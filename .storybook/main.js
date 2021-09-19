@@ -1,27 +1,31 @@
-const path = require('path');
+/**
+ * Custom configuration for Storybook.
+ *
+ * Using Production version of the asset building Webpack configuration to
+ * unify the building pipeline.
+ */
+const custom = require('./../webpack/webpack.prod.js');
+const {merge} = require('webpack-merge');
 
 module.exports = {
   stories: [
-    '../components/**/*.stories.@(js|mdx)'
+    '../components/**/*.stories.js'
   ],
   addons: [
-    '@storybook/addon-knobs'
+    '@storybook/addon-a11y',
+    '@storybook/addon-essentials',
+    '@storybook/addon-knobs',
+    '@storybook/addon-links',
   ],
   webpackFinal: async (config) => {
-    // Add twig support
-    config.module.rules.unshift({
-      test: /\.twig$/,
-      use: [{
-        loader: 'twigjs-loader'
-      }]
-    })
+    // Modify common configs to let Storybook take over.
+    delete custom.entry
+    delete custom.output
+    delete custom.plugins
+    // Special case: override whatever loader is used to load styles with a
+    // style-loader in oder to have styles injected during the runtime.
+    custom.module.rules[1].use[0] = 'style-loader';
 
-    // Tell Storybook where your components live
-    config.resolve.alias['templates'] = path.resolve(
-      __dirname,
-      '../components/'
-    )
-
-    return config
+    return merge(config, custom);
   }
 }
