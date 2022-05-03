@@ -2,12 +2,12 @@
 // List List component.
 //
 
-.civic-link-list {
+.civictheme-link-list {
   $root: &;
 
   #{$root}__title {
     font-weight: bold;
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
   }
 
   #{$root}__list {
@@ -17,14 +17,14 @@
   }
 
   #{$root}__list__item {
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
   }
 
   &--inline {
     display: flex;
 
     #{$root}__title {
-      margin-right: civic-space(2);
+      margin-right: civictheme-space(2);
       margin-bottom: auto;
     }
 
@@ -33,20 +33,20 @@
     }
 
     #{$root}__list__item {
-      margin-right: civic-space(2);
+      margin-right: civictheme-space(2);
       margin-bottom: auto;
     }
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     #{$root}__title {
-      color: $civic-link-list-light-color;
+      color: $civictheme-link-list-light-color;
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     #{$root}__title {
-      color: $civic-link-list-dark-color;
+      color: $civictheme-link-list-dark-color;
     }
   }
 }

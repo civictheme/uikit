@@ -5,7 +5,7 @@
 //
 // Make element visually hidden but readable by screen readers.
 //
-@mixin civic-visually-hidden() {
+@mixin civictheme-visually-hidden() {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;

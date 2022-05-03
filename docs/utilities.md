@@ -1,19 +1,19 @@
 # Utilities
 
-Civic component library provides a wide range of SASS utilities out of the box
+CivicTheme component library provides a wide range of SASS utilities out of the box
 
 ## Spacing
 
-Spacing (such as margin or padding) can be applied using the `civic-space`
+Spacing (such as margin or padding) can be applied using the `civictheme-space`
 function.
 
-Spaces are defined in `$civic-spacing` list variable (currently 8 defined
+Spaces are defined in `$civictheme-spacing` list variable (currently 8 defined
 spaces).
 
 ```scss
 div {
-  padding: civic-space(1) civic-space(2);
-  margin-bottom: civic-space(2);
+  padding: civictheme-space(1) civictheme-space(2);
+  margin-bottom: civictheme-space(2);
 }
 ```
 

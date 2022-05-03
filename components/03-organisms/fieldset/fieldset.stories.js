@@ -21,7 +21,7 @@ export const Fieldset = () => {
   const generalKnobs = {
     theme,
     legend: text('Legend', 'Fieldset legend', generalKnobTab),
-    description: text('Description', 'Civic input description', generalKnobTab),
+    description: text('Description', 'CivicTheme input description', generalKnobTab),
     modifier_class: text('Additional class', '', generalKnobTab),
   };
 

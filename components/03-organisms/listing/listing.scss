@@ -2,7 +2,7 @@
 // Listing component.
 //
 
-.civic-listing {
+.civictheme-listing {
   $root: &;
 
   &__pager {
@@ -11,26 +11,26 @@
   }
 
   &__emptyresults {
-    padding: civic-space(6) 0;
+    padding: civictheme-space(6) 0;
   }
 
   &__results-below {
-    padding: civic-space(3) 0 civic-space(10);
+    padding: civictheme-space(3) 0 civictheme-space(10);
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     &#{$root}--with-background {
       #{$root}__results-below {
-        background-color: $civic-listing-light-background-color;
+        background-color: $civictheme-listing-light-background-color;
       }
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     &#{$root}--with-background {
 
       #{$root}__results-below {
-        background-color: $civic-listing-dark-background-color;
+        background-color: $civictheme-listing-dark-background-color;
       }
     }
   }

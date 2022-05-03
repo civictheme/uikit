@@ -12,12 +12,12 @@
 #}
 
 {% set text = text|default('Skip to main content') %}
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if text is not empty %}
-  <div class="civic-skip-link {{ modifier_class }}">
-    <a class="civic-skip-link__link visually-hidden focusable" href="{{ url }}">
+  <div class="civictheme-skip-link {{ modifier_class }}">
+    <a class="civictheme-skip-link__link visually-hidden focusable" href="{{ url }}">
       {{ text }}
     </a>
   </div>

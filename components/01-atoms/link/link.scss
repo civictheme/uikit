@@ -5,7 +5,7 @@
 //
 // Mixins.
 //
-@mixin civic-link-base() {
+@mixin civictheme-link-base() {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
@@ -16,62 +16,62 @@
     padding: 3px 0 4px;
   }
 
-  .civic-link__link-icon {
+  .civictheme-link__link-icon {
     margin-right: rem(4px);
   }
 
   &,
-  &.civic-theme-light {
-    color: $civic-link-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-link-light-color;
 
     &:focus {
-      @include civic-outline();
+      @include civictheme-outline();
     }
 
     &:hover {
-      background-color: $civic-link-light-hover-background-color;
-      color: $civic-link-light-hover-color;
+      background-color: $civictheme-link-light-hover-background-color;
+      color: $civictheme-link-light-hover-color;
     }
 
-    .civic-link__external-icon {
+    .civictheme-link__external-icon {
       vertical-align: middle;
     }
   }
 
-  &.civic-theme-dark {
-    color: $civic-link-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-link-dark-color;
 
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
 
     &:hover {
-      background-color: $civic-link-dark-hover-background-color;
-      color: $civic-link-dark-hover-color;
+      background-color: $civictheme-link-dark-hover-background-color;
+      color: $civictheme-link-dark-hover-color;
     }
   }
 
   &:visited {
-    @include civic-link-visited ();
+    @include civictheme-link-visited ();
   }
 }
 
-@mixin civic-link-visited() {
-  &.civic-theme-light {
-    color: $civic-link-light-visited-color;
+@mixin civictheme-link-visited() {
+  &.civictheme-theme-light {
+    color: $civictheme-link-light-visited-color;
 
     &:hover {
-      background-color: $civic-link-light-visited-hover-background-color;
-      color: $civic-link-light-visited-hover-color;
+      background-color: $civictheme-link-light-visited-hover-background-color;
+      color: $civictheme-link-light-visited-hover-color;
     }
   }
 
-  &.civic-theme-dark {
-    color: $civic-link-dark-visited-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-link-dark-visited-color;
 
     &:hover {
-      background-color: $civic-link-dark-visited-hover-background-color;
-      color: $civic-link-dark-visited-hover-color;
+      background-color: $civictheme-link-dark-visited-hover-background-color;
+      color: $civictheme-link-dark-visited-hover-color;
     }
   }
 }
@@ -80,6 +80,6 @@
 // Classes.
 //
 
-.civic-link {
-  @include civic-link-base();
+.civictheme-link {
+  @include civictheme-link-base();
 }

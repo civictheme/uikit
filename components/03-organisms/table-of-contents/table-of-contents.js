@@ -11,7 +11,7 @@
  * - data-table-of-contents-anchor-selector (optional): The selector of the
  *   anchors. Defaults to 'h2'.
  * - data-table-of-contents-anchor-scope-selector (optional): The scope for
- *   the anchors. Defaults to '.civic-basic-content'.
+ *   the anchors. Defaults to '.civictheme-basic-content'.
  * - data-table-of-contents-title (optional): The title of TOC.
  */
 
@@ -26,14 +26,14 @@ function CivicTableOfContents(el) {
   this.position = this.target.getAttribute('data-table-of-contents-position').trim();
   this.theme = this.target.hasAttribute('data-table-of-contents-theme') ? this.target.getAttribute('data-table-of-contents-theme').trim() : 'light';
   this.anchorSelector = this.target.hasAttribute('data-table-of-contents-anchor-selector') ? this.target.getAttribute('data-table-of-contents-anchor-selector').trim() : 'h2';
-  this.anchorScopeSelector = this.target.hasAttribute('data-table-of-contents-anchor-scope-selector') ? this.target.getAttribute('data-table-of-contents-anchor-scope-selector').trim() : '.civic-basic-content';
+  this.anchorScopeSelector = this.target.hasAttribute('data-table-of-contents-anchor-scope-selector') ? this.target.getAttribute('data-table-of-contents-anchor-scope-selector').trim() : '.civictheme-basic-content';
   this.title = this.target.hasAttribute('data-table-of-contents-title') ? this.target.getAttribute('data-table-of-contents-title').trim() : '';
 
   // Normalise attribute values.
   this.position = ['before', 'after', 'prepend', 'append'].indexOf(this.position.trim()) > 0 ? this.position : 'before';
   this.theme = this.theme === 'dark' ? 'dark' : 'light';
   this.anchorSelector = this.anchorSelector !== '' ? this.anchorSelector : 'h2';
-  this.anchorScopeSelector = this.anchorScopeSelector !== '' ? this.anchorScopeSelector : '.civic-basic-content';
+  this.anchorScopeSelector = this.anchorScopeSelector !== '' ? this.anchorScopeSelector : '.civictheme-basic-content';
 
   // Initialise component.
   this.init();
@@ -97,17 +97,17 @@ CivicTableOfContents.prototype.findLinks = function (anchorSelector, scopeSelect
 };
 
 CivicTableOfContents.prototype.renderTitle = function (title) {
-  return `<div class="civic-table-of-contents__title">${title}</div>`;
+  return `<div class="civictheme-table-of-contents__title">${title}</div>`;
 };
 
 CivicTableOfContents.prototype.renderLinks = function (links) {
   let html = '';
 
-  html += `<ul class="civic-table-of-contents__links">`;
+  html += `<ul class="civictheme-table-of-contents__links">`;
   for (const i in links) {
     html += `
-      <li class="civic-table-of-contents__link-item">
-        <a class="civic-table-of-contents__link" href="${links[i].url}">${links[i].title}</a>
+      <li class="civictheme-table-of-contents__link-item">
+        <a class="civictheme-table-of-contents__link" href="${links[i].url}">${links[i].title}</a>
       </li>
     `;
   }
@@ -117,7 +117,7 @@ CivicTableOfContents.prototype.renderLinks = function (links) {
 };
 
 CivicTableOfContents.prototype.renderContainer = function (html, theme, position) {
-  return `<div class="civic-table-of-contents civic-theme-${theme} civic-table-of-contents--position-${position}">${html}</div>`;
+  return `<div class="civictheme-table-of-contents civictheme-theme-${theme} civictheme-table-of-contents--position-${position}">${html}</div>`;
 };
 
 CivicTableOfContents.prototype.place = function (el, position, html) {

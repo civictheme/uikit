@@ -2,7 +2,7 @@
  * @file
  * Responsive component.
  *
- * Emits a 'civic-responsive' event on breakpoint change allowing components
+ * Emits a 'civictheme-responsive' event on breakpoint change allowing components
  * to delay initialisation by providing 'data-responsive' attribute with an
  * operator and breakpoint name.
  *
@@ -16,14 +16,14 @@ function CivicResponsive() {
     const query = queries[breakpoint];
     // Store matched media queries in global scope as this component is a
     // singleton.
-    window.civicResponsive = window.civicResponsive || {};
+    window.civicthemeResponsive = window.civicthemeResponsive || {};
     // Only proceed if this query was not processed previously.
-    if (!(query in window.civicResponsive)) {
-      window.civicResponsive[query] = window.matchMedia(query);
-      window.civicResponsive[query].addEventListener('change', this.mediaQueryChange.bind(this, breakpoint));
+    if (!(query in window.civicthemeResponsive)) {
+      window.civicthemeResponsive[query] = window.matchMedia(query);
+      window.civicthemeResponsive[query].addEventListener('change', this.mediaQueryChange.bind(this, breakpoint));
     }
     // Call event handler on init.
-    this.mediaQueryChange(breakpoint, { matches: window.civicResponsive[query].matches });
+    this.mediaQueryChange(breakpoint, { matches: window.civicthemeResponsive[query].matches });
   }
 }
 
@@ -82,7 +82,7 @@ CivicResponsive.prototype.mediaQueryChange = function (breakpoint, evt) {
     return;
   }
   // Fire a custom event that other components can subscribe to.
-  window.dispatchEvent(new CustomEvent('civic-responsive', {
+  window.dispatchEvent(new CustomEvent('civictheme-responsive', {
     bubbles: true,
     detail: {
       breakpoint,
@@ -161,7 +161,7 @@ CivicResponsive.prototype.matchExpr = function (breakpointExpr, breakpoint) {
 };
 
 if (document.querySelectorAll('[data-responsive]').length) {
-  // CivicResponsive needs to run after all civic-responisve
+  // CivicResponsive needs to run after all civictheme-responisve
   // event listeners have been added.
   // Delay the execution until after other components have been initialized.
   // Using setTimeout as an interim solution because:

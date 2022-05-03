@@ -2,7 +2,7 @@
 // Form mixins.
 //
 
-@mixin civic-checkbox-radio($type: 'radio') {
+@mixin civictheme-checkbox-radio($type: 'radio') {
   position: absolute;
   // stylelint-disable-next-line alpha-value-notation
   opacity: 0;
@@ -11,15 +11,15 @@
   z-index: 1;
   cursor: pointer;
 
-  & + .civic-#{$type}__state {
+  & + .civictheme-#{$type}__state {
     &::before {
       content: '';
 
       @if $type == radio {
-        border-radius: $civic-radio-border-radius;
+        border-radius: $civictheme-radio-border-radius;
       }
       @else if $type == checkbox {
-        border-radius: $civic-checkbox-border-radius;
+        border-radius: $civictheme-checkbox-border-radius;
       }
 
       border: 1px solid;
@@ -27,7 +27,7 @@
       width: rem(24px);
       height: rem(24px);
       position: relative;
-      margin-right: civic-space();
+      margin-right: civictheme-space();
       vertical-align: middle;
       cursor: pointer;
       text-align: center;
@@ -35,7 +35,7 @@
   }
 
   &:checked {
-    & + .civic-#{$type}__state {
+    & + .civictheme-#{$type}__state {
       &::before {
         width: rem(22px);
         height: rem(22px);
@@ -46,134 +46,134 @@
 
   &:focus,
   &:hover {
-    & + .civic-#{$type}__state {
+    & + .civictheme-#{$type}__state {
       &::before {
         box-shadow: 0 0 0 1px;
       }
     }
   }
 
-  &.civic-theme-light {
-    & + .civic-#{$type}__state {
+  &.civictheme-theme-light {
+    & + .civictheme-#{$type}__state {
       &::before {
-        border-color: $civic-radio-light-border-color;
+        border-color: $civictheme-radio-light-border-color;
       }
     }
 
     &:focus {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          @include civic-outline();
+          @include civictheme-outline();
         }
       }
     }
 
     &:hover {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          box-shadow: inset 0 0 0 5px $civic-radio-light-background-color;
+          box-shadow: inset 0 0 0 5px $civictheme-radio-light-background-color;
         }
       }
     }
 
     &:checked {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          background-color: $civic-radio-light-selected-background-color;
-          border-color: $civic-radio-light-selected-background-color;
-          box-shadow: inset 0 0 0 3px $civic-radio-light-background-color;
+          background-color: $civictheme-radio-light-selected-background-color;
+          border-color: $civictheme-radio-light-selected-background-color;
+          box-shadow: inset 0 0 0 3px $civictheme-radio-light-background-color;
         }
       }
 
       &.success,
-      &.civic-input--success {
-        & + .civic-#{$type}__state {
+      &.civictheme-input--success {
+        & + .civictheme-#{$type}__state {
           &::before {
-            border-color: $civic-input-light-success-border-color;
-            background-color: $civic-input-light-success-border-color;
+            border-color: $civictheme-input-light-success-border-color;
+            background-color: $civictheme-input-light-success-border-color;
           }
         }
       }
     }
 
     &:disabled {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
           cursor: default;
-          color: $civic-input-light-disabled-color;
-          background-color: $civic-input-light-disabled-background-color;
+          color: $civictheme-input-light-disabled-color;
+          background-color: $civictheme-input-light-disabled-background-color;
         }
       }
     }
   }
 
-  &.civic-theme-dark {
-    & + .civic-#{$type}__state {
+  &.civictheme-theme-dark {
+    & + .civictheme-#{$type}__state {
       &::before {
-        border-color: $civic-radio-dark-border-color;
+        border-color: $civictheme-radio-dark-border-color;
       }
     }
 
     &:hover {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          box-shadow: inset 0 0 0 5px $civic-radio-dark-background-color;
+          box-shadow: inset 0 0 0 5px $civictheme-radio-dark-background-color;
         }
       }
     }
 
     &:focus {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          @include civic-outline();
+          @include civictheme-outline();
         }
       }
     }
 
     &:checked {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          background-color: $civic-radio-dark-selected-background-color;
-          border-color: $civic-radio-dark-selected-background-color;
-          box-shadow: inset 0 0 0 3px $civic-radio-dark-background-color;
+          background-color: $civictheme-radio-dark-selected-background-color;
+          border-color: $civictheme-radio-dark-selected-background-color;
+          box-shadow: inset 0 0 0 3px $civictheme-radio-dark-background-color;
         }
       }
 
       &.success,
-      &.civic-input--success {
-        & + .civic-#{$type}__state {
+      &.civictheme-input--success {
+        & + .civictheme-#{$type}__state {
           &::before {
-            border-color: $civic-input-dark-success-border-color;
-            background-color: $civic-input-dark-success-border-color;
+            border-color: $civictheme-input-dark-success-border-color;
+            background-color: $civictheme-input-dark-success-border-color;
           }
         }
       }
     }
 
     &:disabled {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
           cursor: default;
-          color: $civic-input-dark-disabled-color;
-          background-color: $civic-input-dark-disabled-background-color;
+          color: $civictheme-input-dark-disabled-color;
+          background-color: $civictheme-input-dark-disabled-background-color;
         }
       }
     }
   }
 
   &.error,
-  &.civic-input--error {
-    & + .civic-#{$type}__state {
+  &.civictheme-input--error {
+    & + .civictheme-#{$type}__state {
       &::before {
-        border-color: $civic-input-dark-error-border-color;
+        border-color: $civictheme-input-dark-error-border-color;
       }
     }
 
     &:checked {
-      & + .civic-#{$type}__state {
+      & + .civictheme-#{$type}__state {
         &::before {
-          border-color: $civic-input-dark-error-border-color;
-          background-color: $civic-input-dark-error-border-color;
+          border-color: $civictheme-input-dark-error-border-color;
+          background-color: $civictheme-input-dark-error-border-color;
         }
       }
     }

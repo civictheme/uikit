@@ -111,7 +111,7 @@ export const LargeFilter = () => {
       is_inline: true,
       inline_change_breakpoint: breakpoint,
       type: 'select',
-      modifier_class: 'civic-dropdown-filter--right',
+      modifier_class: 'civictheme-dropdown-filter--right',
       options: [
         formElement('select', {
           value: [

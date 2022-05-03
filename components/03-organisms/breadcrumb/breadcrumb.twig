@@ -13,18 +13,18 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if links %}
   {% set links_count = links|length %}
   {% set parent = false %}
 
-  <nav class="civic-breadcrumb {{ modifier_class }}" aria-label="breadcrumb">
-    <ul class="civic-breadcrumb__links">
+  <nav class="civictheme-breadcrumb {{ modifier_class }}" aria-label="breadcrumb">
+    <ul class="civictheme-breadcrumb__links">
       {% for link in links %}
         {% if link.text is not empty %}
-          <li class="civic-breadcrumb__links--link">
+          <li class="civictheme-breadcrumb__links--link">
 
             {% if loop.index == links_count - 1 %}
               {% set parent = link %}
@@ -51,7 +51,7 @@
       {% endfor %}
 
       {% if parent is not empty %}
-        <li class="civic-breadcrumb__links--link mobile-only">
+        <li class="civictheme-breadcrumb__links--link mobile-only">
           {% include '@atoms/icon/icon.twig' with {
             symbol: 'arrows_leftarrow_2',
           } only %}

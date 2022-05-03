@@ -7,8 +7,8 @@ export default {
 
 export const Fonts = () => {
   const fonts = [...new Set([
-    ...SCSS_VARIABLES['civic-fonts-default'],
-    ...SCSS_VARIABLES['civic-fonts'],
+    ...SCSS_VARIABLES['civictheme-fonts-default'],
+    ...SCSS_VARIABLES['civictheme-fonts'],
   ])];
 
   const types = {

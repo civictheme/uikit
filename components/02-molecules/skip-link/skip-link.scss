@@ -2,37 +2,37 @@
 // Skip Link component.
 //
 
-.civic-skip-link {
+.civictheme-skip-link {
   $root: &;
 
   &__link {
     display: inline-block;
-    margin: civic-space(2) civic-space(3);
-    padding: civic-space();
+    margin: civictheme-space(2) civictheme-space(3);
+    padding: civictheme-space();
 
-    @include civic-typography('label-regular');
+    @include civictheme-typography('label-regular');
   }
 
-  &.civic-theme-light {
-    background-color: $civic-skip-link-light-background-color;
+  &.civictheme-theme-light {
+    background-color: $civictheme-skip-link-light-background-color;
 
     #{$root}__link {
-      color: $civic-skip-link-light-color;
+      color: $civictheme-skip-link-light-color;
 
       &:focus {
-        @include civic-outline(false);
+        @include civictheme-outline(false);
       }
     }
   }
 
-  &.civic-theme-dark {
-    background-color: $civic-skip-link-dark-background-color;
+  &.civictheme-theme-dark {
+    background-color: $civictheme-skip-link-dark-background-color;
 
     #{$root}__link {
-      color: $civic-skip-link-dark-color;
+      color: $civictheme-skip-link-dark-color;
 
       &:focus {
-        @include civic-outline(true);
+        @include civictheme-outline(true);
       }
     }
   }

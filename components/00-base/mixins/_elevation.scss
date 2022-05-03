@@ -8,14 +8,14 @@
 //
 // Elevation from the pre-defined list of elevations.
 //
-@mixin civic-elevation($index: 1) {
-  @if list.nth($civic-elevations, $index) == null {
+@mixin civictheme-elevation($index: 1) {
+  @if list.nth($civictheme-elevations, $index) == null {
     @error '"#{$index}" is not an available elevation.';
   }
 
-  $box-shadow: list.nth($civic-elevations, $index);
+  $box-shadow: list.nth($civictheme-elevations, $index);
 
-  @if civic-string-is-quoted($box-shadow) {
+  @if civictheme-string-is-quoted($box-shadow) {
     $box-shadow: string.unquote($box-shadow);
   }
 

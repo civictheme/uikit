@@ -53,7 +53,7 @@ function CivicCollapsible(el) {
     this.collapse();
   }
 
-  this.el.addEventListener('civic.collapsible.collapse', (evt) => {
+  this.el.addEventListener('civictheme.collapsible.collapse', (evt) => {
     // For some cases (like group collapse) - the animation should be disabled.
     const animate = (evt.detail && evt.detail.animate);
     const isCloseAllEvent = (evt.detail && evt.detail.closeAll);
@@ -62,15 +62,15 @@ function CivicCollapsible(el) {
     }
   });
 
-  this.el.addEventListener('civic.collapsible.expand', () => {
+  this.el.addEventListener('civictheme.collapsible.expand', () => {
     this.expand(true);
   });
 
-  this.el.addEventListener('civic.collapsible.toggle', () => {
+  this.el.addEventListener('civictheme.collapsible.toggle', () => {
     if (this.isCollapsed(this.el)) {
-      this.el.dispatchEvent(new CustomEvent('civic.collapsible.expand', { bubbles: true }));
+      this.el.dispatchEvent(new CustomEvent('civictheme.collapsible.expand', { bubbles: true }));
     } else {
-      this.el.dispatchEvent(new CustomEvent('civic.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
+      this.el.dispatchEvent(new CustomEvent('civictheme.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
     }
   });
 
@@ -82,7 +82,7 @@ function CivicCollapsible(el) {
   this.isGroupsEnabled = true;
   this.groupEnabledBreakpoint = this.el.getAttribute('data-collapsible-group-enabled-breakpoint');
   if (this.groupEnabledBreakpoint) {
-    window.addEventListener('civic-responsive', (evt) => {
+    window.addEventListener('civictheme-responsive', (evt) => {
       const evaluationResult = evt.detail.evaluate(this.groupEnabledBreakpoint, () => {
         // Is within breakpoint.
         this.isGroupsEnabled = true;
@@ -151,9 +151,9 @@ CivicCollapsible.prototype.clickEvent = function (e) {
   }
 
   if (this.collapsed) {
-    this.el.dispatchEvent(new CustomEvent('civic.collapsible.expand', { bubbles: true }));
+    this.el.dispatchEvent(new CustomEvent('civictheme.collapsible.expand', { bubbles: true }));
   } else {
-    this.el.dispatchEvent(new CustomEvent('civic.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
+    this.el.dispatchEvent(new CustomEvent('civictheme.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
   }
 };
 
@@ -179,7 +179,7 @@ CivicCollapsible.prototype.focusoutEvent = function (e) {
     && this.group
     && this.isGroupsEnabled
   ) {
-    e.target.dispatchEvent(new CustomEvent('civic.collapsible.collapse', { bubbles: true }));
+    e.target.dispatchEvent(new CustomEvent('civictheme.collapsible.collapse', { bubbles: true }));
   }
 };
 
@@ -201,18 +201,18 @@ CivicCollapsible.prototype.keydownEvent = function (e) {
   if (this !== document) {
     // Up.
     if (e.which === 38 && !e.shiftKey) {
-      this.dispatchEvent(new CustomEvent('civic.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
+      this.dispatchEvent(new CustomEvent('civictheme.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
       return;
     }
 
     // Down.
     if (e.which === 40 && !e.shiftKey) {
-      this.dispatchEvent(new CustomEvent('civic.collapsible.expand', { bubbles: true }));
+      this.dispatchEvent(new CustomEvent('civictheme.collapsible.expand', { bubbles: true }));
     }
 
     // Space.
     if (e.which === 32) {
-      this.dispatchEvent(new CustomEvent('civic.collapsible.toggle', { bubbles: true }));
+      this.dispatchEvent(new CustomEvent('civictheme.collapsible.toggle', { bubbles: true }));
     }
   }
 };
@@ -226,7 +226,7 @@ CivicCollapsible.prototype.closeGroup = function (group) {
     // eslint-disable-next-line prefer-template
     document.querySelectorAll('[data-collapsible-group=' + group + ']:not([data-collapsible-collapsed])').forEach((el) => {
       if (el !== currentEl) {
-        el.dispatchEvent(new CustomEvent('civic.collapsible.collapse', { bubbles: true }));
+        el.dispatchEvent(new CustomEvent('civictheme.collapsible.collapse', { bubbles: true }));
       }
     });
   }
@@ -237,7 +237,7 @@ CivicCollapsible.prototype.closeGroup = function (group) {
  */
 CivicCollapsible.prototype.collapseAllGroups = function () {
   document.querySelectorAll('[data-collapsible-group]').forEach((el) => {
-    el.dispatchEvent(new CustomEvent('civic.collapsible.collapse', { bubbles: true, detail: { closeAll: true } }));
+    el.dispatchEvent(new CustomEvent('civictheme.collapsible.collapse', { bubbles: true, detail: { closeAll: true } }));
   });
 };
 
@@ -531,7 +531,7 @@ document.querySelectorAll('[data-collapsible]').forEach((el) => {
   // Delay initialisation if should be responsive.
   const breakpointExpr = el.getAttribute('data-responsive');
   if (breakpointExpr) {
-    window.addEventListener('civic-responsive', (evt) => {
+    window.addEventListener('civictheme-responsive', (evt) => {
       evt.detail.evaluate(breakpointExpr, CivicCollapsible, el);
     }, false);
     return;

@@ -39,5 +39,5 @@ export const Logo = (knobTab) => {
     ...generalKnobs,
   });
 
-  return `<div class="civic-logo-example story-wrapper-size--small">${html}</div>`;
+  return `<div class="civictheme-logo-example story-wrapper-size--small">${html}</div>`;
 };

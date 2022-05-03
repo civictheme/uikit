@@ -2,16 +2,16 @@
 // Banner component stories.
 //
 
-.civic-banner {
+.civictheme-banner {
   &__content__example {
-    margin-bottom: civic-space(6);
+    margin-bottom: civictheme-space(6);
   }
 
   &__content__example-last-updated {
-    @include civic-typography('text-small');
+    @include civictheme-typography('text-small');
   }
 
   &__content__example-summary {
-    @include civic-typography('text-large');
+    @include civictheme-typography('text-large');
   }
 }

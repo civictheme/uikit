@@ -12,7 +12,7 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% set statuses = {
@@ -31,24 +31,24 @@
 } %}
 
 {% if steps %}
-  <div class="civic-progress-indicator {{ modifier_class }}" aria-live="polite">
+  <div class="civictheme-progress-indicator {{ modifier_class }}" aria-live="polite">
     {% for step in steps %}
       {% if step.title is not empty %}
-        <div class="civic-progress-indicator__step {{ 'civic-progress-indicator__step--%s'|format(step.status) }}">
+        <div class="civictheme-progress-indicator__step {{ 'civictheme-progress-indicator__step--%s'|format(step.status) }}">
           {% if step.status is defined %}
             {% include '@atoms/icon/icon.twig' with {
               symbol: statuses[step.status].icon,
             } only %}
           {% endif %}
 
-          <div class="civic-progress-indicator__step--inner">
+          <div class="civictheme-progress-indicator__step--inner">
             {% if step.status is defined %}
-              <div class="civic-progress-indicator__step--status">
+              <div class="civictheme-progress-indicator__step--status">
                 {{ statuses[step.status].text }}
               </div>
             {% endif %}
 
-            <div class="civic-progress-indicator__step--title">
+            <div class="civictheme-progress-indicator__step--title">
               {{ step.title }}
             </div>
           </div>

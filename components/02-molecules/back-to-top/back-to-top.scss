@@ -2,44 +2,44 @@
 // Back to Top component.
 //
 
-.civic-back-to-top {
+.civictheme-back-to-top {
   $root: &;
 
   position: fixed;
-  right: $civic-back-to-top-space-right;
-  bottom: $civic-back-to-top-space-bottom;
+  right: $civictheme-back-to-top-space-right;
+  bottom: $civictheme-back-to-top-space-bottom;
 
   &[data-scrollspy='true'] {
     display: none;
 
-    &.civic-scrollspy-scrolled {
+    &.civictheme-scrollspy-scrolled {
       display: block;
     }
   }
 
-  .civic-button {
+  .civictheme-button {
     border-radius: rem(100px);
-    padding: civic-space();
+    padding: civictheme-space();
   }
 
-  &.civic-theme-light {
-    .civic-button {
-      background-color: $civic-back-to-top-light-background-color;
-      border-color: $civic-back-to-top-light-background-color;
+  &.civictheme-theme-light {
+    .civictheme-button {
+      background-color: $civictheme-back-to-top-light-background-color;
+      border-color: $civictheme-back-to-top-light-background-color;
 
-      .civic-icon {
-        fill: $civic-back-to-top-light-color;
+      .civictheme-icon {
+        fill: $civictheme-back-to-top-light-color;
       }
     }
   }
 
-  &.civic-theme-dark {
-    .civic-button {
-      background-color: $civic-back-to-top-dark-background-color;
-      border-color: $civic-back-to-top-dark-background-color;
+  &.civictheme-theme-dark {
+    .civictheme-button {
+      background-color: $civictheme-back-to-top-dark-background-color;
+      border-color: $civictheme-back-to-top-dark-background-color;
 
-      .civic-icon {
-        fill: $civic-back-to-top-dark-color;
+      .civictheme-icon {
+        fill: $civictheme-back-to-top-dark-color;
       }
     }
   }

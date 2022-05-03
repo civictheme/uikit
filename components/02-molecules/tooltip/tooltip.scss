@@ -4,7 +4,7 @@
 
 @use 'sass:math';
 
-.civic-tooltip {
+.civictheme-tooltip {
   $root: &;
 
   display: inline-block;
@@ -19,87 +19,87 @@
     padding: 0;
 
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
   }
 
   &__description {
-    $tooltip-width-half: math.div($civic-tooltip-width, 2);
+    $tooltip-width-half: math.div($civictheme-tooltip-width, 2);
 
-    @include civic-typography('label-small');
+    @include civictheme-typography('label-small');
 
-    border-radius: $civic-tooltip-description-border-radius;
+    border-radius: $civictheme-tooltip-description-border-radius;
 
-    @include civic-elevation(2);
+    @include civictheme-elevation(2);
 
     box-sizing: border-box;
     position: absolute;
-    width: $civic-tooltip-width;
+    width: $civictheme-tooltip-width;
     margin-left: calc(50% - #{$tooltip-width-half});
-    margin-top: $civic-tooltip-triangle-height + math.div(civic-space(), 2);
-    z-index: $civic-tooltip-z-index;
+    margin-top: $civictheme-tooltip-triangle-height + math.div(civictheme-space(), 2);
+    z-index: $civictheme-tooltip-z-index;
 
     // Triangle.
     &::before {
-      $triangle-width-half: math.div($civic-tooltip-triangle-width, 2);
+      $triangle-width-half: math.div($civictheme-tooltip-triangle-width, 2);
 
       content: '';
       display: inline-block;
       position: absolute;
-      width: $civic-tooltip-triangle-width;
-      height: $civic-tooltip-triangle-height;
+      width: $civictheme-tooltip-triangle-width;
+      height: $civictheme-tooltip-triangle-height;
       transform: rotateZ(45deg);
-      top: -1 * math.div($civic-tooltip-triangle-height, 2);
+      top: -1 * math.div($civictheme-tooltip-triangle-height, 2);
       left: calc(50% - #{$triangle-width-half});
     }
   }
 
   &__description__inner {
-    margin: civic-space(2);
+    margin: civictheme-space(2);
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     #{$root}__button {
       svg {
-        fill: $civic-tooltip-light-icon-color;
+        fill: $civictheme-tooltip-light-icon-color;
       }
 
       &:hover {
         svg {
-          fill: $civic-tooltip-light-icon-hover-color;
+          fill: $civictheme-tooltip-light-icon-hover-color;
         }
       }
     }
 
     #{$root}__description {
-      color: $civic-tooltip-light-description-color;
-      background-color: $civic-tooltip-light-description-background-color;
+      color: $civictheme-tooltip-light-description-color;
+      background-color: $civictheme-tooltip-light-description-background-color;
 
       &::before {
-        background-color: $civic-tooltip-light-description-background-color;
+        background-color: $civictheme-tooltip-light-description-background-color;
       }
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     #{$root}__button {
       svg {
-        fill: $civic-tooltip-dark-icon-color;
+        fill: $civictheme-tooltip-dark-icon-color;
       }
 
       &:hover {
         svg {
-          fill: $civic-tooltip-dark-icon-hover-color;
+          fill: $civictheme-tooltip-dark-icon-hover-color;
         }
       }
     }
 
     #{$root}__description {
-      color: $civic-tooltip-dark-description-color;
-      background-color: $civic-tooltip-dark-description-background-color;
+      color: $civictheme-tooltip-dark-description-color;
+      background-color: $civictheme-tooltip-dark-description-background-color;
 
       &::before {
-        background-color: $civic-tooltip-dark-description-background-color;
+        background-color: $civictheme-tooltip-dark-description-background-color;
       }
     }
   }

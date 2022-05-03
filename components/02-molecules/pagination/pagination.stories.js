@@ -40,7 +40,7 @@ export const Pagination = (knobTab) => {
       'light',
       generalKnobTab,
     ),
-    heading_id: text('Heading Id', 'civic-pager-demo', generalKnobTab),
+    heading_id: text('Heading Id', 'civictheme-pager-demo', generalKnobTab),
     items: {
       previous: {
         text: 'Previous',

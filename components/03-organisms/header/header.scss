@@ -2,21 +2,21 @@
 // Header component.
 //
 
-.civic-header {
+.civictheme-header {
   $root: &;
 
-  @include civic-typography('text-regular');
+  @include civictheme-typography('text-regular');
 
   &__top {
-    padding-top: civic-space();
-    padding-bottom: civic-space();
+    padding-top: civictheme-space();
+    padding-bottom: civictheme-space();
   }
 
   &__logo {
-    padding: civic-space() 0;
+    padding: civictheme-space() 0;
 
-    @include civic-breakpoint($civic-header-desktop-menu-breakpoint) {
-      padding: civic-space(3) 0;
+    @include civictheme-breakpoint($civictheme-header-desktop-menu-breakpoint) {
+      padding: civictheme-space(3) 0;
     }
   }
 
@@ -36,53 +36,53 @@
     height: 100%;
     position: relative;
 
-    @include civic-breakpoint($civic-header-desktop-menu-breakpoint) {
+    @include civictheme-breakpoint($civictheme-header-desktop-menu-breakpoint) {
       position: static;
     }
   }
 
-  .civic-logo {
-    width: rem($civic-header-logo-mobile-width);
+  .civictheme-logo {
+    width: rem($civictheme-header-logo-mobile-width);
 
-    @include civic-breakpoint($civic-header-desktop-menu-breakpoint) {
+    @include civictheme-breakpoint($civictheme-header-desktop-menu-breakpoint) {
       width: auto;
-      max-width: rem($civic-header-logo-desktop-width);
+      max-width: rem($civictheme-header-logo-desktop-width);
     }
   }
 
-  .civic-mobile-navigation__trigger {
+  .civictheme-mobile-navigation__trigger {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     #{$root}__top {
-      background-color: $civic-header-light-top-background-color;
-      color: $civic-header-light-top-color;
+      background-color: $civictheme-header-light-top-background-color;
+      color: $civictheme-header-light-top-color;
     }
 
     #{$root}__middle {
-      background-color: $civic-header-light-middle-background-color;
+      background-color: $civictheme-header-light-middle-background-color;
 
       .container {
-        border-color: $civic-header-light-middle-border-color;
+        border-color: $civictheme-header-light-middle-border-color;
       }
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     #{$root}__top {
-      background-color: $civic-header-dark-top-background-color;
-      color: $civic-header-dark-top-color;
+      background-color: $civictheme-header-dark-top-background-color;
+      color: $civictheme-header-dark-top-color;
     }
 
     #{$root}__middle {
-      background-color: $civic-header-dark-middle-background-color;
+      background-color: $civictheme-header-dark-middle-background-color;
 
       .container {
-        border-color: $civic-header-dark-middle-border-color;
+        border-color: $civictheme-header-dark-middle-border-color;
       }
     }
   }

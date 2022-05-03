@@ -88,7 +88,7 @@ CivicButton.prototype.dismissClickEvent = function (e) {
   const button = this.findButton(e.target);
   if (button) {
     button.remove();
-    this.el.dispatchEvent(new CustomEvent('civic.button.dismiss', { bubbles: true }));
+    this.el.dispatchEvent(new CustomEvent('civictheme.button.dismiss', { bubbles: true }));
   }
 };
 
@@ -96,12 +96,12 @@ CivicButton.prototype.dismissClickEvent = function (e) {
  * Find button element.
  */
 CivicButton.prototype.findButton = function (el) {
-  if (el.classList.contains('civic-button')) {
+  if (el.classList.contains('civictheme-button')) {
     return el;
   }
-  return el.closest('.civic-button');
+  return el.closest('.civictheme-button');
 };
 
-document.querySelectorAll('.civic-button').forEach((el) => {
+document.querySelectorAll('.civictheme-button').forEach((el) => {
   new CivicButton(el);
 });

@@ -2,7 +2,7 @@
 // Description List component.
 //
 
-.civic-description-list {
+.civictheme-description-list {
   $root: &;
 
   padding: 0;
@@ -18,7 +18,7 @@
     flex-wrap: nowrap;
 
     #{$root}--inline & {
-      margin-right: civic-space(2);
+      margin-right: civictheme-space(2);
     }
 
     &:last-child {
@@ -36,12 +36,12 @@
     &::after {
       #{$root}--inline & {
         content: '•';
-        margin-left: civic-space(2);
+        margin-left: civictheme-space(2);
       }
     }
 
     &__term {
-      margin-right: civic-space();
+      margin-right: civictheme-space();
 
       &::after {
         content: ':';

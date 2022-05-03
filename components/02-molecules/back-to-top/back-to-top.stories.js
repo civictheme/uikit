@@ -27,5 +27,5 @@ export const BackToTop = (knobTab) => {
     ...generalKnobs,
   });
 
-  return `<a id="top"></a><div class="example-container"><div class="example-container__page-content example-civic-back-to-top"></div>${html}</div>`;
+  return `<a id="top"></a><div class="example-container"><div class="example-container__page-content example-civictheme-back-to-top"></div>${html}</div>`;
 };

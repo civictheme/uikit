@@ -15,16 +15,16 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if logos is not empty %}
   {% for type, logo in logos %}
     {% set visibility_class = type == 'mobile' ? 'show-xxs hide-m' : 'hide-xxs show-m' %}
     {% if logo.src is not empty %}
-      <div class="civic-logo {{ visibility_class }} {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+      <div class="civictheme-logo {{ visibility_class }} {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
         {% if url is not empty %}
-        <a class="civic-logo__url" href="{{ url }}" title="{{ title|default('Click to go to the homepage') }}">
+        <a class="civictheme-logo__url" href="{{ url }}" title="{{ title|default('Click to go to the homepage') }}">
         {% endif %}
           {% include '@atoms/image/image.twig' with {
             theme: theme,

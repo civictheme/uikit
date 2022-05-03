@@ -15,26 +15,26 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 {% set button_type = button_type|default('primary') %}
 {% set button_text = button_text|default('Search') %}
 
-<div class="civic-search {{ modifier_class }}">
-  <form class="civic-search__form" action="{{ search_url }}" role="search" method="get">
-    <div class="civic-search__field-wrapper">
-      <div class="civic-search__field">
+<div class="civictheme-search {{ modifier_class }}">
+  <form class="civictheme-search__form" action="{{ search_url }}" role="search" method="get">
+    <div class="civictheme-search__field-wrapper">
+      <div class="civictheme-search__field">
         {% block search %}
           {% include '@atoms/icon/icon.twig' with {
             symbol: 'userinterface_magnifier',
-            modifier_class: 'civic-search__icon'
+            modifier_class: 'civictheme-search__icon'
           } only %}
           {% include '@atoms/input/input.twig' with {
             text: button_text,
             type: 'search',
             theme: theme,
             placeholder: placeholder,
-            modifier_class: 'civic-search__input',
+            modifier_class: 'civictheme-search__input',
             attributes: 'name=query spellcheck=false',
             value: keys ?? '',
           } only %}
@@ -44,12 +44,12 @@
         text: button_text,
         type: button_type,
         theme: theme,
-        modifier_class: 'civic-search__button',
+        modifier_class: 'civictheme-search__button',
       } only %}
     </div>
 
     {% if help_text is not empty %}
-      <p class="civic-search__help_text">{{ help_text }}</p>
+      <p class="civictheme-search__help_text">{{ help_text }}</p>
     {% endif %}
   </form>
 </div>

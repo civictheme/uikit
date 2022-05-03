@@ -2,19 +2,19 @@
 // Card Container component.
 //
 
-.civic-card-container {
+.civictheme-card-container {
   $root: &;
 
-  &.civic-card-container--vertical-space-top {
-    @include civic-component-with-vertical-space(top, $civic-card-container-space-vertical);
+  &.civictheme-card-container--vertical-space-top {
+    @include civictheme-component-with-vertical-space(top, $civictheme-card-container-space-vertical);
   }
 
-  &.civic-card-container--vertical-space-bottom {
-    @include civic-component-with-vertical-space(bottom, $civic-card-container-space-vertical);
+  &.civictheme-card-container--vertical-space-bottom {
+    @include civictheme-component-with-vertical-space(bottom, $civictheme-card-container-space-vertical);
   }
 
-  &.civic-card-container--vertical-space-both {
-    @include civic-component-with-vertical-space(both, $civic-card-container-space-vertical);
+  &.civictheme-card-container--vertical-space-both {
+    @include civictheme-component-with-vertical-space(both, $civictheme-card-container-space-vertical);
   }
 
   &--fill-width {
@@ -26,31 +26,31 @@
 
   &__card {
     display: flex;
-    margin-bottom: civic-space(3);
+    margin-bottom: civictheme-space(3);
   }
 
   &__header {
     display: flex;
     flex-direction: column;
-    margin-bottom: civic-space(3);
+    margin-bottom: civictheme-space(3);
 
-    @include civic-breakpoint('m') {
+    @include civictheme-breakpoint('m') {
       flex-direction: row;
     }
   }
 
   &__header-title {
-    @include civic-typography('heading-3');
+    @include civictheme-typography('heading-3');
 
-    @include civic-breakpoint('m') {
+    @include civictheme-breakpoint('m') {
       margin-right: auto;
     }
   }
 
   &__header-link {
-    @include civic-typography('label-regular');
+    @include civictheme-typography('label-regular');
 
-    @include civic-breakpoint('m') {
+    @include civictheme-breakpoint('m') {
       align-self: center;
       margin-left: auto;
     }
@@ -64,107 +64,107 @@
     display: flex;
     flex-direction: column;
 
-    @include civic-breakpoint('m') {
+    @include civictheme-breakpoint('m') {
       flex-direction: row;
     }
   }
 
   &__footer-link {
-    @include civic-typography('label-regular');
+    @include civictheme-typography('label-regular');
 
-    margin-top: civic-space(4);
+    margin-top: civictheme-space(4);
 
-    @include civic-breakpoint('m') {
+    @include civictheme-breakpoint('m') {
       align-self: center;
       margin-left: auto;
     }
   }
 
   &__description {
-    @include civic-typography('text-regular');
+    @include civictheme-typography('text-regular');
 
-    margin-bottom: civic-space(3);
+    margin-bottom: civictheme-space(3);
   }
 
   &--listing {
     #{$root}__header-title {
-      @include civic-typography('heading-5');
+      @include civictheme-typography('heading-5');
 
-      padding: civic-space(3) 0 civic-space();
+      padding: civictheme-space(3) 0 civictheme-space();
     }
   }
 
-  &.civic-theme-light {
-    color: $civic-card-container-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-card-container-light-color;
 
     &#{$root}--with-background {
-      background-color: $civic-card-container-light-wrapper-background-color;
-      padding-left: $civic-card-container-space-horizontal;
-      padding-right: $civic-card-container-space-horizontal;
+      background-color: $civictheme-card-container-light-wrapper-background-color;
+      padding-left: $civictheme-card-container-space-horizontal;
+      padding-right: $civictheme-card-container-space-horizontal;
     }
 
     &#{$root}--with-spacing {
-      background-color: $civic-card-container-light-background-color;
+      background-color: $civictheme-card-container-light-background-color;
     }
 
     #{$root}__header-title {
-      color: $civic-card-container-light-heading-title-color;
+      color: $civictheme-card-container-light-heading-title-color;
     }
 
     #{$root}__header-link {
-      .civic-link {
-        color: $civic-card-container-light-heading-color;
+      .civictheme-link {
+        color: $civictheme-card-container-light-heading-color;
 
         &:hover {
-          color: $civic-card-container-light-heading-hover-color;
+          color: $civictheme-card-container-light-heading-hover-color;
         }
       }
     }
 
     #{$root}__footer-link {
-      .civic-link {
-        color: $civic-card-container-light-footer-link-color;
+      .civictheme-link {
+        color: $civictheme-card-container-light-footer-link-color;
 
         &:hover {
-          color: $civic-card-container-light-footer-link-hover-color;
+          color: $civictheme-card-container-light-footer-link-hover-color;
         }
       }
     }
   }
 
-  &.civic-theme-dark {
-    color: $civic-card-container-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-card-container-dark-color;
 
     &#{$root}--with-background {
-      background-color: $civic-card-container-dark-wrapper-background-color;
-      padding-left: $civic-card-container-space-horizontal;
-      padding-right: $civic-card-container-space-horizontal;
+      background-color: $civictheme-card-container-dark-wrapper-background-color;
+      padding-left: $civictheme-card-container-space-horizontal;
+      padding-right: $civictheme-card-container-space-horizontal;
     }
 
     &#{$root}--with-spacing {
-      background-color: $civic-card-container-dark-background-color;
+      background-color: $civictheme-card-container-dark-background-color;
     }
 
     #{$root}__header-title {
-      color: $civic-card-container-dark-heading-title-color;
+      color: $civictheme-card-container-dark-heading-title-color;
     }
 
     #{$root}__header-link {
-      .civic-link {
-        color: $civic-card-container-dark-heading-color;
+      .civictheme-link {
+        color: $civictheme-card-container-dark-heading-color;
 
         &:hover {
-          color: $civic-card-container-dark-heading-hover-color;
+          color: $civictheme-card-container-dark-heading-hover-color;
         }
       }
     }
 
     #{$root}__footer-link {
-      .civic-link {
-        color: $civic-card-container-dark-footer-link-color;
+      .civictheme-link {
+        color: $civictheme-card-container-dark-footer-link-color;
 
         &:hover {
-          color: $civic-card-container-dark-footer-link-hover-color;
+          color: $civictheme-card-container-dark-footer-link-hover-color;
         }
       }
     }

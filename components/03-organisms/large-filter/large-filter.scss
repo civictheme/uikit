@@ -1,4 +1,4 @@
-.civic-large-filter {
+.civictheme-large-filter {
   $root: &;
 
   &__mobile-toggle {
@@ -8,19 +8,19 @@
   }
 
   &__mobile-overlay {
-    padding-bottom: civic-space(5);
+    padding-bottom: civictheme-space(5);
   }
 
   &__mobile-container {
-    padding-bottom: civic-space();
+    padding-bottom: civictheme-space();
   }
 
   &__mobile-toggle-display {
-    @include civic-typography('text-small');
+    @include civictheme-typography('text-small');
 
     text-align: center;
     width: 100%;
-    padding: civic-space() civic-space(3);
+    padding: civictheme-space() civictheme-space(3);
     border: 1px solid transparent;
     border-top: 0;
     box-sizing: border-box;
@@ -31,7 +31,7 @@
   }
 
   &__mobile-filter-title {
-    @include civic-typography('label-regular');
+    @include civictheme-typography('label-regular');
 
     margin: 0;
     display: inline;
@@ -54,35 +54,35 @@
     margin: 0;
     border: none;
     width: 100%;
-    padding: civic-space(2) 0;
+    padding: civictheme-space(2) 0;
 
-    @include civic-breakpoint($civic-large-filter-breakpoint) {
+    @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
       display: inline-flex;
-      padding: civic-space(3) 0;
+      padding: civictheme-space(3) 0;
     }
 
     & > legend {
-      @include civic-typography('text-regular');
+      @include civictheme-typography('text-regular');
 
-      @include civic-breakpoint($civic-large-filter-breakpoint) {
+      @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
         display: block;
         float: left;
-        margin-right: civic-space(5);
+        margin-right: civictheme-space(5);
       }
     }
 
-    .civic-dropdown-filter {
+    .civictheme-dropdown-filter {
       border-bottom: 1px solid transparent;
 
-      @include civic-breakpoint($civic-large-filter-breakpoint) {
-        margin-right: civic-space(3);
+      @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
+        margin-right: civictheme-space(3);
         border-bottom: 0;
       }
 
       &:first-of-type {
         border-top: 1px solid transparent;
 
-        @include civic-breakpoint($civic-large-filter-breakpoint) {
+        @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
           border-top: 0;
         }
       }
@@ -92,11 +92,11 @@
   &__selected-filters {
     display: none;
 
-    @include civic-breakpoint($civic-large-filter-breakpoint) {
+    @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
       display: flex;
       align-items: flex-start;
       flex-wrap: nowrap;
-      padding: civic-space(3) 0;
+      padding: civictheme-space(3) 0;
       width: 100%;
     }
 
@@ -106,19 +106,19 @@
   }
 
   &__selected-filters-title {
-    @include civic-typography('label-regular');
+    @include civictheme-typography('label-regular');
 
     white-space: nowrap;
-    margin-top: civic-space(2);
+    margin-top: civictheme-space(2);
   }
 
   &__tags {
-    margin-left: civic-space(2);
+    margin-left: civictheme-space(2);
     width: 100%;
 
     #{$root}__mobile-tags & {
       margin-left: 0;
-      padding-top: civic-space(2);
+      padding-top: civictheme-space(2);
     }
   }
 
@@ -129,9 +129,9 @@
   }
 
   &__tag {
-    margin-right: civic-space();
-    margin-top: civic-space();
-    margin-bottom: civic-space();
+    margin-right: civictheme-space();
+    margin-top: civictheme-space();
+    margin-bottom: civictheme-space();
     display: inline-block;
   }
 
@@ -140,9 +140,9 @@
   }
 
   &__clear-all {
-    @include civic-typography('label-regular');
+    @include civictheme-typography('label-regular');
 
-    margin-top: civic-space(2);
+    margin-top: civictheme-space(2);
     border: 0;
     padding: 0;
     cursor: pointer;
@@ -158,154 +158,154 @@
     }
 
     &:focus {
-      @include civic-outline();
+      @include civictheme-outline();
     }
   }
 
   &__clear-all-label {
     pointer-events: none;
-    margin-right: civic-space(0.5);
+    margin-right: civictheme-space(0.5);
   }
 
-  &.civic-theme-light {
-    background-color: $civic-large-filter-light-background-color;
+  &.civictheme-theme-light {
+    background-color: $civictheme-large-filter-light-background-color;
 
-    @include civic-breakpoint($civic-large-filter-breakpoint) {
-      border-top: 1px solid $civic-large-filter-light-border-color;
-      border-bottom: 1px solid $civic-large-filter-light-border-color;
+    @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
+      border-top: 1px solid $civictheme-large-filter-light-border-color;
+      border-bottom: 1px solid $civictheme-large-filter-light-border-color;
     }
 
     #{$root}__mobile-toggle {
-      color: $civic-large-filter-light-mobile-toggle-color;
-      background-color: $civic-large-filter-light-mobile-toggle-background-color;
-      border-color: $civic-large-filter-light-mobile-toggle-border-color;
+      color: $civictheme-large-filter-light-mobile-toggle-color;
+      background-color: $civictheme-large-filter-light-mobile-toggle-background-color;
+      border-color: $civictheme-large-filter-light-mobile-toggle-border-color;
     }
 
     #{$root}__mobile-toggle-display {
-      color: $civic-large-filter-light-mobile-toggle-display-color;
-      border-color: $civic-large-filter-light-mobile-toggle-display-border-color;
+      color: $civictheme-large-filter-light-mobile-toggle-display-color;
+      border-color: $civictheme-large-filter-light-mobile-toggle-display-border-color;
     }
 
     #{$root}__mobile-overlay {
-      background-color: $civic-large-filter-light-mobile-overlay-background-color;
+      background-color: $civictheme-large-filter-light-mobile-overlay-background-color;
     }
 
     #{$root}__mobile-filter-title {
-      color: $civic-large-filter-light-mobile-filter-title-color;
+      color: $civictheme-large-filter-light-mobile-filter-title-color;
     }
 
     #{$root}__filters {
       & > legend {
-        color: $civic-large-filter-light-filters-legend-color;
+        color: $civictheme-large-filter-light-filters-legend-color;
       }
 
-      .civic-dropdown-filter {
-        border-bottom-color: $civic-large-filter-light-dropdown-filter-border-color;
+      .civictheme-dropdown-filter {
+        border-bottom-color: $civictheme-large-filter-light-dropdown-filter-border-color;
 
         &:first-of-type {
-          border-top-color: $civic-large-filter-light-dropdown-filter-border-color;
+          border-top-color: $civictheme-large-filter-light-dropdown-filter-border-color;
         }
       }
     }
 
     #{$root}__selected-filters {
-      @include civic-breakpoint($civic-large-filter-breakpoint) {
-        border-top: 1px solid $civic-large-filter-light-selected-filters-border-color;
+      @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
+        border-top: 1px solid $civictheme-large-filter-light-selected-filters-border-color;
       }
     }
 
     #{$root}__clear-all {
-      background-color: $civic-large-filter-light-clear-all-background-color;
-      color: $civic-large-filter-light-clear-all-color;
+      background-color: $civictheme-large-filter-light-clear-all-background-color;
+      color: $civictheme-large-filter-light-clear-all-color;
 
       svg {
-        fill: $civic-large-filter-light-clear-all-icon-color;
+        fill: $civictheme-large-filter-light-clear-all-icon-color;
       }
     }
 
     #{$root}__mobile-clear-container {
       #{$root}__clear-all-label {
-        color: $civic-large-filter-light-mobile-clear-all-label-color;
+        color: $civictheme-large-filter-light-mobile-clear-all-label-color;
       }
 
       svg {
-        fill: $civic-large-filter-light-mobile-clear-all-label-icon;
+        fill: $civictheme-large-filter-light-mobile-clear-all-label-icon;
       }
     }
 
     #{$root}__selected-filters-title {
-      color: $civic-large-filter-light-selected-filters-title-color;
+      color: $civictheme-large-filter-light-selected-filters-title-color;
     }
   }
 
-  &.civic-theme-dark {
-    background-color: $civic-large-filter-dark-background-color;
+  &.civictheme-theme-dark {
+    background-color: $civictheme-large-filter-dark-background-color;
 
-    @include civic-breakpoint($civic-large-filter-breakpoint) {
-      border-top: 1px solid $civic-large-filter-dark-border-color;
-      border-bottom: 1px solid $civic-large-filter-dark-border-color;
+    @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
+      border-top: 1px solid $civictheme-large-filter-dark-border-color;
+      border-bottom: 1px solid $civictheme-large-filter-dark-border-color;
     }
 
     #{$root}__mobile-toggle {
-      color: $civic-large-filter-dark-mobile-toggle-color;
-      background-color: $civic-large-filter-dark-mobile-toggle-background-color;
-      border-color: $civic-large-filter-dark-mobile-toggle-border-color;
+      color: $civictheme-large-filter-dark-mobile-toggle-color;
+      background-color: $civictheme-large-filter-dark-mobile-toggle-background-color;
+      border-color: $civictheme-large-filter-dark-mobile-toggle-border-color;
     }
 
     #{$root}__mobile-toggle-display {
-      color: $civic-large-filter-dark-mobile-toggle-display-color;
-      border-color: $civic-large-filter-dark-mobile-toggle-display-border-color;
+      color: $civictheme-large-filter-dark-mobile-toggle-display-color;
+      border-color: $civictheme-large-filter-dark-mobile-toggle-display-border-color;
     }
 
     #{$root}__mobile-overlay {
-      background-color: $civic-large-filter-dark-mobile-overlay-background-color;
+      background-color: $civictheme-large-filter-dark-mobile-overlay-background-color;
     }
 
     #{$root}__mobile-filter-title {
-      color: $civic-large-filter-dark-mobile-filter-title-color;
+      color: $civictheme-large-filter-dark-mobile-filter-title-color;
     }
 
     #{$root}__filters {
       & > legend {
-        color: $civic-large-filter-dark-filters-legend-color;
+        color: $civictheme-large-filter-dark-filters-legend-color;
       }
 
-      .civic-dropdown-filter {
-        border-bottom-color: $civic-large-filter-dark-dropdown-filter-border-color;
+      .civictheme-dropdown-filter {
+        border-bottom-color: $civictheme-large-filter-dark-dropdown-filter-border-color;
 
         &:first-of-type {
-          border-top-color: $civic-large-filter-dark-dropdown-filter-border-color;
+          border-top-color: $civictheme-large-filter-dark-dropdown-filter-border-color;
         }
       }
     }
 
     #{$root}__selected-filters {
-      @include civic-breakpoint($civic-large-filter-breakpoint) {
-        border-top: 1px solid $civic-large-filter-dark-selected-filters-border-color;
+      @include civictheme-breakpoint($civictheme-large-filter-breakpoint) {
+        border-top: 1px solid $civictheme-large-filter-dark-selected-filters-border-color;
       }
     }
 
     #{$root}__clear-all {
-      background-color: $civic-large-filter-dark-clear-all-background-color;
-      color: $civic-large-filter-dark-clear-all-color;
+      background-color: $civictheme-large-filter-dark-clear-all-background-color;
+      color: $civictheme-large-filter-dark-clear-all-color;
 
       svg {
-        fill: $civic-large-filter-dark-clear-all-icon-color;
+        fill: $civictheme-large-filter-dark-clear-all-icon-color;
       }
     }
 
     #{$root}__mobile-clear-container {
       #{$root}__clear-all-label {
-        color: $civic-large-filter-dark-mobile-clear-all-label-color;
+        color: $civictheme-large-filter-dark-mobile-clear-all-label-color;
       }
 
       svg {
-        fill: $civic-large-filter-dark-mobile-clear-all-label-icon;
+        fill: $civictheme-large-filter-dark-mobile-clear-all-label-icon;
       }
     }
 
     #{$root}__selected-filters-title {
-      color: $civic-large-filter-dark-selected-filters-title-color;
+      color: $civictheme-large-filter-dark-selected-filters-title-color;
     }
   }
 }

@@ -6,24 +6,24 @@ export const Colors = () => {
   const vars = { ...SCSS_VARIABLES };
 
   const types = {
-    'civic-colors-default': 'Standard colors',
-    'civic-colors-default-shades-dark': 'Dark shades',
-    'civic-colors-default-shades-light': 'Light shades',
-    'civic-colors-default-neutrals': 'Neutrals',
-    'civic-colors': 'Custom colors',
+    'civictheme-colors-default': 'Standard colors',
+    'civictheme-colors-default-shades-dark': 'Dark shades',
+    'civictheme-colors-default-shades-light': 'Light shades',
+    'civictheme-colors-default-neutrals': 'Neutrals',
+    'civictheme-colors': 'Custom colors',
   };
 
   // Show only custom colors without overrides of standard colors.
-  vars['civic-colors'] = vars['civic-colors'].filter((n) => vars['civic-colors-default'].indexOf(n) === -1);
+  vars['civictheme-colors'] = vars['civictheme-colors'].filter((n) => vars['civictheme-colors-default'].indexOf(n) === -1);
 
-  vars['civic-colors-default-shades-dark'] = [];
-  vars['civic-colors-default-shades-light'] = [];
-  vars['civic-colors-default-neutrals'] = [];
+  vars['civictheme-colors-default-shades-dark'] = [];
+  vars['civictheme-colors-default-shades-light'] = [];
+  vars['civictheme-colors-default-neutrals'] = [];
 
   for (let i = 0; i <= 100; i += 10) {
-    vars['civic-colors-default-shades-dark'].push(`dark-shade-${i}`);
-    vars['civic-colors-default-shades-light'].push(`light-shade-${i}`);
-    vars['civic-colors-default-neutrals'].push(`neutral-${i}`);
+    vars['civictheme-colors-default-shades-dark'].push(`dark-shade-${i}`);
+    vars['civictheme-colors-default-shades-light'].push(`light-shade-${i}`);
+    vars['civictheme-colors-default-neutrals'].push(`neutral-${i}`);
   }
 
   let html = '';

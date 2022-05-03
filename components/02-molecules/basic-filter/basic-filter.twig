@@ -13,18 +13,18 @@
 */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="civic-basic-filter {{ modifier_class }}" data-component-name="civic-basic-filter">
+<div class="civictheme-basic-filter {{ modifier_class }}" data-component-name="civictheme-basic-filter">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="civic-basic-filter__list">
+        <div class="civictheme-basic-filter__list">
           {% block filters %}
             {% for item in items %}
               {% if item.text is not empty %}
-                <div class="civic-basic-filter__list--row">
+                <div class="civictheme-basic-filter__list--row">
                   {% include '@atoms/button/button.twig' with {
                     theme: theme,
                     type: 'chip',

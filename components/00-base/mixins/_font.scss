@@ -9,8 +9,8 @@
 //
 // Get a font from the pre-defined list of fonts by defined name.
 //
-@function civic-font($name) {
-  $all-fonts: _civic-fonts-all();
+@function civictheme-font($name) {
+  $all-fonts: _civictheme-fonts-all();
 
   @if map.get($all-fonts, $name) == null {
     @error '"#{$name}" is not a defined font.';
@@ -23,14 +23,14 @@
 // Compile all fonts into a single map.
 //
 // Do not use directly.
-// Use @include civic-font() function instead.
+// Use @include civictheme-font() function instead.
 //
 // stylelint-disable-next-line scss/at-function-pattern
-@function _civic-fonts-all() {
-  @return map.merge($civic-fonts-default, $civic-fonts);
+@function _civictheme-fonts-all() {
+  @return map.merge($civictheme-fonts-default, $civictheme-fonts);
 }
 
-@mixin civic-font-url-import($path) {
+@mixin civictheme-font-url-import($path) {
   // Use interpolated CSS @import to bypass importers' functionality to
   // import resources when used in partials.
   // stylelint-disable

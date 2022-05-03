@@ -2,7 +2,7 @@
  * @file
  * Scrollspy component.
  *
- * Adds '.civic-scrollspy-scrolled' class to an element whose
+ * Adds '.civictheme-scrollspy-scrolled' class to an element whose
  * data-scrollspy-offset attribute's value is more than a vertical window scroll.
  */
 function CivicScrollspy(el) {
@@ -24,9 +24,9 @@ function CivicScrollspy(el) {
  */
 CivicScrollspy.prototype.scrollEvent = function () {
   if (window.scrollY > this.offset) {
-    this.el.classList.add('civic-scrollspy-scrolled');
+    this.el.classList.add('civictheme-scrollspy-scrolled');
   } else {
-    this.el.classList.remove('civic-scrollspy-scrolled');
+    this.el.classList.remove('civictheme-scrollspy-scrolled');
   }
 };
 

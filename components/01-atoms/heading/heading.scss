@@ -4,8 +4,8 @@
 
 @for $level from 1 through 6 {
   h#{$level} {
-    &.civic-heading {
-      @include civic-typography('heading-#{$level}');
+    &.civictheme-heading {
+      @include civictheme-typography('heading-#{$level}');
     }
   }
 }

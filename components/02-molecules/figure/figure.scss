@@ -2,7 +2,7 @@
 // Figure component.
 //
 
-.civic-figure {
+.civictheme-figure {
   $root: &;
 
   margin: 0;
@@ -12,28 +12,28 @@
   margin-inline-start: 0;
   margin-inline-end: 0;
 
-  .civic-image {
-    border-radius: $civic-figure-border-radius;
+  .civictheme-image {
+    border-radius: $civictheme-figure-border-radius;
   }
 
-  &.civic-theme-light {
-    color: $civic-figure-caption-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-figure-caption-light-color;
   }
 
-  &.civic-theme-dark {
-    color: $civic-figure-caption-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-figure-caption-dark-color;
   }
 
   &__caption {
-    @include civic-typography('label-small');
+    @include civictheme-typography('label-small');
 
-    .civic-icon {
-      #{$root}.civic-theme-light & {
-        fill: $civic-figure-caption-icon-light-color;
+    .civictheme-icon {
+      #{$root}.civictheme-theme-light & {
+        fill: $civictheme-figure-caption-icon-light-color;
       }
 
-      #{$root}.civic-theme-dark & {
-        fill: $civic-figure-caption-icon-dark-color;
+      #{$root}.civictheme-theme-dark & {
+        fill: $civictheme-figure-caption-icon-dark-color;
       }
     }
   }

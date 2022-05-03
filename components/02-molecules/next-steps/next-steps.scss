@@ -2,150 +2,150 @@
 // Next Steps component.
 //
 
-.civic-next-steps {
+.civictheme-next-steps {
   $root: &;
 
   display: block;
   position: relative;
   text-decoration: none;
 
-  &.civic-next-steps--vertical-space-top {
-    @include civic-component-with-vertical-space(top, $civic-next-steps-space-vertical);
+  &.civictheme-next-steps--vertical-space-top {
+    @include civictheme-component-with-vertical-space(top, $civictheme-next-steps-space-vertical);
   }
 
-  &.civic-next-steps--vertical-space-bottom {
-    @include civic-component-with-vertical-space(bottom, $civic-next-steps-space-vertical);
+  &.civictheme-next-steps--vertical-space-bottom {
+    @include civictheme-component-with-vertical-space(bottom, $civictheme-next-steps-space-vertical);
   }
 
-  &.civic-next-steps--vertical-space-both {
-    @include civic-component-with-vertical-space(both, $civic-next-steps-space-vertical);
+  &.civictheme-next-steps--vertical-space-both {
+    @include civictheme-component-with-vertical-space(both, $civictheme-next-steps-space-vertical);
   }
 
   &__content {
     display: block;
     position: relative;
-    border-radius: $civic-next-steps-border-radius;
-    border-left-width: civic-space(0.75);
+    border-radius: $civictheme-next-steps-border-radius;
+    border-left-width: civictheme-space(0.75);
     border-left-style: solid;
-    padding: civic-space(3) civic-space(3);
+    padding: civictheme-space(3) civictheme-space(3);
 
-    @include civic-breakpoint(m) {
-      padding: civic-space(3) civic-space(5) civic-space(4) civic-space(3);
+    @include civictheme-breakpoint(m) {
+      padding: civictheme-space(3) civictheme-space(5) civictheme-space(4) civictheme-space(3);
     }
   }
 
   &__title {
-    @include civic-typography('heading-4');
+    @include civictheme-typography('heading-4');
   }
 
   &__summary {
-    margin-top: civic-space(2);
+    margin-top: civictheme-space(2);
 
-    @include civic-typography('text-regular');
+    @include civictheme-typography('text-regular');
   }
 
   &__read-more {
     position: absolute;
-    top: civic-space(3);
-    right: civic-space(2);
+    top: civictheme-space(3);
+    right: civictheme-space(2);
 
-    @include civic-breakpoint(m) {
-      right: civic-space(4);
+    @include civictheme-breakpoint(m) {
+      right: civictheme-space(4);
     }
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     #{$root}__content {
-      color: $civic-next-steps-light-color;
-      background-color: $civic-next-steps-light-background-color;
-      border-left-color: $civic-next-steps-light-stripe-color;
+      color: $civictheme-next-steps-light-color;
+      background-color: $civictheme-next-steps-light-background-color;
+      border-left-color: $civictheme-next-steps-light-stripe-color;
     }
 
     &:focus {
-      @include civic-outline(false);
+      @include civictheme-outline(false);
     }
 
     &:hover {
       #{$root}__title {
-        color: $civic-next-steps-light-hover-color;
+        color: $civictheme-next-steps-light-hover-color;
         text-decoration: underline;
       }
 
       #{$root}__read-more {
-        .civic-icon {
-          fill: $civic-next-steps-light-hover-color;
+        .civictheme-icon {
+          fill: $civictheme-next-steps-light-hover-color;
         }
       }
     }
 
     &:active {
-      .civic-next-steps__title {
-        color: $civic-next-steps-light-active-color;
+      .civictheme-next-steps__title {
+        color: $civictheme-next-steps-light-active-color;
         text-decoration: underline;
       }
 
       #{$root}__read-more {
-        .civic-icon {
-          fill: $civic-next-steps-light-active-color;
+        .civictheme-icon {
+          fill: $civictheme-next-steps-light-active-color;
         }
       }
     }
 
     #{$root}__title {
-      color: $civic-next-steps-light-heading-color;
+      color: $civictheme-next-steps-light-heading-color;
     }
 
     #{$root}__read-more {
-      .civic-icon {
-        fill: $civic-next-steps-light-icon-color;
+      .civictheme-icon {
+        fill: $civictheme-next-steps-light-icon-color;
       }
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     #{$root}__content {
-      color: $civic-next-steps-dark-color;
-      background-color: $civic-next-steps-dark-background-color;
-      border-left-color: $civic-next-steps-dark-stripe-color;
+      color: $civictheme-next-steps-dark-color;
+      background-color: $civictheme-next-steps-dark-background-color;
+      border-left-color: $civictheme-next-steps-dark-stripe-color;
     }
 
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
 
     &:hover {
       #{$root}__title {
-        color: $civic-next-steps-dark-hover-color;
+        color: $civictheme-next-steps-dark-hover-color;
         text-decoration: underline;
       }
 
       #{$root}__read-more {
-        .civic-icon {
-          fill: $civic-next-steps-dark-hover-color;
+        .civictheme-icon {
+          fill: $civictheme-next-steps-dark-hover-color;
         }
       }
     }
 
     &:active {
       #{$root}__title {
-        color: $civic-next-steps-dark-active-color;
+        color: $civictheme-next-steps-dark-active-color;
         text-decoration: underline;
       }
 
       #{$root}__read-more {
-        .civic-icon {
-          fill: $civic-next-steps-dark-active-color;
+        .civictheme-icon {
+          fill: $civictheme-next-steps-dark-active-color;
         }
       }
     }
 
     #{$root}__title {
-      color: $civic-next-steps-dark-heading-color;
+      color: $civictheme-next-steps-dark-heading-color;
     }
 
     #{$root}__read-more {
-      .civic-icon {
-        fill: $civic-next-steps-dark-icon-color;
+      .civictheme-icon {
+        fill: $civictheme-next-steps-dark-icon-color;
       }
     }
   }

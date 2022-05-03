@@ -19,14 +19,14 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
-{% set type_class = type is empty ? 'civic-dropdown-filter--%s'|format(type) : '' %}
-{% set is_inline_class = is_inline ? 'civic-dropdown-filter--inline' : '' %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
+{% set type_class = type is empty ? 'civictheme-dropdown-filter--%s'|format(type) : '' %}
+{% set is_inline_class = is_inline ? 'civictheme-dropdown-filter--inline' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_inline_class, modifier_class|default('')) %}
 
 {% if options is not empty %}
   <div
-    class="civic-dropdown-filter {{ modifier_class }}"
+    class="civictheme-dropdown-filter {{ modifier_class }}"
     data-collapsible data-collapsible-collapsed
     {% if inline_change_breakpoint %}
       data-responsive
@@ -37,7 +37,7 @@
       data-collapsible-group="{{ filter_group }}"
     {% endif %}
     data-collapsible-duration="0"
-    data-component-name="civic-dropdown-filter"
+    data-component-name="civictheme-dropdown-filter"
     {% if searchable_threshold %}
       data-dropdown-filter-search-item-threshold="{{ searchable_threshold }}"
     {% endif %}
@@ -45,14 +45,14 @@
       data-dropdown-filter-search-label="{{ search_label_text }}"
     {% endif %}
   >
-    <button class="civic-dropdown-filter__filter-text" data-collapsible-trigger>{{ filter_text }}</button>
-    <div class="civic-dropdown-filter__filter-options" data-collapsible-panel>
-      <div class="civic-dropdown-filter__filter-options-wrapper">
+    <button class="civictheme-dropdown-filter__filter-text" data-collapsible-trigger>{{ filter_text }}</button>
+    <div class="civictheme-dropdown-filter__filter-options" data-collapsible-panel>
+      <div class="civictheme-dropdown-filter__filter-options-wrapper">
         {% block filter_options %}
           {% include '@organisms/fieldset/fieldset.twig' with {
             legend: options_title is not empty ? options_title : null,
             children: options,
-            modifier_class: 'civic-dropdown-filter__fieldset',
+            modifier_class: 'civictheme-dropdown-filter__fieldset',
             type: type,
             attributes: attributes,
           } %}

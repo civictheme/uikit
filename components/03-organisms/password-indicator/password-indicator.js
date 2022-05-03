@@ -37,7 +37,7 @@ function CivicPasswordIndicator(el) {
   this.settings.checkUsername = !(this.el.getAttribute('data-password-indicator-setting-username') === 'false');
   this.settings.checkMinSize = this.el.getAttribute('data-password-indicator-setting-min-count') || 12;
 
-  const themeClass = Array.from(this.el.classList).filter((item) => (item.indexOf('civic-theme') === 0)).pop();
+  const themeClass = Array.from(this.el.classList).filter((item) => (item.indexOf('civictheme-theme') === 0)).pop();
 
   const group = el.getAttribute('data-password-indicator-group');
   this.elUsername = document.querySelector(`[data-password-indicator-username][data-password-indicator-group="${group}"]`);
@@ -45,24 +45,24 @@ function CivicPasswordIndicator(el) {
 
   // Create container to display password indicator.
   this.alert = document.createElement('div');
-  this.alert.classList.add('civic-password-indicator');
-  this.alert.classList.add(themeClass || 'civic-theme-light');
-  this.alert.classList.add('civic-theme-light');
+  this.alert.classList.add('civictheme-password-indicator');
+  this.alert.classList.add(themeClass || 'civictheme-theme-light');
+  this.alert.classList.add('civictheme-theme-light');
   this.alert.innerHTML = `
-<div class="civic-password-indicator__progress">
-  <span class="civic-password-indicator__progress-bar"></span>
+<div class="civictheme-password-indicator__progress">
+  <span class="civictheme-password-indicator__progress-bar"></span>
   <span></span>
 </div>
-<div data-password-indicator-indicator-status class="civic-password-indicator__status"></div>
-<div data-password-indicator-indicator-message class="civic-password-indicator__message"></div>`;
-  this.alertBar = this.alert.querySelector('.civic-password-indicator__progress-bar');
-  this.alertStatus = this.alert.querySelector('.civic-password-indicator__status');
-  this.alertMessage = this.alert.querySelector('.civic-password-indicator__message');
+<div data-password-indicator-indicator-status class="civictheme-password-indicator__status"></div>
+<div data-password-indicator-indicator-message class="civictheme-password-indicator__message"></div>`;
+  this.alertBar = this.alert.querySelector('.civictheme-password-indicator__progress-bar');
+  this.alertStatus = this.alert.querySelector('.civictheme-password-indicator__status');
+  this.alertMessage = this.alert.querySelector('.civictheme-password-indicator__message');
   this.el.after(this.alert);
 
   // Create container to display confirm password state.
   this.confirm = document.createElement('div');
-  this.confirm.classList.add('civic-password-indicator__message');
+  this.confirm.classList.add('civictheme-password-indicator__message');
   this.elConfirmPassword.after(this.confirm);
 
   // Listeners.
@@ -193,12 +193,12 @@ CivicPasswordIndicator.prototype.updatePassword = function (password, username, 
 
   // Clear any existing progress classes.
   this.alert.classList.forEach((item) => {
-    if (item.indexOf('civic-password-indicator--') === 0) {
+    if (item.indexOf('civictheme-password-indicator--') === 0) {
       this.alert.classList.remove(item);
     }
   });
   // Add current progress class.
-  this.alert.classList.add(`civic-password-indicator--${result.indicatorClass}`);
+  this.alert.classList.add(`civictheme-password-indicator--${result.indicatorClass}`);
   this.alertStatus.innerHTML = result.indicatorText;
   if (showMessage) {
     this.alertMessage.innerHTML = result.message;
@@ -217,18 +217,18 @@ CivicPasswordIndicator.prototype.confirmPassword = function () {
   if (password.length > 0 && confirm.length > 0) {
     if (password === confirm) {
       // Pass
-      this.el.parentNode.classList.remove('civic-input--error');
-      this.elConfirmPassword.parentNode.classList.remove('civic-input--error');
+      this.el.parentNode.classList.remove('civictheme-input--error');
+      this.elConfirmPassword.parentNode.classList.remove('civictheme-input--error');
       this.confirm.innerHTML = 'Passwords match';
     } else {
       // Fail
-      this.el.parentNode.classList.add('civic-input--error');
-      this.elConfirmPassword.parentNode.classList.add('civic-input--error');
+      this.el.parentNode.classList.add('civictheme-input--error');
+      this.elConfirmPassword.parentNode.classList.add('civictheme-input--error');
       this.confirm.innerHTML = 'Passwords do not match';
     }
   } else {
-    this.el.parentNode.classList.remove('civic-input--error');
-    this.elConfirmPassword.parentNode.classList.remove('civic-input--error');
+    this.el.parentNode.classList.remove('civictheme-input--error');
+    this.elConfirmPassword.parentNode.classList.remove('civictheme-input--error');
     this.confirm.innerHTML = '';
   }
 };

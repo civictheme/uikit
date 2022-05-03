@@ -5,13 +5,13 @@
 //
 // Set element outline.
 //
-@mixin civic-outline($is_accent: false) {
-  outline-offset: $civic-outline-offset;
+@mixin civictheme-outline($is_accent: false) {
+  outline-offset: $civictheme-outline-offset;
 
   @if $is_accent {
-    outline: $civic-outline-accent;
+    outline: $civictheme-outline-accent;
   }
   @else {
-    outline: $civic-outline;
+    outline: $civictheme-outline;
   }
 }

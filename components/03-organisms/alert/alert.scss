@@ -4,17 +4,17 @@
 
 @use 'sass:map';
 
-.civic-alert {
+.civictheme-alert {
   $root: &;
 
   position: relative;
-  padding: civic-space(2);
+  padding: civictheme-space(2);
 
-  @include civic-breakpoint('m') {
-    padding: civic-space(3);
+  @include civictheme-breakpoint('m') {
+    padding: civictheme-space(3);
   }
 
-  @include civic-typography('label-small');
+  @include civictheme-typography('label-small');
 
   border-bottom: 1px solid;
 
@@ -23,26 +23,26 @@
   }
 
   #{$root}__title {
-    @include civic-typography('heading-6');
+    @include civictheme-typography('heading-6');
 
     display: flex;
     align-items: center;
 
-    @include civic-breakpoint-upto('m') {
-      margin-bottom: civic-space();
+    @include civictheme-breakpoint-upto('m') {
+      margin-bottom: civictheme-space();
     }
   }
 
   #{$root}__icon {
     width: rem(24px);
-    margin-right: civic-space();
+    margin-right: civictheme-space();
 
-    @include civic-breakpoint('m') {
-      margin-right: civic-space(2);
+    @include civictheme-breakpoint('m') {
+      margin-right: civictheme-space(2);
     }
   }
 
-  .civic-icon {
+  .civictheme-icon {
     width: rem(24px);
     height: rem(24px);
   }
@@ -51,21 +51,21 @@
     display: flex;
     align-items: center;
 
-    @include civic-breakpoint(m) {
+    @include civictheme-breakpoint(m) {
       position: relative;
     }
   }
 
   #{$root}__dismiss-button {
     cursor: pointer;
-    margin-left: civic-space(3);
+    margin-left: civictheme-space(3);
     position: absolute;
-    top: civic-space(2);
-    right: civic-space(2);
+    top: civictheme-space(2);
+    right: civictheme-space(2);
     background-color: transparent;
     padding: 0;
 
-    @include civic-breakpoint(m) {
+    @include civictheme-breakpoint(m) {
       position: static;
       align-self: center;
       margin-left: auto;
@@ -74,61 +74,61 @@
 
   // SASS does not allow variables interpolation, so we are creating a local
   // map to easily generate rules.
-  &.civic-theme-light {
-    border-color: $civic-alert-light-divider-color;
+  &.civictheme-theme-light {
+    border-color: $civictheme-alert-light-divider-color;
   }
 
-  &.civic-theme-dark {
-    border-color: $civic-alert-dark-divider-color;
+  &.civictheme-theme-dark {
+    border-color: $civictheme-alert-dark-divider-color;
   }
 
   $map: (
     'status': (
       'light': (
-        'color': $civic-alert-status-light-color,
-        'background-color': $civic-alert-status-light-background-color,
-        'icon-color': $civic-alert-status-light-icon-color,
+        'color': $civictheme-alert-status-light-color,
+        'background-color': $civictheme-alert-status-light-background-color,
+        'icon-color': $civictheme-alert-status-light-icon-color,
       ),
       'dark': (
-        'color': $civic-alert-status-dark-color,
-        'background-color': $civic-alert-status-dark-background-color,
-        'icon-color': $civic-alert-status-dark-icon-color,
+        'color': $civictheme-alert-status-dark-color,
+        'background-color': $civictheme-alert-status-dark-background-color,
+        'icon-color': $civictheme-alert-status-dark-icon-color,
       )
     ),
     'warning': (
       'light': (
-        'color': $civic-alert-warning-light-color,
-        'background-color': $civic-alert-warning-light-background-color,
-        'icon-color': $civic-alert-warning-light-icon-color,
+        'color': $civictheme-alert-warning-light-color,
+        'background-color': $civictheme-alert-warning-light-background-color,
+        'icon-color': $civictheme-alert-warning-light-icon-color,
       ),
       'dark': (
-        'color': $civic-alert-warning-dark-color,
-        'background-color': $civic-alert-warning-dark-background-color,
-        'icon-color': $civic-alert-warning-dark-icon-color,
+        'color': $civictheme-alert-warning-dark-color,
+        'background-color': $civictheme-alert-warning-dark-background-color,
+        'icon-color': $civictheme-alert-warning-dark-icon-color,
       )
     ),
     'error': (
       'light': (
-        'color': $civic-alert-error-light-color,
-        'background-color': $civic-alert-error-light-background-color,
-        'icon-color': $civic-alert-error-light-icon-color,
+        'color': $civictheme-alert-error-light-color,
+        'background-color': $civictheme-alert-error-light-background-color,
+        'icon-color': $civictheme-alert-error-light-icon-color,
       ),
       'dark': (
-        'color': $civic-alert-error-dark-color,
-        'background-color': $civic-alert-error-dark-background-color,
-        'icon-color': $civic-alert-error-dark-icon-color,
+        'color': $civictheme-alert-error-dark-color,
+        'background-color': $civictheme-alert-error-dark-background-color,
+        'icon-color': $civictheme-alert-error-dark-icon-color,
       )
     ),
     'success': (
       'light': (
-        'color': $civic-alert-success-light-color,
-        'background-color': $civic-alert-success-light-background-color,
-        'icon-color': $civic-alert-success-light-icon-color,
+        'color': $civictheme-alert-success-light-color,
+        'background-color': $civictheme-alert-success-light-background-color,
+        'icon-color': $civictheme-alert-success-light-icon-color,
       ),
       'dark': (
-        'color': $civic-alert-success-dark-color,
-        'background-color': $civic-alert-success-dark-background-color,
-        'icon-color': $civic-alert-success-dark-icon-color,
+        'color': $civictheme-alert-success-dark-color,
+        'background-color': $civictheme-alert-success-dark-background-color,
+        'icon-color': $civictheme-alert-success-dark-icon-color,
       )
     ),
   );
@@ -136,13 +136,13 @@
   @each $type, $type-map in $map {
     &#{$root}--#{$type} {
       @each $theme, $values in $type-map {
-        &.civic-theme-#{$theme} {
+        &.civictheme-theme-#{$theme} {
           background-color: map.get($values, 'background-color');
           color: map.get($values, 'color');
 
           #{$root}__dismiss-button,
           #{$root}__icon {
-            .civic-icon {
+            .civictheme-icon {
               fill: map.get($values, 'icon-color');
             }
           }

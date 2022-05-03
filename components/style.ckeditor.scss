@@ -10,9 +10,9 @@
 
 // stylelint-disable no-invalid-position-at-import-rule
 .cke_editable {
-  // Include civic content css styles for typography
-  @include civic-content();
-  @include civic-content-light();
+  // Include civictheme content css styles for typography
+  @include civictheme-content();
+  @include civictheme-content-light();
 
   // Load all non-stories mixins.
   @import '01-atoms/**/!(*.stories).scss';

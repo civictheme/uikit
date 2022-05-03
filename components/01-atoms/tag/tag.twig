@@ -15,15 +15,15 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
-{% set alt_class = is_alt ? 'civic-tag--is-alt' : '' %}
-{% set icon_class = icon is not empty ? 'civic-tag--with-icon' : '' %}
-{% set icon_placement_class = icon ? 'civic-tag--icon-%s'|format(icon_placement|default('before')) : '' %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
+{% set alt_class = is_alt ? 'civictheme-tag--is-alt' : '' %}
+{% set icon_class = icon is not empty ? 'civictheme-tag--with-icon' : '' %}
+{% set icon_placement_class = icon ? 'civictheme-tag--icon-%s'|format(icon_placement|default('before')) : '' %}
 {% set modifier_class = '%s %s %s %s %s'|format(theme_class, alt_class, icon_class, icon_placement_class, modifier_class|default('')) %}
 
 {% set tag_icon %}
   {% if icon %}
-    <span class="civic-tag__icon">
+    <span class="civictheme-tag__icon">
 		  {% include '@atoms/icon/icon.twig' with {
         symbol: icon,
         size: 'small',
@@ -45,9 +45,9 @@
 {% endset %}
 
 {% if tag_text %}
-  <div class="civic-tag {{ modifier_class }}" aria-label="{{ text }}">
+  <div class="civictheme-tag {{ modifier_class }}" aria-label="{{ text }}">
     {% if url is not empty %}
-      <a class="civic-tag__link" href="{{ url }}" {% if text is not empty %}title="{{ text }}" aria-label="{{ text }}"{% endif%} {{ is_new_window ? 'target="_blank"' }}>
+      <a class="civictheme-tag__link" href="{{ url }}" {% if text is not empty %}title="{{ text }}" aria-label="{{ text }}"{% endif%} {{ is_new_window ? 'target="_blank"' }}>
     {% endif %}
         {{ tag_text }}
     {% if url is not empty %}

@@ -2,38 +2,38 @@
 // Basic Content component.
 //
 
-.civic-basic-content {
-  @include civic-content();
+.civictheme-basic-content {
+  @include civictheme-content();
 
-  &.civic-content--vertical-space-top {
-    @include civic-component-with-vertical-space(top, $civic-basic-content-space-vertical);
+  &.civictheme-content--vertical-space-top {
+    @include civictheme-component-with-vertical-space(top, $civictheme-basic-content-space-vertical);
   }
 
-  &.civic-content--vertical-space-bottom {
-    @include civic-component-with-vertical-space(bottom, $civic-basic-content-space-vertical);
+  &.civictheme-content--vertical-space-bottom {
+    @include civictheme-component-with-vertical-space(bottom, $civictheme-basic-content-space-vertical);
   }
 
-  &.civic-content--vertical-space-both {
-    @include civic-component-with-vertical-space(both, $civic-basic-content-space-vertical);
+  &.civictheme-content--vertical-space-both {
+    @include civictheme-component-with-vertical-space(both, $civictheme-basic-content-space-vertical);
   }
 
-  &.civic-theme-light {
-    @include civic-content-light();
+  &.civictheme-theme-light {
+    @include civictheme-content-light();
 
-    &.civic-content--with-background {
-      background-color: $civic-basic-content-light-wrapper-background-color;
-      padding-left: $civic-basic-content-space-horizontal;
-      padding-right: $civic-basic-content-space-horizontal;
+    &.civictheme-content--with-background {
+      background-color: $civictheme-basic-content-light-wrapper-background-color;
+      padding-left: $civictheme-basic-content-space-horizontal;
+      padding-right: $civictheme-basic-content-space-horizontal;
     }
   }
 
-  &.civic-theme-dark {
-    @include civic-content-dark();
+  &.civictheme-theme-dark {
+    @include civictheme-content-dark();
 
-    &.civic-content--with-background {
-      background-color: $civic-basic-content-dark-wrapper-background-color;
-      padding-left: $civic-basic-content-space-horizontal;
-      padding-right: $civic-basic-content-space-horizontal;
+    &.civictheme-content--with-background {
+      background-color: $civictheme-basic-content-dark-wrapper-background-color;
+      padding-left: $civictheme-basic-content-space-horizontal;
+      padding-right: $civictheme-basic-content-space-horizontal;
     }
   }
 }

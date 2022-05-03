@@ -8,7 +8,7 @@
 // Set default styles for the Storybook viewport.
 #root {
   font-family: sans-serif;
-  padding: civic-space(2);
+  padding: civictheme-space(2);
 }
 
 .sb-show-main {
@@ -29,7 +29,7 @@
 }
 
 .story-wrapper-size--large {
-  max-width: map.get($civic-breakpoints, 'xxl');
+  max-width: map.get($civictheme-breakpoints, 'xxl');
 }
 
 .story-wrapper-centered {
@@ -46,7 +46,7 @@
   font-family: 'Courier New', monospace;
   border: dotted 1px purple;
 
-  .civic-theme-dark & {
+  .civictheme-theme-dark & {
     background-color: color.adjust(white, $alpha: -0.7);
     border: dotted 1px purple;
   }
@@ -60,14 +60,14 @@
 }
 
 .example-container {
-  margin-bottom: civic-space(4);
+  margin-bottom: civictheme-space(4);
 }
 
 .example-container__title {
-  @include civic-typography('label-large');
+  @include civictheme-typography('label-large');
 
   border-bottom: solid 1px;
-  margin-bottom: civic-space(2);
+  margin-bottom: civictheme-space(2);
 
   code {
     text-transform: lowercase;
@@ -78,31 +78,31 @@
 }
 
 .example-container__subtitle {
-  @include civic-typography('label-regular');
+  @include civictheme-typography('label-regular');
 
-  margin-bottom: civic-space(1);
+  margin-bottom: civictheme-space(1);
 }
 
 .example-container__content {
-  margin-bottom: civic-space(4);
+  margin-bottom: civictheme-space(4);
 }
 
 .example-container__subcontent {
-  margin-bottom: civic-space(2);
+  margin-bottom: civictheme-space(2);
 }
 
 .docs-container {
   border: solid 1px #ccc;
-  padding: civic-space(4);
-  margin: civic-space(8) auto;
+  padding: civictheme-space(4);
+  margin: civictheme-space(8) auto;
   max-width: 60%;
   min-width: 600px;
 }
 
 .docs-container__title {
-  @include civic-typography('label-large');
+  @include civictheme-typography('label-large');
 }
 
 .docs-container__content {
-  margin-bottom: civic-space(4);
+  margin-bottom: civictheme-space(4);
 }

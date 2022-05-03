@@ -4,8 +4,8 @@
 
 @use 'sass:map';
 
-@each $name in map.keys(_civic-typography-all()) {
-  .civic-#{$name} {
-    @include civic-typography($name);
+@each $name in map.keys(_civictheme-typography-all()) {
+  .civictheme-#{$name} {
+    @include civictheme-typography($name);
   }
 }

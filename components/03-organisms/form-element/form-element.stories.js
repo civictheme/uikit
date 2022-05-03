@@ -63,7 +63,7 @@ export const FormElement = () => {
       generalKnobTab,
     ),
     description: {
-      content: text('Description', 'Civic input description', generalKnobTab),
+      content: text('Description', 'CivicTheme input description', generalKnobTab),
     },
     modifier_class: text('Additional class', '', generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),
@@ -79,8 +79,8 @@ export const FormElement = () => {
 
   const inputKnobs = {
     theme,
-    value: text('Value', 'Civic input', inputKnobTab),
-    placeholder: text('Placeholder', 'Civic input', inputKnobTab),
+    value: text('Value', 'CivicTheme input', inputKnobTab),
+    placeholder: text('Placeholder', 'CivicTheme input', inputKnobTab),
     state: radios(
       'State',
       states,

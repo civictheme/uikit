@@ -2,38 +2,38 @@
 // Label component.
 //
 
-.civic-label {
+.civictheme-label {
   $root: &;
 
   display: block;
-  margin-bottom: civic-space();
+  margin-bottom: civictheme-space();
 
-  @include civic-typography('label-regular');
+  @include civictheme-typography('label-regular');
 
   &--required {
     &::after {
       content: ' (Required)';
 
-      @include civic-typography('label-small');
+      @include civictheme-typography('label-small');
     }
   }
 
-  &.civic-theme-light {
-    color: $civic-label-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-label-light-color;
 
     #{$root}--required {
       &::after {
-        color: $civic-label-light-required-color;
+        color: $civictheme-label-light-required-color;
       }
     }
   }
 
-  &.civic-theme-dark {
-    color: $civic-label-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-label-dark-color;
 
     #{$root}--required {
       &::after {
-        color: $civic-label-dark-required-color;
+        color: $civictheme-label-dark-required-color;
       }
     }
   }

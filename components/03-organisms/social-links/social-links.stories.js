@@ -31,7 +31,7 @@ export const SocialLinks = (knobTab) => {
     },
     {
       url: 'https://www.dropbox.com',
-      text: `<img class="civic-button__icon" width=24 height=24 src="${demoIcon()}"/>`,
+      text: `<img class="civictheme-button__icon" width=24 height=24 src="${demoIcon()}"/>`,
       title: 'Icon with inline image',
     },
     {

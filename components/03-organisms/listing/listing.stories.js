@@ -162,7 +162,7 @@ export const Listing = (knobTab) => {
     }
     generalKnobs.pager = CivicPagination({
       theme,
-      heading_id: 'civic-listing-demo',
+      heading_id: 'civictheme-listing-demo',
       items: {
         previous: {
           text: 'Previous',
@@ -227,6 +227,6 @@ export const Listing = (knobTab) => {
   return CivicListing({
     theme,
     ...generalKnobs,
-    modifier_class: 'civic-listing--with-background',
+    modifier_class: 'civictheme-listing--with-background',
   });
 };

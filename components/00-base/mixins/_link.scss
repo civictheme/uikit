@@ -5,7 +5,7 @@
 //
 // Set link colors.
 //
-@mixin civic-link-colors($normal, $hover: $normal, $visited: $normal, $active: $normal, $focus: false) {
+@mixin civictheme-link-colors($normal, $hover: $normal, $visited: $normal, $active: $normal, $focus: false) {
   color: $normal;
 
   @if $hover != false {
@@ -37,7 +37,7 @@
 //
 // Set link background colors.
 //
-@mixin civic-link-backgrounds($normal, $hover: $normal, $visited: $normal, $active: $normal, $focus: false) {
+@mixin civictheme-link-backgrounds($normal, $hover: $normal, $visited: $normal, $active: $normal, $focus: false) {
   background-color: $normal;
 
   @if $hover != false {
@@ -68,7 +68,7 @@
 //
 // Add text decoration to a link.
 //
-@mixin civic-link-decoration($underline: false, $underline-hover: true, $underline-active: true, $underline-focus: true) {
+@mixin civictheme-link-decoration($underline: false, $underline-hover: true, $underline-active: true, $underline-focus: true) {
   @if $underline {
     text-decoration: underline;
   }
@@ -107,7 +107,7 @@
 //
 // Remove an outline from the link.
 //
-@mixin civic-link-no-outline() {
+@mixin civictheme-link-no-outline() {
   outline: 0;
 
   &:focus {
@@ -118,7 +118,7 @@
 //
 // Cover parent to allow the whole element to become a link.
 //
-@mixin civic-link-cover-parent() {
+@mixin civictheme-link-cover-parent() {
   &::before {
     content: '';
     position: absolute;

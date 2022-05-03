@@ -2,84 +2,84 @@
 // Directional Link component.
 //
 
-.civic-directional-link {
+.civictheme-directional-link {
   $root: &;
 
-  padding: civic-space(2) civic-space(3);
+  padding: civictheme-space(2) civictheme-space(3);
 
-  @include civic-typography('text-regular');
+  @include civictheme-typography('text-regular');
 
   display: flex;
   text-decoration: none;
 
-  .civic-icon {
-    margin-left: civic-space();
-    padding: $civic-directional-icon-padding;
+  .civictheme-icon {
+    margin-left: civictheme-space();
+    padding: $civictheme-directional-icon-padding;
 
     &--left {
       order: -1;
       margin-left: 0;
-      margin-right: civic-space();
+      margin-right: civictheme-space();
     }
   }
 
-  &.civic-theme-light {
-    color: $civic-directional-link-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-directional-link-light-color;
 
-    .civic-icon {
-      fill: $civic-directional-link-light-color;
+    .civictheme-icon {
+      fill: $civictheme-directional-link-light-color;
     }
 
     &:focus {
-      @include civic-outline();
+      @include civictheme-outline();
     }
 
     &:hover {
-      color: $civic-directional-link-light-hover-color;
+      color: $civictheme-directional-link-light-hover-color;
 
-      .civic-icon {
-        fill: $civic-directional-link-light-hover-color;
+      .civictheme-icon {
+        fill: $civictheme-directional-link-light-hover-color;
       }
     }
 
     &#{$root}--disabled {
       &,
       &:hover {
-        color: $civic-directional-link-light-disabled-color;
+        color: $civictheme-directional-link-light-disabled-color;
 
-        .civic-icon {
-          fill: $civic-directional-link-light-disabled-color;
+        .civictheme-icon {
+          fill: $civictheme-directional-link-light-disabled-color;
         }
       }
     }
   }
 
-  &.civic-theme-dark {
-    color: $civic-directional-link-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-directional-link-dark-color;
 
-    .civic-icon {
-      fill: $civic-directional-link-dark-color;
+    .civictheme-icon {
+      fill: $civictheme-directional-link-dark-color;
     }
 
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
 
     &:hover {
-      color: $civic-directional-link-dark-hover-color;
+      color: $civictheme-directional-link-dark-hover-color;
 
-      .civic-icon {
-        fill: $civic-directional-link-dark-hover-color;
+      .civictheme-icon {
+        fill: $civictheme-directional-link-dark-hover-color;
       }
     }
 
     &#{$root}--disabled {
       &,
       &:hover {
-        color: $civic-directional-link-dark-disabled-color;
+        color: $civictheme-directional-link-dark-disabled-color;
 
-        .civic-icon {
-          fill: $civic-directional-link-dark-disabled-color;
+        .civictheme-icon {
+          fill: $civictheme-directional-link-dark-disabled-color;
         }
       }
     }

@@ -2,8 +2,8 @@
 // Content mixins.
 //
 
-@mixin civic-content {
-  @include civic-typography('text-regular');
+@mixin civictheme-content {
+  @include civictheme-typography('text-regular');
 
   h1,
   h2,
@@ -15,68 +15,68 @@
   }
 
   h1 {
-    @include civic-typography('heading-1');
+    @include civictheme-typography('heading-1');
 
-    margin-bottom: civic-space(3);
+    margin-bottom: civictheme-space(3);
 
-    @include civic-breakpoint('m') {
-      margin-bottom: civic-space(4);
+    @include civictheme-breakpoint('m') {
+      margin-bottom: civictheme-space(4);
     }
   }
 
   h2 {
-    @include civic-typography('heading-2');
+    @include civictheme-typography('heading-2');
 
-    margin-bottom: civic-space(3);
+    margin-bottom: civictheme-space(3);
 
-    @include civic-breakpoint('m') {
-      margin-bottom: civic-space(4);
+    @include civictheme-breakpoint('m') {
+      margin-bottom: civictheme-space(4);
     }
   }
 
   h3 {
-    @include civic-typography('heading-3');
+    @include civictheme-typography('heading-3');
 
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
 
-    @include civic-breakpoint('m') {
-      margin-bottom: civic-space(3);
+    @include civictheme-breakpoint('m') {
+      margin-bottom: civictheme-space(3);
     }
   }
 
   h4 {
-    @include civic-typography('heading-4');
+    @include civictheme-typography('heading-4');
 
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
 
-    @include civic-breakpoint('m') {
-      margin-bottom: civic-space(3);
+    @include civictheme-breakpoint('m') {
+      margin-bottom: civictheme-space(3);
     }
   }
 
   h5 {
-    @include civic-typography('heading-5');
+    @include civictheme-typography('heading-5');
 
-    margin-bottom: civic-space();
+    margin-bottom: civictheme-space();
 
-    @include civic-breakpoint('m') {
-      margin-bottom: civic-space(2);
+    @include civictheme-breakpoint('m') {
+      margin-bottom: civictheme-space(2);
     }
   }
 
   h6 {
-    @include civic-typography('heading-6');
+    @include civictheme-typography('heading-6');
 
-    margin-bottom: civic-space();
+    margin-bottom: civictheme-space();
 
-    @include civic-breakpoint('m') {
-      margin-bottom: civic-space(2);
+    @include civictheme-breakpoint('m') {
+      margin-bottom: civictheme-space(2);
     }
   }
 
   p {
-    margin-top: $civic-basic-content-vertical-spacing;
-    margin-bottom: $civic-basic-content-vertical-spacing;
+    margin-top: $civictheme-basic-content-vertical-spacing;
+    margin-bottom: $civictheme-basic-content-vertical-spacing;
 
     &:first-child {
       margin-top: 0;
@@ -84,13 +84,13 @@
   }
 
   blockquote {
-    @include civic-typography('quote');
+    @include civictheme-typography('quote');
 
     position: relative;
     margin: 0;
-    margin-top: $civic-basic-content-vertical-spacing;
-    margin-bottom: $civic-basic-content-vertical-spacing;
-    padding: civic-space(2) civic-space(3);
+    margin-top: $civictheme-basic-content-vertical-spacing;
+    margin-bottom: $civictheme-basic-content-vertical-spacing;
+    padding: civictheme-space(2) civictheme-space(3);
 
     &::before {
       content: '';
@@ -100,19 +100,19 @@
       top: 0;
       bottom: 0;
       left: 0;
-      border-radius: $civic-basic-content-blockquote-border-radius;
+      border-radius: $civictheme-basic-content-blockquote-border-radius;
     }
   }
 
   ul {
-    margin-top: $civic-basic-content-vertical-spacing;
-    margin-bottom: $civic-basic-content-vertical-spacing;
+    margin-top: $civictheme-basic-content-vertical-spacing;
+    margin-bottom: $civictheme-basic-content-vertical-spacing;
     padding: 0;
     list-style: none;
 
     li {
       position: relative;
-      padding-left: $civic-basic-content-list-marker-width + $civic-basic-content-list-marker-margin;
+      padding-left: $civictheme-basic-content-list-marker-width + $civictheme-basic-content-list-marker-margin;
 
       &::before {
         content: '';
@@ -128,23 +128,23 @@
   }
 
   ol {
-    margin-top: $civic-basic-content-vertical-spacing;
-    margin-bottom: $civic-basic-content-vertical-spacing;
+    margin-top: $civictheme-basic-content-vertical-spacing;
+    margin-bottom: $civictheme-basic-content-vertical-spacing;
     counter-reset: ordered_counter;
     padding: 0;
     list-style: none;
 
     li {
       counter-increment: ordered_counter;
-      padding-left: $civic-basic-content-list-marker-width + $civic-basic-content-list-marker-margin;
+      padding-left: $civictheme-basic-content-list-marker-width + $civictheme-basic-content-list-marker-margin;
 
       &::before {
         content: counter(ordered_counter);
         display: inline-block;
         text-align: center;
-        width: $civic-basic-content-list-marker-width;
-        margin-left: -$civic-basic-content-list-marker-width - $civic-basic-content-list-marker-margin;
-        margin-right: $civic-basic-content-list-marker-margin;
+        width: $civictheme-basic-content-list-marker-width;
+        margin-left: -$civictheme-basic-content-list-marker-width - $civictheme-basic-content-list-marker-margin;
+        margin-right: $civictheme-basic-content-list-marker-margin;
       }
     }
   }
@@ -152,13 +152,13 @@
   img {
     height: auto;
     max-width: 100%;
-    margin-top: $civic-basic-content-vertical-spacing * 2;
-    margin-bottom: $civic-basic-content-vertical-spacing * 2;
+    margin-top: $civictheme-basic-content-vertical-spacing * 2;
+    margin-bottom: $civictheme-basic-content-vertical-spacing * 2;
   }
 
   figure {
-    margin-top: $civic-basic-content-vertical-spacing * 2;
-    margin-bottom: $civic-basic-content-vertical-spacing * 2;
+    margin-top: $civictheme-basic-content-vertical-spacing * 2;
+    margin-bottom: $civictheme-basic-content-vertical-spacing * 2;
 
     img {
       margin-top: 0;
@@ -167,126 +167,126 @@
   }
 
   table {
-    @include civic-table();
+    @include civictheme-table();
   }
 }
 
-@mixin civic-content-light {
-  color: $civic-basic-content-light-base-color;
+@mixin civictheme-content-light {
+  color: $civictheme-basic-content-light-base-color;
 
   h1 {
-    color: $civic-basic-content-light-heading-1-color;
+    color: $civictheme-basic-content-light-heading-1-color;
   }
 
   h2 {
-    color: $civic-basic-content-light-heading-2-color;
+    color: $civictheme-basic-content-light-heading-2-color;
   }
 
   h3 {
-    color: $civic-basic-content-light-heading-3-color;
+    color: $civictheme-basic-content-light-heading-3-color;
   }
 
   h4 {
-    color: $civic-basic-content-light-heading-4-color;
+    color: $civictheme-basic-content-light-heading-4-color;
   }
 
   h5 {
-    color: $civic-basic-content-light-heading-5-color;
+    color: $civictheme-basic-content-light-heading-5-color;
   }
 
   h6 {
-    color: $civic-basic-content-light-heading-6-color;
+    color: $civictheme-basic-content-light-heading-6-color;
   }
 
   blockquote {
-    color: $civic-basic-content-light-blockquote-color;
+    color: $civictheme-basic-content-light-blockquote-color;
 
     &::before {
-      background-color: $civic-basic-content-light-blockquote-block;
+      background-color: $civictheme-basic-content-light-blockquote-block;
     }
   }
 
   ul {
     li {
-      color: $civic-basic-content-light-ul-li-color;
+      color: $civictheme-basic-content-light-ul-li-color;
 
       &::before {
-        background-color: $civic-basic-content-light-ul-li-marker-color;
+        background-color: $civictheme-basic-content-light-ul-li-marker-color;
       }
     }
   }
 
   ol {
     li {
-      color: $civic-basic-content-light-ol-li-color;
+      color: $civictheme-basic-content-light-ol-li-color;
 
       &::before {
-        color: $civic-basic-content-light-ol-li-marker-color;
+        color: $civictheme-basic-content-light-ol-li-marker-color;
       }
     }
   }
 
   table {
-    @include civic-table-light();
+    @include civictheme-table-light();
   }
 }
 
-@mixin civic-content-dark {
-  color: $civic-basic-content-dark-base-color;
+@mixin civictheme-content-dark {
+  color: $civictheme-basic-content-dark-base-color;
 
   h1 {
-    color: $civic-basic-content-dark-heading-1-color;
+    color: $civictheme-basic-content-dark-heading-1-color;
   }
 
   h2 {
-    color: $civic-basic-content-dark-heading-2-color;
+    color: $civictheme-basic-content-dark-heading-2-color;
   }
 
   h3 {
-    color: $civic-basic-content-dark-heading-3-color;
+    color: $civictheme-basic-content-dark-heading-3-color;
   }
 
   h4 {
-    color: $civic-basic-content-dark-heading-4-color;
+    color: $civictheme-basic-content-dark-heading-4-color;
   }
 
   h5 {
-    color: $civic-basic-content-dark-heading-5-color;
+    color: $civictheme-basic-content-dark-heading-5-color;
   }
 
   h6 {
-    color: $civic-basic-content-dark-heading-6-color;
+    color: $civictheme-basic-content-dark-heading-6-color;
   }
 
   blockquote {
-    color: $civic-basic-content-dark-blockquote-color;
+    color: $civictheme-basic-content-dark-blockquote-color;
 
     &::before {
-      background-color: $civic-basic-content-dark-blockquote-block;
+      background-color: $civictheme-basic-content-dark-blockquote-block;
     }
   }
 
   ul {
     li {
-      color: $civic-basic-content-dark-ul-li-color;
+      color: $civictheme-basic-content-dark-ul-li-color;
 
       &::before {
-        background-color: $civic-basic-content-dark-ul-li-marker-color;
+        background-color: $civictheme-basic-content-dark-ul-li-marker-color;
       }
     }
   }
 
   ol {
     li {
-      color: $civic-basic-content-dark-ol-li-color;
+      color: $civictheme-basic-content-dark-ol-li-color;
 
       &::before {
-        color: $civic-basic-content-dark-ol-li-marker-color;
+        color: $civictheme-basic-content-dark-ol-li-marker-color;
       }
     }
   }
 
   table {
-    @include civic-table-dark();
+    @include civictheme-table-dark();
   }
 }

@@ -2,63 +2,63 @@
 // Service Card component.
 //
 
-.civic-service-card {
+.civictheme-service-card {
   $root: &;
 
-  border-top-width: civic-space(0.75);
+  border-top-width: civictheme-space(0.75);
   border-top-style: solid;
-  border-radius: $civic-service-card-border-radius;
+  border-radius: $civictheme-service-card-border-radius;
   text-align: center;
   width: 100%;
 
-  @include civic-elevation(3);
+  @include civictheme-elevation(3);
 
   #{$root}__content {
-    padding: civic-space(3) 0 civic-space(3) 0;
+    padding: civictheme-space(3) 0 civictheme-space(3) 0;
 
-    @include civic-breakpoint(m) {
-      padding: civic-space(4) 0 civic-space(4) 0;
+    @include civictheme-breakpoint(m) {
+      padding: civictheme-space(4) 0 civictheme-space(4) 0;
     }
   }
 
   #{$root}__title {
-    @include civic-typography('heading-4');
+    @include civictheme-typography('heading-4');
 
     margin: 0;
-    padding: 0 civic-space(4);
+    padding: 0 civictheme-space(4);
   }
 
   #{$root}__links {
     list-style: none;
     margin-bottom: 0;
-    padding: 0 civic-space(3);
+    padding: 0 civictheme-space(3);
   }
 
   #{$root}__link__item {
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
 
-    @include civic-typography('text-large');
+    @include civictheme-typography('text-large');
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  &.civic-theme-light {
-    background-color: $civic-service-card-light-background-color;
-    border-top-color: $civic-service-card-light-border-top-color;
+  &.civictheme-theme-light {
+    background-color: $civictheme-service-card-light-background-color;
+    border-top-color: $civictheme-service-card-light-border-top-color;
 
     #{$root}__title {
-      color: $civic-service-card-light-heading-color;
+      color: $civictheme-service-card-light-heading-color;
     }
   }
 
-  &.civic-theme-dark {
-    background-color: $civic-service-card-dark-background-color;
-    border-top-color: $civic-service-card-dark-border-top-color;
+  &.civictheme-theme-dark {
+    background-color: $civictheme-service-card-dark-background-color;
+    border-top-color: $civictheme-service-card-dark-border-top-color;
 
     #{$root}__title {
-      color: $civic-service-card-dark-heading-color;
+      color: $civictheme-service-card-dark-heading-color;
     }
   }
 }

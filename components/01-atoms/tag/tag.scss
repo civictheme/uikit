@@ -2,23 +2,23 @@
 // Tag component.
 //
 
-.civic-tag {
+.civictheme-tag {
   $root: &;
 
-  border-radius: $civic-tag-border-radius;
+  border-radius: $civictheme-tag-border-radius;
   border-style: solid;
-  border-width: $civic-tag-border-width;
-  padding: civic-space(0.5) civic-space();
+  border-width: $civictheme-tag-border-width;
+  padding: civictheme-space(0.5) civictheme-space();
   display: inline-block;
 
-  @include civic-typography('label-small');
+  @include civictheme-typography('label-small');
 
   &--icon-after {
     padding-right: rem(4px);
-    padding-left: civic-space();
+    padding-left: civictheme-space();
   }
 
-  .civic-icon {
+  .civictheme-icon {
     padding-right: rem(2px);
     vertical-align: middle;
   }
@@ -27,49 +27,49 @@
     text-decoration: none;
   }
 
-  &.civic-theme-light {
-    background-color: $civic-tag-light-background-color;
-    border-color: $civic-tag-light-border-color;
-    color: $civic-tag-light-color;
+  &.civictheme-theme-light {
+    background-color: $civictheme-tag-light-background-color;
+    border-color: $civictheme-tag-light-border-color;
+    color: $civictheme-tag-light-color;
 
-    @include civic-icon-fill-color($civic-tag-light-color);
+    @include civictheme-icon-fill-color($civictheme-tag-light-color);
 
     &#{$root}--is-alt {
-      background-color: $civic-tag-light-alt-background-color;
-      color: $civic-tag-light-alt-color;
+      background-color: $civictheme-tag-light-alt-background-color;
+      color: $civictheme-tag-light-alt-color;
 
       #{$root}__link {
-        color: $civic-tag-light-alt-color;
+        color: $civictheme-tag-light-alt-color;
       }
 
-      @include civic-icon-fill-color($civic-tag-light-alt-color);
+      @include civictheme-icon-fill-color($civictheme-tag-light-alt-color);
     }
 
     #{$root}__link {
-      color: $civic-tag-light-color;
+      color: $civictheme-tag-light-color;
     }
   }
 
-  &.civic-theme-dark {
-    background-color: $civic-tag-dark-background-color;
-    border-color: $civic-tag-dark-border-color;
-    color: $civic-tag-dark-color;
+  &.civictheme-theme-dark {
+    background-color: $civictheme-tag-dark-background-color;
+    border-color: $civictheme-tag-dark-border-color;
+    color: $civictheme-tag-dark-color;
 
-    @include civic-icon-fill-color($civic-tag-dark-color);
+    @include civictheme-icon-fill-color($civictheme-tag-dark-color);
 
     &#{$root}--is-alt {
-      background-color: $civic-tag-dark-alt-background-color;
-      color: $civic-tag-dark-alt-color;
+      background-color: $civictheme-tag-dark-alt-background-color;
+      color: $civictheme-tag-dark-alt-color;
 
       #{$root}__link {
-        color: $civic-tag-dark-alt-color;
+        color: $civictheme-tag-dark-alt-color;
       }
 
-      @include civic-icon-fill-color($civic-tag-dark-alt-color);
+      @include civictheme-icon-fill-color($civictheme-tag-dark-alt-color);
     }
 
     #{$root}__link {
-      color: $civic-tag-dark-color;
+      color: $civictheme-tag-dark-color;
     }
   }
 }

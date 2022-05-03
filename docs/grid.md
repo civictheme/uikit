@@ -1,10 +1,10 @@
 # Grid
 
-Civic provides a customisable grid utilising a flex-based system.
+CivicTheme provides a customisable grid utilising a flex-based system.
 
 ## Grid System
 
-Civic Component Library's grid system uses a series of containers, rows, and
+CivicTheme Component Library's grid system uses a series of containers, rows, and
 columns to layout and align content.
 
 It’s built with flexbox and is fully responsive.
@@ -47,7 +47,7 @@ The system is adapted from the [SASS flexbox grid](http://sassflexboxgrid.com/).
 Breakpoints are defined as:
 
 ```scss
-$civic-breakpoints: (
+$civictheme-breakpoints: (
   'xs': 368px,
   's': 576px,
   'm': 768px,
@@ -57,18 +57,18 @@ $civic-breakpoints: (
 );
 ```
 
-And can be used with the `civic-breakpoint()` mixin.
+And can be used with the `civictheme-breakpoint()` mixin.
 
 ```scss
 div {
   // Shared rules.
-  @include civic-breakpoint(s) {
+  @include civictheme-breakpoint(s) {
     // Mobile-and-up Small rules.
   }
-  @include civic-breakpoint(m) {
+  @include civictheme-breakpoint(m) {
     // Mobile-and-up Medium rules.
   }
-  @include civic-breakpoint(xl) {
+  @include civictheme-breakpoint(xl) {
     // Mobile-and-up Extra large rules.
   }
 }
@@ -83,10 +83,10 @@ has been omitted to avoid over-complicating breakpoint logic and readability.
 ## Containers and rows
 
 Containers are used to contain and center content to a max-width per breakpoint.
-These are set via the `$civic-breakpoints` map.
+These are set via the `$civictheme-breakpoints` map.
 
 If no container is set then columns spread full-width - this is utilised in
-Civic Page without sidebar where we have full-width components and constraining
+CivicTheme Page without sidebar where we have full-width components and constraining
 of content is done on the component level.
 
 Rows are wrappers for columns. Each column has horizontal padding (called a
@@ -111,7 +111,7 @@ max-width of the child column (with `col-xs-12` class) is 50% of the parent.
 
 ## Utilities
 
-Civic component library come with a variety of
+CivicTheme component library come with a variety of
 [Grid utility mixins](../components/00-base/mixins/_grid.scss) including
 `offset`, `row-reverse`, `flex-column` among others.
 

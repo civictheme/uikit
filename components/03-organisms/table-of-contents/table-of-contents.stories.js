@@ -89,7 +89,7 @@ export const TableOfContents = (knobTab) => {
       ),
       'data-table-of-contents-title': text('Title', 'On this page', tocKnobTab),
       'data-table-of-contents-anchor-selector': text('Anchor selector', 'h3', tocKnobTab),
-      'data-table-of-contents-anchor-scope-selector': text('Anchor scope selector', `.civic-basic-content-${i + 1}`, tocKnobTab),
+      'data-table-of-contents-anchor-scope-selector': text('Anchor scope selector', `.civictheme-basic-content-${i + 1}`, tocKnobTab),
       'data-table-of-contents-position': radios('Position', {
         Before: 'before',
         After: 'after',
@@ -102,7 +102,7 @@ export const TableOfContents = (knobTab) => {
 
     const attributesStr = Object.keys(attributes).map((key) => (attributes[key] !== '' ? `${key}="${attributes[key]}"` : '')).join(' ');
 
-    wrappers.push(`<div class="civic-basic-content civic-basic-content-${i + 1} civic-theme-${attributes['data-table-of-contents-theme']}" ${attributesStr}>${html}</div>`);
+    wrappers.push(`<div class="civictheme-basic-content civictheme-basic-content-${i + 1} civictheme-theme-${attributes['data-table-of-contents-theme']}" ${attributesStr}>${html}</div>`);
   }
 
   return wrappers.join(' ');

@@ -15,24 +15,24 @@
  */
 #}
 
-{% set vertical_space_class = vertical_space in ['top', 'bottom', 'both'] ? 'civic-slider--vertical-space-%s'|format(vertical_space) : '' %}
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set vertical_space_class = vertical_space in ['top', 'bottom', 'both'] ? 'civictheme-slider--vertical-space-%s'|format(vertical_space) : '' %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_space_class, modifier_class|default('')) %}
 
 {% if slides is not empty %}
-  <div class="civic-slider {{ modifier_class }}">
+  <div class="civictheme-slider {{ modifier_class }}">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <div class="civic-slider__container" data-component-civic-slider>
+          <div class="civictheme-slider__container" data-component-civictheme-slider>
             {% block top_controls %}
               {% if title is not empty or link is not empty %}
-                <div class="civic-slider__upper-control-panel" tabindex="0">
+                <div class="civictheme-slider__upper-control-panel" tabindex="0">
                   {% if title is not empty %}
-                    <div class="civic-slider__title">{{ title }}</div>
+                    <div class="civictheme-slider__title">{{ title }}</div>
                   {% endif %}
                   {% if link is not empty %}
-                    <div class="civic-slider__link">
+                    <div class="civictheme-slider__link">
                       {% include '@atoms/button/button.twig' with {
                         theme: theme,
                         kind: 'link',
@@ -48,23 +48,23 @@
             {% endblock %}
 
             {% block slides %}
-              <div class="civic-slider__slides" data-component-civic-slider-panel>
-                <div class="civic-slider__slides-inner" data-component-civic-slider-rail>
+              <div class="civictheme-slider__slides" data-component-civictheme-slider-panel>
+                <div class="civictheme-slider__slides-inner" data-component-civictheme-slider-rail>
                   {{ slides }}
                 </div>
               </div>
             {% endblock %}
 
             {% block controls %}
-              <div class="civic-slider__lower-control-panel">
-                <div class="civic-slider__controls">
+              <div class="civictheme-slider__lower-control-panel">
+                <div class="civictheme-slider__controls">
                   {% include '@atoms/button/button.twig' with {
                     theme: theme,
                     text: previous_label|default('Previous'),
                     type: 'secondary',
                     icon: 'arrows_leftarrow_2',
                     icon_placement: 'before',
-                    attributes: 'data-component-civic-slider-previous',
+                    attributes: 'data-component-civictheme-slider-previous',
                   } only %}
                   {% include '@atoms/button/button.twig' with {
                     theme: theme,
@@ -72,11 +72,11 @@
                     type: 'secondary',
                     icon: 'arrows_rightarrow_3',
                     icon_placement: 'after',
-                    attributes: 'data-component-civic-slider-next',
+                    attributes: 'data-component-civictheme-slider-next',
                   } only %}
                 </div>
-                <div class="civic-slider__steps" tabindex="0">
-                  <div class="civic-slider__progress-indicator" aria-live="polite" data-component-civic-slider-progress></div>
+                <div class="civictheme-slider__steps" tabindex="0">
+                  <div class="civictheme-slider__progress-indicator" aria-live="polite" data-component-civictheme-slider-progress></div>
                 </div>
               </div>
             {% endblock %}

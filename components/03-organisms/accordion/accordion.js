@@ -8,9 +8,9 @@ function CivicAccordion(el, selectedIndex) {
   }
 
   this.el = el;
-  this.accordionItems = this.el.getElementsByClassName('civic-accordion__list-item');
-  this.accordionTriggers = this.el.getElementsByClassName('civic-accordion__header__button');
-  this.accordionPanels = this.el.getElementsByClassName('civic-accordion__content');
+  this.accordionItems = this.el.getElementsByClassName('civictheme-accordion__list-item');
+  this.accordionTriggers = this.el.getElementsByClassName('civictheme-accordion__header__button');
+  this.accordionPanels = this.el.getElementsByClassName('civictheme-accordion__content');
 
   if (this.accordionTriggers.length === 0
     || this.accordionTriggers.length !== this.accordionPanels.length) {
@@ -98,8 +98,8 @@ CivicAccordion.prototype.setSelected = function (index, userInvoked) {
     const currentButton = this.accordionTriggers[i];
     if (i === index) {
       currentButton.classList.add('is-selected');
-      this.accordionItems[i].classList.add('civic-accordion__list-item--expanded');
-      currentButton.classList.add('civic-accordion__header__button--expanded');
+      this.accordionItems[i].classList.add('civictheme-accordion__list-item--expanded');
+      currentButton.classList.add('civictheme-accordion__header__button--expanded');
 
       currentButton.setAttribute('data-selected', true);
 
@@ -107,8 +107,8 @@ CivicAccordion.prototype.setSelected = function (index, userInvoked) {
         currentButton.focus();
       }
     } else {
-      currentButton.classList.remove('civic-accordion__header__button--expanded');
-      this.accordionItems[i].classList.remove('civic-accordion__list-item--expanded');
+      currentButton.classList.remove('civictheme-accordion__header__button--expanded');
+      this.accordionItems[i].classList.remove('civictheme-accordion__list-item--expanded');
       currentButton.setAttribute('data-selected', false);
     }
   }
@@ -144,18 +144,18 @@ CivicAccordion.prototype.setExpanded = function (index, userInvoked) {
       this.accordionPanels[i].style.visibility = 'visible';
 
       // Add required classes.
-      this.accordionTriggers[i].classList.add('civic-accordion__header__button--expanded');
-      this.accordionItems[i].classList.add('civic-accordion__list-item--expanded');
-      this.accordionPanels[i].classList.add('civic-accordion__content--expanded');
+      this.accordionTriggers[i].classList.add('civictheme-accordion__header__button--expanded');
+      this.accordionItems[i].classList.add('civictheme-accordion__list-item--expanded');
+      this.accordionPanels[i].classList.add('civictheme-accordion__content--expanded');
 
       this.accordionPanels[i].setAttribute('aria-hidden', false);
       this.accordionPanels[i].classList.remove('is-hidden');
     } else {
       this.accordionTriggers[i].setAttribute('aria-expanded', false);
       this.accordionTriggers[i].classList.remove('is-expanded');
-      this.accordionTriggers[i].classList.remove('civic-accordion__header__button--expanded');
-      this.accordionItems[i].classList.remove('civic-accordion__list-item--expanded');
-      this.accordionPanels[i].classList.remove('civic-accordion__content--expanded');
+      this.accordionTriggers[i].classList.remove('civictheme-accordion__header__button--expanded');
+      this.accordionItems[i].classList.remove('civictheme-accordion__list-item--expanded');
+      this.accordionPanels[i].classList.remove('civictheme-accordion__content--expanded');
       const currentPanel = this.accordionPanels[i];
       this.accordionPanels[i].style.height = `${this.accordionPanels[i].scrollHeight}px`;
       setTimeout(() => {
@@ -189,7 +189,7 @@ CivicAccordion.prototype.destroy = function () {
   }
 };
 
-document.querySelectorAll('.civic-accordion .civic-accordion__list').forEach((accordion) => {
+document.querySelectorAll('.civictheme-accordion .civictheme-accordion__list').forEach((accordion) => {
   // eslint-disable-next-line no-new
   new CivicAccordion(accordion);
 });

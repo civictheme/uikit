@@ -2,10 +2,10 @@
 // Breadcrumb component.
 //
 
-.civic-breadcrumb {
+.civictheme-breadcrumb {
   $root: &;
 
-  @include civic-typography('label-small');
+  @include civictheme-typography('label-small');
 
   &__links {
     list-style: none;
@@ -17,21 +17,21 @@
     padding: 0;
 
     &--link {
-      margin-right: civic-space();
+      margin-right: civictheme-space();
       display: flex;
       align-items: center;
 
-      @include civic-breakpoint-upto('m') {
+      @include civictheme-breakpoint-upto('m') {
         display: none;
       }
 
       &.mobile-only {
         display: none;
 
-        @include civic-breakpoint-upto('m') {
+        @include civictheme-breakpoint-upto('m') {
           display: flex;
 
-          .civic-link {
+          .civictheme-link {
             border: none;
           }
         }
@@ -39,8 +39,8 @@
     }
   }
 
-  .civic-link {
-    @include civic-typography('label-small');
+  .civictheme-link {
+    @include civictheme-typography('label-small');
 
     padding: 0;
 
@@ -49,36 +49,36 @@
     }
   }
 
-  &.civic-theme-light {
-    color: $civic-breadcrumb-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-breadcrumb-light-color;
 
-    .civic-icon {
-      fill: $civic-breadcrumb-light-icon-color;
+    .civictheme-icon {
+      fill: $civictheme-breadcrumb-light-icon-color;
     }
 
-    .civic-link {
-      color: $civic-breadcrumb-light-color;
-      text-decoration-color: $civic-breadcrumb-light-color;
+    .civictheme-link {
+      color: $civictheme-breadcrumb-light-color;
+      text-decoration-color: $civictheme-breadcrumb-light-color;
 
       &:hover {
-        color: $civic-breadcrumb-light-hover-color;
+        color: $civictheme-breadcrumb-light-hover-color;
       }
     }
   }
 
-  &.civic-theme-dark {
-    color: $civic-breadcrumb-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-breadcrumb-dark-color;
 
-    .civic-icon {
-      fill: $civic-breadcrumb-dark-icon-color;
+    .civictheme-icon {
+      fill: $civictheme-breadcrumb-dark-icon-color;
     }
 
-    .civic-link {
-      color: $civic-breadcrumb-dark-color;
-      text-decoration-color: $civic-breadcrumb-dark-color;
+    .civictheme-link {
+      color: $civictheme-breadcrumb-dark-color;
+      text-decoration-color: $civictheme-breadcrumb-dark-color;
 
       &:hover {
-        color: $civic-breadcrumb-dark-hover-color;
+        color: $civictheme-breadcrumb-dark-hover-color;
       }
     }
   }

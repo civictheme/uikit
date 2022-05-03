@@ -1,6 +1,6 @@
-# Civic component library
+# CivicTheme component library
 
-The documentation for Civic component library provides an introduction and
+The documentation for CivicTheme component library provides an introduction and
 technical information for modifying the look and feel of components,
 instructions for extending and modifying components and adding colors and style
 changes.

@@ -2,135 +2,135 @@
 // Publication Card component.
 //
 
-.civic-publication-card {
+.civictheme-publication-card {
   $root: &;
 
   position: relative;
-  border-radius: $civic-publication-card-border-radius;
+  border-radius: $civictheme-publication-card-border-radius;
   overflow: hidden;
   width: 100%;
 
-  @include civic-elevation(3);
+  @include civictheme-elevation(3);
 
   &:focus-within {
-    @include civic-outline();
+    @include civictheme-outline();
   }
 
   #{$root}__image-wrapper {
     position: relative;
 
-    @include civic-image-fit();
+    @include civictheme-image-fit();
   }
 
   #{$root}__content {
-    padding: civic-space(3);
+    padding: civictheme-space(3);
   }
 
   #{$root}__title {
-    @include civic-typography('heading-5');
+    @include civictheme-typography('heading-5');
 
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
   }
 
   #{$root}__title-link {
-    @include civic-link-decoration();
-    @include civic-link-no-outline();
-    @include civic-link-cover-parent();
+    @include civictheme-link-decoration();
+    @include civictheme-link-no-outline();
+    @include civictheme-link-cover-parent();
 
     display: flex;
     justify-content: space-between;
   }
 
   #{$root}__icon--download {
-    margin-bottom: civic-space(2);
-    margin-left: civic-space(2);
+    margin-bottom: civictheme-space(2);
+    margin-left: civictheme-space(2);
   }
 
   #{$root}__summary {
-    @include civic-typography(text-regular);
+    @include civictheme-typography(text-regular);
 
-    padding-right: civic-space(3);
+    padding-right: civictheme-space(3);
   }
 
   #{$root}__attachment-link {
-    margin-top: civic-space(2);
+    margin-top: civictheme-space(2);
 
-    .civic-link--attachment {
-      @include civic-typography('label-regular');
+    .civictheme-link--attachment {
+      @include civictheme-typography('label-regular');
     }
   }
 
   &#{$root}--large {
-    @include civic-breakpoint(m) {
+    @include civictheme-breakpoint(m) {
       display: flex;
     }
 
     #{$root}__image-wrapper {
-      @include civic-breakpoint(m) {
+      @include civictheme-breakpoint(m) {
         max-width: 12.5rem;
         flex-shrink: 0;
       }
     }
   }
 
-  &.civic-theme-light {
-    background-color: $civic-publication-card-light-background-color;
+  &.civictheme-theme-light {
+    background-color: $civictheme-publication-card-light-background-color;
 
     &:focus {
-      @include civic-outline(false);
+      @include civictheme-outline(false);
     }
 
     #{$root}__icon--download {
-      @include civic-icon-fill-color($civic-publication-card-light-icon-color);
+      @include civictheme-icon-fill-color($civictheme-publication-card-light-icon-color);
     }
 
     #{$root}__title {
-      color: $civic-publication-card-light-heading-color;
+      color: $civictheme-publication-card-light-heading-color;
     }
 
     #{$root}__title-link {
-      @include civic-link-colors($civic-publication-card-light-heading-color, $civic-publication-card-light-heading-hover-color, $active: $civic-publication-card-light-heading-active-color);
-      @include civic-icon-fill-color($civic-publication-card-light-attachment-icon-color);
+      @include civictheme-link-colors($civictheme-publication-card-light-heading-color, $civictheme-publication-card-light-heading-hover-color, $active: $civictheme-publication-card-light-heading-active-color);
+      @include civictheme-icon-fill-color($civictheme-publication-card-light-attachment-icon-color);
     }
 
     #{$root}__summary {
-      color: $civic-publication-card-light-color;
+      color: $civictheme-publication-card-light-color;
     }
 
     #{$root}__attachment-link {
-      .civic-link--attachment {
-        @include civic-link-colors($civic-publication-card-light-attachment-link-color);
+      .civictheme-link--attachment {
+        @include civictheme-link-colors($civictheme-publication-card-light-attachment-link-color);
       }
     }
   }
 
-  &.civic-theme-dark {
-    background-color: $civic-publication-card-dark-background-color;
+  &.civictheme-theme-dark {
+    background-color: $civictheme-publication-card-dark-background-color;
 
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
 
     #{$root}__icon--download {
-      @include civic-icon-fill-color($civic-publication-card-dark-icon-color);
+      @include civictheme-icon-fill-color($civictheme-publication-card-dark-icon-color);
     }
 
     #{$root}__title {
-      color: $civic-publication-card-dark-heading-color;
+      color: $civictheme-publication-card-dark-heading-color;
     }
 
     #{$root}__title-link {
-      @include civic-link-colors($civic-publication-card-dark-heading-color, $civic-publication-card-dark-heading-hover-color, $active: $civic-publication-card-dark-heading-active-color);
-      @include civic-icon-fill-color($civic-publication-card-dark-attachment-icon-color);
+      @include civictheme-link-colors($civictheme-publication-card-dark-heading-color, $civictheme-publication-card-dark-heading-hover-color, $active: $civictheme-publication-card-dark-heading-active-color);
+      @include civictheme-icon-fill-color($civictheme-publication-card-dark-attachment-icon-color);
     }
 
     #{$root}__summary {
-      color: $civic-publication-card-dark-color;
+      color: $civictheme-publication-card-dark-color;
     }
 
     #{$root}__attachment-link {
-      .civic-link--attachment {
-        @include civic-link-colors($civic-publication-card-dark-heading-color);
+      .civictheme-link--attachment {
+        @include civictheme-link-colors($civictheme-publication-card-dark-heading-color);
       }
     }
   }

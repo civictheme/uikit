@@ -2,10 +2,10 @@
 // Form Element component.
 //
 
-.civic-form-element {
-  @include civic-typography('text-regular');
+.civictheme-form-element {
+  @include civictheme-typography('text-regular');
 
-  margin-bottom: civic-space(2);
+  margin-bottom: civictheme-space(2);
   width: 100%;
 
   &:last-child {
@@ -18,21 +18,21 @@
     flex-wrap: wrap;
     position: relative;
 
-    .civic-input {
+    .civictheme-input {
       margin: 0;
     }
 
-    .civic-form-element__description,
+    .civictheme-form-element__description,
     label {
-      padding-left: civic-space(5);
+      padding-left: civictheme-space(5);
     }
 
-    .civic-form-element__description {
+    .civictheme-form-element__description {
       width: 100%;
     }
 
     label {
-      margin: civic-space(0.5) 0;
+      margin: civictheme-space(0.5) 0;
     }
   }
 
@@ -40,49 +40,49 @@
   &--submit {
     display: inline-block;
     width: auto;
-    margin-left: civic-space(2);
+    margin-left: civictheme-space(2);
 
     &:first-child {
       margin-left: 0;
     }
   }
 
-  .civic-message {
-    padding: civic-space();
-    margin-bottom: civic-space();
+  .civictheme-message {
+    padding: civictheme-space();
+    margin-bottom: civictheme-space();
     display: inline-flex;
     align-items: center;
     border: none;
 
-    @include civic-typography('label-small');
+    @include civictheme-typography('label-small');
 
     &__title {
       font-weight: 400;
     }
 
-    .civic-icon {
+    .civictheme-icon {
       width: rem(18px);
       height: rem(18px);
       vertical-align: middle;
     }
 
-    .civic-message__icon {
+    .civictheme-message__icon {
       width: rem(18px);
-      margin-right: civic-space();
+      margin-right: civictheme-space();
     }
   }
 
   &__description {
-    margin-bottom: civic-space(1);
+    margin-bottom: civictheme-space(1);
 
-    @include civic-typography('text-small');
+    @include civictheme-typography('text-small');
   }
 
-  &.civic-theme-light {
-    color: $civic-form-element-light-color;
+  &.civictheme-theme-light {
+    color: $civictheme-form-element-light-color;
   }
 
-  &.civic-theme-dark {
-    color: $civic-form-element-dark-color;
+  &.civictheme-theme-dark {
+    color: $civictheme-form-element-dark-color;
   }
 }

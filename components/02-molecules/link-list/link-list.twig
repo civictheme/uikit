@@ -17,24 +17,24 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
-{% set is_inline_class = is_inline ? 'civic-link-list--inline' : '' %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
+{% set is_inline_class = is_inline ? 'civictheme-link-list--inline' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_inline_class, modifier_class|default('')) %}
 
 {% if links %}
-  <div class="civic-link-list {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
+  <div class="civictheme-link-list {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
     {% block text %}
       {% if text %}
-        <div class="civic-link-list__text">
+        <div class="civictheme-link-list__text">
           {{ text }}
         </div>
       {% endif %}
     {% endblock %}
     {% block links %}
-      <ul class="civic-link-list__list">
+      <ul class="civictheme-link-list__list">
         {% for link in links %}
           {% if link.text is not empty %}
-            <li class="civic-link-list__list__item">
+            <li class="civictheme-link-list__list__item">
               {% include '@atoms/link/link.twig' with {
                 theme: theme,
                 text: link.text,

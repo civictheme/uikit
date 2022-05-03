@@ -1,11 +1,11 @@
 # Typography
 
-Civic Component Library provides a system for easily consuming and extending
+CivicTheme Component Library provides a system for easily consuming and extending
 typography mixins and variables.
 
 ### How to use the typography mixin
 
-Font and typography can be set using the `civic-typography()` mixin.
+Font and typography can be set using the `civictheme-typography()` mixin.
 
 It can be used in 3 ways:
 
@@ -13,7 +13,7 @@ It can be used in 3 ways:
 
 ```scss
 h1 {
-  @include civic-typography((24px, 1.2em, 400, 'primary'));
+  @include civictheme-typography((24px, 1.2em, 400, 'primary'));
 }
 ```
 
@@ -32,8 +32,8 @@ Note:
 The font-family is defined in a map:
 
 ```scss
-$civic-font: (
-  'primary': $civic-font-primary
+$civictheme-font: (
+  'primary': $civictheme-font-primary
 ) !default;
 ```
 
@@ -58,7 +58,7 @@ h1 {
 Given the typography presets e.g:
 
 ```scss
-$civic-typography: (
+$civictheme-typography: (
   'display-xl': (56px, 60px, 700, 'primary')
 );
 ```
@@ -73,38 +73,38 @@ h1 {
 
 ### Including custom fonts
 
-Civic component library allows consumer themes to modify and extend the list of
+CivicTheme component library allows consumer themes to modify and extend the list of
 fonts that are used.
 
-Add custom fonts to $civic-fonts with the same key as above to override
+Add custom fonts to $civictheme-fonts with the same key as above to override
 fonts or with a new key to add a new font kind.
 'uri' can be a URL to the external font or a list of local files with
 extensions to be imported. The font type will be taken from the file extensions.
-Use $civic-assets-directory to provide a relative path.
+Use $civictheme-assets-directory to provide a relative path.
 
 IMPORTANT: Make sure to put commas at the end of every list or SASS will not
 be able to distinguish lists and values.
 
 #### Example custom font.
 ```sass
-$civic-fonts: (
+$civictheme-fonts: (
   'tertiary': (
     'family': 'Roboto',
     'types': (
       (
         'uri': (
-          '#{$civic-assets-directory}fonts/roboto/Roboto-Regular.ttf',
-          '#{$civic-assets-directory}fonts/roboto/Roboto-Regular.woff',
-          '#{$civic-assets-directory}fonts/roboto/Roboto-Regular.eot',
+          '#{$civictheme-assets-directory}fonts/roboto/Roboto-Regular.ttf',
+          '#{$civictheme-assets-directory}fonts/roboto/Roboto-Regular.woff',
+          '#{$civictheme-assets-directory}fonts/roboto/Roboto-Regular.eot',
         ),
       ),
       (
         'italic': true,
         'weight': 'bold',
         'uri': (
-          '#{$civic-assets-directory}fonts/roboto/Roboto-BoldItalic.ttf',
-          '#{$civic-assets-directory}fonts/roboto/Roboto-BoldItalic.woff',
-          '#{$civic-assets-directory}fonts/roboto/Roboto-BoldItalic.eot',
+          '#{$civictheme-assets-directory}fonts/roboto/Roboto-BoldItalic.ttf',
+          '#{$civictheme-assets-directory}fonts/roboto/Roboto-BoldItalic.woff',
+          '#{$civictheme-assets-directory}fonts/roboto/Roboto-BoldItalic.eot',
         ),
       ),
     ),

@@ -2,23 +2,23 @@
 // Search component.
 //
 
-.civic-search {
+.civictheme-search {
   $root: &;
 
   &__field-wrapper {
-    @include civic-breakpoint(m) {
+    @include civictheme-breakpoint(m) {
       display: flex;
     }
   }
 
   &__field {
-    border-radius: $civic-border-radius;
+    border-radius: $civictheme-border-radius;
     position: relative;
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
 
-    @include civic-breakpoint(m) {
+    @include civictheme-breakpoint(m) {
       flex-grow: 1;
-      margin-right: civic-space();
+      margin-right: civictheme-space();
       margin-bottom: 0;
     }
 
@@ -31,77 +31,77 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: civic-space(2);
+    left: civictheme-space(2);
     margin: auto;
   }
 
   &__button {
     width: 100%;
 
-    @include civic-breakpoint(m) {
+    @include civictheme-breakpoint(m) {
       width: auto;
     }
 
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
   }
 
   &__input {
     height: 100%;
 
-    .civic-input__element {
-      @include civic-typography('heading-5');
+    .civictheme-input__element {
+      @include civictheme-typography('heading-5');
 
-      border-radius: $civic-border-radius;
+      border-radius: $civictheme-border-radius;
       border-width: 1px;
       border-style: solid;
-      padding: civic-space(2) civic-space(3) civic-space(2) civic-space(8);
+      padding: civictheme-space(2) civictheme-space(3) civictheme-space(2) civictheme-space(8);
       width: 100%;
       height: 100%;
 
       &:focus {
-        @include civic-outline(true);
+        @include civictheme-outline(true);
       }
     }
   }
 
   &__help_text {
-    @include civic-typography('text-regular');
+    @include civictheme-typography('text-regular');
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     #{$root}__field {
-      color: $civic-search-light-color;
+      color: $civictheme-search-light-color;
     }
 
     #{$root}__input {
-      .civic-input__element {
-        background-color: $civic-search-light-background-color;
-        border-color: $civic-search-light-border-color;
+      .civictheme-input__element {
+        background-color: $civictheme-search-light-background-color;
+        border-color: $civictheme-search-light-border-color;
       }
     }
 
     #{$root}__help_text {
-      color: $civic-search-light-help-color;
+      color: $civictheme-search-light-help-color;
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     #{$root}__field {
-      color: $civic-search-dark-color;
+      color: $civictheme-search-dark-color;
     }
 
     #{$root}__input {
-      .civic-input__element {
-        background-color: $civic-search-dark-background-color;
-        border-color: $civic-search-dark-border-color;
-        color: $civic-search-dark-color;
+      .civictheme-input__element {
+        background-color: $civictheme-search-dark-background-color;
+        border-color: $civictheme-search-dark-border-color;
+        color: $civictheme-search-dark-color;
       }
     }
 
     #{$root}__help_text {
-      color: $civic-search-dark-help-color;
+      color: $civictheme-search-dark-help-color;
     }
   }
 }

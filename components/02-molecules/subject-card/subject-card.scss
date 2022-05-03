@@ -2,16 +2,16 @@
 // Subject Card component.
 //
 
-.civic-subject-card {
+.civictheme-subject-card {
   $root: &;
 
   width: 100%;
 
   &__image-wrapper {
     position: relative;
-    border-radius: $civic-subject-card-border-radius;
+    border-radius: $civictheme-subject-card-border-radius;
     box-sizing: border-box;
-    padding: civic-space(3) civic-space(2);
+    padding: civictheme-space(3) civictheme-space(2);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -19,17 +19,17 @@
     min-height: rem(200px);
     width: 100%;
 
-    @include civic-elevation(3);
+    @include civictheme-elevation(3);
 
     &:focus-within {
-      @include civic-outline();
+      @include civictheme-outline();
     }
 
-    @include civic-breakpoint('m') {
-      padding: civic-space(4) civic-space(3);
+    @include civictheme-breakpoint('m') {
+      padding: civictheme-space(4) civictheme-space(3);
     }
 
-    @include civic-image-fit();
+    @include civictheme-image-fit();
   }
 
   &__image {
@@ -42,64 +42,64 @@
   }
 
   &__title {
-    @include civic-typography('heading-5');
+    @include civictheme-typography('heading-5');
 
-    margin-bottom: civic-space(2);
+    margin-bottom: civictheme-space(2);
     z-index: 1;
   }
 
   &__title-link {
-    @include civic-link-decoration();
-    @include civic-link-no-outline();
-    @include civic-link-cover-parent();
+    @include civictheme-link-decoration();
+    @include civictheme-link-no-outline();
+    @include civictheme-link-cover-parent();
 
     display: flex;
     justify-content: space-between;
   }
 
-  &.civic-theme-light {
+  &.civictheme-theme-light {
     &:focus {
-      @include civic-outline(false);
+      @include civictheme-outline(false);
     }
 
     #{$root}__image-wrapper {
-      background-color: $civic-subject-card-light-image-background-color;
+      background-color: $civictheme-subject-card-light-image-background-color;
     }
 
     #{$root}__title {
-      color: $civic-subject-card-light-color;
+      color: $civictheme-subject-card-light-color;
     }
 
     #{$root}__title-link {
-      @include civic-link-colors($civic-subject-card-light-color, $civic-subject-card-light-hover-color, $active: $civic-subject-card-light-active-color);
+      @include civictheme-link-colors($civictheme-subject-card-light-color, $civictheme-subject-card-light-hover-color, $active: $civictheme-subject-card-light-active-color);
     }
 
     #{$root}__icon--arrow,
     #{$root}__icon--external {
-      @include civic-icon-fill-color($civic-subject-card-light-icon-color, true);
+      @include civictheme-icon-fill-color($civictheme-subject-card-light-icon-color, true);
     }
   }
 
-  &.civic-theme-dark {
+  &.civictheme-theme-dark {
     &:focus {
-      @include civic-outline(true);
+      @include civictheme-outline(true);
     }
 
     #{$root}__image-wrapper {
-      background-color: $civic-subject-card-dark-image-background-color;
+      background-color: $civictheme-subject-card-dark-image-background-color;
     }
 
     #{$root}__title {
-      color: $civic-subject-card-dark-color;
+      color: $civictheme-subject-card-dark-color;
     }
 
     #{$root}__title-link {
-      @include civic-link-colors($civic-subject-card-dark-color, $civic-subject-card-dark-hover-color, $active: $civic-subject-card-dark-active-color);
+      @include civictheme-link-colors($civictheme-subject-card-dark-color, $civictheme-subject-card-dark-hover-color, $active: $civictheme-subject-card-dark-active-color);
     }
 
     #{$root}__icon--arrow,
     #{$root}__icon--external {
-      @include civic-icon-fill-color($civic-subject-card-dark-icon-color, true);
+      @include civictheme-icon-fill-color($civictheme-subject-card-dark-icon-color, true);
     }
   }
 }

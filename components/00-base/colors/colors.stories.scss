@@ -9,22 +9,22 @@
   display: flex;
   flex-flow: row wrap;
 
-  $all-colors: _civic-colors-all();
+  $all-colors: _civictheme-colors-all();
   $dark-shades: ();
   $light-shades: ();
   $neutrals: ();
 
   @for $i from 0 through 100 {
-    $dark-shades: map.merge($dark-shades, ('dark-shade-#{$i}': civic-color-shade-dark($i)));
-    $light-shades: map.merge($light-shades, ('light-shade-#{$i}': civic-color-shade-light($i)));
-    $neutrals: map.merge($neutrals, ('neutral-#{$i}': civic-color-neutral($i)));
+    $dark-shades: map.merge($dark-shades, ('dark-shade-#{$i}': civictheme-color-shade-dark($i)));
+    $light-shades: map.merge($light-shades, ('light-shade-#{$i}': civictheme-color-shade-light($i)));
+    $neutrals: map.merge($neutrals, ('neutral-#{$i}': civictheme-color-neutral($i)));
   }
 
   $all-colors: map.merge($all-colors, $dark-shades);
   $all-colors: map.merge($all-colors, $light-shades);
   $all-colors: map.merge($all-colors, $neutrals);
 
-  @include civic-generate-class-variations-from-map($all-colors, 'story-color') using($key, $value, $index) {
+  @include civictheme-generate-class-variations-from-map($all-colors, 'story-color') using($key, $value, $index) {
     $border-color: transparent;
 
     @if $value == #fff or $value == #0000 {
@@ -39,7 +39,7 @@
     position: relative;
     background-color: $value;
 
-    $content: civic-str-replace(string.to-upper-case(string.slice($key, 1, 1)) + string.slice($key, 2), '-', ' ') + '\A' + string.to-upper-case(#{$value});
+    $content: civictheme-str-replace(string.to-upper-case(string.slice($key, 1, 1)) + string.slice($key, 2), '-', ' ') + '\A' + string.to-upper-case(#{$value});
 
     &::after {
       content: '#{$content}';

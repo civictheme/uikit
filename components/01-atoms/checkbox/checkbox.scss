@@ -4,13 +4,13 @@
 
 @import '../../00-base/mixins/form';
 
-.civic-checkbox {
+.civictheme-checkbox {
   position: absolute;
 
   &__element {
-    @include civic-checkbox-radio('checkbox');
+    @include civictheme-checkbox-radio('checkbox');
 
-    &.civic-input__element + .civic-checkbox__state {
+    &.civictheme-input__element + .civictheme-checkbox__state {
       &::after {
         position: absolute;
         top: 2px;
@@ -22,21 +22,21 @@
       }
     }
 
-    &.civic-theme-light {
+    &.civictheme-theme-light {
       &:checked {
-        & + .civic-checkbox__state {
+        & + .civictheme-checkbox__state {
           &::after {
-            content: civic-color-svg-fill($civic-radio-check, $civic-radio-light-check-color);
+            content: civictheme-color-svg-fill($civictheme-radio-check, $civictheme-radio-light-check-color);
           }
         }
       }
     }
 
-    &.civic-theme-dark {
+    &.civictheme-theme-dark {
       &:checked {
-        & + .civic-checkbox__state {
+        & + .civictheme-checkbox__state {
           &::after {
-            content: civic-color-svg-fill($civic-radio-check, $civic-radio-dark-check-color);
+            content: civictheme-color-svg-fill($civictheme-radio-check, $civictheme-radio-dark-check-color);
           }
         }
       }
@@ -45,5 +45,5 @@
 }
 
 .checkboxes--wrapper {
-  @include civic-typography('text-regular');
+  @include civictheme-typography('text-regular');
 }

@@ -49,12 +49,12 @@ CivicSlider.prototype.refresh = function () {
 
 CivicSlider.prototype.init = function () {
   // Get elements
-  this.elSliderPanel = this.el.querySelector('[data-component-civic-slider-panel]');
-  this.elSliderRail = this.el.querySelector('[data-component-civic-slider-rail]');
-  this.elPrev = this.el.querySelector('[data-component-civic-slider-previous]');
-  this.elNext = this.el.querySelector('[data-component-civic-slider-next]');
-  this.elSlides = this.el.querySelectorAll('[data-component-civic-slider-slide]');
-  this.elProgressIndicator = this.el.querySelector('[data-component-civic-slider-progress]');
+  this.elSliderPanel = this.el.querySelector('[data-component-civictheme-slider-panel]');
+  this.elSliderRail = this.el.querySelector('[data-component-civictheme-slider-rail]');
+  this.elPrev = this.el.querySelector('[data-component-civictheme-slider-previous]');
+  this.elNext = this.el.querySelector('[data-component-civictheme-slider-next]');
+  this.elSlides = this.el.querySelectorAll('[data-component-civictheme-slider-slide]');
+  this.elProgressIndicator = this.el.querySelector('[data-component-civictheme-slider-progress]');
 
   // Set events.
   this.previousClickEvent = this.previousClick.bind(this);
@@ -88,14 +88,14 @@ CivicSlider.prototype.disableSlideInteraction = function () {
 
 CivicSlider.prototype.showAllSlides = function () {
   this.elSlides.forEach((slide) => {
-    slide.classList.remove('civic-slide--hidden');
+    slide.classList.remove('civictheme-slide--hidden');
   });
 };
 
 CivicSlider.prototype.hideAllSlidesExceptCurrent = function () {
   this.elSlides.forEach((slide, idx) => {
     if (idx !== this.currentSlide) {
-      slide.classList.add('civic-slide--hidden');
+      slide.classList.add('civictheme-slide--hidden');
     }
   });
 };
@@ -142,6 +142,6 @@ CivicSlider.prototype.updateProgress = function () {
   this.elProgressIndicator.innerHTML = `Slide ${this.currentSlide + 1} of ${this.totalSlides}`;
 };
 
-document.querySelectorAll('[data-component-civic-slider]').forEach((slider) => {
+document.querySelectorAll('[data-component-civictheme-slider]').forEach((slider) => {
   new CivicSlider(slider);
 });

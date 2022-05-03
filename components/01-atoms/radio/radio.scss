@@ -4,14 +4,14 @@
 
 @import '../../00-base/mixins/form';
 
-.civic-radio {
+.civictheme-radio {
   position: absolute;
 
-  .civic-radio__element {
-    @include civic-checkbox-radio('radio');
+  .civictheme-radio__element {
+    @include civictheme-checkbox-radio('radio');
   }
 }
 
 .radios--wrapper {
-  @include civic-typography('text-regular');
+  @include civictheme-typography('text-regular');
 }

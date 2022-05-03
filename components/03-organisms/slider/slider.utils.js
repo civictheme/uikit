@@ -53,7 +53,7 @@ export const randomSlidesComponent = (count, theme, rand, template) => {
       alt: randomText(4),
     };
     const contentBottom = template && template.content_bottom ? template.content_bottom : '';
-    const attributes = template && template.attributes ? template.attributes : 'data-component-civic-slider-slide';
+    const attributes = template && template.attributes ? template.attributes : 'data-component-civictheme-slider-slide';
     slides.push(Slide({
       theme,
       image_position: imagePosition,

@@ -18,13 +18,13 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if sources is not empty or embedded_source is not empty or raw_source is not empty %}
-  <div class="civic-video-player {{ modifier_class }}">
+  <div class="civictheme-video-player {{ modifier_class }}">
     {% block video %}
-      <div class="civic-video__wrapper">
+      <div class="civictheme-video__wrapper">
         {% if sources is not empty %}
           {% include '@atoms/video/video.twig' with {
             sources: sources,
@@ -51,13 +51,13 @@
     {% endblock %}
 
     {% block links %}
-      <div class="civic-video-player__links">
+      <div class="civictheme-video-player__links">
         {% if transcript_link.url is defined and transcript_link.url is not empty %}
-          <div class="civic-video-player__links__transcript">
+          <div class="civictheme-video-player__links__transcript">
             {% include '@atoms/icon/icon.twig' with {
               symbol: 'designtools_eye',
               color: 'shade_dark_15',
-              modifier_class: 'civic-video__action-icon',
+              modifier_class: 'civictheme-video__action-icon',
             } only %}
             {% include '@atoms/link/link.twig' with {
               theme: theme,
@@ -72,10 +72,10 @@
         {% endif %}
 
         {% if share_link.url is defined and share_link.url is not empty %}
-          <div class="civic-video-player__links__share">
+          <div class="civictheme-video-player__links__share">
             {% include '@atoms/icon/icon.twig' with {
               symbol: 'userinterface_share',
-              modifier_class: 'civic-video__action-icon',
+              modifier_class: 'civictheme-video__action-icon',
             } only %}
             {% include '@atoms/link/link.twig' with {
               theme: theme,

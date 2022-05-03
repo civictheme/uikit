@@ -10,16 +10,16 @@
 //
 // @code
 //
-// @include civic-typography('heading-1');
+// @include civictheme-typography('heading-1');
 //
 // @endcode
 //
-@mixin civic-typography($name) {
+@mixin civictheme-typography($name) {
   @if type-of($name) != string {
     @error 'Only scalar names can be used as a typography preset.';
   }
 
-  @include civic-typography-ruleset($name);
+  @include civictheme-typography-ruleset($name);
 }
 
 //
@@ -27,22 +27,22 @@
 //
 // @code
 //
-// @include civic-typography('heading-1');
+// @include civictheme-typography('heading-1');
 // or
-// @include civic-typography((24px, 1.2em, 400));
+// @include civictheme-typography((24px, 1.2em, 400));
 // or
-// @include civic-typography((
+// @include civictheme-typography((
 //   'xs': (16px, 1.5em, 400),
 //   'l': (24px, 1.2em, 600)
 // ));
 //
 // @endcode
 //
-// Try using @include civic-typography() mixin instead to keep custom
+// Try using @include civictheme-typography() mixin instead to keep custom
 // typography to the minimum.
 //
-@mixin civic-typography-ruleset($ruleset) {
-  $all-typographies: _civic-typography-all();
+@mixin civictheme-typography-ruleset($ruleset) {
+  $all-typographies: _civictheme-typography-all();
 
   // Ruleset is a name of the preset - print preset.
   @if type-of($ruleset) == string {
@@ -55,7 +55,7 @@
 
   // Ruleset is a list of rule - print rules.
   @if type-of($ruleset) == list {
-    @include _civic-typography-print-rules($ruleset);
+    @include _civictheme-typography-print-rules($ruleset);
   }
 
   // Ruleset is a full ruleset definition - print all rules with breakpoints.
@@ -65,8 +65,8 @@
     @each $breakpoint in $breakpoints {
       $breakpoint-rules: map.get($ruleset, $breakpoint);
 
-      @include civic-breakpoint($breakpoint) {
-        @include _civic-typography-print-rules($breakpoint-rules);
+      @include civictheme-breakpoint($breakpoint) {
+        @include _civictheme-typography-print-rules($breakpoint-rules);
       }
     }
   }
@@ -76,20 +76,20 @@
 // Compile all typographies into a single map.
 //
 // Do not use directly.
-// Use @include civic-typography() mixin instead.
+// Use @include civictheme-typography() mixin instead.
 //
 // stylelint-disable-next-line scss/at-function-pattern
-@function _civic-typography-all() {
-  @return map.merge($civic-typography-default, $civic-typography);
+@function _civictheme-typography-all() {
+  @return map.merge($civictheme-typography-default, $civictheme-typography);
 }
 
 //
 // Print typography rules.
 //
 // Do not use directly.
-// Use @include civic-typography() mixin instead.
+// Use @include civictheme-typography() mixin instead.
 //
-@mixin _civic-typography-print-rules($rules) {
+@mixin _civictheme-typography-print-rules($rules) {
   $font-size: list.nth($rules, 1);
   $line-height: list.nth($rules, 2);
   $font-weight: 'default';
@@ -113,7 +113,7 @@
   letter-spacing: $letter-spacing;
 
   @if $font-name != 'none' {
-    font-family: civic-font($font-name);
+    font-family: civictheme-font($font-name);
   }
 
   @if $font-weight != 'default' {

@@ -1,6 +1,6 @@
-# Civic Component Library
+# CivicTheme component Library
 
-Civic component library with Storybook integration.
+CivicTheme component library with Storybook integration.
 
 ## Features
 
@@ -39,3 +39,10 @@ This will build:
 ## Documentation
 
 Please refer to dedicated [Documentation](docs/introduction.md).
+
+----
+
+## Other resources
+-
+- [CivicTheme source site](https://github.com/salsadigitalauorg/civictheme-source)
+- [CivicTheme Drupal theme](https://github.com/salsadigitalauorg/civictheme-drupal)

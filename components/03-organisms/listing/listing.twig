@@ -17,14 +17,14 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="civic-listing {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+<div class="civictheme-listing {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
 
   {% block title %}
     {% if title -%}
-      <div class="civic-listing__title">
+      <div class="civictheme-listing__title">
         {{ title }}
       </div>
     {% endif %}
@@ -32,7 +32,7 @@
 
   {% block exposed %}
     {% if exposed -%}
-      <div class="civic-listing__exposed-form">
+      <div class="civictheme-listing__exposed-form">
         {{ exposed }}
       </div>
     {% endif %}
@@ -40,7 +40,7 @@
 
   {% block header %}
     {% if header -%}
-      <header class="civic-listing__header" tabindex="0">
+      <header class="civictheme-listing__header" tabindex="0">
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
@@ -54,7 +54,7 @@
 
   {% block rows %}
     {% if rows -%}
-      <div class="civic--listing__body">
+      <div class="civictheme--listing__body">
         {{ rows }}
       </div>
     {% endif %}
@@ -62,7 +62,7 @@
 
   {% block empty %}
     {% if rows is not defined or rows is empty -%}
-      <div class="civic-listing__empty-results">
+      <div class="civictheme-listing__empty-results">
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
@@ -76,11 +76,11 @@
 
   {% block rows_below %}
     {% if pager is defined and pager is not empty %}
-      <div class="civic-listing__results-below">
+      <div class="civictheme-listing__results-below">
         <div class="container">
           <div class="row">
             {% block pager %}
-              <div class="civic-listing__pager">
+              <div class="civictheme-listing__pager">
                 {{ pager }}
               </div>
             {% endblock %}
@@ -92,7 +92,7 @@
 
   {% block footer %}
     {% if footer is not empty -%}
-      <footer class="civic-listing__footer">
+      <footer class="civictheme-listing__footer">
         {{ footer }}
       </footer>
     {% endif %}

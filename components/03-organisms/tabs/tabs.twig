@@ -21,7 +21,7 @@
  */
 #}
 
-{% set theme_class = 'civic-theme-%s'|format(theme|default('light')) %}
+{% set theme_class = 'civictheme-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {# Create links from panels if not provided. #}
@@ -38,19 +38,19 @@
 {% endif %}
 
 {% if panels is not empty or links is not empty %}
-  <div class="civic-tabs {{ modifier_class }}">
+  <div class="civictheme-tabs {{ modifier_class }}">
     {% include '@molecules/link-list/link-list.twig' with {
       theme: theme,
       links: links,
       is_inline: true,
-      modifier_class: 'civic-tabs__links',
+      modifier_class: 'civictheme-tabs__links',
     } only %}
 
     {% if panels is not empty %}
-      <div class="civic-tabs__panels">
+      <div class="civictheme-tabs__panels">
         {% for k, panel in panels %}
           {% if panel.content is not empty %}
-            <div class="civic-tabs__panels__panel {{ panel.is_selected ? 'selected' : '' }}" id="{{ panel.id }}" role="tabpanel" aria-labelledby="{{ links[k].link_id }}">
+            <div class="civictheme-tabs__panels__panel {{ panel.is_selected ? 'selected' : '' }}" id="{{ panel.id }}" role="tabpanel" aria-labelledby="{{ links[k].link_id }}">
               {{ panel.content }}
             </div>
           {% endif %}
