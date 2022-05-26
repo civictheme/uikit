@@ -2,6 +2,10 @@
 
 CivicTheme component library with Storybook integration.
 
+----
+
+Version: `0.50.6`
+
 ## Features
 
 - Atomic design
