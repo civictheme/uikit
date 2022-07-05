@@ -536,18 +536,6 @@ promo,light,,,background-color,white
 promo,dark,heading,,color,white
 promo,dark,body,,color,white
 promo,dark,,,background-color,#003a4f
-search,light,,,color,#687174
-search,light,,,background-color,white
-search,light,,,border-color,#004a64
-search,light,help,,color,#687174
-search,light,input,,background-color,white
-search,light,input,,border-color,#004a64
-search,light,input,,color,#687174
-search,light,"input helper",,color,white
-search,dark,,,color,#687174
-search,dark,,,background-color,white
-search,dark,,,border-color,#004a64
-search,dark,help,,color,white
 "skip link",light,,,color,#004a64
 "skip link",light,,,background-color,#e6f0f4
 "skip link",dark,,,color,#e6f0f4
@@ -883,6 +871,16 @@ listing,dark,,,background-color,#003a4f
 "mobile navigation",dark,"close all trigger",,color,white
 "mobile navigation trigger",light,,,color,#354145
 "mobile navigation trigger",dark,,,color,white
+search,light,,,color,#354145
+search,light,,active,color,#00698f
+search,light,"menu item",,border-color,transparent
+search,light,"menu item",hover,border-color,#00698f
+search,light,"menu item",active,border-color,#00698f
+search,dark,,,color,white
+search,dark,,active,color,#61daff
+search,dark,"menu item",,border-color,transparent
+search,dark,"menu item",hover,border-color,#00698f
+search,dark,"menu item",active,border-color,#61daff
 "table of contents",light,title,,color,#354145
 "table of contents",light,link,,color,#354145
 "table of contents",light,link,,border-color,transparent
