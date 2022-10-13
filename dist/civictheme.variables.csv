@@ -268,10 +268,8 @@ table,dark,"row odd",,background-color,#002937
 table,dark,"row odd",,color,#e7f9ff
 iframe,light,,,background-color,#fdfdfd
 iframe,dark,,,background-color,#0d4458
-tooltip,light,trigger,,color,#33444a
 popover,light,content,,background-color,#fdfdfd
 popover,light,content,,border-color,#adafb0
-tooltip,dark,trigger,,color,#e7f9ff
 popover,dark,content,,background-color,#0d4458
 popover,dark,content,,border-color,#a6bac1
 attachment,light,,,background-color,#fdfdfd
@@ -337,29 +335,35 @@ callout,dark,stripe,,border-color,#00698f
 "event card",light,,,background-color,#fdfdfd
 "event card",light,,,border-top-color,#121313
 "event card",light,heading,,color,#002a39
+"event card",light,heading,hover,color,#003f56
+"event card",light,heading,active,color,#33444a
 "event card",light,"icon arrow",,color,inherit
+"event card",light,icon,,color,#00698f
 "event card",light,location,,color,#33444a
 "event card",light,summary,,color,#33444a
 "event card",dark,,,background-color,#002937
 "event card",dark,,,border-top-color,#00698f
 "event card",dark,heading,,color,#f7fdff
+"event card",dark,heading,hover,color,#a0e9ff
+"event card",dark,heading,active,color,#e7f9ff
 "event card",dark,"icon arrow",,color,inherit
+"event card",dark,icon,,color,#61daff
 "event card",dark,location,,color,#e7f9ff
 "event card",dark,summary,,color,#e7f9ff
 "navigation card",light,,,background-color,#fdfdfd
 "navigation card",light,,,color,#33444a
 "navigation card",light,heading,active,color,#002a39
 "navigation card",light,heading,,color,#002a39
-"navigation card",light,heading,hover,color,#002a39
-"navigation card",light,"icon arrow",,color,#002a39
-"navigation card",light,icon,,color,#002a39
+"navigation card",light,heading,hover,color,#003f56
+"navigation card",light,"icon arrow",,color,#00698f
+"navigation card",light,icon,,color,#00698f
 "navigation card",dark,,,background-color,#002937
 "navigation card",dark,,,color,#e7f9ff
 "navigation card",dark,heading,active,color,#f7fdff
 "navigation card",dark,heading,,color,#f7fdff
-"navigation card",dark,heading,hover,color,#f7fdff
-"navigation card",dark,"icon arrow",,color,#f7fdff
-"navigation card",dark,icon,,color,#f7fdff
+"navigation card",dark,heading,hover,color,#a0e9ff
+"navigation card",dark,"icon arrow",,color,#61daff
+"navigation card",dark,icon,,color,#61daff
 "promo card",light,,,background-color,#fdfdfd
 "promo card",light,,,border-top-color,#121313
 "promo card",light,heading,,color,#002a39
@@ -371,20 +375,14 @@ callout,dark,stripe,,border-color,#00698f
 "promo card",dark,"icon arrow",,color,inherit
 "promo card",dark,summary,,color,#e7f9ff
 "publication card",light,"attachment icon",,color,#33444a
-"publication card",light,"attachment link",,color,#33444a
 "publication card",light,,,background-color,#fdfdfd
 "publication card",light,,,color,#33444a
-"publication card",light,heading,active,color,#002a39
 "publication card",light,heading,,color,#002a39
-"publication card",light,heading,hover,color,#002a39
 "publication card",light,icon,,color,#002a39
 "publication card",dark,"attachment icon",,color,#e7f9ff
-"publication card",dark,"attachment link",,color,#e7f9ff
 "publication card",dark,,,background-color,#002937
 "publication card",dark,,,color,#e7f9ff
-"publication card",dark,heading,active,color,#f7fdff
 "publication card",dark,heading,,color,#f7fdff
-"publication card",dark,heading,hover,color,#f7fdff
 "publication card",dark,icon,,color,#f7fdff
 "service card",light,,,background-color,#fdfdfd
 "service card",light,,,border-top-color,#121313
@@ -393,14 +391,14 @@ callout,dark,stripe,,border-color,#00698f
 "service card",dark,,,border-top-color,#00698f
 "service card",dark,heading,,color,#f7fdff
 "subject card",light,,active,color,#33444a
-"subject card",light,,,color,#33444a
-"subject card",light,,hover,color,#33444a
-"subject card",light,icon,,color,#33444a
-"subject card",light,image,,background-color,#e6e9eb
+"subject card",light,,,color,#00698f
+"subject card",light,,hover,color,#003f56
+"subject card",light,icon,,color,#00698f
+"subject card",light,image,,background-color,#fdfdfd
 "subject card",dark,,active,color,#e7f9ff
-"subject card",dark,,,color,#e7f9ff
-"subject card",dark,,hover,color,#e7f9ff
-"subject card",dark,icon,,color,#e7f9ff
+"subject card",dark,,,color,#61daff
+"subject card",dark,,hover,color,#a0e9ff
+"subject card",dark,icon,,color,#61daff
 "subject card",dark,image,,background-color,#003a4f
 figure,light,caption,,color,#33444a
 figure,light,"caption icon",,color,#33444a
@@ -450,6 +448,7 @@ map,dark,,,background-color,transparent
 map,dark,wrapper,,background-color,#003a4f
 "next steps",light,,active,color,#33444a
 "next steps",light,,,background-color,#fdfdfd
+"next steps",light,,,border-color,#adafb0
 "next steps",light,,,color,#33444a
 "next steps",light,heading,,color,#002a39
 "next steps",light,,hover,color,#33444a
@@ -457,6 +456,7 @@ map,dark,wrapper,,background-color,#003a4f
 "next steps",light,stripe,,color,#121313
 "next steps",dark,,active,color,#e7f9ff
 "next steps",dark,,,background-color,#002937
+"next steps",dark,,,border-color,#1a4e61
 "next steps",dark,,,color,#e7f9ff
 "next steps",dark,heading,,color,#f7fdff
 "next steps",dark,,hover,color,#e7f9ff
@@ -738,13 +738,13 @@ promo,dark,heading,,color,#f7fdff
 "skip link",light,,,background-color,#e6e9eb
 "skip link",dark,,,background-color,#003a4f
 slider,light,,,background-color,#e6e9eb
-slider,light,"progress indicator",,background-color,#e6e9eb
-slider,light,"progress indicator",,color,#33444a
+slider,light,"progress indicator",,background-color,#00698f
+slider,light,"progress indicator",,color,#fafbfb
 slider,light,title,,color,#002a39
 slider,light,wrapper,,background-color,#e6e9eb
 slider,dark,,,background-color,#003a4f
-slider,dark,"progress indicator",,background-color,#003a4f
-slider,dark,"progress indicator",,color,#e7f9ff
+slider,dark,"progress indicator",,background-color,#61daff
+slider,dark,"progress indicator",,color,#003a4f
 slider,dark,title,,color,#f7fdff
 slider,dark,wrapper,,background-color,#003a4f
 slide,light,,,background-color,#e6e9eb
@@ -768,3 +768,5 @@ webform,light,,,color,#33444a
 webform,light,wrapper,,background-color,#e6e9eb
 webform,dark,,,background-color,#003a4f
 webform,dark,,,color,#e7f9ff
+webform,dark,wrapper,,background-color,#003a4f
+pager,light,,,color,#00698f
