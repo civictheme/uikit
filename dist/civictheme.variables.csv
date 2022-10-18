@@ -1,772 +1,765 @@
 component,theme,subcomponent,state,rule,value
-collapsible,light,,,color,#33444a
-collapsible,light,icon,,color,#33444a
-collapsible,dark,,,color,#e7f9ff
-collapsible,dark,icon,,color,#e7f9ff
-button,light,primary,,background-color,#00698f
-button,light,primary,,border-color,#00698f
-button,light,primary,,color,#fafbfb
-button,light,primary,hover,background-color,#003f56
-button,light,primary,hover,border-color,#003f56
-button,light,primary,hover,color,#fafbfb
-button,light,primary,visited,background-color,#00698f
-button,light,primary,visited,border-color,#00698f
-button,light,primary,visited,color,#fafbfb
-button,light,primary,active,background-color,#003f56
-button,light,primary,active,border-color,#003f56
-button,light,primary,active,color,#fafbfb
-button,light,"primary focus outline",,color,#8b5cd7
-button,dark,primary,,background-color,#61daff
-button,dark,primary,,border-color,#61daff
-button,dark,primary,,color,#003a4f
-button,dark,primary,hover,background-color,#a0e9ff
-button,dark,primary,hover,border-color,#a0e9ff
-button,dark,primary,hover,color,#002937
-button,dark,primary,visited,background-color,#61daff
-button,dark,primary,visited,border-color,#61daff
-button,dark,primary,visited,color,#003a4f
-button,dark,primary,active,background-color,#a0e9ff
-button,dark,primary,active,border-color,#a0e9ff
-button,dark,primary,active,color,#002937
-button,dark,"primary focus outline",,color,#8b5cd7
+collapsible,light,,,color,var(--ct-color-light-body)
+collapsible,light,icon,,color,var(--ct-color-light-body)
+collapsible,dark,,,color,var(--ct-color-dark-body)
+collapsible,dark,icon,,color,var(--ct-color-dark-body)
+button,light,primary,,background-color,var(--ct-color-light-interaction-background)
+button,light,primary,,border-color,var(--ct-color-light-interaction-background)
+button,light,primary,,color,var(--ct-color-light-interaction-text)
+button,light,primary,hover,background-color,var(--ct-color-light-interaction-hover-background)
+button,light,primary,hover,border-color,var(--ct-color-light-interaction-hover-background)
+button,light,primary,hover,color,var(--ct-color-light-interaction-hover-text)
+button,light,primary,visited,background-color,var(--ct-color-light-interaction-background)
+button,light,primary,visited,border-color,var(--ct-color-light-interaction-background)
+button,light,primary,visited,color,var(--ct-color-light-interaction-text)
+button,light,primary,active,background-color,var(--ct-color-light-interaction-hover-background)
+button,light,primary,active,border-color,var(--ct-color-light-interaction-hover-background)
+button,light,primary,active,color,var(--ct-color-light-interaction-hover-text)
+button,light,"primary focus outline",,color,var(--ct-color-light-interaction-focus)
+button,dark,primary,,background-color,var(--ct-color-dark-interaction-background)
+button,dark,primary,,border-color,var(--ct-color-dark-interaction-background)
+button,dark,primary,,color,var(--ct-color-dark-interaction-text)
+button,dark,primary,hover,background-color,var(--ct-color-dark-interaction-hover-background)
+button,dark,primary,hover,border-color,var(--ct-color-dark-interaction-hover-background)
+button,dark,primary,hover,color,var(--ct-color-dark-interaction-hover-text)
+button,dark,primary,visited,background-color,var(--ct-color-dark-interaction-background)
+button,dark,primary,visited,border-color,var(--ct-color-dark-interaction-background)
+button,dark,primary,visited,color,var(--ct-color-dark-interaction-text)
+button,dark,primary,active,background-color,var(--ct-color-dark-interaction-hover-background)
+button,dark,primary,active,border-color,var(--ct-color-dark-interaction-hover-background)
+button,dark,primary,active,color,var(--ct-color-dark-interaction-hover-text)
+button,dark,"primary focus outline",,color,var(--ct-color-dark-interaction-focus)
 button,light,secondary,,background-color,transparent
-button,light,secondary,,border-color,#00698f
-button,light,secondary,,color,#00698f
+button,light,secondary,,border-color,var(--ct-color-light-interaction-background)
+button,light,secondary,,color,var(--ct-color-light-interaction-background)
 button,light,secondary,hover,background-color,transparent
-button,light,secondary,hover,border-color,#003f56
-button,light,secondary,hover,color,#003f56
+button,light,secondary,hover,border-color,var(--ct-color-light-interaction-hover-background)
+button,light,secondary,hover,color,var(--ct-color-light-interaction-hover-background)
 button,light,secondary,visited,background-color,transparent
-button,light,secondary,visited,border-color,#00698f
-button,light,secondary,visited,color,#00698f
+button,light,secondary,visited,border-color,var(--ct-color-light-interaction-background)
+button,light,secondary,visited,color,var(--ct-color-light-interaction-background)
 button,light,secondary,active,background-color,transparent
-button,light,secondary,active,border-color,#003f56
-button,light,secondary,active,color,#003f56
-button,light,"secondary focus outline",,color,#8b5cd7
+button,light,secondary,active,border-color,var(--ct-color-light-interaction-hover-background)
+button,light,secondary,active,color,var(--ct-color-light-interaction-hover-background)
+button,light,"secondary focus outline",,color,var(--ct-color-light-interaction-focus)
 button,dark,secondary,,background-color,transparent
-button,dark,secondary,,border-color,#61daff
-button,dark,secondary,,color,#61daff
+button,dark,secondary,,border-color,var(--ct-color-dark-interaction-background)
+button,dark,secondary,,color,var(--ct-color-dark-interaction-background)
 button,dark,secondary,hover,background-color,transparent
-button,dark,secondary,hover,border-color,#a0e9ff
-button,dark,secondary,hover,color,#a0e9ff
+button,dark,secondary,hover,border-color,var(--ct-color-dark-interaction-hover-background)
+button,dark,secondary,hover,color,var(--ct-color-dark-interaction-hover-background)
 button,dark,secondary,visited,background-color,transparent
-button,dark,secondary,visited,border-color,#61daff
-button,dark,secondary,visited,color,#61daff
+button,dark,secondary,visited,border-color,var(--ct-color-dark-interaction-background)
+button,dark,secondary,visited,color,var(--ct-color-dark-interaction-background)
 button,dark,secondary,active,background-color,transparent
-button,dark,secondary,active,border-color,#a0e9ff
-button,dark,secondary,active,color,#a0e9ff
-button,dark,"secondary focus outline",,color,#8b5cd7
+button,dark,secondary,active,border-color,var(--ct-color-dark-interaction-hover-background)
+button,dark,secondary,active,color,var(--ct-color-dark-interaction-hover-background)
+button,dark,"secondary focus outline",,color,var(--ct-color-dark-interaction-focus)
 button,light,tertiary,,background-color,transparent
 button,light,tertiary,,border-color,transparent
-button,light,tertiary,,color,#00698f
+button,light,tertiary,,color,var(--ct-color-light-interaction-background)
 button,light,tertiary,hover,background-color,transparent
 button,light,tertiary,hover,border-color,transparent
-button,light,tertiary,hover,color,#003f56
+button,light,tertiary,hover,color,var(--ct-color-light-interaction-hover-background)
 button,light,tertiary,visited,background-color,transparent
 button,light,tertiary,visited,border-color,transparent
-button,light,tertiary,visited,color,#00698f
+button,light,tertiary,visited,color,var(--ct-color-light-interaction-background)
 button,light,tertiary,active,background-color,transparent
 button,light,tertiary,active,border-color,transparent
-button,light,tertiary,active,color,#003f56
-button,light,"tertiary focus outline",,color,#8b5cd7
+button,light,tertiary,active,color,var(--ct-color-light-interaction-hover-background)
+button,light,"tertiary focus outline",,color,var(--ct-color-light-interaction-focus)
 button,dark,tertiary,,background-color,transparent
 button,dark,tertiary,,border-color,transparent
-button,dark,tertiary,,color,#61daff
+button,dark,tertiary,,color,var(--ct-color-dark-interaction-background)
 button,dark,tertiary,hover,background-color,transparent
 button,dark,tertiary,hover,border-color,transparent
-button,dark,tertiary,hover,color,#a0e9ff
+button,dark,tertiary,hover,color,var(--ct-color-dark-interaction-hover-background)
 button,dark,tertiary,visited,background-color,transparent
 button,dark,tertiary,visited,border-color,transparent
-button,dark,tertiary,visited,color,#61daff
+button,dark,tertiary,visited,color,var(--ct-color-dark-interaction-background)
 button,dark,tertiary,active,background-color,transparent
 button,dark,tertiary,active,border-color,transparent
-button,dark,tertiary,active,color,#a0e9ff
-button,dark,"tertiary focus outline",,color,#8b5cd7
+button,dark,tertiary,active,color,var(--ct-color-dark-interaction-hover-background)
+button,dark,"tertiary focus outline",,color,var(--ct-color-dark-interaction-focus)
 chip,light,,,background-color,transparent
-chip,light,,,border-color,#00698f
-chip,light,,,color,#00698f
-chip,light,dismiss,,color,#00698f
-chip,light,,hover,background-color,#003f56
-chip,light,,hover,border-color,#003f56
-chip,light,,hover,color,#fafbfb
+chip,light,,,border-color,var(--ct-color-light-interaction-background)
+chip,light,,,color,var(--ct-color-light-interaction-background)
+chip,light,dismiss,,color,var(--ct-color-light-interaction-background)
+chip,light,,hover,background-color,var(--ct-color-light-interaction-hover-background)
+chip,light,,hover,border-color,var(--ct-color-light-interaction-hover-background)
+chip,light,,hover,color,var(--ct-color-light-interaction-hover-text)
 chip,light,selected,,background-color,transparent
-chip,light,selected,,border-color,#00698f
-chip,light,selected,,color,#00698f
-chip,light,,active,background-color,#003f56
-chip,light,,active,border-color,#003f56
-chip,light,,active,color,#fafbfb
+chip,light,selected,,border-color,var(--ct-color-light-interaction-background)
+chip,light,selected,,color,var(--ct-color-light-interaction-background)
+chip,light,,active,background-color,var(--ct-color-light-interaction-hover-background)
+chip,light,,active,border-color,var(--ct-color-light-interaction-hover-background)
+chip,light,,active,color,var(--ct-color-light-interaction-hover-text)
 chip,light,,visited,background-color,transparent
-chip,light,,visited,border-color,#00698f
-chip,light,,visited,color,#00698f
-chip,light,"focus outline",,color,#8b5cd7
+chip,light,,visited,border-color,var(--ct-color-light-interaction-background)
+chip,light,,visited,color,var(--ct-color-light-interaction-background)
+chip,light,"focus outline",,color,var(--ct-color-light-interaction-focus)
 chip,dark,,,background-color,transparent
-chip,dark,,,border-color,#61daff
-chip,dark,,,color,#61daff
-chip,dark,dismiss,,color,#61daff
-chip,dark,,hover,background-color,#a0e9ff
-chip,dark,,hover,border-color,#a0e9ff
-chip,dark,,hover,color,#002937
+chip,dark,,,border-color,var(--ct-color-dark-interaction-background)
+chip,dark,,,color,var(--ct-color-dark-interaction-background)
+chip,dark,dismiss,,color,var(--ct-color-dark-interaction-background)
+chip,dark,,hover,background-color,var(--ct-color-dark-interaction-hover-background)
+chip,dark,,hover,border-color,var(--ct-color-dark-interaction-hover-background)
+chip,dark,,hover,color,var(--ct-color-dark-interaction-hover-text)
 chip,dark,selected,,background-color,transparent
-chip,dark,selected,,border-color,#61daff
-chip,dark,selected,,color,#61daff
-chip,dark,,active,background-color,#a0e9ff
-chip,dark,,active,border-color,#a0e9ff
-chip,dark,,active,color,#002937
+chip,dark,selected,,border-color,var(--ct-color-dark-interaction-background)
+chip,dark,selected,,color,var(--ct-color-dark-interaction-background)
+chip,dark,,active,background-color,var(--ct-color-dark-interaction-hover-background)
+chip,dark,,active,border-color,var(--ct-color-dark-interaction-hover-background)
+chip,dark,,active,color,var(--ct-color-dark-interaction-hover-text)
 chip,dark,,visited,background-color,transparent
-chip,dark,,visited,border-color,#61daff
-chip,dark,,visited,color,#61daff
-chip,dark,"focus outline",,color,#8b5cd7
-input,light,,,background-color,#fdfdfd
-input,light,,,border-color,#adafb0
-input,light,,,color,#33444a
-input,light,,hover,border-color,#00698f
-input,light,focus,,background-color,#fdfdfd
-input,light,focus,,color,#33444a
-input,light,"focus outline",,color,#8b5cd7
-input,light,focus,,border-color,#5c5d5e
-input,light,error,,border-color,#ce3836
-input,light,success,,border-color,#008482
-input,dark,,,background-color,#0d4458
-input,dark,,,border-color,#a6bac1
-input,dark,,,color,#e7f9ff
-input,dark,,hover,border-color,#61daff
-input,dark,focus,,border-color,#1a4e61
-input,dark,error,,border-color,#e85653
-input,dark,success,,border-color,#12b0ae
-"radio label",light,,,color,#33444a
-radio,light,,,border-color,#adafb0
-radio,light,selected,,background-color,#00698f
-radio,light,,active,background-color,#33444a
-radio,light,check,,color,#fafbfb
-"radio label",dark,,,color,#e7f9ff
-radio,dark,,,border-color,#002937
-radio,dark,selected,,background-color,#61daff
-radio,dark,,active,background-color,#e7f9ff
-radio,dark,check,,color,#003a4f
-"checkbox label",light,,,color,#33444a
-checkbox,light,,,border-color,#adafb0
-checkbox,light,selected,,background-color,#00698f
-checkbox,light,,active,background-color,#33444a
-checkbox,light,check,,color,#fafbfb
-"checkbox label",dark,,,color,#e7f9ff
-checkbox,dark,,,border-color,#002937
-checkbox,dark,selected,,background-color,#61daff
-checkbox,dark,,active,background-color,#e7f9ff
-checkbox,dark,check,,color,#003a4f
-"field description",light,,,color,#33444a
-"field description",dark,,,color,#e7f9ff
+chip,dark,,visited,border-color,var(--ct-color-dark-interaction-background)
+chip,dark,,visited,color,var(--ct-color-dark-interaction-background)
+chip,dark,"focus outline",,color,var(--ct-color-dark-interaction-focus)
+input,light,,,background-color,var(--ct-color-light-background-light)
+input,light,,,border-color,var(--ct-color-light-border-light)
+input,light,,,color,var(--ct-color-light-body)
+input,light,,hover,border-color,var(--ct-color-light-interaction-background)
+input,light,focus,,background-color,var(--ct-color-light-background-light)
+input,light,focus,,color,var(--ct-color-light-body)
+input,light,"focus outline",,color,var(--ct-color-light-interaction-focus)
+input,light,focus,,border-color,var(--ct-color-light-border)
+input,light,error,,border-color,var(--ct-color-light-error)
+input,light,success,,border-color,var(--ct-color-light-success)
+input,dark,,,background-color,var(--ct-color-dark-background-light)
+input,dark,,,border-color,var(--ct-color-dark-border-light)
+input,dark,,,color,var(--ct-color-dark-body)
+input,dark,,hover,border-color,var(--ct-color-dark-interaction-background)
+input,dark,focus,,border-color,var(--ct-color-dark-border)
+input,dark,error,,border-color,var(--ct-color-dark-error)
+input,dark,success,,border-color,var(--ct-color-dark-success)
+"radio label",light,,,color,var(--ct-color-light-body)
+radio,light,,,border-color,var(--ct-color-light-border-light)
+radio,light,selected,,background-color,var(--ct-color-light-interaction-background)
+radio,light,,active,background-color,var(--ct-color-light-body)
+radio,light,check,,color,var(--ct-color-light-interaction-text)
+"radio label",dark,,,color,var(--ct-color-dark-body)
+radio,dark,,,border-color,var(--ct-color-dark-border-dark)
+radio,dark,selected,,background-color,var(--ct-color-dark-interaction-background)
+radio,dark,,active,background-color,var(--ct-color-dark-body)
+radio,dark,check,,color,var(--ct-color-dark-interaction-text)
+"checkbox label",light,,,color,var(--ct-color-light-body)
+checkbox,light,,,border-color,var(--ct-color-light-border-light)
+checkbox,light,selected,,background-color,var(--ct-color-light-interaction-background)
+checkbox,light,,active,background-color,var(--ct-color-light-body)
+checkbox,light,check,,color,var(--ct-color-light-interaction-text)
+"checkbox label",dark,,,color,var(--ct-color-dark-body)
+checkbox,dark,,,border-color,var(--ct-color-dark-border-dark)
+checkbox,dark,selected,,background-color,var(--ct-color-dark-interaction-background)
+checkbox,dark,,active,background-color,var(--ct-color-dark-body)
+checkbox,dark,check,,color,var(--ct-color-dark-interaction-text)
+"field description",light,,,color,var(--ct-color-light-body)
+"field description",dark,,,color,var(--ct-color-dark-body)
 "field message",light,error,,background-color,#f8e1e1
-"field message",light,error,,border-color,#ce3836
-"field message",light,error,,color,#33444a
-"field message",light,"error icon",,color,#ce3836
+"field message",light,error,,border-color,var(--ct-color-light-error)
+"field message",light,error,,color,var(--ct-color-light-body)
+"field message",light,"error icon",,color,var(--ct-color-light-error)
 "field message",light,information,,background-color,#d9ebf5
-"field message",light,information,,border-color,#007cbf
-"field message",light,information,,color,#33444a
-"field message",light,"information icon",,color,#007cbf
-"field message",light,success,,border-color,#008482
+"field message",light,information,,border-color,var(--ct-color-light-information)
+"field message",light,information,,color,var(--ct-color-light-body)
+"field message",light,"information icon",,color,var(--ct-color-light-information)
+"field message",light,success,,border-color,var(--ct-color-light-success)
 "field message",light,success,,background-color,#d9edec
-"field message",light,success,,color,#33444a
-"field message",light,"success icon",,color,#008482
+"field message",light,success,,color,var(--ct-color-light-body)
+"field message",light,"success icon",,color,var(--ct-color-light-success)
 "field message",light,warning,,background-color,#f7e5d9
-"field message",light,warning,,border-color,#c95100
-"field message",light,warning,,color,#33444a
-"field message",light,"warning icon",,color,#c95100
+"field message",light,warning,,border-color,var(--ct-color-light-warning)
+"field message",light,warning,,color,var(--ct-color-light-body)
+"field message",light,"warning icon",,color,var(--ct-color-light-warning)
 "field message",dark,error,,background-color,#a23c3a
-"field message",dark,error,,border-color,#e85653
-"field message",dark,error,,color,#e7f9ff
-"field message",dark,"error icon",,color,#e85653
+"field message",dark,error,,border-color,var(--ct-color-dark-error)
+"field message",dark,error,,color,var(--ct-color-dark-body)
+"field message",dark,"error icon",,color,var(--ct-color-dark-error)
 "field message",dark,information,,background-color,#3589b0
-"field message",dark,information,,border-color,#4cc4fc
-"field message",dark,information,,color,#e7f9ff
-"field message",dark,"information icon",,color,#4cc4fc
-"field message",dark,success,,border-color,#12b0ae
+"field message",dark,information,,border-color,var(--ct-color-dark-information)
+"field message",dark,information,,color,var(--ct-color-dark-body)
+"field message",dark,"information icon",,color,var(--ct-color-dark-information)
+"field message",dark,success,,border-color,var(--ct-color-dark-success)
 "field message",dark,success,,background-color,#0d7b7a
-"field message",dark,success,,color,#e7f9ff
-"field message",dark,"success icon",,color,#12b0ae
+"field message",dark,success,,color,var(--ct-color-dark-body)
+"field message",dark,"success icon",,color,var(--ct-color-dark-success)
 "field message",dark,warning,,background-color,#9f5c30
-"field message",dark,warning,,border-color,#e38444
-"field message",dark,warning,,color,#e7f9ff
-"field message",dark,"warning icon",,color,#e38444
-label,light,,,color,#002a39
-label,light,required,,color,#ce3836
-label,dark,,,color,#f7fdff
-label,dark,required,,color,#e85653
-select,light,,,background-color,#fdfdfd
-select,light,,,color,#33444a
-select,light,,hover,border-color,#adafb0
-select,light,focus,,border-color,#00698f
-select,light,error,,border-color,#ce3836
-select,light,option,,background-color,#fdfdfd
-select,dark,,,background-color,#0d4458
-select,dark,,,color,#e7f9ff
-select,dark,,hover,border-color,#a6bac1
-select,dark,focus,,border-color,#61daff
-select,dark,error,,border-color,#e85653
-select,dark,option,,background-color,#0d4458
-"content link",light,,,color,#00698f
-"content link",light,,hover,background-color,#003f56
-"content link",light,,hover,color,#fafbfb
-"content link",light,,visited,color,#33444a
-"content link",light,visited,hover,color,#fafbfb
-"content link",light,visited,hover,border-color,#8b5cd7
-"content link",dark,,,color,#61daff
-"content link",dark,,hover,background-color,#a0e9ff
-"content link",dark,,hover,color,#002937
-"content link",dark,,visited,color,#e7f9ff
-"content link",dark,visited,hover,color,#002937
-"content link",dark,visited,hover,border-color,#8b5cd7
-link,light,,,color,#00698f
-link,light,,hover,color,#003f56
-link,light,,visited,color,#00698f
-link,light,,active,color,#33444a
-link,dark,,,color,#61daff
-link,dark,,hover,color,#a0e9ff
-link,dark,,visited,color,#61daff
-link,dark,,active,color,#e7f9ff
-heading,light,,,color,#002a39
-heading,dark,,,color,#f7fdff
-tag,light,primary,,background-color,#00698f
-tag,light,primary,,border-color,#00698f
-tag,light,primary,,color,#fafbfb
+"field message",dark,warning,,border-color,var(--ct-color-dark-warning)
+"field message",dark,warning,,color,var(--ct-color-dark-body)
+"field message",dark,"warning icon",,color,var(--ct-color-dark-warning)
+label,light,,,color,var(--ct-color-light-heading)
+label,light,required,,color,var(--ct-color-light-error)
+label,dark,,,color,var(--ct-color-dark-heading)
+label,dark,required,,color,var(--ct-color-dark-error)
+select,light,,,background-color,var(--ct-color-light-background-light)
+select,light,,,color,var(--ct-color-light-body)
+select,light,,hover,border-color,var(--ct-color-light-border-light)
+select,light,focus,,border-color,var(--ct-color-light-interaction-background)
+select,light,error,,border-color,var(--ct-color-light-error)
+select,light,option,,background-color,var(--ct-color-light-background-light)
+select,dark,,,background-color,var(--ct-color-dark-background-light)
+select,dark,,,color,var(--ct-color-dark-body)
+select,dark,,hover,border-color,var(--ct-color-dark-border-light)
+select,dark,focus,,border-color,var(--ct-color-dark-interaction-background)
+select,dark,error,,border-color,var(--ct-color-dark-error)
+select,dark,option,,background-color,var(--ct-color-dark-background-light)
+"content link",light,,,color,var(--ct-color-light-interaction-background)
+"content link",light,,hover,background-color,var(--ct-color-light-interaction-hover-background)
+"content link",light,,hover,color,var(--ct-color-light-interaction-hover-text)
+"content link",light,,visited,color,var(--ct-color-light-body)
+"content link",light,visited,hover,color,var(--ct-color-light-interaction-hover-text)
+"content link",light,visited,hover,border-color,var(--ct-color-light-interaction-focus)
+"content link",dark,,,color,var(--ct-color-dark-interaction-background)
+"content link",dark,,hover,background-color,var(--ct-color-dark-interaction-hover-background)
+"content link",dark,,hover,color,var(--ct-color-dark-interaction-hover-text)
+"content link",dark,,visited,color,var(--ct-color-dark-body)
+"content link",dark,visited,hover,color,var(--ct-color-dark-interaction-hover-text)
+"content link",dark,visited,hover,border-color,var(--ct-color-dark-interaction-focus)
+link,light,,,color,var(--ct-color-light-interaction-background)
+link,light,,hover,color,var(--ct-color-light-interaction-hover-background)
+link,light,,visited,color,var(--ct-color-light-interaction-background)
+link,light,,active,color,var(--ct-color-light-body)
+link,dark,,,color,var(--ct-color-dark-interaction-background)
+link,dark,,hover,color,var(--ct-color-dark-interaction-hover-background)
+link,dark,,visited,color,var(--ct-color-dark-interaction-background)
+link,dark,,active,color,var(--ct-color-dark-body)
+heading,light,,,color,var(--ct-color-light-heading)
+heading,dark,,,color,var(--ct-color-dark-heading)
+tag,light,primary,,background-color,var(--ct-color-light-interaction-background)
+tag,light,primary,,border-color,var(--ct-color-light-interaction-background)
+tag,light,primary,,color,var(--ct-color-light-interaction-text)
 tag,light,secondary,,background-color,transparent
-tag,light,secondary,,border-color,#00698f
-tag,light,secondary,,color,#00698f
+tag,light,secondary,,border-color,var(--ct-color-light-interaction-background)
+tag,light,secondary,,color,var(--ct-color-light-interaction-background)
 tag,light,tertiary,,background-color,transparent
 tag,light,tertiary,,border-color,transparent
-tag,light,tertiary,,color,#00698f
-tag,dark,primary,,background-color,#61daff
-tag,dark,primary,,border-color,#61daff
-tag,dark,primary,,color,#003a4f
+tag,light,tertiary,,color,var(--ct-color-light-interaction-background)
+tag,dark,primary,,background-color,var(--ct-color-dark-interaction-background)
+tag,dark,primary,,border-color,var(--ct-color-dark-interaction-background)
+tag,dark,primary,,color,var(--ct-color-dark-interaction-text)
 tag,dark,secondary,,background-color,transparent
-tag,dark,secondary,,border-color,#61daff
-tag,dark,secondary,,color,#61daff
+tag,dark,secondary,,border-color,var(--ct-color-dark-interaction-background)
+tag,dark,secondary,,color,var(--ct-color-dark-interaction-background)
 tag,dark,tertiary,,background-color,transparent
 tag,dark,tertiary,,border-color,transparent
-tag,dark,tertiary,,color,#61daff
-table,light,,,background-color,#fdfdfd
-table,light,,,border-color,#5c5d5e
-table,light,caption,,color,#33444a
-table,light,,,color,#33444a
-table,light,footer,,border-color,#5c5d5e
-table,light,footer,,color,#002a39
-table,light,header,,border-color,#5c5d5e
-table,light,header,,color,#002a39
-table,light,"row even",,background-color,#e6e9eb
-table,light,"row even",,color,#33444a
-table,light,"row odd",,background-color,#fdfdfd
-table,light,"row odd",,color,#33444a
-table,dark,,,background-color,#002937
-table,dark,,,border-color,#1a4e61
-table,dark,caption,,color,#e7f9ff
-table,dark,,,color,#e7f9ff
-table,dark,footer,,border-color,#1a4e61
-table,dark,footer,,color,#f7fdff
-table,dark,header,,border-color,#1a4e61
-table,dark,header,,color,#f7fdff
-table,dark,"row even",,background-color,#003a4f
-table,dark,"row even",,color,#e7f9ff
-table,dark,"row odd",,background-color,#002937
-table,dark,"row odd",,color,#e7f9ff
-iframe,light,,,background-color,#fdfdfd
-iframe,dark,,,background-color,#0d4458
-popover,light,content,,background-color,#fdfdfd
-popover,light,content,,border-color,#adafb0
-popover,dark,content,,background-color,#0d4458
-popover,dark,content,,border-color,#a6bac1
-attachment,light,,,background-color,#fdfdfd
-attachment,light,,,border-color,#adafb0
-attachment,light,,,color,#33444a
-attachment,light,date,,color,#33444a
-attachment,light,heading,,color,#002a39
-attachment,light,icon,,color,#33444a
-attachment,light,title,,color,#33444a
-attachment,light,wrapper,,background-color,#e6e9eb
-attachment,dark,,,background-color,#002937
-attachment,dark,,,border-color,#002937
-attachment,dark,,,color,#e7f9ff
-attachment,dark,date,,color,#e7f9ff
-attachment,dark,heading,,color,#f7fdff
-attachment,dark,icon,,color,#e7f9ff
-attachment,dark,title,,color,#e7f9ff
-attachment,dark,wrapper,,background-color,#003a4f
-"basic content",light,base,,color,#33444a
-"basic content",light,blockquote,,color,#33444a
-"basic content",light,"heading 1",,color,#002a39
-"basic content",light,"heading 2",,color,#002a39
-"basic content",light,"heading 3",,color,#002a39
-"basic content",light,"heading 4",,color,#002a39
-"basic content",light,"heading 5",,color,#002a39
-"basic content",light,"heading 6",,color,#002a39
-"basic content",light,"ol li",,color,#33444a
-"basic content",light,"ol li marker",,color,#33444a
-"basic content",light,"ul li",,color,#33444a
-"basic content",light,"ul li marker",,color,#33444a
-"basic content",light,wrapper,,background-color,#e6e9eb
-"basic content",dark,base,,color,#e7f9ff
-"basic content",dark,blockquote,,color,#e7f9ff
-"basic content",dark,"heading 1",,color,#f7fdff
-"basic content",dark,"heading 2",,color,#f7fdff
-"basic content",dark,"heading 3",,color,#f7fdff
-"basic content",dark,"heading 4",,color,#f7fdff
-"basic content",dark,"heading 5",,color,#f7fdff
-"basic content",dark,"heading 6",,color,#f7fdff
-"basic content",dark,"ol li",,color,#e7f9ff
-"basic content",dark,"ol li marker",,color,#e7f9ff
-"basic content",dark,"ul li",,color,#e7f9ff
-"basic content",dark,"ul li marker",,color,#e7f9ff
-"basic content",dark,wrapper,,background-color,#003a4f
-callout,light,,,background-color,#e6e9eb
-callout,light,heading,,color,#002a39
-callout,light,summary,,color,#33444a
-callout,light,stripe,,border-color,#121313
-callout,dark,,,background-color,#003a4f
-callout,dark,heading,,color,#f7fdff
-callout,dark,summary,,color,#e7f9ff
-callout,dark,stripe,,border-color,#00698f
-"dropdown filter",light,"filter options",,background-color,#fdfdfd
+tag,dark,tertiary,,color,var(--ct-color-dark-interaction-background)
+table,light,,,background-color,var(--ct-color-light-background-light)
+table,light,,,border-color,var(--ct-color-light-border)
+table,light,caption,,color,var(--ct-color-light-body)
+table,light,,,color,var(--ct-color-light-body)
+table,light,footer,,border-color,var(--ct-color-light-border)
+table,light,footer,,color,var(--ct-color-light-heading)
+table,light,header,,border-color,var(--ct-color-light-border)
+table,light,header,,color,var(--ct-color-light-heading)
+table,light,"row even",,background-color,var(--ct-color-light-background)
+table,light,"row even",,color,var(--ct-color-light-body)
+table,light,"row odd",,background-color,var(--ct-color-light-background-light)
+table,light,"row odd",,color,var(--ct-color-light-body)
+table,dark,,,background-color,var(--ct-color-dark-background-dark)
+table,dark,,,border-color,var(--ct-color-dark-border)
+table,dark,caption,,color,var(--ct-color-dark-body)
+table,dark,,,color,var(--ct-color-dark-body)
+table,dark,footer,,border-color,var(--ct-color-dark-border)
+table,dark,footer,,color,var(--ct-color-dark-heading)
+table,dark,header,,border-color,var(--ct-color-dark-border)
+table,dark,header,,color,var(--ct-color-dark-heading)
+table,dark,"row even",,background-color,var(--ct-color-dark-background)
+table,dark,"row even",,color,var(--ct-color-dark-body)
+table,dark,"row odd",,background-color,var(--ct-color-dark-background-dark)
+table,dark,"row odd",,color,var(--ct-color-dark-body)
+iframe,light,,,background-color,var(--ct-color-light-background-light)
+iframe,dark,,,background-color,var(--ct-color-dark-background-light)
+popover,light,content,,background-color,var(--ct-color-light-background-light)
+popover,light,content,,border-color,var(--ct-color-light-border-light)
+popover,dark,content,,background-color,var(--ct-color-dark-background-light)
+popover,dark,content,,border-color,var(--ct-color-dark-border-light)
+attachment,light,,,background-color,var(--ct-color-light-background-light)
+attachment,light,,,border-color,var(--ct-color-light-border-light)
+attachment,light,,,color,var(--ct-color-light-body)
+attachment,light,date,,color,var(--ct-color-light-body)
+attachment,light,heading,,color,var(--ct-color-light-heading)
+attachment,light,icon,,color,var(--ct-color-light-body)
+attachment,light,title,,color,var(--ct-color-light-body)
+attachment,light,wrapper,,background-color,var(--ct-color-light-background)
+attachment,dark,,,background-color,var(--ct-color-dark-background-dark)
+attachment,dark,,,border-color,var(--ct-color-dark-border-dark)
+attachment,dark,,,color,var(--ct-color-dark-body)
+attachment,dark,date,,color,var(--ct-color-dark-body)
+attachment,dark,heading,,color,var(--ct-color-dark-heading)
+attachment,dark,icon,,color,var(--ct-color-dark-body)
+attachment,dark,title,,color,var(--ct-color-dark-body)
+attachment,dark,wrapper,,background-color,var(--ct-color-dark-background)
+"basic content",light,base,,color,var(--ct-color-light-body)
+"basic content",light,blockquote,,color,var(--ct-color-light-body)
+"basic content",light,"heading 1",,color,var(--ct-color-light-heading)
+"basic content",light,"heading 2",,color,var(--ct-color-light-heading)
+"basic content",light,"heading 3",,color,var(--ct-color-light-heading)
+"basic content",light,"heading 4",,color,var(--ct-color-light-heading)
+"basic content",light,"heading 5",,color,var(--ct-color-light-heading)
+"basic content",light,"heading 6",,color,var(--ct-color-light-heading)
+"basic content",light,"ol li",,color,var(--ct-color-light-body)
+"basic content",light,"ol li marker",,color,var(--ct-color-light-body)
+"basic content",light,"ul li",,color,var(--ct-color-light-body)
+"basic content",light,"ul li marker",,color,var(--ct-color-light-body)
+"basic content",light,wrapper,,background-color,var(--ct-color-light-background)
+"basic content",dark,base,,color,var(--ct-color-dark-body)
+"basic content",dark,blockquote,,color,var(--ct-color-dark-body)
+"basic content",dark,"heading 1",,color,var(--ct-color-dark-heading)
+"basic content",dark,"heading 2",,color,var(--ct-color-dark-heading)
+"basic content",dark,"heading 3",,color,var(--ct-color-dark-heading)
+"basic content",dark,"heading 4",,color,var(--ct-color-dark-heading)
+"basic content",dark,"heading 5",,color,var(--ct-color-dark-heading)
+"basic content",dark,"heading 6",,color,var(--ct-color-dark-heading)
+"basic content",dark,"ol li",,color,var(--ct-color-dark-body)
+"basic content",dark,"ol li marker",,color,var(--ct-color-dark-body)
+"basic content",dark,"ul li",,color,var(--ct-color-dark-body)
+"basic content",dark,"ul li marker",,color,var(--ct-color-dark-body)
+"basic content",dark,wrapper,,background-color,var(--ct-color-dark-background)
+callout,light,,,background-color,var(--ct-color-light-background)
+callout,light,heading,,color,var(--ct-color-light-heading)
+callout,light,summary,,color,var(--ct-color-light-body)
+callout,light,stripe,,border-color,var(--ct-color-light-highlight)
+callout,dark,,,background-color,var(--ct-color-dark-background)
+callout,dark,heading,,color,var(--ct-color-dark-heading)
+callout,dark,summary,,color,var(--ct-color-dark-body)
+callout,dark,stripe,,border-color,var(--ct-color-dark-highlight)
+"dropdown filter",light,"filter options",,background-color,var(--ct-color-light-background-light)
 "dropdown filter",light,"filter options",,border-color,transparent
-"dropdown filter",light,"filter text",,color,#33444a
-"dropdown filter",light,"filter text icon",,color,#33444a
-"dropdown filter",light,"inline filter text",,color,#33444a
-"dropdown filter",dark,"filter options",,background-color,#002937
+"dropdown filter",light,"filter text",,color,var(--ct-color-light-body)
+"dropdown filter",light,"filter text icon",,color,var(--ct-color-light-body)
+"dropdown filter",light,"inline filter text",,color,var(--ct-color-light-body)
+"dropdown filter",dark,"filter options",,background-color,var(--ct-color-dark-background-dark)
 "dropdown filter",dark,"filter options",,border-color,transparent
-"dropdown filter",dark,"filter text",,color,#e7f9ff
-"dropdown filter",dark,"filter text icon",,color,#e7f9ff
-"dropdown filter",dark,"inline filter text",,color,#e7f9ff
-"event card",light,,,background-color,#fdfdfd
-"event card",light,,,border-top-color,#121313
-"event card",light,heading,,color,#002a39
-"event card",light,heading,hover,color,#003f56
-"event card",light,heading,active,color,#33444a
+"dropdown filter",dark,"filter text",,color,var(--ct-color-dark-body)
+"dropdown filter",dark,"filter text icon",,color,var(--ct-color-dark-body)
+"dropdown filter",dark,"inline filter text",,color,var(--ct-color-dark-body)
+campaign,light,,,background-color,var(--ct-color-light-background-light)
+campaign,light,summary,,color,var(--ct-color-light-body)
+campaign,dark,,,background-color,var(--ct-color-dark-background-dark)
+campaign,dark,summary,,color,var(--ct-color-dark-body)
+"event card",light,,,background-color,var(--ct-color-light-background-light)
+"event card",light,,,border-top-color,var(--ct-color-light-highlight)
+"event card",light,heading,,color,var(--ct-color-light-heading)
+"event card",light,heading,hover,color,var(--ct-color-light-interaction-hover-background)
+"event card",light,heading,active,color,var(--ct-color-light-body)
 "event card",light,"icon arrow",,color,inherit
-"event card",light,icon,,color,#00698f
-"event card",light,location,,color,#33444a
-"event card",light,summary,,color,#33444a
-"event card",dark,,,background-color,#002937
-"event card",dark,,,border-top-color,#00698f
-"event card",dark,heading,,color,#f7fdff
-"event card",dark,heading,hover,color,#a0e9ff
-"event card",dark,heading,active,color,#e7f9ff
+"event card",light,icon,,color,var(--ct-color-light-interaction-background)
+"event card",light,location,,color,var(--ct-color-light-body)
+"event card",light,summary,,color,var(--ct-color-light-body)
+"event card",dark,,,background-color,var(--ct-color-dark-background-dark)
+"event card",dark,,,border-top-color,var(--ct-color-dark-highlight)
+"event card",dark,heading,,color,var(--ct-color-dark-heading)
+"event card",dark,heading,hover,color,var(--ct-color-dark-interaction-hover-background)
+"event card",dark,heading,active,color,var(--ct-color-dark-body)
 "event card",dark,"icon arrow",,color,inherit
-"event card",dark,icon,,color,#61daff
-"event card",dark,location,,color,#e7f9ff
-"event card",dark,summary,,color,#e7f9ff
-"navigation card",light,,,background-color,#fdfdfd
-"navigation card",light,,,color,#33444a
-"navigation card",light,heading,active,color,#002a39
-"navigation card",light,heading,,color,#002a39
-"navigation card",light,heading,hover,color,#003f56
-"navigation card",light,"icon arrow",,color,#00698f
-"navigation card",light,icon,,color,#00698f
-"navigation card",dark,,,background-color,#002937
-"navigation card",dark,,,color,#e7f9ff
-"navigation card",dark,heading,active,color,#f7fdff
-"navigation card",dark,heading,,color,#f7fdff
-"navigation card",dark,heading,hover,color,#a0e9ff
-"navigation card",dark,"icon arrow",,color,#61daff
-"navigation card",dark,icon,,color,#61daff
-"promo card",light,,,background-color,#fdfdfd
-"promo card",light,,,border-top-color,#121313
-"promo card",light,heading,,color,#002a39
-"promo card",light,"icon arrow",,color,inherit
-"promo card",light,summary,,color,#33444a
-"promo card",dark,,,background-color,#002937
-"promo card",dark,,,border-top-color,#00698f
-"promo card",dark,heading,,color,#f7fdff
-"promo card",dark,"icon arrow",,color,inherit
-"promo card",dark,summary,,color,#e7f9ff
-"publication card",light,"attachment icon",,color,#33444a
-"publication card",light,,,background-color,#fdfdfd
-"publication card",light,,,color,#33444a
-"publication card",light,heading,,color,#002a39
-"publication card",light,icon,,color,#002a39
-"publication card",dark,"attachment icon",,color,#e7f9ff
-"publication card",dark,,,background-color,#002937
-"publication card",dark,,,color,#e7f9ff
-"publication card",dark,heading,,color,#f7fdff
-"publication card",dark,icon,,color,#f7fdff
-"service card",light,,,background-color,#fdfdfd
-"service card",light,,,border-top-color,#121313
-"service card",light,heading,,color,#002a39
-"service card",dark,,,background-color,#002937
-"service card",dark,,,border-top-color,#00698f
-"service card",dark,heading,,color,#f7fdff
-"subject card",light,,active,color,#33444a
-"subject card",light,,,color,#00698f
-"subject card",light,,hover,color,#003f56
-"subject card",light,icon,,color,#00698f
-"subject card",light,image,,background-color,#fdfdfd
-"subject card",dark,,active,color,#e7f9ff
-"subject card",dark,,,color,#61daff
-"subject card",dark,,hover,color,#a0e9ff
-"subject card",dark,icon,,color,#61daff
-"subject card",dark,image,,background-color,#003a4f
-figure,light,caption,,color,#33444a
-figure,light,"caption icon",,color,#33444a
-figure,dark,caption,,color,#e7f9ff
-figure,dark,"caption icon",,color,#e7f9ff
-"form element",light,,,color,#33444a
-"form element",dark,,,color,#e7f9ff
-"group filter",light,,,background-color,#e6e9eb
-"group filter",light,,,border-color,#5c5d5e
-"group filter",light,"clear all",,background-color,transparent
-"group filter",light,"clear all",,color,#e6e9eb
-"group filter",light,"clear all icon",,color,#ce3836
-"group filter",light,"dropdown filter",,border-color,#5c5d5e
-"group filter",light,"filters legend",,color,#33444a
-"group filter",light,"mobile clear all label",,color,#e6e9eb
-"group filter",light,"mobile filter title",,color,#e6e9eb
-"group filter",light,"mobile overlay",,background-color,#e6e9eb
-"group filter",light,"mobile toggle",,background-color,#e6e9eb
-"group filter",light,"mobile toggle",,border-color,#5c5d5e
-"group filter",light,"mobile toggle",,color,#00698f
-"group filter",light,"mobile toggle display",,border-color,#5c5d5e
-"group filter",light,"mobile toggle display",,color,#e6e9eb
-"group filter",light,"selected filters",,border-color,#adafb0
-"group filter",light,"selected filters title",,color,#33444a
-"group filter",dark,,,background-color,#003a4f
-"group filter",dark,,,border-color,#61daff
-"group filter",dark,"clear all",,background-color,transparent
-"group filter",dark,"clear all",,color,#003a4f
-"group filter",dark,"clear all icon",,color,#003a4f
-"group filter",dark,"dropdown filter",,border-color,#61daff
-"group filter",dark,"filters legend",,color,#e7f9ff
-"group filter",dark,"mobile clear all label",,color,#003a4f
-"group filter",dark,"mobile filter title",,color,#e7f9ff
-"group filter",dark,"mobile overlay",,background-color,#003a4f
-"group filter",dark,"mobile toggle",,background-color,#003a4f
-"group filter",dark,"mobile toggle",,border-color,#61daff
-"group filter",dark,"mobile toggle",,color,#003a4f
-"group filter",dark,"mobile toggle display",,border-color,#61daff
-"group filter",dark,"mobile toggle display",,color,#003a4f
-"group filter",dark,"selected filters",,border-color,#a6bac1
-"group filter",dark,"selected filters title",,color,#003a4f
-logo,light,stripe,,color,#171718
-logo,dark,stripe,,color,#adafb0
+"event card",dark,icon,,color,var(--ct-color-dark-interaction-background)
+"event card",dark,location,,color,var(--ct-color-dark-body)
+"event card",dark,summary,,color,var(--ct-color-dark-body)
+"navigation card",light,,,background-color,var(--ct-color-light-background-light)
+"navigation card",light,,,color,var(--ct-color-light-body)
+"navigation card",light,heading,active,color,var(--ct-color-light-heading)
+"navigation card",light,heading,,color,var(--ct-color-light-heading)
+"navigation card",light,heading,hover,color,var(--ct-color-light-interaction-hover-background)
+"navigation card",light,"icon arrow",,color,var(--ct-color-light-interaction-background)
+"navigation card",light,icon,,color,var(--ct-color-light-interaction-background)
+"navigation card",dark,,,background-color,var(--ct-color-dark-background-dark)
+"navigation card",dark,,,color,var(--ct-color-dark-body)
+"navigation card",dark,heading,active,color,var(--ct-color-dark-heading)
+"navigation card",dark,heading,,color,var(--ct-color-dark-heading)
+"navigation card",dark,heading,hover,color,var(--ct-color-dark-interaction-hover-background)
+"navigation card",dark,"icon arrow",,color,var(--ct-color-dark-interaction-background)
+"navigation card",dark,icon,,color,var(--ct-color-dark-interaction-background)
+"promo card",light,,,background-color,var(--ct-color-light-background-light)
+"promo card",light,,,border-top-color,var(--ct-color-light-highlight)
+"promo card",light,heading,,color,var(--ct-color-light-heading)
+"promo card",light,"icon arrow",,color,var(--ct-color-light-interaction-background)
+"promo card",light,summary,,color,var(--ct-color-light-body)
+"promo card",dark,,,background-color,var(--ct-color-dark-background-dark)
+"promo card",dark,,,border-top-color,var(--ct-color-dark-highlight)
+"promo card",dark,heading,,color,var(--ct-color-dark-heading)
+"promo card",dark,"icon arrow",,color,var(--ct-color-dark-interaction-background)
+"promo card",dark,summary,,color,var(--ct-color-dark-body)
+"publication card",light,"attachment icon",,color,var(--ct-color-light-body)
+"publication card",light,,,background-color,var(--ct-color-light-background-light)
+"publication card",light,,,color,var(--ct-color-light-body)
+"publication card",light,heading,,color,var(--ct-color-light-heading)
+"publication card",light,icon,,color,var(--ct-color-light-heading)
+"publication card",dark,"attachment icon",,color,var(--ct-color-dark-body)
+"publication card",dark,,,background-color,var(--ct-color-dark-background-dark)
+"publication card",dark,,,color,var(--ct-color-dark-body)
+"publication card",dark,heading,,color,var(--ct-color-dark-heading)
+"publication card",dark,icon,,color,var(--ct-color-dark-heading)
+"service card",light,,,background-color,var(--ct-color-light-background-light)
+"service card",light,,,border-top-color,var(--ct-color-light-highlight)
+"service card",light,heading,,color,var(--ct-color-light-heading)
+"service card",dark,,,background-color,var(--ct-color-dark-background-dark)
+"service card",dark,,,border-top-color,var(--ct-color-dark-highlight)
+"service card",dark,heading,,color,var(--ct-color-dark-heading)
+"subject card",light,,active,color,var(--ct-color-light-body)
+"subject card",light,,,color,var(--ct-color-light-interaction-background)
+"subject card",light,,hover,color,var(--ct-color-light-interaction-hover-background)
+"subject card",light,icon,,color,var(--ct-color-light-interaction-background)
+"subject card",light,image,,background-color,var(--ct-color-light-background-light)
+"subject card",dark,,active,color,var(--ct-color-dark-body)
+"subject card",dark,,,color,var(--ct-color-dark-interaction-background)
+"subject card",dark,,hover,color,var(--ct-color-dark-interaction-hover-background)
+"subject card",dark,icon,,color,var(--ct-color-dark-interaction-background)
+"subject card",dark,image,,background-color,var(--ct-color-dark-background)
+figure,light,caption,,color,var(--ct-color-light-body)
+figure,light,"caption icon",,color,var(--ct-color-light-body)
+figure,dark,caption,,color,var(--ct-color-dark-body)
+figure,dark,"caption icon",,color,var(--ct-color-dark-body)
+"form element",light,,,color,var(--ct-color-light-body)
+"form element",dark,,,color,var(--ct-color-dark-body)
+"group filter",light,,,background-color,var(--ct-color-light-background)
+"group filter",light,,,border-color,var(--ct-color-light-border)
+"group filter",light,"dropdown filter",,border-color,var(--ct-color-light-border)
+"group filter",light,"filters legend",,color,var(--ct-color-light-body)
+"group filter",light,"mobile filter title",,color,var(--ct-color-light-background)
+"group filter",light,"mobile overlay",,background-color,var(--ct-color-light-background)
+"group filter",light,"mobile toggle",,background-color,var(--ct-color-light-background)
+"group filter",light,"mobile toggle",,border-color,var(--ct-color-light-border)
+"group filter",light,"mobile toggle",,color,var(--ct-color-light-interaction-background)
+"group filter",light,"mobile toggle display",,border-color,var(--ct-color-light-border)
+"group filter",light,"mobile toggle display",,color,var(--ct-color-light-background)
+"group filter",light,"selected filters",,border-color,var(--ct-color-light-border-light)
+"group filter",light,"selected filters title",,color,var(--ct-color-light-body)
+"group filter",dark,,,background-color,var(--ct-color-dark-background)
+"group filter",dark,,,border-color,var(--ct-color-dark-interaction-background)
+"group filter",dark,"dropdown filter",,border-color,var(--ct-color-dark-interaction-background)
+"group filter",dark,"filters legend",,color,var(--ct-color-dark-body)
+"group filter",dark,"mobile filter title",,color,var(--ct-color-dark-body)
+"group filter",dark,"mobile overlay",,background-color,var(--ct-color-dark-background)
+"group filter",dark,"mobile toggle",,background-color,var(--ct-color-dark-background)
+"group filter",dark,"mobile toggle",,border-color,var(--ct-color-dark-interaction-background)
+"group filter",dark,"mobile toggle",,color,var(--ct-color-dark-background)
+"group filter",dark,"mobile toggle display",,border-color,var(--ct-color-dark-interaction-background)
+"group filter",dark,"mobile toggle display",,color,var(--ct-color-dark-background)
+"group filter",dark,"selected filters",,border-color,var(--ct-color-dark-border-light)
+"group filter",dark,"selected filters title",,color,var(--ct-color-dark-background)
+logo,light,stripe,,color,var(--ct-color-light-border-dark)
+logo,dark,stripe,,color,var(--ct-color-light-border-light)
 map,light,,,background-color,transparent
-map,light,wrapper,,background-color,#e6e9eb
+map,light,wrapper,,background-color,var(--ct-color-light-background)
 map,dark,,,background-color,transparent
-map,dark,wrapper,,background-color,#003a4f
-"next steps",light,,active,color,#33444a
-"next steps",light,,,background-color,#fdfdfd
-"next steps",light,,,border-color,#adafb0
-"next steps",light,,,color,#33444a
-"next steps",light,heading,,color,#002a39
-"next steps",light,,hover,color,#33444a
-"next steps",light,icon,,color,#002a39
-"next steps",light,stripe,,color,#121313
-"next steps",dark,,active,color,#e7f9ff
-"next steps",dark,,,background-color,#002937
-"next steps",dark,,,border-color,#1a4e61
-"next steps",dark,,,color,#e7f9ff
-"next steps",dark,heading,,color,#f7fdff
-"next steps",dark,,hover,color,#e7f9ff
-"next steps",dark,icon,,color,#f7fdff
-"next steps",dark,stripe,,color,#00698f
-quote,light,,,background-color,#fdfdfd
-quote,light,,,border-color,#121313
-quote,light,body,,color,#33444a
-quote,light,author,,color,#002a39
-quote,dark,,,background-color,#0d4458
-quote,dark,,,border-color,#00698f
-quote,dark,body,,color,#e7f9ff
-quote,dark,author,,color,#f7fdff
-"table of contents",light,link,,background-color,#fdfdfd
-"table of contents",light,link,,border-color,#adafb0
-"table of contents",light,link,,color,#002a39
-"table of contents",light,link,hover,background-color,#e6e9eb
-"table of contents",light,link,hover,border-color,#adafb0
-"table of contents",light,link,hover,color,#002a39
-"table of contents",light,"link stripe",,background-color,#adafb0
-"table of contents",light,"link hover stripe",,background-color,#121313
-"table of contents",light,title,,color,#002a39
-"table of contents",dark,link,,background-color,#0d4458
-"table of contents",dark,link,,border-color,#a6bac1
-"table of contents",dark,link,,color,#f7fdff
-"table of contents",dark,link,hover,background-color,#003a4f
-"table of contents",dark,link,hover,border-color,#a6bac1
-"table of contents",dark,link,hover,color,#f7fdff
-"table of contents",dark,"link stripe",,background-color,#a6bac1
-"table of contents",dark,"link hover stripe",,background-color,#00698f
-"table of contents",dark,title,,color,#f7fdff
-tabs,light,"links stripe",,border-color,#adafb0
-tabs,light,links,,background-color,#e6e9eb
-tabs,light,links,,border-color,#adafb0
-tabs,light,links,active,background-color,#fdfdfd
-tabs,light,links,active,border-color,#adafb0
-tabs,light,panel,,background-color,#e6e9eb
-tabs,light,panel,,border-color,#5c5d5e
-tabs,dark,"links stripe",,border-color,#a6bac1
-tabs,dark,links,,background-color,#003a4f
-tabs,dark,links,,border-color,#a6bac1
-tabs,dark,links,active,background-color,#0d4458
-tabs,dark,links,active,border-color,#a6bac1
-tabs,dark,panel,,background-color,#003a4f
-tabs,dark,panel,,border-color,#1a4e61
-breadcrumb,light,,,color,#33444a
-breadcrumb,dark,,,color,#e7f9ff
-tooltip,light,description,,background-color,#00698f
-tooltip,light,description,,color,#fafbfb
-tooltip,light,icon,,color,#00698f
-tooltip,dark,description,,background-color,#61daff
-tooltip,dark,description,,color,#003a4f
-tooltip,dark,icon,,color,#61daff
-accordion,light,,,background-color,#fdfdfd
-accordion,light,,,border-color,#adafb0
-accordion,light,,,color,#33444a
-accordion,light,button,,background-color,#fdfdfd
-accordion,light,button,,color,#002a39
-accordion,light,icon,,color,#00698f
-accordion,light,stripe,,border-color,#121313
-accordion,light,wrapper,,background-color,#121313
-accordion,dark,,,background-color,#0d4458
-accordion,dark,,,border-color,#002937
-accordion,dark,,,color,#e7f9ff
-accordion,dark,button,,background-color,#0d4458
-accordion,dark,button,,color,#f7fdff
-accordion,dark,icon,,color,#61daff
-accordion,dark,stripe,,border-color,#00698f
-accordion,dark,wrapper,,background-color,#00698f
-alert,light,divider,,color,#00698f
+map,dark,wrapper,,background-color,var(--ct-color-dark-background)
+"next steps",light,,active,color,var(--ct-color-light-body)
+"next steps",light,,,background-color,var(--ct-color-light-background-light)
+"next steps",light,,,border-color,var(--ct-color-light-border-light)
+"next steps",light,,,color,var(--ct-color-light-body)
+"next steps",light,heading,,color,var(--ct-color-light-heading)
+"next steps",light,,hover,color,var(--ct-color-light-body)
+"next steps",light,icon,,color,var(--ct-color-light-heading)
+"next steps",light,stripe,,color,var(--ct-color-light-highlight)
+"next steps",dark,,active,color,var(--ct-color-dark-body)
+"next steps",dark,,,background-color,var(--ct-color-dark-background-dark)
+"next steps",dark,,,border-color,var(--ct-color-dark-border)
+"next steps",dark,,,color,var(--ct-color-dark-body)
+"next steps",dark,heading,,color,var(--ct-color-dark-heading)
+"next steps",dark,,hover,color,var(--ct-color-dark-body)
+"next steps",dark,icon,,color,var(--ct-color-dark-heading)
+"next steps",dark,stripe,,color,var(--ct-color-dark-highlight)
+quote,light,,,background-color,var(--ct-color-light-background-light)
+quote,light,,,border-color,var(--ct-color-light-highlight)
+quote,light,body,,color,var(--ct-color-light-body)
+quote,light,author,,color,var(--ct-color-light-heading)
+quote,dark,,,background-color,var(--ct-color-dark-background-light)
+quote,dark,,,border-color,var(--ct-color-dark-highlight)
+quote,dark,body,,color,var(--ct-color-dark-body)
+quote,dark,author,,color,var(--ct-color-dark-heading)
+"table of contents",light,link,,background-color,var(--ct-color-light-background-light)
+"table of contents",light,link,,border-color,var(--ct-color-light-border-light)
+"table of contents",light,link,,color,var(--ct-color-light-heading)
+"table of contents",light,link,hover,background-color,var(--ct-color-light-background)
+"table of contents",light,link,hover,border-color,var(--ct-color-light-border-light)
+"table of contents",light,link,hover,color,var(--ct-color-light-heading)
+"table of contents",light,"link stripe",,background-color,var(--ct-color-light-border-light)
+"table of contents",light,"link hover stripe",,background-color,var(--ct-color-light-highlight)
+"table of contents",light,title,,color,var(--ct-color-light-heading)
+"table of contents",dark,link,,background-color,var(--ct-color-dark-background-light)
+"table of contents",dark,link,,border-color,var(--ct-color-dark-border-light)
+"table of contents",dark,link,,color,var(--ct-color-dark-heading)
+"table of contents",dark,link,hover,background-color,var(--ct-color-dark-background)
+"table of contents",dark,link,hover,border-color,var(--ct-color-dark-border-light)
+"table of contents",dark,link,hover,color,var(--ct-color-dark-heading)
+"table of contents",dark,"link stripe",,background-color,var(--ct-color-dark-border-light)
+"table of contents",dark,"link hover stripe",,background-color,var(--ct-color-dark-highlight)
+"table of contents",dark,title,,color,var(--ct-color-dark-heading)
+tabs,light,"links stripe",,border-color,var(--ct-color-light-border-light)
+tabs,light,links,,background-color,var(--ct-color-light-background)
+tabs,light,links,,border-color,var(--ct-color-light-border-light)
+tabs,light,links,active,background-color,var(--ct-color-light-background-light)
+tabs,light,links,active,border-color,var(--ct-color-light-border-light)
+tabs,light,panel,,background-color,var(--ct-color-light-background)
+tabs,light,panel,,border-color,var(--ct-color-light-border)
+tabs,dark,"links stripe",,border-color,var(--ct-color-dark-border-light)
+tabs,dark,links,,background-color,var(--ct-color-dark-background)
+tabs,dark,links,,border-color,var(--ct-color-dark-border-light)
+tabs,dark,links,active,background-color,var(--ct-color-dark-background-light)
+tabs,dark,links,active,border-color,var(--ct-color-dark-border-light)
+tabs,dark,panel,,background-color,var(--ct-color-dark-background)
+tabs,dark,panel,,border-color,var(--ct-color-dark-border)
+breadcrumb,light,,,color,var(--ct-color-light-body)
+breadcrumb,dark,,,color,var(--ct-color-dark-body)
+tooltip,light,description,,background-color,var(--ct-color-light-interaction-background)
+tooltip,light,description,,color,var(--ct-color-light-interaction-text)
+tooltip,light,icon,,color,var(--ct-color-light-interaction-background)
+tooltip,dark,description,,background-color,var(--ct-color-dark-interaction-background)
+tooltip,dark,description,,color,var(--ct-color-dark-interaction-text)
+tooltip,dark,icon,,color,var(--ct-color-dark-interaction-background)
+accordion,light,,,background-color,var(--ct-color-light-background-light)
+accordion,light,,,border-color,var(--ct-color-light-border-light)
+accordion,light,,,color,var(--ct-color-light-body)
+accordion,light,button,,background-color,var(--ct-color-light-background-light)
+accordion,light,button,,color,var(--ct-color-light-heading)
+accordion,light,icon,,color,var(--ct-color-light-interaction-background)
+accordion,light,stripe,,border-color,var(--ct-color-light-highlight)
+accordion,light,wrapper,,background-color,var(--ct-color-light-highlight)
+accordion,dark,,,background-color,var(--ct-color-dark-background-light)
+accordion,dark,,,border-color,var(--ct-color-dark-border-dark)
+accordion,dark,,,color,var(--ct-color-dark-body)
+accordion,dark,button,,background-color,var(--ct-color-dark-background-light)
+accordion,dark,button,,color,var(--ct-color-dark-heading)
+accordion,dark,icon,,color,var(--ct-color-dark-interaction-background)
+accordion,dark,stripe,,border-color,var(--ct-color-dark-highlight)
+accordion,dark,wrapper,,background-color,var(--ct-color-dark-highlight)
+alert,light,divider,,color,var(--ct-color-light-interaction-background)
 alert,light,error,,background-color,#faebeb
-alert,light,error,,color,#33444a
-alert,light,"error icon",,color,#ce3836
+alert,light,error,,color,var(--ct-color-light-body)
+alert,light,"error icon",,color,var(--ct-color-light-error)
 alert,light,information,,background-color,#e6f2f9
-alert,light,information,,color,#33444a
-alert,light,"information icon",,color,#007cbf
+alert,light,information,,color,var(--ct-color-light-body)
+alert,light,"information icon",,color,var(--ct-color-light-information)
 alert,light,success,,background-color,#e6f3f3
-alert,light,success,,color,#33444a
-alert,light,"success icon",,color,#008482
+alert,light,success,,color,var(--ct-color-light-body)
+alert,light,"success icon",,color,var(--ct-color-light-success)
 alert,light,warning,,background-color,#faeee6
-alert,light,warning,,color,#33444a
-alert,light,"warning icon",,color,#c95100
-alert,dark,divider,,color,#61daff
+alert,light,warning,,color,var(--ct-color-light-body)
+alert,light,"warning icon",,color,var(--ct-color-light-warning)
+alert,dark,divider,,color,var(--ct-color-dark-interaction-background)
 alert,dark,error,,background-color,#a23c3a
-alert,dark,error,,color,#e7f9ff
-alert,dark,"error icon",,color,#e7f9ff
+alert,dark,error,,color,var(--ct-color-dark-body)
+alert,dark,"error icon",,color,var(--ct-color-dark-body)
 alert,dark,information,,background-color,#3589b0
-alert,dark,information,,color,#e7f9ff
-alert,dark,"information icon",,color,#e7f9ff
+alert,dark,information,,color,var(--ct-color-dark-body)
+alert,dark,"information icon",,color,var(--ct-color-dark-body)
 alert,dark,success,,background-color,#0d7b7a
-alert,dark,success,,color,#e7f9ff
-alert,dark,"success icon",,color,#e7f9ff
+alert,dark,success,,color,var(--ct-color-dark-body)
+alert,dark,"success icon",,color,var(--ct-color-dark-body)
 alert,dark,warning,,background-color,#9f5c30
-alert,dark,warning,,color,#e7f9ff
-alert,dark,"warning icon",,color,#e7f9ff
-banner,light,,,background-color,#e6e9eb
-banner,light,,,color,#33444a
-banner,dark,,,background-color,#003a4f
-banner,dark,,,color,#e7f9ff
+alert,dark,warning,,color,var(--ct-color-dark-body)
+alert,dark,"warning icon",,color,var(--ct-color-dark-body)
+banner,light,,,background-color,var(--ct-color-light-background)
+banner,light,,,color,var(--ct-color-light-body)
+banner,dark,,,background-color,var(--ct-color-dark-background)
+banner,dark,,,color,var(--ct-color-dark-body)
 layout,light,,,background-color,inherit
 layout,dark,,,background-color,inherit
-footer,light,,,background-color,#e6e9eb
-footer,light,,,border-color,#adafb0
-footer,light,,,color,#33444a
-footer,light,collapsible,,border-color,#adafb0
-footer,dark,,,background-color,#003a4f
-footer,dark,,,border-color,#1a4e61
-footer,dark,,,color,#e7f9ff
-footer,dark,collapsible,,border-color,#1a4e61
-header,light,middle,,background-color,#fdfdfd
-header,light,middle,,border-color,#adafb0
-header,light,top,,background-color,#e6e9eb
-header,light,top,,color,#33444a
-header,dark,middle,,background-color,#003a4f
-header,dark,middle,,border-color,#a6bac1
-header,dark,top,,background-color,#002937
-header,dark,top,,color,#e7f9ff
-list,light,,,background-color,#e6e9eb
-list,light,,,color,#33444a
-list,dark,,,background-color,#003a4f
-list,dark,,,color,#e7f9ff
-list,dark,with,,background-color,#003a4f
+footer,light,,,background-color,var(--ct-color-light-background)
+footer,light,,,border-color,var(--ct-color-light-border-light)
+footer,light,,,color,var(--ct-color-light-body)
+footer,dark,,,background-color,var(--ct-color-dark-background)
+footer,dark,,,border-color,var(--ct-color-dark-border)
+footer,dark,,,color,var(--ct-color-dark-body)
+header,light,middle,,background-color,var(--ct-color-light-background-light)
+header,light,middle,,border-color,var(--ct-color-light-border-light)
+header,light,top,,background-color,var(--ct-color-light-background)
+header,light,top,,color,var(--ct-color-light-body)
+header,dark,middle,,background-color,var(--ct-color-dark-background)
+header,dark,middle,,border-color,var(--ct-color-dark-border-light)
+header,dark,top,,background-color,var(--ct-color-dark-background-dark)
+header,dark,top,,color,var(--ct-color-dark-body)
+list,light,,,background-color,var(--ct-color-light-background)
+list,light,,,color,var(--ct-color-light-body)
+list,dark,,,background-color,var(--ct-color-dark-background)
+list,dark,,,color,var(--ct-color-dark-body)
 message,light,error,,background-color,#faebeb
-message,light,error,,border-color,#ce3836
-message,light,error,,color,#33444a
-message,light,"error icon",,color,#ce3836
+message,light,error,,border-color,var(--ct-color-light-error)
+message,light,error,,color,var(--ct-color-light-body)
+message,light,"error icon",,color,var(--ct-color-light-error)
 message,light,information,,background-color,#e6f2f9
-message,light,information,,border-color,#007cbf
-message,light,information,,color,#33444a
-message,light,"information icon",,color,#007cbf
-message,light,success,,border-color,#008482
+message,light,information,,border-color,var(--ct-color-light-information)
+message,light,information,,color,var(--ct-color-light-body)
+message,light,"information icon",,color,var(--ct-color-light-information)
+message,light,success,,border-color,var(--ct-color-light-success)
 message,light,success,,background-color,#e6f3f3
-message,light,success,,color,#33444a
-message,light,"success icon",,color,#008482
+message,light,success,,color,var(--ct-color-light-body)
+message,light,"success icon",,color,var(--ct-color-light-success)
 message,light,warning,,background-color,#faeee6
-message,light,warning,,border-color,#c95100
-message,light,warning,,color,#33444a
-message,light,"warning icon",,color,#c95100
+message,light,warning,,border-color,var(--ct-color-light-warning)
+message,light,warning,,color,var(--ct-color-light-body)
+message,light,"warning icon",,color,var(--ct-color-light-warning)
 message,dark,error,,background-color,#a23c3a
-message,dark,error,,border-color,#e85653
-message,dark,error,,color,#e7f9ff
-message,dark,"error icon",,color,#e7f9ff
+message,dark,error,,border-color,var(--ct-color-dark-error)
+message,dark,error,,color,var(--ct-color-dark-body)
+message,dark,"error icon",,color,var(--ct-color-dark-body)
 message,dark,information,,background-color,#3589b0
-message,dark,information,,border-color,#4cc4fc
-message,dark,information,,color,#e7f9ff
-message,dark,"information icon",,color,#e7f9ff
-message,dark,success,,border-color,#12b0ae
+message,dark,information,,border-color,var(--ct-color-dark-information)
+message,dark,information,,color,var(--ct-color-dark-body)
+message,dark,"information icon",,color,var(--ct-color-dark-body)
+message,dark,success,,border-color,var(--ct-color-dark-success)
 message,dark,success,,background-color,#0d7b7a
-message,dark,success,,color,#e7f9ff
-message,dark,"success icon",,color,#e7f9ff
+message,dark,success,,color,var(--ct-color-dark-body)
+message,dark,"success icon",,color,var(--ct-color-dark-body)
 message,dark,warning,,background-color,#9f5c30
-message,dark,warning,,border-color,#e38444
-message,dark,warning,,color,#e7f9ff
-message,dark,"warning icon",,color,#e7f9ff
-navigation,light,"dropdown sub menu",,background-color,#fdfdfd
-navigation,dark,"dropdown sub menu",,background-color,#0d4458
-navigation,light,drawer,,border-color,#00698f
-navigation,light,drawer,,color,#00698f
-navigation,light,drawer,hover,color,#003f56
-navigation,light,drawer,active,color,#003f56
+message,dark,warning,,border-color,var(--ct-color-dark-warning)
+message,dark,warning,,color,var(--ct-color-dark-body)
+message,dark,"warning icon",,color,var(--ct-color-dark-body)
+navigation,light,"dropdown sub menu",,background-color,var(--ct-color-light-background-light)
+navigation,dark,"dropdown sub menu",,background-color,var(--ct-color-dark-background-light)
+navigation,light,drawer,,border-color,var(--ct-color-light-interaction-background)
+navigation,light,drawer,,color,var(--ct-color-light-interaction-background)
+navigation,light,drawer,hover,color,var(--ct-color-light-interaction-hover-background)
+navigation,light,drawer,active,color,var(--ct-color-light-interaction-hover-background)
 navigation,light,"drawer menu item",,background-color,transparent
 navigation,light,"drawer menu item",,border-color,transparent
 navigation,light,"drawer menu item",hover,background-color,transparent
-navigation,light,"drawer menu item",hover,border-color,#003f56
+navigation,light,"drawer menu item",hover,border-color,var(--ct-color-light-interaction-hover-background)
 navigation,light,"drawer menu item",active,background-color,transparent
-navigation,light,"drawer menu item",active,border-color,#121313
-navigation,light,"drawer menu item active trail",,background-color,#00698f
-navigation,light,"drawer menu item active trail",,color,#e6e9eb
-navigation,light,"drawer sub menu",,background-color,#fdfdfd
+navigation,light,"drawer menu item",active,border-color,var(--ct-color-light-highlight)
+navigation,light,"drawer menu item active trail",,background-color,var(--ct-color-light-interaction-background)
+navigation,light,"drawer menu item active trail",,color,var(--ct-color-light-background)
+navigation,light,"drawer sub menu",,background-color,var(--ct-color-light-background-light)
 navigation,light,"drawer sub menu item",,background-color,transparent
-navigation,light,"drawer sub menu item heading",,color,#002a39
-navigation,light,"drawer sub menu item heading",hover,color,#002a39
-navigation,light,"drawer sub menu item heading",active,color,#002a39
-navigation,light,"drawer sub menu item",,color,#00698f
-navigation,light,"drawer sub menu item",hover,background-color,#003f56
-navigation,light,"drawer sub menu item",hover,color,#fafbfb
-navigation,light,"drawer sub menu item",active,background-color,#33444a
-navigation,light,"drawer sub menu item",active,color,#e6e9eb
-navigation,dark,drawer,,border-color,#61daff
-navigation,dark,drawer,,color,#61daff
-navigation,dark,drawer,hover,color,#a0e9ff
-navigation,dark,drawer,active,color,#a0e9ff
+navigation,light,"drawer sub menu item heading",,color,var(--ct-color-light-heading)
+navigation,light,"drawer sub menu item heading",hover,color,var(--ct-color-light-heading)
+navigation,light,"drawer sub menu item heading",active,color,var(--ct-color-light-heading)
+navigation,light,"drawer sub menu item",,color,var(--ct-color-light-interaction-background)
+navigation,light,"drawer sub menu item",hover,background-color,var(--ct-color-light-interaction-hover-background)
+navigation,light,"drawer sub menu item",hover,color,var(--ct-color-light-interaction-hover-text)
+navigation,light,"drawer sub menu item",active,background-color,var(--ct-color-light-body)
+navigation,light,"drawer sub menu item",active,color,var(--ct-color-light-background)
+navigation,dark,drawer,,border-color,var(--ct-color-dark-interaction-background)
+navigation,dark,drawer,,color,var(--ct-color-dark-interaction-background)
+navigation,dark,drawer,hover,color,var(--ct-color-dark-interaction-hover-background)
+navigation,dark,drawer,active,color,var(--ct-color-dark-interaction-hover-background)
 navigation,dark,"drawer menu item",,background-color,transparent
 navigation,dark,"drawer menu item",,border-color,transparent
 navigation,dark,"drawer menu item",hover,background-color,transparent
-navigation,dark,"drawer menu item",hover,border-color,#a0e9ff
+navigation,dark,"drawer menu item",hover,border-color,var(--ct-color-dark-interaction-hover-background)
 navigation,dark,"drawer menu item",active,background-color,transparent
-navigation,dark,"drawer menu item",active,border-color,#00698f
-navigation,dark,"drawer menu item active trail",,background-color,#61daff
-navigation,dark,"drawer menu item active trail",,color,#003a4f
-navigation,dark,"drawer sub menu",,background-color,#0d4458
+navigation,dark,"drawer menu item",active,border-color,var(--ct-color-dark-highlight)
+navigation,dark,"drawer menu item active trail",,background-color,var(--ct-color-dark-interaction-background)
+navigation,dark,"drawer menu item active trail",,color,var(--ct-color-dark-background)
+navigation,dark,"drawer sub menu",,background-color,var(--ct-color-dark-background-light)
 navigation,dark,"drawer sub menu item",,background-color,transparent
-navigation,dark,"drawer sub menu item heading",,color,#f7fdff
-navigation,dark,"drawer sub menu item heading",hover,color,#f7fdff
-navigation,dark,"drawer sub menu item heading",active,color,#f7fdff
-navigation,dark,"drawer sub menu item",,color,#61daff
-navigation,dark,"drawer sub menu item",hover,background-color,#a0e9ff
-navigation,dark,"drawer sub menu item",hover,color,#002937
-navigation,dark,"drawer sub menu item",active,background-color,#e7f9ff
-navigation,dark,"drawer sub menu item",active,color,#003a4f
-"side navigation",light,title,,color,#002a39
-"side navigation",light,"link expanded icon",,color,#002a39
-"side navigation",light,"link parent",,background-color,#fdfdfd
-"side navigation",light,"link parent",,border-color,#adafb0
-"side navigation",light,"link parent",,color,#002a39
-"side navigation",light,"link parent stripe",,color,#adafb0
-"side navigation",light,"link parent",hover,background-color,#b8babc
-"side navigation",light,"link parent",hover,border-color,#adafb0
-"side navigation",light,"link parent",hover,color,#002a39
-"side navigation",light,"link parent hover stripe",,color,#121313
-"side navigation",light,"link parent",active,background-color,#e6e9eb
-"side navigation",light,"link parent",active,border-color,#adafb0
-"side navigation",light,"link parent",active,color,#002a39
-"side navigation",light,"link parent active stripe",,color,#121313
-"side navigation",light,"link child",,background-color,#fdfdfd
-"side navigation",light,"link child",,border-color,#adafb0
-"side navigation",light,"link child",,color,#002a39
-"side navigation",light,"link child stripe",,color,#adafb0
-"side navigation",light,"link child",hover,background-color,#b8babc
-"side navigation",light,"link child",hover,border-color,#adafb0
-"side navigation",light,"link child",hover,color,#002a39
-"side navigation",light,"link child hover stripe",,color,#121313
-"side navigation",light,"link child",active,background-color,#e6e9eb
-"side navigation",light,"link child",active,border-color,#adafb0
-"side navigation",light,"link child",active,color,#002a39
-"side navigation",light,"link child active stripe",,color,#adafb0
-"side navigation",dark,title,,color,#f7fdff
-"side navigation",dark,"link expanded icon",,color,#f7fdff
-"side navigation",dark,"link parent",,background-color,#0d4458
-"side navigation",dark,"link parent",,border-color,#003a4f
-"side navigation",dark,"link parent",,color,#f7fdff
-"side navigation",dark,"link parent stripe",,color,#003a4f
-"side navigation",dark,"link parent",hover,background-color,#002937
-"side navigation",dark,"link parent",hover,border-color,#003a4f
-"side navigation",dark,"link parent",hover,color,#f7fdff
-"side navigation",dark,"link parent hover stripe",,color,#00698f
-"side navigation",dark,"link parent",active,background-color,#003a4f
-"side navigation",dark,"link parent",active,border-color,#003a4f
-"side navigation",dark,"link parent",active,color,#f7fdff
-"side navigation",dark,"link parent active stripe",,color,#00698f
-"side navigation",dark,"link child",,background-color,#0d4458
-"side navigation",dark,"link child",,border-color,#003a4f
-"side navigation",dark,"link child",,color,#f7fdff
-"side navigation",dark,"link child stripe",,color,#003a4f
-"side navigation",dark,"link child",hover,background-color,#002937
-"side navigation",dark,"link child",hover,border-color,#003a4f
-"side navigation",dark,"link child",hover,color,#f7fdff
-"side navigation",dark,"link child hover stripe",,color,#00698f
-"side navigation",dark,"link child",active,background-color,#003a4f
-"side navigation",dark,"link child",active,border-color,#003a4f
-"side navigation",dark,"link child",active,color,#f7fdff
-"side navigation",dark,"link child active stripe",,color,#003a4f
-"mobile navigation",light,panel,,background-color,#fdfdfd
-"mobile navigation",light,"top menu",,background-color,#fdfdfd
-"mobile navigation",light,"bottom menu",,background-color,#e6e9eb
-"mobile navigation",light,"menu item",,color,#00698f
-"mobile navigation",light,"menu item",hover,color,#00698f
-"mobile navigation",light,"menu divider",,border-color,#5c5d5e
-"mobile navigation",light,"subsection heading",,color,#002a39
-"mobile navigation",light,"subsection heading icon",,color,#002a39
-"mobile navigation",light,"subsection trigger",,color,#00698f
-"mobile navigation trigger",light,,,color,#003a4f
-"mobile navigation",dark,panel,,background-color,#003a4f
-"mobile navigation",dark,"top menu",,background-color,#003a4f
-"mobile navigation",dark,"bottom menu",,background-color,#002937
-"mobile navigation",dark,"menu item",,color,#61daff
-"mobile navigation",dark,"menu item",hover,color,#61daff
-"mobile navigation",dark,"menu divider",,border-color,#1a4e61
-"mobile navigation",dark,"subsection heading",,color,#f7fdff
-"mobile navigation",dark,"subsection heading icon",,color,#f7fdff
-"mobile navigation",dark,"subsection trigger",,color,#61daff
-"mobile navigation trigger",dark,,,color,#003a4f
-promo,light,,,background-color,#fdfdfd
-promo,light,body,,color,#33444a
-promo,light,heading,,color,#002a39
-promo,dark,,,background-color,#002937
-promo,dark,body,,color,#e7f9ff
-promo,dark,heading,,color,#f7fdff
-"skip link",light,,,background-color,#e6e9eb
-"skip link",dark,,,background-color,#003a4f
-slider,light,,,background-color,#e6e9eb
-slider,light,"progress indicator",,background-color,#00698f
-slider,light,"progress indicator",,color,#fafbfb
-slider,light,title,,color,#002a39
-slider,light,wrapper,,background-color,#e6e9eb
-slider,dark,,,background-color,#003a4f
-slider,dark,"progress indicator",,background-color,#61daff
-slider,dark,"progress indicator",,color,#003a4f
-slider,dark,title,,color,#f7fdff
-slider,dark,wrapper,,background-color,#003a4f
-slide,light,,,background-color,#e6e9eb
-slide,light,summary,,color,#33444a
-slide,light,title,,color,#002a39
-slide,dark,,,background-color,#003a4f
-slide,dark,summary,,color,#f7fdff
-slide,dark,title,,color,#f7fdff
-"social links",light,,,color,#00698f
-"social links",light,,hover,color,#00698f
-"social links",light,focus,,color,#00698f
-"social links",light,,active,color,#00698f
-"social links",light,,visited,color,#00698f
-"social links",dark,,,color,#61daff
-"social links",dark,,hover,color,#61daff
-"social links",dark,focus,,color,#61daff
-"social links",dark,,active,color,#61daff
-"social links",dark,,visited,color,#61daff
-webform,light,,,background-color,#e6e9eb
-webform,light,,,color,#33444a
-webform,light,wrapper,,background-color,#e6e9eb
-webform,dark,,,background-color,#003a4f
-webform,dark,,,color,#e7f9ff
-webform,dark,wrapper,,background-color,#003a4f
-pager,light,,,color,#00698f
+navigation,dark,"drawer sub menu item heading",,color,var(--ct-color-dark-heading)
+navigation,dark,"drawer sub menu item heading",hover,color,var(--ct-color-dark-heading)
+navigation,dark,"drawer sub menu item heading",active,color,var(--ct-color-dark-heading)
+navigation,dark,"drawer sub menu item",,color,var(--ct-color-dark-interaction-background)
+navigation,dark,"drawer sub menu item",hover,background-color,var(--ct-color-dark-interaction-hover-background)
+navigation,dark,"drawer sub menu item",hover,color,var(--ct-color-dark-interaction-hover-text)
+navigation,dark,"drawer sub menu item",active,background-color,var(--ct-color-dark-body)
+navigation,dark,"drawer sub menu item",active,color,var(--ct-color-dark-background)
+"side navigation",light,title,,color,var(--ct-color-light-heading)
+"side navigation",light,"link expanded icon",,color,var(--ct-color-light-heading)
+"side navigation",light,"link parent",,background-color,var(--ct-color-light-background-light)
+"side navigation",light,"link parent",,border-color,var(--ct-color-light-border-light)
+"side navigation",light,"link parent",,color,var(--ct-color-light-heading)
+"side navigation",light,"link parent stripe",,color,var(--ct-color-light-border-light)
+"side navigation",light,"link parent",hover,background-color,var(--ct-color-light-background-dark)
+"side navigation",light,"link parent",hover,border-color,var(--ct-color-light-border-light)
+"side navigation",light,"link parent",hover,color,var(--ct-color-light-heading)
+"side navigation",light,"link parent hover stripe",,color,var(--ct-color-light-highlight)
+"side navigation",light,"link parent",active,background-color,var(--ct-color-light-background)
+"side navigation",light,"link parent",active,border-color,var(--ct-color-light-border-light)
+"side navigation",light,"link parent",active,color,var(--ct-color-light-heading)
+"side navigation",light,"link parent active stripe",,color,var(--ct-color-light-highlight)
+"side navigation",light,"link child",,background-color,var(--ct-color-light-background-light)
+"side navigation",light,"link child",,border-color,var(--ct-color-light-border-light)
+"side navigation",light,"link child",,color,var(--ct-color-light-heading)
+"side navigation",light,"link child stripe",,color,var(--ct-color-light-border-light)
+"side navigation",light,"link child",hover,background-color,var(--ct-color-light-background-dark)
+"side navigation",light,"link child",hover,border-color,var(--ct-color-light-border-light)
+"side navigation",light,"link child",hover,color,var(--ct-color-light-heading)
+"side navigation",light,"link child hover stripe",,color,var(--ct-color-light-highlight)
+"side navigation",light,"link child",active,background-color,var(--ct-color-light-background)
+"side navigation",light,"link child",active,border-color,var(--ct-color-light-border-light)
+"side navigation",light,"link child",active,color,var(--ct-color-light-heading)
+"side navigation",light,"link child active stripe",,color,var(--ct-color-light-border-light)
+"side navigation",dark,title,,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link expanded icon",,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link parent",,background-color,var(--ct-color-dark-background-light)
+"side navigation",dark,"link parent",,border-color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link parent",,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link parent stripe",,color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link parent",hover,background-color,var(--ct-color-dark-background-dark)
+"side navigation",dark,"link parent",hover,border-color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link parent",hover,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link parent hover stripe",,color,var(--ct-color-dark-highlight)
+"side navigation",dark,"link parent",active,background-color,var(--ct-color-dark-background)
+"side navigation",dark,"link parent",active,border-color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link parent",active,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link parent active stripe",,color,var(--ct-color-dark-highlight)
+"side navigation",dark,"link child",,background-color,var(--ct-color-dark-background-light)
+"side navigation",dark,"link child",,border-color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link child",,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link child stripe",,color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link child",hover,background-color,var(--ct-color-dark-background-dark)
+"side navigation",dark,"link child",hover,border-color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link child",hover,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link child hover stripe",,color,var(--ct-color-dark-highlight)
+"side navigation",dark,"link child",active,background-color,var(--ct-color-dark-background)
+"side navigation",dark,"link child",active,border-color,var(--ct-color-dark-interaction-text)
+"side navigation",dark,"link child",active,color,var(--ct-color-dark-heading)
+"side navigation",dark,"link child active stripe",,color,var(--ct-color-dark-interaction-text)
+"mobile navigation",light,panel,,background-color,var(--ct-color-light-background-light)
+"mobile navigation",light,"top menu",,background-color,var(--ct-color-light-background-light)
+"mobile navigation",light,"bottom menu",,background-color,var(--ct-color-light-background)
+"mobile navigation",light,"menu item",,color,var(--ct-color-light-interaction-background)
+"mobile navigation",light,"menu item",hover,color,var(--ct-color-light-interaction-background)
+"mobile navigation",light,"menu divider",,border-color,var(--ct-color-light-border)
+"mobile navigation",light,"subsection heading",,color,var(--ct-color-light-heading)
+"mobile navigation",light,"subsection heading icon",,color,var(--ct-color-light-heading)
+"mobile navigation",light,"subsection trigger",,color,var(--ct-color-light-interaction-background)
+"mobile navigation trigger",light,,,color,var(--ct-color-dark-background)
+"mobile navigation",dark,panel,,background-color,var(--ct-color-dark-background)
+"mobile navigation",dark,"top menu",,background-color,var(--ct-color-dark-background)
+"mobile navigation",dark,"bottom menu",,background-color,var(--ct-color-dark-background-dark)
+"mobile navigation",dark,"menu item",,color,var(--ct-color-dark-interaction-background)
+"mobile navigation",dark,"menu item",hover,color,var(--ct-color-dark-interaction-background)
+"mobile navigation",dark,"menu divider",,border-color,var(--ct-color-dark-border)
+"mobile navigation",dark,"subsection heading",,color,var(--ct-color-dark-heading)
+"mobile navigation",dark,"subsection heading icon",,color,var(--ct-color-dark-heading)
+"mobile navigation",dark,"subsection trigger",,color,var(--ct-color-dark-interaction-background)
+"mobile navigation trigger",dark,,,color,var(--ct-color-dark-background)
+promo,light,,,background-color,var(--ct-color-light-background-light)
+promo,light,content,,color,var(--ct-color-light-body)
+promo,light,title,,color,var(--ct-color-light-heading)
+promo,dark,,,background-color,var(--ct-color-dark-background-dark)
+promo,dark,content,,color,var(--ct-color-dark-body)
+promo,dark,title,,color,var(--ct-color-dark-heading)
+"skip link",light,,,background-color,var(--ct-color-light-background)
+"skip link",dark,,,background-color,var(--ct-color-dark-background)
+slider,light,,,background-color,var(--ct-color-light-background)
+slider,light,"progress indicator",,background-color,var(--ct-color-light-interaction-background)
+slider,light,"progress indicator",,color,var(--ct-color-light-interaction-text)
+slider,light,title,,color,var(--ct-color-light-heading)
+slider,light,wrapper,,background-color,var(--ct-color-light-background)
+slider,dark,,,background-color,var(--ct-color-dark-background)
+slider,dark,"progress indicator",,background-color,var(--ct-color-dark-interaction-background)
+slider,dark,"progress indicator",,color,var(--ct-color-dark-interaction-text)
+slider,dark,title,,color,var(--ct-color-dark-heading)
+slider,dark,wrapper,,background-color,var(--ct-color-dark-background)
+slide,light,,,background-color,var(--ct-color-light-background)
+slide,light,summary,,color,var(--ct-color-light-body)
+slide,light,title,,color,var(--ct-color-light-heading)
+slide,dark,,,background-color,var(--ct-color-dark-background)
+slide,dark,summary,,color,var(--ct-color-dark-heading)
+slide,dark,title,,color,var(--ct-color-dark-heading)
+"social links",light,,,color,var(--ct-color-light-interaction-background)
+"social links",light,,hover,color,var(--ct-color-light-interaction-background)
+"social links",light,focus,,color,var(--ct-color-light-interaction-background)
+"social links",light,,active,color,var(--ct-color-light-interaction-background)
+"social links",light,,visited,color,var(--ct-color-light-interaction-background)
+"social links",dark,,,color,var(--ct-color-dark-interaction-background)
+"social links",dark,,hover,color,var(--ct-color-dark-interaction-background)
+"social links",dark,focus,,color,var(--ct-color-dark-interaction-background)
+"social links",dark,,active,color,var(--ct-color-dark-interaction-background)
+"social links",dark,,visited,color,var(--ct-color-dark-interaction-background)
+webform,light,,,background-color,var(--ct-color-light-background)
+webform,light,,,color,var(--ct-color-light-body)
+webform,light,wrapper,,background-color,var(--ct-color-light-background)
+webform,dark,,,background-color,var(--ct-color-dark-background)
+webform,dark,,,color,var(--ct-color-dark-body)
+webform,dark,wrapper,,background-color,var(--ct-color-dark-background)
+pager,light,,,color,var(--ct-color-light-interaction-background)
