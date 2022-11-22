@@ -4,7 +4,7 @@ CivicTheme component library with Storybook integration.
 
 ----
 
-Version: `1.2.6`
+Version: `1.3.0`
 
 ## Features
 
