@@ -1,10 +1,10 @@
 // phpcs:ignoreFile
 import { radios, text, boolean } from '@storybook/addon-knobs';
-import CivicThemeNextSteps from './next-steps.twig';
-import { randomUrl } from '../../00-base/base.stories';
+import CivicThemeNextSteps from './next-step.twig';
+import { getSlots } from '../../00-base/base.utils';
 
 export default {
-  title: 'Molecules/Content/Next Steps',
+  title: 'Molecules/Next Steps',
 };
 
 export const NextSteps = (knobTab) => {
@@ -20,10 +20,14 @@ export const NextSteps = (knobTab) => {
       'light',
       generalKnobTab,
     ),
-    title: text('Title', 'Next step title from knob', generalKnobTab),
-    summary: text('Summary', 'Short summary explaining why this link is relevant.', generalKnobTab),
-    url: text('Link', randomUrl(), generalKnobTab),
-    is_external: boolean('Is external', false, generalKnobTab),
+    title: text('Title', 'Next steps title from knob', generalKnobTab),
+    content: text('Content', 'Short summary explaining why this link is relevant.', generalKnobTab),
+    link: {
+      text: text('Link text', 'Sign up', generalKnobTab),
+      url: text('Link URL', 'https://example.com', generalKnobTab),
+      is_new_window: boolean('Link opens in new window', true, generalKnobTab),
+      is_external: boolean('Link is external', true, generalKnobTab),
+    },
     vertical_spacing: radios(
       'Vertical spacing',
       {
@@ -41,5 +45,9 @@ export const NextSteps = (knobTab) => {
 
   return CivicThemeNextSteps({
     ...generalKnobs,
+    ...getSlots([
+      'content_top',
+      'content_bottom',
+    ]),
   });
 };

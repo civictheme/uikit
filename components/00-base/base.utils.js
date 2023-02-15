@@ -12,8 +12,6 @@ import CivicThemeRadio from '../01-atoms/radio/radio.twig';
 import CivicThemeFormElement
   from '../02-molecules/form-element/form-element.twig';
 import CivicThemeLabel from '../01-atoms/label/label.twig';
-import CivicThemeDropdownFilter
-  from '../02-molecules/dropdown-filter/dropdown-filter.twig';
 
 export const getThemes = () => ({
   light: 'Light',
@@ -65,6 +63,8 @@ export const randomBool = (skew) => {
 
 export const randomString = (length) => randomText(length).substring(0, length).trim();
 
+export const randomName = (length) => randomText(length).replace(' ', '').substring(0, length).trim();
+
 export const randomSentence = (words) => {
   words = words || randomInt(5, 25);
   return capitalizeFirstLetter(randomText(words));
@@ -75,13 +75,14 @@ export const randomUrl = (domain) => {
   return `${domain}/${(Math.random() + 1).toString(36).substring(7)}`;
 };
 
-export const randomLinks = (count, length, domain) => {
+export const randomLinks = (count, length, domain, prefix) => {
   const links = [];
+  prefix = prefix || 'Link';
   length = length || 0;
 
   for (let i = 0; i < count; i++) {
     links.push({
-      text: `Link ${i + 1}${length ? ` ${randomString(randomInt(1, length))}` : ''}`,
+      text: `${prefix} ${i + 1}${length ? ` ${randomString(randomInt(3, length))}` : ''}`,
       url: randomUrl(domain),
       is_new_window: randomBool(),
       is_external: randomBool(0.8),
@@ -109,7 +110,7 @@ export const demoImage = (idx) => {
     './assets/images/demo3.jpg',
   ];
 
-  idx = idx || Math.floor(Math.random() * images.length);
+  idx = typeof idx !== 'undefined' ? Math.max(0, Math.min(idx, images.length)) : Math.floor(Math.random() * images.length);
 
   return images[idx];
 };
@@ -220,33 +221,6 @@ export const randomFormElements = (count, theme, rand) => {
   return formElements;
 };
 
-export const randomDropdownFilter = (filterType, numOfOptions, theme, rand, itr) => {
-  const filterOptions = {
-    filter_text: `Filter text ${itr + 1}${rand ? ` ${randomString(randomInt(2, 5))}` : ''}`,
-    filter_group: 'filter_group',
-    options_title: Math.round(Math.random()) ? 'Options title (optional)' : '',
-  };
-  const children = [];
-  let count = itr * numOfOptions;
-  for (let i = 1; i <= numOfOptions; i++) {
-    const options = {
-      required: false,
-      description: false,
-      attributes: '',
-      value: randomString(randomInt(1, 8)),
-    };
-    options.attributes += filterType === 'radio' ? ` name="test_${itr}"` : ` name="${randomString(randomInt(3, 8))}"`;
-    children.push(randomFormElement(filterType, options, theme, true, count++));
-  }
-
-  return CivicThemeDropdownFilter({
-    theme,
-    ...filterOptions,
-    type: filterType,
-    options: children.join(''),
-  });
-};
-
 export const randomOptions = (numOfOptions, optionType = 'option') => {
   const options = [];
   for (let i = 1; i <= numOfOptions; i++) {
@@ -272,7 +246,9 @@ export const generateItems = (count, content) => {
 
 export const objectFromArray = (array) => {
   const obj = {};
-  array.forEach((item) => { obj[item] = item; });
+  array.forEach((item) => {
+    obj[item] = item;
+  });
   return obj;
 };
 
@@ -282,4 +258,34 @@ export const cleanCssIdentifier = function (string) {
     .replace(/[_.~"<>%|'!*();:@&=+$,/?%#[\]{}\n`^\\]/gim, '')
     .replace(/(^\s+)|(\s+$)/gim, '')
     .replace(/\s+/gm, '-');
+};
+
+export const arrayCombine = function (keys, values) {
+  const obj = {};
+
+  if (!keys || !values || keys.constructor !== Array || values.constructor !== Array) {
+    return false;
+  }
+
+  if (keys.length !== values.length) {
+    return false;
+  }
+
+  for (let i = 0; i < keys.length; i++) {
+    obj[keys[i]] = values[i];
+  }
+
+  return obj;
+};
+
+export const toLabels = function (values) {
+  const arr = [];
+  for (const i in values) {
+    arr.push(capitalizeFirstLetter(values[i].replace(/[-_]/, ' ')));
+  }
+  return arr;
+};
+
+export const dateIsValid = function (date) {
+  return !Number.isNaN(Date.parse(date));
 };
