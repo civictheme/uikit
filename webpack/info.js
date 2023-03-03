@@ -8,7 +8,7 @@ const glob = require('glob-gitignore');
 const semver = require('semver');
 
 const defaultInfo = {
-  version: '1.4.2',
+  version: '1.4.3',
   homepage: 'https://github.com/salsadigitalauorg/civictheme',
   bugs: 'https://github.com/salsadigitalauorg/civictheme_source/issues',
   repository: 'https://github.com/salsadigitalauorg/civictheme_source.git',
