@@ -16,7 +16,7 @@ const semver = require(require.resolve('semver', options));
 /* eslint-enable */
 
 const defaultInfo = {
-  version: '1.4.5',
+  version: '1.4.6',
   homepage: 'https://github.com/salsadigitalauorg/civictheme',
   bugs: 'https://github.com/salsadigitalauorg/civictheme_source/issues',
   repository: 'https://github.com/salsadigitalauorg/civictheme_source.git',
