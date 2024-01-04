@@ -16,11 +16,7 @@
 
 </div>
 
----
-
-# CivicTheme UI kit
-
-CivicTheme UI component library with Storybook integration.
+<p align="center">UI component library with Storybook integration</p>
 
 ----
 
