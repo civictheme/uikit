@@ -29,7 +29,8 @@ export const Slider = () => {
 
   const numOfSlides = number(
     'Number of slides',
-    5, {
+    5,
+    {
       range: true,
       min: 0,
       max: 10,

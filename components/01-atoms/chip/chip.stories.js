@@ -18,7 +18,8 @@ export const Chip = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const theme = radios(
-    'Theme', {
+    'Theme',
+    {
       Light: 'light',
       Dark: 'dark',
     },
@@ -27,7 +28,8 @@ export const Chip = (knobTab) => {
   );
 
   const size = radios(
-    'Size', {
+    'Size',
+    {
       Large: 'large',
       Regular: 'regular',
       Small: 'small',
@@ -38,7 +40,8 @@ export const Chip = (knobTab) => {
   );
 
   const kind = radios(
-    'Kind', {
+    'Kind',
+    {
       Default: 'default',
       Input: 'input',
     },

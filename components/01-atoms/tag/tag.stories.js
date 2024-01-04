@@ -20,7 +20,8 @@ export const Tag = (knobTab) => {
 
   const generalKnobs = {
     theme: radios(
-      'Theme', {
+      'Theme',
+      {
         Light: 'light',
         Dark: 'dark',
       },
@@ -28,7 +29,8 @@ export const Tag = (knobTab) => {
       generalKnobTab,
     ),
     type: radios(
-      'Type', {
+      'Type',
+      {
         Primary: 'primary',
         Secondary: 'secondary',
         Tertiary: 'tertiary',
