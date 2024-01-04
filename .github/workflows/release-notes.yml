@@ -1,4 +1,4 @@
-name: Release
+name: Release notes
 
 on:
   push:
@@ -9,12 +9,10 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
-  release-drafter:
-    permissions:
-      contents: write
-      pull-requests: write
+  release-notes:
     runs-on: ubuntu-latest
     steps:
       - uses: release-drafter/release-drafter@v5
