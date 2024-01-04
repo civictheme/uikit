@@ -17,7 +17,8 @@ export const Button = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const generalKnobs = {
     theme: radios(
-      'Theme', {
+      'Theme',
+      {
         Light: 'light',
         Dark: 'dark',
       },
@@ -30,7 +31,8 @@ export const Button = (knobTab) => {
       generalKnobTab,
     ),
     type: radios(
-      'Type', {
+      'Type',
+      {
         Primary: 'primary',
         Secondary: 'secondary',
         Tertiary: 'tertiary',
@@ -40,7 +42,8 @@ export const Button = (knobTab) => {
       generalKnobTab,
     ),
     size: radios(
-      'Size', {
+      'Size',
+      {
         Large: 'large',
         Regular: 'regular',
         Small: 'small',
@@ -50,7 +53,8 @@ export const Button = (knobTab) => {
       generalKnobTab,
     ),
     kind: radios(
-      'Kind', {
+      'Kind',
+      {
         Button: 'button',
         Link: 'link',
         Reset: 'reset',

@@ -27,7 +27,8 @@ export const BasicContent = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const theme = radios(
-    'Theme', {
+    'Theme',
+    {
       Light: 'light',
       Dark: 'dark',
     },

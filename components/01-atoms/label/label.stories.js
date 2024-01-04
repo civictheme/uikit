@@ -23,7 +23,8 @@ export const Label = (knobTab) => {
       generalKnobTab,
     ),
     size: radios(
-      'Size', {
+      'Size',
+      {
         'Extra Large': 'extra-large',
         Large: 'large',
         Regular: 'regular',

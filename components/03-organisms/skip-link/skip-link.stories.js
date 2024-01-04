@@ -15,7 +15,8 @@ export const SkipLink = (knobTab) => {
 
   const generalKnobs = {
     theme: radios(
-      'Theme', {
+      'Theme',
+      {
         Light: 'light',
         Dark: 'dark',
       },
