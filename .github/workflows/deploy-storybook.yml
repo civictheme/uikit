@@ -1,0 +1,20 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches:
+      - main
+      - feature/gha-storybook
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+        with:
+          path: storybook-static
