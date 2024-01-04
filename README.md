@@ -1,10 +1,28 @@
+<p align="center">
+  <a href="" rel="noopener">
+  <img height=100px src="assets/logos/logo_secondary_light_mobile.png" alt="CivicTheme logo"></a>
+</p>
+
+<h1 align="center">CivicTheme - UI Kit</h1>
+
+<div align="center">
+
+[![GitHub Issues](https://img.shields.io/github/issues/civictheme/uikit.svg)](https://github.com/civictheme/uikit/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/civictheme/uikit.svg)](https://github.com/civictheme/uikit/pulls)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/civictheme/uikit)
+[![Test](https://github.com/civictheme/uikit/actions/workflows/test.yml/badge.svg)](https://github.com/civictheme/uikit/actions/workflows/test.yml)
+![LICENSE](https://img.shields.io/github/license/civictheme/uikit)
+[![RenovateBot](https://img.shields.io/badge/RenovateBot-enabled-brightgreen.svg?logo=renovatebot)](https://renovatebot.com)
+
+</div>
+
+---
+
 # CivicTheme UI kit
 
 CivicTheme UI component library with Storybook integration.
 
 ----
-
-Version: `{{ VERSION }}`
 
 ## Features
 
@@ -15,9 +33,11 @@ Version: `{{ VERSION }}`
 
 ## Installing
 
-    npm install
+Download the latest release.    
 
-## Building
+## Maintenance
+
+### Build assets
 
     npm run build
 
@@ -30,13 +50,13 @@ This will build:
   These files can be served publically to show all components available in the
   library.
 
-## Linting
+### Lint code
 
     npm run lint
 
     npm run lint:fix
 
-## Running locally
+### Run Storybook
 
     npm run storybook
 
