@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 /**
  * Custom configuration for Storybook.
  */

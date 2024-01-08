@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 const fs = require('fs');
 const path = require('path');
 

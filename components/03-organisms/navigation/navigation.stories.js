@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeNavigation from './navigation.twig';
 import getMenuLinks from '../../00-base/menu/menu.utils';

@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 function requireAll(r) {
   r.keys().forEach(r);
 }

@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import './scrollspy';
 
 export default {

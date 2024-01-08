@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 /**
  * Table of Contents component.
  *

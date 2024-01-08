@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import CivicThemeCollapsible from './collapsible.stories.twig';
 import './collapsible';
 

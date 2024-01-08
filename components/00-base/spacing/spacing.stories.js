@@ -1,5 +1,3 @@
-// phpcs:ignoreFile
-
 import { placeholder } from '../base.utils';
 
 export default {

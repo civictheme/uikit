@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 //
 // Shared JS helpers for Storybook stories.
 //

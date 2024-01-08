@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import { randomUrl } from '../../00-base/base.utils';
 import CivicThemeLogo from './logo.twig';

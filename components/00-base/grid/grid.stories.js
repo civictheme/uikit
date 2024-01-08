@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 export default {
   title: 'Base/Grid',
   parameters: {

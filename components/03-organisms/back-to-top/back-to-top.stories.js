@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import CivicThemeBackToTop from './back-to-top.twig';
 
 export default {

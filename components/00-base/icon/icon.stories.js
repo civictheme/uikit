@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import { radios, select, text } from '@storybook/addon-knobs';
 
 import merge from 'deepmerge';

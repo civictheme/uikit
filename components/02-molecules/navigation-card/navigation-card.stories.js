@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import {
   boolean, radios, select, text,
 } from '@storybook/addon-knobs';
