@@ -2,14 +2,6 @@
 // Polyfills for deprecated mixins.
 //
 
-//
-// Global flag to identify if the current theme is outdated.
-//
-// Internal. The value is automatically injected during the build.
-// Do not modify this value.
-//
-$ct-outdated: false !default;
-
 // Suppress deprecation warnings.
 $ct-suppress-deprecations: false !default;
 
@@ -23,7 +15,7 @@ $ct-suppress-deprecations: false !default;
     $message: '#{$message} Use replacement: "#{$replacement}".';
   }
 
-  @if $ct-outdated and not $ct-suppress-deprecations {
+  @if not $ct-suppress-deprecations {
     @warn $message;
   }
 }
