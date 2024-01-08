@@ -8,7 +8,7 @@ on:
         required: true
 
 jobs:
-  release:
+  release-package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
