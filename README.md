@@ -1,3 +1,4 @@
+TEST INSTALL
 <p align="center">
   <a href="" rel="noopener">
   <img height=100px src="assets/logos/logo_secondary_light_mobile.png" alt="CivicTheme logo"></a>
