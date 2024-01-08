@@ -8,6 +8,9 @@ on:
         required: true
         default: 'minor'
 
+permissions:
+  contents: write
+
 jobs:
   release-package:
     runs-on: ubuntu-latest
