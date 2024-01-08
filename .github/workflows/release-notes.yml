@@ -2,8 +2,6 @@ name: Release notes
 
 on:
   push:
-    tags:
-      - '*'
     branches:
       - main
 
