@@ -25,11 +25,15 @@
 - Atomic design
 - Accessible
 - Platform-agnostic
-- Drupal and Wordpress compatible
+- Integrated with Drupal: https://www.drupal.org/project/civictheme
 
 ## Installing
 
-Download the latest release.    
+```bash
+npm install @civictheme/uikit
+```
+
+or download the latest release from [GitHub](https://github.com/civictheme/uikit/releases). 
 
 ## Maintenance
 
@@ -46,7 +50,7 @@ This will build:
   These files can be served publically to show all components available in the
   library.
 
-### Lint code
+### Check and fix code style
 
     npm run lint
 
@@ -56,6 +60,21 @@ This will build:
 
     npm run storybook
 
+## Releasing
+
+Releases to GitHub and NPM are automated via GitHub Actions, but initiated
+manually.
+
+To release a new version, go to
+the [Release package](https://github.com/civictheme/uikit/actions/workflows/release-manual.yml)
+GitHub Action, click on the `Run workflow` button, and enter the release
+level: `patch` or `minor`.
+
+After the release is complete, the new version will be available on
+[GitHub](https://github.com/civictheme/uikit/releases)
+and [NPM](https://www.npmjs.com/package/@civictheme/uikit).
+
 ---
 
-For additional information, please refer to the [Documentation site](https://docs.civictheme.io/ui-kit)
+For additional information, please refer to
+the [Documentation site](https://docs.civictheme.io/ui-kit)
