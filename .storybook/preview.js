@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 require('twig');
 
 const storyOrder = [

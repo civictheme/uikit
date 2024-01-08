@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import merge from 'deepmerge';
 import { capitalizeFirstLetter, cleanCssIdentifier } from '../base.utils';
 

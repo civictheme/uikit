@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import { text, radios, select } from '@storybook/addon-knobs';
 import merge from 'deepmerge';
 import CivicThemeTooltip from './tooltip.twig';

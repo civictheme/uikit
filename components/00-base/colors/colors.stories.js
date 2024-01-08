@@ -1,5 +1,3 @@
-// phpcs:ignoreFile
-
 import CivicThemeColors from './colors.stories.twig';
 import { getThemes } from '../base.utils';
 

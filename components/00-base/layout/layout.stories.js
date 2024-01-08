@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeLayout from './layout.twig';
 import CivicThemeLayoutSingleColumn from './content-layout--single-column.twig';

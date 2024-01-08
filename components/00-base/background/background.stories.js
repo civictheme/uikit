@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import { color, select } from '@storybook/addon-knobs';
 import { objectFromArray } from '../base.utils';
 

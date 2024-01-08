@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 /**
  * @file
  * Button component.

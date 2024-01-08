@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 /**
  * @file
  * Tooltip component.

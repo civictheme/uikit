@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import {
   date, number, radios, text,
 } from '@storybook/addon-knobs';

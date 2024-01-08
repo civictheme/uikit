@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 //
 // Extract CSS variables as object from SCSS file.
 //
