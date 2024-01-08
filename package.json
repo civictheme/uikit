@@ -34,6 +34,7 @@
     "@alexskrypnyk/scss-variables-extractor": "^0.1.0",
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
+    "@playwright/test": "^1.40.1",
     "@storybook/addon-a11y": "^6.1.18",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-knobs": "^6.3.1",
@@ -80,7 +81,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@playwright/test": "^1.39.0",
     "@popperjs/core": "^2.11.6",
     "breakpoint-sass": "^3.0.0",
     "normalize.css": "^8.0.1"
