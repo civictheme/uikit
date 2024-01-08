@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       release-level:
-        description: 'Release level (one of): patch, minor, major'
+        description: 'Release level (one of): patch or minor'
         required: true
+        default: 'minor'
 
 jobs:
   release-package:
