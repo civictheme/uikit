@@ -69,4 +69,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          version: ${{ env.NEW_VERSION }}
           publish: true
