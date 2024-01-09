@@ -4,8 +4,10 @@
   "license": "GPL-2.0-or-later",
   "description": "CivicTheme UI Kit with Storybook integration",
   "keywords": [
-    "component library",
     "ui kit",
+    "uikit",
+    "components",
+    "component library",
     "design system",
     "pattern library",
     "storybook",
@@ -14,9 +16,6 @@
   "homepage": "https://github.com/civictheme/uikit",
   "bugs": "https://github.com/civictheme/uikit",
   "repository": "https://github.com/civictheme/uikit.git",
-  "engines": {
-    "node": ">=18.14"
-  },
   "scripts": {
     "build": "npm run dist && export STORYBOOK_FULL=1 && npm run build-storybook -- --quiet",
     "build-storybook": "export NODE_OPTIONS=--openssl-legacy-provider && build-storybook -s .storybook/static",
@@ -29,6 +28,14 @@
     "test": "npm run test-storybook:ci",
     "test-storybook": "test-storybook",
     "test-storybook:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"npx http-server storybook-static --port 6006 -a 127.0.0.1 --silent\" \"wait-on --timeout 10000 http://127.0.0.1:6006 && npm run test-storybook\""
+  },
+  "engines": {
+    "node": ">=18.14"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "breakpoint-sass": "^3.0.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.0",
@@ -79,10 +86,5 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^4.8.0",
     "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "breakpoint-sass": "^3.0.0",
-    "normalize.css": "^8.0.1"
   }
 }
