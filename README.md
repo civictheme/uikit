@@ -35,7 +35,15 @@
 npm install @civictheme/uikit
 ```
 
-or download the latest release from [GitHub](https://github.com/civictheme/uikit/releases). 
+or download the latest release from [GitHub](https://github.com/civictheme/uikit/releases).
+
+## Contributing
+
+Contributions are welcome!
+
+If a specific change is being proposed (either a new feature or a bug fix), you 
+can [create an issue](https://github.com/civictheme/uikit/issues/new) documenting the proposed 
+change.
 
 ## Maintenance
 
