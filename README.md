@@ -1,6 +1,8 @@
-<p align="center">
-  <a href="" rel="noopener">
-  <img height=100px src="assets/logos/logo_secondary_light_mobile.png" alt="CivicTheme logo"></a>
+<p align="center">  
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logos/logo_secondary_dark_desktop.png">
+  <img height=100px src="assets/logos/logo_secondary_light_desktop.png" alt="CivicTheme logo">
+  </picture>  
 </p>
 
 <h1 align="center">CivicTheme - UI Kit</h1>
