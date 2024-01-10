@@ -10,3 +10,8 @@
 /.stylelintrc.json  export-ignore
 /renovate.json      export-ignore
 /webpack            export-ignore
+
+# Exclude demo assets as they are erroneously located in dist assets.
+# @see https://github.com/civictheme/uikit/issues/30
+/assets/images
+/assets/videos
