@@ -39,7 +39,6 @@ jobs:
         uses: atlassian/gajira-create@v3
         with:
           project: ${{ vars.JIRA_PROJECT_KEY }}
-          issuetype: Story
-          summary: "${{ github.event.issue.title }}"
+          issuetype: Task
+          summary: "UI Kit (GitHub): ${{ github.event.issue.title }}"
           description: ${{ env.JIRA_CONTENT }}
-          fields: '{"customfield_11600": "${{ github.event.issue.html_url }}"}'
