@@ -22,6 +22,9 @@
 
 ----
 
+> [!Tip]
+> For support, see [Getting help](https://docs.civictheme.io/getting-help) documentation
+
 ## Features
 
 - Atomic design
