@@ -24,6 +24,7 @@ export const Promo = () => {
     ),
     title: text('Title', 'Sign up for industry news and updates from CivicTheme', generalKnobTab),
     content: text('Content', randomSentence(), generalKnobTab),
+    is_contained: boolean('Contained', true, generalKnobTab),
     link: {
       text: text('Link text', 'Sign up', generalKnobTab),
       url: text('Link URL', 'https://example.com', generalKnobTab),
