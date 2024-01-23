@@ -42,6 +42,7 @@ export const Promo = () => {
       'none',
       generalKnobTab,
     ),
+    with_background: boolean('With background', false, generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),
     modifier_class: text('Additional classes', '', generalKnobTab),
   };
