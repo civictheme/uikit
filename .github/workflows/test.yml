@@ -24,3 +24,19 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npm run test
+
+      - name: Deploy to Netlify
+        if: matrix.node == 20
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish-dir: './storybook-static'
+          production-branch: main
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        timeout-minutes: 1
