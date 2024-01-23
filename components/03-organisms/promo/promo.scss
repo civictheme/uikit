@@ -5,6 +5,11 @@
 .ct-promo {
   $root: &;
 
+  &#{$root}--with-background {
+    padding-left: $ct-promo-space-horizontal;
+    padding-right: $ct-promo-space-horizontal;
+  }
+
   border-top: solid ct-particle(0.125);
   border-bottom: solid ct-particle(0.125);
 
