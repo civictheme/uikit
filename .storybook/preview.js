@@ -94,7 +94,7 @@ export const parameters = {
     prettier: {
       tabWidth: 4,
       useTabs: false,
-      htmlWhitespaceSensitivity: "strict",
+      htmlWhitespaceSensitivity: 'strict',
     },
   },
 };
