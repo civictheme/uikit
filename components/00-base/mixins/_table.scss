@@ -74,7 +74,7 @@
     th,
     td {
       padding: ct-spacing(1.5) ct-spacing();
-      vertical-align: top;
+      vertical-align: $ct-table-cell-vertical-align;
 
       @include ct-breakpoint($ct-table-breakpoint) {
         padding: ct-spacing(1.5) ct-spacing(3);
