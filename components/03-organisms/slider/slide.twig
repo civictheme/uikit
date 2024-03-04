@@ -16,7 +16,11 @@
  * - date_end: [string] Optional end date and time.
  * - date_end_iso: [string] Optional end date and time in ISO format.
  * - content: [string] Content text.
- * - links: [array] Links.
+ * - links: [array] Array of link objects with the properties:
+ *   - text: [string] Text.
+ *   - url: [string] URL.
+ *   - is_new_window: [boolean] Open link in a new window.
+ *   - is_external: [boolean] Link is external or not.
  * - content_bottom: [string] Content slot.
  * - theme: [string] Theme: light, dark.
  * - attributes: [string] Additional attributes.
@@ -114,6 +118,7 @@
                   type: loop.index == 1 ? 'primary' : 'secondary',
                   text: link.text,
                   url: link.url,
+                  is_external: link.is_external,
                   is_new_window: link.is_new_window,
                   modifier_class: 'ct-slide__links__link',
                 } only %}
