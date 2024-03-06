@@ -18,6 +18,14 @@
 
   &#{$root}--none {
     #{$root}__items {
+      display: none;
+      align-items: center;
+      height: 100%;
+
+      @include ct-breakpoint($ct-navigation-breakpoint) {
+        display: flex;
+      }
+
       #{$root}__menu {
         &.ct-menu,
         .ct-menu {
@@ -28,17 +36,70 @@
           margin: 0;
         }
 
-        .ct-menu__sub-menu {
-          margin-top: ct-spacing(2);
+        // First-level items to be displayed inline.
+        &.ct-menu--level-0 {
+          display: flex;
         }
 
         .ct-menu__item {
-          margin-bottom: ct-spacing(2);
-          margin-left: ct-spacing(2);
-        }
+          // Links - level 0.
+          &--level-0 {
+            border-bottom: solid ct-particle(0.5);
 
-        &.ct-menu > .ct-menu__item {
-          margin-left: 0;
+            > .ct-link {
+              display: block;
+              padding: ct-spacing(2);
+              text-align: center;
+
+              &::after {
+                right: ct-spacing();
+                margin-top: -1 * ct-particle(0.25);
+                top: ct-spacing(2);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include ct-component-theme($root) using($root, $theme) {
+      #{$root}__items {
+        .ct-menu__item {
+          // Links - level 0.
+          &--level-0 {
+            border-bottom-color: ct-component-var($root, $theme, menu-item, border-color);
+
+            &:hover {
+              @include ct-component-property($root, $theme, menu-item, hover, background-color);
+
+              border-bottom-color: ct-component-var($root, $theme, menu-item, hover, border-color);
+            }
+
+            &:active {
+              @include ct-component-property($root, $theme, menu-item, active, background-color);
+
+              border-bottom-color: ct-component-var($root, $theme, menu-item, active, border-color);
+            }
+
+            &.ct-menu__item--active-trail {
+              border-bottom-color: ct-component-var($root, $theme, menu, border-color);
+            }
+
+            > .ct-link {
+              @include ct-component-property($root, $theme, menu-item, background-color);
+              @include ct-component-property($root, $theme, menu, color);
+
+              &:hover {
+                @include ct-component-property($root, $theme, menu-item, hover, background-color);
+                @include ct-component-property($root, $theme, menu, hover, color);
+              }
+
+              &:active {
+                @include ct-component-property($root, $theme, menu-item, active, background-color);
+                @include ct-component-property($root, $theme, menu, active, color);
+              }
+            }
+          }
         }
       }
     }
