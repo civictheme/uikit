@@ -46,6 +46,13 @@
         {% endif %}
       {% endif %}
     {% endfor %}
+  {% else %}
+    {% for key in items|keys %}
+      {% if items[key].below %}
+          {% set items_without_below = items[key]|merge({ 'below': null }) %}
+          {% set items = items|merge({(key): items_without_below}) %}
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   <div class="ct-navigation {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
