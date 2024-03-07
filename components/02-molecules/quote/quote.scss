@@ -13,10 +13,17 @@
   margin-bottom: 0;
   display: grid;
 
+  p {
+    @include ct-typography('quote');
+
+    margin-bottom: 0;
+  }
+
   cite {
     @include ct-typography('label-small');
 
     padding: ct-spacing(2) ct-spacing(3) ct-spacing(1) 0;
+    font-style: normal;
 
     &::before {
       content: '-';
