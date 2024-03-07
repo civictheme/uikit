@@ -5,22 +5,18 @@
 .ct-quote {
   $root: &;
 
-  @include ct-reset-box-model();
+  @include ct-typography('quote');
   @include ct-highlight-stripe-vertical($ct-quote-border-width, 0, 0);
 
   position: relative;
-  padding-left: ct-spacing(2);
+  padding: ct-spacing(2) ct-spacing(3) ct-spacing(2) ct-spacing(5);
+  margin-bottom: 0;
+  display: grid;
 
-  &__content {
-    @include ct-typography('quote');
-
-    margin-bottom: 0;
-  }
-
-  &__author {
+  cite {
     @include ct-typography('label-small');
 
-    padding: 0 ct-spacing(3) ct-spacing(3);
+    padding: ct-spacing(2) ct-spacing(3) ct-spacing(1) 0;
 
     &::before {
       content: '-';
@@ -33,7 +29,7 @@
     @include ct-component-property($root, $theme, body, color);
     @include ct-highlight-stripe-background-color(ct-component-var($root, $theme, stripe, background-color));
 
-    #{$root}__author {
+    cite {
       @include ct-component-property($root, $theme, author, color);
     }
   }
