@@ -19,6 +19,7 @@
 </div>
 
 <p align="center">UI component library with Storybook integration</p>
+<p align="center"><a href="https://uikit.civictheme.io/">https://uikit.civictheme.io/</a></p>
 
 ----
 
@@ -49,6 +50,10 @@ can [create an issue](https://github.com/civictheme/uikit/issues/new) documentin
 change.
 
 ## Maintenance
+
+### Pre-release build
+
+All commits to `main` branch are built as a Storybook and automatically deployed to https://civictheme-uikit.netlify.app/
 
 ### Build assets
 
