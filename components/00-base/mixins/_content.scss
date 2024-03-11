@@ -234,7 +234,7 @@
     background-color: $ct-basic-content-light-blockquote-background-color;
 
     &::before {
-      background-color: $ct-basic-content-light-blockquote-block;
+      background-color: $ct-basic-content-light-blockquote-stripe-background-color;
     }
 
     cite {
@@ -299,7 +299,7 @@
     background-color: $ct-basic-content-dark-blockquote-background-color;
 
     &::before {
-      background-color: $ct-basic-content-dark-blockquote-block;
+      background-color: $ct-basic-content-dark-blockquote-stripe-background-color;
     }
 
     cite {
