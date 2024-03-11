@@ -85,6 +85,7 @@ export const BasicContent = (knobTab) => {
 
   // Blockquote.
   html += `
+    <blockquote>Culpa laboris sit fugiat minim ad commodo eu id sint eu sed nisi.</blockquote>
     <blockquote>Culpa laboris sit fugiat minim ad commodo eu id sint eu sed nisi.<cite>Sed aute</cite></blockquote>
   `;
 
