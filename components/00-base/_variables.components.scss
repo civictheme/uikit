@@ -469,8 +469,10 @@ $ct-basic-content-list-marker-width: ct-particle(3.5) !default;
 $ct-basic-content-space-horizontal: ct-spacing(7) !default;
 $ct-basic-content-vertical-spacing: 1.5rem !default;
 $ct-basic-content-light-base-color: ct-color-light('body') !default;
-$ct-basic-content-light-blockquote-block: ct-color-light('body') !default;
+$ct-basic-content-light-blockquote-block: ct-color-light('highlight') !default;
 $ct-basic-content-light-blockquote-color: ct-color-light('body') !default;
+$ct-basic-content-light-blockquote-background-color: ct-color-light('background-light') !default;
+$ct-basic-content-light-blockquote-author-color: ct-color-light('heading') !default;
 $ct-basic-content-light-heading-1-color: ct-color-light('heading') !default;
 $ct-basic-content-light-heading-2-color: ct-color-light('heading') !default;
 $ct-basic-content-light-heading-3-color: ct-color-light('heading') !default;
@@ -483,8 +485,10 @@ $ct-basic-content-light-ul-li-color: ct-color-light('body') !default;
 $ct-basic-content-light-ul-li-marker-color: ct-color-light('body') !default;
 $ct-basic-content-light-background-color: ct-color-light('background') !default;
 $ct-basic-content-dark-base-color: ct-color-dark('body') !default;
-$ct-basic-content-dark-blockquote-block: ct-color-dark('body') !default;
+$ct-basic-content-dark-blockquote-block: ct-color-dark('highlight') !default;
 $ct-basic-content-dark-blockquote-color: ct-color-dark('body') !default;
+$ct-basic-content-dark-blockquote-background-color: ct-color-dark('background-light') !default;
+$ct-basic-content-dark-blockquote-author-color: ct-color-dark('heading') !default;
 $ct-basic-content-dark-heading-1-color: ct-color-dark('heading') !default;
 $ct-basic-content-dark-heading-2-color: ct-color-dark('heading') !default;
 $ct-basic-content-dark-heading-3-color: ct-color-dark('heading') !default;
@@ -685,21 +689,6 @@ $ct-next-step-light-stripe-background-color: ct-color-light('highlight') !defaul
 $ct-next-step-dark-background-color: ct-color-dark('background') !default;
 $ct-next-step-dark-border-color: ct-color-dark('border') !default;
 $ct-next-step-dark-stripe-background-color: ct-color-dark('highlight') !default;
-
-//
-// Quote.
-//
-$ct-quote-border-width: ct-particle(0.75) !default;
-$ct-quote-light-background-color: ct-color-light('background-light') !default;
-$ct-quote-light-border-color: ct-color-light('highlight') !default;
-$ct-quote-light-body-color: ct-color-light('body') !default;
-$ct-quote-light-author-color: ct-color-light('heading') !default;
-$ct-quote-light-stripe-background-color: ct-color-light('highlight') !default;
-$ct-quote-dark-background-color: ct-color-dark('background-light') !default;
-$ct-quote-dark-border-color: ct-color-dark('highlight') !default;
-$ct-quote-dark-body-color: ct-color-dark('body') !default;
-$ct-quote-dark-author-color: ct-color-dark('heading') !default;
-$ct-quote-dark-stripe-background-color: ct-color-dark('highlight') !default;
 
 //
 // Table Of Contents.
