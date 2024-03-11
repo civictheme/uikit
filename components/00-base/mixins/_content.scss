@@ -118,16 +118,16 @@
 
     p {
       @include ct-typography('quote');
-  
+
       margin-bottom: 0;
     }
 
     cite {
       @include ct-typography('label-small');
-  
+
       padding-top: ct-spacing(2);
       font-style: normal;
-  
+
       &::before {
         content: '-';
         margin-right: ct-spacing(0.5);
