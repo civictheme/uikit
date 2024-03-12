@@ -501,7 +501,7 @@
           }
 
           .ct-menu__sub-menu__wrapper--level-1 {
-            @include ct-component-property($root, dropdown-sub-menu, background-color);
+            @include ct-component-property($root, $theme, dropdown-sub-menu, background-color);
           }
         }
       }
