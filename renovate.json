@@ -4,5 +4,11 @@
     "dependencyDashboard": true,
     "extends": [
         "config:base"
+    ],
+    "packageRules": [
+        {
+            "packagePatterns": ["^@storybook/"],
+            "enabled": false
+        }
     ]
 }
