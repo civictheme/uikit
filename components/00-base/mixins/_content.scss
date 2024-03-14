@@ -103,6 +103,7 @@
     margin-top: $ct-basic-content-vertical-spacing;
     margin-bottom: $ct-basic-content-vertical-spacing;
     padding: ct-spacing(2) ct-spacing(3);
+    display: grid;
 
     &::before {
       content: '';
@@ -113,6 +114,24 @@
       bottom: 0;
       left: 0;
       border-radius: $ct-basic-content-blockquote-border-radius;
+    }
+
+    p {
+      @include ct-typography('quote');
+
+      margin-bottom: 0;
+    }
+
+    cite {
+      @include ct-typography('label-small');
+
+      padding-top: ct-spacing(2);
+      font-style: normal;
+
+      &::before {
+        content: '-';
+        margin-right: ct-spacing(0.5);
+      }
     }
   }
 
@@ -212,9 +231,14 @@
 
   blockquote {
     color: $ct-basic-content-light-blockquote-color;
+    background-color: $ct-basic-content-light-blockquote-background-color;
 
     &::before {
-      background-color: $ct-basic-content-light-blockquote-block;
+      background-color: $ct-basic-content-light-blockquote-stripe-background-color;
+    }
+
+    cite {
+      color: $ct-basic-content-light-blockquote-color;
     }
   }
 
@@ -272,9 +296,14 @@
 
   blockquote {
     color: $ct-basic-content-dark-blockquote-color;
+    background-color: $ct-basic-content-dark-blockquote-background-color;
 
     &::before {
-      background-color: $ct-basic-content-dark-blockquote-block;
+      background-color: $ct-basic-content-dark-blockquote-stripe-background-color;
+    }
+
+    cite {
+      color: $ct-basic-content-dark-blockquote-color;
     }
   }
 

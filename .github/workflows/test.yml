@@ -27,7 +27,7 @@ jobs:
 
       - name: Deploy to Netlify
         if: matrix.node == 20
-        uses: nwtgck/actions-netlify@v2.1
+        uses: nwtgck/actions-netlify@v3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: './storybook-static'
