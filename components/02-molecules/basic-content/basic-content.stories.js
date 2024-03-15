@@ -101,6 +101,32 @@ export const BasicContent = (knobTab) => {
       <li>Dolore ea cillum culpa nulla.</li>
       <li>Lorem ipsum ex excepteur.</li>
     </ol>
+    <p>Number list with bullet children</p>
+    <ol>
+        <li>Number</li>
+        <li>Number</li>
+        <li>Number
+          <ul>
+            <li>Bullet</li>
+            <li>Bullet</li>
+          </ul>
+        </li>
+        <li>Number</li>
+        <li>Number</li>
+    </ol>
+    <p>Bullet list with number children</p>
+    <ul>
+        <li>Bullet</li>
+        <li>Bullet
+          <ol>
+            <li>Number</li>
+            <li>Number</li>
+          </ol>
+        </li>
+        <li>Bullet</li>
+        <li>Bullet</li>
+        <li>Bullet</li>
+    </ul>
   `;
 
   // Image.
