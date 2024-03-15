@@ -255,12 +255,11 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
   }
 
   if (evt && evt.target) {
-    if(evt.detail.keydown) {
+    if (evt.detail.keydown) {
       if (evt.target.closest('li') !== t.el) {
         return;
       }
-    }
-    else if (evt.currentTarget !== t.el || evt.target !== t.el) {
+    } else if (evt.currentTarget !== t.el || evt.target !== t.el) {
       return;
     }
   }
