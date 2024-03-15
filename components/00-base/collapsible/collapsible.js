@@ -256,7 +256,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
 
   if (evt && evt.target) {
     if (evt.detail.keydown) {
-      if (evt.target.closest('li') !== t.el) {
+      if (evt.target.closest('[data-collapsible="true"]') !== t.el) {
         return;
       }
     } else if (evt.currentTarget !== t.el || evt.target !== t.el) {
