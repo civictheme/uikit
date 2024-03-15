@@ -77,6 +77,14 @@
     @include ct-breakpoint-upto(m) {
       margin-bottom: ct-spacing(3);
     }
+
+    &.ct-navigation--none {
+      .ct-navigation__items {
+        .ct-navigation__menu.ct-menu--level-0 {
+          display: block;
+        }
+      }
+    }
   }
 
   [data-collapsible='true'] {
