@@ -16,7 +16,8 @@
     margin-top: ct-spacing(2);
   }
 
-  &#{$root}--none {
+  &#{$root}--none,
+  &#{$root}--inline {
     #{$root}__items {
       display: none;
       align-items: center;
@@ -34,11 +35,6 @@
           list-style: none;
           padding: 0;
           margin: 0;
-        }
-
-        // First-level items to be displayed inline.
-        &.ct-menu--level-0 {
-          display: flex;
         }
 
         .ct-menu__item {
@@ -100,6 +96,17 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  &#{$root}--inline {
+    #{$root}__items {
+      #{$root}__menu {
+        // First-level items to be displayed inline.
+        &.ct-menu--level-0 {
+          display: flex;
         }
       }
     }

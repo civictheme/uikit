@@ -7,7 +7,7 @@
   * - theme: [string] Theme: light, dark.
   * - items: [array] Array of menu items.
   * - title: [string] Navigation title.
-  * - dropdown: [string] One of: none, dropdown, drawer.
+  * - type: [string] One of: none, inline, dropdown, drawer.
   * - dropdown_columns: [integer] Number of columns in the dropdown drawer.
   * - dropdown_columns_fill: [bollean] Fill columns.
   * - is_animated: [bollean] Use animation for transitions.
@@ -18,18 +18,18 @@
 #}
 
 {% set menu_id = menu_id|default('navigation') %}
-{% set dropdown_class = 'ct-navigation--%s'|format(dropdown|default('none')) %}
+{% set dropdown_class = 'ct-navigation--%s'|format(type|default('none')) %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, dropdown_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
-  {% if dropdown in ['dropdown', 'drawer'] %}
+  {% if type in ['dropdown', 'drawer'] %}
     {% for key in items|keys %}
       {% if items[key].below %}
         {# Item attributes to convert them into a collapsible element. #}
         {% set item_attributes = 'data-collapsible data-collapsible-collapsed data-collapsible-group=' ~ menu_id ~ ' ' ~ (is_animated ? 'data-collapsible-duration=250' : 'data-collapsible-duration=0') %}
 
-        {% if dropdown == 'drawer' %}
+        {% if type == 'drawer' %}
           {# Item classes to style dynamically. #}
           {% set item_dropdown_columns_class = dropdown_columns ? 'ct-navigation__dropdown-columns--%s'|format(dropdown_columns) : '' %}
           {% set item_dropdown_columns_fill_class = dropdown_columns_fill ? 'ct-navigation__dropdown-columns--fill' : '' %}
