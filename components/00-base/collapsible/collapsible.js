@@ -226,7 +226,7 @@ CivicThemeCollapsible.prototype.closeGroup = function (group) {
     // eslint-disable-next-line prefer-template
     document.querySelectorAll('[data-collapsible-group=' + group + ']:not([data-collapsible-collapsed])').forEach((el) => {
       if (el !== currentEl) {
-        el.dispatchEvent(new CustomEvent('ct.collapsible.collapse', { bubbles: true }));
+        el.dispatchEvent(new CustomEvent('ct.collapsible.collapse', { bubbles: true, detail: { closeGroup: true } }));
       }
     });
   }
@@ -255,7 +255,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
   }
 
   if (evt && evt.target) {
-    if (evt.detail.keydown) {
+    if (evt.detail.keydown && !evt.detail.closeGroup) {
       if (evt.target.closest('[data-collapsible="true"]') !== t.el) {
         return;
       }

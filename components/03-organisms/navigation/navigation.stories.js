@@ -24,10 +24,11 @@ export const Navigation = (knobTab) => {
       generalKnobTab,
     ),
     title: text('Title', 'Navigation title', generalKnobTab),
-    dropdown: radios(
-      'Dropdown',
+    type: radios(
+      'Type',
       {
         None: 'none',
+        Inline: 'inline',
         Dropdown: 'dropdown',
         Drawer: 'drawer',
       },
