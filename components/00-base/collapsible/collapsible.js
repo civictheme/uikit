@@ -201,7 +201,7 @@ CivicThemeCollapsible.prototype.keydownEvent = function (e) {
   if (this !== document) {
     // Up.
     if (e.which === 38 && !e.shiftKey) {
-      this.dispatchEvent(new CustomEvent('ct.collapsible.collapse', { bubbles: true, detail: { animate: true } }));
+      this.dispatchEvent(new CustomEvent('ct.collapsible.collapse', { bubbles: true, detail: { animate: true, keydown: true } }));
       return;
     }
 
@@ -255,7 +255,11 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
   }
 
   if (evt && evt.target) {
-    if (evt.currentTarget !== t.el || evt.target !== t.el) {
+    if (evt.detail.keydown) {
+      if (evt.target.closest('[data-collapsible="true"]') !== t.el) {
+        return;
+      }
+    } else if (evt.currentTarget !== t.el || evt.target !== t.el) {
       return;
     }
   }
