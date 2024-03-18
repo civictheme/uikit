@@ -930,6 +930,10 @@ $ct-message-dark-warning-icon-color: $ct-message-dark-warning-color !default;
 //
 // Navigation can be rendered in 3 ways: plain, with dropdown and with drawer.
 
+// Inline.
+$ct-navigation-inline-column-gutter: $ct-item-list-horizontal-regular-column-gap !default;
+$ct-navigation-inline-row-gutter: $ct-item-list-horizontal-regular-column-gap !default;
+
 // Dropdown.
 $ct-navigation-dropdown-zindex: 11 !default;
 $ct-navigation-dropdown-border-radius: $ct-border-radius !default;
