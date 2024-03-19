@@ -256,11 +256,13 @@ $ct-checkbox-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 $ct-checkbox-label-light-color: ct-color-light('body') !default;
 $ct-checkbox-light-border-color: ct-color-light('border-light') !default;
 $ct-checkbox-light-selected-background-color: ct-color-light('interaction-background') !default;
+$ct-checkbox-light-selected-background-hover-color: ct-color-light('interaction-hover-background') !default;
 $ct-checkbox-light-active-background-color: ct-color-light('body') !default;
 $ct-checkbox-light-check-color: ct-color-light('interaction-text') !default;
 $ct-checkbox-label-dark-color: ct-color-dark('body') !default;
 $ct-checkbox-dark-border-color: ct-color-dark('border-dark') !default;
 $ct-checkbox-dark-selected-background-color: ct-color-dark('interaction-background') !default;
+$ct-checkbox-dark-selected-background-hover-color: ct-color-dark('interaction-hover-background') !default;
 $ct-checkbox-dark-active-background-color: ct-color-dark('body') !default;
 $ct-checkbox-dark-check-color: ct-color-dark('interaction-text') !default;
 
