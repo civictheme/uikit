@@ -32,7 +32,7 @@
 
 {% if text is not empty or icon is not empty %}
   {% set content_markup %}
-    {% if icon %}
+    {% if icon and not is_external %}
       {% set icon_markup %}
         {% include '@base/icon/icon.twig' with {
           symbol: icon,
