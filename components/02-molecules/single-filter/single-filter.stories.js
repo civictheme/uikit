@@ -3,6 +3,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import CivicThemeSingleFilter from './single-filter.twig';
+import './single-filter';
 import {
   getSlots, randomName, randomString,
 } from '../../00-base/base.utils';
