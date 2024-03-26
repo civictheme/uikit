@@ -7,6 +7,7 @@
 
 {% extends './page.twig' %}
 
+{# Header #}
 {% set header_top_2 %}
   {% include '@atoms/paragraph/paragraph.twig' with {
     theme: theme,
@@ -28,7 +29,6 @@
 {% endset %}
 
 {% set header_middle_3 %}
-
   {% include '@organisms/navigation/navigation.twig' with {
     theme: theme,
     items: primary_navigation_items,
@@ -57,82 +57,137 @@
   } %}
 {% endset %}
 
+{# Banner #}
+{% set banner %}
+  {% set content %}
+    {% include '@atoms/paragraph/paragraph.twig' with {
+      theme: theme,
+      content: '<p>Government grade set of high quality design themes that are accessible, inclusive and provide a consistent digital experience for your citizen. </p>',
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+
+    {% include '@atoms/button/button.twig' with {
+      text: 'Primary',
+      type: 'primary',
+      theme: theme,
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+
+    {% include '@atoms/button/button.twig' with {
+      text: 'Secondary',
+      type: 'secondary',
+      theme: theme,
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+  {% endset %}
+  {% set card %}
+    {% include '@molecules/navigation-card/navigation-card.twig' with {
+      theme: theme,
+      title: 'Register for a workshop',
+      summary: 'Optional summary in the breakdown of tasks.',
+      icon: 'mortarboard',
+    } only %}
+  {% endset %}
+  {% set content_below %}
+    {% include '@base/item-grid/item-grid.twig' with {
+      column_count: 4,
+      items: [card, card, card, card],
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+  {% endset %}
+  {% include '@organisms/banner/banner.twig' %}
+{% endset %}
+
+{# Content #}
+  {% set content %}
+    {# Promo #}
+    {% include '@organisms/promo/promo.twig' with {
+      title: 'Sign up for industry news and updates from CivicTheme',
+      content: 'Some text content',
+      is_contained: true,
+      vertical_spacing: 'none',
+      theme: theme,
+      link: {
+        text: 'Sign up',
+        url: 'https://example.com',
+        is_new_window: true,
+        is_external: true,
+      },
+    } only %}
+
+  {% endset %}
+
+{# Footer #}
 {% if logo %}
   {% set footer_top_1 %}
     {% include '@molecules/logo/logo.twig' with logo only %}
   {% endset %}
 {% endif %}
 
+{% set footer_top_2 %}
+  {% include '@organisms/social-links/social-links.twig' with {
+    theme: theme,
+    items: [
+      {
+        symbol: 'facebook',
+        url: 'https://www.facebook.com',
+        title: 'Facebook',
+      },
+      {
+        symbol: 'twitter',
+        url: 'https://www.facebook.com',
+        title: 'Twitter',
+      },
+      {
+        symbol: 'linkedin',
+        url: 'https://www.facebook.com',
+        title: 'LinkedIn',
+      },
+    ],
+    with_border: true,
+  } only %}
+{% endset %}
 
-  {% set footer_top_2 %}
-    {% include '@organisms/social-links/social-links.twig' with {
-      theme: theme,
-      items: [
-        {
-          symbol: 'facebook',
-          url: 'https://www.facebook.com',
-          title: 'Facebook',
-        },
-        {
-          symbol: 'twitter',
-          url: 'https://www.facebook.com',
-          title: 'Twitter',
-        },
-        {
-          symbol: 'linkedin',
-          url: 'https://www.facebook.com',
-          title: 'LinkedIn',
-        },
-      ],
-      with_border: true,
-    } only %}
-  {% endset %}
+{% set footer_middle_1 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links1,
+    title: 'Services',
+  } only %}
+{% endset %}
+{% set footer_middle_2 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links2,
+    title: 'About us',
+  } only %}
+{% endset %}
+{% set footer_middle_3 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links3,
+    title: 'Help',
+  } only %}
+{% endset %}
+{% set footer_middle_4 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links4,
+    title: 'Resources',
+  } only %}
+{% endset %}
 
+{% set footer_bottom_1 %}
+  <div class="ct-footer__acknowledgement ct-text-regular">
+    We acknowledge the traditional owners of the country throughout
+    Australia
+    and their continuing connection to land, sea and community. We pay our
+    respect to them and their cultures and to the elders past and present.
+  </div>
+{% endset %}
 
-
-  {% set footer_middle_1 %}
-    {% include '@organisms/navigation/navigation.twig' with {
-      theme: theme,
-      items: links1,
-      title: 'Services',
-    } only %}
-  {% endset %}
-  {% set footer_middle_2 %}
-    {% include '@organisms/navigation/navigation.twig' with {
-      theme: theme,
-      items: links2,
-      title: 'About us',
-    } only %}
-  {% endset %}
-  {% set footer_middle_3 %}
-    {% include '@organisms/navigation/navigation.twig' with {
-      theme: theme,
-      items: links3,
-      title: 'Help',
-    } only %}
-  {% endset %}
-  {% set footer_middle_4 %}
-    {% include '@organisms/navigation/navigation.twig' with {
-      theme: theme,
-      items: links4,
-      title: 'Resources',
-    } only %}
-  {% endset %}
-
-
-
-  {% set footer_bottom_1 %}
-    <div class="ct-footer__acknowledgement ct-text-regular">
-      We acknowledge the traditional owners of the country throughout
-      Australia
-      and their continuing connection to land, sea and community. We pay our
-      respect to them and their cultures and to the elders past and present.
-    </div>
-  {% endset %}
-
-  {% set footer_bottom_2 %}
-    <div class="copyright ct-text-regular">
-      ©Commonwealth of Australia
-    </div>
-  {% endset %}
-
+{% set footer_bottom_2 %}
+  <div class="copyright ct-text-regular">
+    ©Commonwealth of Australia
+  </div>
+{% endset %}

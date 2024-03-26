@@ -1,11 +1,14 @@
 import {
   boolean, select, radios,
 } from '@storybook/addon-knobs';
-import { getSlots, randomInt } from '../../00-base/base.utils';
+import {
+  demoImage, getSlots, randomInt,
+} from '../../00-base/base.utils';
 import CivicThemePageExample from './page.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
 import { generateMenuLinks } from '../../00-base/menu/menu.utils';
+import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 
 import { Logo } from '../../02-molecules/logo/logo.stories';
 
@@ -43,9 +46,18 @@ export const HomePage = (knobTab) => {
   generalKnobs.links3 = generateMenuLinks(4, 1, false);
   generalKnobs.links4 = generateMenuLinks(4, 1, false);
 
-  if (boolean('Show background image', false, generalKnobTab)) {
-    generalKnobs.footer_background_image = BACKGROUNDS[select('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], generalKnobTab)];
-  }
+  generalKnobs.title = 'Providing visually engaging digital experiences';
+  generalKnobs.background_image = {
+    url: './assets/backgrounds/civictheme_background_1.png',
+  };
+  generalKnobs.background_image_blend_mode = 'normal';
+  generalKnobs.featured_image = {
+    url: demoImage(0),
+    alt: 'Featured image alt text',
+  };
+  generalKnobs.is_decorative = true;
+  generalKnobs.site_section = 'Site section name';
+  generalKnobs.breadcrumb = Breadcrumb(generalKnobTab, false);
 
   return CivicThemePageExample({
     ...generalKnobs,
