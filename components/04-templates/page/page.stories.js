@@ -2,15 +2,20 @@ import {
   boolean, select, radios, number, text,
 } from '@storybook/addon-knobs';
 import {
-  demoImage, getSlots, randomInt, randomTags, randomLinks,
+  demoImage, getSlots, randomInt, randomTags, randomLinks, randomSentence, randomUrl,
 } from '../../00-base/base.utils';
 import CivicThemePageExample from './page.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
 import '../../03-organisms/slider/slider';
-import { generateMenuLinks } from '../../00-base/menu/menu.utils';
+import getMenuLinks, { generateMenuLinks } from '../../00-base/menu/menu.utils';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 import { randomSlidesComponent } from '../../03-organisms/slider/slider.utils';
+import CivicThemeItemGrid from '../../00-base/item-grid/item-grid.twig';
+import PromoCard
+  from '../../02-molecules/promo-card/promo-card.twig';
+import EventCard
+  from '../../02-molecules/event-card/event-card.twig';
 
 import { Logo } from '../../02-molecules/logo/logo.stories';
 
@@ -24,16 +29,18 @@ export default {
 export const HomePage = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
+  const theme = radios(
+    'Theme',
+    {
+      Light: 'light',
+      Dark: 'dark',
+    },
+    'light',
+    generalKnobTab,
+  );
+
   const generalKnobs = {
-    theme: radios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      'light',
-      generalKnobTab,
-    ),
+    theme,
   };
 
   generalKnobs.logo = Logo('Logo', false);
@@ -109,6 +116,76 @@ export const HomePage = (knobTab) => {
 
   generalKnobs.slides = slides;
 
+  const itemsPromo = [];
+  const itemComponentInstancePromo = PromoCard;
+  const itemsEvent = [];
+  const itemComponentInstanceEvent = EventCard;
+  const columnCount = 3;
+  const itemsPerPage = 6;
+  const resultNumber = 6;
+  const itemTags = randomTags(2, true);
+  const itemsCount = itemsPerPage > resultNumber ? resultNumber : itemsPerPage;
+  for (let i = 0; i < itemsCount; i++) {
+    const itemProps = {
+      theme: generalKnobs.theme,
+      title: `Title ${randomSentence(randomInt(1, 5))}`,
+      date: new Date().toLocaleDateString('en-uk', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      summary: `Summary ${randomSentence(randomInt(15, 25))}`,
+      url: randomUrl(),
+      image: {
+        url: demoImage(),
+        alt: 'Image alt text',
+      },
+      size: 'large',
+      tags: itemTags,
+    };
+
+    itemsPromo.push(itemComponentInstancePromo(itemProps));
+  }
+
+  for (let i = 0; i < itemsCount; i++) {
+    const itemProps = {
+      theme: generalKnobs.theme,
+      title: `Title ${randomSentence(randomInt(1, 5))}`,
+      date: new Date().toLocaleDateString('en-uk', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      summary: `Summary ${randomSentence(randomInt(15, 25))}`,
+      url: randomUrl(),
+      image: false,
+      size: 'large',
+      tags: itemTags,
+    };
+
+    itemsEvent.push(itemComponentInstanceEvent(itemProps));
+  }
+
+  generalKnobs.rows_promo = CivicThemeItemGrid({
+    theme,
+    items: itemsPromo,
+    column_count: columnCount,
+    fill_width: false,
+    with_background: false,
+  });
+
+  generalKnobs.rows_event = CivicThemeItemGrid({
+    theme,
+    items: itemsEvent,
+    column_count: columnCount,
+    fill_width: false,
+    with_background: false,
+  });
+
+  generalKnobs.results_count = `Showing ${itemsCount} of ${resultNumber}`;
+
+  generalKnobs.rows_above = `Example content above rows ${randomSentence(randomInt(10, 75))}`;
+
   return CivicThemePageExample({
     ...generalKnobs,
     ...getSlots([
@@ -138,7 +215,8 @@ export const ContentPage = (knobTab) => {
       'light',
       generalKnobTab,
     ),
-    back_to_top: boolean('Show back to top', true, generalKnobTab),
+    is_contained: boolean('Contained', true, generalKnobTab),
+    hide_sidebar: boolean('Hide Sidebar', true, generalKnobTab),
   };
 
   generalKnobs.logo = Logo('Logo', false);
@@ -155,6 +233,8 @@ export const ContentPage = (knobTab) => {
   if (boolean('Show background image', false, generalKnobTab)) {
     generalKnobs.footer_background_image = BACKGROUNDS[select('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], generalKnobTab)];
   }
+
+  generalKnobs.side_navigation_items = getMenuLinks('Links');
 
   return CivicThemePageExample({
     ...generalKnobs,

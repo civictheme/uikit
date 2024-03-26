@@ -99,30 +99,65 @@
 {% endset %}
 
 {# Content #}
-  {% set content %}
-    {# Slider #}
-    {% include '@organisms/slider/slider.twig' with {
-      title: 'Featured news',
-      slides: slides,
-      vertical_spacing: 'both',
-    } only %}
+{% set content %}
 
-    {# Promo #}
-    {% include '@organisms/promo/promo.twig' with {
-      title: 'Sign up for industry news and updates from CivicTheme',
-      content: 'Some text content',
-      is_contained: true,
-      vertical_spacing: 'none',
-      theme: theme,
-      link: {
-        text: 'Sign up',
-        url: 'https://example.com',
-        is_new_window: true,
-        is_external: true,
-      },
+  {# Promo List #}
+  {% include '@organisms/list/list.twig' with {
+    title: 'Container title',
+    link_above: {
+      text: 'Secondary',
+      url: 'https://example.com',
+      is_external: true,
+    },
+    rows_above: rows_above,
+    rows: rows_promo,
+    vertical_spacing: 'both',
+  } only %}
+
+  {# Event List #}
+  {% include '@organisms/list/list.twig' with {
+    title: 'Container title',
+    link_above: {
+      text: 'Secondary',
+      url: 'https://example.com',
+      is_external: true,
+    },
+    rows: rows_event,
+    vertical_spacing: 'both',
+  } only %}
+
+  {# Slider #}
+  {% include '@organisms/slider/slider.twig' with {
+    title: 'Featured news',
+    slides: slides,
+    vertical_spacing: 'both',
+  } only %}
+
+  {# Promo #}
+  {% include '@organisms/promo/promo.twig' with {
+    title: 'Sign up for industry news and updates from CivicTheme',
+    content: 'Some text content',
+    is_contained: true,
+    vertical_spacing: 'none',
+    theme: theme,
+    link: {
+      text: 'Sign up',
+      url: 'https://example.com',
+      is_new_window: true,
+      is_external: true,
+    },
+  } only %}
+{% endset %}
+
+{# Sidebar #}
+{% if hide_sidebar %}
+  {% set sidebar %}
+    {% include '@organisms/side-navigation/side-navigation.twig' with {
+      title: 'Heading Level 5',
+      items: side_navigation_items,
     } only %}
   {% endset %}
-
+{% endif %}
 {# Footer #}
 {% if logo %}
   {% set footer_top_1 %}
