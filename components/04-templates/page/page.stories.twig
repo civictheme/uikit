@@ -88,13 +88,15 @@
       icon: 'mortarboard',
     } only %}
   {% endset %}
-  {% set content_below %}
-    {% include '@base/item-grid/item-grid.twig' with {
-      column_count: 4,
-      items: [card, card, card, card],
-      modifier_class: 'ct-banner__content__example',
-    } only %}
-  {% endset %}
+  {% if content_below %}
+    {% set content_below %}
+      {% include '@base/item-grid/item-grid.twig' with {
+        column_count: 4,
+        items: [card, card, card, card],
+        modifier_class: 'ct-banner__content__example',
+      } only %}
+    {% endset %}
+  {% endif %}
   {% include '@organisms/banner/banner.twig' %}
 {% endset %}
 
@@ -102,29 +104,34 @@
 {% set content %}
 
   {# Promo List #}
-  {% include '@organisms/list/list.twig' with {
-    title: 'Container title',
-    link_above: {
-      text: 'Secondary',
-      url: 'https://example.com',
-      is_external: true,
-    },
-    rows_above: rows_above,
-    rows: rows_promo,
-    vertical_spacing: 'both',
-  } only %}
+  {% if rows_promo %}
+    {% include '@organisms/list/list.twig' with {
+      title: 'Container title',
+      link_above: {
+        text: 'Secondary',
+        url: 'https://example.com',
+        is_external: true,
+      },
+      rows_above: rows_above,
+      rows: rows_promo,
+      results_count: results_count,
+      vertical_spacing: 'both',
+    } only %}
+  {% endif %}
 
   {# Event List #}
-  {% include '@organisms/list/list.twig' with {
-    title: 'Container title',
-    link_above: {
-      text: 'Secondary',
-      url: 'https://example.com',
-      is_external: true,
-    },
-    rows: rows_event,
-    vertical_spacing: 'both',
-  } only %}
+  {% if rows_event %}
+    {% include '@organisms/list/list.twig' with {
+      title: 'Container title',
+      link_above: {
+        text: 'Secondary',
+        url: 'https://example.com',
+        is_external: true,
+      },
+      rows: rows_event,
+      vertical_spacing: 'both',
+    } only %}
+  {% endif %}
 
   {# Slider #}
   {% include '@organisms/slider/slider.twig' with {
@@ -132,7 +139,20 @@
     slides: slides,
     vertical_spacing: 'both',
   } only %}
+{% endset %}
 
+{% if page_content %}
+  {% set content %}
+    {% include '@molecules/basic-content/basic-content.twig' with {
+      theme: theme,
+      content: page_content,
+      vertical_spacing: 'both',
+    } only %}
+  {% endset %}
+{% endif %}
+
+{# Content bottom #}
+{% set content_bottom %}
   {# Promo #}
   {% include '@organisms/promo/promo.twig' with {
     title: 'Sign up for industry news and updates from CivicTheme',
@@ -150,11 +170,12 @@
 {% endset %}
 
 {# Sidebar #}
-{% if hide_sidebar %}
+{% if not hide_sidebar %}
   {% set sidebar %}
     {% include '@organisms/side-navigation/side-navigation.twig' with {
       title: 'Heading Level 5',
       items: side_navigation_items,
+      vertical_spacing: 'both',
     } only %}
   {% endset %}
 {% endif %}
