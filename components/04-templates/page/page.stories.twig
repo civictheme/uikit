@@ -100,6 +100,13 @@
 
 {# Content #}
   {% set content %}
+    {# Slider #}
+    {% include '@organisms/slider/slider.twig' with {
+      title: 'Featured news',
+      slides: slides,
+      vertical_spacing: 'both',
+    } only %}
+
     {# Promo #}
     {% include '@organisms/promo/promo.twig' with {
       title: 'Sign up for industry news and updates from CivicTheme',
@@ -114,7 +121,6 @@
         is_external: true,
       },
     } only %}
-
   {% endset %}
 
 {# Footer #}

@@ -1,14 +1,16 @@
 import {
-  boolean, select, radios,
+  boolean, select, radios, number, text,
 } from '@storybook/addon-knobs';
 import {
-  demoImage, getSlots, randomInt,
+  demoImage, getSlots, randomInt, randomTags, randomLinks,
 } from '../../00-base/base.utils';
 import CivicThemePageExample from './page.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
+import '../../03-organisms/slider/slider';
 import { generateMenuLinks } from '../../00-base/menu/menu.utils';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
+import { randomSlidesComponent } from '../../03-organisms/slider/slider.utils';
 
 import { Logo } from '../../02-molecules/logo/logo.stories';
 
@@ -32,7 +34,6 @@ export const HomePage = (knobTab) => {
       'light',
       generalKnobTab,
     ),
-    back_to_top: boolean('Show back to top', true, generalKnobTab),
   };
 
   generalKnobs.logo = Logo('Logo', false);
@@ -57,7 +58,56 @@ export const HomePage = (knobTab) => {
   };
   generalKnobs.is_decorative = true;
   generalKnobs.site_section = 'Site section name';
-  generalKnobs.breadcrumb = Breadcrumb(generalKnobTab, false);
+  generalKnobs.breadcrumb = Breadcrumb('Breadcrumb', false);
+  const slidesKnobTab = 'Slide';
+  const numOfSlides = number(
+    'Number of slides',
+    5,
+    {
+      range: true,
+      min: 0,
+      max: 10,
+      step: 1,
+    },
+    slidesKnobTab,
+  );
+
+  const slides = randomSlidesComponent(numOfSlides, generalKnobs.theme, true, {
+    image_position: radios('Image Position', {
+      Left: 'left',
+      Right: 'right',
+    }, 'right', slidesKnobTab),
+    tags: randomTags(number(
+      'Number of tags',
+      2,
+      {
+        range: true,
+        min: 0,
+        max: 10,
+        step: 1,
+      },
+      slidesKnobTab,
+    ), true),
+    date: text('Date', '20 Jan 2023 11:00', slidesKnobTab),
+    date_end: text('End date', '21 Jan 2023 15:00', slidesKnobTab),
+    links: randomLinks(number(
+      'Number of links',
+      2,
+      {
+        range: true,
+        min: 0,
+        max: 10,
+        step: 1,
+      },
+      slidesKnobTab,
+    ), 10),
+    ...getSlots([
+      'content_top',
+      'content_bottom',
+    ]),
+  }).join(' ');
+
+  generalKnobs.slides = slides;
 
   return CivicThemePageExample({
     ...generalKnobs,
