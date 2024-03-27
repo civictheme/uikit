@@ -2,251 +2,479 @@
 // Checkbox component.
 //
 
-.ct-checkbox {
-  $root: &;
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:list';
 
-  position: relative;
-  display: flex;
-  align-items: center;
 
-  &--disabled {
-    opacity: 50%;
+// Form controls.
+$ct-form-control-border-radius: $ct-border-radius;
+$ct-form-control-border-width: ct-particle(0.25);
+$ct-form-control-hover-border-width: $ct-form-control-border-width * 1.5;
+
+// Outline.
+$ct-outline-style: solid;
+$ct-outline-width: ct-particle(0.25) !default;
+$ct-outline-offset: ct-particle(0.25) !default;
+
+// Enable CSS animations.
+$ct-animation-enabled: true !default;
+$ct-animation-duration: 0.25s !default;
+
+
+
+$ct-checkbox-check: url("data:image/svg+xml,%3Csvg stroke='' stroke-width='1px' width='14' height='14' viewBox='0 0 14 10' fill='' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.08556 9.91168C3.97589 9.86599 3.87635 9.79904 3.79268 9.71468L0.264683 6.18668C0.0952092 6.01721 0 5.78735 0 5.54768C0 5.30801 0.0952092 5.07816 0.264683 4.90868C0.434156 4.73921 0.664011 4.644 0.903683 4.644C1.14335 4.644 1.37321 4.73921 1.54268 4.90868L4.43168 7.80668L11.9647 0.264682C12.1342 0.0952088 12.364 0 12.6037 0C12.8434 0 13.0732 0.0952088 13.2427 0.264682C13.4122 0.434155 13.5074 0.664011 13.5074 0.903682C13.5074 1.14335 13.4122 1.37321 13.2427 1.54268L5.07068 9.71468C4.98702 9.79904 4.88748 9.86599 4.7778 9.91168C4.66813 9.95737 4.55049 9.9809 4.43168 9.9809C4.31287 9.9809 4.19524 9.95737 4.08556 9.91168Z' /%3E%3C/svg%3E") !default;
+$ct-checkbox-width: ct-particle(3) !default;
+$ct-checkbox-height: $ct-checkbox-width !default;
+
+$ct-form-control-dark-invalid-border-color: red;
+$ct-form-control-dark-border-color: #000;
+
+
+
+$ct-form-control-border-radius: $ct-border-radius !default;
+$ct-form-control-light-background-color: ct-color-light('interaction-text') !default;
+$ct-form-control-light-border-color: ct-color-light('interaction-background') !default;
+$ct-form-control-light-color: ct-color-light('body') !default;
+$ct-form-control-light-hover-background-color: ct-color-light('interaction-hover-text') !default;
+$ct-form-control-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
+$ct-form-control-light-hover-color: $ct-form-control-light-color !default;
+$ct-form-control-light-invalid-background-color: $ct-form-control-light-background-color !default;
+$ct-form-control-light-invalid-border-color: ct-color-light('error') !default;
+$ct-form-control-light-invalid-color: $ct-form-control-light-color !default;
+$ct-form-control-dark-background-color: ct-color-dark('interaction-text') !default;
+$ct-form-control-dark-border-color: ct-color-dark('interaction-background') !default;
+$ct-form-control-dark-color: ct-color-dark('body') !default;
+$ct-form-control-dark-hover-background-color: ct-color-dark('interaction-hover-text') !default;
+$ct-form-control-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
+$ct-form-control-dark-hover-color: $ct-form-control-dark-color !default;
+$ct-form-control-dark-invalid-background-color: $ct-form-control-dark-background-color !default;
+$ct-form-control-dark-invalid-border-color: ct-color-dark('error') !default;
+$ct-form-control-dark-invalid-color: $ct-form-control-dark-color !default;
+
+
+$ct-form-control-hover-border-width: 2px !default;
+
+//
+// Functions to work with conditions.
+//
+
+//
+// Polyfill for ternary if operator.
+//
+@function ct-if($condition, $true-statement, $false-statement) {
+  $output: $false-statement;
+
+  @if $condition {
+    $output: $true-statement;
   }
 
-  .ct-checkbox__element {
-    position: absolute;
-    // stylelint-disable-next-line alpha-value-notation
-    opacity: 0;
-    width: ct-particle(3.25);
-    height: ct-particle(3.25);
-    z-index: 1;
-    cursor: pointer;
+  @return $output;
+}
 
-    & + .ct-checkbox__state {
-      &::before {
-        content: '';
-        border-radius: $ct-checkbox-border-radius;
-        border: ct-particle(0.125) solid;
-        display: block;
-        width: ct-particle(3) - rem(2px);
-        height: ct-particle(3) - rem(2px);
-        position: relative;
-        margin-right: ct-spacing();
-        vertical-align: middle;
-        cursor: pointer;
-        text-align: center;
-      }
+//
+// Border mixins.
+//
 
-      &::after {
-        position: absolute;
-        top: -1 * ct-particle(0.25);
-        left: ct-particle(0.25);
-        display: inline-block;
-        width: ct-particle(3) - rem(2px);
-        height: ct-particle(3) - rem(2px);
-        content: '';
+//
+// Create an inset border on the element.
+//
+@mixin ct-border-inset($color: false, $width: ct-particle(0.125)) {
+  @if $color {
+    box-shadow: inset 0 0 0 $width $color;
+  }
+  @else {
+    box-shadow: inset 0 0 0 $width;
+  }
+}
+
+
+//
+// Form mixins.
+//
+
+// Form control component consists of "element" (the whole thing) and
+// "control" (the actual control that takes user input).
+//
+// Element can be the same DOM element as control (textfield, textarea, select
+// etc) or it can be a wrapping DOM element with control being sitting within
+// it (radio, checkbox etc).
+//
+// For the first case, both ct-form-element() and ct-form-control() should be
+// applied to the component DOM element.
+//
+// For the second case, ct-form-element() should be applied to the wrapping
+// component DOM element and ct-form-control() should be applied to the control
+// DOM element.
+
+//
+// Generic form element styles.
+//
+// These styles are not colour-specific and are responsible for the consistent
+// look and feel of a form element.
+//
+@mixin ct-form-element($width: 100%, $is_padded: true) {
+  @include ct-typography('text-regular');
+
+  &--disabled {
+    @include ct-form-element-disabled();
+  }
+}
+
+//
+// Generic form control styles.
+//
+// These styles are not colour-specific and are responsible for the consistent
+// look and feel of a form control.
+//
+@mixin ct-form-control($width: 100%, $is-padded: true) {
+  border: $ct-form-control-border-width solid currentcolor;
+  cursor: pointer;
+
+  @if $width {
+    width: $width;
+  }
+
+  @if $is-padded {
+    padding: ct-particle(0.5) ct-particle(1);
+  }
+
+  @if $ct-form-control-border-radius != 0 {
+    border-radius: $ct-form-control-border-radius;
+  }
+
+  &:hover {
+    @include ct-border-inset(currentColor, $ct-form-control-hover-border-width - $ct-form-control-border-width);
+  }
+
+  &:focus {
+    @include ct-outline();
+  }
+
+  &::placeholder {
+    opacity: 40%;
+  }
+}
+
+//
+// Print form control colors.
+//
+@mixin ct-form-control-colors($theme, $states: ('default', 'hover', 'focus')) {
+  @if type-of($states) != 'list' {
+    $types: ($states);
+  }
+
+  @each $state in $states {
+    @if $state == 'default' {
+      & {
+        @include _ct-form-control-print-rules(
+            ct-if($theme == 'light', $ct-form-control-light-color, $ct-form-control-dark-color),
+            ct-if($theme == 'light', $ct-form-control-light-background-color, $ct-form-control-dark-background-color),
+            ct-if($theme == 'light', $ct-form-control-light-border-color, $ct-form-control-dark-border-color),
+        );
       }
     }
-
-    &:checked {
-      & + .ct-checkbox__state {
-        &::before {
-          width: ct-particle(3) - rem(2px);
-          height: ct-particle(3) - rem(2px);
-          border-width: ct-particle(0.25);
-        }
+    @else if $state == 'hover' {
+      &:hover {
+        @include _ct-form-control-print-rules(
+            ct-if($theme == 'light', $ct-form-control-light-hover-color, $ct-form-control-dark-hover-color),
+            ct-if($theme == 'light', $ct-form-control-light-hover-background-color, $ct-form-control-dark-hover-background-color),
+            ct-if($theme == 'light', $ct-form-control-light-hover-border-color, $ct-form-control-dark-hover-border-color),
+        );
+        @include ct-border-inset(
+            ct-if($theme == 'light', $ct-form-control-light-hover-border-color, $ct-form-control-dark-hover-border-color),
+        );
       }
     }
-
-    &:focus-visible,
-    &:hover {
-      & + .ct-checkbox__state {
-        &::before {
-          box-shadow: 0 0 0 ct-particle(0.125);
-        }
+    @else if $state == 'focus' {
+      @if $theme == 'light' {
+        @include ct-outline-dark();
+      }
+      @else {
+        @include ct-outline-light();
       }
     }
+    @else if $state == 'invalid' {
+      @include _ct-form-control-print-rules(
+          ct-if($theme == 'light', $ct-form-control-light-invalid-color, $ct-form-control-dark-invalid-color),
+          ct-if($theme == 'light', $ct-form-control-light-invalid-background-color, $ct-form-control-dark-invalid-background-color),
+          ct-if($theme == 'light', $ct-form-control-light-invalid-border-color, $ct-form-control-dark-invalid-border-color),
+      );
 
-    &:disabled {
-      pointer-events: none;
+      &:hover {
+        @include _ct-form-control-print-rules(
+            ct-if($theme == 'light', $ct-form-control-light-invalid-color, $ct-form-control-dark-invalid-color),
+            ct-if($theme == 'light', $ct-form-control-light-invalid-background-color, $ct-form-control-dark-invalid-background-color),
+            ct-if($theme == 'light', $ct-form-control-light-invalid-border-color, $ct-form-control-dark-invalid-border-color),
+        );
+        @include ct-border-inset(
+            ct-if($theme == 'light', $ct-form-control-light-invalid-border-color, $ct-form-control-dark-invalid-border-color),
+        );
+      }
+    }
+  }
+}
+
+//
+// Hide native form control.
+//
+@mixin ct-form-control-no-appearance() {
+  appearance: none;
+
+  // Not removed via appearance.
+  margin: 0;
+}
+
+//
+// Disabled form element.
+//
+@mixin ct-form-element-disabled() {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+//
+// Print form control rules.
+//
+// Do not use directly.
+//
+// stylelint-disable-next-line scss/at-mixin-pattern
+@mixin _ct-form-control-print-rules($color, $background-color, $border-color, $border-width: false) {
+  @if $background-color {
+    background-color: $background-color;
+  }
+
+  @if $border-color {
+    border-color: $border-color;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $border-width {
+    border-width: $border-width;
+  }
+}
+
+//
+// Normalize typography rules and return as a map.
+//
+// Do not use directly.
+//
+// stylelint-disable-next-line scss/at-function-pattern
+@function _ct-typography-extract-rules($rules) {
+  $font-size: list.nth($rules, 1);
+  $line-height: list.nth($rules, 2);
+  $font-weight: false;
+  $font-name: false;
+  $letter-spacing: false;
+
+  @if length($rules) >= 3 {
+    $font-weight: list.nth($rules, 3);
+  }
+
+  @if length($rules) >= 4 {
+    $font-name: list.nth($rules, 4);
+  }
+
+  @if length($rules) >= 5 {
+    $letter-spacing: list.nth($rules, 5);
+  }
+
+  @if $font-name {
+    $font-name: ct-font($font-name);
+  }
+
+  @if $font-weight {
+    // Try to get the weight value from the pre-defined weights or default
+    // to the provided value.
+    $font-weight-value: map.get(_ct-font-weights-all(), $font-weight);
+
+    @if $font-weight-value != null {
+      $font-weight: $font-weight-value;
+    }
+  }
+
+  $map: (
+    'font-size': rem($font-size),
+    'line-height': rem($line-height),
+    'font-weight': $font-weight,
+    'font-name': $font-name,
+    'letter-spacing': $letter-spacing,
+  );
+
+  @return $map;
+}
+
+
+//
+// Include font size, height, weight and family for one-to-many breakpoints.
+//
+// Do not use directly.
+// Use @include ct-ct-typography-rule() function instead.
+//
+// stylelint-disable-next-line scss/at-function-pattern
+@function _ct-typography-get-ruleset-rule($ruleset, $rule-name: false, $rule-breakpoint: false) {
+  $all-typographies: _ct-typography-all();
+
+  // Ruleset is a name of the preset - retrieve preset as a ruleset.
+  @if type-of($ruleset) == string {
+    @if map.get($all-typographies, $ruleset) == null {
+      @error '"#{$ruleset}" is not an available typography preset.';
+    }
+
+    $ruleset: map.get($all-typographies, $ruleset);
+  }
+
+  // Ruleset is a list of rules - extract rules.
+  @if type-of($ruleset) == list {
+    $ruleset: _ct-typography-extract-rules($ruleset);
+
+    @if $rule-name {
+      @return map.get($ruleset, $rule-name);
+    }
+  }
+
+    // Ruleset is a full ruleset definition - print all rules with breakpoints.
+  @else if type-of($ruleset) == map {
+    $breakpoints: map.keys($ruleset);
+
+    @each $breakpoint in $breakpoints {
+      $breakpoint-ruleset: _ct-typography-extract-rules(map.get($ruleset, $breakpoint));
+
+      @if $rule-name and $rule-breakpoint and $breakpoint == $rule-breakpoint {
+        @return map.get($breakpoint-ruleset, $rule-name);
+      }
+    }
+  }
+}
+
+
+//
+// Get typography rules based on the pre-defined typography preset.
+//
+// Similar to ct-typography(), but returns the value instead of printing it.
+//
+@function ct-typography-rule($name, $rule-name, $breakpoint, $default: 'none') {
+  @if type-of($name) != string {
+    @error 'Only scalar names can be used as a typography preset.';
+  }
+
+  $value: _ct-typography-get-ruleset-rule($name, $rule-name, $breakpoint);
+
+  @if $value == null {
+    $value: $default;
+  }
+
+  @return $value;
+}
+
+
+.ct-checkbox {
+  $_control-width: $ct-checkbox-width;
+  $_control-height: $ct-checkbox-height;
+
+  // Helper to set the color of the checked element.
+  // stylelint-disable-next-line scss/at-mixin-pattern
+  @mixin _control-checked($color) {
+    &::before {
+      content: ct-color-svg-fill($ct-checkbox-check, $color);
+    }
+  }
+
+  $root: &;
+
+  @include ct-form-element();
+
+  display: grid;
+  grid-template-columns: $_control-width auto;
+
+  #{$root}__control {
+    @include ct-form-control(false, false);
+    @include ct-form-control-no-appearance();
+
+    display: grid;
+    height: $_control-height;
+    place-content: center;
+    width: $_control-width;
+
+    // Adjust vertical position to be visually centered within the vertical
+    // middle of the label based on the line height.
+    transform: translateY(-1 * math.div($_control-height - ct-typography-rule('label-regular', 'line-height', 'm'), 2));
+
+    &::before {
+      content: '';
+      width: math.div(math.floor(math.div($_control-width - 2 * 1.6 * math.max($ct-form-control-border-width, $ct-form-control-hover-border-width), 2) * 100) * 2, 100);
+      height: math.div(math.floor(math.div($_control-height - 2 * 1.6 * math.max($ct-form-control-border-width, $ct-form-control-hover-border-width), 2) * 100) * 2, 100);
+      transform: scale(0);
+      cursor: pointer;
+    }
+
+    &:checked::before {
+      transform: scale(1);
     }
   }
 
   #{$root}__label {
-    @include ct-typography('text-regular');
+    padding-left: ct-spacing(1.5);
+
+    &.ct-label {
+      font-weight: normal;
+    }
   }
 
   &.ct-theme-light {
-    #{$root}__label {
-      color: $ct-checkbox-label-light-color;
-    }
-
-    #{$root}__element {
-      & + .ct-checkbox__state {
-        &::before {
-          border-color: $ct-checkbox-light-border-color;
-        }
-      }
-
-      &:active {
-        & + .ct-checkbox__state {
-          &::before {
-            background-color: $ct-checkbox-light-active-background-color;
-            border-color: $ct-checkbox-light-active-background-color;
-            box-shadow: inset 0 0 0 ct-particle(0.375) $ct-checkbox-light-check-color;
-          }
-        }
-      }
-
-      &:focus-visible {
-        & + .ct-checkbox__state {
-          &::before {
-            @include ct-outline();
-
-            background-color: $ct-checkbox-light-selected-background-color;
-            border-color: $ct-checkbox-light-selected-background-color;
-            box-shadow: inset 0 0 0 ct-particle(0.375) $ct-checkbox-light-check-color;
-          }
-        }
-      }
-
-      &:hover {
-        & + .ct-checkbox__state {
-          &::before {
-            box-shadow: 0 0 0 ct-particle(0.125) $ct-checkbox-light-border-color;
-          }
-        }
-      }
+    #{$root}__control {
+      @include ct-form-control-colors('light');
 
       &:checked {
-        & + .ct-checkbox__state {
-          &::before {
-            background-color: $ct-checkbox-light-selected-background-color;
-            border-color: $ct-checkbox-light-selected-background-color;
-            box-shadow: inset 0 0 0 ct-particle(0.375) $ct-checkbox-light-check-color;
-          }
+        @include _control-checked($ct-form-control-light-border-color);
+      }
 
-          &::after {
-            content: ct-color-svg-fill($ct-checkbox-check, $ct-checkbox-light-check-color);
-          }
-        }
+      &:checked:hover {
+        @include _control-checked($ct-form-control-light-hover-border-color);
       }
     }
 
-    &.ct-checkbox--success {
-      #{$root}__element {
-        &:checked + .ct-checkbox__state {
-          &::before {
-            border-color: $ct-input-light-success-border-color;
-            background-color: $ct-input-light-success-border-color;
-          }
-        }
-      }
-    }
-
-    &.ct-checkbox--error {
-      #{$root}__element {
-        & + .ct-checkbox__state {
-          &::before {
-            border-color: $ct-input-light-error-border-color;
-          }
-        }
+    &#{$root}--invalid {
+      #{$root}__control {
+        @include ct-form-control-colors('light', 'invalid');
 
         &:checked {
-          & + .ct-checkbox__state {
-            &::before {
-              border-color: $ct-input-light-error-border-color;
-              background-color: $ct-input-light-error-border-color;
-            }
-          }
+          @include _control-checked($ct-form-control-light-invalid-border-color);
+        }
+
+        &:checked:hover {
+          @include _control-checked($ct-form-control-light-invalid-border-color);
         }
       }
     }
   }
 
   &.ct-theme-dark {
-    #{$root}__label {
-      color: $ct-checkbox-label-dark-color;
-    }
-
-    #{$root}__element {
-      & + .ct-checkbox__state {
-        &::before {
-          border-color: $ct-checkbox-dark-border-color;
-        }
-      }
-
-      &:active {
-        & + .ct-checkbox__state {
-          &::before {
-            background-color: $ct-checkbox-dark-active-background-color;
-            border-color: $ct-checkbox-dark-active-background-color;
-            box-shadow: inset 0 0 0 ct-particle(0.375) $ct-checkbox-dark-check-color;
-          }
-        }
-      }
-
-      &:focus-visible {
-        & + .ct-checkbox__state {
-          &::before {
-            @include ct-outline(true);
-
-            background-color: $ct-checkbox-dark-selected-background-color;
-            border-color: $ct-checkbox-dark-selected-background-color;
-            box-shadow: inset 0 0 0 ct-particle(0.375) $ct-checkbox-dark-check-color;
-          }
-        }
-      }
-
-      &:hover {
-        & + .ct-checkbox__state {
-          &::before {
-            box-shadow: 0 0 0 ct-particle(0.125) $ct-checkbox-dark-border-color;
-          }
-        }
-      }
+    #{$root}__control {
+      @include ct-form-control-colors('dark');
 
       &:checked {
-        & + .ct-checkbox__state {
-          &::before {
-            background-color: $ct-checkbox-dark-selected-background-color;
-            border-color: $ct-checkbox-dark-selected-background-color;
-            box-shadow: inset 0 0 0 ct-particle(0.375) $ct-checkbox-dark-check-color;
-          }
+        @include _control-checked($ct-form-control-dark-border-color);
+      }
 
-          &::after {
-            content: ct-color-svg-fill($ct-checkbox-check, $ct-checkbox-dark-check-color);
-          }
-        }
+      &:checked:hover {
+        @include _control-checked($ct-form-control-dark-hover-border-color);
       }
     }
 
-    &.ct-checkbox--success {
-      #{$root}__element {
-        &:checked + .ct-checkbox__state {
-          &::before {
-            border-color: $ct-input-dark-success-border-color;
-            background-color: $ct-input-dark-success-border-color;
-          }
-        }
-      }
-    }
-
-    &.ct-checkbox--error {
-      #{$root}__element {
-        & + .ct-checkbox__state {
-          &::before {
-            border-color: $ct-input-dark-error-border-color;
-          }
-        }
+    &#{$root}--invalid {
+      #{$root}__control {
+        @include ct-form-control-colors('dark', 'invalid');
 
         &:checked {
-          & + .ct-checkbox__state {
-            &::before {
-              border-color: $ct-input-dark-error-border-color;
-              background-color: $ct-input-dark-error-border-color;
-            }
-          }
+          @include _control-checked($ct-form-control-dark-invalid-border-color);
+        }
+
+        &:checked:hover {
+          @include _control-checked($ct-form-control-dark-invalid-border-color);
         }
       }
     }

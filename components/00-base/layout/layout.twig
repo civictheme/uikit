@@ -62,13 +62,21 @@
           {% endblock %}
         {% endif %}
 
+        <aside class="ct-layout__sidebar-right {% if has_sidebar %}col-m-3 col-xxs-12{% endif %}" role="complementary" {% if sidebar_attributes %}{{ sidebar_attributes }}{% endif %}>
+          Sidebar right top
+        </aside>
+
         {% block content %}
           <section class="ct-layout__main {% if has_sidebar %}col-m-8 col-m-offset-1 col-xxs-12{% elseif is_contained %} col-m-12 col-xxs-12{% endif %}" {% if content_attributes %}{{ content_attributes }}{% endif %}>
             {{ content }}
           </section>
         {% endblock %}
 
-      {% if has_sidebar or is_contained %}
+        <aside class="ct-layout__sidebar-right {% if has_sidebar %}col-m-3 col-xxs-12{% endif %}" role="complementary" {% if sidebar_attributes %}{{ sidebar_attributes }}{% endif %}>
+          Sidebar right bottom
+        </aside>
+
+        {% if has_sidebar or is_contained %}
       </div>
       {% endif %}
     </div>

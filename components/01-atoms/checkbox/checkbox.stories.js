@@ -1,14 +1,16 @@
+// phpcs:ignoreFile
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeCheckbox from './checkbox.twig';
+import { indexedString } from '../../00-base/base.stories';
 
 export default {
-  title: 'Atoms/Checkbox',
+  title: 'Atoms/Form control/Checkbox',
   parameters: {
     layout: 'centered',
   },
 };
 
-export const Checkbox = (knobTab) => {
+export const Checkbox = (knobTab, returnHtml = true, idx = true) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const generalKnobs = {
@@ -21,15 +23,18 @@ export const Checkbox = (knobTab) => {
       'light',
       generalKnobTab,
     ),
-    content: text('Content', 'Checkbox label', generalKnobTab),
-    required: boolean('Required', false, generalKnobTab),
-    disabled: boolean('Disabled', false, generalKnobTab),
-    has_error: boolean('Has error', false, generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
+    label: text('Label', 'Checkbox label that spans on the multiple lines to test vertical checkbox alignment', generalKnobTab),
+    is_checked: boolean('Checked', false, generalKnobTab),
+    is_invalid: boolean('Invalid', false, generalKnobTab),
+    is_disabled: boolean('Disabled', false, generalKnobTab),
+    name: text('Name', indexedString('control-name', idx), generalKnobTab),
+    value: text('Value', 'control-value', generalKnobTab),
+    id: text('ID', indexedString('control-id', idx), generalKnobTab),
+    modifier_class: `story-wrapper-size--small ${text('Additional class', '', generalKnobTab)}`,
     attributes: text('Additional attributes', '', generalKnobTab),
   };
 
-  return CivicThemeCheckbox({
+  return returnHtml ? CivicThemeCheckbox({
     ...generalKnobs,
-  });
+  }) : generalKnobs;
 };

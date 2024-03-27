@@ -1,22 +1,37 @@
 //
 // Outline mixins.
 //
+//
+////
+//// Set element outline.
+////
+//@mixin ct-outline($is_dark: false) {
+//  outline-offset: $ct-outline-offset;
+//  outline-width: $ct-outline-width;
+//  outline-style: solid;
+//
+//  @if $is_dark {
+//    outline-color: $ct-outline-dark;
+//  }
+//  @else {
+//    outline-color: $ct-outline-light;
+//  }
+//}
 
 //
 // Set element outline.
 //
-@mixin ct-outline($is_dark: false) {
-  outline-offset: $ct-outline-offset;
-  outline-width: $ct-outline-width;
-  outline-style: solid;
-
-  @if $is_dark {
-    outline-color: $ct-outline-dark;
-  }
-  @else {
-    outline-color: $ct-outline-light;
-  }
+// Do not use directly.
+// Use ct-outline-light() and ct-outline-dark() instead.
+//
+@mixin ct-outline($style: $ct-outline-style, $width: $ct-outline-width, $offset: $ct-outline-offset) {
+  outline-width: $width;
+  outline-style: $style;
+  outline-color: invert;
+  outline-offset: $offset;
+  transition: none;
 }
+
 
 @mixin ct-outline-theme($theme) {
   @if $theme == 'light' {
@@ -26,6 +41,23 @@
     @include ct-outline(true);
   }
 }
+
+//
+@mixin ct-outline-light($width: $ct-outline-width, $offset: $ct-outline-offset) {
+  @include ct-outline($width, $offset);
+
+  outline-color: $ct-outline-light;
+}
+
+//
+// Set element outline.
+//
+@mixin ct-outline-dark($width: $ct-outline-width, $offset: $ct-outline-offset) {
+  @include ct-outline($width, $offset);
+
+  outline-color: $ct-outline-dark;
+}
+
 
 @mixin ct-outline-border() {
   border-radius: $ct-outline-border-radius;
