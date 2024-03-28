@@ -1,0 +1,255 @@
+{#
+/**
+ * @file
+ * Page component stories.
+ */
+#}
+
+{% extends './page.twig' %}
+
+{# Header #}
+{% set header_top_2 %}
+  {% include '@atoms/paragraph/paragraph.twig' with {
+    theme: theme,
+    content: 'A design system by Salsa Digital'
+  } only %}
+{% endset %}
+
+{% set header_top_3 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: secondary_navigation_items,
+    type: 'inline',
+    modifier_class: 'ct-justify-content-end',
+  } only %}
+{% endset %}
+
+{% set header_middle_2 %}
+  {% include '@molecules/logo/logo.twig' with logo only %}
+{% endset %}
+
+{% set header_middle_3 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: primary_navigation_items,
+    type: 'drawer',
+    dropdown_columns: 4,
+    dropdown_columns_fill: true,
+    modifier_class: 'ct-justify-content-end',
+  } only %}
+
+  {% include '@molecules/search/search.twig' with {
+    'theme': theme,
+    'text': 'Search',
+    'url': '/search',
+    'modifier_class': 'ct-justify-content-end',
+  } only %}
+
+  {% include '@organisms/mobile-navigation/mobile-navigation-trigger.twig' with {
+    theme: theme,
+    text: 'Menu',
+  } %}
+
+  {% include '@organisms/mobile-navigation/mobile-navigation.twig' with {
+    theme: theme,
+    top_menu: primary_navigation_items,
+    bottom_menu: secondary_navigation_items,
+  } %}
+{% endset %}
+
+{# Banner #}
+{% set banner %}
+  {% set content %}
+    {% include '@atoms/paragraph/paragraph.twig' with {
+      theme: theme,
+      content: '<p>Government grade set of high quality design themes that are accessible, inclusive and provide a consistent digital experience for your citizen. </p>',
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+
+    {% include '@atoms/button/button.twig' with {
+      text: 'Primary',
+      type: 'primary',
+      theme: theme,
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+
+    {% include '@atoms/button/button.twig' with {
+      text: 'Secondary',
+      type: 'secondary',
+      theme: theme,
+      modifier_class: 'ct-banner__content__example',
+    } only %}
+  {% endset %}
+  {% set card %}
+    {% include '@molecules/navigation-card/navigation-card.twig' with {
+      theme: theme,
+      title: 'Register for a workshop',
+      summary: 'Optional summary in the breakdown of tasks.',
+      icon: 'mortarboard',
+    } only %}
+  {% endset %}
+  {% if content_below %}
+    {% set content_below %}
+      {% include '@base/item-grid/item-grid.twig' with {
+        column_count: 4,
+        items: [card, card, card, card],
+        modifier_class: 'ct-banner__content__example',
+      } only %}
+    {% endset %}
+  {% endif %}
+  {% include '@organisms/banner/banner.twig' %}
+{% endset %}
+
+{# Content #}
+{% set content %}
+
+  {# Promo List #}
+  {% if rows_promo %}
+    {% include '@organisms/list/list.twig' with {
+      title: 'Container title',
+      link_above: {
+        text: 'Secondary',
+        url: 'https://example.com',
+        is_external: true,
+      },
+      rows_above: rows_above,
+      rows: rows_promo,
+      results_count: results_count,
+      vertical_spacing: 'both',
+    } only %}
+  {% endif %}
+
+  {# Event List #}
+  {% if rows_event %}
+    {% include '@organisms/list/list.twig' with {
+      title: 'Container title',
+      link_above: {
+        text: 'Secondary',
+        url: 'https://example.com',
+        is_external: true,
+      },
+      rows: rows_event,
+      vertical_spacing: 'both',
+    } only %}
+  {% endif %}
+
+  {# Slider #}
+  {% include '@organisms/slider/slider.twig' with {
+    title: 'Featured news',
+    slides: slides,
+    vertical_spacing: 'both',
+  } only %}
+{% endset %}
+
+{% if page_content %}
+  {% set content %}
+    {% include '@molecules/basic-content/basic-content.twig' with {
+      theme: theme,
+      content: page_content,
+      vertical_spacing: 'both',
+    } only %}
+  {% endset %}
+{% endif %}
+
+{# Content bottom #}
+{% set content_bottom %}
+  {# Promo #}
+  {% include '@organisms/promo/promo.twig' with {
+    title: 'Sign up for industry news and updates from CivicTheme',
+    content: 'Some text content',
+    is_contained: true,
+    vertical_spacing: 'none',
+    theme: theme,
+    link: {
+      text: 'Sign up',
+      url: 'https://example.com',
+      is_new_window: true,
+      is_external: true,
+    },
+  } only %}
+{% endset %}
+
+{# Sidebar #}
+{% if not hide_sidebar %}
+  {% set sidebar %}
+    {% include '@organisms/side-navigation/side-navigation.twig' with {
+      title: 'Heading Level 5',
+      items: side_navigation_items,
+      vertical_spacing: 'both',
+    } only %}
+  {% endset %}
+{% endif %}
+{# Footer #}
+{% if logo %}
+  {% set footer_top_1 %}
+    {% include '@molecules/logo/logo.twig' with logo only %}
+  {% endset %}
+{% endif %}
+
+{% set footer_top_2 %}
+  {% include '@organisms/social-links/social-links.twig' with {
+    theme: theme,
+    items: [
+      {
+        symbol: 'facebook',
+        url: 'https://www.facebook.com',
+        title: 'Facebook',
+      },
+      {
+        symbol: 'twitter',
+        url: 'https://www.facebook.com',
+        title: 'Twitter',
+      },
+      {
+        symbol: 'linkedin',
+        url: 'https://www.facebook.com',
+        title: 'LinkedIn',
+      },
+    ],
+    with_border: true,
+  } only %}
+{% endset %}
+
+{% set footer_middle_1 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links1,
+    title: 'Services',
+  } only %}
+{% endset %}
+{% set footer_middle_2 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links2,
+    title: 'About us',
+  } only %}
+{% endset %}
+{% set footer_middle_3 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links3,
+    title: 'Help',
+  } only %}
+{% endset %}
+{% set footer_middle_4 %}
+  {% include '@organisms/navigation/navigation.twig' with {
+    theme: theme,
+    items: links4,
+    title: 'Resources',
+  } only %}
+{% endset %}
+
+{% set footer_bottom_1 %}
+  <div class="ct-footer__acknowledgement ct-text-regular">
+    We acknowledge the traditional owners of the country throughout
+    Australia
+    and their continuing connection to land, sea and community. We pay our
+    respect to them and their cultures and to the elders past and present.
+  </div>
+{% endset %}
+
+{% set footer_bottom_2 %}
+  <div class="copyright ct-text-regular">
+    ©Commonwealth of Australia
+  </div>
+{% endset %}
