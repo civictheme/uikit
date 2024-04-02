@@ -59,7 +59,6 @@ function CivicThemeFlyout(el) {
     });
   }
 
-  // Add event listener to handle keydown events
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Tab') {
       const flyoutElements = document.querySelectorAll('[data-flyout]');
