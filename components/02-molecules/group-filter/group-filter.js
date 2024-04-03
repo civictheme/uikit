@@ -9,36 +9,25 @@ function CivicThemeGroupFilterComponent(el) {
 
   this.el = el;
 
-  this.el.addEventListener('ct.group-filter.update', () => {
-    this.update(true);
-  });
+  this.el.addEventListener('ct.group-filter.update', this.update.bind(this));
 
-  // Function to trigger custom event
-  const triggerFilterUpdateEvent = function () {
-    el.dispatchEvent(new CustomEvent('ct.group-filter.update'));
-  };
-
-  // Function to bind event listeners
-  const bindEventListeners = function () {
-    // Add event listener for filter change
+  if (!el.hasEventListener) {
+    el.hasEventListener = true;
     el.querySelectorAll('input, textarea, select, [type="checkbox"], [type="radio"]').forEach((input) => {
-      input.addEventListener('change', triggerFilterUpdateEvent);
+      input.addEventListener('change', () => {
+        el.dispatchEvent(new CustomEvent('ct.group-filter.update', { detail: { parent: input.parentElement } }));
+      });
     });
-  };
-
-  // Bind event listeners
-  bindEventListeners();
+  }
 }
 
 /**
  * Update the instance.
  */
-CivicThemeGroupFilterComponent.prototype.update = function () {
-  const t = this;
-  t.el.setAttribute('aria-live', 'polite');
+CivicThemeGroupFilterComponent.prototype.update = function (el) {
+  el.detail.parent.setAttribute('aria-live', 'polite');
 };
 
-// Find group Filter components and initialize
 document.querySelectorAll('[data-ct-group-filter-filters]').forEach((el) => {
   new CivicThemeGroupFilterComponent(el);
 });
