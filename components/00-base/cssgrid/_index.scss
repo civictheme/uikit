@@ -1,0 +1,16 @@
+//
+// CSSGrid component.
+//
+
+@use '../mixins/cssgrid';
+
+// Define the CSSGrid component
+@mixin cssgrid() {
+  .grid {
+    // Add styles for the grid container
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+}

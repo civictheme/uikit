@@ -1,0 +1,26 @@
+//
+// CSSGrid mixins.
+//
+// CSSGrid system taken from: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
+// Modified for use with CivicTheme.
+//
+
+@use 'sass:math';
+
+// Define a mixin to generate grid classes
+@mixin generate-css-grid($columns, $gutter) {
+  // Generate responsive classes for each breakpoint
+  @each $breakpoint in $breakpoints {
+    @include ct-breakpoint($breakpoint) {
+      // Generate grid classes for the specified number of columns
+      @for $i from 1 through $columns {
+        .col-#{$breakpoint}-#{$i} {
+          flex-basis: math.div(100%, $columns) * $i;
+          max-width: math.div(100%, $columns) * $i;
+          margin-left: $gutter / 2;
+          margin-right: $gutter / 2;
+        }
+      }
+    }
+  }
+}
