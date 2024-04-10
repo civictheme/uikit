@@ -59,6 +59,24 @@ function CivicThemeFlyout(el) {
     });
   }
 
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+      const flyoutElements = document.querySelectorAll('[data-flyout]');
+      flyoutElements.forEach((flyout) => {
+        const focusableElements = flyout.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+        if (document.activeElement === lastFocusable && !event.shiftKey) {
+          event.preventDefault();
+          firstFocusable.focus();
+        } else if (document.activeElement === firstFocusable && event.shiftKey) {
+          event.preventDefault();
+          lastFocusable.focus();
+        }
+      });
+    }
+  });
+
   // Mark as initialized.
   this.el.setAttribute('data-flyout', 'true');
 }

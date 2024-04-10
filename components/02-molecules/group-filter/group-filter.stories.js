@@ -7,6 +7,7 @@ import {
 } from '../../00-base/base.utils';
 
 import CivicThemeGroupFilter from './group-filter.twig';
+import './group-filter';
 
 export default {
   title: 'Molecules/Group Filter',

@@ -4,6 +4,7 @@ import {
 } from '@storybook/addon-knobs';
 import { getSlots, randomLinks, randomTags } from '../../00-base/base.utils';
 import { randomSlidesComponent } from './slider.utils';
+import './slider';
 import CivicThemeSlider from './slider.twig';
 
 export default {

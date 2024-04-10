@@ -104,12 +104,12 @@ export const randomTags = (count, rand) => {
 
 export const demoImage = (idx) => {
   const images = [
-    './assets/images/demo1.jpg',
-    './assets/images/demo2.jpg',
-    './assets/images/demo3.jpg',
-    './assets/images/demo4.jpg',
-    './assets/images/demo5.jpg',
-    './assets/images/demo6.jpg',
+    'demo/images/demo1.jpg',
+    'demo/images/demo2.jpg',
+    'demo/images/demo3.jpg',
+    'demo/images/demo4.jpg',
+    'demo/images/demo5.jpg',
+    'demo/images/demo6.jpg',
   ];
 
   idx = typeof idx !== 'undefined' ? Math.max(0, Math.min(idx, images.length)) : Math.floor(Math.random() * images.length);
@@ -119,20 +119,20 @@ export const demoImage = (idx) => {
 
 export const demoVideos = () => [
   {
-    url: './assets/videos/demo.webm',
+    url: 'demo/videos/demo.webm',
     type: 'video/webm',
   },
   {
-    url: './assets/videos/demo.mp4',
+    url: 'demo/videos/demo.mp4',
     type: 'video/mp4',
   },
   {
-    url: './assets/videos/demo.avi',
+    url: 'demo/videos/demo.avi',
     type: 'video/avi',
   },
 ];
 
-export const demoVideoPoster = () => './assets/videos/demo_poster.png';
+export const demoVideoPoster = () => 'demo/videos/demo_poster.png';
 
 export const demoIcon = () => './assets/icons/megaphone.svg';
 
