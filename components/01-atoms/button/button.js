@@ -53,7 +53,7 @@ CivicThemeButton.prototype.clickEvent = function (e) {
  * Keydown event handler.
  */
 CivicThemeButton.prototype.keydownEvent = function (e) {
-  if (e.key === 'Tab' || e.key.indexOf('Arrow') === 0) {
+  if (e.key && (e.key === 'Tab' || e.key.indexOf('Arrow') === 0)) {
     this.keyboardFocused = true;
   }
 };
