@@ -51,7 +51,7 @@ export const HomePage = (knobTab) => {
   };
 
   generalKnobs.logo = Logo('Logo', false);
-  
+
   generalKnobs.primary_navigation_items = getMenuLinks(primaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
   generalKnobs.primary_navigation_dropdown_columns = number(
     'Dropdown columns',
