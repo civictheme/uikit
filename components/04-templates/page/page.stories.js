@@ -33,6 +33,8 @@ export default {
 
 export const HomePage = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
+  const secondaryNavigationKnobTab = 'Secondary navigation';
+  const primaryNavigationKnobTab = 'Primary navigation';
 
   const theme = radios(
     'Theme',
@@ -49,8 +51,22 @@ export const HomePage = (knobTab) => {
   };
 
   generalKnobs.logo = Logo('Logo', false);
-  generalKnobs.primary_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
-  generalKnobs.secondary_navigation_items = generateMenuLinks(randomInt(2, 5), 1, false);
+  
+  generalKnobs.primary_navigation_items = getMenuLinks(primaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
+  generalKnobs.primary_navigation_dropdown_columns = number(
+    'Dropdown columns',
+    4,
+    {
+      range: true,
+      min: 0,
+      max: 5,
+      step: 1,
+    },
+    primaryNavigationKnobTab,
+  );
+  generalKnobs.primary_navigation_dropdown_columns_fill = boolean('Fill width for missing columns', false, primaryNavigationKnobTab);
+
+  generalKnobs.secondary_navigation_items = getMenuLinks(secondaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
 
   generalKnobs.links1 = generateMenuLinks(4, 1, false);
   generalKnobs.links2 = generateMenuLinks(4, 1, false);
@@ -209,6 +225,8 @@ export const HomePage = (knobTab) => {
 
 export const ContentPage = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
+  const secondaryNavigationKnobTab = 'Secondary navigation';
+  const primaryNavigationKnobTab = 'Primary navigation';
 
   const theme = radios(
     'Theme',
@@ -227,8 +245,21 @@ export const ContentPage = (knobTab) => {
   };
 
   generalKnobs.logo = Logo('Logo', false);
-  generalKnobs.primary_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
-  generalKnobs.secondary_navigation_items = generateMenuLinks(randomInt(2, 5), 1, false);
+  generalKnobs.primary_navigation_items = getMenuLinks(primaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
+  generalKnobs.primary_navigation_dropdown_columns = number(
+    'Dropdown columns',
+    4,
+    {
+      range: true,
+      min: 0,
+      max: 5,
+      step: 1,
+    },
+    primaryNavigationKnobTab,
+  );
+  generalKnobs.primary_navigation_dropdown_columns_fill = boolean('Fill width for missing columns', false, primaryNavigationKnobTab);
+
+  generalKnobs.secondary_navigation_items = getMenuLinks(secondaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
 
   generalKnobs.links1 = generateMenuLinks(4, 1, false);
   generalKnobs.links2 = generateMenuLinks(4, 1, false);
