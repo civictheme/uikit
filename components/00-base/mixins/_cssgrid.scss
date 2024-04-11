@@ -7,20 +7,16 @@
 
 @use 'sass:math';
 
-// Define a mixin to generate grid classes
-@mixin generate-css-grid($columns, $gutter) {
-  // Generate responsive classes for each breakpoint
-  @each $breakpoint in $breakpoints {
-    @include ct-breakpoint($breakpoint) {
-      // Generate grid classes for the specified number of columns
-      @for $i from 1 through $columns {
-        .col-#{$breakpoint}-#{$i} {
-          flex-basis: math.div(100%, $columns) * $i;
-          max-width: math.div(100%, $columns) * $i;
-          margin-left: $gutter / 2;
-          margin-right: $gutter / 2;
-        }
+@mixin ct-cssgrid-col($cols: $ct-grid-columns) {
+  // Validate $cols parameter
+  @if $cols >= 0 and $cols <= $ct-grid-columns {
+    @for $i from $ct-grid-columns through 0 {
+      .col-#{$i} {
+        grid-column: 1 / #{$i};
       }
     }
+  }
+  @else {
+    @warn 'Invalid number of columns specified for ct-cssgrid-col. Please provide a value between 0 and #{$ct-grid-columns}.';
   }
 }

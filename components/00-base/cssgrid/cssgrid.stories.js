@@ -6,24 +6,26 @@ export default {
 };
 
 export const CSSGrid = () => `
-<div class="grid gap-col-4 gap-row-2">
-<div class="col-12 row-1">
-    Header
-</div>
-<div class="col-9 row-2">
-    Navigation
-</div>
-<div class="col-3 row-2 row-3 row-4">
-    Sidebar
-</div>
-<div class=" col-9 row-3">
-    Main Content
-</div>
-<div class="col-9 row-4">
-    Main Content
-</div>
-<div class="col-12 row-5">
-    Footer
-</div>
-</div>
-`;
+<div class="example-container">
+  <div class="example-container__title">CSS grid layout</div>
+  <div class="story-cssgrid-wrapper">
+  <div class="cssgrid gap-col-4 gap-row-2">
+        <div class="col-12 row-1">
+            <span>Header</span>
+        </div>
+        <div class="col-9 row-2">
+            <span>Navigation</span>
+        </div>
+        <div class="col-3 row-2 row-3 row-4">
+            <span>Sidebar</span>
+        </div>
+        <div class="col-9 row-3 row-4">
+            <span>Main Content</span>
+        </div>
+        <div class="col-12 row-5">
+            <span>Footer</span>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>`;
