@@ -1,5 +1,5 @@
 import {
-  boolean, radios, number, text,
+  boolean, radios,
 } from '@storybook/addon-knobs';
 import {
   demoImage, getSlots, randomInt, randomTags, randomLinks, randomSentence, randomUrl, demoVideoPoster, demoVideos,
@@ -8,8 +8,7 @@ import CivicThemePageExample from './page.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
 import '../../03-organisms/slider/slider';
-import getMenuLinks, { generateMenuLinks } from '../../00-base/menu/menu.utils';
-import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
+import { generateMenuLinks } from '../../00-base/menu/menu.utils';
 import { randomSlidesComponent } from '../../03-organisms/slider/slider.utils';
 import CivicThemeItemGrid from '../../00-base/item-grid/item-grid.twig';
 import CivicThemeContentLink from '../../01-atoms/content-link/content-link.twig';
@@ -22,8 +21,6 @@ import PromoCard
 import EventCard
   from '../../02-molecules/event-card/event-card.twig';
 
-import { Logo } from '../../02-molecules/logo/logo.stories';
-
 export default {
   title: 'Templates/Page',
   parameters: {
@@ -33,8 +30,6 @@ export default {
 
 export const HomePage = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const secondaryNavigationKnobTab = 'Secondary navigation';
-  const primaryNavigationKnobTab = 'Primary navigation';
 
   const theme = radios(
     'Theme',
@@ -48,25 +43,42 @@ export const HomePage = (knobTab) => {
 
   const generalKnobs = {
     theme,
+    header_theme: theme,
+    footer_theme: theme,
   };
 
-  generalKnobs.logo = Logo('Logo', false);
-
-  generalKnobs.primary_navigation_items = getMenuLinks(primaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
-  generalKnobs.primary_navigation_dropdown_columns = number(
-    'Dropdown columns',
-    4,
-    {
-      range: true,
-      min: 0,
-      max: 5,
-      step: 1,
+  generalKnobs.logo = {
+    theme: generalKnobs.theme,
+    type: 'inline',
+    with_secondary_image: true,
+    url: randomUrl(),
+    title: 'Logo title',
+    logos: {
+      primary: {
+        mobile: {
+          url: LOGOS[generalKnobs.theme].primary.mobile,
+          alt: 'Primary logo mobile alt text',
+        },
+        desktop: {
+          url: LOGOS[generalKnobs.theme].primary.desktop,
+          alt: 'Primary logo desktop alt text',
+        },
+      },
+      secondary: {
+        mobile: {
+          url: LOGOS[generalKnobs.theme].secondary.mobile,
+          alt: 'Secondary logo mobile alt text',
+        },
+        desktop: {
+          url: LOGOS[generalKnobs.theme].secondary.desktop,
+          alt: 'Secondary logo desktop alt text',
+        },
+      },
     },
-    primaryNavigationKnobTab,
-  );
-  generalKnobs.primary_navigation_dropdown_columns_fill = boolean('Fill width for missing columns', false, primaryNavigationKnobTab);
+  };
 
-  generalKnobs.secondary_navigation_items = getMenuLinks(secondaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
+  generalKnobs.primary_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
+  generalKnobs.secondary_navigation_items = generateMenuLinks(randomInt(2, 5), 1, false);
 
   generalKnobs.links1 = generateMenuLinks(4, 1, false);
   generalKnobs.links2 = generateMenuLinks(4, 1, false);
@@ -85,50 +97,20 @@ export const HomePage = (knobTab) => {
   generalKnobs.is_decorative = true;
   generalKnobs.hide_sidebar = true;
   generalKnobs.site_section = 'Site section name';
-  generalKnobs.breadcrumb = Breadcrumb('Breadcrumb', false);
+  generalKnobs.breadcrumb = {
+    theme: generalKnobs.theme,
+    active_is_link: false,
+    links: randomLinks(randomInt(1, 4), randomInt(6, 6)),
+  };
   generalKnobs.content_below = true;
-  const slidesKnobTab = 'Slide';
-  const numOfSlides = number(
-    'Number of slides',
-    5,
-    {
-      range: true,
-      min: 0,
-      max: 10,
-      step: 1,
-    },
-    slidesKnobTab,
-  );
+  const numOfSlides = randomInt(2, 5);
 
   const slides = randomSlidesComponent(numOfSlides, generalKnobs.theme, true, {
-    image_position: radios('Image Position', {
-      Left: 'left',
-      Right: 'right',
-    }, 'right', slidesKnobTab),
-    tags: randomTags(number(
-      'Number of tags',
-      2,
-      {
-        range: true,
-        min: 0,
-        max: 10,
-        step: 1,
-      },
-      slidesKnobTab,
-    ), true),
-    date: text('Date', '20 Jan 2023 11:00', slidesKnobTab),
-    date_end: text('End date', '21 Jan 2023 15:00', slidesKnobTab),
-    links: randomLinks(number(
-      'Number of links',
-      2,
-      {
-        range: true,
-        min: 0,
-        max: 10,
-        step: 1,
-      },
-      slidesKnobTab,
-    ), 10),
+    image_position: 'right',
+    tags: randomTags(2, randomInt(1, 4)),
+    date: '20 Jan 2023 11:00',
+    date_end: '21 Jan 2023 15:00',
+    links: randomLinks(randomInt(1, 4), randomInt(6, 6)),
     ...getSlots([
       'content_top',
       'content_bottom',
@@ -225,8 +207,6 @@ export const HomePage = (knobTab) => {
 
 export const ContentPage = (knobTab) => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const secondaryNavigationKnobTab = 'Secondary navigation';
-  const primaryNavigationKnobTab = 'Primary navigation';
 
   const theme = radios(
     'Theme',
@@ -240,26 +220,40 @@ export const ContentPage = (knobTab) => {
 
   const generalKnobs = {
     theme,
-    is_contained: boolean('Contained', true, generalKnobTab),
     hide_sidebar: boolean('Hide Sidebar', false, generalKnobTab),
   };
 
-  generalKnobs.logo = Logo('Logo', false);
-  generalKnobs.primary_navigation_items = getMenuLinks(primaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
-  generalKnobs.primary_navigation_dropdown_columns = number(
-    'Dropdown columns',
-    4,
-    {
-      range: true,
-      min: 0,
-      max: 5,
-      step: 1,
+  generalKnobs.logo = {
+    theme: generalKnobs.theme,
+    type: 'inline',
+    with_secondary_image: true,
+    url: randomUrl(),
+    title: 'Logo title',
+    logos: {
+      primary: {
+        mobile: {
+          url: LOGOS[generalKnobs.theme].primary.mobile,
+          alt: 'Primary logo mobile alt text',
+        },
+        desktop: {
+          url: LOGOS[generalKnobs.theme].primary.desktop,
+          alt: 'Primary logo desktop alt text',
+        },
+      },
+      secondary: {
+        mobile: {
+          url: LOGOS[generalKnobs.theme].secondary.mobile,
+          alt: 'Secondary logo mobile alt text',
+        },
+        desktop: {
+          url: LOGOS[generalKnobs.theme].secondary.desktop,
+          alt: 'Secondary logo desktop alt text',
+        },
+      },
     },
-    primaryNavigationKnobTab,
-  );
-  generalKnobs.primary_navigation_dropdown_columns_fill = boolean('Fill width for missing columns', false, primaryNavigationKnobTab);
-
-  generalKnobs.secondary_navigation_items = getMenuLinks(secondaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
+  };
+  generalKnobs.primary_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
+  generalKnobs.secondary_navigation_items = generateMenuLinks(randomInt(2, 5), 1, false);
 
   generalKnobs.links1 = generateMenuLinks(4, 1, false);
   generalKnobs.links2 = generateMenuLinks(4, 1, false);
@@ -272,9 +266,13 @@ export const ContentPage = (knobTab) => {
   };
   generalKnobs.background_image_blend_mode = 'normal';
   generalKnobs.site_section = 'Section Heading';
-  generalKnobs.breadcrumb = Breadcrumb('Breadcrumb', false);
+  generalKnobs.breadcrumb = {
+    theme: generalKnobs.theme,
+    active_is_link: false,
+    links: randomLinks(randomInt(1, 4), randomInt(6, 6)),
+  };
 
-  generalKnobs.side_navigation_items = getMenuLinks('Links');
+  generalKnobs.side_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
 
   let html = '';
 
