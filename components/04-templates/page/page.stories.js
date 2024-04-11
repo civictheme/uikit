@@ -220,6 +220,8 @@ export const ContentPage = (knobTab) => {
 
   const generalKnobs = {
     theme,
+    header_theme: theme,
+    footer_theme: theme,
     hide_sidebar: boolean('Hide Sidebar', false, generalKnobTab),
   };
 
