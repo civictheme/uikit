@@ -11,10 +11,13 @@
  */
 #}
 
-<div class="grid">
+{% set gap_col_class = gap_col ? 'gap_col-%s'|format(gap_col) : '' %}
+{% set gap_row_class = gap_row ? 'gap_row-%s'|format(gap_row) : '' %}
+
+<div class="cssgrid {{ gap_col_class }} {{ gap_row_class }}">
     {% for row in grid_structure %}
         {% set row_content = row[0] %}
-        {% set col_span = 1 %}
+        {% set col_span = 0 %}
         {% set row_index = loop.index %}
 
         {% for cell in row %}

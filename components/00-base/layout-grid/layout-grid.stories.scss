@@ -1,0 +1,15 @@
+//
+// Layout grid component stories.
+//
+
+.cssgrid {
+  box-shadow: 0 0 ct-particle(0.125) ct-particle(0.125) red inset;
+  background-color: white;
+
+  // Column.
+  div {
+    outline: ct-particle(0.125) solid rgba(blue, 0.5);
+    background-color: rgba(#563d7c, 0.15);
+    height: ct-particle(10);
+  }
+}
