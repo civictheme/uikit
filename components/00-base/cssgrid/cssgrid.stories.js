@@ -14,16 +14,16 @@ export const CSSGrid = () => `
           <div class="ct-cssgrid-col-12 ct-cssgrid-row-1">
               <span>Header</span>
           </div>
-          <div class="ct-cssgrid-col-9 ct-cssgrid-row-2">
+          <div class="ct-cssgrid-col-12 ct-cssgrid-row-2 ct-cssgrid-row-offset-2">
               <span>Navigation</span>
           </div>
-          <div class="ct-cssgrid-col-3 ct-cssgrid-row-2 ct-cssgrid-row-3">
+          <div class="ct-cssgrid-col-3 ct-cssgrid-col-offset-10 ct-cssgrid-row-3 ct-cssgrid-row-4 ct-cssgrid-row-offset-3">
               <span>Sidebar</span>
           </div>
-          <div class="ct-cssgrid-col-9 ct-cssgrid-row-3 ct-cssgrid-row-3">
+          <div class="ct-cssgrid-col-9 ct-cssgrid-row-3 ct-cssgrid-row-4 ct-cssgrid-row-offset-3">
               <span>Main Content</span>
           </div>
-          <div class="ct-cssgrid-col-12 ct-cssgrid-row-3">
+          <div class="ct-cssgrid-col-12 ct-cssgrid-row-4 ct-cssgrid-row-offset-4">
               <span>Footer</span>
           </div>
         </div>

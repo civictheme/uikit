@@ -34,11 +34,11 @@
     @for $col from 1 through $cols {
       .ct-cssgrid-col-#{$col} {
         grid-column-start: 1;
-        grid-column-end: #{$col},;
+        grid-column-end: #{$col};
       }
 
       .ct-cssgrid-col-offset-#{$col} {
-        grid-column-start: #{$col},;
+        grid-column-start: #{$col} !important;
       }
     }
   }
@@ -52,11 +52,11 @@
     @for $row from 1 through $rows {
       .ct-cssgrid-row-#{$row} {
         grid-row-start: 1;
-        grid-row-end: #{$row},;
+        grid-row-end: #{$row};
       }
 
       .ct-cssgrid-row-offset-#{$row} {
-        grid-row-start: #{$row},;
+        grid-row-start: #{$row} !important;
       }
     }
   }
