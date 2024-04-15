@@ -342,6 +342,16 @@ $ct-grid-offsets: (
 ) !default;
 
 //
+// Css Grid.
+//
+
+// Number of grid columns.
+$ct-cssgrid-columns: 12 !default;
+
+// Number of grid rows.
+$ct-cssgrid-rows: 3 !default;
+
+//
 // Item list.
 //
 $ct-item-list-horizontal-large-column-gap: ct-spacing(4);

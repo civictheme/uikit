@@ -1,22 +1,66 @@
 //
 // CSSGrid mixins.
 //
-// CSSGrid system taken from: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
-// Modified for use with CivicTheme.
-//
 
 @use 'sass:math';
 
-@mixin ct-cssgrid-col($cols: $ct-grid-columns) {
-  // Validate $cols parameter
-  @if $cols >= 0 and $cols <= $ct-grid-columns {
-    @for $i from $ct-grid-columns through 0 {
-      .col-#{$i} {
-        grid-column: 1 / #{$i};
+@mixin ct-cssgrid($cols: $ct-cssgrid-columns, $rows: $ct-cssgrid-rows) {
+  @if $cols <= $ct-cssgrid-columns and $cols >= 1 {
+    @if $rows <= $ct-cssgrid-rows and $rows >= 1 {
+      // Loop through rows and columns to generate grid classes.
+      @for $col from 1 through $cols {
+        @for $row from 1 through $rows {
+          .ct-cssgrid-#{$col}-#{$row} {
+            display: grid;
+            grid-template-columns: repeat(#{$col}, 1fr);
+            grid-template-rows: repeat(#{$row}, auto);
+            grid-column: auto;
+            grid-row: auto;
+          }
+        }
+      }
+    }
+    @else {
+      @warn 'Invalid number of rows specified for ct-cssgrid-X. Please provide a value between 1 and #{$ct-cssgrid-rows}.';
+    }
+  }
+  @else {
+    @warn 'Invalid number of columns specified for ct-cssgrid-Y. Please provide a value between 1 and #{$ct-cssgrid-columns}.';
+  }
+}
+
+@mixin ct-cssgrid-col($cols: $ct-cssgrid-columns) {
+  @if $cols <= $ct-cssgrid-columns and $cols >= 1 {
+    @for $col from 1 through $cols {
+      .ct-cssgrid-col-#{$col} {
+        grid-column-start: 1;
+        grid-column-end: #{$col},;
+      }
+
+      .ct-cssgrid-col-offset-#{$col} {
+        grid-column-start: #{$col},;
       }
     }
   }
   @else {
-    @warn 'Invalid number of columns specified for ct-cssgrid-col. Please provide a value between 0 and #{$ct-grid-columns}.';
+    @warn 'Invalid number of columns specified for ct-cssgrid-Y. Please provide a value between 1 and #{$ct-cssgrid-columns}.';
+  }
+}
+
+@mixin ct-cssgrid-row($rows: $ct-cssgrid-rows) {
+  @if $rows <= $ct-cssgrid-rows and $rows >= 1 {
+    @for $row from 1 through $rows {
+      .ct-cssgrid-row-#{$row} {
+        grid-row-start: 1;
+        grid-row-end: #{$row},;
+      }
+
+      .ct-cssgrid-row-offset-#{$row} {
+        grid-row-start: #{$row},;
+      }
+    }
+  }
+  @else {
+    @warn 'Invalid number of rows specified for ct-cssgrid-X. Please provide a value between 1 and #{$ct-cssgrid-rows}.';
   }
 }

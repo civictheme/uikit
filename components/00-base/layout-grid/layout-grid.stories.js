@@ -26,8 +26,8 @@ export const LayoutGrid = () => {
   };
 
   const generalKnobs = {
-    grid_structure: grid,
-    content_mapping: map,
+    grid,
+    map,
     gap_col: number('Column gap', 1),
     gap_row: number('Row gap', 1),
   };

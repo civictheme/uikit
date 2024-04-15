@@ -4,11 +4,13 @@
 
 @use 'sass:map';
 
-.cssgrid {
+.ct-cssgrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
 
+  @include ct-cssgrid();
   @include ct-cssgrid-col();
+  @include ct-cssgrid-row();
 }

@@ -4,8 +4,8 @@
  * Layout grid component.
  *
  * Variables:
- * - grid_structure: [array] Grid: light, dark.
- * - content_mapping: [array] Map.
+ * - grid: [array] Grid.
+ * - map: [array] Map.
  * - gap_col: [integer] Column gap.
  * - gap_row: [integer] Row gap.
  */
@@ -14,8 +14,8 @@
 {% set gap_col_class = gap_col ? 'gap_col-%s'|format(gap_col) : '' %}
 {% set gap_row_class = gap_row ? 'gap_row-%s'|format(gap_row) : '' %}
 
-<div class="cssgrid {{ gap_col_class }} {{ gap_row_class }}">
-    {% for row in grid_structure %}
+<div class="ct-cssgrid {{ gap_col_class }} {{ gap_row_class }}">
+    {% for row in grid %}
         {% set row_content = row[0] %}
         {% set col_span = 0 %}
         {% set row_index = loop.index %}
@@ -24,16 +24,16 @@
             {% if cell == row_content %}
                 {% set col_span = col_span + 1 %}
             {% else %}
-                <div class="{{ content_mapping[row_content] | lower }} col-{{ col_span }} row-{{ row_index }}">
-                    {{ content_mapping[row_content] }}
+                <div class="{{ map[row_content] | lower }} col-{{ col_span }} row-{{ row_index }}">
+                    {{ map[row_content] }}
                 </div>
                 {% set row_content = cell %}
                 {% set col_span = 1 %}
             {% endif %}
 
             {% if loop.last %}
-                <div class="{{ content_mapping[row_content] | lower }} col-{{ col_span }} row-{{ row_index }}">
-                    {{ content_mapping[row_content] }}
+                <div class="{{ map[row_content] | lower }} col-{{ col_span }} row-{{ row_index }}">
+                    {{ map[row_content] }}
                 </div>
             {% endif %}
         {% endfor %}
