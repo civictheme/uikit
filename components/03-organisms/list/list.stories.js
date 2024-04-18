@@ -77,7 +77,7 @@ export const List = (knobTab, useKnobs = true, defaultTheme = 'light', defaultVi
     },
     'none',
     generalKnobTab,
-  ) : 'none';
+  ) : 'both';
   generalKnobs.with_background = useKnobs ? boolean('With background', false, generalKnobTab) : false;
   generalKnobs.modifier_class = useKnobs ? text('Additional class', '', generalKnobTab) : '';
 
