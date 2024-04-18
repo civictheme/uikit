@@ -22,18 +22,18 @@ export default {
   },
 };
 
-export const BasicContent = (knobTab) => {
+export const BasicContent = (knobTab, useKnobs = true, defaultTheme = 'light') => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
-  const theme = radios(
+  const theme = useKnobs ? radios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
-    'light',
+    defaultTheme,
     generalKnobTab,
-  );
+  ) : defaultTheme;
 
   let html = '';
 
@@ -173,10 +173,10 @@ export const BasicContent = (knobTab) => {
 
   const generalKnobs = {
     theme,
-    content: boolean('Content', true, generalKnobTab) ? html : null,
-    is_contained: boolean('Contained', true, generalKnobTab),
-    with_background: boolean('With background', false, generalKnobTab),
-    vertical_spacing: radios(
+    content: useKnobs ? boolean('Content', true, generalKnobTab) ? html : null : html,
+    is_contained: useKnobs ? boolean('Contained', true, generalKnobTab) : true,
+    with_background: useKnobs ? boolean('With background', false, generalKnobTab) : false,
+    vertical_spacing: useKnobs ? radios(
       'Vertical spacing',
       {
         None: 'none',
@@ -186,9 +186,9 @@ export const BasicContent = (knobTab) => {
       },
       'none',
       generalKnobTab,
-    ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    ) : 'none',
+    modifier_class: useKnobs ? text('Additional class', '', generalKnobTab) : '',
+    attributes: useKnobs ? text('Additional attributes', '', generalKnobTab) : '',
   };
 
   return CivicThemeBasicContent({
