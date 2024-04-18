@@ -61,35 +61,13 @@
 {% set content %}
 
   {# Promo List #}
-  {% if rows_promo %}
-    {% include '@organisms/list/list.twig' with {
-      title: 'Container title',
-      link_above: {
-        text: 'Secondary',
-        url: 'https://example.com',
-        is_external: true,
-      },
-      rows_above: rows_above,
-      rows: rows_promo,
-      results_count: results_count,
-      vertical_spacing: 'both',
-      theme: theme,
-    } only %}
+  {% if list_promo %}
+    {{ list_promo }}
   {% endif %}
 
-  {# Event List #}
-  {% if rows_event %}
-    {% include '@organisms/list/list.twig' with {
-      title: 'Container title',
-      link_above: {
-        text: 'Secondary',
-        url: 'https://example.com',
-        is_external: true,
-      },
-      rows: rows_event,
-      vertical_spacing: 'both',
-      theme: theme,
-    } only %}
+  {# Navigation List #}
+  {% if list_navigation %}
+    {{ list_navigation }}
   {% endif %}
 
   {# Slider #}

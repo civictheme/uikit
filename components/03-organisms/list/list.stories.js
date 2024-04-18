@@ -30,42 +30,44 @@ export default {
   },
 };
 
-export const List = (knobTab) => {
+export const List = (knobTab, useKnobs = true, defaultTheme = 'light', defaultViewItem = 'promo-card') => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const filtersKnobTab = 'Filters';
   const itemsKnobTab = 'List items';
 
-  const theme = radios(
+  const theme = useKnobs ? radios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
-    'light',
+    defaultTheme,
     generalKnobTab,
-  );
+  ) : defaultTheme;
 
   const generalKnobs = {
     theme,
-    title: text('Title', 'List title', generalKnobTab),
+    title: useKnobs ? text('Title', 'List title', generalKnobTab) : 'List title',
   };
 
-  generalKnobs.content = boolean('With content', true, generalKnobTab) ? randomSentence(50) : null;
-  generalKnobs.link_above = boolean('With link above', true, generalKnobTab) ? {
-    text: text('Link above text', 'View more', generalKnobTab),
+  generalKnobs.content = useKnobs ? boolean('With content', true, generalKnobTab) ? randomSentence(50) : null : randomSentence(50);
+  const linkAbove = {
+    text: useKnobs ? text('Link above text', 'View more', generalKnobTab) : 'View more',
     url: 'http://www.example.com',
     title: 'View more',
     is_new_window: false,
     is_external: false,
-  } : null;
-  generalKnobs.link_below = boolean('With link below', true, generalKnobTab) ? {
-    text: text('Link below text', 'View more', generalKnobTab),
+  };
+  generalKnobs.link_above = useKnobs ? boolean('With link above', true, generalKnobTab) ? linkAbove : null : linkAbove;
+  const linkBelow = {
+    text: useKnobs ? text('Link below text', 'View more', generalKnobTab) : 'View more',
     url: 'http://www.example.com',
     title: 'View more',
     is_new_window: false,
     is_external: false,
-  } : null;
-  generalKnobs.vertical_spacing = radios(
+  };
+  generalKnobs.link_below = useKnobs ? boolean('With link below', true, generalKnobTab) ? linkBelow : null : linkBelow;
+  generalKnobs.vertical_spacing = useKnobs ? radios(
     'Vertical spacing',
     {
       None: 'none',
@@ -75,19 +77,19 @@ export const List = (knobTab) => {
     },
     'none',
     generalKnobTab,
-  );
-  generalKnobs.with_background = boolean('With background', false, generalKnobTab);
-  generalKnobs.modifier_class = text('Additional class', '', generalKnobTab);
+  ) : 'none';
+  generalKnobs.with_background = useKnobs ? boolean('With background', false, generalKnobTab) : false;
+  generalKnobs.modifier_class = useKnobs ? text('Additional class', '', generalKnobTab) : '';
 
-  const showFilters = boolean('Show filters', true, generalKnobTab);
-  const showItems = boolean('Show items', true, generalKnobTab);
-  const showPager = boolean('Show pager', true, generalKnobTab);
+  const showFilters = useKnobs ? boolean('Show filters', true, generalKnobTab) : true;
+  const showItems = useKnobs ? boolean('Show items', true, generalKnobTab) : true;
+  const showPager = useKnobs ? boolean('Show pager', true, generalKnobTab) : true;
 
   let filtersCount = 0;
 
   // Build filters.
   if (showFilters) {
-    const filterType = radios(
+    const filterType = useKnobs ? radios(
       'Filter type',
       {
         Single: 'single',
@@ -95,9 +97,9 @@ export const List = (knobTab) => {
       },
       'single',
       filtersKnobTab,
-    );
+    ) : 'single';
 
-    filtersCount = number(
+    filtersCount = useKnobs ? number(
       'Number of filters',
       3,
       {
@@ -107,7 +109,7 @@ export const List = (knobTab) => {
         step: 1,
       },
       filtersKnobTab,
-    );
+    ) : 3;
 
     if (filterType === 'single') {
       const name = randomName(5);
@@ -190,7 +192,7 @@ export const List = (knobTab) => {
 
   // Build items.
   if (showItems) {
-    const resultNumber = number(
+    const resultNumber = useKnobs ? number(
       'Number of results',
       6,
       {
@@ -200,25 +202,25 @@ export const List = (knobTab) => {
         step: 6,
       },
       itemsKnobTab,
-    );
+    ) : 6;
 
     // Create markup for no results.
     if (resultNumber === 0) {
       generalKnobs.empty = '<p>No results found</p>';
     }
 
-    const viewItemAs = radios(
+    const viewItemAs = useKnobs ? radios(
       'Item type',
       {
         'Promo card': 'promo-card',
         'Navigation card': 'navigation-card',
         Snippet: 'snippet',
       },
-      'promo-card',
+      defaultViewItem,
       itemsKnobTab,
-    );
+    ) : defaultViewItem;
 
-    const itemsPerPage = number(
+    const itemsPerPage = useKnobs ? number(
       'Items per page',
       6,
       {
@@ -228,20 +230,20 @@ export const List = (knobTab) => {
         step: 6,
       },
       itemsKnobTab,
-    );
+    ) : 6;
 
     if (resultNumber > 0) {
-      const itemTheme = radios(
+      const itemTheme = useKnobs ? radios(
         'Theme',
         {
           Light: 'light',
           Dark: 'dark',
         },
-        'light',
+        defaultTheme,
         itemsKnobTab,
-      );
-      const itemWithImage = boolean('With image', true, itemsKnobTab);
-      const itemTags = randomTags(number(
+      ) : defaultTheme;
+      const itemWithImage = useKnobs ? boolean('With image', true, itemsKnobTab) : true;
+      const itemTags = useKnobs ? randomTags(number(
         'Number of tags',
         2,
         {
@@ -251,7 +253,7 @@ export const List = (knobTab) => {
           step: 1,
         },
         itemsKnobTab,
-      ), true);
+      ), true) : randomTags(2, true);
 
       let itemComponentInstance;
       let columnCount;
@@ -304,9 +306,9 @@ export const List = (knobTab) => {
         with_background: generalKnobs.with_background,
       });
 
-      generalKnobs.results_count = boolean('With result count', true, generalKnobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
-      generalKnobs.rows_above = boolean('With content above rows', true, generalKnobTab) ? `Example content above rows ${randomSentence(randomInt(10, 75))}` : null;
-      generalKnobs.rows_below = boolean('With content below rows', true, generalKnobTab) ? `Example content below rows${randomSentence(randomInt(10, 75))}` : null;
+      generalKnobs.results_count = useKnobs ? boolean('With result count', true, generalKnobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null : `Showing ${itemsCount} of ${resultNumber}`;
+      generalKnobs.rows_above = useKnobs ? boolean('With content above rows', true, generalKnobTab) ? `Example content above rows ${randomSentence(randomInt(10, 75))}` : null : `Example content above rows ${randomSentence(randomInt(10, 75))}`;
+      generalKnobs.rows_below = useKnobs ? boolean('With content below rows', true, generalKnobTab) ? `Example content below rows${randomSentence(randomInt(10, 75))}` : null : `Example content below rows${randomSentence(randomInt(10, 75))}`;
     }
   }
 
