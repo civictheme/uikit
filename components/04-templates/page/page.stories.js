@@ -20,6 +20,8 @@ import PromoCard
   from '../../02-molecules/promo-card/promo-card.twig';
 import EventCard
   from '../../02-molecules/event-card/event-card.twig';
+import { Logo } from '../../02-molecules/logo/logo.stories';
+import { Banner } from '../../03-organisms/banner/banner.stories';
 
 export default {
   title: 'Templates/Page',
@@ -47,35 +49,7 @@ export const HomePage = (knobTab) => {
     footer_theme: theme,
   };
 
-  generalKnobs.logo = {
-    theme: generalKnobs.theme,
-    type: 'inline',
-    with_secondary_image: true,
-    url: randomUrl(),
-    title: 'Logo title',
-    logos: {
-      primary: {
-        mobile: {
-          url: LOGOS[generalKnobs.theme].primary.mobile,
-          alt: 'Primary logo mobile alt text',
-        },
-        desktop: {
-          url: LOGOS[generalKnobs.theme].primary.desktop,
-          alt: 'Primary logo desktop alt text',
-        },
-      },
-      secondary: {
-        mobile: {
-          url: LOGOS[generalKnobs.theme].secondary.mobile,
-          alt: 'Secondary logo mobile alt text',
-        },
-        desktop: {
-          url: LOGOS[generalKnobs.theme].secondary.desktop,
-          alt: 'Secondary logo desktop alt text',
-        },
-      },
-    },
-  };
+  generalKnobs.logo = Logo('Logo', false, false, theme);
 
   generalKnobs.primary_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
   generalKnobs.secondary_navigation_items = generateMenuLinks(randomInt(2, 5), 1, false);
@@ -85,24 +59,9 @@ export const HomePage = (knobTab) => {
   generalKnobs.links3 = generateMenuLinks(4, 1, false);
   generalKnobs.links4 = generateMenuLinks(4, 1, false);
 
-  generalKnobs.title = 'Providing visually engaging digital experiences';
-  generalKnobs.background_image = {
-    url: './assets/backgrounds/civictheme_background_1.png',
-  };
-  generalKnobs.background_image_blend_mode = 'normal';
-  generalKnobs.featured_image = {
-    url: demoImage(0),
-    alt: 'Featured image alt text',
-  };
-  generalKnobs.is_decorative = true;
+  generalKnobs.banner = Banner('Banner', false, theme);
   generalKnobs.hide_sidebar = true;
-  generalKnobs.site_section = 'Site section name';
-  generalKnobs.breadcrumb = {
-    theme: generalKnobs.theme,
-    active_is_link: false,
-    links: randomLinks(randomInt(1, 4), randomInt(6, 6)),
-  };
-  generalKnobs.content_below = true;
+
   const numOfSlides = randomInt(2, 5);
 
   const slides = randomSlidesComponent(numOfSlides, generalKnobs.theme, true, {
@@ -225,35 +184,8 @@ export const ContentPage = (knobTab) => {
     hide_sidebar: boolean('Hide Sidebar', false, generalKnobTab),
   };
 
-  generalKnobs.logo = {
-    theme: generalKnobs.theme,
-    type: 'inline',
-    with_secondary_image: true,
-    url: randomUrl(),
-    title: 'Logo title',
-    logos: {
-      primary: {
-        mobile: {
-          url: LOGOS[generalKnobs.theme].primary.mobile,
-          alt: 'Primary logo mobile alt text',
-        },
-        desktop: {
-          url: LOGOS[generalKnobs.theme].primary.desktop,
-          alt: 'Primary logo desktop alt text',
-        },
-      },
-      secondary: {
-        mobile: {
-          url: LOGOS[generalKnobs.theme].secondary.mobile,
-          alt: 'Secondary logo mobile alt text',
-        },
-        desktop: {
-          url: LOGOS[generalKnobs.theme].secondary.desktop,
-          alt: 'Secondary logo desktop alt text',
-        },
-      },
-    },
-  };
+  generalKnobs.logo = Logo('Logo', false, false, theme);
+
   generalKnobs.primary_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
   generalKnobs.secondary_navigation_items = generateMenuLinks(randomInt(2, 5), 1, false);
 
@@ -262,17 +194,7 @@ export const ContentPage = (knobTab) => {
   generalKnobs.links3 = generateMenuLinks(4, 1, false);
   generalKnobs.links4 = generateMenuLinks(4, 1, false);
 
-  generalKnobs.title = 'Providing visually engaging digital experiences';
-  generalKnobs.background_image = {
-    url: './assets/backgrounds/civictheme_background_1.png',
-  };
-  generalKnobs.background_image_blend_mode = 'normal';
-  generalKnobs.site_section = 'Section Heading';
-  generalKnobs.breadcrumb = {
-    theme: generalKnobs.theme,
-    active_is_link: false,
-    links: randomLinks(randomInt(1, 4), randomInt(6, 6)),
-  };
+  generalKnobs.banner = Banner('Banner', false, theme);
 
   generalKnobs.side_navigation_items = generateMenuLinks(randomInt(3, 5), randomInt(3, 5), false);
 

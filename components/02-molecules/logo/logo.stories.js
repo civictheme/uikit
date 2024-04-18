@@ -9,26 +9,26 @@ export default {
   },
 };
 
-export const Logo = (knobTab, doRender = true) => {
+export const Logo = (knobTab, doRender = true, useKnobs = true, defaultTheme = 'light') => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const generalKnobs = {
-    theme: radios('Theme', {
+    theme: useKnobs ? radios('Theme', {
       Light: 'light',
       Dark: 'dark',
-    }, 'light', generalKnobTab),
-    type: radios('Type', {
+    }, defaultTheme, generalKnobTab) : defaultTheme,
+    type: useKnobs ? radios('Type', {
       Default: 'default',
       Stacked: 'stacked',
       Inline: 'inline',
       'Inline-Stacked': 'inline-stacked',
-    }, 'default', generalKnobTab),
-    with_secondary_image: boolean('With secondary image', false, generalKnobTab),
+    }, 'default', generalKnobTab) : 'default',
+    with_secondary_image: useKnobs ? boolean('With secondary image', false, generalKnobTab) : false,
     logos: {},
-    url: text('Link', randomUrl(), generalKnobTab),
-    title: text('Title', 'Logo title', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    url: useKnobs ? text('Link', randomUrl(), generalKnobTab) : randomUrl(),
+    title: useKnobs ? text('Title', 'Logo title', generalKnobTab) : 'Logo title',
+    attributes: useKnobs ? text('Additional attributes', '', generalKnobTab) : '',
+    modifier_class: useKnobs ? text('Additional class', '', generalKnobTab) : '',
   };
 
   generalKnobs.logos = generalKnobs.with_secondary_image ? {

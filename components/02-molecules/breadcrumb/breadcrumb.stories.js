@@ -8,21 +8,21 @@ export default {
   title: 'Molecules/Breadcrumb',
 };
 
-export const Breadcrumb = (knobTab, doRender = true) => {
+export const Breadcrumb = (knobTab, doRender = true, useKnobs = true, defaultTheme = 'light') => {
   const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const generalKnobs = {
-    theme: radios(
+    theme: useKnobs ? radios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
-      'light',
+      defaultTheme,
       generalKnobTab,
-    ),
-    active_is_link: boolean('Active is a link', false, generalKnobTab),
-    links: randomLinks(number(
+    ) : defaultTheme,
+    active_is_link: useKnobs ? boolean('Active is a link', false, generalKnobTab) : false,
+    links: useKnobs ? randomLinks(number(
       'Count of links',
       3,
       {
@@ -42,9 +42,9 @@ export const Breadcrumb = (knobTab, doRender = true) => {
         step: 1,
       },
       generalKnobTab,
-    ) - 6),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    ) - 6) : randomLinks(3, 6),
+    modifier_class: useKnobs ? text('Additional classes', '', generalKnobTab) : '',
+    attributes: useKnobs ? text('Additional attributes', '', generalKnobTab) : '',
   };
 
   return doRender ? CivicThemeBreadcrumb({
