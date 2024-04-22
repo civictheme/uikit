@@ -10,8 +10,8 @@ export default {
   title: 'Molecules/Form Element',
 };
 
-export const FormElement = () => {
-  const generalKnobTab = 'General';
+export const FormElement = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const inputKnobTab = 'Input';
 
   const theme = radios(

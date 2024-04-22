@@ -9,8 +9,8 @@ export default {
   },
 };
 
-export const Promo = () => {
-  const generalKnobTab = 'General';
+export const Promo = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const generalKnobs = {
     theme: radios(

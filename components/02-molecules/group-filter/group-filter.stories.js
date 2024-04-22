@@ -16,8 +16,8 @@ export default {
   },
 };
 
-export const GroupFilter = () => {
-  const generalKnobTab = 'General';
+export const GroupFilter = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const generalKnobs = {
     theme: radios(

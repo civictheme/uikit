@@ -14,8 +14,8 @@ export default {
   },
 };
 
-export const Slider = () => {
-  const generalKnobTab = 'General';
+export const Slider = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const slidesKnobTab = 'Slide';
   const theme = radios(
     'Theme',

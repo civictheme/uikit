@@ -8,8 +8,8 @@ export default {
   title: 'Atoms/Fieldset',
 };
 
-export const Fieldset = () => {
-  const generalKnobTab = 'General';
+export const Fieldset = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const theme = radios(
     'Theme',
     {

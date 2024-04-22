@@ -13,8 +13,8 @@ export default {
   },
 };
 
-export const Tooltip = () => {
-  const generalKnobTab = 'General';
+export const Tooltip = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const defaultSizes = SCSS_VARIABLES['ct-icon-sizes-default'];
   const customSizes = SCSS_VARIABLES['ct-icon-sizes'];

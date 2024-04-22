@@ -10,8 +10,8 @@ export default {
   },
 };
 
-export const MobileNavigation = () => {
-  const generalKnobTab = 'Menu';
+export const MobileNavigation = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'Menu';
   const topMenuKnobTab = 'Top menu';
   const bottomMenuKnobTab = 'Bottom menu';
 
