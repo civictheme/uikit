@@ -42,7 +42,7 @@ export const objectFromArray = (array) => {
 
 export const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-export const indexedString = 'TODO';
+export const indexedString = 'PlaceholderText';
 
 export const cleanCssIdentifier = function (string) {
   return string.toLowerCase()
@@ -108,7 +108,10 @@ export const randomUrl = (domain) => {
   return `${domain}/${(Math.random() + 1).toString(36).substring(7)}`;
 };
 
-export const randomDropdownFilter = 'TODO';
+export const randomDropdownFilter = () => {
+  const filters = ['All', 'Recent', 'Popular', 'Featured'];
+  return filters[Math.floor(Math.random() * filters.length)];
+};
 
 export const randomFormElement = (inputType, options, theme, rand, itr) => {
   const isCheckboxOrRadio = inputType === 'checkbox' || inputType === 'radio';
@@ -249,7 +252,17 @@ export const generateImage = (idx) => {
   return images[idx];
 };
 
-export const generateInputItems = 'TODO';
+export const generateInputItems = (count) => {
+  const items = [];
+  for (let i = 0; i < count; i++) {
+    items.push({
+      id: i + 1,
+      label: `Input ${i + 1}`,
+      value: randomString(randomInt(3, 8)),
+    });
+  }
+  return items;
+};
 
 export const generateItems = (count, content) => {
   const items = [];
@@ -259,7 +272,16 @@ export const generateItems = (count, content) => {
   return items;
 };
 
-export const generateSelectItems = 'TODO';
+export const generateSelectItems = (count) => {
+  const items = [];
+  for (let i = 0; i < count; i++) {
+    items.push({
+      label: `Option ${i + 1}`,
+      value: randomString(randomInt(3, 8)),
+    });
+  }
+  return items;
+};
 
 export const generateSlots = (names) => {
   const showSlots = boolean('Show story-slots', false, 'Slots');
