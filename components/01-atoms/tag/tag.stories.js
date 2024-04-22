@@ -3,7 +3,7 @@ import {
 } from '@storybook/addon-knobs';
 import {
   randomUrl,
-} from '../../00-base/base.utils';
+} from '../../00-base/base.stories';
 
 import CivicThemeTag from './tag.twig';
 

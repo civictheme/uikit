@@ -67,6 +67,10 @@ export const getThemes = () => ({
   dark: 'Dark',
 });
 
+export const dateIsValid = function (date) {
+  return !Number.isNaN(Date.parse(date));
+};
+
 // Random generators.
 
 export const randomBool = (skew) => {
@@ -96,6 +100,8 @@ export const randomText = (words) => {
 };
 
 export const randomString = (length) => randomText(length).substring(0, length).trim();
+
+export const randomName = (length) => randomText(length).replace(' ', '').substring(0, length).trim();
 
 export const randomUrl = (domain) => {
   domain = domain || 'http://example.com';
@@ -266,6 +272,21 @@ export const generateSlots = (names) => {
   }
 
   return obj;
+};
+
+export const generateOptions = (numOfOptions, optionType = 'option') => {
+  const options = [];
+  for (let i = 1; i <= numOfOptions; i++) {
+    const option = {
+      type: optionType,
+      selected: false,
+      label: optionType === 'optgroup' ? `Group ${i}` : randomString(randomInt(3, 8)),
+      value: randomString(randomInt(1, 8)),
+      options: optionType === 'optgroup' ? generateOptions(numOfOptions) : null,
+    };
+    options.push(option);
+  }
+  return options;
 };
 
 export const generateVideoPoster = () => 'demo/videos/demo_poster.png';

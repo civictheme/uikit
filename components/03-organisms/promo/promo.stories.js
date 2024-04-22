@@ -1,6 +1,6 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemePromo from './promo.twig';
-import { getSlots, randomSentence } from '../../00-base/base.utils';
+import { generateSlots, randomSentence } from '../../00-base/base.stories';
 
 export default {
   title: 'Organisms/Promo',
@@ -49,7 +49,7 @@ export const Promo = (knobTab) => {
 
   return CivicThemePromo({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

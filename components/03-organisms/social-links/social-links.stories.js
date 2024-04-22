@@ -1,6 +1,6 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeSocialLinks from './social-links.twig';
-import { demoIcon } from '../../00-base/base.utils';
+import { generateIcon } from '../../00-base/base.stories';
 import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {
@@ -15,7 +15,7 @@ export const SocialLinks = (knobTab) => {
 
   const items = [
     {
-      icon_html: `<img class="ct-button__icon" width=16 height=16 src="${demoIcon()}"/>`,
+      icon_html: `<img class="ct-button__icon" width=16 height=16 src="${generateIcon()}"/>`,
       url: 'https://www.dropbox.com',
       // Deliberately left without a title.
     },

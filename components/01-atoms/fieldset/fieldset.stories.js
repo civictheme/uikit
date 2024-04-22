@@ -1,7 +1,7 @@
 import {
   radios, text, number, boolean,
 } from '@storybook/addon-knobs';
-import { randomFormElements } from '../../00-base/base.utils';
+import { randomFormElements } from '../../00-base/base.stories';
 import CivicThemeFieldset from './fieldset.twig';
 
 export default {

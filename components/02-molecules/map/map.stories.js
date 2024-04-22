@@ -1,5 +1,5 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
-import { getSlots, randomUrl } from '../../00-base/base.utils';
+import { generateSlots, randomUrl } from '../../00-base/base.stories';
 import CivicThemeMap from './map.twig';
 
 export default {
@@ -43,7 +43,7 @@ export const Map = (knobTab) => {
 
   return CivicThemeMap({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

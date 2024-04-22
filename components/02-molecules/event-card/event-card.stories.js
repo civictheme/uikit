@@ -3,11 +3,11 @@ import {
 } from '@storybook/addon-knobs';
 import {
   dateIsValid,
-  demoImage,
-  getSlots, randomSentence,
+  generateImage,
+  generateSlots, randomSentence,
   randomTags,
   randomUrl,
-} from '../../00-base/base.utils';
+} from '../../00-base/base.stories';
 
 import CivicThemeEventCard from './event-card.twig';
 
@@ -42,7 +42,7 @@ export const EventCard = (knobTab) => {
       is_new_window: boolean('Open in a new window', false, generalKnobTab),
     },
     image: boolean('With image', true, generalKnobTab) ? {
-      url: demoImage(),
+      url: generateImage(),
       alt: 'Image alt text',
     } : null,
     tags: randomTags(number(
@@ -65,7 +65,7 @@ export const EventCard = (knobTab) => {
 
   return CivicThemeEventCard({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'image_over',
       'content_top',
       'content_middle',

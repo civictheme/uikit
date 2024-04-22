@@ -1,7 +1,7 @@
 import {
   boolean, radios, select, text,
 } from '@storybook/addon-knobs';
-import { getSlots } from '../../00-base/base.utils';
+import { generateSlots } from '../../00-base/base.stories';
 import CivicThemeFooter from './footer.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
@@ -53,7 +53,7 @@ export const Footer = (knobTab) => {
 
   return CivicThemeFooter({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top1',
       'content_top2',
       'content_middle1',

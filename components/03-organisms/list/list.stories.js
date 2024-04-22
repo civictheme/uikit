@@ -3,10 +3,10 @@ import {
 } from '@storybook/addon-knobs';
 
 import {
-  demoImage,
+  generateImage,
   randomFormElements, randomInt, randomName, randomSentence, randomString, randomTags,
   randomUrl,
-} from '../../00-base/base.utils';
+} from '../../00-base/base.stories';
 
 import CivicThemeGroupFilter
   from '../../02-molecules/group-filter/group-filter.twig';
@@ -286,7 +286,7 @@ export const List = (knobTab) => {
           summary: `Summary ${randomSentence(randomInt(15, 25))}`,
           url: randomUrl(),
           image: itemWithImage ? {
-            url: demoImage(),
+            url: generateImage(),
             alt: 'Image alt text',
           } : false,
           size: 'large',

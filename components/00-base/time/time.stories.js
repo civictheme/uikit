@@ -1,6 +1,6 @@
 import { text } from '@storybook/addon-knobs';
 import CivicThemeTime from './time.twig';
-import { dateIsValid } from '../base.utils';
+import { dateIsValid } from '../base.stories';
 
 export default {
   title: 'Base/Time',

@@ -1,7 +1,7 @@
 import {
   boolean, number, radios, text,
 } from '@storybook/addon-knobs';
-import { getSlots, randomInt, randomSentence } from '../../00-base/base.utils';
+import { generateSlots, randomInt, randomSentence } from '../../00-base/base.stories';
 import CivicThemeHeaderExample from './header.stories.twig';
 
 import getMenuLinks from '../../00-base/menu/menu.utils';
@@ -63,7 +63,7 @@ export const Header = (knobTab) => {
 
   return CivicThemeHeaderExample({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top1',
       'content_top2',
       'content_top3',

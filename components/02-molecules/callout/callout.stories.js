@@ -1,6 +1,6 @@
 import { number, radios, text } from '@storybook/addon-knobs';
 import CivicThemeCallout from './callout.twig';
-import { getSlots, randomLinks, randomSentence } from '../../00-base/base.utils';
+import { generateSlots, randomLinks, randomSentence } from '../../00-base/base.stories';
 
 export default {
   title: 'Molecules/Callout',
@@ -52,7 +52,7 @@ export const Callout = (knobTab) => {
 
   return CivicThemeCallout({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

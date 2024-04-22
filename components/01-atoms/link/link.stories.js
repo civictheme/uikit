@@ -2,7 +2,7 @@ import {
   boolean, radios, text, select,
 } from '@storybook/addon-knobs';
 import CivicThemeLink from './link.twig';
-import { randomUrl } from '../../00-base/base.utils';
+import { randomUrl } from '../../00-base/base.stories';
 
 export default {
   title: 'Atoms/Link',

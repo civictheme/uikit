@@ -4,7 +4,7 @@ import {
 import CivicThemeAccordion from './accordion.twig';
 
 import '../../00-base/collapsible/collapsible';
-import { getSlots } from '../../00-base/base.utils';
+import { generateSlots } from '../../00-base/base.stories';
 
 export default {
   title: 'Molecules/Accordion',
@@ -75,7 +75,7 @@ export const Accordion = (knobTab) => {
   return CivicThemeAccordion({
     ...generalKnobs,
     ...panelKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

@@ -3,7 +3,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import CivicThemeVideo from './video.twig';
-import { demoVideoPoster, demoVideos } from '../../00-base/base.utils';
+import { generateVideoPoster, generateVideos } from '../../00-base/base.stories';
 
 export default {
   title: 'Atoms/Video',
@@ -27,7 +27,7 @@ export const Video = (knobTab) => {
       generalKnobTab,
     ),
     has_controls: boolean('Has controls', true, generalKnobTab),
-    poster: boolean('Has poster', false, generalKnobTab) ? demoVideoPoster() : null,
+    poster: boolean('Has poster', false, generalKnobTab) ? generateVideoPoster() : null,
     width: text('Width', '', generalKnobTab),
     height: text('Height', '', generalKnobTab),
     fallback_text: text('Fallback text', 'Your browser doesn\'t support HTML5 video tag.', generalKnobTab),
@@ -35,7 +35,7 @@ export const Video = (knobTab) => {
     attributes: text('Additional attributes', '', generalKnobTab),
   };
 
-  const sources = demoVideos();
+  const sources = generateVideos();
   const sourcesOptions = {};
   for (const i in sources) {
     sourcesOptions[sources[i].type.substr('video/'.length).toUpperCase()] = sources[i].type;

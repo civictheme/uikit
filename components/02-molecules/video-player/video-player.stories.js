@@ -1,7 +1,7 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 
 import CivicThemeVideo from './video-player.twig';
-import { demoVideoPoster, demoVideos } from '../../00-base/base.utils';
+import { generateVideoPoster, generateVideos } from '../../00-base/base.stories';
 
 export default {
   title: 'Molecules/Video Player',
@@ -37,9 +37,9 @@ export const VideoPlayer = (knobTab) => {
 
   const sourceKnobs = {};
   if (generalKnobs.source_type === 'file') {
-    sourceKnobs.sources = boolean('With sources', true, sourceKnobTab) ? demoVideos() : null;
+    sourceKnobs.sources = boolean('With sources', true, sourceKnobTab) ? generateVideos() : null;
     if (sourceKnobs.sources) {
-      sourceKnobs.poster = boolean('With poster', true, sourceKnobTab) ? demoVideoPoster() : null;
+      sourceKnobs.poster = boolean('With poster', true, sourceKnobTab) ? generateVideoPoster() : null;
     }
   } else if (generalKnobs.source_type === 'embedded') {
     sourceKnobs.embedded_source = text('Embedded source', 'https://www.youtube.com/embed/C0DPdy98e4c', sourceKnobTab);

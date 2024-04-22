@@ -2,7 +2,7 @@ import {
   boolean,
   number, radios, text,
 } from '@storybook/addon-knobs';
-import { randomText } from '../../00-base/base.utils';
+import { randomText } from '../../00-base/base.stories';
 
 export default {
   title: 'Molecules/Table Of Contents',

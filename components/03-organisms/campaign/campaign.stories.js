@@ -2,10 +2,10 @@ import {
   date, number, radios, text,
 } from '@storybook/addon-knobs';
 import {
-  demoImage,
-  getSlots, randomLinks, randomSentence,
+  generateImage,
+  generateSlots, randomLinks, randomSentence,
   randomTags,
-} from '../../00-base/base.utils';
+} from '../../00-base/base.stories';
 
 import CivicThemeCampaign from './campaign.twig';
 
@@ -33,7 +33,7 @@ export const Campaign = (knobTab) => {
     content: text('Content', randomSentence(), generalKnobTab),
     date: date('Date', new Date(), generalKnobTab),
     image: {
-      url: demoImage(),
+      url: generateImage(),
       alt: 'Image alt text',
     },
     image_position: radios(
@@ -90,7 +90,7 @@ export const Campaign = (knobTab) => {
 
   return CivicThemeCampaign({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_middle',
       'content_bottom',

@@ -1,5 +1,5 @@
 import { number, radios, text } from '@storybook/addon-knobs';
-import { getSlots, randomTags } from '../../00-base/base.utils';
+import { generateSlots, randomTags } from '../../00-base/base.stories';
 
 import CivicThemeTagList from './tag-list.twig';
 
@@ -51,7 +51,7 @@ export const TagList = (knobTab) => {
 
   return CivicThemeTagList({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

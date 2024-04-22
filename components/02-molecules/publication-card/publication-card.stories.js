@@ -4,10 +4,10 @@ import {
 
 import CivicThemePublicationCard from './publication-card.twig';
 import {
-  demoImage,
-  getSlots,
+  generateImage,
+  generateSlots,
   randomSentence, randomUrl,
-} from '../../00-base/base.utils';
+} from '../../00-base/base.stories';
 
 export default {
   title: 'Molecules/Publication Card',
@@ -38,7 +38,7 @@ export const PublicationCard = (knobTab) => {
     title: text('Title', 'Publication or whitepaper main title', generalKnobTab),
     summary: text('Summary', randomSentence(), generalKnobTab),
     image: boolean('With image', true, generalKnobTab) ? {
-      url: demoImage(),
+      url: generateImage(),
       alt: 'Image alt text',
     } : false,
     file: boolean('With file', true, generalKnobTab) ? {
@@ -56,7 +56,7 @@ export const PublicationCard = (knobTab) => {
 
   return CivicThemePublicationCard({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'image_over',
       'content_top',
       'content_middle',

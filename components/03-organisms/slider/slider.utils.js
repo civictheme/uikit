@@ -5,13 +5,13 @@
 
 import {
   dateIsValid,
-  demoImage,
+  generateImage,
   randomBool,
   randomInt,
   randomString,
   randomText,
   randomUrl,
-} from '../../00-base/base.utils';
+} from '../../00-base/base.stories';
 import Slide from './slide.twig';
 import Tag from '../../01-atoms/tag/tag.twig';
 import Button from '../../01-atoms/button/button.twig';
@@ -48,7 +48,7 @@ export const randomSlidesComponent = (count, theme, rand, template) => {
 
   for (let i = 0; i < count; i++) {
     const image = template && template.image ? template.image : {
-      url: demoImage(),
+      url: generateImage(),
       alt: randomText(4),
     };
     const imagePosition = template && template.image_position ? template.image_position : 'right';

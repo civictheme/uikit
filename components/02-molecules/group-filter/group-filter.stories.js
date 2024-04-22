@@ -3,8 +3,8 @@ import {
 } from '@storybook/addon-knobs';
 
 import {
-  getSlots, randomFormElements, randomInt, randomString,
-} from '../../00-base/base.utils';
+  generateSlots, randomFormElements, randomInt, randomString,
+} from '../../00-base/base.stories';
 
 import CivicThemeGroupFilter from './group-filter.twig';
 import './group-filter';
@@ -60,7 +60,7 @@ export const GroupFilter = (knobTab) => {
   return CivicThemeGroupFilter({
     ...generalKnobs,
     filters,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

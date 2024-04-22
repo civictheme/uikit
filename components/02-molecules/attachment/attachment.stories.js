@@ -1,5 +1,5 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
-import { getSlots, randomSentence, randomUrl } from '../../00-base/base.utils';
+import { generateSlots, randomSentence, randomUrl } from '../../00-base/base.stories';
 import CivicThemeAttachment from './attachment.twig';
 
 export default {
@@ -129,7 +129,7 @@ export const Attachment = (knobTab) => {
 
   return CivicThemeAttachment({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

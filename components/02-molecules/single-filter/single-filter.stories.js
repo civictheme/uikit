@@ -5,8 +5,8 @@ import {
 import CivicThemeSingleFilter from './single-filter.twig';
 import './single-filter';
 import {
-  getSlots, randomName, randomString,
-} from '../../00-base/base.utils';
+  generateSlots, randomName, randomString,
+} from '../../00-base/base.stories';
 
 export default {
   title: 'Molecules/Single Filter',
@@ -74,7 +74,7 @@ export const SingleFilter = (knobTab) => {
 
   return CivicThemeSingleFilter({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

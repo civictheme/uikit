@@ -1,6 +1,6 @@
 import { radios, select, text } from '@storybook/addon-knobs';
 import CivicThemeMobileNavigationExample from './mobile-navigation.stories.twig';
-import { getSlots } from '../../00-base/base.utils';
+import { generateSlots } from '../../00-base/base.stories';
 import getMenuLinks from '../../00-base/menu/menu.utils';
 
 export default {
@@ -42,7 +42,7 @@ export const MobileNavigation = (knobTab) => {
 
   return CivicThemeMobileNavigationExample({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

@@ -1,5 +1,5 @@
 import { color, select } from '@storybook/addon-knobs';
-import { objectFromArray } from '../base.utils';
+import { objectFromArray } from '../base.stories';
 
 export default {
   title: 'Base/Background',

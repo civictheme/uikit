@@ -3,7 +3,7 @@ import CivicThemeLayout from './layout.twig';
 import CivicThemeLayoutSingleColumn from './content-layout--single-column.twig';
 import CivicThemeLayoutSingleColumnContained
   from './content-layout--single-column-contained.twig';
-import { getSlots, placeholder } from '../base.utils';
+import { generateSlots, placeholder } from '../base.stories';
 
 export default {
   title: 'Base/Layout',
@@ -74,7 +74,7 @@ export const Layout = (knobTab) => {
 
   return CivicThemeLayout({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

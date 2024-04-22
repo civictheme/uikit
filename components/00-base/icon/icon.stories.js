@@ -2,7 +2,7 @@ import { radios, select, text } from '@storybook/addon-knobs';
 
 import merge from 'deepmerge';
 import CivicThemeIcon from './icon.twig';
-import { arrayCombine, toLabels } from '../base.utils';
+import { arrayCombine, toLabels } from '../base.stories';
 
 export default {
   title: 'Base/Icon',

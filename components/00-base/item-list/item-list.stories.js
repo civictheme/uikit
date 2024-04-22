@@ -3,7 +3,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import CivicThemeItemList from './item-list.twig';
-import { generateItems, placeholder, randomSentence } from '../base.utils';
+import { generateItems, placeholder, randomSentence } from '../base.stories';
 
 export default {
   title: 'Base/Item List',

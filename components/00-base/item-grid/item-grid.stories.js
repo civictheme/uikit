@@ -2,7 +2,7 @@ import {
   boolean, number, text,
 } from '@storybook/addon-knobs';
 import CivicThemeItemGrid from './item-grid.twig';
-import { generateItems, placeholder } from '../base.utils';
+import { generateItems, placeholder } from '../base.stories';
 
 export default {
   title: 'Base/Item Grid',

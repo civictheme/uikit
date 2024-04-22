@@ -9,7 +9,7 @@ import { boolean, number } from '@storybook/addon-knobs';
 import {
   randomBool,
   randomUrl,
-} from '../base.utils';
+} from '../base.stories';
 
 export function generateMenuLinks(count, levels, isActiveTrail, title, titleCb, currentLevel, parents) {
   const links = [];
