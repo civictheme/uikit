@@ -10,6 +10,10 @@
 
   @include ct-typography('text-small');
 
+  &--large {
+    @include ct-typography('text-regular');
+  }
+
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);
   }

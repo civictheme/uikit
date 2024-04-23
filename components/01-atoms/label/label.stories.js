@@ -1,4 +1,4 @@
-import { radios, text } from '@storybook/addon-knobs';
+import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeLabel from './label.twig';
 
 export default {
@@ -35,6 +35,8 @@ export const Label = (knobTab) => {
       generalKnobTab,
     ),
     content: text('Content', 'Label content', generalKnobTab),
+    for: text('For', '', generalKnobTab),
+    is_required: boolean('Required', false, generalKnobTab),
     modifier_class: text('Additional classes', '', generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),
   };
