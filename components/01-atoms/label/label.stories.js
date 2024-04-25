@@ -36,7 +36,7 @@ export const Label = (knobTab) => {
     ),
     content: text('Content', 'Label content', generalKnobTab),
     for: text('For', '', generalKnobTab),
-    is_required: boolean('Required', false, generalKnobTab),
+    required: boolean('Required', false, generalKnobTab),
     modifier_class: text('Additional classes', '', generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),
   };

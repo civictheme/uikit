@@ -8,6 +8,7 @@
  * - placeholder: [string] Placeholder text.
  * - disabled: [boolean] Disabled or not.
  * - required: [boolean] Required or not.
+ * - for: [string] Which component this label belongs to.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
@@ -24,6 +25,7 @@
   class="ct-textfield ct-input__element {{ modifier_class }}"
   {{ disabled ? 'disabled' }}
   {{ required ? 'required' }}
+  {% if for is not empty %} for="{{ for }}" {% endif %}
   {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
   {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
 />
