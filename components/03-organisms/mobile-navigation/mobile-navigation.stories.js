@@ -1,6 +1,6 @@
 import { radios, select, text } from '@storybook/addon-knobs';
 import CivicThemeMobileNavigationExample from './mobile-navigation.stories.twig';
-import { generateSlots } from '../../00-base/base.stories';
+import { generateSlots } from '../../00-base/base.utils';
 import getMenuLinks from '../../00-base/menu/menu.utils';
 
 export default {

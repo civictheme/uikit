@@ -3,7 +3,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import CivicThemePopover from './popover.twig';
-import { generateSlots, placeholder } from '../../00-base/base.stories';
+import { generateSlots, placeholder } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Popover',

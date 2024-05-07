@@ -6,7 +6,7 @@ import CivicThemeSingleFilter from './single-filter.twig';
 import './single-filter';
 import {
   generateSlots, randomName, randomString,
-} from '../../00-base/base.stories';
+} from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Single Filter',

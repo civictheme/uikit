@@ -4,7 +4,7 @@ import {
 import CivicThemeAccordion from './accordion.twig';
 
 import '../../00-base/collapsible/collapsible';
-import { generateSlots } from '../../00-base/base.stories';
+import { generateSlots } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Accordion',

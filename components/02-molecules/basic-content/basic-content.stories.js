@@ -10,7 +10,7 @@ import {
   generateImage,
   generateVideoPoster,
   generateVideos,
-} from '../../00-base/base.stories';
+} from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Basic Content',

@@ -1,7 +1,7 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 
 import CivicThemeImage from './image.twig';
-import { generateImage } from '../../00-base/base.stories';
+import { generateImage } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Image',

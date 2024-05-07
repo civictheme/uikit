@@ -1,6 +1,6 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeSelect from './select.twig';
-import { generateOptions, randomInt } from '../../00-base/base.stories';
+import { generateOptions, randomInt } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Select',

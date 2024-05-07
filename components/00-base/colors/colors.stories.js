@@ -1,5 +1,5 @@
 import CivicThemeColors from './colors.stories.twig';
-import { getThemes } from '../base.stories';
+import { getThemes } from '../base.utils';
 
 export default {
   title: 'Base/Colors',

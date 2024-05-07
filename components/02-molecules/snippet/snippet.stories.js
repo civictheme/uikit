@@ -5,7 +5,7 @@ import {
   generateSlots, randomInt, randomSentence,
   randomTags,
   randomUrl,
-} from '../../00-base/base.stories';
+} from '../../00-base/base.utils';
 
 import CivicThemeSummary from './snippet.twig';
 

@@ -1,6 +1,6 @@
 import { radios, text, boolean } from '@storybook/addon-knobs';
 import CivicThemeNextSteps from './next-step.twig';
-import { generateSlots } from '../../00-base/base.stories';
+import { generateSlots } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Next Steps',

@@ -4,7 +4,7 @@ import {
 
 import {
   generateSlots, randomFormElements, randomInt, randomString,
-} from '../../00-base/base.stories';
+} from '../../00-base/base.utils';
 
 import CivicThemeGroupFilter from './group-filter.twig';
 import './group-filter';

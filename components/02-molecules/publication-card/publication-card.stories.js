@@ -7,7 +7,7 @@ import {
   generateImage,
   generateSlots,
   randomSentence, randomUrl,
-} from '../../00-base/base.stories';
+} from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Publication Card',

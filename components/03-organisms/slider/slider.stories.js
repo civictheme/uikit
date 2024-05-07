@@ -2,7 +2,7 @@ import {
   boolean,
   number, radios, text,
 } from '@storybook/addon-knobs';
-import { generateSlots, randomLinks, randomTags } from '../../00-base/base.stories';
+import { generateSlots, randomLinks, randomTags } from '../../00-base/base.utils';
 import { randomSlidesComponent } from './slider.utils';
 import './slider';
 import CivicThemeSlider from './slider.twig';

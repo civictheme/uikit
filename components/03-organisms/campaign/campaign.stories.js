@@ -5,7 +5,7 @@ import {
   generateImage,
   generateSlots, randomLinks, randomSentence,
   randomTags,
-} from '../../00-base/base.stories';
+} from '../../00-base/base.utils';
 
 import CivicThemeCampaign from './campaign.twig';
 

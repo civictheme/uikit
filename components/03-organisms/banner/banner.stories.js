@@ -1,7 +1,7 @@
 import {
   boolean, radios, select, text,
 } from '@storybook/addon-knobs';
-import { generateImage, generateSlots, objectFromArray } from '../../00-base/base.stories';
+import { generateImage, generateSlots, objectFromArray } from '../../00-base/base.utils';
 import CivicThemeBannerExample from './banner.stories.twig';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 

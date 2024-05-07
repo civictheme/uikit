@@ -1,6 +1,6 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemePromo from './promo.twig';
-import { generateSlots, randomSentence } from '../../00-base/base.stories';
+import { generateSlots, randomSentence } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Promo',

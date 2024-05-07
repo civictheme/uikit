@@ -1,6 +1,6 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeSocialLinks from './social-links.twig';
-import { generateIcon } from '../../00-base/base.stories';
+import { generateIcon } from '../../00-base/base.utils';
 import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {

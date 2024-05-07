@@ -1,5 +1,5 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
-import { generateSlots, randomSentence, randomUrl } from '../../00-base/base.stories';
+import { generateSlots, randomSentence, randomUrl } from '../../00-base/base.utils';
 import CivicThemeAttachment from './attachment.twig';
 
 export default {

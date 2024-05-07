@@ -1,5 +1,5 @@
 import { number, radios, text } from '@storybook/addon-knobs';
-import { generateSlots, randomLinks } from '../../00-base/base.stories';
+import { generateSlots, randomLinks } from '../../00-base/base.utils';
 
 import CivicThemeServiceCard from './service-card.twig';
 

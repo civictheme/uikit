@@ -2,7 +2,7 @@ import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeFormElement from './form-element.twig';
 import Input from '../../01-atoms/input/input.twig';
 import Select from '../../01-atoms/select/select.twig';
-import { randomName } from '../../00-base/base.stories';
+import { randomName } from '../../00-base/base.utils';
 import { Radio } from '../../01-atoms/radio/radio.stories';
 import { Checkbox } from '../../01-atoms/checkbox/checkbox.stories';
 

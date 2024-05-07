@@ -1,6 +1,6 @@
 import { number, radios, text } from '@storybook/addon-knobs';
 import CivicThemeCallout from './callout.twig';
-import { generateSlots, randomLinks, randomSentence } from '../../00-base/base.stories';
+import { generateSlots, randomLinks, randomSentence } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Callout',

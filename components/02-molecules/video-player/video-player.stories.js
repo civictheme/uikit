@@ -1,7 +1,7 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 
 import CivicThemeVideo from './video-player.twig';
-import { generateVideoPoster, generateVideos } from '../../00-base/base.stories';
+import { generateVideoPoster, generateVideos } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Video Player',
