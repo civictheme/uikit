@@ -24,7 +24,7 @@ export const Fieldset = (knobTab) => {
     theme,
     legend: text('Legend', 'Fieldset legend', generalKnobTab),
     description: text('Description', 'Fieldset example description', generalKnobTab),
-    required: boolean('Required', true, generalKnobTab),
+    is_required: boolean('Required', true, generalKnobTab),
     modifier_class: text('Additional class', '', generalKnobTab),
   };
 

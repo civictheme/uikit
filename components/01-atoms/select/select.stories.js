@@ -25,7 +25,7 @@ export const Select = (knobTab) => {
     ),
     is_multiple: boolean('Is multiple', false, generalKnobTab),
     options: boolean('With options', true, generalKnobTab) ? generateOptions(numOfOptions, (boolean('Options have groups', false, generalKnobTab) ? 'optgroup' : 'option')) : [],
-    required: boolean('Required', false, generalKnobTab),
+    is_required: boolean('Required', false, generalKnobTab),
     disabled: boolean('Disabled', false, generalKnobTab),
     has_error: boolean('Has error', false, generalKnobTab),
     for: text('For', '', generalKnobTab),

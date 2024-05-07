@@ -17,7 +17,7 @@
 
 {% set form_element_type_class = 'ct-form-element--%s'|format(type|default('default')) %}
 {% set form_element_name_class = name is not empty ? 'ct-form-element--%s'|format(name) : '' %}
-{% set required_class = required ? 'ct-form-element--form-required' : '' %}
+{% set required_class = is_required ? 'ct-form-element--form-required' : '' %}
 {% set error_class = errors ? 'ct-form-element--error' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, form_element_type_class, form_element_name_class, required_class, error_class, modifier_class|default('')) %}
