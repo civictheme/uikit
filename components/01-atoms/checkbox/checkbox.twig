@@ -8,7 +8,7 @@
  * - content: [string] Input field label.
  * - value: [string] Input field value.
  * - disabled: [boolean] Disabled state.
- * - required: [boolean] Required state.
+ * - is_required: [boolean] Required state.
  * - has_error: [boolean] Error state.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
@@ -16,7 +16,7 @@
 #}
 
 {% set disabled_class = disabled ? 'ct-checkbox--disabled' : '' %}
-{% set required_class = required ? 'ct-checkbox--required' : '' %}
+{% set required_class = is_required ? 'ct-checkbox--required' : '' %}
 {% set error_class = has_error ? 'ct-checkbox--error' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s'|format(theme_class, disabled_class, required_class, error_class, modifier_class|default('')) %}
@@ -27,7 +27,7 @@
     class="ct-checkbox__element"
     value="{{ value }}"
     {{ disabled ? 'disabled' }}
-    {{ required ? 'required' }}
+    {{ is_required ? 'required' }}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   />
   <span class="ct-checkbox__state"></span>

@@ -4,8 +4,8 @@ import {
 
 import CivicThemeNavigationCard from './navigation-card.twig';
 import {
-  demoImage,
-  getSlots,
+  generateImage,
+  generateSlots,
   randomUrl,
 } from '../../00-base/base.utils';
 
@@ -37,7 +37,7 @@ export const NavigationCard = (knobTab) => {
       is_new_window: boolean('Open in a new window', false, generalKnobTab),
     },
     image: boolean('With image', true, generalKnobTab) ? {
-      url: demoImage(),
+      url: generateImage(),
       alt: 'Image alt text',
     } : false,
     image_as_icon: boolean('Image as icon', false, generalKnobTab),
@@ -54,7 +54,7 @@ export const NavigationCard = (knobTab) => {
   return CivicThemeNavigationCard({
     ...generalKnobs,
     ...iconKnobs,
-    ...getSlots([
+    ...generateSlots([
       'image_over',
       'content_top',
       'content_middle',

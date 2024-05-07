@@ -2,7 +2,7 @@ import {
   boolean, number, radios, text,
 } from '@storybook/addon-knobs';
 import {
-  getSlots, randomInt, randomSentence,
+  generateSlots, randomInt, randomSentence,
   randomTags,
   randomUrl,
 } from '../../00-base/base.utils';
@@ -53,7 +53,7 @@ export const Snippet = (knobTab) => {
 
   return CivicThemeSummary({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_middle',
       'content_bottom',

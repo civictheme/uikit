@@ -8,8 +8,8 @@ export default {
   title: 'Atoms/Fieldset',
 };
 
-export const Fieldset = () => {
-  const generalKnobTab = 'General';
+export const Fieldset = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const theme = radios(
     'Theme',
     {
@@ -24,7 +24,7 @@ export const Fieldset = () => {
     theme,
     legend: text('Legend', 'Fieldset legend', generalKnobTab),
     description: text('Description', 'Fieldset example description', generalKnobTab),
-    required: boolean('Required', true, generalKnobTab),
+    is_required: boolean('Required', true, generalKnobTab),
     modifier_class: text('Additional class', '', generalKnobTab),
   };
 

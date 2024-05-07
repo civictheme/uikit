@@ -1,7 +1,7 @@
 import {
   boolean, radios, select, text,
 } from '@storybook/addon-knobs';
-import { demoImage, getSlots, objectFromArray } from '../../00-base/base.utils';
+import { generateImage, generateSlots, objectFromArray } from '../../00-base/base.utils';
 import CivicThemeBannerExample from './banner.stories.twig';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 
@@ -40,7 +40,7 @@ export const Banner = (knobTab) => {
       bgImageKnobTab,
     ) : null,
     featured_image: boolean('With featured image', true, generalKnobTab) ? {
-      url: demoImage(0),
+      url: generateImage(0),
       alt: 'Featured image alt text',
     } : null,
     is_decorative: boolean('Decorative', true, generalKnobTab),
@@ -53,7 +53,7 @@ export const Banner = (knobTab) => {
 
   return CivicThemeBannerExample({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top1',
       'content_top2',
       'content_top3',

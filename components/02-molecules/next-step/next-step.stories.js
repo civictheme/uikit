@@ -1,6 +1,6 @@
 import { radios, text, boolean } from '@storybook/addon-knobs';
 import CivicThemeNextSteps from './next-step.twig';
-import { getSlots } from '../../00-base/base.utils';
+import { generateSlots } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Next Steps',
@@ -44,7 +44,7 @@ export const NextSteps = (knobTab) => {
 
   return CivicThemeNextSteps({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

@@ -1,7 +1,7 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
 
 import CivicThemeFigure from './figure.twig';
-import { demoImage } from '../../00-base/base.utils';
+import { generateImage } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Figure',
@@ -23,7 +23,7 @@ export const Figure = (knobTab) => {
       'light',
       generalKnobTab,
     ),
-    url: boolean('With image', true, generalKnobTab) ? demoImage() : false,
+    url: boolean('With image', true, generalKnobTab) ? generateImage() : false,
     alt: text('Image alt text', 'Alternative text', generalKnobTab),
     width: text('Width', '600', generalKnobTab),
     height: text('Height', '', generalKnobTab),

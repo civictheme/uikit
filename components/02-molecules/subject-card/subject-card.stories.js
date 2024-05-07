@@ -1,5 +1,5 @@
 import { boolean, radios, text } from '@storybook/addon-knobs';
-import { demoImage, getSlots, randomUrl } from '../../00-base/base.utils';
+import { generateImage, generateSlots, randomUrl } from '../../00-base/base.utils';
 import CivicThemeSubjectCard from './subject-card.twig';
 
 export default {
@@ -29,7 +29,7 @@ export const SubjectCard = (knobTab) => {
       is_new_window: boolean('Open in a new window', false, generalKnobTab),
     },
     image: boolean('With image', true, generalKnobTab) ? {
-      url: demoImage(),
+      url: generateImage(),
       alt: 'Image alt text',
     } : false,
     modifier_class: `story-wrapper-size--small ${text('Additional class', '', generalKnobTab)}`,
@@ -38,7 +38,7 @@ export const SubjectCard = (knobTab) => {
 
   return CivicThemeSubjectCard({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'image_over',
     ]),
   });
