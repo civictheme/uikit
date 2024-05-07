@@ -22,7 +22,7 @@ export const Radio = (knobTab) => {
       generalKnobTab,
     ),
     content: text('Content', 'Radio label', generalKnobTab),
-    required: boolean('Required', false, generalKnobTab),
+    is_required: boolean('Required', false, generalKnobTab),
     disabled: boolean('Disabled', false, generalKnobTab),
     has_error: boolean('Has error', false, generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),

@@ -2,7 +2,7 @@ import {
   boolean,
   number, radios, text,
 } from '@storybook/addon-knobs';
-import { getSlots, randomLinks, randomTags } from '../../00-base/base.utils';
+import { generateSlots, randomLinks, randomTags } from '../../00-base/base.utils';
 import { randomSlidesComponent } from './slider.utils';
 import './slider';
 import CivicThemeSlider from './slider.twig';
@@ -14,8 +14,8 @@ export default {
   },
 };
 
-export const Slider = () => {
-  const generalKnobTab = 'General';
+export const Slider = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const slidesKnobTab = 'Slide';
   const theme = radios(
     'Theme',
@@ -68,7 +68,7 @@ export const Slider = () => {
       },
       slidesKnobTab,
     ), 10),
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
@@ -98,7 +98,7 @@ export const Slider = () => {
 
   return CivicThemeSlider({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

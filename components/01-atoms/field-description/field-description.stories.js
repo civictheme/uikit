@@ -21,6 +21,15 @@ export const FieldDescription = (knobTab) => {
       'light',
       generalKnobTab,
     ),
+    size: radios(
+      'Size',
+      {
+        Large: 'large',
+        Regular: 'regular',
+      },
+      'regular',
+      generalKnobTab,
+    ),
     content: text('Content', 'We will only use this to respond to your question.', generalKnobTab),
     modifier_class: text('Additional classes', '', generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),

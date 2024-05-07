@@ -10,8 +10,8 @@ export default {
   title: 'Molecules/Form Element',
 };
 
-export const FormElement = () => {
-  const generalKnobTab = 'General';
+export const FormElement = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
   const inputKnobTab = 'Input';
 
   const theme = radios(
@@ -65,7 +65,7 @@ export const FormElement = () => {
       generalKnobTab,
     ),
     errors: boolean('With error', false, generalKnobTab) ? 'Sample error message' : false,
-    required: boolean('Required', false, generalKnobTab),
+    is_required: boolean('Required', false, generalKnobTab),
     modifier_class: text('Additional class', '', generalKnobTab),
     attributes: text('Additional attributes', '', generalKnobTab),
   };
@@ -87,7 +87,7 @@ export const FormElement = () => {
       inputKnobTab,
     ),
     disabled: boolean('Disabled', false, inputKnobTab),
-    required: generalKnobs.required,
+    is_required: generalKnobs.is_required,
   };
 
   const selectKnobs = {
@@ -116,7 +116,7 @@ export const FormElement = () => {
       inputKnobTab,
     ),
     disabled: boolean('Disabled', false, inputKnobTab),
-    required: generalKnobs.required,
+    is_required: generalKnobs.is_required,
   };
 
   const checkboxKnobs = {
@@ -128,7 +128,7 @@ export const FormElement = () => {
       inputKnobTab,
     ),
     disabled: boolean('Disabled', false, inputKnobTab),
-    required: generalKnobs.required,
+    is_required: generalKnobs.is_required,
   };
 
   const children = [];

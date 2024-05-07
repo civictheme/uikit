@@ -7,9 +7,9 @@ import CivicThemeTable from '../../01-atoms/table/table.twig';
 import CivicThemeFigure from '../figure/figure.twig';
 import CivicThemeVideoPlayer from '../video-player/video-player.twig';
 import {
-  demoImage,
-  demoVideoPoster,
-  demoVideos,
+  generateImage,
+  generateVideoPoster,
+  generateVideos,
 } from '../../00-base/base.utils';
 
 export default {
@@ -132,7 +132,7 @@ export const BasicContent = (knobTab, useKnobs = true, defaultTheme = 'light') =
   // Image.
   html += CivicThemeFigure({
     theme,
-    url: demoImage(),
+    url: generateImage(),
     alt: 'Occaecat laborum voluptate cupidatat.',
     caption: 'Commodo anim sint minim.',
   });
@@ -140,8 +140,8 @@ export const BasicContent = (knobTab, useKnobs = true, defaultTheme = 'light') =
   // Video Player.
   html += CivicThemeVideoPlayer({
     theme,
-    sources: demoVideos(),
-    poster: demoVideoPoster(),
+    sources: generateVideos(),
+    poster: generateVideoPoster(),
   });
 
   // Table.

@@ -2,7 +2,7 @@ import {
   boolean, radios,
 } from '@storybook/addon-knobs';
 import {
-  getSlots, randomInt, randomTags, randomLinks,
+  generateSlots, randomInt, randomTags, randomLinks,
 } from '../../00-base/base.utils';
 import CivicThemePageExample from './page.stories.twig';
 import '../../00-base/responsive/responsive';
@@ -62,7 +62,7 @@ export const HomePage = (knobTab) => {
     date: '20 Jan 2023 11:00',
     date_end: '21 Jan 2023 15:00',
     links: randomLinks(randomInt(1, 4), randomInt(6, 6)),
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
@@ -76,7 +76,7 @@ export const HomePage = (knobTab) => {
 
   return CivicThemePageExample({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top1',
       'content_top2',
       'content_top3',
@@ -128,7 +128,7 @@ export const ContentPage = (knobTab) => {
 
   return CivicThemePageExample({
     ...generalKnobs,
-    ...getSlots([
+    ...generateSlots([
       'content_top1',
       'content_top2',
       'content_top3',

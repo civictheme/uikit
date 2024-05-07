@@ -3,7 +3,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import {
-  getSlots, randomFormElements, randomInt, randomString,
+  generateSlots, randomFormElements, randomInt, randomString,
 } from '../../00-base/base.utils';
 
 import CivicThemeGroupFilter from './group-filter.twig';
@@ -16,8 +16,8 @@ export default {
   },
 };
 
-export const GroupFilter = () => {
-  const generalKnobTab = 'General';
+export const GroupFilter = (knobTab) => {
+  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
 
   const generalKnobs = {
     theme: radios(
@@ -60,7 +60,7 @@ export const GroupFilter = () => {
   return CivicThemeGroupFilter({
     ...generalKnobs,
     filters,
-    ...getSlots([
+    ...generateSlots([
       'content_top',
       'content_bottom',
     ]),

@@ -1,5 +1,5 @@
 //
-// Shared JS helpers for Storybook stories.
+// Centralised helpers for all storybook components.
 //
 
 import { boolean } from '@storybook/addon-knobs';
@@ -12,22 +12,76 @@ import CivicThemeFormElement
   from '../02-molecules/form-element/form-element.twig';
 import CivicThemeLabel from '../01-atoms/label/label.twig';
 
+// Utilities.
+
+export const arrayCombine = function (keys, values) {
+  const obj = {};
+
+  if (!keys || !values || keys.constructor !== Array || values.constructor !== Array) {
+    return false;
+  }
+
+  if (keys.length !== values.length) {
+    return false;
+  }
+
+  for (let i = 0; i < keys.length; i++) {
+    obj[keys[i]] = values[i];
+  }
+
+  return obj;
+};
+
+export const objectFromArray = (array) => {
+  const obj = {};
+  array.forEach((item) => {
+    obj[item] = item;
+  });
+  return obj;
+};
+
+export const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+export const indexedString = 'PlaceholderText';
+
+export const cleanCssIdentifier = function (string) {
+  return string.toLowerCase()
+    .replace(/(&\w+?;)/gim, ' ')
+    .replace(/[_.~"<>%|'!*();:@&=+$,/?%#[\]{}\n`^\\]/gim, '')
+    .replace(/(^\s+)|(\s+$)/gim, '')
+    .replace(/\s+/gm, '-');
+};
+
+export const toLabels = function (values) {
+  const arr = [];
+  for (const i in values) {
+    arr.push(capitalizeFirstLetter(values[i].replace(/[-_]/, ' ')));
+  }
+  return arr;
+};
+
+export const placeholder = (content = 'Content placeholder') => `<div class="story-placeholder">${content}</div>`;
+
 export const getThemes = () => ({
   light: 'Light',
   dark: 'Dark',
 });
 
-export const getSlots = (names) => {
-  const showSlots = boolean('Show story-slots', false, 'Slots');
-  const obj = {};
+export const dateIsValid = function (date) {
+  return !Number.isNaN(Date.parse(date));
+};
 
-  if (showSlots) {
-    for (const i in names) {
-      obj[names[i]] = `<div class="story-slot story-slot--${names[i]}">{{ ${names[i]} }}</div>`;
-    }
-  }
+// Random generators.
 
-  return obj;
+export const randomBool = (skew) => {
+  skew = skew || 0.5;
+  return Math.random() > skew;
+};
+
+export const randomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
 };
 
 export const randomText = (words) => {
@@ -45,96 +99,19 @@ export const randomText = (words) => {
   return lorem.generateWords(words);
 };
 
-export const placeholder = (content = 'Content placeholder') => `<div class="story-placeholder">${content}</div>`;
-
-export const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
-
-export const randomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-};
-
-export const randomBool = (skew) => {
-  skew = skew || 0.5;
-  return Math.random() > skew;
-};
-
 export const randomString = (length) => randomText(length).substring(0, length).trim();
 
 export const randomName = (length) => randomText(length).replace(' ', '').substring(0, length).trim();
-
-export const randomSentence = (words) => {
-  words = words || randomInt(5, 25);
-  return capitalizeFirstLetter(randomText(words));
-};
 
 export const randomUrl = (domain) => {
   domain = domain || 'http://example.com';
   return `${domain}/${(Math.random() + 1).toString(36).substring(7)}`;
 };
 
-export const randomLinks = (count, length, domain, prefix) => {
-  const links = [];
-  prefix = prefix || 'Link';
-  length = length || 0;
-
-  for (let i = 0; i < count; i++) {
-    links.push({
-      text: `${prefix} ${i + 1}${length ? ` ${randomString(randomInt(3, length))}` : ''}`,
-      url: randomUrl(domain),
-      is_new_window: randomBool(),
-      is_external: randomBool(0.8),
-    });
-  }
-
-  return links;
+export const randomDropdownFilter = () => {
+  const filters = ['All', 'Recent', 'Popular', 'Featured'];
+  return filters[Math.floor(Math.random() * filters.length)];
 };
-
-export const randomTags = (count, rand) => {
-  const tags = [];
-  rand = rand || false;
-
-  for (let i = 0; i < count; i++) {
-    tags.push(`Topic ${i + 1}${rand ? ` ${randomString(randomInt(2, 5))}` : ''}`);
-  }
-
-  return tags;
-};
-
-export const demoImage = (idx) => {
-  const images = [
-    'demo/images/demo1.jpg',
-    'demo/images/demo2.jpg',
-    'demo/images/demo3.jpg',
-    'demo/images/demo4.jpg',
-    'demo/images/demo5.jpg',
-    'demo/images/demo6.jpg',
-  ];
-
-  idx = typeof idx !== 'undefined' ? Math.max(0, Math.min(idx, images.length)) : Math.floor(Math.random() * images.length);
-
-  return images[idx];
-};
-
-export const demoVideos = () => [
-  {
-    url: 'demo/videos/demo.webm',
-    type: 'video/webm',
-  },
-  {
-    url: 'demo/videos/demo.mp4',
-    type: 'video/mp4',
-  },
-  {
-    url: 'demo/videos/demo.avi',
-    type: 'video/avi',
-  },
-];
-
-export const demoVideoPoster = () => 'demo/videos/demo_poster.png';
-
-export const demoIcon = () => './assets/icons/megaphone.svg';
 
 export const randomFormElement = (inputType, options, theme, rand, itr) => {
   const isCheckboxOrRadio = inputType === 'checkbox' || inputType === 'radio';
@@ -223,19 +200,68 @@ export const randomFormElements = (count, theme, rand) => {
   return formElements;
 };
 
-export const randomOptions = (numOfOptions, optionType = 'option') => {
-  const options = [];
-  for (let i = 1; i <= numOfOptions; i++) {
-    const option = {
-      type: optionType,
-      selected: false,
-      label: optionType === 'optgroup' ? `Group ${i}` : randomString(randomInt(3, 8)),
-      value: randomString(randomInt(1, 8)),
-      options: optionType === 'optgroup' ? randomOptions(numOfOptions) : null,
-    };
-    options.push(option);
+export const randomLinks = (count, length, domain, prefix) => {
+  const links = [];
+  prefix = prefix || 'Link';
+  length = length || 0;
+
+  for (let i = 0; i < count; i++) {
+    links.push({
+      text: `${prefix} ${i + 1}${length ? ` ${randomString(randomInt(3, length))}` : ''}`,
+      url: randomUrl(domain),
+      is_new_window: randomBool(),
+      is_external: randomBool(0.8),
+    });
   }
-  return options;
+
+  return links;
+};
+
+export const randomSentence = (words) => {
+  words = words || randomInt(5, 25);
+  return capitalizeFirstLetter(randomText(words));
+};
+
+export const randomTags = (count, rand) => {
+  const tags = [];
+  rand = rand || false;
+
+  for (let i = 0; i < count; i++) {
+    tags.push(`Topic ${i + 1}${rand ? ` ${randomString(randomInt(2, 5))}` : ''}`);
+  }
+
+  return tags;
+};
+
+// Demo data generators
+
+export const generateIcon = () => './assets/icons/megaphone.svg';
+
+export const generateImage = (idx) => {
+  const images = [
+    'demo/images/demo1.jpg',
+    'demo/images/demo2.jpg',
+    'demo/images/demo3.jpg',
+    'demo/images/demo4.jpg',
+    'demo/images/demo5.jpg',
+    'demo/images/demo6.jpg',
+  ];
+
+  idx = typeof idx !== 'undefined' ? Math.max(0, Math.min(idx, images.length)) : Math.floor(Math.random() * images.length);
+
+  return images[idx];
+};
+
+export const generateInputItems = (count) => {
+  const items = [];
+  for (let i = 0; i < count; i++) {
+    items.push({
+      id: i + 1,
+      label: `Input ${i + 1}`,
+      value: randomString(randomInt(3, 8)),
+    });
+  }
+  return items;
 };
 
 export const generateItems = (count, content) => {
@@ -246,48 +272,58 @@ export const generateItems = (count, content) => {
   return items;
 };
 
-export const objectFromArray = (array) => {
-  const obj = {};
-  array.forEach((item) => {
-    obj[item] = item;
-  });
-  return obj;
+export const generateSelectItems = (count) => {
+  const items = [];
+  for (let i = 0; i < count; i++) {
+    items.push({
+      label: `Option ${i + 1}`,
+      value: randomString(randomInt(3, 8)),
+    });
+  }
+  return items;
 };
 
-export const cleanCssIdentifier = function (string) {
-  return string.toLowerCase()
-    .replace(/(&\w+?;)/gim, ' ')
-    .replace(/[_.~"<>%|'!*();:@&=+$,/?%#[\]{}\n`^\\]/gim, '')
-    .replace(/(^\s+)|(\s+$)/gim, '')
-    .replace(/\s+/gm, '-');
-};
-
-export const arrayCombine = function (keys, values) {
+export const generateSlots = (names) => {
+  const showSlots = boolean('Show story-slots', false, 'Slots');
   const obj = {};
 
-  if (!keys || !values || keys.constructor !== Array || values.constructor !== Array) {
-    return false;
-  }
-
-  if (keys.length !== values.length) {
-    return false;
-  }
-
-  for (let i = 0; i < keys.length; i++) {
-    obj[keys[i]] = values[i];
+  if (showSlots) {
+    for (const i in names) {
+      obj[names[i]] = `<div class="story-slot story-slot--${names[i]}">{{ ${names[i]} }}</div>`;
+    }
   }
 
   return obj;
 };
 
-export const toLabels = function (values) {
-  const arr = [];
-  for (const i in values) {
-    arr.push(capitalizeFirstLetter(values[i].replace(/[-_]/, ' ')));
+export const generateOptions = (numOfOptions, optionType = 'option') => {
+  const options = [];
+  for (let i = 1; i <= numOfOptions; i++) {
+    const option = {
+      type: optionType,
+      selected: false,
+      label: optionType === 'optgroup' ? `Group ${i}` : randomString(randomInt(3, 8)),
+      value: randomString(randomInt(1, 8)),
+      options: optionType === 'optgroup' ? generateOptions(numOfOptions) : null,
+    };
+    options.push(option);
   }
-  return arr;
+  return options;
 };
 
-export const dateIsValid = function (date) {
-  return !Number.isNaN(Date.parse(date));
-};
+export const generateVideoPoster = () => 'demo/videos/demo_poster.png';
+
+export const generateVideos = () => [
+  {
+    url: 'demo/videos/demo.webm',
+    type: 'video/webm',
+  },
+  {
+    url: 'demo/videos/demo.mp4',
+    type: 'video/mp4',
+  },
+  {
+    url: 'demo/videos/demo.avi',
+    type: 'video/avi',
+  },
+];
