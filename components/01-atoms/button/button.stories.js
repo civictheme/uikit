@@ -90,5 +90,24 @@ export const Button = (knobTab) => {
     ) : null,
   };
 
+  // To be moved to utils file.
+  function suppressKnobsIfOptionsProvided(knobs, options) {
+    Object.keys(knobs).forEach(key => {
+      if (key in options) {
+        knobs[key] = options[key]; // Override the knob with the option value if provided
+        console.log('OVERRIDE', key, options[key]);
+      }
+    });
+  }
+
+  // Example of options passed to this story as arg.
+  var options = {
+    text: 'Button text',
+    type: 'primary',
+  };
+
+  // Override the knob with the option value if provided.
+  suppressKnobsIfOptionsProvided(generalKnobs, options);
+
   return CivicThemeButton({ ...generalKnobs, ...iconKnobs });
 };
