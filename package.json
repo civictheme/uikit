@@ -27,7 +27,8 @@
     "dist:dev": "export NODE_OPTIONS=--openssl-legacy-provider && webpack --config ./webpack/webpack.dev.js",
     "test": "npm run test-storybook:ci",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"npx http-server storybook-static --port 6006 -a 127.0.0.1 --silent\" \"wait-on --timeout 10000 http://127.0.0.1:6006 && npm run test-storybook\""
+    "test-storybook:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"npx http-server storybook-static --port 6006 -a 127.0.0.1 --silent\" \"wait-on --timeout 10000 http://127.0.0.1:6006 && npm run test-storybook\"",
+    "reset": "rm -rf node_modules; rm -rf package-lock.json"
   },
   "engines": {
     "node": ">=18.14"
