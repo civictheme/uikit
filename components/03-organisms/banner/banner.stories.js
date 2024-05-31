@@ -48,7 +48,8 @@ export const Banner = (props = {}) => {
     modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  knobs.breadcrumb = knobBoolean('With breadcrumb', true, props.with_breadcrumb, props.knobTab) ? Breadcrumb('Breadcrumb', {
+  knobs.breadcrumb = knobBoolean('With breadcrumb', true, props.with_breadcrumb, props.knobTab) ? Breadcrumb({
+    knobTab: 'Breadcrumb',
     theme: knobs.theme,
     modifier_class: new KnobValue('ct-banner__breadcrumb'),
   }) : '';
