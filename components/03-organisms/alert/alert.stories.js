@@ -1,6 +1,7 @@
 import { button } from '@storybook/addon-knobs';
 import CivicThemeAlert from './alert.twig';
 import { knobNumber, knobRadios, knobText, randomText, shouldRender } from '../../00-base/base.utils';
+import './alert';
 
 export default {
   title: 'Organisms/Alert',
@@ -100,7 +101,7 @@ export const AlertApi = (props = {}) => {
 
   button('Clear cookie', () => {
     document.cookie = 'ct-alert-hide=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-  });
+  }, 'General');
 
   let docs = '';
   docs += 'Dismiss alerts by clicking on [X] button.<br/><br/>';
