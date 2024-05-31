@@ -21,6 +21,24 @@
 }
 
 //
+// Fit image into text size.
+//
+@mixin ct-image-fit-text-size($self: false) {
+  @if $self {
+    height: 1em;
+    width: 1em;
+    object-fit: cover;
+  }
+  @else {
+    img {
+      height: 1em;
+      width: 1em;
+      object-fit: cover;
+    }
+  }
+}
+
+//
 // Fit image into a square container.
 //
 @mixin ct-image-container-square() {
