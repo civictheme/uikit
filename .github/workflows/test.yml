@@ -34,6 +34,9 @@ jobs:
       - name: Check coding standards
         run: npm run lint
 
+      - name: Check Twig coding standards
+        run: composer lint
+
       - name: Build
         run: npm run build
 

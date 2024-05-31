@@ -15,7 +15,7 @@
         "vincentlanglet/twig-cs-fixer": "^2.8"
     },
     "scripts": {
-        "lint": "vendor/bin/twig-cs-fixer",
-        "lint-fix": "vendor/bin/twig-cs-fixer --fix"
+        "lint": "vendor/bin/twig-cs-fixer --no-cache",
+        "lint-fix": "vendor/bin/twig-cs-fixer --no-cache --fix"
     }
 }
