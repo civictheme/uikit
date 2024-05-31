@@ -45,6 +45,7 @@
 
   #{$root}__icon {
     margin-bottom: ct-spacing(2);
+    color: inherit;
   }
 
   #{$root}__icon__image {
@@ -68,5 +69,6 @@
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, background-color);
+    @include ct-component-property($root, $theme, icon, color);
   }
 }
