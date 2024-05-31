@@ -17,13 +17,28 @@ jobs:
         node: [18, 20, 21, 22]
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install && npx playwright install
-      - run: npm run lint
-      - run: npm run build
-      - run: npm run test
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+
+      - name: Install NPM dependencies
+        run: npm install && npx playwright install
+
+      - name: Install PHP dependencies
+        run: composer install
+
+      - name: Check coding standards
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test
 
       - name: Deploy to Netlify
         if: matrix.node == 20
