@@ -1,4 +1,5 @@
 import { knobBoolean, knobNumber, knobRadios, knobText, randomText, shouldRender } from '../../00-base/base.utils';
+import './table-of-contents';
 
 export default {
   title: 'Molecules/Table Of Contents',
