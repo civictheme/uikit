@@ -21,6 +21,23 @@
 }
 
 //
+// Fit image into a square container.
+//
+@mixin ct-image-container-square() {
+  @include ct-image-fit();
+
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+//
 // Drop shadow for image.
 //
 @mixin ct-image-shadow($color, $up: true, $offset-x: ct-particle(2), $offset-y: ct-particle(2)) {
