@@ -70,7 +70,7 @@ export const Campaign = (props = {}) => {
         Bottom: 'bottom',
         Both: 'both',
       },
-      'none',
+      'both',
       props.vertical_spacing,
       props.knobTab,
     ),

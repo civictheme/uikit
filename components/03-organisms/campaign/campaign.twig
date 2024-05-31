@@ -38,12 +38,14 @@
         <div class="ct-campaign__wrapper">
           {% block image %}
             {% if image is not empty %}
-              <div class="ct-campaign__image">
-                {% include '@atoms/image/image.twig' with {
-                  theme: theme,
-                  url: image.url,
-                  alt: image.alt,
-                } only %}
+              <div class="ct-campaign__image-wrapper">
+                <div class="ct-campaign__image">
+                  {% include '@atoms/image/image.twig' with {
+                    theme: theme,
+                    url: image.url,
+                    alt: image.alt,
+                  } only %}
+                </div>
               </div>
             {% endif %}
           {% endblock %}
