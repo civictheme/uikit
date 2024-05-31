@@ -22,15 +22,15 @@ export const NavigationCard = (props = {}) => {
     ),
     title: knobText('Title', 'Navigation card heading which runs across two or three lines', props.navigation_card_title, props.knobTab),
     summary: knobText('Summary', 'Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.', props.summary, props.knobTab),
-    link: {
+    link: knobBoolean('With link', true, props.with_link, props.knobTab) ? {
       url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
       is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
       is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
-    },
+    } : null,
     image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
-    } : false,
+    } : null,
     image_as_icon: knobBoolean('Image as icon', false, props.image_as_icon, props.knobTab),
     modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
