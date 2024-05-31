@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeFooter from './footer.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
@@ -24,12 +24,19 @@ export const Footer = (props = {}) => {
       props.knobTab,
     ),
     modifier_class: knobText('Additional class', '', props.knobTab),
-    logo: knobBoolean('Show logo', true, props.knobTab) ? Logo({ knobTab: 'Logo' }) : null,
     show_social_links: knobBoolean('Show social links', true, props.knobTab),
     show_middle_links: knobBoolean('Show middle links', true, props.knobTab),
     show_acknowledgement: knobBoolean('Show acknowledgement', true, props.knobTab),
     show_copyright: knobBoolean('Show copyright', true, props.knobTab),
   };
+
+  knobs.logo = knobBoolean('Show logo', true, props.knobTab) ? Logo({
+    knobTab: 'Logo',
+    theme: knobs.theme,
+    url: randomUrl('example2.com'),
+    type: new KnobValue(),
+    title: new KnobValue('This is a Logo in Footer'),
+  }) : null;
 
   if (knobBoolean('Show background image', false, props.knobTab)) {
     knobs.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.knobTab)];
