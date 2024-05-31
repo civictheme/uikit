@@ -1,9 +1,6 @@
-import {
-  boolean, radios, select, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemeButton from './button.twig';
 import './button';
+import { knobBoolean, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Button',
@@ -12,24 +9,25 @@ export default {
   },
 };
 
-export const Button = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const generalKnobs = {
-    theme: radios(
+export const Button = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    text: text(
+    text: knobText(
       'Text',
       'Button text',
-      generalKnobTab,
+      props.text,
+      props.knobTab,
     ),
-    type: radios(
+    type: knobRadios(
       'Type',
       {
         Primary: 'primary',
@@ -38,9 +36,10 @@ export const Button = (knobTab) => {
         None: '',
       },
       'primary',
-      generalKnobTab,
+      props.type,
+      props.knobTab,
     ),
-    size: radios(
+    size: knobRadios(
       'Size',
       {
         Large: 'large',
@@ -49,9 +48,10 @@ export const Button = (knobTab) => {
         None: '',
       },
       'regular',
-      generalKnobTab,
+      props.size,
+      props.knobTab,
     ),
-    kind: radios(
+    kind: knobRadios(
       'Kind',
       {
         Button: 'button',
@@ -60,35 +60,40 @@ export const Button = (knobTab) => {
         Submit: 'submit',
       },
       'button',
-      generalKnobTab,
+      props.kind,
+      props.knobTab,
     ),
   };
 
-  if (generalKnobs.kind === 'link') {
-    generalKnobs.url = text('URL', 'http://example.com', generalKnobTab);
-    generalKnobs.is_new_window = boolean('Open in a new window', false, generalKnobTab);
+  if (knobs.kind === 'link') {
+    knobs.url = knobText('URL', 'http://example.com', props.url, props.knobTab);
+    knobs.is_new_window = knobBoolean('Open in a new window', false, props.is_new_window, props.knobTab);
   }
 
-  generalKnobs.is_disabled = boolean('Disabled', false, generalKnobTab);
-  generalKnobs.is_external = boolean('Is external', false, generalKnobTab);
-  generalKnobs.is_raw_text = boolean('Allow HTML in text', false, generalKnobTab);
-  generalKnobs.modifier_class = text('Additional class', '', generalKnobTab);
-  generalKnobs.attributes = text('Additional attributes', '', generalKnobTab);
+  knobs.is_disabled = knobBoolean('Disabled', false, props.is_disabled, props.knobTab);
+  knobs.is_external = knobBoolean('Is external', false, props.is_external, props.knobTab);
+  knobs.is_raw_text = knobBoolean('Allow HTML in text', false, props.is_raw_text, props.knobTab);
+  knobs.modifier_class = knobText('Additional class', '', props.modifier_class, props.knobTab);
+  knobs.attributes = knobText('Additional attributes', '', props.attributes, props.knobTab);
+
+  const withIcon = knobBoolean('With icon', false, props.with_icon, props.knobTab);
 
   const iconKnobTab = 'Icon';
-  const withIcon = boolean('With icon', false, generalKnobTab);
   const iconKnobs = {
-    icon: withIcon ? select('Icon', Object.values(ICONS), Object.values(ICONS)[0], iconKnobTab) : null,
-    icon_placement: withIcon ? radios(
+    icon: withIcon ? knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], props.icon, iconKnobTab) : null,
+    icon_placement: withIcon ? knobRadios(
       'Position',
       {
         Before: 'before',
         After: 'after',
       },
       'after',
+      props.icon_position,
       iconKnobTab,
     ) : null,
   };
 
-  return CivicThemeButton({ ...generalKnobs, ...iconKnobs });
+  const combinedKnobs = { ...knobs, ...iconKnobs };
+
+  return shouldRender(props) ? CivicThemeButton(combinedKnobs) : combinedKnobs;
 };

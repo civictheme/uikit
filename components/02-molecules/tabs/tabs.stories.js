@@ -1,29 +1,24 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
 import CivicThemeTabs from './tabs.twig';
 import './tabs';
-import { placeholder, randomText, randomUrl } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Tabs',
 };
 
-export const Tabs = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Tabs = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    // Dynamic number of tabs/panels.
-    tabs_count: number(
+    tabs_count: knobNumber(
       'Tabs count',
       3,
       {
@@ -32,10 +27,11 @@ export const Tabs = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.tabs_count,
+      props.knobTab,
     ),
-    with_panels: boolean('With panels', true, generalKnobTab),
-    vertical_spacing: radios(
+    with_panels: knobBoolean('With panels', true, props.with_panels, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -44,19 +40,20 @@ export const Tabs = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
   };
 
   let panelKnobs = {};
 
-  if (generalKnobs.with_panels) {
+  if (knobs.with_panels) {
     // Use panels.
     const panels = [];
 
-    for (let i = 1; i <= generalKnobs.tabs_count; i++) {
+    for (let i = 1; i <= knobs.tabs_count; i++) {
       panels.push({
         id: `tab-${i}`,
         title: `Panel ${i} title `,
@@ -70,7 +67,7 @@ export const Tabs = (knobTab) => {
   } else {
     // Use tabs.
     const links = [];
-    for (let i = 1; i <= generalKnobs.tabs_count; i++) {
+    for (let i = 1; i <= knobs.tabs_count; i++) {
       links.push({
         text: `Tab ${i} title `,
         url: randomUrl(),
@@ -83,8 +80,7 @@ export const Tabs = (knobTab) => {
     };
   }
 
-  return CivicThemeTabs({
-    ...generalKnobs,
-    ...panelKnobs,
-  });
+  const combinedKnobs = { ...knobs, ...panelKnobs };
+
+  return shouldRender(props) ? CivicThemeTabs(combinedKnobs) : combinedKnobs;
 };

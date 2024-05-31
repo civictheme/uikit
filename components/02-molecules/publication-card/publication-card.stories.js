@@ -1,13 +1,5 @@
-import {
-  boolean, radios, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemePublicationCard from './publication-card.twig';
-import {
-  generateImage,
-  generateSlots,
-  randomSentence, randomUrl,
-} from '../../00-base/base.utils';
+import { convertDate, generateImage, generateSlots, knobBoolean, knobRadios, knobText, randomSentence, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Publication Card',
@@ -16,32 +8,27 @@ export default {
   },
 };
 
-export const PublicationCard = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
+export const PublicationCard = (props = {}) => {
+  const date = convertDate(null);
 
-  const date = new Date().toLocaleDateString('en-uk', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-
-  const generalKnobs = {
-    theme: radios(
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Publication or whitepaper main title', generalKnobTab),
-    summary: text('Summary', randomSentence(), generalKnobTab),
-    image: boolean('With image', true, generalKnobTab) ? {
+    title: knobText('Title', 'Publication or whitepaper main title', props.title, props.knobTab),
+    summary: knobText('Summary', randomSentence(), props.summary, props.knobTab),
+    image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
     } : false,
-    file: boolean('With file', true, generalKnobTab) ? {
+    file: knobBoolean('With file', true, props.with_file, props.knobTab) ? {
       url: randomUrl(),
       name: 'Document.doc',
       ext: 'doc',
@@ -50,17 +37,17 @@ export const PublicationCard = (knobTab) => {
       changed: date,
       icon: 'word-file',
     } : null,
-    modifier_class: `story-wrapper-size--medium ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemePublicationCard({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemePublicationCard({
+    ...knobs,
     ...generateSlots([
       'image_over',
       'content_top',
       'content_middle',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

@@ -1,14 +1,12 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeTable from './table.twig';
 import './table';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Table',
 };
 
-export const Table = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
+export const Table = (props = {}) => {
   const header = [
     'Header 1',
     'Header 2',
@@ -70,39 +68,37 @@ export const Table = (knobTab) => {
     ];
   };
 
-  const generalKnobs = {
-    theme: radios(
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    header: boolean('With header', true, generalKnobTab) ? header : [],
-    rows: boolean('With rows', true, generalKnobTab) ? true : null,
-    footer: boolean('With footer', true, generalKnobTab) ? footer : [],
-    is_striped: boolean('Striped', true, generalKnobTab),
-    caption: text('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', generalKnobTab),
-    caption_position: radios(
+    header: knobBoolean('With header', true, props.knobTab) ? header : [],
+    rows: knobBoolean('With rows', true, props.knobTab) ? true : null,
+    footer: knobBoolean('With footer', true, props.knobTab) ? footer : [],
+    is_striped: knobBoolean('Striped', true, props.knobTab),
+    caption: knobText('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', props.knobTab),
+    caption_position: knobRadios(
       'Caption position',
       {
         Before: 'before',
         After: 'after',
       },
       'before',
-      generalKnobTab,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
-  if (generalKnobs.rows) {
-    generalKnobs.rows = getRows(generalKnobs.theme);
+  if (knobs.rows) {
+    knobs.rows = getRows(knobs.theme);
   }
 
-  return CivicThemeTable({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeTable(knobs) : knobs;
 };

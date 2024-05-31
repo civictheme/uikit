@@ -1,5 +1,5 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeFieldMessage from './field-message.twig';
+import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Field Message',
@@ -8,20 +8,18 @@ export default {
   },
 };
 
-export const FieldMessage = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const FieldMessage = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    type: radios(
+    type: knobRadios(
       'Type',
       {
         Error: 'error',
@@ -30,14 +28,12 @@ export const FieldMessage = (knobTab) => {
         Success: 'success',
       },
       'error',
-      generalKnobTab,
+      props.knobTab,
     ),
-    content: text('Content', 'Field message content', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    content: knobText('Content', 'Field message content', props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
-  return CivicThemeFieldMessage({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeFieldMessage(knobs) : knobs;
 };

@@ -6,7 +6,7 @@
 
 .ct-paragraph {
   $root: &;
-  $sizes: ( 'extra-large', 'large', 'regular', 'small' );
+  $sizes: ('extra-large', 'large', 'regular', 'small');
 
   display: block;
   margin-bottom: ct-spacing();

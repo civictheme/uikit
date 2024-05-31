@@ -1,8 +1,7 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeFormElement from './form-element.twig';
 import Input from '../../01-atoms/input/input.twig';
 import Select from '../../01-atoms/select/select.twig';
-import { randomName } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomName, shouldRender } from '../../00-base/base.utils';
 import { Radio } from '../../01-atoms/radio/radio.stories';
 import { Checkbox } from '../../01-atoms/checkbox/checkbox.stories';
 
@@ -10,21 +9,20 @@ export default {
   title: 'Molecules/Form Element',
 };
 
-export const FormElement = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
+export const FormElement = (props = {}) => {
   const inputKnobTab = 'Input';
 
-  const theme = radios(
+  const theme = knobRadios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
     'light',
-    generalKnobTab,
+    props.knobTab,
   );
 
-  const inputType = radios(
+  const inputType = knobRadios(
     'Type',
     {
       Text: 'text',
@@ -37,13 +35,13 @@ export const FormElement = (knobTab) => {
       Checkbox: 'checkbox',
     },
     'text',
-    generalKnobTab,
+    props.knobTab,
   );
 
-  const generalKnobs = {
+  const knobs = {
     theme,
-    label: text('Label', 'Label for input', generalKnobTab),
-    label_display: radios(
+    label: knobText('Label', 'Label for input', props.knobTab),
+    label_display: knobRadios(
       'Label display',
       {
         Before: 'before',
@@ -51,10 +49,10 @@ export const FormElement = (knobTab) => {
         Invisible: 'invisible',
       },
       'before',
-      generalKnobTab,
+      props.knobTab,
     ),
-    description: text('Description', 'Example input description', generalKnobTab),
-    description_display: radios(
+    description: knobText('Description', 'Example input description', props.knobTab),
+    description_display: knobRadios(
       'Description display',
       {
         Before: 'before',
@@ -62,12 +60,12 @@ export const FormElement = (knobTab) => {
         Invisible: 'invisible',
       },
       'after',
-      generalKnobTab,
+      props.knobTab,
     ),
-    errors: boolean('With error', false, generalKnobTab) ? 'Sample error message' : false,
-    is_required: boolean('Required', false, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    errors: knobBoolean('With error', false, props.knobTab) ? 'Sample error message' : false,
+    is_required: knobBoolean('Required', false, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
   const states = {
@@ -78,27 +76,27 @@ export const FormElement = (knobTab) => {
 
   const inputKnobs = {
     theme,
-    value: text('Value', 'Form element value', inputKnobTab),
-    placeholder: text('Placeholder', 'Form element placeholder', inputKnobTab),
-    state: radios(
+    value: knobText('Value', 'Form element value', inputKnobTab),
+    placeholder: knobText('Placeholder', 'Form element placeholder', inputKnobTab),
+    state: knobRadios(
       'State',
       states,
       'default',
       inputKnobTab,
     ),
-    disabled: boolean('Disabled', false, inputKnobTab),
-    is_required: generalKnobs.is_required,
+    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    is_required: knobs.is_required,
   };
 
   const selectKnobs = {
     theme,
-    state: radios(
+    state: knobRadios(
       'State',
       states,
       'default',
       inputKnobTab,
     ),
-    disabled: boolean('Disabled', false, inputKnobTab),
+    disabled: knobBoolean('Disabled', false, inputKnobTab),
     options: [
       { type: 'option', value: 'option1', label: 'Option 1' },
       { type: 'option', value: 'option2', label: 'Option 2' },
@@ -109,26 +107,26 @@ export const FormElement = (knobTab) => {
 
   const radioKnobs = {
     theme,
-    state: radios(
+    state: knobRadios(
       'State',
       states,
       'default',
       inputKnobTab,
     ),
-    disabled: boolean('Disabled', false, inputKnobTab),
-    is_required: generalKnobs.is_required,
+    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    is_required: knobs.is_required,
   };
 
   const checkboxKnobs = {
     theme,
-    state: radios(
+    state: knobRadios(
       'State',
       states,
       'default',
       inputKnobTab,
     ),
-    disabled: boolean('Disabled', false, inputKnobTab),
-    is_required: generalKnobs.is_required,
+    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    is_required: knobs.is_required,
   };
 
   const children = [];
@@ -161,13 +159,11 @@ export const FormElement = (knobTab) => {
       }));
   }
 
-  generalKnobs.id = randomName(5);
+  knobs.id = randomName(5);
 
-  const html = CivicThemeFormElement({
-    ...generalKnobs,
-    type: inputType,
-    children,
-  });
+  const combinedKnobs = { ...knobs, type: inputType, children };
 
-  return `<div class="container"><div class="row"><div class="col-xxs-12">${html}</div></div></div>`;
+  return shouldRender(props)
+    ? `<div class="container"><div class="row"><div class="col-xxs-12">${CivicThemeFormElement(combinedKnobs)}</div></div></div>`
+    : combinedKnobs;
 };

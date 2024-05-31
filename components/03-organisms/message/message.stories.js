@@ -1,24 +1,23 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeMessage from './message.twig';
+import { knobRadios, knobText, randomText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Message',
 };
 
-export const Message = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Message = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    type: radios(
+    type: knobRadios(
       'Type',
       {
         Information: 'information',
@@ -27,15 +26,14 @@ export const Message = (knobTab) => {
         Success: 'success',
       },
       'information',
-      generalKnobTab,
+      props.type,
+      props.knobTab,
     ),
-    title: text('Title', 'The information on this page is currently being updated.', generalKnobTab),
-    description: text('Summary', 'Filium morte multavit si sine causa, nollem me tamen laudandis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vel elit laoreet, dignissim arcu sit amet, vulputate risus.', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    title: knobText('Title', 'The information on this page is currently being updated.', props.title, props.knobTab),
+    description: knobText('Summary', `Message description ${randomText()}`, props.description, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeMessage({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeMessage(knobs) : knobs;
 };

@@ -1,16 +1,10 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-
 import CivicThemeBasicContent from './basic-content.twig';
 import CivicThemeContentLink from '../../01-atoms/content-link/content-link.twig';
 import CivicThemeButton from '../../01-atoms/button/button.twig';
 import CivicThemeTable from '../../01-atoms/table/table.twig';
 import CivicThemeFigure from '../figure/figure.twig';
 import CivicThemeVideoPlayer from '../video-player/video-player.twig';
-import {
-  generateImage,
-  generateVideoPoster,
-  generateVideos,
-} from '../../00-base/base.utils';
+import { generateImage, generateVideoPoster, generateVideos, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Basic Content',
@@ -22,17 +16,16 @@ export default {
   },
 };
 
-export const BasicContent = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const theme = radios(
+export const BasicContent = (props = {}) => {
+  const theme = knobRadios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
     'light',
-    generalKnobTab,
+    props.theme,
+    props.knobTab,
   );
 
   let html = '';
@@ -171,12 +164,12 @@ export const BasicContent = (knobTab) => {
     ],
   });
 
-  const generalKnobs = {
+  const knobs = {
     theme,
-    content: boolean('Content', true, generalKnobTab) ? html : null,
-    is_contained: boolean('Contained', true, generalKnobTab),
-    with_background: boolean('With background', false, generalKnobTab),
-    vertical_spacing: radios(
+    content: knobBoolean('Content', true, props.content, props.knobTab) ? html : null,
+    is_contained: knobBoolean('Contained', true, props.is_contained, props.knobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -185,13 +178,12 @@ export const BasicContent = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeBasicContent({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeBasicContent(knobs) : knobs;
 };

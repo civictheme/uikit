@@ -1,5 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeCheckbox from './checkbox.twig';
+import { knobText, knobBoolean, knobRadios, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Checkbox',
@@ -8,28 +8,24 @@ export default {
   },
 };
 
-export const Checkbox = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Checkbox = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    content: text('Content', 'Checkbox label', generalKnobTab),
-    is_required: boolean('Required', false, generalKnobTab),
-    disabled: boolean('Disabled', false, generalKnobTab),
-    has_error: boolean('Has error', false, generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    content: knobText('Content', 'Checkbox label', props.knobTab),
+    is_required: knobBoolean('Required', false, props.knobTab),
+    disabled: knobBoolean('Disabled', false, props.knobTab),
+    has_error: knobBoolean('Has error', false, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
-  return CivicThemeCheckbox({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeCheckbox(knobs) : knobs;
 };

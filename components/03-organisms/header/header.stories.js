@@ -1,7 +1,4 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
-import { generateSlots, randomInt, randomSentence } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, KnobValue, randomInt, randomSentence, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeHeaderExample from './header.stories.twig';
 
 import getMenuLinks from '../../00-base/menu/menu.utils';
@@ -14,32 +11,34 @@ export default {
   },
 };
 
-export const Header = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const secondaryNavigationKnobTab = 'Secondary navigation';
-  const primaryNavigationKnobTab = 'Primary navigation';
-  const searchLinkKnobTab = 'Search';
-
-  const generalKnobs = {
-    theme: radios(
+export const Header = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    show_content_top2: boolean('Show slogan', true, generalKnobTab),
-    show_content_top3: boolean('Show top content', true, generalKnobTab),
-    show_content_middle3: boolean('Show middle content', true, generalKnobTab),
+    show_content_top2: knobBoolean('Show slogan', true, props.knobTab),
+    show_content_top3: knobBoolean('Show top content', true, props.knobTab),
+    show_content_middle3: knobBoolean('Show middle content', true, props.knobTab),
   };
 
-  generalKnobs.logo = boolean('Show logo', true, generalKnobTab) ? Logo('Logo', false) : null;
+  knobs.logo = knobBoolean('Show logo', true, props.knobTab) ? Logo({
+    knobTab: 'Logo',
+    theme: knobs.theme,
+    url: randomUrl('example2.com'),
+    type: new KnobValue(),
+    title: new KnobValue('This is a Logo in Header'),
+  }) : null;
 
-  if (generalKnobs.show_content_middle3) {
-    generalKnobs.primary_navigation_items = getMenuLinks(primaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
-    generalKnobs.primary_navigation_dropdown_columns = number(
+  if (knobs.show_content_middle3) {
+    const primaryNavigationKnobTab = 'Primary navigation';
+    knobs.primary_navigation_items = getMenuLinks({ knobTab: primaryNavigationKnobTab }, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
+    knobs.primary_navigation_dropdown_columns = knobNumber(
       'Dropdown columns',
       4,
       {
@@ -50,19 +49,21 @@ export const Header = (knobTab) => {
       },
       primaryNavigationKnobTab,
     );
-    generalKnobs.primary_navigation_dropdown_columns_fill = boolean('Fill width for missing columns', false, primaryNavigationKnobTab);
-    generalKnobs.with_search = boolean('With Search', true, generalKnobTab) ? {
-      text: text('Text', 'Search', searchLinkKnobTab),
-      url: text('Url', '/search', searchLinkKnobTab),
+    knobs.primary_navigation_dropdown_columns_fill = knobBoolean('Fill width for missing columns', false, primaryNavigationKnobTab);
+
+    const searchLinkKnobTab = 'Search';
+    knobs.with_search = knobBoolean('With Search', true, props.knobTab) ? {
+      text: knobText('Text', 'Search', searchLinkKnobTab),
+      url: knobText('Url', '/search', searchLinkKnobTab),
     } : null;
   }
 
-  if (generalKnobs.show_content_top3) {
-    generalKnobs.secondary_navigation_items = getMenuLinks(secondaryNavigationKnobTab, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
+  if (knobs.show_content_top3) {
+    knobs.secondary_navigation_items = getMenuLinks({ knobTab: 'Secondary navigation' }, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`);
   }
 
-  return CivicThemeHeaderExample({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeHeaderExample({
+    ...knobs,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -72,5 +73,5 @@ export const Header = (knobTab) => {
       'content_middle3',
       'content_bottom1',
     ]),
-  });
+  }) : knobs;
 };

@@ -1,7 +1,5 @@
-import {
-  boolean, radios, text,
-} from '@storybook/addon-knobs';
 import CivicThemeWebform from './webform.twig';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Webform',
@@ -10,24 +8,21 @@ export default {
   },
 };
 
-export const Webform = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const theme = radios(
-    'Theme',
-    {
-      Light: 'light',
-      Dark: 'dark',
-    },
-    'light',
-    generalKnobTab,
-  );
-
-  const generalKnobs = {
-    theme,
-    referenced_webform: text('Title', 'Webform title', generalKnobTab),
-    with_background: boolean('With background', false, generalKnobTab),
-    vertical_spacing: radios(
+export const Webform = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
+      'Theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      'light',
+      props.theme,
+      props.knobTab,
+    ),
+    referenced_webform: knobText('Title', 'Webform title', props.webform_title, props.knobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -36,13 +31,12 @@ export const Webform = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeWebform({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeWebform(knobs) : knobs;
 };

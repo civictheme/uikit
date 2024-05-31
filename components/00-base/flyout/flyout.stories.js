@@ -1,7 +1,6 @@
-import { boolean, number, radios } from '@storybook/addon-knobs';
-
 import './flyout';
 import CivicThemeFlyout from './flyout.stories.twig';
+import { knobBoolean, knobNumber, knobRadios, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Flyout',
@@ -10,9 +9,9 @@ export default {
   },
 };
 
-export const Flyout = () => {
-  const html = CivicThemeFlyout({
-    direction: radios(
+export const Flyout = (props = {}) => {
+  const knobs = {
+    direction: knobRadios(
       'Flyout from',
       {
         Top: 'top',
@@ -21,10 +20,14 @@ export const Flyout = () => {
         Right: 'right',
       },
       'right',
+      props.direction,
+      props.knobTab,
     ),
-    expanded: boolean('Expanded', false),
-    duration: number('Duration (ms)', 500),
-  });
+    expanded: knobBoolean('Expanded', false, props.expanded, props.knobTab),
+    duration: knobNumber('Duration (ms)', 500, undefined, props.duration, props.knobTab),
+  };
 
-  return `<div class="story-wrapper-size--medium">${html}</div>`;
+  return shouldRender(props)
+    ? `<div class="story-wrapper-size--medium">${CivicThemeFlyout(knobs)}</div>`
+    : knobs;
 };

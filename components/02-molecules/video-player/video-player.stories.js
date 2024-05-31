@@ -1,68 +1,63 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-
 import CivicThemeVideo from './video-player.twig';
-import { generateVideoPoster, generateVideos } from '../../00-base/base.utils';
+import { generateVideoPoster, generateVideos, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Video Player',
 };
 
-export const VideoPlayer = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const sourceKnobTab = 'Source';
-  const transcriptLinkKnobTab = 'Transcript Link';
-
-  const generalKnobs = {
-    theme: radios(
+export const VideoPlayer = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    source_type: radios('Source type', {
+    source_type: knobRadios('Source type', {
       File: 'file',
       Embedded: 'embedded',
       Raw: 'raw',
-    }, 'file', generalKnobTab),
-    title: text('Title', 'Test video', generalKnobTab),
-    width: text('Width', '', generalKnobTab),
-    height: text('Height', '500', generalKnobTab),
-    with_transcript_link: boolean('With Transcript link', true, generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    }, 'file', props.source_type, props.knobTab),
+    title: knobText('Title', 'Test video', props.title, props.knobTab),
+    width: knobText('Width', '', props.width, props.knobTab),
+    height: knobText('Height', '500', props.height, props.knobTab),
+    with_transcript_link: knobBoolean('With Transcript link', true, props.with_transcript_link, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
   const sourceKnobs = {};
-  if (generalKnobs.source_type === 'file') {
-    sourceKnobs.sources = boolean('With sources', true, sourceKnobTab) ? generateVideos() : null;
+  const sourceKnobTab = 'Source';
+  if (knobs.source_type === 'file') {
+    sourceKnobs.sources = knobBoolean('With sources', true, props.with_source, sourceKnobTab) ? generateVideos() : null;
     if (sourceKnobs.sources) {
-      sourceKnobs.poster = boolean('With poster', true, sourceKnobTab) ? generateVideoPoster() : null;
+      sourceKnobs.poster = knobBoolean('With poster', true, props.with_poster, sourceKnobTab) ? generateVideoPoster() : null;
     }
-  } else if (generalKnobs.source_type === 'embedded') {
-    sourceKnobs.embedded_source = text('Embedded source', 'https://www.youtube.com/embed/C0DPdy98e4c', sourceKnobTab);
+  } else if (knobs.source_type === 'embedded') {
+    sourceKnobs.embedded_source = knobText('Embedded source', 'https://www.youtube.com/embed/C0DPdy98e4c', props.embedded_source, sourceKnobTab);
   } else {
-    sourceKnobs.raw_source = boolean('With raw input', true, sourceKnobTab) ? '<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/C0DPdy98e4c" width="420"></iframe>' : null;
+    sourceKnobs.raw_source = knobBoolean('With raw input', true, props.with_raw_input, sourceKnobTab) ? '<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/C0DPdy98e4c" width="420"></iframe>' : null;
   }
 
   let transcriptLinkKnobs = {};
-  if (generalKnobs.with_transcript_link) {
+  const transcriptLinkKnobTab = 'Transcript Link';
+  if (knobs.with_transcript_link) {
     transcriptLinkKnobs = {
       transcript_link: {
-        text: text('Text', 'View transcript', transcriptLinkKnobTab),
-        title: text('Title', 'Open transcription in a new window', transcriptLinkKnobTab),
-        url: text('URL', 'https://example.com', transcriptLinkKnobTab),
-        is_new_window: boolean('Open in a new window', true, transcriptLinkKnobTab),
-        is_external: boolean('Is external', false, transcriptLinkKnobTab),
+        text: knobText('Text', 'View transcript', props.transcript_link_text, transcriptLinkKnobTab),
+        title: knobText('Title', 'Open transcription in a new window', props.transcript_link_title, transcriptLinkKnobTab),
+        url: knobText('URL', 'https://example.com', props.transcript_link_url, transcriptLinkKnobTab),
+        is_new_window: knobBoolean('Open in a new window', true, props.transcript_link_is_new_window, transcriptLinkKnobTab),
+        is_external: knobBoolean('Is external', false, props.transcript_link_is_external, transcriptLinkKnobTab),
       },
     };
   }
 
-  return CivicThemeVideo({
-    ...generalKnobs,
-    ...sourceKnobs,
-    ...transcriptLinkKnobs,
-  });
+  const combinedKnobs = { ...knobs, ...sourceKnobs, ...transcriptLinkKnobs };
+
+  return shouldRender(props) ? CivicThemeVideo(combinedKnobs) : combinedKnobs;
 };

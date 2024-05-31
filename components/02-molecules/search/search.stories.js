@@ -1,5 +1,5 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeSearch from './search.twig';
+import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Search',
@@ -8,28 +8,23 @@ export default {
   },
 };
 
-export const Search = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Search = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    text: text('Text', 'Search', generalKnobTab),
-    link: text('Search URL', '/search', generalKnobTab),
-    modifier_class: `story-wrapper-size--large ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    text: knobText('Text', 'Search', props.text, props.knobTab),
+    link: knobText('Search URL', '/search', props.link, props.knobTab),
+    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  const html = CivicThemeSearch({
-    ...generalKnobs,
-  });
-
-  return `${html}`;
+  return shouldRender(props) ? CivicThemeSearch(knobs) : knobs;
 };

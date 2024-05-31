@@ -6,8 +6,4 @@ export default {
   title: 'Base/Responsive',
 };
 
-export const Responsive = () => {
-  const html = CivicThemeResponsive();
-
-  return `<div class="story-wrapper--centered story-wrapper-size--medium">${html}</div>`;
-};
+export const Responsive = () => `<div class="story-wrapper--centered story-wrapper-size--medium">${CivicThemeResponsive()}</div>`;

@@ -1,5 +1,4 @@
-import { number, radios, text } from '@storybook/addon-knobs';
-import { generateSlots, randomTags } from '../../00-base/base.utils';
+import { generateSlots, knobNumber, knobRadios, knobText, randomTags, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeTagList from './tag-list.twig';
 
@@ -10,20 +9,19 @@ export default {
   },
 };
 
-export const TagList = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const TagList = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    tags: randomTags(number(
+    tags: randomTags(knobNumber(
       'Number of tags',
       2,
       {
@@ -32,9 +30,10 @@ export const TagList = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.number_of_tags,
+      props.knobTab,
     ), true),
-    vertical_spacing: radios(
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -43,17 +42,18 @@ export const TagList = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: `story-wrapper-size--small ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeTagList({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeTagList({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

@@ -1,5 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeIframe from './iframe.twig';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Iframe',
@@ -8,23 +8,22 @@ export default {
   },
 };
 
-export const Iframe = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Iframe = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    url: text('URL', 'https://www.openstreetmap.org/export/embed.html?bbox=144.1910129785538%2C-38.33563928918572%2C146.0037571191788%2C-37.37170047141492&amp;layer=mapnik', generalKnobTab),
-    width: text('Width', '500', generalKnobTab),
-    height: text('Height', '300', generalKnobTab),
-    vertical_spacing: radios(
+    url: knobText('URL', 'https://www.openstreetmap.org/export/embed.html?bbox=144.1910129785538%2C-38.33563928918572%2C146.0037571191788%2C-37.37170047141492&amp;layer=mapnik', props.url, props.knobTab),
+    width: knobText('Width', '500', props.width, props.knobTab),
+    height: knobText('Height', '300', props.height, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -33,14 +32,13 @@ export const Iframe = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    with_background: boolean('With background', false, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeIframe({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeIframe(knobs) : knobs;
 };

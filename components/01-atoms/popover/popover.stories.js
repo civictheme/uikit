@@ -1,9 +1,5 @@
-import {
-  radios, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemePopover from './popover.twig';
-import { generateSlots, placeholder } from '../../00-base/base.utils';
+import { generateSlots, knobRadios, knobText, placeholder, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Popover',
@@ -12,33 +8,32 @@ export default {
   },
 };
 
-export const Popover = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Popover = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
     trigger: {
-      text: text('Trigger text', 'Click me', generalKnobTab),
-      url: text('Trigger URL', null, generalKnobTab),
+      text: knobText('Trigger text', 'Click me', props.trigger_text, props.knobTab),
+      url: knobText('Trigger URL', null, props.trigger_url, props.knobTab),
     },
     content: placeholder(),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemePopover({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemePopover({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

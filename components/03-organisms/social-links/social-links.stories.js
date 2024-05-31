@@ -1,6 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeSocialLinks from './social-links.twig';
-import { generateIcon } from '../../00-base/base.utils';
+import { generateIcon, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {
@@ -10,9 +9,7 @@ export default {
   },
 };
 
-export const SocialLinks = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
+export const SocialLinks = (props = {}) => {
   const items = [
     {
       icon_html: `<img class="ct-button__icon" width=16 height=16 src="${generateIcon()}"/>`,
@@ -48,23 +45,22 @@ export const SocialLinks = (knobTab) => {
     },
   ];
 
-  const generalKnobs = {
-    theme: radios(
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    items: boolean('With items', true, generalKnobTab) ? items : null,
-    with_border: boolean('With border', true, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    items: knobBoolean('With items', true, props.with_items, props.knobTab) ? items : null,
+    with_border: knobBoolean('With border', true, props.with_border, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeSocialLinks({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeSocialLinks(knobs) : knobs;
 };

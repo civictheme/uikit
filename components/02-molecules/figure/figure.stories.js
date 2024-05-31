@@ -1,7 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-
 import CivicThemeFigure from './figure.twig';
-import { generateImage } from '../../00-base/base.utils';
+import { generateImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Figure',
@@ -10,29 +8,26 @@ export default {
   },
 };
 
-export const Figure = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Figure = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    url: boolean('With image', true, generalKnobTab) ? generateImage() : false,
-    alt: text('Image alt text', 'Alternative text', generalKnobTab),
-    width: text('Width', '600', generalKnobTab),
-    height: text('Height', '', generalKnobTab),
-    caption: text('Caption', 'Figure image caption.', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    url: knobBoolean('With image', true, props.with_image, props.knobTab) ? generateImage() : false,
+    alt: knobText('Image alt text', 'Alternative text', props.alt, props.knobTab),
+    width: knobText('Width', '600', props.width, props.knobTab),
+    height: knobText('Height', '', props.height, props.knobTab),
+    caption: knobText('Caption', 'Figure image caption.', props.caption, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeFigure({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeFigure(knobs) : knobs;
 };

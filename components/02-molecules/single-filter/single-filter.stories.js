@@ -1,12 +1,6 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemeSingleFilter from './single-filter.twig';
 import './single-filter';
-import {
-  generateSlots, randomName, randomString,
-} from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomName, randomString, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Single Filter',
@@ -15,27 +9,26 @@ export default {
   },
 };
 
-export const SingleFilter = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const SingleFilter = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Filter search results by:', generalKnobTab),
-    submit_text: text('Submit button text', 'Apply', generalKnobTab),
-    is_multiple: boolean('Multiple', false, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    title: knobText('Title', 'Filter search results by:', props.title, props.knobTab),
+    submit_text: knobText('Submit button text', 'Apply', props.submit_text, props.knobTab),
+    is_multiple: knobBoolean('Multiple', false, props.is_multiple, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  const count = number(
+  const count = knobNumber(
     'Number of filters',
     3,
     {
@@ -44,10 +37,11 @@ export const SingleFilter = (knobTab) => {
       max: 15,
       step: 1,
     },
-    generalKnobTab,
+    props.number_of_filters,
+    props.knobTab,
   );
 
-  const selected = number(
+  const selected = knobNumber(
     'Selected',
     0,
     {
@@ -56,7 +50,8 @@ export const SingleFilter = (knobTab) => {
       max: count,
       step: 1,
     },
-    generalKnobTab,
+    props.selected,
+    props.knobTab,
   );
 
   const items = [];
@@ -64,19 +59,19 @@ export const SingleFilter = (knobTab) => {
   for (let i = 0; i < count; i++) {
     items.push({
       text: `Filter ${i + 1}${randomString(3)}`,
-      name: generalKnobs.is_multiple ? name + (i + 1) : name,
-      is_selected: generalKnobs.is_multiple ? (i + 1) <= selected : (i + 1) === selected,
+      name: knobs.is_multiple ? name + (i + 1) : name,
+      is_selected: knobs.is_multiple ? (i + 1) <= selected : (i + 1) === selected,
       attributes: `id="${name}_${randomName(3)}_${i + 1}"`,
     });
   }
 
-  generalKnobs.items = items;
+  knobs.items = items;
 
-  return CivicThemeSingleFilter({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeSingleFilter({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

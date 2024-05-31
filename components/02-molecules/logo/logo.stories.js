@@ -1,5 +1,4 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-import { randomUrl } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeLogo from './logo.twig';
 
 export default {
@@ -9,63 +8,71 @@ export default {
   },
 };
 
-export const Logo = (knobTab, doRender = true) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios('Theme', {
-      Light: 'light',
-      Dark: 'dark',
-    }, 'light', generalKnobTab),
-    type: radios('Type', {
-      Default: 'default',
-      Stacked: 'stacked',
-      Inline: 'inline',
-      'Inline-Stacked': 'inline-stacked',
-    }, 'default', generalKnobTab),
-    with_secondary_image: boolean('With secondary image', false, generalKnobTab),
+export const Logo = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
+      'Theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      'light',
+      props.theme,
+      props.knobTab,
+    ),
+    type: knobRadios(
+      'Type',
+      {
+        Default: 'default',
+        Stacked: 'stacked',
+        Inline: 'inline',
+        'Inline-Stacked': 'inline-stacked',
+      },
+      'default',
+      props.type,
+      props.knobTab,
+    ),
+    with_secondary_image: knobBoolean('With secondary image', false, props.with_secondary_image, props.knobTab),
     logos: {},
-    url: text('Link', randomUrl(), generalKnobTab),
-    title: text('Title', 'Logo title', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    url: knobText('Link', randomUrl(), props.url, props.knobTab),
+    title: knobText('Title', 'Logo title', props.title, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  generalKnobs.logos = generalKnobs.with_secondary_image ? {
+  knobs.logos = knobs.with_secondary_image ? {
     primary: {
       mobile: {
-        url: LOGOS[generalKnobs.theme].primary.mobile,
+        url: LOGOS[knobs.theme].primary.mobile,
         alt: 'Primary logo mobile alt text',
       },
       desktop: {
-        url: LOGOS[generalKnobs.theme].primary.desktop,
+        url: LOGOS[knobs.theme].primary.desktop,
         alt: 'Primary logo desktop alt text',
       },
     },
     secondary: {
       mobile: {
-        url: LOGOS[generalKnobs.theme].secondary.mobile,
+        url: LOGOS[knobs.theme].secondary.mobile,
         alt: 'Secondary logo mobile alt text',
       },
       desktop: {
-        url: LOGOS[generalKnobs.theme].secondary.desktop,
+        url: LOGOS[knobs.theme].secondary.desktop,
         alt: 'Secondary logo desktop alt text',
       },
     },
   } : {
     primary: {
       mobile: {
-        url: LOGOS[generalKnobs.theme].primary.mobile,
+        url: LOGOS[knobs.theme].primary.mobile,
         alt: 'Primary logo mobile alt text',
       },
       desktop: {
-        url: LOGOS[generalKnobs.theme].primary.desktop,
+        url: LOGOS[knobs.theme].primary.desktop,
         alt: 'Primary logo mobile alt text',
       },
     },
   };
 
-  return doRender ? CivicThemeLogo({
-    ...generalKnobs,
-  }) : generalKnobs;
+  return shouldRender(props) ? CivicThemeLogo(knobs) : knobs;
 };

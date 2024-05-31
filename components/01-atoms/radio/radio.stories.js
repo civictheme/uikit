@@ -1,5 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeRadio from './radio.twig';
+import { knobBoolean, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Radio',
@@ -8,28 +8,24 @@ export default {
   },
 };
 
-export const Radio = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Radio = (props = {}) => {
+  const knobs = {
+    theme: knobBoolean(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    content: text('Content', 'Radio label', generalKnobTab),
-    is_required: boolean('Required', false, generalKnobTab),
-    disabled: boolean('Disabled', false, generalKnobTab),
-    has_error: boolean('Has error', false, generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
+    content: knobText('Content', 'Radio label', props.knobTab),
+    is_required: knobBoolean('Required', false, props.knobTab),
+    disabled: knobBoolean('Disabled', false, props.knobTab),
+    has_error: knobBoolean('Has error', false, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.knobTab),
   };
 
-  return CivicThemeRadio({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeRadio(knobs) : knobs;
 };

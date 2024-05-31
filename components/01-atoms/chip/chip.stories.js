@@ -1,10 +1,7 @@
-import {
-  boolean, radios, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemeChip from './chip.twig';
 import './chip';
 import './chip.event.stories';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Chip',
@@ -13,20 +10,19 @@ export default {
   },
 };
 
-export const Chip = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const theme = radios(
+export const Chip = (props = {}) => {
+  const theme = knobRadios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
     'light',
-    generalKnobTab,
+    props.theme,
+    props.knobTab,
   );
 
-  const size = radios(
+  const size = knobRadios(
     'Size',
     {
       Large: 'large',
@@ -35,31 +31,32 @@ export const Chip = (knobTab) => {
       None: '',
     },
     'regular',
-    generalKnobTab,
+    props.size,
+    props.knobTab,
   );
 
-  const kind = radios(
+  const kind = knobRadios(
     'Kind',
     {
       Default: 'default',
       Input: 'input',
     },
     'default',
-    generalKnobTab,
+    props.chip_kind,
+    props.knobTab,
   );
 
-  const generalKnobs = {
+  // Keep props above to preserve order.
+  const knobs = {
     theme,
     kind,
     size,
-    is_multiple: (kind === 'input') ? boolean('Is multiple', false, generalKnobTab) : null,
-    is_selected: (kind === 'input') ? boolean('Is selected', false, generalKnobTab) : null,
-    content: text('Chip label', 'Chip label', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    is_multiple: (kind === 'input') ? knobBoolean('Is multiple', false, props.is_multiple, props.knobTab) : null,
+    is_selected: (kind === 'input') ? knobBoolean('Is selected', false, props.is_selected, props.knobTab) : null,
+    content: knobText('Chip label', 'Chip label', props.content, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeChip({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeChip(knobs) : knobs;
 };

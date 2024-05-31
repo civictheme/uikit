@@ -1,5 +1,5 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeHeading from './heading.twig';
+import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Heading',
@@ -8,33 +8,30 @@ export default {
   },
 };
 
-export const Heading = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Heading = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    level: radios('Level', {
+    level: knobRadios('Level', {
       1: '1',
       2: '2',
       3: '3',
       4: '4',
       5: '5',
       6: '6',
-    }, '1', generalKnobTab),
-    content: text('Content', 'Heading content', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    }, '1', props.level, props.knobTab),
+    content: knobText('Content', 'Heading content', props.content, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeHeading({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeHeading(knobs) : knobs;
 };

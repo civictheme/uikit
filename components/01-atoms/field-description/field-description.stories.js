@@ -1,5 +1,5 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeFieldDescription from './field-description.twig';
+import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Field Description',
@@ -8,34 +8,32 @@ export default {
   },
 };
 
-export const FieldDescription = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const FieldDescription = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    size: radios(
+    size: knobRadios(
       'Size',
       {
         Large: 'large',
         Regular: 'regular',
       },
       'regular',
-      generalKnobTab,
+      props.size,
+      props.knobTab,
     ),
-    content: text('Content', 'We will only use this to respond to your question.', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    content: knobText('Content', 'We will only use this to respond to your question.', props.content, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeFieldDescription({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeFieldDescription(knobs) : knobs;
 };

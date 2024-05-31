@@ -1,5 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeLabel from './label.twig';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Label',
@@ -8,20 +8,18 @@ export default {
   },
 };
 
-export const Label = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Label = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    size: radios(
+    size: knobRadios(
       'Size',
       {
         'Extra Large': 'extra-large',
@@ -32,16 +30,14 @@ export const Label = (knobTab) => {
         None: '',
       },
       'regular',
-      generalKnobTab,
+      props.knobTab,
     ),
-    content: text('Content', 'Label content', generalKnobTab),
-    for: text('For', '', generalKnobTab),
-    is_required: boolean('Required', false, generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    content: knobText('Content', 'Label content', props.knobTab),
+    for: knobText('For', '', props.knobTab),
+    is_required: knobBoolean('Required', false, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
-  return CivicThemeLabel({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeLabel(knobs) : knobs;
 };

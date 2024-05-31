@@ -1,28 +1,24 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
 import CivicThemeBreadcrumb from './breadcrumb.twig';
-import { randomLinks } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomLinks, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Breadcrumb',
 };
 
-export const Breadcrumb = (knobTab, doRender = true) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Breadcrumb = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    active_is_link: boolean('Active is a link', false, generalKnobTab),
-    links: randomLinks(number(
+    active_is_link: knobBoolean('Active is a link', false, props.active_is_link, props.knobTab),
+    links: randomLinks(knobNumber(
       'Count of links',
       3,
       {
@@ -31,8 +27,9 @@ export const Breadcrumb = (knobTab, doRender = true) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
-    ), number(
+      props.count_of_links,
+      props.knobTab,
+    ), knobNumber(
       'Length of links',
       6,
       {
@@ -41,13 +38,12 @@ export const Breadcrumb = (knobTab, doRender = true) => {
         max: 100,
         step: 1,
       },
-      generalKnobTab,
+      props.length_of_links,
+      props.knobTab,
     ) - 6),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return doRender ? CivicThemeBreadcrumb({
-    ...generalKnobs,
-  }) : generalKnobs;
+  return shouldRender(props) ? CivicThemeBreadcrumb(knobs) : knobs;
 };

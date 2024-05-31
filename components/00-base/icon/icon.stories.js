@@ -1,8 +1,6 @@
-import { radios, select, text } from '@storybook/addon-knobs';
-
 import merge from 'deepmerge';
 import CivicThemeIcon from './icon.twig';
-import { arrayCombine, toLabels } from '../base.utils';
+import { arrayCombine, knobRadios, knobSelect, knobText, shouldRender, toLabels } from '../base.utils';
 
 export default {
   title: 'Base/Icon',
@@ -11,9 +9,7 @@ export default {
   },
 };
 
-export const Icon = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
+export const Icon = (props = {}) => {
   const defaultSizes = SCSS_VARIABLES['ct-icon-sizes-default'];
   const customSizes = SCSS_VARIABLES['ct-icon-sizes'];
   let sizes = Object.keys(merge(defaultSizes, customSizes));
@@ -21,11 +17,13 @@ export const Icon = (knobTab) => {
   sizes = arrayCombine(toLabels(sizes), sizes);
   sizes = merge({ Auto: 'auto' }, sizes);
 
-  return CivicThemeIcon({
-    symbol: select('Symbol', ICONS, ICONS[0], generalKnobTab),
-    alt: text('Alt', 'Icon alt text', generalKnobTab),
-    size: radios('Size', sizes, 'auto', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-  });
+  const knobs = {
+    symbol: knobSelect('Symbol', ICONS, ICONS[0], props.symbol, props.knobTab),
+    alt: knobText('Alt', 'Icon alt text', props.alt, props.knobTab),
+    size: knobRadios('Size', sizes, 'auto', props.size, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+  };
+
+  return shouldRender(props) ? CivicThemeIcon(knobs) : knobs;
 };

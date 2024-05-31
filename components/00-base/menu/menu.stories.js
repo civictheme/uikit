@@ -1,6 +1,6 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeMenu from './menu.twig';
 import getMenuLinks from './menu.utils';
+import { knobRadios, knobText, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Menu Generator',
@@ -9,24 +9,21 @@ export default {
   },
 };
 
-export const MenuGenerator = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const MenuGenerator = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    items: getMenuLinks(),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    items: getMenuLinks(props.knobTab, null),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  return CivicThemeMenu({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeMenu(knobs) : knobs;
 };

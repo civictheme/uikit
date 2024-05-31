@@ -1,9 +1,5 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemeItemList from './item-list.twig';
-import { generateItems, placeholder, randomSentence } from '../base.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomSentence, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Item List',
@@ -12,20 +8,19 @@ export default {
   },
 };
 
-export const ItemList = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    direction: radios(
+export const ItemList = (props = {}) => {
+  const knobs = {
+    direction: knobRadios(
       'Direction',
       {
         Horizontal: 'horizontal',
         Vertical: 'vertical',
       },
       'horizontal',
-      generalKnobTab,
+      props.direction,
+      props.knobTab,
     ),
-    size: radios(
+    size: knobRadios(
       'Size',
       {
         Large: 'large',
@@ -33,10 +28,11 @@ export const ItemList = (knobTab) => {
         Small: 'small',
       },
       'regular',
-      generalKnobTab,
+      props.size,
+      props.knobTab,
     ),
-    no_gap: boolean('No gap', false, generalKnobTab),
-    items: generateItems(number(
+    no_gap: knobBoolean('No gap', false, props.no_gap, props.knobTab),
+    items_count: knobNumber(
       'Items count',
       5,
       {
@@ -45,13 +41,17 @@ export const ItemList = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
-    ), placeholder(boolean('Long placeholder text', false, generalKnobTab) ? randomSentence(30) : 'Content placeholder')),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: `story-wrapper-size--large ${text('Additional class', '', generalKnobTab)}`,
+      props.items_count,
+      props.knobTab,
+    ),
+    long_placeholder_text: knobBoolean('Long placeholder text', false, props.long_placeholder_text, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
   };
+  knobs.items = generateItems(
+    knobs.items_count,
+    placeholder(knobs.long_placeholder_text ? randomSentence(30) : 'Content placeholder'),
+  );
 
-  return CivicThemeItemList({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeItemList(knobs) : knobs;
 };

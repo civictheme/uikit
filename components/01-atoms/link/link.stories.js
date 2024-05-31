@@ -1,8 +1,5 @@
-import {
-  boolean, radios, text, select,
-} from '@storybook/addon-knobs';
 import CivicThemeLink from './link.twig';
-import { randomUrl } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobSelect, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Link',
@@ -11,48 +8,47 @@ export default {
   },
 };
 
-export const Link = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Link = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    text: text('Text', 'Link text', generalKnobTab),
-    title: text('Title', 'Link title', generalKnobTab),
-    hidden_text: text('Link hidden text', 'Link hidden text', generalKnobTab),
-    url: text('URL', randomUrl(), generalKnobTab),
-    is_external: boolean('Is external', false, generalKnobTab),
-    is_active: boolean('Is active', false, generalKnobTab),
-    is_disabled: boolean('Is disabled', false, generalKnobTab),
-    is_new_window: boolean('Open in a new window', false, generalKnobTab),
-    with_icon: boolean('With icon', false, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    text: knobText('Text', 'Link text', props.text, props.knobTab),
+    title: knobText('Title', 'Link title', props.link_title, props.knobTab),
+    hidden_text: knobText('Link hidden text', 'Link hidden text', props.hidden_text, props.knobTab),
+    url: knobText('URL', randomUrl(), props.url, props.knobTab),
+    is_external: knobBoolean('Is external', false, props.is_external, props.knobTab),
+    is_active: knobBoolean('Is active', false, props.is_active, props.knobTab),
+    is_disabled: knobBoolean('Is disabled', false, props.is_disabled, props.knobTab),
+    is_new_window: knobBoolean('Open in a new window', false, props.is_new_window, props.knobTab),
+    with_icon: knobBoolean('With icon', false, props.with_icon, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
   const iconKnobTab = 'Icon';
-  const iconKnobs = generalKnobs.with_icon ? {
-    icon_placement: radios(
+  const iconKnobs = knobs.with_icon ? {
+    icon_placement: knobRadios(
       'Icon Position',
       {
         Before: 'before',
         After: 'after',
       },
       'before',
+      props.icon_placement,
       iconKnobTab,
     ),
-    icon: select('Icon', Object.values(ICONS), Object.values(ICONS)[0], iconKnobTab),
+    icon: knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], props.icon, iconKnobTab),
   } : null;
 
-  return CivicThemeLink({
-    ...generalKnobs,
-    ...iconKnobs,
-  });
+  const combinedKnobs = { ...knobs, ...iconKnobs };
+
+  return shouldRender(props) ? CivicThemeLink(combinedKnobs) : combinedKnobs;
 };

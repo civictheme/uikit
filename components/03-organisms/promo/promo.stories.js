@@ -1,6 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemePromo from './promo.twig';
-import { generateSlots, randomSentence } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobText, randomSentence, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Promo',
@@ -9,29 +8,28 @@ export default {
   },
 };
 
-export const Promo = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Promo = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'dark',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Sign up for industry news and updates from CivicTheme', generalKnobTab),
-    content: text('Content', randomSentence(), generalKnobTab),
-    is_contained: boolean('Contained', true, generalKnobTab),
+    title: knobText('Title', 'Sign up for industry news and updates from CivicTheme', props.title, props.knobTab),
+    content: knobText('Content', randomSentence(), props.content, props.knobTab),
+    is_contained: knobBoolean('Contained', true, props.is_contained, props.knobTab),
     link: {
-      text: text('Link text', 'Sign up', generalKnobTab),
-      url: text('Link URL', 'https://example.com', generalKnobTab),
-      is_new_window: boolean('Link opens in new window', true, generalKnobTab),
-      is_external: boolean('Link is external', true, generalKnobTab),
+      text: knobText('Link text', 'Sign up', props.link_text, props.knobTab),
+      url: knobText('Link URL', 'https://example.com', props.link_url, props.knobTab),
+      is_new_window: knobBoolean('Link opens in new window', true, props.link_is_new_window, props.knobTab),
+      is_external: knobBoolean('Link is external', true, props.link_is_external, props.knobTab),
     },
-    vertical_spacing: radios(
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -40,18 +38,19 @@ export const Promo = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    with_background: boolean('With background', false, generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
   };
 
-  return CivicThemePromo({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemePromo({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

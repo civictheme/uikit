@@ -1,5 +1,4 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-import { generateSlots, randomSentence, randomUrl } from '../../00-base/base.utils';
+import { convertDate, generateSlots, knobBoolean, knobRadios, knobText, randomSentence, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeAttachment from './attachment.twig';
 
 export default {
@@ -9,14 +8,8 @@ export default {
   },
 };
 
-export const Attachment = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const date = new Date().toLocaleDateString('en-uk', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+export const Attachment = (props = {}) => {
+  const date = convertDate(null);
 
   const files = [
     {
@@ -98,21 +91,22 @@ export const Attachment = (knobTab) => {
     },
   ];
 
-  const generalKnobs = {
-    theme: radios(
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Attachments', generalKnobTab),
-    content: text('Content', randomSentence(), generalKnobTab),
-    files: boolean('With files', true, generalKnobTab) ? files : null,
-    with_background: boolean('With background', false, generalKnobTab),
-    vertical_spacing: radios(
+    title: knobText('Title', 'Attachments', props.attachment_title, props.knobTab),
+    content: knobText('Content', randomSentence(), props.content, props.knobTab),
+    files: knobBoolean('With files', true, props.with_files, props.knobTab) ? files : null,
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -121,17 +115,18 @@ export const Attachment = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeAttachment({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeAttachment({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

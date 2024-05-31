@@ -63,7 +63,7 @@
     @error '"#{$class}" is not an available breakpoint. (#{map-keys($ct-breakpoints)})';
   }
 
-  @include breakpoint('max-width'  map.get($ct-breakpoints, $class) - 1) {
+  @include breakpoint('max-width' map.get($ct-breakpoints, $class) - 1) {
     @content;
   }
 }
