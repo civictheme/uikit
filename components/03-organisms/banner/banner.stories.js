@@ -54,6 +54,32 @@ export const Banner = (props = {}) => {
     modifier_class: new KnobValue('ct-banner__breadcrumb'),
   }) : '';
 
+  if (knobs.show_content_text) {
+    knobs.content_theme = knobRadios(
+      'Content theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      knobs.theme,
+      props.content_theme,
+      'Content',
+    );
+  }
+
+  if (knobs.show_content_below) {
+    knobs.content_below_theme = knobRadios(
+      'Content below theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      knobs.theme,
+      props.content_below_theme,
+      'Content',
+    );
+  }
+
   return shouldRender(props) ? CivicThemeBannerExample({
     ...knobs,
     ...generateSlots([
