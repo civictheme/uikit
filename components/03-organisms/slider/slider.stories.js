@@ -1,8 +1,4 @@
-import {
-  boolean,
-  number, radios, text,
-} from '@storybook/addon-knobs';
-import { generateSlots, randomLinks, randomTags } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomLinks, randomTags, shouldRender } from '../../00-base/base.utils';
 import { randomSlidesComponent } from './slider.utils';
 import './slider';
 import CivicThemeSlider from './slider.twig';
@@ -14,20 +10,20 @@ export default {
   },
 };
 
-export const Slider = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const slidesKnobTab = 'Slide';
-  const theme = radios(
+export const Slider = (props = {}) => {
+  const theme = knobRadios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
     'light',
-    generalKnobTab,
+    props.theme,
+    props.knobTab,
   );
 
-  const numOfSlides = number(
+  const slidesKnobTab = 'Slides';
+  const numOfSlides = knobNumber(
     'Number of slides',
     5,
     {
@@ -36,15 +32,16 @@ export const Slider = (knobTab) => {
       max: 10,
       step: 1,
     },
+    props.number_of_slides,
     slidesKnobTab,
   );
 
   const slides = randomSlidesComponent(numOfSlides, theme, true, {
-    image_position: radios('Image Position', {
+    image_position: knobRadios('Image Position', {
       Left: 'left',
       Right: 'right',
-    }, 'right', slidesKnobTab),
-    tags: randomTags(number(
+    }, 'right', null, slidesKnobTab),
+    tags: randomTags(knobNumber(
       'Number of tags',
       2,
       {
@@ -53,11 +50,12 @@ export const Slider = (knobTab) => {
         max: 10,
         step: 1,
       },
+      null,
       slidesKnobTab,
     ), true),
-    date: text('Date', '20 Jan 2023 11:00', slidesKnobTab),
-    date_end: text('End date', '21 Jan 2023 15:00', slidesKnobTab),
-    links: randomLinks(number(
+    date: knobText('Date', '20 Jan 2023 11:00', null, slidesKnobTab),
+    date_end: knobText('End date', '21 Jan 2023 15:00', null, slidesKnobTab),
+    links: randomLinks(knobNumber(
       'Number of links',
       2,
       {
@@ -66,6 +64,7 @@ export const Slider = (knobTab) => {
         max: 10,
         step: 1,
       },
+      null,
       slidesKnobTab,
     ), 10),
     ...generateSlots([
@@ -74,11 +73,11 @@ export const Slider = (knobTab) => {
     ]),
   }).join(' ');
 
-  const generalKnobs = {
+  const knobs = {
     theme,
-    title: text('Title', 'Slider title', generalKnobTab),
-    with_background: boolean('With background', false, generalKnobTab),
-    vertical_spacing: radios(
+    title: knobText('Title', 'Slider title', props.title, props.knobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -87,20 +86,21 @@ export const Slider = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
     slides,
-    previous_label: text('Previous Label', 'Previous', generalKnobTab),
-    next_label: text('Next Label', 'Next', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    previous_label: knobText('Previous Label', 'Previous', props.previous_label, props.knobTab),
+    next_label: knobText('Next Label', 'Next', props.next_label, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  return CivicThemeSlider({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeSlider({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

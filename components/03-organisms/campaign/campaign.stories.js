@@ -1,11 +1,4 @@
-import {
-  date, number, radios, text,
-} from '@storybook/addon-knobs';
-import {
-  generateImage,
-  generateSlots, randomLinks, randomSentence,
-  randomTags,
-} from '../../00-base/base.utils';
+import { convertDate, generateImage, generateSlots, knobDate, knobNumber, knobRadios, knobText, randomLinks, randomSentence, randomTags, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeCampaign from './campaign.twig';
 
@@ -16,36 +9,36 @@ export default {
   },
 };
 
-export const Campaign = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Campaign = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Campaign heading which runs across two or three lines', generalKnobTab),
-    content: text('Content', randomSentence(), generalKnobTab),
-    date: date('Date', new Date(), generalKnobTab),
+    title: knobText('Title', 'Campaign heading which runs across two or three lines', props.title, props.knobTab),
+    content: knobText('Content', randomSentence(), props.content, props.knobTab),
+    date: knobDate('Date', new Date(), props.date, props.knobTab),
     image: {
       url: generateImage(),
       alt: 'Image alt text',
     },
-    image_position: radios(
+    image_position: knobRadios(
       'Image position',
       {
         Left: 'left',
         Right: 'right',
       },
       'left',
-      generalKnobTab,
+      props.image_position,
+      props.knobTab,
     ),
-    links: randomLinks(number(
+    links: randomLinks(knobNumber(
       'Number of links',
       2,
       {
@@ -54,9 +47,10 @@ export const Campaign = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.number_of_links,
+      props.knobTab,
     ), 10),
-    tags: randomTags(number(
+    tags: randomTags(knobNumber(
       'Number of tags',
       1,
       {
@@ -65,9 +59,10 @@ export const Campaign = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.number_of_tags,
+      props.knobTab,
     ), true),
-    vertical_spacing: radios(
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -76,24 +71,21 @@ export const Campaign = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  generalKnobs.date = new Date(generalKnobs.date).toLocaleDateString('en-uk', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  knobs.date = convertDate(knobs.date);
 
-  return CivicThemeCampaign({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeCampaign({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_middle',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

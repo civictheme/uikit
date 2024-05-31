@@ -1,9 +1,5 @@
-import {
-  boolean, optionsKnob, radios, text,
-} from '@storybook/addon-knobs';
-
 import CivicThemeVideo from './video.twig';
-import { generateVideoPoster, generateVideos } from '../../00-base/base.utils';
+import { generateVideoPoster, generateVideos, knobBoolean, knobOptions, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Video',
@@ -12,27 +8,25 @@ export default {
   },
 };
 
-export const Video = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const sourcesKnobTab = 'Sources';
-
-  const generalKnobs = {
-    theme: radios(
+export const Video = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    has_controls: boolean('Has controls', true, generalKnobTab),
-    poster: boolean('Has poster', false, generalKnobTab) ? generateVideoPoster() : null,
-    width: text('Width', '', generalKnobTab),
-    height: text('Height', '', generalKnobTab),
-    fallback_text: text('Fallback text', 'Your browser doesn\'t support HTML5 video tag.', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    has_controls: knobBoolean('Has controls', true, props.has_controls, props.knobTab),
+    poster: knobBoolean('Has poster', false, props.poster, props.knobTab) ? generateVideoPoster() : null,
+    width: knobText('Width', '', props.width, props.knobTab),
+    height: knobText('Height', '', props.height, props.knobTab),
+    fallback_text: knobText('Fallback text', 'Your browser doesn\'t support HTML5 video tag.', props.fallback_text, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
   const sources = generateVideos();
@@ -40,16 +34,12 @@ export const Video = (knobTab) => {
   for (const i in sources) {
     sourcesOptions[sources[i].type.substr('video/'.length).toUpperCase()] = sources[i].type;
   }
-  const optionsObj = {
-    display: 'check',
-  };
-  const optValues = optionsKnob('Sources', sourcesOptions, Object.values(sourcesOptions), optionsObj, sourcesKnobTab);
+  const optValues = knobOptions('Sources', sourcesOptions, Object.values(sourcesOptions), { display: 'check' }, props.sources, 'Sources');
   const sourcesKnobs = {
     sources: sources.filter((x) => optValues.includes(x.type)),
   };
 
-  return CivicThemeVideo({
-    ...generalKnobs,
-    ...sourcesKnobs,
-  });
+  const combinedKnobs = { ...knobs, ...sourcesKnobs };
+
+  return shouldRender(props) ? CivicThemeVideo(combinedKnobs) : combinedKnobs;
 };

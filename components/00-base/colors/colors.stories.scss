@@ -59,18 +59,18 @@
   $colors: _ct-colors();
 
   @include ct-generate-class-variations-from-map(map-get($brand-colors, 'light'), 'story-color-light') using($key, $value, $index) {
-    @include ct-stories-color-box($key, $value,  ct-particle(12), ct-particle(7.5));
+    @include ct-stories-color-box($key, $value, ct-particle(12), ct-particle(7.5));
   }
 
   @include ct-generate-class-variations-from-map(map-get($brand-colors, 'dark'), 'story-color-dark') using($key, $value, $index) {
-    @include ct-stories-color-box($key, $value,  ct-particle(12), ct-particle(7.5));
+    @include ct-stories-color-box($key, $value, ct-particle(12), ct-particle(7.5));
   }
 
   @include ct-generate-class-variations-from-map(map-get($colors, 'light'), 'story-color-light') using($key, $value, $index) {
-    @include ct-stories-color-box($key, $value,  ct-particle(12), ct-particle(7.5));
+    @include ct-stories-color-box($key, $value, ct-particle(12), ct-particle(7.5));
   }
 
   @include ct-generate-class-variations-from-map(map-get($colors, 'dark'), 'story-color-dark') using($key, $value, $index) {
-    @include ct-stories-color-box($key, $value,  ct-particle(12), ct-particle(7.5));
+    @include ct-stories-color-box($key, $value, ct-particle(12), ct-particle(7.5));
   }
 }

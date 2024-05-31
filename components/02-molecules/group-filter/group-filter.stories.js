@@ -1,11 +1,4 @@
-import {
-  radios, number, text,
-} from '@storybook/addon-knobs';
-
-import {
-  generateSlots, randomFormElements, randomInt, randomString,
-} from '../../00-base/base.utils';
-
+import { generateSlots, knobNumber, knobRadios, knobText, randomFormElements, randomInt, randomString, shouldRender } from '../../00-base/base.utils';
 import CivicThemeGroupFilter from './group-filter.twig';
 import './group-filter';
 
@@ -16,20 +9,18 @@ export default {
   },
 };
 
-export const GroupFilter = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const GroupFilter = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    filter_number: number(
+    filter_count: knobNumber(
       'Number of filters',
       3,
       {
@@ -38,31 +29,32 @@ export const GroupFilter = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.knobTab,
     ),
-    title: text('Filter title', 'Filter search results by:', generalKnobTab),
-    submit_text: text('Submit button text', 'Apply', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    title: knobText('Filter title', 'Filter search results by:', props.knobTab),
+    submit_text: knobText('Submit button text', 'Apply', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
+    modifier_class: knobText('Additional class', '', props.knobTab),
   };
 
   const filters = [];
 
-  if (generalKnobs.filter_number > 0) {
-    for (let i = 0; i < generalKnobs.filter_number; i++) {
+  if (knobs.filter_count > 0) {
+    for (let i = 0; i < knobs.filter_count; i++) {
       filters.push({
-        content: randomFormElements(1, generalKnobs.theme, true)[0],
+        content: randomFormElements(1, knobs.theme, true)[0],
         title: `Filter ${randomString(randomInt(3, 8))} ${i + 1}`,
       });
     }
   }
 
-  return CivicThemeGroupFilter({
-    ...generalKnobs,
-    filters,
+  const combinedKnobs = { ...knobs, filters };
+
+  return shouldRender(props) ? CivicThemeGroupFilter({
+    ...combinedKnobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : combinedKnobs;
 };

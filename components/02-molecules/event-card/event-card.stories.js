@@ -1,13 +1,4 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
-import {
-  dateIsValid,
-  generateImage,
-  generateSlots, randomSentence,
-  randomTags,
-  randomUrl,
-} from '../../00-base/base.utils';
+import { dateIsValid, generateImage, generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomSentence, randomTags, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeEventCard from './event-card.twig';
 
@@ -18,34 +9,33 @@ export default {
   },
 };
 
-export const EventCard = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const EventCard = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    date: text('Date', '20 Jan 2023 11:00', generalKnobTab),
-    date_end: text('End date', '21 Jan 2023 15:00', generalKnobTab),
-    title: text('Title', 'Event name which runs across two or three lines', generalKnobTab),
-    location: text('Location', 'Suburb, State – 16:00–17:00', generalKnobTab),
-    summary: text('Summary', randomSentence(), generalKnobTab),
+    date: knobText('Date', '20 Jan 2023 11:00', props.date, props.knobTab),
+    date_end: knobText('End date', '21 Jan 2023 15:00', props.date_end, props.knobTab),
+    title: knobText('Title', 'Event name which runs across two or three lines', props.card_title, props.knobTab),
+    location: knobText('Location', 'Suburb, State – 16:00–17:00', props.location, props.knobTab),
+    summary: knobText('Summary', randomSentence(), props.summary, props.knobTab),
     link: {
-      url: text('Link URL', randomUrl(), generalKnobTab),
-      is_external: boolean('Link is external', false, generalKnobTab),
-      is_new_window: boolean('Open in a new window', false, generalKnobTab),
+      url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
+      is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
+      is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
     },
-    image: boolean('With image', true, generalKnobTab) ? {
+    image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
     } : null,
-    tags: randomTags(number(
+    tags: randomTags(knobNumber(
       'Number of tags',
       2,
       {
@@ -54,22 +44,23 @@ export const EventCard = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.number_of_tags,
+      props.knobTab,
     ), true),
-    modifier_class: `story-wrapper-size--small ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  generalKnobs.date_iso = dateIsValid(generalKnobs.date) ? new Date(generalKnobs.date).toISOString() : null;
-  generalKnobs.date_end_iso = dateIsValid(generalKnobs.date_end) ? new Date(generalKnobs.date_end).toISOString() : null;
+  knobs.date_iso = dateIsValid(knobs.date) ? new Date(knobs.date).toISOString() : null;
+  knobs.date_end_iso = dateIsValid(knobs.date_end) ? new Date(knobs.date_end).toISOString() : null;
 
-  return CivicThemeEventCard({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeEventCard({
+    ...knobs,
     ...generateSlots([
       'image_over',
       'content_top',
       'content_middle',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

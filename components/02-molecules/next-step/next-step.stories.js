@@ -1,33 +1,31 @@
-import { radios, text, boolean } from '@storybook/addon-knobs';
 import CivicThemeNextSteps from './next-step.twig';
-import { generateSlots } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Next Steps',
 };
 
-export const NextSteps = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const NextSteps = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Next steps title from knob', generalKnobTab),
-    content: text('Content', 'Short summary explaining why this link is relevant.', generalKnobTab),
+    title: knobText('Title', 'Next steps title from knob', props.title, props.knobTab),
+    content: knobText('Content', 'Short summary explaining why this link is relevant.', props.content, props.knobTab),
     link: {
-      text: text('Link text', 'Sign up', generalKnobTab),
-      url: text('Link URL', 'https://example.com', generalKnobTab),
-      is_new_window: boolean('Link opens in new window', true, generalKnobTab),
-      is_external: boolean('Link is external', true, generalKnobTab),
+      text: knobText('Link text', 'Sign up', props.link_text, props.knobTab),
+      url: knobText('Link URL', 'https://example.com', props.link_url, props.knobTab),
+      is_new_window: knobBoolean('Link opens in new window', true, props.link_is_new_window, props.knobTab),
+      is_external: knobBoolean('Link is external', true, props.link_is_external, props.knobTab),
     },
-    vertical_spacing: radios(
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -36,17 +34,18 @@ export const NextSteps = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  return CivicThemeNextSteps({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeNextSteps({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

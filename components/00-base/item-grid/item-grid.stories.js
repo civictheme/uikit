@@ -1,18 +1,13 @@
-import {
-  boolean, number, text,
-} from '@storybook/addon-knobs';
 import CivicThemeItemGrid from './item-grid.twig';
-import { generateItems, placeholder } from '../base.utils';
+import { generateItems, knobBoolean, knobNumber, knobText, placeholder, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Item Grid',
 };
 
-export const ItemGrid = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    column_count: number(
+export const ItemGrid = (props = {}) => {
+  const knobs = {
+    column_count: knobNumber(
       'Columns',
       4,
       {
@@ -21,10 +16,11 @@ export const ItemGrid = (knobTab) => {
         max: 4,
         step: 1,
       },
-      generalKnobTab,
+      props.column_count,
+      props.knobTab,
     ),
-    fill_width: boolean('Fill width', false, generalKnobTab),
-    items: generateItems(number(
+    fill_width: knobBoolean('Fill width', false, props.fill_width, props.knobTab),
+    number_of_items: knobNumber(
       'Number of items',
       4,
       {
@@ -33,12 +29,13 @@ export const ItemGrid = (knobTab) => {
         max: 7,
         step: 1,
       },
-      generalKnobTab,
-    ), placeholder()),
-    modifier_class: text('Additional class', '', generalKnobTab),
+      props.number_of_items,
+      props.knobTab,
+    ),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  return CivicThemeItemGrid({
-    ...generalKnobs,
-  });
+  knobs.items = generateItems(knobs.number_of_items, placeholder());
+
+  return shouldRender(props) ? CivicThemeItemGrid(knobs) : knobs;
 };

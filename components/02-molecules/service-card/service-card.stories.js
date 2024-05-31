@@ -1,5 +1,4 @@
-import { number, radios, text } from '@storybook/addon-knobs';
-import { generateSlots, randomLinks } from '../../00-base/base.utils';
+import { generateSlots, knobNumber, knobRadios, knobText, randomLinks, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeServiceCard from './service-card.twig';
 
@@ -10,22 +9,20 @@ export default {
   },
 };
 
-export const ServiceCard = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  // Current component parameters.
-  const generalKnobs = {
-    theme: radios(
+export const ServiceCard = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Services category title across one or two lines', generalKnobTab),
-    links: randomLinks(number(
+    title: knobText('Title', 'Services category title across one or two lines', props.title, props.knobTab),
+    links: randomLinks(knobNumber(
       'Number of links',
       5,
       {
@@ -34,17 +31,18 @@ export const ServiceCard = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.number_of_links,
+      props.knobTab,
     ), 10),
-    modifier_class: `story-wrapper-size--small ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeServiceCard({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeServiceCard({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

@@ -1,10 +1,9 @@
-import { text, radios, select } from '@storybook/addon-knobs';
 import merge from 'deepmerge';
 import CivicThemeTooltip from './tooltip.twig';
 import './tooltip';
 
 import '../../00-base/collapsible/collapsible';
-import { randomText } from '../../00-base/base.utils';
+import { knobRadios, knobSelect, knobText, randomText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Tooltip',
@@ -13,24 +12,23 @@ export default {
   },
 };
 
-export const Tooltip = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
+export const Tooltip = (props = {}) => {
   const defaultSizes = SCSS_VARIABLES['ct-icon-sizes-default'];
   const customSizes = SCSS_VARIABLES['ct-icon-sizes'];
   const sizes = Object.keys(merge(defaultSizes, customSizes));
 
-  const generalKnobs = {
-    theme: radios(
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    position: radios(
+    position: knobRadios(
       'Position',
       {
         Auto: 'auto',
@@ -40,17 +38,16 @@ export const Tooltip = (knobTab) => {
         Bottom: 'bottom',
       },
       'auto',
-      generalKnobTab,
+      props.position,
+      props.knobTab,
     ),
-    icon: select('Icon', Object.values(ICONS), 'information-mark', generalKnobTab),
-    icon_size: radios('Icon size', sizes, sizes[2], generalKnobTab),
-    title: text('Title', 'Toggle tooltip display', generalKnobTab),
-    content: text('Content', randomText(), generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    icon: knobSelect('Icon', Object.values(ICONS), 'information-mark', props.icon, props.knobTab),
+    icon_size: knobRadios('Icon size', sizes, sizes[2], props.icon_size, props.knobTab),
+    title: knobText('Title', 'Toggle tooltip display', props.title, props.knobTab),
+    content: knobText('Content', randomText(), props.content, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeTooltip({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeTooltip(knobs) : knobs;
 };

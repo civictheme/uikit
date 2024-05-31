@@ -1,10 +1,6 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
 import CivicThemeAccordion from './accordion.twig';
-
 import '../../00-base/collapsible/collapsible';
-import { generateSlots } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Accordion',
@@ -13,22 +9,21 @@ export default {
   },
 };
 
-export const Accordion = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Accordion = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    expand_all: boolean('Expand all', false, generalKnobTab),
-    with_background: boolean('With background', false, generalKnobTab),
-    vertical_spacing: radios(
+    expand_all: knobBoolean('Expand all', false, props.expand_all, props.knobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -37,15 +32,16 @@ export const Accordion = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
   // Adding dynamic number of accordion panels.
   const panelsKnobTab = 'Panels';
-  const numOfPanels = number(
+  const numOfPanels = knobNumber(
     'Number of panels',
     3,
     {
@@ -54,6 +50,7 @@ export const Accordion = (knobTab) => {
       max: 10,
       step: 1,
     },
+    props.number_of_panels,
     panelsKnobTab,
   );
 
@@ -61,23 +58,20 @@ export const Accordion = (knobTab) => {
   let itr = 1;
   while (itr <= numOfPanels) {
     panels.push({
-      title: text(`Panel ${itr} title `, `Accordion title ${itr}`, panelsKnobTab),
-      content: `${text(`Panel ${itr} content`, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', panelsKnobTab)} <a href="https://example.com">Example link</a>`,
-      expanded: boolean(`Panel ${itr} initially expanded`, generalKnobs.expand_all, panelsKnobTab),
+      title: knobText(`Panel ${itr} title `, `Accordion title ${itr}`, props[`panel_title_${itr}`], panelsKnobTab),
+      content: `${knobText(`Panel ${itr} content`, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', props[`panel_content_${itr}`], panelsKnobTab)} <a href="https://example.com">Example link</a>`,
+      expanded: knobBoolean(`Panel ${itr} initially expanded`, knobs.expand_all, props[`panel_expanded_${itr}`], panelsKnobTab),
     });
     itr += 1;
   }
 
-  const panelKnobs = {
-    panels,
-  };
+  const combinedKnobs = { ...knobs, panels };
 
-  return CivicThemeAccordion({
-    ...generalKnobs,
-    ...panelKnobs,
+  return shouldRender(props) ? CivicThemeAccordion({
+    ...combinedKnobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : combinedKnobs;
 };

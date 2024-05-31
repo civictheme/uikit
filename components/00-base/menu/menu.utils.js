@@ -5,24 +5,20 @@
 
 /* eslint-disable camelcase */
 
-import { boolean, number } from '@storybook/addon-knobs';
-import {
-  randomBool,
-  randomUrl,
-} from '../base.utils';
+import { knobBoolean, knobNumber, randomBool, randomUrl } from '../base.utils';
 
-export function generateMenuLinks(count, levels, isActiveTrail, title, titleCb, currentLevel, parents) {
+export function generateMenuLinks(count, levels, isActiveTrail, title = 'Item', titleCb = null, currentLevel = 1, parents = []) {
   const links = [];
 
+  title = title || 'Item';
   currentLevel = currentLevel || 1;
   parents = parents || [];
-  title = title || 'Item';
 
   titleCb = typeof titleCb === 'function' ? titleCb : function (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) {
     return `${itemTitle} ${itemParents.join('')}${itemIndex}`;
   };
 
-  const active_trail_idx = isActiveTrail ? Math.floor(Math.random() * count) : null;
+  const activeTrailIdx = isActiveTrail ? Math.floor(Math.random() * count) : null;
 
   for (let i = 1; i <= count; i++) {
     const link = {
@@ -30,12 +26,12 @@ export function generateMenuLinks(count, levels, isActiveTrail, title, titleCb, 
       url: randomUrl(),
     };
 
-    if (active_trail_idx === i) {
+    if (activeTrailIdx === i) {
       link.in_active_trail = true;
     }
 
     if (currentLevel < levels) {
-      link.below = generateMenuLinks(count, levels, active_trail_idx === i, title, titleCb, currentLevel + 1, parents.concat([i]));
+      link.below = generateMenuLinks(count, levels, activeTrailIdx === i, title, titleCb, currentLevel + 1, parents.concat([i]));
       link.is_expanded = randomBool(0.5);
     }
 
@@ -45,10 +41,8 @@ export function generateMenuLinks(count, levels, isActiveTrail, title, titleCb, 
   return links;
 }
 
-export default function getMenuLinks(knobTab, titleCb) {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const links_per_level = number(
+export default function getMenuLinks(props = {}, titleCb = null) {
+  const linksPerLevel = knobNumber(
     'Links per level',
     3,
     {
@@ -57,9 +51,11 @@ export default function getMenuLinks(knobTab, titleCb) {
       max: 5,
       step: 1,
     },
-    generalKnobTab,
+    props.links_per_level,
+    props.knobTab,
   );
-  const levels = number(
+
+  const levels = knobNumber(
     'Number of levels',
     3,
     {
@@ -68,9 +64,11 @@ export default function getMenuLinks(knobTab, titleCb) {
       max: 5,
       step: 1,
     },
-    generalKnobTab,
+    props.number_of_levels,
+    props.knobTab,
   );
-  const activeTrail = boolean('Show active trail (random)', false, generalKnobTab);
 
-  return generateMenuLinks(links_per_level, levels, activeTrail, null, titleCb);
+  const activeTrail = knobBoolean('Show active trail (random)', false, props.show_active_trail, props.knobTab);
+
+  return generateMenuLinks(linksPerLevel, levels, activeTrail, null, titleCb);
 }

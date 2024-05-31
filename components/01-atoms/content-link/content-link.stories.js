@@ -1,8 +1,5 @@
-import {
-  boolean, radios, text,
-} from '@storybook/addon-knobs';
 import CivicThemeContentLink from './content-link.twig';
-import { randomUrl } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Content Link',
@@ -11,29 +8,26 @@ export default {
   },
 };
 
-export const ContentLink = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const ContentLink = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    text: text('Text', 'Link text', generalKnobTab),
-    title: text('Title', 'Link title', generalKnobTab),
-    url: text('URL', randomUrl(), generalKnobTab),
-    is_external: boolean('Is external', false, generalKnobTab),
-    is_new_window: boolean('Open in a new window', false, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    text: knobText('Text', 'Link text', props.text, props.knobTab),
+    title: knobText('Title', 'Link title', props.link_title, props.knobTab),
+    url: knobText('URL', randomUrl(), props.url, props.knobTab),
+    is_external: knobBoolean('Is external', false, props.is_external, props.knobTab),
+    is_new_window: knobBoolean('Open in a new window', false, props.is_new_window, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeContentLink({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeContentLink(knobs) : knobs;
 };

@@ -1,6 +1,5 @@
-import { radios, text } from '@storybook/addon-knobs';
-
 import CivicThemeSkipLink from './skip-link.twig';
+import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Skip Link',
@@ -9,29 +8,24 @@ export default {
   },
 };
 
-export const SkipLink = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const SkipLink = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    text: text('Text', 'Skip to main content', generalKnobTab),
-    url: text('URL', '#main-content', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+    text: knobText('Text', 'Skip to main content', props.text, props.knobTab),
+    url: knobText('URL', '#main-content', props.url, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  let html = CivicThemeSkipLink({
-    ...generalKnobs,
-  });
-
-  html += '<div class="docs-container docs-container--large">Press TAB on the keyboard for the Skip Link to appear</div>';
-
-  return html;
+  return shouldRender(props)
+    ? `${CivicThemeSkipLink(knobs)}<div class="docs-container docs-container--large">Press TAB on the keyboard for the Skip Link to appear</div>`
+    : knobs;
 };

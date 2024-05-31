@@ -1,6 +1,6 @@
-import { radios, text } from '@storybook/addon-knobs';
 import CivicThemeSideNavigation from './side-navigation.twig';
 import getMenuLinks from '../../00-base/menu/menu.utils';
+import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Side Navigation',
@@ -9,22 +9,21 @@ export default {
   },
 };
 
-export const SideNavigation = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const SideNavigation = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Side Navigation title', generalKnobTab),
-    items: getMenuLinks('Links'),
-    vertical_spacing: radios(
+    title: knobText('Title', 'Side Navigation title', props.title, props.knobTab),
+    items: getMenuLinks({ knobTab: 'Links' }),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -33,13 +32,12 @@ export const SideNavigation = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeSideNavigation({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeSideNavigation(knobs) : knobs;
 };

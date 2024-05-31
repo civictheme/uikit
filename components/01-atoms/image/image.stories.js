@@ -1,7 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-
 import CivicThemeImage from './image.twig';
-import { generateImage } from '../../00-base/base.utils';
+import { generateImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Image',
@@ -10,28 +8,25 @@ export default {
   },
 };
 
-export const Image = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Image = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    url: boolean('Show image', true, generalKnobTab) ? generateImage() : false,
-    alt: text('Image alt text', 'Alternative text', generalKnobTab),
-    width: text('Width', '', generalKnobTab),
-    height: text('Height', '', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    url: knobBoolean('Show image', true, props.show_image, props.knobTab) ? generateImage() : false,
+    alt: knobText('Image alt text', 'Alternative text', props.alt, props.knobTab),
+    width: knobText('Width', '', props.width, props.knobTab),
+    height: knobText('Height', '', props.height, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeImage({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeImage(knobs) : knobs;
 };

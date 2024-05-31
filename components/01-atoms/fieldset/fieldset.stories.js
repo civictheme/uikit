@@ -1,34 +1,29 @@
-import {
-  radios, text, number, boolean,
-} from '@storybook/addon-knobs';
-import { randomFormElements } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomFormElements, shouldRender } from '../../00-base/base.utils';
 import CivicThemeFieldset from './fieldset.twig';
 
 export default {
   title: 'Atoms/Fieldset',
 };
 
-export const Fieldset = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const theme = radios(
-    'Theme',
-    {
-      Light: 'light',
-      Dark: 'dark',
-    },
-    'light',
-    generalKnobTab,
-  );
-
-  const generalKnobs = {
-    theme,
-    legend: text('Legend', 'Fieldset legend', generalKnobTab),
-    description: text('Description', 'Fieldset example description', generalKnobTab),
-    is_required: boolean('Required', true, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
+export const Fieldset = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
+      'Theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      'light',
+      props.theme,
+      props.knobTab,
+    ),
+    legend: knobText('Legend', 'Fieldset legend', props.legend, props.knobTab),
+    description: knobText('Description', 'Fieldset example description', props.description, props.knobTab),
+    is_required: knobBoolean('Required', true, props.is_required, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  const numOfElements = number(
+  const numOfElements = knobNumber(
     'Number of form elements',
     1,
     {
@@ -37,13 +32,16 @@ export const Fieldset = (knobTab) => {
       max: 10,
       step: 1,
     },
-    generalKnobTab,
+    props.number_of_form_elements,
+    props.knobTab,
   );
 
-  const html = CivicThemeFieldset({
-    ...generalKnobs,
-    children: randomFormElements(numOfElements, theme, true).join(''),
-  });
+  const combinedKnobs = {
+    ...knobs,
+    children: randomFormElements(numOfElements, knobs.theme, true).join(''),
+  };
 
-  return `<div class="container"><div class="row"><div class="col-xxs-12">${html}</div></div></div>`;
+  return shouldRender(props)
+    ? `<div class="container"><div class="row"><div class="col-xxs-12">${CivicThemeFieldset(combinedKnobs)}</div></div></div>`
+    : combinedKnobs;
 };

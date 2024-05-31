@@ -16,6 +16,7 @@
 
     .ct-navigation {
       $root-dropdown: '.ct-navigation';
+
       &#{$root-dropdown}--dropdown {
         #{$root-dropdown}__items {
           #{$root-dropdown}__menu {

@@ -141,7 +141,7 @@
     padding: 0;
     list-style: none;
 
-    >li {
+    > li {
       position: relative;
       padding-left: $ct-basic-content-list-marker-width + $ct-basic-content-list-marker-margin;
 
@@ -165,7 +165,7 @@
     padding: 0;
     list-style: none;
 
-    >li {
+    > li {
       counter-increment: ordered_counter;
       padding-left: $ct-basic-content-list-marker-width + $ct-basic-content-list-marker-margin;
 
@@ -243,7 +243,7 @@
   }
 
   ul {
-    >li {
+    > li {
       color: $ct-basic-content-light-ul-li-color;
 
       &::before {
@@ -253,7 +253,7 @@
   }
 
   ol {
-    >li {
+    > li {
       color: $ct-basic-content-light-ol-li-color;
 
       &::before {
@@ -308,7 +308,7 @@
   }
 
   ul {
-    >li {
+    > li {
       color: $ct-basic-content-dark-ul-li-color;
 
       &::before {
@@ -318,7 +318,7 @@
   }
 
   ol {
-    >li {
+    > li {
       color: $ct-basic-content-dark-ol-li-color;
 
       &::before {

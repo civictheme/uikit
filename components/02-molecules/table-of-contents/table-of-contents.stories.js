@@ -1,17 +1,11 @@
-import {
-  boolean,
-  number, radios, text,
-} from '@storybook/addon-knobs';
-import { randomText } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Table Of Contents',
 };
 
-export const TableOfContents = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const countOfTocs = number(
+export const TableOfContents = (props = {}) => {
+  const countOfTocs = knobNumber(
     'Number of TOCs',
     1,
     {
@@ -20,7 +14,8 @@ export const TableOfContents = (knobTab) => {
       max: 5,
       step: 1,
     },
-    generalKnobTab,
+    props.number_of_tocs,
+    props.knobTab,
   );
 
   const generateContent = (count, selector, duplicate, index) => {
@@ -49,7 +44,7 @@ export const TableOfContents = (knobTab) => {
 
   const contentKnobTab = 'Content';
 
-  const countOfContentItems = number(
+  const countOfContentItems = knobNumber(
     'Number of items',
     5,
     {
@@ -58,18 +53,21 @@ export const TableOfContents = (knobTab) => {
       max: 10,
       step: 1,
     },
+    props.number_of_items,
     contentKnobTab,
   );
 
-  const htmlSelector = text(
+  const htmlSelector = knobText(
     'Selector',
     'h2',
+    props.html_selector,
     contentKnobTab,
   );
 
-  const duplicate = boolean(
+  const duplicate = knobBoolean(
     'Duplicated headers',
     false,
+    props.is_duplicated_headers,
     contentKnobTab,
   );
 
@@ -78,36 +76,36 @@ export const TableOfContents = (knobTab) => {
     const tocKnobTab = `TOC ${i + 1}`;
 
     const attributes = {
-      'data-table-of-contents-theme': radios(
+      'data-table-of-contents-theme': knobRadios(
         'Theme',
         {
           Light: 'light',
           Dark: 'dark',
         },
         'light',
+        props[`theme_toc_${i}`],
         tocKnobTab,
       ),
-      'data-table-of-contents-title': text('Title', 'On this page', tocKnobTab),
-      'data-table-of-contents-anchor-selector': text('Anchor selector', 'h2', tocKnobTab),
-      'data-table-of-contents-anchor-scope-selector': text('Anchor scope selector', `.ct-basic-content-${i + 1}`, tocKnobTab),
-      'data-table-of-contents-position': radios('Position', {
+      'data-table-of-contents-title': knobText('Title', 'On this page', props[`content_title_toc_${i}`], tocKnobTab),
+      'data-table-of-contents-anchor-selector': knobText('Anchor selector', 'h2', props[`content_anchor_selector_toc_${i}`], tocKnobTab),
+      'data-table-of-contents-anchor-scope-selector': knobText('Anchor scope selector', `.ct-basic-content-${i + 1}`, props[`content_anchor_scope_selector_toc_${i}`], tocKnobTab),
+      'data-table-of-contents-position': knobRadios('Position', {
         Before: 'before',
         After: 'after',
         Prepend: 'prepend',
         Append: 'append',
-      }, 'before', tocKnobTab),
+      }, 'before', props[`content_position_toc_${i}`], tocKnobTab),
     };
 
-    const attributesAdditional = text('Additional attributes', '', tocKnobTab);
-
-    const modifierClass = text('Additional class', '', tocKnobTab);
-
-    const html = generateContent(countOfContentItems, htmlSelector, duplicate, i + 1);
-
+    const modifierClass = knobText('Additional class', '', props[`modifier_class_toc_${i}`], tocKnobTab);
     const attributesStr = Object.keys(attributes).map((key) => (attributes[key] !== '' ? `${key}="${attributes[key]}"` : '')).join(' ');
+    const attributesAdditional = knobText('Additional attributes', '', props[`attributes_toc_${i}`], tocKnobTab);
+    const content = generateContent(countOfContentItems, htmlSelector, duplicate, i + 1);
 
-    wrappers.push(`<div class="ct-basic-content ct-basic-content-${i + 1} ct-theme-${attributes['data-table-of-contents-theme']} ${modifierClass}" ${attributesStr} ${attributesAdditional}>${html}</div>`);
+    wrappers.push(`<div class="ct-basic-content ct-basic-content-${i + 1} ct-theme-${attributes['data-table-of-contents-theme']} ${modifierClass}" ${attributesStr} ${attributesAdditional}>${content}</div>`);
   }
 
-  return wrappers.join(' ');
+  const html = wrappers.join(' ');
+
+  return shouldRender(props) ? html : '';
 };

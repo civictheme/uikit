@@ -1,5 +1,4 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-import { generateImage, generateSlots, randomUrl } from '../../00-base/base.utils';
+import { generateImage, generateSlots, knobBoolean, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeSubjectCard from './subject-card.twig';
 
 export default {
@@ -9,37 +8,36 @@ export default {
   },
 };
 
-export const SubjectCard = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const SubjectCard = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Subject card title which runs across two or three lines', generalKnobTab),
+    title: knobText('Title', 'Subject card title which runs across two or three lines', props.title, props.knobTab),
     link: {
-      url: text('Link URL', randomUrl(), generalKnobTab),
-      is_external: boolean('Link is external', false, generalKnobTab),
-      is_new_window: boolean('Open in a new window', false, generalKnobTab),
+      url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
+      is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
+      is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
     },
-    image: boolean('With image', true, generalKnobTab) ? {
+    image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
     } : false,
-    modifier_class: `story-wrapper-size--small ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeSubjectCard({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeSubjectCard({
+    ...knobs,
     ...generateSlots([
       'image_over',
     ]),
-  });
+  }) : knobs;
 };

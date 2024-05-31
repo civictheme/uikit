@@ -1,7 +1,6 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeNavigation from './navigation.twig';
 import getMenuLinks from '../../00-base/menu/menu.utils';
-import { randomInt, randomSentence } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomInt, randomSentence, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Navigation',
@@ -10,21 +9,20 @@ export default {
   },
 };
 
-export const Navigation = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Navigation = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Navigation title', generalKnobTab),
-    type: radios(
+    title: knobText('Title', 'Navigation title', props.title, props.knobTab),
+    type: knobRadios(
       'Type',
       {
         None: 'none',
@@ -33,15 +31,14 @@ export const Navigation = (knobTab) => {
         Drawer: 'drawer',
       },
       'none',
-      generalKnobTab,
+      props.type,
+      props.knobTab,
     ),
-    items: getMenuLinks('Links', (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`),
-    is_animated: boolean('Animated', true, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    items: getMenuLinks({ knobTab: 'Links' }, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`),
+    is_animated: knobBoolean('Animated', true, props.is_animated, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeNavigation({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeNavigation(knobs) : knobs;
 };

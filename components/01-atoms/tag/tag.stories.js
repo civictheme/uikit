@@ -1,10 +1,4 @@
-import {
-  boolean, radios, select, text,
-} from '@storybook/addon-knobs';
-import {
-  randomUrl,
-} from '../../00-base/base.utils';
-
+import { knobBoolean, knobRadios, knobSelect, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeTag from './tag.twig';
 
 export default {
@@ -14,20 +8,18 @@ export default {
   },
 };
 
-export const Tag = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Tag = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    type: radios(
+    type: knobRadios(
       'Type',
       {
         Primary: 'primary',
@@ -35,18 +27,18 @@ export const Tag = (knobTab) => {
         Tertiary: 'tertiary',
       },
       'primary',
-      generalKnobTab,
+      props.knobTab,
     ),
-    content: text('Content', 'Tag content', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    content: knobText('Content', 'Tag content', props.knobTab),
+    modifier_class: knobText('Additional class', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
   const iconKnobTab = 'Icon';
-  const withIcon = boolean('With icon', false, generalKnobTab);
+  const withIcon = knobBoolean('With icon', false, props.knobTab);
   const iconKnobs = {
-    icon: withIcon ? select('Icon', Object.values(ICONS), Object.values(ICONS)[0], iconKnobTab) : null,
-    icon_placement: withIcon ? radios(
+    icon: withIcon ? knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], iconKnobTab) : null,
+    icon_placement: withIcon ? knobRadios(
       'Position',
       {
         Before: 'before',
@@ -57,17 +49,16 @@ export const Tag = (knobTab) => {
     ) : null,
   };
 
+  const withLink = knobBoolean('With link', false, props.knobTab);
+
   const linkKnobTab = 'Link';
-  const withLink = boolean('With link', false, generalKnobTab);
   const linkKnobs = {
-    url: withLink ? text('URL', randomUrl(), linkKnobTab) : null,
-    is_external: withLink ? boolean('Is external', false, linkKnobTab) : null,
-    is_new_window: withLink ? boolean('Open in a new window', false, linkKnobTab) : null,
+    url: withLink ? knobText('URL', randomUrl(), linkKnobTab) : null,
+    is_external: withLink ? knobBoolean('Is external', false, linkKnobTab) : null,
+    is_new_window: withLink ? knobBoolean('Open in a new window', false, linkKnobTab) : null,
   };
 
-  return CivicThemeTag({
-    ...generalKnobs,
-    ...iconKnobs,
-    ...linkKnobs,
-  });
+  const combinedKnobs = { ...knobs, ...iconKnobs, ...linkKnobs };
+
+  return shouldRender(props) ? CivicThemeTag(combinedKnobs) : combinedKnobs;
 };

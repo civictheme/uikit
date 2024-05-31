@@ -1,28 +1,24 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
 import CivicThemePagination from './pagination.twig';
-import { randomUrl } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Pagination',
 };
 
-export const Pagination = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const theme = radios(
+export const Pagination = (props = {}) => {
+  const theme = knobRadios(
     'Theme',
     {
       Light: 'light',
       Dark: 'dark',
     },
     'light',
-    generalKnobTab,
+    props.theme,
+    props.knobTab,
   );
-  const activeIsLink = boolean('Active is a link', true, generalKnobTab);
+  const activeIsLink = knobBoolean('Active is a link', true, props.active_is_link, props.knobTab);
 
-  const pageCount = number(
+  const pageCount = knobNumber(
     'Count of pages',
     5,
     {
@@ -31,10 +27,11 @@ export const Pagination = (knobTab) => {
       max: 10,
       step: 1,
     },
-    generalKnobTab,
+    props.count_of_pages,
+    props.knobTab,
   );
 
-  const current = number(
+  const current = knobNumber(
     'Current page',
     Math.max(1, Math.floor(pageCount / 2)),
     {
@@ -43,9 +40,10 @@ export const Pagination = (knobTab) => {
       max: pageCount,
       step: 1,
     },
-    generalKnobTab,
+    props.current_page,
+    props.knobTab,
   );
-  const useEllipsis = boolean('With ellipsis', false, generalKnobTab);
+  const useEllipsis = knobBoolean('With ellipsis', false, props.use_ellipsis, props.knobTab);
 
   const pages = {};
   const pagerMiddle = Math.ceil(pageCount / 2);
@@ -65,41 +63,43 @@ export const Pagination = (knobTab) => {
     }
   }
 
-  const generalKnobs = {
+  const items = pageCount > 0 ? {
+    previous: {
+      href: randomUrl(),
+    },
+    pages,
+    next: {
+      href: randomUrl(),
+    },
+  } : null;
+
+  const itemsPerPage = [
+    {
+      type: 'option', label: 10, value: 10, selected: false,
+    },
+    {
+      type: 'option', label: 20, value: 20, selected: true,
+    },
+    {
+      type: 'option', label: 50, value: 50, selected: false,
+    },
+    {
+      type: 'option', label: 100, value: 100, selected: false,
+    },
+  ];
+
+  const knobs = {
     theme,
     active_is_link: activeIsLink,
-    items: pageCount > 0 ? {
-      previous: {
-        href: randomUrl(),
-      },
-      pages,
-      next: {
-        href: randomUrl(),
-      },
-    } : null,
-    heading_id: text('Heading Id', 'ct-pager-demo', generalKnobTab),
+    items,
+    heading_id: knobText('Heading Id', 'ct-pager-demo', props.heading_id, props.knobTab),
     use_ellipsis: useEllipsis,
-    items_per_page_options: boolean('With items per page', true, generalKnobTab) ? [
-      {
-        type: 'option', label: 10, value: 10, selected: false,
-      },
-      {
-        type: 'option', label: 20, value: 20, selected: true,
-      },
-      {
-        type: 'option', label: 50, value: 50, selected: false,
-      },
-      {
-        type: 'option', label: 100, value: 100, selected: false,
-      },
-    ] : null,
+    items_per_page_options: knobBoolean('With items per page', true, props.with_items_per_page, props.knobTab) ? itemsPerPage : null,
     total_pages: pageCount,
     current,
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemePagination({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemePagination(knobs) : knobs;
 };

@@ -1,7 +1,6 @@
-import {
-  button, number, radios, text,
-} from '@storybook/addon-knobs';
+import { button } from '@storybook/addon-knobs';
 import CivicThemeAlert from './alert.twig';
+import { knobNumber, knobRadios, knobText, randomText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Organisms/Alert',
@@ -10,19 +9,19 @@ export default {
   },
 };
 
-export const Alert = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const generalKnobs = {
-    theme: radios(
+export const Alert = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    type: radios(
+    type: knobRadios(
       'Type',
       {
         Information: 'information',
@@ -31,15 +30,16 @@ export const Alert = (knobTab) => {
         Success: 'success',
       },
       'information',
-      generalKnobTab,
+      props.type,
+      props.knobTab,
     ),
-    title: text('Title', 'Site information', generalKnobTab),
-    description: text('Description', 'Alert description filium morte multavit si sine causa, nollem me tamen laudandis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vel elit laoreet, dignissim arcu sit amet, vulputate risus.', generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    title: knobText('Title', 'Site information', props.title, props.knobTab),
+    description: knobText('Description', `Alert description ${randomText()}`, props.description, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  const numOfAlerts = number(
+  const numOfAlerts = knobNumber(
     'Number of alerts',
     1,
     {
@@ -48,21 +48,31 @@ export const Alert = (knobTab) => {
       max: 5,
       step: 1,
     },
-    generalKnobTab,
+    props.number_of_alerts,
+    props.knobTab,
   );
-  let html = '';
+
+  const combinedKnobsArray = [];
   for (let i = 0; i < numOfAlerts; i++) {
-    html += CivicThemeAlert({
-      ...generalKnobs,
+    combinedKnobsArray.push({
+      ...knobs,
       id: i,
     });
   }
 
-  return html;
+  if (shouldRender(props)) {
+    let html = '';
+    for (let i = 0; i < combinedKnobsArray.length; i++) {
+      html += CivicThemeAlert(combinedKnobsArray[i]);
+    }
+    return html;
+  }
+
+  return combinedKnobsArray;
 };
 
-export const AlertApi = () => {
-  const endpointType = radios(
+export const AlertApi = (props = {}) => {
+  const endpointType = knobRadios(
     'Payload',
     {
       Default: 'default',
@@ -70,6 +80,8 @@ export const AlertApi = () => {
       Invalid: 'invalid',
     },
     'default',
+    props.endpoint_type,
+    props.knobTab,
   );
 
   let endpoint;
@@ -96,5 +108,7 @@ export const AlertApi = () => {
   docs += 'Dismissed alerts will be revealed if their content was updated. Change payload to "Updated" to see dismissed alerts appear again.<br/><br/>';
   docs += 'Press "Clear cookie" button to clear alert dismissal settings.';
 
-  return `<div data-component-name="ct-alerts" data-alert-endpoint="${endpoint}" data-test-path="/"></div><div class="docs-container docs-container--large"><div class="docs-container__content">${docs}</div></div>`;
+  return shouldRender(props)
+    ? `<div data-component-name="ct-alerts" data-alert-endpoint="${endpoint}" data-test-path="/"></div><div class="docs-container docs-container--large"><div class="docs-container__content">${docs}</div></div>`
+    : '';
 };

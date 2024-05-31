@@ -1,5 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeParagraph from './paragraph.twig';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Paragraph',
@@ -11,21 +11,20 @@ export default {
   },
 };
 
-export const Paragraph = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Paragraph = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    content: text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', generalKnobTab),
-    size: radios(
+    content: knobText('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', props.content, props.knobTab),
+    size: knobRadios(
       'Size',
       {
         'Extra Large': 'extra-large',
@@ -34,14 +33,13 @@ export const Paragraph = (knobTab) => {
         Small: 'small',
       },
       'regular',
-      generalKnobTab,
+      props.size,
+      props.knobTab,
     ),
-    allow_html: boolean('Allow HTML in text', false, generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    allow_html: knobBoolean('Allow HTML in text', false, props.allow_html, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeParagraph({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeParagraph(knobs) : knobs;
 };

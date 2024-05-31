@@ -1,7 +1,4 @@
-import {
-  boolean, radios, select, text,
-} from '@storybook/addon-knobs';
-import { generateSlots } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/base.utils';
 import CivicThemeFooter from './footer.stories.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
@@ -15,44 +12,38 @@ export default {
   },
 };
 
-export const Footer = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const theme = radios(
-    'Theme',
-    {
-      Light: 'light',
-      Dark: 'dark',
-    },
-    'light',
-    generalKnobTab,
-  );
-
-  const generalKnobs = {
-    theme,
-    modifier_class: text('Additional class', '', generalKnobTab),
+export const Footer = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
+      'Theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      'light',
+      props.knobTab,
+    ),
+    modifier_class: knobText('Additional class', '', props.knobTab),
+    logo: knobBoolean('Show logo', true, props.knobTab) ? Logo({ knobTab: 'Logo' }) : null,
+    show_social_links: knobBoolean('Show social links', true, props.knobTab),
+    show_middle_links: knobBoolean('Show middle links', true, props.knobTab),
+    show_acknowledgement: knobBoolean('Show acknowledgement', true, props.knobTab),
+    show_copyright: knobBoolean('Show copyright', true, props.knobTab),
   };
 
-  generalKnobs.logo = boolean('Show logo', true, generalKnobTab) ? Logo('Logo', false) : null;
-
-  generalKnobs.show_social_links = boolean('Show social links', true, generalKnobTab);
-  generalKnobs.show_middle_links = boolean('Show middle links', true, generalKnobTab);
-  generalKnobs.show_acknowledgement = boolean('Show acknowledgement', true, generalKnobTab);
-  generalKnobs.show_copyright = boolean('Show copyright', true, generalKnobTab);
-
-  if (generalKnobs.show_middle_links) {
-    generalKnobs.links1 = generateMenuLinks(4, 1, false);
-    generalKnobs.links2 = generateMenuLinks(4, 1, false);
-    generalKnobs.links3 = generateMenuLinks(4, 1, false);
-    generalKnobs.links4 = generateMenuLinks(4, 1, false);
+  if (knobBoolean('Show background image', false, props.knobTab)) {
+    knobs.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.knobTab)];
   }
 
-  if (boolean('Show background image', false, generalKnobTab)) {
-    generalKnobs.background_image = BACKGROUNDS[select('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], generalKnobTab)];
+  if (knobs.show_middle_links) {
+    knobs.links1 = generateMenuLinks(4, 1, false);
+    knobs.links2 = generateMenuLinks(4, 1, false);
+    knobs.links3 = generateMenuLinks(4, 1, false);
+    knobs.links4 = generateMenuLinks(4, 1, false);
   }
 
-  return CivicThemeFooter({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeFooter({
+    ...knobs,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -63,5 +54,5 @@ export const Footer = (knobTab) => {
       'content_bottom1',
       'content_bottom2',
     ]),
-  });
+  }) : knobs;
 };

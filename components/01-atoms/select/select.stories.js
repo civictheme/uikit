@@ -1,6 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeSelect from './select.twig';
-import { generateOptions, randomInt } from '../../00-base/base.utils';
+import { generateOptions, knobBoolean, knobRadios, knobText, randomInt, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Select',
@@ -9,31 +8,26 @@ export default {
   },
 };
 
-export const Select = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const numOfOptions = randomInt(3, 5);
-
-  const generalKnobs = {
-    theme: radios(
+export const Select = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    is_multiple: boolean('Is multiple', false, generalKnobTab),
-    options: boolean('With options', true, generalKnobTab) ? generateOptions(numOfOptions, (boolean('Options have groups', false, generalKnobTab) ? 'optgroup' : 'option')) : [],
-    is_required: boolean('Required', false, generalKnobTab),
-    disabled: boolean('Disabled', false, generalKnobTab),
-    has_error: boolean('Has error', false, generalKnobTab),
-    for: text('For', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
+    is_multiple: knobBoolean('Is multiple', false, props.knobTab),
+    options: knobBoolean('With options', true, props.knobTab) ? generateOptions(randomInt(3, 5), (knobBoolean('Options have groups', false, props.knobTab) ? 'optgroup' : 'option')) : [],
+    is_required: knobBoolean('Required', false, props.knobTab),
+    disabled: knobBoolean('Disabled', false, props.knobTab),
+    has_error: knobBoolean('Has error', false, props.knobTab),
+    for: knobText('For', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.knobTab),
   };
 
-  return CivicThemeSelect({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeSelect(knobs) : knobs;
 };

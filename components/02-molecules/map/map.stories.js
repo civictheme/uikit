@@ -1,5 +1,4 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
-import { generateSlots, randomUrl } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
 import CivicThemeMap from './map.twig';
 
 export default {
@@ -9,23 +8,22 @@ export default {
   },
 };
 
-export const Map = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Map = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    url: text('URL', 'https://maps.google.com/maps?q=australia&t=&z=3&ie=UTF8&iwloc=&output=embed', generalKnobTab),
-    address: text('Address', 'Australia', generalKnobTab),
-    view_url: text('View URL', randomUrl(), generalKnobTab),
-    vertical_spacing: radios(
+    url: knobText('URL', 'https://maps.google.com/maps?q=australia&t=&z=3&ie=UTF8&iwloc=&output=embed', props.url, props.knobTab),
+    address: knobText('Address', 'Australia', props.address, props.knobTab),
+    view_url: knobText('View URL', randomUrl(), props.view_url, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -34,18 +32,19 @@ export const Map = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    with_background: boolean('With background', false, generalKnobTab),
-    modifier_class: text('Additional class', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeMap({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeMap({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

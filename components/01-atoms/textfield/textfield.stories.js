@@ -1,5 +1,5 @@
-import { boolean, radios, text } from '@storybook/addon-knobs';
 import CivicThemeTextfield from './textfield.twig';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Textfield',
@@ -8,28 +8,24 @@ export default {
   },
 };
 
-export const Textfield = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Textfield = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.knobTab,
     ),
-    placeholder: text('Placeholder', 'Placeholder', generalKnobTab),
-    is_required: boolean('Required', false, generalKnobTab),
-    disabled: boolean('Disabled', false, generalKnobTab),
-    for: text('For', '', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+    placeholder: knobText('Placeholder', 'Placeholder', props.knobTab),
+    is_required: knobBoolean('Required', false, props.knobTab),
+    disabled: knobBoolean('Disabled', false, props.knobTab),
+    for: knobText('For', '', props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.knobTab),
   };
 
-  return CivicThemeTextfield({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeTextfield(knobs) : knobs;
 };

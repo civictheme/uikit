@@ -1,6 +1,5 @@
-import { radios, select, text } from '@storybook/addon-knobs';
 import CivicThemeMobileNavigationExample from './mobile-navigation.stories.twig';
-import { generateSlots } from '../../00-base/base.utils';
+import { generateSlots, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/base.utils';
 import getMenuLinks from '../../00-base/menu/menu.utils';
 
 export default {
@@ -10,41 +9,39 @@ export default {
   },
 };
 
-export const MobileNavigation = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'Menu';
-  const topMenuKnobTab = 'Top menu';
-  const bottomMenuKnobTab = 'Bottom menu';
-
-  const generalKnobs = {
-    theme: radios(
+export const MobileNavigation = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    trigger_theme: radios(
+    trigger_theme: knobRadios(
       'Trigger Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.trigger_theme,
+      props.knobTab,
     ),
-    trigger_text: text('Trigger Text', 'Menu', generalKnobTab),
-    trigger_icon: select('Trigger Icon', Object.values(ICONS), 'bars', generalKnobTab),
-    top_menu: getMenuLinks(topMenuKnobTab, 'Top '),
-    bottom_menu: getMenuLinks(bottomMenuKnobTab, 'Bottom '),
+    trigger_text: knobText('Trigger Text', 'Menu', props.trigger_text, props.knobTab),
+    trigger_icon: knobSelect('Trigger Icon', Object.values(ICONS), 'bars', props.trigger_icon, props.knobTab),
+    top_menu: getMenuLinks({ knobTab: 'Top menu' }, 'Top '),
+    bottom_menu: getMenuLinks({ knobTab: 'Bottom menu' }, 'Bottom '),
   };
 
-  return CivicThemeMobileNavigationExample({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeMobileNavigationExample({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

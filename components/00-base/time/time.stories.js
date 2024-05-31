@@ -1,6 +1,5 @@
-import { text } from '@storybook/addon-knobs';
 import CivicThemeTime from './time.twig';
-import { dateIsValid } from '../base.utils';
+import { dateIsValid, knobText, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Time',
@@ -9,20 +8,16 @@ export default {
   },
 };
 
-export const Time = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    start: text('Start', '20 Jan 2023 11:00', generalKnobTab),
-    end: text('End', '21 Jan 2023 15:00', generalKnobTab),
-    modifier_class: text('Additional classes', '', generalKnobTab),
-    attributes: text('Additional attributes', '', generalKnobTab),
+export const Time = (props = {}) => {
+  const knobs = {
+    start: knobText('Start', '20 Jan 2023 11:00', props.start, props.knobTab),
+    end: knobText('End', '21 Jan 2023 15:00', props.end, props.knobTab),
+    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  generalKnobs.start_iso = dateIsValid(generalKnobs.start) ? new Date(generalKnobs.start).toISOString() : null;
-  generalKnobs.end_iso = dateIsValid(generalKnobs.end) ? new Date(generalKnobs.end).toISOString() : null;
+  knobs.start_iso = dateIsValid(knobs.start) ? new Date(knobs.start).toISOString() : null;
+  knobs.end_iso = dateIsValid(knobs.end) ? new Date(knobs.end).toISOString() : null;
 
-  return CivicThemeTime({
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeTime(knobs) : knobs;
 };

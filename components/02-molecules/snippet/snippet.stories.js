@@ -1,11 +1,4 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
-import {
-  generateSlots, randomInt, randomSentence,
-  randomTags,
-  randomUrl,
-} from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomInt, randomSentence, randomTags, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeSummary from './snippet.twig';
 
@@ -16,27 +9,26 @@ export default {
   },
 };
 
-export const Snippet = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Snippet = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Snippet name which runs across two or three lines', generalKnobTab),
-    summary: text('Summary', randomSentence(randomInt(15, 25)), generalKnobTab),
+    title: knobText('Title', 'Snippet name which runs across two or three lines', props.title, props.knobTab),
+    summary: knobText('Summary', randomSentence(randomInt(15, 25)), props.summary, props.knobTab),
     link: {
-      url: text('Link URL', randomUrl(), generalKnobTab),
-      is_external: boolean('Link is external', false, generalKnobTab),
-      is_new_window: boolean('Open in a new window', false, generalKnobTab),
+      url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
+      is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
+      is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
     },
-    tags: randomTags(number(
+    tags: randomTags(knobNumber(
       'Number of tags',
       2,
       {
@@ -45,18 +37,19 @@ export const Snippet = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.number_of_tags,
+      props.knobTab,
     ), true),
-    modifier_class: `story-wrapper-size--large ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeSummary({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeSummary({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_middle',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

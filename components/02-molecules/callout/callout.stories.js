@@ -1,6 +1,5 @@
-import { number, radios, text } from '@storybook/addon-knobs';
 import CivicThemeCallout from './callout.twig';
-import { generateSlots, randomLinks, randomSentence } from '../../00-base/base.utils';
+import { generateSlots, knobNumber, knobRadios, knobText, randomLinks, randomSentence, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Molecules/Callout',
@@ -9,22 +8,21 @@ export default {
   },
 };
 
-export const Callout = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-
-  const generalKnobs = {
-    theme: radios(
+export const Callout = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
         Dark: 'dark',
       },
       'light',
-      generalKnobTab,
+      props.theme,
+      props.knobTab,
     ),
-    title: text('Title', 'Callout title from knob', generalKnobTab),
-    content: text('Content', randomSentence(), generalKnobTab),
-    vertical_spacing: radios(
+    title: knobText('Title', 'Callout title from knob', props.callout_title, props.knobTab),
+    content: knobText('Content', randomSentence(), props.content, props.knobTab),
+    vertical_spacing: knobRadios(
       'Vertical spacing',
       {
         None: 'none',
@@ -33,9 +31,10 @@ export const Callout = (knobTab) => {
         Both: 'both',
       },
       'none',
-      generalKnobTab,
+      props.vertical_spacing,
+      props.knobTab,
     ),
-    links: randomLinks(number(
+    links: randomLinks(knobNumber(
       'Count of links',
       2,
       {
@@ -44,17 +43,18 @@ export const Callout = (knobTab) => {
         max: 10,
         step: 1,
       },
-      generalKnobTab,
+      props.count_of_links,
+      props.knobTab,
     )),
-    modifier_class: `story-wrapper-size--large ${text('Additional class', '', generalKnobTab)}`,
-    attributes: text('Additional attributes', '', generalKnobTab),
+    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  return CivicThemeCallout({
-    ...generalKnobs,
+  return shouldRender(props) ? CivicThemeCallout({
+    ...knobs,
     ...generateSlots([
       'content_top',
       'content_bottom',
     ]),
-  });
+  }) : knobs;
 };

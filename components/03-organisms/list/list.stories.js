@@ -1,27 +1,13 @@
-import {
-  boolean, number, radios, text,
-} from '@storybook/addon-knobs';
+import { convertDate, generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomFormElements, randomInt, randomName, randomSentence, randomString, randomTags, randomUrl, shouldRender } from '../../00-base/base.utils';
 
-import {
-  generateImage,
-  randomFormElements, randomInt, randomName, randomSentence, randomString, randomTags,
-  randomUrl,
-} from '../../00-base/base.utils';
-
-import CivicThemeGroupFilter
-  from '../../02-molecules/group-filter/group-filter.twig';
-import CivicThemeSingleFilter
-  from '../../02-molecules/single-filter/single-filter.twig';
+import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
+import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
 import CivicThemeItemGrid from '../../00-base/item-grid/item-grid.twig';
-import PromoCard
-  from '../../02-molecules/promo-card/promo-card.twig';
-import NavigationCard
-  from '../../02-molecules/navigation-card/navigation-card.twig';
-import Snippet
-  from '../../02-molecules/snippet/snippet.twig';
-import CivicThemePagination
-  from '../../02-molecules/pagination/pagination.twig';
+import PromoCard from '../../02-molecules/promo-card/promo-card.twig';
+import NavigationCard from '../../02-molecules/navigation-card/navigation-card.twig';
+import Snippet from '../../02-molecules/snippet/snippet.twig';
 import CivicThemeList from './list.twig';
+import { Pagination } from '../../02-molecules/pagination/pagination.stories';
 
 export default {
   title: 'Organisms/List',
@@ -30,42 +16,39 @@ export default {
   },
 };
 
-export const List = (knobTab) => {
-  const generalKnobTab = typeof knobTab === 'string' ? knobTab : 'General';
-  const filtersKnobTab = 'Filters';
-  const itemsKnobTab = 'List items';
-
-  const theme = radios(
-    'Theme',
-    {
-      Light: 'light',
-      Dark: 'dark',
-    },
-    'light',
-    generalKnobTab,
-  );
-
-  const generalKnobs = {
-    theme,
-    title: text('Title', 'List title', generalKnobTab),
+export const List = (props = {}) => {
+  const knobs = {
+    theme: knobRadios(
+      'Theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      'light',
+      props.theme,
+      props.knobTab,
+    ),
+    title: knobText('Title', 'List title', props.title, props.knobTab),
+    content: knobBoolean('With content', true, props.with_content, props.knobTab) ? randomSentence(50) : null,
   };
 
-  generalKnobs.content = boolean('With content', true, generalKnobTab) ? randomSentence(50) : null;
-  generalKnobs.link_above = boolean('With link above', true, generalKnobTab) ? {
-    text: text('Link above text', 'View more', generalKnobTab),
+  knobs.link_above = knobBoolean('With link above', true, props.with_link_above, props.knobTab) ? {
+    text: knobText('Link above text', 'View more', props.link_above_text, 'Content'),
     url: 'http://www.example.com',
     title: 'View more',
     is_new_window: false,
     is_external: false,
   } : null;
-  generalKnobs.link_below = boolean('With link below', true, generalKnobTab) ? {
-    text: text('Link below text', 'View more', generalKnobTab),
+
+  knobs.link_below = knobBoolean('With link below', true, props.with_link_below, props.knobTab) ? {
+    text: knobText('Link below text', 'View more', props.link_below_text, 'Content'),
     url: 'http://www.example.com',
     title: 'View more',
     is_new_window: false,
     is_external: false,
   } : null;
-  generalKnobs.vertical_spacing = radios(
+
+  knobs.vertical_spacing = knobRadios(
     'Vertical spacing',
     {
       None: 'none',
@@ -74,30 +57,36 @@ export const List = (knobTab) => {
       Both: 'both',
     },
     'none',
-    generalKnobTab,
+    props.vertical_spacing,
+    props.knobTab,
   );
-  generalKnobs.with_background = boolean('With background', false, generalKnobTab);
-  generalKnobs.modifier_class = text('Additional class', '', generalKnobTab);
 
-  const showFilters = boolean('Show filters', true, generalKnobTab);
-  const showItems = boolean('Show items', true, generalKnobTab);
-  const showPager = boolean('Show pager', true, generalKnobTab);
+  knobs.with_background = knobBoolean('With background', false, props.with_background, props.knobTab);
+
+  knobs.modifier_class = knobText('Additional class', '', props.modifier_class, props.knobTab);
+
+  const showFilters = knobBoolean('Show filters', true, props.show_filter, props.knobTab);
+  const showItems = knobBoolean('Show items', true, props.show_items, props.knobTab);
+  const showPager = knobBoolean('Show pager', true, props.show_pager, props.knobTab);
 
   let filtersCount = 0;
 
   // Build filters.
   if (showFilters) {
-    const filterType = radios(
+    const filtersKnobTab = 'Filters';
+
+    const filterType = knobRadios(
       'Filter type',
       {
         Single: 'single',
         Group: 'group',
       },
       'single',
+      props.filter_type,
       filtersKnobTab,
     );
 
-    filtersCount = number(
+    filtersCount = knobNumber(
       'Number of filters',
       3,
       {
@@ -106,6 +95,7 @@ export const List = (knobTab) => {
         max: 15,
         step: 1,
       },
+      props.number_of_filters,
       filtersKnobTab,
     );
 
@@ -116,81 +106,55 @@ export const List = (knobTab) => {
         for (let i = 0; i < filtersCount; i++) {
           items.push({
             text: `Filter ${i + 1}${randomString(3)}`,
-            name: generalKnobs.is_multiple ? name + (i + 1) : name,
+            name: knobs.is_multiple ? name + (i + 1) : name,
             attributes: `id="${name}_${randomName(3)}_${i + 1}"`,
           });
         }
       }
 
-      generalKnobs.filters = CivicThemeSingleFilter({
-        theme,
+      const filterKnobs = {
+        theme: knobs.theme,
         is_multiple: true,
         items,
-      });
+      };
+
+      knobs.filters = shouldRender(props) ? CivicThemeSingleFilter(filterKnobs) : filterKnobs;
     } else {
       const filters = [];
       if (filtersCount > 0) {
         for (let j = 0; j < filtersCount; j++) {
           filters.push({
-            content: randomFormElements(1, generalKnobs.theme, true)[0],
+            content: randomFormElements(1, knobs.theme, true)[0],
             title: `Filter ${randomString(randomInt(3, 8))} ${j + 1}`,
           });
         }
       }
 
-      generalKnobs.filters = CivicThemeGroupFilter({
-        theme,
+      const filterKnobs = {
+        theme: knobs.theme,
         title: 'Filter search results by:',
         filters,
-      });
+      };
+
+      knobs.filters = shouldRender(props) ? CivicThemeGroupFilter(filterKnobs) : filterKnobs;
     }
   }
 
   // Build pagination.
   if (showPager) {
-    const pageCount = 5;
-    const pages = {};
-    for (let i = 0; i < pageCount; i++) {
-      pages[i + 1] = {
-        href: randomUrl(),
-      };
-    }
-    generalKnobs.pager = CivicThemePagination({
-      theme,
+    const pagerKnobs = {
+      theme: knobs.theme,
       heading_id: 'ct-listing-demo',
-      items: {
-        previous: {
-          text: 'Previous',
-          href: randomUrl(),
-        },
-        pages,
-        next: {
-          text: 'Next',
-          href: randomUrl(),
-        },
-      },
-      ellipses: true,
-      current: 1,
-      items_per_page_options: [
-        {
-          type: 'option', label: 10, value: 10, selected: false,
-        },
-        {
-          type: 'option', label: 20, value: 20, selected: true,
-        },
-        {
-          type: 'option', label: 50, value: 50, selected: false,
-        },
-        {
-          type: 'option', label: 100, value: 100, selected: false,
-        },
-      ],
-    });
+    };
+
+    knobs.pager = shouldRender(props) ? Pagination({ ...pagerKnobs, ...{ knobTab: 'Pagination' } }) : pagerKnobs;
   }
 
   // Build items.
   if (showItems) {
-    const resultNumber = number(
+    const itemsKnobTab = 'List items';
+
+    const resultNumber = knobNumber(
       'Number of results',
       6,
       {
@@ -199,15 +163,16 @@ export const List = (knobTab) => {
         max: 48,
         step: 6,
       },
+      props.number_of_results,
       itemsKnobTab,
     );
 
     // Create markup for no results.
     if (resultNumber === 0) {
-      generalKnobs.empty = '<p>No results found</p>';
+      knobs.empty = '<p>No results found</p>';
     }
 
-    const viewItemAs = radios(
+    const viewItemAs = knobRadios(
       'Item type',
       {
         'Promo card': 'promo-card',
@@ -215,10 +180,11 @@ export const List = (knobTab) => {
         Snippet: 'snippet',
       },
       'promo-card',
+      props.item_type,
       itemsKnobTab,
     );
 
-    const itemsPerPage = number(
+    const itemsPerPage = knobNumber(
       'Items per page',
       6,
       {
@@ -227,21 +193,25 @@ export const List = (knobTab) => {
         max: 48,
         step: 6,
       },
+      props.items_per_page,
       itemsKnobTab,
     );
 
     if (resultNumber > 0) {
-      const itemTheme = radios(
+      const itemTheme = knobRadios(
         'Theme',
         {
           Light: 'light',
           Dark: 'dark',
         },
         'light',
+        props.item_theme,
         itemsKnobTab,
       );
-      const itemWithImage = boolean('With image', true, itemsKnobTab);
-      const itemTags = randomTags(number(
+
+      const itemWithImage = knobBoolean('With image', true, props.item_with_image, itemsKnobTab);
+
+      const itemTags = randomTags(knobNumber(
         'Number of tags',
         2,
         {
@@ -250,6 +220,7 @@ export const List = (knobTab) => {
           max: 10,
           step: 1,
         },
+        props.item_number_of_tags,
         itemsKnobTab,
       ), true);
 
@@ -278,11 +249,7 @@ export const List = (knobTab) => {
         const itemProps = {
           theme: itemTheme,
           title: `Title ${randomSentence(randomInt(1, 5))}`,
-          date: new Date().toLocaleDateString('en-uk', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          }),
+          date: convertDate(null),
           summary: `Summary ${randomSentence(randomInt(15, 25))}`,
           url: randomUrl(),
           image: itemWithImage ? {
@@ -296,22 +263,21 @@ export const List = (knobTab) => {
         items.push(itemComponentInstance(itemProps));
       }
 
-      generalKnobs.rows = CivicThemeItemGrid({
-        theme,
+      const itemsKnobs = {
+        theme: knobs.theme,
         items,
         column_count: columnCount,
         fill_width: false,
-        with_background: generalKnobs.with_background,
-      });
+        with_background: knobs.with_background,
+      };
 
-      generalKnobs.results_count = boolean('With result count', true, generalKnobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
-      generalKnobs.rows_above = boolean('With content above rows', true, generalKnobTab) ? `Example content above rows ${randomSentence(randomInt(10, 75))}` : null;
-      generalKnobs.rows_below = boolean('With content below rows', true, generalKnobTab) ? `Example content below rows${randomSentence(randomInt(10, 75))}` : null;
+      knobs.rows = shouldRender(props) ? CivicThemeItemGrid(itemsKnobs) : itemsKnobs;
+
+      knobs.results_count = knobBoolean('With result count', true, props.results_count, props.knobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
+      knobs.rows_above = knobBoolean('With content above rows', true, props.rows_above, props.knobTab) ? `Example content above rows ${randomSentence(randomInt(10, 75))}` : null;
+      knobs.rows_below = knobBoolean('With content below rows', true, props.rows_below, props.knobTab) ? `Example content below rows${randomSentence(randomInt(10, 75))}` : null;
     }
   }
 
-  return CivicThemeList({
-    theme,
-    ...generalKnobs,
-  });
+  return shouldRender(props) ? CivicThemeList(knobs) : knobs;
 };
