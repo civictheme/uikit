@@ -26,13 +26,16 @@ export const Banner = (props = {}) => {
   const knobs = {
     theme,
     title: knobText('Title', 'Providing visually engaging digital experiences', props.title, props.knobTab),
-    background_image: withBgImage ? BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.background_image, 'Background')] : null,
+    background_image: withBgImage ? {
+      url: BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], (props.background_image && props.background_image.url) || null, 'Background')],
+      alt: knobText('Alt text', 'Background image alt text', (props.background_image && props.background_image.alt) || null, 'Background'),
+    } : null,
     background_image_blend_mode: withBgImage ? knobSelect(
       'Blend mode',
       objectFromArray(SCSS_VARIABLES['ct-background-blend-modes']),
       SCSS_VARIABLES['ct-background-blend-modes'][0],
       props.blend_mode,
-      'Background Image',
+      'Background',
     ) : null,
     featured_image: knobBoolean('With featured image', true, props.with_featured_image, props.knobTab) ? {
       url: generateImage(0),
