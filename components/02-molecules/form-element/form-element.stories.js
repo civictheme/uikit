@@ -76,15 +76,16 @@ export const FormElement = (props = {}) => {
 
   const inputKnobs = {
     theme,
-    value: knobText('Value', 'Form element value', inputKnobTab),
-    placeholder: knobText('Placeholder', 'Form element placeholder', inputKnobTab),
+    value: knobText('Value', 'Form element value', null, inputKnobTab),
+    placeholder: knobText('Placeholder', 'Form element placeholder', null, inputKnobTab),
     state: knobRadios(
       'State',
       states,
       'default',
+      null,
       inputKnobTab,
     ),
-    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
     is_required: knobs.is_required,
   };
 
@@ -94,9 +95,10 @@ export const FormElement = (props = {}) => {
       'State',
       states,
       'default',
+      null,
       inputKnobTab,
     ),
-    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
     options: [
       { type: 'option', value: 'option1', label: 'Option 1' },
       { type: 'option', value: 'option2', label: 'Option 2' },
@@ -111,9 +113,10 @@ export const FormElement = (props = {}) => {
       'State',
       states,
       'default',
+      null,
       inputKnobTab,
     ),
-    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
     is_required: knobs.is_required,
   };
 
@@ -123,9 +126,10 @@ export const FormElement = (props = {}) => {
       'State',
       states,
       'default',
+      null,
       inputKnobTab,
     ),
-    disabled: knobBoolean('Disabled', false, inputKnobTab),
+    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
     is_required: knobs.is_required,
   };
 
