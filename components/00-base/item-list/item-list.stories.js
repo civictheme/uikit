@@ -5,6 +5,7 @@ export default {
   title: 'Base/Item List',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'large',
   },
 };
 
@@ -46,7 +47,7 @@ export const ItemList = (props = {}) => {
     ),
     long_placeholder_text: knobBoolean('Long placeholder text', false, props.long_placeholder_text, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
   knobs.items = generateItems(
     knobs.items_count,

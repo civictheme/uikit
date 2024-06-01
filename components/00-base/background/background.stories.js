@@ -4,6 +4,8 @@ export default {
   title: 'Base/Background',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'large',
+    wrapperClass: 'story-background-wrapper',
   },
 };
 
@@ -21,6 +23,6 @@ export const Background = (props = {}) => {
   };
 
   return shouldRender(props)
-    ? `<div class="story-background-wrapper story-wrapper-size--large ct-background ct-background--${knobs.blend_mode}" style="background-image: url('${BACKGROUNDS[knobs.url]}'); background-color: ${knobs.color}"></div>`
+    ? `<div class="ct-background ct-background--${knobs.blend_mode}" style="background-image: url('${BACKGROUNDS[knobs.url]}'); background-color: ${knobs.color}"></div>`
     : knobs;
 };

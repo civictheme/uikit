@@ -5,7 +5,7 @@
 */
 #}
 
-<div class="story-wrapper-size--large story-wrapper--centered example-container example-container--columns example-container--columns--2">
+<div class="example-container example-container--columns example-container--columns--2">
   {% for theme, theme_section in sections %}
     <div class="example-container__column example-container__column--{{ theme }}">
       {% for section_title, section_colors in theme_section %}
@@ -18,7 +18,7 @@
               <div class="example-container__subtitle">{{ section_name }}</div>
             {% endif %}
 
-            <div class="example-container__content story-colors-wrapper story-wrapper-size--large">
+            <div class="example-container__content story-colors-wrapper">
               {% for color_name, color in colors %}
                 <div class="story-color-{{ theme }}--{{ color_name }}">
                   <span class="story-color-element" title="{{ color_name }}"></span><span class="story-color-text" title="{{ color_name }}">{{ color_name|capitalize|replace({'-': ' '}) }}</span>

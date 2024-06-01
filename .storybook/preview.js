@@ -1,3 +1,5 @@
+import { decoratorStoryWrapper } from '../components/00-base/base.utils';
+
 require('twig');
 
 const storyOrder = [
@@ -91,3 +93,5 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [decoratorStoryWrapper];

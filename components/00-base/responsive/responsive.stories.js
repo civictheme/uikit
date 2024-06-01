@@ -4,6 +4,9 @@ import '../collapsible/collapsible';
 
 export default {
   title: 'Base/Responsive',
+  parameters: {
+    wrapperCenteredHorizontally: true,
+  },
 };
 
-export const Responsive = () => `<div class="story-wrapper--centered story-wrapper-size--medium">${CivicThemeResponsive()}</div>`;
+export const Responsive = () => CivicThemeResponsive();

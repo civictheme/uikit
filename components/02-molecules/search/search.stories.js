@@ -5,6 +5,7 @@ export default {
   title: 'Molecules/Search',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'large',
   },
 };
 
@@ -22,7 +23,7 @@ export const Search = (props = {}) => {
     ),
     text: knobText('Text', 'Search', props.text, props.knobTab),
     link: knobText('Search URL', '/search', props.link, props.knobTab),
-    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 

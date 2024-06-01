@@ -10,29 +10,55 @@
   font-family: sans-serif;
   padding: ct-spacing(2);
 
-  // Only apply wrappers used directly in preview, but not within other
-  // components.
-  > .story-wrapper-size--small {
-    max-width: map.get($ct-breakpoints, 'xs');
-  }
+  > .story-wrapper {
+    // Only apply wrappers used directly in preview, but not within other
+    // components.
+    &.story-wrapper-size--small {
+      max-width: map.get($ct-breakpoints, 'xs');
+    }
 
-  > .story-wrapper-size--medium {
-    max-width: map.get($ct-breakpoints, 's');
-  }
+    &.story-wrapper-size--medium {
+      max-width: map.get($ct-breakpoints, 's');
+    }
 
-  > .story-wrapper-size--large {
-    max-width: map.get($ct-breakpoints, 'xxl');
-  }
+    &.story-wrapper-size--large {
+      max-width: map.get($ct-breakpoints, 'xxl');
+    }
 
-  > .story-wrapper--centered {
-    margin-left: auto;
-    margin-right: auto;
-  }
+    &.story-wrapper--centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  > .story-wrapper--centered-both {
-    margin-top: 30vh;
-    margin-left: auto;
-    margin-right: auto;
+    &.story-wrapper--centered-both {
+      margin-top: 30vh;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.story-wrapper--resizable {
+      border: solid ct-particle(0.125) blue;
+      padding: ct-particle(8);
+      width: 85vw;
+      height: 95vh;
+      resize: horizontal;
+      overflow: auto;
+
+      &.story-wrapper-size--small {
+        max-width: initial;
+        width: rem(map.get($ct-breakpoints, 'xs')) + ct-spacing(8);
+      }
+
+      &.story-wrapper-size--medium {
+        max-width: initial;
+        width: rem(map.get($ct-breakpoints, 's')) + ct-spacing(8);
+      }
+
+      &.story-wrapper-size--large {
+        max-width: initial;
+        width: rem(map.get($ct-breakpoints, 'xxl')) + ct-spacing(8);
+      }
+    }
   }
 }
 

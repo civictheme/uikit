@@ -5,6 +5,7 @@ export default {
   title: 'Molecules/Subject Card',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'small',
   },
 };
 
@@ -30,7 +31,7 @@ export const SubjectCard = (props = {}) => {
       url: generateImage(),
       alt: 'Image alt text',
     } : false,
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
