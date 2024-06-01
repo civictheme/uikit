@@ -54,3 +54,8 @@ export const NavigationCard = (props = {}) => {
     ]),
   }) : combinedKnobs;
 };
+
+export const NavigationCardWide = (props = {}) => NavigationCard({ ...props,
+  ...{
+    modifier_class: 'story-wrapper-size--large',
+  } });
