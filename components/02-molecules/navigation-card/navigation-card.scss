@@ -23,17 +23,17 @@
   }
 
   #{$root}__image {
-    @include ct-image-fit();
+    @include ct-image-fit-container();
 
-    position: relative;
     height: $ct-navigation-card-image-height-mobile;
     width: auto;
     min-width: $ct-navigation-card-image-width-mobile;
 
     @include ct-breakpoint(m) {
-      width: $ct-navigation-card-image-width-desktop;
+      width: $ct-navigation-card-image-max-width-desktop;
+      min-width: $ct-navigation-card-image-min-width-desktop;
       height: auto;
-      min-height: $ct-navigation-card-image-height-desktop;
+      min-height: $ct-navigation-card-image-min-height-desktop;
       flex-shrink: 0;
     }
   }
