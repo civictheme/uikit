@@ -39,6 +39,21 @@
 }
 
 //
+// Fit image into a container.
+//
+@mixin ct-image-fit-container() {
+  @include ct-image-fit();
+
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+//
 // Fit image into a square container.
 //
 @mixin ct-image-container-square() {
