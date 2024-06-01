@@ -27,7 +27,5 @@ export const Flyout = (props = {}) => {
     duration: knobNumber('Duration (ms)', 500, undefined, props.duration, props.knobTab),
   };
 
-  return shouldRender(props)
-    ? `<div class="story-wrapper-size--medium">${CivicThemeFlyout(knobs)}</div>`
-    : knobs;
+  return shouldRender(props) ? CivicThemeFlyout(knobs) : knobs;
 };

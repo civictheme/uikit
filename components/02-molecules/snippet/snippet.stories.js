@@ -6,6 +6,7 @@ export default {
   title: 'Molecules/Snippet',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'large',
   },
 };
 
@@ -40,7 +41,7 @@ export const Snippet = (props = {}) => {
       props.number_of_tags,
       props.knobTab,
     ), true),
-    modifier_class: `story-wrapper-size--large ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 

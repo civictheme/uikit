@@ -6,6 +6,7 @@ export default {
   title: 'Molecules/Service Card',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'small',
   },
 };
 
@@ -34,7 +35,7 @@ export const ServiceCard = (props = {}) => {
       props.number_of_links,
       props.knobTab,
     ), 10),
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 

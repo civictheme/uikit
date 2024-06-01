@@ -1,5 +1,5 @@
 //
-// Centralised helpers for all storybook components.
+// Centralised utilities for all Storybook stories.
 //
 
 import { boolean, color, date as dateKnob, number, optionsKnob, radios, select, text } from '@storybook/addon-knobs';
@@ -534,4 +534,32 @@ export const knobDate = (name, value, parent, group = 'General') => {
     return dateKnob(name, parent.getValue(), group);
   }
   return parent;
+};
+
+// =============================================================================
+// DECORATORS
+// =============================================================================
+
+export const decoratorStoryWrapper = (content, context) => {
+  const shouldWrap = Object.keys(context.parameters).some((key) => key.startsWith('wrapper'));
+
+  if (!shouldWrap) {
+    return content();
+  }
+
+  const size = ['small', 'medium', 'large'].includes(context.parameters.wrapperSize) ? context.parameters.wrapperSize : 'medium';
+
+  let classes = [
+    'story-wrapper',
+    `story-wrapper-size--${size}`,
+    context.parameters.wrapperIsResizable ? 'story-wrapper--resizable' : '',
+    context.parameters.wrapperCenteredHorizontally || context.parameters.wrapperCentered ? 'story-wrapper--centered' : '',
+    context.parameters.wrapperCenteredVertically || context.parameters.wrapperCentered ? 'story-wrapper--centered-both' : '',
+  ].filter(Boolean).join(' ');
+
+  if (context.parameters.wrapperClass) {
+    classes += ` ${context.parameters.wrapperClass}`;
+  }
+
+  return `<div class="${classes}">${content()}</div>`;
 };

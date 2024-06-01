@@ -6,6 +6,7 @@ export default {
   title: 'Molecules/Event Card',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'small',
   },
 };
 
@@ -47,7 +48,7 @@ export const EventCard = (props = {}) => {
       props.number_of_tags,
       props.knobTab,
     ), true),
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 

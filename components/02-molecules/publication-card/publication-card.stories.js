@@ -5,6 +5,7 @@ export default {
   title: 'Molecules/Publication Card',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'medium',
   },
 };
 
@@ -37,7 +38,7 @@ export const PublicationCard = (props = {}) => {
       changed: date,
       icon: 'word-file',
     } : null,
-    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 

@@ -5,6 +5,7 @@ export default {
   title: 'Molecules/Navigation Card',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'medium',
   },
 };
 
@@ -32,7 +33,7 @@ export const NavigationCard = (props = {}) => {
       alt: 'Image alt text',
     } : null,
     image_as_icon: knobBoolean('Image as icon', false, props.image_as_icon, props.knobTab),
-    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
@@ -54,8 +55,3 @@ export const NavigationCard = (props = {}) => {
     ]),
   }) : combinedKnobs;
 };
-
-export const NavigationCardWide = (props = {}) => NavigationCard({ ...props,
-  ...{
-    modifier_class: 'story-wrapper-size--large',
-  } });

@@ -5,6 +5,8 @@ export default {
   title: 'Base/Fonts',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'large',
+    wrapperCenteredHorizontally: true,
   },
 };
 
@@ -32,5 +34,5 @@ export const Fonts = () => {
     html += `</div>`;
   }
 
-  return `<div class="story-fonts-wrapper story-wrapper-size--large">${html}</div>`;
+  return html;
 };

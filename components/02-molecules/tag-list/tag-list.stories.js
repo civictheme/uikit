@@ -6,6 +6,7 @@ export default {
   title: 'Molecules/Tag List',
   parameters: {
     layout: 'centered',
+    wrapperSize: 'small',
   },
 };
 
@@ -45,7 +46,7 @@ export const TagList = (props = {}) => {
       props.vertical_spacing,
       props.knobTab,
     ),
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
