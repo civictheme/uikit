@@ -209,6 +209,19 @@ export const List = (props = {}) => {
         itemsKnobTab,
       );
 
+      const columnCount = knobNumber(
+        'Number of columns',
+        3,
+        {
+          range: true,
+          min: 1,
+          max: 4,
+          step: 1,
+        },
+        null,
+        itemsKnobTab,
+      );
+
       const itemWithImage = knobBoolean('With image', true, props.item_with_image, itemsKnobTab);
 
       const itemTags = randomTags(knobNumber(
@@ -225,19 +238,15 @@ export const List = (props = {}) => {
       ), true);
 
       let itemComponentInstance;
-      let columnCount;
       switch (viewItemAs) {
         case 'promo-card':
           itemComponentInstance = PromoCard;
-          columnCount = 3;
           break;
         case 'navigation-card':
           itemComponentInstance = NavigationCard;
-          columnCount = 2;
           break;
         case 'snippet':
           itemComponentInstance = Snippet;
-          columnCount = 1;
           break;
         default:
           itemComponentInstance = PromoCard;
