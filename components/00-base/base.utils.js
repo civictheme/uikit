@@ -552,9 +552,10 @@ export const decoratorStoryWrapper = (content, context) => {
   let classes = [
     'story-wrapper',
     `story-wrapper-size--${size}`,
-    context.parameters.wrapperIsResizable ? 'story-wrapper--resizable' : '',
     context.parameters.wrapperCenteredHorizontally || context.parameters.wrapperCentered ? 'story-wrapper--centered' : '',
     context.parameters.wrapperCenteredVertically || context.parameters.wrapperCentered ? 'story-wrapper--centered-both' : '',
+    context.parameters.wrapperIsContainer ? 'story-wrapper--container' : '',
+    context.parameters.wrapperIsResizable && (context.globals.resizer || false) ? 'story-wrapper--resizable' : '',
   ].filter(Boolean).join(' ');
 
   if (context.parameters.wrapperClass) {

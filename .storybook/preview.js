@@ -95,3 +95,18 @@ export const parameters = {
 };
 
 export const decorators = [decoratorStoryWrapper];
+
+export const globalTypes = {
+  resizer: {
+    name: 'Resizer',
+    description: 'Resize component wrapper',
+    defaultValue: false,
+    toolbar: {
+      icon: 'component',
+      items: [
+        { value: true, title: 'Enabled', type: 'item' },
+        { value: false, title: 'Disabled', type: 'reset' },
+      ],
+    },
+  },
+};
