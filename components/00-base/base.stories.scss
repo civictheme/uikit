@@ -37,13 +37,20 @@
     }
 
     &.story-wrapper--resizable {
-      border: solid ct-particle(0.125) blue;
-      padding: ct-particle(8);
+      border: solid ct-particle(0.125) yellowgreen;
+      padding: ct-particle(2);
       width: 85vw;
       height: 95vh;
       resize: horizontal;
       overflow: auto;
+    }
 
+    &.story-wrapper--container {
+      container-type: inline-size;
+    }
+
+    &.story-wrapper--resizable,
+    &.story-wrapper--container {
       &.story-wrapper-size--small {
         max-width: initial;
         width: rem(map.get($ct-breakpoints, 'xs')) + ct-spacing(8);
