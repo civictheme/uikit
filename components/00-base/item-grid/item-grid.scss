@@ -19,5 +19,6 @@
   &__item {
     display: flex;
     margin-bottom: ct-spacing(3);
+    container-type: inline-size;
   }
 }

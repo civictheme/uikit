@@ -561,6 +561,7 @@ $ct-navigation-card-image-width-mobile: auto !default;
 $ct-navigation-card-image-min-height-desktop: ct-particle(32) !default;
 $ct-navigation-card-image-min-width-desktop: ct-particle(36) !default;
 $ct-navigation-card-image-max-width-desktop: 30% !default;
+$ct-navigation-card-orientation-threshold: $ct-navigation-card-image-min-width-desktop * 2 !default;
 $ct-navigation-card-light-background-color: ct-color-light('background-light') !default;
 $ct-navigation-card-light-icon-color: $ct-link-light-color !default;
 $ct-navigation-card-dark-background-color: ct-color-dark('background') !default;

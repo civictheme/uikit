@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
 
-  @include ct-breakpoint(m) {
+  @container (min-width: #{$ct-navigation-card-orientation-threshold}) {
     flex-direction: row;
   }
 
@@ -29,7 +29,7 @@
     width: auto;
     min-width: $ct-navigation-card-image-width-mobile;
 
-    @include ct-breakpoint(m) {
+    @container (min-width: #{$ct-navigation-card-orientation-threshold}) {
       width: $ct-navigation-card-image-max-width-desktop;
       min-width: $ct-navigation-card-image-min-width-desktop;
       height: auto;
