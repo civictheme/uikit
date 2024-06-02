@@ -1,4 +1,4 @@
-import { convertDate, generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomFormElements, randomInt, randomName, randomSentence, randomString, randomTags, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { convertDate, generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomFormElements, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
@@ -283,8 +283,8 @@ export const List = (props = {}) => {
       knobs.rows = shouldRender(props) ? CivicThemeItemGrid(itemsKnobs) : itemsKnobs;
 
       knobs.results_count = knobBoolean('With result count', true, props.results_count, props.knobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
-      knobs.rows_above = knobBoolean('With content above rows', true, props.rows_above, props.knobTab) ? `Example content above rows ${randomSentence(randomInt(10, 75))}` : null;
-      knobs.rows_below = knobBoolean('With content below rows', true, props.rows_below, props.knobTab) ? `Example content below rows${randomSentence(randomInt(10, 75))}` : null;
+      knobs.rows_above = knobBoolean('With content above rows', true, props.rows_above, props.knobTab) ? `Example content above rows ${randomText(randomInt(10, 75))}` : null;
+      knobs.rows_below = knobBoolean('With content below rows', true, props.rows_below, props.knobTab) ? `Example content below rows ${randomText(randomInt(10, 75))}` : null;
     }
   }
 
