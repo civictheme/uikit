@@ -129,4 +129,24 @@
       margin-left: ct-spacing(2);
     }
   }
+
+  &.ct-theme-light {
+    &.active {
+      &:hover {
+        background-color: $ct-chip-light-selected-hover-background-color;
+        border-color: $ct-chip-light-selected-hover-border-color;
+        color: $ct-chip-light-selected-hover-color;
+      }
+    }
+  }
+
+  &.ct-theme-dark {
+    &.active {
+      &:hover {
+        background-color: $ct-chip-dark-selected-hover-background-color;
+        border-color: $ct-chip-dark-selected-hover-border-color;
+        color: $ct-chip-dark-selected-hover-color;
+      }
+    }
+  }
 }
