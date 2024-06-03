@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Grid component.
+ *
+ * Variables:
+ * - use_container: [boolean] Whether to use container or not.
+ * - row_element: [string] Row element.
+ * - column_element: [string] Column element.
+ * - row_class: [string] Optional row class override. Deffaults to 'row'.
+ * - column_class: [string] Optional column class override. Defaults to 'col'.
+ * - items: [array] Array of column items.
+ * - column_count: [number] Number of columns in the row. If 0, the column width
+ *   will be calculated automatically.
+ * - fill_width: [boolean] Stretch "hanging" items to the full width of
+ *   container or not.
+ * - attributes: [string] Additional attributes.
+ * - modifier_class: [string] Additional classes.
+ */
+#}
+
+{% set use_container = use_container|default(true) %}
+{% set row_element = row_element|default('div') %}
+{% set column_element = column_element|default('div') %}
+{% set column_count = column_count|default(0) %}
+{% set row_class = row_class|default('row') %}
+{% set column_class = column_class|default('col') %}
+{% set fill_width_class = fill_width|default(false) ? 'container--fill-width' : '' %}
+{% set modifier_class = '%s %s'|format(fill_width_class, modifier_class|default('')) %}
+
+{% if column_count > 0 %}
+	{% set column_count = column_count in [1, 2, 3, 4, 6, 12] ? column_count : 12 %}
+	{% set column_class = 'col-xxs-12 col-m-%s'|format(12 // column_count) %}
+{% endif %}
+
+{% if items is not empty %}
+	{% if use_container %}
+	<div class="container {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %} aria-live="polite">
+	{% endif %}
+		<{{ row_element }} class="{{ row_class }}">
+			{% for item in items %}
+				{% if item is not empty %}
+					<{{ column_element }} class="{{ column_class }}">
+						{{ item }}
+					</{{ column_element }}>
+				{% endif %}
+			{% endfor %}
+    </{{ row_element }}>
+	{% if use_container %}
+	</div>
+	{% endif %}
+{% endif %}

@@ -44,6 +44,12 @@
   }
 }
 
+.col,
+[class*='col-'] {
+  margin-bottom: ct-spacing(3);
+  container-type: inline-size;
+}
+
 .first {
   order: -1;
 }
@@ -87,6 +93,13 @@
 // Container class should wrap every row.
 .container {
   @include ct-container();
+
+  &--fill-width {
+    [class*='col-'] {
+      max-width: 100%;
+      flex-grow: 1;
+    }
+  }
 }
 
 //
@@ -116,7 +129,13 @@
 }
 
 .col-no-gap {
-  padding: 0;
+  &:not(:first-child) {
+    padding-left: 0;
+  }
+
+  &:not(:last-child) {
+    padding-right: 0;
+  }
 }
 
 .ct-justify-content-start {

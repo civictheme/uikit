@@ -2,7 +2,7 @@ import { convertDate, generateImage, knobBoolean, knobNumber, knobRadios, knobTe
 
 import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
-import CivicThemeItemGrid from '../../00-base/item-grid/item-grid.twig';
+import CivicThemeGrid from '../../00-base/grid/grid.twig';
 import PromoCard from '../../02-molecules/promo-card/promo-card.twig';
 import NavigationCard from '../../02-molecules/navigation-card/navigation-card.twig';
 import Snippet from '../../02-molecules/snippet/snippet.twig';
@@ -280,7 +280,7 @@ export const List = (props = {}) => {
         with_background: knobs.with_background,
       };
 
-      knobs.rows = shouldRender(props) ? CivicThemeItemGrid(itemsKnobs) : itemsKnobs;
+      knobs.rows = shouldRender(props) ? CivicThemeGrid(itemsKnobs) : itemsKnobs;
 
       knobs.results_count = knobBoolean('With result count', true, props.results_count, props.knobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
       knobs.rows_above = knobBoolean('With content above rows', true, props.rows_above, props.knobTab) ? `Example content above rows ${randomText(randomInt(10, 75))}` : null;
