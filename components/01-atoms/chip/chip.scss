@@ -55,6 +55,12 @@
           'border-color': $ct-chip-light-selected-border-color,
           'outline-color': false,
         ),
+        'active-hover': (
+          'color': $ct-chip-light-selected-hover-color,
+          'background-color': $ct-chip-light-selected-hover-background-color,
+          'border-color': $ct-chip-light-selected-hover-border-color,
+          'outline-color': false,
+        ),
         'visited': (
           'color': $ct-chip-light-selected-color,
           'background-color': $ct-chip-light-selected-background-color,
@@ -92,6 +98,12 @@
           'border-color': $ct-chip-dark-selected-border-color,
           'outline-color': false,
         ),
+        'active-hover': (
+          'color': $ct-chip-dark-selected-hover-color,
+          'background-color': $ct-chip-dark-selected-hover-background-color,
+          'border-color': $ct-chip-dark-selected-hover-border-color,
+          'outline-color': false,
+        ),
         'visited': (
           'color': $ct-chip-dark-selected-color,
           'background-color': $ct-chip-dark-selected-background-color,
@@ -127,26 +139,6 @@
 
     &__dismiss {
       margin-left: ct-spacing(2);
-    }
-  }
-
-  &.ct-theme-light {
-    &.active {
-      &:hover {
-        background-color: $ct-chip-light-selected-hover-background-color;
-        border-color: $ct-chip-light-selected-hover-border-color;
-        color: $ct-chip-light-selected-hover-color;
-      }
-    }
-  }
-
-  &.ct-theme-dark {
-    &.active {
-      &:hover {
-        background-color: $ct-chip-dark-selected-hover-background-color;
-        border-color: $ct-chip-dark-selected-hover-border-color;
-        color: $ct-chip-dark-selected-hover-color;
-      }
     }
   }
 }
