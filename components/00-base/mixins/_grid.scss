@@ -18,6 +18,8 @@
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-inline-start: 0;
+  list-style: none;
 
   @include _ct-print-all-gutters($gutters, margin, -1);
 }

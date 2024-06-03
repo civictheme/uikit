@@ -262,7 +262,11 @@ export const generateSlots = (names) => {
 export const generateItems = (count, content) => {
   const items = [];
   for (let i = 1; i <= count; i++) {
-    items.push(content);
+    if (typeof content === 'function') {
+      items.push(content(i));
+    } else {
+      items.push(content);
+    }
   }
   return items;
 };
