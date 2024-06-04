@@ -16,6 +16,7 @@
  * - rail_bottom_right: Bottom right rail slot.
  * - rail_bottom_right_attributes: Bottom right rail attributes.
  * - content_bottom: Content bottom slot.
+ * - is_contained: Whether the page is to be contained.
  * - vertical_spacing: [string] With top, bottom or both vertical spaces.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
@@ -26,9 +27,10 @@
 {% set no_tr_class = rail_top_right is empty ? 'ct-layout--no-top-right' : '' %}
 {% set no_bl_class = rail_bottom_left is empty ? 'ct-layout--no-bottom-left' : '' %}
 {% set no_br_class = rail_bottom_right is empty ? 'ct-layout--no-bottom-right' : '' %}
-{% set vertical_spacing = vertical_spacing != "both" and (rail_top_left or rail_top_right or rail_bottom_left or rail_bottom_right) ? 'top' : vertical_spacing %}
+{% set is_contained = is_contained|default(true) %}
+{% set is_contained_class = is_contained ? 'container' : '' %}
 {% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing--%s'|format(vertical_spacing) : '' %}
-{% set modifier_class = '%s %s %s %s %s %s'|format(no_tl_class, no_tr_class, no_bl_class, no_br_class, vertical_spacing_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s %s %s'|format(no_tl_class, no_tr_class, no_bl_class, no_br_class, is_contained_class, vertical_spacing_class, modifier_class|default('')) %}
 {% set modifier_class = modifier_class|trim %}
 
 {% if content or content_top or rail_top_left or rail_top_right or rail_bottom_left or rail_bottom_right or content_bottom %}
@@ -58,7 +60,7 @@
 
 			{% if rail_top_right is not empty %}
 				{% block rail_top_right %}
-				<aside class="ct-layout__rail_top_right" {% if rail_top_right_attributes is not empty %}{{ rail_top_right_attributes|raw }}{% endif %}>
+					<aside class="ct-layout__rail_top_right" {% if rail_top_right_attributes is not empty %}{{ rail_top_right_attributes|raw }}{% endif %}>
 						{{ rail_top_right }}
 					</aside>
 				{% endblock %}
