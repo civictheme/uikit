@@ -139,7 +139,7 @@ export const randomField = (inputType, options, theme, rand, itr) => {
     description: {
       content: options.description ? `Input description ${itr + 1}${rand ? ` ${randomText(randomInt(4, 10))}` : ''}` : '',
     },
-    children: [],
+    control: [],
     attributes: options.form_element_attributes,
   };
   let attributes = `id="form-element-${itr}"`;
@@ -157,19 +157,19 @@ export const randomField = (inputType, options, theme, rand, itr) => {
 
   switch (inputType) {
     case 'radio':
-      FieldOptions.children.push(CivicThemeRadio(inputOptions));
+      FieldOptions.control.push(CivicThemeRadio(inputOptions));
       break;
     case 'checkbox':
-      FieldOptions.children.push(CivicThemeCheckbox(inputOptions));
+      FieldOptions.control.push(CivicThemeCheckbox(inputOptions));
       break;
     case 'select':
-      FieldOptions.children.push(CivicThemeSelect({
+      FieldOptions.control.push(CivicThemeSelect({
         ...inputOptions,
         options: inputOptions.value,
       }));
       break;
     default:
-      FieldOptions.children.push(CivicThemeInput(inputOptions));
+      FieldOptions.control.push(CivicThemeInput(inputOptions));
   }
 
   return CivicThemeField(FieldOptions);
