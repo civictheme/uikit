@@ -861,6 +861,8 @@ $ct-layout-columns: $ct-grid-columns;
 $ct-layout-rail-left-columns: 3;
 $ct-layout-rail-right-columns: 3;
 $ct-layout-column-gap: ct-spacing(2);
+$ct-layout-column-gap-left-only: $ct-layout-column-gap;
+$ct-layout-column-gap-right-only: $ct-layout-column-gap;
 
 //
 // Form/Fieldset.

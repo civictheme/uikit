@@ -10,6 +10,14 @@
     grid-template-columns: repeat($ct-layout-columns, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: $ct-layout-column-gap;
+
+    #{$root}--no-top-left#{$root}--no-bottom-left & {
+      grid-column-gap: $ct-layout-column-gap-right-only;
+    }
+
+    #{$root}--no-top-right#{$root}--no-bottom-right & {
+      grid-column-gap: $ct-layout-column-gap-left-only;
+    }
   }
 
   &__rail_top_left,
