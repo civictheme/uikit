@@ -90,5 +90,4 @@ export const Field = (props = {}) => {
   }
 
   return shouldRender(props) ? CivicThemeField(knobs) : knobs;
-
 };
