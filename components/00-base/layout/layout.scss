@@ -13,12 +13,17 @@ $ct-cssgrid-rows: 5;
 $ct-cssgrid-gap: ct-spacing(3);
 
 @mixin ct-cssgrid($breakpoint: null, $cols: $ct-cssgrid-columns, $rows: $ct-cssgrid-rows) {
+  $suffix: '';
+  @if $breakpoint {
+    $suffix: '-' + $breakpoint;
+  }
+
   @if $cols <= $ct-cssgrid-columns and $cols >= 1 {
     @if $rows <= $ct-cssgrid-rows and $rows >= 1 {
       // Loop through rows and columns to generate grid classes.
       @for $col from 1 through $cols {
         @for $row from 1 through $rows {
-          .g-#{$col}-#{$row} {
+          .grid#{$suffix}-#{$col}-#{$row} {
             display: grid;
             grid-template-columns: repeat(#{$col}, 1fr);
             grid-template-rows: repeat(#{$row}, auto);
@@ -27,12 +32,10 @@ $ct-cssgrid-gap: ct-spacing(3);
           }
         }
       }
-    }
-    @else {
+    } @else {
       @warn 'Invalid number of rows specified for ct-cssgrid-X. Please provide a value between 1 and #{$ct-cssgrid-rows}.';
     }
-  }
-  @else {
+  } @else {
     @warn 'Invalid number of columns specified for ct-cssgrid-Y. Please provide a value between 1 and #{$ct-cssgrid-columns}.';
   }
 }
@@ -43,7 +46,6 @@ $ct-cssgrid-gap: ct-spacing(3);
   }
 
   $suffix: '';
-
   @if $breakpoint {
     $suffix: '-' + $breakpoint;
   }
@@ -60,13 +62,31 @@ $ct-cssgrid-gap: ct-spacing(3);
   }
 }
 
+@mixin ct-cssgrid-gap($breakpoint: null, $gap: $ct-cssgrid-gap) {
+  $suffix: '';
+  @if $breakpoint {
+    $suffix: '-' + $breakpoint;
+  }
+
+  .g-gap#{$suffix} {
+    grid-gap: $gap;
+  }
+
+  .g-gap#{$suffix}-row {
+    grid-row-gap: $gap;
+  }
+
+  .g-gap#{$suffix}-col {
+    grid-column-gap: $gap;
+  }
+}
+
 @mixin ct-cssgrid-row($breakpoint: null, $rows: $ct-cssgrid-rows) {
   @if $rows > $ct-cssgrid-rows and $rows < 1 {
     @warn 'Invalid number of rows specified for ct-cssgrid-X. Please provide a value between 1 and #{$ct-cssgrid-rows}.';
   }
 
   $suffix: '';
-
   @if $breakpoint {
     $suffix: '-' + $breakpoint;
   }
@@ -83,25 +103,19 @@ $ct-cssgrid-gap: ct-spacing(3);
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-rows: repeat($ct-cssgrid-rows, 1fr);
-  grid-template-columns: repeat($ct-cssgrid-columns, 1fr);
-  gap: $ct-cssgrid-gap;
-}
-
 // Generate column classes.
 @each $breakpoint, $value in $ct-breakpoints {
   @if $breakpoint == $ct-grid-lowest-breakpoint {
+    @include ct-cssgrid();
     @include ct-cssgrid-col();
     @include ct-cssgrid-row();
-    @include ct-cssgrid();
-  }
-  @else {
+    @include ct-cssgrid-gap();
+  } @else {
     @include ct-breakpoint($breakpoint) {
+      @include ct-cssgrid($breakpoint);
       @include ct-cssgrid-col($breakpoint);
       @include ct-cssgrid-row($breakpoint);
-      @include ct-cssgrid($breakpoint);
+      @include ct-cssgrid-gap($breakpoint);
     }
   }
 }
