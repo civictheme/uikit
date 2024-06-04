@@ -51,15 +51,20 @@
 
   {% block content %}
     {% include '@base/layout/layout.twig' with {
-      content: content,
       content_top: content_top,
-      content_bottom: content_bottom,
-      sidebar: sidebar,
-      hide_sidebar: hide_sidebar,
-      is_contained: content_contained,
-      vertical_spacing: vertical_spacing,
-      sidebar_attributes: sidebar_attributes,
+      rail_top_left: null,
+      rail_top_left_attributes: null,
+      rail_top_right: null,
+      rail_top_right_attributes: null,
+      content: content,
       content_attributes: content_attributes,
+      rail_bottom_left: sidebar,
+      rail_bottom_left_attributes: sidebar_attributes,
+      rail_bottom_right: null,
+      rail_bottom_right_attributes: null,
+      is_contained: content_contained,
+      content_bottom: content_bottom,
+      vertical_spacing: vertical_spacing,
     } only %}
   {% endblock %}
 
