@@ -252,7 +252,7 @@ export const generateSlots = (names) => {
 
   if (showSlots) {
     for (const i in names) {
-      obj[names[i]] = `<div class="story-slot story-slot--${names[i]}">{{ ${names[i]} }}</div>`;
+      obj[names[i]] = `<div class="story-slot story-slot--${names[i]}"><code>{{ ${names[i]} }}</code></div>`;
     }
   }
 

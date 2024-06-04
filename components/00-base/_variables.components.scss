@@ -857,8 +857,13 @@ $ct-banner-dark-featured-image-shadow-color: ct-color-dark('background') !defaul
 //
 // Layout.
 //
-$ct-layout-light-background-color: inherit !default;
-$ct-layout-dark-background-color: inherit !default;
+$ct-layout-columns: $ct-grid-columns;
+$ct-layout-rail-left-columns: 3;
+$ct-layout-rail-right-columns: 3;
+$ct-layout-column-gap: ct-spacing(2);
+$ct-layout-column-gap-left-only: $ct-layout-column-gap;
+$ct-layout-column-gap-right-only: $ct-layout-column-gap;
+$ct-layout-breakpoint: l;
 
 //
 // Form/Fieldset.

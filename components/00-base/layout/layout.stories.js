@@ -1,6 +1,4 @@
 import CivicThemeLayout from './layout.twig';
-import CivicThemeLayoutSingleColumn from './content-layout--single-column.twig';
-import CivicThemeLayoutSingleColumnContained from './content-layout--single-column-contained.twig';
 import { generateSlots, knobBoolean, knobRadios, knobText, placeholder, shouldRender } from '../base.utils';
 
 export default {
@@ -12,29 +10,12 @@ export default {
 
 export const Layout = (props = {}) => {
   const knobs = {
-    theme: knobRadios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      'light',
-      props.theme,
-      props.knobTab,
-    ),
-    content: knobBoolean('Show content', true, props.show_content, props.knobTab) ? placeholder('Content placeholder') : '',
-    sidebar: knobBoolean('Show sidebar', false, props.show_sidebar, props.knobTab) ? placeholder('Sidebar placeholder') : '',
+    rail_top_left: knobBoolean('Show top left rail', true, props.rail_top_left, props.knobTab) ? placeholder('Top left rail') : '',
+    rail_bottom_left: knobBoolean('Show bottom left rail', true, props.rail_bottom_left, props.knobTab) ? placeholder('Bottom left rail') : '',
+    content: knobBoolean('Show content', true, props.content, props.knobTab) ? placeholder('Content') : '',
+    rail_top_right: knobBoolean('Show top right rail', true, props.rail_top_right, props.knobTab) ? placeholder('Top right rail') : '',
+    rail_bottom_right: knobBoolean('Show bottom right rail', true, props.rail_bottom_right, props.knobTab) ? placeholder('Bottom right rail') : '',
     is_contained: knobBoolean('Is contained', false, props.is_contained, props.knobTab),
-    layout: knobRadios(
-      'Layout',
-      {
-        'Single Column': 'single_column',
-        'Single Column Contained': 'single_column_contained',
-      },
-      'single_column',
-      props.layout,
-      props.knobTab,
-    ),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -47,29 +28,15 @@ export const Layout = (props = {}) => {
       props.vertical_spacing,
       props.knobTab,
     ),
-    content_attributes: knobText('Content attributes', '', props.content_attributes, props.knobTab),
-    sidebar_attributes: knobText('Sidebar attributes', '', props.sidebar_attributes, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  if (knobs.content) {
-    switch (knobs.layout) {
-      case 'single_column':
-        knobs.content = CivicThemeLayoutSingleColumn({
-          content: knobs.content,
-        });
-        break;
-
-      case 'single_column_contained':
-        knobs.content = CivicThemeLayoutSingleColumnContained({
-          content: knobs.content,
-        });
-        break;
-
-      default:
-        knobs.content = '';
-    }
-  }
+  const attributesTab = 'Attributes';
+  knobs.content_attributes = knobs.content ? knobText('Content attributes', '', props.content_attributes, attributesTab) : '';
+  knobs.rail_top_left_attributes = knobs.rail_top_left ? knobText('Top left rail attributes', '', props.rail_top_left_attributes, attributesTab) : '';
+  knobs.rail_top_right_attributes = knobs.rail_top_right ? knobText('Top right rail attributes', '', props.rail_top_right_attributes, attributesTab) : '';
+  knobs.rail_bottom_left_attributes = knobs.rail_bottom_left ? knobText('Bottom left rail attributes', '', props.rail_bottom_left_attributes, attributesTab) : '';
+  knobs.rail_bottom_right_attributes = knobs.rail_bottom_right ? knobText('Bottom right rail attributes', '', props.rail_bottom_right_attributes, attributesTab) : '';
+  knobs.modifier_class = knobText('Additional class', '', props.modifier_class, props.knobTab);
 
   return shouldRender(props)
     ? CivicThemeLayout({

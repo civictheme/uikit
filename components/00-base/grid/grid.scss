@@ -45,7 +45,7 @@
 }
 
 .col,
-[class*='col-'] {
+[class^='col-'] {
   margin-bottom: ct-spacing(3);
   container-type: inline-size;
 }
