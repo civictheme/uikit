@@ -1,173 +1,94 @@
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 import CivicThemeField from './field.twig';
-import Input from '../../01-atoms/input/input.twig';
-import Select from '../../01-atoms/select/select.twig';
-import { knobBoolean, knobRadios, knobText, randomName, shouldRender } from '../../00-base/base.utils';
-import { Radio } from '../../01-atoms/radio/radio.stories';
+import { Select } from '../../01-atoms/select/select.stories';
+import { Textfield } from '../../01-atoms/textfield/textfield.stories';
+import { Textarea } from '../../01-atoms/textarea/textarea.stories';
 import { Checkbox } from '../../01-atoms/checkbox/checkbox.stories';
 
 export default {
   title: 'Molecules/Field',
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export const Field = (props = {}) => {
-  const inputKnobTab = 'Input';
-
-  const theme = knobRadios(
-    'Theme',
-    {
-      Light: 'light',
-      Dark: 'dark',
-    },
-    'light',
-    props.knobTab,
-  );
-
-  const inputType = knobRadios(
-    'Type',
-    {
-      Text: 'text',
-      Textarea: 'textarea',
-      Email: 'email',
-      Tel: 'tel',
-      Password: 'password',
-      Select: 'select',
-      Radio: 'radio',
-      Checkbox: 'checkbox',
-    },
-    'text',
-    props.knobTab,
-  );
-
   const knobs = {
-    theme,
-    label: knobText('Label', 'Label for input', props.knobTab),
-    label_display: knobRadios(
-      'Label display',
+    theme: knobRadios(
+      'Theme',
       {
-        Before: 'before',
-        After: 'after',
-        Invisible: 'invisible',
+        Light: 'light',
+        Dark: 'dark',
       },
-      'before',
+      'light',
+      props.theme,
       props.knobTab,
     ),
-    description: knobText('Description', 'Example input description', props.knobTab),
-    description_display: knobRadios(
-      'Description display',
+    type: knobRadios(
+      'Type',
       {
-        Before: 'before',
-        After: 'after',
-        Invisible: 'invisible',
+        Textfield: 'textfield',
+        Textarea: 'textarea',
+        Select: 'select',
+        Checkbox: 'checkbox',
+        Hidden: 'hidden',
+        Other: 'other',
       },
-      'after',
+      'textfield',
+      props.type,
       props.knobTab,
     ),
-    errors: knobBoolean('With error', false, props.knobTab) ? 'Sample error message' : false,
-    is_required: knobBoolean('Required', false, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
-  };
-
-  const states = {
-    None: 'default',
-    Error: 'error',
-    Success: 'success',
-  };
-
-  const inputKnobs = {
-    theme,
-    value: knobText('Value', 'Field value', null, inputKnobTab),
-    placeholder: knobText('Placeholder', 'Form element placeholder', null, inputKnobTab),
-    state: knobRadios(
-      'State',
-      states,
-      'default',
-      null,
-      inputKnobTab,
+    direction: knobRadios(
+      'Direction',
+      {
+        Horizontal: 'horizontal',
+        Vertical: 'vertical',
+      },
+      'vertical',
+      props.direction,
+      props.knobTab,
     ),
-    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
-    is_required: knobs.is_required,
-  };
-
-  const selectKnobs = {
-    theme,
-    state: knobRadios(
-      'State',
-      states,
-      'default',
-      null,
-      inputKnobTab,
+    control_direction: knobRadios(
+      'Control direction (for group controls)',
+      {
+        Horizontal: 'horizontal',
+        Vertical: 'vertical',
+      },
+      'vertical',
+      props.control_direction,
+      props.knobTab,
     ),
-    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
-    options: [
-      { type: 'option', value: 'option1', label: 'Option 1' },
-      { type: 'option', value: 'option2', label: 'Option 2' },
-      { type: 'option', value: 'option3', label: 'Option 3' },
-      { type: 'option', value: 'option4', label: 'Option 4' },
-    ],
+    label: knobText('Label', 'Field label', props.label, props.knobTab),
+    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', props.description, props.knobTab),
+    is_required: knobBoolean('Required', false, props.is_required, props.knobTab),
+    is_disabled: knobBoolean('Disabled', false, props.is_disabled, props.knobTab),
+    is_invalid: knobBoolean('Invalid', false, props.is_invalid, props.knobTab),
+    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', props.message, props.knobTab),
+    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
-  const radioKnobs = {
-    theme,
-    state: knobRadios(
-      'State',
-      states,
-      'default',
-      null,
-      inputKnobTab,
-    ),
-    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
-    is_required: knobs.is_required,
-  };
-
-  const checkboxKnobs = {
-    theme,
-    state: knobRadios(
-      'State',
-      states,
-      'default',
-      null,
-      inputKnobTab,
-    ),
-    disabled: knobBoolean('Disabled', false, null, inputKnobTab),
-    is_required: knobs.is_required,
-  };
-
-  const children = [];
-
-  switch (inputType) {
-    case 'radio':
-      children.push(Radio({
-        type: inputType,
-        ...radioKnobs,
-      }));
+  switch (knobs.type) {
+    case 'textfield':
+      knobs.control = Textfield(knobs);
       break;
 
-    case 'checkbox':
-      children.push(Checkbox({
-        type: inputType,
-        ...checkboxKnobs,
-      }));
+    case 'textarea':
+      knobs.control = Textarea(knobs);
       break;
 
     case 'select':
-      children.push(Select({
-        ...selectKnobs,
-      }));
+      knobs.control = Select(knobs);
+      break;
+
+    case 'checkbox':
+      knobs.control = Checkbox(knobs);
       break;
 
     default:
-      children.push(Input({
-        type: inputType,
-        ...inputKnobs,
-      }));
+      knobs.control = Textfield(knobs);
   }
 
-  knobs.id = randomName(5);
+  return shouldRender(props) ? CivicThemeField(knobs) : knobs;
 
-  const combinedKnobs = { ...knobs, type: inputType, children };
-
-  return shouldRender(props)
-    ? `<div class="container"><div class="row"><div class="col-xxs-12">${CivicThemeField(combinedKnobs)}</div></div></div>`
-    : combinedKnobs;
 };
