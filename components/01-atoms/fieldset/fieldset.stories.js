@@ -1,4 +1,4 @@
-import { knobBoolean, knobNumber, knobRadios, knobText, randomFormElements, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomFields, shouldRender } from '../../00-base/base.utils';
 import CivicThemeFieldset from './fieldset.twig';
 
 export default {
@@ -38,7 +38,7 @@ export const Fieldset = (props = {}) => {
 
   const combinedKnobs = {
     ...knobs,
-    children: randomFormElements(numOfElements, knobs.theme, true).join(''),
+    children: randomFields(numOfElements, knobs.theme, true).join(''),
   };
 
   return shouldRender(props)

@@ -1,4 +1,4 @@
-import CivicThemeFormElement from './form-element.twig';
+import CivicThemeField from './field.twig';
 import Input from '../../01-atoms/input/input.twig';
 import Select from '../../01-atoms/select/select.twig';
 import { knobBoolean, knobRadios, knobText, randomName, shouldRender } from '../../00-base/base.utils';
@@ -6,10 +6,10 @@ import { Radio } from '../../01-atoms/radio/radio.stories';
 import { Checkbox } from '../../01-atoms/checkbox/checkbox.stories';
 
 export default {
-  title: 'Molecules/Form Element',
+  title: 'Molecules/Field',
 };
 
-export const FormElement = (props = {}) => {
+export const Field = (props = {}) => {
   const inputKnobTab = 'Input';
 
   const theme = knobRadios(
@@ -76,7 +76,7 @@ export const FormElement = (props = {}) => {
 
   const inputKnobs = {
     theme,
-    value: knobText('Value', 'Form element value', null, inputKnobTab),
+    value: knobText('Value', 'Field value', null, inputKnobTab),
     placeholder: knobText('Placeholder', 'Form element placeholder', null, inputKnobTab),
     state: knobRadios(
       'State',
@@ -168,6 +168,6 @@ export const FormElement = (props = {}) => {
   const combinedKnobs = { ...knobs, type: inputType, children };
 
   return shouldRender(props)
-    ? `<div class="container"><div class="row"><div class="col-xxs-12">${CivicThemeFormElement(combinedKnobs)}</div></div></div>`
+    ? `<div class="container"><div class="row"><div class="col-xxs-12">${CivicThemeField(combinedKnobs)}</div></div></div>`
     : combinedKnobs;
 };

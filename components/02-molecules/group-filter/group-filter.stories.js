@@ -1,4 +1,4 @@
-import { generateSlots, knobNumber, knobRadios, knobText, randomFormElements, randomInt, randomString, shouldRender } from '../../00-base/base.utils';
+import { generateSlots, knobNumber, knobRadios, knobText, randomFields, randomInt, randomString, shouldRender } from '../../00-base/base.utils';
 import CivicThemeGroupFilter from './group-filter.twig';
 import './group-filter';
 
@@ -42,7 +42,7 @@ export const GroupFilter = (props = {}) => {
   if (knobs.filter_count > 0) {
     for (let i = 0; i < knobs.filter_count; i++) {
       filters.push({
-        content: randomFormElements(1, knobs.theme, true)[0],
+        content: randomFields(1, knobs.theme, true)[0],
         title: `Filter ${randomString(randomInt(3, 8))} ${i + 1}`,
       });
     }

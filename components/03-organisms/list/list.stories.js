@@ -1,4 +1,4 @@
-import { convertDate, generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomFormElements, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { convertDate, generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomFields, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
@@ -124,7 +124,7 @@ export const List = (props = {}) => {
       if (filtersCount > 0) {
         for (let j = 0; j < filtersCount; j++) {
           filters.push({
-            content: randomFormElements(1, knobs.theme, true)[0],
+            content: randomFields(1, knobs.theme, true)[0],
             title: `Filter ${randomString(randomInt(3, 8))} ${j + 1}`,
           });
         }

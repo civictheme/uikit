@@ -8,7 +8,7 @@ import CivicThemeInput from '../01-atoms/input/input.twig';
 import CivicThemeSelect from '../01-atoms/select/select.twig';
 import CivicThemeCheckbox from '../01-atoms/checkbox/checkbox.twig';
 import CivicThemeRadio from '../01-atoms/radio/radio.twig';
-import CivicThemeFormElement from '../02-molecules/form-element/form-element.twig';
+import CivicThemeField from '../02-molecules/field/field.twig';
 import CivicThemeLabel from '../01-atoms/label/label.twig';
 
 // =============================================================================
@@ -122,10 +122,10 @@ export const randomDropdownFilter = () => {
   return filters[Math.floor(Math.random() * filters.length)];
 };
 
-export const randomFormElement = (inputType, options, theme, rand, itr) => {
+export const randomField = (inputType, options, theme, rand, itr) => {
   const isCheckboxOrRadio = inputType === 'checkbox' || inputType === 'radio';
 
-  const formElementOptions = {
+  const FieldOptions = {
     theme,
     type: inputType,
     label: CivicThemeLabel({
@@ -157,25 +157,25 @@ export const randomFormElement = (inputType, options, theme, rand, itr) => {
 
   switch (inputType) {
     case 'radio':
-      formElementOptions.children.push(CivicThemeRadio(inputOptions));
+      FieldOptions.children.push(CivicThemeRadio(inputOptions));
       break;
     case 'checkbox':
-      formElementOptions.children.push(CivicThemeCheckbox(inputOptions));
+      FieldOptions.children.push(CivicThemeCheckbox(inputOptions));
       break;
     case 'select':
-      formElementOptions.children.push(CivicThemeSelect({
+      FieldOptions.children.push(CivicThemeSelect({
         ...inputOptions,
         options: inputOptions.value,
       }));
       break;
     default:
-      formElementOptions.children.push(CivicThemeInput(inputOptions));
+      FieldOptions.children.push(CivicThemeInput(inputOptions));
   }
 
-  return CivicThemeFormElement(formElementOptions);
+  return CivicThemeField(FieldOptions);
 };
 
-export const randomFormElements = (count, theme, rand) => {
+export const randomFields = (count, theme, rand) => {
   rand = rand || false;
 
   const inputTypes = [
@@ -190,12 +190,12 @@ export const randomFormElements = (count, theme, rand) => {
 
   const requiredOptions = ['required', ''];
 
-  const formElements = [];
+  const Fields = [];
   for (let i = 0; i < count; i++) {
     const inputType = inputTypes[Math.floor(Math.random() * inputTypes.length)];
     const required = [Math.floor(Math.random() * requiredOptions.length)];
 
-    formElements.push(randomFormElement(
+    Fields.push(randomField(
       inputType,
       {
         required,
@@ -206,7 +206,7 @@ export const randomFormElements = (count, theme, rand) => {
     ));
   }
 
-  return formElements;
+  return Fields;
 };
 
 export const randomLinks = (count, length, domain, prefix) => {
