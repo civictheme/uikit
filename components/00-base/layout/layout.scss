@@ -5,21 +5,6 @@
 .ct-layout {
   $root: &;
 
-  &__inner {
-    display: grid;
-    grid-template-columns: repeat($ct-layout-columns, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: $ct-layout-column-gap;
-
-    #{$root}--no-top-left#{$root}--no-bottom-left & {
-      grid-column-gap: $ct-layout-column-gap-right-only;
-    }
-
-    #{$root}--no-top-right#{$root}--no-bottom-right & {
-      grid-column-gap: $ct-layout-column-gap-left-only;
-    }
-  }
-
   &__rail_top_left,
   &__rail_top_right,
   &__rail_bottom_left,
@@ -27,56 +12,99 @@
     @include ct-print-hide();
   }
 
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat($ct-layout-columns, 1fr);
+
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: $ct-layout-column-gap;
+
+      #{$root}--no-top-left#{$root}--no-bottom-left & {
+        grid-column-gap: $ct-layout-column-gap-right-only;
+      }
+
+      #{$root}--no-top-right#{$root}--no-bottom-right & {
+        grid-column-gap: $ct-layout-column-gap-left-only;
+      }
+    }
+  }
+
   &__rail_top_left {
-    grid-column: 1 / span $ct-layout-rail-left-columns;
+    grid-column: 1 / span $ct-layout-columns;
     grid-row: 1 / span 1;
 
-    #{$root}--no-bottom-left & {
-      grid-row: 1 / span 2;
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      grid-column: 1 / span $ct-layout-rail-left-columns;
+      grid-row: 1 / span 1;
+
+      #{$root}--no-bottom-left & {
+        grid-row: 1 / span 2;
+      }
     }
   }
 
   &__rail_top_right {
-    grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
-    grid-row: 1 / span 1;
+    grid-column: 1 / span $ct-layout-columns;
+    grid-row: 2 / span 1;
 
-    #{$root}--no-bottom-right & {
-      grid-row: 1 / span 2;
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
+      grid-row: 1 / span 1;
+
+      #{$root}--no-bottom-right & {
+        grid-row: 1 / span 2;
+      }
     }
   }
 
   &__main {
-    grid-column: ($ct-layout-rail-left-columns + 1) / span ($ct-layout-columns - $ct-layout-rail-left-columns - $ct-layout-rail-right-columns);
-    grid-row: 1 / span 2;
+    grid-column: 1 / span $ct-layout-columns;
+    grid-row: 3 / span 1;
 
-    #{$root}--no-top-left#{$root}--no-bottom-left & {
-      grid-column: 1 / span ($ct-layout-columns - $ct-layout-rail-right-columns);
-    }
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      grid-column: ($ct-layout-rail-left-columns + 1) / span ($ct-layout-columns - $ct-layout-rail-left-columns - $ct-layout-rail-right-columns);
+      grid-row: 1 / span 2;
 
-    #{$root}--no-top-right#{$root}--no-bottom-right & {
-      grid-column: ($ct-layout-rail-left-columns + 1) / span ($ct-layout-columns - $ct-layout-rail-left-columns);
-    }
+      #{$root}--no-top-left#{$root}--no-bottom-left & {
+        grid-column: 1 / span ($ct-layout-columns - $ct-layout-rail-right-columns);
+      }
 
-    #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right & {
-      grid-column: 1 / span $ct-layout-columns;
+      #{$root}--no-top-right#{$root}--no-bottom-right & {
+        grid-column: ($ct-layout-rail-left-columns + 1) / span ($ct-layout-columns - $ct-layout-rail-left-columns);
+      }
+
+      #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right & {
+        grid-column: 1 / span $ct-layout-columns;
+      }
     }
   }
 
   &__rail_bottom_left {
-    grid-column: 1 / span $ct-layout-rail-left-columns;
-    grid-row: 2 / span 1;
+    grid-column: 1 / span $ct-layout-columns;
+    grid-row: 4 / span 1;
 
-    #{$root}--no-top-left & {
-      grid-row: 1 / span 2;
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      grid-column: 1 / span $ct-layout-rail-left-columns;
+      grid-row: 2 / span 1;
+
+      #{$root}--no-top-left & {
+        grid-row: 1 / span 2;
+      }
     }
   }
 
   &__rail_bottom_right {
-    grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
-    grid-row: 2 / span 1;
+    grid-column: 1 / span $ct-layout-columns;
+    grid-row: 5 / span 1;
 
-    #{$root}--no-top-right & {
-      grid-row: 1 / span 2;
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
+      grid-row: 2 / span 1;
+
+      #{$root}--no-top-right & {
+        grid-row: 1 / span 2;
+      }
     }
   }
 }
