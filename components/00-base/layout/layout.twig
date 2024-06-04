@@ -15,35 +15,34 @@
  * - rail_bottom_left_attributes: Bottom left rail attributes.
  * - rail_bottom_right: Bottom right rail slot.
  * - rail_bottom_right_attributes: Bottom right rail attributes.
- * - is_contained: Whether the page is to be contained for non-layout managed pages.
  * - content_bottom: Content bottom slot.
  * - vertical_spacing: [string] With top, bottom or both vertical spaces.
+ * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
 #}
 
-{% set vertical_spacing = has_sidebar ? 'top' : vertical_spacing %}
+{% set no_tl_class = rail_top_left is empty ? 'ct-layout--no-top-left' : '' %}
+{% set no_tr_class = rail_top_right is empty ? 'ct-layout--no-top-right' : '' %}
+{% set no_bl_class = rail_bottom_left is empty ? 'ct-layout--no-bottom-left' : '' %}
+{% set no_br_class = rail_bottom_right is empty ? 'ct-layout--no-bottom-right' : '' %}
+{% set vertical_spacing = vertical_spacing != "both" and (rail_top_left or rail_top_right or rail_bottom_left or rail_bottom_right) ? 'top' : vertical_spacing %}
 {% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing--%s'|format(vertical_spacing) : '' %}
-{% set modifier_class = '%s %s'|format(vertical_spacing_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s %s'|format(no_tl_class, no_tr_class, no_bl_class, no_br_class, vertical_spacing_class, modifier_class|default('')) %}
+{% set modifier_class = modifier_class|trim %}
 
 {% if content or content_top or rail_top_left or rail_top_right or rail_bottom_left or rail_bottom_right or content_bottom %}
-	<main class="ct-layout {{ modifier_class }}" role="main">
+	<main class="ct-layout {{ modifier_class }}" role="main" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
 		{% block content_top %}
 			{% if content_top is not empty %}
 				{{ content_top }}
 			{% endif %}
 		{% endblock %}
 
-		<div class="ct-layout__inner grid-12-5 grid-m-12-2">
+		<div class="ct-layout__inner">
 			{% if content is not empty %}
 				{% block content %}
-					<section class="
-						ct-layout__main
-						g-row-start-3 g-row-1
-						g-col-start-1 g-col-12
-						g-row-m-start-1 g-row-m-2
-						g-col-m-start-4 g-col-m-6
-						">
+					<section class="ct-layout__main" {% if content_attributes is not empty %}{{ content_attributes|raw }}{% endif %}>
 						{{ content }}
 					</section>
 				{% endblock %}
@@ -51,13 +50,7 @@
 
 			{% if rail_top_left is not empty %}
 				{% block rail_top_left %}
-					<aside class="
-					ct-layout__rail_top_left
-					g-row-start-1 g-row-1
-					g-col-start-1 g-col-12
-					{{ rail_bottom_left is not empty ? 'g-row-m-start-1 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
-					g-col-m-start-1 g-col-m-3
-					">
+					<aside class="ct-layout__rail_top_left" {% if rail_top_left_attributes is not empty %}{{ rail_top_left_attributes|raw }}{% endif %}>
 						{{ rail_top_left }}
 					</aside>
 				{% endblock %}
@@ -65,13 +58,7 @@
 
 			{% if rail_top_right is not empty %}
 				{% block rail_top_right %}
-					<aside class="
-					ct-layout__rail_top_right
-					g-row-start-2 g-row-1
-					g-col-start-1 g-col-12
-					{{ rail_bottom_right is not empty ? 'g-row-m-start-1 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
-					g-col-m-start-10 g-col-m-3
-					">
+				<aside class="ct-layout__rail_top_right" {% if rail_top_right_attributes is not empty %}{{ rail_top_right_attributes|raw }}{% endif %}>
 						{{ rail_top_right }}
 					</aside>
 				{% endblock %}
@@ -79,13 +66,7 @@
 
 			{% if rail_bottom_left is not empty %}
 				{% block rail_bottom_left %}
-					<aside class="
-					ct-layout__rail_bottom_left
-					g-row-start-4 g-row-1
-					g-col-start-1 g-col-12
-					{{ rail_top_left is not empty ? 'g-row-m-start-2 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
-					g-col-m-start-1 g-col-m-3
-					">
+					<aside class="ct-layout__rail_bottom_left" {% if rail_bottom_left_attributes is not empty %}{{ rail_bottom_left_attributes|raw }}{% endif %}>
 						{{ rail_bottom_left }}
 					</aside>
 				{% endblock %}
@@ -93,13 +74,7 @@
 
 			{% if rail_bottom_right is not empty %}
 				{% block rail_bottom_right %}
-					<aside class="
-					ct-layout__rail_bottom_right
-					g-row-start-5 g-row-1
-					g-col-start-1 g-col-12
-					{{ rail_top_right is not empty ? 'g-row-m-start-2 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
-					g-col-m-start-10 g-col-m-3
-					">
+					<aside class="ct-layout__rail_bottom_right" {% if rail_bottom_right_attributes is not empty %}{{ rail_bottom_right_attributes|raw }}{% endif %}>
 						{{ rail_bottom_right }}
 					</aside>
 				{% endblock %}
