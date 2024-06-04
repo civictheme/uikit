@@ -266,6 +266,11 @@
             @include _ct-button-print-rules($type-kind-values);
           }
         }
+        @else if $type-kind == 'active-hover' {
+          &.active:hover {
+            @include _ct-button-print-rules($type-kind-values);
+          }
+        }
         @else if $type-kind == 'focus' {
           &:focus-visible,
           &.focus {

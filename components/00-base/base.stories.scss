@@ -105,13 +105,15 @@
   $_color: grey;
 
   width: 100%;
-  display: block;
+  display: grid;
   background-color: color.adjust($_color, $alpha: -0.7);
   padding: 1em;
   text-align: center;
   font-family: sans-serif;
   border: dotted ct-particle(0.125) $_color;
   color: color.adjust($_color, $alpha: -0.1);
+  height: 100%;
+  place-items: center;
 
   .ct-theme-dark & {
     background-color: color.adjust($_color, $alpha: -0.7);
