@@ -1,15 +1,5 @@
 import CivicThemeLayout from './layout.twig';
-import CivicThemeLayoutSingleColumn from './content-layout--single-column.twig';
-import CivicThemeLayoutSingleColumnContained
-  from './content-layout--single-column-contained.twig';
-import {
-  generateSlots,
-  knobBoolean,
-  knobRadios,
-  knobText,
-  placeholder,
-  shouldRender
-} from '../base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobText, placeholder, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Layout',
@@ -46,8 +36,6 @@ export const Layout = (props = {}) => {
   knobs.rail_bottom_left_attributes = knobs.rail_bottom_left ? knobText('Bottom left rail attributes', '', props.rail_bottom_left_attributes, attributesTab) : '';
   knobs.rail_bottom_right_attributes = knobs.rail_bottom_right ? knobText('Bottom right rail attributes', '', props.rail_bottom_right_attributes, attributesTab) : '';
   knobs.modifier_class = knobText('Additional class', '', props.modifier_class, props.knobTab);
-
-  // is_contained: knobBoolean('Is contained', false, props.is_contained, props.knobTab),
 
   return shouldRender(props)
     ? CivicThemeLayout({
