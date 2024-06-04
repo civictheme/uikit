@@ -39,16 +39,10 @@
 				{% block content %}
 					<section class="
 						ct-layout__main
-
-						g-row-start-3
-						g-row-1
-						g-col-start-1
-						g-col-12
-
-						g-row-m-start-1
-						g-row-m-2
-						g-col-m-start-4
-						g-col-m-6
+						g-row-start-3 g-row-1
+						g-col-start-1 g-col-12
+						g-row-m-start-1 g-row-m-2
+						g-col-m-start-4 g-col-m-6
 						">
 						{{ content }}
 					</section>
@@ -59,16 +53,10 @@
 				{% block rail_top_left %}
 					<aside class="
 					ct-layout__rail_top_left
-
-					g-row-start-1
-					g-row-1
-					g-col-start-1
-					g-col-12
-
-					g-row-m-start-1
-					g-row-m-1
-					g-col-m-start-1
-					g-col-m-3
+					g-row-start-1 g-row-1
+					g-col-start-1 g-col-12
+					{{ rail_bottom_left is not empty ? 'g-row-m-start-1 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
+					g-col-m-start-1 g-col-m-3
 					">
 						{{ rail_top_left }}
 					</aside>
@@ -79,16 +67,10 @@
 				{% block rail_top_right %}
 					<aside class="
 					ct-layout__rail_top_right
-
-					g-row-start-2
-					g-row-1
-					g-col-start-1
-					g-col-12
-
-					g-row-m-start-1
-					g-row-m-1
-					g-col-m-start-10
-					g-col-m-3
+					g-row-start-2 g-row-1
+					g-col-start-1 g-col-12
+					{{ rail_bottom_right is not empty ? 'g-row-m-start-1 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
+					g-col-m-start-10 g-col-m-3
 					">
 						{{ rail_top_right }}
 					</aside>
@@ -99,16 +81,10 @@
 				{% block rail_bottom_left %}
 					<aside class="
 					ct-layout__rail_bottom_left
-
-					g-row-start-4
-					g-row-1
-					g-col-start-1
-					g-col-12
-
-					g-row-m-start-2
-					g-row-m-1
-					g-col-m-start-1
-					g-col-m-3
+					g-row-start-4 g-row-1
+					g-col-start-1 g-col-12
+					{{ rail_top_left is not empty ? 'g-row-m-start-2 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
+					g-col-m-start-1 g-col-m-3
 					">
 						{{ rail_bottom_left }}
 					</aside>
@@ -119,16 +95,10 @@
 				{% block rail_bottom_right %}
 					<aside class="
 					ct-layout__rail_bottom_right
-
-					g-row-start-5
-					g-row-1
-					g-col-start-1
-					g-col-12
-
-					g-row-m-start-2
-					g-row-m-1
-					g-col-m-start-10
-					g-col-m-3
+					g-row-start-5 g-row-1
+					g-col-start-1 g-col-12
+					{{ rail_top_right is not empty ? 'g-row-m-start-2 g-row-m-1' : 'g-row-m-start-1 g-row-m-2'}}
+					g-col-m-start-10 g-col-m-3
 					">
 						{{ rail_bottom_right }}
 					</aside>
