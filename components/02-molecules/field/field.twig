@@ -41,7 +41,7 @@
 {% set is_disabled_class = is_disabled ? 'ct-field--disabled' : '' %}
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, type_class, direction_class, is_required_class, is_disabled_class, modifier_class|default('')) %}
 
-{% set control = control | merge({
+{% set control = control|merge({
     theme: theme,
     is_disabled: is_disabled,
     is_invalid: is_invalid,
