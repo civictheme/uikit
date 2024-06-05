@@ -7,15 +7,20 @@
 
   @include ct-typography('text-regular');
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-width: ct-particle(38);
-  height: ct-particle(6);
-  padding: 0.5em 3.5em 0.5em 1em;
-  background-position: calc(100% - 0.5rem), 100% 0;
-  background-size: 1.5em 1.5em;
+  appearance: none;
+  border-radius: $ct-border-radius;
+  border-width: $ct-select-border-width;
+  min-width: $ct-select-min-width;
+  height: $ct-select-height;
+  padding-top: $ct-select-padding-vertical;
+  padding-bottom: $ct-select-padding-vertical;
+  padding-left: $ct-select-padding-horizontal;
+  padding-right: $ct-select-padding-horizontal + $ct-select-width;
+
+  // Visually move icon off the edge by the width of the border.
+  background-position: calc(100% - $ct-select-border-width);
   background-repeat: no-repeat;
+  background-size: $ct-select-width $ct-select-icon-height;
 
   &[disabled] {
     pointer-events: none;
@@ -24,11 +29,33 @@
 
   &[multiple] {
     height: inherit;
+    padding-left: $ct-select-padding-horizontal;
+    padding-right: $ct-select-padding-horizontal;
+    padding-top: $ct-select-padding-vertical * 2;
+    padding-bottom: $ct-select-padding-vertical * 2;
+
+    optgroup,
+    option {
+      margin-top: ct-spacing();
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    optgroup {
+      font-weight: bold;
+
+      option {
+        &:first-child {
+          margin-top: ct-spacing();
+        }
+      }
+    }
   }
 
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #000;
   }
 
   &:-webkit-scrollbar {
@@ -39,14 +66,19 @@
     background-color: $ct-select-light-background-color;
     border-color: $ct-input-light-border-color;
     color: $ct-select-light-color;
+    background-image: $ct-select-light-icon;
 
     &:hover {
+      // Here and below, we are using the box shadow in addition to the border
+      // to avoid the element from moving when the border is added.
+      border-color: $ct-select-light-hover-border-color;
       box-shadow: 0 0 0 ct-particle(0.125) $ct-select-light-hover-border-color;
     }
 
     &:focus-visible {
       border-color: $ct-select-light-focus-border-color;
       box-shadow: 0 0 0 ct-particle(0.125) $ct-select-light-focus-border-color;
+      outline: none;
     }
 
     &.error,
@@ -55,12 +87,10 @@
       box-shadow: 0 0 0 ct-particle(0.125) $ct-select-light-error-border-color;
     }
 
-    &:-internal-list-box {
-      option {
-        &:checked {
-          background-color: $ct-select-light-option-background-color;
-          color: inherit;
-        }
+    option {
+      &:checked {
+        background-color: $ct-select-light-option-background-color;
+        color: inherit;
       }
     }
 
@@ -73,6 +103,7 @@
     background-color: $ct-select-dark-background-color;
     border-color: $ct-input-dark-border-color;
     color: $ct-select-dark-color;
+    background-image: $ct-select-dark-icon;
 
     &:hover {
       border-color: $ct-select-dark-hover-border-color;
@@ -82,6 +113,7 @@
     &:focus-visible {
       border-color: $ct-select-dark-focus-border-color;
       box-shadow: 0 0 0 ct-particle(0.125) $ct-select-dark-focus-border-color;
+      outline: none;
     }
 
     &.error,
@@ -90,12 +122,10 @@
       box-shadow: 0 0 0 ct-particle(0.125) $ct-select-dark-error-border-color;
     }
 
-    &:-internal-list-box {
-      option {
-        &:checked {
-          background-color: $ct-select-dark-option-background-color;
-          color: inherit;
-        }
+    option {
+      &:checked {
+        background-color: $ct-select-dark-option-background-color;
+        color: inherit;
       }
     }
 

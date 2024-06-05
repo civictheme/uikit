@@ -14,9 +14,10 @@
  *   - options: [array] Array of options (applies to optgroup type):
  *     - label: [string] Option label.
  *     - value: [string] Option value.
- *     - selected: [string] Flag whether option is selected.
+ *     - is_selected: [string] Flag whether option is selected.
+ *     - is_disabled: [string] Flag whether option is disabled.
  * - is_required: [boolean] Required state.
- * - disabled: [boolean] Disabled state.
+ * - is_disabled: [boolean] Disabled state.
  * - has_error: [boolean] Error state.
  * - for: [string] Which component this label belongs to.
  * - attributes: [string] Additional attributes.
@@ -24,32 +25,32 @@
  */
 #}
 
-{% set required_class = is_required ? 'ct-input--required required' : '' %}
-{% set error_class = has_error ? 'ct-input--error error' : '' %}
+{% set required_class = is_required ? 'required' : '' %}
+{% set error_class = has_error ? 'error' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, required_class, error_class, modifier_class|default('')) %}
 
 {% if options is not empty %}
   <select
-    class="ct-select ct-input__element {{ modifier_class }}"
+    class="ct-select {{ modifier_class }}"
     {{ is_multiple ? 'multiple' }}
-    {{ disabled ? 'disabled' }}
+    {{ is_disabled ? 'disabled' }}
     {{ is_required ? 'required' }}
     {% if for is not empty %} for="{{ for }}" {% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
     {% for option in options %}
       {% if option.type == 'optgroup' %}
-        <optgroup label="{{ option.label }}">
+        <optgroup label="{{ option.label }}" {{ option.is_disabled ? 'disabled' }}>
           {% for sub_option in option.options %}
             {% if sub_option.label is not empty %}
-              <option value="{{ sub_option.value|default('') }}" {{ sub_option.selected ? 'selected="selected"' }}>{{ sub_option.label }}</option>
+              <option value="{{ sub_option.value|default('') }}" {{ sub_option.is_selected ? 'selected="selected"' }} {{ sub_option.is_disabled ? 'disabled' }}>{{ sub_option.label }}</option>
             {% endif %}
           {% endfor %}
         </optgroup>
       {% elseif option.type == 'option' %}
         {% if option.label is not empty %}
-          <option value="{{ option.value|default('') }}" {{ option.selected ? 'selected="selected"' }}>{{ option.label }}</option>
+          <option value="{{ option.value|default('') }}" {{ option.is_selected ? 'selected="selected"' }} {{ option.is_disabled ? 'disabled' }}>{{ option.label }}</option>
         {% endif %}
       {% endif %}
     {% endfor %}

@@ -311,15 +311,17 @@ export const generateSelectItems = (count) => {
   return items;
 };
 
-export const generateOptions = (numOfOptions, optionType = 'option') => {
+export const generateSelectOptions = (count, type = 'option') => {
   const options = [];
-  for (let i = 1; i <= numOfOptions; i++) {
+  for (let i = 1; i <= count; i++) {
+    const disabled = randomBool(0.8);
     const option = {
-      type: optionType,
-      selected: false,
-      label: optionType === 'optgroup' ? `Group ${i}` : randomString(randomInt(3, 8)),
+      type,
+      is_selected: randomBool(0.8),
+      is_disabled: disabled,
+      label: (type === 'optgroup' ? `Group ${i}` : randomString(randomInt(3, 8))) + (disabled ? ' (disabled)' : ''),
       value: randomString(randomInt(1, 8)),
-      options: optionType === 'optgroup' ? generateOptions(numOfOptions) : null,
+      options: type === 'optgroup' ? generateSelectOptions(count) : null,
     };
     options.push(option);
   }
