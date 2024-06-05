@@ -30,7 +30,7 @@
     data-component-name="ct-group-filter"
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
-    <div class="container" data-ct-group-filter-element>
+    <div class="container" data-group-filter-element>
       <div class="row">
         <div class="col-xxs-12">
 
@@ -81,7 +81,7 @@
                   {% include '@base/item-list/item-list.twig' with {
                     items: filters_items,
                     modifier_class: 'ct-group-filter__filters',
-                    attributes: 'data-ct-group-filter-filters',
+                    attributes: 'data-group-filter-filters',
                   } only %}
                 </div>
               </div>

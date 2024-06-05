@@ -28,6 +28,6 @@ CivicThemeGroupFilterComponent.prototype.update = function (el) {
   el.detail.parent.setAttribute('aria-live', 'polite');
 };
 
-document.querySelectorAll('[data-ct-group-filter-filters]').forEach((el) => {
+document.querySelectorAll('[data-group-filter-filters]').forEach((el) => {
   new CivicThemeGroupFilterComponent(el);
 });
