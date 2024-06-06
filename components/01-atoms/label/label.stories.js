@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Label = (props = {}) => {
+export const Label = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,7 +17,7 @@ export const Label = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     size: knobRadios(
       'Size',
@@ -30,14 +30,14 @@ export const Label = (props = {}) => {
         None: '',
       },
       'regular',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Label content', props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    is_required: knobBoolean('Required', false, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    content: knobText('Content', 'Label content', parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeLabel(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeLabel(knobs) : knobs;
 };

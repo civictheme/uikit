@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Icon = (props = {}) => {
+export const Icon = (parentKnobs = {}) => {
   const defaultSizes = SCSS_VARIABLES['ct-icon-sizes-default'];
   const customSizes = SCSS_VARIABLES['ct-icon-sizes'];
   let sizes = Object.keys(merge(defaultSizes, customSizes));
@@ -18,12 +18,12 @@ export const Icon = (props = {}) => {
   sizes = merge({ Auto: 'auto' }, sizes);
 
   const knobs = {
-    symbol: knobSelect('Symbol', ICONS, ICONS[0], props.symbol, props.knobTab),
-    alt: knobText('Alt', 'Icon alt text', props.alt, props.knobTab),
-    size: knobRadios('Size', sizes, 'auto', props.size, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    symbol: knobSelect('Symbol', ICONS, ICONS[0], parentKnobs.symbol, parentKnobs.knobTab),
+    alt: knobText('Alt', 'Icon alt text', parentKnobs.alt, parentKnobs.knobTab),
+    size: knobRadios('Size', sizes, 'auto', parentKnobs.size, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeIcon(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeIcon(knobs) : knobs;
 };

@@ -13,7 +13,7 @@ export default {
   },
 };
 
-export const Header = (props = {}) => {
+export const Header = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -21,17 +21,17 @@ export const Header = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const knobs = {
     theme,
-    show_slogan: knobBoolean('Show slogan', true, props.show_slogan, props.knobTab),
-    show_secondary_navigation: knobBoolean('Show secondary navigation', true, props.show_secondary_navigation, props.knobTab),
-    show_logo: knobBoolean('Show logo', true, props.show_logo, props.knobTab),
-    show_primary_navigation: knobBoolean('Show primary navigation', true, props.show_primary_navigation, props.knobTab),
-    show_search: knobBoolean('With Search', true, props.show_search, props.knobTab),
+    show_slogan: knobBoolean('Show slogan', true, parentKnobs.show_slogan, parentKnobs.knobTab),
+    show_secondary_navigation: knobBoolean('Show secondary navigation', true, parentKnobs.show_secondary_navigation, parentKnobs.knobTab),
+    show_logo: knobBoolean('Show logo', true, parentKnobs.show_logo, parentKnobs.knobTab),
+    show_primary_navigation: knobBoolean('Show primary navigation', true, parentKnobs.show_primary_navigation, parentKnobs.knobTab),
+    show_search: knobBoolean('With Search', true, parentKnobs.show_search, parentKnobs.knobTab),
   };
 
   let contentTop3 = '';
@@ -71,7 +71,7 @@ export const Header = (props = {}) => {
     content_middle3: contentMiddle3Content,
   };
 
-  return shouldRender(props) ? CivicThemeHeader({
+  return shouldRender(parentKnobs) ? CivicThemeHeader({
     ...slots,
     ...generateSlots([
       'content_top1',

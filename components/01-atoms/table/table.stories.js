@@ -6,7 +6,7 @@ export default {
   title: 'Atoms/Table',
 };
 
-export const Table = (props = {}) => {
+export const Table = (parentKnobs = {}) => {
   const header = [
     'Header 1',
     'Header 2',
@@ -76,13 +76,13 @@ export const Table = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    header: knobBoolean('With header', true, props.knobTab) ? header : [],
-    rows: knobBoolean('With rows', true, props.knobTab) ? true : null,
-    footer: knobBoolean('With footer', true, props.knobTab) ? footer : [],
-    is_striped: knobBoolean('Striped', true, props.knobTab),
-    caption: knobText('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', props.knobTab),
+    header: knobBoolean('With header', true, parentKnobs.knobTab) ? header : [],
+    rows: knobBoolean('With rows', true, parentKnobs.knobTab) ? true : null,
+    footer: knobBoolean('With footer', true, parentKnobs.knobTab) ? footer : [],
+    is_striped: knobBoolean('Striped', true, parentKnobs.knobTab),
+    caption: knobText('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', parentKnobs.knobTab),
     caption_position: knobRadios(
       'Caption position',
       {
@@ -90,15 +90,15 @@ export const Table = (props = {}) => {
         After: 'after',
       },
       'before',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
   if (knobs.rows) {
     knobs.rows = getRows(knobs.theme);
   }
 
-  return shouldRender(props) ? CivicThemeTable(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeTable(knobs) : knobs;
 };

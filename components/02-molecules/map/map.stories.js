@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Map = (props = {}) => {
+export const Map = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,12 +17,12 @@ export const Map = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    url: knobText('URL', 'https://maps.google.com/maps?q=australia&t=&z=3&ie=UTF8&iwloc=&output=embed', props.url, props.knobTab),
-    address: knobText('Address', 'Australia', props.address, props.knobTab),
-    view_url: knobText('View URL', randomUrl(), props.view_url, props.knobTab),
+    url: knobText('URL', 'https://maps.google.com/maps?q=australia&t=&z=3&ie=UTF8&iwloc=&output=embed', parentKnobs.url, parentKnobs.knobTab),
+    address: knobText('Address', 'Australia', parentKnobs.address, parentKnobs.knobTab),
+    view_url: knobText('View URL', randomUrl(), parentKnobs.view_url, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -32,15 +32,15 @@ export const Map = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeMap({
+  return shouldRender(parentKnobs) ? CivicThemeMap({
     ...knobs,
     ...generateSlots([
       'content_top',

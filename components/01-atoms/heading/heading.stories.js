@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Heading = (props = {}) => {
+export const Heading = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,8 +17,8 @@ export const Heading = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     level: knobRadios('Level', {
       1: '1',
@@ -27,11 +27,11 @@ export const Heading = (props = {}) => {
       4: '4',
       5: '5',
       6: '6',
-    }, '1', props.level, props.knobTab),
-    content: knobText('Content', 'Heading content', props.content, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    }, '1', parentKnobs.level, parentKnobs.knobTab),
+    content: knobText('Content', 'Heading content', parentKnobs.content, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeHeading(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeHeading(knobs) : knobs;
 };

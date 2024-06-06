@@ -41,7 +41,7 @@ export function generateMenuLinks(count, levels, isActiveTrail, title = 'Item', 
   return links;
 }
 
-export default function getMenuLinks(props = {}, titleCb = null) {
+export default function getMenuLinks(parentKnobs = {}, titleCb = null) {
   const linksPerLevel = knobNumber(
     'Links per level',
     3,
@@ -51,8 +51,8 @@ export default function getMenuLinks(props = {}, titleCb = null) {
       max: 5,
       step: 1,
     },
-    props.links_per_level,
-    props.knobTab,
+    parentKnobs.links_per_level,
+    parentKnobs.knobTab,
   );
 
   const levels = knobNumber(
@@ -64,11 +64,11 @@ export default function getMenuLinks(props = {}, titleCb = null) {
       max: 5,
       step: 1,
     },
-    props.number_of_levels,
-    props.knobTab,
+    parentKnobs.number_of_levels,
+    parentKnobs.knobTab,
   );
 
-  const activeTrail = knobBoolean('Show active trail (random)', false, props.show_active_trail, props.knobTab);
+  const activeTrail = knobBoolean('Show active trail (random)', false, parentKnobs.show_active_trail, parentKnobs.knobTab);
 
   return generateMenuLinks(linksPerLevel, levels, activeTrail, null, titleCb);
 }

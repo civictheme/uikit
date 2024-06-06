@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const GroupFilter = (props = {}) => {
+export const GroupFilter = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,7 +18,7 @@ export const GroupFilter = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     filter_count: knobNumber(
       'Number of filters',
@@ -29,12 +29,12 @@ export const GroupFilter = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Filter title', 'Filter search results by:', props.knobTab),
-    submit_text: knobText('Submit button text', 'Apply', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
-    modifier_class: knobText('Additional class', '', props.knobTab),
+    title: knobText('Filter title', 'Filter search results by:', parentKnobs.knobTab),
+    submit_text: knobText('Submit button text', 'Apply', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.knobTab),
   };
 
   const filters = [];
@@ -50,7 +50,7 @@ export const GroupFilter = (props = {}) => {
 
   const combinedKnobs = { ...knobs, filters };
 
-  return shouldRender(props) ? CivicThemeGroupFilter({
+  return shouldRender(parentKnobs) ? CivicThemeGroupFilter({
     ...combinedKnobs,
     ...generateSlots([
       'content_top',

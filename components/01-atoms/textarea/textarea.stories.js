@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Textarea = (props = {}) => {
+export const Textarea = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,7 +17,7 @@ export const Textarea = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     rows: knobNumber(
       'Number of rows',
@@ -28,15 +28,15 @@ export const Textarea = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    placeholder: knobText('Placeholder', 'Placeholder', props.knobTab),
-    is_required: knobBoolean('Required', false, props.knobTab),
-    disabled: knobBoolean('Disabled', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    placeholder: knobText('Placeholder', 'Placeholder', parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.knobTab),
+    disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeTextarea(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeTextarea(knobs) : knobs;
 };
