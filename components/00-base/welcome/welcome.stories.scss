@@ -1,0 +1,28 @@
+.story-welcome {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0033ad;
+}
+
+.story-welcome__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .ct-logo {
+    margin-bottom: ct-spacing(4);
+
+    .ct-logo__image {
+      max-height: ct-particle(10) !important;
+    }
+  }
+
+  .ct-paragraph {
+    margin-top: ct-spacing(4);
+    max-width: ct-particle(100);
+  }
+}
