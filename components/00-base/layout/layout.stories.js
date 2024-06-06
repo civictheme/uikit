@@ -9,12 +9,14 @@ export default {
 };
 
 export const Layout = (props = {}) => {
+  const useLargePlaceholders = knobBoolean('Use large placeholders', false, props.use_large_placeholders, props.knobTab);
+
   const knobs = {
-    rail_top_left: knobBoolean('Show top left rail', true, props.rail_top_left, props.knobTab) ? placeholder('Top left rail') : '',
-    rail_bottom_left: knobBoolean('Show bottom left rail', true, props.rail_bottom_left, props.knobTab) ? placeholder('Bottom left rail') : '',
-    content: knobBoolean('Show content', true, props.content, props.knobTab) ? placeholder('Content') : '',
-    rail_top_right: knobBoolean('Show top right rail', true, props.rail_top_right, props.knobTab) ? placeholder('Top right rail') : '',
-    rail_bottom_right: knobBoolean('Show bottom right rail', true, props.rail_bottom_right, props.knobTab) ? placeholder('Bottom right rail') : '',
+    rail_top_left: knobBoolean('Show top left rail', true, props.rail_top_left, props.knobTab) ? placeholder('Top left rail', useLargePlaceholders ? 50 : 0) : '',
+    rail_bottom_left: knobBoolean('Show bottom left rail', true, props.rail_bottom_left, props.knobTab) ? placeholder('Bottom left rail', useLargePlaceholders ? 50 : 0) : '',
+    content: knobBoolean('Show content', true, props.content, props.knobTab) ? placeholder('Content', useLargePlaceholders ? 1000 : 0) : '',
+    rail_top_right: knobBoolean('Show top right rail', true, props.rail_top_right, props.knobTab) ? placeholder('Top right rail', useLargePlaceholders ? 50 : 0) : '',
+    rail_bottom_right: knobBoolean('Show bottom right rail', true, props.rail_bottom_right, props.knobTab) ? placeholder('Bottom right rail', useLargePlaceholders ? 50 : 0) : '',
     is_contained: knobBoolean('Is contained', false, props.is_contained, props.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',

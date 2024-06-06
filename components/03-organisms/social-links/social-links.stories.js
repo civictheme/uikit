@@ -29,7 +29,10 @@ export const SocialLinks = (props = {}) => {
     {
       title: 'Icon with inline SVG',
       // icon_html should take precedence.
-      icon_html: CivicThemeIcon({ symbol: 'linkedin', size: 'small' }),
+      icon_html: CivicThemeIcon({
+        symbol: 'linkedin',
+        size: 'small',
+      }),
       icon: 'linkedin',
       url: 'https://www.linkedin.com',
     },
@@ -56,7 +59,7 @@ export const SocialLinks = (props = {}) => {
       props.theme,
       props.knobTab,
     ),
-    items: knobBoolean('With items', true, props.with_items, props.knobTab) ? items : null,
+    items: knobBoolean('With items', true, props.with_items, props.knobTab) ? props.items || items : null,
     with_border: knobBoolean('With border', true, props.with_border, props.knobTab),
     modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),

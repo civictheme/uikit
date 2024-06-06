@@ -869,9 +869,12 @@ $ct-banner-dark-featured-image-shadow-color: ct-color-dark('background') !defaul
 $ct-layout-columns: $ct-grid-columns;
 $ct-layout-rail-left-columns: 3;
 $ct-layout-rail-right-columns: 3;
-$ct-layout-column-gap: ct-spacing(2);
-$ct-layout-column-gap-left-only: $ct-layout-column-gap;
-$ct-layout-column-gap-right-only: $ct-layout-column-gap;
+$ct-layout-column-gap: ct-spacing(3);
+$ct-layout-column-gap-left-only: ct-spacing(8);
+$ct-layout-column-gap-right-only: ct-spacing(8);
+$ct-layout-row-gap: ct-spacing(3);
+$ct-layout-row-gap-left-only: ct-spacing(3);
+$ct-layout-row-gap-right-only: ct-spacing(3);
 $ct-layout-breakpoint: l;
 
 //
@@ -1178,3 +1181,9 @@ $ct-pager-light-color: ct-color-light('interaction-background') !default;
 $ct-pager-light-border-color: ct-color-light('border-light') !default;
 $ct-pager-dark-color: ct-color-dark('interaction-background') !default;
 $ct-pager-dark-border-color: ct-color-dark('border') !default;
+
+//
+// Page.
+//
+$ct-page-light-background-color: ct-color-light('background-light') !default;
+$ct-page-dark-background-color: ct-color-dark('background-dark') !default;

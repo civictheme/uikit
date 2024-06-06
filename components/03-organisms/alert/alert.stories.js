@@ -110,6 +110,6 @@ export const AlertApi = (props = {}) => {
   docs += 'Press "Clear cookie" button to clear alert dismissal settings.';
 
   return shouldRender(props)
-    ? `<div data-component-name="ct-alerts" data-alert-endpoint="${endpoint}" data-test-path="/"></div><div class="docs-container docs-container--large"><div class="docs-container__content">${docs}</div></div>`
+    ? `<div data-component-name="ct-alerts" data-alert-endpoint="${endpoint}" data-test-path="/"></div><div class="story-docs story-docs-size--large"><div class="story-docs__content">${docs}</div></div>`
     : '';
 };

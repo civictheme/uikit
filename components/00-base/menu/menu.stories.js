@@ -21,7 +21,7 @@ export const MenuGenerator = (props = {}) => {
       props.theme,
       props.knobTab,
     ),
-    items: getMenuLinks(props.knobTab, null),
+    items: getMenuLinks({ knobTab: props.knobTab }, null),
     modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 

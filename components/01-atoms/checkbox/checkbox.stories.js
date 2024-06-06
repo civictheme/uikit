@@ -1,5 +1,5 @@
 import CivicThemeCheckbox from './checkbox.twig';
-import { knobText, knobBoolean, knobRadios, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Checkbox',

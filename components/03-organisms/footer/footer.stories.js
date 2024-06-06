@@ -1,9 +1,11 @@
-import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, randomUrl, shouldRender } from '../../00-base/base.utils';
-import CivicThemeFooter from './footer.stories.twig';
+import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender, StoryValues } from '../../00-base/base.utils';
+import CivicThemeFooter from './footer.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
-import { generateMenuLinks } from '../../00-base/menu/menu.utils';
 import { Logo } from '../../02-molecules/logo/logo.stories';
+import { SocialLinks } from '../social-links/social-links.stories';
+import { Navigation } from '../navigation/navigation.stories';
+import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {
   title: 'Organisms/Footer',
@@ -13,44 +15,81 @@ export default {
 };
 
 export const Footer = (props = {}) => {
+  const theme = knobRadios(
+    'Theme',
+    {
+      Light: 'light',
+      Dark: 'dark',
+    },
+    'light',
+    props.theme,
+    props.knobTab,
+  );
+
   const knobs = {
-    theme: knobRadios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      'light',
-      props.knobTab,
-    ),
-    modifier_class: knobText('Additional class', '', props.knobTab),
-    show_social_links: knobBoolean('Show social links', true, props.knobTab),
-    show_middle_links: knobBoolean('Show middle links', true, props.knobTab),
-    show_acknowledgement: knobBoolean('Show acknowledgement', true, props.knobTab),
-    show_copyright: knobBoolean('Show copyright', true, props.knobTab),
+    theme,
+    show_logo: knobBoolean('Show logo', true, props.show_logo, props.knobTab),
+    show_social_links: knobBoolean('Show social links', true, props.show_social_links, props.knobTab),
+    show_middle_links: knobBoolean('Show middle links', true, props.show_middle_links, props.knobTab),
+    show_acknowledgement: knobBoolean('Show acknowledgement', true, props.show_acknowledgement, props.knobTab),
+    show_copyright: knobBoolean('Show copyright', true, props.show_copyright, props.knobTab),
+    show_background_image: knobBoolean('Show background image', false, props.show_background_image, props.knobTab),
+    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  knobs.logo = knobBoolean('Show logo', true, props.knobTab) ? Logo({
-    knobTab: 'Logo',
-    theme: knobs.theme,
-    url: randomUrl('example2.com'),
-    type: new KnobValue(),
-    title: new KnobValue('This is a Logo in Footer'),
-  }) : null;
+  const slots = {
+    content_top1: knobs.show_logo ? Logo(new StoryValues({ theme })) : '',
+    content_top2: knobs.show_social_links ? SocialLinks(new StoryValues({
+      theme,
+      items: [
+        {
+          title: 'Facebook',
+          icon: 'facebook',
+          url: 'https://www.facebook.com',
+        },
+        {
+          title: 'X',
+          icon: 'x',
+          url: 'https://www.twitter.com',
+        },
+        {
+          title: 'Icon with inline SVG',
+          // icon_html should take precedence.
+          icon_html: CivicThemeIcon({
+            symbol: 'linkedin',
+            size: 'small',
+          }),
+          icon: 'linkedin',
+          url: 'https://www.linkedin.com',
+        },
+      ],
+    })) : '',
+    content_middle1: knobs.show_middle_links ? Navigation(new StoryValues({
+      title: 'Services',
+      theme,
+    })) : '',
+    content_middle2: knobs.show_middle_links ? Navigation(new StoryValues({
+      title: 'About us',
+      theme,
+    })) : '',
+    content_middle3: knobs.show_middle_links ? Navigation(new StoryValues({
+      title: 'Help',
+      theme,
+    })) : '',
+    content_middle4: knobs.show_middle_links ? Navigation(new StoryValues({
+      title: 'Resources',
+      theme,
+    })) : '',
+    content_bottom1: knobs.show_acknowledgement ? '<div class="ct-footer__acknowledgement ct-text-regular">We acknowledge the traditional owners of the country throughout Australia and their continuing connection to land, sea and community. We pay our respect to them and their cultures and to the elders past and present.</div>' : '',
+    content_bottom2: knobs.show_copyright ? '<div class="copyright ct-text-regular">©Commonwealth of Australia</div>' : '',
+  };
 
-  if (knobBoolean('Show background image', false, props.knobTab)) {
-    knobs.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.knobTab)];
-  }
-
-  if (knobs.show_middle_links) {
-    knobs.links1 = generateMenuLinks(4, 1, false);
-    knobs.links2 = generateMenuLinks(4, 1, false);
-    knobs.links3 = generateMenuLinks(4, 1, false);
-    knobs.links4 = generateMenuLinks(4, 1, false);
+  if (knobs.show_background_image) {
+    slots.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.background_image, props.knobTab)];
   }
 
   return shouldRender(props) ? CivicThemeFooter({
-    ...knobs,
+    ...slots,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -61,5 +100,5 @@ export const Footer = (props = {}) => {
       'content_bottom1',
       'content_bottom2',
     ]),
-  }) : knobs;
+  }) : slots;
 };

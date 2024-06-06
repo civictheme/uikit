@@ -315,9 +315,12 @@
         .ct-menu__item {
           .ct-link {
             display: block;
+            margin-bottom: ct-spacing();
           }
 
           > .ct-link {
+            margin-bottom: auto;
+
             &::after {
               right: ct-spacing();
               margin-top: -1 * ct-particle(0.25);
@@ -340,7 +343,7 @@
             margin-left: ct-spacing(2);
 
             &.ct-menu--level-1 {
-              margin: ct-spacing(2);
+              margin: ct-spacing(2) ct-spacing(4) ct-spacing(4);
             }
           }
         }
