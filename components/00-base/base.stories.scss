@@ -67,6 +67,37 @@
       }
     }
   }
+
+  > .story-docs {
+    $root: &;
+
+    border: solid ct-particle(0.125) #ccc;
+    padding: ct-spacing(4);
+    margin: ct-spacing(4) auto;
+    max-width: 60%;
+    text-align: center;
+
+    &.story-docs-size--small {
+      max-width: map.get($ct-breakpoints, 'xs');
+    }
+
+    &.story-docs-size--medium {
+      max-width: map.get($ct-breakpoints, 's');
+    }
+
+    &.story-docs-size--large {
+      margin: ct-spacing(8) auto;
+      min-width: map.get($ct-breakpoints, 'xxl');
+    }
+
+    #{$root}__title {
+      @include ct-typography('label-large');
+    }
+
+    #{$root}__content {
+      margin-bottom: ct-spacing(4);
+    }
+  }
 }
 
 .sb-show-main {
@@ -81,12 +112,16 @@
 }
 
 .story-slot {
-  display: block;
+  display: grid;
+  align-items: center;
   background-color: color.adjust(purple, $alpha: -0.7);
   padding: 1em;
   text-align: center;
   font-family: sans-serif;
+  font-size: 0.8em;
   border: dotted ct-particle(0.125) purple;
+  white-space: nowrap;
+  height: 100%;
 
   .ct-theme-dark & {
     background-color: color.adjust(white, $alpha: -0.7);
@@ -113,7 +148,7 @@
   border: dotted ct-particle(0.125) $_color;
   color: color.adjust($_color, $alpha: -0.1);
   height: 100%;
-  place-items: center;
+  place-items: top;
 
   .ct-theme-dark & {
     background-color: color.adjust($_color, $alpha: -0.7);
@@ -196,39 +231,5 @@
         color: ct-color-dark('body');
       }
     }
-  }
-}
-
-.docs-container {
-  $root: &;
-
-  border: solid ct-particle(0.125) #ccc;
-  padding: ct-spacing(4);
-  margin: ct-spacing(4) auto;
-  max-width: 60%;
-
-  &--small {
-    max-width: map.get($ct-breakpoints, 'xs');
-  }
-
-  &--medium {
-    max-width: map.get($ct-breakpoints, 's');
-  }
-
-  &--large {
-    margin: ct-spacing(8) auto;
-    min-width: map.get($ct-breakpoints, 'xxl');
-  }
-
-  &--content-centered {
-    text-align: center;
-  }
-
-  #{$root}__title {
-    @include ct-typography('label-large');
-  }
-
-  #{$root}__content {
-    margin-bottom: ct-spacing(4);
   }
 }

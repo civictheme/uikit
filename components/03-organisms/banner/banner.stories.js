@@ -1,6 +1,10 @@
-import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, objectFromArray, shouldRender } from '../../00-base/base.utils';
-import CivicThemeBannerExample from './banner.stories.twig';
+import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, objectFromArray, shouldRender, StoryValues } from '../../00-base/base.utils';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
+import CivicThemeBanner from './banner.twig';
+import CivicThemeParagraph from '../../01-atoms/paragraph/paragraph.twig';
+import CivicThemeButton from '../../01-atoms/button/button.twig';
+import CivicThemeNavigationCard from '../../02-molecules/navigation-card/navigation-card.twig';
+import CivicThemeGrid from '../../00-base/grid/grid.twig';
 
 export default {
   title: 'Organisms/Banner',
@@ -21,67 +25,107 @@ export const Banner = (props = {}) => {
     props.knobTab,
   );
 
-  const withBgImage = knobBoolean('With background image', true, props.with_background_image, props.knobTab);
+  const title = knobText('Title', 'Providing visually engaging digital experiences', props.title, props.knobTab);
+
+  const showBgImage = knobBoolean('Show background image', true, props.show_background_image, props.knobTab);
 
   const knobs = {
     theme,
-    title: knobText('Title', 'Providing visually engaging digital experiences', props.title, props.knobTab),
-    background_image: withBgImage ? {
-      url: BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], (props.background_image && props.background_image.url) || null, 'Background')],
-      alt: knobText('Alt text', 'Background image alt text', (props.background_image && props.background_image.alt) || null, 'Background'),
-    } : null,
-    background_image_blend_mode: withBgImage ? knobSelect(
+    title,
+    background_image: showBgImage ? knobSelect('Background image', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.background_image, 'Background') : '',
+    background_image_blend_mode: showBgImage ? knobSelect(
       'Blend mode',
       objectFromArray(SCSS_VARIABLES['ct-background-blend-modes']),
-      SCSS_VARIABLES['ct-background-blend-modes'][0],
-      props.blend_mode,
+      'multiply',
+      props.background_image_blend_mode,
       'Background',
     ) : null,
-    featured_image: knobBoolean('With featured image', true, props.with_featured_image, props.knobTab) ? {
-      url: generateImage(0),
-      alt: 'Featured image alt text',
-    } : null,
+    show_featured_image: knobBoolean('Show featured image', true, props.show_featured_image, props.knobTab),
     is_decorative: knobBoolean('Decorative', true, props.is_decorative, props.knobTab),
-    site_section: knobBoolean('With site section', true, props.site_section, props.knobTab) ? 'Site section name' : '',
-    show_content_text: knobBoolean('With content text', true, props.show_content_text, props.knobTab),
-    show_content_below: knobBoolean('With content below', false, props.show_content_below, props.knobTab),
+    show_site_section: knobBoolean('Show site section', true, props.show_site_section, props.knobTab),
+    show_breadcrumb: knobBoolean('Show breadcrumb', true, props.show_breadcrumb, props.knobTab),
+    show_content_text: knobBoolean('Show content text', true, props.show_content_text, props.knobTab),
+    show_content_below: knobBoolean('Show content below', false, props.show_content_below, props.knobTab),
     modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  knobs.breadcrumb = knobBoolean('With breadcrumb', true, props.with_breadcrumb, props.knobTab) ? Breadcrumb({
-    knobTab: 'Breadcrumb',
-    theme: knobs.theme,
-    modifier_class: new KnobValue('ct-banner__breadcrumb'),
-  }) : '';
+  const slots = {
+    title: knobs.title,
+    theme,
+    is_decorative: knobs.is_decorative,
+    modifier_class: knobs.modifier_class,
+  };
+
+  if (knobs.background_image) {
+    slots.background_image = {
+      url: BACKGROUNDS[knobs.background_image],
+      alt: knobText('Alt text', 'Background image alt text', props.background_image_alt_text, 'Background'),
+    };
+    slots.background_image_blend_mode = knobs.background_image_blend_mode;
+  }
+
+  if (knobs.show_featured_image) {
+    slots.featured_image = {
+      url: generateImage(0),
+      alt: 'Featured image alt text',
+    };
+  }
+
+  if (knobs.show_site_section) {
+    slots.site_section = 'Site section name';
+  }
+
+  if (knobs.show_breadcrumb) {
+    slots.breadcrumb = Breadcrumb(new StoryValues({
+      theme,
+      count_of_links: new KnobValue(),
+      knobTab: 'Breadcrumb',
+    }, false, props.breadcrumb));
+  }
 
   if (knobs.show_content_text) {
-    knobs.content_theme = knobRadios(
-      'Content theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      knobs.theme,
-      props.content_theme,
-      'Content',
-    );
+    const button = CivicThemeButton({
+      theme,
+      text: 'Learn about our mission',
+      type: 'primary',
+      kind: 'link',
+    });
+
+    let content = '';
+
+    content += CivicThemeParagraph({
+      theme,
+      allow_html: true,
+      content: `<p>Government grade set of high quality design themes that are accessible, inclusive and provide a consistent digital experience for your citizen. </p><p>${button}</p>`,
+    });
+
+    slots.content = content;
   }
 
   if (knobs.show_content_below) {
-    knobs.content_below_theme = knobRadios(
-      'Content below theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      knobs.theme,
-      props.content_below_theme,
-      'Content',
-    );
+    let contentBelow = '';
+
+    const cards = [];
+    for (let i = 0; i < 4; i++) {
+      cards.push(CivicThemeNavigationCard({
+        theme,
+        title: 'Register for a workshop',
+        summary: 'Optional summary in the breakdown of tasks.',
+        icon: 'mortarboard',
+      }));
+    }
+
+    contentBelow = CivicThemeGrid({
+      theme,
+      column_count: 4,
+      items: cards,
+    });
+
+    slots.content_below = contentBelow;
   }
 
-  return shouldRender(props) ? CivicThemeBannerExample({
-    ...knobs,
+  return shouldRender(props) ? CivicThemeBanner({
+    ...slots,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -90,5 +134,5 @@ export const Banner = (props = {}) => {
       'content',
       'content_bottom',
     ]),
-  }) : knobs;
+  }) : slots;
 };

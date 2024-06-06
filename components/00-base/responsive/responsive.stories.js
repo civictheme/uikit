@@ -6,6 +6,9 @@ export default {
   title: 'Base/Responsive',
   parameters: {
     wrapperCenteredHorizontally: true,
+    docs: 'Try resizing your browser window to see how components react to a breakpoint change',
+    docsSize: 'large',
+    docsPlacement: 'before',
   },
 };
 

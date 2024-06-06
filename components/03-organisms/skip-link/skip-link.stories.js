@@ -5,6 +5,8 @@ export default {
   title: 'Organisms/Skip Link',
   parameters: {
     layout: 'fullscreen',
+    docs: 'Press TAB on the keyboard for the Skip Link to appear',
+    docsSize: 'large',
   },
 };
 
@@ -25,7 +27,5 @@ export const SkipLink = (props = {}) => {
     modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
   };
 
-  return shouldRender(props)
-    ? `${CivicThemeSkipLink(knobs)}<div class="docs-container docs-container--large">Press TAB on the keyboard for the Skip Link to appear</div>`
-    : knobs;
+  return shouldRender(props) ? CivicThemeSkipLink(knobs) : knobs;
 };
