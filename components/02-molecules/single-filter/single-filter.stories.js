@@ -23,6 +23,7 @@ export const SingleFilter = (parentKnobs = {}) => {
     ),
     title: knobText('Title', 'Filter search results by:', parentKnobs.title, parentKnobs.knobTab),
     submit_text: knobText('Submit button text', 'Apply', parentKnobs.submit_text, parentKnobs.knobTab),
+    reset_text: knobText('Reset button text', 'Clear all', parentKnobs.reset_text, parentKnobs.knobTab),
     is_multiple: knobBoolean('Multiple', false, parentKnobs.is_multiple, parentKnobs.knobTab),
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
