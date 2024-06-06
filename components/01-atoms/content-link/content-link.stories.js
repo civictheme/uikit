@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const ContentLink = (props = {}) => {
+export const ContentLink = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,17 +17,17 @@ export const ContentLink = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    text: knobText('Text', 'Link text', props.text, props.knobTab),
-    title: knobText('Title', 'Link title', props.link_title, props.knobTab),
-    url: knobText('URL', randomUrl(), props.url, props.knobTab),
-    is_external: knobBoolean('Is external', false, props.is_external, props.knobTab),
-    is_new_window: knobBoolean('Open in a new window', false, props.is_new_window, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    text: knobText('Text', 'Link text', parentKnobs.text, parentKnobs.knobTab),
+    title: knobText('Title', 'Link title', parentKnobs.link_title, parentKnobs.knobTab),
+    url: knobText('URL', randomUrl(), parentKnobs.url, parentKnobs.knobTab),
+    is_external: knobBoolean('Is external', false, parentKnobs.is_external, parentKnobs.knobTab),
+    is_new_window: knobBoolean('Open in a new window', false, parentKnobs.is_new_window, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeContentLink(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeContentLink(knobs) : knobs;
 };

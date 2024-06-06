@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const ItemList = (props = {}) => {
+export const ItemList = (parentKnobs = {}) => {
   const knobs = {
     direction: knobRadios(
       'Direction',
@@ -18,8 +18,8 @@ export const ItemList = (props = {}) => {
         Vertical: 'vertical',
       },
       'horizontal',
-      props.direction,
-      props.knobTab,
+      parentKnobs.direction,
+      parentKnobs.knobTab,
     ),
     size: knobRadios(
       'Size',
@@ -29,10 +29,10 @@ export const ItemList = (props = {}) => {
         Small: 'small',
       },
       'regular',
-      props.size,
-      props.knobTab,
+      parentKnobs.size,
+      parentKnobs.knobTab,
     ),
-    no_gap: knobBoolean('No gap', false, props.no_gap, props.knobTab),
+    no_gap: knobBoolean('No gap', false, parentKnobs.no_gap, parentKnobs.knobTab),
     items_count: knobNumber(
       'Items count',
       5,
@@ -42,17 +42,17 @@ export const ItemList = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.items_count,
-      props.knobTab,
+      parentKnobs.items_count,
+      parentKnobs.knobTab,
     ),
-    long_placeholder_text: knobBoolean('Long placeholder text', false, props.long_placeholder_text, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    long_placeholder_text: knobBoolean('Long placeholder text', false, parentKnobs.long_placeholder_text, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
   knobs.items = generateItems(
     knobs.items_count,
     placeholder(knobs.long_placeholder_text ? randomSentence(30) : 'Content placeholder'),
   );
 
-  return shouldRender(props) ? CivicThemeItemList(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeItemList(knobs) : knobs;
 };

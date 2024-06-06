@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Iframe = (props = {}) => {
+export const Iframe = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,12 +17,12 @@ export const Iframe = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    url: knobText('URL', 'https://www.openstreetmap.org/export/embed.html?bbox=144.1910129785538%2C-38.33563928918572%2C146.0037571191788%2C-37.37170047141492&amp;layer=mapnik', props.url, props.knobTab),
-    width: knobText('Width', '500', props.width, props.knobTab),
-    height: knobText('Height', '300', props.height, props.knobTab),
+    url: knobText('URL', 'https://www.openstreetmap.org/export/embed.html?bbox=144.1910129785538%2C-38.33563928918572%2C146.0037571191788%2C-37.37170047141492&amp;layer=mapnik', parentKnobs.url, parentKnobs.knobTab),
+    width: knobText('Width', '500', parentKnobs.width, parentKnobs.knobTab),
+    height: knobText('Height', '300', parentKnobs.height, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -32,13 +32,13 @@ export const Iframe = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeIframe(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeIframe(knobs) : knobs;
 };

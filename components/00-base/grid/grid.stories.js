@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Grid = (props = {}) => {
+export const Grid = (parentKnobs = {}) => {
   const knobs = {
     number_of_items: knobNumber(
       'Number of items',
@@ -19,8 +19,8 @@ export const Grid = (props = {}) => {
         max: 15,
         step: 1,
       },
-      props.number_of_items,
-      props.knobTab,
+      parentKnobs.number_of_items,
+      parentKnobs.knobTab,
     ),
     column_count: parseInt(knobRadios(
       'Columns',
@@ -34,10 +34,10 @@ export const Grid = (props = {}) => {
         12: '12',
       },
       '12',
-      props.column_count,
-      props.knobTab,
+      parentKnobs.column_count,
+      parentKnobs.knobTab,
     ), 10),
-    fill_width: knobBoolean('Fill width', false, props.fill_width, props.knobTab),
+    fill_width: knobBoolean('Fill width', false, parentKnobs.fill_width, parentKnobs.knobTab),
     render_as: knobRadios(
       'Render as',
       {
@@ -45,10 +45,10 @@ export const Grid = (props = {}) => {
         'ul > li': 'ulli',
       },
       'divdiv',
-      props.render_as,
-      props.knobTab,
+      parentKnobs.render_as,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   if (knobs.render_as === 'ulli') {
@@ -61,9 +61,9 @@ export const Grid = (props = {}) => {
 
   knobs.items = generateItems(knobs.number_of_items, () => `<span class="story-placeholder">${Math.floor(12 / (knobs.column_count > 0 ? knobs.column_count : 12))}</span>`);
 
-  const showOutline = knobBoolean('Show outlines', false, props.showOutlines, props.knobTab);
+  const showOutline = knobBoolean('Show outlines', false, parentKnobs.showOutlines, parentKnobs.knobTab);
 
-  return shouldRender(props) ? `<div class="${showOutline ? 'story-grid-wrapper' : ''}">${CivicThemeGrid(knobs)}</div>` : knobs;
+  return shouldRender(parentKnobs) ? `<div class="${showOutline ? 'story-grid-wrapper' : ''}">${CivicThemeGrid(knobs)}</div>` : knobs;
 };
 
 export const GridExample = () => {

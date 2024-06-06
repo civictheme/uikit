@@ -12,7 +12,7 @@ export default {
   },
 };
 
-export const Field = (props = {}) => {
+export const Field = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -21,8 +21,8 @@ export const Field = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     type: knobRadios(
       'Type',
@@ -35,8 +35,8 @@ export const Field = (props = {}) => {
         Other: 'other',
       },
       'textfield',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
     direction: knobRadios(
       'Direction',
@@ -45,8 +45,8 @@ export const Field = (props = {}) => {
         Vertical: 'vertical',
       },
       'vertical',
-      props.direction,
-      props.knobTab,
+      parentKnobs.direction,
+      parentKnobs.knobTab,
     ),
     control_direction: knobRadios(
       'Control direction (for group controls)',
@@ -55,17 +55,17 @@ export const Field = (props = {}) => {
         Vertical: 'vertical',
       },
       'vertical',
-      props.control_direction,
-      props.knobTab,
+      parentKnobs.control_direction,
+      parentKnobs.knobTab,
     ),
-    label: knobText('Label', 'Field label', props.label, props.knobTab),
-    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', props.description, props.knobTab),
-    is_required: knobBoolean('Required', false, props.is_required, props.knobTab),
-    is_disabled: knobBoolean('Disabled', false, props.is_disabled, props.knobTab),
-    is_invalid: knobBoolean('Invalid', false, props.is_invalid, props.knobTab),
-    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', props.message, props.knobTab),
-    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab),
+    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.description, parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    is_invalid: knobBoolean('Invalid', false, parentKnobs.is_invalid, parentKnobs.knobTab),
+    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.message, parentKnobs.knobTab),
+    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab)}`,
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   switch (knobs.type) {
@@ -89,5 +89,5 @@ export const Field = (props = {}) => {
       knobs.control = Textfield(knobs);
   }
 
-  return shouldRender(props) ? CivicThemeField(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeField(knobs) : knobs;
 };

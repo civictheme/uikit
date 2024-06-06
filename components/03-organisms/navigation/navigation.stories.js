@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Navigation = (props = {}) => {
+export const Navigation = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,10 +18,10 @@ export const Navigation = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Navigation title', props.title, props.knobTab),
+    title: knobText('Title', 'Navigation title', parentKnobs.title, parentKnobs.knobTab),
     type: knobRadios(
       'Type',
       {
@@ -31,14 +31,14 @@ export const Navigation = (props = {}) => {
         Drawer: 'drawer',
       },
       'none',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
     items: getMenuLinks({ knobTab: 'Links' }, (itemTitle, itemIndex, itemCurrentLevel, itemIsActiveTrail, itemParents) => `${itemTitle} ${itemParents.join('')}${itemIndex} ${randomSentence(itemCurrentLevel > 1 ? randomInt(2, 5) : randomInt(1, 3))}`),
-    is_animated: knobBoolean('Animated', true, props.is_animated, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    is_animated: knobBoolean('Animated', true, parentKnobs.is_animated, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeNavigation(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeNavigation(knobs) : knobs;
 };

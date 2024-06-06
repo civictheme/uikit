@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Webform = (props = {}) => {
+export const Webform = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,11 +17,11 @@ export const Webform = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    referenced_webform: knobText('Title', 'Webform title', props.webform_title, props.knobTab),
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    referenced_webform: knobText('Title', 'Webform title', parentKnobs.webform_title, parentKnobs.knobTab),
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -31,12 +31,12 @@ export const Webform = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeWebform(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeWebform(knobs) : knobs;
 };

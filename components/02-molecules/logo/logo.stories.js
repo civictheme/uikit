@@ -8,18 +8,20 @@ export default {
   },
 };
 
-export const Logo = (props = {}) => {
+export const Logo = (parentKnobs = {}) => {
+  const theme = knobRadios(
+    'Theme',
+    {
+      Light: 'light',
+      Dark: 'dark',
+    },
+    'light',
+    parentKnobs.theme,
+    parentKnobs.knobTab,
+  );
+
   const knobs = {
-    theme: knobRadios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      'light',
-      props.theme,
-      props.knobTab,
-    ),
+    theme,
     type: knobRadios(
       'Type',
       {
@@ -29,50 +31,43 @@ export const Logo = (props = {}) => {
         'Inline-Stacked': 'inline-stacked',
       },
       'default',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
-    with_secondary_image: knobBoolean('With secondary image', false, props.with_secondary_image, props.knobTab),
-    logos: {},
-    url: knobText('Link', randomUrl(), props.url, props.knobTab),
-    title: knobText('Title', 'Logo title', props.title, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    with_secondary_image: knobBoolean('With secondary image', false, parentKnobs.with_secondary_image, parentKnobs.knobTab),
+    logos: {
+      primary: {
+        mobile: {
+          url: LOGOS[theme].primary.mobile,
+          alt: 'Primary logo mobile alt text',
+        },
+        desktop: {
+          url: LOGOS[theme].primary.desktop,
+          alt: 'Primary logo desktop alt text',
+        },
+      },
+    },
+    url: knobText('Link', randomUrl(), parentKnobs.url, parentKnobs.knobTab),
+    title: knobText('Title', 'Logo title', parentKnobs.title, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   knobs.logos = knobs.with_secondary_image ? {
-    primary: {
-      mobile: {
-        url: LOGOS[knobs.theme].primary.mobile,
-        alt: 'Primary logo mobile alt text',
-      },
-      desktop: {
-        url: LOGOS[knobs.theme].primary.desktop,
-        alt: 'Primary logo desktop alt text',
-      },
-    },
-    secondary: {
-      mobile: {
-        url: LOGOS[knobs.theme].secondary.mobile,
-        alt: 'Secondary logo mobile alt text',
-      },
-      desktop: {
-        url: LOGOS[knobs.theme].secondary.desktop,
-        alt: 'Secondary logo desktop alt text',
+    ...knobs.logos,
+    ...{
+      secondary: {
+        mobile: {
+          url: LOGOS[theme].secondary.mobile,
+          alt: 'Secondary logo mobile alt text',
+        },
+        desktop: {
+          url: LOGOS[theme].secondary.desktop,
+          alt: 'Secondary logo desktop alt text',
+        },
       },
     },
-  } : {
-    primary: {
-      mobile: {
-        url: LOGOS[knobs.theme].primary.mobile,
-        alt: 'Primary logo mobile alt text',
-      },
-      desktop: {
-        url: LOGOS[knobs.theme].primary.desktop,
-        alt: 'Primary logo mobile alt text',
-      },
-    },
-  };
+  } : knobs.logos;
 
-  return shouldRender(props) ? CivicThemeLogo(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeLogo(knobs) : knobs;
 };

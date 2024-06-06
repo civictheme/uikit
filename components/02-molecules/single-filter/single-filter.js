@@ -19,6 +19,8 @@ function CivicThemeSingleFilterComponent(el) {
       });
     });
   }
+
+  this.activateOrDeactivateSubmitButton(el);
 }
 
 /**
@@ -26,8 +28,23 @@ function CivicThemeSingleFilterComponent(el) {
  */
 CivicThemeSingleFilterComponent.prototype.update = function (el) {
   el.detail.parent.setAttribute('aria-live', 'polite');
+  this.activateOrDeactivateSubmitButton(this.el);
 };
 
-document.querySelectorAll('.ct-single-filter__list').forEach((el) => {
+CivicThemeSingleFilterComponent.prototype.activateOrDeactivateSubmitButton = function (el) {
+  const buttons = el.querySelectorAll('.ct-button');
+  const activeChips = el.querySelectorAll('.ct-chip.active');
+  if (!activeChips.length) {
+    buttons.forEach((element) => {
+      element.setAttribute('disabled', 'disabled');
+    });
+  } else {
+    buttons.forEach((element) => {
+      element.removeAttribute('disabled');
+    });
+  }
+};
+
+document.querySelectorAll('.ct-single-filter').forEach((el) => {
   new CivicThemeSingleFilterComponent(el);
 });

@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const PublicationCard = (props = {}) => {
+export const PublicationCard = (parentKnobs = {}) => {
   const date = convertDate(null);
 
   const knobs = {
@@ -20,16 +20,16 @@ export const PublicationCard = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Publication or whitepaper main title', props.title, props.knobTab),
-    summary: knobText('Summary', randomSentence(), props.summary, props.knobTab),
-    image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
+    title: knobText('Title', 'Publication or whitepaper main title', parentKnobs.title, parentKnobs.knobTab),
+    summary: knobText('Summary', randomSentence(), parentKnobs.summary, parentKnobs.knobTab),
+    image: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
     } : false,
-    file: knobBoolean('With file', true, props.with_file, props.knobTab) ? {
+    file: knobBoolean('With file', true, parentKnobs.with_file, parentKnobs.knobTab) ? {
       url: randomUrl(),
       name: 'Document.doc',
       ext: 'doc',
@@ -38,11 +38,11 @@ export const PublicationCard = (props = {}) => {
       changed: date,
       icon: 'word-file',
     } : null,
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemePublicationCard({
+  return shouldRender(parentKnobs) ? CivicThemePublicationCard({
     ...knobs,
     ...generateSlots([
       'image_over',

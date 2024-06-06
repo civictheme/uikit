@@ -8,16 +8,16 @@ export default {
   },
 };
 
-export const Time = (props = {}) => {
+export const Time = (parentKnobs = {}) => {
   const knobs = {
-    start: knobText('Start', '20 Jan 2023 11:00', props.start, props.knobTab),
-    end: knobText('End', '21 Jan 2023 15:00', props.end, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    start: knobText('Start', '20 Jan 2023 11:00', parentKnobs.start, parentKnobs.knobTab),
+    end: knobText('End', '21 Jan 2023 15:00', parentKnobs.end, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   knobs.start_iso = dateIsValid(knobs.start) ? new Date(knobs.start).toISOString() : null;
   knobs.end_iso = dateIsValid(knobs.end) ? new Date(knobs.end).toISOString() : null;
 
-  return shouldRender(props) ? CivicThemeTime(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeTime(knobs) : knobs;
 };

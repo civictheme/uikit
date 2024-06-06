@@ -16,7 +16,7 @@ export default {
   },
 };
 
-export const List = (props = {}) => {
+export const List = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -25,23 +25,23 @@ export const List = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'List title', props.title, props.knobTab),
-    content: knobBoolean('With content', true, props.with_content, props.knobTab) ? randomSentence(50) : null,
+    title: knobText('Title', 'List title', parentKnobs.title, parentKnobs.knobTab),
+    content: knobBoolean('With content', true, parentKnobs.with_content, parentKnobs.knobTab) ? randomSentence(50) : null,
   };
 
-  knobs.link_above = knobBoolean('With link above', true, props.with_link_above, props.knobTab) ? {
-    text: knobText('Link above text', 'View more', props.link_above_text, 'Content'),
+  knobs.link_above = knobBoolean('With link above', true, parentKnobs.with_link_above, parentKnobs.knobTab) ? {
+    text: knobText('Link above text', 'View more', parentKnobs.link_above_text, 'Content'),
     url: 'http://www.example.com',
     title: 'View more',
     is_new_window: false,
     is_external: false,
   } : null;
 
-  knobs.link_below = knobBoolean('With link below', true, props.with_link_below, props.knobTab) ? {
-    text: knobText('Link below text', 'View more', props.link_below_text, 'Content'),
+  knobs.link_below = knobBoolean('With link below', true, parentKnobs.with_link_below, parentKnobs.knobTab) ? {
+    text: knobText('Link below text', 'View more', parentKnobs.link_below_text, 'Content'),
     url: 'http://www.example.com',
     title: 'View more',
     is_new_window: false,
@@ -57,17 +57,17 @@ export const List = (props = {}) => {
       Both: 'both',
     },
     'none',
-    props.vertical_spacing,
-    props.knobTab,
+    parentKnobs.vertical_spacing,
+    parentKnobs.knobTab,
   );
 
-  knobs.with_background = knobBoolean('With background', false, props.with_background, props.knobTab);
+  knobs.with_background = knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab);
 
-  knobs.modifier_class = knobText('Additional class', '', props.modifier_class, props.knobTab);
+  knobs.modifier_class = knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab);
 
-  const showFilters = knobBoolean('Show filters', true, props.show_filter, props.knobTab);
-  const showItems = knobBoolean('Show items', true, props.show_items, props.knobTab);
-  const showPager = knobBoolean('Show pager', true, props.show_pager, props.knobTab);
+  const showFilters = knobBoolean('Show filters', true, parentKnobs.show_filter, parentKnobs.knobTab);
+  const showItems = knobBoolean('Show items', true, parentKnobs.show_items, parentKnobs.knobTab);
+  const showPager = knobBoolean('Show pager', true, parentKnobs.show_pager, parentKnobs.knobTab);
 
   let filtersCount = 0;
 
@@ -82,7 +82,7 @@ export const List = (props = {}) => {
         Group: 'group',
       },
       'single',
-      props.filter_type,
+      parentKnobs.filter_type,
       filtersKnobTab,
     );
 
@@ -95,7 +95,7 @@ export const List = (props = {}) => {
         max: 15,
         step: 1,
       },
-      props.number_of_filters,
+      parentKnobs.number_of_filters,
       filtersKnobTab,
     );
 
@@ -118,7 +118,7 @@ export const List = (props = {}) => {
         items,
       };
 
-      knobs.filters = shouldRender(props) ? CivicThemeSingleFilter(filterKnobs) : filterKnobs;
+      knobs.filters = shouldRender(parentKnobs) ? CivicThemeSingleFilter(filterKnobs) : filterKnobs;
     } else {
       const filters = [];
       if (filtersCount > 0) {
@@ -136,7 +136,7 @@ export const List = (props = {}) => {
         filters,
       };
 
-      knobs.filters = shouldRender(props) ? CivicThemeGroupFilter(filterKnobs) : filterKnobs;
+      knobs.filters = shouldRender(parentKnobs) ? CivicThemeGroupFilter(filterKnobs) : filterKnobs;
     }
   }
 
@@ -147,7 +147,7 @@ export const List = (props = {}) => {
       heading_id: 'ct-listing-demo',
     };
 
-    knobs.pager = shouldRender(props) ? Pagination({ ...pagerKnobs, ...{ knobTab: 'Pagination' } }) : pagerKnobs;
+    knobs.pager = shouldRender(parentKnobs) ? Pagination({ ...pagerKnobs, ...{ knobTab: 'Pagination' } }) : pagerKnobs;
   }
 
   // Build items.
@@ -163,7 +163,7 @@ export const List = (props = {}) => {
         max: 48,
         step: 6,
       },
-      props.number_of_results,
+      parentKnobs.number_of_results,
       itemsKnobTab,
     );
 
@@ -180,7 +180,7 @@ export const List = (props = {}) => {
         Snippet: 'snippet',
       },
       'promo-card',
-      props.item_type,
+      parentKnobs.item_type,
       itemsKnobTab,
     );
 
@@ -193,7 +193,7 @@ export const List = (props = {}) => {
         max: 48,
         step: 6,
       },
-      props.items_per_page,
+      parentKnobs.items_per_page,
       itemsKnobTab,
     );
 
@@ -205,7 +205,7 @@ export const List = (props = {}) => {
           Dark: 'dark',
         },
         'light',
-        props.item_theme,
+        parentKnobs.item_theme,
         itemsKnobTab,
       );
 
@@ -222,7 +222,7 @@ export const List = (props = {}) => {
         itemsKnobTab,
       );
 
-      const itemWithImage = knobBoolean('With image', true, props.item_with_image, itemsKnobTab);
+      const itemWithImage = knobBoolean('With image', true, parentKnobs.item_with_image, itemsKnobTab);
 
       const itemTags = randomTags(knobNumber(
         'Number of tags',
@@ -233,7 +233,7 @@ export const List = (props = {}) => {
           max: 10,
           step: 1,
         },
-        props.item_number_of_tags,
+        parentKnobs.item_number_of_tags,
         itemsKnobTab,
       ), true);
 
@@ -280,13 +280,13 @@ export const List = (props = {}) => {
         with_background: knobs.with_background,
       };
 
-      knobs.rows = shouldRender(props) ? CivicThemeGrid(itemsKnobs) : itemsKnobs;
+      knobs.rows = shouldRender(parentKnobs) ? CivicThemeGrid(itemsKnobs) : itemsKnobs;
 
-      knobs.results_count = knobBoolean('With result count', true, props.results_count, props.knobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
-      knobs.rows_above = knobBoolean('With content above rows', true, props.rows_above, props.knobTab) ? `Example content above rows ${randomText(randomInt(10, 75))}` : null;
-      knobs.rows_below = knobBoolean('With content below rows', true, props.rows_below, props.knobTab) ? `Example content below rows ${randomText(randomInt(10, 75))}` : null;
+      knobs.results_count = knobBoolean('With result count', true, parentKnobs.results_count, parentKnobs.knobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
+      knobs.rows_above = knobBoolean('With content above rows', true, parentKnobs.rows_above, parentKnobs.knobTab) ? `Example content above rows ${randomText(randomInt(10, 75))}` : null;
+      knobs.rows_below = knobBoolean('With content below rows', true, parentKnobs.rows_below, parentKnobs.knobTab) ? `Example content below rows ${randomText(randomInt(10, 75))}` : null;
     }
   }
 
-  return shouldRender(props) ? CivicThemeList(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeList(knobs) : knobs;
 };

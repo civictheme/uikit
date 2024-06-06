@@ -1,9 +1,11 @@
-import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, randomUrl, shouldRender } from '../../00-base/base.utils';
-import CivicThemeFooter from './footer.stories.twig';
+import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender, KnobValues } from '../../00-base/base.utils';
+import CivicThemeFooter from './footer.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
-import { generateMenuLinks } from '../../00-base/menu/menu.utils';
 import { Logo } from '../../02-molecules/logo/logo.stories';
+import { SocialLinks } from '../social-links/social-links.stories';
+import { Navigation } from '../navigation/navigation.stories';
+import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {
   title: 'Organisms/Footer',
@@ -12,45 +14,82 @@ export default {
   },
 };
 
-export const Footer = (props = {}) => {
+export const Footer = (parentKnobs = {}) => {
+  const theme = knobRadios(
+    'Theme',
+    {
+      Light: 'light',
+      Dark: 'dark',
+    },
+    'light',
+    parentKnobs.theme,
+    parentKnobs.knobTab,
+  );
+
   const knobs = {
-    theme: knobRadios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      'light',
-      props.knobTab,
-    ),
-    modifier_class: knobText('Additional class', '', props.knobTab),
-    show_social_links: knobBoolean('Show social links', true, props.knobTab),
-    show_middle_links: knobBoolean('Show middle links', true, props.knobTab),
-    show_acknowledgement: knobBoolean('Show acknowledgement', true, props.knobTab),
-    show_copyright: knobBoolean('Show copyright', true, props.knobTab),
+    theme,
+    show_logo: knobBoolean('Show logo', true, parentKnobs.show_logo, parentKnobs.knobTab),
+    show_social_links: knobBoolean('Show social links', true, parentKnobs.show_social_links, parentKnobs.knobTab),
+    show_middle_links: knobBoolean('Show middle links', true, parentKnobs.show_middle_links, parentKnobs.knobTab),
+    show_acknowledgement: knobBoolean('Show acknowledgement', true, parentKnobs.show_acknowledgement, parentKnobs.knobTab),
+    show_copyright: knobBoolean('Show copyright', true, parentKnobs.show_copyright, parentKnobs.knobTab),
+    show_background_image: knobBoolean('Show background image', false, parentKnobs.show_background_image, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  knobs.logo = knobBoolean('Show logo', true, props.knobTab) ? Logo({
-    knobTab: 'Logo',
-    theme: knobs.theme,
-    url: randomUrl('example2.com'),
-    type: new KnobValue(),
-    title: new KnobValue('This is a Logo in Footer'),
-  }) : null;
+  const props = {
+    content_top1: knobs.show_logo ? Logo(new KnobValues({ theme })) : '',
+    content_top2: knobs.show_social_links ? SocialLinks(new KnobValues({
+      theme,
+      items: [
+        {
+          title: 'Facebook',
+          icon: 'facebook',
+          url: 'https://www.facebook.com',
+        },
+        {
+          title: 'X',
+          icon: 'x',
+          url: 'https://www.twitter.com',
+        },
+        {
+          title: 'Icon with inline SVG',
+          // icon_html should take precedence.
+          icon_html: CivicThemeIcon({
+            symbol: 'linkedin',
+            size: 'small',
+          }),
+          icon: 'linkedin',
+          url: 'https://www.linkedin.com',
+        },
+      ],
+    })) : '',
+    content_middle1: knobs.show_middle_links ? Navigation(new KnobValues({
+      title: 'Services',
+      theme,
+    })) : '',
+    content_middle2: knobs.show_middle_links ? Navigation(new KnobValues({
+      title: 'About us',
+      theme,
+    })) : '',
+    content_middle3: knobs.show_middle_links ? Navigation(new KnobValues({
+      title: 'Help',
+      theme,
+    })) : '',
+    content_middle4: knobs.show_middle_links ? Navigation(new KnobValues({
+      title: 'Resources',
+      theme,
+    })) : '',
+    content_bottom1: knobs.show_acknowledgement ? '<div class="ct-footer__acknowledgement ct-text-regular">We acknowledge the traditional owners of the country throughout Australia and their continuing connection to land, sea and community. We pay our respect to them and their cultures and to the elders past and present.</div>' : '',
+    content_bottom2: knobs.show_copyright ? '<div class="copyright ct-text-regular">©Commonwealth of Australia</div>' : '',
+  };
 
-  if (knobBoolean('Show background image', false, props.knobTab)) {
-    knobs.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.knobTab)];
+  if (knobs.show_background_image) {
+    props.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], parentKnobs.background_image, parentKnobs.knobTab)];
   }
 
-  if (knobs.show_middle_links) {
-    knobs.links1 = generateMenuLinks(4, 1, false);
-    knobs.links2 = generateMenuLinks(4, 1, false);
-    knobs.links3 = generateMenuLinks(4, 1, false);
-    knobs.links4 = generateMenuLinks(4, 1, false);
-  }
-
-  return shouldRender(props) ? CivicThemeFooter({
-    ...knobs,
+  return shouldRender(parentKnobs) ? CivicThemeFooter({
+    ...props,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -61,5 +100,5 @@ export const Footer = (props = {}) => {
       'content_bottom1',
       'content_bottom2',
     ]),
-  }) : knobs;
+  }) : props;
 };

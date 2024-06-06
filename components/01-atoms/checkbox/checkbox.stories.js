@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Checkbox = (props = {}) => {
+export const Checkbox = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,16 +17,16 @@ export const Checkbox = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Checkbox label', props.knobTab),
-    is_required: knobBoolean('Required', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    disabled: knobBoolean('Disabled', false, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    content: knobText('Content', 'Checkbox label', parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    has_error: knobBoolean('Has error', false, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeCheckbox(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeCheckbox(knobs) : knobs;
 };

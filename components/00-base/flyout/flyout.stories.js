@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Flyout = (props = {}) => {
+export const Flyout = (parentKnobs = {}) => {
   const knobs = {
     direction: knobRadios(
       'Flyout from',
@@ -20,12 +20,12 @@ export const Flyout = (props = {}) => {
         Right: 'right',
       },
       'right',
-      props.direction,
-      props.knobTab,
+      parentKnobs.direction,
+      parentKnobs.knobTab,
     ),
-    expanded: knobBoolean('Expanded', false, props.expanded, props.knobTab),
-    duration: knobNumber('Duration (ms)', 500, undefined, props.duration, props.knobTab),
+    expanded: knobBoolean('Expanded', false, parentKnobs.expanded, parentKnobs.knobTab),
+    duration: knobNumber('Duration (ms)', 500, undefined, parentKnobs.duration, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeFlyout(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeFlyout(knobs) : knobs;
 };

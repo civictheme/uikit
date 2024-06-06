@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const CheckboxGroup = (props = {}) => {
+export const CheckboxGroup = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,7 +17,7 @@ export const CheckboxGroup = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     direction: knobRadios(
       'Direction',
@@ -26,7 +26,7 @@ export const CheckboxGroup = (props = {}) => {
         Vertical: 'vertical',
       },
       'vertical',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     items: randomFields(knobNumber(
       'Items count',
@@ -37,15 +37,15 @@ export const CheckboxGroup = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.knobTab,
-    ), props.theme, false, 'checkbox'),
-    content: knobText('Content', 'Checkbox label', props.knobTab),
-    disabled: knobBoolean('Disabled', false, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.knobTab)}`,
-    attributes: knobText('Additional attributes', '', props.knobTab),
+      parentKnobs.knobTab,
+    ), parentKnobs.theme, false, 'checkbox'),
+    content: knobText('Content', 'Checkbox label', parentKnobs.knobTab),
+    disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    has_error: knobBoolean('Has error', false, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', parentKnobs.knobTab)}`,
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeCheckboxGroup(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeCheckboxGroup(knobs) : knobs;
 };

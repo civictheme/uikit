@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Button = (props = {}) => {
+export const Button = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,14 +18,14 @@ export const Button = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     text: knobText(
       'Text',
       'Button text',
-      props.text,
-      props.knobTab,
+      parentKnobs.text,
+      parentKnobs.knobTab,
     ),
     type: knobRadios(
       'Type',
@@ -36,8 +36,8 @@ export const Button = (props = {}) => {
         None: '',
       },
       'primary',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
     size: knobRadios(
       'Size',
@@ -48,8 +48,8 @@ export const Button = (props = {}) => {
         None: '',
       },
       'regular',
-      props.size,
-      props.knobTab,
+      parentKnobs.size,
+      parentKnobs.knobTab,
     ),
     kind: knobRadios(
       'Kind',
@@ -60,27 +60,27 @@ export const Button = (props = {}) => {
         Submit: 'submit',
       },
       'button',
-      props.kind,
-      props.knobTab,
+      parentKnobs.kind,
+      parentKnobs.knobTab,
     ),
   };
 
   if (knobs.kind === 'link') {
-    knobs.url = knobText('URL', 'http://example.com', props.url, props.knobTab);
-    knobs.is_new_window = knobBoolean('Open in a new window', false, props.is_new_window, props.knobTab);
+    knobs.url = knobText('URL', 'http://example.com', parentKnobs.url, parentKnobs.knobTab);
+    knobs.is_new_window = knobBoolean('Open in a new window', false, parentKnobs.is_new_window, parentKnobs.knobTab);
   }
 
-  knobs.is_disabled = knobBoolean('Disabled', false, props.is_disabled, props.knobTab);
-  knobs.is_external = knobBoolean('Is external', false, props.is_external, props.knobTab);
-  knobs.is_raw_text = knobBoolean('Allow HTML in text', false, props.is_raw_text, props.knobTab);
-  knobs.modifier_class = knobText('Additional class', '', props.modifier_class, props.knobTab);
-  knobs.attributes = knobText('Additional attributes', '', props.attributes, props.knobTab);
+  knobs.is_disabled = knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab);
+  knobs.is_external = knobBoolean('Is external', false, parentKnobs.is_external, parentKnobs.knobTab);
+  knobs.is_raw_text = knobBoolean('Allow HTML in text', false, parentKnobs.is_raw_text, parentKnobs.knobTab);
+  knobs.modifier_class = knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab);
+  knobs.attributes = knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab);
 
-  const withIcon = knobBoolean('With icon', false, props.with_icon, props.knobTab);
+  const withIcon = knobBoolean('With icon', false, parentKnobs.with_icon, parentKnobs.knobTab);
 
   const iconKnobTab = 'Icon';
   const iconKnobs = {
-    icon: withIcon ? knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], props.icon, iconKnobTab) : null,
+    icon: withIcon ? knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], parentKnobs.icon, iconKnobTab) : null,
     icon_placement: withIcon ? knobRadios(
       'Position',
       {
@@ -88,12 +88,12 @@ export const Button = (props = {}) => {
         After: 'after',
       },
       'after',
-      props.icon_position,
+      parentKnobs.icon_position,
       iconKnobTab,
     ) : null,
   };
 
   const combinedKnobs = { ...knobs, ...iconKnobs };
 
-  return shouldRender(props) ? CivicThemeButton(combinedKnobs) : combinedKnobs;
+  return shouldRender(parentKnobs) ? CivicThemeButton(combinedKnobs) : combinedKnobs;
 };

@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const Paragraph = (props = {}) => {
+export const Paragraph = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -20,10 +20,10 @@ export const Paragraph = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', props.content, props.knobTab),
+    content: knobText('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', parentKnobs.content, parentKnobs.knobTab),
     size: knobRadios(
       'Size',
       {
@@ -33,13 +33,13 @@ export const Paragraph = (props = {}) => {
         Small: 'small',
       },
       'regular',
-      props.size,
-      props.knobTab,
+      parentKnobs.size,
+      parentKnobs.knobTab,
     ),
-    allow_html: knobBoolean('Allow HTML in text', false, props.allow_html, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    allow_html: knobBoolean('Allow HTML in text', false, parentKnobs.allow_html, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeParagraph(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeParagraph(knobs) : knobs;
 };

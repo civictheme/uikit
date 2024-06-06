@@ -44,12 +44,6 @@
   }
 }
 
-.col,
-[class^='col-'] {
-  margin-bottom: ct-spacing(3);
-  container-type: inline-size;
-}
-
 .first {
   order: -1;
 }

@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Accordion = (props = {}) => {
+export const Accordion = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,11 +18,11 @@ export const Accordion = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    expand_all: knobBoolean('Expand all', false, props.expand_all, props.knobTab),
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    expand_all: knobBoolean('Expand all', false, parentKnobs.expand_all, parentKnobs.knobTab),
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -32,11 +32,11 @@ export const Accordion = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   // Adding dynamic number of accordion panels.
@@ -50,7 +50,7 @@ export const Accordion = (props = {}) => {
       max: 10,
       step: 1,
     },
-    props.number_of_panels,
+    parentKnobs.number_of_panels,
     panelsKnobTab,
   );
 
@@ -58,16 +58,16 @@ export const Accordion = (props = {}) => {
   let itr = 1;
   while (itr <= numOfPanels) {
     panels.push({
-      title: knobText(`Panel ${itr} title `, `Accordion title ${itr}`, props[`panel_title_${itr}`], panelsKnobTab),
-      content: `${knobText(`Panel ${itr} content`, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', props[`panel_content_${itr}`], panelsKnobTab)} <a href="https://example.com">Example link</a>`,
-      expanded: knobBoolean(`Panel ${itr} initially expanded`, knobs.expand_all, props[`panel_expanded_${itr}`], panelsKnobTab),
+      title: knobText(`Panel ${itr} title `, `Accordion title ${itr}`, parentKnobs[`panel_title_${itr}`], panelsKnobTab),
+      content: `${knobText(`Panel ${itr} content`, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', parentKnobs[`panel_content_${itr}`], panelsKnobTab)} <a href="https://example.com">Example link</a>`,
+      expanded: knobBoolean(`Panel ${itr} initially expanded`, knobs.expand_all, parentKnobs[`panel_expanded_${itr}`], panelsKnobTab),
     });
     itr += 1;
   }
 
   const combinedKnobs = { ...knobs, panels };
 
-  return shouldRender(props) ? CivicThemeAccordion({
+  return shouldRender(parentKnobs) ? CivicThemeAccordion({
     ...combinedKnobs,
     ...generateSlots([
       'content_top',

@@ -15,9 +15,18 @@
   &__inner {
     display: grid;
     grid-template-columns: repeat($ct-layout-columns, 1fr);
+    grid-row-gap: $ct-layout-row-gap;
+
+    #{$root}--no-top-left#{$root}--no-bottom-left & {
+      grid-row-gap: $ct-layout-row-gap-right-only;
+    }
+
+    #{$root}--no-top-right#{$root}--no-bottom-right & {
+      grid-row-gap: $ct-layout-row-gap-left-only;
+    }
 
     @include ct-breakpoint($ct-layout-breakpoint) {
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: auto 1fr;
       grid-column-gap: $ct-layout-column-gap;
 
       #{$root}--no-top-left#{$root}--no-bottom-left & {
@@ -37,6 +46,7 @@
     @include ct-breakpoint($ct-layout-breakpoint) {
       grid-column: 1 / span $ct-layout-rail-left-columns;
       grid-row: 1 / span 1;
+      height: auto;
 
       #{$root}--no-bottom-left & {
         grid-row: 1 / span 2;
@@ -51,6 +61,7 @@
     @include ct-breakpoint($ct-layout-breakpoint) {
       grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
       grid-row: 1 / span 1;
+      height: auto;
 
       #{$root}--no-bottom-right & {
         grid-row: 1 / span 2;
@@ -87,6 +98,7 @@
     @include ct-breakpoint($ct-layout-breakpoint) {
       grid-column: 1 / span $ct-layout-rail-left-columns;
       grid-row: 2 / span 1;
+      height: 100%;
 
       #{$root}--no-top-left & {
         grid-row: 1 / span 2;
@@ -101,6 +113,7 @@
     @include ct-breakpoint($ct-layout-breakpoint) {
       grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
       grid-row: 2 / span 1;
+      height: 100%;
 
       #{$root}--no-top-right & {
         grid-row: 1 / span 2;

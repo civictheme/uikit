@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/Tabs',
 };
 
-export const Tabs = (props = {}) => {
+export const Tabs = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -15,8 +15,8 @@ export const Tabs = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     tabs_count: knobNumber(
       'Tabs count',
@@ -27,10 +27,10 @@ export const Tabs = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.tabs_count,
-      props.knobTab,
+      parentKnobs.tabs_count,
+      parentKnobs.knobTab,
     ),
-    with_panels: knobBoolean('With panels', true, props.with_panels, props.knobTab),
+    with_panels: knobBoolean('With panels', true, parentKnobs.with_panels, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -40,11 +40,11 @@ export const Tabs = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   let panelKnobs = {};
@@ -82,5 +82,5 @@ export const Tabs = (props = {}) => {
 
   const combinedKnobs = { ...knobs, ...panelKnobs };
 
-  return shouldRender(props) ? CivicThemeTabs(combinedKnobs) : combinedKnobs;
+  return shouldRender(parentKnobs) ? CivicThemeTabs(combinedKnobs) : combinedKnobs;
 };

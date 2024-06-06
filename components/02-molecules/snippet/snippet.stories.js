@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Snippet = (props = {}) => {
+export const Snippet = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,15 +19,15 @@ export const Snippet = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Snippet name which runs across two or three lines', props.title, props.knobTab),
-    summary: knobText('Summary', randomSentence(randomInt(15, 25)), props.summary, props.knobTab),
+    title: knobText('Title', 'Snippet name which runs across two or three lines', parentKnobs.title, parentKnobs.knobTab),
+    summary: knobText('Summary', randomSentence(randomInt(15, 25)), parentKnobs.summary, parentKnobs.knobTab),
     link: {
-      url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
-      is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
-      is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
+      url: knobText('Link URL', randomUrl(), parentKnobs.link_url, parentKnobs.knobTab),
+      is_external: knobBoolean('Link is external', false, parentKnobs.link_is_external, parentKnobs.knobTab),
+      is_new_window: knobBoolean('Open in a new window', false, parentKnobs.link_is_new_window, parentKnobs.knobTab),
     },
     tags: randomTags(knobNumber(
       'Number of tags',
@@ -38,14 +38,14 @@ export const Snippet = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_tags,
-      props.knobTab,
+      parentKnobs.number_of_tags,
+      parentKnobs.knobTab,
     ), true),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSummary({
+  return shouldRender(parentKnobs) ? CivicThemeSummary({
     ...knobs,
     ...generateSlots([
       'content_top',
