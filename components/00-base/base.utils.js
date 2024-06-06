@@ -175,7 +175,7 @@ export const randomField = (inputType, options, theme, rand, itr) => {
   return CivicThemeField(FieldOptions);
 };
 
-export const randomFields = (count, theme, rand) => {
+export const randomFields = (count, theme, rand, defaultInputType) => {
   rand = rand || false;
 
   const inputTypes = [
@@ -192,7 +192,7 @@ export const randomFields = (count, theme, rand) => {
 
   const Fields = [];
   for (let i = 0; i < count; i++) {
-    const inputType = inputTypes[Math.floor(Math.random() * inputTypes.length)];
+    const inputType = defaultInputType || inputTypes[Math.floor(Math.random() * inputTypes.length)];
     const required = [Math.floor(Math.random() * requiredOptions.length)];
 
     Fields.push(randomField(
