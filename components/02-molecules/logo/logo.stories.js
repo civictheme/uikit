@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Logo = (props = {}) => {
+export const Logo = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -16,8 +16,8 @@ export const Logo = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const knobs = {
@@ -31,10 +31,10 @@ export const Logo = (props = {}) => {
         'Inline-Stacked': 'inline-stacked',
       },
       'default',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
-    with_secondary_image: knobBoolean('With secondary image', false, props.with_secondary_image, props.knobTab),
+    with_secondary_image: knobBoolean('With secondary image', false, parentKnobs.with_secondary_image, parentKnobs.knobTab),
     logos: {
       primary: {
         mobile: {
@@ -47,10 +47,10 @@ export const Logo = (props = {}) => {
         },
       },
     },
-    url: knobText('Link', randomUrl(), props.url, props.knobTab),
-    title: knobText('Title', 'Logo title', props.title, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    url: knobText('Link', randomUrl(), parentKnobs.url, parentKnobs.knobTab),
+    title: knobText('Title', 'Logo title', parentKnobs.title, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   knobs.logos = knobs.with_secondary_image ? {
@@ -69,5 +69,5 @@ export const Logo = (props = {}) => {
     },
   } : knobs.logos;
 
-  return shouldRender(props) ? CivicThemeLogo(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeLogo(knobs) : knobs;
 };

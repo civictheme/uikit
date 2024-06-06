@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Link = (props = {}) => {
+export const Link = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,20 +17,20 @@ export const Link = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    text: knobText('Text', 'Link text', props.text, props.knobTab),
-    title: knobText('Title', 'Link title', props.link_title, props.knobTab),
-    hidden_text: knobText('Link hidden text', 'Link hidden text', props.hidden_text, props.knobTab),
-    url: knobText('URL', randomUrl(), props.url, props.knobTab),
-    is_external: knobBoolean('Is external', false, props.is_external, props.knobTab),
-    is_active: knobBoolean('Is active', false, props.is_active, props.knobTab),
-    is_disabled: knobBoolean('Is disabled', false, props.is_disabled, props.knobTab),
-    is_new_window: knobBoolean('Open in a new window', false, props.is_new_window, props.knobTab),
-    with_icon: knobBoolean('With icon', false, props.with_icon, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    text: knobText('Text', 'Link text', parentKnobs.text, parentKnobs.knobTab),
+    title: knobText('Title', 'Link title', parentKnobs.link_title, parentKnobs.knobTab),
+    hidden_text: knobText('Link hidden text', 'Link hidden text', parentKnobs.hidden_text, parentKnobs.knobTab),
+    url: knobText('URL', randomUrl(), parentKnobs.url, parentKnobs.knobTab),
+    is_external: knobBoolean('Is external', false, parentKnobs.is_external, parentKnobs.knobTab),
+    is_active: knobBoolean('Is active', false, parentKnobs.is_active, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Is disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    is_new_window: knobBoolean('Open in a new window', false, parentKnobs.is_new_window, parentKnobs.knobTab),
+    with_icon: knobBoolean('With icon', false, parentKnobs.with_icon, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   const iconKnobTab = 'Icon';
@@ -42,13 +42,13 @@ export const Link = (props = {}) => {
         After: 'after',
       },
       'before',
-      props.icon_placement,
+      parentKnobs.icon_placement,
       iconKnobTab,
     ),
-    icon: knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], props.icon, iconKnobTab),
+    icon: knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], parentKnobs.icon, iconKnobTab),
   } : null;
 
   const combinedKnobs = { ...knobs, ...iconKnobs };
 
-  return shouldRender(props) ? CivicThemeLink(combinedKnobs) : combinedKnobs;
+  return shouldRender(parentKnobs) ? CivicThemeLink(combinedKnobs) : combinedKnobs;
 };

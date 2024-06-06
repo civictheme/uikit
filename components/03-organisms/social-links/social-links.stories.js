@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const SocialLinks = (props = {}) => {
+export const SocialLinks = (parentKnobs = {}) => {
   const items = [
     {
       icon_html: `<img class="ct-button__icon" width=16 height=16 src="${generateIcon()}"/>`,
@@ -56,14 +56,14 @@ export const SocialLinks = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    items: knobBoolean('With items', true, props.with_items, props.knobTab) ? props.items || items : null,
-    with_border: knobBoolean('With border', true, props.with_border, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    items: knobBoolean('With items', true, parentKnobs.with_items, parentKnobs.knobTab) ? parentKnobs.items || items : null,
+    with_border: knobBoolean('With border', true, parentKnobs.with_border, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSocialLinks(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeSocialLinks(knobs) : knobs;
 };

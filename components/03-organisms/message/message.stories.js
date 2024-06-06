@@ -5,7 +5,7 @@ export default {
   title: 'Organisms/Message',
 };
 
-export const Message = (props = {}) => {
+export const Message = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -14,8 +14,8 @@ export const Message = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     type: knobRadios(
       'Type',
@@ -26,14 +26,14 @@ export const Message = (props = {}) => {
         Success: 'success',
       },
       'information',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'The information on this page is currently being updated.', props.title, props.knobTab),
-    description: knobText('Summary', `Message description ${randomText()}`, props.description, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    title: knobText('Title', 'The information on this page is currently being updated.', parentKnobs.title, parentKnobs.knobTab),
+    description: knobText('Summary', `Message description ${randomText()}`, parentKnobs.description, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeMessage(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeMessage(knobs) : knobs;
 };

@@ -14,7 +14,7 @@ export default {
   },
 };
 
-export const Footer = (props = {}) => {
+export const Footer = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -22,19 +22,19 @@ export const Footer = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const knobs = {
     theme,
-    show_logo: knobBoolean('Show logo', true, props.show_logo, props.knobTab),
-    show_social_links: knobBoolean('Show social links', true, props.show_social_links, props.knobTab),
-    show_middle_links: knobBoolean('Show middle links', true, props.show_middle_links, props.knobTab),
-    show_acknowledgement: knobBoolean('Show acknowledgement', true, props.show_acknowledgement, props.knobTab),
-    show_copyright: knobBoolean('Show copyright', true, props.show_copyright, props.knobTab),
-    show_background_image: knobBoolean('Show background image', false, props.show_background_image, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    show_logo: knobBoolean('Show logo', true, parentKnobs.show_logo, parentKnobs.knobTab),
+    show_social_links: knobBoolean('Show social links', true, parentKnobs.show_social_links, parentKnobs.knobTab),
+    show_middle_links: knobBoolean('Show middle links', true, parentKnobs.show_middle_links, parentKnobs.knobTab),
+    show_acknowledgement: knobBoolean('Show acknowledgement', true, parentKnobs.show_acknowledgement, parentKnobs.knobTab),
+    show_copyright: knobBoolean('Show copyright', true, parentKnobs.show_copyright, parentKnobs.knobTab),
+    show_background_image: knobBoolean('Show background image', false, parentKnobs.show_background_image, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   const slots = {
@@ -85,10 +85,10 @@ export const Footer = (props = {}) => {
   };
 
   if (knobs.show_background_image) {
-    slots.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.background_image, props.knobTab)];
+    slots.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], parentKnobs.background_image, parentKnobs.knobTab)];
   }
 
-  return shouldRender(props) ? CivicThemeFooter({
+  return shouldRender(parentKnobs) ? CivicThemeFooter({
     ...slots,
     ...generateSlots([
       'content_top1',

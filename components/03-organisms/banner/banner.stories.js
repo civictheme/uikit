@@ -13,7 +13,7 @@ export default {
   },
 };
 
-export const Banner = (props = {}) => {
+export const Banner = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -21,32 +21,32 @@ export const Banner = (props = {}) => {
       Dark: 'dark',
     },
     'dark',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
-  const title = knobText('Title', 'Providing visually engaging digital experiences', props.title, props.knobTab);
+  const title = knobText('Title', 'Providing visually engaging digital experiences', parentKnobs.title, parentKnobs.knobTab);
 
-  const showBgImage = knobBoolean('Show background image', true, props.show_background_image, props.knobTab);
+  const showBgImage = knobBoolean('Show background image', true, parentKnobs.show_background_image, parentKnobs.knobTab);
 
   const knobs = {
     theme,
     title,
-    background_image: showBgImage ? knobSelect('Background image', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], props.background_image, 'Background') : '',
+    background_image: showBgImage ? knobSelect('Background image', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], parentKnobs.background_image, 'Background') : '',
     background_image_blend_mode: showBgImage ? knobSelect(
       'Blend mode',
       objectFromArray(SCSS_VARIABLES['ct-background-blend-modes']),
       'multiply',
-      props.background_image_blend_mode,
+      parentKnobs.background_image_blend_mode,
       'Background',
     ) : null,
-    show_featured_image: knobBoolean('Show featured image', true, props.show_featured_image, props.knobTab),
-    is_decorative: knobBoolean('Decorative', true, props.is_decorative, props.knobTab),
-    show_site_section: knobBoolean('Show site section', true, props.show_site_section, props.knobTab),
-    show_breadcrumb: knobBoolean('Show breadcrumb', true, props.show_breadcrumb, props.knobTab),
-    show_content_text: knobBoolean('Show content text', true, props.show_content_text, props.knobTab),
-    show_content_below: knobBoolean('Show content below', false, props.show_content_below, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    show_featured_image: knobBoolean('Show featured image', true, parentKnobs.show_featured_image, parentKnobs.knobTab),
+    is_decorative: knobBoolean('Decorative', true, parentKnobs.is_decorative, parentKnobs.knobTab),
+    show_site_section: knobBoolean('Show site section', true, parentKnobs.show_site_section, parentKnobs.knobTab),
+    show_breadcrumb: knobBoolean('Show breadcrumb', true, parentKnobs.show_breadcrumb, parentKnobs.knobTab),
+    show_content_text: knobBoolean('Show content text', true, parentKnobs.show_content_text, parentKnobs.knobTab),
+    show_content_below: knobBoolean('Show content below', false, parentKnobs.show_content_below, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   const slots = {
@@ -59,7 +59,7 @@ export const Banner = (props = {}) => {
   if (knobs.background_image) {
     slots.background_image = {
       url: BACKGROUNDS[knobs.background_image],
-      alt: knobText('Alt text', 'Background image alt text', props.background_image_alt_text, 'Background'),
+      alt: knobText('Alt text', 'Background image alt text', parentKnobs.background_image_alt_text, 'Background'),
     };
     slots.background_image_blend_mode = knobs.background_image_blend_mode;
   }
@@ -80,7 +80,7 @@ export const Banner = (props = {}) => {
       theme,
       count_of_links: new KnobValue(),
       knobTab: 'Breadcrumb',
-    }, false, props.breadcrumb));
+    }, false, parentKnobs.breadcrumb));
   }
 
   if (knobs.show_content_text) {
@@ -124,7 +124,7 @@ export const Banner = (props = {}) => {
     slots.content_below = contentBelow;
   }
 
-  return shouldRender(props) ? CivicThemeBanner({
+  return shouldRender(parentKnobs) ? CivicThemeBanner({
     ...slots,
     ...generateSlots([
       'content_top1',

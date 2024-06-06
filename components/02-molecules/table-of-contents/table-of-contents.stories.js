@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Table Of Contents',
 };
 
-export const TableOfContents = (props = {}) => {
+export const TableOfContents = (parentKnobs = {}) => {
   const countOfTocs = knobNumber(
     'Number of TOCs',
     1,
@@ -15,8 +15,8 @@ export const TableOfContents = (props = {}) => {
       max: 5,
       step: 1,
     },
-    props.number_of_tocs,
-    props.knobTab,
+    parentKnobs.number_of_tocs,
+    parentKnobs.knobTab,
   );
 
   const generateContent = (count, selector, duplicate, index) => {
@@ -54,21 +54,21 @@ export const TableOfContents = (props = {}) => {
       max: 10,
       step: 1,
     },
-    props.number_of_items,
+    parentKnobs.number_of_items,
     contentKnobTab,
   );
 
   const htmlSelector = knobText(
     'Selector',
     'h2',
-    props.html_selector,
+    parentKnobs.html_selector,
     contentKnobTab,
   );
 
   const duplicate = knobBoolean(
     'Duplicated headers',
     false,
-    props.is_duplicated_headers,
+    parentKnobs.is_duplicated_headers,
     contentKnobTab,
   );
 
@@ -84,23 +84,23 @@ export const TableOfContents = (props = {}) => {
           Dark: 'dark',
         },
         'light',
-        props[`theme_toc_${i}`],
+        parentKnobs[`theme_toc_${i}`],
         tocKnobTab,
       ),
-      'data-table-of-contents-title': knobText('Title', 'On this page', props[`content_title_toc_${i}`], tocKnobTab),
-      'data-table-of-contents-anchor-selector': knobText('Anchor selector', 'h2', props[`content_anchor_selector_toc_${i}`], tocKnobTab),
-      'data-table-of-contents-anchor-scope-selector': knobText('Anchor scope selector', `.ct-basic-content-${i + 1}`, props[`content_anchor_scope_selector_toc_${i}`], tocKnobTab),
+      'data-table-of-contents-title': knobText('Title', 'On this page', parentKnobs[`content_title_toc_${i}`], tocKnobTab),
+      'data-table-of-contents-anchor-selector': knobText('Anchor selector', 'h2', parentKnobs[`content_anchor_selector_toc_${i}`], tocKnobTab),
+      'data-table-of-contents-anchor-scope-selector': knobText('Anchor scope selector', `.ct-basic-content-${i + 1}`, parentKnobs[`content_anchor_scope_selector_toc_${i}`], tocKnobTab),
       'data-table-of-contents-position': knobRadios('Position', {
         Before: 'before',
         After: 'after',
         Prepend: 'prepend',
         Append: 'append',
-      }, 'before', props[`content_position_toc_${i}`], tocKnobTab),
+      }, 'before', parentKnobs[`content_position_toc_${i}`], tocKnobTab),
     };
 
-    const modifierClass = knobText('Additional class', '', props[`modifier_class_toc_${i}`], tocKnobTab);
+    const modifierClass = knobText('Additional class', '', parentKnobs[`modifier_class_toc_${i}`], tocKnobTab);
     const attributesStr = Object.keys(attributes).map((key) => (attributes[key] !== '' ? `${key}="${attributes[key]}"` : '')).join(' ');
-    const attributesAdditional = knobText('Additional attributes', '', props[`attributes_toc_${i}`], tocKnobTab);
+    const attributesAdditional = knobText('Additional attributes', '', parentKnobs[`attributes_toc_${i}`], tocKnobTab);
     const content = generateContent(countOfContentItems, htmlSelector, duplicate, i + 1);
 
     wrappers.push(`<div class="ct-basic-content ct-basic-content-${i + 1} ct-theme-${attributes['data-table-of-contents-theme']} ${modifierClass}" ${attributesStr} ${attributesAdditional}>${content}</div>`);
@@ -108,5 +108,5 @@ export const TableOfContents = (props = {}) => {
 
   const html = wrappers.join(' ');
 
-  return shouldRender(props) ? html : '';
+  return shouldRender(parentKnobs) ? html : '';
 };

@@ -5,7 +5,7 @@ export default {
   title: 'Atoms/Fieldset',
 };
 
-export const Fieldset = (props = {}) => {
+export const Fieldset = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -14,13 +14,13 @@ export const Fieldset = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    legend: knobText('Legend', 'Fieldset legend', props.legend, props.knobTab),
-    description: knobText('Description', 'Fieldset example description', props.description, props.knobTab),
-    is_required: knobBoolean('Required', true, props.is_required, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    legend: knobText('Legend', 'Fieldset legend', parentKnobs.legend, parentKnobs.knobTab),
+    description: knobText('Description', 'Fieldset example description', parentKnobs.description, parentKnobs.knobTab),
+    is_required: knobBoolean('Required', true, parentKnobs.is_required, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   const numOfElements = knobNumber(
@@ -32,8 +32,8 @@ export const Fieldset = (props = {}) => {
       max: 10,
       step: 1,
     },
-    props.number_of_form_elements,
-    props.knobTab,
+    parentKnobs.number_of_form_elements,
+    parentKnobs.knobTab,
   );
 
   const combinedKnobs = {
@@ -41,7 +41,7 @@ export const Fieldset = (props = {}) => {
     children: randomFields(numOfElements, knobs.theme, true).join(''),
   };
 
-  return shouldRender(props)
+  return shouldRender(parentKnobs)
     ? `<div class="container"><div class="row"><div class="col-xxs-12">${CivicThemeFieldset(combinedKnobs)}</div></div></div>`
     : combinedKnobs;
 };

@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const SkipLink = (props = {}) => {
+export const SkipLink = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,13 +19,13 @@ export const SkipLink = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    text: knobText('Text', 'Skip to main content', props.text, props.knobTab),
-    url: knobText('URL', '#main-content', props.url, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    text: knobText('Text', 'Skip to main content', parentKnobs.text, parentKnobs.knobTab),
+    url: knobText('URL', '#main-content', parentKnobs.url, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSkipLink(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeSkipLink(knobs) : knobs;
 };

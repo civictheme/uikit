@@ -445,9 +445,9 @@ export class KnobValue {
  * Container for the knob values passed to the stories.
  */
 export class StoryValues {
-  constructor(props = {}, shouldRender = true, parentProps = {}) {
-    this.props = props;
-    this.parentProps = parentProps;
+  constructor(parentKnobs = {}, shouldRender = true, parentKnobs = {}) {
+    this.parentKnobs = parentKnobs;
+    this.parentKnobs = parentKnobs;
     this.shouldRender = shouldRender;
 
     /* eslint no-constructor-return: 0 */
@@ -457,12 +457,12 @@ export class StoryValues {
           return target.shouldRender;
         }
 
-        if (prop in target.parentProps) {
-          return target.parentProps[prop];
+        if (prop in target.parentKnobs) {
+          return target.parentKnobs[prop];
         }
 
-        if (prop in target.props) {
-          return target.props[prop];
+        if (prop in target.parentKnobs) {
+          return target.parentKnobs[prop];
         }
 
         if (prop === 'knobTab') {
@@ -537,28 +537,28 @@ export const knobOptions = (name, options, value, optionsObj, parent, group = 'G
 export const knobDate = (name, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => dateKnob(knobName, knobValue, knobGroup));
 
 /**
- * Render a component if none of the props are of KnobValue class.
+ * Render a component if none of the parentKnobs are of KnobValue class.
  *
  * Allows to re-use stories to collect the values without rendering the
  * component.
  */
-export const shouldRender = (props) => {
-  if (props === null || typeof props !== 'object') return true;
+export const shouldRender = (parentKnobs) => {
+  if (parentKnobs === null || typeof parentKnobs !== 'object') return true;
 
-  if (Object.keys(props).length === 0 && props.constructor === Object) {
+  if (Object.keys(parentKnobs).length === 0 && parentKnobs.constructor === Object) {
     return true;
   }
 
-  // If the props are of StoryValues class, then check the shouldRender flag.
-  if (props instanceof StoryValues) {
-    return props.shouldRender;
+  // If the parentKnobs are of StoryValues class, then check the shouldRender flag.
+  if (parentKnobs instanceof StoryValues) {
+    return parentKnobs.shouldRender;
   }
 
   let showKnobs = false;
-  const propsValues = Object.values(props);
+  const knobsValues = Object.values(parentKnobs);
 
-  for (let i = 0; i < propsValues.length; i++) {
-    const value = propsValues[i];
+  for (let i = 0; i < knobsValues.length; i++) {
+    const value = knobsValues[i];
     if (value instanceof KnobValue) {
       if (value.getValue() !== null) {
         showKnobs = true;

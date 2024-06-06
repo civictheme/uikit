@@ -15,7 +15,7 @@ export default {
   },
 };
 
-export const ContentPage = (props = {}) => {
+export const ContentPage = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -23,15 +23,15 @@ export const ContentPage = (props = {}) => {
       Dark: 'dark',
     },
     'dark',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const knobs = {
-    show_rail_top_left: knobBoolean('Show left top rail', true, props.show_rail_top_left, props.knobTab),
-    show_rail_bottom_left: knobBoolean('Show left bottom rail', true, props.show_rail_bottom_left, props.knobTab),
-    show_rail_top_right: knobBoolean('Show right top rail', false, props.show_right_top_rail, props.knobTab),
-    show_rail_bottom_right: knobBoolean('Show right bottom rail', false, props.show_right_bottom_rail, props.knobTab),
+    show_rail_top_left: knobBoolean('Show left top rail', true, parentKnobs.show_rail_top_left, parentKnobs.knobTab),
+    show_rail_bottom_left: knobBoolean('Show left bottom rail', true, parentKnobs.show_rail_bottom_left, parentKnobs.knobTab),
+    show_rail_top_right: knobBoolean('Show right top rail', false, parentKnobs.show_right_top_rail, parentKnobs.knobTab),
+    show_rail_bottom_right: knobBoolean('Show right bottom rail', false, parentKnobs.show_right_bottom_rail, parentKnobs.knobTab),
   };
 
   const slots = {};

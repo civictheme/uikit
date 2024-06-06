@@ -13,7 +13,7 @@ export default {
   },
 };
 
-export const MobileNavigation = (props = {}) => {
+export const MobileNavigation = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -21,8 +21,8 @@ export const MobileNavigation = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const knobs = {
@@ -34,11 +34,11 @@ export const MobileNavigation = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.trigger_theme,
-      props.knobTab,
+      parentKnobs.trigger_theme,
+      parentKnobs.knobTab,
     ),
-    trigger_text: knobText('Trigger Text', 'Menu', props.trigger_text, props.knobTab),
-    trigger_icon: knobSelect('Trigger Icon', Object.values(ICONS), 'bars', props.trigger_icon, props.knobTab),
+    trigger_text: knobText('Trigger Text', 'Menu', parentKnobs.trigger_text, parentKnobs.knobTab),
+    trigger_icon: knobSelect('Trigger Icon', Object.values(ICONS), 'bars', parentKnobs.trigger_icon, parentKnobs.knobTab),
     top_menu: getMenuLinks({ knobTab: 'Top menu' }, 'Top '),
     bottom_menu: getMenuLinks({ knobTab: 'Bottom menu' }, 'Bottom '),
   };
@@ -61,5 +61,5 @@ export const MobileNavigation = (props = {}) => {
     ]),
   });
 
-  return shouldRender(props) ? `${trigger}${panel}` : knobs;
+  return shouldRender(parentKnobs) ? `${trigger}${panel}` : knobs;
 };

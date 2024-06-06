@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Image = (props = {}) => {
+export const Image = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,16 +17,16 @@ export const Image = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    url: knobBoolean('Show image', true, props.show_image, props.knobTab) ? generateImage() : false,
-    alt: knobText('Image alt text', 'Alternative text', props.alt, props.knobTab),
-    width: knobText('Width', '', props.width, props.knobTab),
-    height: knobText('Height', '', props.height, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    url: knobBoolean('Show image', true, parentKnobs.show_image, parentKnobs.knobTab) ? generateImage() : false,
+    alt: knobText('Image alt text', 'Alternative text', parentKnobs.alt, parentKnobs.knobTab),
+    width: knobText('Width', '', parentKnobs.width, parentKnobs.knobTab),
+    height: knobText('Height', '', parentKnobs.height, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeImage(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeImage(knobs) : knobs;
 };

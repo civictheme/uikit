@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const Select = (props = {}) => {
+export const Select = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -20,18 +20,18 @@ export const Select = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    is_multiple: knobBoolean('Is multiple', false, props.is_multiple, props.knobTab),
-    options: knobBoolean('With options', true, props.options, props.knobTab) ? generateSelectOptions(randomInt(3, 5), (knobBoolean('Options have groups', false, null, props.knobTab) ? 'optgroup' : 'option')) : [],
-    is_required: knobBoolean('Required', false, props.is_required, props.knobTab),
-    is_disabled: knobBoolean('Disabled', false, props.is_disabled, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.has_error, props.knobTab),
-    for: knobText('For', '', props.for, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
+    is_multiple: knobBoolean('Is multiple', false, parentKnobs.is_multiple, parentKnobs.knobTab),
+    options: knobBoolean('With options', true, parentKnobs.options, parentKnobs.knobTab) ? generateSelectOptions(randomInt(3, 5), (knobBoolean('Options have groups', false, null, parentKnobs.knobTab) ? 'optgroup' : 'option')) : [],
+    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    has_error: knobBoolean('Has error', false, parentKnobs.has_error, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.for, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSelect(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeSelect(knobs) : knobs;
 };

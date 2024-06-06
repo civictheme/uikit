@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const EventCard = (props = {}) => {
+export const EventCard = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,20 +19,20 @@ export const EventCard = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    date: knobText('Date', '20 Jan 2023 11:00', props.date, props.knobTab),
-    date_end: knobText('End date', '21 Jan 2023 15:00', props.date_end, props.knobTab),
-    title: knobText('Title', 'Event name which runs across two or three lines', props.card_title, props.knobTab),
-    location: knobText('Location', 'Suburb, State – 16:00–17:00', props.location, props.knobTab),
-    summary: knobText('Summary', randomSentence(), props.summary, props.knobTab),
+    date: knobText('Date', '20 Jan 2023 11:00', parentKnobs.date, parentKnobs.knobTab),
+    date_end: knobText('End date', '21 Jan 2023 15:00', parentKnobs.date_end, parentKnobs.knobTab),
+    title: knobText('Title', 'Event name which runs across two or three lines', parentKnobs.card_title, parentKnobs.knobTab),
+    location: knobText('Location', 'Suburb, State – 16:00–17:00', parentKnobs.location, parentKnobs.knobTab),
+    summary: knobText('Summary', randomSentence(), parentKnobs.summary, parentKnobs.knobTab),
     link: {
-      url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
-      is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
-      is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
+      url: knobText('Link URL', randomUrl(), parentKnobs.link_url, parentKnobs.knobTab),
+      is_external: knobBoolean('Link is external', false, parentKnobs.link_is_external, parentKnobs.knobTab),
+      is_new_window: knobBoolean('Open in a new window', false, parentKnobs.link_is_new_window, parentKnobs.knobTab),
     },
-    image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
+    image: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
     } : null,
@@ -45,17 +45,17 @@ export const EventCard = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_tags,
-      props.knobTab,
+      parentKnobs.number_of_tags,
+      parentKnobs.knobTab,
     ), true),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   knobs.date_iso = dateIsValid(knobs.date) ? new Date(knobs.date).toISOString() : null;
   knobs.date_end_iso = dateIsValid(knobs.date_end) ? new Date(knobs.date_end).toISOString() : null;
 
-  return shouldRender(props) ? CivicThemeEventCard({
+  return shouldRender(parentKnobs) ? CivicThemeEventCard({
     ...knobs,
     ...generateSlots([
       'image_over',
