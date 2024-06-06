@@ -33,7 +33,7 @@
  */
 #}
 
-{% set type = type not in ['textfield', 'textarea', 'select', 'radio-group', 'checkbox', 'checkbox-group', 'hidden'] ? 'hidden' : type %}
+{% set type = type not in ['textfield', 'textarea', 'select', 'radio', 'checkbox', 'hidden'] ? 'hidden' : type %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type|default('input')) %}
 {% set direction_class = 'ct-field--%s'|format(direction|default('horizontal')) %}
@@ -70,10 +70,12 @@
       {% include '@atoms/select/select.twig' with control only %}
     {% elseif type == 'checkbox' %}
       {% include '@atoms/checkbox/checkbox.twig' with control only %}
+    {% elseif type == 'radio' %}
+      {% include '@atoms/radio/radio.twig' with control only %}
     {% else %}
       <input
         type="{{ type }}"
-        {# name="{{ control.name }}" #}
+        name="{{ control.name }}"
         {% if control.modifier_class %}class="{{ control.modifier_class }}"{% endif %}
         {% if control.value %}value="{{ control.value }}"{% endif %}
         {% if control.for %}id="{{ control.for }}"{% endif %}
