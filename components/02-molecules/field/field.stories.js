@@ -30,6 +30,7 @@ export const Field = (parentKnobs = {}) => {
         Textfield: 'textfield',
         Textarea: 'textarea',
         Select: 'select',
+        Radio: 'radio',
         Checkbox: 'checkbox',
         Hidden: 'hidden',
         Other: 'other',
