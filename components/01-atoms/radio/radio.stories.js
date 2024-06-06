@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Radio = (props = {}) => {
+export const Radio = (parentKnobs = {}) => {
   const knobs = {
     theme: knobBoolean(
       'Theme',
@@ -17,16 +17,16 @@ export const Radio = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Radio label', props.knobTab),
-    is_required: knobBoolean('Required', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    is_disabled: knobBoolean('Disabled', false, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.knobTab),
+    content: knobText('Content', 'Radio label', parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    has_error: knobBoolean('Has error', false, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeRadio(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeRadio(knobs) : knobs;
 };

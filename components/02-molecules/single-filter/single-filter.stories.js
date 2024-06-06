@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const SingleFilter = (props = {}) => {
+export const SingleFilter = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,14 +18,15 @@ export const SingleFilter = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Filter search results by:', props.title, props.knobTab),
-    submit_text: knobText('Submit button text', 'Apply', props.submit_text, props.knobTab),
-    is_multiple: knobBoolean('Multiple', false, props.is_multiple, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    title: knobText('Title', 'Filter search results by:', parentKnobs.title, parentKnobs.knobTab),
+    submit_text: knobText('Submit button text', 'Apply', parentKnobs.submit_text, parentKnobs.knobTab),
+    reset_text: knobText('Reset button text', 'Clear all', parentKnobs.reset_text, parentKnobs.knobTab),
+    is_multiple: knobBoolean('Multiple', false, parentKnobs.is_multiple, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   const count = knobNumber(
@@ -37,8 +38,8 @@ export const SingleFilter = (props = {}) => {
       max: 15,
       step: 1,
     },
-    props.number_of_filters,
-    props.knobTab,
+    parentKnobs.number_of_filters,
+    parentKnobs.knobTab,
   );
 
   const selected = knobNumber(
@@ -50,8 +51,8 @@ export const SingleFilter = (props = {}) => {
       max: count,
       step: 1,
     },
-    props.selected,
-    props.knobTab,
+    parentKnobs.selected,
+    parentKnobs.knobTab,
   );
 
   const items = [];
@@ -67,7 +68,7 @@ export const SingleFilter = (props = {}) => {
 
   knobs.items = items;
 
-  return shouldRender(props) ? CivicThemeSingleFilter({
+  return shouldRender(parentKnobs) ? CivicThemeSingleFilter({
     ...knobs,
     ...generateSlots([
       'content_top',

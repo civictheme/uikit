@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Popover = (props = {}) => {
+export const Popover = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,19 +17,19 @@ export const Popover = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     trigger: {
-      text: knobText('Trigger text', 'Click me', props.trigger_text, props.knobTab),
-      url: knobText('Trigger URL', null, props.trigger_url, props.knobTab),
+      text: knobText('Trigger text', 'Click me', parentKnobs.trigger_text, parentKnobs.knobTab),
+      url: knobText('Trigger URL', null, parentKnobs.trigger_url, parentKnobs.knobTab),
     },
     content: placeholder(),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemePopover({
+  return shouldRender(parentKnobs) ? CivicThemePopover({
     ...knobs,
     ...generateSlots([
       'content_top',

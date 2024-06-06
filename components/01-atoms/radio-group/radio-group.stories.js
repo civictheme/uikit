@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const RadioGroup = (props = {}) => {
+export const RadioGroup = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,7 +17,7 @@ export const RadioGroup = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     direction: knobRadios(
       'Direction',
@@ -26,7 +26,7 @@ export const RadioGroup = (props = {}) => {
         Vertical: 'vertical',
       },
       'vertical',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     items: randomFields(knobNumber(
       'Items count',
@@ -37,16 +37,16 @@ export const RadioGroup = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.knobTab,
-    ), props.theme, false, 'radio'),
-    name: knobText('Name', 'radio-name', props.name, props.knobTab),
-    content: knobText('Content', 'Radio label', props.knobTab),
-    is_disabled: knobBoolean('Disabled', false, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.knobTab)}`,
-    attributes: knobText('Additional attributes', '', props.knobTab),
+      parentKnobs.knobTab,
+    ), parentKnobs.theme, false, 'radio'),
+    name: knobText('Name', 'radio-name', parentKnobs.name, parentKnobs.knobTab),
+    content: knobText('Content', 'Radio label', parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    has_error: knobBoolean('Has error', false, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', parentKnobs.knobTab)}`,
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeRadioGroup(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeRadioGroup(knobs) : knobs;
 };

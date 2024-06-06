@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Alert = (props = {}) => {
+export const Alert = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,8 +19,8 @@ export const Alert = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     type: knobRadios(
       'Type',
@@ -31,13 +31,13 @@ export const Alert = (props = {}) => {
         Success: 'success',
       },
       'information',
-      props.type,
-      props.knobTab,
+      parentKnobs.type,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Site information', props.title, props.knobTab),
-    description: knobText('Description', `Alert description ${randomText()}`, props.description, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    title: knobText('Title', 'Site information', parentKnobs.title, parentKnobs.knobTab),
+    description: knobText('Description', `Alert description ${randomText()}`, parentKnobs.description, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   const numOfAlerts = knobNumber(
@@ -49,8 +49,8 @@ export const Alert = (props = {}) => {
       max: 5,
       step: 1,
     },
-    props.number_of_alerts,
-    props.knobTab,
+    parentKnobs.number_of_alerts,
+    parentKnobs.knobTab,
   );
 
   const combinedKnobsArray = [];
@@ -61,7 +61,7 @@ export const Alert = (props = {}) => {
     });
   }
 
-  if (shouldRender(props)) {
+  if (shouldRender(parentKnobs)) {
     let html = '';
     for (let i = 0; i < combinedKnobsArray.length; i++) {
       html += CivicThemeAlert(combinedKnobsArray[i]);
@@ -72,7 +72,7 @@ export const Alert = (props = {}) => {
   return combinedKnobsArray;
 };
 
-export const AlertApi = (props = {}) => {
+export const AlertApi = (parentKnobs = {}) => {
   const endpointType = knobRadios(
     'Payload',
     {
@@ -81,8 +81,8 @@ export const AlertApi = (props = {}) => {
       Invalid: 'invalid',
     },
     'default',
-    props.endpoint_type,
-    props.knobTab,
+    parentKnobs.endpoint_type,
+    parentKnobs.knobTab,
   );
 
   let endpoint;
@@ -109,7 +109,7 @@ export const AlertApi = (props = {}) => {
   docs += 'Dismissed alerts will be revealed if their content was updated. Change payload to "Updated" to see dismissed alerts appear again.<br/><br/>';
   docs += 'Press "Clear cookie" button to clear alert dismissal settings.';
 
-  return shouldRender(props)
-    ? `<div data-component-name="ct-alerts" data-alert-endpoint="${endpoint}" data-test-path="/"></div><div class="docs-container docs-container--large"><div class="docs-container__content">${docs}</div></div>`
+  return shouldRender(parentKnobs)
+    ? `<div data-component-name="ct-alerts" data-alert-endpoint="${endpoint}" data-test-path="/"></div><div class="story-docs story-docs-size--large"><div class="story-docs__content">${docs}</div></div>`
     : '';
 };

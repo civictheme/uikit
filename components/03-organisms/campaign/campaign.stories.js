@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Campaign = (props = {}) => {
+export const Campaign = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,12 +18,12 @@ export const Campaign = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Campaign heading which runs across two or three lines', props.title, props.knobTab),
-    content: knobText('Content', randomSentence(), props.content, props.knobTab),
-    date: knobDate('Date', new Date(), props.date, props.knobTab),
+    title: knobText('Title', 'Campaign heading which runs across two or three lines', parentKnobs.title, parentKnobs.knobTab),
+    content: knobText('Content', randomSentence(), parentKnobs.content, parentKnobs.knobTab),
+    date: knobDate('Date', new Date(), parentKnobs.date, parentKnobs.knobTab),
     image: {
       url: generateImage(),
       alt: 'Image alt text',
@@ -35,8 +35,8 @@ export const Campaign = (props = {}) => {
         Right: 'right',
       },
       'left',
-      props.image_position,
-      props.knobTab,
+      parentKnobs.image_position,
+      parentKnobs.knobTab,
     ),
     links: randomLinks(knobNumber(
       'Number of links',
@@ -47,8 +47,8 @@ export const Campaign = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_links,
-      props.knobTab,
+      parentKnobs.number_of_links,
+      parentKnobs.knobTab,
     ), 10),
     tags: randomTags(knobNumber(
       'Number of tags',
@@ -59,8 +59,8 @@ export const Campaign = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_tags,
-      props.knobTab,
+      parentKnobs.number_of_tags,
+      parentKnobs.knobTab,
     ), true),
     vertical_spacing: knobRadios(
       'Vertical spacing',
@@ -71,16 +71,16 @@ export const Campaign = (props = {}) => {
         Both: 'both',
       },
       'both',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   knobs.date = convertDate(knobs.date);
 
-  return shouldRender(props) ? CivicThemeCampaign({
+  return shouldRender(parentKnobs) ? CivicThemeCampaign({
     ...knobs,
     ...generateSlots([
       'content_top',

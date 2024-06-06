@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Textfield = (props = {}) => {
+export const Textfield = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,15 +17,15 @@ export const Textfield = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    placeholder: knobText('Placeholder', 'Placeholder', props.knobTab),
-    is_required: knobBoolean('Required', false, props.knobTab),
-    disabled: knobBoolean('Disabled', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    placeholder: knobText('Placeholder', 'Placeholder', parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.knobTab),
+    disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeTextfield(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeTextfield(knobs) : knobs;
 };

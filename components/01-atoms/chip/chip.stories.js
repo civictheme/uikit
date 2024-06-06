@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Chip = (props = {}) => {
+export const Chip = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -18,8 +18,8 @@ export const Chip = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const size = knobRadios(
@@ -31,8 +31,8 @@ export const Chip = (props = {}) => {
       None: '',
     },
     'regular',
-    props.size,
-    props.knobTab,
+    parentKnobs.size,
+    parentKnobs.knobTab,
   );
 
   const kind = knobRadios(
@@ -42,21 +42,21 @@ export const Chip = (props = {}) => {
       Input: 'input',
     },
     'default',
-    props.chip_kind,
-    props.knobTab,
+    parentKnobs.chip_kind,
+    parentKnobs.knobTab,
   );
 
-  // Keep props above to preserve order.
+  // Keep parentKnobs above to preserve order.
   const knobs = {
     theme,
     kind,
     size,
-    is_multiple: (kind === 'input') ? knobBoolean('Is multiple', false, props.is_multiple, props.knobTab) : null,
-    is_selected: (kind === 'input') ? knobBoolean('Is selected', false, props.is_selected, props.knobTab) : null,
-    content: knobText('Chip label', 'Chip label', props.content, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    is_multiple: (kind === 'input') ? knobBoolean('Is multiple', false, parentKnobs.is_multiple, parentKnobs.knobTab) : null,
+    is_selected: (kind === 'input') ? knobBoolean('Is selected', false, parentKnobs.is_selected, parentKnobs.knobTab) : null,
+    content: knobText('Chip label', 'Chip label', parentKnobs.content, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeChip(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeChip(knobs) : knobs;
 };

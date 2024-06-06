@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const TagList = (props = {}) => {
+export const TagList = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,8 +19,8 @@ export const TagList = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     tags: randomTags(knobNumber(
       'Number of tags',
@@ -31,8 +31,8 @@ export const TagList = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_tags,
-      props.knobTab,
+      parentKnobs.number_of_tags,
+      parentKnobs.knobTab,
     ), true),
     vertical_spacing: knobRadios(
       'Vertical spacing',
@@ -43,14 +43,14 @@ export const TagList = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeTagList({
+  return shouldRender(parentKnobs) ? CivicThemeTagList({
     ...knobs,
     ...generateSlots([
       'content_top',

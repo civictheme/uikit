@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const Search = (props = {}) => {
+export const Search = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,14 +18,14 @@ export const Search = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    text: knobText('Text', 'Search', props.text, props.knobTab),
-    link: knobText('Search URL', '/search', props.link, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    text: knobText('Text', 'Search', parentKnobs.text, parentKnobs.knobTab),
+    url: knobText('Search URL', '/search', parentKnobs.url, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSearch(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeSearch(knobs) : knobs;
 };

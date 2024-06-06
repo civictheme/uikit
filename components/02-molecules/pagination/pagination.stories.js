@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Pagination',
 };
 
-export const Pagination = (props = {}) => {
+export const Pagination = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -13,10 +13,10 @@ export const Pagination = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
-  const activeIsLink = knobBoolean('Active is a link', true, props.active_is_link, props.knobTab);
+  const activeIsLink = knobBoolean('Active is a link', true, parentKnobs.active_is_link, parentKnobs.knobTab);
 
   const pageCount = knobNumber(
     'Count of pages',
@@ -27,8 +27,8 @@ export const Pagination = (props = {}) => {
       max: 10,
       step: 1,
     },
-    props.count_of_pages,
-    props.knobTab,
+    parentKnobs.count_of_pages,
+    parentKnobs.knobTab,
   );
 
   const current = knobNumber(
@@ -40,10 +40,10 @@ export const Pagination = (props = {}) => {
       max: pageCount,
       step: 1,
     },
-    props.current_page,
-    props.knobTab,
+    parentKnobs.current_page,
+    parentKnobs.knobTab,
   );
-  const useEllipsis = knobBoolean('With ellipsis', false, props.use_ellipsis, props.knobTab);
+  const useEllipsis = knobBoolean('With ellipsis', false, parentKnobs.use_ellipsis, parentKnobs.knobTab);
 
   const pages = {};
   const pagerMiddle = Math.ceil(pageCount / 2);
@@ -92,14 +92,14 @@ export const Pagination = (props = {}) => {
     theme,
     active_is_link: activeIsLink,
     items,
-    heading_id: knobText('Heading Id', 'ct-pager-demo', props.heading_id, props.knobTab),
+    heading_id: knobText('Heading Id', 'ct-pager-demo', parentKnobs.heading_id, parentKnobs.knobTab),
     use_ellipsis: useEllipsis,
-    items_per_page_options: knobBoolean('With items per page', true, props.with_items_per_page, props.knobTab) ? itemsPerPage : null,
+    items_per_page_options: knobBoolean('With items per page', true, parentKnobs.with_items_per_page, parentKnobs.knobTab) ? itemsPerPage : null,
     total_pages: pageCount,
     current,
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemePagination(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemePagination(knobs) : knobs;
 };

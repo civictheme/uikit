@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const FieldDescription = (props = {}) => {
+export const FieldDescription = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,8 +17,8 @@ export const FieldDescription = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     size: knobRadios(
       'Size',
@@ -27,13 +27,13 @@ export const FieldDescription = (props = {}) => {
         Regular: 'regular',
       },
       'regular',
-      props.size,
-      props.knobTab,
+      parentKnobs.size,
+      parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'We will only use this to respond to your question.', props.content, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    content: knobText('Content', 'We will only use this to respond to your question.', parentKnobs.content, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeFieldDescription(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeFieldDescription(knobs) : knobs;
 };

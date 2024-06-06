@@ -16,7 +16,7 @@ export default {
   },
 };
 
-export const BasicContent = (props = {}) => {
+export const BasicContent = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -24,8 +24,8 @@ export const BasicContent = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   let html = '';
@@ -166,9 +166,9 @@ export const BasicContent = (props = {}) => {
 
   const knobs = {
     theme,
-    content: knobBoolean('Content', true, props.content, props.knobTab) ? html : null,
-    is_contained: knobBoolean('Contained', true, props.is_contained, props.knobTab),
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    content: knobBoolean('Content', true, parentKnobs.content, parentKnobs.knobTab) ? html : null,
+    is_contained: knobBoolean('Contained', true, parentKnobs.is_contained, parentKnobs.knobTab),
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -178,12 +178,12 @@ export const BasicContent = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeBasicContent(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeBasicContent(knobs) : knobs;
 };

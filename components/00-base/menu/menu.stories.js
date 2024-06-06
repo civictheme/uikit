@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const MenuGenerator = (props = {}) => {
+export const MenuGenerator = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,12 +18,12 @@ export const MenuGenerator = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    items: getMenuLinks(props.knobTab, null),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    items: getMenuLinks({ knobTab: parentKnobs.knobTab }, null),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeMenu(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeMenu(knobs) : knobs;
 };

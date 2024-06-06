@@ -1,6 +1,7 @@
 //
 // Centralised utilities for all Storybook stories.
 //
+/* eslint max-classes-per-file: 0 */
 
 import { boolean, color, date as dateKnob, number, optionsKnob, radios, select, text } from '@storybook/addon-knobs';
 import { LoremIpsum } from 'lorem-ipsum';
@@ -41,7 +42,8 @@ export const objectFromArray = (array) => {
   return obj;
 };
 
-export const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+export const capitalizeFirstLetter = (string) => string.charAt(0)
+  .toUpperCase() + string.slice(1);
 
 export const indexedString = 'PlaceholderText';
 
@@ -60,8 +62,6 @@ export const toLabels = function (values) {
   }
   return arr;
 };
-
-export const placeholder = (content = 'Content placeholder') => `<div class="story-placeholder">${content}</div>`;
 
 export const getThemes = () => ({
   light: 'Light',
@@ -108,9 +108,11 @@ export const randomText = (words) => {
   return lorem.generateWords(words);
 };
 
-export const randomString = (length) => randomText(length).substring(0, length).trim();
+export const randomString = (length) => randomText(length).substring(0, length)
+  .trim();
 
-export const randomName = (length) => randomText(length).replace(' ', '').substring(0, length).trim();
+export const randomName = (length) => randomText(length).replace(' ', '')
+  .substring(0, length).trim();
 
 export const randomUrl = (domain) => {
   domain = domain || 'http://example.com';
@@ -246,8 +248,10 @@ export const randomTags = (count, rand) => {
 // DEMO DATA GENERATORS
 // =============================================================================
 
+export const placeholder = (content = 'Content placeholder', words = 0) => `<div class="story-placeholder">${content}${words > 0 ? ` ${randomSentence(words)}` : ''}</div>`;
+
 export const generateSlots = (names) => {
-  const showSlots = boolean('Show story-slots', false, 'Slots');
+  const showSlots = boolean('Show story slots', false, 'Slots');
   const obj = {};
 
   if (showSlots) {
@@ -350,196 +354,229 @@ export const generateVideos = () => [
 // =============================================================================
 
 /**
- * Knob wrappers are poor man's Args with additional functionality.
+ * Knob wrappers are poor man's story Args with additional functionality.
  *
- * The use case is to allow re-using the same pre-defined knob within the child
- * component in the parent component. But also allow the parent to override the
- * value of the knob or completely suppress the knob from being shown.
+ * The use case is to allow re-using the same pre-defined story knobs within
+ * the child component in the parent component's story. But also allow the
+ * parent component story to override the value of the knob or completely
+ * suppress the knob from being shown.
  *
- * The capability that the wrappers provide are:
- * 1. Each knob to have its own default value visible in UI.
- * 2. If a parent provides a value, then that value is used directly. No knob
- *    is rendered.
- * 3. Allow parent to choose which specific child's knob is shown.
- * 4. Allow parent to choose which specific child's knob is shown, but with a
- *    custom value.
+ * The wrapper provides a capability for a parent story to call a child
+ * component's story:
+ * 1. Without any values passed - would render a child component with its
+ *    default knob values and no knobs shown.
+ * 2. With some values passed - would render a child component with these
+ *    values (unspecified values would use the knobs' default values) and
+ *    no knobs shown.
+ * 3. Without **knob values** passed and wanting to see **all** the knobs -
+ *    would render a child component with its default knob values and show
+ *    **all** the knobs.
+ * 4. Without **knob values** passed and wanting to see **some** knobs - would
+ *    render a child component with their default knob values and
+ *    show **only the knobs for passed values**.
+ * 5. With some **knob values** passed and wanting to see the knobs - would
+ *    render a child component with **these knob values** and show the knobs
+ *    only for these passed values.
  *
  * @code
- * // In the story of the parent component.
+ * // Render a child component with its default knob values and no knobs
+ * // shown. All the component's properties will use the values set on
+ * // the knobs in the child component's story.
+ * const component1 = MyComponent(new KnobValues());
  *
- * // Define some values.
- * knobs.theme = radios();
+ * // Render a child component with `title` set to `My title` and no knobs
+ * // shown. Unspecified component's properties will use the values set on
+ * // the knobs in the child component's story.
+ * const component2 = MyComponent(new KnobValues({
+ *   title: 'My title',
+ * }));
  *
- * // Show the child component.
- * knobs.logo = boolean('Show logo', true, generalKnobTab) ? Logo({
- *   knobTab: 'Logo',
- *   // Use the value of the parent's knob. Knob is not rendered.
- *   theme: knobs.theme,
- *   // Use a value directly. Knob is not rendered.
- *   url: randomUrl('example2.com'),
- *   // Use a default value from the component's story. Knob is rendered.
- *   type: new KnobValue(),
- *   // Use a custom value set in this story. Knob is rendered.
- *   title: new KnobValue('This is a Logo in Header'),
- * }) : null;
+ * // Render a child component with its default knob values and show
+ * // **all** the knobs. The values of the knobs will use the values set on
+ * // the knobs in the child component's story.
+ * const component3 = MyComponent();
+ *
+ * // Render a child component with a value from the `Theme` knob set in the
+ * // child component's story and show the `Theme` knob with **that** value.
+ * // Unspecified component's properties will use the values set on
+ * // the knobs in the child component's story.
+ * const component3 = MyComponent(new KnobValues({
+ *   theme: new KnobValue(),
+ * }));
+ *
+ * // Render a child component with a value `dark` and show the `Theme` knob
+ * // with the value `dark`.
+ * // Unspecified component's properties will use the values set on
+ * // the knobs in the child component's story.
+ * const component3 = MyComponent(new KnobValues({
+ *   theme: new KnobValue('dark'),
+ * }));
  * @endcode
+ */
+
+/**
+ * Knob value container.
  *
- * In this example the child component is not actually rendered, but the values
- * of the knobs are used in the parent component's story that includes the child
- * component through twig, so only the values are used, not the child's
- * component rendered output.
+ * If the value is set to null, then the default value of the knob is used and
+ * the knob is shown.
  *
- * In order to provide the functionality where either a whole rendered component
- * or just it's knobs/values are returned to the parent component, the child
- * component must do 3 things:
+ * If the value is set to anything else, then this value is used and the knob is
+ * shown.
  *
- * 1. Define `props` object as a very first argument in the component's
- *    function.
- *    export const Logo = (props = {}) => {}
- *
- * 2. Use the wrapper functions to get the values of the knobs. Pass the parent
- *    component's knob value as an argument.
- *
- * 3. Check the provided props and render the component or just the
- *    knobs if parent value is provided. If the props do not contain any values
- *    of the KnobValue class, then the component is rendered directly.
- *    Otherwise, the knobs are rendered.
- *
- * KnobValue class is used to provide a way to pass the value of a knob to a
- * child component, but also allow the parent component to override the value.
- *
- * It is also used to differentiate between a value that is set by the parent
- * component directly to be used by a child component vs a value that is passed
- * to the child's knob as a default value of that knob.
- *
- * If an empty KnobValue object is passed to a knob, then the knob is rendered
- * with its own default value.
+ * If the value is set to null, and useDefault is set to true, then the default
+ * value of the knob is used and the knob is not shown.
  */
 export class KnobValue {
-  constructor(value = null) {
+  constructor(value = null, useDefault = false) {
     this.value = value;
+    this.useDefault = useDefault;
   }
 
   getValue() {
     return this.value;
   }
+
+  isUsingDefault() {
+    return this.useDefault;
+  }
 }
 
 /**
- * Render a component if none of the props are of KnobValue class.
+ * Container for the knob values passed to the stories.
  */
-export const shouldRender = (props) => {
-  if (props === null || typeof props !== 'object') return true;
+export class KnobValues {
+  constructor(knobs = {}, shouldRender = true, parentKnobs = {}) {
+    this.knobs = knobs;
+    this.parentKnobs = parentKnobs;
+    this.shouldRender = shouldRender;
 
-  if (Object.keys(props).length === 0 && props.constructor === Object) {
+    /* eslint no-constructor-return: 0 */
+    return new Proxy(this, {
+      get: (target, prop) => {
+        if (prop === 'shouldRender') {
+          return target.shouldRender;
+        }
+
+        if (prop in target.parentKnobs) {
+          return target.parentKnobs[prop];
+        }
+
+        if (prop in target.knobs) {
+          return target.knobs[prop];
+        }
+
+        if (prop === 'knobTab') {
+          return 'General';
+        }
+
+        return new KnobValue(null, true);
+      },
+    });
+  }
+}
+
+/**
+ * Process values passed to the knob and return a value or render a knob.
+ *
+ * Do not optimize this function - it is laid out in a way that is easy to
+ * understand and follow the logic.
+ */
+const processKnob = (name, defaultValue, parent, group, knobCallback) => {
+  if (parent) {
+    // If parent was passed, and it is not a KnobValue instance, then it
+    // represents a directly passed value that should be used without
+    // rendering the knob.
+    if (!(parent instanceof KnobValue)) {
+      return parent;
+    }
+
+    // If parent was passed, and it is KnobValue instance set to use the default
+    // value, then use the default value passed to the knob without rendering
+    // the knob itself.
+    if (parent.isUsingDefault()) {
+      return defaultValue;
+    }
+  }
+
+  if (parent === null) {
+    return parent;
+  }
+
+  let val;
+
+  if (parent === undefined) {
+    // If parent was not provided - use the default value in the knob.
+    val = defaultValue;
+  } else if (parent.getValue() === null) {
+    // If parent was provided as a KnobValue with no value - use the default
+    // value in the knob.
+    val = defaultValue;
+  } else {
+    // If parent was provided as a KnobValue with a value - use this value in
+    // the knob.
+    val = parent.getValue();
+  }
+
+  return knobCallback(name, val, group);
+};
+
+export const knobText = (name, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => text(knobName, knobValue, knobGroup));
+
+export const knobRadios = (name, options, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => radios(knobName, options, knobValue, knobGroup));
+
+export const knobBoolean = (name, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => boolean(knobName, knobValue, knobGroup));
+
+export const knobNumber = (name, value, options, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => number(knobName, knobValue, options, knobGroup));
+
+export const knobSelect = (name, options, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => select(knobName, options, knobValue, knobGroup));
+
+export const knobColor = (name, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => color(knobName, knobValue, knobGroup));
+
+export const knobOptions = (name, options, value, optionsObj, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => optionsKnob(knobName, options, knobValue, optionsObj, knobGroup));
+
+export const knobDate = (name, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => dateKnob(knobName, knobValue, knobGroup));
+
+/**
+ * Render a component if none of the parentKnobs are of KnobValue class.
+ *
+ * Allows to re-use stories to collect the values without rendering the
+ * component.
+ *
+ * Do not optimize this function - it is laid out in a way that is easy to
+ * understand and follow the logic.
+ */
+export const shouldRender = (parentKnobs) => {
+  if (parentKnobs === null || typeof parentKnobs !== 'object') return true;
+
+  if (Object.keys(parentKnobs).length === 0 && parentKnobs.constructor === Object) {
     return true;
   }
 
-  return !Object.values(props).some((value) => value instanceof KnobValue);
-};
+  // If the parentKnobs are of KnobValues class, then check the shouldRender
+  // flag.
+  if (parentKnobs instanceof KnobValues) {
+    return parentKnobs.shouldRender;
+  }
 
-export const knobText = (name, value, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return text(name, value, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return text(name, value, group);
-    }
-    return text(name, parent.getValue(), group);
-  }
-  return parent;
-};
+  let showKnobs = false;
+  const knobsValues = Object.values(parentKnobs);
 
-export const knobRadios = (name, options, value, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return radios(name, options, value, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return radios(name, options, value, group);
-    }
-    return radios(name, options, parent.getValue(), group);
-  }
-  return parent;
-};
+  for (let i = 0; i < knobsValues.length; i++) {
+    const value = knobsValues[i];
+    if (value instanceof KnobValue) {
+      if (value.getValue() !== null) {
+        showKnobs = true;
+        break;
+      }
 
-export const knobBoolean = (name, value, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return boolean(name, value, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return boolean(name, value, group);
+      if (value.getValue() == null && !value.isUsingDefault()) {
+        showKnobs = true;
+        break;
+      }
     }
-    return boolean(name, parent.getValue(), group);
   }
-  return parent;
-};
 
-export const knobNumber = (name, value, options, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return number(name, value, options, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return number(name, value, options, group);
-    }
-    return number(name, parent.getValue(), options, group);
-  }
-  return parent;
-};
-
-export const knobSelect = (name, options, value, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return select(name, options, value, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return select(name, options, value, group);
-    }
-    return select(name, options, parent.getValue(), group);
-  }
-  return parent;
-};
-
-export const knobColor = (name, value, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return color(name, value, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return color(name, value, group);
-    }
-    return color(name, parent.getValue(), group);
-  }
-  return parent;
-};
-
-export const knobOptions = (name, options, value, optionsObj, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return optionsKnob(name, options, value, optionsObj, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return optionsKnob(name, options, value, optionsObj, group);
-    }
-    return optionsKnob(name, options, parent.getValue(), optionsObj, group);
-  }
-  return parent;
-};
-
-export const knobDate = (name, value, parent, group = 'General') => {
-  if (parent === undefined || parent === null) {
-    return dateKnob(name, value, group);
-  }
-  if (parent instanceof KnobValue) {
-    if (parent.getValue() === null) {
-      return dateKnob(name, value, group);
-    }
-    return dateKnob(name, parent.getValue(), group);
-  }
-  return parent;
+  return !showKnobs;
 };
 
 // =============================================================================
@@ -547,7 +584,8 @@ export const knobDate = (name, value, parent, group = 'General') => {
 // =============================================================================
 
 export const decoratorStoryWrapper = (content, context) => {
-  const shouldWrap = Object.keys(context.parameters).some((key) => key.startsWith('wrapper'));
+  const shouldWrap = Object.keys(context.parameters)
+    .some((key) => key.startsWith('wrapper'));
 
   if (!shouldWrap) {
     return content();
@@ -569,4 +607,23 @@ export const decoratorStoryWrapper = (content, context) => {
   }
 
   return `<div class="${classes}">${content()}</div>`;
+};
+
+export const decoratorDocs = (content, context) => {
+  if (context.parameters.docs) {
+    const size = ['small', 'medium', 'large'].includes(context.parameters.docsSize) ? context.parameters.docsSize : 'medium';
+
+    const classes = [
+      'story-docs',
+      `story-docs-size--${size}`,
+    ].filter(Boolean).join(' ');
+
+    if (context.parameters.docsPlacement === 'before') {
+      content = `<div class="${classes}">${context.parameters.docs}</div>${typeof content === 'function' ? content() : content}`;
+    } else {
+      content = `${typeof content === 'function' ? content() : content}<div class="${classes}">${context.parameters.docs}</div>`;
+    }
+  }
+
+  return typeof content === 'function' ? content() : content;
 };

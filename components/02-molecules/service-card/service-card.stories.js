@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const ServiceCard = (props = {}) => {
+export const ServiceCard = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,10 +19,10 @@ export const ServiceCard = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Services category title across one or two lines', props.title, props.knobTab),
+    title: knobText('Title', 'Services category title across one or two lines', parentKnobs.title, parentKnobs.knobTab),
     links: randomLinks(knobNumber(
       'Number of links',
       5,
@@ -32,14 +32,14 @@ export const ServiceCard = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_links,
-      props.knobTab,
+      parentKnobs.number_of_links,
+      parentKnobs.knobTab,
     ), 10),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeServiceCard({
+  return shouldRender(parentKnobs) ? CivicThemeServiceCard({
     ...knobs,
     ...generateSlots([
       'content_top',
