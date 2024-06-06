@@ -9,6 +9,7 @@
  * - value: [string] Input field value.
  * - disabled: [boolean] Disabled state.
  * - is_required: [boolean] Required state.
+ * - for: [string] Which component this label belongs to.
  * - has_error: [boolean] Error state.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
@@ -32,6 +33,12 @@
   />
   <span class="ct-checkbox__state"></span>
   {% if content is not empty %}
-    <label class="ct-checkbox__label{{ disabled ? ' ct-checkbox__label--disabled' }}">{{ content }}</label>
+    {% include '@atoms/label/label.twig' with {
+        theme: theme,
+        content: content,
+        is_required: is_required,
+        for: for ? for : null,
+        modifier_class: 'ct-checkbox__label ' ~ disabled ? ' ct-checkbox__label--disabled',
+      } only %}
   {% endif %}
 </div>

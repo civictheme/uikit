@@ -21,6 +21,7 @@ export const Checkbox = (props = {}) => {
     ),
     content: knobText('Content', 'Checkbox label', props.knobTab),
     is_required: knobBoolean('Required', false, props.knobTab),
+    for: knobText('For', '', props.knobTab),
     disabled: knobBoolean('Disabled', false, props.knobTab),
     has_error: knobBoolean('Has error', false, props.knobTab),
     modifier_class: knobText('Additional classes', '', props.knobTab),
