@@ -251,7 +251,7 @@ export const randomTags = (count, rand) => {
 export const placeholder = (content = 'Content placeholder', words = 0) => `<div class="story-placeholder">${content}${words > 0 ? ` ${randomSentence(words)}` : ''}</div>`;
 
 export const generateSlots = (names) => {
-  const showSlots = boolean('Show story-slots', false, 'Slots');
+  const showSlots = boolean('Show story slots', false, 'Slots');
   const obj = {};
 
   if (showSlots) {

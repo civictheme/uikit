@@ -61,7 +61,7 @@ export const Header = (parentKnobs = {}) => {
     contentMiddle3Content += MobileNavigation(new StoryValues({ theme }));
   }
 
-  const slots = {
+  const props = {
     content_top2: knobs.show_slogan ? Paragraph(new StoryValues({ content: 'A design system by Salsa Digital', theme })) : '',
     content_top3: contentTop3,
     content_middle2: knobs.show_logo ? Logo(new StoryValues({
@@ -72,7 +72,7 @@ export const Header = (parentKnobs = {}) => {
   };
 
   return shouldRender(parentKnobs) ? CivicThemeHeader({
-    ...slots,
+    ...props,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -82,5 +82,5 @@ export const Header = (parentKnobs = {}) => {
       'content_middle3',
       'content_bottom1',
     ]),
-  }) : slots;
+  }) : props;
 };

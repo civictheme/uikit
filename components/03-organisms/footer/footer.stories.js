@@ -37,7 +37,7 @@ export const Footer = (parentKnobs = {}) => {
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  const slots = {
+  const props = {
     content_top1: knobs.show_logo ? Logo(new StoryValues({ theme })) : '',
     content_top2: knobs.show_social_links ? SocialLinks(new StoryValues({
       theme,
@@ -85,11 +85,11 @@ export const Footer = (parentKnobs = {}) => {
   };
 
   if (knobs.show_background_image) {
-    slots.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], parentKnobs.background_image, parentKnobs.knobTab)];
+    props.background_image = BACKGROUNDS[knobSelect('Background', Object.keys(BACKGROUNDS), Object.keys(BACKGROUNDS)[0], parentKnobs.background_image, parentKnobs.knobTab)];
   }
 
   return shouldRender(parentKnobs) ? CivicThemeFooter({
-    ...slots,
+    ...props,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -100,5 +100,5 @@ export const Footer = (parentKnobs = {}) => {
       'content_bottom1',
       'content_bottom2',
     ]),
-  }) : slots;
+  }) : props;
 };
