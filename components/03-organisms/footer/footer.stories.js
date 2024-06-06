@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender, StoryValues } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender, KnobValues } from '../../00-base/base.utils';
 import CivicThemeFooter from './footer.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
@@ -38,8 +38,8 @@ export const Footer = (parentKnobs = {}) => {
   };
 
   const props = {
-    content_top1: knobs.show_logo ? Logo(new StoryValues({ theme })) : '',
-    content_top2: knobs.show_social_links ? SocialLinks(new StoryValues({
+    content_top1: knobs.show_logo ? Logo(new KnobValues({ theme })) : '',
+    content_top2: knobs.show_social_links ? SocialLinks(new KnobValues({
       theme,
       items: [
         {
@@ -64,19 +64,19 @@ export const Footer = (parentKnobs = {}) => {
         },
       ],
     })) : '',
-    content_middle1: knobs.show_middle_links ? Navigation(new StoryValues({
+    content_middle1: knobs.show_middle_links ? Navigation(new KnobValues({
       title: 'Services',
       theme,
     })) : '',
-    content_middle2: knobs.show_middle_links ? Navigation(new StoryValues({
+    content_middle2: knobs.show_middle_links ? Navigation(new KnobValues({
       title: 'About us',
       theme,
     })) : '',
-    content_middle3: knobs.show_middle_links ? Navigation(new StoryValues({
+    content_middle3: knobs.show_middle_links ? Navigation(new KnobValues({
       title: 'Help',
       theme,
     })) : '',
-    content_middle4: knobs.show_middle_links ? Navigation(new StoryValues({
+    content_middle4: knobs.show_middle_links ? Navigation(new KnobValues({
       title: 'Resources',
       theme,
     })) : '',

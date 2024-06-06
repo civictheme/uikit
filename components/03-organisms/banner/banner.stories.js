@@ -1,4 +1,4 @@
-import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, objectFromArray, shouldRender, StoryValues } from '../../00-base/base.utils';
+import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, objectFromArray, shouldRender, KnobValues } from '../../00-base/base.utils';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 import CivicThemeBanner from './banner.twig';
 import CivicThemeParagraph from '../../01-atoms/paragraph/paragraph.twig';
@@ -76,7 +76,7 @@ export const Banner = (parentKnobs = {}) => {
   }
 
   if (knobs.show_breadcrumb) {
-    props.breadcrumb = Breadcrumb(new StoryValues({
+    props.breadcrumb = Breadcrumb(new KnobValues({
       theme,
       count_of_links: new KnobValue(),
       knobTab: 'Breadcrumb',

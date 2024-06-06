@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, StoryValues } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, KnobValues } from '../../00-base/base.utils';
 import CivicThemePage from './page.twig';
 import { Banner } from '../../03-organisms/banner/banner.stories';
 import { Footer } from '../../03-organisms/footer/footer.stories';
@@ -38,12 +38,12 @@ export const ContentPage = (parentKnobs = {}) => {
 
   props.theme = theme;
 
-  props.banner = Banner(new StoryValues({
+  props.banner = Banner(new KnobValues({
     theme,
     breadcrumb: { count_of_links: 3 },
   }));
 
-  const headerValues = Header(new StoryValues({
+  const headerValues = Header(new KnobValues({
     knobTab: 'Header',
     theme,
   }, false));
@@ -56,13 +56,13 @@ export const ContentPage = (parentKnobs = {}) => {
   props.header_middle_3 = headerValues.content_middle3;
   props.header_bottom_1 = headerValues.content_bottom1;
 
-  props.content = BasicContent(new StoryValues({
+  props.content = BasicContent(new KnobValues({
     theme,
   }));
   props.vertical_spacing = 'both';
 
   if (knobs.show_rail_top_left) {
-    props.rail_top_left = SideNavigation(new StoryValues({
+    props.rail_top_left = SideNavigation(new KnobValues({
       theme,
     }));
   }
@@ -87,7 +87,7 @@ export const ContentPage = (parentKnobs = {}) => {
   }
 
   if (knobs.show_rail_top_right) {
-    props.rail_top_right = SideNavigation(new StoryValues({
+    props.rail_top_right = SideNavigation(new KnobValues({
       theme,
     }));
   }
@@ -111,7 +111,7 @@ export const ContentPage = (parentKnobs = {}) => {
     props.rail_bottom_right = content;
   }
 
-  const footerValues = Footer(new StoryValues({
+  const footerValues = Footer(new KnobValues({
     theme,
   }, false));
 

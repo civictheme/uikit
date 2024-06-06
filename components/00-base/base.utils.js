@@ -382,12 +382,12 @@ export const generateVideos = () => [
  * // Render a child component with its default knob values and no knobs
  * // shown. All the component's properties will use the values set on
  * // the knobs in the child component's story.
- * const component1 = MyComponent(new StoryValues());
+ * const component1 = MyComponent(new KnobValues());
  *
  * // Render a child component with `title` set to `My title` and no knobs
  * // shown. Unspecified component's properties will use the values set on
  * // the knobs in the child component's story.
- * const component2 = MyComponent(new StoryValues({
+ * const component2 = MyComponent(new KnobValues({
  *   title: 'My title',
  * }));
  *
@@ -400,7 +400,7 @@ export const generateVideos = () => [
  * // child component's story and show the `Theme` knob with **that** value.
  * // Unspecified component's properties will use the values set on
  * // the knobs in the child component's story.
- * const component3 = MyComponent(new StoryValues({
+ * const component3 = MyComponent(new KnobValues({
  *   theme: new KnobValue(),
  * }));
  *
@@ -408,7 +408,7 @@ export const generateVideos = () => [
  * // with the value `dark`.
  * // Unspecified component's properties will use the values set on
  * // the knobs in the child component's story.
- * const component3 = MyComponent(new StoryValues({
+ * const component3 = MyComponent(new KnobValues({
  *   theme: new KnobValue('dark'),
  * }));
  * @endcode
@@ -444,9 +444,9 @@ export class KnobValue {
 /**
  * Container for the knob values passed to the stories.
  */
-export class StoryValues {
-  constructor(parentKnobs = {}, shouldRender = true, parentKnobs = {}) {
-    this.parentKnobs = parentKnobs;
+export class KnobValues {
+  constructor(knobs = {}, shouldRender = true, parentKnobs = {}) {
+    this.knobs = knobs;
     this.parentKnobs = parentKnobs;
     this.shouldRender = shouldRender;
 
@@ -461,8 +461,8 @@ export class StoryValues {
           return target.parentKnobs[prop];
         }
 
-        if (prop in target.parentKnobs) {
-          return target.parentKnobs[prop];
+        if (prop in target.knobs) {
+          return target.knobs[prop];
         }
 
         if (prop === 'knobTab') {
@@ -541,6 +541,9 @@ export const knobDate = (name, value, parent, group = 'General') => processKnob(
  *
  * Allows to re-use stories to collect the values without rendering the
  * component.
+ *
+ * Do not optimize this function - it is laid out in a way that is easy to
+ * understand and follow the logic.
  */
 export const shouldRender = (parentKnobs) => {
   if (parentKnobs === null || typeof parentKnobs !== 'object') return true;
@@ -549,8 +552,9 @@ export const shouldRender = (parentKnobs) => {
     return true;
   }
 
-  // If the parentKnobs are of StoryValues class, then check the shouldRender flag.
-  if (parentKnobs instanceof StoryValues) {
+  // If the parentKnobs are of KnobValues class, then check the shouldRender
+  // flag.
+  if (parentKnobs instanceof KnobValues) {
     return parentKnobs.shouldRender;
   }
 

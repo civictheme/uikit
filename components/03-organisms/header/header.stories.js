@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, shouldRender, StoryValues } from '../../00-base/base.utils';
+import { generateSlots, knobBoolean, knobRadios, shouldRender, KnobValues } from '../../00-base/base.utils';
 import { Logo } from '../../02-molecules/logo/logo.stories';
 import CivicThemeHeader from './header.twig';
 import { Paragraph } from '../../01-atoms/paragraph/paragraph.stories';
@@ -36,7 +36,7 @@ export const Header = (parentKnobs = {}) => {
 
   let contentTop3 = '';
   if (knobs.show_secondary_navigation) {
-    contentTop3 += Navigation(new StoryValues({
+    contentTop3 += Navigation(new KnobValues({
       theme,
       title: null,
       type: 'dropdown',
@@ -46,25 +46,25 @@ export const Header = (parentKnobs = {}) => {
 
   let contentMiddle3Content = '';
   if (knobs.show_primary_navigation) {
-    contentMiddle3Content += Navigation(new StoryValues({
+    contentMiddle3Content += Navigation(new KnobValues({
       theme,
       title: null,
       type: 'drawer',
       modifier_class: 'ct-justify-content-end',
     }));
 
-    contentMiddle3Content += Search(new StoryValues({
+    contentMiddle3Content += Search(new KnobValues({
       modifier_class: 'ct-justify-content-end',
       theme,
     }));
 
-    contentMiddle3Content += MobileNavigation(new StoryValues({ theme }));
+    contentMiddle3Content += MobileNavigation(new KnobValues({ theme }));
   }
 
   const props = {
-    content_top2: knobs.show_slogan ? Paragraph(new StoryValues({ content: 'A design system by Salsa Digital', theme })) : '',
+    content_top2: knobs.show_slogan ? Paragraph(new KnobValues({ content: 'A design system by Salsa Digital', theme })) : '',
     content_top3: contentTop3,
-    content_middle2: knobs.show_logo ? Logo(new StoryValues({
+    content_middle2: knobs.show_logo ? Logo(new KnobValues({
       theme,
       knobTab: 'Logo',
     })) : '',
