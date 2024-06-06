@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const PromoCard = (props = {}) => {
+export const PromoCard = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -19,20 +19,20 @@ export const PromoCard = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    subtitle: knobText('Subtitle', randomSentence(3), props.subtitle, props.knobTab),
-    date: knobText('Date', '20 Jan 2023 11:00', props.date, props.knobTab),
-    date_end: knobText('End date', '21 Jan 2023 15:00', props.date_end, props.knobTab),
-    title: knobText('Title', 'Promo card name which runs across two or three lines', props.title, props.knobTab),
-    summary: knobText('Summary', randomSentence(), props.summary, props.knobTab),
+    subtitle: knobText('Subtitle', randomSentence(3), parentKnobs.subtitle, parentKnobs.knobTab),
+    date: knobText('Date', '20 Jan 2023 11:00', parentKnobs.date, parentKnobs.knobTab),
+    date_end: knobText('End date', '21 Jan 2023 15:00', parentKnobs.date_end, parentKnobs.knobTab),
+    title: knobText('Title', 'Promo card name which runs across two or three lines', parentKnobs.title, parentKnobs.knobTab),
+    summary: knobText('Summary', randomSentence(), parentKnobs.summary, parentKnobs.knobTab),
     link: {
-      url: knobText('Link URL', randomUrl(), props.link_url, props.knobTab),
-      is_external: knobBoolean('Link is external', false, props.link_is_external, props.knobTab),
-      is_new_window: knobBoolean('Open in a new window', false, props.link_is_new_window, props.knobTab),
+      url: knobText('Link URL', randomUrl(), parentKnobs.link_url, parentKnobs.knobTab),
+      is_external: knobBoolean('Link is external', false, parentKnobs.link_is_external, parentKnobs.knobTab),
+      is_new_window: knobBoolean('Open in a new window', false, parentKnobs.link_is_new_window, parentKnobs.knobTab),
     },
-    image: knobBoolean('With image', true, props.with_image, props.knobTab) ? {
+    image: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? {
       url: generateImage(),
       alt: 'Image alt text',
     } : false,
@@ -45,17 +45,17 @@ export const PromoCard = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.number_of_tags,
-      props.knobTab,
+      parentKnobs.number_of_tags,
+      parentKnobs.knobTab,
     ), true),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   knobs.date_iso = dateIsValid(knobs.date) ? new Date(knobs.date).toISOString() : null;
   knobs.date_end_iso = dateIsValid(knobs.date_end) ? new Date(knobs.date_end).toISOString() : null;
 
-  return shouldRender(props) ? CivicThemePromoCard({
+  return shouldRender(parentKnobs) ? CivicThemePromoCard({
     ...knobs,
     ...generateSlots([
       'image_over',

@@ -12,7 +12,7 @@ export default {
   },
 };
 
-export const Tooltip = (props = {}) => {
+export const Tooltip = (parentKnobs = {}) => {
   const defaultSizes = SCSS_VARIABLES['ct-icon-sizes-default'];
   const customSizes = SCSS_VARIABLES['ct-icon-sizes'];
   const sizes = Object.keys(merge(defaultSizes, customSizes));
@@ -25,8 +25,8 @@ export const Tooltip = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     position: knobRadios(
       'Position',
@@ -38,16 +38,16 @@ export const Tooltip = (props = {}) => {
         Bottom: 'bottom',
       },
       'auto',
-      props.position,
-      props.knobTab,
+      parentKnobs.position,
+      parentKnobs.knobTab,
     ),
-    icon: knobSelect('Icon', Object.values(ICONS), 'information-mark', props.icon, props.knobTab),
-    icon_size: knobRadios('Icon size', sizes, sizes[2], props.icon_size, props.knobTab),
-    title: knobText('Title', 'Toggle tooltip display', props.title, props.knobTab),
-    content: knobText('Content', randomText(), props.content, props.knobTab),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    icon: knobSelect('Icon', Object.values(ICONS), 'information-mark', parentKnobs.icon, parentKnobs.knobTab),
+    icon_size: knobRadios('Icon size', sizes, sizes[2], parentKnobs.icon_size, parentKnobs.knobTab),
+    title: knobText('Title', 'Toggle tooltip display', parentKnobs.title, parentKnobs.knobTab),
+    content: knobText('Content', randomText(), parentKnobs.content, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeTooltip(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeTooltip(knobs) : knobs;
 };

@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Attachment = (props = {}) => {
+export const Attachment = (parentKnobs = {}) => {
   const date = convertDate(null);
 
   const files = [
@@ -99,13 +99,13 @@ export const Attachment = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Attachments', props.attachment_title, props.knobTab),
-    content: knobText('Content', randomSentence(), props.content, props.knobTab),
-    files: knobBoolean('With files', true, props.with_files, props.knobTab) ? files : null,
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    title: knobText('Title', 'Attachments', parentKnobs.attachment_title, parentKnobs.knobTab),
+    content: knobText('Content', randomSentence(), parentKnobs.content, parentKnobs.knobTab),
+    files: knobBoolean('With files', true, parentKnobs.with_files, parentKnobs.knobTab) ? files : null,
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -115,14 +115,14 @@ export const Attachment = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeAttachment({
+  return shouldRender(parentKnobs) ? CivicThemeAttachment({
     ...knobs,
     ...generateSlots([
       'content_top',

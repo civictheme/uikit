@@ -42,67 +42,67 @@
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, type_class, direction_class, is_required_class, is_disabled_class, modifier_class|default('')) %}
 
 {% set control = control|merge({
-    theme: theme,
-    is_disabled: is_disabled,
-    has_error: has_error,
-    is_required: is_required,
-    modifier_class: 'ct-field__control ' ~ control.modifier_class,
+	theme: theme,
+	is_disabled: is_disabled,
+	has_error: has_error,
+	is_required: is_required,
+	modifier_class: 'ct-field__control ' ~ control.modifier_class,
 }) %}
 
 <div class="ct-field {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
-  {% set label_padded_class = type in ['textfield', 'textarea', 'select'] and direction == 'horizontal' ? 'ct-field__label--padded' : '' %}
-  {% if label is not empty and type != 'hidden' %}
-    {% include '@atoms/label/label.twig' with {
-      theme: theme,
-      content: label,
-      is_required: is_required,
-      for: control.for ? control.for : null,
-      modifier_class: 'ct-field__label ' ~ label_padded_class,
-    } only %}
-  {% endif %}
+	{% set label_padded_class = type in ['textfield', 'textarea', 'select'] and direction == 'horizontal' ? 'ct-field__label--padded' : '' %}
+	{% if label is not empty and type != 'hidden' %}
+		{% include '@atoms/label/label.twig' with {
+			theme: theme,
+			content: label,
+			is_required: is_required,
+			for: control.for ? control.for : null,
+			modifier_class: 'ct-field__label ' ~ label_padded_class,
+		} only %}
+	{% endif %}
 
-  <div class="ct-field__wrapper">
-    {% if type == 'textfield' %}
-      {% include '@atoms/textfield/textfield.twig' with control only %}
-    {% elseif type == 'textarea' %}
-      {% include '@atoms/textarea/textarea.twig' with control only %}
-    {% elseif type == 'select' %}
-      {% include '@atoms/select/select.twig' with control only %}
-    {% elseif type == 'checkbox' %}
-      {% include '@atoms/checkbox/checkbox.twig' with control only %}
-    {% elseif type == 'radio' %}
-      {% include '@atoms/radio/radio.twig' with control only %}
-    {% elseif type == 'checkbox-group' %}
-      {% include '@atoms/checkbox-group/checkbox-group.twig' with control only %}
-    {% elseif type == 'radio-group' %}
-      {% include '@atoms/radio-group/radio-group.twig' with control only %}
-    {% else %}
-      <input
-        type="{{ type }}"
-        name="{{ control.name }}"
-        {% if control.modifier_class %}class="{{ control.modifier_class }}"{% endif %}
-        {% if control.value %}value="{{ control.value }}"{% endif %}
-        {% if control.for %}id="{{ control.for }}"{% endif %}
-        {% if control.attributes %}{{ control.attributes|raw }}{% endif %}
-      />
-    {% endif %}
+	<div class="ct-field__wrapper">
+		{% if type == 'textfield' %}
+			{% include '@atoms/textfield/textfield.twig' with control only %}
+		{% elseif type == 'textarea' %}
+			{% include '@atoms/textarea/textarea.twig' with control only %}
+		{% elseif type == 'select' %}
+			{% include '@atoms/select/select.twig' with control only %}
+		{% elseif type == 'checkbox' %}
+			{% include '@atoms/checkbox/checkbox.twig' with control only %}
+		{% elseif type == 'radio' %}
+			{% include '@atoms/radio/radio.twig' with control only %}
+		{% elseif type == 'checkbox-group' %}
+			{% include '@atoms/checkbox-group/checkbox-group.twig' with control only %}
+		{% elseif type == 'radio-group' %}
+			{% include '@atoms/radio-group/radio-group.twig' with control only %}
+		{% else %}
+			<input
+				type="{{ type }}"
+				name="{{ control.name }}"
+				{% if control.modifier_class %}class="{{ control.modifier_class }}"{% endif %}
+				{% if control.value %}value="{{ control.value }}"{% endif %}
+				{% if control.for %}id="{{ control.for }}"{% endif %}
+				{% if control.attributes %}{{ control.attributes|raw }}{% endif %}
+			/>
+		{% endif %}
 
-    {% if description is not empty and type != 'hidden' %}
-      {% include '@atoms/field-description/field-description.twig' with {
-        theme: theme,
-        size: 'regular',
-        content: description,
-        modifier_class: 'ct-field__description',
-      } only %}
-    {% endif %}
+		{% if description is not empty and type != 'hidden' %}
+			{% include '@atoms/field-description/field-description.twig' with {
+				theme: theme,
+				size: 'regular',
+				content: description,
+				modifier_class: 'ct-field__description',
+			} only %}
+		{% endif %}
 
-    {% if (message or has_error) and type != 'hidden' %}
-      {% include '@atoms/field-message/field-message.twig' with {
-        theme: theme,
-        type: has_error ? 'error' : 'information',
-        content: message ? message : (has_error ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
-        modifier_class: 'ct-field__message',
-      } only %}
-    {% endif %}
-  </div>
+		{% if (message or has_error) and type != 'hidden' %}
+			{% include '@atoms/field-message/field-message.twig' with {
+				theme: theme,
+				type: has_error ? 'error' : 'information',
+				content: message ? message : (has_error ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+				modifier_class: 'ct-field__message',
+			} only %}
+		{% endif %}
+	</div>
 </div>

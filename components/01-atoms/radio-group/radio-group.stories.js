@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const RadioGroup = (props = {}) => {
+export const RadioGroup = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,8 +17,8 @@ export const RadioGroup = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
     direction: knobRadios(
       'Direction',
@@ -27,8 +27,8 @@ export const RadioGroup = (props = {}) => {
         Vertical: 'vertical',
       },
       'vertical',
-      props.direction,
-      props.knobTab,
+      parentKnobs.direction,
+      parentKnobs.knobTab,
     ),
     items: randomFields(knobNumber(
       'Items count',
@@ -39,16 +39,16 @@ export const RadioGroup = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.knobTab,
-    ), props.theme, false, 'radio'),
-    name: knobText('Name', 'radio-name', props.name, props.knobTab),
-    content: knobText('Content', 'Radio label', props.content, props.knobTab),
-    is_disabled: knobBoolean('Disabled', false, props.is_disabled, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.has_error, props.knobTab),
-    for: knobText('For', '', props.for, props.knobTab),
-    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.knobTab)}`,
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+      parentKnobs.knobTab,
+    ), parentKnobs.theme, false, 'radio'),
+    name: knobText('Name', 'radio-name', parentKnobs.name, parentKnobs.knobTab),
+    content: knobText('Content', 'Radio label', parentKnobs.content, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    has_error: knobBoolean('Has error', false, parentKnobs.has_error, parentKnobs.knobTab),
+    for: knobText('For', '', parentKnobs.for, parentKnobs.knobTab),
+    modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', parentKnobs.knobTab)}`,
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeRadioGroup(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeRadioGroup(knobs) : knobs;
 };

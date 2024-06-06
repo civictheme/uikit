@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const SideNavigation = (props = {}) => {
+export const SideNavigation = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -18,10 +18,10 @@ export const SideNavigation = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Side Navigation title', props.title, props.knobTab),
+    title: knobText('Title', 'Side Navigation title', parentKnobs.title, parentKnobs.knobTab),
     items: getMenuLinks({ knobTab: 'Links' }),
     vertical_spacing: knobRadios(
       'Vertical spacing',
@@ -32,12 +32,12 @@ export const SideNavigation = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSideNavigation(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeSideNavigation(knobs) : knobs;
 };

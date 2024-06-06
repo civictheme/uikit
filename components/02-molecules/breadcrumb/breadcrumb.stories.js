@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Breadcrumb',
 };
 
-export const Breadcrumb = (props = {}) => {
+export const Breadcrumb = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -14,10 +14,10 @@ export const Breadcrumb = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.theme,
-      props.knobTab,
+      parentKnobs.theme,
+      parentKnobs.knobTab,
     ),
-    active_is_link: knobBoolean('Active is a link', false, props.active_is_link, props.knobTab),
+    active_is_link: knobBoolean('Active is a link', false, parentKnobs.active_is_link, parentKnobs.knobTab),
     links: randomLinks(knobNumber(
       'Count of links',
       3,
@@ -27,8 +27,8 @@ export const Breadcrumb = (props = {}) => {
         max: 10,
         step: 1,
       },
-      props.count_of_links,
-      props.knobTab,
+      parentKnobs.count_of_links,
+      parentKnobs.knobTab,
     ), knobNumber(
       'Length of links',
       6,
@@ -38,12 +38,12 @@ export const Breadcrumb = (props = {}) => {
         max: 100,
         step: 1,
       },
-      props.length_of_links,
-      props.knobTab,
+      parentKnobs.length_of_links,
+      parentKnobs.knobTab,
     ) - 6),
-    modifier_class: knobText('Additional classes', '', props.modifier_class, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeBreadcrumb(knobs) : knobs;
+  return shouldRender(parentKnobs) ? CivicThemeBreadcrumb(knobs) : knobs;
 };

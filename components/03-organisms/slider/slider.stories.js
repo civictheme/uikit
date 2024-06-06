@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Slider = (props = {}) => {
+export const Slider = (parentKnobs = {}) => {
   const theme = knobRadios(
     'Theme',
     {
@@ -18,8 +18,8 @@ export const Slider = (props = {}) => {
       Dark: 'dark',
     },
     'light',
-    props.theme,
-    props.knobTab,
+    parentKnobs.theme,
+    parentKnobs.knobTab,
   );
 
   const slidesKnobTab = 'Slides';
@@ -32,7 +32,7 @@ export const Slider = (props = {}) => {
       max: 10,
       step: 1,
     },
-    props.number_of_slides,
+    parentKnobs.number_of_slides,
     slidesKnobTab,
   );
 
@@ -75,8 +75,8 @@ export const Slider = (props = {}) => {
 
   const knobs = {
     theme,
-    title: knobText('Title', 'Slider title', props.title, props.knobTab),
-    with_background: knobBoolean('With background', false, props.with_background, props.knobTab),
+    title: knobText('Title', 'Slider title', parentKnobs.title, parentKnobs.knobTab),
+    with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',
       {
@@ -86,17 +86,17 @@ export const Slider = (props = {}) => {
         Both: 'both',
       },
       'none',
-      props.vertical_spacing,
-      props.knobTab,
+      parentKnobs.vertical_spacing,
+      parentKnobs.knobTab,
     ),
     slides,
-    previous_label: knobText('Previous Label', 'Previous', props.previous_label, props.knobTab),
-    next_label: knobText('Next Label', 'Next', props.next_label, props.knobTab),
-    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
-    modifier_class: knobText('Additional class', '', props.modifier_class, props.knobTab),
+    previous_label: knobText('Previous Label', 'Previous', parentKnobs.previous_label, parentKnobs.knobTab),
+    next_label: knobText('Next Label', 'Next', parentKnobs.next_label, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  return shouldRender(props) ? CivicThemeSlider({
+  return shouldRender(parentKnobs) ? CivicThemeSlider({
     ...knobs,
     ...generateSlots([
       'content_top',

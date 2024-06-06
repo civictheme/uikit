@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const Tag = (props = {}) => {
+export const Tag = (parentKnobs = {}) => {
   const knobs = {
     theme: knobRadios(
       'Theme',
@@ -17,7 +17,7 @@ export const Tag = (props = {}) => {
         Dark: 'dark',
       },
       'light',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
     type: knobRadios(
       'Type',
@@ -27,15 +27,15 @@ export const Tag = (props = {}) => {
         Tertiary: 'tertiary',
       },
       'primary',
-      props.knobTab,
+      parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Tag content', props.knobTab),
-    modifier_class: knobText('Additional class', '', props.knobTab),
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    content: knobText('Content', 'Tag content', parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
   };
 
   const iconKnobTab = 'Icon';
-  const withIcon = knobBoolean('With icon', false, props.knobTab);
+  const withIcon = knobBoolean('With icon', false, parentKnobs.knobTab);
   const iconKnobs = {
     icon: withIcon ? knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], iconKnobTab) : null,
     icon_placement: withIcon ? knobRadios(
@@ -49,7 +49,7 @@ export const Tag = (props = {}) => {
     ) : null,
   };
 
-  const withLink = knobBoolean('With link', false, props.knobTab);
+  const withLink = knobBoolean('With link', false, parentKnobs.knobTab);
 
   const linkKnobTab = 'Link';
   const linkKnobs = {
@@ -60,5 +60,5 @@ export const Tag = (props = {}) => {
 
   const combinedKnobs = { ...knobs, ...iconKnobs, ...linkKnobs };
 
-  return shouldRender(props) ? CivicThemeTag(combinedKnobs) : combinedKnobs;
+  return shouldRender(parentKnobs) ? CivicThemeTag(combinedKnobs) : combinedKnobs;
 };
