@@ -3,6 +3,7 @@ import { decoratorDocs, decoratorStoryWrapper } from '../components/00-base/base
 require('twig');
 
 const storyOrder = [
+  'Welcome',
   'Base',
   [
     'Colors',
@@ -36,7 +37,7 @@ export const parameters = {
       },
       {
         name: 'Dark',
-        value: '#003f56',
+        value: '#0033ad',
       },
     ],
   },

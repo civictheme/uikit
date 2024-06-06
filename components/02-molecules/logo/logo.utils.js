@@ -35,6 +35,18 @@ function getLogos() {
         urls[theme].secondary[type] = `${dir.replace('../../../', '')}/${path}`;
       }
     }
+    const customMatches = path.matchAll(/logo_custom_([^_]+)+_([^_]+)+_([^.]+)/g);
+    for (const match of customMatches) {
+      if (match.length >= 3) {
+        const theme = match[1] === 'dark' ? 'dark' : 'light';
+        const type = match[2] === 'mobile' ? 'mobile' : 'desktop';
+        const name = match[3];
+        urls[theme] = urls[theme] || {};
+        urls[theme][name] = urls[theme][name] || {};
+        urls[theme][name][type] = urls[theme][name][type] || {};
+        urls[theme][name][type] = `${dir.replace('../../../', '')}/${path}`;
+      }
+    }
   });
 
   return urls;
