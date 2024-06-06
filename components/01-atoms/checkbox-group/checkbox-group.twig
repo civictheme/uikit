@@ -9,6 +9,7 @@
  * - disabled: [boolean] Disabled state.
  * - direction: [string] Direction: horizontal, vertical.
  * - items: [array] Array of children items:
+ *   - name: [string] DOM name.
  *   - content: [string] Input field label.
  *   - value: [string] Input field value.
  *   - disabled: [boolean] Disabled state.
@@ -29,7 +30,7 @@
   {% set list_items = [] %}
   {% for key, item in items %}
     {% set list_item %}
-      {% set item = {theme: theme, disabled: disabled, has_error: has_error, content: content, value: value}|merge(item) %}
+      {% set item = {theme: theme, disabled: disabled, has_error: has_error, content: content, value: value, name: name}|merge(item) %}
       {% include '@atoms/checkbox/checkbox.twig' with item only %}
     {% endset %}
     {% set list_items = list_items|merge([list_item]) %}

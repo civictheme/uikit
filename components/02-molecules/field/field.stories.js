@@ -4,6 +4,9 @@ import { Select } from '../../01-atoms/select/select.stories';
 import { Textfield } from '../../01-atoms/textfield/textfield.stories';
 import { Textarea } from '../../01-atoms/textarea/textarea.stories';
 import { Checkbox } from '../../01-atoms/checkbox/checkbox.stories';
+import { CheckboxGroup } from '../../01-atoms/checkbox-group/checkbox-group.stories';
+import { Radio } from '../../01-atoms/radio/radio.stories';
+import { RadioGroup } from '../../01-atoms/radio-group/radio-group.stories';
 
 export default {
   title: 'Molecules/Field',
@@ -31,7 +34,9 @@ export const Field = (props = {}) => {
         Textarea: 'textarea',
         Select: 'select',
         Radio: 'radio',
+        'Radio Group': 'radio-group',
         Checkbox: 'checkbox',
+        'Checkbox Group': 'checkbox-group',
         Hidden: 'hidden',
         Other: 'other',
       },
@@ -63,7 +68,7 @@ export const Field = (props = {}) => {
     description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', props.description, props.knobTab),
     is_required: knobBoolean('Required', false, props.is_required, props.knobTab),
     is_disabled: knobBoolean('Disabled', false, props.is_disabled, props.knobTab),
-    is_invalid: knobBoolean('Invalid', false, props.is_invalid, props.knobTab),
+    has_error: knobBoolean('Has error', false, props.has_error, props.knobTab),
     message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', props.message, props.knobTab),
     modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', props.modifier_class, props.knobTab)}`,
     attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
@@ -84,6 +89,18 @@ export const Field = (props = {}) => {
 
     case 'checkbox':
       knobs.control = Checkbox(knobs);
+      break;
+
+    case 'checkbox-group':
+      knobs.control = CheckboxGroup(knobs);
+      break;
+
+    case 'radio':
+      knobs.control = Radio(knobs);
+      break;
+
+    case 'radio-group':
+      knobs.control = RadioGroup(knobs);
       break;
 
     default:

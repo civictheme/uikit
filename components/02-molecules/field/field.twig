@@ -13,7 +13,7 @@
  * - label: [string] Label.
  * - description: [string] Description.
  * - is_required: [boolean] Denote if the field is required.
- * - is_invalid: [boolean] Denote if the field is invalid.
+ * - has_error: [boolean] Error state.
  * - is_disabled: [boolean] Denote if the field is disabled.
  * - control: [object] Object with control's properties:
  *   - name: [string] DOM name.
@@ -27,13 +27,13 @@
  *     - for: [string] Which component this label belongs to.
  *     - is_checked: [boolean] Denote if the component is checked.
  *     - is_disabled: [boolean] Denote if the component is disabled.
- *     - is_invalid: [boolean] Denote if the component is invalid.
+ *     - has_error: [boolean] Error state.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
 #}
 
-{% set type = type not in ['textfield', 'textarea', 'select', 'radio', 'checkbox', 'hidden'] ? 'hidden' : type %}
+{% set type = type not in ['textfield', 'textarea', 'select', 'radio', 'radio-group', 'checkbox', 'checkbox-group', 'hidden'] ? 'hidden' : type %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type|default('input')) %}
 {% set direction_class = 'ct-field--%s'|format(direction|default('horizontal')) %}
@@ -44,7 +44,7 @@
 {% set control = control|merge({
     theme: theme,
     is_disabled: is_disabled,
-    is_invalid: is_invalid,
+    has_error: has_error,
     is_required: is_required,
     modifier_class: 'ct-field__control ' ~ control.modifier_class,
 }) %}
@@ -72,6 +72,10 @@
       {% include '@atoms/checkbox/checkbox.twig' with control only %}
     {% elseif type == 'radio' %}
       {% include '@atoms/radio/radio.twig' with control only %}
+    {% elseif type == 'checkbox-group' %}
+      {% include '@atoms/checkbox-group/checkbox-group.twig' with control only %}
+    {% elseif type == 'radio-group' %}
+      {% include '@atoms/radio-group/radio-group.twig' with control only %}
     {% else %}
       <input
         type="{{ type }}"
@@ -92,11 +96,11 @@
       } only %}
     {% endif %}
 
-    {% if (message or is_invalid) and type != 'hidden' %}
+    {% if (message or has_error) and type != 'hidden' %}
       {% include '@atoms/field-message/field-message.twig' with {
         theme: theme,
-        type: is_invalid ? 'error' : 'information',
-        content: message ? message : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+        type: has_error ? 'error' : 'information',
+        content: message ? message : (has_error ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
         modifier_class: 'ct-field__message',
       } only %}
     {% endif %}

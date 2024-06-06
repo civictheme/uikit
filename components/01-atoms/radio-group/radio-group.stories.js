@@ -17,6 +17,7 @@ export const RadioGroup = (props = {}) => {
         Dark: 'dark',
       },
       'light',
+      props.theme,
       props.knobTab,
     ),
     direction: knobRadios(
@@ -26,6 +27,7 @@ export const RadioGroup = (props = {}) => {
         Vertical: 'vertical',
       },
       'vertical',
+      props.direction,
       props.knobTab,
     ),
     items: randomFields(knobNumber(
@@ -40,12 +42,12 @@ export const RadioGroup = (props = {}) => {
       props.knobTab,
     ), props.theme, false, 'radio'),
     name: knobText('Name', 'radio-name', props.name, props.knobTab),
-    content: knobText('Content', 'Radio label', props.knobTab),
-    is_disabled: knobBoolean('Disabled', false, props.knobTab),
-    has_error: knobBoolean('Has error', false, props.knobTab),
-    for: knobText('For', '', props.knobTab),
+    content: knobText('Content', 'Radio label', props.content, props.knobTab),
+    is_disabled: knobBoolean('Disabled', false, props.is_disabled, props.knobTab),
+    has_error: knobBoolean('Has error', false, props.has_error, props.knobTab),
+    for: knobText('For', '', props.for, props.knobTab),
     modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', props.knobTab)}`,
-    attributes: knobText('Additional attributes', '', props.knobTab),
+    attributes: knobText('Additional attributes', '', props.attributes, props.knobTab),
   };
 
   return shouldRender(props) ? CivicThemeRadioGroup(knobs) : knobs;

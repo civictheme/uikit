@@ -4,10 +4,11 @@
  * Checkbox component.
  *
  * Variables:
+ * - name: [string] DOM name.
  * - theme: [string] Theme: light, dark.
  * - content: [string] Input field label.
  * - value: [string] Input field value.
- * - disabled: [boolean] Disabled state.
+ * - is_disabled: [boolean] Disabled state.
  * - is_required: [boolean] Required state.
  * - for: [string] Which component this label belongs to.
  * - has_error: [boolean] Error state.
@@ -16,7 +17,7 @@
  */
 #}
 
-{% set disabled_class = disabled ? 'ct-checkbox--disabled' : '' %}
+{% set disabled_class = is_disabled ? 'ct-checkbox--disabled' : '' %}
 {% set required_class = is_required ? 'ct-checkbox--required' : '' %}
 {% set error_class = has_error ? 'ct-checkbox--error' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
@@ -24,10 +25,11 @@
 
 <div class="ct-checkbox {{ modifier_class|trim }}">
   <input
+    name="{{ name }}"
     type="checkbox"
     class="ct-checkbox__element"
     value="{{ value }}"
-    {{ disabled ? 'disabled' }}
+    {{ is_disabled ? 'disabled' }}
     {{ is_required ? 'required' }}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   />
@@ -38,7 +40,7 @@
         content: content,
         is_required: is_required,
         for: for ? for : null,
-        modifier_class: 'ct-checkbox__label ' ~ disabled ? ' ct-checkbox__label--disabled',
+        modifier_class: 'ct-checkbox__label ' ~ is_disabled ? ' ct-checkbox__label--disabled',
       } only %}
   {% endif %}
 </div>
