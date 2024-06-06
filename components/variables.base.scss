@@ -21,13 +21,55 @@
 
 $ct-colors-brands: (
   'light': (
-    'brand1': #00698f,
-    'brand2': #e6e9eb,
-    'brand3': #121313,
+    'brand1': #0033ad,
+    'brand2': #f5f5f5,
+    'brand3': #ff5553,
   ),
   'dark': (
-    'brand1': #61daff,
-    'brand2': #003a4f,
-    'brand3': #00698f,
+    'brand1': #fff,
+    'brand2': #264db0,
+    'brand3': #ff5553,
+  )
+);
+$ct-colors: (
+  'light': (
+    'heading': #000a23,
+    'body': #333b4f,
+    'background-light': #fefefe,
+    'background': #f5f5f5,
+    'background-dark': #c4c4c4,
+    'border-light': #b8b8b8,
+    'border': #626262,
+    'border-dark': #191919,
+    'interaction-text': #fdfdfd,
+    'interaction-background': #0033ad,
+    'interaction-hover-text': #fdfdfd,
+    'interaction-hover-background': #001f69,
+    'interaction-focus': #8b5cd7,
+    'highlight': #ff5553,
+    'information': #007cbf,
+    'warning': #c95100,
+    'error': #ce3836,
+    'success': #ce3836,
+  ),
+  'dark': (
+    'heading': #fff,
+    'body': #fafafa,
+    'background-light': #3256b4,
+    'background': #254db0,
+    'background-dark': #1a367b,
+    'border-light': #b4c1e2,
+    'border': #3c5fb8,
+    'border-dark': #1a367b,
+    'interaction-text': #254db0,
+    'interaction-background': #fff,
+    'interaction-hover-text': #1a367b,
+    'interaction-hover-background': #fafafa,
+    'interaction-focus': #8b5cd7,
+    'highlight': #ff5553,
+    'information': #4cc4fc,
+    'warning': #e38444,
+    'error': #e85653,
+    'success': #12b0ae,
   )
 );
