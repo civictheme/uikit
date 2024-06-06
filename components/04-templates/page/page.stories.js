@@ -34,11 +34,11 @@ export const ContentPage = (parentKnobs = {}) => {
     show_rail_bottom_right: knobBoolean('Show right bottom rail', false, parentKnobs.show_right_bottom_rail, parentKnobs.knobTab),
   };
 
-  const slots = {};
+  const props = {};
 
-  slots.theme = theme;
+  props.theme = theme;
 
-  slots.banner = Banner(new StoryValues({
+  props.banner = Banner(new StoryValues({
     theme,
     breadcrumb: { count_of_links: 3 },
   }));
@@ -47,22 +47,22 @@ export const ContentPage = (parentKnobs = {}) => {
     knobTab: 'Header',
     theme,
   }, false));
-  slots.header_theme = theme;
-  slots.header_top_1 = headerValues.content_top1;
-  slots.header_top_2 = headerValues.content_top2;
-  slots.header_top_3 = headerValues.content_top3;
-  slots.header_middle_1 = headerValues.content_middle1;
-  slots.header_middle_2 = headerValues.content_middle2;
-  slots.header_middle_3 = headerValues.content_middle3;
-  slots.header_bottom_1 = headerValues.content_bottom1;
+  props.header_theme = theme;
+  props.header_top_1 = headerValues.content_top1;
+  props.header_top_2 = headerValues.content_top2;
+  props.header_top_3 = headerValues.content_top3;
+  props.header_middle_1 = headerValues.content_middle1;
+  props.header_middle_2 = headerValues.content_middle2;
+  props.header_middle_3 = headerValues.content_middle3;
+  props.header_bottom_1 = headerValues.content_bottom1;
 
-  slots.content = BasicContent(new StoryValues({
+  props.content = BasicContent(new StoryValues({
     theme,
   }));
-  slots.vertical_spacing = 'both';
+  props.vertical_spacing = 'both';
 
   if (knobs.show_rail_top_left) {
-    slots.rail_top_left = SideNavigation(new StoryValues({
+    props.rail_top_left = SideNavigation(new StoryValues({
       theme,
     }));
   }
@@ -83,11 +83,11 @@ export const ContentPage = (parentKnobs = {}) => {
       content: `<p>Register for events!</p><p>${button}</p>`,
     });
 
-    slots.rail_bottom_left = content;
+    props.rail_bottom_left = content;
   }
 
   if (knobs.show_rail_top_right) {
-    slots.rail_top_right = SideNavigation(new StoryValues({
+    props.rail_top_right = SideNavigation(new StoryValues({
       theme,
     }));
   }
@@ -108,27 +108,27 @@ export const ContentPage = (parentKnobs = {}) => {
       content: `<p>Register for events!</p><p>${button}</p>`,
     });
 
-    slots.rail_bottom_right = content;
+    props.rail_bottom_right = content;
   }
 
   const footerValues = Footer(new StoryValues({
     theme,
   }, false));
 
-  slots.footer_theme = theme;
-  slots.footer_logo = footerValues.logo;
-  slots.footer_background_image = footerValues.background_image;
-  slots.footer_top_1 = footerValues.content_top1;
-  slots.footer_top_2 = footerValues.content_top2;
-  slots.footer_middle_1 = footerValues.content_middle1;
-  slots.footer_middle_2 = footerValues.content_middle2;
-  slots.footer_middle_3 = footerValues.content_middle3;
-  slots.footer_middle_4 = footerValues.content_middle4;
-  slots.footer_bottom_1 = footerValues.content_bottom1;
-  slots.footer_bottom_2 = footerValues.content_bottom2;
+  props.footer_theme = theme;
+  props.footer_logo = footerValues.logo;
+  props.footer_background_image = footerValues.background_image;
+  props.footer_top_1 = footerValues.content_top1;
+  props.footer_top_2 = footerValues.content_top2;
+  props.footer_middle_1 = footerValues.content_middle1;
+  props.footer_middle_2 = footerValues.content_middle2;
+  props.footer_middle_3 = footerValues.content_middle3;
+  props.footer_middle_4 = footerValues.content_middle4;
+  props.footer_bottom_1 = footerValues.content_bottom1;
+  props.footer_bottom_2 = footerValues.content_bottom2;
 
   return CivicThemePage({
-    ...slots,
+    ...props,
     ...generateSlots([
       'header_top_1',
       'header_top_2',

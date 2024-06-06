@@ -49,7 +49,7 @@ export const Banner = (parentKnobs = {}) => {
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  const slots = {
+  const props = {
     title: knobs.title,
     theme,
     is_decorative: knobs.is_decorative,
@@ -57,26 +57,26 @@ export const Banner = (parentKnobs = {}) => {
   };
 
   if (knobs.background_image) {
-    slots.background_image = {
+    props.background_image = {
       url: BACKGROUNDS[knobs.background_image],
       alt: knobText('Alt text', 'Background image alt text', parentKnobs.background_image_alt_text, 'Background'),
     };
-    slots.background_image_blend_mode = knobs.background_image_blend_mode;
+    props.background_image_blend_mode = knobs.background_image_blend_mode;
   }
 
   if (knobs.show_featured_image) {
-    slots.featured_image = {
+    props.featured_image = {
       url: generateImage(0),
       alt: 'Featured image alt text',
     };
   }
 
   if (knobs.show_site_section) {
-    slots.site_section = 'Site section name';
+    props.site_section = 'Site section name';
   }
 
   if (knobs.show_breadcrumb) {
-    slots.breadcrumb = Breadcrumb(new StoryValues({
+    props.breadcrumb = Breadcrumb(new StoryValues({
       theme,
       count_of_links: new KnobValue(),
       knobTab: 'Breadcrumb',
@@ -99,7 +99,7 @@ export const Banner = (parentKnobs = {}) => {
       content: `<p>Government grade set of high quality design themes that are accessible, inclusive and provide a consistent digital experience for your citizen. </p><p>${button}</p>`,
     });
 
-    slots.content = content;
+    props.content = content;
   }
 
   if (knobs.show_content_below) {
@@ -121,11 +121,11 @@ export const Banner = (parentKnobs = {}) => {
       items: cards,
     });
 
-    slots.content_below = contentBelow;
+    props.content_below = contentBelow;
   }
 
   return shouldRender(parentKnobs) ? CivicThemeBanner({
-    ...slots,
+    ...props,
     ...generateSlots([
       'content_top1',
       'content_top2',
@@ -134,5 +134,5 @@ export const Banner = (parentKnobs = {}) => {
       'content',
       'content_bottom',
     ]),
-  }) : slots;
+  }) : props;
 };
