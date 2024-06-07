@@ -5,10 +5,10 @@
 .ct-layout {
   $root: &;
 
-  &__rail_top_left,
-  &__rail_top_right,
-  &__rail_bottom_left,
-  &__rail_bottom_right {
+  &__sidebar_top_left,
+  &__sidebar_top_right,
+  &__sidebar_bottom_left,
+  &__sidebar_bottom_right {
     @include ct-print-hide();
   }
 
@@ -39,12 +39,12 @@
     }
   }
 
-  &__rail_top_left {
+  &__sidebar_top_left {
     grid-column: 1 / span $ct-layout-columns;
     grid-row: 1 / span 1;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
-      grid-column: 1 / span $ct-layout-rail-left-columns;
+      grid-column: 1 / span $ct-layout-sidebar-left-columns;
       grid-row: 1 / span 1;
       height: auto;
 
@@ -54,12 +54,12 @@
     }
   }
 
-  &__rail_top_right {
+  &__sidebar_top_right {
     grid-column: 1 / span $ct-layout-columns;
     grid-row: 2 / span 1;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
-      grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
+      grid-column: ($ct-layout-columns - $ct-layout-sidebar-right-columns + 1) / span $ct-layout-sidebar-right-columns;
       grid-row: 1 / span 1;
       height: auto;
 
@@ -74,15 +74,15 @@
     grid-row: 3 / span 1;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
-      grid-column: ($ct-layout-rail-left-columns + 1) / span ($ct-layout-columns - $ct-layout-rail-left-columns - $ct-layout-rail-right-columns);
+      grid-column: ($ct-layout-sidebar-left-columns + 1) / span ($ct-layout-columns - $ct-layout-sidebar-left-columns - $ct-layout-sidebar-right-columns);
       grid-row: 1 / span 2;
 
       #{$root}--no-top-left#{$root}--no-bottom-left & {
-        grid-column: 1 / span ($ct-layout-columns - $ct-layout-rail-right-columns);
+        grid-column: 1 / span ($ct-layout-columns - $ct-layout-sidebar-right-columns);
       }
 
       #{$root}--no-top-right#{$root}--no-bottom-right & {
-        grid-column: ($ct-layout-rail-left-columns + 1) / span ($ct-layout-columns - $ct-layout-rail-left-columns);
+        grid-column: ($ct-layout-sidebar-left-columns + 1) / span ($ct-layout-columns - $ct-layout-sidebar-left-columns);
       }
 
       #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right & {
@@ -91,12 +91,12 @@
     }
   }
 
-  &__rail_bottom_left {
+  &__sidebar_bottom_left {
     grid-column: 1 / span $ct-layout-columns;
     grid-row: 4 / span 1;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
-      grid-column: 1 / span $ct-layout-rail-left-columns;
+      grid-column: 1 / span $ct-layout-sidebar-left-columns;
       grid-row: 2 / span 1;
       height: 100%;
 
@@ -106,12 +106,12 @@
     }
   }
 
-  &__rail_bottom_right {
+  &__sidebar_bottom_right {
     grid-column: 1 / span $ct-layout-columns;
     grid-row: 5 / span 1;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
-      grid-column: ($ct-layout-columns - $ct-layout-rail-right-columns + 1) / span $ct-layout-rail-right-columns;
+      grid-column: ($ct-layout-columns - $ct-layout-sidebar-right-columns + 1) / span $ct-layout-sidebar-right-columns;
       grid-row: 2 / span 1;
       height: 100%;
 

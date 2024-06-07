@@ -5,16 +5,16 @@
  *
  * Variables:
  * - content_top: Content top slot.
- * - rail_top_left: Top left rail slot.
- * - rail_top_left_attributes: Top left rail attributes.
- * - rail_top_right: Top right rail slot.
- * - rail_top_right_attributes: Top right rail attributes.
+ * - sidebar_top_left: Top left sidebar slot.
+ * - sidebar_top_left_attributes: Top left sidebar attributes.
+ * - sidebar_top_right: Top right sidebar slot.
+ * - sidebar_top_right_attributes: Top right sidebar attributes.
  * - content: Content slot.
  * - content_attributes: Content attributes.
- * - rail_bottom_left: Bottom left rail slot.
- * - rail_bottom_left_attributes: Bottom left rail attributes.
- * - rail_bottom_right: Bottom right rail slot.
- * - rail_bottom_right_attributes: Bottom right rail attributes.
+ * - sidebar_bottom_left: Bottom left sidebar slot.
+ * - sidebar_bottom_left_attributes: Bottom left sidebar attributes.
+ * - sidebar_bottom_right: Bottom right sidebar slot.
+ * - sidebar_bottom_right_attributes: Bottom right sidebar attributes.
  * - content_bottom: Content bottom slot.
  * - is_contained: Whether the page is to be contained.
  * - vertical_spacing: [string] With top, bottom or both vertical spaces.
@@ -23,17 +23,17 @@
  */
 #}
 
-{% set no_tl_class = rail_top_left is empty ? 'ct-layout--no-top-left' : '' %}
-{% set no_tr_class = rail_top_right is empty ? 'ct-layout--no-top-right' : '' %}
-{% set no_bl_class = rail_bottom_left is empty ? 'ct-layout--no-bottom-left' : '' %}
-{% set no_br_class = rail_bottom_right is empty ? 'ct-layout--no-bottom-right' : '' %}
+{% set no_tl_class = sidebar_top_left is empty ? 'ct-layout--no-top-left' : '' %}
+{% set no_tr_class = sidebar_top_right is empty ? 'ct-layout--no-top-right' : '' %}
+{% set no_bl_class = sidebar_bottom_left is empty ? 'ct-layout--no-bottom-left' : '' %}
+{% set no_br_class = sidebar_bottom_right is empty ? 'ct-layout--no-bottom-right' : '' %}
 {% set is_contained = is_contained|default(true) %}
 {% set is_contained_class = is_contained ? 'container' : '' %}
 {% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing--%s'|format(vertical_spacing) : '' %}
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(no_tl_class, no_tr_class, no_bl_class, no_br_class, is_contained_class, vertical_spacing_class, modifier_class|default('')) %}
 {% set modifier_class = modifier_class|trim %}
 
-{% if content or content_top or rail_top_left or rail_top_right or rail_bottom_left or rail_bottom_right or content_bottom %}
+{% if content or content_top or sidebar_top_left or sidebar_top_right or sidebar_bottom_left or sidebar_bottom_right or content_bottom %}
 	<main class="ct-layout {{ modifier_class }}" role="main" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
 		{% block content_top %}
 			{% if content_top is not empty %}
@@ -50,34 +50,34 @@
 				{% endblock %}
 			{% endif %}
 
-			{% if rail_top_left is not empty %}
-				{% block rail_top_left %}
-					<aside class="ct-layout__rail_top_left" {% if rail_top_left_attributes is not empty %}{{ rail_top_left_attributes|raw }}{% endif %}>
-						{{ rail_top_left }}
+			{% if sidebar_top_left is not empty %}
+				{% block sidebar_top_left %}
+					<aside class="ct-layout__sidebar_top_left" {% if sidebar_top_left_attributes is not empty %}{{ sidebar_top_left_attributes|raw }}{% endif %}>
+						{{ sidebar_top_left }}
 					</aside>
 				{% endblock %}
 			{% endif %}
 
-			{% if rail_top_right is not empty %}
-				{% block rail_top_right %}
-					<aside class="ct-layout__rail_top_right" {% if rail_top_right_attributes is not empty %}{{ rail_top_right_attributes|raw }}{% endif %}>
-						{{ rail_top_right }}
+			{% if sidebar_top_right is not empty %}
+				{% block sidebar_top_right %}
+					<aside class="ct-layout__sidebar_top_right" {% if sidebar_top_right_attributes is not empty %}{{ sidebar_top_right_attributes|raw }}{% endif %}>
+						{{ sidebar_top_right }}
 					</aside>
 				{% endblock %}
 			{% endif %}
 
-			{% if rail_bottom_left is not empty %}
-				{% block rail_bottom_left %}
-					<aside class="ct-layout__rail_bottom_left" {% if rail_bottom_left_attributes is not empty %}{{ rail_bottom_left_attributes|raw }}{% endif %}>
-						{{ rail_bottom_left }}
+			{% if sidebar_bottom_left is not empty %}
+				{% block sidebar_bottom_left %}
+					<aside class="ct-layout__sidebar_bottom_left" {% if sidebar_bottom_left_attributes is not empty %}{{ sidebar_bottom_left_attributes|raw }}{% endif %}>
+						{{ sidebar_bottom_left }}
 					</aside>
 				{% endblock %}
 			{% endif %}
 
-			{% if rail_bottom_right is not empty %}
-				{% block rail_bottom_right %}
-					<aside class="ct-layout__rail_bottom_right" {% if rail_bottom_right_attributes is not empty %}{{ rail_bottom_right_attributes|raw }}{% endif %}>
-						{{ rail_bottom_right }}
+			{% if sidebar_bottom_right is not empty %}
+				{% block sidebar_bottom_right %}
+					<aside class="ct-layout__sidebar_bottom_right" {% if sidebar_bottom_right_attributes is not empty %}{{ sidebar_bottom_right_attributes|raw }}{% endif %}>
+						{{ sidebar_bottom_right }}
 					</aside>
 				{% endblock %}
 			{% endif %}
