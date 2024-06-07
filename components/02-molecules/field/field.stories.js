@@ -76,35 +76,35 @@ export const Field = (parentKnobs = {}) => {
 
   switch (knobs.type) {
     case 'textfield':
-      knobs.control = Textfield(parentKnobs);
+      knobs.control = Textfield(parentKnobs.knobTab);
       break;
 
     case 'textarea':
-      knobs.control = Textarea(parentKnobs);
+      knobs.control = Textarea(parentKnobs.knobTab);
       break;
 
     case 'select':
-      knobs.control = Select(parentKnobs);
+      knobs.control = Select(parentKnobs.knobTab);
       break;
 
     case 'checkbox':
-      knobs.control = Checkbox(parentKnobs);
+      knobs.control = Checkbox(parentKnobs.knobTab);
       break;
 
     case 'checkbox-group':
-      knobs.control = CheckboxGroup(parentKnobs);
+      knobs.control = CheckboxGroup(parentKnobs.knobTab);
       break;
 
     case 'radio':
-      knobs.control = Radio(parentKnobs);
+      knobs.control = Radio(parentKnobs.knobTab);
       break;
 
     case 'radio-group':
-      knobs.control = RadioGroup(parentKnobs);
+      knobs.control = RadioGroup(parentKnobs.knobTab);
       break;
 
     default:
-      knobs.control = Textfield(parentKnobs);
+      knobs.control = Textfield(parentKnobs.knobTab);
   }
 
   return shouldRender(parentKnobs) ? CivicThemeField(knobs) : knobs;
