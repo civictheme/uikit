@@ -9,7 +9,7 @@ function CivicThemeSlider(el) {
   this.el = el;
 
   this.panel = this.el.querySelector('[data-slider-panel]');
-  this.rail = this.el.querySelector('[data-slider-rail]');
+  this.sidebar = this.el.querySelector('[data-slider-sidebar]');
   this.prev = this.el.querySelector('[data-slider-previous]');
   this.next = this.el.querySelector('[data-slider-next]');
   this.slides = this.el.querySelectorAll('[data-slider-slide]');
@@ -37,9 +37,9 @@ CivicThemeSlider.prototype.refresh = function () {
     slide.style.width = panelWidth;
   });
 
-  // Set the rail width.
+  // Set the sidebar width.
   const panelWidthVal = parseFloat(panelWidth);
-  this.rail.style.width = `${this.totalSlides * panelWidthVal}px`;
+  this.sidebar.style.width = `${this.totalSlides * panelWidthVal}px`;
 
   // Reset slide heights.
   this.slides.forEach((slide) => {
@@ -66,18 +66,18 @@ CivicThemeSlider.prototype.refresh = function () {
   this.hideAllSlidesExceptCurrent();
 
   // Set heights based on largest slide height.
-  this.rail.style.height = largestHeightPx;
+  this.sidebar.style.height = largestHeightPx;
   this.panel.style.height = largestHeightPx;
 };
 
 CivicThemeSlider.prototype.enableSlideInteraction = function () {
-  this.rail.querySelectorAll('a, button').forEach((link) => {
+  this.sidebar.querySelectorAll('a, button').forEach((link) => {
     link.removeAttribute('tabindex');
   });
 };
 
 CivicThemeSlider.prototype.disableSlideInteraction = function () {
-  this.rail.querySelectorAll('a, button').forEach((link) => {
+  this.sidebar.querySelectorAll('a, button').forEach((link) => {
     link.setAttribute('tabindex', '-1');
   });
 };
@@ -97,7 +97,7 @@ CivicThemeSlider.prototype.hideAllSlidesExceptCurrent = function () {
 };
 
 CivicThemeSlider.prototype.updateDisplaySlide = function () {
-  const duration = parseFloat(window.getComputedStyle(this.rail).transitionDuration) * 1000;
+  const duration = parseFloat(window.getComputedStyle(this.sidebar).transitionDuration) * 1000;
 
   this.disableSlideInteraction();
   this.showAllSlides();
@@ -126,7 +126,7 @@ CivicThemeSlider.prototype.updateControlsState = function () {
 CivicThemeSlider.prototype.previousClick = function () {
   this.currentSlide--;
   this.currentSlide = this.currentSlide < 0 ? 0 : this.currentSlide;
-  this.rail.style.left = `${this.currentSlide * -100}%`;
+  this.sidebar.style.left = `${this.currentSlide * -100}%`;
   this.updateProgress();
   this.updateDisplaySlide();
   this.updateControlsState();
@@ -136,7 +136,7 @@ CivicThemeSlider.prototype.nextClick = function () {
   this.currentSlide++;
   const total = this.totalSlides - 1;
   this.currentSlide = this.currentSlide > total ? total : this.currentSlide;
-  this.rail.style.left = `${this.currentSlide * -100}%`;
+  this.sidebar.style.left = `${this.currentSlide * -100}%`;
   this.updateProgress();
   this.updateDisplaySlide();
   this.updateControlsState();

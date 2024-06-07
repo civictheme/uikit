@@ -28,10 +28,10 @@ export const ContentPage = (parentKnobs = {}) => {
   );
 
   const knobs = {
-    show_rail_top_left: knobBoolean('Show left top rail', true, parentKnobs.show_rail_top_left, parentKnobs.knobTab),
-    show_rail_bottom_left: knobBoolean('Show left bottom rail', true, parentKnobs.show_rail_bottom_left, parentKnobs.knobTab),
-    show_rail_top_right: knobBoolean('Show right top rail', false, parentKnobs.show_right_top_rail, parentKnobs.knobTab),
-    show_rail_bottom_right: knobBoolean('Show right bottom rail', false, parentKnobs.show_right_bottom_rail, parentKnobs.knobTab),
+    show_sidebar_top_left: knobBoolean('Show top left sidebar', true, parentKnobs.show_sidebar_top_left, parentKnobs.knobTab),
+    show_sidebar_bottom_left: knobBoolean('Show bottom left sidebar', true, parentKnobs.show_sidebar_bottom_left, parentKnobs.knobTab),
+    show_sidebar_top_right: knobBoolean('Show top right sidebar', false, parentKnobs.show_right_top_rail, parentKnobs.knobTab),
+    show_sidebar_bottom_right: knobBoolean('Show bottom right sidebar', false, parentKnobs.show_right_bottom_rail, parentKnobs.knobTab),
   };
 
   const props = {};
@@ -61,13 +61,13 @@ export const ContentPage = (parentKnobs = {}) => {
   }));
   props.vertical_spacing = 'both';
 
-  if (knobs.show_rail_top_left) {
-    props.rail_top_left = SideNavigation(new KnobValues({
+  if (knobs.show_sidebar_top_left) {
+    props.sidebar_top_left = SideNavigation(new KnobValues({
       theme,
     }));
   }
 
-  if (knobs.show_rail_bottom_left) {
+  if (knobs.show_sidebar_bottom_left) {
     const button = CivicThemeButton({
       theme,
       text: 'Register',
@@ -83,16 +83,16 @@ export const ContentPage = (parentKnobs = {}) => {
       content: `<p>Register for events!</p><p>${button}</p>`,
     });
 
-    props.rail_bottom_left = content;
+    props.sidebar_bottom_left = content;
   }
 
-  if (knobs.show_rail_top_right) {
-    props.rail_top_right = SideNavigation(new KnobValues({
+  if (knobs.show_sidebar_top_right) {
+    props.sidebar_top_right = SideNavigation(new KnobValues({
       theme,
     }));
   }
 
-  if (knobs.show_rail_bottom_right) {
+  if (knobs.show_sidebar_bottom_right) {
     const button = CivicThemeButton({
       theme,
       text: 'Register',
@@ -108,7 +108,7 @@ export const ContentPage = (parentKnobs = {}) => {
       content: `<p>Register for events!</p><p>${button}</p>`,
     });
 
-    props.rail_bottom_right = content;
+    props.sidebar_bottom_right = content;
   }
 
   const footerValues = Footer(new KnobValues({
@@ -140,11 +140,11 @@ export const ContentPage = (parentKnobs = {}) => {
       'banner',
       'highlighted',
       'content_top',
-      'rail_top_left',
-      'rail_top_right',
+      'sidebar_top_left',
+      'sidebar_top_right',
       'content',
-      'rail_bottom_left',
-      'rail_bottom_right',
+      'sidebar_bottom_left',
+      'sidebar_bottom_right',
       'is_contained',
       'content_bottom',
       'footer_top_1',
