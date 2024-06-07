@@ -8,6 +8,7 @@
  * - has_error: [boolean] Error state.
  * - is_disabled: [boolean] Disabled state.
  * - direction: [string] Direction: horizontal, vertical.
+ * - for: [string] Which component this label belongs to.
  * - items: [array] Array of children items:
  *   - name: [string] DOM name.
  *   - content: [string] Input field label.
@@ -30,7 +31,7 @@
   {% set list_items = [] %}
   {% for key, item in items %}
     {% set list_item %}
-      {% set item = {theme: theme, is_disabled: is_disabled, has_error: has_error, content: content, value: value, name: name}|merge(item) %}
+      {% set item = {theme: theme, is_disabled: is_disabled, has_error: has_error, content: content, value: value, name: name, for: for ~ '-' ~ key}|merge(item) %}
       {% include '@atoms/radio/radio.twig' with item only %}
     {% endset %}
     {% set list_items = list_items|merge([list_item]) %}

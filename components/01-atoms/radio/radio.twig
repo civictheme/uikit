@@ -29,6 +29,7 @@
     type="radio"
     class="ct-radio__element"
     value="{{ value }}"
+    id="{{ for }}"
     {{ is_disabled ? 'disabled' }}
     {{ is_required ? 'required' }}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}

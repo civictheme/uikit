@@ -21,7 +21,7 @@ export const Textfield = (parentKnobs = {}) => {
     ),
     placeholder: knobText('Placeholder', 'Placeholder', parentKnobs.knobTab),
     is_required: knobBoolean('Required', false, parentKnobs.knobTab),
-    disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
     for: knobText('For', '', parentKnobs.knobTab),
     modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
