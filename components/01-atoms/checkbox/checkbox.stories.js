@@ -22,7 +22,7 @@ export const Checkbox = (parentKnobs = {}) => {
     ),
     content: knobText('Content', 'Checkbox label', parentKnobs.content, parentKnobs.knobTab),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
-    for: knobText('For', '', parentKnobs.for, parentKnobs.knobTab),
+    for: knobText('For', 'checkbox-element', parentKnobs.for, parentKnobs.knobTab),
     is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
     has_error: knobBoolean('Has error', false, parentKnobs.has_error, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
