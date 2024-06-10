@@ -1,5 +1,5 @@
 import CivicThemeRadio from './radio.twig';
-import { knobBoolean, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobText, knobRadios, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Radio',
@@ -10,7 +10,7 @@ export default {
 
 export const Radio = (parentKnobs = {}) => {
   const knobs = {
-    theme: knobBoolean(
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
