@@ -119,6 +119,14 @@ export const randomUrl = (domain) => {
   return `${domain}/${(Math.random() + 1).toString(36).substring(7)}`;
 };
 
+export const randomFutureDate = (days = 30) => {
+  const now = new Date();
+  const endDate = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
+  const randomDate = new Date(now.getTime() + Math.random() * (endDate.getTime() - now.getTime()));
+
+  return convertDate(randomDate);
+};
+
 export const randomDropdownFilter = () => {
   const filters = ['All', 'Recent', 'Popular', 'Featured'];
   return filters[Math.floor(Math.random() * filters.length)];
