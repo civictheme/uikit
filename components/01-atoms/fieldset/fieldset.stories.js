@@ -2,7 +2,7 @@ import { knobBoolean, knobNumber, knobRadios, knobText, randomFields, shouldRend
 import CivicThemeFieldset from './fieldset.twig';
 
 export default {
-  title: 'Atoms/Fieldset',
+  title: 'Atoms/Form Controls/Fieldset',
 };
 
 export const Fieldset = (parentKnobs = {}) => {

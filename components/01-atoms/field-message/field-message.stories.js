@@ -2,7 +2,7 @@ import CivicThemeFieldMessage from './field-message.twig';
 import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Field Message',
+  title: 'Atoms/Form Controls/Field Message',
   parameters: {
     layout: 'centered',
   },

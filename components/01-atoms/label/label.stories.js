@@ -2,7 +2,7 @@ import CivicThemeLabel from './label.twig';
 import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Label',
+  title: 'Atoms/Form Controls/Label',
   parameters: {
     layout: 'centered',
   },

@@ -2,7 +2,7 @@ import CivicThemeSelect from './select.twig';
 import { generateSelectOptions, knobBoolean, knobRadios, knobText, randomInt, shouldRender } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Select',
+  title: 'Atoms/Form Controls/Select',
   parameters: {
     layout: 'centered',
     wrapperSize: 'small',

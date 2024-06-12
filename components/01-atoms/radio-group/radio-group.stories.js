@@ -2,7 +2,7 @@ import CivicThemeRadioGroup from './radio-group.twig';
 import { knobText, knobBoolean, knobNumber, knobRadios, shouldRender, randomFields } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Radio Group',
+  title: 'Atoms/Form Controls/Radio Group',
   parameters: {
     layout: 'centered',
   },
