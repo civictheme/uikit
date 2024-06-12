@@ -243,16 +243,41 @@ $ct-input-dark-success-border-color: ct-color-dark('success') !default;
 //
 // Radio.
 //
-$ct-radio-label-light-color: ct-color-light('body') !default;
+$ct-radio-disabled-opacity: 40% !default;
+$ct-radio-outline-width: 2px !default;
+$ct-radio-outline-offset: 2px !default;
+$ct-radio-light-background-color: transparent !default;
 $ct-radio-light-border-color: ct-color-light('border-light') !default;
-$ct-radio-light-selected-background-color: ct-color-light('interaction-background') !default;
-$ct-radio-light-active-background-color: ct-color-light('body') !default;
-$ct-radio-light-check-color: ct-color-light('interaction-text') !default;
-$ct-radio-label-dark-color: ct-color-dark('body') !default;
-$ct-radio-dark-border-color: ct-color-dark('border-dark') !default;
-$ct-radio-dark-selected-background-color: ct-color-dark('interaction-background') !default;
-$ct-radio-dark-active-background-color: ct-color-dark('body') !default;
-$ct-radio-dark-check-color: ct-color-dark('interaction-text') !default;
+$ct-radio-light-color: ct-color-light('body') !default;
+$ct-radio-light-hover-background-color: $ct-radio-light-background-color !default;
+$ct-radio-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
+$ct-radio-light-hover-color: $ct-radio-light-color !default;
+$ct-radio-light-checked-background-color: $ct-radio-light-background-color !default;
+$ct-radio-light-checked-border-color: ct-color-light('interaction-background') !default;
+$ct-radio-light-checked-color: $ct-radio-light-color !default;
+$ct-radio-light-checked-hover-background-color: $ct-radio-light-hover-background-color !default;
+$ct-radio-light-checked-hover-border-color: $ct-radio-light-hover-border-color !default;
+$ct-radio-light-checked-hover-color: $ct-radio-light-hover-color !default;
+$ct-radio-light-invalid-background-color: $ct-radio-light-hover-background-color !default;
+$ct-radio-light-invalid-border-color: ct-color-light('error') !default;
+$ct-radio-light-invalid-color: ct-color-light('error') !default;
+$ct-radio-light-outline-color: $ct-outline-light !default;
+$ct-radio-dark-background-color: transparent !default;
+$ct-radio-dark-border-color: ct-color-dark('border-light') !default;
+$ct-radio-dark-color: ct-color-dark('body') !default;
+$ct-radio-dark-hover-background-color: $ct-radio-dark-background-color !default;
+$ct-radio-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
+$ct-radio-dark-hover-color: $ct-radio-dark-color !default;
+$ct-radio-dark-checked-background-color: $ct-radio-dark-background-color !default;
+$ct-radio-dark-checked-border-color: ct-color-dark('interaction-background') !default;
+$ct-radio-dark-checked-color: $ct-radio-dark-color !default;
+$ct-radio-dark-checked-hover-background-color: $ct-radio-dark-hover-background-color !default;
+$ct-radio-dark-checked-hover-border-color: $ct-radio-dark-hover-border-color !default;
+$ct-radio-dark-checked-hover-color: $ct-radio-dark-hover-color !default;
+$ct-radio-dark-invalid-background-color: $ct-radio-dark-hover-background-color !default;
+$ct-radio-dark-invalid-border-color: ct-color-dark('error') !default;
+$ct-radio-dark-invalid-color: ct-color-dark('error') !default;
+$ct-radio-dark-outline-color: $ct-outline-dark !default;
 
 //
 // Checkbox.
