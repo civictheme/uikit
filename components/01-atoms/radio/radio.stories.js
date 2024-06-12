@@ -1,5 +1,5 @@
 import CivicThemeRadio from './radio.twig';
-import { knobBoolean, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomId, randomInt, randomName, shouldRender } from '../../00-base/base.utils';
 
 export default {
   title: 'Atoms/Radio',
@@ -10,7 +10,7 @@ export default {
 
 export const Radio = (parentKnobs = {}) => {
   const knobs = {
-    theme: knobBoolean(
+    theme: knobRadios(
       'Theme',
       {
         Light: 'light',
@@ -19,11 +19,13 @@ export const Radio = (parentKnobs = {}) => {
       'light',
       parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Radio label', parentKnobs.knobTab),
+    label: knobText('Label', 'Radio label', parentKnobs.knobTab),
+    name: randomName(),
+    id: randomId(),
+    value: randomInt(1, 1000),
     is_required: knobBoolean('Required', false, parentKnobs.knobTab),
-    for: knobText('For', '', parentKnobs.knobTab),
     is_disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
-    has_error: knobBoolean('Has error', false, parentKnobs.knobTab),
+    is_invalid: knobBoolean('Has error', false, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
     modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
   };
