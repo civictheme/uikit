@@ -1,4 +1,4 @@
-import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, KnobValues, shouldRender } from '../../00-base/base.utils';
 import CivicThemeField from './field.twig';
 import { Select } from '../../01-atoms/select/select.stories';
 import { Textfield } from '../../01-atoms/textfield/textfield.stories';
@@ -12,6 +12,8 @@ export default {
   title: 'Molecules/Field',
   parameters: {
     layout: 'centered',
+    wrapperIsContainer: true,
+    wrapperSize: 'medium',
   },
 };
 
@@ -25,7 +27,7 @@ export const Field = (parentKnobs = {}) => {
       },
       'light',
       parentKnobs.theme,
-      parentKnobs.knobTab,
+      parentKnobs.knobTab
     ),
     type: knobRadios(
       'Type',
@@ -42,69 +44,69 @@ export const Field = (parentKnobs = {}) => {
       },
       'textfield',
       parentKnobs.type,
-      parentKnobs.knobTab,
+      parentKnobs.knobTab
     ),
-    direction: knobRadios(
-      'Direction',
+    orientation: knobRadios(
+      'Orientation',
       {
         Horizontal: 'horizontal',
         Vertical: 'vertical',
       },
       'vertical',
-      parentKnobs.direction,
-      parentKnobs.knobTab,
+      parentKnobs.orientation,
+      parentKnobs.knobTab
     ),
-    control_direction: knobRadios(
-      'Control direction (for group controls)',
+    control_orientation: knobRadios(
+      'Control orientation (for group controls)',
       {
         Horizontal: 'horizontal',
         Vertical: 'vertical',
       },
       'vertical',
-      parentKnobs.control_direction,
-      parentKnobs.knobTab,
+      parentKnobs.control_orientation,
+      parentKnobs.knobTab
     ),
-    label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab),
-    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.description, parentKnobs.knobTab),
-    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
-    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
-    has_error: knobBoolean('Has error', false, parentKnobs.has_error, parentKnobs.knobTab),
-    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.message, parentKnobs.knobTab),
-    modifier_class: `story-wrapper-size--medium ${knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab)}`,
-    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab,),
+    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.description, parentKnobs.knobTab,),
+    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab,),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab,),
+    is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab,),
+    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.message, parentKnobs.knobTab,),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab,),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab,),
   };
 
   switch (knobs.type) {
     case 'textfield':
-      knobs.control = Textfield(parentKnobs.knobTab);
+      knobs.control = Textfield({knobTab: 'Control'});
       break;
 
     case 'textarea':
-      knobs.control = Textarea(parentKnobs.knobTab);
+      knobs.control = Textarea({knobTab: 'Control'});
       break;
 
     case 'select':
-      knobs.control = Select(parentKnobs.knobTab);
+      knobs.control = Select({knobTab: 'Control'});
       break;
 
     case 'checkbox':
-      knobs.control = Checkbox(parentKnobs.knobTab);
+      knobs.control = Checkbox({knobTab: 'Control'});
       break;
 
     case 'checkbox-group':
-      knobs.control = CheckboxGroup(parentKnobs.knobTab);
+      knobs.control = CheckboxGroup({knobTab: 'Control'});
       break;
 
     case 'radio':
-      knobs.control = Radio(parentKnobs.knobTab);
+      knobs.control = Radio({knobTab: 'Control'});
       break;
 
     case 'radio-group':
-      knobs.control = RadioGroup(parentKnobs.knobTab);
+      knobs.control = RadioGroup({knobTab: 'Control'});
       break;
 
     default:
-      knobs.control = Textfield(parentKnobs.knobTab);
+      knobs.control = Textfield({knobTab: 'Control'});
   }
 
   return shouldRender(parentKnobs) ? CivicThemeField(knobs) : knobs;

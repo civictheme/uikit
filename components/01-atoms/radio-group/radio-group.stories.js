@@ -44,7 +44,7 @@ export const RadioGroup = (parentKnobs = {}) => {
     name: knobText('Name', 'radio-name', parentKnobs.name, parentKnobs.knobTab),
     content: knobText('Content', 'Radio label', parentKnobs.content, parentKnobs.knobTab),
     is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
-    has_error: knobBoolean('Has error', false, parentKnobs.has_error, parentKnobs.knobTab),
+    is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
     for: knobText('For', 'radio-element', parentKnobs.for, parentKnobs.knobTab),
     modifier_class: `story-wrapper-size--small ${knobText('Additional class', '', parentKnobs.knobTab)}`,
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),

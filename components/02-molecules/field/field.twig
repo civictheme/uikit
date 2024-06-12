@@ -7,27 +7,25 @@
  *
  * Variables:
  * - theme: [string] Theme: light, dark.
- * - type: [string] Type defined by a control type.
- * - direction: [string] Elements direction: vertical or horizontal.
- * - control_direction: [string] Elements direction within a control (if the control supports it): vertical or horizontal.
+ * - type: [string] Type defined by a control type. Required.
+ * - orientation: [string] Elements orientation: vertical or horizontal.
+ * - control_orientation: [string] Elements orientation within a control (if the control supports it): vertical or horizontal.
  * - label: [string] Label.
  * - description: [string] Description.
- * - is_required: [boolean] Denote if the field is required.
- * - has_error: [boolean] Error state.
- * - is_disabled: [boolean] Denote if the field is disabled.
+ * - is_invalid: [boolean] Denote if the control is invalid.
+ * - is_disabled: [boolean] Denote if the control is disabled.
+ * - is_required: [boolean] Denote if the control is required.
  * - control: [object] Object with control's properties:
  *   - name: [string] DOM name.
  *   - value: [string] DOM value.
- *   - for: [string] Which component this label belongs to.
  *   - attributes: [string] Additional attributes.
  *   - modifier_class: [string] Additional classes.
  *   - items: [array] An array of items for group controls. Each item consists of:
  *     - label: [string] Child label.
  *     - value: [string] Child DOM value.
- *     - for: [string] Which component this label belongs to.
- *     - is_checked: [boolean] Denote if the component is checked.
- *     - is_disabled: [boolean] Denote if the component is disabled.
- *     - has_error: [boolean] Error state.
+ * 		 - is_invalid: [boolean] Denote if the control is invalid.
+ *     - is_disabled: [boolean] Denote if the control is disabled.
+ *     - is_required: [boolean] Denote if the control is required.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
@@ -36,27 +34,29 @@
 {% set type = type not in ['textfield', 'textarea', 'select', 'radio', 'radio-group', 'checkbox', 'checkbox-group', 'hidden'] ? 'hidden' : type %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type|default('input')) %}
-{% set direction_class = 'ct-field--%s'|format(direction|default('horizontal')) %}
+{% set orientation_class = 'ct-field--%s'|format(orientation|default('horizontal')) %}
 {% set is_required_class = is_required ? 'ct-field--required' : '' %}
 {% set is_disabled_class = is_disabled ? 'ct-field--disabled' : '' %}
-{% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, type_class, direction_class, is_required_class, is_disabled_class, modifier_class|default('')) %}
+{% set is_invalid_class = is_invalid ? 'ct-field--invalid' : '' %}
+{% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 
 {% set control = control|merge({
 	theme: theme,
 	is_disabled: is_disabled,
-	has_error: has_error,
+	is_invalid: is_invalid,
 	is_required: is_required,
 	modifier_class: 'ct-field__control ' ~ control.modifier_class,
 }) %}
 
 <div class="ct-field {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
-	{% set label_padded_class = type in ['textfield', 'textarea', 'select'] and direction == 'horizontal' ? 'ct-field__label--padded' : '' %}
+	{% set label_padded_class = type in ['textfield', 'textarea', 'select'] and orientation == 'horizontal' ? 'ct-field__label--padded' : '' %}
+
 	{% if label is not empty and type != 'hidden' %}
 		{% include '@atoms/label/label.twig' with {
 			theme: theme,
 			content: label,
 			is_required: is_required,
-			for: control.for ? control.for : null,
+			for: control.id ? control.id : null,
 			modifier_class: 'ct-field__label ' ~ label_padded_class,
 		} only %}
 	{% endif %}
@@ -82,25 +82,18 @@
 				name="{{ control.name }}"
 				{% if control.modifier_class %}class="{{ control.modifier_class }}"{% endif %}
 				{% if control.value %}value="{{ control.value }}"{% endif %}
-				{% if control.for %}id="{{ control.for }}"{% endif %}
+				{% if control.id %}id="{{ control.id }}"{% endif %}
+				{% if control.is_required %}required{% endif %}
+				{% if control.is_disabled %}disabled{% endif %}
 				{% if control.attributes %}{{ control.attributes|raw }}{% endif %}
 			/>
 		{% endif %}
 
-		{% if description is not empty and type != 'hidden' %}
-			{% include '@atoms/field-description/field-description.twig' with {
-				theme: theme,
-				size: 'regular',
-				content: description,
-				modifier_class: 'ct-field__description',
-			} only %}
-		{% endif %}
-
-		{% if (message or has_error) and type != 'hidden' %}
+		{% if (message or is_invalid) and type != 'hidden' %}
 			{% include '@atoms/field-message/field-message.twig' with {
 				theme: theme,
-				type: has_error ? 'error' : 'information',
-				content: message ? message : (has_error ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+				type: is_invalid ? 'error' : 'information',
+				content: message ? message : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
 				modifier_class: 'ct-field__message',
 			} only %}
 		{% endif %}
