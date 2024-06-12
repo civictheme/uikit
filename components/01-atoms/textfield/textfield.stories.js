@@ -2,7 +2,7 @@ import CivicThemeTextfield from './textfield.twig';
 import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Textfield',
+  title: 'Atoms/Form Controls/Textfield',
   parameters: {
     layout: 'centered',
   },

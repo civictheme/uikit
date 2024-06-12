@@ -2,7 +2,7 @@ import CivicThemeTextarea from './textarea.twig';
 import { knobBoolean, knobNumber, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Textarea',
+  title: 'Atoms/Form Controls/Textarea',
   parameters: {
     layout: 'centered',
   },

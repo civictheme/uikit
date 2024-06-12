@@ -2,7 +2,7 @@ import CivicThemeRadio from './radio.twig';
 import { knobBoolean, knobRadios, knobText, randomId, randomInt, randomName, shouldRender } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Radio',
+  title: 'Atoms/Form Controls/Radio',
   parameters: {
     layout: 'centered',
   },

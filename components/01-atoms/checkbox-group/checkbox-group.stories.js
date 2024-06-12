@@ -2,7 +2,7 @@ import CivicThemeCheckboxGroup from './checkbox-group.twig';
 import { knobText, knobBoolean, knobNumber, knobRadios, shouldRender, randomFields } from '../../00-base/base.utils';
 
 export default {
-  title: 'Atoms/Checkbox Group',
+  title: 'Atoms/Form Controls/Checkbox Group',
   parameters: {
     layout: 'centered',
   },
