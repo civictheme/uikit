@@ -87,7 +87,7 @@ export const randomBool = (skew) => {
   return Math.random() > skew;
 };
 
-export const randomInt = (min, max) => {
+export const randomInt = (min = 1, max = 100) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
@@ -111,12 +111,25 @@ export const randomText = (words) => {
 export const randomString = (length) => randomText(length).substring(0, length)
   .trim();
 
-export const randomName = (length) => randomText(length).replace(' ', '')
+export const randomName = (length = 8) => randomText(length).replace(' ', '')
   .substring(0, length).trim();
+
+export const randomId = (() => {
+  let id = 0;
+  return () => ++id;
+})();
 
 export const randomUrl = (domain) => {
   domain = domain || 'http://example.com';
   return `${domain}/${(Math.random() + 1).toString(36).substring(7)}`;
+};
+
+export const randomFutureDate = (days = 30) => {
+  const now = new Date();
+  const endDate = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
+  const randomDate = new Date(now.getTime() + Math.random() * (endDate.getTime() - now.getTime()));
+
+  return convertDate(randomDate);
 };
 
 export const randomDropdownFilter = () => {
@@ -124,12 +137,12 @@ export const randomDropdownFilter = () => {
   return filters[Math.floor(Math.random() * filters.length)];
 };
 
-export const randomField = (inputType, options, theme, rand, itr) => {
-  const isCheckboxOrRadio = inputType === 'checkbox' || inputType === 'radio';
+export const randomField = (type, options, theme, rand, itr) => {
+  const isCheckboxOrRadio = type === 'checkbox' || type === 'radio';
 
-  const FieldOptions = {
+  const fieldOptions = {
     theme,
-    type: inputType,
+    type,
     label: CivicThemeLabel({
       theme,
       content: options.title ? options.title : `Input title ${itr + 1}${rand ? ` ${randomString(randomInt(2, 5))}` : ''}`,
@@ -149,30 +162,30 @@ export const randomField = (inputType, options, theme, rand, itr) => {
 
   const inputOptions = {
     theme,
-    type: inputType,
+    type,
     attributes,
     required: options.required,
     value: typeof options.value !== 'undefined' ? options.value : randomString(randomInt(3, 8)),
   };
 
-  switch (inputType) {
+  switch (type) {
     case 'radio':
-      FieldOptions.control.push(CivicThemeRadio(inputOptions));
+      fieldOptions.control.push(CivicThemeRadio(inputOptions));
       break;
     case 'checkbox':
-      FieldOptions.control.push(CivicThemeCheckbox(inputOptions));
+      fieldOptions.control.push(CivicThemeCheckbox(inputOptions));
       break;
     case 'select':
-      FieldOptions.control.push(CivicThemeSelect({
+      fieldOptions.control.push(CivicThemeSelect({
         ...inputOptions,
         options: inputOptions.value,
       }));
       break;
     default:
-      FieldOptions.control.push(CivicThemeInput(inputOptions));
+      fieldOptions.control.push(CivicThemeInput(inputOptions));
   }
 
-  return CivicThemeField(FieldOptions);
+  return CivicThemeField(fieldOptions);
 };
 
 export const randomFields = (count, theme, rand, defaultInputType) => {
@@ -190,12 +203,12 @@ export const randomFields = (count, theme, rand, defaultInputType) => {
 
   const requiredOptions = ['required', ''];
 
-  const Fields = [];
+  const fields = [];
   for (let i = 0; i < count; i++) {
     const inputType = defaultInputType || inputTypes[Math.floor(Math.random() * inputTypes.length)];
     const required = [Math.floor(Math.random() * requiredOptions.length)];
 
-    Fields.push(randomField(
+    fields.push(randomField(
       inputType,
       {
         required,
@@ -206,7 +219,7 @@ export const randomFields = (count, theme, rand, defaultInputType) => {
     ));
   }
 
-  return Fields;
+  return fields;
 };
 
 export const randomLinks = (count, length, domain, prefix) => {

@@ -42,8 +42,17 @@
     margin-top: ct-spacing(3);
 
     @include ct-breakpoint(m) {
+      flex-grow: 0;
       margin-left: ct-spacing(3);
       margin-top: 0;
+    }
+
+    .ct-button {
+      flex-grow: 1;
+
+      @include ct-breakpoint(m) {
+        flex-grow: 0;
+      }
     }
   }
 
