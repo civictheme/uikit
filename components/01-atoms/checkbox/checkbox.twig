@@ -5,40 +5,40 @@
  *
  * Variables:
  * - theme: [string] Theme: light, dark.
- * - content: [string] Input field label.
- * - value: [string] Input field value.
- * - disabled: [boolean] Disabled state.
- * - is_required: [boolean] Required state.
- * - for: [string] Which component this label belongs to.
- * - has_error: [boolean] Error state.
+ * - name: [string] DOM name. Required.
+ * - id: [string] DOM id. Required.
+ * - value: [string] DOM value.
+ * - label: [string] Label content.
+ * - is_checked: [boolean] Denote if the control is checked.
+ * - is_invalid: [boolean] Denote if the control is invalid.
+ * - is_disabled: [boolean] Denote if the control is disabled.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
 #}
 
-{% set disabled_class = disabled ? 'ct-checkbox--disabled' : '' %}
-{% set required_class = is_required ? 'ct-checkbox--required' : '' %}
-{% set error_class = has_error ? 'ct-checkbox--error' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s'|format(theme_class, disabled_class, required_class, error_class, modifier_class|default('')) %}
+{% set is_invalid_class = is_invalid ? 'ct-checkbox--is-invalid' : '' %}
+{% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-<div class="ct-checkbox {{ modifier_class|trim }}">
+{% if name is not empty and id is not empty %}
   <input
     type="checkbox"
-    class="ct-checkbox__element"
+    class="ct-checkbox {{ modifier_class }}"
+    name="{{ name }}"
     value="{{ value }}"
-    {{ disabled ? 'disabled' }}
-    {{ is_required ? 'required' }}
+    id="{{ id }}"
+    {{ is_checked ? 'checked' }}
+    {{ is_disabled ? 'disabled' }}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   />
-  <span class="ct-checkbox__state"></span>
-  {% if content is not empty %}
+  {% if label is not empty %}
     {% include '@atoms/label/label.twig' with {
-        theme: theme,
-        content: content,
-        is_required: is_required,
-        for: for ? for : null,
-        modifier_class: 'ct-checkbox__label ' ~ disabled ? ' ct-checkbox__label--disabled',
-      } only %}
+      theme: theme,
+      content: label,
+      for: id,
+      size: 'small',
+      modifier_class: 'ct-checkbox__label',
+    } only %}
   {% endif %}
-</div>
+{% endif %}
