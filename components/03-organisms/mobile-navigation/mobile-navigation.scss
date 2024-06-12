@@ -192,14 +192,13 @@ $ct-mobile-navigation-spacing: ct-spacing(2);
 .ct-mobile-navigation-trigger {
   $root: &;
 
+  @include ct-typography('label-extra-small');
   @include ct-print-hide();
 
   background-color: transparent;
   border: none;
   padding-left: 0;
   padding-right: 0;
-
-  @include ct-typography-ruleset(($ct-font-base-size * 0.875, ct-icon-size-dimension('regular', 'xxs', 'height'), 400, 'primary', 0));
 
   display: inline;
 
