@@ -241,7 +241,7 @@ $ct-input-dark-error-border-color: ct-color-dark('error') !default;
 $ct-input-dark-success-border-color: ct-color-dark('success') !default;
 
 //
-// Radio.
+// Form Control/Radio.
 //
 $ct-radio-disabled-opacity: 40% !default;
 $ct-radio-outline-width: 2px !default;
@@ -280,7 +280,7 @@ $ct-radio-dark-invalid-color: ct-color-dark('error') !default;
 $ct-radio-dark-outline-color: $ct-outline-dark !default;
 
 //
-// Checkbox.
+// Form Control/Checkbox.
 //
 $ct-checkbox-border-radius: math.div($ct-border-radius, 2) !default;
 $ct-checkbox-check: url("data:image/svg+xml,%3Csvg viewBox='' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.9 0H17.1C17.3387 0 17.5676 0.0948211 17.7364 0.263604C17.9052 0.432387 18 0.661305 18 0.9V17.1C18 17.3387 17.9052 17.5676 17.7364 17.7364C17.5676 17.9052 17.3387 18 17.1 18H0.9C0.661305 18 0.432387 17.9052 0.263604 17.7364C0.0948211 17.5676 0 17.3387 0 17.1V0.9C0 0.661305 0.0948211 0.432387 0.263604 0.263604C0.432387 0.0948211 0.661305 0 0.9 0ZM6.48885 14.1746C6.57252 14.259 6.67206 14.326 6.78173 14.3716C6.8914 14.4173 7.00904 14.4409 7.12785 14.4409C7.24666 14.4409 7.3643 14.4173 7.47397 14.3716C7.58364 14.326 7.68318 14.259 7.76685 14.1746L15.9388 6.00264C16.1083 5.83317 16.2035 5.60331 16.2035 5.36364C16.2035 5.12397 16.1083 4.89412 15.9388 4.72464C15.7694 4.55517 15.5395 4.45996 15.2998 4.45996C15.0602 4.45996 14.8303 4.55517 14.6608 4.72464L7.12785 12.2666L4.23885 9.36864C4.06938 9.19917 3.83952 9.10396 3.59985 9.10396C3.36018 9.10396 3.13032 9.19917 2.96085 9.36864C2.79138 9.53812 2.69617 9.76797 2.69617 10.0076C2.69617 10.2473 2.79138 10.4772 2.96085 10.6466L6.48885 14.1746Z' fill='currentcolor'/%3E%3C/svg%3E%0A");
@@ -319,6 +319,40 @@ $ct-checkbox-dark-invalid-background-color: $ct-checkbox-dark-hover-background-c
 $ct-checkbox-dark-invalid-border-color: ct-color-dark('error') !default;
 $ct-checkbox-dark-invalid-color: ct-color-dark('error') !default;
 $ct-checkbox-dark-outline-color: $ct-outline-dark !default;
+
+//
+// Form Control/Textfield.
+//
+$ct-textfield-border-radius: $ct-border-radius !default;
+$ct-textfield-outline-width: 2px !default;
+$ct-textfield-outline-offset: 2px !default;
+$ct-textfield-disabled-opacity: 40% !default;
+$ct-textfield-light-background-color: ct-color-light('background-light') !default;
+$ct-textfield-light-border-color: ct-color-light('border') !default;
+$ct-textfield-light-color: ct-color-light('body') !default;
+$ct-textfield-light-hover-background-color: $ct-textfield-light-background-color !default;
+$ct-textfield-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
+$ct-textfield-light-hover-color: $ct-textfield-light-color !default;
+$ct-textfield-light-focus-background-color: $ct-textfield-light-background-color !default;
+$ct-textfield-light-focus-border-color: ct-color-light('interaction-background') !default;
+$ct-textfield-light-focus-color: $ct-textfield-light-color !default;
+$ct-textfield-light-invalid-background-color: inherit !default;
+$ct-textfield-light-invalid-border-color: ct-color-light('error') !default;
+$ct-textfield-light-invalid-color: inherit !default;
+$ct-textfield-light-outline-color: $ct-outline-light !default;
+$ct-textfield-dark-background-color: ct-color-dark('background-dark') !default;
+$ct-textfield-dark-border-color: ct-color-dark('border-light') !default;
+$ct-textfield-dark-color: ct-color-dark('body') !default;
+$ct-textfield-dark-hover-background-color: $ct-textfield-dark-background-color !default;
+$ct-textfield-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
+$ct-textfield-dark-hover-color: $ct-textfield-dark-color !default;
+$ct-textfield-dark-focus-background-color: ct-color-dark('background') !default;
+$ct-textfield-dark-focus-border-color: ct-color-dark('interaction-background') !default;
+$ct-textfield-dark-focus-color: $ct-textfield-dark-color !default;
+$ct-textfield-dark-invalid-background-color: inherit !default;
+$ct-textfield-dark-invalid-border-color: ct-color-dark('error') !default;
+$ct-textfield-dark-invalid-color: inherit !default;
+$ct-textfield-dark-outline-color: $ct-outline-dark !default;
 
 //
 // Field description.

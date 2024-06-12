@@ -21,14 +21,15 @@
   $_checked-hover-border-width: $_checked-border-width;
   $_ct-checkbox-check_resized: ct-svg-viewbox($ct-checkbox-check, '0 0 #{$_checked-square-width} #{$_checked-square-height}');
 
-  appearance: none;
+  @include ct-form-control-no-appearance();
+  @include ct-form-control-disabled($ct-checkbox-disabled-opacity);
+
   border-radius: $ct-checkbox-border-radius;
   border-style: solid;
   box-sizing: border-box;
   height: $_height;
   width: $_width;
   border-width: $_border-width;
-  margin: 0;
   cursor: pointer;
 
   // Offset by font spacing.
@@ -73,9 +74,6 @@
   }
 
   &:disabled {
-    opacity: $ct-checkbox-disabled-opacity;
-    pointer-events: none;
-
     + label {
       opacity: $ct-checkbox-disabled-opacity;
       pointer-events: none;
