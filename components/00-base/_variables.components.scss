@@ -283,17 +283,42 @@ $ct-radio-dark-outline-color: $ct-outline-dark !default;
 // Checkbox.
 //
 $ct-checkbox-border-radius: math.div($ct-border-radius, 2) !default;
-$ct-checkbox-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='' title='approvetick' width='22' height='22' viewBox='0 0 24 24' aria-hidden='true'%3E%3Cpath d='M18.7104 7.20998C18.6175 7.11625 18.5069 7.04186 18.385 6.99109C18.2632 6.94032 18.1324 6.91418 18.0004 6.91418C17.8684 6.91418 17.7377 6.94032 17.6159 6.99109C17.494 7.04186 17.3834 7.11625 17.2904 7.20998L9.84044 14.67L6.71044 11.53C6.61392 11.4367 6.49998 11.3634 6.37512 11.3142C6.25026 11.265 6.11694 11.2409 5.98276 11.2432C5.84858 11.2455 5.71617 11.2743 5.59309 11.3278C5.47001 11.3812 5.35868 11.4585 5.26544 11.555C5.1722 11.6515 5.09889 11.7654 5.04968 11.8903C5.00048 12.0152 4.97635 12.1485 4.97867 12.2827C4.98099 12.4168 5.00972 12.5493 5.06321 12.6723C5.1167 12.7954 5.19392 12.9067 5.29044 13L9.13044 16.84C9.2234 16.9337 9.334 17.0081 9.45586 17.0589C9.57772 17.1096 9.70843 17.1358 9.84044 17.1358C9.97245 17.1358 10.1032 17.1096 10.225 17.0589C10.3469 17.0081 10.4575 16.9337 10.5504 16.84L18.7104 8.67998C18.8119 8.58634 18.893 8.47269 18.9484 8.34619C19.0038 8.21969 19.0324 8.08308 19.0324 7.94498C19.0324 7.80688 19.0038 7.67028 18.9484 7.54378C18.893 7.41728 18.8119 7.30363 18.7104 7.20998Z'%3E%3C/path%3E%3C/svg%3E") !default;
-$ct-checkbox-label-light-color: ct-color-light('body') !default;
+$ct-checkbox-check: url("data:image/svg+xml,%3Csvg viewBox='' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.9 0H17.1C17.3387 0 17.5676 0.0948211 17.7364 0.263604C17.9052 0.432387 18 0.661305 18 0.9V17.1C18 17.3387 17.9052 17.5676 17.7364 17.7364C17.5676 17.9052 17.3387 18 17.1 18H0.9C0.661305 18 0.432387 17.9052 0.263604 17.7364C0.0948211 17.5676 0 17.3387 0 17.1V0.9C0 0.661305 0.0948211 0.432387 0.263604 0.263604C0.432387 0.0948211 0.661305 0 0.9 0ZM6.48885 14.1746C6.57252 14.259 6.67206 14.326 6.78173 14.3716C6.8914 14.4173 7.00904 14.4409 7.12785 14.4409C7.24666 14.4409 7.3643 14.4173 7.47397 14.3716C7.58364 14.326 7.68318 14.259 7.76685 14.1746L15.9388 6.00264C16.1083 5.83317 16.2035 5.60331 16.2035 5.36364C16.2035 5.12397 16.1083 4.89412 15.9388 4.72464C15.7694 4.55517 15.5395 4.45996 15.2998 4.45996C15.0602 4.45996 14.8303 4.55517 14.6608 4.72464L7.12785 12.2666L4.23885 9.36864C4.06938 9.19917 3.83952 9.10396 3.59985 9.10396C3.36018 9.10396 3.13032 9.19917 2.96085 9.36864C2.79138 9.53812 2.69617 9.76797 2.69617 10.0076C2.69617 10.2473 2.79138 10.4772 2.96085 10.6466L6.48885 14.1746Z' fill='currentcolor'/%3E%3C/svg%3E%0A");
+$ct-checkbox-disabled-opacity: 40% !default;
+$ct-checkbox-outline-width: 2px !default;
+$ct-checkbox-outline-offset: 2px !default;
+$ct-checkbox-light-background-color: transparent !default;
 $ct-checkbox-light-border-color: ct-color-light('border-light') !default;
-$ct-checkbox-light-selected-background-color: ct-color-light('interaction-background') !default;
-$ct-checkbox-light-active-background-color: ct-color-light('body') !default;
-$ct-checkbox-light-check-color: ct-color-light('interaction-text') !default;
-$ct-checkbox-label-dark-color: ct-color-dark('body') !default;
-$ct-checkbox-dark-border-color: ct-color-dark('border-dark') !default;
-$ct-checkbox-dark-selected-background-color: ct-color-dark('interaction-background') !default;
-$ct-checkbox-dark-active-background-color: ct-color-dark('body') !default;
-$ct-checkbox-dark-check-color: ct-color-dark('interaction-text') !default;
+$ct-checkbox-light-color: ct-color-light('body') !default;
+$ct-checkbox-light-hover-background-color: $ct-checkbox-light-background-color !default;
+$ct-checkbox-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
+$ct-checkbox-light-hover-color: $ct-checkbox-light-color !default;
+$ct-checkbox-light-checked-background-color: $ct-checkbox-light-background-color !default;
+$ct-checkbox-light-checked-border-color: ct-color-light('interaction-background') !default;
+$ct-checkbox-light-checked-color: $ct-checkbox-light-color !default;
+$ct-checkbox-light-checked-hover-background-color: $ct-checkbox-light-hover-background-color !default;
+$ct-checkbox-light-checked-hover-border-color: $ct-checkbox-light-hover-border-color !default;
+$ct-checkbox-light-checked-hover-color: $ct-checkbox-light-hover-color !default;
+$ct-checkbox-light-invalid-background-color: $ct-checkbox-light-hover-background-color !default;
+$ct-checkbox-light-invalid-border-color: ct-color-light('error') !default;
+$ct-checkbox-light-invalid-color: ct-color-light('error') !default;
+$ct-checkbox-light-outline-color: $ct-outline-light !default;
+$ct-checkbox-dark-background-color: transparent !default;
+$ct-checkbox-dark-border-color: ct-color-dark('border-light') !default;
+$ct-checkbox-dark-color: ct-color-dark('body') !default;
+$ct-checkbox-dark-hover-background-color: $ct-checkbox-dark-background-color !default;
+$ct-checkbox-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
+$ct-checkbox-dark-hover-color: $ct-checkbox-dark-color !default;
+$ct-checkbox-dark-checked-background-color: $ct-checkbox-dark-background-color !default;
+$ct-checkbox-dark-checked-border-color: ct-color-dark('interaction-background') !default;
+$ct-checkbox-dark-checked-color: $ct-checkbox-dark-color !default;
+$ct-checkbox-dark-checked-hover-background-color: $ct-checkbox-dark-hover-background-color !default;
+$ct-checkbox-dark-checked-hover-border-color: $ct-checkbox-dark-hover-border-color !default;
+$ct-checkbox-dark-checked-hover-color: $ct-checkbox-dark-hover-color !default;
+$ct-checkbox-dark-invalid-background-color: $ct-checkbox-dark-hover-background-color !default;
+$ct-checkbox-dark-invalid-border-color: ct-color-dark('error') !default;
+$ct-checkbox-dark-invalid-color: ct-color-dark('error') !default;
+$ct-checkbox-dark-outline-color: $ct-outline-dark !default;
 
 //
 // Field description.

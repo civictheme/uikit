@@ -62,7 +62,7 @@
       height: $_checked-circle-height;
 
       // Center the circle.
-      margin: math.div($_height, 2) - math.div($_checked-circle-height, 2) - $_checked-border-width math.div($_width, 2) - math.div($_checked-circle-width, 2) - $_checked-border-width;
+      margin: math.div($_height - $_checked-circle-height, 2) - $_checked-border-width math.div($_width, 2) - math.div($_checked-circle-width, 2) - $_checked-border-width;
     }
   }
 
@@ -89,11 +89,11 @@
 
     &:not(#{$root}--is-invalid) {
       @include ct-component-property($root, $theme, border-color);
-      @include ct-component-property($root, $theme, bakcground-color);
+      @include ct-component-property($root, $theme, background-color);
 
       &:hover {
         @include ct-component-property($root, $theme, hover, border-color);
-        @include ct-component-property($root, $theme, hover, bakcground-color);
+        @include ct-component-property($root, $theme, hover, background-color);
 
         & + label {
           @include ct-component-property($root, $theme, hover, color);
@@ -110,11 +110,11 @@
 
       &:checked {
         @include ct-component-property($root, $theme, checked, border-color);
-        @include ct-component-property($root, $theme, checked, bakcground-color);
+        @include ct-component-property($root, $theme, checked, background-color);
 
         &:hover {
           @include ct-component-property($root, $theme, checked, hover, border-color);
-          @include ct-component-property($root, $theme, checked, hover, bakcground-color);
+          @include ct-component-property($root, $theme, checked, hover, background-color);
 
           &::before {
             background-color: ct-component-var($root, $theme, checked, hover, border-color);
@@ -141,7 +141,7 @@
 
     &#{$root}--is-invalid {
       @include ct-component-property($root, $theme, invalid, border-color);
-      @include ct-component-property($root, $theme, invalid, bakcground-color);
+      @include ct-component-property($root, $theme, invalid, background-color);
 
       &:hover {
         & + label {

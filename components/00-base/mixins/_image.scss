@@ -82,3 +82,10 @@
 
   filter: drop-shadow(-1 * $offset-x $multiplier * $offset-y 0 $color);
 }
+
+//
+// String to set SVG viewbox.
+//
+@function ct-svg-viewbox($svg, $value) {
+  @return ct-str-replace($svg, "viewBox=''", "viewBox='#{$value}'");
+}
