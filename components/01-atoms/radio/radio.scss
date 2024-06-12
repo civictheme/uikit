@@ -20,14 +20,15 @@
   $_checked-circle-height: $_height * 0.5385;
   $_checked-hover-border-width: $_checked-border-width;
 
-  appearance: none;
+  @include ct-form-control-no-appearance();
+  @include ct-form-control-disabled($ct-radio-disabled-opacity);
+
   border-radius: 50%;
   border-style: solid;
   box-sizing: border-box;
   height: $_height;
   width: $_width;
   border-width: $_border-width;
-  margin: 0;
   cursor: pointer;
 
   // Offset by font spacing.
@@ -73,9 +74,6 @@
   }
 
   &:disabled {
-    opacity: $ct-radio-disabled-opacity;
-    pointer-events: none;
-
     + label {
       opacity: $ct-radio-disabled-opacity;
       pointer-events: none;
