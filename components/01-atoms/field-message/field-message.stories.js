@@ -17,6 +17,7 @@ export const FieldMessage = (parentKnobs = {}) => {
         Dark: 'dark',
       },
       'light',
+      parentKnobs.theme,
       parentKnobs.knobTab,
     ),
     type: knobRadios(
@@ -28,11 +29,12 @@ export const FieldMessage = (parentKnobs = {}) => {
         Success: 'success',
       },
       'error',
+      parentKnobs.type,
       parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Field message content', parentKnobs.knobTab),
-    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
+    content: knobText('Content', 'Field message content', parentKnobs.content, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   return shouldRender(parentKnobs) ? CivicThemeFieldMessage(knobs) : knobs;
