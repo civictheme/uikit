@@ -7,5 +7,5 @@ export default create({
   base: 'light',
   brandTitle: 'CivicTheme Library',
   brandUrl: 'https://github.com/civictheme/uikit',
-  brandImage: './assets/logos/logo_secondary_light_desktop.png',
+  brandImage: './assets/logos/logo_custom_light_desktop_dta.png',
 });
