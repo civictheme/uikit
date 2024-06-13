@@ -1,0 +1,14 @@
+.story-about {
+  .ct-item-list__item {
+    display: inline-flex;
+    padding-left: 0;
+
+    .ct-paragraph {
+      padding-left: ct-spacing(2);
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
