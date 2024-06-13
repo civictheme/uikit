@@ -19,16 +19,17 @@ export const Select = (parentKnobs = {}) => {
         Dark: 'dark',
       },
       'light',
+      parentKnobs.theme,
       parentKnobs.knobTab,
     ),
     is_multiple: knobBoolean('Is multiple', false, parentKnobs.is_multiple, parentKnobs.knobTab),
     options: knobBoolean('With options', true, parentKnobs.options, parentKnobs.knobTab) ? generateSelectOptions(10, (knobBoolean('Options have groups', false, null, parentKnobs.knobTab) ? 'optgroup' : 'option')) : [],
     name: randomName(),
-    is_required: knobBoolean('Required', false, parentKnobs.knobTab),
-    is_disabled: knobBoolean('Disabled', false, parentKnobs.knobTab),
-    is_invalid: knobBoolean('Has error', false, parentKnobs.knobTab),
-    modifier_class: knobText('Additional classes', '', parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
+    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   return shouldRender(parentKnobs) ? CivicThemeSelect(knobs) : knobs;
