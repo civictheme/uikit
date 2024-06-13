@@ -151,9 +151,7 @@ export const randomField = (type, options, theme, rand, itr) => {
     }),
     label_display: isCheckboxOrRadio ? 'after' : 'before',
     description_position: isCheckboxOrRadio ? 'after' : 'before',
-    description: {
-      content: options.description ? `Input description ${itr + 1}${rand ? ` ${randomText(randomInt(4, 10))}` : ''}` : '',
-    },
+    description: options.description ? `Input description ${itr + 1}${rand ? ` ${randomText(randomInt(4, 10))}` : ''}` : '',
     control: [],
     attributes: options.form_element_attributes,
   };
@@ -511,7 +509,7 @@ const processKnob = (name, defaultValue, parent, group, knobCallback) => {
     }
   }
 
-  if (parent === null) {
+  if (parent === null || parent === false) {
     return parent;
   }
 
