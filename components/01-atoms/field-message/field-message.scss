@@ -3,6 +3,7 @@
 //
 
 @use 'sass:map';
+@use 'sass:math';
 
 //
 // Mixins.
@@ -10,10 +11,11 @@
 
 .ct-field-message {
   $root: &;
+  $_padding: ct-spacing();
 
   display: block;
   border-radius: $ct-field-message-border-radius;
-  padding: ct-spacing();
+  padding: $_padding;
   border-width: ct-particle(0.125);
   border-style: solid;
 
@@ -88,6 +90,8 @@
 
           #{$root}__icon {
             color: map.get($values, 'icon-color');
+            vertical-align: top;
+            margin-top: math.div($_padding, 2);
           }
         }
       }
