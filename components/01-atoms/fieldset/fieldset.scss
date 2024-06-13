@@ -8,17 +8,15 @@
   border: none;
   padding: ct-spacing(2) 0;
 
-  &.ct-form-element--form-required {
-    #{$root}__legend::after {
-      content: ' (Required)';
+  &__wrapper {
+    & > *:not(:last-child) {
+      margin-bottom: ct-spacing(2);
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    &.ct-form-element--form-required {
-      #{$root}__legend::after {
-        @include ct-component-property($root, $theme, required, color);
-      }
+  &__fields {
+    & > .ct-field:not(:last-child) {
+      margin-bottom: ct-spacing(4);
     }
   }
 }
