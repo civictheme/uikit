@@ -19,6 +19,10 @@
   padding: ct-spacing(1.625) ct-spacing(2);
   width: 100%;
 
+  // Fix additional bottom spacing added due to <textarea> being an
+  // inline-block element.
+  vertical-align: bottom;
+
   &:hover {
     border-width: $_hover-border-width;
     margin: 0;

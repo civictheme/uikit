@@ -8,10 +8,10 @@
   display: block;
   margin-bottom: ct-spacing();
 
-  @include ct-typography('text-small');
+  @include ct-typography('text-regular');
 
   &--large {
-    @include ct-typography('text-regular');
+    @include ct-typography('text-large');
   }
 
   @include ct-component-theme($root) using($root, $theme) {

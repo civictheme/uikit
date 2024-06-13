@@ -472,8 +472,9 @@ $ct-field-message-dark-warning-color: ct-color-dark('body') !default;
 $ct-field-message-dark-warning-icon-color: $ct-field-message-dark-warning-color !default;
 
 //
-// Field label.
+// Label.
 //
+$ct-label-required-content: '*';
 $ct-label-light-color: ct-color-light('heading') !default;
 $ct-label-light-required-color: ct-color-light('error') !default;
 $ct-label-dark-color: ct-color-dark('heading') !default;
@@ -771,10 +772,10 @@ $ct-figure-light-caption-color: ct-color-light('body') !default;
 $ct-figure-dark-caption-color: ct-color-dark('body') !default;
 
 //
-// Form/Form element.
+// Field.
 //
-$ct-form-element-light-color: ct-color-light('body') !default;
-$ct-form-element-dark-color: ct-color-dark('body') !default;
+$ct-field-horizontal-label-width: auto !default;
+$ct-field-horizontal-label-max-width: 25% !default;
 
 //
 // Single filter.
