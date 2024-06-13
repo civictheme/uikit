@@ -13,11 +13,9 @@
 
   @include ct-typography('label-regular');
 
-  &--required {
+  &#{$root}--required {
     &::after {
-      content: ' (Required)';
-
-      @include ct-typography('label-extra-small');
+      content: $ct-label-required-content;
     }
   }
 
@@ -33,7 +31,7 @@
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);
 
-    #{$root}--required {
+    &#{$root}--required {
       &::after {
         @include ct-component-property($root, $theme, required, color);
       }

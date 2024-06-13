@@ -1,18 +1,61 @@
 //
-// Form Element component.
+// Field component.
 //
 
-.ct-form-element {
-  $root: &;
+@use 'sass:math';
 
-  margin-bottom: ct-spacing(2);
+.ct-field {
+  $root: &;
+  $_control-vertical-padding: ct-spacing(2);
+  $_control-border-width: ct-particle(0.125);
+
   width: 100%;
 
-  &:last-child {
-    margin-bottom: 0;
+  &:not(:last-child) {
+    margin-bottom: ct-spacing(2);
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & > *:not(:last-child),
+  &__wrapper > *:not(:last-child) {
+    margin-bottom: ct-spacing();
+  }
+
+  &#{$root}--horizontal {
+    display: flex;
+    flex-flow: row;
+    align-items: start;
+    column-gap: ct-spacing();
+
+    #{$root}__label {
+      flex: 0 1 auto;
+      width: $ct-field-horizontal-label-width;
+      max-width: $ct-field-horizontal-label-max-width;
+    }
+
+    &#{$root}--textfield,
+    &#{$root}--textarea,
+    &#{$root}--select {
+      #{$root}__label {
+        margin-top: $_control-vertical-padding - $_control-border-width;
+      }
+    }
+
+    #{$root}__wrapper {
+      flex: 1 0 0;
+      display: flex;
+      flex-flow: column;
+    }
+
+    #{$root}__control {
+      order: 1;
+    }
+
+    #{$root}__description {
+      order: 2;
+    }
+
+    #{$root}__message {
+      order: 3;
+    }
   }
 }
