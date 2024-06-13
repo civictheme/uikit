@@ -488,47 +488,32 @@ export class KnobValues {
 
 /**
  * Process values passed to the knob and return a value or render a knob.
- *
- * Do not optimize this function - it is laid out in a way that is easy to
- * understand and follow the logic.
  */
-const processKnob = (name, defaultValue, parent, group, knobCallback) => {
-  if (parent) {
-    // If parent was passed, and it is not a KnobValue instance, then it
-    // represents a directly passed value that should be used without
-    // rendering the knob.
-    if (!(parent instanceof KnobValue)) {
-      return parent;
-    }
-
-    // If parent was passed, and it is KnobValue instance set to use the default
-    // value, then use the default value passed to the knob without rendering
-    // the knob itself.
-    if (parent.isUsingDefault()) {
-      return defaultValue;
-    }
+export const processKnob = (name, defaultValue, parent, group, knobCallback) => {
+  // If parent is undefined, use the default value and render the knob.
+  if (parent === undefined) {
+    return knobCallback(name, defaultValue, group);
   }
 
-  if (parent === null || parent === false) {
+  // If parent is null, a scalar value or an object, use it's value.
+  if (parent === null || !(parent instanceof KnobValue)) {
     return parent;
   }
 
-  let val;
-
-  if (parent === undefined) {
-    // If parent was not provided - use the default value in the knob.
-    val = defaultValue;
-  } else if (parent.getValue() === null) {
-    // If parent was provided as a KnobValue with no value - use the default
-    // value in the knob.
-    val = defaultValue;
-  } else {
-    // If parent was provided as a KnobValue with a value - use this value in
-    // the knob.
-    val = parent.getValue();
+  // If parent is a KnobValue instance set to use the default value, return the
+  // default value.
+  if (parent && parent.isUsingDefault()) {
+    return defaultValue;
   }
 
-  return knobCallback(name, val, group);
+  // If parent is a KnobValue instance with a null value, use the default value
+  // and render the knob.
+  if (parent.getValue() === null) {
+    return knobCallback(name, defaultValue, group);
+  }
+
+  // Use the value from the KnobValue instance.
+  return knobCallback(name, parent.getValue(), group);
 };
 
 export const knobText = (name, value, parent, group = 'General') => processKnob(name, value, parent, group, (knobName, knobValue, knobGroup) => text(knobName, knobValue, knobGroup));
