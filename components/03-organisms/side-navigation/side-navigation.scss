@@ -118,7 +118,7 @@
             ct-component-var($root, $theme, link, child, background-color),
             ct-component-var($root, $theme, link, child, border-color),
             ct-component-var($root, $theme, link, child, color),
-            ct-component-var($root, $theme, link, child, stripe-color)
+            ct-component-var($root, $theme, link, child, stripe-background-color)
           );
 
           &:hover,
@@ -127,7 +127,7 @@
               ct-component-var($root, $theme, link, child, hover, background-color),
               ct-component-var($root, $theme, link, child, hover, border-color),
               ct-component-var($root, $theme, link, child, hover, color),
-              ct-component-var($root, $theme, link, child, hover, stripe-color)
+              ct-component-var($root, $theme, link, child, hover, stripe-background-color)
             );
           }
         }
@@ -141,7 +141,7 @@
                 ct-component-var($root, $theme, link, child, active, background-color),
                 ct-component-var($root, $theme, link, child, active, border-color),
                 ct-component-var($root, $theme, link, child, active, color),
-                ct-component-var($root, $theme, link, child, active, stripe-color)
+                ct-component-var($root, $theme, link, child, active, stripe-background-color)
               );
             }
 
@@ -151,7 +151,7 @@
                 ct-component-var($root, $theme, link, child, hover, background-color),
                 ct-component-var($root, $theme, link, child, hover, border-color),
                 ct-component-var($root, $theme, link, child, hover, color),
-                ct-component-var($root, $theme, link, child, hover, stripe-color)
+                ct-component-var($root, $theme, link, child, hover, stripe-background-color)
               );
             }
           }
@@ -163,7 +163,7 @@
               ct-component-var($root, $theme, link, parent, background-color),
               ct-component-var($root, $theme, link, parent, border-color),
               ct-component-var($root, $theme, link, parent, color),
-              ct-component-var($root, $theme, link, parent, stripe-color)
+              ct-component-var($root, $theme, link, parent, stripe-background-color)
             );
 
             &:hover,
@@ -172,7 +172,7 @@
                 ct-component-var($root, $theme, link, parent, hover, background-color),
                 ct-component-var($root, $theme, link, parent, hover, border-color),
                 ct-component-var($root, $theme, link, parent, hover, color),
-                ct-component-var($root, $theme, link, parent, hover, stripe-color)
+                ct-component-var($root, $theme, link, parent, hover, stripe-background-color)
               );
             }
           }
@@ -186,7 +186,7 @@
                   ct-component-var($root, $theme, link, parent, active, background-color),
                   ct-component-var($root, $theme, link, parent, active, border-color),
                   ct-component-var($root, $theme, link, parent, active, color),
-                  ct-component-var($root, $theme, link, parent, active, stripe-color)
+                  ct-component-var($root, $theme, link, parent, active, stripe-background-color)
                 );
               }
 
@@ -196,7 +196,7 @@
                   ct-component-var($root, $theme, link, parent, hover, background-color),
                   ct-component-var($root, $theme, link, parent, hover, border-color),
                   ct-component-var($root, $theme, link, parent, hover, color),
-                  ct-component-var($root, $theme, link, parent, hover, stripe-color)
+                  ct-component-var($root, $theme, link, parent, hover, stripe-background-color)
                 );
               }
             }
