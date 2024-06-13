@@ -3,9 +3,7 @@ import CivicThemeField from './field.twig';
 import { Select } from '../../01-atoms/select/select.stories';
 import { Textfield } from '../../01-atoms/textfield/textfield.stories';
 import { Textarea } from '../../01-atoms/textarea/textarea.stories';
-import { Checkbox } from '../../01-atoms/checkbox/checkbox.stories';
 import { CheckboxGroup } from '../../01-atoms/checkbox-group/checkbox-group.stories';
-import { Radio } from '../../01-atoms/radio/radio.stories';
 import { RadioGroup } from '../../01-atoms/radio-group/radio-group.stories';
 
 export default {
@@ -27,7 +25,7 @@ export const Field = (parentKnobs = {}) => {
       },
       'light',
       parentKnobs.theme,
-      parentKnobs.knobTab
+      parentKnobs.knobTab,
     ),
     type: knobRadios(
       'Type',
@@ -35,16 +33,14 @@ export const Field = (parentKnobs = {}) => {
         Textfield: 'textfield',
         Textarea: 'textarea',
         Select: 'select',
-        Radio: 'radio',
-        'Radio Group': 'radio-group',
-        Checkbox: 'checkbox',
-        'Checkbox Group': 'checkbox-group',
+        Radios: 'radios',
+        Checkboxes: 'checkboxes',
         Hidden: 'hidden',
         Other: 'other',
       },
       'textfield',
       parentKnobs.type,
-      parentKnobs.knobTab
+      parentKnobs.knobTab,
     ),
     orientation: knobRadios(
       'Orientation',
@@ -54,26 +50,17 @@ export const Field = (parentKnobs = {}) => {
       },
       'vertical',
       parentKnobs.orientation,
-      parentKnobs.knobTab
+      parentKnobs.knobTab,
     ),
-    control_orientation: knobRadios(
-      'Control orientation (for group controls)',
-      {
-        Horizontal: 'horizontal',
-        Vertical: 'vertical',
-      },
-      'vertical',
-      parentKnobs.control_orientation,
-      parentKnobs.knobTab
-    ),
-    label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab,),
-    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.description, parentKnobs.knobTab,),
-    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab,),
-    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab,),
-    is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab,),
-    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.message, parentKnobs.knobTab,),
-    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab,),
-    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab,),
+    is_inline: knobBoolean('Inline (for group controls)', false, parentKnobs.is_inline, parentKnobs.knobTab),
+    label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab),
+    description: knobText('Description', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.description, parentKnobs.knobTab),
+    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
+    message: knobText('Message', 'Content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.message, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   switch (knobs.type) {
@@ -89,12 +76,16 @@ export const Field = (parentKnobs = {}) => {
       knobs.control = Select(new KnobValues({}, false));
       break;
 
-    case 'checkbox-group':
-      knobs.control = CheckboxGroup(new KnobValues({}, false));
+    case 'radios':
+      knobs.control = RadioGroup(new KnobValues({
+        is_inline: knobs.is_inline,
+      }, false));
       break;
 
-    case 'radio-group':
-      knobs.control = RadioGroup(new KnobValues({}, false));
+    case 'checkboxes':
+      knobs.control = CheckboxGroup(new KnobValues({
+        is_inline: knobs.is_inline,
+      }, false));
       break;
 
     default:

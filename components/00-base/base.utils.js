@@ -509,7 +509,7 @@ const processKnob = (name, defaultValue, parent, group, knobCallback) => {
     }
   }
 
-  if (parent === null) {
+  if (parent === null || parent === false) {
     return parent;
   }
 

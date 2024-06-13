@@ -23,7 +23,7 @@ export const Textfield = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     placeholder: knobText('Placeholder', 'Placeholder', parentKnobs.placeholder, parentKnobs.knobTab),
-    value: knobText('Value', '', parentKnobs.value,  parentKnobs.knobTab),
+    value: knobText('Value', '', parentKnobs.value, parentKnobs.knobTab),
     name: randomName(),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
     is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
