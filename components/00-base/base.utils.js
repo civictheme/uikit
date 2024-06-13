@@ -5,12 +5,6 @@
 
 import { boolean, color, date as dateKnob, number, optionsKnob, radios, select, text } from '@storybook/addon-knobs';
 import { LoremIpsum } from 'lorem-ipsum';
-import CivicThemeInput from '../01-atoms/input/input.twig';
-import CivicThemeSelect from '../01-atoms/select/select.twig';
-import CivicThemeCheckbox from '../01-atoms/checkbox/checkbox.twig';
-import CivicThemeRadio from '../01-atoms/radio/radio.twig';
-import CivicThemeField from '../02-molecules/field/field.twig';
-import CivicThemeLabel from '../01-atoms/label/label.twig';
 
 // =============================================================================
 // UTILITIES
@@ -119,6 +113,8 @@ export const randomId = (() => {
   return () => ++id;
 })();
 
+export const randomArrayItem = (array) => array[Math.floor(Math.random() * array.length)];
+
 export const randomUrl = (domain) => {
   domain = domain || 'http://example.com';
   return `${domain}/${(Math.random() + 1).toString(36).substring(7)}`;
@@ -135,91 +131,6 @@ export const randomFutureDate = (days = 30) => {
 export const randomDropdownFilter = () => {
   const filters = ['All', 'Recent', 'Popular', 'Featured'];
   return filters[Math.floor(Math.random() * filters.length)];
-};
-
-export const randomField = (type, options, theme, rand, itr) => {
-  const isCheckboxOrRadio = type === 'checkbox' || type === 'radio';
-
-  const fieldOptions = {
-    theme,
-    type,
-    label: CivicThemeLabel({
-      theme,
-      content: options.title ? options.title : `Input title ${itr + 1}${rand ? ` ${randomString(randomInt(2, 5))}` : ''}`,
-      attributes: `for="form-element-${itr}"`,
-      required: options.required,
-    }),
-    label_display: isCheckboxOrRadio ? 'after' : 'before',
-    description_position: isCheckboxOrRadio ? 'after' : 'before',
-    description: options.description ? `Input description ${itr + 1}${rand ? ` ${randomText(randomInt(4, 10))}` : ''}` : '',
-    control: [],
-    attributes: options.form_element_attributes,
-  };
-  let attributes = `id="form-element-${itr}"`;
-  if (typeof options.attributes !== 'undefined') {
-    attributes += options.attributes;
-  }
-
-  const inputOptions = {
-    theme,
-    type,
-    attributes,
-    required: options.required,
-    value: typeof options.value !== 'undefined' ? options.value : randomString(randomInt(3, 8)),
-  };
-
-  switch (type) {
-    case 'radio':
-      fieldOptions.control.push(CivicThemeRadio(inputOptions));
-      break;
-    case 'checkbox':
-      fieldOptions.control.push(CivicThemeCheckbox(inputOptions));
-      break;
-    case 'select':
-      fieldOptions.control.push(CivicThemeSelect({
-        ...inputOptions,
-        options: inputOptions.value,
-      }));
-      break;
-    default:
-      fieldOptions.control.push(CivicThemeInput(inputOptions));
-  }
-
-  return CivicThemeField(fieldOptions);
-};
-
-export const randomFields = (count, theme, rand, defaultInputType) => {
-  rand = rand || false;
-
-  const inputTypes = [
-    'text',
-    'textarea',
-    'tel',
-    'password',
-    'radio',
-    'checkbox',
-    'select',
-  ];
-
-  const requiredOptions = ['required', ''];
-
-  const fields = [];
-  for (let i = 0; i < count; i++) {
-    const inputType = defaultInputType || inputTypes[Math.floor(Math.random() * inputTypes.length)];
-    const required = [Math.floor(Math.random() * requiredOptions.length)];
-
-    fields.push(randomField(
-      inputType,
-      {
-        required,
-      },
-      theme,
-      rand,
-      i,
-    ));
-  }
-
-  return fields;
 };
 
 export const randomLinks = (count, length, domain, prefix) => {

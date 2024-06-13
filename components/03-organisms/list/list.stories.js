@@ -1,4 +1,4 @@
-import { generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomBool, randomFields, randomFutureDate, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomBool, randomFutureDate, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
 
 import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
@@ -8,6 +8,7 @@ import NavigationCard from '../../02-molecules/navigation-card/navigation-card.t
 import Snippet from '../../02-molecules/snippet/snippet.twig';
 import CivicThemeList from './list.twig';
 import { Pagination } from '../../02-molecules/pagination/pagination.stories';
+import { randomFields } from '../../02-molecules/field/field.utils';
 
 export default {
   title: 'Organisms/List',

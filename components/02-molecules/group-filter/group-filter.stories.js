@@ -1,6 +1,7 @@
-import { generateSlots, knobNumber, knobRadios, knobText, randomFields, randomInt, randomString, shouldRender } from '../../00-base/base.utils';
+import { generateSlots, knobNumber, knobRadios, knobText, randomInt, randomString, shouldRender } from '../../00-base/base.utils';
 import CivicThemeGroupFilter from './group-filter.twig';
 import './group-filter';
+import { randomFields } from '../field/field.utils';
 
 export default {
   title: 'Molecules/Group Filter',
