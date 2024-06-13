@@ -13,9 +13,9 @@
   // The dimensions of the checkbox control's elements are based on the label size.
   $_width: $_label-font-size * 1.625;
   $_height: $_label-font-size * 1.625;
-  $_border-width: $_width * 0.0384;
-  $_hover-border-width: $_width * 0.0769;
-  $_checked-border-width: $_width * 0.0769;
+  $_border-width: ct-particle(0.125);
+  $_hover-border-width: $_border-width * 2;
+  $_checked-border-width: $_hover-border-width;
   $_checked-square-width: $_width * 0.6923;
   $_checked-square-height: $_height * 0.6923;
   $_checked-hover-border-width: $_checked-border-width;
