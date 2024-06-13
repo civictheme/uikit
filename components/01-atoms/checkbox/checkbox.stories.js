@@ -24,7 +24,7 @@ export const Checkbox = (parentKnobs = {}) => {
     name: randomName(),
     id: randomId(),
     value: randomInt(1, 1000),
-    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    is_checked: knobBoolean('Checked', false, parentKnobs.is_checked, parentKnobs.knobTab),
     is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
     is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
