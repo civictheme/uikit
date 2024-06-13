@@ -6,6 +6,7 @@ export default {
   parameters: {
     layout: 'centered',
     wrapperIsContainer: true,
+    wrapperIsResizable: true,
     wrapperSize: 'medium',
   },
 };
