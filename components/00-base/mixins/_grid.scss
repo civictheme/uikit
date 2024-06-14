@@ -50,17 +50,17 @@
 //
 // Do not use directly.
 //
-@mixin _ct-print-all-gutters($gutters: $ct-grid-gutters, $rulePrefix: padding, $scale: 1) {
+@mixin _ct-print-all-gutters($gutters: $ct-grid-gutters, $rule-prefix: padding, $scale: 1) {
   @if $gutters {
     @each $bp, $gutter in $gutters {
       @if $bp == $ct-grid-lowest-breakpoint {
-        #{$rulePrefix}-left: math.div($gutter, 2) * $scale;
-        #{$rulePrefix}-right: math.div($gutter, 2) * $scale;
+        #{$rule-prefix}-left: math.div($gutter, 2) * $scale;
+        #{$rule-prefix}-right: math.div($gutter, 2) * $scale;
       }
       @else {
         @include ct-breakpoint($bp) {
-          #{$rulePrefix}-left: math.div($gutter, 2) * $scale;
-          #{$rulePrefix}-right: math.div($gutter, 2) * $scale;
+          #{$rule-prefix}-left: math.div($gutter, 2) * $scale;
+          #{$rule-prefix}-right: math.div($gutter, 2) * $scale;
         }
       }
     }
