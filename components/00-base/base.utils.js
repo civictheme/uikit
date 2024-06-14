@@ -6,6 +6,8 @@
 import { boolean, color, date as dateKnob, number, optionsKnob, radios, select, text } from '@storybook/addon-knobs';
 import { LoremIpsum } from 'lorem-ipsum';
 
+import seedrandom from 'seedrandom';
+
 // =============================================================================
 // UTILITIES
 // =============================================================================
@@ -87,7 +89,16 @@ export const randomInt = (min = 1, max = 100) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-export const randomText = (words) => {
+export const randomId = (() => {
+  let id = 0;
+  return () => ++id;
+})();
+
+export const randomArrayItem = (array) => array[Math.floor(Math.random() * array.length)];
+
+export const randomText = (words, seed = null) => {
+  seed = seed || Math.random().toString();
+
   const lorem = new LoremIpsum({
     sentencesPerParagraph: {
       max: 8,
@@ -97,23 +108,22 @@ export const randomText = (words) => {
       max: 16,
       min: 4,
     },
+    random: seedrandom(seed),
   });
 
   return lorem.generateWords(words);
 };
 
-export const randomString = (length) => randomText(length).substring(0, length)
+export const randomString = (length, seed = null) => randomText(length, seed).substring(0, length)
   .trim();
 
-export const randomName = (length = 8) => randomText(length).replace(' ', '')
+export const randomName = (length = 8, seed = null) => randomText(length, seed).replace(' ', '')
   .substring(0, length).trim();
 
-export const randomId = (() => {
-  let id = 0;
-  return () => ++id;
-})();
-
-export const randomArrayItem = (array) => array[Math.floor(Math.random() * array.length)];
+export const randomSentence = (words, seed = null) => {
+  words = words || randomInt(5, 25);
+  return capitalizeFirstLetter(randomText(words, seed));
+};
 
 export const randomUrl = (domain) => {
   domain = domain || 'http://example.com';
@@ -148,11 +158,6 @@ export const randomLinks = (count, length, domain, prefix) => {
   }
 
   return links;
-};
-
-export const randomSentence = (words) => {
-  words = words || randomInt(5, 25);
-  return capitalizeFirstLetter(randomText(words));
 };
 
 export const randomTags = (count, rand) => {
