@@ -8,7 +8,9 @@
  * - row_element: [string] Row element.
  * - column_element: [string] Column element.
  * - row_class: [string] Optional row class override. Deffaults to 'row'.
- * - column_class: [string] Optional column class override. Defaults to 'col'.
+ * - column_class: [string] Optional column class override. Defaults to 'col' if
+ *   column auto-generation is not requird (column_count is 0), otherwise it is
+ *   appended to the auto-generated column class list.
  * - items: [array] Array of column items.
  * - column_count: [number] Number of columns in the row. If 0, the column width
  *   will be calculated automatically.
@@ -24,13 +26,15 @@
 {% set column_element = column_element|default('div') %}
 {% set column_count = column_count|default(0) %}
 {% set row_class = row_class|default('row') %}
-{% set column_class = column_class|default('col') %}
 {% set fill_width_class = fill_width|default(false) ? 'container--fill-width' : '' %}
 {% set modifier_class = '%s %s'|format(fill_width_class, modifier_class|default('')) %}
 
 {% if column_count > 0 %}
+	{% set column_class = column_class|default('') %}
 	{% set column_count = column_count in [1, 2, 3, 4, 6, 12] ? column_count : 12 %}
-	{% set column_class = 'col-xxs-12 col-m-%s'|format(12 // column_count) %}
+	{% set column_class = 'col-xxs-12 col-m-%s %s'|format(12 // column_count, column_class) %}
+{% else %}
+	{% set column_class = column_class|default('col') %}
 {% endif %}
 
 {% if items is not empty %}
