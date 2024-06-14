@@ -1219,7 +1219,7 @@ $ct-side-navigation-light-link-child-hover-stripe-background-color: ct-color-lig
 $ct-side-navigation-light-link-child-active-background-color: ct-color-light('background') !default;
 $ct-side-navigation-light-link-child-active-border-color: $ct-side-navigation-light-link-child-border-color !default;
 $ct-side-navigation-light-link-child-active-color: $ct-side-navigation-light-link-child-color !default;
-$ct-side-navigation-light-link-child-active-stripe-background-color: $ct-side-navigation-light-link-child-stripe-background-color !default;
+$ct-side-navigation-light-link-child-active-stripe-background-color: $ct-side-navigation-light-link-child-hover-stripe-background-color !default;
 $ct-side-navigation-dark-title-color: ct-color-dark('heading') !default;
 $ct-side-navigation-dark-link-expanded-icon-color: ct-color-dark('heading') !default;
 $ct-side-navigation-dark-link-parent-background-color: ct-color-dark('background-light') !default;
@@ -1245,7 +1245,7 @@ $ct-side-navigation-dark-link-child-hover-stripe-background-color: ct-color-dark
 $ct-side-navigation-dark-link-child-active-background-color: ct-color-dark('background') !default;
 $ct-side-navigation-dark-link-child-active-border-color: $ct-side-navigation-dark-link-child-border-color !default;
 $ct-side-navigation-dark-link-child-active-color: $ct-side-navigation-dark-link-child-color !default;
-$ct-side-navigation-dark-link-child-active-stripe-background-color: $ct-side-navigation-dark-link-child-stripe-background-color !default;
+$ct-side-navigation-dark-link-child-active-stripe-background-color: $ct-side-navigation-dark-link-child-hover-stripe-background-color !default;
 
 //
 // Mobile navigation.
