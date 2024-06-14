@@ -43,7 +43,7 @@
           }
         }
 
-        // If last entry return false.
+        // If last entry return the fallback.
         @if $i == length($map) {
           @return $fallback;
         }
