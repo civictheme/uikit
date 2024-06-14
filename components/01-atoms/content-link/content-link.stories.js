@@ -21,7 +21,7 @@ export const ContentLink = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     text: knobText('Text', 'Link text', parentKnobs.text, parentKnobs.knobTab),
-    title: knobText('Title', 'Link title', parentKnobs.link_title, parentKnobs.knobTab),
+    title: knobText('Title', 'Link title', parentKnobs.title, parentKnobs.knobTab),
     url: knobText('URL', randomUrl(), parentKnobs.url, parentKnobs.knobTab),
     is_external: knobBoolean('Is external', false, parentKnobs.is_external, parentKnobs.knobTab),
     is_new_window: knobBoolean('Open in a new window', false, parentKnobs.is_new_window, parentKnobs.knobTab),

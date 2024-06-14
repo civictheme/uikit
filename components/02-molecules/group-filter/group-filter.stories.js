@@ -19,6 +19,7 @@ export const GroupFilter = (parentKnobs = {}) => {
         Dark: 'dark',
       },
       'light',
+      parentKnobs.theme,
       parentKnobs.knobTab,
     ),
     filter_count: knobNumber(
@@ -30,12 +31,13 @@ export const GroupFilter = (parentKnobs = {}) => {
         max: 10,
         step: 1,
       },
+      parentKnobs.filter_count,
       parentKnobs.knobTab,
     ),
-    title: knobText('Filter title', 'Filter search results by:', parentKnobs.knobTab),
-    submit_text: knobText('Submit button text', 'Apply', parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
-    modifier_class: knobText('Additional class', '', parentKnobs.knobTab),
+    title: knobText('Filter title', 'Filter search results by:', parentKnobs.title, parentKnobs.knobTab),
+    submit_text: knobText('Submit button text', 'Apply', parentKnobs.submit_text, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
   const filters = [];

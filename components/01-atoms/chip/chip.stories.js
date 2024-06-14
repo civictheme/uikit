@@ -42,7 +42,7 @@ export const Chip = (parentKnobs = {}) => {
       Input: 'input',
     },
     'default',
-    parentKnobs.chip_kind,
+    parentKnobs.kind,
     parentKnobs.knobTab,
   );
 
