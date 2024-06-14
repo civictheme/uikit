@@ -3,6 +3,7 @@
 //
 
 @use 'sass:map';
+@use 'sass:math';
 @use 'sass:list';
 @use 'sass:string';
 
@@ -87,6 +88,31 @@
         width: ct-icon-size-dimension($size, $breakpoint, 'width');
         height: ct-icon-size-dimension($size, $breakpoint, 'height');
       }
+    }
+  }
+}
+
+//
+// Align icon with a top part of text (aka ascender line).
+//
+// @see https://www.monotype.com/resources/z-typographic-terms
+//
+@mixin ct-icon-align-with-text($text-name, $icon-size: 'regular') {
+  $text-name: 'text-regular';
+  $typography-rulesets: _ct-typography-get-ruleset-rule($text-name);
+
+  vertical-align: top;
+  line-height: 100%;
+
+  @each $breakpoint, $rules in $typography-rulesets {
+    $font-size: ct-typography-rule($text-name, 'font-size', $breakpoint);
+    $line-height: ct-typography-rule($text-name, 'line-height', $breakpoint);
+    $text-height: math.max($font-size, $line-height);
+    $icon-height: ct-icon-size-dimension($icon-size, $breakpoint, 'height');
+    $delta: $text-height - $icon-height;
+
+    @include ct-breakpoint($breakpoint) {
+      margin-top: math.div($delta, 2);
     }
   }
 }
