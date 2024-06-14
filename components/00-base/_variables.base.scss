@@ -326,9 +326,15 @@ $ct-grid-lowest-breakpoint: 'xxs' !default;
 
 // The width of the fluid container at max width. Used to contain fluid
 // containers on wide screens. Set to 'auto' to keep fluid.
-$ct-grid-max-width: map.get($ct-breakpoints, 'xxl') !default;
+$ct-grid-max-width: map.get($ct-breakpoints, $ct-grid-lowest-breakpoint) !default;
 
-// Spacing between columns in a row.
+// The lowest breakpoint where *responsive* grid classes should start applying.
+// Must align with the value in the auto-generated column_class in
+// the Grid component.
+$ct-grid-responsive-breakpoint: 'm' !default;
+
+// Vertical or horizontal spacing between grid items depending on the responsive
+// context.
 $ct-grid-gutters: (
   'xxs': $ct-grid-space * 2,
   'xs': $ct-grid-space * 2,

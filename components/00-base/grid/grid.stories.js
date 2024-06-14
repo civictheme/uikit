@@ -131,6 +131,7 @@ export const GridExample = () => {
   html += CivicThemeGrid({
     column_count: cols.length,
     items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    column_class: 'col-no-gap',
   });
 
   html += `<div class="example-container__title">No column gap - Auto column</div>`;
