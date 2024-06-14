@@ -4,7 +4,7 @@ require('twig');
 
 const storyOrder = [
   'Welcome',
-  'About',
+  'About CivicTheme',
   'Base',
   [
     'Colors',

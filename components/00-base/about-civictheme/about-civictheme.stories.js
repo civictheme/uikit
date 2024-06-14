@@ -1,7 +1,7 @@
-import AboutExample from './about.stories.twig';
+import AboutCivicThemeExample from './about-civictheme.stories.twig';
 
 export default {
-  title: 'About',
+  title: 'About CivicTheme',
   parameters: {
     layout: 'fullscreen',
     options: { showPanel: false },
@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const About = () => AboutExample({
+export const AboutCivicTheme = () => AboutCivicThemeExample({
   logos: {
     primary: {
       mobile: {
@@ -21,3 +21,5 @@ export const About = () => AboutExample({
     },
   },
 });
+
+AboutCivicTheme.storyName = 'About CivicTheme';
