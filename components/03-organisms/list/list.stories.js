@@ -219,7 +219,7 @@ export const List = (parentKnobs = {}) => {
           max: 4,
           step: 1,
         },
-        null,
+        parentKnobs.item_column_count,
         itemsKnobTab,
       );
 
@@ -260,7 +260,7 @@ export const List = (parentKnobs = {}) => {
           theme: itemTheme,
           title: `Title ${randomSentence(randomInt(1, 5))}`,
           date: randomFutureDate(),
-          summary: `Summary ${randomSentence(randomInt(15, 25))}`,
+          summary: `Summary ${randomSentence(randomInt(10, 35))}`,
           link: {
             url: randomUrl(),
             is_new_window: randomBool(),
