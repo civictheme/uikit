@@ -20,6 +20,8 @@
 
   #{$root}__icon {
     margin-right: ct-spacing(2);
+
+    @include ct-icon-align-with-text('text-regular');
   }
 
   #{$root}__title {

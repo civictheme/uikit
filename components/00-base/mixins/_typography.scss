@@ -84,7 +84,7 @@
 // Include font size, height, weight and family for one-to-many breakpoints.
 //
 // Do not use directly.
-// Use @include ct-ct-typography-rule() function instead.
+// Use @include ct-typography-rule() function instead.
 //
 // stylelint-disable-next-line scss/at-function-pattern
 @function _ct-typography-get-ruleset-rule($ruleset, $rule-name: false, $rule-breakpoint: false) {
@@ -112,14 +112,21 @@
   @else if type-of($ruleset) == map {
     $breakpoints: map.keys($ruleset);
 
+    @if $rule-name == false and $rule-breakpoint == false {
+      @return $ruleset;
+    }
+
     @each $breakpoint in $breakpoints {
       $breakpoint-ruleset: _ct-typography-extract-rules(map.get($ruleset, $breakpoint));
 
+      // Return requested rule if it matches the breakpoint.
       @if $rule-name and $rule-breakpoint and $breakpoint == $rule-breakpoint {
         @return map.get($breakpoint-ruleset, $rule-name);
       }
     }
   }
+
+  @error 'Requested typography rule or breakpoint not found.';
 }
 
 //

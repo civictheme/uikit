@@ -21,6 +21,12 @@
 
   @include ct-typography('text-regular');
 
+  #{$root}__icon {
+    vertical-align: top;
+
+    @include ct-icon-align-with-text('text-regular');
+  }
+
   $map: (
     'information': (
       'light': (
@@ -90,8 +96,6 @@
 
           #{$root}__icon {
             color: map.get($values, 'icon-color');
-            vertical-align: top;
-            margin-top: math.div($_padding, 2);
           }
         }
       }
