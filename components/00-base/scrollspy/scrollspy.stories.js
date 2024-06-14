@@ -2,6 +2,12 @@ import './scrollspy';
 
 export default {
   title: 'Base/Scrollspy',
+  parameters: {
+    layout: 'fullscreen',
+    docs: 'Scroll the viewport to see elements appear when it reaches a specific pixel threshold.',
+    docsSize: 'medium',
+    docsPlacement: 'before',
+  },
 };
 
 export const Scrollspy = () => `
