@@ -13,7 +13,8 @@
 @use 'sass:map';
 
 @mixin ct-row($gutters: $ct-grid-gutters) {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
@@ -21,7 +22,7 @@
   padding-inline-start: 0;
   list-style: none;
 
-  @include _ct-print-all-gutters($gutters, margin, -1);
+  @include _ct-print-all-gutters($gutters, margin);
 }
 
 @mixin ct-row-reverse() {
@@ -46,21 +47,46 @@
 }
 
 //
-// Print all gutters at their breakpoints.
+// Print all vertical and horizontal gutters at their breakpoints.
 //
 // Do not use directly.
 //
-@mixin _ct-print-all-gutters($gutters: $ct-grid-gutters, $rule-prefix: padding, $scale: 1) {
-  @if $gutters {
-    @each $bp, $gutter in $gutters {
-      @if $bp == $ct-grid-lowest-breakpoint {
-        #{$rule-prefix}-left: math.div($gutter, 2) * $scale;
-        #{$rule-prefix}-right: math.div($gutter, 2) * $scale;
-      }
-      @else {
-        @include ct-breakpoint($bp) {
-          #{$rule-prefix}-left: math.div($gutter, 2) * $scale;
-          #{$rule-prefix}-right: math.div($gutter, 2) * $scale;
+@mixin _ct-print-all-gutters($gutters: $ct-grid-gutters, $rule-prefix: padding) {
+  $_scale: 1;
+
+  @if $rule-prefix == margin {
+    $_scale: -1;
+  }
+
+  &:not(.col-no-gap) {
+    @if $gutters {
+      @each $bp, $gutter in $gutters {
+        @if $bp == $ct-grid-lowest-breakpoint {
+          #{$rule-prefix}-left: math.div($gutter, 2) * $_scale;
+          #{$rule-prefix}-right: math.div($gutter, 2) * $_scale;
+
+          // Vertical gutters for a column used up to the breakpoint where the
+          // grid becomes responsive.
+          @if $_scale > 0 {
+            margin-bottom: auto;
+
+            @include ct-breakpoint-upto($ct-grid-responsive-breakpoint) {
+              margin-bottom: $gutter;
+            }
+          }
+        }
+        @else {
+          @include ct-breakpoint($bp) {
+            #{$rule-prefix}-left: math.div($gutter, 2) * $_scale;
+            #{$rule-prefix}-right: math.div($gutter, 2) * $_scale;
+
+            // Vertical gutters for a row.
+            @if $_scale < 0 {
+              @include ct-breakpoint($ct-grid-responsive-breakpoint) {
+                margin-bottom: $gutter;
+              }
+            }
+          }
         }
       }
     }
