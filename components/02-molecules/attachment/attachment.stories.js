@@ -102,7 +102,7 @@ export const Attachment = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Attachments', parentKnobs.attachment_title, parentKnobs.knobTab),
+    title: knobText('Title', 'Attachments', parentKnobs.title, parentKnobs.knobTab),
     content: knobText('Content', randomSentence(), parentKnobs.content, parentKnobs.knobTab),
     files: knobBoolean('With files', true, parentKnobs.with_files, parentKnobs.knobTab) ? files : null,
     with_background: knobBoolean('With background', false, parentKnobs.with_background, parentKnobs.knobTab),

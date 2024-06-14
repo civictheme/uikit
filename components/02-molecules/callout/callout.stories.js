@@ -21,7 +21,7 @@ export const Callout = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    title: knobText('Title', 'Callout title from knob', parentKnobs.callout_title, parentKnobs.knobTab),
+    title: knobText('Title', 'Callout title from knob', parentKnobs.title, parentKnobs.knobTab),
     content: knobText('Content', randomSentence(), parentKnobs.content, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
       'Vertical spacing',

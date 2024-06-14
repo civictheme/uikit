@@ -40,7 +40,7 @@ export const Slider = (parentKnobs = {}) => {
     image_position: knobRadios('Image Position', {
       Left: 'left',
       Right: 'right',
-    }, 'right', null, slidesKnobTab),
+    }, 'right', parentKnobs.image_position, slidesKnobTab),
     tags: randomTags(knobNumber(
       'Number of tags',
       2,
@@ -50,11 +50,11 @@ export const Slider = (parentKnobs = {}) => {
         max: 10,
         step: 1,
       },
-      null,
+      parentKnobs.number_of_tags,
       slidesKnobTab,
     ), true),
-    date: knobText('Date', '20 Jan 2023 11:00', null, slidesKnobTab),
-    date_end: knobText('End date', '21 Jan 2023 15:00', null, slidesKnobTab),
+    date: knobText('Date', '20 Jan 2023 11:00', parentKnobs.date, slidesKnobTab),
+    date_end: knobText('End date', '21 Jan 2023 15:00', parentKnobs.date_end, slidesKnobTab),
     links: randomLinks(knobNumber(
       'Number of links',
       2,
@@ -64,7 +64,7 @@ export const Slider = (parentKnobs = {}) => {
         max: 10,
         step: 1,
       },
-      null,
+      parentKnobs.number_of_links,
       slidesKnobTab,
     ), 10),
     ...generateSlots([

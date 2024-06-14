@@ -24,7 +24,7 @@ export const EventCard = (parentKnobs = {}) => {
     ),
     date: knobText('Date', '20 Jan 2023 11:00', parentKnobs.date, parentKnobs.knobTab),
     date_end: knobText('End date', '21 Jan 2023 15:00', parentKnobs.date_end, parentKnobs.knobTab),
-    title: knobText('Title', 'Event name which runs across two or three lines', parentKnobs.card_title, parentKnobs.knobTab),
+    title: knobText('Title', 'Event name which runs across two or three lines', parentKnobs.title, parentKnobs.knobTab),
     location: knobText('Location', 'Suburb, State – 16:00–17:00', parentKnobs.location, parentKnobs.knobTab),
     summary: knobText('Summary', randomSentence(), parentKnobs.summary, parentKnobs.knobTab),
     link: {

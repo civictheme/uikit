@@ -76,13 +76,14 @@ export const Table = (parentKnobs = {}) => {
         Dark: 'dark',
       },
       'light',
+      parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    header: knobBoolean('With header', true, parentKnobs.knobTab) ? header : [],
-    rows: knobBoolean('With rows', true, parentKnobs.knobTab) ? true : null,
-    footer: knobBoolean('With footer', true, parentKnobs.knobTab) ? footer : [],
-    is_striped: knobBoolean('Striped', true, parentKnobs.knobTab),
-    caption: knobText('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', parentKnobs.knobTab),
+    header: knobBoolean('With header', true, parentKnobs.with_header, parentKnobs.knobTab) ? header : [],
+    rows: knobBoolean('With rows', true, parentKnobs.with_rows, parentKnobs.knobTab) ? true : null,
+    footer: knobBoolean('With footer', true, parentKnobs.with_footer, parentKnobs.knobTab) ? footer : [],
+    is_striped: knobBoolean('Striped', true, parentKnobs.is_striped, parentKnobs.knobTab),
+    caption: knobText('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', parentKnobs.caption, parentKnobs.knobTab),
     caption_position: knobRadios(
       'Caption position',
       {
@@ -90,10 +91,11 @@ export const Table = (parentKnobs = {}) => {
         After: 'after',
       },
       'before',
+      parentKnobs.caption_position,
       parentKnobs.knobTab,
     ),
-    modifier_class: knobText('Additional class', '', parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   if (knobs.rows) {
