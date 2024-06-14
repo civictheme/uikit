@@ -25,22 +25,6 @@
   @include _ct-print-all-gutters($gutters, margin);
 }
 
-@mixin ct-row-reverse() {
-  flex-direction: row-reverse;
-}
-
-@mixin ct-row-natural-height() {
-  align-items: flex-start;
-}
-
-@mixin ct-row-flex-column() {
-  flex-direction: column;
-}
-
-@mixin ct-col-reverse() {
-  flex-direction: column-reverse;
-}
-
 @mixin ct-flex-align-right() {
   margin-left: auto;
   flex-shrink: 0;
