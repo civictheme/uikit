@@ -4,6 +4,7 @@
 
 @use 'sass:color';
 @use 'sass:map';
+@use 'sass:math';
 
 // Set default styles for the Storybook viewport.
 #root {
@@ -136,7 +137,9 @@
   right: 0;
 }
 
-.story-placeholder {
+.story-placeholder,
+.story-placeholder--fill,
+.story-placeholder--fixed {
   $_color: grey;
 
   width: 100%;
@@ -155,6 +158,14 @@
     border: dotted ct-particle(0.125) $_color;
     color: color.adjust($_color, $alpha: 0.1);
   }
+}
+
+.story-placeholder--fill {
+  width: 100%;
+}
+
+.story-placeholder--fixed {
+  width: math.div(ct-breakpoint-next($ct-grid-lowest-breakpoint), 2);
 }
 
 .example-container {
