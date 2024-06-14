@@ -4,27 +4,52 @@
 
 @use 'sass:map';
 
+//
+// Max width container class to limit the width of the fluid containers at max width.
+//
+.container-max-width {
+  @include ct-breakpoint(xxl) {
+    width: $ct-grid-max-width;
+    margin: 0 auto;
+  }
+}
+
+//
+// Offset container class to add offset on small screens.
+//
+.container-offset-xs {
+  @include ct-breakpoint-upto(m) {
+    padding-left: map.get($ct-grid-offsets, 'xxs');
+    padding-right: map.get($ct-grid-offsets, 'xxs');
+    width: auto;
+  }
+}
+
+// Container class should wrap every row.
+.container {
+  @include ct-container();
+
+  &--fill-width {
+    [class*='col-'] {
+      max-width: 100%;
+      flex-grow: 1;
+    }
+  }
+}
+
 .row {
+  $root: &;
+
   @include ct-row($ct-grid-gutters);
 
-  &--no-wrap {
-    flex-wrap: nowrap;
-  }
-
-  &.reverse {
-    @include ct-row-reverse();
-  }
-
-  &.natural-height {
-    @include ct-row-natural-height();
-  }
-
-  &.flex-column {
-    @include ct-row-flex-column();
+  &#{$root}--reverse {
+    flex-direction: row-reverse;
   }
 }
 
 .col {
+  $root: &;
+
   // Make columns at the lowest breakpoint to act as a single column per row.
   @include _ct-grid-col($ct-grid-lowest-breakpoint, $ct-grid-columns);
 
@@ -34,13 +59,43 @@
   @include ct-breakpoint($next-bp) {
     @include _ct-grid-col();
   }
+}
 
-  &.reverse {
-    @include ct-col-reverse();
+// Generate column classes.
+@each $breakpoint, $value in $ct-breakpoints {
+  @if $breakpoint == $ct-grid-lowest-breakpoint {
+    @include _ct-col-factory($breakpoint);
+  }
+  @else {
+    @include ct-breakpoint($breakpoint) {
+      @include _ct-col-factory($breakpoint);
+    }
+  }
+}
+
+// Utilities for fixed and auto columns.
+.col,
+[class*='col-'] {
+  &.col--reverse {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
-  &--no-grow {
+  &.col--no-grow {
     flex-grow: initial;
+  }
+
+  &.col--no-gap {
+    // Remove the offsets starting from the next breakpoint from the lowest one.
+    @include ct-breakpoint(ct-breakpoint-next($ct-grid-lowest-breakpoint, key)) {
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+
+      &:not(:last-child) {
+        padding-right: 0;
+      }
+    }
   }
 }
 
@@ -70,69 +125,6 @@
 
 .align-stretch {
   align-self: stretch;
-}
-
-// Generate column classes.
-@each $breakpoint, $value in $ct-breakpoints {
-  @if $breakpoint == $ct-grid-lowest-breakpoint {
-    @include _ct-col-factory($breakpoint);
-  }
-  @else {
-    @include ct-breakpoint($breakpoint) {
-      @include _ct-col-factory($breakpoint);
-    }
-  }
-}
-
-// Container class should wrap every row.
-.container {
-  @include ct-container();
-
-  &--fill-width {
-    [class*='col-'] {
-      max-width: 100%;
-      flex-grow: 1;
-    }
-  }
-}
-
-//
-// Max width container class to limit the width of the fluid containers at max width.
-//
-.container-max-width {
-  @include ct-breakpoint(xxl) {
-    width: $ct-grid-max-width;
-    margin: 0 auto;
-  }
-}
-
-//
-// Offset container class to add offset on small screens.
-//
-.container-offset-xs {
-  @include ct-breakpoint-upto(m) {
-    padding-left: map.get($ct-grid-offsets, 'xxs');
-    padding-right: map.get($ct-grid-offsets, 'xxs');
-    width: auto;
-  }
-}
-
-.row-no-gap {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.col-no-gap {
-  // Remove the offsets starting from the next breakpoint from the lowest one.
-  @include ct-breakpoint(ct-breakpoint-next($ct-grid-lowest-breakpoint, key)) {
-    &:not(:first-child) {
-      padding-left: 0;
-    }
-
-    &:not(:last-child) {
-      padding-right: 0;
-    }
-  }
 }
 
 .ct-justify-content-start {

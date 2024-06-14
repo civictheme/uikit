@@ -3,8 +3,6 @@
 //
 
 .story-grid-wrapper {
-  background-color: #efefef;
-
   .container {
     box-shadow: 0 0 ct-particle(0.125) ct-particle(0.125) red inset;
     background-color: white;
@@ -17,17 +15,12 @@
       div,
       li {
         outline: ct-particle(0.125) solid rgba(blue, 0.5);
-        background-color: rgba(#563d7c, 0.15);
+        background-color: rgba(#563d7c, 0.25);
 
         // Column content.
         span {
           box-shadow: 0 0 0 ct-particle(0.125) green inset;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          text-align: center;
-          vertical-align: middle;
+          background-color: rgba(green, 0.15);
         }
       }
     }

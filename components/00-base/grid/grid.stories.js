@@ -59,7 +59,7 @@ export const Grid = (parentKnobs = {}) => {
     knobs.column_element = 'div';
   }
 
-  knobs.items = generateItems(knobs.number_of_items, () => `<span class="story-placeholder--fill">${Math.floor(12 / (knobs.column_count > 0 ? knobs.column_count : 12))}</span>`);
+  knobs.items = generateItems(knobs.number_of_items, () => `<span class="story-placeholder">${Math.floor(12 / (knobs.column_count > 0 ? knobs.column_count : 12))}</span>`);
 
   const showOutline = knobBoolean('Show outlines', false, parentKnobs.showOutlines, parentKnobs.knobTab);
 
@@ -76,76 +76,105 @@ export const GridExample = () => {
   for (let j = 0; j < cols.length; j++) {
     html += CivicThemeGrid({
       column_count: cols[j],
-      items: generateItems(cols[j], `<span class="story-placeholder--fill">${Math.floor(12 / cols[j])}</span>`),
+      items: generateItems(cols[j], `<span class="story-placeholder">${Math.floor(12 / cols[j])}</span>`),
     });
   }
 
-  html += `<div class="example-container__title">Grid within a grid</div>`;
+  html += `<div class="example-container__title">Nested grid</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
     items: [
       CivicThemeGrid({
         items: [
-          `<span class="story-placeholder--fill">Nested</span>`,
-          `<span class="story-placeholder--fill">Nested</span>`,
-          `<span class="story-placeholder--fill">Nested</span>`,
+          `<span class="story-placeholder">Nested</span>`,
+          `<span class="story-placeholder">Nested</span>`,
+          `<span class="story-placeholder">Nested</span>`,
         ],
         use_container: false,
       }),
-      `<span class="story-placeholder--fill">Parent</span>`,
+      `<span class="story-placeholder">Parent</span>`,
     ],
     column_count: 2,
   });
 
-  html += `<div class="example-container__title">Auto column</div>`;
-  cols = ['A', 'B', 'C', 'D'];
+  html += `<div class="example-container__subtitle">Auto column <code>.col</code></div>`;
+
+  html += `<div class="example-container__title">Fill width elements</div>`;
+  cols = ['A', 'B', 'C', 'D', 'E'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]} fixed width</span>`),
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
     column_class: 'col',
   });
 
-  html += `<div class="example-container__title">Auto column - Fixed width element</div>`;
-  cols = ['A', 'B', 'C', 'D'];
+  html += `<div class="example-container__title">Hugged width elements</div>`;
+  cols = ['A', 'B', 'C', 'D', 'E'];
+  html += CivicThemeGrid({
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder--hugged">${cols[i - 1]}</span>`),
+    column_class: 'col',
+  });
+
+  html += `<div class="example-container__title">Fixed width element</div>`;
+  cols = ['A', 'B', 'C', 'D', 'E'];
   html += CivicThemeGrid({
     items: generateItems(cols.length, (i) => `<span class="story-placeholder--fixed">${cols[i - 1]} fixed width</span>`),
     column_class: 'col',
   });
 
-  html += `<div class="example-container__title">Reversed</div>`;
+  html += `<div class="example-container__title">Row utilities</div>`;
+
+  html += `<div class="example-container__subtitle">Reversed <code>.row--reverse</code></div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
     column_count: cols.length,
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fill">${cols[i - 1]}</span>`),
-    row_class: 'row reverse',
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    row_class: 'row row--reverse',
   });
 
-  html += `<div class="example-container__title">Natural height</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fill">${cols[i - 1]}</span>`),
-    row_class: 'row natural-height',
-  });
+  html += `<div class="example-container__title">Column utilities</div>`;
 
-  html += `<div class="example-container__title">Flex column</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fill">${cols[i - 1]}</span>`),
-    row_class: 'row flex-column',
-  });
-
-  html += `<div class="example-container__title">No column gap</div>`;
+  html += `<div class="example-container__subtitle">Reversed <code>.col--reverse</code></div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
     column_count: cols.length,
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fill">${cols[i - 1]}</span>`),
-    column_class: 'col-no-gap',
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fixed">${cols[i - 1]} - 1</span> <span class="story-placeholder--fixed">${cols[i - 1]} - 2</span>`),
+    column_class: 'col--reverse',
   });
 
-  html += `<div class="example-container__title">No column gap - Auto column</div>`;
+  html += `<div class="example-container__subtitle">Reversed <code>.col--reverse</code> - Auto column</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fill">${cols[i - 1]}</span>`),
-    column_class: 'col col-no-gap',
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]} - 1</span> <span class="story-placeholder">${cols[i - 1]} - 2</span>`),
+    column_class: 'col col--reverse',
+  });
+
+  html += `<div class="example-container__subtitle">No grow <code>.col--no-grow</code></div>`;
+  cols = ['A', 'B', 'C', 'D', 'E'];
+  html += CivicThemeGrid({
+    column_count: cols.length,
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder--hugged">${cols[i - 1]}</span>`),
+    column_class: 'col--no-grow',
+  });
+
+  html += `<div class="example-container__subtitle">No grow <code>.col--no-grow</code> - Auto column</div>`;
+  cols = ['A', 'B', 'C', 'D', 'E'];
+  html += CivicThemeGrid({
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder--hugged">${cols[i - 1]}</span>`),
+    column_class: 'col col--no-grow',
+  });
+
+  html += `<div class="example-container__subtitle">No column gap <code>.col--no-gap</code></div>`;
+  cols = ['A', 'B', 'C', 'D'];
+  html += CivicThemeGrid({
+    column_count: cols.length,
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    column_class: 'col--no-gap',
+  });
+
+  html += `<div class="example-container__subtitle">No column gap <code>.col--no-gap</code> - Auto column</div>`;
+  cols = ['A', 'B', 'C', 'D'];
+  html += CivicThemeGrid({
+    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    column_class: 'col col--no-gap',
   });
 
   html += '</div>';
