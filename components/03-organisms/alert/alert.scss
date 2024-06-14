@@ -30,6 +30,7 @@
   #{$root}__icon {
     width: ct-particle(3);
     margin-right: ct-spacing();
+    line-height: 100%;
 
     @include ct-breakpoint(m) {
       margin-right: ct-spacing(2);
