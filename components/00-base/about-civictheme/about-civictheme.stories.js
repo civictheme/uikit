@@ -21,3 +21,5 @@ export const AboutCivicTheme = () => AboutCivicThemeExample({
     },
   },
 });
+
+AboutCivicTheme.storyName = 'About CivicTheme';
