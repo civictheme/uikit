@@ -513,7 +513,10 @@ export const decoratorStoryWrapper = (content, context) => {
     classes += ` ${context.parameters.wrapperClass}`;
   }
 
-  return `<div class="${classes}">${content()}</div>`;
+  context.parameters.wrapperHtmlBefore = context.parameters.wrapperHtmlBefore || '';
+  context.parameters.wrapperHtmlAfter = context.parameters.wrapperHtmlAfter || '';
+
+  return `<div class="${classes}">${context.parameters.wrapperHtmlBefore}${content()}${context.parameters.wrapperHtmlAfter}</div>`;
 };
 
 export const decoratorDocs = (content, context) => {
