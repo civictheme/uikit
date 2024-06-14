@@ -55,6 +55,12 @@
     margin-bottom: ct-spacing(2);
   }
 
+  &__rows {
+    [class^='col'] {
+      @include ct-equal-heights();
+    }
+  }
+
   &__rows-below {
     margin-top: ct-spacing(2);
     margin-bottom: ct-spacing(2);

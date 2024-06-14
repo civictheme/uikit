@@ -247,3 +247,16 @@
     }
   }
 }
+
+//
+// Make content equal heights by stretching all children to the same height.
+//
+@mixin ct-equal-heights() {
+  display: flex;
+
+  > * {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
