@@ -5,7 +5,7 @@ export default {
   title: 'Base/Colors',
 };
 
-function getColourMap(name) {
+function getColorMap(name) {
   const map = {};
 
   map.default = SCSS_VARIABLES[`ct-${name}-default`] || {};
@@ -83,8 +83,8 @@ export const Colors = () => {
     },
   };
 
-  const brandMap = getColourMap('colors-brands');
-  const paletteMap = getColourMap('colors');
+  const brandMap = getColorMap('colors-brands');
+  const paletteMap = getColorMap('colors');
 
   const colorMap = {
     'Brand colors': brandMap,
