@@ -30,7 +30,8 @@
   @include ct-container();
 
   &--fill-width {
-    [class*='col-'] {
+    > .col,
+    > [class*='col-'] {
       max-width: 100%;
       flex-grow: 1;
     }
@@ -45,6 +46,35 @@
   &#{$root}--reverse {
     flex-direction: row-reverse;
   }
+
+  &#{$root}--no-grow {
+    > .col,
+    > [class*='col-'] {
+      flex-grow: initial;
+      flex-basis: auto;
+    }
+  }
+
+  &#{$root}--equal-heights-content {
+    > .col,
+    > [class*='col-'] {
+      > * {
+        height: 100%;
+      }
+    }
+  }
+
+  &#{$root}--unequal-heights {
+    > .col,
+    > [class*='col-'] {
+      margin-bottom: auto;
+    }
+  }
+}
+
+ul.row {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .col {
@@ -83,6 +113,7 @@
 
   &.col--no-grow {
     flex-grow: initial;
+    flex-basis: auto;
   }
 
   &.col--no-gap {

@@ -56,9 +56,7 @@
   }
 
   &__rows {
-    [class^='col'] {
-      @include ct-equal-heights();
-    }
+    // Noop.
   }
 
   &__rows-below {
