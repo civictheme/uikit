@@ -143,46 +143,6 @@
   .col-#{$bp}-offset-0 {
     margin-left: 0;
   }
-
-  .row.start-#{$bp} {
-    justify-content: flex-start;
-  }
-
-  .row.center-#{$bp} {
-    justify-content: center;
-  }
-
-  .row.end-#{$bp} {
-    justify-content: flex-end;
-  }
-
-  .row.top-#{$bp} {
-    align-items: flex-start;
-  }
-
-  .row.middle-#{$bp} {
-    align-items: center;
-  }
-
-  .row.bottom-#{$bp} {
-    align-items: flex-end;
-  }
-
-  .row.around-#{$bp} {
-    justify-content: space-around;
-  }
-
-  .row.between-#{$bp} {
-    justify-content: space-between;
-  }
-
-  .first-#{$bp} {
-    order: -1;
-  }
-
-  .last-#{$bp} {
-    order: 1;
-  }
 }
 
 //
