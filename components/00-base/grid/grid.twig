@@ -10,8 +10,8 @@
  * - row_attributes: [string] Additional row attributes.
  * - column_element: [string] Column element.
  * - column_class: [string] Optional column class override. Defaults to 'col' if
- *   column auto-generation is not requird (column_count is 0), otherwise it is
- *   appended to the auto-generated column class list.
+ *   column auto-generation is not required (template_column_count is 0),
+ *   otherwise it is appended to the auto-generated column class list.
  * - column_attributes: [string] Additional column attributes.
  * - use_container: [boolean] Whether to use container or not.
  * - template_column_count: [number] Number of columns in the row. If 0 - the
@@ -28,17 +28,19 @@
 {% set row_element = row_element|default('div') %}
 {% set column_element = column_element|default('div') %}
 {% set template_column_count = template_column_count|default(0) %}
-{% set row_class = row_class|default('row') %}
+{% set row_class = 'row ' ~ row_class|default('') %}
 {% set fill_width_class = fill_width|default(false) ? 'container--fill-width' : '' %}
 {% set modifier_class = '%s %s'|format(fill_width_class, modifier_class|default('')) %}
 
+{% set row_class = row_class|trim %}
 {% if template_column_count > 0 %}
 	{% set column_class = column_class|default('') %}
 	{% set template_column_count = template_column_count in [1, 2, 3, 4, 6, 12] ? template_column_count : 12 %}
-	{% set column_class = 'col-xxs-12 col-m-%s %s'|format(12 // template_column_count, column_class) %}
+	{% set column_class = 'col-xxs-12 col-m-%s %s'|format(12 // template_column_count, column_class)|trim %}
 {% else %}
 	{% set template_column_count = items|length %}
-	{% set column_class = column_class|default('col') %}
+	{% set column_class = 'col ' ~ column_class|default('') %}
+	{% set column_class = column_class|trim %}
 {% endif %}
 
 {# Propagade modifier class to row class if container is not used. #}

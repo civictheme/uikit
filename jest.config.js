@@ -6,11 +6,16 @@ module.exports = {
       ],
     }],
   },
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|svg|ico|woff|woff2|ttf|eot|webm|avi|mp4|twig)$': 'jest-transform-stub',
+    '\\.(jpg|jpeg|png|svg|ico|woff|woff2|ttf|eot|webm|avi|mp4)$': 'jest-transform-stub',
   },
   transformIgnorePatterns: [
     'node_modules/(?!(@storybook/addon-knobs)/)',
+  ],
+  coverageDirectory: '.logs/coverage',
+  collectCoverageFrom: [
+    '**/components/**/*.{js,jsx,twig}',
+    '!**/*.stories.js',
   ],
 };
