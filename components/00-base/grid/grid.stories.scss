@@ -2,27 +2,163 @@
 // Grid component stories.
 //
 
-.story-grid-wrapper {
+@use 'sass:math';
+
+.story-grid-outlines {
+  $_container-color: red;
+  $_row-color: orange;
+  $_template-column-color: green;
+  $_auto-column-color: blue;
+  $_placeholder-text-color: grey;
+
   .container {
-    box-shadow: 0 0 ct-particle(0.125) ct-particle(0.125) red inset;
-    background-color: white;
+    background-color: rgba($_container-color, 0.025);
+    box-shadow: 0 0 1px 1px $_container-color inset;
 
     .row,
     ul {
-      outline: ct-particle(0.125) solid rgba(#563d7c, 0.1);
+      counter-reset: example-coloumn-counter;
+      background-color: rgba($_row-color, 0.1);
+      outline: 1px solid rgba($_row-color, 0.2);
 
       // Column.
-      div,
-      li {
-        outline: ct-particle(0.125) solid rgba(blue, 0.5);
-        background-color: rgba(#563d7c, 0.25);
+      > .col,
+      > [class*='col-'],
+      > li {
+        counter-increment: example-coloumn-counter;
+        position: relative;
+
+        &::after {
+          content: counter(example-coloumn-counter) ' of ' attr(data-example-total-columns);
+          position: absolute;
+          bottom: 2px;
+          right: 0;
+          left: 0;
+          text-align: center;
+          font-size: 0.6em;
+        }
+
+        .row,
+        ul {
+          counter-reset: example-nested-coloumn-counter;
+
+          > .col,
+          > [class*='col-'],
+          > li {
+            counter-increment: example-nested-coloumn-counter;
+
+            &::after {
+              content: 'Nested ' counter(example-nested-coloumn-counter) ' of ' attr(data-example-total-columns);
+              left: auto;
+              font-size: 0.4em;
+            }
+          }
+        }
+
+        @mixin _ct-story-placeholder-meta($width) {
+          position: relative;
+
+          &::before {
+            content: ct-string($width);
+            color: $_placeholder-text-color;
+            position: absolute;
+            top: 2px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.6em;
+            font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            white-space: nowrap;
+          }
+        }
 
         // Column content.
-        span {
-          box-shadow: 0 0 0 ct-particle(0.125) yellowgreen inset;
-          background-color: rgba(yellowgreen, 0.15);
+        .story-placeholder {
+          @include _ct-story-placeholder-meta('100%');
+        }
+
+        .story-placeholder--hugged {
+          @include _ct-story-placeholder-meta('auto');
+        }
+
+        .story-placeholder--fixed {
+          $_width: math.div(ct-breakpoint-next($ct-grid-lowest-breakpoint), 2);
+
+          @include _ct-story-placeholder-meta($_width);
+        }
+      }
+
+      // Column colors.
+      > [class*='col-'] {
+        background-color: rgba($_template-column-color, 0.05);
+        outline: 1px solid rgba($_template-column-color, 0.5);
+
+        &::after {
+          color: $_template-column-color;
+        }
+      }
+
+      > .col,
+      > li {
+        background-color: rgba($_auto-column-color, 0.05);
+        outline: 1px solid rgba($_auto-column-color, 0.5);
+
+        &::after {
+          color: $_auto-column-color;
         }
       }
     }
   }
+
+  &.grid-story-docs {
+    row-gap: 1em;
+
+    > * {
+      margin-right: 1em;
+      white-space: nowrap;
+    }
+
+    @mixin _ct-story-docs-color-square($color) {
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        background-color: $color;
+        margin-right: 0.5em;
+        vertical-align: top;
+      }
+    }
+
+    .grid-story-docs-color-container {
+      @include _ct-story-docs-color-square($_container-color);
+    }
+
+    .grid-story-docs-color-row {
+      @include _ct-story-docs-color-square($_row-color);
+    }
+
+    .grid-story-docs-color-template-column {
+      @include _ct-story-docs-color-square($_template-column-color);
+    }
+
+    .grid-story-docs-color-auto-column {
+      @include _ct-story-docs-color-square($_auto-column-color);
+    }
+
+    .grid-story-docs-color-placeholder {
+      @include _ct-story-docs-color-square($_placeholder-text-color);
+    }
+  }
 }
+
+#root {
+  > .story-docs {
+    &.story-docs-size--medium {
+      width: fit-content;
+      max-width: 100%;
+    }
+  }
+}
+
+@include ct-story-docs-conditional('.story-grid-outlines');

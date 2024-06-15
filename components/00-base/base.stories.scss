@@ -101,6 +101,19 @@
   }
 }
 
+//
+// Conditionally show docs if an element with a certain class follows the docs.
+//
+@mixin ct-story-docs-conditional($class) {
+  .story-docs:has(+ #{$class}) {
+    display: block;
+  }
+
+  .story-docs:not(:has(+ #{$class})) {
+    display: none;
+  }
+}
+
 .sb-show-main {
   overflow-y: scroll;
 
@@ -144,12 +157,12 @@
 
   display: inline-block;
   background-color: color.adjust($_color, $alpha: -0.7);
-  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   text-align: center;
   font-family: sans-serif;
   border: dotted ct-particle(0.125) $_color;
   color: color.adjust($_color, $alpha: -0.1);
-  height: 100%;
 
   .ct-theme-dark & {
     background-color: color.adjust($_color, $alpha: -0.7);
@@ -190,6 +203,7 @@
   #{$root}__subtitle {
     @include ct-typography('label-regular');
 
+    margin-top: ct-spacing(2);
     margin-bottom: ct-spacing(1);
   }
 
@@ -250,7 +264,7 @@
     border: 1px solid #e1e1e8;
     color: #d63384;
     display: inline-block;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     font-size: 0.9em;
     padding: 0 0.25em;
   }
