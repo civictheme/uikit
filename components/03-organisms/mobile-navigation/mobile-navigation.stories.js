@@ -8,7 +8,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
     wrapperSize: 'small',
-    wrapperClass: 'example-container__page-content example-ct-mobile-navigation',
+    wrapperClass: 'story-container__page-content story-ct-mobile-navigation',
     docs: 'Click on the mobile navigation trigger in the top left to open Mobile Navigation panel.',
   },
 };

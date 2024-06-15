@@ -17,7 +17,7 @@
 
     .row,
     ul {
-      counter-reset: example-coloumn-counter;
+      counter-reset: story-coloumn-counter;
       background-color: rgba($_row-color, 0.1);
       outline: 1px solid rgba($_row-color, 0.2);
 
@@ -25,11 +25,11 @@
       > .col,
       > [class*='col-'],
       > li {
-        counter-increment: example-coloumn-counter;
+        counter-increment: story-coloumn-counter;
         position: relative;
 
         &::after {
-          content: counter(example-coloumn-counter) ' of ' attr(data-example-total-columns);
+          content: counter(story-coloumn-counter) ' of ' attr(data-story-total-columns);
           position: absolute;
           bottom: 2px;
           right: 0;
@@ -40,15 +40,15 @@
 
         .row,
         ul {
-          counter-reset: example-nested-coloumn-counter;
+          counter-reset: story-column-nested-counter;
 
           > .col,
           > [class*='col-'],
           > li {
-            counter-increment: example-nested-coloumn-counter;
+            counter-increment: story-column-nested-counter;
 
             &::after {
-              content: 'Nested ' counter(example-nested-coloumn-counter) ' of ' attr(data-example-total-columns);
+              content: 'Nested ' counter(story-column-nested-counter) ' of ' attr(data-story-total-columns);
               left: auto;
               font-size: 0.4em;
             }

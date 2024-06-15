@@ -6,48 +6,48 @@
 #}
 
 <style>
-  .example-menu-multiple-inline-with-absolute-panels [data-collapsible] {
+  .story-menu-multiple-inline-with-absolute-panels [data-collapsible] {
     position: relative;
   }
 
-  .example-menu-multiple-inline-with-absolute-panels [data-collapsible] [data-collapsible-panel] {
+  .story-menu-multiple-inline-with-absolute-panels [data-collapsible] [data-collapsible-panel] {
     top: 1.5em;
   }
 
-  .example-menu-multiple-inline-with-absolute-panels ul {
+  .story-menu-multiple-inline-with-absolute-panels ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  .example-menu-multiple-inline-with-absolute-panels ul li {
+  .story-menu-multiple-inline-with-absolute-panels ul li {
     white-space: nowrap;
   }
 
-  .example-menu-multiple-inline-with-absolute-panels ul li[data-collapsible] li a {
+  .story-menu-multiple-inline-with-absolute-panels ul li[data-collapsible] li a {
     display: block;
     padding: 1em;
   }
 
-  .example-menu-multiple-inline-with-absolute-panels ul li[data-collapsible] li a:hover {
+  .story-menu-multiple-inline-with-absolute-panels ul li[data-collapsible] li a:hover {
     background: cornflowerblue;
   }
 
-  .example-menu-focus *:focus {
+  .story-menu-focus *:focus {
     outline: solid 2px green;
   }
 
-  .example-menu-focus button:focus {
+  .story-menu-focus button:focus {
     outline: solid 2px orange;
   }
 
-  .example-menu-focus [data-collapsible-trigger]:focus {
+  .story-menu-focus [data-collapsible-trigger]:focus {
     outline: solid 2px red;
   }
 </style>
 
-<div class="example-container">
-  <div class="example-container__title">Initially expanded</div>
+<div class="story-container">
+  <div class="story-container__title">Initially expanded</div>
 
   <div data-collapsible>
     <div data-collapsible-trigger>
@@ -63,8 +63,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Initially collapsed</div>
+<div class="story-container">
+  <div class="story-container__title">Initially collapsed</div>
 
   <div data-collapsible data-collapsible-collapsed>
     <div data-collapsible-trigger>
@@ -80,8 +80,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Long animation</div>
+<div class="story-container">
+  <div class="story-container__title">Long animation</div>
 
   <div data-collapsible data-collapsible-collapsed data-collapsible-duration="2000">
     <div data-collapsible-trigger>
@@ -97,8 +97,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">No animation</div>
+<div class="story-container">
+  <div class="story-container__title">No animation</div>
 
   <div data-collapsible data-collapsible-collapsed data-collapsible-duration="0">
     <div data-collapsible-trigger>
@@ -114,8 +114,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Minimal data attributes</div>
+<div class="story-container">
+  <div class="story-container__title">Minimal data attributes</div>
 
   <div data-collapsible>
     <div>
@@ -131,8 +131,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">No trigger icon</div>
+<div class="story-container">
+  <div class="story-container__title">No trigger icon</div>
 
   <div data-collapsible data-collapsible-trigger-no-icon>
     <div>
@@ -148,8 +148,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Wide trigger icon</div>
+<div class="story-container">
+  <div class="story-container__title">Wide trigger icon</div>
 
   <div data-collapsible data-collapsible-trigger-wide>
     <div>
@@ -165,8 +165,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Themed</div>
+<div class="story-container">
+  <div class="story-container__title">Themed</div>
 
   <div data-collapsible class="{{ theme_class }}">
     <div>
@@ -182,8 +182,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Trigger is a link - Initially expanded</div>
+<div class="story-container">
+  <div class="story-container__title">Trigger is a link - Initially expanded</div>
 
   <div data-collapsible>
     <a href="#" data-collapsible-trigger>
@@ -199,8 +199,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Trigger is a button - Initially expanded</div>
+<div class="story-container">
+  <div class="story-container__title">Trigger is a button - Initially expanded</div>
 
   <div data-collapsible>
     <button data-collapsible-trigger>
@@ -216,8 +216,8 @@
   </div>
 </div>
 
-<div class="example-container">
-  <div class="example-container__title">Inline trigger</div>
+<div class="story-container">
+  <div class="story-container__title">Inline trigger</div>
 
   <div data-collapsible>
     <span data-collapsible-trigger>
@@ -233,8 +233,8 @@
   </div>
 </div>
 
-<div class="example-container" style="height: 300px">
-  <div class="example-container__title">Absolute panel</div>
+<div class="story-container" style="height: 300px">
+  <div class="story-container__title">Absolute panel</div>
 
   <div data-collapsible style="position: relative">
     <span data-collapsible-trigger>
@@ -252,8 +252,8 @@
   Text behind absolutely positioned panel.
 </div>
 
-<div class="example-container example-menu-multiple-inline-with-absolute-panels" style="height: 300px">
-  <div class="example-container__title">
+<div class="story-container story-menu-multiple-inline-with-absolute-panels" style="height: 300px">
+  <div class="story-container__title">
     Multiple inline with absolute panels
   </div>
 
@@ -305,8 +305,8 @@
   Text behind absolutely positioned panels.
 </div>
 
-<div class="example-container example-menu-multiple-inline-with-absolute-panels example-menu-focus" style="height: 300px">
-  <div class="example-container__title">
+<div class="story-container story-menu-multiple-inline-with-absolute-panels story-menu-focus" style="height: 300px">
+  <div class="story-container__title">
     Multiple inline with absolute panels and focus
   </div>
 
@@ -366,8 +366,8 @@
   </div>
 </div>
 
-<div class="example-container">
-    <div class="example-container__title">Test Nested Collapsible Closed</div>
+<div class="story-container">
+    <div class="story-container__title">Test Nested Collapsible Closed</div>
 
     <div data-collapsible data-collapsible-collapsed>
         <div data-collapsible-trigger>
@@ -443,8 +443,8 @@
     </div>
 </div>
 
-<div class="example-container">
-    <div class="example-container__title">Test Nested Collapsible Expanded</div>
+<div class="story-container">
+    <div class="story-container__title">Test Nested Collapsible Expanded</div>
 
     <div data-collapsible>
         <div data-collapsible-trigger>

@@ -17,17 +17,17 @@ export const Fonts = () => {
   let html = '';
 
   for (const i in Object.values(fonts)) {
-    html += `<div class="example-container">`;
+    html += `<div class="story-container">`;
 
-    html += `<div class="example-container__title">${fonts[i]}</div>`;
+    html += `<div class="story-container__title">${fonts[i]}</div>`;
 
-    html += `<div class="example-container__content">`;
+    html += `<div class="story-container__content">`;
     for (const weightName in weights) {
-      html += `<div class="example-container__subtitle">${capitalizeFirstLetter(weightName)}</div>`;
-      html += `<div class="example-container__subcontent story-font--${cleanCssIdentifier(weightName)}--${fonts[i]}">The quick brown fox jumps over the lazy dog</div>`;
+      html += `<div class="story-container__subtitle">${capitalizeFirstLetter(weightName)}</div>`;
+      html += `<div class="story-container__subcontent story-font--${cleanCssIdentifier(weightName)}--${fonts[i]}">The quick brown fox jumps over the lazy dog</div>`;
 
-      html += `<div class="example-container__subtitle">${capitalizeFirstLetter(weightName)} Italic</div>`;
-      html += `<div class="example-container__subcontent story-font--italic--${cleanCssIdentifier(weightName)}--${fonts[i]}">The quick brown fox jumps over the lazy dog</div>`;
+      html += `<div class="story-container__subtitle">${capitalizeFirstLetter(weightName)} Italic</div>`;
+      html += `<div class="story-container__subcontent story-font--italic--${cleanCssIdentifier(weightName)}--${fonts[i]}">The quick brown fox jumps over the lazy dog</div>`;
     }
     html += `</div>`;
 
