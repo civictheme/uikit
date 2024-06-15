@@ -37,7 +37,7 @@
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
 
 <div class="ct-list {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
-  <div class="ct-list__container">
+  <div class="ct-list__inner">
 
     {% block header %}
       {% if title is not empty or link_above is not empty %}
@@ -59,7 +59,7 @@
               <div class="col-xxs-12 col-m-3">
                 {% block link_above %}
                   {% if link_above %}
-                    <div class="ct-list__link-above">
+                    <div class="ct-list__link-above ct-justify-content-center">
                       {% include '@atoms/button/button.twig' with {
                         theme: theme,
                         type: 'secondary',
@@ -84,7 +84,7 @@
 
     {% block content %}
       {% if content %}
-        <div class="ct-list__content__wrapper">
+        <div class="ct-list__content">
           <div class="container">
             <div class="row">
               <div class="col-xxs-12">
@@ -92,7 +92,7 @@
                   content: content,
                   theme: theme,
                   allow_html: true,
-                  modifier_class: 'ct-list__content',
+                  modifier_class: 'ct-list__content__inner',
                 } only %}
               </div>
             </div>
@@ -122,12 +122,13 @@
 
           {% block rows_above %}
             {% if rows_above -%}
-              <div class="container">
+              <div class="container ct-list__rows-above">
                 <div class="row">
-                  <div class="col-xxs-12 ct-list__rows-above">
+                  <div class="col-xxs-12">
                     {% if rows_above is not iterable %}
                       {% set rows_above = [rows_above] %}
                     {% endif %}
+
                     {% for rows_above_row in rows_above %}
                       {% if rows_above_row is iterable %}
                         {{ rows_above_row }}
@@ -135,6 +136,7 @@
                         {% include '@atoms/paragraph/paragraph.twig' with {
                           content: rows_above_row,
                           theme: theme,
+                          modifier_class: 'ct-list__rows-above__inner',
                         } only %}
                       {% endif %}
                     {% endfor %}
@@ -146,13 +148,13 @@
 
           {% block results_count %}
             {% if results_count -%}
-              <div class="container">
+              <div class="container ct-list__results-count">
                 <div class="row">
                   <div class="col-xxs-12">
                     {% include '@atoms/label/label.twig' with {
                       content: results_count,
                       theme: theme,
-                      modifier_class: 'ct-list__results-count',
+                      modifier_class: 'ct-list__results-count__inner',
                     } only %}
                   </div>
                 </div>
@@ -166,12 +168,13 @@
 
           {% block rows_below %}
             {% if rows_below %}
-              <div class="container">
+              <div class="container ct-list__rows-below">
                 <div class="row">
-                  <div class="col-xxs-12 ct-list__rows-above">
+                  <div class="col-xxs-12">
                     {% if rows_below is not iterable %}
                       {% set rows_below = [rows_below] %}
                     {% endif %}
+
                     {% for rows_below_row in rows_below %}
                       {% if rows_below_row is iterable %}
                         {{ rows_below_row }}
@@ -179,6 +182,7 @@
                         {% include '@atoms/paragraph/paragraph.twig' with {
                           content: rows_below_row,
                           theme: theme,
+                          modifier_class: 'ct-list__rows-below__inner',
                         } only %}
                       {% endif %}
                     {% endfor %}
@@ -193,14 +197,14 @@
 
       {% block empty %}
         {% if empty is defined and (rows is not defined or rows is empty) -%}
-          <div class="container">
+          <div class="container ct-list__empty-results">
             <div class="row">
               <div class="col-xxs-12">
                 {% include '@atoms/paragraph/paragraph.twig' with {
                   content: empty,
                   allow_html: true,
                   theme: theme,
-                  modifier_class: 'ct-list__empty-results',
+                  modifier_class: 'ct-list__empty-results__inner',
                 } only %}
               </div>
             </div>
@@ -212,7 +216,7 @@
 
     {% block list_below %}
       {% if link_below %}
-        <div class="ct-list__link-below">
+        <div class="ct-list__link-below ct-justify-content-center">
           {% include '@atoms/button/button.twig' with {
             theme: theme,
             type: 'secondary',
