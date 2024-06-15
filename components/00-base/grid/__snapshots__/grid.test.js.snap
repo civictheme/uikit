@@ -1,0 +1,630 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  attributes: 'data-test="true"',
+  modifier_class: 'custom-modifier',
+  description: 'attributes and modifier class without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <div
+    class="row  custom-modifier"
+    data-test="true"
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  description: 'multiple items without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <div
+    class="row  "
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+																
+    <div
+      class="col"
+    >
+      
+						2
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  description: 'without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <div
+    class="row  "
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  fill_width: true,
+  description: 'fill width without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <div
+    class="row container--fill-width "
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+																
+    <div
+      class="col"
+    >
+      
+						2
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  row_class: 'custom-row',
+  column_class: 'custom-col',
+  description: 'custom classes without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <div
+    class="row custom-row  "
+  >
+    
+												
+    <div
+      class="col custom-col"
+    >
+      
+						1
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  row_element: 'section',
+  column_element: 'span',
+  description: 'custom elements without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <section
+    class="row  "
+  >
+    
+												
+    <span
+      class="col"
+    >
+      
+						1
+					
+    </span>
+    
+																
+    <span
+      class="col"
+    >
+      
+						2
+					
+    </span>
+    
+							    
+  </section>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: false,
+  template_column_count: 3,
+  description: 'column count without container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+		
+			
+  <div
+    class="row  "
+  >
+    
+												
+    <div
+      class="col-xxs-12 col-m-4"
+    >
+      
+						1
+					
+    </div>
+    
+																
+    <div
+      class="col-xxs-12 col-m-4"
+    >
+      
+						2
+					
+    </div>
+    
+																
+    <div
+      class="col-xxs-12 col-m-4"
+    >
+      
+						3
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  attributes: 'data-test="true"',
+  modifier_class: 'custom-modifier',
+  description: 'attributes and modifier class with container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container  custom-modifier"
+    data-test="true"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  description: 'multiple items with container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container  "
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+																
+      <div
+        class="col"
+      >
+        
+						2
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  fill_width: true,
+  description: 'fill width with container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container container--fill-width "
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+																
+      <div
+        class="col"
+      >
+        
+						2
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  row_class: 'custom-row',
+  column_class: 'custom-col',
+  description: 'custom classes with container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container  "
+  >
+    
+			
+    <div
+      class="row custom-row"
+    >
+      
+												
+      <div
+        class="col custom-col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  row_element: 'section',
+  column_element: 'span',
+  description: 'custom elements with container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container  "
+  >
+    
+			
+    <section
+      class="row"
+    >
+      
+												
+      <span
+        class="col"
+      >
+        
+						1
+					
+      </span>
+      
+																
+      <span
+        class="col"
+      >
+        
+						2
+					
+      </span>
+      
+							    
+    </section>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  template_column_count: 3,
+  description: 'column count with container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container  "
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-4"
+      >
+        
+						1
+					
+      </div>
+      
+																
+      <div
+        class="col-xxs-12 col-m-4"
+      >
+        
+						2
+					
+      </div>
+      
+																
+      <div
+        class="col-xxs-12 col-m-4"
+      >
+        
+						3
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly { items: [Array], use_container: true, description: 'with container' } 1`] = `
+<div>
+  
+
+
+			
+
+
+		
+  <div
+    aria-live="polite"
+    class="container  "
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
