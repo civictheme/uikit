@@ -280,9 +280,10 @@ export const List = (parentKnobs = {}) => {
       const itemsKnobs = {
         theme: knobs.theme,
         items,
-        column_count: columnCount,
+        template_column_count: columnCount,
         fill_width: false,
         with_background: knobs.with_background,
+        row_class: 'row--equal-heights-content',
       };
 
       knobs.rows = shouldRender(parentKnobs) ? CivicThemeGrid(itemsKnobs) : itemsKnobs;
