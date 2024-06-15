@@ -40,7 +40,7 @@ export const Header = (parentKnobs = {}) => {
       theme,
       title: null,
       type: 'dropdown',
-      modifier_class: 'ct-justify-content-end',
+      modifier_class: 'ct-flex-justify-content-end',
     }));
   }
 
@@ -50,11 +50,11 @@ export const Header = (parentKnobs = {}) => {
       theme,
       title: null,
       type: 'drawer',
-      modifier_class: 'ct-justify-content-end',
+      modifier_class: 'ct-flex-justify-content-end',
     }));
 
     contentMiddle3Content += Search(new KnobValues({
-      modifier_class: 'ct-justify-content-end',
+      modifier_class: 'ct-flex-justify-content-end',
       theme,
     }));
 
