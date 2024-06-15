@@ -1,4 +1,4 @@
-import CivicThemeCollapsible from './collapsible.stories.twig';
+import CollapsibleStoryTemplate from './collapsible.stories.twig';
 import './collapsible';
 
 export default {
@@ -8,4 +8,4 @@ export default {
   },
 };
 
-export const Collapsible = CivicThemeCollapsible;
+export const Collapsible = CollapsibleStoryTemplate;

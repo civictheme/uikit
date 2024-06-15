@@ -1,4 +1,4 @@
-import CivicThemeColors from './colors.stories.twig';
+import ColorsStoryTemplate from './colors.stories.twig';
 import { getThemes } from '../base.utils';
 
 export default {
@@ -115,7 +115,7 @@ export const Colors = () => {
     }
   }
 
-  return CivicThemeColors({
+  return ColorsStoryTemplate({
     sections,
   });
 };

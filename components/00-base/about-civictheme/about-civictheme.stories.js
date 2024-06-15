@@ -1,4 +1,4 @@
-import AboutCivicThemeExample from './about-civictheme.stories.twig';
+import AboutCivicThemeStoryTemplate from './about-civictheme.stories.twig';
 
 export default {
   title: 'About CivicTheme',
@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const AboutCivicTheme = () => AboutCivicThemeExample({
+export const AboutCivicTheme = () => AboutCivicThemeStoryTemplate({
   logos: {
     primary: {
       mobile: {
