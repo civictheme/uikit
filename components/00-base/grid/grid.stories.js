@@ -5,82 +5,13 @@ export default {
   title: 'Base/Grid',
   parameters: {
     layout: 'fullscreen',
-    docs: '<div class="grid-story-docs story-grid-outlines row row--no-grow"><span class="col grid-story-docs-color-container">Container</span><span class="col grid-story-docs-color-row">Row</span><span class="col grid-story-docs-color-template-column">Template column</span><span class="col grid-story-docs-color-auto-column">Auto column</span><span class="col grid-story-docs-color-placeholder">Placeholder</span></div>',
+    docs: '<div class="grid-story-docs story-grid-outlines row row--no-grow"><strong>Outline colors: </strong><span class="col grid-story-docs-color-container">Container</span><span class="col grid-story-docs-color-row">Row</span><span class="col grid-story-docs-color-template-column">Template column</span><span class="col grid-story-docs-color-auto-column">Auto column</span><span class="col grid-story-docs-color-placeholder">Placeholder</span></div>',
     docsSize: 'medium',
     docsPlacement: 'before',
   },
 };
 
-export const Grid = (parentKnobs = {}) => {
-  const knobs = {
-    number_of_items: knobNumber(
-      'Number of items',
-      4,
-      {
-        range: true,
-        min: 0,
-        max: 15,
-        step: 1,
-      },
-      parentKnobs.number_of_items,
-      parentKnobs.knobTab,
-    ),
-    template_column_count: parseInt(knobRadios(
-      'Template column count',
-      {
-        'Not set (use auto columns)': '0',
-        1: '1',
-        2: '2',
-        3: '3',
-        4: '4',
-        6: '6',
-        12: '12',
-      },
-      '12',
-      parentKnobs.template_column_count,
-      parentKnobs.knobTab,
-    ), 10),
-    use_container: knobBoolean('Use container', true, parentKnobs.use_container, parentKnobs.knobTab),
-    fill_width: knobBoolean('Fill width', false, parentKnobs.fill_width, parentKnobs.knobTab),
-    render_as: knobRadios(
-      'Render as',
-      {
-        'div > div': 'divdiv',
-        'ul > li': 'ulli',
-      },
-      'divdiv',
-      parentKnobs.render_as,
-      parentKnobs.knobTab,
-    ),
-    row_class: knobText('Additional row class', '', parentKnobs.row_class, parentKnobs.knobTab),
-    row_attributes: knobText('Additional row attributes', '', parentKnobs.row_attributes, parentKnobs.knobTab),
-    column_class: knobText('Additional column class', '', parentKnobs.column_class, parentKnobs.knobTab),
-    column_attributes: knobText('Additional column attributes', '', parentKnobs.column_attributes, parentKnobs.knobTab),
-    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
-  };
-
-  const showOutline = knobBoolean('Show outlines', false, parentKnobs.showOutlines, parentKnobs.knobTab);
-
-  const props = {
-    items: generateItems(knobs.number_of_items, () => `<span class="story-placeholder">${Math.floor(12 / (knobs.template_column_count > 0 ? knobs.template_column_count : 12))}</span>`),
-    row_element: knobs.render_as === 'ulli' ? 'ul' : 'div',
-    row_class: knobs.row_class,
-    row_attributes: knobs.row_attributes,
-    column_element: knobs.render_as === 'ulli' ? 'li' : 'div',
-    column_class: knobs.column_class,
-    column_attributes: `data-example-total-columns="${knobs.number_of_items}"`,
-    use_container: knobs.use_container,
-    template_column_count: knobs.template_column_count,
-    fill_width: knobs.fill_width,
-    attributes: knobs.attributes,
-    modifier_class: knobs.modifier_class,
-  };
-
-  return shouldRender(parentKnobs) ? `<div class="${showOutline ? 'story-grid-outlines' : ''}">${CivicThemeGrid(props)}</div>` : knobs;
-};
-
-export const GridExample = () => {
+export const Grid = () => {
   const showOutline = knobBoolean('Show outlines', false);
 
   let cols = [];
@@ -288,4 +219,73 @@ export const GridExample = () => {
   html += '</div>';
 
   return html;
+};
+
+export const GridGenerator = (parentKnobs = {}) => {
+  const knobs = {
+    number_of_items: knobNumber(
+      'Number of items',
+      4,
+      {
+        range: true,
+        min: 0,
+        max: 15,
+        step: 1,
+      },
+      parentKnobs.number_of_items,
+      parentKnobs.knobTab,
+    ),
+    template_column_count: parseInt(knobRadios(
+      'Template column count',
+      {
+        'Not set (use auto columns)': '0',
+        1: '1',
+        2: '2',
+        3: '3',
+        4: '4',
+        6: '6',
+        12: '12',
+      },
+      '12',
+      parentKnobs.template_column_count,
+      parentKnobs.knobTab,
+    ), 10),
+    use_container: knobBoolean('Use container', true, parentKnobs.use_container, parentKnobs.knobTab),
+    fill_width: knobBoolean('Fill width', false, parentKnobs.fill_width, parentKnobs.knobTab),
+    render_as: knobRadios(
+      'Render as',
+      {
+        'div > div': 'divdiv',
+        'ul > li': 'ulli',
+      },
+      'divdiv',
+      parentKnobs.render_as,
+      parentKnobs.knobTab,
+    ),
+    row_class: knobText('Additional row class', '', parentKnobs.row_class, parentKnobs.knobTab),
+    row_attributes: knobText('Additional row attributes', '', parentKnobs.row_attributes, parentKnobs.knobTab),
+    column_class: knobText('Additional column class', '', parentKnobs.column_class, parentKnobs.knobTab),
+    column_attributes: knobText('Additional column attributes', '', parentKnobs.column_attributes, parentKnobs.knobTab),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+  };
+
+  const showOutline = knobBoolean('Show outlines', false, parentKnobs.showOutlines, parentKnobs.knobTab);
+
+  const props = {
+    items: generateItems(knobs.number_of_items, () => `<span class="story-placeholder">${Math.floor(12 / (knobs.template_column_count > 0 ? knobs.template_column_count : 12))}</span>`),
+    row_element: knobs.render_as === 'ulli' ? 'ul' : 'div',
+    row_class: knobs.row_class,
+    row_attributes: knobs.row_attributes,
+    column_element: knobs.render_as === 'ulli' ? 'li' : 'div',
+    column_class: knobs.column_class,
+    column_attributes: `data-example-total-columns="${knobs.number_of_items}"`,
+    use_container: knobs.use_container,
+    template_column_count: knobs.template_column_count,
+    fill_width: knobs.fill_width,
+    attributes: knobs.attributes,
+    modifier_class: knobs.modifier_class,
+  };
+
+  return shouldRender(parentKnobs) ? `<div class="${showOutline ? 'story-grid-outlines' : ''}">${CivicThemeGrid(props)}</div>` : knobs;
 };
