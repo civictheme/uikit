@@ -184,7 +184,7 @@ export const GridExample = () => {
   });
 
   html += `<div class="example-container__subtitle">Equal column heights by default</div>`;
-  cols = [randomSentence(5, 'A'), randomSentence(20, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
+  cols = [`<strong>Content should not fill - height is not 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
     items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
     column_attributes: `data-example-total-columns="${cols.length}"`,
@@ -192,14 +192,14 @@ export const GridExample = () => {
   });
 
   html += `<div class="example-container__subtitle">Equal column heights by default - Auto column</div>`;
-  cols = [randomSentence(5, 'A'), randomSentence(20, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
+  cols = [`<strong>Content should not fill - height is not 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
     items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
     column_attributes: `data-example-total-columns="${cols.length}"`,
   });
 
   html += `<div class="example-container__subtitle">Equal column heights propagated to content <code>.row.row--equal-heights-content > .col-[breakpoint]-[column]</code></div>`;
-  cols = [randomSentence(5, 'A'), randomSentence(20, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
+  cols = [`<strong>Content should fill - height is propagated to be 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
     items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
     column_attributes: `data-example-total-columns="${cols.length}"`,
@@ -208,7 +208,7 @@ export const GridExample = () => {
   });
 
   html += `<div class="example-container__subtitle">Equal column heights propagated to content <code>.row.row--equal-heights-content > .col</code> - Auto column</div>`;
-  cols = [randomSentence(5, 'A'), randomSentence(20, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
+  cols = [`<strong>Content should fill - height is propagated to be 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
     items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
     column_attributes: `data-example-total-columns="${cols.length}"`,
