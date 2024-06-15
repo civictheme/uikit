@@ -1,4 +1,4 @@
-import CivicThemeTypography from './typography.stories.twig';
+import TypographyStoryTemplate from './typography.stories.twig';
 
 export default {
   title: 'Base/Typography',
@@ -9,4 +9,4 @@ export default {
   },
 };
 
-export const Typography = () => CivicThemeTypography();
+export const Typography = () => TypographyStoryTemplate();

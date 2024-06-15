@@ -1,5 +1,5 @@
 import './flyout';
-import CivicThemeFlyout from './flyout.stories.twig';
+import FlyoutStoryTemplate from './flyout.stories.twig';
 import { knobBoolean, knobNumber, knobRadios, shouldRender } from '../base.utils';
 
 export default {
@@ -27,5 +27,5 @@ export const Flyout = (parentKnobs = {}) => {
     duration: knobNumber('Duration (ms)', 500, undefined, parentKnobs.duration, parentKnobs.knobTab),
   };
 
-  return shouldRender(parentKnobs) ? CivicThemeFlyout(knobs) : knobs;
+  return shouldRender(parentKnobs) ? FlyoutStoryTemplate(knobs) : knobs;
 };

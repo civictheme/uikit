@@ -1,4 +1,4 @@
-import CivicThemeResponsive from './responsive.stories.twig';
+import ResponsiveStoryTemplate from './responsive.stories.twig';
 import './responsive';
 import '../collapsible/collapsible';
 
@@ -12,4 +12,4 @@ export default {
   },
 };
 
-export const Responsive = () => CivicThemeResponsive();
+export const Responsive = () => ResponsiveStoryTemplate();

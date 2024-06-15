@@ -1,5 +1,5 @@
 import './welcome.stories.scss';
-import WelcomeExample from './welcome.stories.twig';
+import WelcomeStoryTemplate from './welcome.stories.twig';
 
 export default {
   title: 'Welcome',
@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Welcome = () => WelcomeExample({
+export const Welcome = () => WelcomeStoryTemplate({
   logos: {
     primary: {
       mobile: {
