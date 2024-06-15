@@ -2,8 +2,8 @@
 // Scrollspy component stories.
 //
 
-.example-container__page-content {
-  &.example-scrollspy {
+.story-container__page-content {
+  &.story-scrollspy {
     height: 2000px;
 
     &::before {
@@ -30,22 +30,22 @@
   }
 }
 
-.example-scrollspy-target1 {
+.story-scrollspy-target1 {
   position: fixed;
   bottom: ct-particle(12);
   right: ct-particle(12);
 }
 
-.example-scrollspy-target2 {
+.story-scrollspy-target2 {
   position: fixed;
   bottom: 10px;
   right: ct-particle(12);
 }
 
-.example-scrollspy-target1.ct-scrollspy-scrolled {
+.story-scrollspy-target1.ct-scrollspy-scrolled {
   border: solid ct-particle(0.125) red;
 }
 
-.example-scrollspy-target2.ct-scrollspy-scrolled {
+.story-scrollspy-target2.ct-scrollspy-scrolled {
   border: solid ct-particle(0.125) blue;
 }

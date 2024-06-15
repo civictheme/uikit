@@ -12,9 +12,9 @@ export const Spacing = () => {
     spacingHtml = `<div class="story-spacing--${i}">${spacingHtml}</div>`;
   }
 
-  html += `<div class="example-container story-wrapper-size--large story-wrapper--centered">`;
-  html += `<div class="example-container__title">Spacing</div>`;
-  html += `<div class="example-container__content">`;
+  html += `<div class="story-container story-wrapper-size--large story-wrapper--centered">`;
+  html += `<div class="story-container__title">Spacing</div>`;
+  html += `<div class="story-container__content">`;
   html += `<div class="story-spacing-wrapper ">${spacingHtml}</div>`;
   html += `</div>`;
   html += `</div>`;
@@ -32,9 +32,9 @@ export const Spacing = () => {
     spacingComponentHtml += `<div class="story-vertical-spacing-container"><div class="story-vertical-spacing ${className}">${placeholder(`Content <code>.${className}</code>`)}</div></div><hr>`;
   });
 
-  html += `<div class="example-container story-wrapper-size--large story-wrapper--centered">`;
-  html += `<div class="example-container__title">Component Vertical Spacing</div>`;
-  html += `<div class="example-container__content">`;
+  html += `<div class="story-container story-wrapper-size--large story-wrapper--centered">`;
+  html += `<div class="story-container__title">Component Vertical Spacing</div>`;
+  html += `<div class="story-container__content">`;
   html += `<div class="story-vertical-spacing-wrapper ">${spacingComponentHtml}</div>`;
   html += `</div>`;
   html += `</div>`;
@@ -45,9 +45,9 @@ export const Spacing = () => {
     spacingInsetComponentHtml += `<div class="story-vertical-spacing-container"><div class="story-vertical-spacing ${className}">${placeholder(`Content <code>.${className}</code>`)}</div></div><hr>`;
   });
 
-  html += `<div class="example-container story-wrapper-size--large story-wrapper--centered">`;
-  html += `<div class="example-container__title">Component Vertical Spacing Inset</div>`;
-  html += `<div class="example-container__content">`;
+  html += `<div class="story-container story-wrapper-size--large story-wrapper--centered">`;
+  html += `<div class="story-container__title">Component Vertical Spacing Inset</div>`;
+  html += `<div class="story-container__content">`;
   html += `<div class="story-vertical-spacing-wrapper ">${spacingInsetComponentHtml}</div>`;
   html += `</div>`;
   html += `</div>`;
