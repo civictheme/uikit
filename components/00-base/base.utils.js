@@ -528,10 +528,14 @@ export const decoratorDocs = (content, context) => {
   if (context.parameters.docs) {
     const size = ['small', 'medium', 'large'].includes(context.parameters.docsSize) ? context.parameters.docsSize : 'medium';
 
-    const classes = [
+    let classes = [
       'story-docs',
       `story-docs-size--${size}`,
     ].filter(Boolean).join(' ');
+
+    if (context.parameters.docsClass) {
+      classes += ` ${context.parameters.docsClass}`;
+    }
 
     if (context.parameters.docsPlacement === 'before') {
       content = `<div class="${classes}">${context.parameters.docs}</div>${typeof content === 'function' ? content() : content}`;
