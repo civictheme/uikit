@@ -42,35 +42,16 @@
     $_scale: -1;
   }
 
-  &:not(.col-no-gap) {
-    @if $gutters {
-      @each $bp, $gutter in $gutters {
-        @if $bp == $ct-grid-lowest-breakpoint {
+  @if $gutters {
+    @each $bp, $gutter in $gutters {
+      @if $bp == $ct-grid-lowest-breakpoint {
+        #{$rule-prefix}-left: math.div($gutter, 2) * $_scale;
+        #{$rule-prefix}-right: math.div($gutter, 2) * $_scale;
+      }
+      @else {
+        @include ct-breakpoint($bp) {
           #{$rule-prefix}-left: math.div($gutter, 2) * $_scale;
           #{$rule-prefix}-right: math.div($gutter, 2) * $_scale;
-
-          // Vertical gutters for a column used up to the breakpoint where the
-          // grid becomes responsive.
-          @if $_scale > 0 {
-            margin-bottom: auto;
-
-            @include ct-breakpoint-upto($ct-grid-responsive-breakpoint) {
-              margin-bottom: $gutter;
-            }
-          }
-        }
-        @else {
-          @include ct-breakpoint($bp) {
-            #{$rule-prefix}-left: math.div($gutter, 2) * $_scale;
-            #{$rule-prefix}-right: math.div($gutter, 2) * $_scale;
-
-            // Vertical gutters for a row.
-            @if $_scale < 0 {
-              @include ct-breakpoint($ct-grid-responsive-breakpoint) {
-                margin-bottom: $gutter;
-              }
-            }
-          }
         }
       }
     }

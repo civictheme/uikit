@@ -1,4 +1,4 @@
-import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, objectFromArray, shouldRender, KnobValues } from '../../00-base/base.utils';
+import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, KnobValues, objectFromArray, randomSentence, shouldRender } from '../../00-base/base.utils';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 import CivicThemeBanner from './banner.twig';
 import CivicThemeParagraph from '../../01-atoms/paragraph/paragraph.twig';
@@ -110,15 +110,16 @@ export const Banner = (parentKnobs = {}) => {
       cards.push(CivicThemeNavigationCard({
         theme,
         title: 'Register for a workshop',
-        summary: 'Optional summary in the breakdown of tasks.',
+        summary: randomSentence(7 + i, `Register for a workshop${i}`),
         icon: 'mortarboard',
       }));
     }
 
     contentBelow = CivicThemeGrid({
       theme,
-      column_count: 4,
+      template_column_count: 4,
       items: cards,
+      row_class: 'row--equal-heights-content',
     });
 
     props.content_below = contentBelow;
