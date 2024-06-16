@@ -19,8 +19,3 @@ $ct-suppress-deprecations: false !default;
     @warn $message;
   }
 }
-
-@mixin ct-highlight-stripe($width, $border-radius, $border-width: ct-particle(0.125), $position: 'left') {
-  @include ct-deprecation(1.5, 'ct-highlight-stripe()', 'ct-highlight-stripe-vertical()');
-  @include ct-highlight-stripe-vertical($width, $border-radius, $border-width, $position);
-}
