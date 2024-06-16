@@ -2,7 +2,7 @@ import CivicThemePagination from './pagination.twig';
 import { knobBoolean, knobNumber, knobRadios, knobText, randomId, randomName, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Molecules/Pagination',
+  title: 'Molecules/List/Pagination',
   parameters: {
     layout: 'fullscreen',
   },

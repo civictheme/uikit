@@ -4,7 +4,7 @@ import './group-filter';
 import { randomFields } from '../field/field.utils';
 
 export default {
-  title: 'Molecules/Group Filter',
+  title: 'Molecules/List/Group Filter',
   parameters: {
     layout: 'fullscreen',
   },

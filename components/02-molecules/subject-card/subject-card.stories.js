@@ -2,7 +2,7 @@ import { demoImage, knobBoolean, knobRadios, knobText, randomUrl, shouldRender, 
 import CivicThemeSubjectCard from './subject-card.twig';
 
 export default {
-  title: 'Molecules/Subject Card',
+  title: 'Molecules/List/Subject Card',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'small',

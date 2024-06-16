@@ -3,7 +3,7 @@ import { dateIsValid, demoImage, knobBoolean, knobNumber, knobRadios, knobText, 
 import CivicThemePromoCard from './promo-card.twig';
 
 export default {
-  title: 'Molecules/Promo Card',
+  title: 'Molecules/List/Promo Card',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'small',

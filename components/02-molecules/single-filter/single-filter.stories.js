@@ -3,7 +3,7 @@ import './single-filter';
 import { knobBoolean, knobNumber, knobRadios, knobText, randomName, randomString, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Molecules/Single Filter',
+  title: 'Molecules/List/Single Filter',
   parameters: {
     layout: 'fullscreen',
   },
