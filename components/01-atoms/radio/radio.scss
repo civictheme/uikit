@@ -64,6 +64,17 @@
 
       // Center the circle.
       margin: math.div($_height - $_checked-circle-height, 2) - $_checked-border-width math.div($_width, 2) - math.div($_checked-circle-width, 2) - $_checked-border-width;
+
+      @if $ct-animation-enabled and $ct-radio-animation-duration > 0 {
+        transform: scale(0);
+        animation: radio-grow $ct-radio-animation-duration forwards;
+
+        @keyframes radio-grow {
+          to {
+            transform: scale(1);
+          }
+        }
+      }
     }
   }
 
