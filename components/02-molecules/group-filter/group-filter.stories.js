@@ -34,7 +34,7 @@ export const GroupFilter = (parentKnobs = {}) => {
       parentKnobs.filter_count,
       parentKnobs.knobTab,
     ),
-    title: knobText('Filter title', 'Filter search results by:', parentKnobs.title, parentKnobs.knobTab),
+    title: knobText('Filter title', 'Filter results by:', parentKnobs.title, parentKnobs.knobTab),
     submit_text: knobText('Submit button text', 'Apply', parentKnobs.submit_text, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
@@ -45,8 +45,8 @@ export const GroupFilter = (parentKnobs = {}) => {
   if (knobs.filter_count > 0) {
     for (let i = 0; i < knobs.filter_count; i++) {
       filters.push({
-        content: randomFields(1, knobs.theme, true)[0],
         title: `Filter ${randomString(randomInt(3, 8))} ${i + 1}`,
+        content: randomFields(1, knobs.theme, true)[0],
       });
     }
   }
