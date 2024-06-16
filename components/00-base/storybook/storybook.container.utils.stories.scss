@@ -13,7 +13,6 @@
 
   // Make sure to not use margins as they will negate each other and testing
   // layouts will be giving false positives.
-  padding-top: ct-spacing(2);
   padding-bottom: ct-spacing(2);
 
   #{$root}__title {
@@ -23,6 +22,10 @@
     border-bottom: solid ct-particle(0.125);
     padding-bottom: ct-spacing(2);
     padding-top: ct-spacing(4);
+
+    &#{$root}__title--spaced {
+      margin-bottom: ct-spacing(2);
+    }
   }
 
   #{$root}__subtitle {
@@ -34,6 +37,8 @@
   }
 
   #{$root}__content {
+    @include ct-container();
+
     padding-bottom: ct-spacing(4);
   }
 

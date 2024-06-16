@@ -3,7 +3,7 @@ import './responsive';
 import '../collapsible/collapsible';
 
 export default {
-  title: 'Base/Responsive',
+  title: 'Base/Utilities/Responsive',
   parameters: {
     storyLayoutCenteredHorizontally: true,
     docs: 'Try resizing your browser window to see how components react to a breakpoint change',

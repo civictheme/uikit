@@ -2,7 +2,7 @@ import CollapsibleStoryTemplate from './collapsible.stories.twig';
 import './collapsible';
 
 export default {
-  title: 'Base/Collapsible',
+  title: 'Base/Utilities/Collapsible',
   parameters: {
     storyLayoutCenteredHorizontally: true,
   },

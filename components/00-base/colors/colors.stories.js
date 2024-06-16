@@ -3,6 +3,9 @@ import { themes } from '../storybook/storybook.generators.utils';
 
 export default {
   title: 'Base/Colors',
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 function getColorMap(name) {

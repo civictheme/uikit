@@ -8,7 +8,16 @@ const storyOrder = [
   'Base',
   [
     'Colors',
-    '*',
+    'Fonts',
+    'Typography',
+    'Icon',
+    'Background',
+    'Elevation',
+    'Grid',
+    'Layout',
+    'Spacing',
+    'Item List',
+    'Utilities',
     'Storybook',
     [
       'Overview',
@@ -35,7 +44,7 @@ export const parameters = {
     values: [
       {
         name: 'White',
-        value: '#fff',
+        value: '#ffffff',
       },
       {
         name: 'Light',
@@ -111,8 +120,16 @@ export const globalTypes = {
     toolbar: {
       icon: 'component',
       items: [
-        { value: true, title: 'Enabled', type: 'item' },
-        { value: false, title: 'Disabled', type: 'reset' },
+        {
+          value: true,
+          title: 'Enabled',
+          type: 'item',
+        },
+        {
+          value: false,
+          title: 'Disabled',
+          type: 'reset',
+        },
       ],
     },
   },

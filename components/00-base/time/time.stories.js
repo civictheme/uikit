@@ -2,7 +2,7 @@ import CivicThemeTime from './time.twig';
 import { dateIsValid, knobText, shouldRender } from '../storybook/storybook.utils';
 
 export default {
-  title: 'Base/Time',
+  title: 'Base/Utilities/Time',
   parameters: {
     layout: 'centered',
   },
