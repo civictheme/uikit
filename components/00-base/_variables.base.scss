@@ -329,9 +329,17 @@ $ct-grid-lowest-breakpoint: 'xxs' !default;
 // the Grid component.
 $ct-grid-responsive-breakpoint: 'm' !default;
 
-// Vertical or horizontal spacing between grid items depending on the responsive
+// Horizontal spacing between grid items depending on the responsive
 // context.
 $ct-grid-gutters: (
+  'xxs': $ct-grid-space * 2,
+  'xs': $ct-grid-space * 2,
+  's': $ct-grid-space * 3
+) !default;
+
+// Horizontal spacing between grid items depending on the responsive
+// context.
+$ct-grid-vertical-gutters: (
   'xxs': $ct-grid-space * 2,
   'xs': $ct-grid-space * 2,
   's': $ct-grid-space * 3

@@ -11,6 +11,7 @@
   $_template-column-color: green;
   $_auto-column-color: blue;
   $_placeholder-text-color: grey;
+  $_story-container-color: #25324d;
 
   .container,
   .container-fluid {
@@ -20,7 +21,7 @@
     .row,
     ul {
       counter-reset: story-coloumn-counter;
-      background-color: rgba($_row-color, 0.1);
+      background-color: rgba($_row-color, 0.2);
       outline: 1px solid rgba($_row-color, 0.2);
 
       // Column.
@@ -92,7 +93,7 @@
 
       // Column colors.
       > [class*='col-'] {
-        background-color: rgba($_template-column-color, 0.05);
+        background-color: rgba($_template-column-color, 0.1);
         outline: 1px solid rgba($_template-column-color, 0.5);
 
         &::after {
@@ -102,7 +103,7 @@
 
       > .col,
       > li {
-        background-color: rgba($_auto-column-color, 0.05);
+        background-color: rgba($_auto-column-color, 0.1);
         outline: 1px solid rgba($_auto-column-color, 0.5);
 
         &::after {
@@ -160,6 +161,11 @@
     .grid-story-docs-color-placeholder {
       @include _ct-story-docs-color-square($_placeholder-text-color);
     }
+  }
+
+  .story-container__title,
+  .story-container__subtitle {
+    box-shadow: 0 0 1px 1px $_story-container-color inset;
   }
 }
 
