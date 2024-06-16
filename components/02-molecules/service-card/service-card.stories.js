@@ -3,7 +3,7 @@ import { knobNumber, knobRadios, knobText, randomLinks, shouldRender, slotKnobs 
 import CivicThemeServiceCard from './service-card.twig';
 
 export default {
-  title: 'Molecules/Service Card',
+  title: 'Molecules/List/Service Card',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'small',

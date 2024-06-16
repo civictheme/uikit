@@ -2,7 +2,7 @@ import CivicThemeNavigationCard from './navigation-card.twig';
 import { demoImage, knobBoolean, knobRadios, knobSelect, knobText, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Molecules/Navigation Card',
+  title: 'Molecules/List/Navigation Card',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'medium',

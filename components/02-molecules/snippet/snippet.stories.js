@@ -3,7 +3,7 @@ import { knobBoolean, knobNumber, knobRadios, knobText, randomInt, randomSentenc
 import CivicThemeSummary from './snippet.twig';
 
 export default {
-  title: 'Molecules/Snippet',
+  title: 'Molecules/List/Snippet',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'large',

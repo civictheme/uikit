@@ -3,7 +3,7 @@ import { dateIsValid, demoImage, knobBoolean, knobNumber, knobRadios, knobText, 
 import CivicThemeEventCard from './event-card.twig';
 
 export default {
-  title: 'Molecules/Event Card',
+  title: 'Molecules/List/Event Card',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'small',

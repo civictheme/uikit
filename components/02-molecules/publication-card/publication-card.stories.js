@@ -2,7 +2,7 @@ import CivicThemePublicationCard from './publication-card.twig';
 import { convertDate, demoImage, knobBoolean, knobRadios, knobText, randomSentence, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Molecules/Publication Card',
+  title: 'Molecules/List/Publication Card',
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'medium',
