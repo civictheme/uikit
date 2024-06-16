@@ -30,6 +30,7 @@
           border: 0;
           display: flex;
           flex-wrap: nowrap;
+          flex-direction: column;
           justify-content: stretch;
 
           &:first-of-type::after {
@@ -97,7 +98,7 @@
     caption-side: bottom;
 
     caption {
-      @include ct-typography('text-regular');
+      @include ct-typography('text-small');
     }
   }
 }
