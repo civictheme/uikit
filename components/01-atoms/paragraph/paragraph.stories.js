@@ -1,10 +1,11 @@
 import CivicThemeParagraph from './paragraph.twig';
-import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { knobBoolean, knobRadios, knobText, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Paragraph',
   parameters: {
     layout: 'centered',
+    storyLayoutSize: 'medium',
     knobs: {
       escapeHTML: false,
     },
@@ -23,7 +24,7 @@ export const Paragraph = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    content: knobText('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', parentKnobs.content, parentKnobs.knobTab),
+    content: knobText('Content', randomSentence(50, 'paragraph-content'), parentKnobs.content, parentKnobs.knobTab),
     size: knobRadios(
       'Size',
       {
