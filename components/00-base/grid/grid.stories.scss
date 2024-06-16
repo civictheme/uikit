@@ -6,12 +6,14 @@
 
 .story-grid-outlines {
   $_container-color: red;
+  $_fluid-container-color: purple;
   $_row-color: orange;
   $_template-column-color: green;
   $_auto-column-color: blue;
   $_placeholder-text-color: grey;
 
-  .container {
+  .container,
+  .container-fluid {
     background-color: rgba($_container-color, 0.025);
     box-shadow: 0 0 1px 1px $_container-color inset;
 
@@ -110,6 +112,11 @@
     }
   }
 
+  .container-fluid {
+    background-color: rgba($_fluid-container-color, 0.025);
+    box-shadow: 0 0 1px 1px $_fluid-container-color inset;
+  }
+
   &.grid-story-docs {
     row-gap: 1em;
 
@@ -130,8 +137,12 @@
       }
     }
 
-    .grid-story-docs-color-container {
+    .grid-story-docs-color-container-contained {
       @include _ct-story-docs-color-square($_container-color);
+    }
+
+    .grid-story-docs-color-container-fluid {
+      @include _ct-story-docs-color-square($_fluid-container-color);
     }
 
     .grid-story-docs-color-row {

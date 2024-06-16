@@ -11,9 +11,11 @@ exports[`Grid renders correctly {
   
 
 
-			
-
 		
+
+	
+					
+
 			
   <div
     class="row  custom-modifier"
@@ -45,12 +47,14 @@ exports[`Grid renders correctly {
   
 
 
-			
-
 		
+
+	
+		
+
 			
   <div
-    class="row  "
+    class="row"
   >
     
 												
@@ -87,12 +91,14 @@ exports[`Grid renders correctly {
   
 
 
-			
-
 		
+
+	
+		
+
 			
   <div
-    class="row  "
+    class="row"
   >
     
 												
@@ -121,12 +127,14 @@ exports[`Grid renders correctly {
   
 
 
-			
-
 		
+	
+	
+		
+
 			
   <div
-    class="row container--fill-width "
+    class="row row--fill-width"
   >
     
 												
@@ -165,12 +173,14 @@ exports[`Grid renders correctly {
   
 
 
-			
-
 		
+
+	
+		
+
 			
   <div
-    class="row custom-row  "
+    class="row custom-row"
   >
     
 												
@@ -200,12 +210,14 @@ exports[`Grid renders correctly {
   
 
 
-			
-
 		
+
+	
+		
+
 			
   <section
-    class="row  "
+    class="row"
   >
     
 												
@@ -245,10 +257,12 @@ exports[`Grid renders correctly {
 
 			
 
+	
 		
+
 			
   <div
-    class="row  "
+    class="row"
   >
     
 												
@@ -296,13 +310,14 @@ exports[`Grid renders correctly {
   
 
 
-			
+		
 
+	
 
 		
   <div
     aria-live="polite"
-    class="container  custom-modifier"
+    class="container custom-modifier"
     data-test="true"
   >
     
@@ -339,13 +354,14 @@ exports[`Grid renders correctly {
   
 
 
-			
+		
 
+	
 
 		
   <div
     aria-live="polite"
-    class="container  "
+    class="container"
   >
     
 			
@@ -391,13 +407,67 @@ exports[`Grid renders correctly {
   
 
 
-			
-
+		
+	
+	
 
 		
   <div
     aria-live="polite"
-    class="container container--fill-width "
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+																
+      <div
+        class="col"
+      >
+        
+						2
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  is_fluid: true,
+  description: 'multiple items with fluid container'
+} 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container-fluid"
   >
     
 			
@@ -444,13 +514,14 @@ exports[`Grid renders correctly {
   
 
 
-			
+		
 
+	
 
 		
   <div
     aria-live="polite"
-    class="container  "
+    class="container"
   >
     
 			
@@ -488,13 +559,14 @@ exports[`Grid renders correctly {
   
 
 
-			
+		
 
+	
 
 		
   <div
     aria-live="polite"
-    class="container  "
+    class="container"
   >
     
 			
@@ -542,11 +614,75 @@ exports[`Grid renders correctly {
 
 			
 
+	
 
 		
   <div
     aria-live="polite"
-    class="container  "
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-4"
+      >
+        
+						1
+					
+      </div>
+      
+																
+      <div
+        class="col-xxs-12 col-m-4"
+      >
+        
+						2
+					
+      </div>
+      
+																
+      <div
+        class="col-xxs-12 col-m-4"
+      >
+        
+						3
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid renders correctly {
+  items: [Array],
+  use_container: true,
+  template_column_count: 3,
+  is_fluid: true,
+  description: 'column count with fluid container'
+} 1`] = `
+<div>
+  
+
+
+			
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container-fluid"
   >
     
 			
@@ -596,13 +732,14 @@ exports[`Grid renders correctly { items: [Array], use_container: true, descripti
   
 
 
-			
+		
 
+	
 
 		
   <div
     aria-live="polite"
-    class="container  "
+    class="container"
   >
     
 			

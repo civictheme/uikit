@@ -12,6 +12,42 @@
 @use 'sass:math';
 @use 'sass:map';
 
+//
+// Container class should wrap every row.
+//
+@mixin ct-container($contained: true) {
+  margin: 0 auto;
+
+  @if $contained {
+    // Support super-narrow screens as well.
+    $_width: map.get($ct-grid-offsets, xs) * 2;
+
+    // Use vw instead of % so it calculates on viewport and not parent container.
+    max-width: calc(100vw - #{$_width});
+
+    // Set width for container at each breakpoint accounting for offsets at this
+    // breakpoint.
+    @each $bp, $value in $ct-breakpoints {
+      @include ct-breakpoint($bp) {
+        max-width: map.get($ct-breakpoints, $bp) - (map.get($ct-grid-offsets, $bp) * 2);
+      }
+    }
+  }
+  @else {
+    width: 100%;
+
+    // Reset negative row margins which are used to offset column margins.
+    .row {
+      @each $bp, $value in $ct-breakpoints {
+        @include ct-breakpoint($bp) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
 @mixin ct-row($gutters: $ct-grid-gutters) {
   margin-left: auto;
   margin-right: auto;
@@ -22,7 +58,7 @@
   padding-inline-start: 0;
   list-style: none;
 
-  @include _ct-print-all-gutters($gutters, margin);
+  @include _ct-print-all-gutters($rule-prefix: margin);
 }
 
 @mixin ct-flex-align-right() {
@@ -150,27 +186,6 @@
 //
 @mixin ct-col-offset($column_num) {
   margin-left: math.div(100%, $ct-grid-columns) * $column_num;
-}
-
-//
-// Container class should wrap every row.
-//
-@mixin ct-container() {
-  margin: 0 auto;
-
-  // Support super-narrow screens as well.
-  $width: map.get($ct-grid-offsets, xs) * 2;
-
-  // Use vw instead of % so it calculates on viewport and not parent container.
-  max-width: calc(100vw - #{$width});
-
-  // Set width for container at each breakpoint accounting for offsets at this
-  // breakpoint.
-  @each $bp, $value in $ct-breakpoints {
-    @include ct-breakpoint($bp) {
-      max-width: map.get($ct-breakpoints, $bp) - (map.get($ct-grid-offsets, $bp) * 2);
-    }
-  }
 }
 
 //

@@ -4,38 +4,13 @@
 
 @use 'sass:map';
 
-//
-// Max width container class to limit the width of the fluid containers at max width.
-//
-.container-max-width {
-  @include ct-breakpoint(xxl) {
-    width: $ct-grid-max-width;
-    margin: 0 auto;
-  }
-}
-
-//
-// Offset container class to add offset on small screens.
-//
-.container-offset-xs {
-  @include ct-breakpoint-upto(m) {
-    padding-left: map.get($ct-grid-offsets, 'xxs');
-    padding-right: map.get($ct-grid-offsets, 'xxs');
-    width: auto;
-  }
-}
-
 // Container class should wrap every row.
 .container {
   @include ct-container();
+}
 
-  &--fill-width {
-    > .col,
-    > [class*='col-'] {
-      max-width: 100%;
-      flex-grow: 1;
-    }
-  }
+.container-fluid {
+  @include ct-container(false);
 }
 
 .row {
@@ -52,6 +27,14 @@
     > [class*='col-'] {
       flex-grow: initial;
       flex-basis: auto;
+    }
+  }
+
+  &#{$root}--fill-width {
+    > .col,
+    > [class*='col-'] {
+      max-width: 100%;
+      flex-grow: 1;
     }
   }
 

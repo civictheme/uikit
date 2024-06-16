@@ -324,10 +324,6 @@ $ct-grid-space: ct-particle-px() !default;
 // The lowest breakpoint where column classes should start applying.
 $ct-grid-lowest-breakpoint: 'xxs' !default;
 
-// The width of the fluid container at max width. Used to contain fluid
-// containers on wide screens. Set to 'auto' to keep fluid.
-$ct-grid-max-width: map.get($ct-breakpoints, $ct-grid-lowest-breakpoint) !default;
-
 // The lowest breakpoint where *responsive* grid classes should start applying.
 // Must align with the value in the auto-generated column_class in
 // the Grid component.
