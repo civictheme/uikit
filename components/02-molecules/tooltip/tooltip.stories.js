@@ -3,7 +3,7 @@ import CivicThemeTooltip from './tooltip.twig';
 import './tooltip';
 
 import '../../00-base/collapsible/collapsible';
-import { knobRadios, knobSelect, knobText, randomText, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobSelect, knobText, randomText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Tooltip',

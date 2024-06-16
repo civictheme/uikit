@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import CivicThemeMap from './map.twig';
 
 export default {
@@ -42,7 +42,7 @@ export const Map = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeMap({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

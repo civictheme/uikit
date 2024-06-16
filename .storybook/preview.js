@@ -1,4 +1,4 @@
-import { decoratorDocs, decoratorStoryLayout } from '../components/00-base/base.utils';
+import { decoratorDocs, decoratorStoryLayout } from '../components/00-base/storybook/storybook.utils';
 
 require('twig');
 
@@ -9,6 +9,11 @@ const storyOrder = [
   [
     'Colors',
     '*',
+    'Storybook',
+    [
+      'Overview',
+      '*',
+    ],
   ],
   '*',
 ];

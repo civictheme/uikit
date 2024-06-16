@@ -1,4 +1,4 @@
-import { generateSlots, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobSelect, knobText, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import getMenuLinks from '../../00-base/menu/menu.utils';
 import CivicThemeMobileNavigation from './mobile-navigation.twig';
 import CivicThemeMobileNavigationTrigger from './mobile-navigation-trigger.twig';
@@ -10,6 +10,7 @@ export default {
     storyLayoutSize: 'small',
     storyLayoutClass: 'story-container__page-content story-ct-mobile-navigation',
     docs: 'Click on the mobile navigation trigger in the top left to open Mobile Navigation panel.',
+    docsPlacement: 'after',
   },
 };
 
@@ -55,7 +56,7 @@ export const MobileNavigation = (parentKnobs = {}) => {
     top_menu: knobs.top_menu,
     bottom_menu: knobs.bottom_menu,
     content_bottom: knobs.content_bottom,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

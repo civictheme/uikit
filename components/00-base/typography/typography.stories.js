@@ -5,7 +5,6 @@ export default {
   parameters: {
     docs: 'Demonstration of typography rules defined in the design system.<br/>For fully styled content, see <code>Basic&nbsp;content</code> component.',
     docsSize: 'medium',
-    docsPlacement: 'before',
   },
 };
 

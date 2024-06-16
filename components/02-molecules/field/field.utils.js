@@ -1,4 +1,4 @@
-import { KnobValues, randomArrayItem } from '../../00-base/base.utils';
+import { KnobValues, randomArrayItem } from '../../00-base/storybook/storybook.utils';
 import { Field } from './field.stories';
 
 export const randomFields = (count, theme, rand, defaultInputType) => {

@@ -1,4 +1,4 @@
-import { generateImage, generateSlots, knobBoolean, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { demoImage, knobBoolean, knobRadios, knobText, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import CivicThemeSubjectCard from './subject-card.twig';
 
 export default {
@@ -28,7 +28,7 @@ export const SubjectCard = (parentKnobs = {}) => {
       is_new_window: knobBoolean('Open in a new window', false, parentKnobs.link_is_new_window, parentKnobs.knobTab),
     },
     image: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? {
-      url: generateImage(),
+      url: demoImage(),
       alt: 'Image alt text',
     } : false,
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
@@ -37,7 +37,7 @@ export const SubjectCard = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeSubjectCard({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'image_over',
     ]),
   }) : knobs;

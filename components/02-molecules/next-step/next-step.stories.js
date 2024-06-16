@@ -1,5 +1,5 @@
 import CivicThemeNextSteps from './next-step.twig';
-import { generateSlots, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Next Steps',
@@ -43,7 +43,7 @@ export const NextSteps = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeNextSteps({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

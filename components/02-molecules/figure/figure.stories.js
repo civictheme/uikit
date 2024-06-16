@@ -1,5 +1,5 @@
 import CivicThemeFigure from './figure.twig';
-import { generateImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { demoImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Figure',
@@ -20,7 +20,7 @@ export const Figure = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    url: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? generateImage() : false,
+    url: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? demoImage() : false,
     alt: knobText('Image alt text', 'Alternative text', parentKnobs.alt, parentKnobs.knobTab),
     width: knobText('Width', '600', parentKnobs.width, parentKnobs.knobTab),
     height: knobText('Height', '', parentKnobs.height, parentKnobs.knobTab),

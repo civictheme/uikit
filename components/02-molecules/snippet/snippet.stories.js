@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomInt, randomSentence, randomTags, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomInt, randomSentence, randomTags, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemeSummary from './snippet.twig';
 
@@ -47,7 +47,7 @@ export const Snippet = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeSummary({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_middle',
       'content_bottom',

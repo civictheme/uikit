@@ -1,13 +1,12 @@
 import CivicThemeGrid from './grid.twig';
-import { code, generateItems, knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomSentence, shouldRender } from '../base.utils';
+import { code, generateItems, knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomSentence, shouldRender } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Grid',
   parameters: {
     layout: 'fullscreen',
     docs: '<div class="grid-story-docs story-grid-outlines row row--no-grow"><strong>Outline colors: </strong><span class="col grid-story-docs-color-container-contained">Contained container</span><span class="col grid-story-docs-color-container-fluid">Fluid container</span><span class="col grid-story-docs-color-row">Row</span><span class="col grid-story-docs-color-template-column">Template column</span><span class="col grid-story-docs-color-auto-column">Auto column</span><span class="col grid-story-docs-color-placeholder">Placeholder</span></div>',
-    docsSize: 'medium',
-    docsPlacement: 'before',
+    docsClass: 'story-docs--conditional',
   },
 };
 

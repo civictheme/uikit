@@ -1,5 +1,5 @@
 import CivicThemeFieldDescription from './field-description.twig';
-import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Form Controls/Field Description',

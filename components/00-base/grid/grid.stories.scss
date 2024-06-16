@@ -163,13 +163,4 @@
   }
 }
 
-#root {
-  > .story-docs {
-    &.story-docs-size--medium {
-      width: fit-content;
-      max-width: 100%;
-    }
-  }
-}
-
 @include ct-story-docs-conditional('.story-grid-outlines');

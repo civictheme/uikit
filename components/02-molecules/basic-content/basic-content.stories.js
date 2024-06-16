@@ -4,7 +4,7 @@ import CivicThemeButton from '../../01-atoms/button/button.twig';
 import CivicThemeTable from '../../01-atoms/table/table.twig';
 import CivicThemeFigure from '../figure/figure.twig';
 import CivicThemeVideoPlayer from '../video-player/video-player.twig';
-import { generateImage, generateVideoPoster, generateVideos, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { demoImage, demoVideoPoster, demoVideos, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Basic Content',
@@ -125,7 +125,7 @@ export const BasicContent = (parentKnobs = {}) => {
   // Image.
   html += CivicThemeFigure({
     theme,
-    url: generateImage(),
+    url: demoImage(),
     alt: 'Occaecat laborum voluptate cupidatat.',
     caption: 'Commodo anim sint minim.',
   });
@@ -133,8 +133,8 @@ export const BasicContent = (parentKnobs = {}) => {
   // Video Player.
   html += CivicThemeVideoPlayer({
     theme,
-    sources: generateVideos(),
-    poster: generateVideoPoster(),
+    sources: demoVideos(),
+    poster: demoVideoPoster(),
   });
 
   // Table.

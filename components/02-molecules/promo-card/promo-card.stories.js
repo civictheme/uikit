@@ -1,4 +1,4 @@
-import { dateIsValid, generateImage, generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomSentence, randomTags, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { dateIsValid, demoImage, knobBoolean, knobNumber, knobRadios, knobText, randomSentence, randomTags, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemePromoCard from './promo-card.twig';
 
@@ -33,7 +33,7 @@ export const PromoCard = (parentKnobs = {}) => {
       is_new_window: knobBoolean('Open in a new window', false, parentKnobs.link_is_new_window, parentKnobs.knobTab),
     },
     image: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? {
-      url: generateImage(),
+      url: demoImage(),
       alt: 'Image alt text',
     } : false,
     tags: randomTags(knobNumber(
@@ -57,7 +57,7 @@ export const PromoCard = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemePromoCard({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'image_over',
       'content_top',
       'content_middle',

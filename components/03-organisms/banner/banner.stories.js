@@ -1,4 +1,4 @@
-import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, KnobValues, objectFromArray, randomSentence, shouldRender } from '../../00-base/base.utils';
+import { demoImage, knobBoolean, knobRadios, knobSelect, knobText, KnobValue, KnobValues, objectFromArray, randomSentence, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import { Breadcrumb } from '../../02-molecules/breadcrumb/breadcrumb.stories';
 import CivicThemeBanner from './banner.twig';
 import CivicThemeParagraph from '../../01-atoms/paragraph/paragraph.twig';
@@ -66,7 +66,7 @@ export const Banner = (parentKnobs = {}) => {
 
   if (knobs.show_featured_image) {
     props.featured_image = {
-      url: generateImage(0),
+      url: demoImage(0),
       alt: 'Featured image alt text',
     };
   }
@@ -127,7 +127,7 @@ export const Banner = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeBanner({
     ...props,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top1',
       'content_top2',
       'content_top3',

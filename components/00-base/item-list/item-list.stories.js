@@ -1,5 +1,5 @@
 import CivicThemeItemList from './item-list.twig';
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomSentence, shouldRender } from '../base.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomSentence, shouldRender } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Item List',

@@ -1,5 +1,5 @@
 import merge from 'deepmerge';
-import { capitalizeFirstLetter, cleanCssIdentifier } from '../base.utils';
+import { capitalizeFirstLetter, cleanCssIdentifier } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Fonts',

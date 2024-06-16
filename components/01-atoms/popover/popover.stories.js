@@ -1,5 +1,5 @@
 import CivicThemePopover from './popover.twig';
-import { generateSlots, knobRadios, knobText, placeholder, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobText, placeholder, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Popover',
@@ -31,7 +31,7 @@ export const Popover = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemePopover({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

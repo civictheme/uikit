@@ -1,4 +1,4 @@
-import { generateSlots, knobNumber, knobRadios, knobText, randomLinks, shouldRender } from '../../00-base/base.utils';
+import { knobNumber, knobRadios, knobText, randomLinks, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemeServiceCard from './service-card.twig';
 
@@ -41,7 +41,7 @@ export const ServiceCard = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeServiceCard({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

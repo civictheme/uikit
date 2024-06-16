@@ -1,5 +1,5 @@
 import CivicThemeLabel from './label.twig';
-import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Form Controls/Label',

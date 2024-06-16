@@ -1,4 +1,4 @@
-import { convertDate, generateSlots, knobBoolean, knobRadios, knobText, randomSentence, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { convertDate, knobBoolean, knobRadios, knobText, randomSentence, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import CivicThemeAttachment from './attachment.twig';
 
 export default {
@@ -124,7 +124,7 @@ export const Attachment = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeAttachment({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

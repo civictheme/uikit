@@ -1,4 +1,4 @@
-import { generateImage, knobBoolean, knobNumber, knobRadios, knobText, randomBool, randomFutureDate, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { demoImage, knobBoolean, knobNumber, knobRadios, knobText, randomBool, randomFutureDate, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
@@ -267,7 +267,7 @@ export const List = (parentKnobs = {}) => {
             is_external: randomBool(0.8),
           },
           image: itemWithImage ? {
-            url: generateImage(),
+            url: demoImage(),
             alt: 'Image alt text',
           } : false,
           size: 'large',

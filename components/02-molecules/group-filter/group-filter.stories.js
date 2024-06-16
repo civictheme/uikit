@@ -1,4 +1,4 @@
-import { generateSlots, knobNumber, knobRadios, knobText, randomInt, randomString, shouldRender } from '../../00-base/base.utils';
+import { knobNumber, knobRadios, knobText, randomInt, randomString, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import CivicThemeGroupFilter from './group-filter.twig';
 import './group-filter';
 import { randomFields } from '../field/field.utils';
@@ -55,7 +55,7 @@ export const GroupFilter = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeGroupFilter({
     ...combinedKnobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

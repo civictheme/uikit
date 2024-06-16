@@ -1,4 +1,4 @@
-import { convertDate, generateImage, generateSlots, knobDate, knobNumber, knobRadios, knobText, randomLinks, randomSentence, randomTags, shouldRender } from '../../00-base/base.utils';
+import { convertDate, demoImage, knobDate, knobNumber, knobRadios, knobText, randomLinks, randomSentence, randomTags, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemeCampaign from './campaign.twig';
 
@@ -25,7 +25,7 @@ export const Campaign = (parentKnobs = {}) => {
     content: knobText('Content', randomSentence(), parentKnobs.content, parentKnobs.knobTab),
     date: knobDate('Date', new Date(), parentKnobs.date, parentKnobs.knobTab),
     image: {
-      url: generateImage(),
+      url: demoImage(),
       alt: 'Image alt text',
     },
     image_position: knobRadios(
@@ -82,7 +82,7 @@ export const Campaign = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeCampaign({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_middle',
       'content_bottom',

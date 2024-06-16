@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, knobSelect, knobText, shouldRender, KnobValues } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobSelect, knobText, KnobValues, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import CivicThemeFooter from './footer.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
@@ -90,7 +90,7 @@ export const Footer = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeFooter({
     ...props,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top1',
       'content_top2',
       'content_middle1',

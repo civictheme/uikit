@@ -1,6 +1,6 @@
 import CivicThemeButton from './button.twig';
 import './button';
-import { knobBoolean, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Button',

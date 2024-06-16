@@ -1,5 +1,5 @@
 import CivicThemeNavigationCard from './navigation-card.twig';
-import { generateImage, generateSlots, knobBoolean, knobRadios, knobSelect, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { demoImage, knobBoolean, knobRadios, knobSelect, knobText, randomUrl, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Navigation Card',
@@ -31,7 +31,7 @@ export const NavigationCard = (parentKnobs = {}) => {
       is_new_window: knobBoolean('Open in a new window', false, parentKnobs.link_is_new_window, parentKnobs.knobTab),
     } : null,
     image: knobBoolean('With image', true, parentKnobs.with_image, parentKnobs.knobTab) ? {
-      url: generateImage(),
+      url: demoImage(),
       alt: 'Image alt text',
     } : null,
     image_as_icon: knobBoolean('Image as icon', false, parentKnobs.image_as_icon, parentKnobs.knobTab),
@@ -49,7 +49,7 @@ export const NavigationCard = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeNavigationCard({
     ...combinedKnobs,
-    ...generateSlots([
+    ...slotKnobs([
       'image_over',
       'content_top',
       'content_middle',

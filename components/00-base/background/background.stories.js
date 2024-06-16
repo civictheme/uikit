@@ -1,4 +1,4 @@
-import { knobColor, knobSelect, objectFromArray, shouldRender } from '../base.utils';
+import { knobColor, knobSelect, objectFromArray, shouldRender } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Background',

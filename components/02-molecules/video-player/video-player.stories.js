@@ -1,5 +1,5 @@
 import CivicThemeVideo from './video-player.twig';
-import { generateVideoPoster, generateVideos, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { demoVideoPoster, demoVideos, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Video Player',
@@ -33,9 +33,9 @@ export const VideoPlayer = (parentKnobs = {}) => {
   const sourceKnobs = {};
   const sourceKnobTab = 'Source';
   if (knobs.source_type === 'file') {
-    sourceKnobs.sources = knobBoolean('With sources', true, parentKnobs.with_source, sourceKnobTab) ? generateVideos() : null;
+    sourceKnobs.sources = knobBoolean('With sources', true, parentKnobs.with_source, sourceKnobTab) ? demoVideos() : null;
     if (sourceKnobs.sources) {
-      sourceKnobs.poster = knobBoolean('With poster', true, parentKnobs.with_poster, sourceKnobTab) ? generateVideoPoster() : null;
+      sourceKnobs.poster = knobBoolean('With poster', true, parentKnobs.with_poster, sourceKnobTab) ? demoVideoPoster() : null;
     }
   } else if (knobs.source_type === 'embedded') {
     sourceKnobs.embedded_source = knobText('Embedded source', 'https://www.youtube.com/embed/C0DPdy98e4c', parentKnobs.embedded_source, sourceKnobTab);

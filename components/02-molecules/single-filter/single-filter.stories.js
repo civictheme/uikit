@@ -1,6 +1,6 @@
 import CivicThemeSingleFilter from './single-filter.twig';
 import './single-filter';
-import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomName, randomString, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomName, randomString, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Single Filter',
@@ -70,7 +70,7 @@ export const SingleFilter = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeSingleFilter({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),
