@@ -2,6 +2,7 @@
 // Item List component.
 //
 
+@use 'sass:math';
 @import '../mixins/reset';
 
 .ct-item-list {
@@ -13,9 +14,9 @@
 
   &#{$root}--horizontal {
     display: flex;
+    flex-wrap: wrap;
     column-gap: $ct-item-list-horizontal-regular-column-gap;
     row-gap: $ct-item-list-horizontal-regular-row-gap;
-    flex-wrap: wrap;
 
     &#{$root}--small {
       column-gap: $ct-item-list-horizontal-small-column-gap;
@@ -23,8 +24,13 @@
     }
 
     &#{$root}--large {
-      column-gap: $ct-item-list-horizontal-large-column-gap;
-      row-gap: $ct-item-list-horizontal-large-row-gap;
+      column-gap: math.div($ct-item-list-horizontal-large-column-gap, 2);
+      row-gap: math.div($ct-item-list-horizontal-large-row-gap, 2);
+
+      @include ct-breakpoint($ct-grid-responsive-breakpoint) {
+        column-gap: $ct-item-list-horizontal-large-column-gap;
+        row-gap: $ct-item-list-horizontal-large-row-gap;
+      }
     }
 
     &#{$root}--no-gap {
@@ -44,8 +50,13 @@
     }
 
     &#{$root}--large {
-      column-gap: $ct-item-list-vertical-large-column-gap;
-      row-gap: $ct-item-list-vertical-large-row-gap;
+      column-gap: math.div($ct-item-list-vertical-large-column-gap, 2);
+      row-gap: math.div($ct-item-list-vertical-large-row-gap, 2);
+
+      @include ct-breakpoint($ct-grid-responsive-breakpoint) {
+        column-gap: $ct-item-list-vertical-large-column-gap;
+        row-gap: $ct-item-list-vertical-large-row-gap;
+      }
     }
 
     &#{$root}--no-gap {
