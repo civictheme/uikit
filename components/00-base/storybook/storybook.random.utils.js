@@ -19,10 +19,7 @@ export const randomInt = (min = 1, max = 100) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-export const randomId = (() => {
-  let id = 0;
-  return () => ++id;
-})();
+export const randomId = (prefix = '') => `random-id-${prefix.length > 0 ? `${prefix}-` : ''}${randomInt(10000, 99999)}`;
 
 export const randomArrayItem = (array) => array[Math.floor(Math.random() * array.length)];
 
