@@ -4,7 +4,8 @@ import './collapsible';
 export default {
   title: 'Base/Utilities/Collapsible',
   parameters: {
-    storyLayoutCenteredHorizontally: true,
+    layout: 'centered',
+    storyLayoutSize: 'medium',
   },
 };
 

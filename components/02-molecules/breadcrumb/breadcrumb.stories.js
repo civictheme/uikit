@@ -3,6 +3,9 @@ import { knobBoolean, knobNumber, knobRadios, knobText, randomLinks, shouldRende
 
 export default {
   title: 'Molecules/Breadcrumb',
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export const Breadcrumb = (parentKnobs = {}) => {

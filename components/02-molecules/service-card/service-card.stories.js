@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/List/Service Card',
   parameters: {
     layout: 'centered',
-    storyLayoutSize: 'small',
+    storyLayoutSize: 'medium',
   },
 };
 

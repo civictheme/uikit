@@ -13,37 +13,33 @@
 
   // Make sure to not use margins as they will negate each other and testing
   // layouts will be giving false positives.
-  padding-bottom: ct-spacing(2);
+  margin-bottom: ct-spacing(2);
 
   #{$root}__title {
     @include ct-typography('label-large');
     @include ct-container();
 
     border-bottom: solid ct-particle(0.125);
-    padding-bottom: ct-spacing(2);
-    padding-top: ct-spacing(4);
-
-    &#{$root}__title--spaced {
-      margin-bottom: ct-spacing(2);
-    }
+    margin-bottom: ct-spacing(2);
+    margin-top: ct-spacing(4);
   }
 
   #{$root}__subtitle {
     @include ct-typography('label-regular');
     @include ct-container();
 
-    padding-top: ct-spacing(3);
-    padding-bottom: ct-spacing(2);
+    margin-top: ct-spacing(3);
+    margin-bottom: ct-spacing(2);
   }
 
   #{$root}__content {
     @include ct-container();
 
-    padding-bottom: ct-spacing(4);
+    margin-bottom: ct-spacing(4);
   }
 
   #{$root}__subcontent {
-    padding-bottom: ct-spacing(4);
+    margin-bottom: ct-spacing(4);
   }
 
   &#{$root}--columns {
