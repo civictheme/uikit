@@ -227,7 +227,7 @@
   outline-width: $ct-button-outline-width;
 
   @if $ct-animation-enabled {
-    transition: all $ct-animation-duration ease;
+    transition: all $ct-button-animation-duration ease;
   }
 
   &:focus-visible,
