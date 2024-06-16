@@ -133,7 +133,7 @@ export const List = (parentKnobs = {}) => {
 
       const filterKnobs = {
         theme: knobs.theme,
-        title: 'Filter search results by:',
+        title: 'Filter results by:',
         filters,
       };
 
