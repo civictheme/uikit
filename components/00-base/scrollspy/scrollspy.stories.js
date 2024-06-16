@@ -1,7 +1,7 @@
 import './scrollspy';
 
 export default {
-  title: 'Base/Scrollspy',
+  title: 'Base/Utilities/Scrollspy',
   parameters: {
     layout: 'fullscreen',
     docs: 'Scroll the viewport to see elements appear when it reaches a specific pixel threshold.',

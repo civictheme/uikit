@@ -3,7 +3,7 @@ import './button';
 import { knobBoolean, knobRadios, knobSelect, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Atoms/Form Controls/Button',
   parameters: {
     layout: 'centered',
   },

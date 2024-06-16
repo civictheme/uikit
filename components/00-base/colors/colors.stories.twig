@@ -10,7 +10,7 @@
     <div class="story-container__column story-container__column--{{ theme }}">
       {% for section_title, section_colors in theme_section %}
 
-        <div class="story-container__title">{{ section_title }}</div>
+        <div class="story-container__title story-container__title--spaced">{{ section_title }}</div>
 
         {% for section_name, colors in section_colors %}
           <div class="story-container">

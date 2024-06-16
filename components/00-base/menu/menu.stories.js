@@ -3,7 +3,7 @@ import getMenuLinks from './menu.utils';
 import { knobRadios, knobText, shouldRender } from '../storybook/storybook.utils';
 
 export default {
-  title: 'Base/Menu Generator',
+  title: 'Base/Utilities/Menu Generator',
   parameters: {
     layout: 'centered',
   },

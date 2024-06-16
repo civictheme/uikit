@@ -15,6 +15,7 @@
     margin: ct-spacing(4) auto;
     max-width: 60%;
     text-align: center;
+    line-height: 150%;
 
     &.story-docs-size--small {
       max-width: map.get($ct-breakpoints, 'xs');
