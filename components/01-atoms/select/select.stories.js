@@ -5,9 +5,7 @@ export default {
   title: 'Atoms/Form Controls/Select',
   parameters: {
     layout: 'centered',
-    storyLayoutIsContainer: true,
-    storyLayoutIsResizable: true,
-    storyLayoutSize: 'medium',
+    storyLayoutSize: 'small',
   },
 };
 

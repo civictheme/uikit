@@ -8,6 +8,9 @@ export default {
     storyLayoutSize: 'medium',
     storyLayoutIsContainer: true,
     storyLayoutIsResizable: true,
+    docs: 'This component adapts to the width of its container instead of the viewport. Use the toolbar button to enable container resizing.',
+    docsPlacement: 'after',
+    docsSize: 'small',
   },
 };
 
