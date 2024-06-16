@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Publication Card',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'medium',
+    storyLayoutSize: 'medium',
   },
 };
 

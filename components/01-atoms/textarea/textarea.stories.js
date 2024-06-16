@@ -5,9 +5,9 @@ export default {
   title: 'Atoms/Form Controls/Textarea',
   parameters: {
     layout: 'centered',
-    wrapperIsContainer: true,
-    wrapperIsResizable: true,
-    wrapperSize: 'medium',
+    storyLayoutIsContainer: true,
+    storyLayoutIsResizable: true,
+    storyLayoutSize: 'medium',
   },
 };
 

@@ -1,4 +1,4 @@
-import { decoratorDocs, decoratorStoryWrapper } from '../components/00-base/base.utils';
+import { decoratorDocs, decoratorStoryLayout } from '../components/00-base/base.utils';
 
 require('twig');
 
@@ -96,7 +96,7 @@ export const parameters = {
   },
 };
 
-export const decorators = [decoratorStoryWrapper, decoratorDocs];
+export const decorators = [decoratorStoryLayout, decoratorDocs];
 
 export const globalTypes = {
   resizer: {

@@ -5,8 +5,8 @@ export default {
   title: 'Base/Fonts',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'large',
-    wrapperCenteredHorizontally: true,
+    storyLayoutSize: 'large',
+    storyLayoutCenteredHorizontally: true,
   },
 };
 

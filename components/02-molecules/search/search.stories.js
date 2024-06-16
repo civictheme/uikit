@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Search',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'large',
+    storyLayoutSize: 'large',
   },
 };
 

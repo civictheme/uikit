@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Subject Card',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'small',
+    storyLayoutSize: 'small',
   },
 };
 

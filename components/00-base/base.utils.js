@@ -114,10 +114,12 @@ export const randomText = (words, seed = null) => {
   return lorem.generateWords(words);
 };
 
-export const randomString = (length, seed = null) => randomText(length, seed).substring(0, length)
+export const randomString = (length, seed = null) => randomText(length, seed)
+  .substring(0, length)
   .trim();
 
-export const randomName = (length = 8, seed = null) => randomText(length, seed).replace(' ', '')
+export const randomName = (length = 8, seed = null) => randomText(length, seed)
+  .replace(' ', '')
   .substring(0, length).trim();
 
 export const randomSentence = (words, seed = null) => {
@@ -497,33 +499,33 @@ export const shouldRender = (parentKnobs) => {
 // DECORATORS
 // =============================================================================
 
-export const decoratorStoryWrapper = (content, context) => {
+export const decoratorStoryLayout = (content, context) => {
   const shouldWrap = Object.keys(context.parameters)
-    .some((key) => key.startsWith('wrapper'));
+    .some((key) => key.startsWith('storyLayout'));
 
   if (!shouldWrap) {
     return content();
   }
 
-  const size = ['small', 'medium', 'large'].includes(context.parameters.wrapperSize) ? context.parameters.wrapperSize : 'medium';
+  const size = ['small', 'medium', 'large'].includes(context.parameters.storyLayoutSize) ? context.parameters.storyLayoutSize : 'medium';
 
   let classes = [
-    'story-wrapper',
-    `story-wrapper-size--${size}`,
-    context.parameters.wrapperCenteredHorizontally || context.parameters.wrapperCentered ? 'story-wrapper--centered' : '',
-    context.parameters.wrapperCenteredVertically || context.parameters.wrapperCentered ? 'story-wrapper--centered-both' : '',
-    context.parameters.wrapperIsContainer ? 'story-wrapper--container' : '',
-    context.parameters.wrapperIsResizable && (context.globals.resizer || false) ? 'story-wrapper--resizable' : '',
+    'story-layout',
+    `story-layout-size--${size}`,
+    context.parameters.storyLayoutCenteredHorizontally || context.parameters.storyLayoutCentered ? 'story-layout--centered' : '',
+    context.parameters.storyLayoutCenteredVertically || context.parameters.storyLayoutCentered ? 'story-layout--centered-both' : '',
+    context.parameters.storyLayoutIsContainer ? 'story-layout--container' : '',
+    context.parameters.storyLayoutIsResizable && (context.globals.resizer || false) ? 'story-layout--resizable' : '',
   ].filter(Boolean).join(' ');
 
-  if (context.parameters.wrapperClass) {
-    classes += ` ${context.parameters.wrapperClass}`;
+  if (context.parameters.storyLayoutClass) {
+    classes += ` ${context.parameters.storyLayoutClass}`;
   }
 
-  context.parameters.wrapperHtmlBefore = context.parameters.wrapperHtmlBefore || '';
-  context.parameters.wrapperHtmlAfter = context.parameters.wrapperHtmlAfter || '';
+  context.parameters.storyLayoutHtmlBefore = context.parameters.storyLayoutHtmlBefore || '';
+  context.parameters.storyLayoutHtmlAfter = context.parameters.storyLayoutHtmlAfter || '';
 
-  return `<div class="${classes}">${context.parameters.wrapperHtmlBefore}${content()}${context.parameters.wrapperHtmlAfter}</div>`;
+  return `<div class="${classes}">${context.parameters.storyLayoutHtmlBefore}${content()}${context.parameters.storyLayoutHtmlAfter}</div>`;
 };
 
 export const decoratorDocs = (content, context) => {

@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Callout',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'large',
+    storyLayoutSize: 'large',
   },
 };
 

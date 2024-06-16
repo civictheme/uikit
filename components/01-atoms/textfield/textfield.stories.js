@@ -4,10 +4,9 @@ import { knobBoolean, knobRadios, knobText, randomId, randomName, shouldRender }
 export default {
   title: 'Atoms/Form Controls/Textfield',
   parameters: {
-    layout: 'centered',
-    wrapperIsContainer: true,
-    wrapperIsResizable: true,
-    wrapperSize: 'medium',
+    layout: 'fullscreen',
+    storyLayoutCentered: 'small',
+    storyLayoutSize: 'small',
   },
 };
 
