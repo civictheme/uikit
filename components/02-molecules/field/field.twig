@@ -45,7 +45,7 @@
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
-{% set orientation = orientation in ['vertical', 'horizontal'] ? orientation : 'horizontal' %}
+{% set orientation = orientation in ['vertical', 'horizontal'] ? orientation : 'vertical' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type) %}
 {% set is_required_class = is_required ? 'ct-field--required' : '' %}

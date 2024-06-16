@@ -26,9 +26,16 @@
     align-items: start;
     column-gap: ct-spacing();
 
+    &#{$root}--horizontal--fluid {
+      #{$root}__label {
+        min-width: auto;
+        max-width: fit-content;
+      }
+    }
+
     #{$root}__label {
       flex: 0 1 auto;
-      width: $ct-field-horizontal-label-width;
+      min-width: $ct-field-horizontal-label-min-width;
       max-width: $ct-field-horizontal-label-max-width;
     }
 
