@@ -107,7 +107,7 @@
     &#{$root}--decorative {
       #{$root}__featured-image__wrapper {
         @include ct-breakpoint(m) {
-          @include ct-image-shadow(ct-component-var($root, $theme, featured-image, shadow-color));
+          @include ct-image-shadow(ct-component-var($root, $theme, featured-image, shadow-color), 'up-left');
         }
       }
     }

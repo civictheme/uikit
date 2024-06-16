@@ -73,14 +73,49 @@
 //
 // Drop shadow for image.
 //
-@mixin ct-image-shadow($color, $up: true, $offset-x: ct-particle(2), $offset-y: ct-particle(2)) {
-  $multiplier: 1;
+@mixin ct-image-shadow($color, $direction: down, $offset-x: ct-particle(2), $offset-y: ct-particle(2)) {
+  $_multiplier-x: 1;
+  $_multiplier-y: 1;
+  $allowed-directions: up, down, left, right, up-left, up-right, down-left, down-right;
 
-  @if $up {
-    $multiplier: -1;
+  @if not index($allowed-directions, $direction) {
+    @error "Invalid direction: #{$direction}. Allowed directions are: #{join($allowed-directions, ', ')}";
   }
 
-  filter: drop-shadow(-1 * $offset-x $multiplier * $offset-y 0 $color);
+  @if $direction == 'up' {
+    $_multiplier-y: -1;
+    $_multiplier-x: 0;
+  }
+  @else if $direction == 'down' {
+    $_multiplier-y: 1;
+    $_multiplier-x: 0;
+  }
+  @else if $direction == 'left' {
+    $_multiplier-x: -1;
+    $_multiplier-y: 0;
+  }
+  @else if $direction == 'right' {
+    $_multiplier-x: 1;
+    $_multiplier-y: 0;
+  }
+  @else if $direction == 'up-left' {
+    $_multiplier-x: -1;
+    $_multiplier-y: -1;
+  }
+  @else if $direction == 'up-right' {
+    $_multiplier-x: 1;
+    $_multiplier-y: -1;
+  }
+  @else if $direction == 'down-left' {
+    $_multiplier-x: -1;
+    $_multiplier-y: 1;
+  }
+  @else if $direction == 'down-right' {
+    $_multiplier-x: 1;
+    $_multiplier-y: 1;
+  }
+
+  filter: drop-shadow($_multiplier-x * $offset-x $_multiplier-y * $offset-y 0 $color);
 }
 
 //
