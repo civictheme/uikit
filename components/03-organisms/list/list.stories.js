@@ -283,7 +283,7 @@ export const List = (parentKnobs = {}) => {
         template_column_count: columnCount,
         fill_width: false,
         with_background: knobs.with_background,
-        row_class: 'row--equal-heights-content',
+        row_class: 'row--equal-heights-content row--vertically-spaced',
       };
 
       knobs.rows = shouldRender(parentKnobs) ? CivicThemeGrid(itemsKnobs) : itemsKnobs;
