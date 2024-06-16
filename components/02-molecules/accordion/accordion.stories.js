@@ -1,6 +1,6 @@
 import CivicThemeAccordion from './accordion.twig';
 import '../../00-base/collapsible/collapsible';
-import { knobBoolean, knobNumber, knobRadios, knobText, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomSentence, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Accordion',
@@ -59,7 +59,7 @@ export const Accordion = (parentKnobs = {}) => {
   while (itr <= numOfPanels) {
     panels.push({
       title: knobText(`Panel ${itr} title `, `Accordion title ${itr}`, parentKnobs[`panel_title_${itr}`], panelsKnobTab),
-      content: `${knobText(`Panel ${itr} content`, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum magnam modi obcaecati vitae voluptatibus! Accusamus atque deleniti, distinctio esse facere, nam odio officiis omnis porro quibusdam quis repudiandae veritatis.', parentKnobs[`panel_content_${itr}`], panelsKnobTab)} <a href="https://example.com">Example link</a>`,
+      content: `${knobText(`Panel ${itr} content`, randomSentence(100, 'accordion-panel'), parentKnobs[`panel_content_${itr}`], panelsKnobTab)} <a href="https://example.com">Example link</a>`,
       expanded: knobBoolean(`Panel ${itr} initially expanded`, knobs.expand_all, parentKnobs[`panel_expanded_${itr}`], panelsKnobTab),
     });
     itr += 1;
