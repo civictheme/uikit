@@ -67,11 +67,6 @@ export const randomFutureDate = (days = 30) => {
   return convertDate(randomDate);
 };
 
-export const randomDropdownFilter = () => {
-  const filters = ['All', 'Recent', 'Popular', 'Featured'];
-  return filters[Math.floor(Math.random() * filters.length)];
-};
-
 export const randomLinks = (count, length, domain, prefix) => {
   const links = [];
   prefix = prefix || 'Link';
