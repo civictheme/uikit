@@ -5,7 +5,7 @@
 
 /* eslint-disable camelcase */
 
-import { knobBoolean, knobNumber, randomBool, randomUrl } from '../base.utils';
+import { knobBoolean, knobNumber, randomBool, randomUrl } from '../storybook/storybook.utils';
 
 export function generateMenuLinks(count, levels, isActiveTrail, title = 'Item', titleCb = null, currentLevel = 1, parents = []) {
   const links = [];

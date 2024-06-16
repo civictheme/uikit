@@ -1,7 +1,7 @@
 import CivicThemeChip from './chip.twig';
 import './chip';
 import './chip.event.stories';
-import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Chip',

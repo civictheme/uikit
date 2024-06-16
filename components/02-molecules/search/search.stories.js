@@ -1,5 +1,5 @@
 import CivicThemeSearch from './search.twig';
-import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Search',

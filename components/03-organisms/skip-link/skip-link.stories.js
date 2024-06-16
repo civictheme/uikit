@@ -1,5 +1,5 @@
 import CivicThemeSkipLink from './skip-link.twig';
-import { knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Organisms/Skip Link',
@@ -7,6 +7,7 @@ export default {
     layout: 'fullscreen',
     docs: 'Press TAB on the keyboard for the Skip Link to appear',
     docsSize: 'large',
+    docsPlacement: 'after',
   },
 };
 

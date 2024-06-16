@@ -3,7 +3,7 @@
  * Slider component utilities.
  */
 
-import { dateIsValid, generateImage, randomBool, randomInt, randomString, randomText, randomUrl } from '../../00-base/base.utils';
+import { dateIsValid, demoImage, randomBool, randomInt, randomString, randomText, randomUrl } from '../../00-base/storybook/storybook.utils';
 import Slide from './slide.twig';
 import Tag from '../../01-atoms/tag/tag.twig';
 import Button from '../../01-atoms/button/button.twig';
@@ -40,7 +40,7 @@ export const randomSlidesComponent = (count, theme, rand, template) => {
 
   for (let i = 0; i < count; i++) {
     const image = template && template.image ? template.image : {
-      url: generateImage(),
+      url: demoImage(),
       alt: randomText(4),
     };
     const imagePosition = template && template.image_position ? template.image_position : 'right';

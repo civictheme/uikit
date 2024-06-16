@@ -8,7 +8,6 @@ export default {
     storyLayoutCenteredHorizontally: true,
     docs: 'Try resizing your browser window to see how components react to a breakpoint change',
     docsSize: 'large',
-    docsPlacement: 'before',
   },
 };
 

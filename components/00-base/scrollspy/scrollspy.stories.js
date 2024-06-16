@@ -5,8 +5,6 @@ export default {
   parameters: {
     layout: 'fullscreen',
     docs: 'Scroll the viewport to see elements appear when it reaches a specific pixel threshold.',
-    docsSize: 'medium',
-    docsPlacement: 'before',
   },
 };
 

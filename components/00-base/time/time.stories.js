@@ -1,5 +1,5 @@
 import CivicThemeTime from './time.twig';
-import { dateIsValid, knobText, shouldRender } from '../base.utils';
+import { dateIsValid, knobText, shouldRender } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Time',

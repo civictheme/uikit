@@ -1,6 +1,6 @@
 import merge from 'deepmerge';
 import CivicThemeIcon from './icon.twig';
-import { arrayCombine, knobRadios, knobSelect, knobText, shouldRender, toLabels } from '../base.utils';
+import { arrayCombine, knobRadios, knobSelect, knobText, shouldRender, toLabels } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Icon',

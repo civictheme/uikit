@@ -1,5 +1,5 @@
 import ColorsStoryTemplate from './colors.stories.twig';
-import { getThemes } from '../base.utils';
+import { themes } from '../storybook/storybook.generators.utils';
 
 export default {
   title: 'Base/Colors',
@@ -26,7 +26,7 @@ function getColorMap(name) {
     };
   }
 
-  for (const theme in getThemes()) {
+  for (const theme in themes()) {
     map.custom[theme] = Object.keys(map.custom[theme]).filter((n) => Object.keys(map.default[theme]).indexOf(n) === -1)
       .reduce((obj2, key) => {
         if (key in map.custom[theme]) {
@@ -93,7 +93,7 @@ export const Colors = () => {
 
   const sections = {};
 
-  for (const theme in getThemes()) {
+  for (const theme in themes()) {
     for (const sectionTitle in sectionMap) {
       for (const sectionName in sectionMap[sectionTitle]) {
         sections[theme] = sections[theme] || {};

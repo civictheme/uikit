@@ -1,5 +1,5 @@
 import CivicThemePagination from './pagination.twig';
-import { knobBoolean, knobNumber, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Pagination',

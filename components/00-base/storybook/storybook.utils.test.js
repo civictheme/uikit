@@ -1,4 +1,4 @@
-import { KnobValue, processKnob } from './base.utils';
+import { KnobValue, processKnob } from './storybook.knobs.utils';
 
 // eslint-disable-next-line no-unused-vars
 const knobCallback = jest.fn((name, value, group) => value);

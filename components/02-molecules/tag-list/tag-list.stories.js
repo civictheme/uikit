@@ -1,4 +1,4 @@
-import { generateSlots, knobNumber, knobRadios, knobText, randomTags, shouldRender } from '../../00-base/base.utils';
+import { knobNumber, knobRadios, knobText, randomTags, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemeTagList from './tag-list.twig';
 
@@ -52,7 +52,7 @@ export const TagList = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeTagList({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

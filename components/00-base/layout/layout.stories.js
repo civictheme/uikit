@@ -1,5 +1,5 @@
 import CivicThemeLayout from './layout.twig';
-import { generateSlots, knobBoolean, knobRadios, knobText, placeholder, shouldRender } from '../base.utils';
+import { knobBoolean, knobRadios, knobText, placeholder, shouldRender, slotKnobs } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Layout',
@@ -43,7 +43,7 @@ export const Layout = (parentKnobs = {}) => {
   return shouldRender(parentKnobs)
     ? CivicThemeLayout({
       ...knobs,
-      ...generateSlots([
+      ...slotKnobs([
         'content_top',
         'content_bottom',
       ]),

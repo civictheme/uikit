@@ -1,6 +1,6 @@
 import CivicThemeNavigation from './navigation.twig';
 import getMenuLinks from '../../00-base/menu/menu.utils';
-import { knobBoolean, knobRadios, knobText, randomInt, randomSentence, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomInt, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Organisms/Navigation',

@@ -1,5 +1,5 @@
 import CivicThemePromo from './promo.twig';
-import { generateSlots, knobBoolean, knobRadios, knobText, randomSentence, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomSentence, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Organisms/Promo',
@@ -48,7 +48,7 @@ export const Promo = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemePromo({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

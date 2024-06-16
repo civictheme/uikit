@@ -1,5 +1,5 @@
 import CivicThemeMessage from './message.twig';
-import { knobRadios, knobText, randomText, shouldRender } from '../../00-base/base.utils';
+import { knobRadios, knobText, randomText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Organisms/Message',

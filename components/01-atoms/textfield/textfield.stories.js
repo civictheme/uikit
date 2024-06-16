@@ -1,11 +1,10 @@
 import CivicThemeTextfield from './textfield.twig';
-import { knobBoolean, knobRadios, knobText, randomId, randomName, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, randomId, randomName, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Form Controls/Textfield',
   parameters: {
-    layout: 'fullscreen',
-    storyLayoutCentered: 'small',
+    layout: 'centered',
     storyLayoutSize: 'small',
   },
 };

@@ -1,6 +1,6 @@
 import CivicThemeMenu from './menu.twig';
 import getMenuLinks from './menu.utils';
-import { knobRadios, knobText, shouldRender } from '../base.utils';
+import { knobRadios, knobText, shouldRender } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Menu Generator',

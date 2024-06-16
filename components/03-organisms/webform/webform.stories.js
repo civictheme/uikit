@@ -1,5 +1,5 @@
 import CivicThemeWebform from './webform.twig';
-import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Organisms/Webform',

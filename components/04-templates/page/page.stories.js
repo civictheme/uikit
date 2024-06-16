@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, KnobValues } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, KnobValues, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import CivicThemePage from './page.twig';
 import { Banner } from '../../03-organisms/banner/banner.stories';
 import { Footer } from '../../03-organisms/footer/footer.stories';
@@ -129,7 +129,7 @@ export const ContentPage = (parentKnobs = {}) => {
 
   return CivicThemePage({
     ...props,
-    ...generateSlots([
+    ...slotKnobs([
       'header_top_1',
       'header_top_2',
       'header_top_3',

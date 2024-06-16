@@ -1,5 +1,5 @@
 import CivicThemeCallout from './callout.twig';
-import { generateSlots, knobNumber, knobRadios, knobText, randomLinks, randomSentence, shouldRender } from '../../00-base/base.utils';
+import { knobNumber, knobRadios, knobText, randomLinks, randomSentence, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Callout',
@@ -53,7 +53,7 @@ export const Callout = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeCallout({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

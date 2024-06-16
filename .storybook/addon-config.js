@@ -11,7 +11,6 @@ exports.default = function () {
       },
     },
     '@storybook/addon-links',
-    '@a110/storybook-expand-all',
   ];
 
   // Html and pseudo knobs.

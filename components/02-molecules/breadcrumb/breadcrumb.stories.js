@@ -1,5 +1,5 @@
 import CivicThemeBreadcrumb from './breadcrumb.twig';
-import { knobBoolean, knobNumber, knobRadios, knobText, randomLinks, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomLinks, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Breadcrumb',

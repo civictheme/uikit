@@ -1,5 +1,5 @@
 import CivicThemeImage from './image.twig';
-import { generateImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { demoImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Atoms/Image',
@@ -20,7 +20,7 @@ export const Image = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    url: knobBoolean('Show image', true, parentKnobs.show_image, parentKnobs.knobTab) ? generateImage() : false,
+    url: knobBoolean('Show image', true, parentKnobs.show_image, parentKnobs.knobTab) ? demoImage() : false,
     alt: knobText('Image alt text', 'Alternative text', parentKnobs.alt, parentKnobs.knobTab),
     width: knobText('Width', '', parentKnobs.width, parentKnobs.knobTab),
     height: knobText('Height', '', parentKnobs.height, parentKnobs.knobTab),

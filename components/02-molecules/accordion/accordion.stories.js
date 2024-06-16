@@ -1,6 +1,6 @@
 import CivicThemeAccordion from './accordion.twig';
 import '../../00-base/collapsible/collapsible';
-import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Accordion',
@@ -69,7 +69,7 @@ export const Accordion = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeAccordion({
     ...combinedKnobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),

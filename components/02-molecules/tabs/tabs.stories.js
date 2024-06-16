@@ -1,6 +1,6 @@
 import CivicThemeTabs from './tabs.twig';
 import './tabs';
-import { knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomText, randomUrl, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomText, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
   title: 'Molecules/Tabs',

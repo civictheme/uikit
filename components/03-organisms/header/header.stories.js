@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobRadios, shouldRender, KnobValues } from '../../00-base/base.utils';
+import { knobBoolean, knobRadios, KnobValues, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import { Logo } from '../../02-molecules/logo/logo.stories';
 import CivicThemeHeader from './header.twig';
 import { Paragraph } from '../../01-atoms/paragraph/paragraph.stories';
@@ -73,7 +73,7 @@ export const Header = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeHeader({
     ...props,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top1',
       'content_top2',
       'content_top3',

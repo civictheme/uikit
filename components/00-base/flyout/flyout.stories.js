@@ -1,6 +1,6 @@
 import './flyout';
 import FlyoutStoryTemplate from './flyout.stories.twig';
-import { knobBoolean, knobNumber, knobRadios, shouldRender } from '../base.utils';
+import { knobBoolean, knobNumber, knobRadios, shouldRender } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Flyout',

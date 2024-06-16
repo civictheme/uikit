@@ -1,4 +1,4 @@
-import { placeholder } from '../base.utils';
+import { placeholder } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Spacing',

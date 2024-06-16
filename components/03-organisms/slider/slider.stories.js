@@ -1,4 +1,4 @@
-import { generateSlots, knobBoolean, knobNumber, knobRadios, knobText, randomLinks, randomTags, shouldRender } from '../../00-base/base.utils';
+import { knobBoolean, knobNumber, knobRadios, knobText, randomLinks, randomTags, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import { randomSlidesComponent } from './slider.utils';
 import './slider';
 import CivicThemeSlider from './slider.twig';
@@ -67,7 +67,7 @@ export const Slider = (parentKnobs = {}) => {
       parentKnobs.number_of_links,
       slidesKnobTab,
     ), 10),
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),
@@ -98,7 +98,7 @@ export const Slider = (parentKnobs = {}) => {
 
   return shouldRender(parentKnobs) ? CivicThemeSlider({
     ...knobs,
-    ...generateSlots([
+    ...slotKnobs([
       'content_top',
       'content_bottom',
     ]),
