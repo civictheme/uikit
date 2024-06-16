@@ -59,7 +59,7 @@
               <div class="col-xxs-12 col-m-3">
                 {% block link_above %}
                   {% if link_above %}
-                    <div class="ct-list__link-above ct-justify-content-center">
+                    <div class="ct-list__link-above ct-flex-justify-content-center">
                       {% include '@atoms/button/button.twig' with {
                         theme: theme,
                         type: 'secondary',
@@ -216,7 +216,7 @@
 
     {% block list_below %}
       {% if link_below %}
-        <div class="ct-list__link-below ct-justify-content-center">
+        <div class="ct-list__link-below ct-flex-justify-content-center">
           {% include '@atoms/button/button.twig' with {
             theme: theme,
             type: 'secondary',

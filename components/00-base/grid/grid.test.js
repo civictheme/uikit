@@ -22,6 +22,12 @@ const dataProviderGrid = () => [
   },
   {
     items: [1, 2],
+    use_container: true,
+    is_fluid: true,
+    description: 'multiple items with fluid container',
+  },
+  {
+    items: [1, 2],
     use_container: false,
     description: 'multiple items without container',
   },
@@ -30,6 +36,13 @@ const dataProviderGrid = () => [
     use_container: true,
     template_column_count: 3,
     description: 'column count with container',
+  },
+  {
+    items: [1, 2, 3],
+    use_container: true,
+    template_column_count: 3,
+    is_fluid: true,
+    description: 'column count with fluid container',
   },
   {
     items: [1, 2, 3],
@@ -103,20 +116,29 @@ describe('Grid', () => {
 
 describe('Grid Container', () => {
   each([
-    { use_container: true },
-    { use_container: false },
+    { use_container: true, is_fluid: false },
+    { use_container: true, is_fluid: true },
+    { use_container: false, is_fluid: false },
+    { use_container: false, is_fluid: true },
   ]).test('renders %s', async (props) => {
     const { container } = await render(template, { items: [1], ...props });
 
     if (props.use_container) {
-      expect(container.querySelectorAll('.container')).toHaveLength(1);
+      if (props.is_fluid) {
+        expect(container.querySelectorAll('.container')).toHaveLength(0);
+        expect(container.querySelectorAll('.container-fluid')).toHaveLength(1);
+      } else {
+        expect(container.querySelectorAll('.container')).toHaveLength(1);
+        expect(container.querySelectorAll('.container-fluid')).toHaveLength(0);
+      }
     } else {
       expect(container.querySelectorAll('.container')).toHaveLength(0);
+      expect(container.querySelectorAll('.container-fluid')).toHaveLength(0);
     }
   });
 });
 
-describe('Grid Fill Width', () => {
+describe('Grid Row Fill Width', () => {
   each([
     { fill_width: true },
     { fill_width: false },
@@ -128,7 +150,7 @@ describe('Grid Fill Width', () => {
     });
 
     if (props.fill_width) {
-      expect(container.innerHTML).toContain('container--fill-width');
+      expect(container.innerHTML).toContain('row--fill-width');
     }
   });
 });
@@ -195,6 +217,23 @@ describe('Grid Custom Classes', () => {
       template_column_count: null,
       row_class: null,
       column_class: null,
+      fill_width: false,
+      expectedRowClass: 'row',
+      expectedColumnClass: 'col',
+    },
+    {
+      template_column_count: null,
+      row_class: null,
+      column_class: null,
+      fill_width: true,
+      expectedRowClass: 'row row--fill-width',
+      expectedColumnClass: 'col',
+    },
+    {
+      template_column_count: 0,
+      row_class: null,
+      column_class: null,
+      fill_width: false,
       expectedRowClass: 'row',
       expectedColumnClass: 'col',
     },
@@ -202,35 +241,72 @@ describe('Grid Custom Classes', () => {
       template_column_count: 0,
       row_class: null,
       column_class: null,
-      expectedRowClass: 'row',
+      fill_width: true,
+      expectedRowClass: 'row row--fill-width',
       expectedColumnClass: 'col',
     },
     {
       template_column_count: 0,
       row_class: 'custom-row',
       column_class: 'custom-col',
+      fill_width: false,
       expectedRowClass: 'row custom-row',
+      expectedColumnClass: 'col custom-col',
+    },
+    {
+      template_column_count: 0,
+      row_class: 'custom-row',
+      column_class: 'custom-col',
+      fill_width: true,
+      expectedRowClass: 'row row--fill-width custom-row',
       expectedColumnClass: 'col custom-col',
     },
     {
       template_column_count: 12,
       row_class: null,
       column_class: null,
+      fill_width: false,
       expectedRowClass: 'row',
+      expectedColumnClass: 'col-xxs-12 col-m-1',
+    },
+    {
+      template_column_count: 12,
+      row_class: null,
+      column_class: null,
+      fill_width: true,
+      expectedRowClass: 'row row--fill-width',
       expectedColumnClass: 'col-xxs-12 col-m-1',
     },
     {
       template_column_count: 12,
       row_class: 'custom-row',
       column_class: null,
+      fill_width: false,
       expectedRowClass: 'row custom-row',
       expectedColumnClass: 'col-xxs-12 col-m-1',
     },
     {
       template_column_count: 12,
       row_class: 'custom-row',
+      column_class: null,
+      fill_width: true,
+      expectedRowClass: 'row row--fill-width custom-row',
+      expectedColumnClass: 'col-xxs-12 col-m-1',
+    },
+    {
+      template_column_count: 12,
+      row_class: 'custom-row',
       column_class: 'custom-col',
+      fill_width: false,
       expectedRowClass: 'row custom-row',
+      expectedColumnClass: 'col-xxs-12 col-m-1 custom-col',
+    },
+    {
+      template_column_count: 12,
+      row_class: 'custom-row',
+      column_class: 'custom-col',
+      fill_width: true,
+      expectedRowClass: 'row row--fill-width custom-row',
       expectedColumnClass: 'col-xxs-12 col-m-1 custom-col',
     },
   ]).test('renders %s', async (props) => {
