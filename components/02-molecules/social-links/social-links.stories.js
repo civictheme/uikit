@@ -3,7 +3,7 @@ import { demoIcon, knobBoolean, knobRadios, knobText, shouldRender } from '../..
 import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {
-  title: 'Organisms/Social Links',
+  title: 'Molecules/Social Links',
   parameters: {
     layout: 'centered',
   },

@@ -3,9 +3,9 @@ import CivicThemeFooter from './footer.twig';
 import '../../00-base/responsive/responsive';
 import '../../00-base/collapsible/collapsible';
 import { Logo } from '../../02-molecules/logo/logo.stories';
-import { SocialLinks } from '../social-links/social-links.stories';
 import { Navigation } from '../navigation/navigation.stories';
 import CivicThemeIcon from '../../00-base/icon/icon.twig';
+import { SocialLinks } from '../../02-molecules/social-links/social-links.stories';
 
 export default {
   title: 'Organisms/Footer',
