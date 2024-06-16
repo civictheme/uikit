@@ -7,6 +7,7 @@ export default {
     layout: 'centered',
     storyLayoutSize: 'large',
     storyLayoutCenteredHorizontally: true,
+    storyLayoutClass: 'story-fonts-wrapper story-wrapper-size--large',
   },
 };
 
@@ -19,7 +20,7 @@ export const Fonts = () => {
   for (const i in Object.values(fonts)) {
     html += `<div class="story-container">`;
 
-    html += `<div class="story-container__title">${fonts[i]}</div>`;
+    html += `<div class="story-container__title">${capitalizeFirstLetter(fonts[i])}</div>`;
 
     html += `<div class="story-container__content">`;
     for (const weightName in weights) {
