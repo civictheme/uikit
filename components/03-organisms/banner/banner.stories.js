@@ -119,7 +119,7 @@ export const Banner = (parentKnobs = {}) => {
       theme,
       template_column_count: 4,
       items: cards,
-      row_class: 'row--equal-heights-content',
+      row_class: 'row--equal-heights-content row--vertically-spaced',
     });
 
     props.content_below = contentBelow;
