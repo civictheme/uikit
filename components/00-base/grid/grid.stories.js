@@ -1,5 +1,5 @@
 import CivicThemeGrid from './grid.twig';
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, randomSentence, shouldRender } from '../base.utils';
+import { code, generateItems, knobBoolean, knobNumber, knobRadios, knobText, placeholder, randomSentence, shouldRender } from '../base.utils';
 
 export default {
   title: 'Base/Grid',
@@ -19,96 +19,122 @@ export const Grid = () => {
   let html = `<div class="story-container ${showOutline ? 'story-grid-outlines' : ''}">`;
 
   html += `<div class="story-container__title">Columns</div>`;
-  html += `<div class="story-container__subtitle">Template column <code>.row > .col-[breakpoint]-[column]</code></div>`;
+
+  html += `<div class="story-container__subtitle">Template column ${code('.row > .col-[breakpoint]-[column]')}</div>`;
   cols = [1, 2, 3, 4, 6, 12];
   for (let j = 0; j < cols.length; j++) {
     html += CivicThemeGrid({
-      items: generateItems(cols[j], `<span class="story-placeholder">${Math.floor(12 / cols[j])}</span>`),
+      items: generateItems(cols[j], placeholder(code(Math.floor(12 / cols[j])))),
       column_attributes: `data-story-total-columns="${cols[j]}"`,
       template_column_count: cols[j],
     });
   }
 
-  html += `<div class="story-container__subtitle">Auto column <code>.row > .col</code></div>`;
+  html += `<div class="story-container__subtitle">Auto column ${code('.row > .col')}</div>`;
   cols = [1, 2, 3, 4, 6, 12];
   for (let j = 0; j < cols.length; j++) {
     html += CivicThemeGrid({
-      items: generateItems(cols[j], `<span class="story-placeholder">${Math.floor(12 / cols[j])}</span>`),
+      items: generateItems(cols[j], placeholder(code('auto'))),
       column_attributes: `data-story-total-columns="${cols[j]}"`,
     });
   }
 
-  html += `<div class="story-container__title">Contents width</div>`;
+  html += `<div class="story-container__title">Offsets and order</div>`;
 
-  html += `<div class="story-container__subtitle">Filled <code>width: 100%</code></div>`;
+  html += `<div class="story-container__subtitle">Template column ${code('.row > .col-[breakpoint]-offset-[column]')}</div>`;
+  cols = [1, 2, 3, 4, 6, 12];
+  let offsets = [1, 2, 3, 4, 6, 8];
+  for (let j = 0; j < cols.length; j++) {
+    html += CivicThemeGrid({
+      items: generateItems(1, placeholder(`width ${code(Math.floor(12 / cols[j]))}, offset ${code(offsets[j])}`)),
+      column_attributes: `data-story-total-columns="1"`,
+      column_class: `col-m-offset-${offsets[j]}`,
+      template_column_count: cols[j],
+    });
+  }
+
+  html += `<div class="story-container__subtitle">Auto column ${code('.row > .col.col-[breakpoint]-offset-[column]')}</div>`;
+  cols = [1, 2, 3, 4, 6, 12];
+  offsets = [1, 2, 3, 4, 6, 8];
+  for (let j = 0; j < cols.length; j++) {
+    html += CivicThemeGrid({
+      items: generateItems(1, placeholder(`width ${code('auto')}, offset ${code(offsets[j])}`)),
+      column_attributes: `data-story-total-columns="1"`,
+      column_class: `col-m-offset-${offsets[j]}`,
+    });
+  }
+
+  html += `<div class="story-container__title">Content width</div>`;
+
+  html += `<div class="story-container__subtitle">Filled ${code('width: 100%')}</div>`;
   cols = ['A', 'B', 'C', 'D', 'E'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     column_class: 'col',
   });
 
-  html += `<div class="story-container__subtitle">Hugged <code>width: auto</code></div>`;
+  html += `<div class="story-container__subtitle">Hugged ${code('width: auto')}</div>`;
   cols = ['A', 'B', 'C', 'D', 'E'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--hugged">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1], 0, 'story-placeholder--hugged')),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     column_class: 'col',
   });
 
-  html += `<div class="story-container__subtitle">Fixed <code>width: 184px</code></div>`;
+  html += `<div class="story-container__subtitle">Fixed ${code('width: 184px')}</div>`;
   cols = ['A', 'B', 'C', 'D', 'E'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fixed">${cols[i - 1]} fixed width</span>`),
+    items: generateItems(cols.length, (i) => placeholder(`${cols[i - 1]} fixed width`, 0, 'story-placeholder--fixed')),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     column_class: 'col',
   });
 
   html += `<div class="story-container__title">Nested</div>`;
 
-  html += `<div class="story-container__subtitle">Template column <code>.row > .col-[breakpoint]-[column]</code></div>`;
+  html += `<div class="story-container__subtitle">Template column ${code('.row > .col-[breakpoint]-[column]')}</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
     items: [
       CivicThemeGrid({
         items: [
-          `<span class="story-placeholder">Nested</span>`,
-          `<span class="story-placeholder">Nested</span>`,
-          `<span class="story-placeholder">Nested</span>`,
+          placeholder('Nested'),
+          placeholder('Nested'),
+          placeholder('Nested'),
         ],
         use_container: false,
         column_attributes: 'data-story-total-columns="3"',
       }),
-      `<span class="story-placeholder">Parent</span>`,
+      placeholder('Parent'),
     ],
     template_column_count: 2,
     column_attributes: 'data-story-total-columns="2"',
   });
 
-  html += `<div class="story-container__subtitle">Auto column <code>.row > .col</code></div>`;
+  html += `<div class="story-container__subtitle">Auto column ${code('.row > .col')}</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
     items: [
       CivicThemeGrid({
         items: [
-          `<span class="story-placeholder">Nested</span>`,
-          `<span class="story-placeholder">Nested</span>`,
-          `<span class="story-placeholder">Nested</span>`,
+          placeholder('Nested'),
+          placeholder('Nested'),
+          placeholder('Nested'),
         ],
         use_container: false,
         column_attributes: 'data-story-total-columns="3"',
       }),
-      `<span class="story-placeholder">Parent</span>`,
+      placeholder('Parent'),
     ],
     column_attributes: 'data-story-total-columns="2"',
   });
 
   html += `<div class="story-container__title">Row utilities</div>`;
 
-  html += `<div class="story-container__subtitle">Reversed columns <code>.row.row--reverse</code></div>`;
+  html += `<div class="story-container__subtitle">Reversed columns ${code('.row.row--reverse')}</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
     row_class: 'row row--reverse',
@@ -117,7 +143,7 @@ export const Grid = () => {
   html += `<div class="story-container__subtitle">Equal column heights by default</div>`;
   cols = [`<strong>Content should not fill - height is not 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
   });
@@ -125,93 +151,93 @@ export const Grid = () => {
   html += `<div class="story-container__subtitle">Equal column heights by default - Auto column</div>`;
   cols = [`<strong>Content should not fill - height is not 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
   });
 
-  html += `<div class="story-container__subtitle">Equal column heights propagated to content <code>.row.row--equal-heights-content > .col-[breakpoint]-[column]</code></div>`;
+  html += `<div class="story-container__subtitle">Equal column heights propagated to content ${code('.row.row--equal-heights-content > .col-[breakpoint]-[column]')}</div>`;
   cols = [`<strong>Content should fill - height is propagated to be 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
     row_class: 'row row--equal-heights-content',
   });
 
-  html += `<div class="story-container__subtitle">Equal column heights propagated to content <code>.row.row--equal-heights-content > .col</code> - Auto column</div>`;
+  html += `<div class="story-container__subtitle">Equal column heights propagated to content ${code('.row.row--equal-heights-content > .col')} - Auto column</div>`;
   cols = [`<strong>Content should fill - height is propagated to be 100%.</strong> ${randomSentence(5, 'A')}`, randomSentence(30, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     row_class: 'row row--equal-heights-content',
   });
 
-  html += `<div class="story-container__subtitle">Unequal column heights <code>.row.row--unequal-heights > .col-[breakpoint]-[column]</code></div>`;
+  html += `<div class="story-container__subtitle">Unequal column heights ${code('.row.row--unequal-heights > .col-[breakpoint]-[column]')}</div>`;
   cols = [randomSentence(5, 'A'), randomSentence(20, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
     row_class: 'row row--unequal-heights',
   });
 
-  html += `<div class="story-container__subtitle">Unequal column heights <code>.row.row--unequal-heights > .col</code> - Auto column</div>`;
+  html += `<div class="story-container__subtitle">Unequal column heights ${code('.row.row--unequal-heights > .col')} - Auto column</div>`;
   cols = [randomSentence(5, 'A'), randomSentence(20, 'B'), randomSentence(5, 'C'), randomSentence(5, 'D')];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     row_class: 'row row--unequal-heights',
   });
 
   html += `<div class="story-container__title">Column utilities</div>`;
 
-  html += `<div class="story-container__subtitle">Reversed items <code>.row > .col-[breakpoint]-[column].col--reverse</code></div>`;
+  html += `<div class="story-container__subtitle">Reversed items ${code('.row > .col-[breakpoint]-[column].col--reverse')}</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--fixed">${cols[i - 1]} - 1</span> <span class="story-placeholder--fixed">${cols[i - 1]} - 2</span>`),
+    items: generateItems(cols.length, (i) => `${placeholder(`${cols[i - 1]}-1`)} ${placeholder(`${cols[i - 1]}-2`)}`),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
     column_class: 'col--reverse',
   });
 
-  html += `<div class="story-container__subtitle">Reversed items <code>.row > .col.col--reverse</code> - Auto column</div>`;
+  html += `<div class="story-container__subtitle">Reversed items ${code('.row > .col.col--reverse')} - Auto column</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]} - 1</span> <span class="story-placeholder">${cols[i - 1]} - 2</span>`),
+    items: generateItems(cols.length, (i) => `${placeholder(`${cols[i - 1]}-1`)} ${placeholder(`${cols[i - 1]}-2`)}`),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     column_class: 'col col--reverse',
   });
 
-  html += `<div class="story-container__subtitle">No grow <code>.row > .col-[breakpoint]-[column].col--no-grow</code></div>`;
+  html += `<div class="story-container__subtitle">No grow ${code('.row > .col-[breakpoint]-[column].col--no-grow')}</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--hugged">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
     column_class: 'col--no-grow',
   });
 
-  html += `<div class="story-container__subtitle">No grow <code>.row > .col.col--no-grow</code> - Auto column</div>`;
+  html += `<div class="story-container__subtitle">No grow ${code('.row > .col.col--no-grow')} - Auto column</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder--hugged">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     column_class: 'col col--no-grow',
   });
 
-  html += `<div class="story-container__subtitle">No gap <code>.row > .col-[breakpoint]-[column].col--no-gap</code></div>`;
+  html += `<div class="story-container__subtitle">No gap ${code('.row > .col-[breakpoint]-[column].col--no-gap')}</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     template_column_count: cols.length,
     column_class: 'col--no-gap',
   });
 
-  html += `<div class="story-container__subtitle">No gap <code>.row > .col.col--no-gap</code> - Auto column</div>`;
+  html += `<div class="story-container__subtitle">No gap ${code('.row > .col.col--no-gap')} - Auto column</div>`;
   cols = ['A', 'B', 'C', 'D'];
   html += CivicThemeGrid({
-    items: generateItems(cols.length, (i) => `<span class="story-placeholder">${cols[i - 1]}</span>`),
+    items: generateItems(cols.length, (i) => placeholder(cols[i - 1])),
     column_attributes: `data-story-total-columns="${cols.length}"`,
     column_class: 'col col--no-gap',
   });
@@ -273,7 +299,7 @@ export const GridGenerator = (parentKnobs = {}) => {
   const showOutline = knobBoolean('Show outlines', false, parentKnobs.showOutlines, parentKnobs.knobTab);
 
   const props = {
-    items: generateItems(knobs.number_of_items, () => `<span class="story-placeholder">${Math.floor(12 / (knobs.template_column_count > 0 ? knobs.template_column_count : 12))}</span>`),
+    items: generateItems(knobs.number_of_items, () => placeholder(Math.floor(12 / (knobs.template_column_count > 0 ? knobs.template_column_count : 12)))),
     row_element: knobs.render_as === 'ulli' ? 'ul' : 'div',
     row_class: knobs.row_class,
     row_attributes: knobs.row_attributes,
