@@ -222,6 +222,27 @@ export const Grid = () => {
     row_class: 'row row--unequal-heights',
   });
 
+  html += `<div class="story-container__subtitle">Vertical spacing ${code('.row.row--vertically-spaced > .col-[breakpoint]-[column]')}</div>`;
+  cols = [4, 3, 4];
+  for (let j = 0; j < cols.length; j++) {
+    html += CivicThemeGrid({
+      items: generateItems(cols[j] + (j % 2), placeholder(code(Math.floor(12 / cols[j])))),
+      column_attributes: `data-story-total-columns="${cols[j]}"`,
+      template_column_count: cols[j],
+      row_class: 'row row--vertically-spaced',
+    });
+  }
+
+  html += `<div class="story-container__subtitle">Vertical spacing ${code('.row.row--vertically-spaced > .col')} - Autocolumn</div>`;
+  cols = [4, 3, 4];
+  for (let j = 0; j < cols.length; j++) {
+    html += CivicThemeGrid({
+      items: generateItems(cols[j] + (j % 2), placeholder(code(Math.floor(12 / cols[j])), 0, 'story-placeholder--fixed')),
+      column_attributes: `data-story-total-columns="${cols[j]}"`,
+      row_class: 'row row--vertically-spaced',
+    });
+  }
+
   html += `<div class="story-container__title">Column utilities</div>`;
 
   html += `<div class="story-container__subtitle">Reversed items ${code('.row > .col-[breakpoint]-[column].col--reverse')}</div>`;

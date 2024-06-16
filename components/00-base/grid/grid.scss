@@ -53,6 +53,21 @@
       margin-bottom: auto;
     }
   }
+
+  &#{$root}--vertically-spaced {
+    @each $bp, $gutter in $ct-grid-vertical-gutters {
+      @if $bp == $ct-grid-lowest-breakpoint {
+        row-gap: $gutter;
+        margin-bottom: $gutter;
+      }
+      @else {
+        @include ct-breakpoint($bp) {
+          row-gap: $gutter;
+          margin-bottom: $gutter;
+        }
+      }
+    }
+  }
 }
 
 ul.row {

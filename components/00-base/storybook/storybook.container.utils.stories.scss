@@ -11,33 +11,34 @@
 .story-container {
   $root: &;
 
-  margin-bottom: ct-spacing(4);
+  // Make sure to not use margins as they will negate each other and testing
+  // layouts will be giving false positives.
+  padding-top: ct-spacing(2);
+  padding-bottom: ct-spacing(2);
 
   #{$root}__title {
     @include ct-typography('label-large');
+    @include ct-container();
 
     border-bottom: solid ct-particle(0.125);
-    margin-bottom: ct-spacing(4);
-    margin-top: ct-spacing(2);
-
-    &:first-child {
-      margin-top: 0;
-    }
+    padding-bottom: ct-spacing(2);
+    padding-top: ct-spacing(4);
   }
 
   #{$root}__subtitle {
     @include ct-typography('label-regular');
+    @include ct-container();
 
-    margin-top: ct-spacing(3);
-    margin-bottom: ct-spacing(2);
+    padding-top: ct-spacing(3);
+    padding-bottom: ct-spacing(2);
   }
 
   #{$root}__content {
-    margin-bottom: ct-spacing(4);
+    padding-bottom: ct-spacing(4);
   }
 
   #{$root}__subcontent {
-    margin-bottom: ct-spacing(4);
+    padding-bottom: ct-spacing(4);
   }
 
   &#{$root}--columns {
