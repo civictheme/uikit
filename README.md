@@ -52,6 +52,13 @@ change.
 
 ## Maintenance
 
+### Updating minor dependencies
+
+```bash
+npm install -g npm-check-updates
+npx npm-check-updates -u --target minor
+```
+
 ### Pre-release build
 
 All commits to `main` branch are built as a Storybook and automatically deployed to https://civictheme-uikit.netlify.app/
