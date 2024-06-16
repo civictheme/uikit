@@ -13,6 +13,7 @@
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/civictheme/uikit.svg)](https://github.com/civictheme/uikit/pulls)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/civictheme/uikit)
 [![Test](https://github.com/civictheme/uikit/actions/workflows/test.yml/badge.svg)](https://github.com/civictheme/uikit/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/civictheme/uikit/graph/badge.svg?token=NMJD1RDUVQ)](https://codecov.io/gh/civictheme/uikit)
 ![LICENSE](https://img.shields.io/github/license/civictheme/uikit)
 [![RenovateBot](https://img.shields.io/badge/RenovateBot-enabled-brightgreen.svg?logo=renovatebot)](https://renovatebot.com)
 
