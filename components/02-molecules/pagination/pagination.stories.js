@@ -23,7 +23,7 @@ export const Pagination = (parentKnobs = {}) => {
     active_is_link: knobBoolean('Active is a link', true, parentKnobs.active_is_link, parentKnobs.knobTab),
     use_ellipsis: knobBoolean('With ellipsis', false, parentKnobs.use_ellipsis, parentKnobs.knobTab),
     with_items_per_page: knobBoolean('With items per page', true, parentKnobs.with_items_per_page, parentKnobs.knobTab),
-    heading_id: knobText('Heading ID', 'ct-pager-demo', parentKnobs.heading_id, parentKnobs.knobTab),
+    heading_id: knobText('Heading ID', 'ct-pagination-demo', parentKnobs.heading_id, parentKnobs.knobTab),
     modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
