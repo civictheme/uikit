@@ -23,3 +23,15 @@
   align-items: center;
   height: 100%;
 }
+
+.ct-flex-align-self-start {
+  align-self: flex-start;
+}
+
+.ct-flex-align-self-center {
+  align-self: center;
+}
+
+.ct-flex-align-self-end {
+  align-self: flex-end;
+}

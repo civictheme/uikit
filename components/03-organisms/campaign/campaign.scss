@@ -7,32 +7,6 @@
 .ct-campaign {
   $root: &;
 
-  #{$root}__wrapper {
-    @include ct-breakpoint(m) {
-      display: flex;
-      flex-wrap: nowrap;
-    }
-  }
-
-  &#{$root}--image-right {
-    #{$root}__wrapper {
-      @include ct-breakpoint(m) {
-        flex-direction: row-reverse;
-      }
-    }
-  }
-
-  #{$root}__image-wrapper {
-    flex: 1;
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
-      margin-left: ct-spacing(6);
-      margin-right: ct-spacing(6);
-      margin-bottom: ct-spacing(2);
-    }
-  }
-
   #{$root}__image {
     @include ct-image-fit();
 
@@ -47,55 +21,43 @@
     }
   }
 
-  #{$root}__inner-wrapper {
-    flex: 1;
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
-      margin-left: ct-spacing(6);
-      margin-right: ct-spacing(6);
-      margin-bottom: ct-spacing(4);
-    }
-  }
-
-  #{$root}__tags {
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(4);
-    }
-  }
-
-  #{$root}__title {
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
+  #{$root}__inner {
+    > * {
       margin-bottom: ct-spacing(2);
+
+      @include ct-breakpoint(m) {
+        margin-bottom: ct-spacing(3);
+      }
+
+      @include ct-breakpoint(xl) {
+        margin-bottom: ct-spacing(4);
+      }
     }
   }
 
-  #{$root}__date {
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(2);
-    }
-  }
-
-  #{$root}__content {
-    margin-bottom: ct-spacing(4);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(5);
+  #{$root}__links {
+    > * {
+      display: flex;
+      align-items: center;
     }
   }
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, background-color);
 
-    #{$root}__image {
-      @include ct-breakpoint(m) {
-        @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), false, $ct-campaign-image-shadow-offset-x, $ct-campaign-image-shadow-offset-y);
+    &.ct-campaign--image-left {
+      .ct-campaign__image {
+        @include ct-breakpoint(m) {
+          @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), 'down-right', $ct-campaign-image-shadow-offset-x, $ct-campaign-image-shadow-offset-y);
+        }
+      }
+    }
+
+    &.ct-campaign--image-right {
+      .ct-campaign__image {
+        @include ct-breakpoint(m) {
+          @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), 'down-left', $ct-campaign-image-shadow-offset-x, $ct-campaign-image-shadow-offset-y);
+        }
       }
     }
   }
