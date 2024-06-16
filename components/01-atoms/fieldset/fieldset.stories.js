@@ -23,7 +23,7 @@ export const Fieldset = (parentKnobs = {}) => {
     ),
     legend: knobText('Legend', 'Fieldset legend', parentKnobs.legend, parentKnobs.knobTab),
     description: knobText('Description', 'Fieldset example description', parentKnobs.description, parentKnobs.knobTab),
-    message: knobText('Message', '', parentKnobs.message, parentKnobs.knobTab),
+    message: knobText('Message', 'Example message', parentKnobs.message, parentKnobs.knobTab),
     message_type: knobRadios(
       'Type',
       {
@@ -40,8 +40,8 @@ export const Fieldset = (parentKnobs = {}) => {
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
   };
 
-  const numOfElements = knobNumber(
-    'Number of form elements',
+  const numberFields = knobNumber(
+    'Number of fields',
     1,
     {
       range: true,
@@ -49,13 +49,36 @@ export const Fieldset = (parentKnobs = {}) => {
       max: 10,
       step: 1,
     },
-    parentKnobs.number_of_form_elements,
+    parentKnobs.number_fields,
     parentKnobs.knobTab,
   );
 
+  const numberNestedFieldsets = knobNumber(
+    'Number of nested fieldsets',
+    1,
+    {
+      range: true,
+      min: 0,
+      max: 10,
+      step: 1,
+    },
+    parentKnobs.number_nested_fieldsets,
+    parentKnobs.knobTab,
+  );
+
+  let nested = '';
+  for (let i = 0; i < numberNestedFieldsets; i++) {
+    nested = CivicThemeFieldset({
+      theme: knobs.theme,
+      legend: `Nested fieldset ${i + 1}. ${knobs.legend}`,
+      description: `Nested fieldset ${i + 1} description`,
+      fields: randomFields(numberFields, knobs.theme, true).join('') + nested,
+    });
+  }
+
   const combinedKnobs = {
     ...knobs,
-    fields: randomFields(numOfElements, knobs.theme, true).join(''),
+    fields: randomFields(numberFields, knobs.theme, true).join('') + nested,
   };
 
   return shouldRender(parentKnobs) ? CivicThemeFieldset(combinedKnobs) : combinedKnobs;
