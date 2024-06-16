@@ -3,7 +3,7 @@ import getMenuLinks from '../../00-base/menu/menu.utils';
 import { knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Organisms/Side Navigation',
+  title: 'Organisms/Navigation/Side Navigation',
   parameters: {
     layout: 'centered',
   },

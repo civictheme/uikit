@@ -4,7 +4,7 @@ import CivicThemeMobileNavigation from './mobile-navigation.twig';
 import CivicThemeMobileNavigationTrigger from './mobile-navigation-trigger.twig';
 
 export default {
-  title: 'Organisms/Mobile Navigation',
+  title: 'Organisms/Navigation/Mobile Navigation',
   parameters: {
     layout: 'fullscreen',
     storyLayoutSize: 'small',
