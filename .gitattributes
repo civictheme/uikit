@@ -8,10 +8,8 @@
 /.storybook         export-ignore
 /.stylelintignore   export-ignore
 /.stylelintrc.json  export-ignore
+/.twig-cs-fixer.php export-ignore
+/composer.json      export-ignore
+/jest.config.js     export-ignore
 /renovate.json      export-ignore
 /webpack            export-ignore
-
-# Exclude demo assets as they are erroneously located in dist assets.
-# @see https://github.com/civictheme/uikit/issues/30
-/assets/images      export-ignore
-/assets/videos      export-ignore
