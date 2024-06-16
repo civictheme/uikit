@@ -3,7 +3,7 @@ import getMenuLinks from '../../00-base/menu/menu.utils';
 import { knobBoolean, knobRadios, knobText, randomInt, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 export default {
-  title: 'Organisms/Navigation',
+  title: 'Organisms/Navigation/Navigation',
   parameters: {
     layout: 'centered',
   },
