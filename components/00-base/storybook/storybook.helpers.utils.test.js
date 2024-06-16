@@ -1,12 +1,4 @@
-import {
-  arrayCombine,
-  objectFromArray,
-  capitalizeFirstLetter,
-  cleanCssIdentifier,
-  toLabels,
-  dateIsValid,
-  convertDate
-} from './storybook.helpers.utils';
+import { arrayCombine, objectFromArray, capitalizeFirstLetter, cleanCssIdentifier, toLabels, dateIsValid, convertDate } from './storybook.helpers.utils';
 
 describe('Helper Utilities', () => {
   describe('arrayCombine', () => {

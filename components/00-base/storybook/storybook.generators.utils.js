@@ -3,7 +3,7 @@
 //
 /* eslint max-classes-per-file: 0 */
 
-import { randomInt, randomBool, randomSentence, randomString } from './storybook.random.utils';
+import { randomInt, randomBool, randomSentence, randomString, randomArrayItem } from './storybook.random.utils';
 
 export const themes = () => ({
   light: 'Light',
@@ -24,9 +24,10 @@ export const demoImage = (idx) => {
     'demo/images/demo6.jpg',
   ];
 
-  idx = typeof idx !== 'undefined' ? Math.max(0, Math.min(idx, images.length)) : Math.floor(Math.random() * images.length);
+  const maxIndex = images.length - 1;
+  idx = typeof idx !== 'undefined' ? Math.max(0, Math.min(idx, maxIndex)) : null;
 
-  return images[idx];
+  return idx !== null ? images[idx] : randomArrayItem(images);
 };
 
 export const demoIcon = () => './assets/icons/megaphone.svg';
