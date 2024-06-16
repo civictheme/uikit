@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/Snippet',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'large',
+    storyLayoutSize: 'large',
   },
 };
 

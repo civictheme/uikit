@@ -4,8 +4,8 @@ export default {
   title: 'Base/Background',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'large',
-    wrapperClass: 'story-background-wrapper',
+    storyLayoutSize: 'large',
+    storyLayoutClass: 'story-background-wrapper',
   },
 };
 

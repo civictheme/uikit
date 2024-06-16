@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/Tag List',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'small',
+    storyLayoutSize: 'small',
   },
 };
 

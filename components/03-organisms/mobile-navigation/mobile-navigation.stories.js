@@ -7,8 +7,8 @@ export default {
   title: 'Organisms/Mobile Navigation',
   parameters: {
     layout: 'fullscreen',
-    wrapperSize: 'small',
-    wrapperClass: 'story-container__page-content story-ct-mobile-navigation',
+    storyLayoutSize: 'small',
+    storyLayoutClass: 'story-container__page-content story-ct-mobile-navigation',
     docs: 'Click on the mobile navigation trigger in the top left to open Mobile Navigation panel.',
   },
 };

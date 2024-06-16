@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/Event Card',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'small',
+    storyLayoutSize: 'small',
   },
 };
 

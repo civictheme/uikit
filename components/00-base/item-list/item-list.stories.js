@@ -5,7 +5,7 @@ export default {
   title: 'Base/Item List',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'large',
+    storyLayoutSize: 'large',
   },
 };
 

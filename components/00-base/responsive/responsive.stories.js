@@ -5,7 +5,7 @@ import '../collapsible/collapsible';
 export default {
   title: 'Base/Responsive',
   parameters: {
-    wrapperCenteredHorizontally: true,
+    storyLayoutCenteredHorizontally: true,
     docs: 'Try resizing your browser window to see how components react to a breakpoint change',
     docsSize: 'large',
     docsPlacement: 'before',

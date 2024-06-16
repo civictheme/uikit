@@ -5,9 +5,9 @@ export default {
   title: 'Molecules/Navigation Card',
   parameters: {
     layout: 'centered',
-    wrapperSize: 'medium',
-    wrapperIsContainer: true,
-    wrapperIsResizable: true,
+    storyLayoutSize: 'medium',
+    storyLayoutIsContainer: true,
+    storyLayoutIsResizable: true,
   },
 };
 
