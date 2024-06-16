@@ -3,6 +3,10 @@ import './table-of-contents';
 
 export default {
   title: 'Molecules/Table Of Contents',
+  parameters: {
+    layout: 'centered',
+    storyLayoutSize: 'medium',
+  },
 };
 
 export const TableOfContents = (parentKnobs = {}) => {

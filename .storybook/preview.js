@@ -25,6 +25,26 @@ const storyOrder = [
     ],
   ],
   '*',
+  'Atoms',
+  '*',
+  'Molecules',
+  [
+    '*',
+    'List',
+    [
+      'Single Filter',
+      'Group Filter',
+      'Pagination',
+      '*',
+      'Snippet',
+    ],
+    '*',
+  ],
+  '*',
+  'Organisms',
+  '*',
+  'Templates',
+  '*',
 ];
 
 export const parameters = {

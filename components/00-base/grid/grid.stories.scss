@@ -165,7 +165,19 @@
 
   .story-container__title,
   .story-container__subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
     box-shadow: 0 0 1px 1px $_story-container-color inset;
+  }
+
+  .story-container__title {
+    padding-bottom: ct-spacing(2);
+    padding-top: ct-spacing(4);
+  }
+
+  .story-container__subtitle {
+    padding-top: ct-spacing(3);
+    padding-bottom: ct-spacing(2);
   }
 }
 
