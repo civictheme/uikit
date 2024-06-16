@@ -26,6 +26,10 @@ const storyOrder = [
   ],
   '*',
   'Atoms',
+  [
+    '*',
+    'Form Controls',
+  ],
   '*',
   'Molecules',
   [
