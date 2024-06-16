@@ -10,7 +10,6 @@ export default {
   title: 'Molecules/Field',
   parameters: {
     layout: 'centered',
-    storyLayoutIsContainer: true,
     storyLayoutSize: 'medium',
   },
 };
