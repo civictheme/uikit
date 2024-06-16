@@ -15,6 +15,7 @@
   $_label-line_height: ct-typography-rule($_label-size, 'line-height', 'm');
   $_label-font-size-actual: math.max($_label-font-size, $_label-line_height);
   $_icon-height: $_vertical-padding + $_label-font-size-actual + $_border-width;
+
   // Icon height drives the width because it is used as a background image.
   $_icon-width: $_icon-height;
 
@@ -23,6 +24,7 @@
   @include ct-typography($_label-size);
 
   width: 100%;
+
   // Show at least 5 characters.
   min-width: $_icon-width + $_horizontal-padding * 2 + $ct-font-average-character-width * 5;
   border-radius: $ct-select-border-radius;

@@ -17,6 +17,8 @@
  *   - label: [string] Option label.
  *   - value: [string] Option value.
  *   - selected: [string] Flag whether option is selected.
+ * - items_per_page_name: [string] Name for items per page.
+ * - items_per_page_id: [string] Id for items per page.
  * - items_per_page_attributes: attributes for select element.
  * - use_ellipsis: [boolean] Flag whether ellipsis to be shown.
  * - attributes: [string] Additional attributes.
@@ -38,16 +40,15 @@
 
     {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pager__items_per_page">
-        {%- include '@atoms/label/label.twig' with {
-          content: items_per_page_label,
-          modifier_class: 'ct-pager__items_per_page__label'
-        } -%}
-        {%- include '@atoms/select/select.twig' with {
-          theme: theme,
-          is_multiple: false,
+        {%- include '@molecules/field/field.twig' with {
+          label: items_per_page_label,
+          type: 'select',
+          orientation: 'horizontal',
+          name: items_per_page_name,
+          id: items_per_page_id,
           options: items_per_page_options,
           attributes: items_per_page_attributes,
-          modifier_class: 'ct-pager__items_per_page__select'
+          modifier_class: 'ct-field--horizontal--fluid ct-pager__items_per_page__label'
         } -%}
       </div>
     {% endif %}
