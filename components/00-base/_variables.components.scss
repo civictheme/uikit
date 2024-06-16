@@ -1017,8 +1017,11 @@ $ct-layout-breakpoint: l;
 //
 // Form/Fieldset.
 //
+$ct-fieldset-stripe-width: $ct-stripe-size !default;
 $ct-fieldset-light-required-color: ct-color-light('error') !default;
+$ct-fieldset-light-stripe-border-color: ct-color-light('highlight') !default;
 $ct-fieldset-dark-required-color: ct-color-dark('error') !default;
+$ct-fieldset-light-stripe-border-color: ct-color-dark('highlight') !default;
 
 //
 // Footer.

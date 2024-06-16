@@ -16,8 +16,10 @@ export const randomFields = (count, theme, rand, defaultInputType) => {
   for (let i = 0; i < count; i++) {
     const inputType = defaultInputType || randomArrayItem(inputTypes);
     fields.push(Field(new KnobValues({
+      theme,
       type: inputType,
       message: null,
+      orientation: randomArrayItem(['horizontal', 'vertical']),
     })));
   }
 
