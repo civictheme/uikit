@@ -33,6 +33,7 @@ export const capitalizeFirstLetter = (string) => string.charAt(0)
 
 export const cleanCssIdentifier = function (string) {
   return string.toLowerCase()
+    .replace(/_/, '-')
     .replace(/(&\w+?;)/gim, ' ')
     .replace(/[_.~"<>%|'!*();:@&=+$,/?%#[\]{}\n`^\\]/gim, '')
     .replace(/(^\s+)|(\s+$)/gim, '')
