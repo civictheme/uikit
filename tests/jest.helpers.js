@@ -9,7 +9,7 @@ Twig.extendFunction('source', (src) => {
   return fs.readFileSync(src, 'utf8');
 });
 
-global.dom = async function (template, props, matchSnapshot = true) {
+global.dom = async function (template, props = {}, matchSnapshot = true) {
   const { container } = await render(template, props, {
     base: 'components/00-base',
     atoms: 'components/01-atoms',
@@ -33,7 +33,11 @@ global.assertUniqueCssClasses = function (element) {
       acc[cls] = (acc[cls] || 0) + 1;
       return acc;
     }, {});
+
     const duplicates = Object.entries(classOccurrences).filter(([, count]) => count > 1);
     expect(duplicates).toHaveLength(0);
+
+    const undefinedClasses = classes.filter((cls) => cls === 'undefined');
+    expect(undefinedClasses).toHaveLength(0);
   });
 };

@@ -7,6 +7,7 @@
  * - theme: [string] Theme: light, dark. Optional.
  * - legend: [string] Legend for the fieldset. Optional.
  * - description: [string] Description for the fieldset. Optional.
+ * - description_display: [string] Description display: before, after, invisible. Default is before. Optional.
  * - message: [string] Message content. Optional.
  * - message_type: [string] Type of the message: error, warning, info, success. Default is error.
  * - fields: [string] Fields content. Optional.
@@ -19,10 +20,11 @@
  */
 #}
 
-{% set required_class = is_required ? 'ct-fieldset--required' : '' %}
+{% set description_display = description_display in ['before', 'after', 'invisible'] ? description_display : 'before' %}
 {% set message_type = message_type|default('error') %}
+{% set required_class = is_required ? 'ct-fieldset--required' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, form_element_type_class, form_element_name_class, required_class, error_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}
 
 <fieldset class="ct-fieldset {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
 	{% if legend is not empty %}
@@ -37,11 +39,11 @@
 	{% endif %}
 
 	<div class="ct-fieldset__wrapper">
-		{% if description is not empty %}
+		{% if description is not empty and (description_display == 'before' or description_display == 'invisible') %}
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,
-				modifier_class: 'ct-fieldset__description',
+				modifier_class: 'ct-fieldset__description ' ~ (description_display == 'invisible' ? 'ct-fieldset__description--invisible ct-visually-hidden' : 'ct-fieldset__description--before'),
 			} only %}
 		{% endif %}
 
@@ -54,6 +56,10 @@
 			} only %}
 		{% endif %}
 
+		{% if prefix is not empty %}
+			<div class="ct-fieldset__prefix">{{ prefix }}</div>
+		{% endif %}
+
 		{% block fields %}
 			{% if fields is not empty %}
 				<div class="ct-fieldset__fields">
@@ -61,5 +67,17 @@
 				</div>
 			{% endif %}
 		{% endblock %}
+
+		{% if suffix is not empty %}
+			<div class="ct-fieldset__suffix">{{ suffix }}</div>
+		{% endif %}
+
+		{% if description is not empty and description_display == 'after' %}
+			{% include '@atoms/paragraph/paragraph.twig' with {
+				theme: theme,
+				content: description,
+				modifier_class: 'ct-fieldset__description ct-fieldset__description--after',
+			} only %}
+		{% endif %}
 	</div>
 </fieldset>

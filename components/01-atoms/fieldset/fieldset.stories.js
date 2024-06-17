@@ -6,6 +6,7 @@ export default {
   title: 'Atoms/Form Controls/Fieldset',
   parameters: {
     layout: 'centered',
+    storyLayoutSize: 'medium',
   },
 };
 
@@ -23,6 +24,17 @@ export const Fieldset = (parentKnobs = {}) => {
     ),
     legend: knobText('Legend', 'Fieldset legend', parentKnobs.legend, parentKnobs.knobTab),
     description: knobText('Description', 'Fieldset example description', parentKnobs.description, parentKnobs.knobTab),
+    description_display: knobRadios(
+      'Description display',
+      {
+        Before: 'before',
+        After: 'after',
+        Invisible: 'invisible',
+      },
+      'before',
+      parentKnobs.description_display,
+      parentKnobs.knobTab,
+    ),
     message: knobText('Message', 'Example message', parentKnobs.message, parentKnobs.knobTab),
     message_type: knobRadios(
       'Type',
@@ -36,8 +48,11 @@ export const Fieldset = (parentKnobs = {}) => {
       parentKnobs.message_type,
       parentKnobs.knobTab,
     ),
+    prefix: knobText('Prefix', '', parentKnobs.prefix, parentKnobs.knobTab),
+    suffix: knobText('Suffix', '', parentKnobs.suffix, parentKnobs.knobTab),
     is_required: knobBoolean('Required', true, parentKnobs.is_required, parentKnobs.knobTab),
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
   const numberFields = knobNumber(
