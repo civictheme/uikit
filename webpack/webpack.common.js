@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: (function (pattern) {
     // Splitting entries into two chunks:
-    // main: all styles used in components -> output: civictheme.css
-    // variables: CSS variables -> output: civictheme.variables.css
+    // - main: all styles used in components -> civictheme.css
+    // - variables: CSS variables -> civictheme.variables.css
     const entries = {
       main: [],
       variables: [],
