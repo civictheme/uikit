@@ -1,0 +1,951 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field Component default input 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--email ct-field--vertical    custom-modifier"
+    data-test="true"
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+															
+
+
+	
+      <input
+        class="ct-input ct-theme-light  ct-field__control"
+        id="testid"
+        name="testname"
+        type="email"
+        value="testvalue"
+      />
+      
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component default values 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+															
+
+
+	
+      <input
+        class="ct-input ct-theme-light  ct-field__control"
+        name="test"
+        type="hidden"
+      />
+      
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component multiple control as array propagation - checkboxes 1`] = `
+<div>
+  
+
+
+
+		
+				
+	
+  <div
+    class="ct-field ct-theme-light ct-field--checkboxes ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+			
+																																								
+
+
+  
+      <ul
+        class="ct-item-list ct-item-list--vertical ct-item-list--regular  "
+      >
+        
+                  
+        <li
+          class="ct-item-list__item"
+        >
+          
+          													
+
+
+  
+          <input
+            class="ct-checkbox ct-theme-light  ct-field__control custom-modifier"
+            data-test="true"
+            id="testid"
+            name="testname"
+            type="checkbox"
+            value="testvalue"
+          />
+          
+      
+
+
+          <label
+            class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
+            for="testid"
+          >
+            
+    Test Label
+  
+          </label>
+            											
+        
+        </li>
+        
+                        
+        <li
+          class="ct-item-list__item"
+        >
+          
+          													
+
+
+  
+          <input
+            class="ct-checkbox ct-theme-light  ct-field__control custom-modifier2"
+            data-test="false"
+            id="testid2"
+            name="testname"
+            type="checkbox"
+            value="testvalue2"
+          />
+          
+      
+
+
+          <label
+            class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
+            for="testid2"
+          >
+            
+    Test Label
+  
+          </label>
+            											
+        
+        </li>
+        
+            
+      </ul>
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component multiple control as array propagation - textfield 1`] = `
+<div>
+  
+
+
+
+		
+				
+	
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control custom-modifier"
+        data-test="true"
+        id="testid"
+        name="testname"
+        type="textfield"
+        value="testvalue"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component multiple control as array propagation with mixed levels - checkboxes 1`] = `
+<div>
+  
+
+
+
+		
+				
+	
+  <div
+    class="ct-field ct-theme-light ct-field--checkboxes ct-field--vertical    custom-modifier-parent"
+    data-test-parent="true"
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+			
+																																								
+
+
+  
+      <ul
+        class="ct-item-list ct-item-list--vertical ct-item-list--regular  "
+      >
+        
+                  
+        <li
+          class="ct-item-list__item"
+        >
+          
+          													
+
+
+  
+          <input
+            class="ct-checkbox ct-theme-light  ct-field__control custom-modifier-nested1"
+            data-test-nested1="true"
+            id="testid1"
+            name="testname"
+            type="checkbox"
+            value="testvalue"
+          />
+          
+      
+
+
+          <label
+            class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
+            for="testid1"
+          >
+            
+    Checkbox 1
+  
+          </label>
+            											
+        
+        </li>
+        
+                        
+        <li
+          class="ct-item-list__item"
+        >
+          
+          													
+
+
+  
+          <input
+            class="ct-checkbox ct-theme-light  ct-field__control"
+            id="testid2"
+            name="testname"
+            type="checkbox"
+            value="testvalue2"
+          />
+          
+      
+
+
+          <label
+            class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
+            for="testid2"
+          >
+            
+    Checkbox 2
+  
+          </label>
+            											
+        
+        </li>
+        
+            
+      </ul>
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component nothing is rendered if name is not provided 1`] = `
+<div>
+  
+
+
+
+	
+		
+
+</div>
+`;
+
+exports[`Field Component radios 1`] = `
+<div>
+  
+
+
+
+		
+				
+	
+  <div
+    class="ct-field ct-theme-light ct-field--radios ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+			
+																																								
+
+
+  
+      <ul
+        class="ct-item-list ct-item-list--vertical ct-item-list--regular  "
+      >
+        
+                  
+        <li
+          class="ct-item-list__item"
+        >
+          
+          													
+
+
+  
+          <input
+            class="ct-radio ct-theme-light  ct-field__control custom-modifier"
+            data-test="true"
+            id="testid"
+            name="testname"
+            type="radio"
+            value="testvalue"
+          />
+          
+      
+
+
+          <label
+            class="ct-label ct-theme-light ct-label--small  ct-radio__label"
+            for="testid"
+          >
+            
+    Test Label
+  
+          </label>
+            											
+        
+        </li>
+        
+                        
+        <li
+          class="ct-item-list__item"
+        >
+          
+          													
+
+
+  
+          <input
+            class="ct-radio ct-theme-light  ct-field__control custom-modifier2"
+            data-test="false"
+            id="testid2"
+            name="testname"
+            type="radio"
+            value="testvalue2"
+          />
+          
+      
+
+
+          <label
+            class="ct-label ct-theme-light ct-label--small  ct-radio__label"
+            for="testid2"
+          >
+            
+    Test Label
+  
+          </label>
+            											
+        
+        </li>
+        
+            
+      </ul>
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component required, disabled, and description 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical ct-field--required ct-field--disabled  "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+							
+
+
+      <div
+        class="ct-field-description ct-theme-light ct-field-description--regular ct-field__description"
+      >
+        
+    This is a description
+  
+      </div>
+      			
+							
+
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        disabled=""
+        name="testname"
+        required=""
+        type="textfield"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component select 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--select ct-field--vertical    custom-modifier"
+    data-test="true"
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+	
+      <select
+        class="ct-select ct-theme-light  ct-field__control"
+        id="testid"
+        name="testname"
+      >
+        
+													
+      </select>
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component single control as array propagation 1`] = `
+<div>
+  
+
+
+
+		
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control custom-modifier"
+        data-test="true"
+        id="testid"
+        name="testname"
+        type="textfield"
+        value="testvalue"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component single control as object propagation 1`] = `
+<div>
+  
+
+
+
+		
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control custom-modifier"
+        data-test="true"
+        id="testid"
+        name="testname"
+        type="textfield"
+        value="testvalue"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component textarea with all attributes 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--textarea ct-field--vertical ct-field--required  ct-field--invalid custom-modifier"
+    data-test="true"
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular ct-label--required ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+  
+      <textarea
+        class="ct-textarea ct-theme-light ct-textarea--is-invalid ct-field__control"
+        id="testid"
+        name="testname"
+        required=""
+        type=""
+        value="testvalue"
+      >
+        testvalue
+      </textarea>
+      
+
+			
+							
+
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component textfield 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    custom-modifier"
+    data-test="true"
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      for="testid"
+    >
+      
+    Test Label
+  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        id="testid"
+        name="testname"
+        type="textfield"
+        value="testvalue"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component theme, orientation, and invalid state 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-dark ct-field--textfield ct-field--horizontal   ct-field--invalid "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+
+	
+      <input
+        class="ct-textfield ct-theme-dark ct-textfield--is-invalid ct-field__control"
+        name="testname"
+        type="textfield"
+      />
+      
+
+			
+							
+
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component values 1`] = `
+<div>
+  
+
+
+
+	
+		
+	
+  <div
+    class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+															
+
+
+	
+      <input
+        class="ct-input ct-theme-light  ct-field__control"
+        name="testname"
+        type="hidden"
+        value="testvalue"
+      />
+      
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;

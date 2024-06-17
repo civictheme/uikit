@@ -1,9 +1,7 @@
-import { render } from 'twig-testing-library';
 import each from 'jest-each';
 
 const template = 'components/00-base/grid/grid.twig';
 
-// Data provider for different test cases
 const dataProviderGrid = () => [
   {
     items: [1],
@@ -108,9 +106,7 @@ const dataProviderGrid = () => [
 
 describe('Grid', () => {
   each(dataProviderGrid()).test('renders correctly %s', async (props) => {
-    const { container } = await render(template, props);
-
-    expect(container).toMatchSnapshot();
+    await dom(template, props);
   });
 });
 
@@ -121,19 +117,19 @@ describe('Grid Container', () => {
     { use_container: false, is_fluid: false },
     { use_container: false, is_fluid: true },
   ]).test('renders %s', async (props) => {
-    const { container } = await render(template, { items: [1], ...props });
+    const c = await dom(template, { items: [1], ...props });
 
     if (props.use_container) {
       if (props.is_fluid) {
-        expect(container.querySelectorAll('.container')).toHaveLength(0);
-        expect(container.querySelectorAll('.container-fluid')).toHaveLength(1);
+        expect(c.querySelectorAll('.container')).toHaveLength(0);
+        expect(c.querySelectorAll('.container-fluid')).toHaveLength(1);
       } else {
-        expect(container.querySelectorAll('.container')).toHaveLength(1);
-        expect(container.querySelectorAll('.container-fluid')).toHaveLength(0);
+        expect(c.querySelectorAll('.container')).toHaveLength(1);
+        expect(c.querySelectorAll('.container-fluid')).toHaveLength(0);
       }
     } else {
-      expect(container.querySelectorAll('.container')).toHaveLength(0);
-      expect(container.querySelectorAll('.container-fluid')).toHaveLength(0);
+      expect(c.querySelectorAll('.container')).toHaveLength(0);
+      expect(c.querySelectorAll('.container-fluid')).toHaveLength(0);
     }
   });
 });
@@ -143,14 +139,14 @@ describe('Grid Row Fill Width', () => {
     { fill_width: true },
     { fill_width: false },
   ]).test('renders %s', async (props) => {
-    const { container } = await render(template, {
+    const c = await dom(template, {
       items: [1],
       use_container: true,
       ...props,
     });
 
     if (props.fill_width) {
-      expect(container.innerHTML).toContain('row--fill-width');
+      expect(c.innerHTML).toContain('row--fill-width');
     }
   });
 });
@@ -168,18 +164,18 @@ describe('Grid Attributes and Modifier Class', () => {
       use_container: false,
     },
   ]).test('renders %s', async (props) => {
-    const { container } = await render(template, {
+    const c = await dom(template, {
       items: [1],
       ...props,
     });
 
     if (props.use_container) {
-      expect(container.querySelectorAll('.container.custom-modifier')).toHaveLength(1);
-      expect(container.querySelectorAll('.container[data-test="true"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.container.custom-modifier')).toHaveLength(1);
+      expect(c.querySelectorAll('.container[data-test="true"]')).toHaveLength(1);
     } else {
-      expect(container.querySelectorAll('.container')).toHaveLength(0);
-      expect(container.querySelectorAll('.row.custom-modifier')).toHaveLength(1);
-      expect(container.querySelectorAll('.row[data-test="true"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.container')).toHaveLength(0);
+      expect(c.querySelectorAll('.row.custom-modifier')).toHaveLength(1);
+      expect(c.querySelectorAll('.row[data-test="true"]')).toHaveLength(1);
     }
   });
 });
@@ -195,7 +191,7 @@ describe('Grid Custom Elements', () => {
       column_element: 'div',
     },
   ]).test('renders %s', async (props) => {
-    const { container } = await render(template, {
+    const c = await dom(template, {
       items: [1],
       use_container: true,
       ...props,
@@ -203,14 +199,11 @@ describe('Grid Custom Elements', () => {
 
     const rowElement = props.row_element || 'div';
     const columnElement = props.column_element || 'div';
-    expect(container.querySelector(rowElement)).toBeTruthy();
-    expect(container.querySelector(columnElement)).toBeTruthy();
+    expect(c.querySelector(rowElement)).toBeTruthy();
+    expect(c.querySelector(columnElement)).toBeTruthy();
   });
 });
 
-/**
- * @group wip1
- */
 describe('Grid Custom Classes', () => {
   each([
     {
@@ -310,15 +303,15 @@ describe('Grid Custom Classes', () => {
       expectedColumnClass: 'col-xxs-12 col-m-1 custom-col',
     },
   ]).test('renders %s', async (props) => {
-    const { container } = await render(template, {
+    const c = await dom(template, {
       items: [1],
       use_container: true,
       ...props,
     });
 
-    expect(container.querySelector('div:nth-child(1)>div:nth-child(1)').innerHTML)
+    expect(c.querySelector('div:nth-child(1)>div:nth-child(1)').outerHTML)
       .toContain(`class="${props.expectedRowClass}"`);
-    expect(container.querySelector('div:nth-child(1)>div:nth-child(1)>div:nth-child(1)').innerHTML)
+    expect(c.querySelector('div:nth-child(1)>div:nth-child(1)>div:nth-child(1)').outerHTML)
       .toContain(`class="${props.expectedColumnClass}"`);
   });
 });

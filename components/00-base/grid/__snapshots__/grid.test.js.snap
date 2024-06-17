@@ -1,5 +1,933 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Grid Attributes and Modifier Class renders {
+  attributes: 'data-test="true"',
+  modifier_class: 'custom-modifier',
+  use_container: false
+} 1`] = `
+<div>
+  
+
+
+		
+
+	
+					
+
+			
+  <div
+    class="row  custom-modifier"
+    data-test="true"
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Attributes and Modifier Class renders {
+  attributes: 'data-test="true"',
+  modifier_class: 'custom-modifier',
+  use_container: true
+} 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container custom-modifier"
+    data-test="true"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Container renders { use_container: false, is_fluid: false } 1`] = `
+<div>
+  
+
+
+		
+
+	
+		
+
+			
+  <div
+    class="row"
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Container renders { use_container: false, is_fluid: true } 1`] = `
+<div>
+  
+
+
+		
+
+	
+		
+
+			
+  <div
+    class="row"
+  >
+    
+												
+    <div
+      class="col"
+    >
+      
+						1
+					
+    </div>
+    
+							    
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Container renders { use_container: true, is_fluid: false } 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Container renders { use_container: true, is_fluid: true } 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container-fluid"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 0,
+  row_class: 'custom-row',
+  column_class: 'custom-col',
+  fill_width: false,
+  expectedRowClass: 'row custom-row',
+  expectedColumnClass: 'col custom-col'
+} 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row custom-row"
+    >
+      
+												
+      <div
+        class="col custom-col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 0,
+  row_class: 'custom-row',
+  column_class: 'custom-col',
+  fill_width: true,
+  expectedRowClass: 'row row--fill-width custom-row',
+  expectedColumnClass: 'col custom-col'
+} 1`] = `
+<div>
+  
+
+
+		
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width custom-row"
+    >
+      
+												
+      <div
+        class="col custom-col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 0,
+  row_class: null,
+  column_class: null,
+  fill_width: false,
+  expectedRowClass: 'row',
+  expectedColumnClass: 'col'
+} 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 0,
+  row_class: null,
+  column_class: null,
+  fill_width: true,
+  expectedRowClass: 'row row--fill-width',
+  expectedColumnClass: 'col'
+} 1`] = `
+<div>
+  
+
+
+		
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 12,
+  row_class: 'custom-row',
+  column_class: 'custom-col',
+  fill_width: false,
+  expectedRowClass: 'row custom-row',
+  expectedColumnClass: 'col-xxs-12 col-m-1 custom-col'
+} 1`] = `
+<div>
+  
+
+
+			
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row custom-row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-1 custom-col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 12,
+  row_class: 'custom-row',
+  column_class: 'custom-col',
+  fill_width: true,
+  expectedRowClass: 'row row--fill-width custom-row',
+  expectedColumnClass: 'col-xxs-12 col-m-1 custom-col'
+} 1`] = `
+<div>
+  
+
+
+			
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width custom-row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-1 custom-col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 12,
+  row_class: 'custom-row',
+  column_class: null,
+  fill_width: false,
+  expectedRowClass: 'row custom-row',
+  expectedColumnClass: 'col-xxs-12 col-m-1'
+} 1`] = `
+<div>
+  
+
+
+			
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row custom-row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-1"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 12,
+  row_class: 'custom-row',
+  column_class: null,
+  fill_width: true,
+  expectedRowClass: 'row row--fill-width custom-row',
+  expectedColumnClass: 'col-xxs-12 col-m-1'
+} 1`] = `
+<div>
+  
+
+
+			
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width custom-row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-1"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 12,
+  row_class: null,
+  column_class: null,
+  fill_width: false,
+  expectedRowClass: 'row',
+  expectedColumnClass: 'col-xxs-12 col-m-1'
+} 1`] = `
+<div>
+  
+
+
+			
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-1"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: 12,
+  row_class: null,
+  column_class: null,
+  fill_width: true,
+  expectedRowClass: 'row row--fill-width',
+  expectedColumnClass: 'col-xxs-12 col-m-1'
+} 1`] = `
+<div>
+  
+
+
+			
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width"
+    >
+      
+												
+      <div
+        class="col-xxs-12 col-m-1"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: null,
+  row_class: null,
+  column_class: null,
+  fill_width: false,
+  expectedRowClass: 'row',
+  expectedColumnClass: 'col'
+} 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Classes renders {
+  template_column_count: null,
+  row_class: null,
+  column_class: null,
+  fill_width: true,
+  expectedRowClass: 'row row--fill-width',
+  expectedColumnClass: 'col'
+} 1`] = `
+<div>
+  
+
+
+		
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Elements renders { row_element: 'div', column_element: 'div' } 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Custom Elements renders { row_element: 'section', column_element: 'span' } 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <section
+      class="row"
+    >
+      
+												
+      <span
+        class="col"
+      >
+        
+						1
+					
+      </span>
+      
+							    
+    </section>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Row Fill Width renders { fill_width: false } 1`] = `
+<div>
+  
+
+
+		
+
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
+exports[`Grid Row Fill Width renders { fill_width: true } 1`] = `
+<div>
+  
+
+
+		
+	
+	
+
+		
+  <div
+    aria-live="polite"
+    class="container"
+  >
+    
+			
+    <div
+      class="row row--fill-width"
+    >
+      
+												
+      <div
+        class="col"
+      >
+        
+						1
+					
+      </div>
+      
+							    
+    </div>
+    
+		
+  </div>
+  
+	
+</div>
+`;
+
 exports[`Grid renders correctly {
   items: [Array],
   use_container: false,
