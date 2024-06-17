@@ -210,9 +210,9 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('multiple control as array propagation - checkboxes', async () => {
+  test('multiple control as array propagation - checkbox', async () => {
     const c = await dom(template, {
-      type: 'checkboxes',
+      type: 'checkbox',
       label: 'Test Label',
       control: [
         {
@@ -248,9 +248,9 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('multiple control as array propagation with mixed levels - checkboxes', async () => {
+  test('multiple control as array propagation with mixed levels - checkbox', async () => {
     const c = await dom(template, {
-      type: 'checkboxes',
+      type: 'checkbox',
       label: 'Test Label',
       name: 'testname',
       id: 'testid',
@@ -377,9 +377,9 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('radios', async () => {
+  test('radio', async () => {
     const c = await dom(template, {
-      type: 'radios',
+      type: 'radio',
       label: 'Test Label',
       control: [
         {

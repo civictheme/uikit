@@ -8,8 +8,8 @@ export const randomFields = (count, theme, rand, defaultInputType) => {
     'textfield',
     'textarea',
     'select',
-    'radios',
-    'checkboxes',
+    'radio',
+    'checkbox',
   ];
 
   const fields = [];
