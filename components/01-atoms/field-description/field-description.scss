@@ -16,5 +16,9 @@
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);
+
+    a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+      color: inherit;
+    }
   }
 }

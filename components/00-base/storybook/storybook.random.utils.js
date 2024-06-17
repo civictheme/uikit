@@ -67,6 +67,8 @@ export const randomFutureDate = (days = 30) => {
   return convertDate(randomDate);
 };
 
+export const randomLink = (text, url, isNewWindow, isExternal) => `<a href="${url || randomUrl()}"${isNewWindow ? ' target="_blank"' : ''}${isExternal ? ' rel="noopener noreferrer"' : ''}>${text || randomSentence(3)}</a>`;
+
 export const randomLinks = (count, length, domain, prefix) => {
   const links = [];
   prefix = prefix || 'Link';
