@@ -16,6 +16,8 @@ module.exports = {
   coverageDirectory: '.logs/coverage',
   collectCoverageFrom: [
     '**/components/**/*.{js,jsx,twig}',
+    '**/tests/**/*.{js,jsx,twig}',
     '!**/*.stories.js',
   ],
+  setupFiles: ['<rootDir>/tests/jest.helpers.js'],
 };

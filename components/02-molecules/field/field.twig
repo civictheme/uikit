@@ -55,33 +55,18 @@
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 
 {# Initialise empty control and convert to an array. #}
-{% if control is not defined %}
-	{% set control = [] %}
+{% if control is not defined or control is not iterable %}
+	{% set control = [{name: name}] %}
 {% else %}
-	{% set control = control is iterable ? control : [control] %}
-{% endif %}
-
-{% if control|length == 0 %}
-	{% set control = [{
-		theme: theme,
-		name: name,
-		value: value,
-		id: id,
-		options: options is defined ? options : [],
-		placeholder: placeholder is defined ? placeholder : '',
-		is_required: is_required,
-		is_invalid: is_invalid,
-		is_disabled: is_disabled,
-		is_multiple: is_multiple is defined ? is_multiple : false,
-		attributes: '',
-		modifier_class: 'ct-field__control',
-	}] %}
+	{% set first_key = control|keys|first %}
+	{% set control = first_key is not empty and first_key matches '/^[0-9]+$/' ? control : [control] %}
 {% endif %}
 
 {% set _controls = [] %}
 {% for c in control %}
 	{% set c = {
 		theme: c.theme is defined ? c.theme : theme,
+		label: c.label is defined ? c.label : label,
 		name: c.name is defined ? c.name : name,
 		value: c.value is defined ? c.value : value,
 		id: c.id is defined ? c.id : id,
@@ -98,66 +83,68 @@
 {% endfor %}
 {% set control = _controls %}
 
-<div class="ct-field {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
-	{% if label is not empty and type != 'hidden' %}
-		{% include '@atoms/label/label.twig' with {
-			theme: theme,
-			content: label,
-			is_required: is_required,
-			for: control[0].id and type not in ['radios', 'checkboxes'] ? control[0].id : null,
-			modifier_class: 'ct-field__label',
-		} only %}
-	{% endif %}
-
-	<div class="ct-field__wrapper">
-		{% if (description) and type != 'hidden' %}
-			{% include '@atoms/field-description/field-description.twig' with {
+{% if control[0].name is defined %}
+	<div class="ct-field {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
+		{% if label is not empty and type != 'hidden' %}
+			{% include '@atoms/label/label.twig' with {
 				theme: theme,
-				content: description ? description : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
-				modifier_class: 'ct-field__description',
+				content: label,
+				is_required: is_required,
+				for: control[0].id and type not in ['radios', 'checkboxes'] ? control[0].id : null,
+				modifier_class: 'ct-field__label',
 			} only %}
 		{% endif %}
 
-		{% if type == 'textfield' %}
-			{% include '@atoms/textfield/textfield.twig' with control[0] only %}
+		<div class="ct-field__wrapper">
+			{% if (description) and type != 'hidden' %}
+				{% include '@atoms/field-description/field-description.twig' with {
+					theme: theme,
+					content: description ? description : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					modifier_class: 'ct-field__description',
+				} only %}
+			{% endif %}
 
-		{% elseif type == 'textarea' %}
-			{% include '@atoms/textarea/textarea.twig' with control[0] only %}
+			{% if type == 'textfield' %}
+				{% include '@atoms/textfield/textfield.twig' with control[0] only %}
 
-		{% elseif type == 'select' %}
-			{% include '@atoms/select/select.twig' with control[0] only %}
+			{% elseif type == 'textarea' %}
+				{% include '@atoms/textarea/textarea.twig' with control[0] only %}
 
-		{% elseif type == 'checkboxes' or type == 'radios' %}
-			{% set list_items = [] %}
-			{% for key, item in control %}
-				{% set list_item %}
-					{% set item = {theme: theme, label: label, value: value, name: name, id: id ~ '-' ~ key, is_required: is_required, is_disabled: is_disabled, is_invalid: is_invalid, attributes: attributes, modifier_class: modifier_class}|merge(item) %}
-					{% if type == 'checkboxes' %}
-						{% include '@atoms/checkbox/checkbox.twig' with item only %}
-					{% else %}
-						{% include '@atoms/radio/radio.twig' with item only %}
-					{% endif %}
-				{% endset %}
-				{% set list_items = list_items|merge([list_item]) %}
-			{% endfor %}
-			{% include '@base/item-list/item-list.twig' with {
-				direction: is_inline ? 'horizontal' : 'vertical',
-				items: list_items,
-			} only %}
+			{% elseif type == 'select' %}
+				{% include '@atoms/select/select.twig' with control[0] only %}
 
-		{% else %}
-			{% set control0 = control[0] %}
-			{% set control0 = control0|merge({'type': type}) %}
-			{% include '@atoms/input/input.twig' with control0 only %}
-		{% endif %}
+			{% elseif type == 'checkboxes' or type == 'radios' %}
 
-		{% if (message or is_invalid) and type != 'hidden' %}
-			{% include '@atoms/field-message/field-message.twig' with {
-				theme: theme,
-				type: is_invalid ? 'error' : 'information',
-				content: message ? message : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
-				modifier_class: 'ct-field__message',
-			} only %}
-		{% endif %}
+				{% set list_items = [] %}
+				{% for key, item in control %}
+					{% set list_item %}
+						{% if type == 'checkboxes' %}
+							{% include '@atoms/checkbox/checkbox.twig' with item only %}
+						{% else %}
+							{% include '@atoms/radio/radio.twig' with item only %}
+						{% endif %}
+					{% endset %}
+					{% set list_items = list_items|merge([list_item]) %}
+				{% endfor %}
+				{% include '@base/item-list/item-list.twig' with {
+					direction: is_inline ? 'horizontal' : 'vertical',
+					items: list_items,
+				} only %}
+
+			{% else %}
+				{% set control0 = control[0] %}
+				{% set control0 = control0|merge({'type': type}) %}
+				{% include '@atoms/input/input.twig' with control0 only %}
+			{% endif %}
+
+			{% if (message or is_invalid) and type != 'hidden' %}
+				{% include '@atoms/field-message/field-message.twig' with {
+					theme: theme,
+					type: is_invalid ? 'error' : 'information',
+					content: message ? message : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					modifier_class: 'ct-field__message',
+				} only %}
+			{% endif %}
+		</div>
 	</div>
-</div>
+{% endif %}
