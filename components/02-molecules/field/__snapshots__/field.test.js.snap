@@ -96,7 +96,7 @@ exports[`Field Component default values 1`] = `
 </div>
 `;
 
-exports[`Field Component multiple control as array propagation - checkboxes 1`] = `
+exports[`Field Component multiple control as array propagation - checkbox 1`] = `
 <div>
   
 
@@ -106,7 +106,7 @@ exports[`Field Component multiple control as array propagation - checkboxes 1`] 
 				
 	
   <div
-    class="ct-field ct-theme-light ct-field--checkboxes ct-field--vertical    "
+    class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical    "
   >
     
 					
@@ -272,7 +272,7 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
 </div>
 `;
 
-exports[`Field Component multiple control as array propagation with mixed levels - checkboxes 1`] = `
+exports[`Field Component multiple control as array propagation with mixed levels - checkbox 1`] = `
 <div>
   
 
@@ -282,7 +282,7 @@ exports[`Field Component multiple control as array propagation with mixed levels
 				
 	
   <div
-    class="ct-field ct-theme-light ct-field--checkboxes ct-field--vertical    custom-modifier-parent"
+    class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical    custom-modifier-parent"
     data-test-parent="true"
   >
     
@@ -404,7 +404,7 @@ exports[`Field Component nothing is rendered if name is not provided 1`] = `
 </div>
 `;
 
-exports[`Field Component radios 1`] = `
+exports[`Field Component radio 1`] = `
 <div>
   
 
@@ -414,7 +414,7 @@ exports[`Field Component radios 1`] = `
 				
 	
   <div
-    class="ct-field ct-theme-light ct-field--radios ct-field--vertical    "
+    class="ct-field ct-theme-light ct-field--radio ct-field--vertical    "
   >
     
 					

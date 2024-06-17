@@ -9,7 +9,7 @@
  *
  * For simple controls, the properties `name`, `value`, `is_invalid`,
  * `is_disabled`, and `is_required` can be defined at the top level.
- * For group controls, like radios or checkboxes, these properties will be
+ * For group controls, like radio or checkbox, these properties will be
  * propagated to `control` prop, unless explicitly defined there.
  *
  * Variables:
@@ -27,7 +27,7 @@
  * - is_inline: [boolean] Denote if the complex control is shown inline. Optional.
  * - control: [object | array[object]] Object or array of objects with control's
  *   properties. Required for complex controls.
- *   - label: [string] Control label. Required only for a radio group or checkboxes.
+ *   - label: [string] Control label. Required only for a radio group or checkbox.
  *   - name: [string] Control DOM name. Propagated from `name` if not defined.
  *   - value: [string] Control DOM value. Propagated from `value` if not defined.
  *   - id: [string] Control DOM id. Optional.
@@ -90,7 +90,7 @@
 				theme: theme,
 				content: label,
 				is_required: is_required,
-				for: control[0].id and type not in ['radios', 'checkboxes'] ? control[0].id : null,
+				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
 				modifier_class: 'ct-field__label',
 			} only %}
 		{% endif %}
@@ -113,12 +113,12 @@
 			{% elseif type == 'select' %}
 				{% include '@atoms/select/select.twig' with control[0] only %}
 
-			{% elseif type == 'checkboxes' or type == 'radios' %}
+			{% elseif type == 'checkbox' or type == 'radio' %}
 
 				{% set list_items = [] %}
 				{% for key, item in control %}
 					{% set list_item %}
-						{% if type == 'checkboxes' %}
+						{% if type == 'checkbox' %}
 							{% include '@atoms/checkbox/checkbox.twig' with item only %}
 						{% else %}
 							{% include '@atoms/radio/radio.twig' with item only %}

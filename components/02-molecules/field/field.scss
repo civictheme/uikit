@@ -40,8 +40,8 @@
       margin-top: $_control-vertical-padding - $_control-border-width;
     }
 
-    &#{$root}--radios,
-    &#{$root}--checkboxes,
+    &#{$root}--radio,
+    &#{$root}--checkbox,
     &#{$root}--select[multiple] {
       #{$root}__label {
         margin-top: 0;

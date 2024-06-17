@@ -33,8 +33,8 @@ export const Field = (parentKnobs = {}) => {
         Textarea: 'textarea',
         Select: 'select',
         'Select Multiple': 'select_multiple',
-        Radios: 'radios',
-        Checkboxes: 'checkboxes',
+        Radio: 'radio',
+        Checkbox: 'checkbox',
         Hidden: 'hidden',
         Color: 'color',
         Date: 'date',
@@ -97,7 +97,7 @@ export const Field = (parentKnobs = {}) => {
       knobs.type = 'select';
       break;
 
-    case 'radios':
+    case 'radio':
       controlKnobs.control = generateItems(knobNumber(
         'Items count',
         5,
@@ -113,13 +113,13 @@ export const Field = (parentKnobs = {}) => {
         ...Radio(new KnobValues({ theme: knobs.theme }, false)),
         ...{
           id: randomId(`${name}-${idx}`),
-          // All radios in a group should have the same name.
+          // All radio in a group should have the same name.
           name,
         },
       }));
       break;
 
-    case 'checkboxes':
+    case 'checkbox':
       controlKnobs.control = generateItems(knobNumber(
         'Items count',
         5,
@@ -142,7 +142,7 @@ export const Field = (parentKnobs = {}) => {
     default:
       controlKnobs = {
         id: randomId(name),
-        // All radios in a group should have the same name.
+        // All radio in a group should have the same name.
         name,
       };
   }
