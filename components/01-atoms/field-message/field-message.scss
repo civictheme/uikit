@@ -97,6 +97,10 @@
           #{$root}__icon {
             color: map.get($values, 'icon-color');
           }
+
+          a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+            color: inherit;
+          }
         }
       }
     }

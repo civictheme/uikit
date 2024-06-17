@@ -1,4 +1,4 @@
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomName, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 import CivicThemeField from './field.twig';
 import { Select } from '../../01-atoms/select/select.stories';
 import { Textfield } from '../../01-atoms/textfield/textfield.stories';
@@ -57,8 +57,8 @@ export const Field = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab),
-    description: knobText('Description', 'Description content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.description, parentKnobs.knobTab),
-    message: knobText('Message', 'Message content sample with long text that spans on the multiple lines to test text vertical spacing', parentKnobs.message, parentKnobs.knobTab),
+    description: knobText('Description', `Description content sample. ${randomSentence(50)}`, parentKnobs.description, parentKnobs.knobTab),
+    message: knobText('Message', `Message content sample. ${randomSentence(50)}`, parentKnobs.message, parentKnobs.knobTab),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
     is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
     is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
@@ -76,6 +76,14 @@ export const Field = (parentKnobs = {}) => {
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
+
+  if (knobs.description && knobs.description.length > 0) {
+    knobs.description += ` ${randomLink()}`;
+  }
+
+  if (knobs.message && knobs.message.length > 0) {
+    knobs.message += ` ${randomLink()}`;
+  }
 
   let controlKnobs = {};
   const name = randomName();
