@@ -32,6 +32,7 @@ export const Field = (parentKnobs = {}) => {
         Textfield: 'textfield',
         Textarea: 'textarea',
         Select: 'select',
+        'Select Multiple': 'select_multiple',
         Radios: 'radios',
         Checkboxes: 'checkboxes',
         Hidden: 'hidden',
@@ -89,6 +90,11 @@ export const Field = (parentKnobs = {}) => {
 
     case 'select':
       controlKnobs = Select(new KnobValues({ theme: knobs.theme }, false));
+      break;
+
+    case 'select_multiple':
+      controlKnobs = Select(new KnobValues({ theme: knobs.theme, is_multiple: true }, false));
+      knobs.type = 'select';
       break;
 
     case 'radios':

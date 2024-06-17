@@ -72,6 +72,7 @@
 		is_required: is_required,
 		is_invalid: is_invalid,
 		is_disabled: is_disabled,
+		is_multiple: is_multiple is defined ? is_multiple : false,
 		attributes: '',
 		modifier_class: 'ct-field__control',
 	}] %}
@@ -85,6 +86,7 @@
 		value: c.value is defined ? c.value : value,
 		id: c.id is defined ? c.id : id,
 		options: c.options is defined ? c.options : options is defined ? options : [],
+		is_multiple: c.is_multiple is defined ? c.is_multiple : is_multiple is defined ? is_multiple : false,
 		placeholder: placeholder is defined ? placeholder : '',
 		is_required: is_required,
 		is_invalid: is_invalid,
