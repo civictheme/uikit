@@ -1,4 +1,13 @@
-import { render } from 'twig-testing-library';
+import { render, Twig } from 'twig-testing-library';
+import * as fs from 'node:fs';
+
+const dir = __dirname;
+Twig.extendFunction('source', (src) => {
+  if (src.startsWith('@civictheme')) {
+    src = src.replace('@civictheme', dir);
+  }
+  return fs.readFileSync(src, 'utf8');
+});
 
 global.dom = async function (template, props, matchSnapshot = true) {
   const { container } = await render(template, props, {
@@ -19,7 +28,7 @@ global.dom = async function (template, props, matchSnapshot = true) {
 global.assertUniqueCssClasses = function (element) {
   const elements = element.querySelectorAll('*');
   elements.forEach((el) => {
-    const classes = el.className.split(' ').filter((cls) => cls);
+    const classes = typeof el.className === 'string' ? el.className.split(' ').filter((cls) => cls) : [];
     const classOccurrences = classes.reduce((acc, cls) => {
       acc[cls] = (acc[cls] || 0) + 1;
       return acc;
