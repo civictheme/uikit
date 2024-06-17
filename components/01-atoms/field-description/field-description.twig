@@ -7,6 +7,7 @@
  * - theme: [string] Theme: light, dark.
  * - content: [string] The description's content.
  * - size: [string] Label size: large, regular.
+ * - allow_html: [boolean] Allow HTML in text.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
@@ -19,6 +20,10 @@
 
 {% if content is not empty -%}
   <div class="ct-field-description {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
-    {{ content }}
+    {% if allow_html %}
+      {{ content }}
+    {% else %}
+      {{ content|striptags }}
+    {% endif %}
   </div>
 {%- endif %}
