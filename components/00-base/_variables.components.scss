@@ -439,6 +439,40 @@ $ct-fieldset-dark-required-color: ct-color-dark('error') !default;
 $ct-fieldset-light-stripe-border-color: ct-color-dark('highlight') !default;
 
 //
+// Form Control/Input.
+//
+$ct-input-border-radius: $ct-border-radius !default;
+$ct-input-outline-width: 2px !default;
+$ct-input-outline-offset: 2px !default;
+$ct-input-disabled-opacity: 40% !default;
+$ct-input-light-background-color: ct-color-light('background-light') !default;
+$ct-input-light-border-color: ct-color-light('border') !default;
+$ct-input-light-color: ct-color-light('body') !default;
+$ct-input-light-hover-background-color: $ct-input-light-background-color !default;
+$ct-input-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
+$ct-input-light-hover-color: $ct-input-light-color !default;
+$ct-input-light-focus-background-color: $ct-input-light-background-color !default;
+$ct-input-light-focus-border-color: ct-color-light('interaction-background') !default;
+$ct-input-light-focus-color: $ct-input-light-color !default;
+$ct-input-light-invalid-background-color: ct-color-light('background-light') !default;
+$ct-input-light-invalid-border-color: ct-color-light('error') !default;
+$ct-input-light-invalid-color: ct-color-light('body') !default;
+$ct-input-light-outline-color: $ct-outline-light !default;
+$ct-input-dark-background-color: ct-color-dark('background-dark') !default;
+$ct-input-dark-border-color: ct-color-dark('border-light') !default;
+$ct-input-dark-color: ct-color-dark('body') !default;
+$ct-input-dark-hover-background-color: $ct-input-dark-background-color !default;
+$ct-input-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
+$ct-input-dark-hover-color: $ct-input-dark-color !default;
+$ct-input-dark-focus-background-color: ct-color-dark('background') !default;
+$ct-input-dark-focus-border-color: ct-color-dark('interaction-background') !default;
+$ct-input-dark-focus-color: $ct-input-dark-color !default;
+$ct-input-dark-invalid-background-color: ct-color-dark('background-dark') !default;
+$ct-input-dark-invalid-border-color: ct-color-dark('error') !default;
+$ct-input-dark-invalid-color: ct-color-dark('body') !default;
+$ct-input-dark-outline-color: $ct-outline-dark !default;
+
+//
 // Form Control/Label.
 //
 $ct-label-required-content: '*';
