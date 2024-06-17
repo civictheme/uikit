@@ -35,6 +35,20 @@ export const Field = (parentKnobs = {}) => {
         Radios: 'radios',
         Checkboxes: 'checkboxes',
         Hidden: 'hidden',
+        Color: 'color',
+        Date: 'date',
+        Email: 'email',
+        File: 'file',
+        Image: 'image',
+        Month: 'month',
+        Number: 'number',
+        Password: 'password',
+        Range: 'range',
+        Search: 'search',
+        Tel: 'tel',
+        Time: 'time',
+        Url: 'url',
+        Week: 'week',
         Other: 'other',
       },
       'textfield',
@@ -120,7 +134,11 @@ export const Field = (parentKnobs = {}) => {
       break;
 
     default:
-      controlKnobs = {};
+      controlKnobs = {
+        id: randomId(name),
+        // All radios in a group should have the same name.
+        name,
+      };
   }
 
   // Merge and override knob values from controls with the values taken from

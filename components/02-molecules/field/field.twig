@@ -41,7 +41,7 @@
  */
 #}
 
-{% set type = type in ['textfield', 'textarea', 'select', 'radios', 'checkboxes', 'hidden'] ? type : 'hidden' %}
+{% set type = type is defined ? type : 'hidden' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
@@ -144,16 +144,9 @@
 			} only %}
 
 		{% else %}
-			<input
-				type="{{ type }}"
-				name="{{ control[0].name }}"
-				{% if control[0].modifier_class %}class="{{ control[0].modifier_class }}"{% endif %}
-				{% if control[0].value %}value="{{ control[0].value }}"{% endif %}
-				{% if control[0].id %}id="{{ control[0].id }}"{% endif %}
-				{% if control[0].is_required %}required{% endif %}
-				{% if control[0].is_disabled %}disabled{% endif %}
-				{% if control[0].attributes %}{{ control[0].attributes|raw }}{% endif %}
-			/>
+			{% set control0 = control[0] %}
+			{% set control0 = control0|merge({'type': type}) %}
+			{% include '@atoms/input/input.twig' with control0 only %}
 		{% endif %}
 
 		{% if (message or is_invalid) and type != 'hidden' %}
