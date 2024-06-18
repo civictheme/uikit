@@ -1,3 +1,4 @@
+**/*.test.*
 .editorconfig
 .eslintignore
 .eslintrc.yml
@@ -11,9 +12,5 @@
 composer.json
 jest.config.js
 renovate.json
+tests
 webpack
-
-# Exclude demo assets as they are erroneously located in dist assets.
-# @see https://github.com/civictheme/uikit/issues/30
-assets/images
-assets/videos
