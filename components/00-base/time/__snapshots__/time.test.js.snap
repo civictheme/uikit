@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Time Component does not render when start time is empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Time Component renders with custom attributes and classes 1`] = `
+<div>
+  
+
+  
+  <span
+    class="ct-time custom-class"
+    data-test="true"
+  >
+    
+    
+    <time
+      class="ct-time__start"
+      datetime="2023-06-15T08:00:00Z"
+    >
+      2023-06-15T08:00
+    </time>
+    
+      
+  </span>
+  
+
+</div>
+`;
+
+exports[`Time Component renders with start and end time 1`] = `
+<div>
+  
+
+  
+  <span
+    class="ct-time "
+  >
+    
+    
+    <time
+      class="ct-time__start"
+      datetime="2023-06-15T08:00:00Z"
+    >
+      2023-06-15T08:00
+    </time>
+    
+          —
+      
+    <time
+      class="ct-time__end"
+      datetime="2023-06-15T17:00:00Z"
+    >
+      2023-06-15T17:00
+    </time>
+    
+      
+  </span>
+  
+
+</div>
+`;
+
+exports[`Time Component renders with start time only 1`] = `
+<div>
+  
+
+  
+  <span
+    class="ct-time "
+  >
+    
+    
+    <time
+      class="ct-time__start"
+      datetime="2023-06-15T08:00:00Z"
+    >
+      2023-06-15T08:00
+    </time>
+    
+      
+  </span>
+  
+
+</div>
+`;
+
+exports[`Time Component strips HTML tags from attribute values 1`] = `
+<div>
+  
+
+  
+  <span
+    class="ct-time "
+  >
+    
+    
+    <time
+      class="ct-time__start"
+      datetime="2023-06-15T08:00:00Z"
+    >
+      <b>
+        2023-06-15T08:00
+      </b>
+    </time>
+    
+          —
+      
+    <time
+      class="ct-time__end"
+      datetime="2023-06-15T17:00:00Z"
+    >
+      <b>
+        2023-06-15T17:00
+      </b>
+    </time>
+    
+      
+  </span>
+  
+
+</div>
+`;
