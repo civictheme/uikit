@@ -25,7 +25,7 @@
     "lint-fix": "eslint ./components ./.storybook ./webpack ./tests --fix && stylelint 'components/**/*.scss' --fix",
     "dist": "export NODE_OPTIONS=--openssl-legacy-provider && webpack --config ./webpack/webpack.prod.js",
     "dist-dev": "export NODE_OPTIONS=--openssl-legacy-provider && webpack --config ./webpack/webpack.dev.js",
-    "postinstall": "patch-package",
+    "postinstall": "if [ -d .storybook ]; then patch-package; fi",
     "test": "npm run test-unit && npm run test-storybook",
     "test:ci": "npm run test-unit:ci && npm run test-storybook:ci",
     "test-unit": "jest",
