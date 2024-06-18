@@ -68,7 +68,7 @@ export const List = (parentKnobs = {}) => {
 
   const showFilters = knobBoolean('Show filters', true, parentKnobs.show_filter, parentKnobs.knobTab);
   const showItems = knobBoolean('Show items', true, parentKnobs.show_items, parentKnobs.knobTab);
-  const showPager = knobBoolean('Show pager', true, parentKnobs.show_pager, parentKnobs.knobTab);
+  const showPagination = knobBoolean('Show pagination', true, parentKnobs.show_pagination, parentKnobs.knobTab);
 
   let filtersCount = 0;
 
@@ -142,13 +142,13 @@ export const List = (parentKnobs = {}) => {
   }
 
   // Build pagination.
-  if (showPager) {
-    const pagerKnobs = {
+  if (showPagination) {
+    const paginationKnobs = {
       theme: knobs.theme,
       heading_id: 'ct-listing-demo',
     };
 
-    knobs.pager = shouldRender(parentKnobs) ? Pagination({ ...pagerKnobs, ...{ knobTab: 'Pagination' } }) : pagerKnobs;
+    knobs.pagination = shouldRender(parentKnobs) ? Pagination({ ...paginationKnobs, ...{ knobTab: 'Pagination' } }) : paginationKnobs;
   }
 
   // Build items.
