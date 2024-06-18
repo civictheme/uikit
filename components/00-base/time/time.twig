@@ -15,10 +15,10 @@
 
 {% if start is not empty %}
   <span class="ct-time {{ modifier_class|default('') }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
-    <time class="ct-time__start" datetime="{{ start_iso|default(start) }}">{{ start }}</time>
+    <time class="ct-time__start" datetime="{{ start_iso|default(start)|striptags }}">{{ start }}</time>
     {% if end is not empty %}
       &mdash;
-      <time class="ct-time__end" datetime="{{ end_iso|default(end) }}">{{ end }}</time>
+      <time class="ct-time__end" datetime="{{ end_iso|default(end)|striptags }}">{{ end }}</time>
     {% endif %}
   </span>
 {% endif %}
