@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component hides sidebars when specified 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+			
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with all sidebars and content sections 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-vertical-spacing--top"
+    role="main"
+  >
+    
+									Top content
+					
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+												
+      <aside
+        class="ct-layout__sidebar_top_left"
+      >
+        
+						Top left sidebar
+					
+      </aside>
+      
+							
+												
+      <aside
+        class="ct-layout__sidebar_top_right"
+      >
+        
+						Top right sidebar
+					
+      </aside>
+      
+							
+												
+      <aside
+        class="ct-layout__sidebar_bottom_left"
+      >
+        
+						Bottom left sidebar
+					
+      </aside>
+      
+							
+												
+      <aside
+        class="ct-layout__sidebar_bottom_right"
+      >
+        
+						Bottom right sidebar
+					
+      </aside>
+      
+									
+    </div>
+    
+
+									Bottom content
+						
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with custom attributes and classes 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right  custom-modifier"
+    data-test="true"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+			
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with default values 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+			
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with sidebar bottom left 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left ct-layout--no-top-right  ct-layout--no-bottom-right ct-vertical-spacing--top"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+			
+			
+												
+      <aside
+        class="ct-layout__sidebar_bottom_left"
+      >
+        
+						Bottom left sidebar
+					
+      </aside>
+      
+							
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with sidebar bottom right 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left  ct-vertical-spacing--top"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+			
+			
+			
+												
+      <aside
+        class="ct-layout__sidebar_bottom_right"
+      >
+        
+						Bottom right sidebar
+					
+      </aside>
+      
+									
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with sidebar top left 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right ct-vertical-spacing--top"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+												
+      <aside
+        class="ct-layout__sidebar_top_left"
+      >
+        
+						Top left sidebar
+					
+      </aside>
+      
+							
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component renders with sidebar top right 1`] = `
+<div>
+  
+
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left  ct-layout--no-bottom-left ct-layout--no-bottom-right ct-vertical-spacing--top"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        
+						Main content
+					
+      </section>
+      
+							
+			
+												
+      <aside
+        class="ct-layout__sidebar_top_right"
+      >
+        
+						Top right sidebar
+					
+      </aside>
+      
+							
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
