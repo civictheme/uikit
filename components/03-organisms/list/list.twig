@@ -16,7 +16,7 @@
  * - rows: [string] Rows content.
  * - rows_below: [string] Content below rows.
  * - empty: [string] Empty results content.
- * - pager: [string] Pager slot.
+ * - pagination: [string] Pagination slot.
  * - footer: [string] Footer slot.
  * - link_below: [object] Link object:
  *   - text: [string] Text.
@@ -232,14 +232,14 @@
         </div>
       {% endif %}
 
-      {% if pager is defined and pager is not empty %}
+      {% if pagination is defined and pagination is not empty %}
         <div class="ct-list__results-below">
-          {% block pager %}
+          {% block pagination %}
             <div class="container">
               <div class="row">
                 <div class="col-xxs-12">
-                  <div class="ct-list__pager">
-                    {{ pager }}
+                  <div class="ct-list__pagination">
+                    {{ pagination }}
                   </div>
                 </div>
               </div>

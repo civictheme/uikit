@@ -54,14 +54,14 @@ export const Pagination = (parentKnobs = {}) => {
     parentKnobs.knobTab,
   );
 
-  const pagerMiddle = Math.ceil(knobs.count_of_pages / 2);
-  const pagerFirst = knobs.current - pagerMiddle + 1;
-  const pagerLast = knobs.current + knobs.count_of_pages - pagerMiddle;
+  const paginationMiddle = Math.ceil(knobs.count_of_pages / 2);
+  const paginationFirst = knobs.current - paginationMiddle + 1;
+  const paginationLast = knobs.current + knobs.count_of_pages - paginationMiddle;
 
   const pages = {};
   for (let i = 0; i < knobs.count_of_pages; i++) {
     if (knobs.use_ellipsis) {
-      if (i === 0 || (i > pagerFirst && i < pagerLast) || i === (knobs.count_of_pages - 1)) {
+      if (i === 0 || (i > paginationFirst && i < paginationLast) || i === (knobs.count_of_pages - 1)) {
         pages[i + 1] = {
           href: randomUrl(),
         };
