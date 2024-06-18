@@ -60,13 +60,13 @@
 	{% set row_attributes = (row_attributes ~ ' ' ~ attributes)|trim %}
 {% endif %}
 
-{% set row_class1 = row_classes|join(' ')|trim %}
+{% set row_class_string = row_classes|join(' ')|trim %}
 
 {% if items is not empty %}
 	{% if use_container %}
 	<div class="{{ container_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %} aria-live="polite">
 	{% endif %}
-		<{{ row_element }} class="{{ row_class1 }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
+		<{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
 			{% for item in items %}
 				{% if item is not empty %}
 					<{{ column_element }} class="{{ column_class }}" {% if column_attributes is not empty %}{{ column_attributes|raw }}{% endif %}>
