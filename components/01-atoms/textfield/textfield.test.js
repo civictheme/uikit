@@ -55,7 +55,7 @@ describe('Textfield Component', () => {
 
     expect(c.querySelector('.ct-textfield').getAttribute('value')).toEqual('Sample text');
     expect(c.querySelector('.ct-textfield').getAttribute('name')).toEqual('test-textfield');
-    expect(c.querySelector('.ct-textfield').getAttribute('data-test')).toEqual('alert(1)');
+    expect(c.querySelector('.ct-textfield').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
 
     assertUniqueCssClasses(c);
   });

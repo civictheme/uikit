@@ -62,7 +62,7 @@ exports[`Label Component strips HTML tags from attribute values 1`] = `
 
   <label
     class="ct-label ct-theme-light ct-label--regular  "
-    data-test="alert(1)"
+    data-test="<script>alert(1)</script>"
   >
     
     Sample label

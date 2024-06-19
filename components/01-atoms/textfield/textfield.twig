@@ -30,6 +30,6 @@
 		{{ is_disabled ? 'disabled' }}
 		{{ is_required ? 'required' }}
 		{% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-		{% if attributes is not empty %}{{ attributes|striptags }}{% endif %}
+		{% if attributes is not empty %}{{ attributes|raw }}{% endif %}
 	/>
 {% endif %}

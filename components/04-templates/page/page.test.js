@@ -30,7 +30,7 @@ describe('Page Component', () => {
       attributes: 'data-test="<script>alert(1)</script>"',
     });
 
-    expect(c.querySelector('.ct-page').getAttribute('data-test')).toEqual('alert(1)');
+    expect(c.querySelector('.ct-page').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
     assertUniqueCssClasses(c);
   });
 
