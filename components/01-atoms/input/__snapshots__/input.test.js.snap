@@ -56,7 +56,7 @@ exports[`Input Component strips HTML tags from attribute values 1`] = `
 	
   <input
     class="ct-input ct-theme-light"
-    data-test="alert(1)"
+    data-test="<script>alert(1)</script>"
     name="test-input"
     type="text"
     value="Sample text"

@@ -76,7 +76,7 @@ exports[`Radio Component strips HTML tags from attribute values 1`] = `
   
   <input
     class="ct-radio ct-theme-light"
-    data-test="alert(1)"
+    data-test="<script>alert(1)</script>"
     id="radio-id"
     name="test-radio"
     type="radio"

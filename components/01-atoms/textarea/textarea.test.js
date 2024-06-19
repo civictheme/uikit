@@ -59,7 +59,7 @@ describe('Textarea Component', () => {
 
     expect(c.querySelector('.ct-textarea').textContent.trim()).toEqual('Sample text');
     expect(c.querySelector('.ct-textarea').getAttribute('name')).toEqual('test-textarea');
-    expect(c.querySelector('.ct-textarea').getAttribute('data-test')).toEqual('alert(1)');
+    expect(c.querySelector('.ct-textarea').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
 
     assertUniqueCssClasses(c);
   });

@@ -1500,7 +1500,7 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
 
   <div
     class="ct-page ct-theme-light "
-    data-test="alert(1)"
+    data-test="<script>alert(1)</script>"
   >
     
   

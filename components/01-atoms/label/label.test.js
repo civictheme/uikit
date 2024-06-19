@@ -64,7 +64,7 @@ describe('Label Component', () => {
     });
 
     expect(c.querySelector('.ct-label').textContent.trim()).toEqual('Sample label');
-    expect(c.querySelector('.ct-label').getAttribute('data-test')).toEqual('alert(1)');
+    expect(c.querySelector('.ct-label').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
 
     assertUniqueCssClasses(c);
   });

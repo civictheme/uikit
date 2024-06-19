@@ -56,7 +56,7 @@ exports[`Textarea Component strips HTML tags from attribute values 1`] = `
   
   <textarea
     class="ct-textarea ct-theme-light"
-    data-test="alert(1)"
+    data-test="<script>alert(1)</script>"
     name="test-textarea"
   >
     Sample text

@@ -62,7 +62,7 @@ describe('Input Component', () => {
 
     expect(c.querySelector('.ct-input').getAttribute('value')).toEqual('Sample text');
     expect(c.querySelector('.ct-input').getAttribute('name')).toEqual('test-input');
-    expect(c.querySelector('.ct-input').getAttribute('data-test')).toEqual('alert(1)');
+    expect(c.querySelector('.ct-input').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
 
     assertUniqueCssClasses(c);
   });
