@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Component does not render when name or id is empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Radio Component does not render when name or id is empty 2`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Radio Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  <input
+    checked=""
+    class="ct-radio ct-theme-dark ct-radio--is-invalid custom-class"
+    data-test="true"
+    disabled=""
+    id="radio-id"
+    name="test-radio"
+    type="radio"
+    value="radio-value"
+  />
+  
+      
+
+
+  <label
+    class="ct-label ct-theme-dark ct-label--small  ct-radio__label"
+    for="radio-id"
+  >
+    
+    Radio Label
+  
+  </label>
+    
+</div>
+`;
+
+exports[`Radio Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  
+  <input
+    class="ct-radio ct-theme-light"
+    id="radio-id"
+    name="test-radio"
+    type="radio"
+    value="radio-value"
+  />
+  
+  
+</div>
+`;
+
+exports[`Radio Component strips HTML tags from attribute values 1`] = `
+<div>
+  
+
+
+  
+  <input
+    class="ct-radio ct-theme-light"
+    data-test="alert(1)"
+    id="radio-id"
+    name="test-radio"
+    type="radio"
+    value="radio-value"
+  />
+  
+  
+</div>
+`;

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component does not render when name or options are empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Select Component does not render when name or options are empty 2`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Select Component renders optgroup with options 1`] = `
+<div>
+  
+
+
+	
+  <select
+    class="ct-select ct-theme-light"
+    name="test-select"
+  >
+    
+									
+    <optgroup
+      label="Group 1"
+    >
+      
+																		
+      <option
+        value="1.1"
+      >
+        Option 1.1
+      </option>
+      
+																								
+      <option
+        value="1.2"
+      >
+        Option 1.2
+      </option>
+      
+															
+    </optgroup>
+    
+																	
+    <option
+      value="2"
+    >
+      Option 2
+    </option>
+    
+										
+  </select>
+  
+
+</div>
+`;
+
+exports[`Select Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+	
+  <select
+    class="ct-select ct-theme-dark ct-select--is-invalid custom-class"
+    data-test="true"
+    disabled=""
+    id="select-id"
+    multiple=""
+    name="test-select"
+    required=""
+  >
+    
+														
+    <option
+      selected="selected"
+      value="1"
+    >
+      Option 1
+    </option>
+    
+																					
+    <option
+      value="2"
+    >
+      Option 2
+    </option>
+    
+																					
+    <option
+      disabled=""
+      value="3"
+    >
+      Option 3
+    </option>
+    
+										
+  </select>
+  
+
+</div>
+`;
+
+exports[`Select Component renders with required attributes 1`] = `
+<div>
+  
+
+
+	
+  <select
+    class="ct-select ct-theme-light"
+    name="test-select"
+  >
+    
+														
+    <option
+      value="1"
+    >
+      Option 1
+    </option>
+    
+																					
+    <option
+      value="2"
+    >
+      Option 2
+    </option>
+    
+										
+  </select>
+  
+
+</div>
+`;
+
+exports[`Select Component strips HTML tags from attribute values 1`] = `
+<div>
+  
+
+
+	
+  <select
+    class="ct-select ct-theme-light"
+    data-test="alert(1)"
+    name="test-select"
+  >
+    
+														
+    <option
+      value="1"
+    >
+      Option 1
+    </option>
+    
+										
+  </select>
+  
+
+</div>
+`;

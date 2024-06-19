@@ -30,7 +30,7 @@
     id="{{ id }}"
     {{ is_checked ? 'checked' }}
     {{ is_disabled ? 'disabled' }}
-    {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+    {% if attributes is not empty %}{{ attributes|striptags }}{% endif %}
   />
   {% if label is not empty %}
     {% include '@atoms/label/label.twig' with {
