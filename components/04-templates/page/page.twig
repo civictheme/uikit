@@ -15,7 +15,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-page {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+<div class="ct-page {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|striptags }}{% endif %}>
   <a id="top"></a>
 
   {% block header %}
@@ -52,6 +52,8 @@
   {% block content %}
     {% include '@base/layout/layout.twig' with {
       content_top: content_top,
+      hide_sidebar_left: hide_sidebar_left,
+      hide_sidebar_right: hide_sidebar_right,
       sidebar_top_left: sidebar_top_left,
       sidebar_top_left_attributes: sidebar_top_left_attributes,
       sidebar_top_right: sidebar_top_right,
