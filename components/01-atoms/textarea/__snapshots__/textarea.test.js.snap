@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea Component does not render when name is empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Textarea Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  <textarea
+    class="ct-textarea ct-theme-dark ct-textarea--is-invalid custom-class"
+    data-test="true"
+    disabled=""
+    name="test-textarea"
+    placeholder="Enter text here"
+    required=""
+    rows="5"
+  >
+    Sample text
+  </textarea>
+  
+
+</div>
+`;
+
+exports[`Textarea Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  
+  <textarea
+    class="ct-textarea ct-theme-light"
+    name="test-textarea"
+  >
+    Sample text
+  </textarea>
+  
+
+</div>
+`;
+
+exports[`Textarea Component strips HTML tags from attribute values 1`] = `
+<div>
+  
+
+
+  
+  <textarea
+    class="ct-textarea ct-theme-light"
+    data-test="alert(1)"
+    name="test-textarea"
+  >
+    Sample text
+  </textarea>
+  
+
+</div>
+`;
