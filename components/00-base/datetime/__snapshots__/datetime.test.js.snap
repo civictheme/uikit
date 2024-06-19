@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Time Component does not render when start time is empty 1`] = `
+exports[`Datetime Component does not render when start time is empty 1`] = `
 <div>
   
 
@@ -8,19 +8,19 @@ exports[`Time Component does not render when start time is empty 1`] = `
 </div>
 `;
 
-exports[`Time Component renders with custom attributes and classes 1`] = `
+exports[`Datetime Component renders with custom attributes and classes 1`] = `
 <div>
   
 
   
   <span
-    class="ct-time custom-class"
+    class="ct-datetime custom-class"
     data-test="true"
   >
     
     
     <time
-      class="ct-time__start"
+      class="ct-timestamp__start"
       datetime="2023-06-15T08:00:00Z"
     >
       2023-06-15T08:00
@@ -33,18 +33,18 @@ exports[`Time Component renders with custom attributes and classes 1`] = `
 </div>
 `;
 
-exports[`Time Component renders with start and end time 1`] = `
+exports[`Datetime Component renders with start and end time 1`] = `
 <div>
   
 
   
   <span
-    class="ct-time "
+    class="ct-datetime "
   >
     
     
     <time
-      class="ct-time__start"
+      class="ct-timestamp__start"
       datetime="2023-06-15T08:00:00Z"
     >
       2023-06-15T08:00
@@ -53,7 +53,7 @@ exports[`Time Component renders with start and end time 1`] = `
           —
       
     <time
-      class="ct-time__end"
+      class="ct-timestamp__end"
       datetime="2023-06-15T17:00:00Z"
     >
       2023-06-15T17:00
@@ -66,18 +66,18 @@ exports[`Time Component renders with start and end time 1`] = `
 </div>
 `;
 
-exports[`Time Component renders with start time only 1`] = `
+exports[`Datetime Component renders with start time only 1`] = `
 <div>
   
 
   
   <span
-    class="ct-time "
+    class="ct-datetime "
   >
     
     
     <time
-      class="ct-time__start"
+      class="ct-timestamp__start"
       datetime="2023-06-15T08:00:00Z"
     >
       2023-06-15T08:00
@@ -90,18 +90,18 @@ exports[`Time Component renders with start time only 1`] = `
 </div>
 `;
 
-exports[`Time Component strips HTML tags from attribute values 1`] = `
+exports[`Datetime Component strips HTML tags from attribute values 1`] = `
 <div>
   
 
   
   <span
-    class="ct-time "
+    class="ct-datetime "
   >
     
     
     <time
-      class="ct-time__start"
+      class="ct-timestamp__start"
       datetime="2023-06-15T08:00:00Z"
     >
       <b>
@@ -112,7 +112,7 @@ exports[`Time Component strips HTML tags from attribute values 1`] = `
           —
       
     <time
-      class="ct-time__end"
+      class="ct-timestamp__end"
       datetime="2023-06-15T17:00:00Z"
     >
       <b>
