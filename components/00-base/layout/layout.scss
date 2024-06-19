@@ -34,7 +34,7 @@
     --sbl: 4;
     --sbr: 5;
 
-    #{$root}--no-top-left & {
+    #{$root}--no-top-left > #{$root}__inner > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -42,7 +42,7 @@
       --sbr: 4;
     }
 
-    #{$root}--no-top-right & {
+    #{$root}--no-top-right > #{$root}__inner > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -50,7 +50,7 @@
       --sbr: 4;
     }
 
-    #{$root}--no-bottom-left & {
+    #{$root}--no-bottom-left > #{$root}__inner > & {
       --stl: 1;
       --str: 2;
       --m: 3;
@@ -58,7 +58,7 @@
       --sbr: 4;
     }
 
-    #{$root}--no-bottom-right & {
+    #{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 1;
       --str: 2;
       --m: 3;
@@ -66,7 +66,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right & {
+    #{$root}--no-top-left#{$root}--no-top-right > #{$root}__inner > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -74,7 +74,7 @@
       --sbr: 3;
     }
 
-    #{$root}--no-top-left#{$root}--no-bottom-left & {
+    #{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -82,7 +82,7 @@
       --sbr: 3;
     }
 
-    #{$root}--no-top-left#{$root}--no-bottom-right & {
+    #{$root}--no-top-left#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -90,7 +90,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-right#{$root}--no-bottom-left & {
+    #{$root}--no-top-right#{$root}--no-bottom-left > #{$root}__inner > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -98,7 +98,7 @@
       --sbr: 3;
     }
 
-    #{$root}--no-top-right#{$root}--no-bottom-right & {
+    #{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -106,7 +106,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-bottom-left#{$root}--no-bottom-right & {
+    #{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 1;
       --str: 2;
       --m: 3;
@@ -114,7 +114,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left & {
+    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left > #{$root}__inner > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -122,7 +122,7 @@
       --sbr: 2;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-right & {
+    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -130,7 +130,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-bottom-right & {
+    #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -138,7 +138,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right & {
+    #{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -146,7 +146,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right & {
+    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -164,7 +164,7 @@
       grid-row: 1 / span 1;
       height: auto;
 
-      #{$root}--no-bottom-left & {
+      #{$root}--no-bottom-left > #{$root}__inner > & {
         grid-row: 1 / span 2;
       }
     }
@@ -179,7 +179,7 @@
       grid-row: 1 / span 1;
       height: auto;
 
-      #{$root}--no-bottom-right & {
+      #{$root}--no-bottom-right > #{$root}__inner > & {
         grid-row: 1 / span 2;
       }
     }
@@ -193,15 +193,15 @@
       grid-column: ($ct-layout-sidebar-left-columns + 1) / span ($ct-layout-columns - $ct-layout-sidebar-left-columns - $ct-layout-sidebar-right-columns);
       grid-row: 1 / span 2;
 
-      #{$root}--no-top-left#{$root}--no-bottom-left & {
+      #{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner > & {
         grid-column: 1 / span ($ct-layout-columns - $ct-layout-sidebar-right-columns);
       }
 
-      #{$root}--no-top-right#{$root}--no-bottom-right & {
+      #{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner > & {
         grid-column: ($ct-layout-sidebar-left-columns + 1) / span ($ct-layout-columns - $ct-layout-sidebar-left-columns);
       }
 
-      #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right & {
+      #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner > & {
         grid-column: 1 / span $ct-layout-columns;
       }
     }
@@ -216,7 +216,7 @@
       grid-row: 2 / span 1;
       height: 100%;
 
-      #{$root}--no-top-left & {
+      #{$root}--no-top-left > #{$root}__inner > & {
         grid-row: 1 / span 2;
       }
     }
@@ -231,7 +231,7 @@
       grid-row: 2 / span 1;
       height: 100%;
 
-      #{$root}--no-top-right & {
+      #{$root}--no-top-right > #{$root}__inner > & {
         grid-row: 1 / span 2;
       }
     }
