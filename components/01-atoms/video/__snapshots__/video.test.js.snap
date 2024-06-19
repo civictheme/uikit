@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video Component does not render when sources are empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Video Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  
+        
+        
+        
+        
+        
+  
+  <video
+    class="ct-video ct-theme-dark custom-class"
+    controls=""
+    data-test="true"
+    height="360"
+    poster="https://example.com/poster.jpg"
+    title="Sample Video"
+    width="640"
+  >
+    
+          
+    <source
+      src="https://example.com/video.mp4"
+      type="video/mp4"
+    />
+    
+        Custom fallback text.
+  
+  </video>
+  
+
+</div>
+`;
+
+exports[`Video Component renders with required attributes 1`] = `
+<div>
+  
+
+
+        
+  
+  
+  
+  
+  
+  
+  
+  <video
+    class="ct-video ct-theme-light "
+  >
+    
+          
+    <source
+      src="https://example.com/video.mp4"
+      type="video/mp4"
+    />
+    
+        Your browser doesn't support HTML5 video.
+  
+  </video>
+  
+
+</div>
+`;
