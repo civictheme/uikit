@@ -37,7 +37,13 @@ export const Layout = (parentKnobs = {}) => {
   const showNested = knobBoolean('Show nested layout', false, parentKnobs.show_nested_layout, parentKnobs.knobTab);
 
   knobs.content = showNested ? CivicThemeLayout({
-    ...knobs,
+    ...{
+      sidebar_top_left: placeholder('Nested top left sidebar', useLargePlaceholders ? 50 : 0),
+      sidebar_bottom_left: placeholder('Nested bottom left sidebar', useLargePlaceholders ? 50 : 0),
+      content: placeholder('Nested content', useLargePlaceholders ? 1000 : 0),
+      sidebar_top_right: placeholder('Nested top right sidebar', useLargePlaceholders ? 50 : 0),
+      sidebar_bottom_right: placeholder('Nested bottom right sidebar', useLargePlaceholders ? 50 : 0),
+    },
     ...slotKnobs([
       'content_top',
       'content_bottom',
