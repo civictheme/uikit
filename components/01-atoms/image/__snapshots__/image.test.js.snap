@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Component does not render when url is empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Image Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  <img
+    alt="Sample Image"
+    class="ct-image ct-theme-dark custom-class"
+    data-test="true"
+    height="400"
+    src="https://example.com/image.jpg"
+    width="600"
+  />
+  
+
+</div>
+`;
+
+exports[`Image Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  
+  <img
+    alt=""
+    class="ct-image ct-theme-light "
+    src="https://example.com/image.jpg"
+  />
+  
+
+</div>
+`;

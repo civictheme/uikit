@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover Component does not render when content is empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Popover Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-popover ct-theme-dark custom-class"
+    data-collapsible=""
+    data-collapsible-collapsed=""
+    data-collapsible-duration="250"
+    data-collapsible-group="sample-group"
+    data-test="true"
+  >
+    
+    
+
+
+
+  
+        
+  
+  
+    <a
+      aria-label="Opens in a new tab"
+      class="ct-link ct-theme-dark     ct-popover__link"
+      data-collapsible-trigger=""
+      href="https://example.com"
+      tabindex="0"
+      target="_blank"
+    >
+      
+              Sample Trigger
+            
+      <span
+        class="ct-visually-hidden"
+      >
+        (Opens in a new tab/window)
+      </span>
+      
+    
+  
+    </a>
+    
+
+    
+    <div
+      class="ct-popover__content"
+      data-collapsible-panel=""
+    >
+      
+      
+      <div
+        class="ct-popover__content__inner"
+      >
+        
+
+                          
+                  Sample content
+        
+                                
+      </div>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Popover Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-popover ct-theme-light "
+    data-collapsible=""
+    data-collapsible-collapsed=""
+    data-collapsible-duration="250"
+    data-collapsible-group=""
+  >
+    
+    
+
+
+
+  
+  
+  
+  
+    <a
+      class="ct-link ct-theme-light     ct-popover__link"
+      data-collapsible-trigger=""
+      tabindex="0"
+    >
+      
+              Sample Trigger
+      
+  
+    </a>
+    
+
+    
+    <div
+      class="ct-popover__content"
+      data-collapsible-panel=""
+    >
+      
+      
+      <div
+        class="ct-popover__content__inner"
+      >
+        
+
+                          
+                  Sample content
+        
+                                
+      </div>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
