@@ -23,15 +23,13 @@
 
 {% if name is not empty %}
   <textarea
-    type="{{ type }}"
     class="ct-textarea {{ modifier_class }}"
     name="{{ name }}"
-    value="{{ value }}"
     {% if rows %}rows="{{ rows }}"{% endif %}
     {% if id %}id="{{ id }}"{% endif %}
     {{ is_disabled ? 'disabled' }}
     {{ is_required ? 'required' }}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
-  />{% if value is not empty %}{{ value }}{% endif %}</textarea>
+    {% if attributes is not empty %}{{ attributes|striptags }}{% endif %}
+  />{{ value|default('') }}</textarea>
 {% endif %}
