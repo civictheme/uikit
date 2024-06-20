@@ -44,7 +44,7 @@
     --sbl: 4;
     --sbr: 5;
 
-    #{$root}--no-top-left > #{$root}__inner > & {
+    #{$root}--no-top-left > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -52,7 +52,7 @@
       --sbr: 4;
     }
 
-    #{$root}--no-top-right > #{$root}__inner > & {
+    #{$root}--no-top-right > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -60,7 +60,7 @@
       --sbr: 4;
     }
 
-    #{$root}--no-bottom-left > #{$root}__inner > & {
+    #{$root}--no-bottom-left > & {
       --stl: 1;
       --str: 2;
       --m: 3;
@@ -68,7 +68,7 @@
       --sbr: 4;
     }
 
-    #{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-bottom-right > & {
       --stl: 1;
       --str: 2;
       --m: 3;
@@ -76,7 +76,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-top-right > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -84,7 +84,7 @@
       --sbr: 3;
     }
 
-    #{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-bottom-left > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -92,7 +92,7 @@
       --sbr: 3;
     }
 
-    #{$root}--no-top-left#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-bottom-right > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -100,7 +100,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-right#{$root}--no-bottom-left > #{$root}__inner > & {
+    #{$root}--no-top-right#{$root}--no-bottom-left > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -108,7 +108,7 @@
       --sbr: 3;
     }
 
-    #{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-top-right#{$root}--no-bottom-right > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -116,7 +116,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-bottom-left#{$root}--no-bottom-right > & {
       --stl: 1;
       --str: 2;
       --m: 3;
@@ -124,7 +124,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -132,7 +132,7 @@
       --sbr: 2;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-right > & {
       --stl: 0;
       --str: 0;
       --m: 1;
@@ -140,7 +140,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-bottom-right > & {
       --stl: 0;
       --str: 1;
       --m: 2;
@@ -148,7 +148,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right > & {
       --stl: 1;
       --str: 0;
       --m: 2;
@@ -156,7 +156,7 @@
       --sbr: 0;
     }
 
-    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right > #{$root}__inner > & {
+    #{$root}--no-top-left#{$root}--no-top-right#{$root}--no-bottom-left#{$root}--no-bottom-right > & {
       --stl: 0;
       --str: 0;
       --m: 1;
