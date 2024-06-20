@@ -1,0 +1,676 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion Component does not render when panels are empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Accordion Component expands all panels when expand_all is true 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-accordion ct-theme-light   "
+  >
+    
+    
+    <div
+      class="container"
+    >
+      
+      
+      <div
+        class="row"
+      >
+        
+        
+        <div
+          class="col-xxs-12"
+        >
+          
+                                
+                      
+          <div
+            class="ct-accordion__content"
+          >
+            
+              
+            <ul
+              class="ct-accordion__panels"
+            >
+              
+                                                                          
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="true"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 1
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="false"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-light ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 1
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                                                            
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="true"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 2
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="false"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-light ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 2
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                
+            </ul>
+            
+            
+          </div>
+          
+          
+                                        
+        </div>
+        
+      
+      </div>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Accordion Component renders individual panels with expanded state 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-accordion ct-theme-light   "
+  >
+    
+    
+    <div
+      class="container"
+    >
+      
+      
+      <div
+        class="row"
+      >
+        
+        
+        <div
+          class="col-xxs-12"
+        >
+          
+                                
+                      
+          <div
+            class="ct-accordion__content"
+          >
+            
+              
+            <ul
+              class="ct-accordion__panels"
+            >
+              
+                                                                          
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="true"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 1
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="false"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-light ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 1
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                                                            
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-collapsed=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="false"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 2
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="true"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-light ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 2
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                
+            </ul>
+            
+            
+          </div>
+          
+          
+                                        
+        </div>
+        
+      
+      </div>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Accordion Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-accordion ct-theme-dark ct-vertical-spacing-inset--both ct-accordion--with-background custom-class"
+    data-test="true"
+  >
+    
+    
+    <div
+      class="container"
+    >
+      
+      
+      <div
+        class="row"
+      >
+        
+        
+        <div
+          class="col-xxs-12"
+        >
+          
+                                    
+          <div
+            class="ct-accordion__content-top"
+          >
+            
+                Top content
+              
+          </div>
+          
+                      
+                      
+          <div
+            class="ct-accordion__content"
+          >
+            
+              
+            <ul
+              class="ct-accordion__panels"
+            >
+              
+                                                                          
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="true"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 1
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="false"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 1
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                                                            
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="true"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 2
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="false"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 2
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                
+            </ul>
+            
+            
+          </div>
+          
+          
+                                    
+          <div
+            class="ct-accordion__content-bottom"
+          >
+            
+                Bottom content
+              
+          </div>
+          
+                              
+        </div>
+        
+      
+      </div>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Accordion Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-accordion ct-theme-light   "
+  >
+    
+    
+    <div
+      class="container"
+    >
+      
+      
+      <div
+        class="row"
+      >
+        
+        
+        <div
+          class="col-xxs-12"
+        >
+          
+                                
+                      
+          <div
+            class="ct-accordion__content"
+          >
+            
+              
+            <ul
+              class="ct-accordion__panels"
+            >
+              
+                                                                          
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-collapsed=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="false"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 1
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="true"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-light ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 1
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                                                            
+              <li
+                class="ct-accordion__panels__panel"
+                data-collapsible=""
+                data-collapsible-collapsed=""
+                data-collapsible-duration="250"
+                data-collapsible-trigger-wide=""
+              >
+                
+                      
+                <div
+                  class="ct-accordion__panels__panel__header"
+                >
+                  
+                        
+                  <button
+                    aria-expanded="false"
+                    class="ct-accordion__panels__panel__header__button"
+                    data-collapsible-trigger=""
+                  >
+                    
+                          Panel 2
+                        
+                  </button>
+                  
+                      
+                </div>
+                
+
+                      
+                <div
+                  aria-hidden="true"
+                  class="ct-accordion__panels__panel__content"
+                  data-collapsible-panel=""
+                >
+                  
+                        
+
+
+                  <div
+                    class="ct-paragraph ct-theme-light ct-paragraph--regular ct-accordion__panels__panel__content__inner"
+                  >
+                    
+          Content 2
+      
+                  </div>
+                                        
+                </div>
+                
+                    
+              </li>
+              
+                                                
+            </ul>
+            
+            
+          </div>
+          
+          
+                                        
+        </div>
+        
+      
+      </div>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;

@@ -18,7 +18,8 @@
  * - date_end: [string] Optional end date and time.
  * - date_end_iso: [string] Optional end date and time in ISO format.
  * - location: [string] Location.
- * - url: [string] Optional URL.
+ * - link: [object] Optional link.
+ *   - url: [string] URL.
  * - tags: [array] Array of tags.
  * - theme: [string] Theme: light, dark.
  * - attributes: [string] Additional attributes.
@@ -94,7 +95,7 @@
               {% include '@atoms/link/link.twig' with {
                 theme: theme,
                 text: title,
-                url: url,
+                url: link.url,
                 modifier_class: 'ct-event-card__title__link',
               } only %}
             {% else %}
