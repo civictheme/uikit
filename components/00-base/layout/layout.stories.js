@@ -1,5 +1,5 @@
 import CivicThemeLayout from './layout.twig';
-import { knobBoolean, knobRadios, knobText, placeholder, shouldRender, slotKnobs } from '../storybook/storybook.utils';
+import { knobBoolean, knobRadios, knobText, placeholder, randomInt, shouldRender, slotKnobs } from '../storybook/storybook.utils';
 
 export default {
   title: 'Base/Layout',
@@ -12,12 +12,12 @@ export const Layout = (parentKnobs = {}) => {
   const useLargePlaceholders = knobBoolean('Use large placeholders', false, parentKnobs.use_large_placeholders, parentKnobs.knobTab);
 
   const knobs = {
-    sidebar_top_left: knobBoolean('Show top left sidebar', true, parentKnobs.sidebar_top_left, parentKnobs.knobTab) ? placeholder('Top left sidebar', useLargePlaceholders ? 50 : 0) : '',
-    sidebar_bottom_left: knobBoolean('Show bottom left sidebar', true, parentKnobs.sidebar_bottom_left, parentKnobs.knobTab) ? placeholder('Bottom left sidebar', useLargePlaceholders ? 50 : 0) : '',
+    sidebar_top_left: knobBoolean('Show top left sidebar', true, parentKnobs.sidebar_top_left, parentKnobs.knobTab) ? placeholder('Top left sidebar', useLargePlaceholders ? randomInt(30, 100) : 0) : '',
+    sidebar_bottom_left: knobBoolean('Show bottom left sidebar', true, parentKnobs.sidebar_bottom_left, parentKnobs.knobTab) ? placeholder('Bottom left sidebar', useLargePlaceholders ? randomInt(30, 100) : 0) : '',
     hide_sidebar_left: knobBoolean('Hide left sidebar', false, parentKnobs.hide_sidebar_left, parentKnobs.knobTab),
-    content: knobBoolean('Show content', true, parentKnobs.content, parentKnobs.knobTab) ? placeholder('Content', useLargePlaceholders ? 1000 : 0) : '',
-    sidebar_top_right: knobBoolean('Show top right sidebar', true, parentKnobs.sidebar_top_right, parentKnobs.knobTab) ? placeholder('Top right sidebar', useLargePlaceholders ? 50 : 0) : '',
-    sidebar_bottom_right: knobBoolean('Show bottom right sidebar', true, parentKnobs.sidebar_bottom_right, parentKnobs.knobTab) ? placeholder('Bottom right sidebar', useLargePlaceholders ? 50 : 0) : '',
+    content: knobBoolean('Show content', true, parentKnobs.content, parentKnobs.knobTab) ? placeholder('Content', useLargePlaceholders ? randomInt(500, 1000) : 0) : '',
+    sidebar_top_right: knobBoolean('Show top right sidebar', true, parentKnobs.sidebar_top_right, parentKnobs.knobTab) ? placeholder('Top right sidebar', useLargePlaceholders ? randomInt(30, 100) : 0) : '',
+    sidebar_bottom_right: knobBoolean('Show bottom right sidebar', true, parentKnobs.sidebar_bottom_right, parentKnobs.knobTab) ? placeholder('Bottom right sidebar', useLargePlaceholders ? randomInt(30, 100) : 0) : '',
     hide_sidebar_right: knobBoolean('Hide right sidebar', false, parentKnobs.hide_sidebar_right, parentKnobs.knobTab),
     is_contained: knobBoolean('Is contained', false, parentKnobs.is_contained, parentKnobs.knobTab),
     vertical_spacing: knobRadios(
@@ -38,11 +38,11 @@ export const Layout = (parentKnobs = {}) => {
 
   knobs.content = showNested ? CivicThemeLayout({
     ...{
-      sidebar_top_left: placeholder('Nested top left sidebar', useLargePlaceholders ? 50 : 0),
-      sidebar_bottom_left: placeholder('Nested bottom left sidebar', useLargePlaceholders ? 50 : 0),
-      content: placeholder('Nested content', useLargePlaceholders ? 1000 : 0),
-      sidebar_top_right: placeholder('Nested top right sidebar', useLargePlaceholders ? 50 : 0),
-      sidebar_bottom_right: placeholder('Nested bottom right sidebar', useLargePlaceholders ? 50 : 0),
+      sidebar_top_left: placeholder('Nested top left sidebar', useLargePlaceholders ? randomInt(30, 100) : 0),
+      sidebar_bottom_left: placeholder('Nested bottom left sidebar', useLargePlaceholders ? randomInt(30, 100) : 0),
+      content: placeholder('Nested content', useLargePlaceholders ? randomInt(500, 1000) : 0),
+      sidebar_top_right: placeholder('Nested top right sidebar', useLargePlaceholders ? randomInt(30, 100) : 0),
+      sidebar_bottom_right: placeholder('Nested bottom right sidebar', useLargePlaceholders ? randomInt(30, 100) : 0),
     },
     ...slotKnobs([
       'content_top',
