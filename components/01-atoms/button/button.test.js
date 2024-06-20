@@ -48,7 +48,7 @@ describe('Button Component', () => {
       attributes: 'data-test="true"',
       modifier_class: 'custom-class',
       theme: 'dark',
-      icon: 'sample-icon',
+      icon: 'call',
       icon_placement: 'before',
     });
 

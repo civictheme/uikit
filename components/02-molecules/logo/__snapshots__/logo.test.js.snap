@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Component does not render when logos are empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Logo Component renders as div when URL is not provided 1`] = `
+<div>
+  
+
+
+      
+  <div
+    class="ct-logo ct-theme-light ct-logo--default "
+  >
+    
+  
+                          
+
+
+  
+    <img
+      alt="Logo Mobile"
+      class="ct-image ct-theme-light ct-logo__image ct-logo__image--mobile hide-l"
+      src="https://example.com/logo-mobile.png"
+    />
+    
+              
+
+
+  
+    <img
+      alt="Logo Desktop"
+      class="ct-image ct-theme-light ct-logo__image ct-logo__image--desktop hide-xxs show-l"
+      src="https://example.com/logo-desktop.png"
+    />
+    
+            
+      
+  </div>
+  
+  
+</div>
+`;
+
+exports[`Logo Component renders as link when URL is provided 1`] = `
+<div>
+  
+
+
+      
+  <a
+    class="ct-logo ct-theme-light ct-logo--default "
+    href="https://example.com"
+    title="Go to homepage"
+  >
+    
+  
+                          
+
+
+  
+    <img
+      alt="Logo Mobile"
+      class="ct-image ct-theme-light ct-logo__image ct-logo__image--mobile hide-l"
+      src="https://example.com/logo-mobile.png"
+    />
+    
+              
+
+
+  
+    <img
+      alt="Logo Desktop"
+      class="ct-image ct-theme-light ct-logo__image ct-logo__image--desktop hide-xxs show-l"
+      src="https://example.com/logo-desktop.png"
+    />
+    
+            
+      
+  </a>
+  
+  
+</div>
+`;
+
+exports[`Logo Component renders primary logo only for default type 1`] = `
+<div>
+  
+
+
+      
+  <div
+    class="ct-logo ct-theme-light ct-logo--default "
+  >
+    
+  
+                          
+
+
+  
+    <img
+      alt="Logo Mobile"
+      class="ct-image ct-theme-light ct-logo__image ct-logo__image--mobile hide-l"
+      src="https://example.com/logo-mobile.png"
+    />
+    
+              
+
+
+  
+    <img
+      alt="Logo Desktop"
+      class="ct-image ct-theme-light ct-logo__image ct-logo__image--desktop hide-xxs show-l"
+      src="https://example.com/logo-desktop.png"
+    />
+    
+            
+      
+  </div>
+  
+  
+</div>
+`;
+
+exports[`Logo Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+      
+  <a
+    class="ct-logo ct-theme-dark ct-logo--stacked custom-class"
+    data-test="true"
+    href="https://example.com"
+    title="Go to homepage"
+  >
+    
+  
+                          
+
+
+  
+    <img
+      alt="Logo Mobile"
+      class="ct-image ct-theme-dark ct-logo__image ct-logo__image--mobile hide-l"
+      src="https://example.com/logo-mobile.png"
+    />
+    
+              
+
+
+  
+    <img
+      alt="Logo Desktop"
+      class="ct-image ct-theme-dark ct-logo__image ct-logo__image--desktop hide-xxs show-l"
+      src="https://example.com/logo-desktop.png"
+    />
+    
+                              
+    <span
+      class="ct-logo__stripe "
+    />
+    
+                    
+
+
+  
+    <img
+      alt="Secondary Logo Mobile"
+      class="ct-image ct-theme-dark ct-logo__image ct-logo__image--mobile hide-l"
+      src="https://example.com/secondary-logo-mobile.png"
+    />
+    
+              
+
+
+  
+    <img
+      alt="Secondary Logo Desktop"
+      class="ct-image ct-theme-dark ct-logo__image ct-logo__image--desktop hide-xxs show-l"
+      src="https://example.com/secondary-logo-desktop.png"
+    />
+    
+            
+      
+  </a>
+  
+  
+</div>
+`;
