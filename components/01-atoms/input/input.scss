@@ -46,6 +46,11 @@
       @include ct-component-property($root, $theme, border-color);
       @include ct-component-property($root, $theme, background-color);
 
+      @if $theme == 'dark' {
+        // Note that this will also affects the calendar color scheme.
+        color-scheme: dark;
+      }
+
       &::placeholder {
         @include ct-component-property($root, $theme, color);
       }
