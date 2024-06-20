@@ -26,7 +26,17 @@
   &__inner {
     display: grid;
     grid-template-columns: repeat($ct-layout-columns, 1fr);
-    grid-gap: $ct-layout-row-gap $ct-layout-column-gap;
+    gap: $ct-layout-row-gap $ct-layout-column-gap;
+
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      #{$root}--no-top-left#{$root}--no-bottom-left & {
+        gap: $ct-layout-row-gap-right-only $ct-layout-column-gap-right-only;
+      }
+
+      #{$root}--no-top-right#{$root}--no-bottom-right & {
+        gap: $ct-layout-row-gap-left-only $ct-layout-column-gap-left-only;
+      }
+    }
 
     --stl: 1;
     --str: 2;
