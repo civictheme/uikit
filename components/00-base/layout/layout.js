@@ -40,8 +40,9 @@ function CivicThemeLayout(el) {
  * Position element in relation to it's above element.
  */
 CivicThemeLayout.prototype.masonryPositionElement = function (el, aboveEl, gap) {
-  const aboveLastChild = aboveEl.children[aboveEl.children.length - 1];
-  const aboveBottom = aboveLastChild.getBoundingClientRect().bottom;
+  const aboveChildIdx = aboveEl.children.length - 1;
+  const aboveChild = (aboveChildIdx >= 0) ? aboveEl.children[aboveChildIdx] : null;
+  const aboveBottom = aboveChild ? aboveChild.getBoundingClientRect().bottom : aboveEl.getBoundingClientRect().top;
   const currentTop = el.getBoundingClientRect().top;
   el.style.marginTop = `${aboveBottom + gap - currentTop}px`;
 };
