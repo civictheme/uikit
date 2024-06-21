@@ -12,7 +12,7 @@
  * - icon_placement: [string] Icon position: left, right
  * - text: [string] Button text.
  * - url: [string] URL for the link button.
- * - is_raw_text: [boolean] Output text as raw value.
+ * - allow_html: [boolean] Allow HTML in text.
  * - is_new_window: [boolean] Open in a new window or not.
  * - is_external: [boolean] If link is external or not.
  * - is_disabled: [boolean] Disabled or not.
@@ -43,13 +43,13 @@
     {% endset %}
 
     {% if icon_placement == 'before' %}
-      {{ icon_markup }}{{ is_raw_text ? text|raw : text }}
+      {{ icon_markup }}{{ allow_html ? text|raw : text }}
     {% else %}
-      {{ is_raw_text ? text|raw : text }}{{ icon_markup }}
+      {{ allow_html ? text|raw : text }}{{ icon_markup }}
     {% endif %}
 
   {% else %}
-    {{ is_raw_text ? text|raw : text }}
+    {{ allow_html ? text|raw : text }}
   {% endif %}
 {% endset %}
 
@@ -93,7 +93,7 @@
     type="{{ kind }}"
     class="ct-button {{ modifier_class }}"
     data-component-name="button"
-    value="{{ (is_raw_text ? text|raw : text)|trim }}"
+    value="{{ (allow_html ? text|raw : text)|trim }}"
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   />
