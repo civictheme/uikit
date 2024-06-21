@@ -82,7 +82,7 @@ exports[`Field Description Component strips HTML content 1`] = `
     class="ct-field-description ct-theme-light ct-field-description--regular "
   >
     
-          This is a description
+          Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end
       
   </div>
 </div>

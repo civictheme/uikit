@@ -39,13 +39,15 @@ describe('Field Message Component', () => {
 
   test('strips HTML content', async () => {
     const c = await dom(template, {
-      content: '<strong>This is an HTML message</strong>',
+      content: 'Start <strong>prefix</strong> middle <script>alert("XSS")</script> end',
       allow_html: false,
     });
 
-    expect(c.querySelectorAll('.ct-field-message.ct-theme-light.ct-field-message--information')).toHaveLength(1);
-    expect(c.querySelector('.ct-field-message').textContent.trim()).toContain('This is an HTML message');
-    expect(c.querySelector('.ct-field-message').textContent.trim()).not.toContain('<strong>This is an HTML message</strong>');
+    expect(c.querySelectorAll('.ct-field-message')).toHaveLength(1);
+
+    const content = c.querySelector('.ct-field-message').innerHTML.trim();
+    expect(content).not.toContain('Start <strong>prefix</strong> middle <script>alert("XSS")</script> end');
+    expect(content).toContain('Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end');
 
     assertUniqueCssClasses(c);
   });
