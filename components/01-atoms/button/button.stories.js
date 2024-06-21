@@ -72,7 +72,7 @@ export const Button = (parentKnobs = {}) => {
 
   knobs.is_disabled = knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab);
   knobs.is_external = knobBoolean('Is external', false, parentKnobs.is_external, parentKnobs.knobTab);
-  knobs.is_raw_text = knobBoolean('Allow HTML in text', false, parentKnobs.is_raw_text, parentKnobs.knobTab);
+  knobs.allow_html = knobBoolean('Allow HTML in text', false, parentKnobs.allow_html, parentKnobs.knobTab);
   knobs.modifier_class = knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab);
   knobs.attributes = knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab);
 
