@@ -38,6 +38,12 @@
       min-width: $ct-field-horizontal-label-min-width;
       max-width: $ct-field-horizontal-label-max-width;
       margin-top: $_control-vertical-padding - $_control-border-width;
+
+      @each $width in $ct-field-horizontal-label-fixed-widths {
+        .ct-field-horizontal-label-fixed-width-#{$width} & {
+          width: ct-spacing($width);
+        }
+      }
     }
 
     &#{$root}--radio,
