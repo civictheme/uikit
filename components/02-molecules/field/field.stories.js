@@ -1,5 +1,6 @@
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomInt, randomLink, randomName, randomSentence, randomText, shouldRender } from '../../00-base/storybook/storybook.utils';
 import CivicThemeField from './field.twig';
+import CivicThemeFieldset from '../../01-atoms/fieldset/fieldset.twig';
 import { Select } from '../../01-atoms/select/select.stories';
 import { Textfield } from '../../01-atoms/textfield/textfield.stories';
 import { Textarea } from '../../01-atoms/textarea/textarea.stories';
@@ -160,4 +161,56 @@ export const Field = (parentKnobs = {}) => {
   const combinedKnobs = { ...controlKnobs, ...knobs };
 
   return shouldRender(parentKnobs) ? CivicThemeField(combinedKnobs) : combinedKnobs;
+};
+
+export const FieldExamples = (parentKnobs = {}) => {
+  const inputTypes = [
+    'textfield',
+    'textarea',
+    'select',
+    'radio',
+    'checkbox',
+  ];
+
+  const knobs = {
+    theme: knobRadios(
+      'Theme',
+      {
+        Light: 'light',
+        Dark: 'dark',
+      },
+      'light',
+      parentKnobs.theme,
+      parentKnobs.knobTab,
+    ),
+    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
+    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
+  };
+
+  const fieldsets = [
+    CivicThemeFieldset({
+      theme: knobs.theme,
+      fields: inputTypes.map((type) => Field(new KnobValues({
+        theme: knobs.theme,
+        type,
+        label: randomText(randomInt(1, 6)),
+        description: null,
+        message: null,
+        orientation: 'vertical',
+      }))).join(''),
+    }),
+    CivicThemeFieldset({
+      theme: knobs.theme,
+      fields: inputTypes.map((type) => Field(new KnobValues({
+        theme: knobs.theme,
+        type,
+        label: randomText(randomInt(1, 6)),
+        description: null,
+        message: null,
+        orientation: 'horizontal',
+      }))).join(''),
+    }),
+  ];
+
+  return `<form class="${knobs.modifier_class}" ${knobs.attributes}>${fieldsets.join('')}</form>`;
 };
