@@ -29,6 +29,11 @@
     gap: $ct-layout-row-gap $ct-layout-column-gap;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
+      --js-masonry-enabled: 1;
+
+      grid-template-rows: auto 1fr;
+      grid-template-rows: masonry;
+
       #{$root}--no-top-left#{$root}--no-bottom-left & {
         gap: $ct-layout-row-gap-right-only $ct-layout-column-gap-right-only;
       }
