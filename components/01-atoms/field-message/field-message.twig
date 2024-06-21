@@ -33,7 +33,7 @@
         modifier_class: 'ct-field-message__icon',
       } only %}
     {% endif %}
-    {% if allow_html %}
+    {% if allow_html|default(false) %}
       {{ content }}
     {% else %}
       {{ content|striptags }}
