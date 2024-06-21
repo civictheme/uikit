@@ -68,4 +68,29 @@ describe('Label Component', () => {
 
     assertUniqueCssClasses(c);
   });
+
+  test('allows HTML content', async () => {
+    const c = await dom(template, {
+      content: '<strong>This is an HTML message</strong>',
+      allow_html: true,
+    });
+
+    expect(c.querySelectorAll('.ct-label')).toHaveLength(1);
+    expect(c.querySelector('.ct-label').innerHTML.trim()).toContain('<strong>This is an HTML message</strong>');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('strips HTML content', async () => {
+    const c = await dom(template, {
+      content: '<strong>This is an HTML message</strong>',
+      allow_html: false,
+    });
+
+    expect(c.querySelectorAll('.ct-label')).toHaveLength(1);
+    expect(c.querySelector('.ct-label').textContent.trim()).toContain('This is an HTML message');
+    expect(c.querySelector('.ct-label').textContent.trim()).not.toContain('<strong>This is an HTML message</strong>');
+
+    assertUniqueCssClasses(c);
+  });
 });

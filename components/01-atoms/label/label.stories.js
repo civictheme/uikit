@@ -5,6 +5,9 @@ export default {
   title: 'Atoms/Form Controls/Label',
   parameters: {
     layout: 'centered',
+    knobs: {
+      escapeHTML: false,
+    },
   },
 };
 
@@ -37,6 +40,7 @@ export const Label = (parentKnobs = {}) => {
     content: knobText('Content', 'Label content', parentKnobs.content, parentKnobs.knobTab),
     for: knobText('For', '', parentKnobs.for, parentKnobs.knobTab),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    allow_html: knobBoolean('Allow HTML in content', false, parentKnobs.allow_html, parentKnobs.knobTab),
     modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };

@@ -10,6 +10,7 @@
  * - size: [string] Label size: extra-large, large, regular, small, extra-small.
  * - is_required: [boolean] Mark label as requried.
  * - for: [string] Which component this label belongs to.
+ * - allow_html: [boolean] Allow HTML in text.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
@@ -28,6 +29,10 @@
     {% if for is not empty %} for="{{ for }}" {% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
-    {{ content }}
+    {% if allow_html|default(false) %}
+      {{ content }}
+    {% else %}
+      {{ content|striptags }}
+    {% endif %}
   </{{ tag }}>
 {%- endif %}
