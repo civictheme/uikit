@@ -64,9 +64,9 @@ describe('Datetime Component', () => {
     });
 
     expect(c.querySelector('.ct-timestamp__start').getAttribute('datetime')).toEqual('2023-06-15T08:00:00Z');
-    expect(c.querySelector('.ct-timestamp__start').textContent.trim()).toEqual('2023-06-15T08:00');
+    expect(c.querySelector('.ct-timestamp__start').innerHTML.trim()).toEqual('<b>2023-06-15T08:00</b>');
     expect(c.querySelector('.ct-timestamp__end').getAttribute('datetime')).toEqual('2023-06-15T17:00:00Z');
-    expect(c.querySelector('.ct-timestamp__end').textContent.trim()).toEqual('2023-06-15T17:00');
+    expect(c.querySelector('.ct-timestamp__end').innerHTML.trim()).toEqual('<b>2023-06-15T17:00</b>');
 
     assertUniqueCssClasses(c);
   });
