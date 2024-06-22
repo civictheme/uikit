@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skip Link Component renders with all attributes provided 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-skip-link ct-theme-dark additional-class"
+  >
+    
+    
+
+
+
+  
+  
+  
+  
+    <a
+      class="ct-link ct-theme-dark     ct-skip-link__link ct-visually-hidden ct-focusable"
+      href="#main-content"
+      title="Go to main content"
+    >
+      
+              Go to main content
+      
+  
+    </a>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Skip Link Component renders with default text when text is empty 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-skip-link ct-theme-light "
+  >
+    
+    
+
+
+
+  
+  
+  
+  
+    <a
+      class="ct-link ct-theme-light     ct-skip-link__link ct-visually-hidden ct-focusable"
+      href="#main-content"
+      title="Skip to main content"
+    >
+      
+              Skip to main content
+      
+  
+    </a>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Skip Link Component renders with only required attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-skip-link ct-theme-light "
+  >
+    
+    
+
+
+
+  
+  
+  
+  
+    <a
+      class="ct-link ct-theme-light     ct-skip-link__link ct-visually-hidden ct-focusable"
+      href="#main-content"
+      title="Skip to main content"
+    >
+      
+              Skip to main content
+      
+  
+    </a>
+    
+  
+  </div>
+  
+
+</div>
+`;

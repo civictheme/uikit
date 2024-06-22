@@ -1,0 +1,623 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Component does not render when items are empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Navigation Component renders correctly when items have submenus 1`] = `
+<div>
+  
+
+
+                    
+        
+                  
+                                        
+                                                    
+        
+                  
+                                        
+                                        
+  
+  <div
+    class="ct-navigation ct-theme-dark ct-navigation--drawer "
+  >
+    
+    
+    
+    <div
+      class="ct-navigation__items"
+    >
+      
+      
+
+
+
+
+
+
+            
+      <ul
+        class="ct-menu ct-menu--level-0 ct-theme-dark ct-navigation__menu "
+        data-component-name="ct-menu"
+      >
+        
+    
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  ct-navigation__has-dropdown ct-navigation__dropdown-columns--2 "
+          data-collapsible=""
+          data-collapsible-collapsed=""
+          data-collapsible-duration="250"
+          data-collapsible-group="main-nav"
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-dark     ct-menu__item__link"
+            href="/services"
+            title="Services"
+          >
+            
+              Services
+      
+  
+          </a>
+          
+
+        
+                                      
+          <div
+            class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+          >
+            
+        
+            <ul
+              class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+            >
+              
+    
+          
+                  
+      
+              <li
+                class="ct-menu__item ct-menu__item--level-1   "
+              >
+                
+
+        
+
+
+
+  
+  
+  
+  
+                <a
+                  class="ct-link ct-theme-dark     ct-menu__item__link"
+                  href="/services/consulting"
+                  title="Consulting"
+                >
+                  
+              Consulting
+      
+  
+                </a>
+                
+
+        
+        
+      
+              </li>
+              
+    
+            
+            </ul>
+            
+      
+          </div>
+          
+      
+
+        
+      
+        </li>
+        
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  ct-navigation__has-dropdown ct-navigation__dropdown-columns--2 "
+          data-collapsible=""
+          data-collapsible-collapsed=""
+          data-collapsible-duration="250"
+          data-collapsible-group="main-nav"
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-dark     ct-menu__item__link"
+            href="/contact"
+            title="Contact"
+          >
+            
+              Contact
+      
+  
+          </a>
+          
+
+        
+                                      
+          <div
+            class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+          >
+            
+        
+            <ul
+              class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+            >
+              
+    
+          
+                  
+      
+              <li
+                class="ct-menu__item ct-menu__item--level-1   "
+              >
+                
+
+        
+
+
+
+  
+  
+  
+  
+                <a
+                  class="ct-link ct-theme-dark     ct-menu__item__link"
+                  href="/contact/support"
+                  title="Support"
+                >
+                  
+              Support
+      
+  
+                </a>
+                
+
+        
+        
+      
+              </li>
+              
+    
+            
+            </ul>
+            
+      
+          </div>
+          
+      
+
+        
+      
+        </li>
+        
+    
+          
+      </ul>
+      
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Navigation Component renders with all attributes provided 1`] = `
+<div>
+  
+
+
+                                                
+  
+  <div
+    class="ct-navigation ct-theme-dark ct-navigation--dropdown additional-class"
+  >
+    
+                  
+
+
+  
+    <h2
+      class="ct-heading ct-theme-dark ct-navigation__title"
+    >
+      Main Navigation
+    </h2>
+    
+          
+    
+    <div
+      class="ct-navigation__items"
+    >
+      
+      
+
+
+
+
+
+
+            
+      <ul
+        class="ct-menu ct-menu--level-0 ct-theme-dark ct-navigation__menu "
+        data-component-name="ct-menu"
+      >
+        
+    
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-dark     ct-menu__item__link"
+            href="/"
+            title="Home"
+          >
+            
+              Home
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-dark     ct-menu__item__link"
+            href="/about"
+            title="About"
+          >
+            
+              About
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-dark     ct-menu__item__link"
+            href="/services"
+            title="Services"
+          >
+            
+              Services
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-dark     ct-menu__item__link"
+            href="/contact"
+            title="Contact"
+          >
+            
+              Contact
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+    
+          
+      </ul>
+      
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Navigation Component renders with only required attributes 1`] = `
+<div>
+  
+
+
+                  
+  
+  <div
+    class="ct-navigation ct-theme-light ct-navigation--none "
+  >
+    
+    
+    
+    <div
+      class="ct-navigation__items"
+    >
+      
+      
+
+
+
+
+
+
+            
+      <ul
+        class="ct-menu ct-menu--level-0 ct-theme-light ct-navigation__menu "
+        data-component-name="ct-menu"
+      >
+        
+    
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-light     ct-menu__item__link"
+            href="/"
+            title="Home"
+          >
+            
+              Home
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+    
+          
+      </ul>
+      
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Navigation Component renders with some attributes missing 1`] = `
+<div>
+  
+
+
+                            
+  
+  <div
+    class="ct-navigation ct-theme-light ct-navigation--none "
+  >
+    
+    
+    
+    <div
+      class="ct-navigation__items"
+    >
+      
+      
+
+
+
+
+
+
+            
+      <ul
+        class="ct-menu ct-menu--level-0 ct-theme-light ct-navigation__menu "
+        data-component-name="ct-menu"
+      >
+        
+    
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-light     ct-menu__item__link"
+            href="/"
+            title="Home"
+          >
+            
+              Home
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+          
+                  
+      
+        <li
+          class="ct-menu__item ct-menu__item--level-0   "
+        >
+          
+
+        
+
+
+
+  
+  
+  
+  
+          <a
+            class="ct-link ct-theme-light     ct-menu__item__link"
+            href="/about"
+            title="About"
+          >
+            
+              About
+      
+  
+          </a>
+          
+
+        
+        
+      
+        </li>
+        
+    
+          
+      </ul>
+      
+      
+    
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;

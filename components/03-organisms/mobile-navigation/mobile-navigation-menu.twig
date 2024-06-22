@@ -108,7 +108,9 @@ Overrides for generation of child links.
 
   <div data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link">
     <div data-flyout-panel>
-      {% include '@organisms/mobile-navigation/mobile-navigation-close.twig' %}
+      {% include '@organisms/mobile-navigation/mobile-navigation-close.twig' with {
+        theme: theme,
+      } only %}
 
       <div class="ct-mobile-navigation__close-trigger">
         {% include '@atoms/button/button.twig' with {
