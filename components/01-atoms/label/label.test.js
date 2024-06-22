@@ -95,5 +95,4 @@ describe('Label Component', () => {
 
     assertUniqueCssClasses(c);
   });
-
 });

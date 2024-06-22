@@ -62,5 +62,4 @@ describe('Paragraph Component', () => {
 
     assertUniqueCssClasses(c);
   });
-
 });

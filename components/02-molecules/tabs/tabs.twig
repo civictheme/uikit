@@ -68,7 +68,7 @@
       <div class="ct-tabs__panels">
         {% for k, panel in panels %}
           {% if panel.content is not empty %}
-            <div class="ct-tabs__panels__panel {% if panel.is_selected %}selected{% endif%}" data-tabs-panel id="{{ panel.id }}" role="tabpanel" aria-labelledby="{{ links[k].link_id }}">
+            <div class="ct-tabs__panels__panel {% if panel.is_selected %}selected{% endif %}" data-tabs-panel id="{{ panel.id }}" role="tabpanel" aria-labelledby="{{ links[k].link_id }}">
               {{ panel.content }}
             </div>
           {% endif %}

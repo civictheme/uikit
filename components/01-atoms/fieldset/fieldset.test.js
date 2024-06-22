@@ -74,15 +74,15 @@ describe('Fieldset Component', () => {
 
   test('renders with prefix and suffix', async () => {
     const c = await dom(template, {
-      prefix: '<div class="test-prefix">Prefix</div>',
-      suffix: '<div class="test-suffix">Suffix</div>',
+      prefix: '<div class="test-prefix"><span>Prefix</span></div>',
+      suffix: '<div class="test-suffix"><span>Suffix</span></div>',
     });
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__prefix')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__prefix').innerHTML.trim()).toContain('Prefix');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__prefix').innerHTML.trim()).toContain('<span>Prefix</span>');
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__suffix')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__suffix').innerHTML.trim()).toContain('Suffix');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__suffix').innerHTML.trim()).toContain('<span>Suffix</span>');
 
     assertUniqueCssClasses(c);
   });
