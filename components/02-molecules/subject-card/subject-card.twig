@@ -28,7 +28,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, with_image_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
-  <div class="ct-subject-card {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-subject-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-subject-card__content">
       {% block image %}
         {% if image.url is defined and image.url is not empty %}

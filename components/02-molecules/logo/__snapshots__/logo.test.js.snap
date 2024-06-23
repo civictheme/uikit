@@ -5,14 +5,12 @@ exports[`Logo Component does not render when logos are empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Logo Component renders as div when URL is not provided 1`] = `
 <div>
   
-
 
       
   <div
@@ -22,7 +20,6 @@ exports[`Logo Component renders as div when URL is not provided 1`] = `
   
                           
 
-
   
     <img
       alt="Logo Mobile"
@@ -31,7 +28,6 @@ exports[`Logo Component renders as div when URL is not provided 1`] = `
     />
     
               
-
 
   
     <img
@@ -52,7 +48,6 @@ exports[`Logo Component renders as link when URL is provided 1`] = `
 <div>
   
 
-
       
   <a
     class="ct-logo ct-theme-light ct-logo--default "
@@ -63,7 +58,6 @@ exports[`Logo Component renders as link when URL is provided 1`] = `
   
                           
 
-
   
     <img
       alt="Logo Mobile"
@@ -72,7 +66,6 @@ exports[`Logo Component renders as link when URL is provided 1`] = `
     />
     
               
-
 
   
     <img
@@ -93,7 +86,6 @@ exports[`Logo Component renders primary logo only for default type 1`] = `
 <div>
   
 
-
       
   <div
     class="ct-logo ct-theme-light ct-logo--default "
@@ -101,7 +93,6 @@ exports[`Logo Component renders primary logo only for default type 1`] = `
     
   
                           
-
 
   
     <img
@@ -111,7 +102,6 @@ exports[`Logo Component renders primary logo only for default type 1`] = `
     />
     
               
-
 
   
     <img
@@ -132,7 +122,6 @@ exports[`Logo Component renders with optional attributes 1`] = `
 <div>
   
 
-
       
   <a
     class="ct-logo ct-theme-dark ct-logo--stacked custom-class"
@@ -144,7 +133,6 @@ exports[`Logo Component renders with optional attributes 1`] = `
   
                           
 
-
   
     <img
       alt="Logo Mobile"
@@ -153,7 +141,6 @@ exports[`Logo Component renders with optional attributes 1`] = `
     />
     
               
-
 
   
     <img
@@ -169,7 +156,6 @@ exports[`Logo Component renders with optional attributes 1`] = `
     
                     
 
-
   
     <img
       alt="Secondary Logo Mobile"
@@ -178,7 +164,6 @@ exports[`Logo Component renders with optional attributes 1`] = `
     />
     
               
-
 
   
     <img

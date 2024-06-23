@@ -28,7 +28,7 @@
 {% if content is not empty %}
   {% if kind == 'input' %}
     <label
-      class="ct-chip {{ modifier_class }}"
+      class="ct-chip {{ modifier_class -}}"
       data-component-name="chip"
       {% if is_multiple %}data-chip-dismiss{% endif %}
     >
@@ -36,7 +36,7 @@
         class="ct-chip__input"
         type="{% if is_multiple %}checkbox{% else %}radio{% endif %}"
         {% if is_selected %}checked="checked"{% endif %}
-        {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+        {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
       >
       {{- content -}}
       {% if is_multiple %}
@@ -48,9 +48,9 @@
     </label>
   {% else %}
     <span
-      class="ct-chip {{ modifier_class }}"
+      class="ct-chip {{ modifier_class -}}"
       data-component-name="chip"
-      {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
       {{- content -}}
     </span>

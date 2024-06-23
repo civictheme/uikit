@@ -43,7 +43,6 @@ exports[`Service Card Component renders with content slots 1`] = `
               
                                                                                                                                                                         
 
-
   
       <ul
         class="ct-item-list ct-item-list--vertical ct-item-list--regular  ct-service-card__links"
@@ -57,7 +56,6 @@ exports[`Service Card Component renders with content slots 1`] = `
                           
 
 
-
   
   
   
@@ -66,10 +64,7 @@ exports[`Service Card Component renders with content slots 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-            
-              Link 1
-      
-  
+                Link 1  
           </a>
           
               
@@ -84,7 +79,6 @@ exports[`Service Card Component renders with content slots 1`] = `
                           
 
 
-
   
   
   
@@ -93,10 +87,7 @@ exports[`Service Card Component renders with content slots 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-            
-              Link 2
-      
-  
+                Link 2  
           </a>
           
               
@@ -160,7 +151,6 @@ exports[`Service Card Component renders with optional attributes 1`] = `
               
                                                                                                                                                                         
 
-
   
       <ul
         class="ct-item-list ct-item-list--vertical ct-item-list--regular  ct-service-card__links"
@@ -174,7 +164,6 @@ exports[`Service Card Component renders with optional attributes 1`] = `
                           
 
 
-
   
         
         
@@ -185,9 +174,7 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             href="https://example.com/link1"
             target="_blank"
           >
-            
-              Link 1
-            
+                Link 1        
             <span
               class="ct-visually-hidden"
             >
@@ -218,7 +205,6 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             
 
       
-  
           </a>
           
               
@@ -233,7 +219,6 @@ exports[`Service Card Component renders with optional attributes 1`] = `
                           
 
 
-
   
   
   
@@ -242,10 +227,7 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             class="ct-link ct-theme-dark"
             href="https://example.com/link2"
           >
-            
-              Link 2
-      
-  
+                Link 2  
           </a>
           
               
@@ -301,7 +283,6 @@ exports[`Service Card Component renders with required attributes 1`] = `
               
                                                                                                                                                                         
 
-
   
       <ul
         class="ct-item-list ct-item-list--vertical ct-item-list--regular  ct-service-card__links"
@@ -315,7 +296,6 @@ exports[`Service Card Component renders with required attributes 1`] = `
                           
 
 
-
   
   
   
@@ -324,10 +304,7 @@ exports[`Service Card Component renders with required attributes 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-            
-              Link 1
-      
-  
+                Link 1  
           </a>
           
               
@@ -342,7 +319,6 @@ exports[`Service Card Component renders with required attributes 1`] = `
                           
 
 
-
   
   
   
@@ -351,10 +327,7 @@ exports[`Service Card Component renders with required attributes 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-            
-              Link 2
-      
-  
+                Link 2  
           </a>
           
               

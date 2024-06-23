@@ -49,7 +49,7 @@
     {% set attributes = attributes ~ 'height="' ~ height ~ '"' %}
   {% endif %}
 
-  <video class="ct-video {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <video class="ct-video {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% for source in sources %}
       <source src="{{ source.url }}" type="{{ source.type }}"/>
     {% endfor %}

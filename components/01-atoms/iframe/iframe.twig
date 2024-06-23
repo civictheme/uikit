@@ -20,9 +20,9 @@
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
 
 <iframe
-  class="ct-iframe {{ modifier_class }}"
+  class="ct-iframe {{ modifier_class -}}"
   {% if url %}src="{{ url }}"{% endif %}
   {% if width %}width="{{ width }}"{% endif %}
   {% if height %}height="{{ height }}"{% endif %}
-  {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
 ></iframe>

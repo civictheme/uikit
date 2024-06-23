@@ -32,9 +32,9 @@
 
 {% if items is not empty %}
   <nav
-    class="ct-pagination {{ modifier_class }}" role="navigation"
+    class="ct-pagination {{ modifier_class -}}" role="navigation"
     {% if heading_id is not empty %}aria-labelledby="{{ heading_id }}"{% endif %}
-    {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
     <h4 {% if heading_id is not empty %}id="{{ heading_id }}"{% endif %} class="ct-visually-hidden">{{ 'Pagination' }}</h4>
 

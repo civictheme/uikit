@@ -5,9 +5,7 @@ exports[`Button Component renders as a link with optional attributes 1`] = `
   
 
 
-
   
-
   
   <a
     aria-label="Opens in a new tab"
@@ -18,9 +16,8 @@ exports[`Button Component renders as a link with optional attributes 1`] = `
     role="button"
     target="_blank"
   >
-    
           
-                
+          
 
 
                                     
@@ -53,7 +50,6 @@ exports[`Button Component renders as a link with optional attributes 1`] = `
     </span>
     
   
-  
   </a>
   
 
@@ -65,10 +61,8 @@ exports[`Button Component renders as a link with optional attributes, is externa
   
 
 
-
   
-  
-  
+    
   <a
     aria-label="Opens in a new tab"
     class="ct-button ct-theme-dark  ct-button--link ct-button--regular  ct-button--external custom-class"
@@ -78,9 +72,8 @@ exports[`Button Component renders as a link with optional attributes, is externa
     role="button"
     target="_blank"
   >
-    
           
-                
+          
 
 
                                     
@@ -136,7 +129,6 @@ exports[`Button Component renders as a link with optional attributes, is externa
     
 
     
-  
   </a>
   
 
@@ -146,8 +138,6 @@ exports[`Button Component renders as a link with optional attributes, is externa
 exports[`Button Component renders as a reset button 1`] = `
 <div>
   
-
-
 
 
 
@@ -169,8 +159,6 @@ exports[`Button Component renders as a submit button 1`] = `
 
 
 
-
-
   
   <input
     class="ct-button ct-theme-light  ct-button--submit ct-button--regular   "
@@ -189,8 +177,6 @@ exports[`Button Component renders with disabled state 1`] = `
 
 
 
-
-
   
   <button
     aria-disabled="true"
@@ -198,10 +184,7 @@ exports[`Button Component renders with disabled state 1`] = `
     data-component-name="button"
     disabled="disabled"
   >
-    
-          Click me
-  
-  
+      Click me
   </button>
   
 
@@ -214,17 +197,12 @@ exports[`Button Component renders with required attributes 1`] = `
 
 
 
-
-
   
   <button
     class="ct-button ct-theme-light  ct-button--button ct-button--regular   "
     data-component-name="button"
   >
-    
-          Click me
-  
-  
+      Click me
   </button>
   
 

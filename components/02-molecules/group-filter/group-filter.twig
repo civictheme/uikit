@@ -26,9 +26,9 @@
 	{% set title = title|default('Filter results by:') %}
 
 	<div
-		class="ct-group-filter {{ modifier_class }}"
+		class="ct-group-filter {{ modifier_class -}}"
 		data-component-name="ct-group-filter"
-		{% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+		{% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
 	>
 		<div class="container" data-group-filter-element>
 			<div class="row">

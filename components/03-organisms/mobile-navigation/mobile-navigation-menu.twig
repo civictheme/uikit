@@ -33,7 +33,7 @@ Copied as-is from '@base/menu/menu.twig'.
 {% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul class="ct-menu ct-menu--level-{{ menu_level }} {{ modifier_class }} " data-component-name="ct-menu" {{ attributes|default('') }}>
+      <ul class="ct-menu ct-menu--level-{{ menu_level }} {{ modifier_class -}} " data-component-name="ct-menu" {{ attributes|default('') }}>
     {% else %}
       {% if is_collapsible %}
         {% set collapsible_panel = 'data-collapsible-panel' %}

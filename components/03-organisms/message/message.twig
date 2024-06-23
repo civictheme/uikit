@@ -24,11 +24,11 @@
 } %}
 
 <div
-  class="ct-message {{ modifier_class }}"
+  class="ct-message {{ modifier_class -}}"
   role="{% if type == 'error' %}alert{% else %}contentinfo{% endif %}"
   aria-label="{{ type }}"
   {% if type == 'error' %}aria-live="polite"{% endif %}
-  {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
 >
   {% if icons[type] is defined %}
     <div class="ct-message__icon">

@@ -21,7 +21,7 @@
   {% set links_count = links|length %}
   {% set parent = false %}
 
-  <nav class="ct-breadcrumb {{ modifier_class }}" aria-label="breadcrumb" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <nav class="ct-breadcrumb {{ modifier_class -}}" aria-label="breadcrumb" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% set link_items = [] %}
 
     {% for link in links %}

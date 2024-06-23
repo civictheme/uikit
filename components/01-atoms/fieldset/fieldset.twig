@@ -26,7 +26,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}
 
-<fieldset class="ct-fieldset {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 	{% if legend is not empty %}
 		{% include '@atoms/label/label.twig' with {
 			theme: theme,

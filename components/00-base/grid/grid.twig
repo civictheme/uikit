@@ -64,7 +64,7 @@
 
 {% if items is not empty %}
 	{% if use_container %}
-	<div class="{{ container_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %} aria-live="polite">
+	<div class="{{ container_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %} aria-live="polite">
 	{% endif %}
 		<{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
 			{% for item in items %}

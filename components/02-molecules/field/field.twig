@@ -84,7 +84,7 @@
 {% set control = _controls %}
 
 {% if control[0].name is defined %}
-	<div class="ct-field {{ modifier_class }}" {% if attributes %}{{ attributes|raw }}{% endif %}>
+	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
 		{% if label is not empty and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,

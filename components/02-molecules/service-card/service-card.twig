@@ -22,7 +22,7 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
-  <div class="ct-service-card {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-service-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-service-card__content">
       {% block content_top %}
         {% if content_top is not empty %}

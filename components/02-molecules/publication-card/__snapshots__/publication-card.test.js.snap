@@ -31,7 +31,6 @@ exports[`Publication Card Component renders file link with extension and size 1`
         
 
 
-
   
   
   
@@ -41,16 +40,13 @@ exports[`Publication Card Component renders file link with extension and size 1`
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        
-              Sample File 
+            Sample File 
         <span
           class="ct-publication-card__link__extension"
         >
           (PDF, 2MB)
         </span>
-        
-      
-  
+          
       </a>
       
       
@@ -80,7 +76,6 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
     >
       
           
-
 
   
       <img
@@ -127,7 +122,6 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
                     
 
 
-
   
   
   
@@ -136,9 +130,8 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
           class="ct-link ct-theme-dark     ct-publication-card__title__link"
           href="https://example.com/sample.pdf"
         >
-          
-              
-              Publication Card Title        
+                    
+      Publication Card Title        
 
 
                                     
@@ -163,8 +156,6 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
 
         
       
-      
-  
         </a>
         
           
@@ -193,7 +184,6 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
         
 
 
-
   
   
   
@@ -203,16 +193,13 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        
-              Sample File 
+            Sample File 
         <span
           class="ct-publication-card__link__extension"
         >
           (PDF, 2MB)
         </span>
-        
-      
-  
+          
       </a>
       
       
@@ -260,7 +247,6 @@ exports[`Publication Card Component renders with required attributes 1`] = `
                     
 
 
-
   
   
   
@@ -269,9 +255,8 @@ exports[`Publication Card Component renders with required attributes 1`] = `
           class="ct-link ct-theme-light     ct-publication-card__title__link"
           href="https://example.com/sample.pdf"
         >
-          
-              
-              Publication Card Title        
+                    
+      Publication Card Title        
 
 
                                     
@@ -296,8 +281,6 @@ exports[`Publication Card Component renders with required attributes 1`] = `
 
         
       
-      
-  
         </a>
         
           
@@ -310,7 +293,6 @@ exports[`Publication Card Component renders with required attributes 1`] = `
         
 
 
-
   
   
   
@@ -320,16 +302,13 @@ exports[`Publication Card Component renders with required attributes 1`] = `
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        
-              Sample File 
+            Sample File 
         <span
           class="ct-publication-card__link__extension"
         >
           (PDF, 2MB)
         </span>
-        
-      
-  
+          
       </a>
       
       
@@ -375,7 +354,6 @@ exports[`Publication Card Component renders with summary when provided 1`] = `
         
 
 
-
   
   
   
@@ -385,16 +363,13 @@ exports[`Publication Card Component renders with summary when provided 1`] = `
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        
-              Sample File 
+            Sample File 
         <span
           class="ct-publication-card__link__extension"
         >
           (PDF, 2MB)
         </span>
-        
-      
-  
+          
       </a>
       
       

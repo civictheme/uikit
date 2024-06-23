@@ -5,14 +5,12 @@ exports[`Content Link Component does not render when text is empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Content Link Component renders with optional attributes 1`] = `
 <div>
   
-
 
         
         
@@ -25,7 +23,6 @@ exports[`Content Link Component renders with optional attributes 1`] = `
     target="_blank"
     title="Example Title"
   >
-    
     Sample Link      
     <span
       class="ct-visually-hidden"
@@ -57,7 +54,6 @@ exports[`Content Link Component renders with optional attributes 1`] = `
     
 
       
-  
   </a>
   
 
@@ -68,7 +64,6 @@ exports[`Content Link Component renders with required attributes 1`] = `
 <div>
   
 
-
   
   
   
@@ -76,9 +71,7 @@ exports[`Content Link Component renders with required attributes 1`] = `
     class="ct-content-link ct-theme-light  "
     href="https://example.com"
   >
-    
     Sample Link
-  
   </a>
   
 

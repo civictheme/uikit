@@ -55,7 +55,7 @@
     {% endfor %}
   {% endif %}
 
-  <div class="ct-navigation {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% if title %}
       {% block title %}
         {% include '@atoms/heading/heading.twig' with {

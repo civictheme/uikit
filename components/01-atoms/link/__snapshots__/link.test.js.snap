@@ -6,14 +6,12 @@ exports[`Link Component does not render when text and icon are empty 1`] = `
 
 
 
-
 </div>
 `;
 
 exports[`Link Component renders with optional attributes, is external 1`] = `
 <div>
   
-
 
 
   
@@ -29,9 +27,7 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
     target="_blank"
     title="Example Title"
   >
-    
-              Sample Link
-            
+        Sample Link        
     <span
       class="ct-visually-hidden"
     >
@@ -62,7 +58,6 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
     
 
       
-  
   </a>
   
 
@@ -72,7 +67,6 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
 exports[`Link Component renders with optional attributes, not external 1`] = `
 <div>
   
-
 
 
   
@@ -88,9 +82,8 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
     target="_blank"
     title="Example Title"
   >
-    
               
-                      
+              
 
 
                                     
@@ -114,7 +107,6 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
     
 
         Sample Link
-      
             
     <span
       class="ct-visually-hidden"
@@ -123,7 +115,6 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
     </span>
     
     
-  
   </a>
   
 
@@ -135,7 +126,6 @@ exports[`Link Component renders with required attributes 1`] = `
   
 
 
-
   
   
   
@@ -144,10 +134,7 @@ exports[`Link Component renders with required attributes 1`] = `
     class="ct-link ct-theme-light"
     href="https://example.com"
   >
-    
-              Sample Link
-      
-  
+        Sample Link  
   </a>
   
 

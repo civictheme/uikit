@@ -25,7 +25,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
-  <div class="ct-next-step {{ modifier_class }}" href="{{ url }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-next-step {{ modifier_class -}}" href="{{ url }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">

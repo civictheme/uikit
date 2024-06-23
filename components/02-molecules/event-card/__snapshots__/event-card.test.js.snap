@@ -18,7 +18,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
       
         
 
-
   
       <img
         alt="Image description"
@@ -67,9 +66,8 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         <span
           class="ct-tag ct-theme-dark ct-tag--secondary ct-tag--with-icon ct-tag--icon-before  "
         >
-          
+                      
                 
-                         
 
 
                                     
@@ -92,9 +90,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           </svg>
           
 
-                     
-
-  
+                       
           <span
             class="ct-datetime "
           >
@@ -112,7 +108,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           
           
         
-  
         </span>
         
           
@@ -130,7 +125,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
                                   
 
 
-
   
   
   
@@ -139,10 +133,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           class="ct-link ct-theme-dark     ct-event-card__title__link"
           href="https://example.com"
         >
-          
-              Event Title
-      
-  
+              Event Title  
         </a>
         
                       
@@ -192,7 +183,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
               
                                                                                           
 
-
   
           <ul
             class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-tag-list__content"
@@ -212,9 +202,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
               <span
                 class="ct-tag ct-theme-dark ct-tag--primary    "
               >
-                
-         Tag 1   
-  
+                     Tag 1   
               </span>
               
           
@@ -235,9 +223,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
               <span
                 class="ct-tag ct-theme-dark ct-tag--primary    "
               >
-                
-         Tag 2   
-  
+                     Tag 2   
               </span>
               
           
@@ -255,7 +241,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
                           
 
 
-
   
   
   
@@ -264,9 +249,8 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           class="ct-link ct-theme-dark    ct-link--only-icon ct-event-card__tags__link"
           href="https://example.com"
         >
-          
+                    
               
-                      
 
 
                                     
@@ -291,8 +275,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
         
       
-      
-  
         </a>
         
                       
@@ -347,9 +329,8 @@ exports[`Event Card Component renders with required attributes 1`] = `
         <span
           class="ct-tag ct-theme-light ct-tag--secondary ct-tag--with-icon ct-tag--icon-before  "
         >
-          
+                      
                 
-                         
 
 
                                     
@@ -372,9 +353,7 @@ exports[`Event Card Component renders with required attributes 1`] = `
           </svg>
           
 
-                     
-
-  
+                       
           <span
             class="ct-datetime "
           >
@@ -392,7 +371,6 @@ exports[`Event Card Component renders with required attributes 1`] = `
           
           
         
-  
         </span>
         
           
