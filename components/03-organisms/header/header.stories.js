@@ -62,6 +62,7 @@ export const Header = (parentKnobs = {}) => {
   }
 
   const props = {
+    theme,
     content_top2: knobs.show_slogan ? Paragraph(new KnobValues({ content: 'A design system by Salsa Digital', theme })) : '',
     content_top3: contentTop3,
     content_middle2: knobs.show_logo ? Logo(new KnobValues({

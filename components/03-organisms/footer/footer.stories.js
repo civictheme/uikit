@@ -38,6 +38,7 @@ export const Footer = (parentKnobs = {}) => {
   };
 
   const props = {
+    theme,
     content_top1: knobs.show_logo ? Logo(new KnobValues({ theme })) : '',
     content_top2: knobs.show_social_links ? SocialLinks(new KnobValues({
       theme,
