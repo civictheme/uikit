@@ -37,9 +37,7 @@ exports[`Slider Component renders with all attributes provided 1`] = `
           <div
             class="ct-slider__content__top"
           >
-            
-                Top Content
-              
+            Top Content
           </div>
           
                       
@@ -69,10 +67,8 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                 
               <div
                 class="ct-slider__slides__inner"
-                data-slider-sidebar=""
+                data-slider-rail=""
               >
-                
-                  
                 <div
                   class="slide"
                 >
@@ -83,8 +79,6 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                 >
                   Slide 2
                 </div>
-                
-                
               </div>
               
               
@@ -208,9 +202,7 @@ exports[`Slider Component renders with all attributes provided 1`] = `
           <div
             class="ct-slider__content__bottom"
           >
-            
-                Bottom Content
-              
+            Bottom Content
           </div>
           
                               
@@ -270,17 +262,13 @@ exports[`Slider Component renders with only required attributes 1`] = `
                 
               <div
                 class="ct-slider__slides__inner"
-                data-slider-sidebar=""
+                data-slider-rail=""
               >
-                
-                  
                 <div
                   class="slide"
                 >
                   Slide 1
                 </div>
-                
-                
               </div>
               
               
@@ -444,9 +432,7 @@ exports[`Slider Component renders without some attributes 1`] = `
           <div
             class="ct-slider__content__top"
           >
-            
-                Top Content
-              
+            Top Content
           </div>
           
                       
@@ -476,17 +462,13 @@ exports[`Slider Component renders without some attributes 1`] = `
                 
               <div
                 class="ct-slider__slides__inner"
-                data-slider-sidebar=""
+                data-slider-rail=""
               >
-                
-                  
                 <div
                   class="slide"
                 >
                   Slide 1
                 </div>
-                
-                
               </div>
               
               
