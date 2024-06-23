@@ -37,7 +37,7 @@ export const FieldMessage = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     content: knobText('Content', `Field message content sample. ${randomSentence(50)} ${randomLink()}`, parentKnobs.content, parentKnobs.knobTab),
-    allow_html: knobBoolean('Allow HTML in content', false, parentKnobs.allow_html, parentKnobs.knobTab),
+    allow_html: knobBoolean('Allow HTML in content', true, parentKnobs.allow_html, parentKnobs.knobTab),
     modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };

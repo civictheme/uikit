@@ -100,6 +100,7 @@
 				{% include '@atoms/field-description/field-description.twig' with {
 					theme: theme,
 					content: description ? description : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					allow_html: true,
 					modifier_class: 'ct-field__description',
 				} only %}
 			{% endif %}
@@ -142,6 +143,7 @@
 					theme: theme,
 					type: is_invalid ? 'error' : 'information',
 					content: message ? message : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					allow_html: true,
 					modifier_class: 'ct-field__message',
 				} only %}
 			{% endif %}
