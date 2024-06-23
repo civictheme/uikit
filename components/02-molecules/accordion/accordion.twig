@@ -43,14 +43,14 @@
                 {% for panel in panels %}
                   {% if panel.title is not empty and panel.content is not empty %}
                     {% set is_expanded = panel.expanded == true or expand_all == true %}
-                    <li class="ct-accordion__panels__panel" data-collapsible {{ is_expanded ? '' : 'data-collapsible-collapsed' }} data-collapsible-duration="250" data-collapsible-trigger-wide>
+                    <li class="ct-accordion__panels__panel" data-collapsible {% if not is_expanded %}data-collapsible-collapsed{% endif %} data-collapsible-duration="250" data-collapsible-trigger-wide>
                       <div class="ct-accordion__panels__panel__header">
-                        <button class="ct-accordion__panels__panel__header__button" data-collapsible-trigger aria-expanded="{{ is_expanded ? 'true' : 'false' }}">
+                        <button class="ct-accordion__panels__panel__header__button" data-collapsible-trigger aria-expanded="{% if is_expanded %}true{% else %}false{% endif %}">
                           {{ panel.title }}
                         </button>
                       </div>
 
-                      <div class="ct-accordion__panels__panel__content" data-collapsible-panel aria-hidden="{{ is_expanded ? 'false' : 'true' }}">
+                      <div class="ct-accordion__panels__panel__content" data-collapsible-panel aria-hidden="{% if is_expanded %}false{% else %}true{% endif %}">
                         {% include '@atoms/paragraph/paragraph.twig' with {
                           theme: theme,
                           content: panel.content,

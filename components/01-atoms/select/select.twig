@@ -40,7 +40,7 @@
 	>
 		{% for option in options %}
 			{% if option.type == 'optgroup' %}
-				<optgroup label="{{ option.label }}" {{ option.is_disabled ? 'disabled' }}>
+				<optgroup label="{{ option.label }}" {% if option.is_disabled %}disabled{% endif %}>
 					{% for sub_option in option.options %}
 						{% if sub_option.label is not empty %}
 							<option value="{{ sub_option.value|default('') }}" {% if sub_option.is_selected %}selected="selected"{% endif %} {% if sub_option.is_disabled %}disabled{% endif %}>{{ sub_option.label }}</option>

@@ -30,11 +30,11 @@
     <label
       class="ct-chip {{ modifier_class }}"
       data-component-name="chip"
-      {{ is_multiple ? 'data-chip-dismiss' }}
+      {% if is_multiple %}data-chip-dismiss{% endif %}
     >
       <input
         class="ct-chip__input"
-        type="{{ is_multiple ? 'checkbox' : 'radio' }}"
+        type="{% if is_multiple %}checkbox{% else %}radio{% endif %}"
         {% if is_selected %}checked="checked"{% endif %}
         {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
       >
