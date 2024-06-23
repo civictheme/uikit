@@ -6,12 +6,12 @@ describe('Popover Component', () => {
       trigger: {
         text: 'Sample Trigger',
       },
-      content: 'Sample content',
+      content: '<span>Sample content</span>',
     });
 
     expect(c.querySelectorAll('.ct-popover')).toHaveLength(1);
     expect(c.querySelector('.ct-popover__link').textContent.trim()).toEqual('Sample Trigger');
-    expect(c.querySelector('.ct-popover__content').textContent.trim()).toEqual('Sample content');
+    expect(c.querySelector('.ct-popover__content').innerHTML.trim()).toContain('<span>Sample content</span>');
 
     assertUniqueCssClasses(c);
   });
