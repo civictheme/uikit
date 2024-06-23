@@ -6,13 +6,13 @@ describe('Menu Component', () => {
       items: [
         {
           title: 'Home',
-          url: '/'
+          url: '/',
         },
         {
           title: 'About',
-          url: '/about'
-        }
-      ]
+          url: '/about',
+        },
+      ],
     });
 
     expect(c.querySelectorAll('.ct-menu')).toHaveLength(1);
@@ -29,11 +29,11 @@ describe('Menu Component', () => {
       items: [
         {
           title: 'Home',
-          url: '/'
+          url: '/',
         },
         {
           title: 'About',
-          url: '/about'
+          url: '/about',
         },
         {
           title: 'Services',
@@ -41,15 +41,15 @@ describe('Menu Component', () => {
           below: [
             {
               title: 'Consulting',
-              url: '/services/consulting'
+              url: '/services/consulting',
             },
             {
               title: 'Development',
-              url: '/services/development'
-            }
-          ]
-        }
-      ]
+              url: '/services/development',
+            },
+          ],
+        },
+      ],
     });
 
     expect(c.querySelectorAll('.ct-menu')).toHaveLength(2);
@@ -66,11 +66,11 @@ describe('Menu Component', () => {
       items: [
         {
           title: 'Home',
-          url: '/'
+          url: '/',
         },
         {
           title: 'About',
-          url: '/about'
+          url: '/about',
         },
         {
           title: 'Services',
@@ -78,17 +78,17 @@ describe('Menu Component', () => {
           below: [
             {
               title: 'Consulting',
-              url: '/services/consulting'
+              url: '/services/consulting',
             },
             {
               title: 'Development',
-              url: '/services/development'
-            }
-          ]
-        }
+              url: '/services/development',
+            },
+          ],
+        },
       ],
       theme: 'dark',
-      modifier_class: 'custom-modifier'
+      modifier_class: 'custom-modifier',
     });
 
     expect(c.querySelectorAll('.ct-menu')).toHaveLength(2);
@@ -106,11 +106,11 @@ describe('Menu Component', () => {
       items: [
         {
           title: 'Home',
-          url: '/'
+          url: '/',
         },
         {
           title: 'About',
-          url: '/about'
+          url: '/about',
         },
         {
           title: 'Services',
@@ -124,12 +124,12 @@ describe('Menu Component', () => {
             },
             {
               title: 'Development',
-              url: '/services/development'
-            }
-          ]
-        }
+              url: '/services/development',
+            },
+          ],
+        },
       ],
-      is_collapsible: true
+      is_collapsible: true,
     });
 
     expect(c.querySelectorAll('.ct-menu')).toHaveLength(2);
@@ -149,12 +149,12 @@ describe('Menu Component', () => {
         {
           title: 'Home',
           url: '/',
-          attributes: 'data-test="home"'
+          attributes: 'data-test="home"',
         },
         {
           title: 'About',
           url: '/about',
-          attributes: 'data-test="about"'
+          attributes: 'data-test="about"',
         },
         {
           title: 'Services',
@@ -164,16 +164,16 @@ describe('Menu Component', () => {
             {
               title: 'Consulting',
               url: '/services/consulting',
-              attributes: 'data-test="consulting"'
+              attributes: 'data-test="consulting"',
             },
             {
               title: 'Development',
               url: '/services/development',
-              attributes: 'data-test="development"'
-            }
-          ]
-        }
-      ]
+              attributes: 'data-test="development"',
+            },
+          ],
+        },
+      ],
     });
 
     expect(c.querySelector('[data-test="home"]')).toBeTruthy();
@@ -191,12 +191,12 @@ describe('Menu Component', () => {
         {
           title: 'Home',
           url: '/',
-          attributes: 'data-test="home" data-extra="extra-home"'
+          attributes: 'data-test="home" data-extra="extra-home"',
         },
         {
           title: 'About',
           url: '/about',
-          attributes: 'data-test="about" data-extra="extra-about"'
+          attributes: 'data-test="about" data-extra="extra-about"',
         },
         {
           title: 'Services',
@@ -206,16 +206,16 @@ describe('Menu Component', () => {
             {
               title: 'Consulting',
               url: '/services/consulting',
-              attributes: 'data-test="consulting" data-extra="extra-consulting"'
+              attributes: 'data-test="consulting" data-extra="extra-consulting"',
             },
             {
               title: 'Development',
               url: '/services/development',
-              attributes: 'data-test="development" data-extra="extra-development"'
-            }
-          ]
-        }
-      ]
+              attributes: 'data-test="development" data-extra="extra-development"',
+            },
+          ],
+        },
+      ],
     });
 
     expect(c.querySelector('[data-test="home"][data-extra="extra-home"]')).toBeTruthy();

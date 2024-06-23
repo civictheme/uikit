@@ -6,8 +6,8 @@ describe('Link List Component', () => {
       items: [
         '<a href="/">Home</a>',
         '<a href="/about">About</a>',
-        '<a href="/contact">Contact</a>'
-      ]
+        '<a href="/contact">Contact</a>',
+      ],
     });
 
     expect(c.querySelectorAll('.ct-item-list')).toHaveLength(1);
@@ -25,8 +25,8 @@ describe('Link List Component', () => {
       items: [
         '<a href="/">Home</a>',
         '<a href="/about">About</a>',
-        '<a href="/contact">Contact</a>'
-      ]
+        '<a href="/contact">Contact</a>',
+      ],
     });
 
     expect(c.querySelectorAll('.ct-item-list.ct-item-list--vertical')).toHaveLength(1);
@@ -41,8 +41,8 @@ describe('Link List Component', () => {
       items: [
         '<a href="/">Home</a>',
         '<a href="/about">About</a>',
-        '<a href="/contact">Contact</a>'
-      ]
+        '<a href="/contact">Contact</a>',
+      ],
     });
 
     expect(c.querySelectorAll('.ct-item-list.ct-item-list--large')).toHaveLength(1);
@@ -57,8 +57,8 @@ describe('Link List Component', () => {
       items: [
         '<a href="/">Home</a>',
         '<a href="/about">About</a>',
-        '<a href="/contact">Contact</a>'
-      ]
+        '<a href="/contact">Contact</a>',
+      ],
     });
 
     expect(c.querySelectorAll('.ct-item-list.ct-item-list--no-gap')).toHaveLength(1);
@@ -72,10 +72,10 @@ describe('Link List Component', () => {
       items: [
         '<a href="/">Home</a>',
         '<a href="/about">About</a>',
-        '<a href="/contact">Contact</a>'
+        '<a href="/contact">Contact</a>',
       ],
       attributes: 'data-test="true"',
-      modifier_class: 'custom-modifier'
+      modifier_class: 'custom-modifier',
     });
 
     expect(c.querySelectorAll('.ct-item-list.custom-modifier')).toHaveLength(1);
@@ -86,7 +86,7 @@ describe('Link List Component', () => {
 
   test('does not render when items are empty', async () => {
     const c = await dom(template, {
-      items: []
+      items: [],
     });
 
     expect(c.querySelectorAll('.ct-item-list')).toHaveLength(0);
