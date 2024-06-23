@@ -235,7 +235,7 @@ exports[`Field Message Component strips HTML content 1`] = `
     </svg>
     
 
-                This is an HTML message
+                Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end
       
   </div>
 </div>

@@ -43,6 +43,7 @@
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,
+				allow_html: true,
 				modifier_class: 'ct-fieldset__description ' ~ (description_display == 'invisible' ? 'ct-fieldset__description--invisible ct-visually-hidden' : 'ct-fieldset__description--before'),
 			} only %}
 		{% endif %}
@@ -52,30 +53,32 @@
 				theme: theme,
 				type: message_type,
 				content: message,
+				allow_html: true,
 				modifier_class: 'ct-fieldset__message',
 			} only %}
 		{% endif %}
 
 		{% if prefix is not empty %}
-			<div class="ct-fieldset__prefix">{{ prefix }}</div>
+			<div class="ct-fieldset__prefix">{{ prefix|raw }}</div>
 		{% endif %}
 
 		{% block fields %}
 			{% if fields is not empty %}
 				<div class="ct-fieldset__fields">
-					{{ fields }}
+					{{ fields|raw }}
 				</div>
 			{% endif %}
 		{% endblock %}
 
 		{% if suffix is not empty %}
-			<div class="ct-fieldset__suffix">{{ suffix }}</div>
+			<div class="ct-fieldset__suffix">{{ suffix|raw }}</div>
 		{% endif %}
 
 		{% if description is not empty and description_display == 'after' %}
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,
+				allow_html: true,
 				modifier_class: 'ct-fieldset__description ct-fieldset__description--after',
 			} only %}
 		{% endif %}

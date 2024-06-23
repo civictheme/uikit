@@ -9,8 +9,21 @@ Twig.extendFunction('source', (src) => {
   return fs.readFileSync(src, 'utf8');
 });
 
+const originalRender = render;
+const wrappedRender = async (template, props = {}, namespaces = {}, twigCallback = () => {}) => {
+  const wrappedTwigCallback = (TwigInstance) => {
+    const originalTwig = TwigInstance.twig;
+    TwigInstance.twig = function (options) {
+      options.autoescape = true;
+      return originalTwig(options);
+    };
+    twigCallback(TwigInstance);
+  };
+  return originalRender(template, props, namespaces, wrappedTwigCallback);
+};
+
 global.dom = async function (template, props = {}, matchSnapshot = true) {
-  const { container } = await render(template, props, {
+  const { container } = await wrappedRender(template, props, {
     base: 'components/00-base',
     atoms: 'components/01-atoms',
     molecules: 'components/02-molecules',

@@ -37,18 +37,6 @@ describe('Paragraph Component', () => {
     expect(c.querySelectorAll('.ct-paragraph')).toHaveLength(0);
   });
 
-  test('strips HTML tags from content when allow_html is false', async () => {
-    const c = await dom(template, {
-      content: '<strong>Sample content</strong>',
-      allow_html: false,
-    });
-
-    expect(c.querySelector('.ct-paragraph').textContent.trim()).toEqual('Sample content');
-    expect(c.querySelector('.ct-paragraph').innerHTML).not.toContain('<strong>');
-
-    assertUniqueCssClasses(c);
-  });
-
   test('renders HTML tags in content when allow_html is true', async () => {
     const c = await dom(template, {
       content: '<strong>Sample content</strong>',
@@ -56,6 +44,21 @@ describe('Paragraph Component', () => {
     });
 
     expect(c.querySelector('.ct-paragraph').innerHTML.trim()).toEqual('<strong>Sample content</strong>');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('strips HTML content', async () => {
+    const c = await dom(template, {
+      content: 'Start <strong>prefix</strong> middle <script>alert("XSS")</script> end',
+      allow_html: false,
+    });
+
+    expect(c.querySelectorAll('.ct-paragraph')).toHaveLength(1);
+
+    const content = c.querySelector('.ct-paragraph').innerHTML.trim();
+    expect(content).not.toContain('Start <strong>prefix</strong> middle <script>alert("XSS")</script> end');
+    expect(content).toContain('Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end');
 
     assertUniqueCssClasses(c);
   });

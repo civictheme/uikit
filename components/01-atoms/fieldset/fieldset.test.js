@@ -20,23 +20,23 @@ describe('Fieldset Component', () => {
 
   test('renders with description before', async () => {
     const c = await dom(template, {
-      description: 'Test Description',
+      description: '<strong>Test Description</strong>',
       description_display: 'before',
     });
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__description--before')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__description--before').textContent.trim()).toEqual('Test Description');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__description--before').innerHTML.trim()).toEqual('<strong>Test Description</strong>');
     assertUniqueCssClasses(c);
   });
 
   test('renders with description after', async () => {
     const c = await dom(template, {
-      description: 'Test Description',
+      description: '<strong>Test Description</strong>',
       description_display: 'after',
     });
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__description--after')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__description--after').textContent.trim()).toEqual('Test Description');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__description--after').innerHTML.trim()).toEqual('<strong>Test Description</strong>');
     assertUniqueCssClasses(c);
   });
 
@@ -53,12 +53,12 @@ describe('Fieldset Component', () => {
 
   test('renders with message', async () => {
     const c = await dom(template, {
-      message: 'Test Message',
+      message: '<strong>Test Message</strong>',
       message_type: 'warning',
     });
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__message')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__message').textContent.trim()).toEqual('Test Message');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__message').innerHTML.trim()).toContain('<strong>Test Message</strong>');
     assertUniqueCssClasses(c);
   });
 
@@ -74,15 +74,15 @@ describe('Fieldset Component', () => {
 
   test('renders with prefix and suffix', async () => {
     const c = await dom(template, {
-      prefix: '<div class="test-prefix">Prefix</div>',
-      suffix: '<div class="test-suffix">Suffix</div>',
+      prefix: '<div class="test-prefix"><span>Prefix</span></div>',
+      suffix: '<div class="test-suffix"><span>Suffix</span></div>',
     });
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__prefix')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__prefix').innerHTML.trim()).toContain('Prefix');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__prefix').innerHTML.trim()).toContain('<span>Prefix</span>');
 
     expect(c.querySelectorAll('.ct-fieldset .ct-fieldset__suffix')).toHaveLength(1);
-    expect(c.querySelector('.ct-fieldset .ct-fieldset__suffix').innerHTML.trim()).toContain('Suffix');
+    expect(c.querySelector('.ct-fieldset .ct-fieldset__suffix').innerHTML.trim()).toContain('<span>Suffix</span>');
 
     assertUniqueCssClasses(c);
   });

@@ -58,7 +58,7 @@ exports[`Paragraph Component renders with required attributes 1`] = `
 </div>
 `;
 
-exports[`Paragraph Component strips HTML tags from content when allow_html is false 1`] = `
+exports[`Paragraph Component strips HTML content 1`] = `
 <div>
   
 
@@ -67,7 +67,7 @@ exports[`Paragraph Component strips HTML tags from content when allow_html is fa
     class="ct-paragraph ct-theme-light ct-paragraph--regular "
   >
     
-          Sample content
+          Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end
       
   </div>
 </div>

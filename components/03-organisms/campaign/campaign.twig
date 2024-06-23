@@ -35,7 +35,7 @@
 <div class="ct-campaign {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
 	<div class="container">
 		<div class="row row--vertically-spaced">
-			<div class="col-xxs-12 {{ image_position == 'right' ? 'col-m-5 col-m-offset-1' : 'col-m-5 col-m-offset-1' }} ct-flex-align-self-center">
+			<div class="col-xxs-12 {% if image_position == 'right' %}col-m-5 col-m-offset-1{% else %}col-m-5 col-m-offset-1{% endif %} ct-flex-align-self-center">
 				<div class="ct-campaign__inner">
 					{% block content_top %}
 						{% if content_top is not empty %}
@@ -119,7 +119,7 @@
 					{% endblock %}
 				</div>
 			</div>
-			<div class="col-xxs-12 first {{ image_position == 'right' ? 'col-m-5 col-m-offset-1 last-m' : 'col-m-5 first-m' }} ct-flex-align-self-start">
+			<div class="col-xxs-12 first {% if image_position == 'right' %}col-m-5 col-m-offset-1 last-m{% else %}col-m-5 first-m{% endif %} ct-flex-align-self-start">
 				{% block image %}
 					{% if image is not empty %}
 						<div class="ct-campaign__image">

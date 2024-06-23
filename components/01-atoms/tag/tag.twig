@@ -66,7 +66,7 @@
   class="ct-tag {{ modifier_class }}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if url is not empty %}title="{{ content }}"{% endif %}
-    {{ url is not empty and is_new_window ? 'target="_blank" aria-label="Opens in a new tab"' }}
+    {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
     {{ content_markup }}{{ is_new_window_content }}{{ is_external_content }}

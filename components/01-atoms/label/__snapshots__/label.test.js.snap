@@ -9,11 +9,15 @@ exports[`Label Component allows HTML content 1`] = `
     class="ct-label ct-theme-light ct-label--regular  "
   >
     
-          
+          Start 
     <strong>
-      This is an HTML message
+      prefix
     </strong>
-    
+     middle 
+    <script>
+      alert(‘XSS’)
+    </script>
+     end
       
   </label>
 </div>
@@ -83,7 +87,7 @@ exports[`Label Component strips HTML content 1`] = `
     class="ct-label ct-theme-light ct-label--regular  "
   >
     
-          This is an HTML message
+          Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end
       
   </label>
 </div>

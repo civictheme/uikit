@@ -33,23 +33,23 @@
 		class="ct-select {{ modifier_class }}"
 		name="{{ name }}"
 		{% if id %}id="{{ id }}"{% endif %}
-		{{ is_multiple ? 'multiple' }}
-		{{ is_disabled ? 'disabled' }}
-		{{ is_required ? 'required' }}
+		{% if is_multiple %}multiple{% endif %}
+		{% if is_disabled %}disabled{% endif %}
+		{% if is_required %}required{% endif %}
 		{% if attributes is not empty %}{{ attributes|raw }}{% endif %}
 	>
 		{% for option in options %}
 			{% if option.type == 'optgroup' %}
-				<optgroup label="{{ option.label }}" {{ option.is_disabled ? 'disabled' }}>
+				<optgroup label="{{ option.label }}" {% if option.is_disabled %}disabled{% endif %}>
 					{% for sub_option in option.options %}
 						{% if sub_option.label is not empty %}
-							<option value="{{ sub_option.value|default('') }}" {{ sub_option.is_selected ? 'selected="selected"' }} {{ sub_option.is_disabled ? 'disabled' }}>{{ sub_option.label }}</option>
+							<option value="{{ sub_option.value|default('') }}" {% if sub_option.is_selected %}selected="selected"{% endif %} {% if sub_option.is_disabled %}disabled{% endif %}>{{ sub_option.label }}</option>
 						{% endif %}
 					{% endfor %}
 				</optgroup>
 			{% elseif option.type == 'option' %}
 				{% if option.label is not empty %}
-					<option value="{{ option.value|default('') }}" {{ option.is_selected ? 'selected="selected"' }} {{ option.is_disabled ? 'disabled' }}>{{ option.label }}</option>
+					<option value="{{ option.value|default('') }}" {% if option.is_selected %}selected="selected"{% endif %} {% if option.is_disabled %}disabled{% endif %}>{{ option.label }}</option>
 				{% endif %}
 			{% endif %}
 		{% endfor %}

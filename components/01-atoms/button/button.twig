@@ -83,7 +83,7 @@
     data-component-name="button"
     {% if url %}href="{{ url }}"{% endif %}
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
-    {{ is_new_window ? 'target="_blank" aria-label="Opens in a new tab"' }}
+    {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
     {{ content_markup }}{{ is_new_window_content }}{{ is_external_content }}

@@ -38,7 +38,7 @@
   {% for logo_type, logo in logos %}
     {% if (type == 'default' and logo_type == 'primary') or type != 'default' %}
       {% if logo_type == 'secondary' %}
-        <span class="ct-logo__stripe {{ type == 'inline' ? 'hide-xxs show-l' : '' }}"></span>
+        <span class="ct-logo__stripe {% if type == 'inline' %}hide-xxs show-l{% endif %}"></span>
       {% endif %}
       {% for breakpoint, img in logo %}
         {% include '@atoms/image/image.twig' with {
