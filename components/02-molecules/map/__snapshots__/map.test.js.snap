@@ -5,14 +5,12 @@ exports[`Map Component does not render when URL is empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Map Component renders with default view text 1`] = `
 <div>
   
-
 
   
   <div
@@ -127,7 +125,6 @@ exports[`Map Component renders with optional attributes 1`] = `
 <div>
   
 
-
   
   <div
     class="ct-map ct-theme-dark ct-vertical-spacing-inset--both ct-map--with-background custom-class"
@@ -153,9 +150,7 @@ exports[`Map Component renders with optional attributes 1`] = `
           <div
             class="ct-map__content-top"
           >
-            
-                Top content
-              
+            Top content
           </div>
           
                       
@@ -234,9 +229,7 @@ exports[`Map Component renders with optional attributes 1`] = `
           <div
             class="ct-map__content-bottom"
           >
-            
-                Bottom content
-              
+            Bottom content
           </div>
           
                               
@@ -258,7 +251,6 @@ exports[`Map Component renders with optional attributes 1`] = `
 exports[`Map Component renders with required attributes 1`] = `
 <div>
   
-
 
   
   <div

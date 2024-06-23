@@ -37,7 +37,7 @@
         {% block content_top %}
           {% if content_top is not empty %}
             <div class="ct-popover__content-top">
-              {{ content_top }}
+              {{- content_top|raw -}}
             </div>
           {% endif %}
         {% endblock %}
@@ -49,7 +49,7 @@
         {% block content_bottom %}
           {% if content_bottom is not empty %}
             <div class="ct-popover__content-bottom">
-              {{ content_bottom }}
+              {{- content_bottom|raw -}}
             </div>
           {% endif %}
         {% endblock %}

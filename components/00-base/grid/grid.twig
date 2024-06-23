@@ -70,7 +70,7 @@
 			{% for item in items %}
 				{% if item is not empty %}
 					<{{ column_element }} class="{{ column_class }}" {% if column_attributes is not empty %}{{ column_attributes|raw }}{% endif %}>
-						{{ item }}
+						{{ item|raw }}
 					</{{ column_element }}>
 				{% endif %}
 			{% endfor %}

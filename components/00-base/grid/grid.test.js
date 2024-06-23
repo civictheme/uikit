@@ -4,99 +4,99 @@ const template = 'components/00-base/grid/grid.twig';
 
 const dataProviderGrid = () => [
   {
-    items: [1],
+    items: ['1'],
     use_container: true,
     description: 'with container',
   },
   {
-    items: [1],
+    items: ['1'],
     use_container: false,
     description: 'without container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: true,
     description: 'multiple items with container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: true,
     is_fluid: true,
     description: 'multiple items with fluid container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: false,
     description: 'multiple items without container',
   },
   {
-    items: [1, 2, 3],
+    items: ['1', '2', '3'],
     use_container: true,
     template_column_count: 3,
     description: 'column count with container',
   },
   {
-    items: [1, 2, 3],
+    items: ['1', '2', '3'],
     use_container: true,
     template_column_count: 3,
     is_fluid: true,
     description: 'column count with fluid container',
   },
   {
-    items: [1, 2, 3],
+    items: ['1', '2', '3'],
     use_container: false,
     template_column_count: 3,
     description: 'column count without container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: true,
     row_element: 'section',
     column_element: 'span',
     description: 'custom elements with container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: false,
     row_element: 'section',
     column_element: 'span',
     description: 'custom elements without container',
   },
   {
-    items: [1],
+    items: ['1'],
     use_container: true,
     row_class: 'custom-row',
     column_class: 'custom-col',
     description: 'custom classes with container',
   },
   {
-    items: [1],
+    items: ['1'],
     use_container: false,
     row_class: 'custom-row',
     column_class: 'custom-col',
     description: 'custom classes without container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: true,
     fill_width: true,
     description: 'fill width with container',
   },
   {
-    items: [1, 2],
+    items: ['1', '2'],
     use_container: false,
     fill_width: true,
     description: 'fill width without container',
   },
   {
-    items: [1],
+    items: ['1'],
     use_container: true,
     attributes: 'data-test="true"',
     modifier_class: 'custom-modifier',
     description: 'attributes and modifier class with container',
   },
   {
-    items: [1],
+    items: ['1'],
     use_container: false,
     attributes: 'data-test="true"',
     modifier_class: 'custom-modifier',
@@ -117,7 +117,7 @@ describe('Grid Container', () => {
     { use_container: false, is_fluid: false },
     { use_container: false, is_fluid: true },
   ]).test('renders %s', async (props) => {
-    const c = await dom(template, { items: [1], ...props });
+    const c = await dom(template, { items: ['1'], ...props });
 
     if (props.use_container) {
       if (props.is_fluid) {
@@ -140,7 +140,7 @@ describe('Grid Row Fill Width', () => {
     { fill_width: false },
   ]).test('renders %s', async (props) => {
     const c = await dom(template, {
-      items: [1],
+      items: ['1'],
       use_container: true,
       ...props,
     });
@@ -165,7 +165,7 @@ describe('Grid Attributes and Modifier Class', () => {
     },
   ]).test('renders %s', async (props) => {
     const c = await dom(template, {
-      items: [1],
+      items: ['1'],
       ...props,
     });
 
@@ -192,7 +192,7 @@ describe('Grid Custom Elements', () => {
     },
   ]).test('renders %s', async (props) => {
     const c = await dom(template, {
-      items: [1],
+      items: ['1'],
       use_container: true,
       ...props,
     });
@@ -304,7 +304,7 @@ describe('Grid Custom Classes', () => {
     },
   ]).test('renders %s', async (props) => {
     const c = await dom(template, {
-      items: [1],
+      items: ['1'],
       use_container: true,
       ...props,
     });

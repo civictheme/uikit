@@ -5,14 +5,12 @@ exports[`Accordion Component does not render when panels are empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Accordion Component expands all panels when expand_all is true 1`] = `
 <div>
   
-
 
   
   <div
@@ -173,7 +171,6 @@ exports[`Accordion Component expands all panels when expand_all is true 1`] = `
 exports[`Accordion Component renders individual panels with expanded state 1`] = `
 <div>
   
-
 
   
   <div
@@ -336,7 +333,6 @@ exports[`Accordion Component renders with optional attributes 1`] = `
 <div>
   
 
-
   
   <div
     class="ct-accordion ct-theme-dark ct-vertical-spacing-inset--both ct-accordion--with-background custom-class"
@@ -362,9 +358,7 @@ exports[`Accordion Component renders with optional attributes 1`] = `
           <div
             class="ct-accordion__content-top"
           >
-            
-                Top content
-              
+            Top content
           </div>
           
                       
@@ -491,9 +485,7 @@ exports[`Accordion Component renders with optional attributes 1`] = `
           <div
             class="ct-accordion__content-bottom"
           >
-            
-                Bottom content
-              
+            Bottom content
           </div>
           
                               
@@ -515,7 +507,6 @@ exports[`Accordion Component renders with optional attributes 1`] = `
 exports[`Accordion Component renders with required attributes 1`] = `
 <div>
   
-
 
   
   <div

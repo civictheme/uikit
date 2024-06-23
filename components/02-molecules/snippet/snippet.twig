@@ -32,7 +32,7 @@
         {% block content_top %}
           {% if content_top is not empty %}
             <div class="ct-snippet__content-top">
-              {{ content_top }}
+              {{- content_top|raw -}}
             </div>
           {% endif %}
         {% endblock %}
@@ -66,7 +66,7 @@
         {% block content_middle %}
           {% if content_middle is not empty %}
             <div class="ct-snippet__content-middle">
-              {{ content_middle }}
+              {{- content_middle|raw -}}
             </div>
           {% endif %}
         {% endblock %}
@@ -98,7 +98,7 @@
         {% block content_bottom %}
           {% if content_bottom is not empty %}
             <div class="ct-snippet__content-bottom">
-              {{ content_bottom }}
+              {{- content_bottom|raw -}}
             </div>
           {% endif %}
         {% endblock %}
