@@ -1,5 +1,5 @@
 import CivicThemeSocialLinks from './social-links.twig';
-import { demoIcon, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { demoImage, knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
 import CivicThemeIcon from '../../00-base/icon/icon.twig';
 
 export default {
@@ -11,11 +11,6 @@ export default {
 
 export const SocialLinks = (parentKnobs = {}) => {
   const items = [
-    {
-      icon_html: `<img class="ct-button__icon" width=16 height=16 src="${demoIcon()}"/>`,
-      url: 'https://www.dropbox.com',
-      // Deliberately left without a title.
-    },
     {
       title: 'Facebook',
       icon: 'facebook',
@@ -45,6 +40,11 @@ export const SocialLinks = (parentKnobs = {}) => {
       title: 'YouTube',
       icon: 'youtube',
       url: 'https://www.youtube.com',
+    },
+    {
+      icon_html: `<img class="ct-button__icon" width="16" height="16" src="${demoImage(1)}"/>`,
+      url: 'https://www.dropbox.com',
+      // Deliberately left without a title.
     },
   ];
 
