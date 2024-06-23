@@ -21,7 +21,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, with_border_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
-  <div class="ct-social-links {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-social-links {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 
     {% block items %}
       {% set items_rendered = [] %}

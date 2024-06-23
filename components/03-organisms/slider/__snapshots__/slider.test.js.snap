@@ -5,14 +5,12 @@ exports[`Slider Component does not render when slides are empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Slider Component renders with all attributes provided 1`] = `
 <div>
   
-
 
   
   <div
@@ -107,17 +105,14 @@ exports[`Slider Component renders with all attributes provided 1`] = `
 
 
 
-
-
   
                 <button
                   class="ct-button ct-theme-dark ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
                 >
-                  
+                        
           
-                
 
 
                                     
@@ -143,12 +138,9 @@ exports[`Slider Component renders with all attributes provided 1`] = `
       Previous Slide
     
   
-  
                 </button>
                 
                   
-
-
 
 
 
@@ -158,9 +150,8 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                   data-component-name="button"
                   data-slider-next=""
                 >
-                  
-          
-          Next Slide      
+                        
+    Next Slide      
 
 
                                     
@@ -184,8 +175,6 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                   
 
       
-    
-  
   
                 </button>
                 
@@ -205,9 +194,7 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                 data-slider-progress=""
                 tabindex="0"
               >
-                
-         Slide 1   
-  
+                     Slide 1   
               </span>
               
               
@@ -245,7 +232,6 @@ exports[`Slider Component renders with all attributes provided 1`] = `
 exports[`Slider Component renders with only required attributes 1`] = `
 <div>
   
-
 
   
   <div
@@ -315,17 +301,14 @@ exports[`Slider Component renders with only required attributes 1`] = `
 
 
 
-
-
   
                 <button
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
                 >
-                  
+                        
           
-                
 
 
                                     
@@ -351,12 +334,9 @@ exports[`Slider Component renders with only required attributes 1`] = `
       Previous
     
   
-  
                 </button>
                 
                   
-
-
 
 
 
@@ -366,9 +346,8 @@ exports[`Slider Component renders with only required attributes 1`] = `
                   data-component-name="button"
                   data-slider-next=""
                 >
-                  
-          
-          Next      
+                        
+    Next      
 
 
                                     
@@ -392,8 +371,6 @@ exports[`Slider Component renders with only required attributes 1`] = `
                   
 
       
-    
-  
   
                 </button>
                 
@@ -413,9 +390,7 @@ exports[`Slider Component renders with only required attributes 1`] = `
                 data-slider-progress=""
                 tabindex="0"
               >
-                
-         Slide 1   
-  
+                     Slide 1   
               </span>
               
               
@@ -444,7 +419,6 @@ exports[`Slider Component renders with only required attributes 1`] = `
 exports[`Slider Component renders without some attributes 1`] = `
 <div>
   
-
 
   
   <div
@@ -533,17 +507,14 @@ exports[`Slider Component renders without some attributes 1`] = `
 
 
 
-
-
   
                 <button
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
                 >
-                  
+                        
           
-                
 
 
                                     
@@ -569,12 +540,9 @@ exports[`Slider Component renders without some attributes 1`] = `
       Previous Slide
     
   
-  
                 </button>
                 
                   
-
-
 
 
 
@@ -584,9 +552,8 @@ exports[`Slider Component renders without some attributes 1`] = `
                   data-component-name="button"
                   data-slider-next=""
                 >
-                  
-          
-          Next Slide      
+                        
+    Next Slide      
 
 
                                     
@@ -610,8 +577,6 @@ exports[`Slider Component renders without some attributes 1`] = `
                   
 
       
-    
-  
   
                 </button>
                 
@@ -631,9 +596,7 @@ exports[`Slider Component renders without some attributes 1`] = `
                 data-slider-progress=""
                 tabindex="0"
               >
-                
-         Slide 1   
-  
+                     Slide 1   
               </span>
               
               

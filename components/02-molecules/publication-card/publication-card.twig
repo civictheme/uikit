@@ -33,7 +33,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, with_image_class, modifier_class|default('')) %}
 
 {% if file is not empty %}
-  <div class="ct-publication-card {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-publication-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% block image %}
       {% if image.url is not empty %}
         <div class="ct-publication-card__image">

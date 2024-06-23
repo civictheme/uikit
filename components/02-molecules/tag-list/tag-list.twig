@@ -19,7 +19,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {% if tags is not empty %}
-  <div class="ct-tag-list {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-tag-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% block content_top %}
       {% if content_top is not empty %}
         <div class="ct-tag-list__content-top">

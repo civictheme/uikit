@@ -57,7 +57,7 @@
 {% endfor %}
 
 {% if panels is not empty or link_items is not empty %}
-  <div class="ct-tabs {{ modifier_class }}" data-tabs-panel {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+  <div class="ct-tabs {{ modifier_class -}}" data-tabs-panel {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% include '@base/item-list/item-list.twig' with {
       items: link_items,
       no_gap: true,

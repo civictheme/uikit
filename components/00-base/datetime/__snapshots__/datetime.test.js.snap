@@ -1,18 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Datetime Component does not render when start time is empty 1`] = `
-<div>
-  
-
-
-</div>
-`;
+exports[`Datetime Component does not render when start time is empty 1`] = `<div />`;
 
 exports[`Datetime Component renders with custom attributes and classes 1`] = `
 <div>
-  
-
-  
+    
   <span
     class="ct-datetime custom-class"
     data-test="true"
@@ -35,9 +27,7 @@ exports[`Datetime Component renders with custom attributes and classes 1`] = `
 
 exports[`Datetime Component renders with start and end time 1`] = `
 <div>
-  
-
-  
+    
   <span
     class="ct-datetime "
   >
@@ -68,9 +58,7 @@ exports[`Datetime Component renders with start and end time 1`] = `
 
 exports[`Datetime Component renders with start time only 1`] = `
 <div>
-  
-
-  
+    
   <span
     class="ct-datetime "
   >
@@ -92,9 +80,7 @@ exports[`Datetime Component renders with start time only 1`] = `
 
 exports[`Datetime Component strips HTML tags from attribute values 1`] = `
 <div>
-  
-
-  
+    
   <span
     class="ct-datetime "
   >

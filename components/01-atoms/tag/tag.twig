@@ -37,9 +37,9 @@
        {% endset %}
 
        {% if icon_placement == 'before' %}
-         {{ icon_markup }}{{- content|raw -}}
+         {{- icon_markup -}}{{- content|raw -}}
        {% else %}
-         {{- content|raw -}}{{ icon_markup }}
+         {{- content|raw -}}{{- icon_markup -}}
        {% endif %}
 
      {% else %}
@@ -63,12 +63,12 @@
 
   {% set tag = url is not empty ? 'a' : 'span' %}
   <{{ tag }}
-  class="ct-tag {{ modifier_class }}"
+  class="ct-tag {{ modifier_class -}}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if url is not empty %}title="{{- content -}}"{% endif %}
     {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-    {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {{ content_markup }}{{ is_new_window_content }}{{ is_external_content }}
+    {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
   </{{ tag }}>
 {% endif %}

@@ -33,7 +33,6 @@ exports[`Callout Component renders with multiple links 1`] = `
                                                                                             
             
 
-
   
             <ul
               class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-callout__links"
@@ -48,8 +47,6 @@ exports[`Callout Component renders with multiple links 1`] = `
 
 
 
-
-
   
                 <a
                   class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   "
@@ -57,10 +54,7 @@ exports[`Callout Component renders with multiple links 1`] = `
                   href="https://example.com"
                   role="button"
                 >
-                  
-          Link 1
-  
-  
+                    Link 1
                 </a>
                 
               
@@ -76,8 +70,6 @@ exports[`Callout Component renders with multiple links 1`] = `
 
 
 
-
-
   
                 <a
                   class="ct-button ct-theme-light ct-button--secondary ct-button--link ct-button--regular   "
@@ -85,10 +77,7 @@ exports[`Callout Component renders with multiple links 1`] = `
                   href="https://example.com"
                   role="button"
                 >
-                  
-          Link 2
-  
-  
+                    Link 2
                 </a>
                 
               
@@ -104,8 +93,6 @@ exports[`Callout Component renders with multiple links 1`] = `
 
 
 
-
-
   
                 <a
                   class="ct-button ct-theme-light ct-button--secondary ct-button--link ct-button--regular   "
@@ -113,10 +100,7 @@ exports[`Callout Component renders with multiple links 1`] = `
                   href="https://example.com"
                   role="button"
                 >
-                  
-          Link 3
-  
-  
+                    Link 3
                 </a>
                 
               
@@ -214,7 +198,6 @@ exports[`Callout Component renders with optional attributes 1`] = `
                                                                       
             
 
-
   
             <ul
               class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-callout__links"
@@ -228,10 +211,8 @@ exports[`Callout Component renders with optional attributes 1`] = `
                           
 
 
-
   
-  
-  
+    
                 <a
                   aria-label="Opens in a new tab"
                   class="ct-button ct-theme-dark ct-button--primary ct-button--link ct-button--regular  ct-button--external "
@@ -240,9 +221,7 @@ exports[`Callout Component renders with optional attributes 1`] = `
                   role="button"
                   target="_blank"
                 >
-                  
-          Link 1
-      
+                    Link 1    
                   <span
                     class="ct-visually-hidden"
                   >
@@ -273,7 +252,6 @@ exports[`Callout Component renders with optional attributes 1`] = `
                   
 
     
-  
                 </a>
                 
               
@@ -289,8 +267,6 @@ exports[`Callout Component renders with optional attributes 1`] = `
 
 
 
-
-
   
                 <a
                   class="ct-button ct-theme-dark ct-button--secondary ct-button--link ct-button--regular   "
@@ -298,10 +274,7 @@ exports[`Callout Component renders with optional attributes 1`] = `
                   href="https://example.com"
                   role="button"
                 >
-                  
-          Link 2
-  
-  
+                    Link 2
                 </a>
                 
               
@@ -387,7 +360,6 @@ exports[`Callout Component renders with required attributes 1`] = `
             
                                               
             
-
 
                                         
           </div>

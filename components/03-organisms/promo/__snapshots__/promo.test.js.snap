@@ -6,14 +6,12 @@ exports[`Promo Component does not render when title and content are empty 1`] = 
 
 
 
-
 </div>
 `;
 
 exports[`Promo Component renders with all attributes provided 1`] = `
 <div>
   
-
 
 
   
@@ -89,10 +87,8 @@ exports[`Promo Component renders with all attributes provided 1`] = `
                         
 
 
-
   
-  
-  
+    
               <a
                 aria-label="Opens in a new tab"
                 class="ct-button ct-theme-dark ct-button--secondary ct-button--link ct-button--large  ct-button--external ct-promo__button"
@@ -101,9 +97,7 @@ exports[`Promo Component renders with all attributes provided 1`] = `
                 role="button"
                 target="_blank"
               >
-                
-          Learn More
-      
+                  Learn More    
                 <span
                   class="ct-visually-hidden"
                 >
@@ -134,7 +128,6 @@ exports[`Promo Component renders with all attributes provided 1`] = `
                 
 
     
-  
               </a>
               
                       
@@ -172,7 +165,6 @@ exports[`Promo Component renders with all attributes provided 1`] = `
 exports[`Promo Component renders with only required attributes 1`] = `
 <div>
   
-
 
 
   
@@ -253,7 +245,6 @@ exports[`Promo Component renders with only required attributes 1`] = `
 exports[`Promo Component renders without content_bottom and link 1`] = `
 <div>
   
-
 
 
   
@@ -345,7 +336,6 @@ exports[`Promo Component renders without content_top and content_bottom 1`] = `
   
 
 
-
   
   <div
     class="ct-promo ct-theme-light   "
@@ -395,8 +385,6 @@ exports[`Promo Component renders without content_top and content_bottom 1`] = `
 
 
 
-
-
   
         <a
           class="ct-button ct-theme-light ct-button--secondary ct-button--link ct-button--large   ct-promo__button"
@@ -404,10 +392,7 @@ exports[`Promo Component renders without content_top and content_bottom 1`] = `
           href="https://example.com"
           role="button"
         >
-          
-          Learn More
-  
-  
+            Learn More
         </a>
         
                       

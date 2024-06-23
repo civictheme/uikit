@@ -25,9 +25,9 @@
 
 {% if content is not empty -%}
   <{{ tag }}
-    class="ct-label {{ modifier_class }}"
+    class="ct-label {{ modifier_class -}}"
     {% if for is not empty %} for="{{ for }}" {% endif %}
-    {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
     {% if allow_html|default(false) %}
       {{- content|raw -}}

@@ -32,7 +32,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, image_position_class, modifier_class|default('')) %}
 
-<div class="ct-campaign {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+<div class="ct-campaign {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 	<div class="container">
 		<div class="row row--vertically-spaced">
 			<div class="col-xxs-12 {% if image_position == 'right' %}col-m-5 col-m-offset-1{% else %}col-m-5 col-m-offset-1{% endif %} ct-flex-align-self-center">

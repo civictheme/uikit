@@ -5,14 +5,12 @@ exports[`Navigation Component does not render when items are empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Navigation Component renders correctly when items have submenus 1`] = `
 <div>
   
-
 
                     
         
@@ -43,7 +41,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
 
             
       <ul
-        class="ct-menu ct-menu--level-0 ct-theme-dark ct-navigation__menu "
+        class="ct-menu ct-menu--level-0 ct-theme-dark ct-navigation__menu"
         data-component-name="ct-menu"
       >
         
@@ -63,7 +61,6 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
         
 
 
-
   
   
   
@@ -73,10 +70,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
             href="/services"
             title="Services"
           >
-            
-              Services
-      
-  
+                Services  
           </a>
           
 
@@ -103,7 +97,6 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
         
 
 
-
   
   
   
@@ -113,10 +106,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   href="/services/consulting"
                   title="Consulting"
                 >
-                  
-              Consulting
-      
-  
+                      Consulting  
                 </a>
                 
 
@@ -153,7 +143,6 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
         
 
 
-
   
   
   
@@ -163,10 +152,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
             href="/contact"
             title="Contact"
           >
-            
-              Contact
-      
-  
+                Contact  
           </a>
           
 
@@ -193,7 +179,6 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
         
 
 
-
   
   
   
@@ -203,10 +188,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   href="/contact/support"
                   title="Support"
                 >
-                  
-              Support
-      
-  
+                      Support  
                 </a>
                 
 
@@ -247,7 +229,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
 <div>
   
 
-
                                                 
   
   <div
@@ -279,7 +260,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
 
             
       <ul
-        class="ct-menu ct-menu--level-0 ct-theme-dark ct-navigation__menu "
+        class="ct-menu ct-menu--level-0 ct-theme-dark ct-navigation__menu"
         data-component-name="ct-menu"
       >
         
@@ -295,7 +276,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
         
 
 
-
   
   
   
@@ -305,10 +285,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/"
             title="Home"
           >
-            
-              Home
-      
-  
+                Home  
           </a>
           
 
@@ -326,7 +303,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
           
 
         
-
 
 
   
@@ -338,10 +314,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/about"
             title="About"
           >
-            
-              About
-      
-  
+                About  
           </a>
           
 
@@ -359,7 +332,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
           
 
         
-
 
 
   
@@ -371,10 +343,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/services"
             title="Services"
           >
-            
-              Services
-      
-  
+                Services  
           </a>
           
 
@@ -394,7 +363,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
         
 
 
-
   
   
   
@@ -404,10 +372,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/contact"
             title="Contact"
           >
-            
-              Contact
-      
-  
+                Contact  
           </a>
           
 
@@ -435,7 +400,6 @@ exports[`Navigation Component renders with only required attributes 1`] = `
 <div>
   
 
-
                   
   
   <div
@@ -457,7 +421,7 @@ exports[`Navigation Component renders with only required attributes 1`] = `
 
             
       <ul
-        class="ct-menu ct-menu--level-0 ct-theme-light ct-navigation__menu "
+        class="ct-menu ct-menu--level-0 ct-theme-light ct-navigation__menu"
         data-component-name="ct-menu"
       >
         
@@ -473,7 +437,6 @@ exports[`Navigation Component renders with only required attributes 1`] = `
         
 
 
-
   
   
   
@@ -483,10 +446,7 @@ exports[`Navigation Component renders with only required attributes 1`] = `
             href="/"
             title="Home"
           >
-            
-              Home
-      
-  
+                Home  
           </a>
           
 
@@ -514,7 +474,6 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
 <div>
   
 
-
                             
   
   <div
@@ -536,7 +495,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
 
             
       <ul
-        class="ct-menu ct-menu--level-0 ct-theme-light ct-navigation__menu "
+        class="ct-menu ct-menu--level-0 ct-theme-light ct-navigation__menu"
         data-component-name="ct-menu"
       >
         
@@ -552,7 +511,6 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
         
 
 
-
   
   
   
@@ -562,10 +520,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
             href="/"
             title="Home"
           >
-            
-              Home
-      
-  
+                Home  
           </a>
           
 
@@ -585,7 +540,6 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
         
 
 
-
   
   
   
@@ -595,10 +549,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
             href="/about"
             title="About"
           >
-            
-              About
-      
-  
+                About  
           </a>
           
 

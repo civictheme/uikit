@@ -29,7 +29,7 @@
 {% if items is not empty %}
 	{% set title = title|default('Filter results by:') %}
 
-	<div class="ct-single-filter {{ modifier_class }}" data-component-name="ct-single-filter" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+	<div class="ct-single-filter {{ modifier_class -}}" data-component-name="ct-single-filter" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 		<div class="container">
 			<div class="row">
 				<div class="col-xxs-12">

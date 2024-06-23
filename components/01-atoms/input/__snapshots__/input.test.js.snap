@@ -5,14 +5,12 @@ exports[`Input Component does not render when name is empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Input Component renders with optional attributes 1`] = `
 <div>
   
-
 
 	
   <input
@@ -35,7 +33,6 @@ exports[`Input Component renders with required attributes 1`] = `
 <div>
   
 
-
 	
   <input
     class="ct-input ct-theme-light"
@@ -51,7 +48,6 @@ exports[`Input Component renders with required attributes 1`] = `
 exports[`Input Component strips HTML tags from attribute values 1`] = `
 <div>
   
-
 
 	
   <input

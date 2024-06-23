@@ -44,7 +44,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
         
 
 
-
   
   
   
@@ -54,9 +53,8 @@ exports[`Pagination Component renders current page correctly 1`] = `
           href="#previous"
           title="Go to previous page - page 1"
         >
-          
+                    
               
-                      
 
 
                                     
@@ -81,8 +79,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
 
         Previous
       
-      
-  
         </a>
         
       
@@ -99,7 +95,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
                                           
 
 
-
   
   
   
@@ -109,10 +104,7 @@ exports[`Pagination Component renders current page correctly 1`] = `
           href="#1"
           title="Go to page 1 of 3"
         >
-          
-              1
-      
-  
+              1  
         </a>
         
         
@@ -129,7 +121,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
                                           
 
 
-
   
   
   
@@ -139,10 +130,7 @@ exports[`Pagination Component renders current page correctly 1`] = `
           href="#2"
           title="Current page"
         >
-          
-              2
-      
-  
+              2  
         </a>
         
         
@@ -159,7 +147,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
                                           
 
 
-
   
   
   
@@ -169,10 +156,7 @@ exports[`Pagination Component renders current page correctly 1`] = `
           href="#3"
           title="Go to page 3 of 3"
         >
-          
-              3
-      
-  
+              3  
         </a>
         
         
@@ -190,7 +174,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
         
 
 
-
   
   
   
@@ -201,9 +184,8 @@ exports[`Pagination Component renders current page correctly 1`] = `
           href="#next"
           title="Go to next page"
         >
-          
-              
-              Next        
+                    
+      Next        
 
 
                                     
@@ -228,8 +210,6 @@ exports[`Pagination Component renders current page correctly 1`] = `
 
         
       
-      
-  
         </a>
         
       
@@ -277,8 +257,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
 
 	
-		
-	
+			
       <div
         class="ct-field ct-theme-dark ct-field--select ct-field--horizontal    ct-field--horizontal--fluid ct-pagination__items_per_page__label"
         data-test="items-per-page"
@@ -302,7 +281,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           
 			
 							
-
 
 	
           <select
@@ -361,7 +339,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
                     
 
 
-
   
   
   
@@ -371,9 +348,8 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#first"
           title="Go to first page"
         >
-          
+                    
               
-                      
 
 
                                     
@@ -398,8 +374,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
         First
       
-      
-  
         </a>
         
         
@@ -416,7 +390,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         
 
 
-
   
   
   
@@ -426,9 +399,8 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#previous"
           title="Go to previous page - page 1"
         >
-          
+                    
               
-                      
 
 
                                     
@@ -453,8 +425,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
         Previous
       
-      
-  
         </a>
         
       
@@ -471,7 +441,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
                                           
 
 
-
   
   
   
@@ -481,10 +450,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#1"
           title="Go to page 1 of 3"
         >
-          
-              1
-      
-  
+              1  
         </a>
         
         
@@ -501,7 +467,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
                                           
 
 
-
   
   
   
@@ -511,10 +476,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#2"
           title="Current page"
         >
-          
-              2
-      
-  
+              2  
         </a>
         
         
@@ -541,7 +503,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
                                           
 
 
-
   
   
   
@@ -551,10 +512,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#3"
           title="Go to page 3 of 3"
         >
-          
-              3
-      
-  
+              3  
         </a>
         
         
@@ -572,7 +530,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         
 
 
-
   
   
   
@@ -583,9 +540,8 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#next"
           title="Go to next page"
         >
-          
-              
-              Next        
+                    
+      Next        
 
 
                                     
@@ -610,8 +566,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
         
       
-      
-  
         </a>
         
       
@@ -627,7 +581,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           
 
 
-
   
   
   
@@ -638,9 +591,8 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           href="#last"
           title="Go to last page"
         >
-          
-              
-              Last        
+                    
+      Last        
 
 
                                     
@@ -665,8 +617,6 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
         
       
-      
-  
         </a>
         
         
@@ -718,7 +668,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
         
 
 
-
   
   
   
@@ -728,9 +677,8 @@ exports[`Pagination Component renders with required attributes 1`] = `
           href="#previous"
           title="Go to previous page - page 1"
         >
-          
+                    
               
-                      
 
 
                                     
@@ -755,8 +703,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
 
         Previous
       
-      
-  
         </a>
         
       
@@ -773,7 +719,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
                                           
 
 
-
   
   
   
@@ -783,10 +728,7 @@ exports[`Pagination Component renders with required attributes 1`] = `
           href="#1"
           title="Go to page 1 of 3"
         >
-          
-              1
-      
-  
+              1  
         </a>
         
         
@@ -803,7 +745,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
                                           
 
 
-
   
   
   
@@ -813,10 +754,7 @@ exports[`Pagination Component renders with required attributes 1`] = `
           href="#2"
           title="Current page"
         >
-          
-              2
-      
-  
+              2  
         </a>
         
         
@@ -833,7 +771,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
                                           
 
 
-
   
   
   
@@ -843,10 +780,7 @@ exports[`Pagination Component renders with required attributes 1`] = `
           href="#3"
           title="Go to page 3 of 3"
         >
-          
-              3
-      
-  
+              3  
         </a>
         
         
@@ -864,7 +798,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
         
 
 
-
   
   
   
@@ -875,9 +808,8 @@ exports[`Pagination Component renders with required attributes 1`] = `
           href="#next"
           title="Go to next page"
         >
-          
-              
-              Next        
+                    
+      Next        
 
 
                                     
@@ -902,8 +834,6 @@ exports[`Pagination Component renders with required attributes 1`] = `
 
         
       
-      
-  
         </a>
         
       

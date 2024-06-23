@@ -5,7 +5,6 @@ exports[`Select Component does not render when name or options are empty 1`] = `
   
 
 
-
 </div>
 `;
 
@@ -14,14 +13,12 @@ exports[`Select Component does not render when name or options are empty 2`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Select Component renders optgroup with options 1`] = `
 <div>
   
-
 
 	
   <select
@@ -69,7 +66,6 @@ exports[`Select Component renders with optional attributes 1`] = `
 <div>
   
 
-
 	
   <select
     class="ct-select ct-theme-dark ct-select--is-invalid custom-class"
@@ -115,7 +111,6 @@ exports[`Select Component renders with required attributes 1`] = `
 <div>
   
 
-
 	
   <select
     class="ct-select ct-theme-light"
@@ -146,7 +141,6 @@ exports[`Select Component renders with required attributes 1`] = `
 exports[`Select Component strips HTML tags from attribute values 1`] = `
 <div>
   
-
 
 	
   <select

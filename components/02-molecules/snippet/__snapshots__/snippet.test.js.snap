@@ -96,7 +96,6 @@ exports[`Snippet Component renders with link and tags 1`] = `
                                       
 
 
-
   
   
   
@@ -105,10 +104,7 @@ exports[`Snippet Component renders with link and tags 1`] = `
           class="ct-link ct-theme-light     ct-snippet__title__link"
           href="https://example.com/read-more"
         >
-          
-              Snippet Title
-      
-  
+              Snippet Title  
         </a>
         
                           
@@ -132,7 +128,6 @@ exports[`Snippet Component renders with link and tags 1`] = `
               
                                                                                           
 
-
   
           <ul
             class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-tag-list__content"
@@ -152,9 +147,7 @@ exports[`Snippet Component renders with link and tags 1`] = `
               <span
                 class="ct-tag ct-theme-light ct-tag--primary    "
               >
-                
-         Tag1   
-  
+                     Tag1   
               </span>
               
           
@@ -175,9 +168,7 @@ exports[`Snippet Component renders with link and tags 1`] = `
               <span
                 class="ct-tag ct-theme-light ct-tag--primary    "
               >
-                
-         Tag2   
-  
+                     Tag2   
               </span>
               
           
@@ -239,7 +230,6 @@ exports[`Snippet Component renders with optional attributes 1`] = `
                                       
 
 
-
   
         
   
@@ -250,9 +240,7 @@ exports[`Snippet Component renders with optional attributes 1`] = `
           href="https://example.com/read-more"
           target="_blank"
         >
-          
-              Snippet Title
-            
+              Snippet Title        
           <span
             class="ct-visually-hidden"
           >
@@ -260,7 +248,6 @@ exports[`Snippet Component renders with optional attributes 1`] = `
           </span>
           
     
-  
         </a>
         
                           
@@ -300,7 +287,6 @@ exports[`Snippet Component renders with optional attributes 1`] = `
               
                                                                                           
 
-
   
           <ul
             class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-tag-list__content"
@@ -320,9 +306,7 @@ exports[`Snippet Component renders with optional attributes 1`] = `
               <span
                 class="ct-tag ct-theme-dark ct-tag--primary    "
               >
-                
-         Tag1   
-  
+                     Tag1   
               </span>
               
           
@@ -343,9 +327,7 @@ exports[`Snippet Component renders with optional attributes 1`] = `
               <span
                 class="ct-tag ct-theme-dark ct-tag--primary    "
               >
-                
-         Tag2   
-  
+                     Tag2   
               </span>
               
           

@@ -35,12 +35,12 @@
   {% endif %}
 
   <a
-    class="ct-content-link {{ modifier_class }}"
+    class="ct-content-link {{ modifier_class -}}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if title is not empty %}title="{{ title }}"{% endif %}
     {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-    {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {{ text|raw }}{{ is_new_window_content }}{{ is_external_content }}
+    {{- text|raw -}}{{- is_new_window_content -}}{{- is_external_content -}}
   </a>
 {% endif %}

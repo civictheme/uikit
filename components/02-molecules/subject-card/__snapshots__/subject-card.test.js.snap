@@ -5,14 +5,12 @@ exports[`Subject Card Component does not render when title is empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Subject Card Component renders with content slots 1`] = `
 <div>
   
-
 
   
   <div
@@ -61,7 +59,6 @@ exports[`Subject Card Component renders with link and image 1`] = `
 <div>
   
 
-
   
   <div
     class="ct-subject-card ct-theme-light ct-subject-card--with-image "
@@ -78,7 +75,6 @@ exports[`Subject Card Component renders with link and image 1`] = `
       >
         
             
-
 
   
         <img
@@ -103,7 +99,6 @@ exports[`Subject Card Component renders with link and image 1`] = `
                                   
 
 
-
   
   
   
@@ -112,10 +107,7 @@ exports[`Subject Card Component renders with link and image 1`] = `
           class="ct-link ct-theme-light     ct-subject-card__title__link"
           href="https://example.com/read-more"
         >
-          
-              Subject Card Title
-      
-  
+              Subject Card Title  
         </a>
         
                       
@@ -135,7 +127,6 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
 <div>
   
 
-
   
   <div
     class="ct-subject-card ct-theme-dark ct-subject-card--with-image custom-class"
@@ -153,7 +144,6 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
       >
         
             
-
 
   
         <img
@@ -187,7 +177,6 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
                                   
 
 
-
   
         
   
@@ -198,9 +187,7 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
           href="https://example.com/read-more"
           target="_blank"
         >
-          
-              Subject Card Title
-            
+              Subject Card Title        
           <span
             class="ct-visually-hidden"
           >
@@ -208,7 +195,6 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
           </span>
           
     
-  
         </a>
         
                       
@@ -227,7 +213,6 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
 exports[`Subject Card Component renders with required attributes 1`] = `
 <div>
   
-
 
   
   <div

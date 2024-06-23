@@ -20,7 +20,7 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if sources is not empty or embedded_source is not empty or raw_source is not empty %}
-  <div class="ct-video-player {{ modifier_class }}">
+  <div class="ct-video-player {{ modifier_class -}}">
     {% block video %}
       <div class="ct-video-player__wrapper">
         {% if sources is not empty %}

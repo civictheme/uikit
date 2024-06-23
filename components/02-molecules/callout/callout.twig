@@ -24,7 +24,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
-<div class="ct-callout {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
+<div class="ct-callout {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <div class="container">
     <div class="row">
       <div class="col-xxs-12">
