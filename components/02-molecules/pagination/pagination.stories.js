@@ -20,7 +20,6 @@ export const Pagination = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    active_is_link: knobBoolean('Active is a link', true, parentKnobs.active_is_link, parentKnobs.knobTab),
     use_ellipsis: knobBoolean('With ellipsis', false, parentKnobs.use_ellipsis, parentKnobs.knobTab),
     with_items_per_page: knobBoolean('With items per page', true, parentKnobs.with_items_per_page, parentKnobs.knobTab),
     heading_id: knobText('Heading ID', 'ct-pagination-demo', parentKnobs.heading_id, parentKnobs.knobTab),
@@ -54,19 +53,13 @@ export const Pagination = (parentKnobs = {}) => {
     parentKnobs.knobTab,
   );
 
-  const paginationMiddle = Math.ceil(knobs.count_of_pages / 2);
-  const paginationFirst = knobs.current - paginationMiddle + 1;
-  const paginationLast = knobs.current + knobs.count_of_pages - paginationMiddle;
-
   const pages = {};
-  for (let i = 0; i < knobs.count_of_pages; i++) {
-    if (knobs.use_ellipsis) {
-      if (i === 0 || (i > paginationFirst && i < paginationLast) || i === (knobs.count_of_pages - 1)) {
-        pages[i + 1] = {
-          href: randomUrl(),
-        };
-      }
-    } else {
+  if (knobs.use_ellipsis) {
+    pages[knobs.current_page] = {
+      href: randomUrl(),
+    };
+  } else {
+    for (let i = 0; i < knobs.count_of_pages; i++) {
       pages[i + 1] = {
         href: randomUrl(),
       };
@@ -85,12 +78,11 @@ export const Pagination = (parentKnobs = {}) => {
 
   const props = {
     theme: knobs.theme,
-    active_is_link: knobs.active_is_link,
     items,
     heading_id: knobs.heading_id,
     use_ellipsis: knobs.use_ellipsis,
     total_pages: knobs.count_of_pages,
-    current: knobs.current,
+    current: knobs.current_page,
     modifier_class: knobs.modifier_class,
     attributes: knobs.attributes,
   };
