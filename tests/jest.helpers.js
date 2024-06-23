@@ -9,6 +9,8 @@ Twig.extendFunction('source', (src) => {
   return fs.readFileSync(src, 'utf8');
 });
 
+Twig.extendFunction('random', () => 42);
+
 const originalRender = render;
 const wrappedRender = async (template, props = {}, namespaces = {}, twigCallback = () => {}) => {
   const wrappedTwigCallback = (TwigInstance) => {
