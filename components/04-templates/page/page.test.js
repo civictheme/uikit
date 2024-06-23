@@ -47,8 +47,8 @@ describe('Page Component', () => {
       header_middle_2: 'Header Middle 2',
       header_middle_3: 'Header Middle 3',
       header_bottom_1: 'Header Bottom 1',
-      banner: 'Banner Content',
-      highlighted: 'Highlighted Content',
+      banner: '<strong>Banner Content</strong>',
+      highlighted: '<strong>Highlighted Content</strong>',
       content_top: 'Content Top',
       sidebar_top_left: 'Sidebar Top Left',
       sidebar_top_left_attributes: 'data-sidebar-top-left="true"',
@@ -83,8 +83,8 @@ describe('Page Component', () => {
     expect(c.querySelector('.ct-page').outerHTML).toContain('Header Middle 2');
     expect(c.querySelector('.ct-page').outerHTML).toContain('Header Middle 3');
     expect(c.querySelector('.ct-page').outerHTML).toContain('Header Bottom 1');
-    expect(c.querySelector('.ct-page').outerHTML).toContain('Banner Content');
-    expect(c.querySelector('.ct-page').outerHTML).toContain('Highlighted Content');
+    expect(c.querySelector('.ct-page').outerHTML).toContain('<strong>Banner Content</strong>');
+    expect(c.querySelector('.ct-page').outerHTML).toContain('<strong>Highlighted Content</strong>');
     expect(c.querySelector('.ct-page').outerHTML).toContain('Content Top');
     expect(c.querySelector('.ct-page').outerHTML).toContain('Sidebar Top Left');
     expect(c.querySelector('.ct-page').outerHTML).toContain('Sidebar Top Right');
