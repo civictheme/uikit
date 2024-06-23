@@ -1,4 +1,4 @@
-import { randomArrayItem, randomBool, randomFutureDate, randomId, randomInt, randomLinks, randomName, randomSentence, randomString, randomTags, randomText, randomUrl } from './storybook.random.utils';
+import { randomArrayItem, randomBool, randomId, randomInt, randomLinks, randomName, randomSentence, randomString, randomTags, randomText, randomUrl } from './storybook.random.utils';
 
 describe('Random Generators', () => {
   test.each([
@@ -65,11 +65,6 @@ describe('Random Generators', () => {
     ['http://custom.com', expect.stringContaining('http://custom.com/')],
   ])('randomUrl(%s) returns %s', (domain, expected) => {
     expect(randomUrl(domain)).toEqual(expected);
-  });
-
-  xtest('randomFutureDate() returns a future date string', () => {
-    const result = randomFutureDate();
-    expect(new Date(result).getTime()).toBeGreaterThan(new Date().getTime());
   });
 
   test.each([
