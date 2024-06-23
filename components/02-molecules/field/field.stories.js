@@ -1,4 +1,4 @@
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomInt, randomLink, randomName, randomSentence, randomText, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 import CivicThemeField from './field.twig';
 import CivicThemeFieldset from '../../01-atoms/fieldset/fieldset.twig';
 import { Select } from '../../01-atoms/select/select.stories';
@@ -74,6 +74,17 @@ export const Field = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     is_inline: knobBoolean('Inline (for group controls)', false, parentKnobs.is_inline, parentKnobs.knobTab),
+    labels_width: knobRadios(
+      'Fixed label width',
+      {
+        None: 'none',
+        '15 particles': '15',
+        '25 particles': '25',
+      },
+      'none',
+      parentKnobs.labels_width,
+      parentKnobs.labels_width,
+    ),
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
@@ -84,6 +95,10 @@ export const Field = (parentKnobs = {}) => {
 
   if (knobs.message && knobs.message.length > 0) {
     knobs.message += ` ${randomLink()}`;
+  }
+
+  if (knobs.labels_width !== 'none') {
+    knobs.modifier_class += ` ct-field--with-fixed-labels--${knobs.labels_width}`;
   }
 
   let controlKnobs = {};
@@ -183,9 +198,29 @@ export const FieldExamples = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
+    labels_width: knobRadios(
+      'Fixed label width',
+      {
+        None: 'none',
+        '15 particles': '15',
+        '25 particles': '25',
+      },
+      'none',
+      parentKnobs.labels_width,
+      parentKnobs.labels_width,
+    ),
+    is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
+    is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
+    is_disabled: knobBoolean('Disabled', false, parentKnobs.is_disabled, parentKnobs.knobTab),
+    with_description: knobBoolean('With description', false, parentKnobs.description, parentKnobs.knobTab) ? randomSentence(50, 'field-description') : null,
+    with_message: knobBoolean('With message', false, parentKnobs.message, parentKnobs.knobTab) ? randomSentence(50, 'field-message') : null,
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
+
+  if (knobs.labels_width !== 'none') {
+    knobs.modifier_class += ` ct-field--with-fixed-labels--${knobs.labels_width}`;
+  }
 
   const fieldsets = [
     CivicThemeFieldset({
@@ -193,10 +228,14 @@ export const FieldExamples = (parentKnobs = {}) => {
       fields: inputTypes.map((type) => Field(new KnobValues({
         theme: knobs.theme,
         type,
-        label: randomText(randomInt(1, 6)),
-        description: null,
-        message: null,
         orientation: 'vertical',
+        description: knobs.with_description,
+        message: knobs.with_message,
+        is_required: knobs.is_required,
+        is_invalid: knobs.is_invalid,
+        is_disabled: knobs.is_disabled,
+        modifier_class: knobs.modifier_class,
+        attributes: knobs.attributes,
       }))).join(''),
     }),
     CivicThemeFieldset({
@@ -204,13 +243,18 @@ export const FieldExamples = (parentKnobs = {}) => {
       fields: inputTypes.map((type) => Field(new KnobValues({
         theme: knobs.theme,
         type,
-        label: randomText(randomInt(1, 6)),
-        description: null,
-        message: null,
         orientation: 'horizontal',
+        labels_width: knobs.labels_width,
+        description: knobs.with_description,
+        message: knobs.with_message,
+        is_required: knobs.is_required,
+        is_invalid: knobs.is_invalid,
+        is_disabled: knobs.is_disabled,
+        modifier_class: knobs.modifier_class,
+        attributes: knobs.attributes,
       }))).join(''),
     }),
   ];
 
-  return `<form class="${knobs.modifier_class}" ${knobs.attributes}>${fieldsets.join('')}</form>`;
+  return fieldsets.join('');
 };
