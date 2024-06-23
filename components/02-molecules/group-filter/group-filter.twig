@@ -37,7 +37,7 @@
 					{% if content_top is not empty %}
 						{% block content_top %}
 							<div class="ct-group-filter__content-top">
-								{{ content_top }}
+								{{- content_top|raw -}}
 							</div>
 						{% endblock %}
 					{% endif %}
@@ -116,7 +116,7 @@
 					{% block content_bottom %}
 						{% if content_bottom is not empty %}
 							<div class="ct-group-filter__content-bottom">
-								{{ content_bottom }}
+								{{- content_bottom|raw -}}
 							</div>
 						{% endif %}
 					{% endblock %}

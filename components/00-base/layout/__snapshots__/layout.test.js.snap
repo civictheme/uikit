@@ -8,7 +8,6 @@ exports[`Layout Component hides sidebars when specified 1`] = `
 
 
 
-
 	
   <main
     class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
@@ -53,15 +52,13 @@ exports[`Layout Component renders with all sidebars and content sections 1`] = `
 
 
 
-
 	
   <main
     class="ct-layout ct-vertical-spacing--top"
     role="main"
   >
     
-									Top content
-					
+					Top content		
 		
     <div
       class="ct-layout__inner container"
@@ -120,8 +117,7 @@ exports[`Layout Component renders with all sidebars and content sections 1`] = `
     </div>
     
 
-									Bottom content
-						
+					Bottom content			
   </main>
   
 
@@ -131,7 +127,6 @@ exports[`Layout Component renders with all sidebars and content sections 1`] = `
 exports[`Layout Component renders with custom attributes and classes 1`] = `
 <div>
   
-
 
 
 
@@ -182,7 +177,6 @@ exports[`Layout Component renders with default values 1`] = `
 
 
 
-
 	
   <main
     class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
@@ -222,7 +216,6 @@ exports[`Layout Component renders with default values 1`] = `
 exports[`Layout Component renders with sidebar bottom left 1`] = `
 <div>
   
-
 
 
 
@@ -281,7 +274,6 @@ exports[`Layout Component renders with sidebar bottom right 1`] = `
 
 
 
-
 	
   <main
     class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left  ct-vertical-spacing--top"
@@ -335,7 +327,6 @@ exports[`Layout Component renders with sidebar top left 1`] = `
 
 
 
-
 	
   <main
     class="ct-layout ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right ct-vertical-spacing--top"
@@ -384,7 +375,6 @@ exports[`Layout Component renders with sidebar top left 1`] = `
 exports[`Layout Component renders with sidebar top right 1`] = `
 <div>
   
-
 
 
 

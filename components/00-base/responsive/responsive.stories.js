@@ -5,9 +5,9 @@ import '../collapsible/collapsible';
 export default {
   title: 'Base/Utilities/Responsive',
   parameters: {
-    storyLayoutCenteredHorizontally: true,
+    layout: 'centered',
+    storyLayoutSize: 'medium',
     docs: 'Try resizing your browser window to see how components react to a breakpoint change',
-    docsSize: 'large',
   },
 };
 

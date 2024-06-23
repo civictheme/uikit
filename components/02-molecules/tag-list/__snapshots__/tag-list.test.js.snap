@@ -5,14 +5,12 @@ exports[`Tag List Component does not render when tags are empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Tag List Component renders with content slots 1`] = `
 <div>
   
-
 
   
   <div
@@ -23,9 +21,7 @@ exports[`Tag List Component renders with content slots 1`] = `
     <div
       class="ct-tag-list__content-top"
     >
-      
-          Top content
-        
+      Top content
     </div>
     
           
@@ -95,9 +91,7 @@ exports[`Tag List Component renders with content slots 1`] = `
     <div
       class="ct-tag-list__content-bottom"
     >
-      
-          Bottom content
-        
+      Bottom content
     </div>
     
             
@@ -111,7 +105,6 @@ exports[`Tag List Component renders with optional attributes 1`] = `
 <div>
   
 
-
   
   <div
     class="ct-tag-list ct-theme-dark ct-vertical-spacing--both custom-class"
@@ -122,9 +115,7 @@ exports[`Tag List Component renders with optional attributes 1`] = `
     <div
       class="ct-tag-list__content-top"
     >
-      
-          Top content
-        
+      Top content
     </div>
     
           
@@ -194,9 +185,7 @@ exports[`Tag List Component renders with optional attributes 1`] = `
     <div
       class="ct-tag-list__content-bottom"
     >
-      
-          Bottom content
-        
+      Bottom content
     </div>
     
             
@@ -209,7 +198,6 @@ exports[`Tag List Component renders with optional attributes 1`] = `
 exports[`Tag List Component renders with required attributes 1`] = `
 <div>
   
-
 
   
   <div
