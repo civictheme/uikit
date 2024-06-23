@@ -43,6 +43,7 @@
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,
+				allow_html: true,
 				modifier_class: 'ct-fieldset__description ' ~ (description_display == 'invisible' ? 'ct-fieldset__description--invisible ct-visually-hidden' : 'ct-fieldset__description--before'),
 			} only %}
 		{% endif %}
@@ -52,6 +53,7 @@
 				theme: theme,
 				type: message_type,
 				content: message,
+				allow_html: true,
 				modifier_class: 'ct-fieldset__message',
 			} only %}
 		{% endif %}
@@ -76,6 +78,7 @@
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,
+				allow_html: true,
 				modifier_class: 'ct-fieldset__description ct-fieldset__description--after',
 			} only %}
 		{% endif %}
