@@ -26,14 +26,14 @@
 {% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul class="ct-menu ct-menu--level-{{ menu_level }} {{ modifier_class -}} " data-component-name="ct-menu" {{ attributes|default('') }}>
+      <ul class="ct-menu ct-menu--level-{{- menu_level }} {{ modifier_class -}} " data-component-name="ct-menu" {{- attributes|default('') -}}>
     {% else %}
       {% if is_collapsible %}
         {% set collapsible_panel = 'data-collapsible-panel' %}
         {% set aria_hidden = item.in_active_trail ? 'aria-hidden="false"' : 'aria-hidden="true"' %}
       {% endif %}
-      <div class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-{{ menu_level }}" {{ collapsible_panel }} {{ aria_hidden|raw }}>
-        <ul class="ct-menu ct-menu__sub-menu ct-menu--level-{{ menu_level }}">
+      <div class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-{{- menu_level }}" {{ collapsible_panel }} {{ aria_hidden|raw -}}>
+        <ul class="ct-menu ct-menu__sub-menu ct-menu--level-{{- menu_level }}">
     {% endif %}
 
     {% for key, item in items %}
@@ -53,7 +53,7 @@
         {% set item_attributes = [item_attributes, 'data-collapsible', 'data-collapsible-duration="0"', collapsible_collapsed, aria_expanded]|join(' ') %}
       {% endif %}
 
-      <li class="{{ item_classes|join(' ') }}" {{ item_attributes|raw }}>
+      <li class="{{- item_classes|join(' ') -}}" {{- item_attributes|raw -}}>
 
         {% include '@atoms/link/link.twig' with {
           theme: theme,
@@ -71,7 +71,7 @@
         {% endif %}
 
         {% if item.below %}
-          {{ menus.menu_links_below(item.below, menu_level + 1, classes, theme, is_collapsible, key) }}
+          {{- menus.menu_links_below(item.below, menu_level + 1, classes, theme, is_collapsible, key) -}}
         {% endif %}
 
       </li>
