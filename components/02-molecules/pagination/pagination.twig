@@ -102,7 +102,7 @@
           {% endif %}
         {% endif %}
 
-        <li class="ct-pagination__item {{ current == key ? ' ct-pagination__item--active' : 'hide-xxs show-m' }}">
+        <li class="ct-pagination__item {% if current == key %}ct-pagination__item--active{% else %}hide-xxs show-m{% endif %}">
           {% if current == key %}
             {% set attributes = 'title="Current page"' %}
           {% else %}
