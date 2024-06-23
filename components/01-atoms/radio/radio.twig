@@ -28,8 +28,8 @@
     name="{{ name }}"
     value="{{ value }}"
     id="{{ id }}"
-    {{ is_checked ? 'checked' }}
-    {{ is_disabled ? 'disabled' }}
+    {% if is_checked %}checked{% endif %}
+    {% if is_disabled %}disabled{% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   />
   {% if label is not empty %}

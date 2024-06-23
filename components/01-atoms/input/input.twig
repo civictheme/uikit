@@ -27,8 +27,8 @@
 		name="{{ name }}"
 		{% if value is not empty %}value="{{ value }}"{% endif %}
 		{% if id %}id="{{ id }}"{% endif %}
-		{{ is_disabled ? 'disabled' }}
-		{{ is_required ? 'required' }}
+		{% if is_disabled %}disabled{% endif %}
+		{% if is_required %}required{% endif %}
 		{% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
 		{% if attributes is not empty %}{{ attributes|raw }}{% endif %}
 	/>
