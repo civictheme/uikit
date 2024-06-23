@@ -58,6 +58,12 @@
     background-color: color.adjust(white, $alpha: -0.7);
     border: dotted ct-particle(0.125) purple;
   }
+
+  code {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+  }
 }
 
 .story-slot--image_over {
