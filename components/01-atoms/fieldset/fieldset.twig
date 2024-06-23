@@ -12,9 +12,6 @@
  * - message_type: [string] Type of the message: error, warning, info, success. Default is error.
  * - fields: [string] Fields content. Optional.
  * - is_required: [boolean] Denote if the fieldset is required. Optional.
- * - form_element_type_class: [string] Class related to the form element type. Optional.
- * - form_element_name_class: [string] Class related to the form element name. Optional.
- * - error_class: [string] Error class for the fieldset. Optional.
  * - attributes: [string] Additional attributes for the fieldset. Optional.
  * - modifier_class: [string] Additional classes. Optional.
  */
@@ -59,19 +56,19 @@
 		{% endif %}
 
 		{% if prefix is not empty %}
-			<div class="ct-fieldset__prefix">{{ prefix|raw }}</div>
+			<div class="ct-fieldset__prefix">{{- prefix|raw -}}</div>
 		{% endif %}
 
 		{% block fields %}
 			{% if fields is not empty %}
 				<div class="ct-fieldset__fields">
-					{{ fields|raw }}
+					{{- fields|raw -}}
 				</div>
 			{% endif %}
 		{% endblock %}
 
 		{% if suffix is not empty %}
-			<div class="ct-fieldset__suffix">{{ suffix|raw }}</div>
+			<div class="ct-fieldset__suffix">{{- suffix|raw -}}</div>
 		{% endif %}
 
 		{% if description is not empty and description_display == 'after' %}
