@@ -4,14 +4,12 @@ exports[`Chip Component does not render when content is empty 1`] = `
 <div>
   
 
-
 </div>
 `;
 
 exports[`Chip Component renders with optional attributes 1`] = `
 <div>
   
-
       
   <label
     class="ct-chip ct-theme-dark ct-chip--input ct-chip--large active ct-chip--multiple custom-class"
@@ -26,9 +24,7 @@ exports[`Chip Component renders with optional attributes 1`] = `
       data-test="true"
       type="checkbox"
     />
-    
-      Sample Chip
-              
+    Sample Chip        
 
 
                                     
@@ -61,15 +57,12 @@ exports[`Chip Component renders with optional attributes 1`] = `
 exports[`Chip Component renders with required attributes 1`] = `
 <div>
   
-
       
   <span
     class="ct-chip ct-theme-light ct-chip--default ct-chip--regular   "
     data-component-name="chip"
   >
-    
-      Sample Chip
-    
+    Sample Chip
   </span>
   
   

@@ -9,11 +9,10 @@ exports[`Field Description Component allows HTML content 1`] = `
     class="ct-field-description ct-theme-light ct-field-description--regular "
   >
     
-          
+    
     <strong>
       This is a description
     </strong>
-    
       
   </div>
 </div>
@@ -37,8 +36,7 @@ exports[`Field Description Component renders with additional attributes and clas
     data-test="true"
   >
     
-          This is a description
-      
+    This is a description  
   </div>
 </div>
 `;
@@ -52,8 +50,7 @@ exports[`Field Description Component renders with custom theme and size 1`] = `
     class="ct-field-description ct-theme-dark ct-field-description--large "
   >
     
-          This is a description
-      
+    This is a description  
   </div>
 </div>
 `;
@@ -67,8 +64,7 @@ exports[`Field Description Component renders with default values 1`] = `
     class="ct-field-description ct-theme-light ct-field-description--regular "
   >
     
-          This is a description
-      
+    This is a description  
   </div>
 </div>
 `;
@@ -82,8 +78,7 @@ exports[`Field Description Component strips HTML content 1`] = `
     class="ct-field-description ct-theme-light ct-field-description--regular "
   >
     
-          Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end
-      
+    Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
   </div>
 </div>
 `;

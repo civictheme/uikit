@@ -57,7 +57,7 @@
 			{% if content is not empty %}
 				{% block content %}
 					<section class="ct-layout__main" {% if content_attributes is not empty %}{{ content_attributes|raw }}{% endif %}>
-						{{ content|raw }}
+						{{- content|raw -}}
 					</section>
 				{% endblock %}
 			{% endif %}

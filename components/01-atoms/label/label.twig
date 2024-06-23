@@ -30,9 +30,9 @@
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
     {% if allow_html|default(false) %}
-      {{ content|raw }}
+      {{- content|raw -}}
     {% else %}
-      {{ content }}
+      {{- content -}}
     {% endif %}
   </{{ tag }}>
 {%- endif %}

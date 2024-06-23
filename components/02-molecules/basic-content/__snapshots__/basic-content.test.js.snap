@@ -6,14 +6,12 @@ exports[`Basic Content Component does not render when content is empty 1`] = `
 
 
 
-
 </div>
 `;
 
 exports[`Basic Content Component renders with optional attributes 1`] = `
 <div>
   
-
 
 
   
@@ -37,8 +35,7 @@ exports[`Basic Content Component renders with optional attributes 1`] = `
           class="col-xxs-12"
         >
           
-                          This is basic content with options.
-                      
+            This is basic content with options.          
         </div>
         
         
@@ -57,7 +54,6 @@ exports[`Basic Content Component renders with optional attributes 1`] = `
 exports[`Basic Content Component renders with required attributes 1`] = `
 <div>
   
-
 
 
   
@@ -80,8 +76,7 @@ exports[`Basic Content Component renders with required attributes 1`] = `
           class="col-xxs-12"
         >
           
-                          This is basic content.
-                      
+            This is basic content.          
         </div>
         
         
@@ -102,14 +97,12 @@ exports[`Basic Content Component renders without containment 1`] = `
   
 
 
-
   
   <div
     class="ct-basic-content ct-theme-light   "
   >
     
-                  This content is not contained.
-              
+    This content is not contained.  
   </div>
   
 

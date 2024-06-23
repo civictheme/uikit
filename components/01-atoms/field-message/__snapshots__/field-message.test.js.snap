@@ -32,11 +32,10 @@ exports[`Field Message Component allows HTML content 1`] = `
     </svg>
     
 
-                
+          
     <strong>
       This is an HTML message
     </strong>
-    
       
   </div>
 </div>
@@ -83,8 +82,7 @@ exports[`Field Message Component renders with additional attributes and classes 
     </svg>
     
 
-                This is a message
-      
+          This is a message  
   </div>
 </div>
 `;
@@ -121,8 +119,7 @@ exports[`Field Message Component renders with custom theme and type 1`] = `
     </svg>
     
 
-                This is an error message
-      
+          This is an error message  
   </div>
 </div>
 `;
@@ -159,8 +156,7 @@ exports[`Field Message Component renders with default values 1`] = `
     </svg>
     
 
-                This is a message
-      
+          This is a message  
   </div>
 </div>
 `;
@@ -197,8 +193,7 @@ exports[`Field Message Component renders with icons 1`] = `
     </svg>
     
 
-                This is a warning message
-      
+          This is a warning message  
   </div>
 </div>
 `;
@@ -235,8 +230,7 @@ exports[`Field Message Component strips HTML content 1`] = `
     </svg>
     
 
-                Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end
-      
+          Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
   </div>
 </div>
 `;
