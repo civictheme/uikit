@@ -34,9 +34,9 @@
       } only %}
     {% endif %}
     {% if allow_html|default(false) %}
-      {{ content|raw }}
+      {{- content|raw -}}
     {% else %}
-      {{ content }}
+      {{- content -}}
     {% endif %}
   </div>
 {%- endif %}

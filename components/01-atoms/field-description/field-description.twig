@@ -21,9 +21,9 @@
 {% if content is not empty -%}
   <div class="ct-field-description {{ modifier_class }}" {% if attributes is not empty %}{{ attributes|raw }}{% endif %}>
     {% if allow_html|default(false) %}
-      {{ content|raw }}
+      {{- content|raw -}}
     {% else %}
-      {{ content }}
+      {{- content -}}
     {% endif %}
   </div>
 {%- endif %}

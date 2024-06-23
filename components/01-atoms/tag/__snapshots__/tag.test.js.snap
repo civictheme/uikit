@@ -5,14 +5,12 @@ exports[`Tag Component does not render when content is empty 1`] = `
   
 
 
-
 </div>
 `;
 
 exports[`Tag Component renders with optional attributes 1`] = `
 <div>
   
-
 
    
         
@@ -52,7 +50,6 @@ exports[`Tag Component renders with optional attributes 1`] = `
     
 
          Sample Tag
-       
               
     <span
       class="ct-visually-hidden"
@@ -95,7 +92,6 @@ exports[`Tag Component renders with required attributes 1`] = `
 <div>
   
 
-
    
   
   
@@ -104,8 +100,7 @@ exports[`Tag Component renders with required attributes 1`] = `
     class="ct-tag ct-theme-light ct-tag--primary    "
   >
     
-                Sample Tag
-        
+         Sample Tag   
   
   </span>
   

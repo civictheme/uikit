@@ -38,7 +38,7 @@
         {% if is_selected %}checked="checked"{% endif %}
         {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
       >
-      {{ content }}
+      {{- content -}}
       {% if is_multiple %}
         {% include '@base/icon/icon.twig' with {
           symbol: 'cancel',
@@ -52,7 +52,7 @@
       data-component-name="chip"
       {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
     >
-      {{ content }}
+      {{- content -}}
     </span>
   {% endif %}
 {% endif %}

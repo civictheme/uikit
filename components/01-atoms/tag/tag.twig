@@ -37,13 +37,13 @@
        {% endset %}
 
        {% if icon_placement == 'before' %}
-         {{ icon_markup }}{{ content|raw }}
+         {{ icon_markup }}{{- content|raw -}}
        {% else %}
-         {{ content|raw }}{{ icon_markup }}
+         {{- content|raw -}}{{ icon_markup }}
        {% endif %}
 
      {% else %}
-       {{ content|raw }}
+       {{- content|raw -}}
      {% endif %}
    {% endset %}
 
@@ -65,7 +65,7 @@
   <{{ tag }}
   class="ct-tag {{ modifier_class }}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
-    {% if url is not empty %}title="{{ content }}"{% endif %}
+    {% if url is not empty %}title="{{- content -}}"{% endif %}
     {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
     {% if attributes is not empty %}{{ attributes|raw }}{% endif %}
   >
