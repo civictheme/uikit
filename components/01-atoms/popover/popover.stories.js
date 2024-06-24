@@ -22,7 +22,7 @@ export const Popover = (parentKnobs = {}) => {
     ),
     trigger: {
       text: knobText('Trigger text', 'Click me', parentKnobs.trigger_text, parentKnobs.knobTab),
-      url: knobText('Trigger URL', null, parentKnobs.trigger_url, parentKnobs.knobTab),
+      url: knobText('Trigger URL', '', parentKnobs.trigger_url, parentKnobs.knobTab),
     },
     content: placeholder(),
     modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
