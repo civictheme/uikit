@@ -1,4 +1,4 @@
-import { demoImage, knobBoolean, knobNumber, knobRadios, knobText, randomBool, randomFutureDate, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { demoImage, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomBool, randomFutureDate, randomInt, randomName, randomSentence, randomString, randomTags, randomText, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
 
 import CivicThemeGroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import CivicThemeSingleFilter from '../../02-molecules/single-filter/single-filter.twig';
@@ -9,6 +9,7 @@ import Snippet from '../../02-molecules/snippet/snippet.twig';
 import CivicThemeList from './list.twig';
 import { Pagination } from '../../02-molecules/pagination/pagination.stories';
 import { randomFields } from '../../02-molecules/field/field.utils';
+import { Paragraph } from '../../01-atoms/paragraph/paragraph.stories';
 
 export default {
   title: 'Organisms/List',
@@ -289,8 +290,16 @@ export const List = (parentKnobs = {}) => {
       knobs.rows = shouldRender(parentKnobs) ? CivicThemeGrid(itemsKnobs) : itemsKnobs;
 
       knobs.results_count = knobBoolean('With result count', true, parentKnobs.results_count, parentKnobs.knobTab) ? `Showing ${itemsCount} of ${resultNumber}` : null;
-      knobs.rows_above = knobBoolean('With content above rows', true, parentKnobs.rows_above, parentKnobs.knobTab) ? `Example content above rows ${randomText(randomInt(10, 75))}` : null;
-      knobs.rows_below = knobBoolean('With content below rows', true, parentKnobs.rows_below, parentKnobs.knobTab) ? `Example content below rows ${randomText(randomInt(10, 75))}` : null;
+      knobs.rows_above = knobBoolean('With content above rows', true, parentKnobs.rows_above, parentKnobs.knobTab) ? Paragraph(new KnobValues({
+        theme: knobs.theme,
+        content: `Example content above rows ${randomText(randomInt(10, 75))}`,
+        allow_html: true,
+      })) : null;
+      knobs.rows_below = knobBoolean('With content below rows', true, parentKnobs.rows_below, parentKnobs.knobTab) ? Paragraph(new KnobValues({
+        theme: knobs.theme,
+        content: `Example content below rows ${randomText(randomInt(10, 75))}`,
+        allow_html: true,
+      })) : null;
     }
   }
 
