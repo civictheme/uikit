@@ -5,7 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ct-color-light('interaction-hover-background');
+
+  // CivicTheme's own brand color.
+  background-color: #003f56;
 }
 
 .story-welcome__inner {
