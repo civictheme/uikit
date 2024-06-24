@@ -6,8 +6,10 @@
 
 .ct-field {
   $root: &;
+  $_label-size: 'label-small';
   $_control-vertical-padding: ct-spacing(2);
   $_control-border-width: ct-particle(0.125);
+  $_item-line_height: ct-typography-rule($_label-size, 'line-height', 'm');
 
   width: 100%;
 
@@ -18,6 +20,10 @@
   & > *:not(:last-child),
   &__wrapper > *:not(:last-child) {
     margin-bottom: ct-spacing();
+  }
+
+  .ct-item-list__item {
+    line-height: $_item-line_height;
   }
 
   &#{$root}--horizontal {

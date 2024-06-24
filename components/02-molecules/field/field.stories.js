@@ -12,6 +12,7 @@ export default {
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'medium',
+    storyLayoutClass: 'ct-text-regular',
   },
 };
 
