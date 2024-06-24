@@ -38,7 +38,6 @@
 
 <div class="ct-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <div class="ct-list__inner">
-
     {% block header %}
       {% if title is not empty or link_above is not empty %}
         <div class="ct-list__header">
@@ -102,7 +101,6 @@
     {% endblock %}
 
     {% block list %}
-
       {% block filters %}
         {% if filters -%}
           <div class="ct-list__filters">
@@ -128,18 +126,8 @@
                     {% if rows_above is not iterable %}
                       {% set rows_above = [rows_above] %}
                     {% endif %}
-
                     {% for rows_above_row in rows_above %}
-                      {% if rows_above_row is iterable %}
-                        {{ rows_above_row }}
-                      {% else %}
-                        {% include '@atoms/paragraph/paragraph.twig' with {
-                          content: rows_above_row,
-                          allow_html: true,
-                          theme: theme,
-                          modifier_class: 'ct-list__rows-above__inner',
-                        } only %}
-                      {% endif %}
+                      {{- rows_above_row|raw -}}
                     {% endfor %}
                   </div>
                 </div>
@@ -175,25 +163,14 @@
                     {% if rows_below is not iterable %}
                       {% set rows_below = [rows_below] %}
                     {% endif %}
-
                     {% for rows_below_row in rows_below %}
-                      {% if rows_below_row is iterable %}
-                        {{ rows_below_row }}
-                      {% else %}
-                        {% include '@atoms/paragraph/paragraph.twig' with {
-                          content: rows_below_row,
-                          allow_html: true,
-                          theme: theme,
-                          modifier_class: 'ct-list__rows-below__inner',
-                        } only %}
-                      {% endif %}
+                      {{- rows_below_row|raw -}}
                     {% endfor %}
                   </div>
                 </div>
               </div>
             {% endif %}
           {% endblock %}
-
         {% endif %}
       {% endblock %}
 
@@ -213,7 +190,6 @@
           </div>
         {% endif %}
       {% endblock %}
-
     {% endblock %}
 
     {% block list_below %}

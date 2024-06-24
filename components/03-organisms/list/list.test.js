@@ -40,9 +40,9 @@ describe('List Component', () => {
     expect(c.querySelector('.ct-list__link-above__link').textContent.trim()).toBe('Link Above');
     expect(c.querySelector('.ct-list__filters').textContent.trim()).toBe('Sample Filters');
     expect(c.querySelector('.ct-list__results-count__inner').textContent.trim()).toBe('10 Results');
-    expect(c.querySelector('.ct-list__rows-above__inner').textContent.trim()).toBe('Rows Above');
+    expect(c.querySelector('.ct-list__rows-above').textContent.trim()).toBe('Rows Above');
     expect(c.querySelector('.ct-list__rows').textContent.trim()).toBe('Rows Content');
-    expect(c.querySelector('.ct-list__rows-below__inner').textContent.trim()).toBe('Rows Below');
+    expect(c.querySelector('.ct-list__rows-below').textContent.trim()).toBe('Rows Below');
     expect(c.querySelector('.ct-list__pagination').textContent.trim()).toBe('Pagination Content');
     expect(c.querySelector('.ct-list__footer').textContent.trim()).toBe('Footer Content');
     expect(c.querySelector('.ct-list__link-below__link').textContent.trim()).toBe('Link Below');
@@ -79,9 +79,9 @@ describe('List Component', () => {
     expect(c.querySelector('.ct-list__link-above__link')).toBeNull();
     expect(c.querySelector('.ct-list__filters')).toBeNull();
     expect(c.querySelector('.ct-list__results-count__inner')).toBeNull();
-    expect(c.querySelector('.ct-list__rows-above__inner')).toBeNull();
+    expect(c.querySelector('.ct-list__rows-above')).toBeNull();
     expect(c.querySelector('.ct-list__rows')).toBeNull();
-    expect(c.querySelector('.ct-list__rows-below__inner')).toBeNull();
+    expect(c.querySelector('.ct-list__rows-below')).toBeNull();
     expect(c.querySelector('.ct-list__pagination')).toBeNull();
     expect(c.querySelector('.ct-list__footer')).toBeNull();
     expect(c.querySelector('.ct-list__link-below__link')).toBeNull();
