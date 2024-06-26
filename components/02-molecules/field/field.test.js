@@ -446,4 +446,24 @@ describe('Field Component', () => {
 
     assertUniqueCssClasses(c);
   });
+
+  describe.each([
+    { label: 'Test Label', labelDisplay: 'visible', type: 'textfield', expected: 1, selector: '.ct-field__label', description: 'visible label with textfield' },
+    { label: 'Test Label', labelDisplay: 'visually_hidden', type: 'textfield', expected: 1, selector: '.ct-field__label.ct-visually-hidden', description: 'visually hidden label with textfield' },
+    { label: 'Test Label', labelDisplay: 'hidden', type: 'textfield', expected: 0, selector: '.ct-field__label', description: 'hidden label with textfield' },
+    { label: '', labelDisplay: 'visible', type: 'textfield', expected: 0, selector: '.ct-field__label', description: 'empty label with textfield' },
+    { label: 'Test Label', labelDisplay: 'visible', type: 'hidden', expected: 0, selector: '.ct-field__label', description: 'visible label with hidden input' },
+    { label: 'Test Label', labelDisplay: 'hidden', type: 'hidden', expected: 0, selector: '.ct-field__label', description: 'hidden label with hidden input' },
+  ])('Field Component - $description', ({ label, labelDisplay, type, expected, selector }) => {
+    test(`renders ${expected} label(s)`, async () => {
+      const c = await dom(template, {
+        label,
+        label_display: labelDisplay,
+        type,
+        name: 'testname',
+      });
+
+      expect(c.querySelectorAll(selector)).toHaveLength(expected);
+    });
+  });
 });

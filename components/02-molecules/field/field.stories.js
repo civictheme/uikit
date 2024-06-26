@@ -59,6 +59,17 @@ export const Field = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab),
+    label_display: knobRadios(
+      'Label display',
+      {
+        Visible: 'visible',
+        'Visually hidden': 'visually_hidden',
+        Hidden: 'hidden',
+      },
+      'visible',
+      parentKnobs.label_display,
+      parentKnobs.knobTab,
+    ),
     description: knobText('Description', `Description content sample. ${randomSentence(50)}`, parentKnobs.description, parentKnobs.knobTab),
     message: knobText('Message', `Message content sample. ${randomSentence(50)}`, parentKnobs.message, parentKnobs.knobTab),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),

@@ -1,5 +1,261 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Field Component Field Component - empty label with textfield renders 0 label(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        name="testname"
+        type="text"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component Field Component - hidden label with hidden input renders 0 label(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+															
+
+	
+      <input
+        class="ct-input ct-theme-light  ct-field__control"
+        name="testname"
+        type="hidden"
+      />
+      
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component Field Component - hidden label with textfield renders 0 label(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        name="testname"
+        type="text"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component Field Component - visible label with hidden input renders 0 label(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
+  >
+    
+		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+															
+
+	
+      <input
+        class="ct-input ct-theme-light  ct-field__control"
+        name="testname"
+        type="hidden"
+      />
+      
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component Field Component - visible label with textfield renders 1 label(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+    >
+      
+    Test Label  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        name="testname"
+        type="text"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component Field Component - visually hidden label with textfield renders 1 label(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__label ct-visually-hidden"
+    >
+      
+    Test Label  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        name="testname"
+        type="text"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
 exports[`Field Component default input 1`] = `
 <div>
   
