@@ -237,7 +237,7 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
         data-test="true"
         id="testid"
         name="testname"
-        type="textfield"
+        type="text"
         value="testvalue"
       />
       
@@ -518,7 +518,7 @@ exports[`Field Component required, disabled, and description 1`] = `
         disabled=""
         name="testname"
         required=""
-        type="textfield"
+        type="text"
       />
       
 
@@ -624,7 +624,7 @@ exports[`Field Component single control as array propagation 1`] = `
         data-test="true"
         id="testid"
         name="testname"
-        type="textfield"
+        type="text"
         value="testvalue"
       />
       
@@ -677,7 +677,7 @@ exports[`Field Component single control as object propagation 1`] = `
         data-test="true"
         id="testid"
         name="testname"
-        type="textfield"
+        type="text"
         value="testvalue"
       />
       
@@ -786,7 +786,7 @@ exports[`Field Component textfield 1`] = `
         class="ct-textfield ct-theme-light  ct-field__control"
         id="testid"
         name="testname"
-        type="textfield"
+        type="text"
         value="testvalue"
       />
       
@@ -827,7 +827,7 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
       <input
         class="ct-textfield ct-theme-dark ct-textfield--is-invalid ct-field__control"
         name="testname"
-        type="textfield"
+        type="text"
       />
       
 

@@ -52,7 +52,7 @@ describe('Field Component', () => {
       orientation: 'horizontal',
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-dark.ct-field--horizontal.ct-field--invalid')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"].ct-textfield.ct-theme-dark.ct-field__control')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-dark.ct-field__control')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
     assertUniqueCssClasses(c);
   });
@@ -67,7 +67,7 @@ describe('Field Component', () => {
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical.ct-field--required.ct-field--disabled')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field .ct-field__description')).toHaveLength(1);
     expect(c.querySelector('.ct-field .ct-field__description').textContent.trim()).toEqual('This is a description');
     assertUniqueCssClasses(c);
@@ -88,12 +88,12 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
 
     expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
 
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"][id="testid"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][value="testvalue"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][id="testid"]')).toHaveLength(1);
 
     expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(0);
@@ -124,12 +124,12 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
 
     expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
 
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"][id="testid"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][value="testvalue"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][id="testid"]')).toHaveLength(1);
 
     expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(1);
@@ -160,12 +160,12 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
 
     expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
 
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"][id="testid"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][value="testvalue"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][id="testid"]')).toHaveLength(1);
 
     expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(1);
@@ -204,8 +204,8 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
 
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="textfield"][name="testname2"]')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname2"]')).toHaveLength(0);
 
     assertUniqueCssClasses(c);
   });
