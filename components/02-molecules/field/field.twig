@@ -16,6 +16,7 @@
  * - theme: [string] Theme: light, dark. Optional.
  * - type: [string] Type defined by a control type. Required.
  * - label: [string] Label. Optional.
+ * - label_display: [string] Label display: visible, visually_hidden, hidden. Optional.
  * - description: [string] Description. Optional.
  * - name: [string] DOM name. Required, propagated.
  * - value: [string] DOM value. Optional, propagated.
@@ -42,6 +43,7 @@
 #}
 
 {% set type = type is defined ? type : 'hidden' %}
+{% set label_display = label_display is defined and label_display in ['visible', 'visually_hidden', 'hidden'] ? label_display : 'visible' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
@@ -85,13 +87,13 @@
 
 {% if control[0].name is defined %}
 	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
-		{% if label is not empty and type != 'hidden' %}
+		{% if label is not empty and label_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,
 				content: label,
 				is_required: is_required,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
-				modifier_class: 'ct-field__label',
+				modifier_class: 'ct-field__label' ~ (label_display == 'visually_hidden' ? ' ct-visually-hidden' : ''),
 			} only %}
 		{% endif %}
 
