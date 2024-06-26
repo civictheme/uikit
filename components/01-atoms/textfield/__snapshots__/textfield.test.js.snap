@@ -20,7 +20,7 @@ exports[`Textfield Component renders with optional attributes 1`] = `
     name="test-textfield"
     placeholder="Enter text here"
     required=""
-    type="textfield"
+    type="text"
     value="Sample text"
   />
   
@@ -36,7 +36,7 @@ exports[`Textfield Component renders with required attributes 1`] = `
   <input
     class="ct-textfield ct-theme-light"
     name="test-textfield"
-    type="textfield"
+    type="text"
     value="Sample text"
   />
   
@@ -53,7 +53,7 @@ exports[`Textfield Component strips HTML tags from attribute values 1`] = `
     class="ct-textfield ct-theme-light"
     data-test="<script>alert(1)</script>"
     name="test-textfield"
-    type="textfield"
+    type="text"
     value="Sample text"
   />
   
