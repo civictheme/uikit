@@ -420,6 +420,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
 
   
           <input
+            checked=""
             class="ct-checkbox ct-theme-light  ct-field__control custom-modifier2"
             data-test="false"
             id="testid2"
@@ -702,6 +703,7 @@ exports[`Field Component radio 1`] = `
 
   
           <input
+            checked=""
             class="ct-radio ct-theme-light  ct-field__control custom-modifier2"
             data-test="false"
             id="testid2"

@@ -226,6 +226,7 @@ describe('Field Component', () => {
           name: 'testname',
           value: 'testvalue2',
           id: 'testid2',
+          is_checked: true,
           modifier_class: 'custom-modifier2',
           attributes: 'data-test="false"',
         },
@@ -238,9 +239,11 @@ describe('Field Component', () => {
 
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"]')).toHaveLength(2);
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid"][checked]')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue2"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"][checked]')).toHaveLength(1);
 
     expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
@@ -386,6 +389,7 @@ describe('Field Component', () => {
           name: 'testname',
           value: 'testvalue',
           id: 'testid',
+          is_checked: false,
           modifier_class: 'custom-modifier',
           attributes: 'data-test="true"',
         },
@@ -393,6 +397,7 @@ describe('Field Component', () => {
           name: 'testname',
           value: 'testvalue2',
           id: 'testid2',
+          is_checked: true,
           modifier_class: 'custom-modifier2',
           attributes: 'data-test="false"',
         },
@@ -406,8 +411,10 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"]')).toHaveLength(2);
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][value="testvalue"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid"][checked]')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][value="testvalue2"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid2"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid2"][checked]')).toHaveLength(1);
 
     expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
