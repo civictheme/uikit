@@ -1,4 +1,4 @@
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomBool, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 import CivicThemeField from './field.twig';
 import CivicThemeFieldset from '../../01-atoms/fieldset/fieldset.twig';
 import { Select } from '../../01-atoms/select/select.stories';
@@ -145,12 +145,14 @@ export const Field = (parentKnobs = {}) => {
         },
         parentKnobs.items_count,
         parentKnobs.knobTab,
-      ), (idx) => ({
+      ), (idx, count) => ({
         ...Radio(new KnobValues({ theme: knobs.theme }, false)),
         ...{
           id: randomId(`${name}-${idx}`),
           // All radio in a group should have the same name.
           name,
+          // Make the last radio checked by default.
+          is_checked: idx === count - 1,
         },
       }));
       break;
@@ -171,6 +173,7 @@ export const Field = (parentKnobs = {}) => {
         ...Checkbox(new KnobValues({ theme: knobs.theme }, false)),
         ...{
           id: randomId(`${name}-${idx}`),
+          is_checked: randomBool(0.6),
         },
       }));
       break;
