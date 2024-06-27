@@ -78,6 +78,7 @@
 		is_required: is_required,
 		is_invalid: is_invalid,
 		is_disabled: is_disabled,
+		is_checked: c.is_checked is defined ? c.is_checked : false,
 		attributes: c.attributes is defined ? c.attributes : '',
 		modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
 	} %}
