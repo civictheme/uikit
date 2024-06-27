@@ -53,7 +53,7 @@ export const generateItems = (count, content) => {
   const items = [];
   for (let i = 1; i <= count; i++) {
     if (typeof content === 'function') {
-      items.push(content(i));
+      items.push(content(i, count));
     } else {
       items.push(content);
     }
