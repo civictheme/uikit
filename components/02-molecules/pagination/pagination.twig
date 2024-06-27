@@ -11,7 +11,7 @@
  *   - href: [string] Item link.
  * - items_modifier_class: [string] Items modifier class.
  * - current: [string] Current page number.
- * - items_per_page_label: [string] Label for items per page.
+ * - items_per_page_title: [string] Title for "items per page" field.
  * - items_per_page_options: [array] Array of options (applies to optgroup type):
  *   - type: [string] Option type ('option')
  *   - label: [string] Option label.
@@ -26,7 +26,7 @@
  */
 #}
 
-{% set items_per_page_label = items_per_page_label|default('Items per page') %}
+{% set items_per_page_title = items_per_page_title|default('Items per page') %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
@@ -41,14 +41,14 @@
     {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pagination__items_per_page">
         {%- include '@molecules/field/field.twig' with {
-          label: items_per_page_label,
+          title: items_per_page_title,
           type: 'select',
           orientation: 'horizontal',
           name: items_per_page_name,
           id: items_per_page_id,
           options: items_per_page_options,
           attributes: items_per_page_attributes,
-          modifier_class: 'ct-field--horizontal--fluid ct-pagination__items_per_page__label'
+          modifier_class: 'ct-pagination__items_per_page__field ct-field--horizontal--fluid'
         } -%}
       </div>
     {% endif %}

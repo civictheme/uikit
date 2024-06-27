@@ -259,7 +259,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 	
 			
       <div
-        class="ct-field ct-theme-dark ct-field--select ct-field--horizontal    ct-field--horizontal--fluid ct-pagination__items_per_page__label"
+        class="ct-field ct-theme-dark ct-field--select ct-field--horizontal    ct-pagination__items_per_page__field ct-field--horizontal--fluid"
         data-test="items-per-page"
       >
         
@@ -267,7 +267,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
 
         <label
-          class="ct-label ct-theme-dark ct-label--regular  ct-field__label"
+          class="ct-label ct-theme-dark ct-label--regular  ct-field__title"
           for="items-per-page"
         >
           

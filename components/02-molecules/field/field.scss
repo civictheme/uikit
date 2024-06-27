@@ -33,13 +33,13 @@
     column-gap: ct-spacing();
 
     &#{$root}--horizontal--fluid {
-      #{$root}__label {
+      #{$root}__title {
         min-width: auto;
         max-width: fit-content;
       }
     }
 
-    #{$root}__label {
+    #{$root}__title {
       flex: 0 1 auto;
       min-width: $ct-field-horizontal-label-min-width;
       max-width: $ct-field-horizontal-label-max-width;
@@ -47,8 +47,8 @@
     }
 
     @each $width in $ct-field-label-fixed-widths {
-      &#{$root}--with-fixed-labels--#{$width} {
-        #{$root}__label {
+      &#{$root}--with-fixed-title--#{$width} {
+        #{$root}__title {
           min-width: ct-spacing($width);
         }
       }
@@ -57,7 +57,7 @@
     &#{$root}--radio,
     &#{$root}--checkbox,
     &#{$root}--select[multiple] {
-      #{$root}__label {
+      #{$root}__title {
         margin-top: 0;
       }
     }
