@@ -88,7 +88,7 @@ export const Pagination = (parentKnobs = {}) => {
   };
 
   if (knobs.with_items_per_page) {
-    props.items_per_page_label = 'Items per page';
+    props.items_per_page_title = 'Items per page';
     props.items_per_page_name = randomName();
     props.items_per_page_id = randomId();
 

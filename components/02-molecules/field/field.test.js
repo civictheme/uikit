@@ -76,7 +76,7 @@ describe('Field Component', () => {
   test('textfield', async () => {
     const c = await dom(template, {
       type: 'textfield',
-      label: 'Test Label',
+      title: 'Test Title',
       name: 'testname',
       value: 'testvalue',
       id: 'testid',
@@ -100,7 +100,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -109,7 +109,7 @@ describe('Field Component', () => {
   test('single control as object propagation', async () => {
     const c = await dom(template, {
       type: 'textfield',
-      label: 'Test Label',
+      title: 'Test Title',
       control: {
         name: 'testname',
         value: 'testvalue',
@@ -136,7 +136,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(1);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -145,7 +145,7 @@ describe('Field Component', () => {
   test('single control as array propagation', async () => {
     const c = await dom(template, {
       type: 'textfield',
-      label: 'Test Label',
+      title: 'Test Title',
       control: [{
         name: 'testname',
         value: 'testvalue',
@@ -172,7 +172,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(1);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -181,7 +181,7 @@ describe('Field Component', () => {
   test('multiple control as array propagation - textfield', async () => {
     const c = await dom(template, {
       type: 'textfield',
-      label: 'Test Label',
+      title: 'Test Title',
       control: [
         {
           name: 'testname',
@@ -213,7 +213,7 @@ describe('Field Component', () => {
   test('multiple control as array propagation - checkbox', async () => {
     const c = await dom(template, {
       type: 'checkbox',
-      label: 'Test Label',
+      title: 'Test Title',
       control: [
         {
           name: 'testname',
@@ -242,7 +242,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue2"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"]')).toHaveLength(1);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -251,7 +251,7 @@ describe('Field Component', () => {
   test('multiple control as array propagation with mixed levels - checkbox', async () => {
     const c = await dom(template, {
       type: 'checkbox',
-      label: 'Test Label',
+      title: 'Test Title',
       name: 'testname',
       id: 'testid',
       modifier_class: 'custom-modifier-parent',
@@ -297,8 +297,8 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field input.custom-modifier-parent')).toHaveLength(0);
 
     // Do not use [for] on label when multiple controls passed.
-    expect(c.querySelectorAll('.ct-field .ct-label.ct-field__label')).toHaveLength(1);
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelectorAll('.ct-field .ct-label.ct-field__title')).toHaveLength(1);
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label.ct-checkbox__label[for="testid1"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field .ct-label.ct-checkbox__label[for="testid2"]')).toHaveLength(1);
     expect(c.querySelector('.ct-field .ct-label.ct-checkbox__label[for="testid1"]').textContent.trim()).toEqual('Checkbox 1');
@@ -310,7 +310,7 @@ describe('Field Component', () => {
   test('textarea with all attributes', async () => {
     const c = await dom(template, {
       type: 'textarea',
-      label: 'Test Label',
+      title: 'Test Title',
       name: 'testname',
       value: 'testvalue',
       id: 'testid',
@@ -335,7 +335,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field textarea.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -344,7 +344,7 @@ describe('Field Component', () => {
   test('select', async () => {
     const c = await dom(template, {
       type: 'select',
-      label: 'Test Label',
+      title: 'Test Title',
       name: 'testname',
       value: 'testvalue',
       id: 'testid',
@@ -371,7 +371,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field select.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -380,7 +380,7 @@ describe('Field Component', () => {
   test('radio', async () => {
     const c = await dom(template, {
       type: 'radio',
-      label: 'Test Label',
+      title: 'Test Title',
       control: [
         {
           name: 'testname',
@@ -409,7 +409,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][value="testvalue2"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid2"]')).toHaveLength(1);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -418,7 +418,7 @@ describe('Field Component', () => {
   test('default input', async () => {
     const c = await dom(template, {
       type: 'email',
-      label: 'Test Label',
+      title: 'Test Title',
       name: 'testname',
       value: 'testvalue',
       id: 'testid',
@@ -441,24 +441,24 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__label').textContent.trim()).toEqual('Test Label');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
 
   describe.each([
-    { label: 'Test Label', labelDisplay: 'visible', type: 'textfield', expected: 1, selector: '.ct-field__label', description: 'visible label with textfield' },
-    { label: 'Test Label', labelDisplay: 'visually_hidden', type: 'textfield', expected: 1, selector: '.ct-field__label.ct-visually-hidden', description: 'visually hidden label with textfield' },
-    { label: 'Test Label', labelDisplay: 'hidden', type: 'textfield', expected: 0, selector: '.ct-field__label', description: 'hidden label with textfield' },
-    { label: '', labelDisplay: 'visible', type: 'textfield', expected: 0, selector: '.ct-field__label', description: 'empty label with textfield' },
-    { label: 'Test Label', labelDisplay: 'visible', type: 'hidden', expected: 0, selector: '.ct-field__label', description: 'visible label with hidden input' },
-    { label: 'Test Label', labelDisplay: 'hidden', type: 'hidden', expected: 0, selector: '.ct-field__label', description: 'hidden label with hidden input' },
-  ])('Field Component - $description', ({ label, labelDisplay, type, expected, selector }) => {
-    test(`renders ${expected} label(s)`, async () => {
+    { title: 'Test Title', titleDisplay: 'visible', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'visible title with textfield' },
+    { title: 'Test Title', titleDisplay: 'visually_hidden', type: 'textfield', expected: 1, selector: '.ct-field__title.ct-visually-hidden', description: 'visually hidden title with textfield' },
+    { title: 'Test Title', titleDisplay: 'hidden', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'hidden title with textfield' },
+    { title: '', titleDisplay: 'visible', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'empty title with textfield' },
+    { title: 'Test Title', titleDisplay: 'visible', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'visible title with hidden input' },
+    { title: 'Test Title', titleDisplay: 'hidden', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'hidden title with hidden input' },
+  ])('Field Component - $description', ({ title, titleDisplay, type, expected, selector }) => {
+    test(`renders ${expected} title(s)`, async () => {
       const c = await dom(template, {
-        label,
-        label_display: labelDisplay,
+        title,
+        title_display: titleDisplay,
         type,
         name: 'testname',
       });

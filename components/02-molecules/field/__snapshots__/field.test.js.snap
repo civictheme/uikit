@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field Component Field Component - empty label with textfield renders 0 label(s) 1`] = `
+exports[`Field Component Field Component - empty title with textfield renders 0 title(s) 1`] = `
 <div>
   
 
@@ -40,7 +40,7 @@ exports[`Field Component Field Component - empty label with textfield renders 0 
 </div>
 `;
 
-exports[`Field Component Field Component - hidden label with hidden input renders 0 label(s) 1`] = `
+exports[`Field Component Field Component - hidden title with hidden input renders 0 title(s) 1`] = `
 <div>
   
 
@@ -79,7 +79,7 @@ exports[`Field Component Field Component - hidden label with hidden input render
 </div>
 `;
 
-exports[`Field Component Field Component - hidden label with textfield renders 0 label(s) 1`] = `
+exports[`Field Component Field Component - hidden title with textfield renders 0 title(s) 1`] = `
 <div>
   
 
@@ -119,7 +119,7 @@ exports[`Field Component Field Component - hidden label with textfield renders 0
 </div>
 `;
 
-exports[`Field Component Field Component - visible label with hidden input renders 0 label(s) 1`] = `
+exports[`Field Component Field Component - visible title with hidden input renders 0 title(s) 1`] = `
 <div>
   
 
@@ -158,7 +158,7 @@ exports[`Field Component Field Component - visible label with hidden input rende
 </div>
 `;
 
-exports[`Field Component Field Component - visible label with textfield renders 1 label(s) 1`] = `
+exports[`Field Component Field Component - visible title with textfield renders 1 title(s) 1`] = `
 <div>
   
 
@@ -174,10 +174,10 @@ exports[`Field Component Field Component - visible label with textfield renders 
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -207,7 +207,7 @@ exports[`Field Component Field Component - visible label with textfield renders 
 </div>
 `;
 
-exports[`Field Component Field Component - visually hidden label with textfield renders 1 label(s) 1`] = `
+exports[`Field Component Field Component - visually hidden title with textfield renders 1 title(s) 1`] = `
 <div>
   
 
@@ -223,10 +223,10 @@ exports[`Field Component Field Component - visually hidden label with textfield 
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label ct-visually-hidden"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title ct-visually-hidden"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -273,11 +273,11 @@ exports[`Field Component default input 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -363,10 +363,10 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -407,7 +407,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
             for="testid"
           >
             
-    Test Label  
+    Test Title  
           </label>
             											
         </li>
@@ -436,7 +436,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
             for="testid2"
           >
             
-    Test Label  
+    Test Title  
           </label>
             											
         </li>
@@ -472,11 +472,11 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -526,10 +526,10 @@ exports[`Field Component multiple control as array propagation with mixed levels
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -645,10 +645,10 @@ exports[`Field Component radio 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -689,7 +689,7 @@ exports[`Field Component radio 1`] = `
             for="testid"
           >
             
-    Test Label  
+    Test Title  
           </label>
             											
         </li>
@@ -718,7 +718,7 @@ exports[`Field Component radio 1`] = `
             for="testid2"
           >
             
-    Test Label  
+    Test Title  
           </label>
             											
         </li>
@@ -806,11 +806,11 @@ exports[`Field Component select 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -859,11 +859,11 @@ exports[`Field Component single control as array propagation 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -912,11 +912,11 @@ exports[`Field Component single control as object propagation 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -966,11 +966,11 @@ exports[`Field Component textarea with all attributes 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular ct-label--required ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular ct-label--required ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		
@@ -1022,11 +1022,11 @@ exports[`Field Component textfield 1`] = `
 
 
     <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__label"
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
       
-    Test Label  
+    Test Title  
     </label>
     		
 		

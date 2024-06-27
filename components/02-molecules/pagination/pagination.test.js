@@ -42,7 +42,7 @@ describe('Pagination Component', () => {
         last: { text: 'Last', href: '#last' },
       },
       current: '2',
-      items_per_page_label: 'Items per page',
+      items_per_page_title: 'Items per page',
       items_per_page_options: [
         { type: 'option', label: '10', value: '10', selected: 'selected' },
         { type: 'option', label: '20', value: '20' },
