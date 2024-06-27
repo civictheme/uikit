@@ -63,7 +63,7 @@ export const Field = (parentKnobs = {}) => {
       'Title display',
       {
         Visible: 'visible',
-        'Visually hidden': 'visually_hidden',
+        Invisible: 'invisible',
         Hidden: 'hidden',
       },
       'visible',

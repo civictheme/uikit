@@ -16,7 +16,7 @@
  * - theme: [string] Theme: light, dark. Optional.
  * - type: [string] Type defined by a control type. Required.
  * - title: [string] Title. Optional.
- * - title_display: [string] Title display: visible, visually_hidden, hidden. Optional.
+ * - title_display: [string] Title display: visible, invisible, hidden. Optional.
  * - description: [string] Description. Optional.
  * - name: [string] DOM name. Required, propagated.
  * - value: [string] DOM value. Optional, propagated.
@@ -43,7 +43,7 @@
 #}
 
 {% set type = type is defined ? type : 'hidden' %}
-{% set title_display = title_display is defined and title_display in ['visible', 'visually_hidden', 'hidden'] ? title_display : 'visible' %}
+{% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
@@ -94,7 +94,7 @@
 				content: title,
 				is_required: is_required,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
-				modifier_class: 'ct-field__title' ~ (title_display == 'visually_hidden' ? ' ct-visually-hidden' : ''),
+				modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
 			} only %}
 		{% endif %}
 

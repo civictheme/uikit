@@ -119,6 +119,55 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
 </div>
 `;
 
+exports[`Field Component Field Component - invisible title with textfield renders 1 title(s) 1`] = `
+<div>
+  
+
+
+
+	
+			
+  <div
+    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
+  >
+    
+					
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title ct-visually-hidden"
+    >
+      
+    Test Title  
+    </label>
+    		
+		
+    <div
+      class="ct-field__wrapper"
+    >
+      
+			
+							
+
+	
+      <input
+        class="ct-textfield ct-theme-light  ct-field__control"
+        name="testname"
+        type="text"
+      />
+      
+
+			
+					
+    </div>
+    
+	
+  </div>
+  
+
+</div>
+`;
+
 exports[`Field Component Field Component - visible title with hidden input renders 0 title(s) 1`] = `
 <div>
   
@@ -175,55 +224,6 @@ exports[`Field Component Field Component - visible title with textfield renders 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
-    >
-      
-    Test Title  
-    </label>
-    		
-		
-    <div
-      class="ct-field__wrapper"
-    >
-      
-			
-							
-
-	
-      <input
-        class="ct-textfield ct-theme-light  ct-field__control"
-        name="testname"
-        type="text"
-      />
-      
-
-			
-					
-    </div>
-    
-	
-  </div>
-  
-
-</div>
-`;
-
-exports[`Field Component Field Component - visually hidden title with textfield renders 1 title(s) 1`] = `
-<div>
-  
-
-
-
-	
-			
-  <div
-    class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
-  >
-    
-					
-
-
-    <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__title ct-visually-hidden"
     >
       
     Test Title  

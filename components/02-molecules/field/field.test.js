@@ -456,7 +456,7 @@ describe('Field Component', () => {
 
   describe.each([
     { title: 'Test Title', titleDisplay: 'visible', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'visible title with textfield' },
-    { title: 'Test Title', titleDisplay: 'visually_hidden', type: 'textfield', expected: 1, selector: '.ct-field__title.ct-visually-hidden', description: 'visually hidden title with textfield' },
+    { title: 'Test Title', titleDisplay: 'invisible', type: 'textfield', expected: 1, selector: '.ct-field__title.ct-visually-hidden', description: 'invisible title with textfield' },
     { title: 'Test Title', titleDisplay: 'hidden', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'hidden title with textfield' },
     { title: '', titleDisplay: 'visible', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'empty title with textfield' },
     { title: 'Test Title', titleDisplay: 'visible', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'visible title with hidden input' },
