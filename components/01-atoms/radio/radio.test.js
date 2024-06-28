@@ -24,6 +24,7 @@ describe('Radio Component', () => {
       label: 'Radio Label',
       theme: 'dark',
       is_checked: true,
+      is_required: true,
       is_invalid: true,
       is_disabled: true,
       attributes: 'data-test="true"',
@@ -34,6 +35,7 @@ describe('Radio Component', () => {
     expect(c.querySelector('.ct-radio').getAttribute('name')).toEqual('test-radio');
     expect(c.querySelector('.ct-radio').getAttribute('id')).toEqual('radio-id');
     expect(c.querySelector('.ct-radio').getAttribute('value')).toEqual('radio-value');
+    expect(c.querySelector('.ct-radio').hasAttribute('required')).toBe(true);
     expect(c.querySelector('.ct-radio').hasAttribute('checked')).toBe(true);
     expect(c.querySelector('.ct-radio').hasAttribute('disabled')).toBe(true);
     expect(c.querySelector('.ct-radio').getAttribute('data-test')).toEqual('true');
