@@ -2,6 +2,21 @@
 // Layout component stories.
 //
 
+@use 'sass:color';
+
+// Nested layout.
+.ct-layout {
+  .ct-layout {
+    .story-placeholder {
+      $_color: #6b5394;
+
+      background-color: color.adjust($_color, $alpha: -0.7);
+      border: dashed 1px color.adjust($_color, $alpha: -0.3);
+      color: color.adjust($_color, $lightness: -30%);
+    }
+  }
+}
+
 .story-layout-outlines {
   $_viewport-color: blue;
   $_layout-color: green;
