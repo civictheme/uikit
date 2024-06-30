@@ -6,7 +6,10 @@
 
 // Container class should wrap every row.
 .container {
-  @include ct-container();
+  &,
+  & .container-fluid {
+    @include ct-container();
+  }
 }
 
 .container-fluid {
@@ -15,8 +18,6 @@
 
 .row {
   $root: &;
-
-  @include ct-row($ct-grid-gutters);
 
   &#{$root}--reverse {
     flex-direction: row-reverse;
