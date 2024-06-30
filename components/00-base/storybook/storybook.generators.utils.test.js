@@ -15,17 +15,17 @@ describe('Domain-Specific Generators', () => {
   describe('placeholder', () => {
     it('returns placeholder with default parameters', () => {
       expect(placeholder())
-        .toBe('<div class="story-placeholder">Content placeholder</div>');
+        .toBe('<div class="story-placeholder" contenteditable="true">Content placeholder</div>');
     });
 
     it('returns placeholder with custom content and class', () => {
       expect(placeholder('Custom content', 0, 'custom-class'))
-        .toBe('<div class="custom-class">Custom content</div>');
+        .toBe('<div class="custom-class" contenteditable="true">Custom content</div>');
     });
 
     it('returns placeholder with random sentence', () => {
       const result = placeholder('Custom content', 5);
-      expect(result.startsWith('<div class="story-placeholder">Custom content '))
+      expect(result.startsWith('<div class="story-placeholder" contenteditable="true">Custom content '))
         .toBe(true);
     });
   });

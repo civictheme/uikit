@@ -10,7 +10,7 @@ export const themes = () => ({
   dark: 'Dark',
 });
 
-export const placeholder = (content = 'Content placeholder', words = 0, cssClass = 'story-placeholder') => `<div class="${cssClass}">${content}${words > 0 ? ` ${randomSentence(words)}` : ''}</div>`;
+export const placeholder = (content = 'Content placeholder', words = 0, cssClass = 'story-placeholder') => `<div class="${cssClass}" contenteditable="true">${content}${words > 0 ? ` ${randomSentence(words)}` : ''}</div>`;
 
 export const code = (content) => `<code>${content}</code>`;
 
