@@ -4,7 +4,7 @@
  */
 function CivicThemeLayout(el) {
   this.el = el;
-  this.grid = el.querySelector('.ct-layout__inner');
+  this.grid = el.querySelector(':scope > .ct-layout__inner');
   const gridStyle = getComputedStyle(this.grid);
 
   if (gridStyle.gridTemplateRows === 'masonry' || this.grid.hasAttribute('data-masonry')) {
@@ -13,15 +13,16 @@ function CivicThemeLayout(el) {
 
   this.grid.setAttribute('data-masonry', true);
 
-  this.stl = this.grid.querySelector('.ct-layout__sidebar_top_left');
-  this.str = this.grid.querySelector('.ct-layout__sidebar_top_right');
-  this.sbl = this.grid.querySelector('.ct-layout__sidebar_bottom_left');
-  this.sbr = this.grid.querySelector('.ct-layout__sidebar_bottom_right');
+  this.stl = this.grid.querySelector(':scope > .ct-layout__sidebar_top_left');
+  this.str = this.grid.querySelector(':scope > .ct-layout__sidebar_top_right');
+  this.sbl = this.grid.querySelector(':scope > .ct-layout__sidebar_bottom_left');
+  this.sbr = this.grid.querySelector(':scope > .ct-layout__sidebar_bottom_right');
 
   // Only enable masonry if all 4 elements are present.
   if (this.stl && this.str && this.sbl && this.sbr) {
     // Prepare redraw variables.
     this.gap = parseFloat(gridStyle.gridRowGap);
+    // Items include all children of the grid, not just the 4 sidebar regions.
     this.items = Array.from(this.grid.children);
     this.height = 0;
 
@@ -31,7 +32,17 @@ function CivicThemeLayout(el) {
         this.masonryRedraw();
       });
     });
-    this.resizeObserver.observe(this.grid);
+
+    // Observe all children of the grid items rather than the items themselves:
+    // this allows us to detect changes in the height of the children rather
+    // tnan of the grid items as their height will not change when children
+    // combined heights is less than a single grid row height.
+    this.items.forEach((item) => {
+      Array.from(item.children).forEach((child) => {
+        this.resizeObserver.observe(child);
+      });
+    });
+
     this.masonryRedraw();
   }
 }
@@ -51,9 +62,20 @@ CivicThemeLayout.prototype.masonryPositionElement = function (el, aboveEl, gap) 
  * Reposition grid elements.
  */
 CivicThemeLayout.prototype.masonryRedraw = function () {
-  // Ignore redraw if grid items total height hasn't changed since last redraw.
-  const newHeight = this.items.reduce((t, el) => t + el.getBoundingClientRect().height, 0);
+  // Calculate the new height of all children.
+  //
+  // Although masonry layout is applied only if the element has the
+  // CSS variable --js-masonry-enabled set and we could have check for this
+  // variable to preserve height reclaulation, this variable can be assigned
+  // within a specific media query. Therefore, we need to calculate the height
+  // in case --js-masonry-enabled is assigned to the element after the viewport
+  // has been resized.
+  const newHeight = this.items.reduce((totalHeight, item) => {
+    const childrenHeight = Array.from(item.children).reduce((childTotal, child) => childTotal + child.getBoundingClientRect().height, 0);
+    return totalHeight + childrenHeight;
+  }, 0);
 
+  // Proceed only if the height has changed.
   if (newHeight !== this.height) {
     this.height = newHeight;
 
@@ -69,7 +91,6 @@ CivicThemeLayout.prototype.masonryRedraw = function () {
   }
 };
 
-// Initialize CivicThemeLayout on every element.
 document.querySelectorAll('.ct-layout').forEach((layout) => {
   // eslint-disable-next-line no-new
   new CivicThemeLayout(layout);
