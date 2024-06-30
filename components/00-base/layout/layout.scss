@@ -17,6 +17,7 @@
     #{$root}.ct-vertical-spacing--both {
       margin-top: 0;
     }
+
     #{$root}.ct-vertical-spacing--bottom,
     #{$root}.ct-vertical-spacing--both {
       margin-bottom: 0;
@@ -24,22 +25,20 @@
   }
 
   &__inner {
+    $inner: &;
+
     display: grid;
     grid-template-columns: repeat($ct-layout-columns, 1fr);
-    gap: $ct-layout-row-gap $ct-layout-column-gap;
+    row-gap: $ct-layout-row-gap;
     grid-template-rows: auto 1fr;
     grid-template-rows: masonry;
 
     @include ct-breakpoint($ct-layout-breakpoint) {
+      // Activate masonry layout.
       --js-masonry-enabled: 1;
 
-      #{$root}--no-top-left#{$root}--no-bottom-left & {
-        gap: $ct-layout-row-gap-right-only $ct-layout-column-gap-right-only;
-      }
-
-      #{$root}--no-top-right#{$root}--no-bottom-right & {
-        gap: $ct-layout-row-gap-left-only $ct-layout-column-gap-left-only;
-      }
+      // See the responsive layout rules at the bottom of this file.
+      column-gap: $ct-layout-column-gap;
     }
 
     --stl: 1;
@@ -247,6 +246,75 @@
 
       #{$root}--no-top-right > #{$root}__inner > & {
         grid-row: 1 / span 2;
+      }
+    }
+  }
+}
+
+//
+// Layout has larger gaps when only one sidebar is present.
+// Nested layouts should have the smae larger gaps when only one sidebar is
+// present, but only when the parent layout has no sidebars.
+//
+@include ct-breakpoint($ct-layout-breakpoint) {
+  .ct-layout {
+    $root: &;
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    &#{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner {
+      column-gap: $ct-layout-column-gap-right-only;
+    }
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    &#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner {
+      column-gap: $ct-layout-column-gap-left-only;
+    }
+
+    & > #{$root}__inner {
+      #{$root} {
+        > #{$root}__inner {
+          column-gap: $ct-layout-column-gap;
+        }
+      }
+    }
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    &#{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner {
+      #{$root} {
+        &#{$root}--no-top-left#{$root}--no-bottom-left,
+        &#{$root}--no-top-right#{$root}--no-bottom-right {
+          > #{$root}__inner {
+            column-gap: $ct-layout-column-gap;
+          }
+        }
+      }
+    }
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    &#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner {
+      #{$root} {
+        &#{$root}--no-top-left#{$root}--no-bottom-left,
+        &#{$root}--no-top-right#{$root}--no-bottom-right {
+          > #{$root}__inner {
+            column-gap: $ct-layout-column-gap;
+          }
+        }
+      }
+    }
+
+    &#{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner {
+      #{$root} {
+        &#{$root}--no-top-left#{$root}--no-bottom-left {
+          > #{$root}__inner {
+            column-gap: $ct-layout-column-gap-right-only;
+          }
+        }
+
+        &#{$root}--no-top-right#{$root}--no-bottom-right {
+          > #{$root}__inner {
+            column-gap: $ct-layout-column-gap-right-only;
+          }
+        }
       }
     }
   }
