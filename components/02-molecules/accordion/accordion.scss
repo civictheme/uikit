@@ -6,8 +6,10 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-accordion-space-horizontal;
-    padding-right: $ct-accordion-space-horizontal;
+    @include ct-breakpoint(m) {
+      padding-left: $ct-accordion-space-horizontal;
+      padding-right: $ct-accordion-space-horizontal;
+    }
   }
 
   #{$root}__content {
