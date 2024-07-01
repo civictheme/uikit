@@ -5,7 +5,7 @@ export default {
   title: 'Base/Grid',
   parameters: {
     layout: 'fullscreen',
-    docs: '<div class="grid-story-docs story-grid-outlines row row--no-grow"><strong>Outline colors: </strong><br/><span class="col grid-story-docs-color-container-contained">Contained container</span><span class="col grid-story-docs-color-container-fluid">Fluid container</span><span class="col grid-story-docs-color-row">Row</span><span class="col grid-story-docs-color-template-column">Template column</span><span class="col grid-story-docs-color-auto-column">Auto column</span><span class="col grid-story-docs-color-placeholder">Placeholder</span></div>',
+    docs: '<div class="grid-story-docs story-grid-outlines row row--no-grow"><strong>Outline colors: </strong><span class="col grid-story-docs-color-container-contained">Contained container</span><span class="col grid-story-docs-color-container-fluid">Fluid container</span><span class="col grid-story-docs-color-row">Row</span><span class="col grid-story-docs-color-template-column">Template column</span><span class="col grid-story-docs-color-auto-column">Auto column</span><span class="col grid-story-docs-color-placeholder">Placeholder</span></div>',
     docsClass: 'story-docs--conditional',
   },
 };
@@ -135,7 +135,7 @@ export const Grid = () => {
           placeholder('Nested'),
           placeholder('Nested'),
         ],
-        use_container: true,
+        use_container: false,
         column_attributes: 'data-story-total-columns="3"',
       }),
       placeholder('Parent'),
@@ -154,120 +154,11 @@ export const Grid = () => {
           placeholder('Nested'),
           placeholder('Nested'),
         ],
-        use_container: true,
+        use_container: false,
         column_attributes: 'data-story-total-columns="3"',
       }),
       placeholder('Parent'),
     ],
-    column_attributes: 'data-story-total-columns="2"',
-  });
-
-  html += `<div class="story-container__subtitle">Template column container in container ${code('.container .container > .row > .col-[breakpoint]-[column]')}</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: [
-      CivicThemeGrid({
-        items: [
-          placeholder('Nested'),
-          placeholder('Nested'),
-          placeholder('Nested'),
-        ],
-        use_container: true,
-        is_fluid: false,
-        column_attributes: 'data-story-total-columns="3"',
-      }),
-      placeholder('Parent'),
-    ],
-    use_container: true,
-    is_fluid: false,
-    template_column_count: 2,
-    column_attributes: 'data-story-total-columns="2"',
-  });
-
-  html += `<div class="story-container__subtitle">Template column fluid container in container ${code('.container .container-fluid > .row > .col-[breakpoint]-[column]')}</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: [
-      CivicThemeGrid({
-        items: [
-          placeholder('Nested'),
-          placeholder('Nested'),
-          placeholder('Nested'),
-        ],
-        use_container: true,
-        is_fluid: true,
-        column_attributes: 'data-story-total-columns="3"',
-      }),
-      placeholder('Parent'),
-    ],
-    use_container: true,
-    is_fluid: false,
-    template_column_count: 2,
-    column_attributes: 'data-story-total-columns="2"',
-  });
-
-  html += `<div class="story-container__subtitle">Template column container in fluid container ${code('.container-fluid .container > .row > .col-[breakpoint]-[column]')}</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: [
-      CivicThemeGrid({
-        items: [
-          placeholder('Nested'),
-          placeholder('Nested'),
-          placeholder('Nested'),
-        ],
-        use_container: true,
-        is_fluid: false,
-        column_attributes: 'data-story-total-columns="3"',
-      }),
-      placeholder('Parent'),
-    ],
-    use_container: true,
-    is_fluid: true,
-    template_column_count: 2,
-    column_attributes: 'data-story-total-columns="2"',
-  });
-
-  html += `<div class="story-container__subtitle">Template column container in fluid container (all columns) ${code('.container-fluid .container > .row > .col-[breakpoint]-[column]')}</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: [
-      CivicThemeGrid({
-        items: [
-          placeholder('Nested'),
-          placeholder('Nested'),
-          placeholder('Nested'),
-        ],
-        use_container: true,
-        is_fluid: false,
-        column_attributes: 'data-story-total-columns="3"',
-      }),
-    ],
-    use_container: true,
-    is_fluid: true,
-    template_column_count: 1,
-    column_attributes: 'data-story-total-columns="1"',
-  });
-
-  html += `<div class="story-container__subtitle">Template column fluid container in fluid container ${code('.container-fluid .container-fluid > .row > .col-[breakpoint]-[column]')}</div>`;
-  cols = ['A', 'B', 'C', 'D'];
-  html += CivicThemeGrid({
-    items: [
-      CivicThemeGrid({
-        items: [
-          placeholder('Nested'),
-          placeholder('Nested'),
-          placeholder('Nested'),
-        ],
-        use_container: true,
-        is_fluid: true,
-        column_attributes: 'data-story-total-columns="3"',
-      }),
-      placeholder('Parent'),
-    ],
-    use_container: true,
-    is_fluid: true,
-    template_column_count: 2,
     column_attributes: 'data-story-total-columns="2"',
   });
 

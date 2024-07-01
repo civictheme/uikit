@@ -32,16 +32,18 @@
         max-width: map.get($ct-breakpoints, $bp) - (map.get($ct-grid-offsets, $bp) * 2);
       }
     }
-
-    > .row {
-      @include ct-row($ct-grid-gutters);
-    }
   }
   @else {
     width: 100%;
 
-    > .row {
-      @include ct-row(false);
+    // Reset negative row margins which are used to offset column margins.
+    .row {
+      @each $bp, $value in $ct-breakpoints {
+        @include ct-breakpoint($bp) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
     }
   }
 }
@@ -56,9 +58,7 @@
   padding-inline-start: 0;
   list-style: none;
 
-  @if $gutters != false {
-    @include _ct-print-all-gutters($rule-prefix: margin);
-  }
+  @include _ct-print-all-gutters($rule-prefix: margin);
 }
 
 @mixin ct-flex-align-right() {
