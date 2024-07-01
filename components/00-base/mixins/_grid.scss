@@ -37,11 +37,22 @@
     width: 100%;
 
     // Reset negative row margins which are used to offset column margins.
-    .row {
+    > .row {
       @each $bp, $value in $ct-breakpoints {
         @include ct-breakpoint($bp) {
           margin-left: auto;
           margin-right: auto;
+
+          > .col,
+          > [class*='col-'] {
+            &:first-child {
+              padding-left: 0;
+            }
+
+            &:last-child {
+              padding-right: 0;
+            }
+          }
         }
       }
     }
