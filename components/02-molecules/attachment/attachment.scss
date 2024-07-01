@@ -6,8 +6,10 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-attachment-space-horizontal;
-    padding-right: $ct-attachment-space-horizontal;
+    @include ct-breakpoint(m) {
+      padding-left: $ct-attachment-space-horizontal;
+      padding-right: $ct-attachment-space-horizontal;
+    }
   }
 
   #{$root}__wrapper {

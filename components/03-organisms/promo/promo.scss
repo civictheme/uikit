@@ -6,8 +6,10 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-promo-space-horizontal;
-    padding-right: $ct-promo-space-horizontal;
+    @include ct-breakpoint(m) {
+      padding-left: $ct-promo-space-horizontal;
+      padding-right: $ct-promo-space-horizontal;
+    }
   }
 
   border-top: solid ct-particle(0.125);
