@@ -7,7 +7,7 @@ describe('Layout Component', () => {
     });
 
     expect(c.querySelectorAll('.ct-layout')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-layout .container')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-layout .container-fluid')).toHaveLength(1);
     expect(c.querySelector('.ct-layout__main').textContent.trim()).toEqual('Main content');
 
     assertUniqueCssClasses(c);
@@ -94,12 +94,58 @@ describe('Layout Component', () => {
       hide_sidebar_right: true,
     });
 
+    expect(c.querySelectorAll('.ct-layout .container-fluid')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-layout__sidebar_top_left')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-layout__sidebar_top_right')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-layout__sidebar_bottom_left')).toHaveLength(0);
     expect(c.querySelectorAll('.ct-layout__sidebar_bottom_right')).toHaveLength(0);
     expect(c.querySelector('.ct-layout').classList).toContain('ct-layout--no-sidebar-left');
     expect(c.querySelector('.ct-layout').classList).toContain('ct-layout--no-sidebar-right');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('hides sidebars when specified - contained', async () => {
+    const c = await dom(template, {
+      content: 'Main content',
+      sidebar_top_left: 'Top left sidebar',
+      sidebar_top_right: 'Top right sidebar',
+      sidebar_bottom_left: 'Bottom left sidebar',
+      sidebar_bottom_right: 'Bottom right sidebar',
+      hide_sidebar_left: true,
+      hide_sidebar_right: true,
+      is_contained: true,
+    });
+
+    expect(c.querySelectorAll('.ct-layout .container')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-layout__sidebar_top_left')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-layout__sidebar_top_right')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-layout__sidebar_bottom_left')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-layout__sidebar_bottom_right')).toHaveLength(0);
+    expect(c.querySelector('.ct-layout').classList).toContain('ct-layout--no-sidebar-left');
+    expect(c.querySelector('.ct-layout').classList).toContain('ct-layout--no-sidebar-right');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('only main - contained', async () => {
+    const c = await dom(template, {
+      content: 'Main content',
+      is_contained: true,
+    });
+
+    expect(c.querySelectorAll('.ct-layout .container')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('only main - not contained', async () => {
+    const c = await dom(template, {
+      content: 'Main content',
+      is_contained: false,
+    });
+
+    expect(c.querySelectorAll('.ct-layout .container-fluid')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });

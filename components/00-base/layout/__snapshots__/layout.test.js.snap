@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout Component hides sidebars when specified 1`] = `
+exports[`Layout Component hides sidebars when specified - contained 1`] = `
 <div>
   
 
@@ -18,6 +18,132 @@ exports[`Layout Component hides sidebars when specified 1`] = `
 		
     <div
       class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        Main content
+      </section>
+      
+							
+			
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component hides sidebars when specified 1`] = `
+<div>
+  
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container-fluid"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        Main content
+      </section>
+      
+							
+			
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component only main - contained 1`] = `
+<div>
+  
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container"
+    >
+      
+												
+      <section
+        class="ct-layout__main"
+      >
+        Main content
+      </section>
+      
+							
+			
+			
+			
+					
+    </div>
+    
+
+								
+  </main>
+  
+
+</div>
+`;
+
+exports[`Layout Component only main - not contained 1`] = `
+<div>
+  
+
+
+
+
+
+	
+  <main
+    class="ct-layout ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
+    role="main"
+  >
+    
+							
+		
+    <div
+      class="ct-layout__inner container-fluid"
     >
       
 												
@@ -130,7 +256,7 @@ exports[`Layout Component renders with custom attributes and classes 1`] = `
 							
 		
     <div
-      class="ct-layout__inner container"
+      class="ct-layout__inner container-fluid"
     >
       
 												
@@ -172,7 +298,7 @@ exports[`Layout Component renders with default values 1`] = `
 							
 		
     <div
-      class="ct-layout__inner container"
+      class="ct-layout__inner container-fluid"
     >
       
 												
