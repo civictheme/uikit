@@ -32,6 +32,13 @@
     }
   }
 
+  &__rows {
+    .col,
+    [class*='col-'] {
+      container-type: inline-size;
+    }
+  }
+
   &__link-below {
     padding-top: ct-spacing();
     padding-bottom: ct-spacing();
