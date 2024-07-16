@@ -43,7 +43,8 @@
       {% if icon_placement == 'before' %}
         {{- icon_markup -}}{{- text|raw -}}
       {% else %}
-        {{- text|raw -}}{{- icon_markup -}}
+        {% set text_arr = text|trim|split(' ') %}
+        {{ text_arr|slice(0, -1)|join(' ') }} <span class="ct-link__group">{{ text_arr|last }}{{- icon_markup -}}</span>
       {% endif %}
 
     {% else %}

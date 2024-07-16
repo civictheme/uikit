@@ -45,7 +45,12 @@
     {% if icon_placement == 'before' %}
       {{- icon_markup -}}{{ allow_html ? text|raw : text }}
     {% else %}
-      {{- allow_html ? text|raw : text -}}{{- icon_markup -}}
+      {% if allow_html %}
+        {{ text|raw }}{{- icon_markup -}}
+      {% else %}
+        {% set text_arr = text|trim|split(' ') %}
+        {{ text_arr|slice(0, -1)|join(' ') }} <span class="ct-button__group">{{ text_arr|last }}{{- icon_markup -}}</span>
+      {% endif %}
     {% endif %}
 
   {% else %}

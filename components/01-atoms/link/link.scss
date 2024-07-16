@@ -17,6 +17,10 @@
     @include ct-outline-border();
   }
 
+  &__group {
+    white-space: nowrap;
+  }
+
   &#{$root}--only-icon {
     display: inline-block;
     line-height: 0;
