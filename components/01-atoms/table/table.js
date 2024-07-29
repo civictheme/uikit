@@ -46,7 +46,7 @@ CivicThemeTable.prototype.addTheadColumnTitles = function () {
   tbodyRows.forEach((tbodyRow) => {
     const tbodyRowCells = tbodyRow.querySelectorAll('th, td');
     tbodyRowCells.forEach((tbodyRowCell, index) => {
-      if (!tbodyRowCell.hasAttribute('data-title')) {
+      if (!tbodyRowCell.hasAttribute('data-title') && theadCells[index]) {
         tbodyRowCell.setAttribute('data-title', theadCells[index].textContent);
       }
     });
