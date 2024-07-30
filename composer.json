@@ -12,7 +12,7 @@
         "php": ">=8.2"
     },
     "require-dev": {
-        "vincentlanglet/twig-cs-fixer": "^2.8"
+        "vincentlanglet/twig-cs-fixer": "^3.0"
     },
     "scripts": {
         "lint": "vendor/bin/twig-cs-fixer --no-cache",
