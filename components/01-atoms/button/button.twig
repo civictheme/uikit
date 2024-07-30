@@ -33,48 +33,30 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, kind_class, size_class, dismiss_class, is_external, modifier_class|default('')) %}
 
-{% set content_markup %}
-  {% if icon %}
+{% set button_content %}
+  {%- if allow_html -%}
     {% set icon_markup %}
       {% include '@base/icon/icon.twig' with {
         symbol: icon,
         modifier_class: 'ct-button__icon',
       } only %}
     {% endset %}
-
     {% if icon_placement == 'before' %}
-      {{- icon_markup -}}{{ allow_html ? text|raw : text }}
+      {{- icon_markup -}}{{ text|raw }}
     {% else %}
-      {%- if allow_html -%}
-        {{ text|raw }}{{- icon_markup -}}
-      {%- else -%}
-        {%- if text is not empty -%}
-          {%- set text_arr = text|trim|split(' ') -%}
-          {{- text_arr|slice(0, -1)|join(' ') }} <span class="ct-button__group">{{ text_arr|last }}{{- icon_markup -}}</span>
-        {%- else -%}
-          {{- icon_markup -}}
-        {%- endif -%}
-      {%- endif -%}
+      {{ text|raw }}{{- icon_markup -}}
     {% endif %}
-
-  {% else %}
-    {{- allow_html ? text|raw : text -}}
-  {% endif %}
+  {%- else -%}
+    {%- include '@base/text-icon/text-icon.twig' with {
+      text: text,
+      is_new_window: is_new_window,
+      is_external: is_external,
+      icon: icon,
+      icon_placement: icon_placement,
+      icon_class: 'ct-button__icon',
+    } only -%}
+  {%- endif -%}
 {% endset %}
-
-{% if is_new_window %}
-  {% set is_new_window_content %}
-    <span class="ct-visually-hidden">(Opens in a new tab/window)</span>
-  {% endset %}
-{% endif %}
-
-{% if is_external %}
-  {% set is_external_content %}
-    {% include '@base/icon/icon.twig' with {
-      symbol: 'upper-right-arrow',
-    } only %}
-  {% endset %}
-{% endif %}
 
 {% if kind == 'button' %}
   <button
@@ -83,7 +65,7 @@
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {{- content_markup -}}
+    {{- button_content -}}
   </button>
 {% elseif kind == 'link' %}
   <a
@@ -95,7 +77,7 @@
     {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
+    {{- button_content -}}
   </a>
 {% elseif kind in ['reset', 'submit'] %}
   <input

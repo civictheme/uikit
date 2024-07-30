@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Text Icon component.
+ *
+ * Variables:
+ * - text: [string] Link text.
+ * - is_new_window: [boolean] Open in a new window.
+ * - is_external: [boolean] Link is external.
+ * - icon: [string] Icon name.
+ * - icon_placement: [string] Icon position: before, after.
+ * - icon_class: [string] Class for custom icon.
+ */
+#}
+{% spaceless %}
+  {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
+
+  {% set content_markup %}
+    {% if icon or is_external %}
+
+      {% set icon_markup %}
+        {% include '@base/icon/icon.twig' with {
+          symbol: icon,
+          modifier_class: icon_class|default(''),
+        } only %}
+      {% endset %}
+
+      {% if is_external and text is not empty %}
+        {% set is_external_content %}
+          {% include '@base/icon/icon.twig' with {
+            symbol: 'upper-right-arrow',
+          } only %}
+        {% endset %}
+      {% endif %}
+
+      {% if icon_placement == 'before' %}
+        {% if text is not empty %}
+          {% set text_arr = text|trim|split(' ') %}
+          {{- icon_markup -}}{{- text_arr|slice(0, -1)|join(' ') }} <span class="ct-text-icon__group">{{ text_arr|last }}{{- is_external_content -}}</span>
+        {% else %}
+          {{- icon_markup -}}
+        {% endif %}
+      {% else %}
+        {% if text is not empty %}
+          {% set text_arr = text|trim|split(' ') %}
+          {{- text_arr|slice(0, -1)|join(' ') }} <span class="ct-text-icon__group">{{ text_arr|last }}{{- icon_markup -}}{{- is_external_content -}}</span>
+        {% else %}
+          {{- icon_markup -}}
+        {% endif %}
+      {% endif %}
+
+    {% else %}
+      {{- text|raw -}}
+    {% endif %}
+  {% endset %}
+
+  {% if is_new_window %}
+    {% set is_new_window_content %}
+      <span class="ct-visually-hidden">(Opens in a new tab/window)</span>
+    {% endset %}
+  {% endif %}
+{% endspaceless %}
+
+{{- content_markup -}}{{- is_new_window_content -}}
