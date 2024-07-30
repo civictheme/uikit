@@ -127,8 +127,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
   
   
-  
-  
         <a
           class="ct-link ct-theme-dark     ct-event-card__title__link"
           href="https://example.com"
@@ -239,16 +237,15 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
   
   
-  
-  
         <a
           aria-hidden="true"
           class="ct-link ct-theme-dark    ct-link--only-icon ct-event-card__tags__link"
           href="https://example.com"
           tabindex="-1"
         >
-                    
               
+              
+      
 
 
                                     
@@ -271,7 +268,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           </svg>
           
 
-        
+          
       
         </a>
         

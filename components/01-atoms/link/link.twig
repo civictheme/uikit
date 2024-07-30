@@ -31,39 +31,16 @@
 {% set attributes = is_disabled ? attributes ~ ' disabled' : attributes %}
 
 {% if text is not empty or icon is not empty %}
-  {% set content_markup %}
-    {% if icon and not is_external %}
-      {% set icon_markup %}
-        {% include '@base/icon/icon.twig' with {
-          symbol: icon,
-          modifier_class: 'ct-link__icon',
-        } only %}
-      {% endset %}
-
-      {% if icon_placement == 'before' %}
-        {{- icon_markup -}}{{- text|raw -}}
-      {% else %}
-        {{- text|raw -}}{{- icon_markup -}}
-      {% endif %}
-
-    {% else %}
-      {{- text|raw -}}
-    {% endif %}
+  {% set link_content %}
+    {%- include '@base/text-icon/text-icon.twig' with {
+      text: text,
+      is_new_window: is_new_window,
+      is_external: is_external,
+      icon: icon,
+      icon_placement: icon_placement,
+      icon_class: 'ct-link__icon',
+    } only -%}
   {% endset %}
-
-  {% if is_new_window %}
-    {% set is_new_window_content %}
-      <span class="ct-visually-hidden">(Opens in a new tab/window)</span>
-    {% endset %}
-  {% endif %}
-
-  {% if is_external and text is not empty %}
-    {% set is_external_content %}
-      {% include '@base/icon/icon.twig' with {
-        symbol: 'upper-right-arrow',
-      } only %}
-    {% endset %}
-  {% endif %}
 
   <a
     class="ct-link {{ modifier_class -}}"
@@ -73,6 +50,6 @@
     {% if is_disabled %}disabled{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
+    {{- link_content -}}
   </a>
 {% endif %}
