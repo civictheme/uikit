@@ -36,10 +36,10 @@
 {% set button_content %}
   {%- if allow_html -%}
     {% set icon_markup %}
-      {% include '@base/icon/icon.twig' with {
+      {%- include '@base/icon/icon.twig' with {
         symbol: icon,
         modifier_class: 'ct-button__icon',
-      } only %}
+      } only -%}
     {% endset %}
     {% if icon_placement == 'before' %}
       {{- icon_markup -}}{{ text|raw }}

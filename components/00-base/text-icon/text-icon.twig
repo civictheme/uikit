@@ -18,35 +18,52 @@
   {% set content_markup %}
     {% if icon or is_external %}
 
-      {% set icon_markup %}
-        {% include '@base/icon/icon.twig' with {
-          symbol: icon,
-          modifier_class: icon_class|default(''),
-        } only %}
-      {% endset %}
-
-      {% if is_external and text is not empty %}
-        {% set is_external_content %}
-          {% include '@base/icon/icon.twig' with {
-            symbol: 'upper-right-arrow',
+      {% if icon %}
+        {% set icon_markup %}
+          {%- include '@base/icon/icon.twig' with {
+            symbol: icon,
+            modifier_class: icon_class|default(''),
           } only %}
-        {% endset %}
+        {% endset -%}
       {% endif %}
 
-      {% if icon_placement == 'before' %}
-        {% if text is not empty %}
-          {% set text_arr = text|trim|split(' ') %}
-          {{- icon_markup -}}{{- text_arr|slice(0, -1)|join(' ') }} <span class="ct-text-icon__group">{{ text_arr|last }}{{- is_external_content -}}</span>
+      {% if text is not empty %}
+
+        {% if icon and icon_placement == 'before' and not is_external %}
+          {{- icon_markup -}}{{- text|raw -}}
         {% else %}
-          {{- icon_markup -}}
+          {# Prepare the text #}
+          {% set text_arr = text|trim|split(' ') %}
+          {% set text_start = text_arr|slice(0, -1)|join(' ') %}
+          {% set text_end = text_arr|last %}
+
+          {# Place text in groups #}
+          {% set before_group = text_start %}
+          {% set within_group = text_end %}
+
+          {# Place icon before or after text #}
+          {% if icon_placement == 'before' %}
+            {% set before_group = icon_markup|raw ~ before_group %}
+          {% else %}
+            {% set within_group = within_group ~ icon_markup|raw %}
+          {% endif %}
+
+          {# Add external icon #}
+          {% if is_external %}
+            {% set is_external_content %}
+              {%- include '@base/icon/icon.twig' with {
+                symbol: 'upper-right-arrow',
+              } only -%}
+            {% endset %}
+            {% set within_group = within_group|raw ~ is_external_content|raw %}
+          {% endif %}
+
+          {# Set the markup #}
+          {{- before_group|raw }} <span class="ct-text-icon__group">{{- within_group|raw -}}</span>
         {% endif %}
+
       {% else %}
-        {% if text is not empty %}
-          {% set text_arr = text|trim|split(' ') %}
-          {{- text_arr|slice(0, -1)|join(' ') }} <span class="ct-text-icon__group">{{ text_arr|last }}{{- icon_markup -}}{{- is_external_content -}}</span>
-        {% else %}
-          {{- icon_markup -}}
-        {% endif %}
+        {{- icon_markup -}}
       {% endif %}
 
     {% else %}
@@ -55,9 +72,9 @@
   {% endset %}
 
   {% if is_new_window %}
-    {% set is_new_window_content %}
+    {% set is_new_window_content -%}
       <span class="ct-visually-hidden">(Opens in a new tab/window)</span>
-    {% endset %}
+    {%- endset %}
   {% endif %}
 {% endspaceless %}
 
