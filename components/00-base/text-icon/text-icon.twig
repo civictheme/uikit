@@ -12,7 +12,7 @@
  * - icon_class: [string] Class for custom icon.
  */
 #}
-{% spaceless %}
+{% apply spaceless %}
   {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
 
   {% set content_markup %}
@@ -76,6 +76,6 @@
       <span class="ct-visually-hidden">(Opens in a new tab/window)</span>
     {%- endset %}
   {% endif %}
-{% endspaceless %}
+{% endapply %}
 
 {{- content_markup -}}{{- is_new_window_content -}}
