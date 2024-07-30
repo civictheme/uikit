@@ -13,6 +13,10 @@ export const TextIcon = (parentKnobs = {}) => {
     text: knobText('Text', randomText(8), parentKnobs.text, parentKnobs.knobTab),
     is_new_window: knobBoolean('Open in a new window', false, parentKnobs.is_new_window, parentKnobs.knobTab),
     is_external: knobBoolean('Is external', false, parentKnobs.is_external, parentKnobs.knobTab),
+    with_icon: knobBoolean('With icon', false, parentKnobs.with_icon, parentKnobs.knobTab),
+  };
+
+  const iconKnobs = knobs.with_icon ? {
     icon_placement: knobRadios(
       'Icon Position',
       {
@@ -25,7 +29,9 @@ export const TextIcon = (parentKnobs = {}) => {
     ),
     icon: knobSelect('Icon', Object.values(ICONS), Object.values(ICONS)[0], parentKnobs.icon, parentKnobs.knobTab),
     icon_class: knobText('Icon class', '', parentKnobs.icon_class, parentKnobs.knobTab),
-  };
+  } : null;
 
-  return shouldRender(parentKnobs) ? CivicThemeTextIcon(knobs) : knobs;
+  const combinedKnobs = { ...knobs, ...iconKnobs };
+
+  return shouldRender(parentKnobs) ? CivicThemeTextIcon(combinedKnobs) : combinedKnobs;
 };
