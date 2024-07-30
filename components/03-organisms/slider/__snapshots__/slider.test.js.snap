@@ -97,16 +97,16 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                 
                   
 
-
-
   
                 <button
                   class="ct-button ct-theme-dark ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
                 >
-                        
-          
+                      
+              
+      
+        
 
 
                                     
@@ -129,14 +129,12 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                   </svg>
                   
 
-      Previous Slide
-    
-  
+          Previous Slide
+      
+      
                 </button>
                 
                   
-
-
 
   
                 <button
@@ -144,12 +142,22 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                   data-component-name="button"
                   data-slider-next=""
                 >
-                        
-    Next 
+                      
+              
+      
+                  
+                              
+          
+                    
+          
+                                
+          
+          
+          Next 
                   <span
-                    class="ct-button__group"
+                    class="ct-text-icon__group"
                   >
-                    Slide      
+                    Slide
 
 
                                     
@@ -172,10 +180,12 @@ exports[`Slider Component renders with all attributes provided 1`] = `
                     </svg>
                     
 
-      
+          
                   </span>
                   
-  
+        
+      
+      
                 </button>
                 
                 
@@ -293,16 +303,16 @@ exports[`Slider Component renders with only required attributes 1`] = `
                 
                   
 
-
-
   
                 <button
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
                 >
-                        
-          
+                      
+              
+      
+        
 
 
                                     
@@ -325,14 +335,12 @@ exports[`Slider Component renders with only required attributes 1`] = `
                   </svg>
                   
 
-      Previous
-    
-  
+          Previous
+      
+      
                 </button>
                 
                   
-
-
 
   
                 <button
@@ -340,12 +348,22 @@ exports[`Slider Component renders with only required attributes 1`] = `
                   data-component-name="button"
                   data-slider-next=""
                 >
-                        
-     
+                      
+              
+      
+                  
+                              
+          
+                    
+          
+                                
+          
+          
+           
                   <span
-                    class="ct-button__group"
+                    class="ct-text-icon__group"
                   >
-                    Next      
+                    Next
 
 
                                     
@@ -368,10 +386,12 @@ exports[`Slider Component renders with only required attributes 1`] = `
                     </svg>
                     
 
-      
+          
                   </span>
                   
-  
+        
+      
+      
                 </button>
                 
                 
@@ -499,16 +519,16 @@ exports[`Slider Component renders without some attributes 1`] = `
                 
                   
 
-
-
   
                 <button
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
                 >
-                        
-          
+                      
+              
+      
+        
 
 
                                     
@@ -531,14 +551,12 @@ exports[`Slider Component renders without some attributes 1`] = `
                   </svg>
                   
 
-      Previous Slide
-    
-  
+          Previous Slide
+      
+      
                 </button>
                 
                   
-
-
 
   
                 <button
@@ -546,12 +564,22 @@ exports[`Slider Component renders without some attributes 1`] = `
                   data-component-name="button"
                   data-slider-next=""
                 >
-                        
-    Next 
+                      
+              
+      
+                  
+                              
+          
+                    
+          
+                                
+          
+          
+          Next 
                   <span
-                    class="ct-button__group"
+                    class="ct-text-icon__group"
                   >
-                    Slide      
+                    Slide
 
 
                                     
@@ -574,10 +602,12 @@ exports[`Slider Component renders without some attributes 1`] = `
                     </svg>
                     
 
-      
+          
                   </span>
                   
-  
+        
+      
+      
                 </button>
                 
                 

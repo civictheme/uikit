@@ -33,8 +33,6 @@ exports[`Publication Card Component renders file link with extension and size 1`
 
   
   
-  
-  
       <a
         class="ct-link ct-theme-light     ct-publication-card__link"
         href="https://example.com/sample.pdf"
@@ -124,18 +122,26 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
 
   
   
-  
-  
         <a
           class="ct-link ct-theme-dark     ct-publication-card__title__link"
           href="https://example.com/sample.pdf"
         >
+              
+              
+      
+                  
+                              
+          
                     
-      Publication Card 
+          
+                                
+          
+          
+          Publication Card 
           <span
-            class="ct-link__group"
+            class="ct-text-icon__group"
           >
-            Title        
+            Title
 
 
                                     
@@ -158,9 +164,11 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
             </svg>
             
 
-        
+          
           </span>
           
+        
+      
       
         </a>
         
@@ -190,8 +198,6 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
         
 
 
-  
-  
   
   
       <a
@@ -255,18 +261,26 @@ exports[`Publication Card Component renders with required attributes 1`] = `
 
   
   
-  
-  
         <a
           class="ct-link ct-theme-light     ct-publication-card__title__link"
           href="https://example.com/sample.pdf"
         >
+              
+              
+      
+                  
+                              
+          
                     
-      Publication Card 
+          
+                                
+          
+          
+          Publication Card 
           <span
-            class="ct-link__group"
+            class="ct-text-icon__group"
           >
-            Title        
+            Title
 
 
                                     
@@ -289,9 +303,11 @@ exports[`Publication Card Component renders with required attributes 1`] = `
             </svg>
             
 
-        
+          
           </span>
           
+        
+      
       
         </a>
         
@@ -305,8 +321,6 @@ exports[`Publication Card Component renders with required attributes 1`] = `
         
 
 
-  
-  
   
   
       <a
@@ -366,8 +380,6 @@ exports[`Publication Card Component renders with summary when provided 1`] = `
         
 
 
-  
-  
   
   
       <a

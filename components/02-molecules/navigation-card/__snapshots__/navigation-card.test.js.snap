@@ -105,18 +105,26 @@ exports[`Navigation Card Component renders with link when provided 1`] = `
 
   
   
-  
-  
         <a
           class="ct-link ct-theme-light     ct-navigation-card__title__link"
           href="https://example.com"
         >
+              
+              
+      
+                  
+                              
+          
                     
-      Card 
+          
+                                
+          
+          
+          Card 
           <span
-            class="ct-link__group"
+            class="ct-text-icon__group"
           >
-            Title        
+            Title
 
 
                                     
@@ -139,9 +147,11 @@ exports[`Navigation Card Component renders with link when provided 1`] = `
             </svg>
             
 
-        
+          
           </span>
           
+        
+      
       
         </a>
         
@@ -234,8 +244,6 @@ exports[`Navigation Card Component renders with optional attributes, no icon, im
 
 
   
-        
-  
   
         <a
           aria-label="Opens in a new tab"
@@ -243,12 +251,22 @@ exports[`Navigation Card Component renders with optional attributes, no icon, im
           href="https://example.com"
           target="_blank"
         >
+              
+              
+      
+                  
+                              
+          
                     
-      Card 
+          
+                                
+          
+          
+          Card 
           <span
-            class="ct-link__group"
+            class="ct-text-icon__group"
           >
-            Title        
+            Title
 
 
                                     
@@ -271,17 +289,17 @@ exports[`Navigation Card Component renders with optional attributes, no icon, im
             </svg>
             
 
-        
+          
           </span>
           
-            
+        
+      
+      
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
-          
-    
         </a>
         
                       
@@ -408,8 +426,6 @@ exports[`Navigation Card Component renders with optional attributes, with icon 1
 
 
   
-        
-  
   
         <a
           aria-label="Opens in a new tab"
@@ -417,12 +433,22 @@ exports[`Navigation Card Component renders with optional attributes, with icon 1
           href="https://example.com"
           target="_blank"
         >
+              
+              
+      
+                  
+                              
+          
                     
-      Card 
+          
+                                
+          
+          
+          Card 
           <span
-            class="ct-link__group"
+            class="ct-text-icon__group"
           >
-            Title        
+            Title
 
 
                                     
@@ -445,17 +471,17 @@ exports[`Navigation Card Component renders with optional attributes, with icon 1
             </svg>
             
 
-        
+          
           </span>
           
-            
+        
+      
+      
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
-          
-    
         </a>
         
                       
