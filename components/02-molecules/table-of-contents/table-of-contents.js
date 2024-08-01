@@ -64,8 +64,9 @@ CivicThemeTableOfContents.prototype.init = function () {
 
 CivicThemeTableOfContents.prototype.findLinks = function (anchorSelector, scopeSelector) {
   const links = [];
+  const existingUrls = new Set(); // Track existing URLs.
 
-  // Fins links within provided scope selector.
+  // Find links within provided scope selector.
   document.querySelectorAll(scopeSelector).forEach((elScope) => {
     elScope.querySelectorAll(anchorSelector).forEach((elAnchor) => {
       // Respect existing ID.
@@ -75,21 +76,31 @@ CivicThemeTableOfContents.prototype.findLinks = function (anchorSelector, scopeS
       // Generate new ID if no existing ID.
       if (!anchorId || anchorId.length === 0) {
         anchorId = this.makeAnchorId(anchorText);
-        // Check if generated ID is already present on the page.
-        if (elScope.querySelectorAll(`#${anchorId}`).length) {
+        // Check if generated ID is already present on the page or links array.
+        while (elScope.querySelectorAll(`#${anchorId}`).length || existingUrls.has(`#${anchorId}`)) {
           // Add random 3 character suffix.
           anchorId = `${anchorId}-${Math.random().toString(36).substring(2, 5)}`;
         }
       }
 
+      const url = `#${anchorId}`;
+
+      // Skip adding the link if the URL already exists.
+      if (existingUrls.has(url)) {
+        return;
+      }
+
       links.push({
         title: anchorText,
-        url: `#${anchorId}`,
+        url,
       });
 
       // Update anchor with the id. This will "fix" any anchors with duplicated
       // IDs, which is not a valid HTML content.
       elAnchor.id = anchorId;
+
+      // Add the URL to the set of existing URLs.
+      existingUrls.add(url);
     });
   });
 
