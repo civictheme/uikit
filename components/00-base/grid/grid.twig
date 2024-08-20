@@ -39,7 +39,6 @@
 	{% set template_column_count = template_column_count in [1, 2, 3, 4, 6, 12] ? template_column_count : 12 %}
 	{% set column_class = 'col-xxs-12 col-m-%s %s'|format(12 // template_column_count, column_class)|trim %}
 {% else %}
-	{% set template_column_count = items|length %}
 	{% set column_class = ('col ' ~ column_class|default(''))|trim %}
 {% endif %}
 
