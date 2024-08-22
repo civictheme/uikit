@@ -85,6 +85,8 @@ CivicThemeAlert.prototype.isVisible = function (visibilityString) {
   }
 
   let pageVisibility = visibilityString.replace(/\*/g, '[^ ]*');
+  // Replace '<br />' with ''.
+  pageVisibility = pageVisibility.replace(new RegExp('<br />', 'g'), '');
   // Replace '<front>' with "/".
   pageVisibility = pageVisibility.replace('<front>', '/');
   // Replace all occurrences of '/' with '\/'.
