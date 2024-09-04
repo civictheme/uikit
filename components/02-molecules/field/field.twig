@@ -120,7 +120,7 @@
 			{% elseif type == 'checkbox' or type == 'radio' %}
 
 				{% set list_items = [] %}
-				{% for key, item in control %}
+				{% for item in control %}
 					{% set list_item %}
 						{% if type == 'checkbox' %}
 							{% include '@atoms/checkbox/checkbox.twig' with item only %}
