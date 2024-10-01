@@ -21,8 +21,12 @@ exports[`Back to Top Component button contains correct icon 1`] = `
       href="#top"
       role="button"
     >
-          
-              
+                
+      <span
+        class="ct-visually-hidden"
+      >
+        Return focus to the top of the page
+      </span>
       
 
 
@@ -46,8 +50,7 @@ exports[`Back to Top Component button contains correct icon 1`] = `
       </svg>
       
 
-          
-      
+  
     </a>
     
 
@@ -78,8 +81,12 @@ exports[`Back to Top Component renders button with correct attributes 1`] = `
       href="#top"
       role="button"
     >
-          
-              
+                
+      <span
+        class="ct-visually-hidden"
+      >
+        Return focus to the top of the page
+      </span>
       
 
 
@@ -103,8 +110,7 @@ exports[`Back to Top Component renders button with correct attributes 1`] = `
       </svg>
       
 
-          
-      
+  
     </a>
     
 
@@ -135,8 +141,12 @@ exports[`Back to Top Component renders correctly 1`] = `
       href="#top"
       role="button"
     >
-          
-              
+                
+      <span
+        class="ct-visually-hidden"
+      >
+        Return focus to the top of the page
+      </span>
       
 
 
@@ -160,8 +170,7 @@ exports[`Back to Top Component renders correctly 1`] = `
       </svg>
       
 
-          
-      
+  
     </a>
     
 
