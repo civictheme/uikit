@@ -681,7 +681,7 @@ $ct-attachment-dark-wrapper-background-color: ct-color-dark('background') !defau
 $ct-back-to-top-space-bottom: ct-spacing(8) !default;
 $ct-back-to-top-space-right: ct-spacing(2) !default;
 $ct-back-to-top-background-color: ct-color-light('interaction-background') !default;
-$ct-back-to-top-border-color: $ct-back-to-top-background-color !default;
+$ct-back-to-top-border-color: ct-color-light('background-light') !default;
 $ct-back-to-top-color: ct-color-light('interaction-text') !default;
 $ct-back-to-top-outline-color: transparent !default;
 
