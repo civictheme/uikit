@@ -34,7 +34,11 @@
   <a id="banner"></a>
 
   {% block banner %}
-    {{ banner|raw }}
+    {% if banner is not empty %}
+      {{ banner|raw }}
+    {% else %}
+      <a id="main-content" tabindex="-1"></a>
+    {% endif %}
   {% endblock %}
 
   {% if highlighted is not empty %}
