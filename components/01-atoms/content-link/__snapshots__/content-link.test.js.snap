@@ -22,7 +22,9 @@ exports[`Content Link Component renders with optional attributes 1`] = `
     target="_blank"
     title="Example Title"
   >
-        
+    
+
+    
       
       
                   
@@ -33,6 +35,7 @@ exports[`Content Link Component renders with optional attributes 1`] = `
                                 
           
                                             
+          
           Sample 
     <span
       class="ct-text-icon__group"
@@ -63,7 +66,7 @@ exports[`Content Link Component renders with optional attributes 1`] = `
   
     </span>
     
-        
+                  
       
       
     <span
@@ -87,7 +90,9 @@ exports[`Content Link Component renders with required attributes 1`] = `
     class="ct-content-link ct-theme-light  "
     href="https://example.com"
   >
-        Sample Link  
+    
+
+    Sample Link  
   </a>
   
 

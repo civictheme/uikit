@@ -61,7 +61,9 @@ exports[`Service Card Component renders with content slots 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-                Link 1  
+            
+
+    Link 1  
           </a>
           
               
@@ -80,7 +82,9 @@ exports[`Service Card Component renders with content slots 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-                Link 2  
+            
+
+    Link 2  
           </a>
           
               
@@ -163,7 +167,9 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             href="https://example.com/link1"
             target="_blank"
           >
-                
+            
+
+    
       
       
                   
@@ -174,6 +180,7 @@ exports[`Service Card Component renders with optional attributes 1`] = `
                                 
           
                                             
+          
           Link 
             <span
               class="ct-text-icon__group"
@@ -204,7 +211,7 @@ exports[`Service Card Component renders with optional attributes 1`] = `
   
             </span>
             
-        
+                  
       
       
             <span
@@ -230,7 +237,9 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             class="ct-link ct-theme-dark"
             href="https://example.com/link2"
           >
-                Link 2  
+            
+
+    Link 2  
           </a>
           
               
@@ -303,7 +312,9 @@ exports[`Service Card Component renders with required attributes 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-                Link 1  
+            
+
+    Link 1  
           </a>
           
               
@@ -322,7 +333,9 @@ exports[`Service Card Component renders with required attributes 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-                Link 2  
+            
+
+    Link 2  
           </a>
           
               
