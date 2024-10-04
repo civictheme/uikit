@@ -35,7 +35,7 @@
     @error '"#{$name}" is not an available breakpoint. (#{map-keys($ct-breakpoints)})';
   }
 
-  @media ('min-width: ' + map.get($ct-breakpoints, $name)) {
+  @media (#{'min-width: ' + map.get($ct-breakpoints, $name)}) {
     @content;
   }
 }
@@ -62,7 +62,7 @@
     @error '"#{$class}" is not an available breakpoint. (#{map-keys($ct-breakpoints)})';
   }
 
-  @media ('max-width: ' + (map.get($ct-breakpoints, $class) - 1)) {
+  @media (#{'max-width: ' + (map.get($ct-breakpoints, $class) - 1)}) {
     @content;
   }
 }
