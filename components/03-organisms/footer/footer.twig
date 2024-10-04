@@ -52,7 +52,7 @@
       </div>
     {% endif %}
 
-    {% if content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_middle4 is not empty %}
+    {% if content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_middle4 is not empty or content_middle5 is not empty %}
       <div class="container ct-footer__middle">
         <div class="row">
 
@@ -91,6 +91,16 @@
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle4">
                   {{- content_middle4|raw -}}
+                </div>
+              </div>
+            {% endblock -%}
+          {% endif %}
+
+          {% if content_middle5 is not empty %}
+            {%- block content_middle4 %}
+              <div class="col-xxs-12">
+                <div class="ct-footer__middle__content-middle5">
+                  {{- content_middle5|raw -}}
                 </div>
               </div>
             {% endblock -%}
