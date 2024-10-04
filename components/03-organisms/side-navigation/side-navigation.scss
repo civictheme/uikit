@@ -42,6 +42,7 @@
       @include ct-typography('text-regular');
 
       display: block;
+      box-sizing: border-box;
       position: relative;
       padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
       border-bottom-width: ct-particle(0.125);
@@ -74,6 +75,7 @@
     }
 
     [data-collapsible]:not([data-collapsible-trigger-no-icon]) .ct-menu__item__link-trigger[data-collapsible-trigger] {
+      box-sizing: border-box;
       position: absolute;
       top: 0;
       right: 0;

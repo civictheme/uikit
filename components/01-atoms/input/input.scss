@@ -30,6 +30,33 @@
     width: $_label-line_height + $_vertical_spacing * 2;
   }
 
+  &[type='button'],
+  &[type='reset'],
+  &[type='submit'] {
+    -webkit-appearance: button;
+  }
+
+  &[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      height: auto;
+    }
+  }
+
+  &[type='search'] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+
+  &::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+
   &:focus-visible {
     outline-style: solid;
     outline-width: $ct-input-outline-width;

@@ -30,6 +30,7 @@
   #{$root}__featured-image__wrapper {
     @include ct-image-fit();
 
+    box-sizing: border-box;
     width: $ct-banner-featured-image-width;
     display: none;
 
