@@ -65,7 +65,7 @@
 
           {# Set the markup #}
           {% if icon_group_disabled %}
-            {{- before_group|raw }} {{- within_group|raw -}}
+            {{- before_group|raw }} {{ within_group|raw -}}
           {% else %}
             {{- before_group|raw }} <span class="ct-text-icon__group">{{- within_group|raw -}}</span>
           {% endif %}
