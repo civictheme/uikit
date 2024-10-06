@@ -683,7 +683,7 @@ $ct-back-to-top-space-right: ct-spacing(2) !default;
 $ct-back-to-top-background-color: ct-color-light('interaction-background') !default;
 $ct-back-to-top-border-color: $ct-back-to-top-background-color !default;
 $ct-back-to-top-color: ct-color-light('interaction-text') !default;
-$ct-back-to-top-outline-color: transparent !default;
+$ct-back-to-top-outline-color: ct-color-light('interaction-focus') !default;
 
 //
 // Basic content.
