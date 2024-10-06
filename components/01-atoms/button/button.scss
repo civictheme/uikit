@@ -353,6 +353,7 @@
   cursor: pointer;
   border: $ct-button-border-width solid transparent;
   border-radius: $ct-button-border-radius;
+  appearance: button;
 
   @include ct-button-size('regular');
 

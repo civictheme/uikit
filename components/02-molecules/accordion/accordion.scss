@@ -49,6 +49,7 @@
   #{$root}__panels__panel__header__button {
     @include ct-typography('heading-6');
 
+    appearance: button;
     border-radius: $ct-accordion-button-border-radius;
     border: none;
     cursor: pointer;
