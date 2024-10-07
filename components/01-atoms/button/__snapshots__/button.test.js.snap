@@ -13,7 +13,9 @@ exports[`Button Component renders as a link with optional attributes 1`] = `
     role="button"
     target="_blank"
   >
-        
+    
+
+    
               
       
         
@@ -66,7 +68,9 @@ exports[`Button Component renders as a link with optional attributes, is externa
     role="button"
     target="_blank"
   >
-        
+    
+
+    
               
       
                   
@@ -77,6 +81,7 @@ exports[`Button Component renders as a link with optional attributes, is externa
                                 
           
                                             
+          
           
 
 
@@ -130,7 +135,7 @@ exports[`Button Component renders as a link with optional attributes, is externa
   
     </span>
     
-        
+                  
       
       
     <span
@@ -187,7 +192,9 @@ exports[`Button Component renders with disabled state 1`] = `
     data-component-name="button"
     disabled="disabled"
   >
-        Click me  
+    
+
+    Click me  
   </button>
   
 
@@ -203,7 +210,9 @@ exports[`Button Component renders with required attributes 1`] = `
     class="ct-button ct-theme-light  ct-button--button ct-button--regular   "
     data-component-name="button"
   >
-        Click me  
+    
+
+    Click me  
   </button>
   
 

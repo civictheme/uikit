@@ -10,8 +10,13 @@
  * - icon: [string] Icon name.
  * - icon_placement: [string] Icon position: before, after.
  * - icon_class: [string] Class for custom icon.
+ * - icon_group_disabled: [boolean] Disable icon and last word grouping.
+ * - icon_single_only: [boolean] Only show 1 icon. If icon and is_external, external will take preference.
  */
 #}
+
+{% set icon = icon and is_external and icon_single_only ? 'upper-right-arrow' : icon %}
+
 {% apply spaceless %}
   {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
 
@@ -49,7 +54,7 @@
           {% endif %}
 
           {# Add external icon #}
-          {% if is_external %}
+          {% if is_external and not icon_single_only %}
             {% set is_external_content %}
               {%- include '@base/icon/icon.twig' with {
                 symbol: 'upper-right-arrow',
@@ -59,7 +64,11 @@
           {% endif %}
 
           {# Set the markup #}
-          {{- before_group|raw }} <span class="ct-text-icon__group">{{- within_group|raw -}}</span>
+          {% if icon_group_disabled %}
+            {{- before_group|raw }} {{ within_group|raw -}}
+          {% else %}
+            {{- before_group|raw }} <span class="ct-text-icon__group">{{- within_group|raw -}}</span>
+          {% endif %}
         {% endif %}
 
       {% else %}

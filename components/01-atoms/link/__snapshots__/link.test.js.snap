@@ -25,7 +25,9 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
     target="_blank"
     title="Example Title"
   >
-        
+    
+
+    
               
       
                   
@@ -36,6 +38,7 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
                                 
           
                                             
+          
           
 
 
@@ -89,7 +92,7 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
   
     </span>
     
-        
+                  
       
       
     <span
@@ -119,7 +122,9 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
     target="_blank"
     title="Example Title"
   >
-        
+    
+
+    
               
       
         
@@ -170,7 +175,9 @@ exports[`Link Component renders with required attributes 1`] = `
     class="ct-link ct-theme-light"
     href="https://example.com"
   >
-        Sample Link  
+    
+
+    Sample Link  
   </a>
   
 
