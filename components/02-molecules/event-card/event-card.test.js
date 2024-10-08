@@ -31,7 +31,7 @@ describe('Event Card Component', () => {
       date: '2023-01-01 12:00',
       date_iso: '2023-01-01T12:00:00Z',
       location: 'Event Location',
-      link: { url: 'https://example.com' },
+      link: { text: 'Learn more', url: 'https://example.com' },
       tags: ['Tag 1', 'Tag 2'],
       theme: 'dark',
       attributes: 'data-test="true"',
