@@ -18,7 +18,9 @@
   h1 {
     @include ct-typography('heading-1');
 
-    margin-bottom: ct-spacing(3);
+    & {
+      margin-bottom: ct-spacing(3);
+    }
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(4);
@@ -28,7 +30,9 @@
   h2 {
     @include ct-typography('heading-2');
 
-    margin-bottom: ct-spacing(3);
+    & {
+      margin-bottom: ct-spacing(3);
+    }
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(4);
@@ -38,7 +42,9 @@
   h3 {
     @include ct-typography('heading-3');
 
-    margin-bottom: ct-spacing(2);
+    & {
+      margin-bottom: ct-spacing(2);
+    }
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(3);
@@ -48,7 +54,9 @@
   h4 {
     @include ct-typography('heading-4');
 
-    margin-bottom: ct-spacing(2);
+    & {
+      margin-bottom: ct-spacing(2);
+    }
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(3);
@@ -58,7 +66,9 @@
   h5 {
     @include ct-typography('heading-5');
 
-    margin-bottom: ct-spacing();
+    & {
+      margin-bottom: ct-spacing();
+    }
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(2);
@@ -68,7 +78,9 @@
   h6 {
     @include ct-typography('heading-6');
 
-    margin-bottom: ct-spacing();
+    & {
+      margin-bottom: ct-spacing();
+    }
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(2);
@@ -99,12 +111,14 @@
   blockquote {
     @include ct-typography('quote');
 
-    position: relative;
-    margin: 0;
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
-    padding: ct-spacing(2) ct-spacing(3);
-    display: grid;
+    & {
+      position: relative;
+      margin: 0;
+      margin-top: $ct-basic-content-vertical-spacing;
+      margin-bottom: $ct-basic-content-vertical-spacing;
+      padding: ct-spacing(2) ct-spacing(3);
+      display: grid;
+    }
 
     &::before {
       content: '';
@@ -120,14 +134,18 @@
     p {
       @include ct-typography('quote');
 
-      margin-bottom: 0;
+      & {
+        margin-bottom: 0;
+      }
     }
 
     cite {
       @include ct-typography('label-extra-small');
 
-      padding-top: ct-spacing(2);
-      font-style: normal;
+      & {
+        padding-top: ct-spacing(2);
+        font-style: normal;
+      }
 
       &::before {
         content: '-';

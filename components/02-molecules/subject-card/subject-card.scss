@@ -7,20 +7,24 @@
 
   @include ct-elevation-interaction();
 
-  position: relative;
-  border-radius: $ct-service-card-border-radius;
-  width: 100%;
+  & {
+    position: relative;
+    border-radius: $ct-service-card-border-radius;
+    width: 100%;
+  }
 
   #{$root}__content {
     @include ct-image-fit();
 
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: $ct-subject-card-image-height-mobile;
-    min-width: $ct-subject-card-image-width-mobile;
-    padding: ct-spacing(2);
+    & {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: $ct-subject-card-image-height-mobile;
+      min-width: $ct-subject-card-image-width-mobile;
+      padding: ct-spacing(2);
+    }
 
     @include ct-breakpoint(m) {
       padding: ct-spacing(3);
@@ -46,7 +50,9 @@
     @include ct-link-cover-parent();
     @include ct-link-wide();
 
-    flex-direction: column;
+    & {
+      flex-direction: column;
+    }
 
     .ct-link__icon {
       @include ct-icon-size();

@@ -195,11 +195,13 @@ $ct-mobile-navigation-spacing: ct-spacing(2);
   @include ct-typography('label-extra-small');
   @include ct-print-hide();
 
-  background-color: transparent;
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-  display: inline;
+  & {
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    display: inline;
+  }
 
   @include ct-breakpoint($ct-mobile-navigation-breakpoint) {
     display: none;
@@ -208,7 +210,9 @@ $ct-mobile-navigation-spacing: ct-spacing(2);
   .ct-icon {
     @include ct-icon-size('extra-small');
 
-    vertical-align: middle;
+    & {
+      vertical-align: middle;
+    }
   }
 
   @include ct-component-theme($root) using($root, $theme) {

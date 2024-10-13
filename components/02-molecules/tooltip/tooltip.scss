@@ -23,13 +23,15 @@
     @include ct-typography('label-extra-small');
     @include ct-elevation(2);
 
-    display: flex;
-    align-items: center;
-    border-radius: $ct-tooltip-description-border-radius;
-    position: absolute;
-    width: $ct-tooltip-width-mobile;
-    min-height: math.div($ct-tooltip-width-mobile, 2);
-    z-index: $ct-tooltip-z-index;
+    & {
+      display: flex;
+      align-items: center;
+      border-radius: $ct-tooltip-description-border-radius;
+      position: absolute;
+      width: $ct-tooltip-width-mobile;
+      min-height: math.div($ct-tooltip-width-mobile, 2);
+      z-index: $ct-tooltip-z-index;
+    }
 
     &[data-popper-placement^='top'] > [data-tooltip-arrow] {
       bottom: -$ct-tooltip-triangle-width;

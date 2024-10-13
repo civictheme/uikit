@@ -9,12 +9,14 @@
 
   @include ct-elevation-interaction();
 
-  position: relative;
-  border-radius: $ct-promo-card-border-radius;
-  width: 100%;
+  & {
+    position: relative;
+    border-radius: $ct-promo-card-border-radius;
+    width: 100%;
 
-  // Promo image from "spilling" over the border radius.
-  overflow: hidden;
+    // Promo image from "spilling" over the border radius.
+    overflow: hidden;
+  }
 
   &:not(#{$root}--with-image) {
     @include ct-highlight-stripe-horizontal($ct-promo-card-stripe-height, $ct-promo-card-border-radius, 0);
@@ -23,9 +25,11 @@
   #{$root}__image {
     @include ct-image-fit();
 
-    position: relative;
-    height: $ct-promo-card-image-height-mobile;
-    width: $ct-promo-card-image-width-mobile;
+    & {
+      position: relative;
+      height: $ct-promo-card-image-height-mobile;
+      width: $ct-promo-card-image-width-mobile;
+    }
 
     @include ct-breakpoint(m) {
       height: $ct-promo-card-image-height-desktop;
