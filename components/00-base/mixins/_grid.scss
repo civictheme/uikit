@@ -16,14 +16,18 @@
 // Container class should wrap every row.
 //
 @mixin ct-container($contained: true) {
-  margin: 0 auto;
+  & {
+    margin: 0 auto;
+  }
 
   @if $contained {
     // Support super-narrow screens as well.
     $_width: map.get($ct-grid-offsets, xs) * 2;
 
     // Use vw instead of % so it calculates on viewport and not parent container.
-    max-width: calc(100vw - #{$_width});
+    & {
+      max-width: calc(100vw - #{$_width});
+    }
 
     // Set width for container at each breakpoint accounting for offsets at this
     // breakpoint.
@@ -34,7 +38,9 @@
     }
   }
   @else {
-    width: 100%;
+    & {
+      width: 100%;
+    }
 
     // Reset negative row margins which are used to offset column margins.
     > .row {

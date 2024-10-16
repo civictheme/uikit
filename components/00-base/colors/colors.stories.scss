@@ -34,8 +34,10 @@
 
     @include ct-typography('label-extra-small');
 
-    text-align: center;
-    margin: ct-spacing() 0;
+    & {
+      text-align: center;
+      margin: ct-spacing() 0;
+    }
 
     &::after {
       $content: string.to-upper-case(#{$value});

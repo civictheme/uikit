@@ -8,8 +8,10 @@
   &__title {
     @include ct-typography('heading-5');
 
-    margin-top: 0;
-    margin-bottom: ct-spacing(2);
+    & {
+      margin-top: 0;
+      margin-bottom: ct-spacing(2);
+    }
   }
 
   @for $i from 0 through 10 {
@@ -41,13 +43,15 @@
     .ct-menu__item__link {
       @include ct-typography('text-regular');
 
-      display: block;
-      box-sizing: border-box;
-      position: relative;
-      padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
-      border-bottom-width: ct-particle(0.125);
-      border-bottom-style: solid;
-      text-decoration: none;
+      & {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
+        border-bottom-width: ct-particle(0.125);
+        border-bottom-style: solid;
+        text-decoration: none;
+      }
 
       &:first-child {
         border-top-width: ct-particle(0.125);

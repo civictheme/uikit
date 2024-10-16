@@ -6,7 +6,9 @@
 // Set link colors.
 //
 @mixin ct-link-colors($normal, $hover: $normal, $visited: $normal, $active: $normal, $focus: false) {
-  color: $normal;
+  & {
+    color: $normal;
+  }
 
   @if $hover != false {
     &:hover,
@@ -71,11 +73,13 @@
 // Add text decoration to a link.
 //
 @mixin ct-link-decoration($underline: false, $underline-hover: true, $underline-active: true, $underline-focus: true) {
-  @if $underline {
-    text-decoration: underline;
-  }
-  @else {
-    text-decoration: none;
+  & {
+    @if $underline {
+      text-decoration: underline;
+    }
+    @else {
+      text-decoration: none;
+    }
   }
 
   &:hover {

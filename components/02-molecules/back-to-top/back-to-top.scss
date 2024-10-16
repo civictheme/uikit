@@ -7,9 +7,11 @@
 
   @include ct-print-hide();
 
-  position: fixed;
-  right: $ct-back-to-top-space-right;
-  bottom: $ct-back-to-top-space-bottom;
+  & {
+    position: fixed;
+    right: $ct-back-to-top-space-right;
+    bottom: $ct-back-to-top-space-bottom;
+  }
 
   #{$root}__button {
     &,

@@ -19,7 +19,9 @@
     $box-shadow: string.unquote($box-shadow);
   }
 
-  box-shadow: $box-shadow;
+  & {
+    box-shadow: $box-shadow;
+  }
 }
 
 @mixin ct-elevation-interaction() {

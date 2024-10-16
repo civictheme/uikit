@@ -7,14 +7,16 @@
 
   @include ct-typography('label-regular');
 
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  border-top-width: ct-particle(0.125);
-  border-top-style: solid;
-  padding: ct-spacing(3);
+  & {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    border-top-width: ct-particle(0.125);
+    border-top-style: solid;
+    padding: ct-spacing(3);
+  }
 
   @include ct-breakpoint(m) {
     width: 100%;
@@ -92,7 +94,9 @@
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);
 
-    border-top-color: ct-component-var($root, $theme, border-color);
-    border-bottom-color: ct-component-var($root, $theme, border-color);
+    & {
+      border-top-color: ct-component-var($root, $theme, border-color);
+      border-bottom-color: ct-component-var($root, $theme, border-color);
+    }
   }
 }

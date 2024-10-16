@@ -9,14 +9,16 @@
 
   @include ct-elevation-interaction();
 
-  position: relative;
-  border-radius: $ct-navigation-card-border-radius;
-  width: 100%;
+  & {
+    position: relative;
+    border-radius: $ct-navigation-card-border-radius;
+    width: 100%;
 
-  // Prevent image from "spilling" over the border radius.
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+    // Prevent image from "spilling" over the border radius.
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
 
   @container (min-width: #{$ct-navigation-card-orientation-threshold}) {
     flex-direction: row;
@@ -25,9 +27,11 @@
   #{$root}__image {
     @include ct-image-fit-container();
 
-    height: $ct-navigation-card-image-height-mobile;
-    width: auto;
-    min-width: $ct-navigation-card-image-width-mobile;
+    & {
+      height: $ct-navigation-card-image-height-mobile;
+      width: auto;
+      min-width: $ct-navigation-card-image-width-mobile;
+    }
 
     @container (min-width: #{$ct-navigation-card-orientation-threshold}) {
       width: $ct-navigation-card-image-max-width-desktop;

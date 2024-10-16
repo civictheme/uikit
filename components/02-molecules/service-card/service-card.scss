@@ -8,9 +8,11 @@
   @include ct-elevation-interaction();
   @include ct-highlight-stripe-horizontal($ct-service-card-stripe-height, $ct-service-card-border-radius, 0);
 
-  position: relative;
-  border-radius: $ct-service-card-border-radius;
-  width: 100%;
+  & {
+    position: relative;
+    border-radius: $ct-service-card-border-radius;
+    width: 100%;
+  }
 
   #{$root}__content {
     padding: ct-spacing(3);
