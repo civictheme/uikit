@@ -9,19 +9,23 @@
 
   // Make button appear as a "Navigation with Drawer" item.
   // @see navigation.scss
-  display: flex;
-  align-items: center;
+  & {
+    display: flex;
+    align-items: center;
+  }
 
   &__link {
     @include ct-typography('label-regular');
 
-    text-decoration: none;
-    border-bottom: solid ct-particle(0.5);
-    padding-left: ct-spacing(2);
-    padding-right: ct-spacing(2);
-    padding-top: $ct-navigation-drawer-top-offset;
-    padding-bottom: $ct-navigation-drawer-top-offset;
-    text-align: center;
+    & {
+      text-decoration: none;
+      border-bottom: solid ct-particle(0.5);
+      padding-left: ct-spacing(2);
+      padding-right: ct-spacing(2);
+      padding-top: $ct-navigation-drawer-top-offset;
+      padding-bottom: $ct-navigation-drawer-top-offset;
+      text-align: center;
+    }
 
     .ct-button__icon {
       margin-left: ct-spacing(0.5);
@@ -33,7 +37,9 @@
       @include ct-component-property(ct-navigation, $theme, drawer, menu-item, background-color);
       @include ct-component-property(ct-navigation, $theme, drawer, color);
 
-      border-bottom-color: ct-component-var(ct-navigation, $theme, drawer, menu-item, border-color);
+      & {
+        border-bottom-color: ct-component-var(ct-navigation, $theme, drawer, menu-item, border-color);
+      }
 
       &:hover {
         @include ct-component-property(ct-navigation, $theme, drawer, menu-item, hover, background-color);

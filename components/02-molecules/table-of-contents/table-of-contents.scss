@@ -38,8 +38,10 @@
   &__title {
     @include ct-typography('heading-4');
 
-    margin-top: 0;
-    margin-bottom: ct-spacing(3);
+    & {
+      margin-top: 0;
+      margin-bottom: ct-spacing(3);
+    }
   }
 
   &__links {
@@ -51,12 +53,14 @@
   &__link {
     @include ct-typography('label-extra-small');
 
-    display: block;
-    position: relative;
-    padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
-    border: 0;
-    border-style: solid;
-    text-decoration: none;
+    & {
+      display: block;
+      position: relative;
+      padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
+      border: 0;
+      border-style: solid;
+      text-decoration: none;
+    }
 
     &::before {
       content: '';

@@ -12,8 +12,10 @@
     }
   }
 
-  border-top: solid ct-particle(0.125);
-  border-bottom: solid ct-particle(0.125);
+  & {
+    border-top: solid ct-particle(0.125);
+    border-bottom: solid ct-particle(0.125);
+  }
 
   &__wrapper {
     padding: ct-spacing(3) 0;

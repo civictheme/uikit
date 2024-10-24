@@ -9,8 +9,10 @@
   @include ct-link-decoration(false, false, true, false);
   @include ct-disabled();
 
-  padding: ct-spacing(0.375) 0 ct-spacing(0.25);
-  word-break: break-word;
+  & {
+    padding: ct-spacing(0.375) 0 ct-spacing(0.25);
+    word-break: break-word;
+  }
 
   &:focus-visible {
     @include ct-outline();

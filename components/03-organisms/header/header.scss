@@ -55,8 +55,10 @@
   &__content-middle3 {
     @include ct-print-hide();
 
-    height: 100%;
-    position: relative;
+    & {
+      height: 100%;
+      position: relative;
+    }
 
     @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
       position: static;

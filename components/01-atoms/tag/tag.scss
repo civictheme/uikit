@@ -17,7 +17,9 @@
     .ct-icon {
       @include ct-icon-size('small');
 
-      margin-right: ct-spacing(0.25);
+      & {
+        margin-right: ct-spacing(0.25);
+      }
     }
   }
 
@@ -25,7 +27,9 @@
     .ct-icon {
       @include ct-icon-size('small');
 
-      margin-left: ct-spacing(0.25);
+      & {
+        margin-left: ct-spacing(0.25);
+      }
     }
   }
 

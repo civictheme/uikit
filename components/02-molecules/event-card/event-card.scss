@@ -9,12 +9,14 @@
 
   @include ct-elevation-interaction();
 
-  position: relative;
-  border-radius: $ct-event-card-border-radius;
-  width: 100%;
+  & {
+    position: relative;
+    border-radius: $ct-event-card-border-radius;
+    width: 100%;
 
-  // Event image from "spilling" over the border radius.
-  overflow: hidden;
+    // Event image from "spilling" over the border radius.
+    overflow: hidden;
+  }
 
   &:not(#{$root}--with-image) {
     @include ct-highlight-stripe-horizontal($ct-event-card-stripe-height, $ct-event-card-border-radius, 0);
@@ -23,9 +25,11 @@
   #{$root}__image {
     @include ct-image-fit();
 
-    position: relative;
-    height: $ct-event-card-image-height-mobile;
-    width: $ct-event-card-image-width-mobile;
+    & {
+      position: relative;
+      height: $ct-event-card-image-height-mobile;
+      width: $ct-event-card-image-width-mobile;
+    }
 
     @include ct-breakpoint(m) {
       height: $ct-event-card-image-height-desktop;
@@ -52,7 +56,9 @@
   #{$root}__location {
     @include ct-typography('label-regular');
 
-    margin-bottom: ct-spacing(2);
+    & {
+      margin-bottom: ct-spacing(2);
+    }
   }
 
   #{$root}__tags {

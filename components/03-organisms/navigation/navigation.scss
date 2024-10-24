@@ -12,8 +12,10 @@
   #{$root}__title {
     @include ct-typography('heading-5');
 
-    margin-bottom: ct-spacing(2);
-    margin-top: ct-spacing(2);
+    & {
+      margin-bottom: ct-spacing(2);
+      margin-top: ct-spacing(2);
+    }
   }
 
   &#{$root}--none {
@@ -23,9 +25,11 @@
         .ct-menu {
           @include ct-print-hide();
 
-          list-style: none;
-          padding: 0;
-          margin: 0;
+          & {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
         }
 
         .ct-menu__sub-menu {
@@ -59,9 +63,11 @@
         .ct-menu {
           @include ct-print-hide();
 
-          list-style: none;
-          padding: 0;
-          margin: 0;
+          & {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
         }
 
         .ct-menu__sub-menu {
@@ -84,9 +90,11 @@
     #{$root}__items {
       @include ct-print-hide();
 
-      align-items: center;
-      height: 100%;
-      display: none;
+      & {
+        align-items: center;
+        height: 100%;
+        display: none;
+      }
 
       @include ct-breakpoint($ct-navigation-breakpoint) {
         display: flex;
@@ -140,7 +148,9 @@
 
               @include ct-container();
 
-              margin-bottom: ct-spacing(4);
+              & {
+                margin-bottom: ct-spacing(4);
+              }
             }
           }
 
@@ -292,7 +302,9 @@
     #{$root}__items {
       @include ct-print-hide();
 
-      display: none;
+      & {
+        display: none;
+      }
 
       @include ct-breakpoint($ct-navigation-breakpoint) {
         display: flex;

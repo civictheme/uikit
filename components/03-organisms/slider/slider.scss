@@ -46,7 +46,9 @@
   #{$root}__slides {
     @include ct-elevation(3);
 
-    border-radius: $ct-slider-border-radius;
+    & {
+      border-radius: $ct-slider-border-radius;
+    }
   }
 
   #{$root}__controls {
