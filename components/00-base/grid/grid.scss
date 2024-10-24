@@ -18,6 +18,17 @@
 
   @include ct-row($ct-grid-gutters);
 
+  &#{$root}--no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
   &#{$root}--reverse {
     flex-direction: row-reverse;
   }
@@ -104,6 +115,8 @@ ul.row {
 // Utilities for fixed and auto columns.
 .col,
 [class*='col-'] {
+  box-sizing: border-box;
+
   &.col--reverse {
     display: flex;
     flex-direction: column-reverse;

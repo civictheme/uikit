@@ -10,6 +10,7 @@
  * - value: [string] DOM value.
  * - label: [string] Label content.
  * - is_checked: [boolean] Denote if the control is checked.
+ * - is_required: [boolean] Denote if the control is required.
  * - is_invalid: [boolean] Denote if the control is invalid.
  * - is_disabled: [boolean] Denote if the control is disabled.
  * - attributes: [string] Additional attributes.
@@ -29,6 +30,7 @@
     value="{{ value }}"
     id="{{ id }}"
     {% if is_checked %}checked{% endif %}
+    {% if is_required %}required{% endif %}
     {% if is_disabled %}disabled{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   />

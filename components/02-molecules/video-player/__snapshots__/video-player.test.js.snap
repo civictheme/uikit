@@ -213,19 +213,20 @@ exports[`Video Component renders with transcript link 1`] = `
         
             
 
-
-  
   
         <a
-          aria-label="Opens in a new tab"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--small   "
           data-component-name="button"
           href="transcript.html"
           role="button"
           target="_blank"
         >
-                
           
+
+    
+              
+      
+        
 
 
                                     
@@ -248,16 +249,14 @@ exports[`Video Component renders with transcript link 1`] = `
           </svg>
           
 
-      View Transcript
-    
+          View Transcript
+      
       
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
-          
-  
         </a>
         
           

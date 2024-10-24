@@ -15,7 +15,8 @@
  * Variables:
  * - theme: [string] Theme: light, dark. Optional.
  * - type: [string] Type defined by a control type. Required.
- * - label: [string] Label. Optional.
+ * - title: [string] Title. Optional.
+ * - title_display: [string] Title display: visible, invisible, hidden. Optional.
  * - description: [string] Description. Optional.
  * - name: [string] DOM name. Required, propagated.
  * - value: [string] DOM value. Optional, propagated.
@@ -42,6 +43,7 @@
 #}
 
 {% set type = type is defined ? type : 'hidden' %}
+{% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
@@ -66,7 +68,7 @@
 {% for c in control %}
 	{% set c = {
 		theme: c.theme is defined ? c.theme : theme,
-		label: c.label is defined ? c.label : label,
+		label: c.label is defined ? c.label : title,
 		name: c.name is defined ? c.name : name,
 		value: c.value is defined ? c.value : value,
 		id: c.id is defined ? c.id : id,
@@ -76,6 +78,7 @@
 		is_required: is_required,
 		is_invalid: is_invalid,
 		is_disabled: is_disabled,
+		is_checked: c.is_checked is defined ? c.is_checked : false,
 		attributes: c.attributes is defined ? c.attributes : '',
 		modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
 	} %}
@@ -85,13 +88,13 @@
 
 {% if control[0].name is defined %}
 	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
-		{% if label is not empty and type != 'hidden' %}
+		{% if title is not empty and title_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,
-				content: label,
+				content: title,
 				is_required: is_required,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
-				modifier_class: 'ct-field__label',
+				modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
 			} only %}
 		{% endif %}
 
@@ -117,7 +120,7 @@
 			{% elseif type == 'checkbox' or type == 'radio' %}
 
 				{% set list_items = [] %}
-				{% for key, item in control %}
+				{% for item in control %}
 					{% set list_item %}
 						{% if type == 'checkbox' %}
 							{% include '@atoms/checkbox/checkbox.twig' with item only %}
@@ -142,7 +145,7 @@
 				{% include '@atoms/field-message/field-message.twig' with {
 					theme: theme,
 					type: is_invalid ? 'error' : 'information',
-					content: message ? message : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					content: message ? message : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
 				} only %}

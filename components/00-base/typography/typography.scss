@@ -19,8 +19,10 @@
 p {
   @include ct-typography('text-regular');
 
-  margin-top: $ct-basic-content-vertical-spacing;
-  margin-bottom: $ct-basic-content-vertical-spacing;
+  & {
+    margin-top: $ct-basic-content-vertical-spacing;
+    margin-bottom: $ct-basic-content-vertical-spacing;
+  }
 
   &:first-child {
     margin-top: 0;
@@ -34,11 +36,13 @@ p {
 blockquote {
   @include ct-typography('quote');
 
-  position: relative;
-  margin: 0;
-  margin-top: $ct-basic-content-vertical-spacing;
-  margin-bottom: $ct-basic-content-vertical-spacing;
-  padding: ct-spacing(2) ct-spacing(3);
+  & {
+    position: relative;
+    margin: 0;
+    margin-top: $ct-basic-content-vertical-spacing;
+    margin-bottom: $ct-basic-content-vertical-spacing;
+    padding: ct-spacing(2) ct-spacing(3);
+  }
 
   &::before {
     content: '';

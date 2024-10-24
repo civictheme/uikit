@@ -263,12 +263,12 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
     />
     
 
-      
+            
     <strong>
       Banner Content
     </strong>
     
-  
+      
             
     <div
       class="container"
@@ -578,8 +578,6 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -587,8 +585,13 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -611,7 +614,6 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
         </svg>
         
 
-      
   
       </a>
       
@@ -659,8 +661,13 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -742,8 +749,6 @@ exports[`Page Component renders content block with permutations: {
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -751,8 +756,13 @@ exports[`Page Component renders content block with permutations: {
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -775,7 +785,6 @@ exports[`Page Component renders content block with permutations: {
         </svg>
         
 
-      
   
       </a>
       
@@ -823,8 +832,13 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -892,8 +906,6 @@ exports[`Page Component renders content block with permutations: {
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -901,8 +913,13 @@ exports[`Page Component renders content block with permutations: {
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -925,7 +942,6 @@ exports[`Page Component renders content block with permutations: {
         </svg>
         
 
-      
   
       </a>
       
@@ -973,8 +989,13 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -1042,8 +1063,6 @@ exports[`Page Component renders content block with permutations: {
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -1051,8 +1070,13 @@ exports[`Page Component renders content block with permutations: {
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -1075,7 +1099,6 @@ exports[`Page Component renders content block with permutations: {
         </svg>
         
 
-      
   
       </a>
       
@@ -1123,8 +1146,13 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -1141,7 +1169,7 @@ exports[`Page Component renders content block with permutations: {
 							
 		
       <div
-        class="ct-layout__inner container"
+        class="ct-layout__inner container-fluid"
       >
         
 												
@@ -1178,8 +1206,6 @@ exports[`Page Component renders content block with permutations: {
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -1187,8 +1213,13 @@ exports[`Page Component renders content block with permutations: {
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -1211,7 +1242,6 @@ exports[`Page Component renders content block with permutations: {
         </svg>
         
 
-      
   
       </a>
       
@@ -1252,8 +1282,13 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -1277,8 +1312,6 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -1286,8 +1319,13 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -1310,7 +1348,6 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
         </svg>
         
 
-      
   
       </a>
       
@@ -1350,8 +1387,13 @@ exports[`Page Component renders with default values 1`] = `
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -1375,8 +1417,6 @@ exports[`Page Component renders with default values 1`] = `
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -1384,8 +1424,13 @@ exports[`Page Component renders with default values 1`] = `
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -1408,7 +1453,6 @@ exports[`Page Component renders with default values 1`] = `
         </svg>
         
 
-      
   
       </a>
       
@@ -1449,8 +1493,13 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
     />
     
 
+            
+    <a
+      id="main-content"
+      tabindex="-1"
+    />
+    
       
-  
   
       
 
@@ -1474,8 +1523,6 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
       
   
 
-
-
   
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
@@ -1483,8 +1530,13 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
         href="#top"
         role="button"
       >
-              
-          
+                  
+        <span
+          class="ct-visually-hidden"
+        >
+          Return focus to the top of the page
+        </span>
+        
 
 
                                     
@@ -1507,7 +1559,6 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
         </svg>
         
 
-      
   
       </a>
       

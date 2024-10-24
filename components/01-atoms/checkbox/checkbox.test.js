@@ -24,6 +24,7 @@ describe('Checkbox Component', () => {
       value: 'test-value',
       label: 'Test Label',
       is_checked: true,
+      is_required: true,
       is_invalid: true,
       is_disabled: true,
       attributes: 'data-test="true"',
@@ -35,6 +36,7 @@ describe('Checkbox Component', () => {
     expect(c.querySelector('.ct-checkbox').getAttribute('name')).toBe('test-checkbox');
     expect(c.querySelector('.ct-checkbox').getAttribute('id')).toBe('test-checkbox-id');
     expect(c.querySelector('.ct-checkbox').getAttribute('value')).toBe('test-value');
+    expect(c.querySelector('.ct-checkbox').required).toBe(true);
     expect(c.querySelector('.ct-checkbox').checked).toBe(true);
     expect(c.querySelector('.ct-checkbox').disabled).toBe(true);
     expect(c.querySelector('.ct-checkbox').getAttribute('data-test')).toBe('true');

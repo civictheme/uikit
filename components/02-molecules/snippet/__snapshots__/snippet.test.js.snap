@@ -98,13 +98,13 @@ exports[`Snippet Component renders with link and tags 1`] = `
 
   
   
-  
-  
         <a
           class="ct-link ct-theme-light     ct-snippet__title__link"
           href="https://example.com/read-more"
         >
-              Snippet Title  
+          
+
+    Snippet Title  
         </a>
         
                           
@@ -227,8 +227,6 @@ exports[`Snippet Component renders with optional attributes 1`] = `
 
 
   
-        
-  
   
         <a
           aria-label="Opens in a new tab"
@@ -236,14 +234,14 @@ exports[`Snippet Component renders with optional attributes 1`] = `
           href="https://example.com/read-more"
           target="_blank"
         >
-              Snippet Title        
+          
+
+    Snippet Title  
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
-          
-    
         </a>
         
                           

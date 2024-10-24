@@ -12,10 +12,12 @@
   #{$root}__content {
     @include ct-elevation(4);
 
-    position: absolute;
-    z-index: $ct-popover-z-index;
-    border-radius: $ct-popover-description-border-radius;
-    margin-top: $ct-popover-top-offset;
+    & {
+      position: absolute;
+      z-index: $ct-popover-z-index;
+      border-radius: $ct-popover-description-border-radius;
+      margin-top: $ct-popover-top-offset;
+    }
   }
 
   #{$root}__content__inner {

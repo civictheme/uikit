@@ -10,7 +10,7 @@ export const themes = () => ({
   dark: 'Dark',
 });
 
-export const placeholder = (content = 'Content placeholder', words = 0, cssClass = 'story-placeholder') => `<div class="${cssClass}">${content}${words > 0 ? ` ${randomSentence(words)}` : ''}</div>`;
+export const placeholder = (content = 'Content placeholder', words = 0, cssClass = 'story-placeholder') => `<div class="${cssClass}" contenteditable="true">${content}${words > 0 ? ` ${randomSentence(words)}` : ''}</div>`;
 
 export const code = (content) => `<code>${content}</code>`;
 
@@ -53,7 +53,7 @@ export const generateItems = (count, content) => {
   const items = [];
   for (let i = 1; i <= count; i++) {
     if (typeof content === 'function') {
-      items.push(content(i));
+      items.push(content(i, count));
     } else {
       items.push(content);
     }

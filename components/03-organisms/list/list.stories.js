@@ -163,7 +163,7 @@ export const List = (parentKnobs = {}) => {
         range: true,
         min: 0,
         max: 48,
-        step: 6,
+        step: 1,
       },
       parentKnobs.number_of_results,
       itemsKnobTab,

@@ -66,7 +66,7 @@ describe('Link Component', () => {
     expect(c.querySelector('.ct-link').getAttribute('target')).toEqual('_blank');
     expect(c.querySelector('.ct-link').getAttribute('aria-label')).toEqual('Opens in a new tab');
     expect(c.querySelector('.ct-link').getAttribute('data-test')).toEqual('true');
-    expect(c.querySelectorAll('.ct-link .ct-link__icon')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-link .ct-link__icon')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });

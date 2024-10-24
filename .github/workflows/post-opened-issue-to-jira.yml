@@ -14,7 +14,7 @@ jobs:
         run: echo "${{ github.event.issue.body }}" > ${{ runner.temp }}/_github_workflow/issue.md
 
       - name: Convert GitHub markdown to Jira markup
-        uses: docker://pandoc/core:3.2
+        uses: docker://pandoc/core:3.5
         with:
           args: --from gfm --to jira --output=/github/workflow/issue.jira /github/workflow/issue.md
 

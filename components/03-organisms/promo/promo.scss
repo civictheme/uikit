@@ -6,12 +6,16 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-promo-space-horizontal;
-    padding-right: $ct-promo-space-horizontal;
+    @include ct-breakpoint(m) {
+      padding-left: $ct-promo-space-horizontal;
+      padding-right: $ct-promo-space-horizontal;
+    }
   }
 
-  border-top: solid ct-particle(0.125);
-  border-bottom: solid ct-particle(0.125);
+  & {
+    border-top: solid ct-particle(0.125);
+    border-bottom: solid ct-particle(0.125);
+  }
 
   &__wrapper {
     padding: ct-spacing(3) 0;

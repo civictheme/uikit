@@ -18,16 +18,45 @@
   @include ct-form-control-disabled($ct-input-disabled-opacity);
   @include ct-typography('label-small');
 
-  border-radius: $ct-input-border-radius;
-  border-style: solid;
-  border-width: $_border-width;
-  padding: $_vertical_spacing $_horizontal_spacing;
-  width: 100%;
-  min-height: $_label-line_height + $_vertical_spacing * 2;
+  & {
+    border-radius: $ct-input-border-radius;
+    border-style: solid;
+    border-width: $_border-width;
+    padding: $_vertical_spacing $_horizontal_spacing;
+    width: 100%;
+    min-height: $_label-line_height + $_vertical_spacing * 2;
+  }
 
   &[type='color'] {
     padding: math.div($_vertical_spacing, 2) math.div($_horizontal_spacing, 2);
     width: $_label-line_height + $_vertical_spacing * 2;
+  }
+
+  &[type='button'],
+  &[type='reset'],
+  &[type='submit'] {
+    appearance: button;
+  }
+
+  &[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      height: auto;
+    }
+  }
+
+  &[type='search'] {
+    appearance: textfield;
+    outline-offset: -2px;
+
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
+  }
+
+  &::-webkit-file-upload-button {
+    appearance: button;
+    font: inherit;
   }
 
   &:focus-visible {

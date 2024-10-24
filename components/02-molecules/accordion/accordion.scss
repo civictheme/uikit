@@ -6,8 +6,10 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-accordion-space-horizontal;
-    padding-right: $ct-accordion-space-horizontal;
+    @include ct-breakpoint(m) {
+      padding-left: $ct-accordion-space-horizontal;
+      padding-right: $ct-accordion-space-horizontal;
+    }
   }
 
   #{$root}__content {
@@ -47,6 +49,7 @@
   #{$root}__panels__panel__header__button {
     @include ct-typography('heading-6');
 
+    appearance: button;
     border-radius: $ct-accordion-button-border-radius;
     border: none;
     cursor: pointer;

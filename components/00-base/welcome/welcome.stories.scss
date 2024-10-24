@@ -16,15 +16,15 @@
   align-items: center;
 
   .ct-logo {
-    margin-bottom: ct-spacing(4);
+    margin-bottom: 2em;
 
     .ct-logo__image {
-      max-height: ct-particle(10) !important;
+      max-height: 5em;
     }
   }
 
   .ct-paragraph {
-    margin-top: ct-spacing(4);
-    max-width: ct-particle(100);
+    margin-top: 2em;
+    max-width: 50em;
   }
 }

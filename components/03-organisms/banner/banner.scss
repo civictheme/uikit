@@ -14,8 +14,10 @@
   #{$root}__inner {
     @include ct-background();
 
-    padding-top: ct-spacing(3);
-    padding-bottom: ct-spacing(10);
+    & {
+      padding-top: ct-spacing(3);
+      padding-bottom: ct-spacing(10);
+    }
 
     @include ct-print() {
       padding-top: ct-spacing(2);
@@ -30,8 +32,11 @@
   #{$root}__featured-image__wrapper {
     @include ct-image-fit();
 
-    width: $ct-banner-featured-image-width;
-    display: none;
+    & {
+      box-sizing: border-box;
+      width: $ct-banner-featured-image-width;
+      display: none;
+    }
 
     @include ct-breakpoint(m) {
       display: block;

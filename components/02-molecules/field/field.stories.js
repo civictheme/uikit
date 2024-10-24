@@ -1,4 +1,4 @@
-import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
+import { generateItems, knobBoolean, knobNumber, knobRadios, knobText, KnobValues, randomBool, randomId, randomLink, randomName, randomSentence, shouldRender } from '../../00-base/storybook/storybook.utils';
 import CivicThemeField from './field.twig';
 import CivicThemeFieldset from '../../01-atoms/fieldset/fieldset.twig';
 import { Select } from '../../01-atoms/select/select.stories';
@@ -58,7 +58,18 @@ export const Field = (parentKnobs = {}) => {
       parentKnobs.type,
       parentKnobs.knobTab,
     ),
-    label: knobText('Label', 'Field label', parentKnobs.label, parentKnobs.knobTab),
+    title: knobText('Title', 'Field title', parentKnobs.title, parentKnobs.knobTab),
+    title_display: knobRadios(
+      'Title display',
+      {
+        Visible: 'visible',
+        Invisible: 'invisible',
+        Hidden: 'hidden',
+      },
+      'visible',
+      parentKnobs.title_display,
+      parentKnobs.knobTab,
+    ),
     description: knobText('Description', `Description content sample. ${randomSentence(50)}`, parentKnobs.description, parentKnobs.knobTab),
     message: knobText('Message', `Message content sample. ${randomSentence(50)}`, parentKnobs.message, parentKnobs.knobTab),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
@@ -75,16 +86,16 @@ export const Field = (parentKnobs = {}) => {
       parentKnobs.knobTab,
     ),
     is_inline: knobBoolean('Inline (for group controls)', false, parentKnobs.is_inline, parentKnobs.knobTab),
-    labels_width: knobRadios(
-      'Fixed label width',
+    title_width: knobRadios(
+      'Fixed title width',
       {
         None: 'none',
         '15 particles': '15',
         '25 particles': '25',
       },
       'none',
-      parentKnobs.labels_width,
-      parentKnobs.labels_width,
+      parentKnobs.title_width,
+      parentKnobs.knobTab,
     ),
     modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
@@ -98,8 +109,8 @@ export const Field = (parentKnobs = {}) => {
     knobs.message += ` ${randomLink()}`;
   }
 
-  if (knobs.labels_width !== 'none') {
-    knobs.modifier_class += ` ct-field--with-fixed-labels--${knobs.labels_width}`;
+  if (knobs.title_width !== 'none') {
+    knobs.modifier_class += ` ct-field--with-fixed-title--${knobs.title_width}`;
   }
 
   let controlKnobs = {};
@@ -134,12 +145,14 @@ export const Field = (parentKnobs = {}) => {
         },
         parentKnobs.items_count,
         parentKnobs.knobTab,
-      ), (idx) => ({
+      ), (idx, count) => ({
         ...Radio(new KnobValues({ theme: knobs.theme }, false)),
         ...{
           id: randomId(`${name}-${idx}`),
           // All radio in a group should have the same name.
           name,
+          // Make the last radio checked by default.
+          is_checked: idx === count - 1,
         },
       }));
       break;
@@ -160,6 +173,7 @@ export const Field = (parentKnobs = {}) => {
         ...Checkbox(new KnobValues({ theme: knobs.theme }, false)),
         ...{
           id: randomId(`${name}-${idx}`),
+          is_checked: randomBool(0.6),
         },
       }));
       break;
@@ -199,7 +213,7 @@ export const FieldExamples = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
-    labels_width: knobRadios(
+    title_width: knobRadios(
       'Fixed label width',
       {
         None: 'none',
@@ -207,8 +221,8 @@ export const FieldExamples = (parentKnobs = {}) => {
         '25 particles': '25',
       },
       'none',
-      parentKnobs.labels_width,
-      parentKnobs.labels_width,
+      parentKnobs.title_width,
+      parentKnobs.title_width,
     ),
     is_required: knobBoolean('Required', false, parentKnobs.is_required, parentKnobs.knobTab),
     is_invalid: knobBoolean('Has error', false, parentKnobs.is_invalid, parentKnobs.knobTab),
@@ -219,8 +233,8 @@ export const FieldExamples = (parentKnobs = {}) => {
     attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
   };
 
-  if (knobs.labels_width !== 'none') {
-    knobs.modifier_class += ` ct-field--with-fixed-labels--${knobs.labels_width}`;
+  if (knobs.title_width !== 'none') {
+    knobs.modifier_class += ` ct-field--with-fixed-title--${knobs.title_width}`;
   }
 
   const fieldsets = [
@@ -245,7 +259,7 @@ export const FieldExamples = (parentKnobs = {}) => {
         theme: knobs.theme,
         type,
         orientation: 'horizontal',
-        labels_width: knobs.labels_width,
+        title_width: knobs.title_width,
         description: knobs.with_description,
         message: knobs.with_message,
         is_required: knobs.is_required,
