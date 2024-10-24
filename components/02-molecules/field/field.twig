@@ -39,6 +39,8 @@
  *   - modifier_class: [string] Control additional classes. Optional.
  * - attributes: [string] Additional attributes. Optional.
  * - modifier_class: [string] Additional classes. Optional.
+ * - prefix: [string] The content to add before the field.
+ * - suffix: [string] The content to add after the field.
  */
 #}
 
@@ -108,6 +110,10 @@
 				} only %}
 			{% endif %}
 
+			{% if prefix is not empty %}
+				<div class="ct-field__prefix">{{- prefix|raw -}}</div>
+			{% endif %}
+
 			{% if type == 'textfield' %}
 				{% include '@atoms/textfield/textfield.twig' with control[0] only %}
 
@@ -139,6 +145,10 @@
 				{% set control0 = control[0] %}
 				{% set control0 = control0|merge({'type': type}) %}
 				{% include '@atoms/input/input.twig' with control0 only %}
+			{% endif %}
+
+			{% if suffix is not empty %}
+				<div class="ct-field__suffix">{{- suffix|raw -}}</div>
 			{% endif %}
 
 			{% if (message or is_invalid) and type != 'hidden' %}
