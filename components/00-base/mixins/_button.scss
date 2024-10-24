@@ -217,13 +217,17 @@
     @error '"#{$type}" is not one of allowed #{$types}.';
   }
 
-  display: inline-block;
-  text-decoration: none;
-  outline-offset: $ct-button-outline-offset;
-  outline-width: $ct-button-outline-width;
+  & {
+    display: inline-block;
+    text-decoration: none;
+    outline-offset: $ct-button-outline-offset;
+    outline-width: $ct-button-outline-width;
+  }
 
   @if $ct-animation-enabled {
-    transition: all $ct-button-animation-duration ease;
+    & {
+      transition: all $ct-button-animation-duration ease;
+    }
   }
 
   &:focus-visible,
@@ -294,23 +298,31 @@
     @include ct-typography('label-large');
 
     @if $with-padding {
-      padding: ct-spacing(2) ct-spacing(6);
+      & {
+        padding: ct-spacing(2) ct-spacing(6);
+      }
     }
   }
   @else if $size == 'regular' {
     @include ct-typography('label-regular');
 
     @if $with-padding {
-      padding: ct-spacing(1.75) ct-spacing(5);
+      & {
+        padding: ct-spacing(1.75) ct-spacing(5);
+      }
     }
   }
   @else if $size == 'small' {
     @include ct-typography('label-extra-small');
 
-    border-width: math.div($ct-button-border-width, 2);
+    & {
+      border-width: math.div($ct-button-border-width, 2);
+    }
 
     @if $with-padding {
-      padding: ct-spacing() ct-spacing(4);
+      & {
+        padding: ct-spacing() ct-spacing(4);
+      }
     }
   }
   @else {
