@@ -93,7 +93,7 @@
 		{% if title is not empty and title_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,
-				content: title,
+				content: label is not empty ? label : title,
 				is_required: is_required,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
 				modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
