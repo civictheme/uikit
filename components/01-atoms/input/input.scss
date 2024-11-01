@@ -24,7 +24,6 @@
     border-width: $_border-width;
     padding: $_vertical_spacing $_horizontal_spacing;
     width: 100%;
-    min-height: $_label-line_height + $_vertical_spacing * 2;
   }
 
   &[type='color'] {
