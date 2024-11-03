@@ -28,7 +28,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
     
     
     
-    <div
+    <nav
       class="ct-navigation__items"
     >
       
@@ -213,7 +213,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
       
       
     
-    </div>
+    </nav>
     
   
   </div>
@@ -244,7 +244,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
     
           
     
-    <div
+    <nav
       class="ct-navigation__items"
     >
       
@@ -383,7 +383,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
       
       
     
-    </div>
+    </nav>
     
   
   </div>
@@ -404,7 +404,7 @@ exports[`Navigation Component renders with only required attributes 1`] = `
     
     
     
-    <div
+    <nav
       class="ct-navigation__items"
     >
       
@@ -456,7 +456,7 @@ exports[`Navigation Component renders with only required attributes 1`] = `
       
       
     
-    </div>
+    </nav>
     
   
   </div>
@@ -477,7 +477,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
     
     
     
-    <div
+    <nav
       class="ct-navigation__items"
     >
       
@@ -558,7 +558,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
       
       
     
-    </div>
+    </nav>
     
   
   </div>
