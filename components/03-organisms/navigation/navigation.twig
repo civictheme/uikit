@@ -5,6 +5,7 @@
   *
   * Variables:
   * - theme: [string] Theme: light, dark.
+  * - name: [string] Navigation name for <nav> element.
   * - items: [array] Array of menu items.
   * - title: [string] Navigation title.
   * - type: [string] One of: none, inline, dropdown, drawer.
@@ -67,12 +68,15 @@
       {% endblock %}
     {% endif %}
 
-    <div class="ct-navigation__items">
+    <nav
+      class="ct-navigation__items"
+      {% if name is not empty %}aria-label="{{ name }}"{% endif %}
+    >
       {% include '@base/menu/menu.twig' with {
         theme: theme,
         items: items,
         modifier_class: 'ct-navigation__menu',
       } only %}
-    </div>
+    </nav>
   </div>
 {% endif %}
