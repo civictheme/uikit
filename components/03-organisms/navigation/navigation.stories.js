@@ -21,6 +21,7 @@ export const Navigation = (parentKnobs = {}) => {
       parentKnobs.theme,
       parentKnobs.knobTab,
     ),
+    name: knobText('Name', 'Primary', parentKnobs.name, parentKnobs.knobTab),
     title: knobText('Title', 'Navigation title', parentKnobs.title, parentKnobs.knobTab),
     type: knobRadios(
       'Type',
