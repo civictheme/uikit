@@ -104,6 +104,7 @@ function CivicThemeCollapsible(el) {
 
   // Mark as initialized.
   this.el.setAttribute('data-collapsible', 'true');
+  this.trigger.setAttribute('aria-expanded', !this.collapsed);
 }
 
 /**
