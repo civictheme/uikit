@@ -132,6 +132,7 @@
 
     @include ct-breakpoint(m) {
       @include ct-image-container-square();
+
       padding: 0;
       height: 100%;
     }
