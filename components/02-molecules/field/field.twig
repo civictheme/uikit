@@ -39,6 +39,8 @@
  *   - modifier_class: [string] Control additional classes. Optional.
  * - attributes: [string] Additional attributes. Optional.
  * - modifier_class: [string] Additional classes. Optional.
+ * - prefix: [string] The content to add before the field.
+ * - suffix: [string] The content to add after the field.
  */
 #}
 
@@ -75,9 +77,9 @@
 		options: c.options is defined ? c.options : options is defined ? options : [],
 		is_multiple: c.is_multiple is defined ? c.is_multiple : is_multiple is defined ? is_multiple : false,
 		placeholder: placeholder is defined ? placeholder : '',
-		is_required: is_required,
+		is_required: c.is_required is defined ? c.is_required : is_required,
 		is_invalid: is_invalid,
-		is_disabled: is_disabled,
+		is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
 		is_checked: c.is_checked is defined ? c.is_checked : false,
 		attributes: c.attributes is defined ? c.attributes : '',
 		modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
@@ -91,7 +93,7 @@
 		{% if title is not empty and title_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,
-				content: title,
+				content: label is not empty ? label : title,
 				is_required: is_required,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
 				modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
@@ -106,6 +108,10 @@
 					allow_html: true,
 					modifier_class: 'ct-field__description',
 				} only %}
+			{% endif %}
+
+			{% if prefix is not empty %}
+				<div class="ct-field__prefix">{{- prefix|raw -}}</div>
 			{% endif %}
 
 			{% if type == 'textfield' %}
@@ -139,6 +145,10 @@
 				{% set control0 = control[0] %}
 				{% set control0 = control0|merge({'type': type}) %}
 				{% include '@atoms/input/input.twig' with control0 only %}
+			{% endif %}
+
+			{% if suffix is not empty %}
+				<div class="ct-field__suffix">{{- suffix|raw -}}</div>
 			{% endif %}
 
 			{% if (message or is_invalid) and type != 'hidden' %}

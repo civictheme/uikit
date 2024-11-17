@@ -53,12 +53,11 @@ function CivicThemeCollapsible(el) {
   this.panel.addEventListener('click', (e) => e.stopPropagation());
   this.panel.addEventListener('focusout', this.focusoutEvent.bind(this));
 
-  // Init focusable elements.
-  this.initFocusableElements(this.panel);
-
   // Collapse if was set as initially collapsed.
   if (this.collapsed) {
     this.collapse();
+    // Init focusable elements for data-collapsible-collapsed only.
+    this.initFocusableElements(this.panel);
   }
 
   this.el.addEventListener('ct.collapsible.collapse', (evt) => {
@@ -104,6 +103,7 @@ function CivicThemeCollapsible(el) {
 
   // Mark as initialized.
   this.el.setAttribute('data-collapsible', 'true');
+  this.trigger.setAttribute('aria-expanded', !this.collapsed);
 }
 
 /**

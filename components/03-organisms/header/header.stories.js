@@ -38,6 +38,7 @@ export const Header = (parentKnobs = {}) => {
   if (knobs.show_secondary_navigation) {
     contentTop3 += Navigation(new KnobValues({
       theme,
+      name: 'secondary',
       title: null,
       type: 'dropdown',
       modifier_class: 'ct-flex-justify-content-end',
@@ -48,6 +49,7 @@ export const Header = (parentKnobs = {}) => {
   if (knobs.show_primary_navigation) {
     contentMiddle3Content += Navigation(new KnobValues({
       theme,
+      name: 'primary',
       title: null,
       type: 'drawer',
       modifier_class: 'ct-flex-justify-content-end',
