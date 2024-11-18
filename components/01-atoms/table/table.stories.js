@@ -87,6 +87,7 @@ export const Table = (parentKnobs = {}) => {
     rows: knobBoolean('With rows', true, parentKnobs.with_rows, parentKnobs.knobTab) ? true : null,
     footer: knobBoolean('With footer', true, parentKnobs.with_footer, parentKnobs.knobTab) ? footer : [],
     is_striped: knobBoolean('Striped', true, parentKnobs.is_striped, parentKnobs.knobTab),
+    is_data_table: knobBoolean('Data table', false, parentKnobs.is_data_table, parentKnobs.knobTab),
     caption: knobText('Caption content', 'Table caption Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.', parentKnobs.caption, parentKnobs.knobTab),
     caption_position: knobRadios(
       'Caption position',
