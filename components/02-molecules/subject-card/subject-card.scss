@@ -24,6 +24,7 @@
       min-height: $ct-subject-card-image-height-mobile;
       min-width: $ct-subject-card-image-width-mobile;
       padding: ct-spacing(2);
+      box-sizing: border-box;
     }
 
     @include ct-breakpoint(m) {
