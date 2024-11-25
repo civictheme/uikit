@@ -117,24 +117,26 @@
     }
   }
 
-  #{$root}__inner {
-    padding: ct-spacing(4);
+  #{$root}__image {
+    width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
 
     @include ct-breakpoint(m) {
-      padding: ct-particle(10) 0;
+      width: ct-particle(60);
     }
-  }
-
-  #{$root}__image {
-    height: $ct-slide-mobile-height;
 
     @include ct-image-fit();
+  }
+
+  #{$root}__wrapper {
+    flex-grow: 1;
+    padding: ct-spacing(4) ct-spacing(3);
+    display: flex;
+    align-items: center;
 
     @include ct-breakpoint(m) {
-      @include ct-image-container-square();
-
-      padding: 0;
-      height: 100%;
+      padding: (ct-spacing() * 13) ct-spacing(10);
     }
   }
 
