@@ -117,6 +117,12 @@
     }
   }
 
+  #{$root}__row {
+    @include ct-breakpoint(m) {
+      width: 100%;
+    }
+  }
+
   #{$root}__inner {
     padding: ct-spacing(4);
 
