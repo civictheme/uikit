@@ -1,25 +1,25 @@
-import AboutCivicThemeStoryTemplate from './about-civictheme.stories.twig';
+import Component from './about-civictheme.stories.twig';
+import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
-export default {
-  title: 'About CivicTheme',
+const meta = {
+  component: Component,
   parameters: {
     layout: 'fullscreen',
-    options: { showPanel: false },
-    showPanel: false,
   },
-};
-
-export const AboutCivicTheme = () => AboutCivicThemeStoryTemplate({
-  logos: {
-    primary: {
-      mobile: {
-        url: LOGOS.light.civictheme.mobile,
-      },
-      desktop: {
-        url: LOGOS.light.civictheme.desktop,
+  args: {
+    logos: {
+      primary: {
+        mobile: {
+          url: Constants.LOGOS.light.civictheme.mobile,
+        },
+        desktop: {
+          url: Constants.LOGOS.light.civictheme.desktop,
+        },
       },
     },
   },
-});
+};
 
-AboutCivicTheme.storyName = 'About CivicTheme';
+export default meta;
+
+export const AboutCivicTheme = {};

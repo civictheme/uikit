@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { decoratorDocs } from './storybook.docs.utils';
 
 describe('decoratorDocs', () => {
