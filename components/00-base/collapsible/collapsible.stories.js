@@ -1,12 +1,13 @@
-import CollapsibleStoryTemplate from './collapsible.stories.twig';
-import './collapsible';
+import Component from './collapsible.stories.twig';
 
-export default {
-  title: 'Base/Utilities/Collapsible',
+const meta = {
+  component: Component,
   parameters: {
     layout: 'centered',
     storyLayoutSize: 'medium',
   },
 };
 
-export const Collapsible = CollapsibleStoryTemplate;
+export default meta;
+
+export const Collapsible = {};
