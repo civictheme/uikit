@@ -35,6 +35,10 @@ CivicThemeSlider.prototype.refresh = function () {
   const panelWidth = window.getComputedStyle(this.panel).width;
   const panelWidthVal = parseFloat(panelWidth);
 
+  // Reset rail and panel height.
+  this.rail.style.height = '';
+  this.panel.style.height = '';
+
   // Set the rail width.
   this.rail.style.width = `${this.totalSlides * panelWidthVal}px`;
 
