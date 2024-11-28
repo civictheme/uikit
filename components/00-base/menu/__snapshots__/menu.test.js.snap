@@ -86,7 +86,10 @@ exports[`Menu Component renders collapsible menu 1`] = `
                     
       
     <li
+      aria-expanded="true"
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children ct-menu__item--active-trail "
+      data-collapsible=""
+      data-collapsible-duration="0"
     >
       
 
@@ -148,7 +151,6 @@ exports[`Menu Component renders collapsible menu 1`] = `
   
   
             <a
-              aria-expanded="true"
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/consulting"
               title="Consulting"
@@ -181,7 +183,6 @@ exports[`Menu Component renders collapsible menu 1`] = `
   
   
             <a
-              aria-expanded="true"
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/development"
               title="Development"
