@@ -20,6 +20,11 @@ CivicThemeTable.prototype.init = function () {
 
   this.addTitles();
 
+  // Check if the table has the class 'ct-table--data'
+  if (this.el.classList.contains('ct-table--data')) {
+    this.addWrapper();
+  }
+
   this.el.setAttribute('data-table', 'true');
 };
 
@@ -30,6 +35,21 @@ CivicThemeTable.prototype.init = function () {
 // CivicThemeTable.prototype.addColScopedTitles.
 CivicThemeTable.prototype.addTitles = function () {
   this.addTheadColumnTitles();
+};
+
+CivicThemeTable.prototype.addWrapper = function () {
+  // Select the target element you want to wrap.
+  const targetElement = this.el;
+  // Create the wrapper element.
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('ct-table--wrapper');
+  // Add attributes to the wrapper
+  wrapper.setAttribute('role', 'region');
+  wrapper.setAttribute('tabindex', '0');
+  // Insert the wrapper before the target element.
+  targetElement.parentNode.insertBefore(wrapper, targetElement);
+  // Move the target element inside the wrapper.
+  wrapper.appendChild(targetElement);
 };
 
 // eslint-disable-next-line func-names

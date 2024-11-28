@@ -19,6 +19,7 @@
     border-width: $_border-width;
     padding: $_vertical_spacing $_horizontal_spacing;
     width: 100%;
+    box-sizing: border-box;
   }
 
   &:focus-visible {

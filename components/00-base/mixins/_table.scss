@@ -14,6 +14,42 @@
 
   @include ct-typography('text-regular');
 
+  thead,
+  tfoot {
+    @include ct-typography('label-regular');
+  }
+
+  tr {
+    th,
+    td {
+      padding: ct-spacing(1.5) ct-spacing(3);
+      vertical-align: $ct-table-cell-vertical-align;
+    }
+  }
+
+  caption {
+    text-align: left;
+    padding: ct-spacing(1.5) 0;
+
+    @include ct-typography('label-large');
+  }
+
+  &#{$root}--caption-after {
+    caption-side: bottom;
+
+    caption {
+      @include ct-typography('text-small');
+    }
+  }
+
+  &:not(.ct-table--data) {
+    @include ct-table-responsive();
+  }
+}
+
+@mixin ct-table-responsive() {
+  $root: &;
+
   @include ct-breakpoint-upto($ct-table-breakpoint) {
     thead,
     tfoot {
@@ -64,41 +100,12 @@
         }
       }
     }
-  }
 
-  thead,
-  tfoot {
-    @include ct-typography('label-regular');
-  }
-
-  tr {
-    th,
-    td {
-      padding: ct-spacing(1.5) ct-spacing();
-      vertical-align: $ct-table-cell-vertical-align;
-
-      @include ct-breakpoint($ct-table-breakpoint) {
-        padding: ct-spacing(1.5) ct-spacing(3);
+    tr {
+      th,
+      td {
+        padding: ct-spacing(1.5) ct-spacing();
       }
-    }
-  }
-
-  caption {
-    text-align: left;
-    padding: ct-spacing(1.5) 0;
-
-    @include ct-typography('label-large');
-
-    @include ct-breakpoint($ct-table-breakpoint) {
-      padding: ct-spacing(1.5) 0;
-    }
-  }
-
-  &#{$root}--caption-after {
-    caption-side: bottom;
-
-    caption {
-      @include ct-typography('text-small');
     }
   }
 }
@@ -143,6 +150,10 @@
 
   caption {
     color: $ct-table-light-caption-color;
+  }
+
+  &.ct-table--data {
+    border-top: solid ct-particle(0.125) $ct-table-light-footer-border-color;
   }
 
   &.ct-table--striped {
@@ -206,6 +217,10 @@
 
   caption {
     color: $ct-table-dark-caption-color;
+  }
+
+  &.ct-table--data {
+    border-top: solid ct-particle(0.125) $ct-table-dark-footer-border-color;
   }
 
   &.ct-table--striped {
