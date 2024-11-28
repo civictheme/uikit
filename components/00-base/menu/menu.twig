@@ -46,11 +46,27 @@
       ] %}
 
       {% set item_attributes = item.attributes|default('') %}
-      {% set aria_expanded = '' %}
       {% if item.below and is_collapsible %}
         {% set aria_expanded = item.in_active_trail and item.is_expanded ? 'aria-expanded="true"' : 'aria-expanded="false"' %}
         {% set collapsible_collapsed = item.in_active_trail and item.is_expanded ? '' : 'data-collapsible-collapsed' %}
         {% set item_attributes = [item_attributes, 'data-collapsible', 'data-collapsible-duration="0"', collapsible_collapsed, aria_expanded]|join(' ') %}
+      {% endif %}
+      {% set item_attributes = item.attributes|default('') %}
+
+      {# Check if this is the deepest active item #}
+      {% set has_active_children = false %}
+      {% if item.below %}
+        {% for child in item.below %}
+          {% if child.in_active_trail %}
+            {% set has_active_children = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if item.in_active_trail and not has_active_children %}
+        {% set aria_current = 'aria-current="page"' %}
+      {% else %}
+        {% set aria_current = '' %}
       {% endif %}
 
       <li class="{{- item_classes|join(' ') -}}" {{- item_attributes|raw -}}>
@@ -61,7 +77,7 @@
           title: item.title,
           url: item.url,
           modifier_class: 'ct-menu__item__link',
-          attributes: item.link_attributes|default('') ~ aria_expanded,
+          attributes: item.link_attributes|default('') ~ aria_expanded ~ aria_current,
           is_new_window: item.is_new_window is defined ? item.is_new_window : false,
           is_external: item.is_external is defined ? item.is_external : false,
         } only %}
