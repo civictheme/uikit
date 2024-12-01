@@ -14,6 +14,8 @@ exports[`Input Component renders with optional attributes 1`] = `
 
 	
   <input
+    aria-describedby="input-id-message"
+    aria-invalid="true"
     class="ct-input ct-theme-dark ct-input--is-invalid custom-class"
     data-test="true"
     disabled=""
