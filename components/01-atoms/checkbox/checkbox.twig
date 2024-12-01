@@ -29,8 +29,9 @@
     name="{{ name }}"
     value="{{ value }}"
     id="{{ id }}"
+		{% if is_invalid and id %}aria-describedby="{{ id }}-message"{% endif %}
     {% if is_checked %}checked{% endif %}
-    {% if is_required %}required{% endif %}
+		{% if is_required %}required aria-invalid="{{ is_invalid ? is_invalid : 'false' }}"{% endif %}
     {% if is_disabled %}disabled{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   />

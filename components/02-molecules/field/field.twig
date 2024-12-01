@@ -158,6 +158,7 @@
 					content: message ? message : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
+					message_id: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id ~ '-message'  : null,
 				} only %}
 			{% endif %}
 		</div>
