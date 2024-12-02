@@ -248,6 +248,10 @@
     color: $ct-basic-content-light-heading-6-color;
   }
 
+  a:not(.ct-button) {
+    @include ct-content-link-light();
+  }
+
   blockquote {
     color: $ct-basic-content-light-blockquote-color;
     background-color: $ct-basic-content-light-blockquote-background-color;
@@ -311,6 +315,10 @@
 
   h6 {
     color: $ct-basic-content-dark-heading-6-color;
+  }
+
+  a:not(.ct-button) {
+    @include ct-content-link-dark();
   }
 
   blockquote {
