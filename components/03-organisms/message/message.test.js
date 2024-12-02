@@ -35,7 +35,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is a default message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBe('contentinfo');
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBe('information');
-    expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBeNull();
+    expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('assertive');
 
     assertUniqueCssClasses(c);
   });
@@ -55,7 +55,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message__summary')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('role')).toBe('contentinfo');
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBe('success');
-    expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBeNull();
+    expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('assertive');
 
     assertUniqueCssClasses(c);
   });
