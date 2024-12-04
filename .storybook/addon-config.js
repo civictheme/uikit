@@ -2,6 +2,7 @@ exports.default = function () {
   // Lean storybook config.
   let config = [
     '@storybook/addon-knobs',
+    '@whitespace/storybook-addon-html',
     {
       name: '@storybook/addon-essentials',
       options: {
