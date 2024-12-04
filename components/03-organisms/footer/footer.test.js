@@ -10,6 +10,7 @@ describe('Footer Component', () => {
       content_middle2: 'Middle content 2',
       content_middle3: 'Middle content 3',
       content_middle4: 'Middle content 4',
+      content_middle5: 'Middle content 5',
       content_bottom1: 'Bottom content 1',
       content_bottom2: 'Bottom content 2',
       background_image: 'path/to/image.jpg',
@@ -25,6 +26,7 @@ describe('Footer Component', () => {
     expect(c.querySelector('.ct-footer__middle__content-middle2').textContent).toBe('Middle content 2');
     expect(c.querySelector('.ct-footer__middle__content-middle3').textContent).toBe('Middle content 3');
     expect(c.querySelector('.ct-footer__middle__content-middle4').textContent).toBe('Middle content 4');
+    expect(c.querySelector('.ct-footer__middle__content-middle5').textContent).toBe('Middle content 5');
     expect(c.querySelector('.ct-footer__bottom__content-bottom1').textContent).toBe('Bottom content 1');
     expect(c.querySelector('.ct-footer__bottom__content-bottom2').textContent).toBe('Bottom content 2');
     expect(c.querySelector('.ct-footer').getAttribute('style')).toContain('background-image: url(\'path/to/image.jpg\')');
@@ -41,6 +43,7 @@ describe('Footer Component', () => {
       content_middle2: 'Middle content 2',
       content_middle3: '',
       content_middle4: '',
+      content_middle5: '',
       content_bottom1: 'Bottom content 1',
       content_bottom2: '',
       background_image: '',
@@ -70,6 +73,7 @@ describe('Footer Component', () => {
       content_middle2: '',
       content_middle3: '',
       content_middle4: '',
+      content_middle5: '',
       content_bottom1: '',
       content_bottom2: '',
       background_image: '',
