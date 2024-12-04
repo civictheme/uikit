@@ -1,3 +1,5 @@
+import { jest } from '@jest/globals';
+
 describe('Collapsible utility', () => {
   beforeAll(() => {
     // jsdom doesn't support innerText by default.
@@ -29,7 +31,7 @@ describe('Collapsible utility', () => {
     `;
 
     // eslint-disable-next-line global-require
-    require('./collapsible');
+    await import('./collapsible');
 
     document.querySelector('[data-collapsible-trigger]').click();
 
