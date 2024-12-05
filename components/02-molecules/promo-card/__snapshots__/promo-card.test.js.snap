@@ -249,7 +249,6 @@ exports[`Promo Card Component renders with optional attributes 1`] = `
   
   
         <a
-          aria-label="Opens in a new tab"
           class="ct-link ct-theme-dark     ct-promo-card__title__link"
           href="https://example.com"
           target="_blank"
@@ -359,7 +358,6 @@ exports[`Promo Card Component renders with optional attributes 1`] = `
   
         <a
           aria-hidden="true"
-          aria-label="Opens in a new tab"
           class="ct-link ct-theme-dark    ct-link--only-icon ct-promo-card__tags__link"
           href="https://example.com"
           tabindex="-1"

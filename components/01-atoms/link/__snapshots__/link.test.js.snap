@@ -17,7 +17,6 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
   
   
   <a
-    aria-label="Opens in a new tab"
     class="ct-link ct-theme-dark ct-link--external ct-link--active ct-link--disabled  custom-class"
     data-test="true"
     disabled=""
@@ -114,7 +113,6 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
   
   
   <a
-    aria-label="Opens in a new tab"
     class="ct-link ct-theme-dark  ct-link--active ct-link--disabled  custom-class"
     data-test="true"
     disabled=""
