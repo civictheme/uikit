@@ -2,6 +2,7 @@ import Component from './background.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
 const meta = {
+  title: 'Base/Background',
   component: Component,
   argTypes: {
     blend_mode: {

@@ -116,7 +116,13 @@ for (const theme in themes) {
 }
 
 const meta = {
+  title: 'Base/Colors',
   component: Component,
+};
+
+export default meta;
+
+export const Colors = {
   parameters: {
     layout: 'fullscreen',
   },
@@ -124,7 +130,3 @@ const meta = {
     sections,
   },
 };
-
-export default meta;
-
-export const Colors = {};

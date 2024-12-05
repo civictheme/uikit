@@ -1,32 +1,29 @@
-import Component from './content-link.twig';
+import Component from './image.twig';
 
 const meta = {
-  title: 'Atoms/Content Link',
+  title: 'Atoms/Image',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    text: {
-      control: { type: 'text' },
-    },
     url: {
       control: { type: 'text' },
     },
-    title: {
+    alt: {
       control: { type: 'text' },
     },
-    is_new_window: {
-      control: { type: 'boolean' },
+    width: {
+      control: { type: 'text' },
     },
-    is_external: {
-      control: { type: 'boolean' },
-    },
-    attributes: {
+    height: {
       control: { type: 'text' },
     },
     modifier_class: {
+      control: { type: 'text' },
+    },
+    attributes: {
       control: { type: 'text' },
     },
   },
@@ -34,16 +31,17 @@ const meta = {
 
 export default meta;
 
-export const ContentLink = {
+export const Image = {
   parameters: {
     layout: 'centered',
   },
   args: {
     theme: 'light',
-    text: 'Link text',
-    title: 'Link title',
-    url: 'https://example.com',
-    is_new_window: false,
-    is_external: false,
+    url: 'https://picsum.photos/200/300',
+    alt: 'Alternative text',
+    width: '',
+    height: '',
+    modifier_class: '',
+    attributes: '',
   },
 };

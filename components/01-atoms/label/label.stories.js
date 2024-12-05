@@ -1,43 +1,40 @@
-import Component from './chip.twig';
-import './chip.event.stories';
+import Component from './label.twig';
 
 const meta = {
-  title: 'Atoms/Chip',
+  title: 'Atoms/Form Controls/Label',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    kind: {
-      control: { type: 'radio' },
-      options: {
-        Default: 'default',
-        Input: 'input',
-      },
-    },
     size: {
       control: { type: 'radio' },
-      options: {
-        Large: 'large',
-        Regular: 'regular',
-        Small: 'small',
-        None: '',
-      },
+      options: [
+        'extra-large',
+        'large',
+        'regular',
+        'small',
+        'extra-small',
+        '',
+      ],
     },
     content: {
       control: { type: 'text' },
     },
-    is_selected: {
-      control: { type: 'boolean' },
-    },
-    is_multiple: {
-      control: { type: 'boolean' },
-    },
-    attributes: {
+    for: {
       control: { type: 'text' },
     },
+    is_required: {
+      control: { type: 'boolean' },
+    },
+    allow_html: {
+      control: { type: 'boolean' },
+    },
     modifier_class: {
+      control: { type: 'text' },
+    },
+    attributes: {
       control: { type: 'text' },
     },
   },
@@ -45,16 +42,18 @@ const meta = {
 
 export default meta;
 
-export const Chip = {
+export const Label = {
   parameters: {
     layout: 'centered',
   },
   args: {
     theme: 'light',
-    kind: 'default',
     size: 'regular',
-    content: 'Chip label',
-    is_selected: false,
-    is_multiple: false,
+    content: 'Label content',
+    for: '',
+    is_required: false,
+    allow_html: false,
+    modifier_class: '',
+    attributes: '',
   },
 };

@@ -1,7 +1,7 @@
-import Component from './checkbox.twig';
+import Component from './radio.twig';
 
 const meta = {
-  title: 'Atoms/Form Controls/Checkbox',
+  title: 'Atoms/Form Controls/Radio',
   component: Component,
   argTypes: {
     theme: {
@@ -43,20 +43,21 @@ const meta = {
 
 export default meta;
 
-export const Checkbox = {
-  title: 'Atoms/Form Controls/Checkbox',
+export const Radio = {
   parameters: {
     layout: 'centered',
   },
   args: {
     theme: 'light',
-    label: 'This is a checkbox',
-    name: 'name',
-    id: 'id-name',
-    value: '50',
+    label: 'Radio label',
+    name: 'radio-name',
+    id: 'radio-id',
+    value: '123',
     is_checked: false,
     is_required: false,
     is_invalid: false,
     is_disabled: false,
+    attributes: '',
+    modifier_class: '',
   },
 };

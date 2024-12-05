@@ -1,14 +1,20 @@
-import Component from './checkbox.twig';
+import Component from './textarea.twig';
 
 const meta = {
-  title: 'Atoms/Form Controls/Checkbox',
+  title: 'Atoms/Form Controls/Textarea',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    label: {
+    rows: {
+      control: { type: 'number', min: 1, max: 10, step: 1 },
+    },
+    placeholder: {
+      control: { type: 'text' },
+    },
+    value: {
       control: { type: 'text' },
     },
     name: {
@@ -16,12 +22,6 @@ const meta = {
     },
     id: {
       control: { type: 'text' },
-    },
-    value: {
-      control: { type: 'text' },
-    },
-    is_checked: {
-      control: { type: 'boolean' },
     },
     is_required: {
       control: { type: 'boolean' },
@@ -43,20 +43,21 @@ const meta = {
 
 export default meta;
 
-export const Checkbox = {
-  title: 'Atoms/Form Controls/Checkbox',
+export const Textarea = {
   parameters: {
     layout: 'centered',
   },
   args: {
     theme: 'light',
-    label: 'This is a checkbox',
-    name: 'name',
-    id: 'id-name',
-    value: '50',
-    is_checked: false,
+    rows: 5,
+    placeholder: 'Placeholder',
+    value: '',
+    name: 'textarea-name',
+    id: 'textarea-id',
     is_required: false,
     is_invalid: false,
     is_disabled: false,
+    attributes: '',
+    modifier_class: '',
   },
 };

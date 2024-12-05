@@ -1,14 +1,37 @@
-import Component from './checkbox.twig';
+import Component from './input.twig';
 
 const meta = {
-  title: 'Atoms/Form Controls/Checkbox',
+  title: 'Atoms/Form Controls/Input',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    label: {
+    type: {
+      control: { type: 'radio' },
+      options: [
+        'color',
+        'date',
+        'email',
+        'file',
+        'image',
+        'month',
+        'number',
+        'password',
+        'range',
+        'search',
+        'tel',
+        'time',
+        'url',
+        'week',
+        'other',
+      ],
+    },
+    placeholder: {
+      control: { type: 'text' },
+    },
+    value: {
       control: { type: 'text' },
     },
     name: {
@@ -16,12 +39,6 @@ const meta = {
     },
     id: {
       control: { type: 'text' },
-    },
-    value: {
-      control: { type: 'text' },
-    },
-    is_checked: {
-      control: { type: 'boolean' },
     },
     is_required: {
       control: { type: 'boolean' },
@@ -32,10 +49,10 @@ const meta = {
     is_disabled: {
       control: { type: 'boolean' },
     },
-    attributes: {
+    modifier_class: {
       control: { type: 'text' },
     },
-    modifier_class: {
+    attributes: {
       control: { type: 'text' },
     },
   },
@@ -43,20 +60,22 @@ const meta = {
 
 export default meta;
 
-export const Checkbox = {
-  title: 'Atoms/Form Controls/Checkbox',
+export const Input = {
   parameters: {
     layout: 'centered',
+    storyLayoutSize: 'small',
   },
   args: {
     theme: 'light',
-    label: 'This is a checkbox',
-    name: 'name',
-    id: 'id-name',
-    value: '50',
-    is_checked: false,
+    type: 'email',
+    placeholder: 'Placeholder',
+    value: '',
+    name: 'input-name',
+    id: 'input-id',
     is_required: false,
     is_invalid: false,
     is_disabled: false,
+    modifier_class: '',
+    attributes: '',
   },
 };

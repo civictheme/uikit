@@ -1,14 +1,14 @@
-import Component from './about-civictheme.stories.twig';
+import Component from './welcome.stories.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
 const meta = {
-  title: 'About CivicTheme',
+  title: 'Welcome',
   component: Component,
 };
 
 export default meta;
 
-export const AboutCivicTheme = {
+export const Welcome = {
   parameters: {
     layout: 'fullscreen',
   },
