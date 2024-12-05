@@ -1,10 +1,11 @@
 import Component from './content-link.twig';
 
 const meta = {
+  title: 'Atoms/Content Link',
   component: Component,
   argTypes: {
     theme: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['light', 'dark'],
     },
     text: {
