@@ -16,6 +16,7 @@
     border-top-width: ct-particle(0.125);
     border-top-style: solid;
     padding: ct-spacing(3);
+    box-sizing: border-box;
   }
 
   @include ct-breakpoint(m) {

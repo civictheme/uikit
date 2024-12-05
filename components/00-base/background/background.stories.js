@@ -1,7 +1,8 @@
-import Component from './background.twig';
+import Component from './background.stories.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
 const meta = {
+  title: 'Base/Background',
   component: Component,
   argTypes: {
     blend_mode: {
@@ -23,8 +24,6 @@ export default meta;
 export const Background = {
   parameters: {
     layout: 'centered',
-    storyLayoutSize: 'large',
-    storyLayoutClass: 'story-background-wrapper',
   },
   args: {
     url: Constants.BACKGROUNDS[Object.keys(Constants.BACKGROUNDS)[0]],

@@ -1,6 +1,7 @@
 import Component from './datetime.twig';
 
 const meta = {
+  title: 'Base/Utilities/Datetime',
   component: Component,
   parameters: {
     layout: 'centered',

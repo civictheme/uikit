@@ -2,21 +2,22 @@ import Component from './chip.twig';
 import './chip.event.stories';
 
 const meta = {
+  title: 'Atoms/Chip',
   component: Component,
   argTypes: {
     theme: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['light', 'dark'],
     },
     kind: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: {
         Default: 'default',
         Input: 'input',
       },
     },
     size: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: {
         Large: 'large',
         Regular: 'regular',

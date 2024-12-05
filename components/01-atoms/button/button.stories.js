@@ -1,28 +1,29 @@
 import Component from './button.twig';
 
 const meta = {
+  title: 'Atoms/Form Controls/Button',
   component: Component,
   parameters: {
     layout: 'centered',
   },
   argTypes: {
     theme: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['light', 'dark'],
     },
     text: {
       control: { type: 'text' },
     },
     type: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['primary', 'secondary', 'tertiary'],
     },
     size: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['large', 'regular', 'small'],
     },
     kind: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['button', 'link', 'reset', 'submit'],
     },
     url: {
