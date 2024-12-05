@@ -116,15 +116,27 @@ for (const theme in themes) {
 }
 
 const meta = {
+  title: 'Base/Colors',
   component: Component,
-  parameters: {
-    layout: 'fullscreen',
-  },
-  args: {
-    sections,
+  argTypes: {
+    sections: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };
 
 export default meta;
 
-export const Colors = {};
+export const Colors = {
+  parameters: {
+    layout: 'fullscreen',
+    html: {
+      disable: true,
+    },
+  },
+  args: {
+    sections,
+  },
+};

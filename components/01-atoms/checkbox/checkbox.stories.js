@@ -1,10 +1,11 @@
 import Component from './checkbox.twig';
 
 const meta = {
+  title: 'Atoms/Form Controls/Checkbox',
   component: Component,
   argTypes: {
     theme: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['light', 'dark'],
     },
     label: {
