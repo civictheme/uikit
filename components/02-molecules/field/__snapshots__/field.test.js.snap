@@ -797,6 +797,7 @@ exports[`Field Component required, disabled, and description 1`] = `
 
 	
       <input
+        aria-invalid="false"
         class="ct-textfield ct-theme-light  ct-field__control"
         disabled=""
         name="testname"
@@ -1018,6 +1019,8 @@ exports[`Field Component textarea with all attributes 1`] = `
 
   
       <textarea
+        aria-describedby="testid-message"
+        aria-invalid="true"
         class="ct-textarea ct-theme-light ct-textarea--is-invalid ct-field__control"
         id="testid"
         name="testname"

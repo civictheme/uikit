@@ -22,6 +22,8 @@ exports[`Checkbox Component renders with optional attributes 1`] = `
 
   
   <input
+    aria-describedby="test-checkbox-id-message"
+    aria-invalid="true"
     checked=""
     class="ct-checkbox ct-theme-dark ct-checkbox--is-invalid custom-class"
     data-test="true"
