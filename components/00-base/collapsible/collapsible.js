@@ -276,6 +276,16 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
     obj.collapsed = true;
   };
 
+  const onTransitionEnd = function () {
+    // Remove the event listener straight away.
+    // eslint-disable-next-line no-caller, no-restricted-properties
+    t.panel.removeEventListener('transitionend', onTransitionEnd);
+    // Remove progress state.
+    t.el.removeAttribute('data-collapsible-collapsing');
+    // Set all required attributes.
+    setAttributes(t);
+  };
+
   if (animate && t.duration > 0) {
     // Support already set transitions.
     const transition = t.panel.style.transition || `height ${t.duration}ms ease-out`;
@@ -292,15 +302,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
       t.el.setAttribute('data-collapsible-collapsing', '');
       requestAnimationFrame(() => {
         // Register an event listener to fire at the end of the transition.
-        t.panel.addEventListener('transitionend', function () {
-          // Remove the event listener straight away.
-          // eslint-disable-next-line no-caller, no-restricted-properties
-          t.panel.removeEventListener('transitionend', arguments.callee);
-          // Remove progress state.
-          t.el.removeAttribute('data-collapsible-collapsing');
-          // Set all required attributes.
-          setAttributes(t);
-        });
+        t.panel.addEventListener('transitionend', onTransitionEnd);
         // Finally, change the height, triggering the transition.
         t.panel.style.height = '0px';
       });
@@ -340,6 +342,16 @@ CivicThemeCollapsible.prototype.expand = function (animate) {
     obj.collapsed = false;
   };
 
+  const onTransitionEnd = function () {
+    // Remove the event listener straight away.
+    // eslint-disable-next-line no-caller, no-restricted-properties
+    t.panel.removeEventListener('transitionend', onTransitionEnd);
+    // Set all required attributes.
+    setAttributes(t);
+    // Remove progress state.
+    t.el.removeAttribute('data-collapsible-collapsing');
+  };
+
   if (animate && t.duration > 0) {
     // Get height before animation starts.
     const h = t.panel.scrollHeight;
@@ -353,15 +365,7 @@ CivicThemeCollapsible.prototype.expand = function (animate) {
 
       requestAnimationFrame(() => {
         // Register an event listener to fire at the end of the transition.
-        t.panel.addEventListener('transitionend', function () {
-          // Remove the event listener straight away.
-          // eslint-disable-next-line no-caller, no-restricted-properties
-          t.panel.removeEventListener('transitionend', arguments.callee);
-          // Set all required attributes.
-          setAttributes(t);
-          // Remove progress state.
-          t.el.removeAttribute('data-collapsible-collapsing');
-        });
+        t.panel.addEventListener('transitionend', onTransitionEnd);
         // Finally, change the height, triggering the transition.
         t.panel.style.height = `${h}px`;
       });

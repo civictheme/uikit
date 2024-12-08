@@ -1,4 +1,6 @@
-import each from 'jest-each';
+import jestEach from 'jest-each';
+
+const each = jestEach.default;
 
 const template = 'components/00-base/grid/grid.twig';
 
