@@ -69,6 +69,13 @@ export const parameters = {
     options: {},
     manual: true,
   },
+  html: {
+    prettier: {
+      tabWidth: 4,
+      useTabs: false,
+      htmlWhitespaceSensitivity: 'strict',
+    },
+  },
   options: {
     storySort: {
       order: storyOrder,
