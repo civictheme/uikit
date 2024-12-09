@@ -68,6 +68,8 @@ exports[`Select Component renders with optional attributes 1`] = `
 
 	
   <select
+    aria-describedby="select-id-message"
+    aria-invalid="true"
     class="ct-select ct-theme-dark ct-select--is-invalid custom-class"
     data-test="true"
     disabled=""

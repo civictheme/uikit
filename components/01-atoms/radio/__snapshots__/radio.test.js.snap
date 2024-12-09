@@ -22,6 +22,8 @@ exports[`Radio Component renders with optional attributes 1`] = `
 
   
   <input
+    aria-describedby="radio-id-message"
+    aria-invalid="true"
     checked=""
     class="ct-radio ct-theme-dark ct-radio--is-invalid custom-class"
     data-test="true"
