@@ -1,98 +1,79 @@
-import CivicThemePagination from './pagination.twig';
-import { knobBoolean, knobNumber, knobRadios, knobText, randomId, randomName, randomUrl, shouldRender } from '../../00-base/storybook/storybook.utils';
+import Component from './pagination.twig';
 
-export default {
+const meta = {
   title: 'Molecules/List/Pagination',
-  parameters: {
-    layout: 'fullscreen',
+  component: Component,
+  argTypes: {
+    theme: {
+      control: { type: 'radio' },
+      options: ['light', 'dark'],
+    },
+    heading_id: {
+      control: { type: 'text' },
+    },
+    items: {
+      control: { type: 'array' },
+    },
+    items_modifier_class: {
+      control: { type: 'text' },
+    },
+    current: {
+      control: { type: 'number' },
+    },
+    items_per_page_title: {
+      control: { type: 'text' },
+    },
+    items_per_page_options: {
+      control: { type: 'array' },
+    },
+    items_per_page_name: {
+      control: { type: 'text' },
+    },
+    items_per_page_id: {
+      control: { type: 'text' },
+    },
+    items_per_page_attributes: {
+      control: { type: 'text' },
+    },
+    use_ellipsis: {
+      control: { type: 'boolean' },
+    },
+    modifier_class: {
+      control: { type: 'text' },
+    },
+    attributes: {
+      control: { type: 'text' },
+    },
   },
 };
 
-export const Pagination = (parentKnobs = {}) => {
-  const knobs = {
-    theme: knobRadios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
+export default meta;
+
+export const Pagination = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: {
+    theme: 'light',
+    heading_id: 'ct-pagination-demo',
+    items: {
+      previous: {
+        href: 'http://example.com',
       },
-      'light',
-      parentKnobs.theme,
-      parentKnobs.knobTab,
-    ),
-    use_ellipsis: knobBoolean('With ellipsis', false, parentKnobs.use_ellipsis, parentKnobs.knobTab),
-    with_items_per_page: knobBoolean('With items per page', true, parentKnobs.with_items_per_page, parentKnobs.knobTab),
-    heading_id: knobText('Heading ID', 'ct-pagination-demo', parentKnobs.heading_id, parentKnobs.knobTab),
-    modifier_class: knobText('Additional classes', '', parentKnobs.modifier_class, parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
-  };
-
-  knobs.count_of_pages = knobNumber(
-    'Count of pages',
-    5,
-    {
-      range: true,
-      min: 0,
-      max: 10,
-      step: 1,
+      pages: {
+        1: { href: 'http://example.com' },
+        2: { href: 'http://example.com' },
+        3: { href: 'http://example.com' },
+      },
+      next: {
+        href: 'http://example.com',
+      },
     },
-    parentKnobs.count_of_pages,
-    parentKnobs.knobTab,
-  );
-
-  knobs.current_page = knobNumber(
-    'Current page',
-    Math.max(1, Math.floor(knobs.count_of_pages / 2)),
-    {
-      range: true,
-      min: 1,
-      max: knobs.count_of_pages,
-      step: 1,
-    },
-    parentKnobs.current_page,
-    parentKnobs.knobTab,
-  );
-
-  const pages = {};
-  if (knobs.use_ellipsis) {
-    pages[knobs.current_page] = {
-      href: randomUrl(),
-    };
-  } else {
-    for (let i = 0; i < knobs.count_of_pages; i++) {
-      pages[i + 1] = {
-        href: randomUrl(),
-      };
-    }
-  }
-
-  const items = knobs.count_of_pages > 0 ? {
-    previous: {
-      href: randomUrl(),
-    },
-    pages,
-    next: {
-      href: randomUrl(),
-    },
-  } : null;
-
-  const props = {
-    theme: knobs.theme,
-    items,
-    heading_id: knobs.heading_id,
-    use_ellipsis: knobs.use_ellipsis,
-    total_pages: knobs.count_of_pages,
-    current: knobs.current_page,
-    modifier_class: knobs.modifier_class,
-    attributes: knobs.attributes,
-  };
-
-  if (knobs.with_items_per_page) {
-    props.items_per_page_title = 'Items per page';
-    props.items_per_page_name = randomName();
-    props.items_per_page_id = randomId();
-
-    props.items_per_page_options = [
+    items_modifier_class: '',
+    current: 1,
+    total_pages: 3,
+    items_per_page_title: 'Items per page',
+    items_per_page_options: [
       {
         type: 'option',
         label: 10,
@@ -117,8 +98,12 @@ export const Pagination = (parentKnobs = {}) => {
         value: 100,
         is_selected: false,
       },
-    ];
-  }
-
-  return shouldRender(parentKnobs) ? CivicThemePagination(props) : knobs;
+    ],
+    items_per_page_name: 'items_per_page_name',
+    items_per_page_id: 'items-per-page-id',
+    items_per_page_attributes: '',
+    use_ellipsis: false,
+    modifier_class: '',
+    attributes: '',
+  },
 };
