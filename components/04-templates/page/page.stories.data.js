@@ -37,10 +37,10 @@ export default {
       content: BasicContent(BasicContentData.args(theme)),
       content_attributes: '',
       sidebar_bottom_left: Paragraph({
-        theme: theme,
+        theme,
         allow_html: true,
         content: `<p>Register for events!</p><p>${Button({
-          theme: theme,
+          theme,
           text: 'Register',
           type: 'primary',
           kind: 'link',
@@ -66,6 +66,6 @@ export default {
       footer_bottom_2: footerData.content_bottom2,
       attributes: '',
       modifier_class: '',
-    }
-  }
-}
+    };
+  },
+};

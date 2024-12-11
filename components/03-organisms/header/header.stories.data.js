@@ -9,46 +9,44 @@ import MobileNavigationPanel from '../mobile-navigation/mobile-navigation.twig';
 import MobileNavigationTrigger from '../mobile-navigation/mobile-navigation-trigger.twig';
 
 export default {
-  args: (theme = 'light') => {
-    return {
+  args: (theme = 'light') => ({
+    theme,
+    content_top1: '',
+    content_top2: Paragraph({
       theme,
-      content_top1: '',
-      content_top2: Paragraph({
-        theme,
-        content: 'A design system by Salsa Digital',
-      }).trim(),
-      content_top3: Navigation({
+      content: 'A design system by Salsa Digital',
+    }).trim(),
+    content_top3: Navigation({
+      ...NavigationData.args(theme),
+      name: 'secondary',
+      title: null,
+      type: 'dropdown',
+      modifier_class: 'ct-flex-justify-content-end',
+    }),
+    content_middle1: '',
+    content_middle2: Logo(LogoData.args(theme)),
+    content_middle3: [
+      Navigation({
         ...NavigationData.args(theme),
-        name: 'secondary',
+        name: 'primary',
         title: null,
-        type: 'dropdown',
-        modifier_class: 'ct-flex-justify-content-end'
-      }),
-      content_middle1: '',
-      content_middle2: Logo(LogoData.args(theme)),
-      content_middle3: [
-        Navigation({
-          ...NavigationData.args(theme),
-          name: 'primary',
-          title: null,
-          type: 'drawer',
-          modifier_class: 'ct-flex-justify-content-end',
-        }).trim(),
-        Search({
-          theme,
-          text: 'Search',
-          url: '/search',
-          modifier_class: 'ct-flex-justify-content-end',
-        }).trim(),
-        MobileNavigationTrigger({
-          theme,
-          icon: 'bars',
-          text: 'Menu',
-        }).trim(),
-        MobileNavigationPanel(MobileNavigationStory.args).trim(),
-      ].join(''),
-      content_bottom1: '',
-      modifier_class: '',
-    }
-  }
-}
+        type: 'drawer',
+        modifier_class: 'ct-flex-justify-content-end',
+      }).trim(),
+      Search({
+        theme,
+        text: 'Search',
+        url: '/search',
+        modifier_class: 'ct-flex-justify-content-end',
+      }).trim(),
+      MobileNavigationTrigger({
+        theme,
+        icon: 'bars',
+        text: 'Menu',
+      }).trim(),
+      MobileNavigationPanel(MobileNavigationStory.args).trim(),
+    ].join(''),
+    content_bottom1: '',
+    modifier_class: '',
+  }),
+};
