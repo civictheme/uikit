@@ -1,89 +1,99 @@
-import { knobBoolean, knobRadios, KnobValues, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
-import { Logo } from '../../02-molecules/logo/logo.stories';
-import CivicThemeHeader from './header.twig';
-import { Paragraph } from '../../01-atoms/paragraph/paragraph.stories';
-import { Navigation } from '../navigation/navigation.stories';
-import { Search } from '../../02-molecules/search/search.stories';
-import { MobileNavigation } from '../mobile-navigation/mobile-navigation.stories';
+import Component from './header.twig';
 
-export default {
+import Logo from '../../02-molecules/logo/logo.twig';
+import { Logo as LogoStory } from '../../02-molecules/logo/logo.stories';
+import Paragraph from '../../01-atoms/paragraph/paragraph.twig';
+import Navigation from '../navigation/navigation.twig';
+import { Navigation as NavigationStory } from '../navigation/navigation.stories';
+import Search from '../../02-molecules/search/search.twig';
+import { MobileNavigation as MobileNavigationStory } from '../mobile-navigation/mobile-navigation.stories';
+import MobileNavigationPanel from '../mobile-navigation/mobile-navigation.twig';
+import MobileNavigationTrigger from '../mobile-navigation/mobile-navigation-trigger.twig';
+
+const meta = {
   title: 'Organisms/Header',
-  parameters: {
-    layout: 'fullscreen',
+  component: Component,
+  argTypes: {
+    theme: {
+      control: { type: 'radio' },
+      options: ['light', 'dark'],
+    },
+    content_top1: {
+      control: { type: 'text' },
+    },
+    content_top2: {
+      control: { type: 'text' },
+    },
+    content_top3: {
+      control: { type: 'text' },
+    },
+    content_middle1: {
+      control: { type: 'text' },
+    },
+    content_middle2: {
+      control: { type: 'text' },
+    },
+    content_middle3: {
+      control: { type: 'text' },
+    },
+    content_bottom1: {
+      control: { type: 'text' },
+    },
+    modifier_class: {
+      control: { type: 'text' },
+    },
   },
 };
 
-export const Header = (parentKnobs = {}) => {
-  const theme = knobRadios(
-    'Theme',
-    {
-      Light: 'light',
-      Dark: 'dark',
-    },
-    'light',
-    parentKnobs.theme,
-    parentKnobs.knobTab,
-  );
+export default meta;
 
-  const knobs = {
-    theme,
-    show_slogan: knobBoolean('Show slogan', true, parentKnobs.show_slogan, parentKnobs.knobTab),
-    show_secondary_navigation: knobBoolean('Show secondary navigation', true, parentKnobs.show_secondary_navigation, parentKnobs.knobTab),
-    show_logo: knobBoolean('Show logo', true, parentKnobs.show_logo, parentKnobs.knobTab),
-    show_primary_navigation: knobBoolean('Show primary navigation', true, parentKnobs.show_primary_navigation, parentKnobs.knobTab),
-    show_search: knobBoolean('With Search', true, parentKnobs.show_search, parentKnobs.knobTab),
-  };
-
-  let contentTop3 = '';
-  if (knobs.show_secondary_navigation) {
-    contentTop3 += Navigation(new KnobValues({
-      theme,
+export const Header = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {
+    theme: 'light',
+    content_top1: '',
+    content_top2: Paragraph({
+      theme: 'light',
+      content: 'A design system by Salsa Digital',
+    }).trim(),
+    content_top3: Navigation({
+      ...NavigationStory.args,
+      theme: 'light',
       name: 'secondary',
       title: null,
       type: 'dropdown',
       modifier_class: 'ct-flex-justify-content-end',
-    }));
-  }
-
-  let contentMiddle3Content = '';
-  if (knobs.show_primary_navigation) {
-    contentMiddle3Content += Navigation(new KnobValues({
-      theme,
-      name: 'primary',
-      title: null,
-      type: 'drawer',
-      modifier_class: 'ct-flex-justify-content-end',
-    }));
-
-    contentMiddle3Content += Search(new KnobValues({
-      modifier_class: 'ct-flex-justify-content-end',
-      theme,
-    }));
-
-    contentMiddle3Content += MobileNavigation(new KnobValues({ theme }));
-  }
-
-  const props = {
-    theme,
-    content_top2: knobs.show_slogan ? Paragraph(new KnobValues({ content: 'A design system by Salsa Digital', theme })) : '',
-    content_top3: contentTop3,
-    content_middle2: knobs.show_logo ? Logo(new KnobValues({
-      theme,
-      knobTab: 'Logo',
-    })) : '',
-    content_middle3: contentMiddle3Content,
-  };
-
-  return shouldRender(parentKnobs) ? CivicThemeHeader({
-    ...props,
-    ...slotKnobs([
-      'content_top1',
-      'content_top2',
-      'content_top3',
-      'content_middle1',
-      'content_middle2',
-      'content_middle3',
-      'content_bottom1',
-    ]),
-  }) : props;
+    }).trim(),
+    content_middle1: '',
+    content_middle2: Logo({
+      ...LogoStory.args,
+      theme: 'light',
+    }).trim(),
+    content_middle3: [
+      Navigation({
+        ...NavigationStory.args,
+        theme: 'light',
+        name: 'primary',
+        title: null,
+        type: 'drawer',
+        modifier_class: 'ct-flex-justify-content-end',
+      }).trim(),
+      Search({
+        theme: 'light',
+        text: 'Search',
+        url: '/search',
+        modifier_class: 'ct-flex-justify-content-end',
+      }).trim(),
+      MobileNavigationTrigger({
+        theme: 'light',
+        icon: 'bars',
+        text: 'Menu',
+      }).trim(),
+      MobileNavigationPanel(MobileNavigationStory.args).trim(),
+    ].join(''),
+    content_bottom1: '',
+    modifier_class: '',
+  },
 };

@@ -1,7 +1,8 @@
 import { render, Twig } from 'twig-testing-library';
 import * as fs from 'node:fs';
 
-const dir = __dirname;
+const dir = new URL('.', import.meta.url).pathname;
+
 Twig.extendFunction('source', (src) => {
   if (src.startsWith('@civictheme')) {
     src = src.replace('@civictheme', dir);
