@@ -1,19 +1,18 @@
-import Component from './side-navigation.twig';
-import SideNavigationData from './side-navigation.stories.data';
+import Component from './webform.twig';
 
 const meta = {
-  title: 'Organisms/Navigation/Side Navigation',
+  title: 'Organisms/Webform',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    items: {
-      control: { type: 'array' },
-    },
-    title: {
+    referenced_webform: {
       control: { type: 'text' },
+    },
+    with_background: {
+      control: { type: 'boolean' },
     },
     vertical_spacing: {
       control: { type: 'radio' },
@@ -30,9 +29,16 @@ const meta = {
 
 export default meta;
 
-export const SideNavigation = {
+export const Webform = {
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
-  args: SideNavigationData.args('light'),
+  args: {
+    theme: 'light',
+    referenced_webform: 'Webform title',
+    with_background: false,
+    vertical_spacing: 'none',
+    attributes: '',
+    modifier_class: '',
+  },
 };
