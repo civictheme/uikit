@@ -31,6 +31,7 @@ export const Footer = (parentKnobs = {}) => {
     show_logo: knobBoolean('Show logo', true, parentKnobs.show_logo, parentKnobs.knobTab),
     show_social_links: knobBoolean('Show social links', true, parentKnobs.show_social_links, parentKnobs.knobTab),
     show_middle_links: knobBoolean('Show middle links', true, parentKnobs.show_middle_links, parentKnobs.knobTab),
+    show_bottom_links: knobBoolean('Show bottom links', false, parentKnobs.show_bottom_links, parentKnobs.knobTab),
     show_acknowledgement: knobBoolean('Show acknowledgement', true, parentKnobs.show_acknowledgement, parentKnobs.knobTab),
     show_copyright: knobBoolean('Show copyright', true, parentKnobs.show_copyright, parentKnobs.knobTab),
     show_background_image: knobBoolean('Show background image', false, parentKnobs.show_background_image, parentKnobs.knobTab),
@@ -81,6 +82,11 @@ export const Footer = (parentKnobs = {}) => {
       title: 'Resources',
       theme,
     })) : '',
+    content_middle5: knobs.show_bottom_links ? Navigation(new KnobValues({
+      type: 'inline',
+      title: null,
+      theme,
+    })) : '',
     content_bottom1: knobs.show_acknowledgement ? '<div class="ct-footer__acknowledgement ct-text-regular">We acknowledge the traditional owners of the country throughout Australia and their continuing connection to land, sea and community. We pay our respect to them and their cultures and to the elders past and present.</div>' : '',
     content_bottom2: knobs.show_copyright ? '<div class="copyright ct-text-regular">©Commonwealth of Australia</div>' : '',
   };
@@ -98,6 +104,7 @@ export const Footer = (parentKnobs = {}) => {
       'content_middle2',
       'content_middle3',
       'content_middle4',
+      'content_middle5',
       'content_bottom1',
       'content_bottom2',
     ]),
