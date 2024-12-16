@@ -36,7 +36,7 @@ describe('Link Component', () => {
     expect(c.querySelector('.ct-link').getAttribute('href')).toEqual('https://example.com');
     expect(c.querySelector('.ct-link').getAttribute('title')).toEqual('Example Title');
     expect(c.querySelector('.ct-link').getAttribute('target')).toEqual('_blank');
-    expect(c.querySelector('.ct-link').getAttribute('aria-label')).toEqual('Opens in a new tab');
+    expect(c.querySelector('.ct-link').textContent).toContain('(Opens in a new tab/window)');
     expect(c.querySelector('.ct-link').getAttribute('data-test')).toEqual('true');
     expect(c.querySelectorAll('.ct-link .ct-link__icon')).toHaveLength(1);
 
@@ -64,7 +64,7 @@ describe('Link Component', () => {
     expect(c.querySelector('.ct-link').getAttribute('href')).toEqual('https://example.com');
     expect(c.querySelector('.ct-link').getAttribute('title')).toEqual('Example Title');
     expect(c.querySelector('.ct-link').getAttribute('target')).toEqual('_blank');
-    expect(c.querySelector('.ct-link').getAttribute('aria-label')).toEqual('Opens in a new tab');
+    expect(c.querySelector('.ct-link').textContent).toContain('(Opens in a new tab/window)');
     expect(c.querySelector('.ct-link').getAttribute('data-test')).toEqual('true');
     expect(c.querySelectorAll('.ct-link .ct-link__icon')).toHaveLength(1);
 
