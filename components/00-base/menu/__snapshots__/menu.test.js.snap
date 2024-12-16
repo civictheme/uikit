@@ -18,6 +18,9 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
@@ -46,6 +49,9 @@ exports[`Menu Component renders collapsible menu 1`] = `
     
           
                   
+      
+            
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0   "
@@ -76,6 +82,9 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                                                 
       
+                                                              
+                    
+      
     <li
       aria-expanded="true"
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children ct-menu__item--active-trail "
@@ -90,6 +99,7 @@ exports[`Menu Component renders collapsible menu 1`] = `
   
   
       <a
+        aria-current="page"
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/services"
         title="Services"
@@ -126,6 +136,9 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
@@ -154,6 +167,9 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
           
                   
+      
+            
+                    
       
           <li
             class="ct-menu__item ct-menu__item--level-1   "
@@ -220,6 +236,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
       data-extra="extra-home"
@@ -251,6 +270,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
       data-extra="extra-about"
@@ -281,6 +303,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -320,6 +345,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
             data-extra="extra-consulting"
@@ -350,6 +378,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
           
                   
+      
+            
+                    
       
           <li
             class="ct-menu__item ct-menu__item--level-1   "
@@ -418,6 +449,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
       data-test="home"
@@ -448,6 +482,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
       data-test="about"
@@ -477,6 +514,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -515,6 +555,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
             data-test="consulting"
@@ -544,6 +587,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
           
                   
+      
+            
+                    
       
           <li
             class="ct-menu__item ct-menu__item--level-1   "
@@ -611,6 +657,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
@@ -640,6 +689,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
@@ -668,6 +720,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -705,6 +760,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
@@ -733,6 +791,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
           
                   
+      
+            
+                    
       
           <li
             class="ct-menu__item ct-menu__item--level-1   "
@@ -799,6 +860,9 @@ exports[`Menu Component renders with default values 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
@@ -827,6 +891,9 @@ exports[`Menu Component renders with default values 1`] = `
     
           
                   
+      
+            
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0   "
@@ -881,6 +948,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
@@ -910,6 +980,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
@@ -938,6 +1011,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -975,6 +1051,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
@@ -1003,6 +1082,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
           
                   
+      
+            
+                    
       
           <li
             class="ct-menu__item ct-menu__item--level-1   "
