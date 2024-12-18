@@ -412,7 +412,14 @@ CivicThemeCollapsible.prototype.getTrigger = function (el) {
  * Get panel element.
  */
 CivicThemeCollapsible.prototype.getPanel = function (el) {
-  return el.querySelector('[data-collapsible-panel]') || this.getTrigger(el).nextElementSibling || null;
+  let panelEl = el.querySelector('[data-collapsible-panel]');
+  if (!panelEl) {
+    const triggerEl = this.getTrigger(el);
+    if (triggerEl) {
+      panelEl = triggerEl.nextElementSibling;
+    }
+  }
+  return panelEl;
 };
 
 /**
