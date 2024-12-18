@@ -1,18 +1,21 @@
-import Component from './single-filter.twig';
-import SingleFilterData from './single-filter.stories.data';
+import Component from './group-filter.twig';
+import GroupFilterData from './group-filter.stories.data';
 
 const meta = {
-  title: 'Molecules/List/Single Filter',
+  title: 'Molecules/List/Group Filter',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    content_top: {
+    title: {
       control: { type: 'text' },
     },
-    title: {
+    filters: {
+      control: { type: 'array' },
+    },
+    submit_text: {
       control: { type: 'text' },
     },
     form_attributes: {
@@ -21,20 +24,11 @@ const meta = {
     form_hidden_fields: {
       control: { type: 'text' },
     },
-    items: {
-      control: { type: 'array' },
-    },
-    submit_text: {
-      control: { type: 'text' },
-    },
-    reset_text: {
+    content_top: {
       control: { type: 'text' },
     },
     content_bottom: {
       control: { type: 'text' },
-    },
-    is_multiple: {
-      control: { type: 'boolean' },
     },
     attributes: {
       control: { type: 'text' },
@@ -47,9 +41,19 @@ const meta = {
 
 export default meta;
 
-export const SingleFilter = {
+export const GroupFilter = {
   parameters: {
     layout: 'padded',
   },
-  args: SingleFilterData.args('light'),
+  args: GroupFilterData.args('light'),
+};
+
+export const GroupFilterDark = {
+  parameters: {
+    layout: 'padded',
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
+  args: GroupFilterData.args('dark'),
 };

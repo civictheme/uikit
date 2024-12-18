@@ -1,4 +1,5 @@
 import Component from './snippet.twig';
+import SnippetData from './snippet.stories.data';
 
 const meta = {
   title: 'Molecules/List/Snippet',
@@ -44,22 +45,5 @@ export const Snippet = {
   parameters: {
     layout: 'centered',
   },
-  args: {
-    theme: 'light',
-    title: 'Snippet name which runs across two or three lines',
-    summary: 'Summary of the snippet',
-    link: {
-      url: 'https://example.com',
-      is_new_window: false,
-    },
-    tags: [
-      'Tag 1',
-      'Tag 2',
-    ],
-    content_top: '',
-    content_middle: '',
-    content_bottom: '',
-    modifier_class: '',
-    attributes: '',
-  },
+  args: SnippetData.args('light'),
 };
