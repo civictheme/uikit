@@ -57,7 +57,7 @@ describe('Collapsible utility', () => {
     `;
 
     // eslint-disable-next-line global-require
-    require('./collapsible');
+    await import('./collapsible');
 
     expect(document.querySelectorAll('[data-collapsible-trigger] .ct-text-icon__group')).toHaveLength(1);
     expect(document.querySelector('[data-collapsible-trigger] .ct-text-icon__group').textContent.trim()).toEqual('trigger');
