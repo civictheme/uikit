@@ -156,7 +156,7 @@ const STYLE_STORIES_FILE_OUT  = `${DIR_OUT}/${STYLE_NAME}.stories.css`
 const VAR_CT_ASSETS_DIRECTORY = `$ct-assets-directory: '/themes/custom/${THEME_NAME}/dist/assets/';`
 
 const JS_FILE_OUT             = `${DIR_OUT}/${SCRIPT_NAME}.js`
-const JS_CIVIC_IMPORTS        = `${COMPONENT_DIR}/**/!(*.stories|*.stories.old|*.component|*.min|*.test|*.script|*.utils).js`
+const JS_CIVIC_IMPORTS        = `${COMPONENT_DIR}/**/!(*.stories|*.stories.data|*.component|*.min|*.test|*.script|*.utils).js`
 const JS_LIB_IMPORTS          = [fullPath('./node_modules/@popperjs/core/dist/umd/popper.js')]
 const JS_ASSET_IMPORTS        = [
   `${DIR_CIVICTHEME}/assets/js/**/*.js`,
