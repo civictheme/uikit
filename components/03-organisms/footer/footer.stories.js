@@ -28,6 +28,9 @@ const meta = {
     content_middle4: {
       control: { type: 'text' },
     },
+    content_middle5: {
+      control: { type: 'text' },
+    },
     content_bottom1: {
       control: { type: 'text' },
     },

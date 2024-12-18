@@ -33,6 +33,7 @@ export default {
     content_middle2: Navigation({ ...NavigationData.args(theme), title: 'About us' }),
     content_middle3: Navigation({ ...NavigationData.args(theme), title: 'Help' }),
     content_middle4: Navigation({ ...NavigationData.args(theme), title: 'Resources' }),
+    content_middle5: Navigation({ ...NavigationData.args(theme), title: null }),
     content_bottom1: '<div class="ct-footer__acknowledgement ct-text-regular">We acknowledge the traditional owners of the country throughout Australia and their continuing connection to land, sea and community. We pay our respect to them and their cultures and to the elders past and present.</div>',
     content_bottom2: '<div class="copyright ct-text-regular">©Commonwealth of Australia</div>',
     background_image: '',
