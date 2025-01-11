@@ -19,8 +19,8 @@
   "type": "module",
   "scripts": {
     "build": "npm run dist && export STORYBOOK_FULL=1 && npm run build-storybook -- --quiet",
-    "dist": "node build.js storybook build styles styles_variables js assets constants",
-    "dist:watch": "node build.js storybook build watch styles styles_variables js assets constants",
+    "dist": "node build.js base build styles styles_variables styles_stories js_storybook assets constants",
+    "dist:watch": "node build.js base build watch styles styles_variables styles_stories js_storybook assets constants",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "npm run dist && storybook build",
     "dev": "npm run dist && node build.js cli \"dist:watch\" \"storybook\"",

@@ -30,7 +30,7 @@ import { globSync } from 'node:fs'
 import { execSync, spawn } from 'child_process'
 import * as sass from 'sass'
 
-import scssVariables from './.storybook/importer.scss_variables.js'
+import scssVariableImporter from './.storybook/importer.scss_variables.js'
 import iconUtils from './components/00-base/icon/icon.utils.js'
 import backgroundUtils from './components/00-base/background/background.utils.js'
 import logoUtils from './components/02-molecules/logo/logo.utils.js'
@@ -89,7 +89,9 @@ const config = {
   styles_admin: false,
   styles_layout: false,
   styles_variables: false,
-  js: false,
+  styles_stories: false,
+  js_drupal: false,
+  js_storybook: false,
   assets: false,
   constants: false,
   base: false,
@@ -109,7 +111,8 @@ if (flags[0] !== 'cli') {
     config.styles = true
     config.styles_editor = true
     config.styles_variables = true
-    config.js = true
+    config.js_drupal = true
+    config.js_storybook = true
     config.assets = true
   } else {
     // Fully configured from command line - everything disabled by default.
@@ -135,9 +138,9 @@ const DIR_OUT                 = fullPath('./dist/')
 const DIR_ASSETS_IN           = fullPath('./assets/')
 const DIR_ASSETS_OUT          = fullPath('./dist/assets/')
 
-const COMPONENT_DIR           = config.base || config.storybook ? DIR_COMPONENTS_IN : DIR_COMPONENTS_OUT
-const STYLE_NAME              = config.base || config.storybook ? 'civictheme' : 'styles'
-const SCRIPT_NAME             = config.base || config.storybook ? 'civictheme' : 'scripts'
+const COMPONENT_DIR           = config.base ? DIR_COMPONENTS_IN : DIR_COMPONENTS_OUT
+const STYLE_NAME              = config.base ? 'civictheme' : 'styles'
+const SCRIPT_NAME             = config.base ? 'civictheme' : 'scripts'
 
 const STYLE_FILE_IN           = `${COMPONENT_DIR}/style.scss`
 const STYLE_VARIABLE_FILE_IN  = `${COMPONENT_DIR}/style.css_variables.scss`
@@ -156,6 +159,7 @@ const STYLE_STORIES_FILE_OUT  = `${DIR_OUT}/${STYLE_NAME}.stories.css`
 const VAR_CT_ASSETS_DIRECTORY = `$ct-assets-directory: '/themes/custom/${THEME_NAME}/dist/assets/';`
 
 const JS_FILE_OUT             = `${DIR_OUT}/${SCRIPT_NAME}.js`
+const JS_STORYBOOK_FILE_OUT   = `${DIR_OUT}/${SCRIPT_NAME}.storybook.js`
 const JS_CIVIC_IMPORTS        = `${COMPONENT_DIR}/**/!(*.stories|*.stories.data|*.component|*.min|*.test|*.script|*.utils).js`
 const JS_LIB_IMPORTS          = [fullPath('./node_modules/@popperjs/core/dist/umd/popper.js')]
 const JS_ASSET_IMPORTS        = [
@@ -172,7 +176,7 @@ function build() {
   }
 
   // --------------------------------------------------------------------------- COMBINED FOLDER
-  if (config.combine && !config.base && !config.storybook) {
+  if (config.combine && !config.base) {
     runCommand(`rsync -a --delete ${DIR_UIKIT_COMPONENTS_IN}/ ${DIR_UIKIT_COPY_OUT}/`)
     runCommand(`rsync -a --delete ${DIR_UIKIT_COPY_OUT}/ ${DIR_COMPONENTS_OUT}/`)
     runCommand(`rsync -a ${DIR_COMPONENTS_IN}/ ${DIR_COMPONENTS_OUT}/`)
@@ -189,9 +193,6 @@ function build() {
       config.base ? [
         config.styles_admin ? getStyleImport(STYLE_ADMIN_FILE_IN, PATH) : '',
         config.styles_layout ? loadStyle(STYLE_LAYOUT_FILE_IN, PATH) : '',
-      ].join('\n') : '',
-      config.storybook ? [
-        loadStyle(STYLE_STORIES_FILE_IN, COMPONENT_DIR)
       ].join('\n') : '',
     ].join('\n')
 
@@ -235,8 +236,20 @@ function build() {
     console.log(`Saved: Variable styles`)
   }
 
+  if (config.styles_stories) {
+    const storybookcss = [
+      VAR_CT_ASSETS_DIRECTORY,
+      loadStyle(STYLE_STORIES_FILE_IN, COMPONENT_DIR),
+    ].join('\n')
+
+    const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
+    fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
+    console.log(`Saved: Stories styles`)
+  }
+
   // --------------------------------------------------------------------------- SCRIPTS
-  if (config.js) {
+  if (config.js_drupal || config.js_storybook) {
+    const jsComponents = []
     const jsOutData = []
 
     // Third party imports.
@@ -253,17 +266,30 @@ function build() {
     globSync(JS_CIVIC_IMPORTS).forEach(filename => {
       const name = `${THEME_NAME}_${filename.split('/').reverse()[0].replace('.js', '').replace(/-/g, '_')}`
       const body = fs.readFileSync(filename, 'utf-8')
-      let outBody = ''
-      if (config.storybook) {
-        outBody = `document.addEventListener('DOMContentLoaded', () => {\n${body}\n});`
-      } else {
-        outBody = `Drupal.behaviors.${name} = {attach: function (context, settings) {\n${body}\n}};`
-      }
-      jsOutData.push(outBody)
+      jsComponents.push({ name, body })
     })
 
-    fs.writeFileSync(JS_FILE_OUT, jsOutData.join('\n'), 'utf-8')
-    console.log(`Saved: Compiled javascript`)
+    // Write JS file with drupal behaviour wrapper.
+    if (config.js_drupal) {
+      fs.writeFileSync(JS_FILE_OUT, [
+        ...jsOutData,
+        ...jsComponents.map(i => {
+          return `Drupal.behaviors.${i.name} = {attach: function (context, settings) {\n${i.body}\n}};`
+        })
+      ].join('\n'), 'utf-8')
+      console.log(`Saved: Compiled javascript (drupal)`)
+    }
+
+    // Write JS file with dom content loaded wrapper.
+    if (config.js_storybook) {
+      fs.writeFileSync(JS_STORYBOOK_FILE_OUT, [
+        ...jsOutData,
+        ...jsComponents.map(i => {
+          return `document.addEventListener('DOMContentLoaded', () => {\n${i.body}\n});`
+        })
+      ].join('\n'), 'utf-8')
+      console.log(`Saved: Compiled javascript (storybook)`)
+    }
   }
 
   // --------------------------------------------------------------------------- ASSETS
@@ -277,7 +303,7 @@ function build() {
       BACKGROUNDS: backgroundUtils.getBackgrounds(),
       ICONS: iconUtils.getIcons(),
       LOGOS: logoUtils.getLogos(),
-      SCSS_VARIABLES: scssVariables.getVariables(),
+      SCSS_VARIABLES: scssVariableImporter.getVariables(),
     }
     fs.writeFileSync('./dist/constants.json', JSON.stringify(constants, null, 2), 'utf-8')
     console.log(`Saved: Compiled constants`)
