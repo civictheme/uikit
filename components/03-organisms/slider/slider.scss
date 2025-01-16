@@ -103,23 +103,9 @@
 .ct-slide {
   $root: &;
 
-  min-height: $ct-slider-slide-mobile-min-height;
-
-  @include ct-breakpoint(m) {
-    min-height: $ct-slider-slide-desktop-min-height;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  &#{$root}--image-right {
-    @include ct-breakpoint(m) {
-      flex-direction: row-reverse;
-    }
-  }
-
   #{$root}__row {
     @include ct-breakpoint(m) {
-      width: 100%;
+      height: 100%;
     }
   }
 
@@ -144,6 +130,7 @@
     }
   }
 
+  #{$root}__content,
   #{$root}__tags {
     margin-bottom: ct-spacing(3);
 
@@ -152,27 +139,12 @@
     }
   }
 
+  #{$root}__date,
   #{$root}__title {
     margin-bottom: ct-spacing(3);
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(2);
-    }
-  }
-
-  #{$root}__date {
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(2);
-    }
-  }
-
-  #{$root}__content {
-    margin-bottom: ct-spacing(4);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(5);
     }
   }
 
