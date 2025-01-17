@@ -46,7 +46,7 @@
 {% set modifier_class = modifier_class|trim %}
 
 {% if content %}
-	<main class="ct-layout {{ modifier_class -}}" role="main" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+	<main id="main-content" tabindex="-1" class="ct-layout {{ modifier_class -}}" role="main" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 		{% block content_top %}
 			{% if content_top is not empty %}
 				{{- content_top|raw -}}

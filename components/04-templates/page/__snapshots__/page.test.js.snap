@@ -308,7 +308,9 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
 	
     <main
       class="ct-layout ct-vertical-spacing--top"
+      id="main-content"
       role="main"
+      tabindex="-1"
     >
       
 					Content Top		
@@ -662,13 +664,7 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
@@ -679,7 +675,9 @@ exports[`Page Component renders content block with permutations: {
 	
     <main
       class="ct-layout ct-vertical-spacing--top"
+      id="main-content"
       role="main"
+      tabindex="-1"
     >
       
 							
@@ -833,13 +831,7 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
@@ -850,7 +842,9 @@ exports[`Page Component renders content block with permutations: {
 	
     <main
       class="ct-layout ct-layout--no-sidebar-right  ct-layout--no-top-right  ct-layout--no-bottom-right ct-vertical-spacing--top"
+      id="main-content"
       role="main"
+      tabindex="-1"
     >
       
 							
@@ -990,13 +984,7 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
@@ -1007,7 +995,9 @@ exports[`Page Component renders content block with permutations: {
 	
     <main
       class="ct-layout ct-layout--no-sidebar-left  ct-layout--no-top-left  ct-layout--no-bottom-left  ct-vertical-spacing--top"
+      id="main-content"
       role="main"
+      tabindex="-1"
     >
       
 							
@@ -1147,13 +1137,7 @@ exports[`Page Component renders content block with permutations: {
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
@@ -1164,7 +1148,9 @@ exports[`Page Component renders content block with permutations: {
 	
     <main
       class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
+      id="main-content"
       role="main"
+      tabindex="-1"
     >
       
 							
@@ -1283,13 +1269,7 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
@@ -1388,13 +1368,7 @@ exports[`Page Component renders with default values 1`] = `
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
@@ -1494,13 +1468,7 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
     />
     
 
-            
-    <a
-      id="main-content"
-      tabindex="-1"
-    />
-    
-      
+        
   
       
 
