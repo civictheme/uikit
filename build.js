@@ -9,11 +9,11 @@ This is a simplified build system for civictheme, designed to:
 
 Build by calling:
 
-  npm run build:new
+  npm run dist
 
 Build and watch by calling:
 
-  npm run build:watch:new
+  npm run dist:watch
 
 Notes:
 
