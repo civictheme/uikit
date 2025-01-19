@@ -198,12 +198,11 @@ CivicThemeCollapsible.prototype.focusoutEvent = function (e) {
  * React on pressed keys.
  */
 CivicThemeCollapsible.prototype.keydownEvent = function (e) {
-  if (!/(32|27|38|40)/.test(e.which) || e.altKey || e.ctrlKey || e.metaKey || /input|textarea|select|object/i.test(e.target.tagName)) {
+  if (!/(32|27|37|38|39|40)/.test(e.which) || e.altKey || e.ctrlKey || e.metaKey || /input|textarea|select|object/i.test(e.target.tagName)) {
     return;
   }
 
   e.stopPropagation();
-  e.preventDefault();
 
   // ESC.
   if (e.which === 27) {
@@ -212,14 +211,16 @@ CivicThemeCollapsible.prototype.keydownEvent = function (e) {
   }
 
   if (this !== document) {
-    // Up.
-    if (e.which === 38 && !e.shiftKey) {
+    if ((e.which === 38 || e.which === 40 || e.which === 32) && !e.shiftKey) {
+      e.preventDefault();
+    }
+    // Up or Left.
+    if ((e.which === 38 || e.which === 37) && !e.shiftKey) {
       this.dispatchEvent(new CustomEvent('ct.collapsible.collapse', { bubbles: true, detail: { animate: true, keydown: true } }));
       return;
     }
-
-    // Down.
-    if (e.which === 40 && !e.shiftKey) {
+    // Down or Right.
+    if ((e.which === 40 || e.which === 39) && !e.shiftKey) {
       this.dispatchEvent(new CustomEvent('ct.collapsible.expand', { bubbles: true }));
     }
 
