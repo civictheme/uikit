@@ -18,7 +18,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is an error message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBe('alert');
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBe('error');
-    expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('polite');
+    expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('assertive');
 
     assertUniqueCssClasses(c);
   });
