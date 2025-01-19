@@ -62,7 +62,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Deploy to Netlify
-        if: matrix.node-version == 20
+        if: matrix.node-version == 22
         uses: nwtgck/actions-netlify@v3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
