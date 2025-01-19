@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * Slider component.
  */
@@ -85,6 +86,7 @@ CivicThemeSlider.prototype.disableSlideInteraction = function () {
 CivicThemeSlider.prototype.showAllSlides = function () {
   this.slides.forEach((slide) => {
     slide.setAttribute('data-slider-slide-hidden', true);
+    slide.removeAttribute('inert');
   });
 };
 
@@ -92,6 +94,7 @@ CivicThemeSlider.prototype.hideAllSlidesExceptCurrent = function () {
   this.slides.forEach((slide, idx) => {
     if (idx !== this.currentSlide) {
       slide.removeAttribute('data-slider-slide-hidden');
+      slide.setAttribute('inert', true);
     }
   });
 };
