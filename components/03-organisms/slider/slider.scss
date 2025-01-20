@@ -103,43 +103,34 @@
 .ct-slide {
   $root: &;
 
-  min-height: $ct-slider-slide-mobile-min-height;
-
-  @include ct-breakpoint(m) {
-    min-height: $ct-slider-slide-desktop-min-height;
-    display: flex;
-    flex-wrap: nowrap;
+  #{$root}__row {
+    @include ct-breakpoint(m) {
+      height: 100%;
+    }
   }
 
-  &#{$root}--image-right {
+  #{$root}__inner {
+    padding: ct-spacing(4);
+
     @include ct-breakpoint(m) {
-      flex-direction: row-reverse;
+      padding: ct-particle(10) 0;
     }
   }
 
   #{$root}__image {
-    width: 100%;
-    overflow: hidden;
-    flex-shrink: 0;
-
-    @include ct-breakpoint(m) {
-      width: ct-particle(60);
-    }
+    height: $ct-slide-mobile-height;
 
     @include ct-image-fit();
-  }
-
-  #{$root}__wrapper {
-    flex-grow: 1;
-    padding: ct-spacing(4) ct-spacing(3);
-    display: flex;
-    align-items: center;
 
     @include ct-breakpoint(m) {
-      padding: (ct-spacing() * 13) ct-spacing(10);
+      @include ct-image-container-square();
+
+      padding: 0;
+      height: 100%;
     }
   }
 
+  #{$root}__content,
   #{$root}__tags {
     margin-bottom: ct-spacing(3);
 
@@ -148,27 +139,12 @@
     }
   }
 
+  #{$root}__date,
   #{$root}__title {
     margin-bottom: ct-spacing(3);
 
     @include ct-breakpoint(m) {
       margin-bottom: ct-spacing(2);
-    }
-  }
-
-  #{$root}__date {
-    margin-bottom: ct-spacing(3);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(2);
-    }
-  }
-
-  #{$root}__content {
-    margin-bottom: ct-spacing(4);
-
-    @include ct-breakpoint(m) {
-      margin-bottom: ct-spacing(5);
     }
   }
 
