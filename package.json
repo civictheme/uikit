@@ -18,7 +18,7 @@
   "repository": "https://github.com/civictheme/uikit.git",
   "type": "module",
   "scripts": {
-    "build": "npm run dist && export STORYBOOK_FULL=1 && npm run build-storybook -- --quiet",
+    "build": "npm run build-storybook",
     "dist": "node build.js base build styles styles_variables styles_stories js_storybook assets constants",
     "dist:watch": "node build.js base build watch styles styles_variables styles_stories js_storybook assets constants",
     "storybook": "storybook dev -p 6006",
