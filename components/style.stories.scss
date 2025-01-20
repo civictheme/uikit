@@ -6,7 +6,6 @@
 //
 // stylelint-disable scss/at-import-partial-extension
 @import '00-base/variables';
-
 @import '00-base/**/storybook.stories.scss';
 @import '00-base/**/!(*storybook*).stories.scss';
 @import '01-atoms/**/*.stories.scss';
