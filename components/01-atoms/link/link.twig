@@ -50,7 +50,7 @@
     class="ct-link {{ modifier_class -}}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if title is not empty %}title="{{ title }}"{% endif %}
-    {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
+    {% if is_new_window %}target="_blank"{% endif %}
     {% if is_disabled %}disabled{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >

@@ -35,6 +35,7 @@ function CivicThemeCollapsible(el) {
   this.duration = this.el.hasAttribute('data-collapsible-duration') ? this.el.getAttribute('data-collapsible-duration') : 500;
   this.group = this.el.hasAttribute('data-collapsible-group') ? this.el.getAttribute('data-collapsible-group') : null;
   this.icon = '<svg class="ct-icon" width="24" height="24" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.6072 8.38619C18.3583 8.13884 18.0217 8 17.6709 8C17.32 8 16.9834 8.13884 16.7346 8.38619L11.9668 13.0876L7.26542 8.38619C7.01659 8.13884 6.67999 8 6.32913 8C5.97827 8 5.64167 8.13884 5.39284 8.38619C5.26836 8.50965 5.16956 8.65654 5.10214 8.81838C5.03471 8.98022 5 9.1538 5 9.32912C5 9.50445 5.03471 9.67803 5.10214 9.83987C5.16956 10.0017 5.26836 10.1486 5.39284 10.2721L11.0239 15.9031C11.1473 16.0276 11.2942 16.1264 11.4561 16.1938C11.6179 16.2612 11.7915 16.2959 11.9668 16.2959C12.1421 16.2959 12.3157 16.2612 12.4775 16.1938C12.6394 16.1264 12.7863 16.0276 12.9097 15.9031L18.6072 10.2721C18.7316 10.1486 18.8304 10.0017 18.8979 9.83987C18.9653 9.67803 19 9.50445 19 9.32912C19 9.1538 18.9653 8.98022 18.8979 8.81838C18.8304 8.65654 18.7316 8.50965 18.6072 8.38619Z" /></svg>';
+  this.iconGroupEnabled = this.el.hasAttribute('data-collapsible-icon-group');
 
   // Make sure that both trigger and a panel have required attributes set.
   this.trigger.setAttribute('data-collapsible-trigger', '');
@@ -43,7 +44,19 @@ function CivicThemeCollapsible(el) {
   if (!this.panel.hasAttribute('data-collapsible-trigger-no-icon') && !this.trigger.querySelector('.ct-collapsible__icon')) {
     const iconEl = this.htmlToElement(this.icon);
     iconEl.classList.add('ct-collapsible__icon');
-    this.trigger.append(iconEl);
+    // If multiple words - use last word and icon grouping.
+    if (this.iconGroupEnabled) {
+      const text = this.trigger.innerText.trim();
+      const lastWordIndex = text.lastIndexOf(' ');
+      const lastWord = lastWordIndex >= 0 ? text.substring(lastWordIndex + 1) : text;
+      const firstWords = lastWordIndex >= 0 ? text.substring(0, lastWordIndex + 1) : '';
+      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${lastWord} </span>`);
+      iconGroupEl.append(iconEl);
+      this.trigger.innerHTML = firstWords;
+      this.trigger.append(iconGroupEl);
+    } else {
+      this.trigger.append(iconEl);
+    }
   }
 
   // Attach event listener.
@@ -185,12 +198,11 @@ CivicThemeCollapsible.prototype.focusoutEvent = function (e) {
  * React on pressed keys.
  */
 CivicThemeCollapsible.prototype.keydownEvent = function (e) {
-  if (!/(32|27|38|40)/.test(e.which) || e.altKey || e.ctrlKey || e.metaKey || /input|textarea|select|object/i.test(e.target.tagName)) {
+  if (!/(32|27|37|38|39|40)/.test(e.which) || e.altKey || e.ctrlKey || e.metaKey || /input|textarea|select|object/i.test(e.target.tagName)) {
     return;
   }
 
   e.stopPropagation();
-  e.preventDefault();
 
   // ESC.
   if (e.which === 27) {
@@ -199,14 +211,16 @@ CivicThemeCollapsible.prototype.keydownEvent = function (e) {
   }
 
   if (this !== document) {
-    // Up.
-    if (e.which === 38 && !e.shiftKey) {
+    if ((e.which === 38 || e.which === 40 || e.which === 32) && !e.shiftKey) {
+      e.preventDefault();
+    }
+    // Up or Left.
+    if ((e.which === 38 || e.which === 37) && !e.shiftKey) {
       this.dispatchEvent(new CustomEvent('ct.collapsible.collapse', { bubbles: true, detail: { animate: true, keydown: true } }));
       return;
     }
-
-    // Down.
-    if (e.which === 40 && !e.shiftKey) {
+    // Down or Right.
+    if ((e.which === 40 || e.which === 39) && !e.shiftKey) {
       this.dispatchEvent(new CustomEvent('ct.collapsible.expand', { bubbles: true }));
     }
 
