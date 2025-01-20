@@ -1305,8 +1305,7 @@ $ct-skip-link-dark-background-color: ct-color-dark('background') !default;
 //
 $ct-slider-border-radius: $ct-border-radius !default;
 $ct-slider-space-horizontal: ct-spacing(7) !default;
-$ct-slider-slide-desktop-min-height: ct-particle(35) !default;
-$ct-slider-slide-mobile-min-height: ct-particle(35) !default;
+$ct-slide-mobile-height: ct-particle(35) !default;
 $ct-slider-mobile-transition: 0.5s !default;
 $ct-slider-desktop-transition: 1s !default;
 $ct-slider-light-background-color: ct-color-light('background-light') !default;
