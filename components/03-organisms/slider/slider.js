@@ -87,20 +87,14 @@ CivicThemeSlider.prototype.disableSlideInteraction = function () {
   });
 };
 
-CivicThemeSlider.prototype.showAllSlides = function () {
-  this.slides.forEach((slide) => {
-    slide.setAttribute('data-slider-slide-hidden', true);
-    slide.removeAttribute('inert');
-  });
-};
-
 CivicThemeSlider.prototype.hideAllSlidesExceptCurrent = function () {
   this.slides.forEach((slide, idx) => {
     if (idx !== this.currentSlide) {
-      slide.setAttribute('data-slider-slide-hidden', 'true');
+      slide.setAttribute('data-slider-slide-hidden', true);
+      slide.setAttribute('inert', true);
     } else {
       slide.removeAttribute('data-slider-slide-hidden');
-      slide.setAttribute('inert', true);
+      slide.removeAttribute('inert');
     }
   });
 };
