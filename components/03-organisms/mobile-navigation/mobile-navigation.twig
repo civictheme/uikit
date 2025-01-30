@@ -7,6 +7,7 @@
   * - theme: [string] Theme: light, dark.
   * - content_top: [string] Content slot.
   * - content_bottom: [string] Content slot.
+  * - search_link: [object] Search link object.
   * - primary_navigation_items: [array] Array of menu items.
   * - secondary_navigation_items: [array] Array of menu items.
   * - modifier_class: [string] Additional classes.
@@ -36,6 +37,7 @@
           {% include '@organisms/mobile-navigation/mobile-navigation-menu.twig' with {
             theme: theme,
             items: top_menu,
+            search_link: search_link,
             modifier_class: 'ct-mobile-navigation__top-menu',
           } only %}
         </div>

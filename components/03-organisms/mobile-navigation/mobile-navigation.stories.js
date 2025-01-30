@@ -1,4 +1,4 @@
-import { knobRadios, knobSelect, knobText, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
+import { knobRadios, knobBoolean, knobSelect, knobText, shouldRender, slotKnobs } from '../../00-base/storybook/storybook.utils';
 import getMenuLinks from '../../00-base/menu/menu.utils';
 import CivicThemeMobileNavigation from './mobile-navigation.twig';
 import CivicThemeMobileNavigationTrigger from './mobile-navigation-trigger.twig';
@@ -40,6 +40,7 @@ export const MobileNavigation = (parentKnobs = {}) => {
     ),
     trigger_text: knobText('Trigger Text', 'Menu', parentKnobs.trigger_text, parentKnobs.knobTab),
     trigger_icon: knobSelect('Trigger Icon', Object.values(ICONS), 'bars', parentKnobs.trigger_icon, parentKnobs.knobTab),
+    with_search: knobBoolean('With search link', true, parentKnobs.with_search, parentKnobs.knobTab),
     top_menu: getMenuLinks({ knobTab: 'Top menu' }, 'Top '),
     bottom_menu: getMenuLinks({ knobTab: 'Bottom menu' }, 'Bottom '),
   };
@@ -56,6 +57,10 @@ export const MobileNavigation = (parentKnobs = {}) => {
     top_menu: knobs.top_menu,
     bottom_menu: knobs.bottom_menu,
     content_bottom: knobs.content_bottom,
+    search_link: knobs.with_search ? {
+      text: 'Search',
+      url: '/search',
+    } : null,
     ...slotKnobs([
       'content_top',
       'content_bottom',

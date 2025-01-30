@@ -55,12 +55,17 @@ export const Header = (parentKnobs = {}) => {
       modifier_class: 'ct-flex-justify-content-end',
     }));
 
-    contentMiddle3Content += Search(new KnobValues({
-      modifier_class: 'ct-flex-justify-content-end',
+    if (knobs.show_search) {
+      contentMiddle3Content += Search(new KnobValues({
+        modifier_class: 'ct-flex-justify-content-end',
+        theme,
+      }));
+    }
+
+    contentMiddle3Content += MobileNavigation(new KnobValues({
+      with_search: knobs.show_search,
       theme,
     }));
-
-    contentMiddle3Content += MobileNavigation(new KnobValues({ theme }));
   }
 
   const props = {

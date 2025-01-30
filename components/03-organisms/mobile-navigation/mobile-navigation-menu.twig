@@ -19,6 +19,7 @@
  *   - below: [array] Array of submenu items.
  *   - is_expanded: [boolean] Flag if the current item has visible child.
  *   - in_active_trail: [boolean] Flag if the current item is in the active trail.
+ * - search_link: [object] Search link object.
  */
 #}
 
@@ -84,6 +85,19 @@ Copied as-is from '@base/menu/menu.twig'.
     {% endfor %}
 
     {% if menu_level == 0 %}
+        {% if search_link %}
+          <li class="ct-menu__item ct-menu__item--level-0">
+            {% include '@atoms/link/link.twig' with {
+              theme: theme,
+              text: search_link.text,
+              title: search_link.text,
+              url: search_link.url,
+              modifier_class: 'ct-menu__item__link',
+              icon: 'magnifier',
+              icon_placement: 'before',
+            } only %}
+          </li>
+        {% endif %}
       </ul>
     {% else %}
         </ul>
