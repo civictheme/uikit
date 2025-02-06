@@ -10,6 +10,8 @@
  * - size: [string] Button size: large, regular, small.
  * - icon: [string] Icon name.
  * - icon_placement: [string] Icon position: left, right
+ * - icon_group_disabled: [boolean] Disable icon and last word grouping.
+ * - icon_single_only: [boolean] Only show 1 icon. If icon and is_external, external will take preference.
  * - text: [string] Button text.
  * - url: [string] URL for the link button.
  * - allow_html: [boolean] Allow HTML in text.
@@ -53,6 +55,8 @@
       is_external: is_external,
       icon: icon,
       icon_placement: icon_placement,
+      icon_group_disabled: icon_group_disabled|default(false),
+      icon_single_only: icon_single_only|default(false),
       icon_class: 'ct-button__icon',
     } only -%}
   {%- endif -%}
