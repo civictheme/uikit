@@ -34,7 +34,7 @@ function CivicThemeSlider(el) {
   document.fonts.ready.then(() => {
     requestAnimationFrame(() => {
       this.refresh();
-    })
+    });
   });
 }
 
