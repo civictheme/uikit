@@ -265,7 +265,7 @@ CivicThemeCollapsible.prototype.setCollapsedState = function () {
   this.panel.setAttribute('aria-hidden', true);
   this.trigger.setAttribute('aria-expanded', false);
   this.collapsed = true;
-}
+};
 
 /**
  * Collapse panel.
@@ -340,7 +340,7 @@ CivicThemeCollapsible.prototype.setExpandedState = function () {
   this.trigger.setAttribute('aria-expanded', true);
   this.el.removeAttribute('data-collapsible-collapsed');
   this.collapsed = false;
-}
+};
 
 /**
  * Expand panel.
