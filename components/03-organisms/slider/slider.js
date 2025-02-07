@@ -29,6 +29,13 @@ function CivicThemeSlider(el) {
   this.hideAllSlidesExceptCurrent();
 
   this.refresh();
+
+  // Refresh slider on font-load.
+  document.fonts.ready.then(() => {
+    requestAnimationFrame(() => {
+      this.refresh();
+    })
+  });
 }
 
 CivicThemeSlider.prototype.refresh = function () {
