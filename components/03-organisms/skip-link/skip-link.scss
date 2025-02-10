@@ -9,7 +9,7 @@
     display: inline-block;
     margin: ct-spacing(2) ct-spacing(3);
 
-    &:not([data-platform="ios"]) {
+    &:not([data-platform='ios']) {
       &:active,
       &:focus-visible,
       &:hover {
