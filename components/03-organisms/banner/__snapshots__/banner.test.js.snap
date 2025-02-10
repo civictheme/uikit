@@ -291,6 +291,7 @@ exports[`Banner Component renders with all attributes provided 1`] = `
           
           
           <a
+            aria-hidden="true"
             id="main-content"
             tabindex="-1"
           />
@@ -521,6 +522,7 @@ exports[`Banner Component renders with only required attributes 1`] = `
           
           
           <a
+            aria-hidden="true"
             id="main-content"
             tabindex="-1"
           />
@@ -605,6 +607,7 @@ exports[`Banner Component renders without additional attributes and classes 1`] 
           
           
           <a
+            aria-hidden="true"
             id="main-content"
             tabindex="-1"
           />
