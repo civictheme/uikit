@@ -4,7 +4,6 @@
  */
 
 function CivicThemeSkipToTarget(el) {
-  console.log('ding')
   this.el = el;
   this.targetId = this.el.getAttribute('href');
 
