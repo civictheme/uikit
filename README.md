@@ -82,7 +82,11 @@ This will build:
 
     npm run lint-fix
 
-### Run Storybook
+### Run Storybook for development
+
+    npm run dev
+
+### Run Storybook after build
 
     npm run storybook
 
