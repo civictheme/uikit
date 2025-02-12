@@ -30,6 +30,13 @@
     .ct-button__icon {
       margin-left: ct-spacing(0.5);
     }
+
+    @include ct-breakpoint-upto(m) {
+      // Hide text on small screens.
+      .ct-text-icon__group > span {
+        @include ct-visually-hidden();
+      }
+    }
   }
 
   @include ct-component-theme($root) using($root, $theme) {

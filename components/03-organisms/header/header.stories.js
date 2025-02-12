@@ -25,13 +25,21 @@ export const Header = (parentKnobs = {}) => {
     parentKnobs.knobTab,
   );
 
+  const showSearch = knobBoolean(
+    'With Search',
+    true,
+    parentKnobs.show_search,
+    parentKnobs.knobTab,
+  );
+
   const knobs = {
     theme,
+    show_search: showSearch,
+    search_as_mobile_link: showSearch ? knobBoolean('Search as link on mobile', false, parentKnobs.search_as_mobile_link, parentKnobs.knobTab) : null,
     show_slogan: knobBoolean('Show slogan', true, parentKnobs.show_slogan, parentKnobs.knobTab),
     show_secondary_navigation: knobBoolean('Show secondary navigation', true, parentKnobs.show_secondary_navigation, parentKnobs.knobTab),
     show_logo: knobBoolean('Show logo', true, parentKnobs.show_logo, parentKnobs.knobTab),
     show_primary_navigation: knobBoolean('Show primary navigation', true, parentKnobs.show_primary_navigation, parentKnobs.knobTab),
-    show_search: knobBoolean('With Search', true, parentKnobs.show_search, parentKnobs.knobTab),
   };
 
   let contentTop3 = '';
@@ -55,12 +63,18 @@ export const Header = (parentKnobs = {}) => {
       modifier_class: 'ct-flex-justify-content-end',
     }));
 
-    contentMiddle3Content += Search(new KnobValues({
-      modifier_class: 'ct-flex-justify-content-end',
-      theme,
-    }));
+    if (knobs.show_search) {
+      contentMiddle3Content += Search(new KnobValues({
+        modifier_class: 'ct-flex-justify-content-end',
+        hide_on_mobile: knobs.search_as_mobile_link,
+        theme,
+      }));
+    }
 
-    contentMiddle3Content += MobileNavigation(new KnobValues({ theme }));
+    contentMiddle3Content += MobileNavigation(new KnobValues({
+      theme,
+      with_search: knobs.search_as_mobile_link,
+    }));
   }
 
   const props = {

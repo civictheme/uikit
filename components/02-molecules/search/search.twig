@@ -9,16 +9,19 @@
  * - url: [string] Search page URL.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
+ * - hide_on_mobile: [boolean] Flag to hide the search on mobile.
  */
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
+{% set hide_on_mobile_class = hide_on_mobile ? 'hide-xxs show-m-flex' : '' %}
+{% set modifier_class = '%s %s %s'|format(theme_class, hide_on_mobile_class, modifier_class|default('')) %}
+{% set search_text = '<span>%s</span>'|format(text) %}
 
-<div class="ct-search hide-xxs show-m-flex {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-search {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   {% include '@atoms/link/link.twig' with {
     theme: theme|default('light'),
-    text: text,
+    text: search_text,
     url: url,
     icon: 'magnifier',
     icon_placement: 'after',
