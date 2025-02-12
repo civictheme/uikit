@@ -150,7 +150,7 @@ function buildCombineDirectories() {
     runCommand(`rsync -a --delete ${DIR_UIKIT_COMPONENTS_IN}/ ${DIR_UIKIT_COPY_OUT}/`)
     runCommand(`rsync -a --delete ${DIR_UIKIT_COPY_OUT}/ ${DIR_COMPONENTS_OUT}/`)
     runCommand(`rsync -a ${DIR_COMPONENTS_IN}/ ${DIR_COMPONENTS_OUT}/`)
-    successReporter(`Saved: Combined folders ${time()}\n`)
+    successReporter(`Saved: Combined folders ${time()}`)
   }
 }
 
@@ -186,7 +186,7 @@ function buildStylesEditor() {
 
     const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
-    successReporter(`Saved: Editor styles ${time()}\n`)
+    successReporter(`Saved: Editor styles ${time()}`)
   }
 }
 
@@ -194,7 +194,7 @@ function buildStylesAdmin() {
   if (config.styles_admin) {
     const compiled = sass.compile(STYLE_ADMIN_FILE_IN, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_ADMIN_FILE_OUT, compiled.css, 'utf-8')
-    successReporter(`Saved: Admin styles ${time()}\n`)
+    successReporter(`Saved: Admin styles ${time()}`)
   }
 }
 
@@ -207,7 +207,7 @@ function buildStylesLayout() {
 
     const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
-    successReporter(`Saved: Layout styles ${time()}\n`)
+    successReporter(`Saved: Layout styles ${time()}`)
   }
 }
 
