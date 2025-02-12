@@ -150,7 +150,7 @@ function buildCombineDirectories() {
     runCommand(`rsync -a --delete ${DIR_UIKIT_COMPONENTS_IN}/ ${DIR_UIKIT_COPY_OUT}/`)
     runCommand(`rsync -a --delete ${DIR_UIKIT_COPY_OUT}/ ${DIR_COMPONENTS_OUT}/`)
     runCommand(`rsync -a ${DIR_COMPONENTS_IN}/ ${DIR_COMPONENTS_OUT}/`)
-    console.log(`Saved: Combined folders ${time()}`)
+    console.log(`✅   Saved: Combined folders ${time()}`)
   }
 }
 
@@ -166,18 +166,13 @@ function buildStyles() {
         config.styles_layout ? loadStyleFile(STYLE_LAYOUT_FILE_IN, PATH) : '',
       ].join('\n') : '',
     ].join('\n')
-    try {
-      const compiled = sass.compileString(stylecss, { loadPaths: [COMPONENT_DIR, PATH] })
-      const compiledImportAtTop = compiled.css.split('\n')
-        .sort(a => a.indexOf('@import') === 0 ? -1 : 0)
-        .sort(a => a.indexOf('@charset') === 0 ? -1 : 0)
-        .join('\n')
-      fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
-      console.log(`Saved: Component styles ${time()}`)
-    }
-    catch (error) {
-      errorReporter(error);
-    }
+    const compiled = sass.compileString(stylecss, { loadPaths: [COMPONENT_DIR, PATH] })
+    const compiledImportAtTop = compiled.css.split('\n')
+      .sort(a => a.indexOf('@import') === 0 ? -1 : 0)
+      .sort(a => a.indexOf('@charset') === 0 ? -1 : 0)
+      .join('\n')
+    fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
+    console.log(`✅   Saved: Component styles ${time()}`)
   }
 }
 
@@ -187,14 +182,9 @@ function buildStylesEditor() {
       VAR_CT_ASSETS_DIRECTORY,
       loadStyleFile(STYLE_EDITOR_FILE_IN, PATH),
     ].join('\n')
-
-    try {
-      const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
-      fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
-      console.log(`Saved: Editor styles ${time()}`)
-    } catch (error) {
-      errorReporter(error);
-    }
+    const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
+    fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
+    console.log(`✅   Saved: Editor styles ${time()}`)
   }
 }
 
@@ -202,7 +192,7 @@ function buildStylesAdmin() {
   if (config.styles_admin) {
     const compiled = sass.compile(STYLE_ADMIN_FILE_IN, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_ADMIN_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Admin styles ${time()}`)
+    console.log(`✅   Saved: Admin styles ${time()}`)
   }
 }
 
@@ -212,26 +202,17 @@ function buildStylesLayout() {
       VAR_CT_ASSETS_DIRECTORY,
       loadStyleFile(STYLE_LAYOUT_FILE_IN, PATH),
     ].join('\n')
-    try {
-      const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
-      fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
-      console.log(`Saved: Layout styles ${time()}`)
-    }
-    catch (error) {
-      errorReporter(error);
-    }
+    const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
+    fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
+    console.log(`✅   Saved: Layout styles ${time()}`)
   }
 }
 
 function buildStylesVariables() {
   if (config.styles_variables) {
-    try {
-      const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { loadPaths: [COMPONENT_DIR] })
-      fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
-      console.log(`Saved: Variable styles ${time()}`)
-    } catch (error) {
-      errorReporter(error);
-    }
+    const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { loadPaths: [COMPONENT_DIR] })
+    fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
+    console.log(`✅   Saved: Variable styles ${time()}`)
   }
 }
 
@@ -241,13 +222,9 @@ function buildStylesStories() {
       VAR_CT_ASSETS_DIRECTORY,
       loadStyleFile(STYLE_STORIES_FILE_IN, COMPONENT_DIR),
     ].join('\n')
-    try {
-      const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
-      fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
-      console.log(`Saved: Stories styles ${time()}`)
-    } catch (error) {
-      errorReporter(error);
-    }
+    const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
+    fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
+    console.log(`✅   Saved: Stories styles ${time()}`)
   }
 }
 
@@ -284,7 +261,7 @@ function buildJavascript() {
           return `Drupal.behaviors.${i.name} = {attach: function (context, settings) {\n${i.body}\n}};`
         })
       ].join('\n'), 'utf-8')
-      console.log(`Saved: Compiled javascript (drupal) ${time()}`)
+      console.log(`✅   Saved: Compiled javascript (drupal) ${time()}`)
     }
 
     // Write JS file with dom content loaded wrapper.
@@ -295,7 +272,7 @@ function buildJavascript() {
           return `document.addEventListener('DOMContentLoaded', () => {\n${i.body}\n});`
         })
       ].join('\n'), 'utf-8')
-      console.log(`Saved: Compiled javascript (storybook) ${time()}`)
+      console.log(`✅   Saved: Compiled javascript (storybook) ${time()}`)
     }
   }
 }
@@ -303,7 +280,7 @@ function buildJavascript() {
 function buildAssetsDirectory() {
   if (config.assets) {
     runCommand(`rsync -a --delete --prune-empty-dirs --exclude .gitkeep --exclude js --exclude sass ${DIR_ASSETS_IN}/ ${DIR_ASSETS_OUT}/`)
-    console.log(`Saved: Assets ${time()}`)
+    console.log(`✅   Saved: Assets ${time()}`)
   }
 }
 
@@ -330,18 +307,21 @@ async function buildConstants() {
 async function build() {
   startTime = new Date().getTime()
   lastTime = startTime
-
-  buildOutDirectory()
-  buildCombineDirectories()
-  buildStyles()
-  buildStylesEditor()
-  buildStylesAdmin()
-  buildStylesLayout()
-  buildStylesVariables()
-  buildStylesStories()
-  buildJavascript()
-  buildAssetsDirectory()
-  await buildConstants()
+  try {
+    buildOutDirectory()
+    buildCombineDirectories()
+    buildStyles()
+    buildStylesEditor()
+    buildStylesAdmin()
+    buildStylesLayout()
+    buildStylesVariables()
+    buildStylesStories()
+    buildJavascript()
+    buildAssetsDirectory()
+    await buildConstants()
+  } catch (error) {
+    errorReporter(error);
+  }
 
   console.log(`Time taken: ${time(true)}`)
 }
@@ -435,6 +415,6 @@ function time(full) {
 }
 
 function errorReporter(error) {
-  console.error('Error during SASS compilation:', error.message);
+  console.error('❌   Error during SASS compilation:', error.message);
   console.error('Details:', error.formatted || error); // `error.formatted` provides nicer SASS error messages if available
 }
