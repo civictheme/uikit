@@ -166,14 +166,18 @@ function buildStyles() {
         config.styles_layout ? loadStyleFile(STYLE_LAYOUT_FILE_IN, PATH) : '',
       ].join('\n') : '',
     ].join('\n')
-
-    const compiled = sass.compileString(stylecss, { loadPaths: [COMPONENT_DIR, PATH] })
-    const compiledImportAtTop = compiled.css.split('\n')
-      .sort(a => a.indexOf('@import') === 0 ? -1 : 0)
-      .sort(a => a.indexOf('@charset') === 0 ? -1 : 0)
-      .join('\n')
-    fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
-    console.log(`Saved: Component styles ${time()}`)
+    try {
+      const compiled = sass.compileString(stylecss, { loadPaths: [COMPONENT_DIR, PATH] })
+      const compiledImportAtTop = compiled.css.split('\n')
+        .sort(a => a.indexOf('@import') === 0 ? -1 : 0)
+        .sort(a => a.indexOf('@charset') === 0 ? -1 : 0)
+        .join('\n')
+      fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
+      console.log(`Saved: Component styles ${time()}`)
+    }
+    catch (error) {
+      errorReporter(error);
+    }
   }
 }
 
@@ -184,9 +188,13 @@ function buildStylesEditor() {
       loadStyleFile(STYLE_EDITOR_FILE_IN, PATH),
     ].join('\n')
 
-    const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
-    fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Editor styles ${time()}`)
+    try {
+      const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
+      fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
+      console.log(`Saved: Editor styles ${time()}`)
+    } catch (error) {
+      errorReporter(error);
+    }
   }
 }
 
@@ -204,18 +212,26 @@ function buildStylesLayout() {
       VAR_CT_ASSETS_DIRECTORY,
       loadStyleFile(STYLE_LAYOUT_FILE_IN, PATH),
     ].join('\n')
-
-    const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
-    fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Layout styles ${time()}`)
+    try {
+      const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
+      fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
+      console.log(`Saved: Layout styles ${time()}`)
+    }
+    catch (error) {
+      errorReporter(error);
+    }
   }
 }
 
 function buildStylesVariables() {
   if (config.styles_variables) {
-    const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { loadPaths: [COMPONENT_DIR] })
-    fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Variable styles ${time()}`)
+    try {
+      const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { loadPaths: [COMPONENT_DIR] })
+      fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
+      console.log(`Saved: Variable styles ${time()}`)
+    } catch (error) {
+      errorReporter(error);
+    }
   }
 }
 
@@ -225,10 +241,13 @@ function buildStylesStories() {
       VAR_CT_ASSETS_DIRECTORY,
       loadStyleFile(STYLE_STORIES_FILE_IN, COMPONENT_DIR),
     ].join('\n')
-
-    const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
-    fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Stories styles ${time()}`)
+    try {
+      const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
+      fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
+      console.log(`Saved: Stories styles ${time()}`)
+    } catch (error) {
+      errorReporter(error);
+    }
   }
 }
 
@@ -413,4 +432,9 @@ function time(full) {
   const rtn = now - (full ? startTime : lastTime)
   lastTime = now
   return `[ ${rtn} ms ]`
+}
+
+function errorReporter(error) {
+  console.error('Error during SASS compilation:', error.message);
+  console.error('Details:', error.formatted || error); // `error.formatted` provides nicer SASS error messages if available
 }
