@@ -7,7 +7,7 @@ exports[`Search Component renders with URL only 1`] = `
 
 
   <div
-    class="ct-search hide-xxs show-m-flex ct-theme-light "
+    class="ct-search ct-theme-light "
   >
     
   
@@ -37,7 +37,10 @@ exports[`Search Component renders with URL only 1`] = `
       <span
         class="ct-text-icon__group"
       >
-        Search
+        <span>
+          Search
+        </span>
+        
 
 
                                     
@@ -82,7 +85,7 @@ exports[`Search Component renders with optional attributes 1`] = `
 
 
   <div
-    class="ct-search hide-xxs show-m-flex ct-theme-dark custom-class"
+    class="ct-search ct-theme-dark custom-class"
     data-test="true"
   >
     
@@ -113,7 +116,10 @@ exports[`Search Component renders with optional attributes 1`] = `
       <span
         class="ct-text-icon__group"
       >
-        Search
+        <span>
+          Search
+        </span>
+        
 
 
                                     
@@ -158,7 +164,7 @@ exports[`Search Component renders with required attributes 1`] = `
 
 
   <div
-    class="ct-search hide-xxs show-m-flex ct-theme-light "
+    class="ct-search ct-theme-light "
   >
     
   
@@ -188,7 +194,10 @@ exports[`Search Component renders with required attributes 1`] = `
       <span
         class="ct-text-icon__group"
       >
-        Search
+        <span>
+          Search
+        </span>
+        
 
 
                                     
