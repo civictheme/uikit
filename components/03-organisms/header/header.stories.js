@@ -54,3 +54,10 @@ export const HeaderDark = {
   },
   args: HeaderData.args('dark'),
 };
+
+export const HeaderWithMobileNavSearchLink = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: HeaderData.args('light', { mobileSearchLink: true }),
+};

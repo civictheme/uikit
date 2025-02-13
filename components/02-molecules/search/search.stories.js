@@ -14,9 +14,6 @@ const meta = {
     url: {
       control: { type: 'text' },
     },
-    hide_on_mobile: {
-      control: { type: 'boolean' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -36,7 +33,6 @@ export const Search = {
     theme: 'light',
     text: 'Search',
     url: '/search',
-    hide_on_mobile: false,
     modifier_class: '',
     attributes: '',
   },

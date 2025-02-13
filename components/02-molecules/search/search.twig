@@ -9,13 +9,11 @@
  * - url: [string] Search page URL.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
- * - hide_on_mobile: [boolean] Flag to hide the search on mobile.
  */
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set hide_on_mobile_class = hide_on_mobile ? 'hide-xxs show-m-flex' : '' %}
-{% set modifier_class = '%s %s %s'|format(theme_class, hide_on_mobile_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 {% set search_text = '<span>%s</span>'|format(text) %}
 
 <div class="ct-search {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
