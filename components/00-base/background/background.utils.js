@@ -3,11 +3,11 @@
  * Background component utilities.
  */
 
-const fs = require('fs');
-const pathUtil = require('path');
+import fs from 'fs';
+import pathUtil from 'path';
 
 const dir = '../../../assets/backgrounds';
-const basePath = pathUtil.resolve(__dirname, dir);
+const basePath = pathUtil.resolve(import.meta.dirname, dir);
 const paths = fs.readdirSync(basePath);
 
 function getBackgrounds() {
@@ -18,6 +18,6 @@ function getBackgrounds() {
   return urls;
 }
 
-module.exports = {
-  getBackgrounds,
-};
+export default {
+  getBackgrounds
+}

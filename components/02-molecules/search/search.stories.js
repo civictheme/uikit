@@ -1,32 +1,43 @@
-import CivicThemeSearch from './search.twig';
-import { knobBoolean, knobRadios, knobText, shouldRender } from '../../00-base/storybook/storybook.utils';
+import Component from './search.twig';
 
-export default {
+const meta = {
   title: 'Molecules/Search',
-  parameters: {
-    layout: 'centered',
-    storyLayoutSize: 'large',
+  component: Component,
+  argTypes: {
+    theme: {
+      control: { type: 'radio' },
+      options: ['light', 'dark'],
+    },
+    text: {
+      control: { type: 'text' },
+    },
+    url: {
+      control: { type: 'text' },
+    },
+    hide_on_mobile: {
+      control: { type: 'boolean' },
+    },
+    modifier_class: {
+      control: { type: 'text' },
+    },
+    attributes: {
+      control: { type: 'text' },
+    },
   },
 };
 
-export const Search = (parentKnobs = {}) => {
-  const knobs = {
-    theme: knobRadios(
-      'Theme',
-      {
-        Light: 'light',
-        Dark: 'dark',
-      },
-      'light',
-      parentKnobs.theme,
-      parentKnobs.knobTab,
-    ),
-    text: knobText('Text', 'Search', parentKnobs.text, parentKnobs.knobTab),
-    url: knobText('Search URL', '/search', parentKnobs.url, parentKnobs.knobTab),
-    hide_on_mobile: knobBoolean('Hide on mobile', false, parentKnobs.hide_on_mobile, parentKnobs.knobTab),
-    modifier_class: knobText('Additional class', '', parentKnobs.modifier_class, parentKnobs.knobTab),
-    attributes: knobText('Additional attributes', '', parentKnobs.attributes, parentKnobs.knobTab),
-  };
+export default meta;
 
-  return shouldRender(parentKnobs) ? CivicThemeSearch(knobs) : knobs;
+export const Search = {
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    theme: 'light',
+    text: 'Search',
+    url: '/search',
+    hide_on_mobile: false,
+    modifier_class: '',
+    attributes: '',
+  },
 };

@@ -13,7 +13,9 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -583,6 +585,7 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -648,7 +651,9 @@ exports[`Page Component renders content block with permutations: {
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -664,6 +669,7 @@ exports[`Page Component renders content block with permutations: {
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -754,6 +760,7 @@ exports[`Page Component renders content block with permutations: {
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -819,7 +826,9 @@ exports[`Page Component renders content block with permutations: {
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -835,6 +844,7 @@ exports[`Page Component renders content block with permutations: {
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -911,6 +921,7 @@ exports[`Page Component renders content block with permutations: {
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -976,7 +987,9 @@ exports[`Page Component renders content block with permutations: {
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -992,6 +1005,7 @@ exports[`Page Component renders content block with permutations: {
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -1068,6 +1082,7 @@ exports[`Page Component renders content block with permutations: {
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -1133,7 +1148,9 @@ exports[`Page Component renders content block with permutations: {
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -1149,6 +1166,7 @@ exports[`Page Component renders content block with permutations: {
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -1211,6 +1229,7 @@ exports[`Page Component renders content block with permutations: {
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -1269,7 +1288,9 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -1285,6 +1306,7 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -1317,6 +1339,7 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -1374,7 +1397,9 @@ exports[`Page Component renders with default values 1`] = `
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -1390,6 +1415,7 @@ exports[`Page Component renders with default values 1`] = `
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -1422,6 +1448,7 @@ exports[`Page Component renders with default values 1`] = `
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
@@ -1480,7 +1507,9 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
     
   
     <a
+      aria-hidden="true"
       id="top"
+      tab-index="-1"
     />
     
 
@@ -1496,6 +1525,7 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
 
             
     <a
+      aria-hidden="true"
       id="main-content"
       tabindex="-1"
     />
@@ -1528,6 +1558,7 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
       <a
         class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
+        data-skip-to-target=""
         href="#top"
         role="button"
       >
