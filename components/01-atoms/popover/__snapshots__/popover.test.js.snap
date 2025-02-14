@@ -23,10 +23,6 @@ exports[`Popover Component renders with optional attributes 1`] = `
   >
     
     
-
-
-  
-  
     <a
       class="ct-link ct-theme-dark     ct-popover__link"
       data-collapsible-trigger=""
@@ -34,9 +30,7 @@ exports[`Popover Component renders with optional attributes 1`] = `
       tabindex="0"
       target="_blank"
     >
-      
-
-    Sample Trigger  
+      Sample Trigger
       <span
         class="ct-visually-hidden"
       >
@@ -44,7 +38,6 @@ exports[`Popover Component renders with optional attributes 1`] = `
       </span>
     </a>
     
-
     
     <div
       class="ct-popover__content"
@@ -86,21 +79,14 @@ exports[`Popover Component renders with required attributes 1`] = `
   >
     
     
-
-
-  
-  
     <a
       class="ct-link ct-theme-light     ct-popover__link"
       data-collapsible-trigger=""
       tabindex="0"
     >
-      
-
-    Sample Trigger  
+      Sample Trigger
     </a>
     
-
     
     <div
       class="ct-popover__content"
