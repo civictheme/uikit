@@ -26,7 +26,10 @@ export default {
       title: 'Field title',
       title_display: 'visible',
       description: 'Description content sample.',
-      message: 'Message content sample.',
+      message: {
+        content: 'Message content sample.',
+        attributes: `id="field_id--error-message"`,
+      },
       is_required: false,
       is_invalid: false,
       is_disabled: false,

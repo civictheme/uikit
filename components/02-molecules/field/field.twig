@@ -37,6 +37,9 @@
  *   - is_disabled: [boolean] Denote if the control is disabled. Propagated from `is_disabled` if not defined.
  *   - attributes: [string] Control additional attributes. Optional.
  *   - modifier_class: [string] Control additional classes. Optional.
+ * - message: [object] Message object for showing messages.
+ *   - content: Message content
+ *   - attributes: [string] Message attributes.
  * - attributes: [string] Additional attributes. Optional.
  * - modifier_class: [string] Additional classes. Optional.
  * - prefix: [string] The content to add before the field.
@@ -155,9 +158,10 @@
 				{% include '@atoms/field-message/field-message.twig' with {
 					theme: theme,
 					type: is_invalid ? 'error' : 'information',
-					content: message ? message : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
+					content: message.content ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
+          			attributes: message.attributes|default('')
 				} only %}
 			{% endif %}
 		</div>
