@@ -52,7 +52,7 @@
         @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
           @include ct-component-property(ct-navigation, $theme, drawer, menu-item, hover, background-color);
           @include ct-component-property(ct-navigation, $theme, drawer, hover, color);
-      
+
           border-bottom-color: ct-component-var(ct-navigation, $theme, drawer, menu-item, hover, border-color);
         }
       }
