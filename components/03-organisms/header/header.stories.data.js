@@ -37,7 +37,7 @@ export default {
         theme,
         text: 'Search',
         url: '/search',
-        modifier_class: options.mobileSearchLink ? 'ct-flex-justify-content-end hide-xxs show-m-flex' : 'ct-flex-justify-content-end',
+        modifier_class: `ct-flex-justify-content-end ${options.mobileSearchLink ? 'hide-xxs show-m-flex' : ''}`,
       }).trim(),
       MobileNavigationTrigger({
         theme,

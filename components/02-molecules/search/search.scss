@@ -30,12 +30,12 @@
     .ct-button__icon {
       margin-left: ct-spacing(0.5);
     }
+  }
 
-    @include ct-breakpoint-upto(m) {
-      // Hide text on small screens.
-      .ct-text-icon__group > span {
-        @include ct-visually-hidden();
-      }
+  // Hide text on small screens.
+  &__link-text {
+    @include ct-breakpoint-upto($ct-header-desktop-menu-breakpoint) {
+      @include ct-visually-hidden();
     }
   }
 
@@ -49,10 +49,12 @@
       }
 
       &:hover {
-        @include ct-component-property(ct-navigation, $theme, drawer, menu-item, hover, background-color);
-        @include ct-component-property(ct-navigation, $theme, drawer, hover, color);
-
-        border-bottom-color: ct-component-var(ct-navigation, $theme, drawer, menu-item, hover, border-color);
+        @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
+          @include ct-component-property(ct-navigation, $theme, drawer, menu-item, hover, background-color);
+          @include ct-component-property(ct-navigation, $theme, drawer, hover, color);
+      
+          border-bottom-color: ct-component-var(ct-navigation, $theme, drawer, menu-item, hover, border-color);
+        }
       }
 
       &[aria-expanded='true'],
