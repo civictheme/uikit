@@ -50,6 +50,16 @@
 
   &#{$root}--inline {
     #{$root}__items {
+      & {
+        align-items: center;
+        height: 100%;
+        display: none;
+      }
+
+      @include ct-breakpoint($ct-navigation-breakpoint) {
+        display: flex;
+      }
+
       #{$root}__menu {
         // First-level items to be displayed inline.
         &.ct-menu--level-0 {
@@ -111,6 +121,13 @@
         &.ct-menu--level-0 {
           // First-level items to be displayed inline.
           display: flex;
+
+          > .ct-menu__item {
+            > .ct-link {
+              padding-left: ct-spacing(2);
+              padding-right: ct-spacing(2);
+            }
+          }
         }
       }
 
