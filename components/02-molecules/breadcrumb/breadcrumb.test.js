@@ -14,10 +14,15 @@ describe('Breadcrumb Component', () => {
     expect(c.querySelector('.ct-breadcrumb__links__link--active').textContent.trim()).toEqual('Subcategory');
 
     const links = c.querySelectorAll('.ct-breadcrumb__links__link');
-    expect(links).toHaveLength(3);
-    expect(links[0].textContent.trim()).toEqual('Home');
-    expect(links[1].textContent.trim()).toEqual('Category');
-    expect(links[2].textContent.trim()).toEqual('Subcategory');
+    expect(links).toHaveLength(4);
+
+    // Mobile.
+    expect(links[0].textContent.trim()).toEqual('Category');
+
+    // Desktop.
+    expect(links[1].textContent.trim()).toEqual('Home');
+    expect(links[2].textContent.trim()).toEqual('Category');
+    expect(links[3].textContent.trim()).toEqual('Subcategory');
 
     const separators = c.querySelectorAll('.ct-breadcrumb__links__separator');
     expect(separators).toHaveLength(2);
