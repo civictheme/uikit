@@ -10,7 +10,7 @@ const meta = {
     },
     tag: {
       control: { type: 'radio' },
-      options: [ 'label', 'legend', 'div' ],
+      options: ['label', 'legend', 'div'],
     },
     content: {
       control: { type: 'text' },
