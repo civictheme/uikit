@@ -5,7 +5,7 @@
  *
  * Variables:
  * - theme: [string] Theme: light, dark.
- * - tag: [string] Tag: `label`, `legend`, `div`.
+ * - tag: [string] Tag: `label`, `legend`.
  * - content: [string] The label's content.
  * - size: [string] Label size: extra-large, large, regular, small, extra-small.
  * - is_required: [boolean] Mark label as required.
@@ -17,7 +17,7 @@
  */
 #}
 
-{% set tag = tag in ['label', 'legend', 'div'] ? tag : 'label' %}
+{% set tag = tag in ['label', 'legend'] ? tag : 'label' %}
 {% set size = size in ['extra-large', 'large', 'regular', 'small', 'extra-small'] ? size : 'regular' %}
 {% set size_class = 'ct-label--%s'|format(size) %}
 {% set required_class = is_required ? 'ct-label--required' : '' %}

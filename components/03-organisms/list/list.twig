@@ -137,15 +137,10 @@
 
           {% block results_count %}
             {% if results_count -%}
-              <div class="container ct-list__results-count">
+              <div class="container">
                 <div class="row">
                   <div class="col-xxs-12">
-                    {% include '@atoms/label/label.twig' with {
-                      content: results_count,
-                      theme: theme,
-                      tag: 'div',
-                      modifier_class: 'ct-list__results-count__inner',
-                    } only %}
+                    <div class="ct-list__results-count">{{ results_count }}</div>
                   </div>
                 </div>
               </div>

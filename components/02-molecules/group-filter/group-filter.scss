@@ -9,8 +9,10 @@
   padding-right: ct-spacing(4);
 
   #{$root}__title {
+    @include ct-typography('label-regular');
+
     white-space: nowrap;
-    margin-bottom: 0;
+    margin: 0;
   }
 
   #{$root}__row {
@@ -38,5 +40,9 @@
   @include ct-component-theme($root) using($root, $theme) {
     border-top-color: ct-component-var($root, $theme, border-color);
     border-bottom-color: ct-component-var($root, $theme, border-color);
+
+    #{$root}__title {
+      color: ct-component-var($root, $theme, title, color);
+    }
   }
 }

@@ -32,6 +32,12 @@
     }
   }
 
+  &__results-count {
+    @include ct-typography('label-regular');
+
+    margin: 0;
+  }
+
   &__rows {
     .col,
     [class*='col-'] {
@@ -49,6 +55,10 @@
     &#{$root}__header,
     &#{$root}__rows-header {
       @include ct-component-property($root, $theme, color);
+    }
+
+    #{$root}__results-count {
+      @include ct-component-property($root, $theme, results-count, color);
     }
 
     &#{$root}--with-background {
