@@ -1004,7 +1004,13 @@ exports[`Field Component textarea with all attributes 1`] = `
       for="testid"
     >
       
-    Test Title  
+    Test Title 
+      <span
+        class="ct-label__required"
+      >
+        (required)
+      </span>
+        
     </label>
     		
 		

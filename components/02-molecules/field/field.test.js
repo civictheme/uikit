@@ -338,7 +338,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field textarea.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title (required)');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
