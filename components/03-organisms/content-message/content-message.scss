@@ -1,0 +1,26 @@
+//
+// Message component.
+//
+
+@use 'sass:map';
+
+.ct-content-message {
+  $root: &;
+
+  // Override the Message component styles.
+  .ct-message {
+    margin: 0;
+    justify-content: flex-start;
+
+    // Reset the spacing of the summary if title is not present.
+    .ct-message__summary:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @include ct-component-theme($root) using($root, $theme) {
+    &#{$root}--with-background {
+      @include ct-component-property($root, $theme, background-color);
+    }
+  }
+}

@@ -1099,6 +1099,12 @@ $ct-message-dark-warning-color: ct-color-dark('body') !default;
 $ct-message-dark-warning-icon-color: $ct-message-dark-warning-color !default;
 
 //
+// Content Message.
+//
+$ct-content-message-light-background-color: ct-color-light('background') !default;
+$ct-content-message-dark-background-color: ct-color-dark('background') !default;
+
+//
 // Navigation
 //
 // Navigation can be rendered in 3 ways: plain, with dropdown and with drawer.

@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Content Message component based on the Message component.
+ *
+ * Variables:
+ * - theme: [string] Theme: light, dark.
+ * - type: [string] Message type: information, error, warning, success.
+ * - content: [string] Content text.
+ * - modifier_class: [string] Additional classes.
+ */
+#}
+
+{% set type = type|default('information') %}
+{% set type_class = 'ct-message--%s'|format(type) %}
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set with_background_class = with_background ? 'ct-content-message--with-background' : '' %}
+{% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing-inset--%s'|format(vertical_spacing) : '' %}
+{% set content_message_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
+{% set message_class = '%s %s'|format(theme_class, type_class) %}
+
+{% set icons = {
+  information: 'information-mark',
+  warning: 'exclamation-mark-2',
+  error: 'exclamation-mark-1',
+  success: 'approve',
+} %}
+<div class="ct-content-message {{ content_message_class -}}">
+  <div
+    class="ct-message {{ message_class -}}"
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  >
+    {% if icons[type] is defined %}
+      <div class="ct-message__icon">
+        {% include "@base/icon/icon.twig" with {
+          symbol: icons[type],
+          size: 'regular',
+        } only %}
+      </div>
+    {% endif %}
+
+    <div class="ct-message__content">
+      {% if title %}
+        <div class="ct-message__title">{{ title }}</div>
+      {% endif %}
+
+      {% if content %}
+        <div class="ct-message__summary">{{ content|striptags('<strong>,<a>,<pre>,<ul>,<ol>,<li>')|raw }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
