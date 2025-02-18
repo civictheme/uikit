@@ -38,6 +38,9 @@ const meta = {
     template_column_count: {
       control: { type: 'number' },
     },
+    auto_breakpoint: {
+      control: { type: 'boolean' },
+    },
     fill_width: {
       control: { type: 'boolean' },
     },
@@ -77,11 +80,12 @@ export const Grid = {
     column_element: 'div',
     column_class: 'col',
     column_attributes: '',
-    use_container: true,
+    use_container: false,
     is_fluid: false,
     template_column_count: 0,
+    auto_breakpoint: false,
     fill_width: false,
     attributes: '',
-    modifier_class: '',
+    modifier_class: 'row--equal-heights-content row--vertically-spaced',
   },
 };
