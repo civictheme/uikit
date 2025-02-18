@@ -127,13 +127,6 @@
         &.ct-menu--level-0 {
           // First-level items to be displayed inline.
           display: flex;
-
-          > .ct-menu__item {
-            > .ct-link {
-              padding-left: ct-spacing(2);
-              padding-right: ct-spacing(2);
-            }
-          }
         }
       }
 
@@ -344,6 +337,13 @@
         // First-level items to be displayed inline.
         &.ct-menu--level-0 {
           display: flex;
+
+          > .ct-menu__item {
+            > .ct-link {
+              padding-left: ct-spacing(2);
+              padding-right: ct-spacing(2);
+            }
+          }
         }
 
         .ct-menu__item {
