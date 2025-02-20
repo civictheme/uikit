@@ -53,20 +53,13 @@ exports[`Service Card Component renders with content slots 1`] = `
           class="ct-item-list__item"
         >
                           
-
-
-  
-  
           <a
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-            
-
-    Link 1  
+            Link 1
           </a>
-          
-              
+                        
         </li>
         
                         
@@ -74,20 +67,13 @@ exports[`Service Card Component renders with content slots 1`] = `
           class="ct-item-list__item"
         >
                           
-
-
-  
-  
           <a
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-            
-
-    Link 2  
+            Link 2
           </a>
-          
-              
+                        
         </li>
         
             
@@ -157,37 +143,16 @@ exports[`Service Card Component renders with optional attributes 1`] = `
           class="ct-item-list__item"
         >
                           
-
-
-  
-  
           <a
             class="ct-link ct-theme-dark ct-link--external"
             href="https://example.com/link1"
             target="_blank"
           >
-            
-
-    
-      
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-                                            
-          
-          Link 
+            Link 
             <span
               class="ct-text-icon__group"
             >
-              1
-
-
-                                    
+              1  
               <svg
                 aria-hidden="true"
                 class="ct-icon  "
@@ -207,20 +172,14 @@ exports[`Service Card Component renders with optional attributes 1`] = `
               </svg>
               
 
-  
             </span>
-            
-                  
-      
-      
             <span
               class="ct-visually-hidden"
             >
               (Opens in a new tab/window)
             </span>
           </a>
-          
-              
+                        
         </li>
         
                         
@@ -228,20 +187,13 @@ exports[`Service Card Component renders with optional attributes 1`] = `
           class="ct-item-list__item"
         >
                           
-
-
-  
-  
           <a
             class="ct-link ct-theme-dark"
             href="https://example.com/link2"
           >
-            
-
-    Link 2  
+            Link 2
           </a>
-          
-              
+                        
         </li>
         
             
@@ -303,20 +255,13 @@ exports[`Service Card Component renders with required attributes 1`] = `
           class="ct-item-list__item"
         >
                           
-
-
-  
-  
           <a
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-            
-
-    Link 1  
+            Link 1
           </a>
-          
-              
+                        
         </li>
         
                         
@@ -324,20 +269,13 @@ exports[`Service Card Component renders with required attributes 1`] = `
           class="ct-item-list__item"
         >
                           
-
-
-  
-  
           <a
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-            
-
-    Link 2  
+            Link 2
           </a>
-          
-              
+                        
         </li>
         
             
