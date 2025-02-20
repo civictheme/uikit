@@ -12,82 +12,80 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-group-filter ct-theme-light "
     data-component-name="ct-group-filter"
   >
     
-		
+    
     <div
       class="container"
       data-group-filter-element=""
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-																		
+                                    
           <div
             class="ct-group-filter__content-top"
           >
             Top Content
           </div>
           
-											
-																																																															
-						
-						
+                      
+                                                                                                                              
+            
+            
           <div
             class="row row--no-wrap ct-group-filter__row"
           >
             
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-																			
-
-
-                <label
-                  class="ct-label ct-theme-light ct-label--regular  ct-group-filter__title"
+                                      
+                <div
+                  class="ct-group-filter__title"
                 >
-                  
-    Filter results by:  
-                </label>
-                																	
+                  Filter results by:
+                </div>
+                
+                                  
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <ul
@@ -99,7 +97,7 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -142,14 +140,14 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
   
                     </div>
                     
-							
+              
                   </li>
                   
                         
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -192,30 +190,30 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
   
                     </div>
                     
-							
+              
                   </li>
                   
             
                 </ul>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <button
@@ -244,35 +242,35 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
 Apply filters
                 </button>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																		
+            
+                      
+                                    
           <div
             class="ct-group-filter__content-bottom"
           >
             Bottom Content
           </div>
           
-															
+                              
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 
@@ -283,76 +281,74 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-group-filter ct-theme-light custom-modifier"
     data-component-name="ct-group-filter"
     data-test="true"
   >
     
-		
+    
     <div
       class="container"
       data-group-filter-element=""
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-					
-																																																															
-						
-						
+          
+                                                                                                                              
+            
+            
           <div
             class="row row--no-wrap ct-group-filter__row"
           >
             
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-																			
-
-
-                <label
-                  class="ct-label ct-theme-light ct-label--regular  ct-group-filter__title"
+                                      
+                <div
+                  class="ct-group-filter__title"
                 >
-                  
-    Filter results by:  
-                </label>
-                																	
+                  Filter results by:
+                </div>
+                
+                                  
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <ul
@@ -364,7 +360,7 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -407,14 +403,14 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
   
                     </div>
                     
-							
+              
                   </li>
                   
                         
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -457,30 +453,30 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
   
                     </div>
                     
-							
+              
                   </li>
                   
             
                 </ul>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <button
@@ -509,28 +505,28 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
 Apply filters
                 </button>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																				
+            
+                      
+                                        
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 
@@ -541,75 +537,73 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-group-filter ct-theme-light "
     data-component-name="ct-group-filter"
   >
     
-		
+    
     <div
       class="container"
       data-group-filter-element=""
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-					
-																																																															
-						
-						
+          
+                                                                                                                              
+            
+            
           <div
             class="row row--no-wrap ct-group-filter__row"
           >
             
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-																			
-
-
-                <label
-                  class="ct-label ct-theme-light ct-label--regular  ct-group-filter__title"
+                                      
+                <div
+                  class="ct-group-filter__title"
                 >
-                  
-    Custom Title  
-                </label>
-                																	
+                  Custom Title
+                </div>
+                
+                                  
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <ul
@@ -621,7 +615,7 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -664,14 +658,14 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
   
                     </div>
                     
-							
+              
                   </li>
                   
                         
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -714,30 +708,30 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
   
                     </div>
                     
-							
+              
                   </li>
                   
             
                 </ul>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <button
@@ -766,28 +760,28 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
 Submit Filters
                 </button>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																				
+            
+                      
+                                        
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 
@@ -798,75 +792,73 @@ exports[`Group Filter Component renders with default values 1`] = `
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-group-filter ct-theme-light "
     data-component-name="ct-group-filter"
   >
     
-		
+    
     <div
       class="container"
       data-group-filter-element=""
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-					
-																																																															
-						
-						
+          
+                                                                                                                              
+            
+            
           <div
             class="row row--no-wrap ct-group-filter__row"
           >
             
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-																			
-
-
-                <label
-                  class="ct-label ct-theme-light ct-label--regular  ct-group-filter__title"
+                                      
+                <div
+                  class="ct-group-filter__title"
                 >
-                  
-    Filter results by:  
-                </label>
-                																	
+                  Filter results by:
+                </div>
+                
+                                  
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <ul
@@ -878,7 +870,7 @@ exports[`Group Filter Component renders with default values 1`] = `
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -921,14 +913,14 @@ exports[`Group Filter Component renders with default values 1`] = `
   
                     </div>
                     
-							
+              
                   </li>
                   
                         
                   <li
                     class="ct-item-list__item"
                   >
-                    								
+                                    
 
   
                     <div
@@ -971,30 +963,30 @@ exports[`Group Filter Component renders with default values 1`] = `
   
                     </div>
                     
-							
+              
                   </li>
                   
             
                 </ul>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
 
-							
+              
             <div
               class="col col--no-grow"
             >
               
-								
+                
               <div
                 class="ct-flex-row-align-middle"
               >
                 
-									
+                  
 
   
                 <button
@@ -1023,28 +1015,28 @@ exports[`Group Filter Component renders with default values 1`] = `
 Apply filters
                 </button>
                 
-								
+                
               </div>
               
-							
+              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																				
+            
+                      
+                                        
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 
@@ -1055,82 +1047,80 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-group-filter ct-theme-light "
     data-component-name="ct-group-filter"
   >
     
-		
+    
     <div
       class="container"
       data-group-filter-element=""
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-					
-																																																															
-													
+          
+                                                                                                                              
+                          
           <form
             action="/filters"
             id="filter-form"
             method="POST"
           >
             
-						
-						
+            
+            
             <div
               class="row row--no-wrap ct-group-filter__row"
             >
               
-							
+              
               <div
                 class="col col--no-grow"
               >
                 
-								
+                
                 <div
                   class="ct-flex-row-align-middle"
                 >
                   
-																			
-
-
-                  <label
-                    class="ct-label ct-theme-light ct-label--regular  ct-group-filter__title"
+                                      
+                  <div
+                    class="ct-group-filter__title"
                   >
-                    
-    Filter results by:  
-                  </label>
-                  																	
+                    Filter results by:
+                  </div>
+                  
+                                  
                 </div>
                 
-							
+              
               </div>
               
 
-							
+              
               <div
                 class="col"
               >
                 
-								
+                
                 <div
                   class="ct-flex-row-align-middle"
                 >
                   
-									
+                  
 
   
                   <ul
@@ -1142,7 +1132,7 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
                     <li
                       class="ct-item-list__item"
                     >
-                      								
+                                      
 
   
                       <div
@@ -1185,14 +1175,14 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
   
                       </div>
                       
-							
+              
                     </li>
                     
                         
                     <li
                       class="ct-item-list__item"
                     >
-                      								
+                                      
 
   
                       <div
@@ -1235,30 +1225,30 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
   
                       </div>
                       
-							
+              
                     </li>
                     
             
                   </ul>
                   
-								
+                
                 </div>
                 
-							
+              
               </div>
               
 
-							
+              
               <div
                 class="col col--no-grow"
               >
                 
-								
+                
                 <div
                   class="ct-flex-row-align-middle"
                 >
                   
-									
+                  
 
   
                   <button
@@ -1287,38 +1277,38 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
 Apply filters
                   </button>
                   
-								
+                
                 </div>
                 
-							
+              
               </div>
               
-						
+            
             </div>
             
 
-													
+                          
             <input
               name="token"
               type="hidden"
               value="12345"
             />
             
-						
-													
+            
+                          
           </form>
           
-											
-																				
+                      
+                                        
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 

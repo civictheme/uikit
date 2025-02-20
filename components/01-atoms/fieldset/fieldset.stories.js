@@ -1,4 +1,6 @@
 import Component from './fieldset.twig';
+import FieldData from '../../02-molecules/field/field.stories.data';
+import Field from '../../02-molecules/field/field.twig';
 
 const meta = {
   title: 'Atoms/Form Controls/Fieldset',
@@ -25,14 +27,20 @@ const meta = {
       control: { type: 'radio' },
       options: ['error', 'information', 'warning', 'success'],
     },
+    fields: {
+      control: { type: 'text' },
+    },
+    is_required: {
+      control: { type: 'boolean' },
+    },
+    required_text: {
+      control: { type: 'text' },
+    },
     prefix: {
       control: { type: 'text' },
     },
     suffix: {
       control: { type: 'text' },
-    },
-    is_required: {
-      control: { type: 'boolean' },
     },
     modifier_class: {
       control: { type: 'text' },
@@ -54,11 +62,16 @@ export const Fieldset = {
     legend: 'Fieldset legend',
     description: 'Fieldset example description',
     description_display: 'before',
-    message: 'Example message',
+    message: 'Fieldset example message',
     message_type: 'error',
+    fields: [
+      Field({ ...FieldData.args('light', { controls: true, is_required: true }), type: 'checkbox', description: '', message: '' }),
+      Field({ ...FieldData.args('light', { controls: true, is_required: true }), type: 'radio', message: '' }),
+    ].join('').trim(),
+    is_required: true,
+    required_text: '',
     prefix: '',
     suffix: '',
-    is_required: true,
     modifier_class: '',
     attributes: '',
   },

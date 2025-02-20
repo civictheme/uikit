@@ -24,6 +24,7 @@
  * - is_invalid: [boolean] Denote if the control is invalid. Optional, propagated.
  * - is_disabled: [boolean] Denote if the control is disabled. Optional, propagated.
  * - is_required: [boolean] Denote if the control is required. Optional, propagated.
+ * - required_text: [string] Text to display within label element when required. Optional, propagated.
  * - orientation: [string] Elements orientation: vertical or horizontal. Optional.
  * - is_inline: [boolean] Denote if the complex control is shown inline. Optional.
  * - control: [object | array[object]] Object or array of objects with control's
@@ -81,6 +82,7 @@
 		is_multiple: c.is_multiple is defined ? c.is_multiple : is_multiple is defined ? is_multiple : false,
 		placeholder: placeholder is defined ? placeholder : '',
 		is_required: c.is_required is defined ? c.is_required : is_required,
+		required_text: c.required_text ? c.required_text : required_text,
 		is_invalid: is_invalid,
 		is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
 		is_checked: c.is_checked is defined ? c.is_checked : false,
@@ -98,6 +100,7 @@
 				theme: theme,
 				content: label is not empty ? label : title,
 				is_required: is_required,
+				required_text: required_text,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
 				modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
 			} only %}
