@@ -26,7 +26,7 @@ const meta = {
     with_background: {
       control: { type: 'boolean' },
     },
-    has_role: {
+    has_aria: {
       control: { type: 'boolean' },
     },
     attributes: {
@@ -51,7 +51,7 @@ export const Message = {
     content: 'Message description',
     vertical_spacing: 'none',
     with_background: false,
-    has_role: true,
+    has_aria: true,
     attributes: '',
     modifier_class: '',
   },
