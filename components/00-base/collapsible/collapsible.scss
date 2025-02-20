@@ -2,27 +2,41 @@
 // Collapsible component.
 //
 
-@use 'sass:list';
-@use 'sass:map';
-
 [data-collapsible] {
   [data-collapsible-trigger] {
     cursor: pointer;
-  }
+    position: relative;
 
-  .ct-collapsible__icon {
-    @include ct-icon-size();
-  }
+    .ct-collapsible__icon {
+      @include ct-icon-size();
 
-  &:not([data-collapsible-trigger-no-icon]) {
-    [data-collapsible-trigger] {
-      position: relative;
+      transform: rotate(-180deg);
 
-      .ct-collapsible__icon {
-        transform: rotate(-180deg);
+      @include ct-print() {
+        transform: rotate(-180deg) !important;
       }
     }
 
+    &[data-collapsible-trigger-collapsing] {
+      .ct-collapsible__icon {
+        transform: rotate(0deg);
+      }
+
+      &[data-collapsible-trigger-collapsed] {
+        .ct-collapsible__icon {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &[data-collapsible-trigger-collapsed] {
+      .ct-collapsible__icon {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &:not([data-collapsible-trigger-no-icon]) {
     &[data-collapsible-trigger-wide] {
       [data-collapsible-trigger] {
         display: flex;
@@ -42,36 +56,12 @@
     }
   }
 
-  &[data-collapsible-collapsing] {
-    [data-collapsible-trigger] {
-      .ct-collapsible__icon {
-        transform: rotate(0deg);
-      }
-    }
-
-    &[data-collapsible-collapsed] {
-      [data-collapsible-trigger] {
-        .ct-collapsible__icon {
-          transform: rotate(-180deg);
-        }
-      }
-    }
-  }
-
   &[data-collapsible-collapsed] {
-    [data-collapsible-trigger] {
-      .ct-collapsible__icon {
-        transform: rotate(0deg);
-      }
-    }
-
     [data-collapsible-panel] {
-      height: 0;
-      overflow: hidden;
-
       @include ct-print() {
-        height: auto;
-        visibility: visible;
+        display: block !important;
+        height: auto !important;
+        overflow: auto !important;
       }
     }
   }
@@ -81,8 +71,9 @@
   [data-collapsible] {
     &[data-collapsible-collapsed] {
       [data-collapsible-panel] {
-        height: auto;
-        overflow: auto;
+        display: block !important;
+        height: auto !important;
+        overflow: auto !important;
       }
     }
   }
