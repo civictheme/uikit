@@ -30,6 +30,7 @@ const config = {
   lintex: false,
   combine: false,
   styles: false,
+  styles_storybook: false,
   styles_editor: false,
   styles_admin: false,
   styles_layout: false,
@@ -55,6 +56,7 @@ if (['cli', 'lintex'].indexOf(flags[0]) >= 0) {
     config.watch = flags.indexOf('watch') >= 0
     config.combine = true
     config.styles = true
+    config.styles_storybook = true
     config.styles_editor = true
     config.styles_variables = true
     config.styles_stories = true
@@ -88,6 +90,7 @@ const DIR_ASSETS_OUT            = fullPath('./dist/assets/')
 const COMPONENT_DIR             = config.base ? DIR_COMPONENTS_IN : DIR_COMPONENTS_OUT
 const STYLE_NAME                = config.base ? 'civictheme' : 'styles'
 const SCRIPT_NAME               = config.base ? 'civictheme' : 'scripts'
+const DRUPAL_THEME_FOLDER       = config.base ? 'contrib' : 'custom'
 
 const STYLE_FILE_IN             = `${COMPONENT_DIR}/style.scss`
 const STYLE_VARIABLE_FILE_IN    = `${COMPONENT_DIR}/style.css_variables.scss`
@@ -97,13 +100,17 @@ const STYLE_EDITOR_FILE_IN      = `${DIR_ASSETS_IN}/sass/theme.editor.scss`
 const STYLE_ADMIN_FILE_IN       = `${DIR_ASSETS_IN}/sass/theme.admin.scss`
 const STYLE_LAYOUT_FILE_IN      = `${DIR_ASSETS_IN}/sass/theme.layout.scss`
 const STYLE_FILE_OUT            = `${DIR_OUT}/${STYLE_NAME}.css`
+const STYLE_STORYBOOK_FILE_OUT  = `${DIR_OUT}/${STYLE_NAME}.storybook.css`
 const STYLE_EDITOR_FILE_OUT     = `${DIR_OUT}/${STYLE_NAME}.editor.css`
 const STYLE_VARIABLE_FILE_OUT   = `${DIR_OUT}/${STYLE_NAME}.variables.css`
 const STYLE_ADMIN_FILE_OUT      = `${DIR_OUT}/${STYLE_NAME}.admin.css`
 const STYLE_LAYOUT_FILE_OUT     = `${DIR_OUT}/${STYLE_NAME}.layout.css`
 const STYLE_STORIES_FILE_OUT    = `${DIR_OUT}/${STYLE_NAME}.stories.css`
 
-const VAR_CT_ASSETS_DIRECTORY   = `$ct-assets-directory: '/themes/custom/${THEME_NAME}/dist/assets/';`
+const DIR_CT_ASSETS             = `/themes/${DRUPAL_THEME_FOLDER}/${THEME_NAME}/dist/assets/`
+const DIR_SB_ASSETS             = `/assets/`
+const VAR_CT_ASSETS_DIRECTORY   = `$ct-assets-directory: '${DIR_CT_ASSETS}';`
+const VAR_SB_ASSETS_DIRECTORY   = `$ct-assets-directory: '${DIR_SB_ASSETS}';`
 
 const JS_FILE_OUT               = `${DIR_OUT}/${SCRIPT_NAME}.js`
 const JS_STORYBOOK_FILE_OUT     = `${DIR_OUT}/${SCRIPT_NAME}.storybook.js`
@@ -150,7 +157,7 @@ function buildCombineDirectories() {
     runCommand(`rsync -a --delete ${DIR_UIKIT_COMPONENTS_IN}/ ${DIR_UIKIT_COPY_OUT}/`)
     runCommand(`rsync -a --delete ${DIR_UIKIT_COPY_OUT}/ ${DIR_COMPONENTS_OUT}/`)
     runCommand(`rsync -a ${DIR_COMPONENTS_IN}/ ${DIR_COMPONENTS_OUT}/`)
-    console.log(`Saved: Combined folders ${time()}`)
+    successReporter(`Saved: Combined folders ${time()}`)
   }
 }
 
@@ -173,7 +180,17 @@ function buildStyles() {
       .sort(a => a.indexOf('@charset') === 0 ? -1 : 0)
       .join('\n')
     fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
-    console.log(`Saved: Component styles ${time()}`)
+    successReporter(`Saved: Component styles ${time()}`)
+  }
+}
+
+function buildStylesStorybook() {
+  if (config.styles && config.styles_storybook) {
+    // Replace the asset path.
+    let file = fs.readFileSync(STYLE_FILE_OUT, 'utf-8')
+    file = file.replaceAll(DIR_CT_ASSETS, DIR_SB_ASSETS)
+    fs.writeFileSync(STYLE_STORYBOOK_FILE_OUT, file, 'utf-8')
+    successReporter(`Saved: Component styles (storybook) ${time()}`)
   }
 }
 
@@ -186,7 +203,7 @@ function buildStylesEditor() {
 
     const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Editor styles ${time()}`)
+    successReporter(`Saved: Editor styles ${time()}`)
   }
 }
 
@@ -194,7 +211,7 @@ function buildStylesAdmin() {
   if (config.styles_admin) {
     const compiled = sass.compile(STYLE_ADMIN_FILE_IN, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_ADMIN_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Admin styles ${time()}`)
+    successReporter(`Saved: Admin styles ${time()}`)
   }
 }
 
@@ -207,7 +224,7 @@ function buildStylesLayout() {
 
     const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
     fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Layout styles ${time()}`)
+    successReporter(`Saved: Layout styles ${time()}`)
   }
 }
 
@@ -215,20 +232,20 @@ function buildStylesVariables() {
   if (config.styles_variables) {
     const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { loadPaths: [COMPONENT_DIR] })
     fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Variable styles ${time()}`)
+    successReporter(`Saved: Variable styles ${time()}`)
   }
 }
 
 function buildStylesStories() {
   if (config.styles_stories) {
     const storybookcss = [
-      VAR_CT_ASSETS_DIRECTORY,
+      VAR_SB_ASSETS_DIRECTORY,
       loadStyleFile(STYLE_STORIES_FILE_IN, COMPONENT_DIR),
     ].join('\n')
 
     const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
     fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
-    console.log(`Saved: Stories styles ${time()}`)
+    successReporter(`Saved: Stories styles ${time()}`)
   }
 }
 
@@ -265,7 +282,7 @@ function buildJavascript() {
           return `Drupal.behaviors.${i.name} = {attach: function (context, settings) {\n${i.body}\n}};`
         })
       ].join('\n'), 'utf-8')
-      console.log(`Saved: Compiled javascript (drupal) ${time()}`)
+      successReporter(`Saved: Compiled javascript (drupal) ${time()}`)
     }
 
     // Write JS file with dom content loaded wrapper.
@@ -276,7 +293,7 @@ function buildJavascript() {
           return `document.addEventListener('DOMContentLoaded', () => {\n${i.body}\n});`
         })
       ].join('\n'), 'utf-8')
-      console.log(`Saved: Compiled javascript (storybook) ${time()}`)
+      successReporter(`Saved: Compiled javascript (storybook) ${time()}`)
     }
   }
 }
@@ -284,7 +301,7 @@ function buildJavascript() {
 function buildAssetsDirectory() {
   if (config.assets) {
     runCommand(`rsync -a --delete --prune-empty-dirs --exclude .gitkeep --exclude js --exclude sass ${DIR_ASSETS_IN}/ ${DIR_ASSETS_OUT}/`)
-    console.log(`Saved: Assets ${time()}`)
+    successReporter(`Saved: Assets ${time()}`)
   }
 }
 
@@ -302,7 +319,7 @@ async function buildConstants() {
       SCSS_VARIABLES: scssVariableImporter.getVariables(),
     }
     fs.writeFileSync(CONSTANTS_FILE_OUT, JSON.stringify(constants, null, 2), 'utf-8')
-    console.log(`Saved: Compiled constants ${time()}`)
+    successReporter(`Saved: Compiled constants ${time()}`)
   }
 }
 
@@ -311,18 +328,22 @@ async function buildConstants() {
 async function build() {
   startTime = new Date().getTime()
   lastTime = startTime
-
-  buildOutDirectory()
-  buildCombineDirectories()
-  buildStyles()
-  buildStylesEditor()
-  buildStylesAdmin()
-  buildStylesLayout()
-  buildStylesVariables()
-  buildStylesStories()
-  buildJavascript()
-  buildAssetsDirectory()
-  await buildConstants()
+  try {
+    buildOutDirectory()
+    buildCombineDirectories()
+    buildStyles()
+    buildStylesStorybook()
+    buildStylesEditor()
+    buildStylesAdmin()
+    buildStylesLayout()
+    buildStylesVariables()
+    buildStylesStories()
+    buildJavascript()
+    buildAssetsDirectory()
+    await buildConstants()
+  } catch (error) {
+    errorReporter(error);
+  }
 
   console.log(`Time taken: ${time(true)}`)
 }
@@ -413,4 +434,13 @@ function time(full) {
   const rtn = now - (full ? startTime : lastTime)
   lastTime = now
   return `[ ${rtn} ms ]`
+}
+
+function errorReporter(error) {
+  console.error('❌   Error during SASS compilation:', error.message);
+  console.error('Details:', error.formatted || error);
+}
+
+function successReporter(message) {
+  console.log(`✅   ${message}`)
 }

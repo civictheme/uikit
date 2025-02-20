@@ -25,7 +25,7 @@
     {% set link_items = [] %}
 
     {% for link in links %}
-      {% set link_item %}
+      {% set link_item -%}
         {% set link = {
           text: link.text,
           url: link.url,
@@ -35,24 +35,20 @@
           modifier_class: (loop.index == links_count) ? 'ct-breadcrumb__links__link ct-breadcrumb__links__link--active' : 'ct-breadcrumb__links__link',
         } %}
 
-        {% if (not active_is_link or link.url is empty) and (loop.index == links_count) %}
+        {%- if (not active_is_link or link.url is empty) and (loop.index == links_count) -%}
           <span class="ct-breadcrumb__links__link ct-breadcrumb__links__link--active" aria-current="location">{{ link.text }}</span>
-        {% else %}
-          {% include '@atoms/link/link.twig' with link only %}
+        {%- else -%}
+          {%- include '@atoms/link/link.twig' with link only -%}
+          {%- if loop.index < links_count -%}
+            {%- include '@base/icon/icon.twig' with {
+              symbol: 'right-arrow-1',
+              modifier_class: 'ct-breadcrumb__links__separator',
+            } only -%}
+          {% endif -%}
         {% endif %}
-      {% endset %}
+      {%- endset %}
 
       {% set link_items = link_items|merge([link_item]) %}
-
-      {% if loop.index < links_count %}
-        {% set link_item %}
-          {% include '@base/icon/icon.twig' with {
-            symbol: 'right-arrow-1',
-            modifier_class: 'ct-breadcrumb__links__separator',
-          } only %}
-        {% endset %}
-        {% set link_items = link_items|merge([link_item]) %}
-      {% endif %}
 
       {% if loop.index == links_count - 1 %}
         {% set parent = {
@@ -61,6 +57,7 @@
           theme: theme,
           icon: 'left-arrow',
           icon_placement: 'before',
+          modifier_class: 'ct-breadcrumb__links__link',
         } %}
       {% endif %}
     {% endfor %}

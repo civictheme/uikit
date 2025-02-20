@@ -68,9 +68,6 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         >
                       
                 
-
-
-                                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-tag__icon"
@@ -89,8 +86,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
           </svg>
           
-
-                       
+                     
           <span
             class="ct-datetime "
           >
@@ -123,20 +119,13 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         class="ct-heading ct-theme-dark ct-event-card__title"
       >
                                   
-
-
-  
-  
         <a
           class="ct-link ct-theme-dark     ct-event-card__title__link"
           href="https://example.com"
         >
-          
-
-    Event Title  
+          Event Title
         </a>
-        
-                      
+                              
       </h4>
       
               
@@ -235,24 +224,12 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         
             
                           
-
-
-  
-  
         <a
           aria-hidden="true"
           class="ct-link ct-theme-dark    ct-link--only-icon ct-event-card__tags__link"
           href="https://example.com"
           tabindex="-1"
         >
-          
-
-    
-              
-      
-
-
-                                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-link__icon"
@@ -272,11 +249,8 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           </svg>
           
 
-          
-      
         </a>
-        
-                      
+                              
       </div>
       
               
@@ -330,9 +304,6 @@ exports[`Event Card Component renders with required attributes 1`] = `
         >
                       
                 
-
-
-                                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-tag__icon"
@@ -351,8 +322,7 @@ exports[`Event Card Component renders with required attributes 1`] = `
 
           </svg>
           
-
-                       
+                     
           <span
             class="ct-datetime "
           >
