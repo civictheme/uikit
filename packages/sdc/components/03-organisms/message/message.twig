@@ -7,12 +7,13 @@
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Message type (information, error, warning, success).
  * - title: [string] Title text.
+ * - description: [string] Description text.
  * - content: [string] Content text.
  * - with_background: [boolean] Whether to show a background.
  * - vertical_spacing: [string] Vertical spacing: top, bottom, both.
- * - hide_role: [boolean] Whether to hide the role attribute.
- * - attributes: [string] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - has_role: [boolean] Whether to has the role attribute.
+ * - attributes: [string] Additional attributes.
+ * - modifier_class: [string] Additional classes.
  *
  * Slots:
  * - title: Title text.
@@ -32,7 +33,9 @@
   vertical_spacing_class,
   modifier_class|default(''))
 %}
-{% set hide_role = hide_role|default(false) %}
+{% set has_role = has_role|default(true) %}
+{# If description is set, use it as content because it has been used as description. #}
+{% set content = description|default(content) %}
 
 {% set icons = {
   information: 'information-mark',
@@ -41,16 +44,14 @@
   success: 'approve',
 } %}
 
-{# Set default role based on message type #}
-{% set role_value = type == 'error' ? 'alert' : 'contentinfo' %}
-
-{# Build accessibility attributes unless explicitly hidden #}
-{% set default_attributes = not hide_role ? ' role="' ~ role_value ~ '" aria-label="' ~ type ~ '" aria-live="assertive"' : '' %}
-
-{# Combine custom attributes with default accessibility attributes #}
-{% set final_attributes = attributes|default('') ~ default_attributes %}
-
-<div class="ct-message {{ modifier_class }}" {{ final_attributes|raw }}>
+<div class="ct-message {{ modifier_class }}"
+  {% if has_role %}
+    role="{{ type == 'error' ? 'alert' : 'contentinfo' }}"
+    aria-label="{{ type }}"
+    aria-live="assertive"
+  {% endif %}
+  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+>
   <div class="ct-message__inner">
     {% if icons[type] is defined %}
       <div class="ct-message__icon">
