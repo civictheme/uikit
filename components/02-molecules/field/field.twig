@@ -38,7 +38,7 @@
  *   - attributes: [string] Control additional attributes. Optional.
  *   - modifier_class: [string] Control additional classes. Optional.
  * - message: [object] Message object for showing messages.
- *   - content: Message content
+ *   - content: [string] Message content
  *   - attributes: [string] Message attributes.
  * - attributes: [string] Additional attributes. Optional.
  * - modifier_class: [string] Additional classes. Optional.
@@ -161,7 +161,7 @@
 					content: message.content ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
-          			attributes: message.attributes|default('')
+					attributes: message.attributes|default('')
 				} only %}
 			{% endif %}
 		</div>
