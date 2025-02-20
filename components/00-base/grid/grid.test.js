@@ -317,3 +317,36 @@ describe('Grid Custom Classes', () => {
       .toContain(`class="${props.expectedColumnClass}"`);
   });
 });
+
+describe('Grid Auto Breakpoint and Template Columns', () => {
+  each([
+    { template_column_count: 12 },
+    { template_column_count: 6 },
+    { template_column_count: 4 },
+    { template_column_count: 3 },
+    { template_column_count: 2 },
+    { template_column_count: 1 },
+  ]).test('renders %s', async (props) => {
+    const c = await dom(template, {
+      items: ['1'],
+      column_element: 'div',
+      auto_breakpoint: true,
+      ...props,
+    });
+
+    const el = c.querySelector('.row > div');
+    if (props.template_column_count === 12) {
+      expect(el.classList.toString()).toEqual('col-xxs-12 col-m-1');
+    } else if (props.template_column_count === 6) {
+      expect(el.classList.toString()).toEqual('col-xxs-12 col-m-6 col-xl-4 col-xxl-2');
+    } else if (props.template_column_count === 4) {
+      expect(el.classList.toString()).toEqual('col-xxs-12 col-m-6 col-xl-4 col-xxl-3');
+    } else if (props.template_column_count === 3) {
+      expect(el.classList.toString()).toEqual('col-xxs-12 col-m-6 col-xl-4');
+    } else if (props.template_column_count === 2) {
+      expect(el.classList.toString()).toEqual('col-xxs-12 col-m-6');
+    } else if (props.template_column_count === 1) {
+      expect(el.classList.toString()).toEqual('col-xxs-12');
+    }
+  });
+});
