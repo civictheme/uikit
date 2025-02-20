@@ -22,7 +22,7 @@ const meta = {
     with_background: {
       control: { type: 'boolean' },
     },
-    hide_role: {
+    has_role: {
       control: { type: 'boolean' },
     },
     attributes: {
@@ -47,7 +47,7 @@ export const Message = {
     content: 'Message description',
     vertical_spacing: 'none',
     with_background: false,
-    hide_role: false,
+    has_role: true,
     attributes: '',
     modifier_class: '',
   },

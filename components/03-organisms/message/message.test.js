@@ -71,7 +71,7 @@ describe('Message Component', () => {
       type: 'success',
       content: 'This is a default message.',
       modifier_class: 'additional-class',
-      hide_role: true,
+      has_role: false,
     });
 
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
@@ -92,7 +92,7 @@ describe('Message Component', () => {
       type: 'success',
       content: 'This is a default message.',
       with_background: true,
-      hide_role: true,
+      has_role: false,
     });
 
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
@@ -111,7 +111,7 @@ describe('Message Component', () => {
       type: 'success',
       content: 'This is a default message.',
       vertical_spacing: 'both',
-      hide_role: true,
+      has_role: false,
     });
 
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
