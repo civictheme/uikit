@@ -454,6 +454,58 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
+  describe('field messages', () => {
+    test('custom message renders correctly when message object is passed', async () => {
+      const c = await dom(template, {
+        name: 'testname',
+        type: 'textfield',
+        message: {
+          content: 'Custom error message',
+          attributes: 'data-test="true"',
+        },
+      });
+
+      const messageElement = c.querySelector('.ct-field .ct-field__message');
+      expect(messageElement).not.toBeNull();
+      expect(messageElement.textContent.trim()).toBe('Custom error message');
+      expect(messageElement.getAttribute('data-test')).toBe('true');
+      assertUniqueCssClasses(c);
+    });
+
+    test('default message renders when field is invalid without message object and no field title', async () => {
+      const c = await dom(template, {
+        name: 'testname',
+        type: 'textfield',
+        is_invalid: true,
+      });
+
+      const messageElement = c.querySelector('.ct-field .ct-field__message');
+      expect(messageElement).not.toBeNull();
+      expect(messageElement.textContent.trim()).toBe('Field has an error');
+      expect(c.querySelectorAll('.ct-field--invalid')).toHaveLength(1);
+      assertUniqueCssClasses(c);
+    });
+
+    test('default message renders when message object has no content and title is present', async () => {
+      const c = await dom(template, {
+        name: 'testname',
+        title: 'Test input',
+        type: 'textfield',
+        is_invalid: true,
+        message: {
+          attributes: 'data-test="true"',
+        },
+      });
+
+      const messageElement = c.querySelector('.ct-field .ct-field__message');
+      expect(messageElement).not.toBeNull();
+      expect(messageElement.textContent.trim()).toBe('Field Test input has an error');
+      expect(messageElement.getAttribute('data-test')).toBe('true');
+      expect(c.querySelectorAll('.ct-field--invalid')).toHaveLength(1);
+      assertUniqueCssClasses(c);
+    });
+  });
+
   describe.each([
     { title: 'Test Title', titleDisplay: 'visible', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'visible title with textfield' },
     { title: 'Test Title', titleDisplay: 'invisible', type: 'textfield', expected: 1, selector: '.ct-field__title.ct-visually-hidden', description: 'invisible title with textfield' },

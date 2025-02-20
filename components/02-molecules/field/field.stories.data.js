@@ -19,14 +19,17 @@ export default {
       value: `option_${i}`,
       selected: false,
     })) : null;
-
+    const fieldId = `field_id_${Math.floor(Math.random() * 1000)}`;
     return {
       theme,
       type: 'textfield',
       title: 'Field title',
       title_display: 'visible',
       description: 'Description content sample.',
-      message: 'Message content sample.',
+      message: {
+        content: 'Message conte nt sample.',
+        attributes: `id="${fieldId}--error-message"`,
+      },
       is_required: options.is_required || false,
       required_text: '',
       is_invalid: false,
@@ -36,7 +39,7 @@ export default {
       name,
       value: '',
       placeholder: 'Field placeholder',
-      id: `field_id_${Math.floor(Math.random() * 1000)}`,
+      id: fieldId,
       control,
       options: selectOptions,
       attributes: '',
