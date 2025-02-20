@@ -35,20 +35,13 @@ exports[`Promo Card Component renders with link when provided 1`] = `
         class="ct-heading ct-theme-light ct-promo-card__title"
       >
                                       
-
-
-  
-  
         <a
           class="ct-link ct-theme-light     ct-promo-card__title__link"
           href="https://example.com"
         >
-          
-
-    Promo Card Title  
+          Promo Card Title
         </a>
-        
-                          
+                                  
       </h4>
       
                   
@@ -70,24 +63,12 @@ exports[`Promo Card Component renders with link when provided 1`] = `
         
               
                               
-
-
-  
-  
         <a
           aria-hidden="true"
           class="ct-link ct-theme-light    ct-link--only-icon ct-promo-card__tags__link"
           href="https://example.com"
           tabindex="-1"
         >
-          
-
-    
-              
-      
-
-
-                                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-link__icon"
@@ -107,11 +88,8 @@ exports[`Promo Card Component renders with link when provided 1`] = `
           </svg>
           
 
-          
-      
         </a>
-        
-                          
+                                  
       </div>
       
                   
@@ -244,27 +222,19 @@ exports[`Promo Card Component renders with optional attributes 1`] = `
         class="ct-heading ct-theme-dark ct-promo-card__title"
       >
                                       
-
-
-  
-  
         <a
-          aria-label="Opens in a new tab"
           class="ct-link ct-theme-dark     ct-promo-card__title__link"
           href="https://example.com"
           target="_blank"
         >
-          
-
-    Promo Card Title  
+          Promo Card Title
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
         </a>
-        
-                          
+                                  
       </h4>
       
                   
@@ -353,26 +323,13 @@ exports[`Promo Card Component renders with optional attributes 1`] = `
         
               
                               
-
-
-  
-  
         <a
           aria-hidden="true"
-          aria-label="Opens in a new tab"
           class="ct-link ct-theme-dark    ct-link--only-icon ct-promo-card__tags__link"
           href="https://example.com"
           tabindex="-1"
           target="_blank"
         >
-          
-
-    
-              
-      
-
-
-                                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-link__icon"
@@ -392,16 +349,13 @@ exports[`Promo Card Component renders with optional attributes 1`] = `
           </svg>
           
 
-          
-      
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
         </a>
-        
-                          
+                                  
       </div>
       
                   

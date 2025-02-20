@@ -97,20 +97,13 @@ exports[`Subject Card Component renders with link and image 1`] = `
         class="ct-heading ct-theme-light ct-subject-card__title"
       >
                                   
-
-
-  
-  
         <a
           class="ct-link ct-theme-light     ct-subject-card__title__link"
           href="https://example.com/read-more"
         >
-          
-
-    Subject Card Title  
+          Subject Card Title
         </a>
-        
-                      
+                              
       </h4>
       
                   
@@ -175,27 +168,19 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
         class="ct-heading ct-theme-dark ct-subject-card__title"
       >
                                   
-
-
-  
-  
         <a
-          aria-label="Opens in a new tab"
           class="ct-link ct-theme-dark     ct-subject-card__title__link"
           href="https://example.com/read-more"
           target="_blank"
         >
-          
-
-    Subject Card Title  
+          Subject Card Title
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
         </a>
-        
-                      
+                              
       </h4>
       
                   

@@ -89,9 +89,7 @@ exports[`Banner Component renders with all attributes provided 1`] = `
     
           
       
-                            
                               
-      
       
           
           
@@ -107,23 +105,10 @@ exports[`Banner Component renders with all attributes provided 1`] = `
                     class="ct-item-list__item"
                   >
                             
-
-
-  
-  
                     <a
-                      class="ct-link ct-theme-dark"
+                      class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
                       href="/"
                     >
-                      
-
-    
-              
-      
-        
-
-
-                                    
                       <svg
                         aria-hidden="true"
                         class="ct-icon  ct-link__icon"
@@ -142,13 +127,9 @@ exports[`Banner Component renders with all attributes provided 1`] = `
 
                       </svg>
                       
-
-          Home
-      
-      
+Home
                     </a>
-                    
-      
+                          
                   </li>
                   
             
@@ -166,32 +147,12 @@ exports[`Banner Component renders with all attributes provided 1`] = `
                   <li
                     class="ct-item-list__item"
                   >
-                            
-                  
-
-
-  
-  
                     <a
                       class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
                       href="/"
                     >
-                      
-
-    Home  
+                      Home
                     </a>
-                    
-              
-                  </li>
-                  
-                        
-                  <li
-                    class="ct-item-list__item"
-                  >
-                              
-
-
-                                    
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-breadcrumb__links__separator"
@@ -211,30 +172,19 @@ exports[`Banner Component renders with all attributes provided 1`] = `
                     </svg>
                     
 
-          
                   </li>
                   
                         
                   <li
                     class="ct-item-list__item"
                   >
-                            
-                  
-
-
-  
-  
                     <a
                       aria-current="location"
                       class="ct-link ct-theme-dark  ct-link--active   ct-breadcrumb__links__link ct-breadcrumb__links__link--active"
                       href="/section"
                     >
-                      
-
-    Section  
+                      Section
                     </a>
-                    
-              
                   </li>
                   
             
@@ -291,6 +241,7 @@ exports[`Banner Component renders with all attributes provided 1`] = `
           
           
           <a
+            aria-hidden="true"
             id="main-content"
             tabindex="-1"
           />
@@ -521,6 +472,7 @@ exports[`Banner Component renders with only required attributes 1`] = `
           
           
           <a
+            aria-hidden="true"
             id="main-content"
             tabindex="-1"
           />
@@ -605,6 +557,7 @@ exports[`Banner Component renders without additional attributes and classes 1`] 
           
           
           <a
+            aria-hidden="true"
             id="main-content"
             tabindex="-1"
           />

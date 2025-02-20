@@ -53,6 +53,22 @@
         {% set item_attributes = [item_attributes, 'data-collapsible', 'data-collapsible-duration="0"', collapsible_collapsed, aria_expanded]|join(' ') %}
       {% endif %}
 
+      {# Check if this is the deepest active item #}
+      {% set has_active_children = false %}
+      {% if item.below %}
+        {% for child in item.below %}
+          {% if child.in_active_trail %}
+            {% set has_active_children = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if item.in_active_trail and not has_active_children %}
+        {% set aria_current = 'aria-current="page"' %}
+      {% else %}
+        {% set aria_current = '' %}
+      {% endif %}
+
       <li class="{{- item_classes|join(' ') -}}" {{- item_attributes|raw -}}>
 
         {% include '@atoms/link/link.twig' with {
@@ -61,7 +77,7 @@
           title: item.title,
           url: item.url,
           modifier_class: 'ct-menu__item__link',
-          attributes: item.link_attributes|default('') ~ aria_expanded,
+          attributes: item.link_attributes|default('') ~ aria_current,
           is_new_window: item.is_new_window is defined ? item.is_new_window : false,
           is_external: item.is_external is defined ? item.is_external : false,
         } only %}

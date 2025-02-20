@@ -8,17 +8,12 @@
 .ct-label {
   $root: &;
 
-  display: block;
-  margin-bottom: ct-spacing();
-  -webkit-tap-highlight-color: transparent;
-
   @include ct-typography('label-regular');
 
-  &#{$root}--required {
-    &::after {
-      content: $ct-label-required-content;
-    }
-  }
+  display: block;
+  margin: 0;
+  margin-bottom: ct-spacing();
+  -webkit-tap-highlight-color: transparent;
 
   @each $name in map.keys(_ct-typography-all()) {
     @if string.index(#{$name}, 'label-') {
@@ -32,10 +27,8 @@
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);
 
-    &#{$root}--required {
-      &::after {
-        @include ct-component-property($root, $theme, required, color);
-      }
+    #{$root}__required {
+      @include ct-component-property($root, $theme, required, color);
     }
   }
 }

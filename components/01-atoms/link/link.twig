@@ -21,19 +21,18 @@
  */
 #}
 
-{% set text = text|default('') %}
-{% set only_icon_class = icon is not empty and text is empty ? 'ct-link--only-icon' : '' %}
-{% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
-{% set is_external_class = is_external ? 'ct-link--external' : '' %}
-{% set is_active_class = is_active ? 'ct-link--active' : '' %}
-{% set is_disabled_class = is_disabled ? 'ct-link--disabled' : '' %}
-{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim %}
+{%- set text = text|default('') -%}
+{%- set only_icon_class = icon is not empty and text is empty ? 'ct-link--only-icon' : '' -%}
+{%- set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' -%}
+{%- set is_external_class = is_external ? 'ct-link--external' : '' -%}
+{%- set is_active_class = is_active ? 'ct-link--active' : '' -%}
+{%- set is_disabled_class = is_disabled ? 'ct-link--disabled' : '' -%}
+{%- set theme_class = 'ct-theme-%s'|format(theme|default('light')) -%}
+{%- set modifier_class = '%s %s %s %s %s %s'|format(theme_class, is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim -%}
+{%- set attributes = is_disabled ? attributes ~ ' disabled' : attributes -%}
 
-{% set attributes = is_disabled ? attributes ~ ' disabled' : attributes %}
-
-{% if text is not empty or icon is not empty %}
-  {% set link_content %}
+{%- if text is not empty or icon is not empty -%}
+  {%- set link_content -%}
     {%- include '@base/text-icon/text-icon.twig' with {
       text: text,
       is_new_window: is_new_window,
@@ -44,16 +43,16 @@
       icon_group_disabled: icon_group_disabled|default(false),
       icon_single_only: icon_single_only|default(false),
     } only -%}
-  {% endset %}
+  {%- endset -%}
 
   <a
     class="ct-link {{ modifier_class -}}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if title is not empty %}title="{{ title }}"{% endif %}
-    {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
+    {% if is_new_window %}target="_blank"{% endif %}
     {% if is_disabled %}disabled{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
     {{- link_content -}}
   </a>
-{% endif %}
+{%- endif -%}

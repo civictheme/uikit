@@ -68,28 +68,11 @@ exports[`List Component renders with all attributes provided 1`] = `
                   href="https://example.com"
                   role="button"
                 >
-                  
-
-    
-              
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-          
-          
-          Link 
+                  Link 
                   <span
                     class="ct-text-icon__group"
                   >
-                    Above
-
-
-                                    
+                    Above 
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-button__icon"
@@ -109,12 +92,7 @@ exports[`List Component renders with all attributes provided 1`] = `
                     </svg>
                     
 
-          
                   </span>
-                  
-                  
-      
-      
                 </a>
                 
                     
@@ -194,7 +172,7 @@ exports[`List Component renders with all attributes provided 1`] = `
                       
                       
       <div
-        class="container ct-list__results-count"
+        class="container"
       >
         
                 
@@ -208,15 +186,13 @@ exports[`List Component renders with all attributes provided 1`] = `
           >
             
                     
-
-
-            <label
-              class="ct-label ct-theme-dark ct-label--regular  ct-list__results-count__inner"
+            <div
+              class="ct-list__results-count"
             >
-              
-    10 Results  
-            </label>
-                              
+              10 Results
+            </div>
+            
+                  
           </div>
           
                 
@@ -276,28 +252,11 @@ exports[`List Component renders with all attributes provided 1`] = `
           href="https://example.com"
           role="button"
         >
-          
-
-    
-              
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-          
-          
           Link 
           <span
             class="ct-text-icon__group"
           >
-            Below
-
-
-                                    
+            Below 
             <svg
               aria-hidden="true"
               class="ct-icon  ct-button__icon"
@@ -317,12 +276,7 @@ exports[`List Component renders with all attributes provided 1`] = `
             </svg>
             
 
-          
           </span>
-          
-                  
-      
-      
         </a>
         
         

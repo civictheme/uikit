@@ -18,27 +18,23 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/"
         title="Home"
       >
-        
-
-    Home  
+        Home
       </a>
       
-
         
         
       
@@ -47,27 +43,23 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/about"
         title="About"
       >
-        
-
-    About  
+        About
       </a>
       
-
         
         
       
@@ -75,6 +67,9 @@ exports[`Menu Component renders collapsible menu 1`] = `
     
           
                                                 
+      
+                                                              
+                    
       
     <li
       aria-expanded="true"
@@ -85,22 +80,15 @@ exports[`Menu Component renders collapsible menu 1`] = `
       
 
         
-
-
-  
-  
       <a
-        aria-expanded="true"
+        aria-current="page"
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/services"
         title="Services"
       >
-        
-
-    Services  
+        Services
       </a>
       
-
                   
       <a
         aria-expanded="true"
@@ -127,27 +115,23 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/consulting"
               title="Consulting"
             >
-              
-
-    Consulting  
+              Consulting
             </a>
             
-
         
         
       
@@ -156,27 +140,23 @@ exports[`Menu Component renders collapsible menu 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/development"
               title="Development"
             >
-              
-
-    Development  
+              Development
             </a>
             
-
         
         
       
@@ -221,6 +201,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
       data-extra="extra-home"
@@ -229,21 +212,14 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/"
         title="Home"
       >
-        
-
-    Home  
+        Home
       </a>
       
-
         
         
       
@@ -251,6 +227,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
     
           
                   
+      
+            
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0   "
@@ -260,21 +239,14 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/about"
         title="About"
       >
-        
-
-    About  
+        About
       </a>
       
-
         
         
       
@@ -282,6 +254,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -291,21 +266,14 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/services"
         title="Services"
       >
-        
-
-    Services  
+        Services
       </a>
       
-
         
                             
       <div
@@ -321,6 +289,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
             data-extra="extra-consulting"
@@ -329,21 +300,14 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/consulting"
               title="Consulting"
             >
-              
-
-    Consulting  
+              Consulting
             </a>
             
-
         
         
       
@@ -351,6 +315,9 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
           
           
                   
+      
+            
+                    
       
           <li
             class="ct-menu__item ct-menu__item--level-1   "
@@ -360,21 +327,14 @@ exports[`Menu Component renders menu items with additional attributes 1`] = `
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/development"
               title="Development"
             >
-              
-
-    Development  
+              Development
             </a>
             
-
         
         
       
@@ -419,6 +379,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
       data-test="home"
@@ -426,21 +389,14 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/"
         title="Home"
       >
-        
-
-    Home  
+        Home
       </a>
       
-
         
         
       
@@ -448,6 +404,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
     
           
                   
+      
+            
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0   "
@@ -456,21 +415,14 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/about"
         title="About"
       >
-        
-
-    About  
+        About
       </a>
       
-
         
         
       
@@ -479,6 +431,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+                                                              
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
       data-test="services"
@@ -486,21 +441,14 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/services"
         title="Services"
       >
-        
-
-    Services  
+        Services
       </a>
       
-
         
                             
       <div
@@ -516,6 +464,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
             data-test="consulting"
@@ -523,21 +474,14 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/consulting"
               title="Consulting"
             >
-              
-
-    Consulting  
+              Consulting
             </a>
             
-
         
         
       
@@ -546,6 +490,9 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
             data-test="development"
@@ -553,21 +500,14 @@ exports[`Menu Component renders menu items with correct attributes 1`] = `
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/development"
               title="Development"
             >
-              
-
-    Development  
+              Development
             </a>
             
-
         
         
       
@@ -612,27 +552,23 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/"
         title="Home"
       >
-        
-
-    Home  
+        Home
       </a>
       
-
         
         
       
@@ -640,6 +576,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
     
           
                   
+      
+            
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0   "
@@ -647,21 +586,14 @@ exports[`Menu Component renders with default values - submenu 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/about"
         title="About"
       >
-        
-
-    About  
+        About
       </a>
       
-
         
         
       
@@ -669,6 +601,9 @@ exports[`Menu Component renders with default values - submenu 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -676,21 +611,14 @@ exports[`Menu Component renders with default values - submenu 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/services"
         title="Services"
       >
-        
-
-    Services  
+        Services
       </a>
       
-
         
                             
       <div
@@ -706,27 +634,23 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/consulting"
               title="Consulting"
             >
-              
-
-    Consulting  
+              Consulting
             </a>
             
-
         
         
       
@@ -735,27 +659,23 @@ exports[`Menu Component renders with default values - submenu 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-light     ct-menu__item__link"
               href="/services/development"
               title="Development"
             >
-              
-
-    Development  
+              Development
             </a>
             
-
         
         
       
@@ -800,27 +720,23 @@ exports[`Menu Component renders with default values 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/"
         title="Home"
       >
-        
-
-    Home  
+        Home
       </a>
       
-
         
         
       
@@ -829,27 +745,23 @@ exports[`Menu Component renders with default values 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-light     ct-menu__item__link"
         href="/about"
         title="About"
       >
-        
-
-    About  
+        About
       </a>
       
-
         
         
       
@@ -882,27 +794,23 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
                   
       
+            
+                    
+      
     <li
       class="ct-menu__item ct-menu__item--level-0   "
     >
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-dark     ct-menu__item__link"
         href="/"
         title="Home"
       >
-        
-
-    Home  
+        Home
       </a>
       
-
         
         
       
@@ -910,6 +818,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
     
           
                   
+      
+            
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0   "
@@ -917,21 +828,14 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-dark     ct-menu__item__link"
         href="/about"
         title="About"
       >
-        
-
-    About  
+        About
       </a>
       
-
         
         
       
@@ -939,6 +843,9 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
     
           
                   
+      
+                                                              
+                    
       
     <li
       class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
@@ -946,21 +853,14 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
       
 
         
-
-
-  
-  
       <a
         class="ct-link ct-theme-dark     ct-menu__item__link"
         href="/services"
         title="Services"
       >
-        
-
-    Services  
+        Services
       </a>
       
-
         
                             
       <div
@@ -976,27 +876,23 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-dark     ct-menu__item__link"
               href="/services/consulting"
               title="Consulting"
             >
-              
-
-    Consulting  
+              Consulting
             </a>
             
-
         
         
       
@@ -1005,27 +901,23 @@ exports[`Menu Component renders with theme and custom classes 1`] = `
           
                   
       
+            
+                    
+      
           <li
             class="ct-menu__item ct-menu__item--level-1   "
           >
             
 
         
-
-
-  
-  
             <a
               class="ct-link ct-theme-dark     ct-menu__item__link"
               href="/services/development"
               title="Development"
             >
-              
-
-    Development  
+              Development
             </a>
             
-
         
         
       

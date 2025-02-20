@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Page tempalte.
+ * Page template.
  *
  * Variables:
  * - theme: [string] Theme: light, dark.
@@ -16,7 +16,7 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 <div class="ct-page {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-  <a id="top"></a>
+  <a id="top" tab-index="-1" aria-hidden="true"></a>
 
   {% block header %}
     {% include '@organisms/header/header.twig' with {
@@ -37,7 +37,7 @@
     {% if banner is not empty %}
       {{ banner|raw }}
     {% else %}
-      <a id="main-content" tabindex="-1"></a>
+      <a id="main-content" tabindex="-1" aria-hidden="true"></a>
     {% endif %}
   {% endblock %}
 

@@ -338,7 +338,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field textarea.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title (required)');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -452,6 +452,58 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
+  });
+
+  describe('field messages', () => {
+    test('custom message renders correctly when message object is passed', async () => {
+      const c = await dom(template, {
+        name: 'testname',
+        type: 'textfield',
+        message: {
+          content: 'Custom error message',
+          attributes: 'data-test="true"',
+        },
+      });
+
+      const messageElement = c.querySelector('.ct-field .ct-field__message');
+      expect(messageElement).not.toBeNull();
+      expect(messageElement.textContent.trim()).toBe('Custom error message');
+      expect(messageElement.getAttribute('data-test')).toBe('true');
+      assertUniqueCssClasses(c);
+    });
+
+    test('default message renders when field is invalid without message object and no field title', async () => {
+      const c = await dom(template, {
+        name: 'testname',
+        type: 'textfield',
+        is_invalid: true,
+      });
+
+      const messageElement = c.querySelector('.ct-field .ct-field__message');
+      expect(messageElement).not.toBeNull();
+      expect(messageElement.textContent.trim()).toBe('Field has an error');
+      expect(c.querySelectorAll('.ct-field--invalid')).toHaveLength(1);
+      assertUniqueCssClasses(c);
+    });
+
+    test('default message renders when message object has no content and title is present', async () => {
+      const c = await dom(template, {
+        name: 'testname',
+        title: 'Test input',
+        type: 'textfield',
+        is_invalid: true,
+        message: {
+          attributes: 'data-test="true"',
+        },
+      });
+
+      const messageElement = c.querySelector('.ct-field .ct-field__message');
+      expect(messageElement).not.toBeNull();
+      expect(messageElement.textContent.trim()).toBe('Field Test input has an error');
+      expect(messageElement.getAttribute('data-test')).toBe('true');
+      expect(c.querySelectorAll('.ct-field--invalid')).toHaveLength(1);
+      assertUniqueCssClasses(c);
+    });
   });
 
   describe.each([

@@ -137,7 +137,7 @@ describe('Menu Component', () => {
     expect(c.querySelector('.ct-menu__item--level-0 .ct-menu__item__link').textContent.trim()).toEqual('Home');
     expect(c.querySelector('.ct-menu__item--level-0 .ct-menu__item__link').getAttribute('href')).toEqual('/');
     expect(c.querySelectorAll('.ct-menu__sub-menu')).toHaveLength(1);
-    expect(c.querySelectorAll('[aria-expanded="true"]')).toHaveLength(3);
+    expect(c.querySelectorAll('[aria-expanded="true"]')).toHaveLength(2);
     expect(c.querySelectorAll('[aria-expanded="false"]')).toHaveLength(0);
 
     assertUniqueCssClasses(c);

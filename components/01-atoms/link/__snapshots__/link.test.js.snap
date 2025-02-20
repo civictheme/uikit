@@ -1,23 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link Component does not render when text and icon are empty 1`] = `
-<div>
-  
-
-
-
-</div>
-`;
+exports[`Link Component does not render when text and icon are empty 1`] = `<div />`;
 
 exports[`Link Component renders with optional attributes, is external 1`] = `
 <div>
-  
-
-
-  
-  
   <a
-    aria-label="Opens in a new tab"
     class="ct-link ct-theme-dark ct-link--external ct-link--active ct-link--disabled  custom-class"
     data-test="true"
     disabled=""
@@ -25,24 +12,6 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
     target="_blank"
     title="Example Title"
   >
-    
-
-    
-              
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-                                            
-          
-          
-
-
-                                    
     <svg
       aria-hidden="true"
       class="ct-icon  ct-link__icon"
@@ -61,15 +30,11 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
 
     </svg>
     
-
-          Sample 
+Sample 
     <span
       class="ct-text-icon__group"
     >
-      Link
-
-
-                                    
+      Link 
       <svg
         aria-hidden="true"
         class="ct-icon  "
@@ -89,32 +54,19 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
       </svg>
       
 
-  
     </span>
-    
-                  
-      
-      
     <span
       class="ct-visually-hidden"
     >
       (Opens in a new tab/window)
     </span>
   </a>
-  
-
 </div>
 `;
 
 exports[`Link Component renders with optional attributes, not external 1`] = `
 <div>
-  
-
-
-  
-  
   <a
-    aria-label="Opens in a new tab"
     class="ct-link ct-theme-dark  ct-link--active ct-link--disabled  custom-class"
     data-test="true"
     disabled=""
@@ -122,15 +74,6 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
     target="_blank"
     title="Example Title"
   >
-    
-
-    
-              
-      
-        
-
-
-                                    
     <svg
       aria-hidden="true"
       class="ct-icon  ct-link__icon"
@@ -149,37 +92,23 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
 
     </svg>
     
-
-          Sample Link
-      
-      
+Sample Link
     <span
       class="ct-visually-hidden"
     >
       (Opens in a new tab/window)
     </span>
   </a>
-  
-
 </div>
 `;
 
 exports[`Link Component renders with required attributes 1`] = `
 <div>
-  
-
-
-  
-  
   <a
     class="ct-link ct-theme-light"
     href="https://example.com"
   >
-    
-
-    Sample Link  
+    Sample Link
   </a>
-  
-
 </div>
 `;
