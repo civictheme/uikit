@@ -158,7 +158,7 @@
 				{% include '@atoms/field-message/field-message.twig' with {
 					theme: theme,
 					type: is_invalid ? 'error' : 'information',
-					content: message.content ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
+					content: message is defined and message.content is defined ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
 					attributes: message.attributes|default('')
