@@ -33,7 +33,12 @@
   vertical_spacing_class,
   modifier_class|default(''))
 %}
-{% set has_role = has_role|default(true) %}
+
+{# If has_role is not defined, set it to true. #}
+{% if has_role is not defined %}
+  {% set has_role = true %}
+{% endif %}
+
 {# If description is set, use it as content because it has been used as description. #}
 {% set content = description|default(content) %}
 
