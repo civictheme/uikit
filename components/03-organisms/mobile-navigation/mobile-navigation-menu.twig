@@ -16,6 +16,7 @@
  * - items: [array] Menu links array. Each item contains:
  *   - title: [string] The title of the link.
  *   - url: [string] The link url.
+ *   - icon: [string] Icon name.
  *   - below: [array] Array of submenu items.
  *   - is_expanded: [boolean] Flag if the current item has visible child.
  *   - in_active_trail: [boolean] Flag if the current item is in the active trail.
@@ -66,6 +67,8 @@ Copied as-is from '@base/menu/menu.twig'.
           text: item.title,
           title: item.title,
           url: item.url,
+          icon: item.icon,
+          icon_placement: 'before',
           modifier_class: 'ct-menu__item__link',
           attributes: item.link_attributes|default(''),
           is_new_window: item.is_new_window is defined ? item.is_new_window : false,

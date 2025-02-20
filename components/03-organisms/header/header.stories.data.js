@@ -9,7 +9,7 @@ import MobileNavigationPanel from '../mobile-navigation/mobile-navigation.twig';
 import MobileNavigationTrigger from '../mobile-navigation/mobile-navigation-trigger.twig';
 
 export default {
-  args: (theme = 'light') => ({
+  args: (theme = 'light', options = {}) => ({
     theme,
     content_top1: '',
     content_top2: Paragraph({
@@ -37,14 +37,25 @@ export default {
         theme,
         text: 'Search',
         url: '/search',
-        modifier_class: 'ct-flex-justify-content-end',
+        modifier_class: `ct-flex-justify-content-end ${options.mobileSearchLink ? 'hide-xxs show-m-flex' : ''}`,
       }).trim(),
       MobileNavigationTrigger({
         theme,
         icon: 'bars',
         text: 'Menu',
       }).trim(),
-      MobileNavigationPanel(MobileNavigationStory.args).trim(),
+      MobileNavigationPanel({
+        ...MobileNavigationStory.args,
+        top_menu: options.mobileSearchLink
+          ? MobileNavigationStory.args.top_menu.concat({
+            title: 'Search',
+            url: '/search',
+            icon: 'magnifier',
+            in_active_trail: false,
+            is_expanded: false,
+          })
+          : MobileNavigationStory.args.top_menu,
+      }).trim(),
     ].join(''),
     content_bottom1: '',
     modifier_class: '',
