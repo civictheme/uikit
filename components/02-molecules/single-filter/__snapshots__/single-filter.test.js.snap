@@ -12,53 +12,51 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-single-filter ct-theme-light "
     data-component-name="ct-single-filter"
   >
     
-		
+    
     <div
       class="container"
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-																
-																																																									
-						
-													
-
-
-          <label
-            class="ct-label ct-theme-light ct-label--regular  ct-single-filter__title"
-          >
+                                
+                                                                                                                  
             
-    Filter results by:  
-          </label>
-          						
-						
+                          
+          <div
+            class="ct-single-filter__title"
+          >
+            Filter results by:
+          </div>
+          
+            
+            
           <div
             class="ct-single-filter__wrapper"
           >
             
-							
+              
             <div
               class="ct-single-filter__items"
             >
               
-								
+                
 
   
               <ul
@@ -69,7 +67,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                  																																												
+                                                                                                          
       
                   <label
                     class="ct-chip ct-theme-light ct-chip--input ct-chip--small active ct-chip--multiple "
@@ -85,9 +83,6 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                       type="checkbox"
                     />
                     Filter 1        
-
-
-                                    
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-chip__dismiss"
@@ -106,18 +101,17 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
 
                     </svg>
                     
-
-            
+          
                   </label>
                   
-  															
+                                
                 </li>
                 
                         
                 <li
                   class="ct-item-list__item"
                 >
-                  																																												
+                                                                                                          
       
                   <label
                     class="ct-chip ct-theme-light ct-chip--input ct-chip--small  ct-chip--multiple "
@@ -132,9 +126,6 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                       type="checkbox"
                     />
                     Filter 2        
-
-
-                                    
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-chip__dismiss"
@@ -153,25 +144,24 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
 
                     </svg>
                     
-
-            
+          
                   </label>
                   
-  															
+                                
                 </li>
                 
             
               </ul>
               
-							
+              
             </div>
             
-							
+              
             <div
               class="ct-single-filter__actions"
             >
               
-								
+                
 
   
               <button
@@ -179,28 +169,11 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                 data-component-name="button"
                 type="submit"
               >
-                
-
-    
-              
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-          
-          
-          Apply 
+                Apply 
                 <span
                   class="ct-text-icon__group"
                 >
-                  filter
-
-
-                                    
+                  filter 
                   <svg
                     aria-hidden="true"
                     class="ct-icon  ct-button__icon"
@@ -220,34 +193,29 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                   </svg>
                   
 
-          
                 </span>
-                
-                  
-      
-      
               </button>
               
 
-															
+                              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																				
+            
+                      
+                                        
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 
@@ -258,61 +226,59 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-single-filter ct-theme-dark custom-class"
     data-component-name="ct-single-filter"
     data-test="true"
   >
     
-		
+    
     <div
       class="container"
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-																		
+                                    
           <div
             class="ct-single-filter__content-top"
           >
             Top content
           </div>
           
-											
-																																																									
-						
-													
-
-
-          <label
-            class="ct-label ct-theme-dark ct-label--regular  ct-single-filter__title"
-          >
+                      
+                                                                                                                  
             
-    Filter results by:  
-          </label>
-          						
-						
+                          
+          <div
+            class="ct-single-filter__title"
+          >
+            Filter results by:
+          </div>
+          
+            
+            
           <div
             class="ct-single-filter__wrapper"
           >
             
-							
+              
             <div
               class="ct-single-filter__items"
             >
               
-								
+                
 
   
               <ul
@@ -323,7 +289,7 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                  																																												
+                                                                                                          
       
                   <label
                     class="ct-chip ct-theme-dark ct-chip--input ct-chip--small active  "
@@ -341,14 +307,14 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                     Filter 1    
                   </label>
                   
-  															
+                                
                 </li>
                 
                         
                 <li
                   class="ct-item-list__item"
                 >
-                  																																												
+                                                                                                          
       
                   <label
                     class="ct-chip ct-theme-dark ct-chip--input ct-chip--small   "
@@ -364,21 +330,21 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                     Filter 2    
                   </label>
                   
-  															
+                                
                 </li>
                 
             
               </ul>
               
-							
+              
             </div>
             
-							
+              
             <div
               class="ct-single-filter__actions"
             >
               
-								
+                
 
   
               <button
@@ -386,28 +352,11 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                 data-component-name="button"
                 type="submit"
               >
-                
-
-    
-              
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-          
-          
-          Apply 
+                Apply 
                 <span
                   class="ct-text-icon__group"
                 >
-                  filter
-
-
-                                    
+                  filter 
                   <svg
                     aria-hidden="true"
                     class="ct-icon  ct-button__icon"
@@ -427,16 +376,11 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                   </svg>
                   
 
-          
                 </span>
-                
-                  
-      
-      
               </button>
               
 
-																	
+                                  
 
   
               <input
@@ -446,32 +390,32 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                 value="Clear all"
               />
               
-															
+                              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																		
+            
+                      
+                                    
           <div
             class="ct-single-filter__content-bottom"
           >
             Bottom content
           </div>
           
-															
+                              
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 
@@ -482,53 +426,51 @@ exports[`Single Filter Component renders with required attributes 1`] = `
 <div>
   
 
-	
-	
+  
+  
   <div
     class="ct-single-filter ct-theme-light "
     data-component-name="ct-single-filter"
   >
     
-		
+    
     <div
       class="container"
     >
       
-			
+      
       <div
         class="row"
       >
         
-				
+        
         <div
           class="col-xxs-12"
         >
           
 
-																
-																																																									
-						
-													
-
-
-          <label
-            class="ct-label ct-theme-light ct-label--regular  ct-single-filter__title"
-          >
+                                
+                                                                                                                  
             
-    Filter results by:  
-          </label>
-          						
-						
+                          
+          <div
+            class="ct-single-filter__title"
+          >
+            Filter results by:
+          </div>
+          
+            
+            
           <div
             class="ct-single-filter__wrapper"
           >
             
-							
+              
             <div
               class="ct-single-filter__items"
             >
               
-								
+                
 
   
               <ul
@@ -539,7 +481,7 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                  																																												
+                                                                                                          
       
                   <label
                     class="ct-chip ct-theme-light ct-chip--input ct-chip--small active  "
@@ -556,14 +498,14 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                     Filter 1    
                   </label>
                   
-  															
+                                
                 </li>
                 
                         
                 <li
                   class="ct-item-list__item"
                 >
-                  																																												
+                                                                                                          
       
                   <label
                     class="ct-chip ct-theme-light ct-chip--input ct-chip--small   "
@@ -579,21 +521,21 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                     Filter 2    
                   </label>
                   
-  															
+                                
                 </li>
                 
             
               </ul>
               
-							
+              
             </div>
             
-							
+              
             <div
               class="ct-single-filter__actions"
             >
               
-								
+                
 
   
               <button
@@ -601,28 +543,11 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                 data-component-name="button"
                 type="submit"
               >
-                
-
-    
-              
-      
-                  
-                              
-          
-                    
-          
-                                
-          
-          
-          
-          Apply 
+                Apply 
                 <span
                   class="ct-text-icon__group"
                 >
-                  filter
-
-
-                                    
+                  filter 
                   <svg
                     aria-hidden="true"
                     class="ct-icon  ct-button__icon"
@@ -642,34 +567,29 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                   </svg>
                   
 
-          
                 </span>
-                
-                  
-      
-      
               </button>
               
 
-															
+                              
             </div>
             
-						
+            
           </div>
           
 
-						
-											
-																				
+            
+                      
+                                        
         </div>
         
-			
+      
       </div>
       
-		
+    
     </div>
     
-	
+  
   </div>
   
 

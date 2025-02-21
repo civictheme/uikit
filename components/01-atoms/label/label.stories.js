@@ -8,33 +8,40 @@ const meta = {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    size: {
+    tag: {
       control: { type: 'radio' },
-      options: [
-        'extra-large',
-        'large',
-        'regular',
-        'small',
-        'extra-small',
-        '',
-      ],
+      options: ['label', 'legend'],
     },
     content: {
+      control: { type: 'text' },
+    },
+    size: {
+      control: { type: 'select' },
+      options: [
+        '',
+        'extra-small',
+        'small',
+        'regular',
+        'large',
+        'extra-large',
+      ],
+    },
+    is_required: {
+      control: { type: 'boolean' },
+    },
+    required_text: {
       control: { type: 'text' },
     },
     for: {
       control: { type: 'text' },
     },
-    is_required: {
-      control: { type: 'boolean' },
-    },
     allow_html: {
       control: { type: 'boolean' },
     },
-    modifier_class: {
+    attributes: {
       control: { type: 'text' },
     },
-    attributes: {
+    modifier_class: {
       control: { type: 'text' },
     },
   },
@@ -48,12 +55,14 @@ export const Label = {
   },
   args: {
     theme: 'light',
-    size: 'regular',
+    tag: 'label',
     content: 'Label content',
-    for: '',
+    size: 'regular',
     is_required: false,
+    required_text: '',
+    for: '',
     allow_html: false,
-    modifier_class: '',
     attributes: '',
+    modifier_class: '',
   },
 };

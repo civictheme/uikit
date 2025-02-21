@@ -262,6 +262,7 @@ CivicThemeCollapsible.prototype.setCollapsedState = function () {
   this.panel.style.overflow = 'hidden';
   this.panel.style.display = 'none';
   this.el.setAttribute('data-collapsible-collapsed', '');
+  this.trigger.setAttribute('data-collapsible-trigger-collapsed', '');
   this.panel.setAttribute('aria-hidden', true);
   this.trigger.setAttribute('aria-expanded', false);
   this.collapsed = true;
@@ -296,6 +297,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
     t.panel.removeEventListener('transitionend', onTransitionEnd);
     // Remove progress state.
     t.el.removeAttribute('data-collapsible-collapsing');
+    t.trigger.removeAttribute('data-collapsible-trigger-collapsing');
     // Set all required attributes.
     t.setCollapsedState.call(t);
   };
@@ -314,6 +316,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
       t.panel.style.height = `${h}px`;
       // Set progress state.
       t.el.setAttribute('data-collapsible-collapsing', '');
+      t.trigger.setAttribute('data-collapsible-trigger-collapsing', '');
       requestAnimationFrame(() => {
         // Register an event listener to fire at the end of the transition.
         t.panel.addEventListener('transitionend', onTransitionEnd);
@@ -341,6 +344,7 @@ CivicThemeCollapsible.prototype.setExpandedState = function () {
   this.panel.setAttribute('aria-hidden', false);
   this.trigger.setAttribute('aria-expanded', true);
   this.el.removeAttribute('data-collapsible-collapsed');
+  this.trigger.removeAttribute('data-collapsible-trigger-collapsed');
   this.collapsed = false;
 };
 
@@ -365,6 +369,7 @@ CivicThemeCollapsible.prototype.expand = function (animate) {
     t.setExpandedState.call(t);
     // Remove progress state.
     t.el.removeAttribute('data-collapsible-collapsing');
+    t.trigger.removeAttribute('data-collapsible-trigger-collapsing');
   };
 
   if (animate && t.duration > 0) {
@@ -375,6 +380,7 @@ CivicThemeCollapsible.prototype.expand = function (animate) {
 
     // Set progress state.
     t.el.setAttribute('data-collapsible-collapsing', '');
+    t.trigger.setAttribute('data-collapsible-trigger-collapsing', '');
     t.panel.style.height = '0px';
     requestAnimationFrame(() => {
       // Prepare for animation by setting initial values.

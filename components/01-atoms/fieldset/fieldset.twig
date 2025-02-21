@@ -12,6 +12,7 @@
  * - message_type: [string] Type of the message: error, warning, info, success. Default is error.
  * - fields: [string] Fields content. Optional.
  * - is_required: [boolean] Denote if the fieldset is required. Optional.
+ * - required_text: [string] Text to display within label element when required. Optional.
  * - attributes: [string] Additional attributes for the fieldset. Optional.
  * - modifier_class: [string] Additional classes. Optional.
  * - prefix: [string] The content to add before the fieldset children.
@@ -33,6 +34,7 @@
 			size: 'large',
 			content: legend,
 			is_required: is_required,
+			required_text: required_text,
 			modifier_class: 'ct-fieldset__legend',
 		} only %}
 	{% endif %}

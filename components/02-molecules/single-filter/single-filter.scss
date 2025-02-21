@@ -16,6 +16,9 @@
   }
 
   #{$root}__title {
+    @include ct-typography('label-regular');
+
+    margin: 0;
     margin-bottom: ct-spacing(3);
   }
 
@@ -57,5 +60,9 @@
   @include ct-component-theme($root) using($root, $theme) {
     border-top-color: ct-component-var($root, $theme, border-color);
     border-bottom-color: ct-component-var($root, $theme, border-color);
+
+    #{$root}__title {
+      color: ct-component-var($root, $theme, title, color);
+    }
   }
 }

@@ -475,7 +475,6 @@ $ct-input-dark-outline-color: $ct-outline-dark !default;
 //
 // Form Control/Label.
 //
-$ct-label-required-content: '*';
 $ct-label-light-color: ct-color-light('heading') !default;
 $ct-label-light-required-color: ct-color-light('error') !default;
 $ct-label-dark-color: ct-color-dark('heading') !default;
@@ -849,7 +848,9 @@ $ct-tooltip-dark-icon-color: ct-color-dark('interaction-background') !default;
 // List/Single filter.
 //
 $ct-single-filter-light-border-color: ct-color-light('border-light') !default;
+$ct-single-filter-light-title-color: ct-color-light('heading') !default;
 $ct-single-filter-dark-border-color: ct-color-dark('border') !default;
+$ct-single-filter-dark-title-color: ct-color-dark('heading') !default;
 
 //
 // List/Group filter.
@@ -867,6 +868,7 @@ $ct-group-filter-light-mobile-toggle-display-border-color: ct-color-light('borde
 $ct-group-filter-light-mobile-toggle-display-color: ct-color-light('background') !default;
 $ct-group-filter-light-selected-filters-border-color: ct-color-light('border-light') !default;
 $ct-group-filter-light-selected-filters-title-color: ct-color-light('body') !default;
+$ct-group-filter-light-title-color: ct-color-light('heading') !default;
 $ct-group-filter-dark-background-color: ct-color-dark('background') !default;
 $ct-group-filter-dark-border-color: ct-color-dark('border') !default;
 $ct-group-filter-dark-dropdown-filter-border-color: ct-color-dark('interaction-background') !default;
@@ -880,6 +882,7 @@ $ct-group-filter-dark-mobile-toggle-display-border-color: ct-color-dark('interac
 $ct-group-filter-dark-mobile-toggle-display-color: ct-color-dark('background') !default;
 $ct-group-filter-dark-selected-filters-border-color: ct-color-dark('border-light') !default;
 $ct-group-filter-dark-selected-filters-title-color: ct-color-dark('background') !default;
+$ct-group-filter-dark-title-color: ct-color-dark('heading') !default;
 
 //
 // List/Pagination.
@@ -1058,8 +1061,10 @@ $ct-header-dark-top-color: ct-color-dark('body') !default;
 //
 $ct-list-light-background-color: ct-color-light('background') !default;
 $ct-list-light-color: ct-color-light('body') !default;
+$ct-list-light-results-count-color: ct-color-light('heading') !default;
 $ct-list-dark-background-color: ct-color-dark('background') !default;
 $ct-list-dark-color: ct-color-dark('body') !default;
+$ct-list-dark-results-count-color: ct-color-dark('heading') !default;
 
 //
 // Message.

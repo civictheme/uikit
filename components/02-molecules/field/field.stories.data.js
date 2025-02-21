@@ -5,8 +5,8 @@ export default {
       label: `Control item ${i}`,
       name,
       value: '',
-      id: `control_item_${i}`,
-      is_required: false,
+      id: `${name}_control_item_${i}`,
+      is_required: options.is_required || false,
       is_invalid: false,
       is_disabled: false,
       attributes: '',
@@ -19,15 +19,19 @@ export default {
       value: `option_${i}`,
       selected: false,
     })) : null;
-
+    const fieldId = `field_id_${Math.floor(Math.random() * 1000)}`;
     return {
       theme,
       type: 'textfield',
       title: 'Field title',
       title_display: 'visible',
       description: 'Description content sample.',
-      message: 'Message content sample.',
-      is_required: false,
+      message: {
+        content: 'Message conte nt sample.',
+        attributes: `id="${fieldId}--error-message"`,
+      },
+      is_required: options.is_required || false,
+      required_text: '',
       is_invalid: false,
       is_disabled: false,
       orientation: 'vertical',
@@ -35,7 +39,7 @@ export default {
       name,
       value: '',
       placeholder: 'Field placeholder',
-      id: 'field_id',
+      id: fieldId,
       control,
       options: selectOptions,
       attributes: '',

@@ -21,13 +21,16 @@ describe('Label Component', () => {
       tag: 'legend',
       size: 'large',
       is_required: true,
+      required_text: '(custom-required)',
       for: 'input-id',
       attributes: 'data-test="true"',
       modifier_class: 'custom-class',
     });
 
     expect(c.querySelectorAll('.ct-label.custom-class.ct-theme-dark.ct-label--large.ct-label--required')).toHaveLength(1);
-    expect(c.querySelector('.ct-label').textContent.trim()).toEqual('Sample label');
+    expect(c.querySelectorAll('.ct-label.ct-label--required .ct-label__required')).toHaveLength(1);
+    expect(c.querySelector('.ct-label__required').textContent.trim()).toEqual('(custom-required)');
+    expect(c.querySelector('.ct-label').textContent.trim()).toEqual('Sample label (custom-required)');
     expect(c.querySelector('.ct-label').tagName.toLowerCase()).toEqual('legend');
     expect(c.querySelector('.ct-label').getAttribute('for')).toEqual('input-id');
     expect(c.querySelector('.ct-label').getAttribute('data-test')).toEqual('true');
@@ -38,7 +41,7 @@ describe('Label Component', () => {
   test('renders with default tag and size when invalid values are provided', async () => {
     const c = await dom(template, {
       content: 'Sample label',
-      tag: 'div', // Invalid value
+      tag: 'b', // Invalid value
       size: 'huge', // Invalid value
     });
 

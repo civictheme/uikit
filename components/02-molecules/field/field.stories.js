@@ -10,7 +10,7 @@ const meta = {
       options: ['light', 'dark'],
     },
     type: {
-      control: { type: 'radio' },
+      control: { type: 'select' },
       options: ['textfield', 'textarea', 'select', 'select_multiple', 'radio', 'checkbox', 'hidden', 'color', 'date', 'email', 'file', 'image', 'month', 'number', 'password', 'range', 'search', 'tel', 'time', 'url', 'week', 'other'],
     },
     title: {
@@ -43,6 +43,9 @@ const meta = {
     },
     is_required: {
       control: { type: 'boolean' },
+    },
+    required_text: {
+      control: { type: 'text' },
     },
     orientation: {
       control: { type: 'radio' },
@@ -83,7 +86,7 @@ export const FieldRadio = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { controls: true }),
+    ...FieldData.args('light', { controls: true, is_required: true }),
     type: 'radio',
   },
 };
@@ -93,7 +96,7 @@ export const FieldCheckbox = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { controls: true }),
+    ...FieldData.args('light', { controls: true, is_required: true }),
     type: 'checkbox',
   },
 };
@@ -103,7 +106,7 @@ export const FieldSelect = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { options: true }),
+    ...FieldData.args('light', { options: true, is_required: true }),
     type: 'select',
   },
 };

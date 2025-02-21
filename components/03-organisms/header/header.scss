@@ -57,11 +57,6 @@
 
     & {
       height: 100%;
-      position: relative;
-    }
-
-    @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
-      position: static;
       display: flex;
       justify-content: flex-end;
     }
@@ -173,13 +168,6 @@
         }
       }
     }
-  }
-
-  .ct-mobile-navigation-trigger {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
   }
 
   @include ct-component-theme($root) using($root, $theme) {

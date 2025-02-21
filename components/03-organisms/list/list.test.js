@@ -39,7 +39,7 @@ describe('List Component', () => {
     expect(c.querySelector('.ct-list__title').textContent.trim()).toBe('Sample Title');
     expect(c.querySelector('.ct-list__link-above__link').textContent.trim()).toBe('Link Above');
     expect(c.querySelector('.ct-list__filters').textContent.trim()).toBe('Sample Filters');
-    expect(c.querySelector('.ct-list__results-count__inner').textContent.trim()).toBe('10 Results');
+    expect(c.querySelector('.ct-list__results-count').textContent.trim()).toBe('10 Results');
     expect(c.querySelector('.ct-list__rows-above').textContent.trim()).toBe('Rows Above');
     expect(c.querySelector('.ct-list__rows').textContent.trim()).toBe('Rows Content');
     expect(c.querySelector('.ct-list__rows-below').textContent.trim()).toBe('Rows Below');
@@ -78,7 +78,7 @@ describe('List Component', () => {
     expect(c.querySelector('.ct-list__title')).toBeNull();
     expect(c.querySelector('.ct-list__link-above__link')).toBeNull();
     expect(c.querySelector('.ct-list__filters')).toBeNull();
-    expect(c.querySelector('.ct-list__results-count__inner')).toBeNull();
+    expect(c.querySelector('.ct-list__results-count')).toBeNull();
     expect(c.querySelector('.ct-list__rows-above')).toBeNull();
     expect(c.querySelector('.ct-list__rows')).toBeNull();
     expect(c.querySelector('.ct-list__rows-below')).toBeNull();

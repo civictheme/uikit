@@ -55,7 +55,13 @@ exports[`Label Component renders with optional attributes 1`] = `
     for="input-id"
   >
     
-    Sample label  
+    Sample label 
+    <span
+      class="ct-label__required"
+    >
+      (custom-required)
+    </span>
+      
   </legend>
 </div>
 `;
