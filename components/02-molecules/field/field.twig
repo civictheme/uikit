@@ -95,6 +95,10 @@
 
 {% if control[0].name is defined %}
 	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
+		{# If the field is a radio or checkbox, wrap it in a fieldset and add an aria-describedby attribute. #}
+		{% if type in ['radio', 'checkbox'] %}
+			<fieldset aria-describedby="{{ control[0].id }}-message">
+		{% endif %}
 		{% if title is not empty and title_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,
@@ -164,10 +168,13 @@
 					content: message is defined and message.content is defined ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
-					message_id: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id ~ '-message'  : null,
+					id: control[0].id ? control[0].id ~ '-message'  : null,
 					attributes: message.attributes|default('')
 				} only %}
 			{% endif %}
 		</div>
+		{% if type in ['radio', 'checkbox'] %}
+			</fieldset>
+		{% endif %}
 	</div>
 {% endif %}

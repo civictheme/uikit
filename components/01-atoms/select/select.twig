@@ -36,7 +36,8 @@
 		{% if is_invalid and id %}aria-describedby="{{ id }}-message"{% endif %}
 		{% if is_multiple %}multiple{% endif %}
 		{% if is_disabled %}disabled{% endif %}
-		{% if is_required %}required aria-invalid="{{ is_invalid ? is_invalid : 'false' }}"{% endif %}
+		{% if is_required %}required{% endif %}
+		aria-invalid="{{ is_invalid ? is_invalid : 'false' }}"
 		{% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
 	>
 		{% for option in options %}
