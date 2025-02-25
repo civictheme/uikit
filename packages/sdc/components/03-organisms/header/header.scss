@@ -15,22 +15,32 @@
     margin-bottom: ct-spacing();
 
     .ct-navigation {
-      $root-dropdown: '.ct-navigation';
+      $root-nav: '.ct-navigation';
 
-      &#{$root-dropdown}--dropdown {
-        #{$root-dropdown}__items {
-          #{$root-dropdown}__menu {
+      // Common styles for all variants in top section
+      #{$root-nav}__items {
+        height: 100%;
+        min-height: ct-spacing(6); // Ensure consistent height
+
+        #{$root-nav}__menu {
+          &.ct-menu--level-0 {
+            gap: ct-spacing(3); // Wider spacing for top navigation
+            height: 100%;
+            align-items: center;
+          }
+        }
+      }
+
+      &#{$root-nav}--dropdown,
+      &#{$root-nav}--inline {
+        #{$root-nav}__items {
+          #{$root-nav}__menu {
             .ct-menu__item {
-              // Links - level 0.
+              // Links - level 0
               &--level-0 {
-                margin-right: ct-spacing(2);
-
-                &:last-child {
-                  margin-right: 0;
-                }
-
                 > .ct-link {
                   text-align: center;
+                  padding-block: ct-spacing();
                 }
               }
             }
@@ -62,6 +72,34 @@
     }
 
     .ct-navigation {
+      $root-nav: '.ct-navigation';
+
+      // Common styles for all variants in middle section
+      #{$root-nav}__items {
+        height: 100%;
+        min-height: ct-spacing(8); // Taller height for primary navigation
+
+        #{$root-nav}__menu {
+          &.ct-menu--level-0 {
+            gap: ct-spacing(4); // Wider spacing for primary navigation
+            height: 100%;
+            align-items: center;
+          }
+
+          .ct-menu__item--level-0 {
+            > .ct-link {
+              position: relative;
+              padding-block: ct-spacing(2);
+              font-weight: 500;
+            }
+
+            &.ct-menu__item--active-trail > .ct-link::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+
       $root-drawer: '.ct-navigation';
 
       &#{$root-drawer}--drawer {
