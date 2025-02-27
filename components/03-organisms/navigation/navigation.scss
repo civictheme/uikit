@@ -57,14 +57,7 @@
     // Base styles for all first-level menus
     .ct-menu--level-0 {
       display: flex;
-      align-items: center;
       gap: ct-spacing(2); // Consistent spacing between items
-
-      > .ct-menu__item {
-        > .ct-link {
-          padding-inline: ct-spacing(2);
-        }
-      }
     }
   }
 
@@ -233,17 +226,6 @@
         .ct-menu--level-1 {
           .ct-menu__sub-menu {
             margin-left: ct-spacing(2);
-          }
-        }
-
-        .ct-menu__item {
-          .ct-link {
-            display: block;
-
-            &::after {
-              right: ct-spacing();
-              margin-top: -1 * ct-particle(0.25);
-            }
           }
         }
       }
