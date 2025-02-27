@@ -81,9 +81,7 @@
 
         #{$root-nav}__menu {
           &.ct-menu--level-0 {
-            gap: ct-spacing(4); // Wider spacing for primary navigation
-            height: 100%;
-            align-items: center;
+            gap: ct-spacing(0);
           }
 
           .ct-menu__item--level-0 {
