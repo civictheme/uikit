@@ -11,6 +11,7 @@
 
   #{$root}__title {
     @include ct-typography('heading-5');
+
     margin-block: ct-spacing(2);
   }
 
@@ -28,6 +29,7 @@
       &.ct-menu,
       .ct-menu {
         @include ct-print-hide();
+
         list-style: none;
         padding: 0;
         margin: 0;
@@ -94,6 +96,7 @@
           .ct-menu__sub-menu {
             &.ct-menu--level-1 {
               @include ct-container();
+
               display: flex;
               flex-wrap: wrap;
               gap: ct-spacing(4);
@@ -237,6 +240,7 @@
           margin-top: $ct-navigation-dropdown-top-offset;
           border-bottom-left-radius: $ct-navigation-dropdown-border-radius;
           border-bottom-right-radius: $ct-navigation-dropdown-border-radius;
+
           @include ct-elevation(4);
 
           .ct-menu__sub-menu {

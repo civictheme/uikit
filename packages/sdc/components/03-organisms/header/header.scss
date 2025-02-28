@@ -184,7 +184,6 @@
             .ct-menu__item {
               // Links - level 0.
               &--level-0 {
-
                 &:hover {
                   @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
                 }
@@ -194,7 +193,6 @@
                 }
 
                 &[data-collapsible] {
-
                   &:hover {
                     @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
                   }
