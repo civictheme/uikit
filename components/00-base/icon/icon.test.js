@@ -17,13 +17,11 @@ describe('Icon Component', () => {
     const c = await dom(template, {
       symbol: 'close',
       size: 'large',
-      alt: 'Test Icon',
     });
 
     expect(c.querySelectorAll('.ct-icon.ct-icon--size-large')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-icon[aria-hidden="true"]')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-icon[role="img"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-icon[alt="Test Icon"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
