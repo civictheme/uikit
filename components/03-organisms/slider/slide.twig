@@ -31,7 +31,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
+<div class="ct-slide {{ modifier_class -}}" role="group" aria-roledescription="slide" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
 	<div class="row ct-slide__row">
     {% block image %}
       {% if image is not empty %}
