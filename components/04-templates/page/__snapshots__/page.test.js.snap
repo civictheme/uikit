@@ -24,7 +24,7 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
 
   
     <header
-      class="ct-header ct-theme-light "
+      class="ct-header ct-theme-light  "
       role="banner"
     >
       
@@ -221,28 +221,36 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
       </div>
       
     
-                  
+          
       <div
-        class="container"
+        class="ct-header__bottom"
       >
         
-          
+                  
         <div
-          class="row"
+          class="container"
         >
           
             
           <div
-            class="col-xxs-12"
+            class="row"
           >
             
-              
+            
             <div
-              class="ct-header__content-bottom1"
+              class="col-xxs-12"
             >
               
+              
+              <div
+                class="ct-header__content-bottom1"
+              >
+                
                 Header Bottom 1
               
+              </div>
+              
+            
             </div>
             
             
@@ -251,11 +259,10 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
           
         </div>
         
-        
+              
       </div>
       
-          
-  
+      
     </header>
     
   

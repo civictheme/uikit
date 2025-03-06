@@ -62,6 +62,7 @@
     align-items: center;
   }
 
+  &--multiline #{$root}__content-bottom1,
   &__content-middle3 {
     @include ct-print-hide();
 
@@ -222,12 +223,23 @@
     }
   }
 
+  &--multiline {
+    #{$root}__bottom {
+      border-bottom: solid ct-particle(0.125);
+    }
+
+    #{$root}__middle {
+      border-bottom: none;
+    }
+  }
+
   @include ct-component-theme($root) using($root, $theme) {
     #{$root}__top {
       @include ct-component-property($root, $theme, top, background-color);
       @include ct-component-property($root, $theme, top, color);
     }
 
+    #{$root}__bottom,
     #{$root}__middle {
       @include ct-component-property($root, $theme, middle, background-color);
       @include ct-component-property($root, $theme, middle, border-color);

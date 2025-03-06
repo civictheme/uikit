@@ -1,5 +1,5 @@
 import Component from './header.twig';
-import HeaderData from './header.stories.data';
+import HeaderData, { HeaderMultilineData } from './header.stories.data';
 
 const meta = {
   title: 'Organisms/Header',
@@ -8,6 +8,9 @@ const meta = {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
+    },
+    is_multiline: {
+      control: { type: 'boolean' },
     },
     content_top1: {
       control: { type: 'text' },
@@ -53,6 +56,13 @@ export const HeaderDark = {
     },
   },
   args: HeaderData.args('dark'),
+};
+
+export const HeaderMultiline = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: HeaderMultilineData.args('light'),
 };
 
 export const HeaderWithMobileNavSearchLink = {
