@@ -5,6 +5,7 @@
  *
  * Variables:
  * - theme: [string] Theme: light, dark.
+ * - is_multiline: [boolean] Whether the header is multiline.
  * - content_top1: [string] Content slot.
  * - content_top2: [string] Content slot.
  * - content_top3: [string] Content slot.
@@ -17,7 +18,7 @@
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, is_multiline ? 'ct-header--multiline' : '', modifier_class|default('')) %}
 
 {% if content_top1 is not empty or content_top2 is not empty or content_top3 is not empty or content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_bottom1 is not empty %}
   <header class="ct-header {{ modifier_class -}}" role="banner">
@@ -111,18 +112,19 @@
     {% endif %}
 
     {% if content_bottom1 is not empty %}
-      {% block content_bottom1 %}
-        <div class="container">
-          <div class="row">
+      <div class="ct-header__bottom">
+        {% block content_bottom1 %}
+          <div class="container">
+            <div class="row">
             <div class="col-xxs-12">
               <div class="ct-header__content-bottom1">
                 {{ content_bottom1|raw }}
               </div>
             </div>
+            </div>
           </div>
-        </div>
-      {% endblock %}
+        {% endblock %}
+      </div>
     {% endif %}
-
   </header>
 {% endif %}
