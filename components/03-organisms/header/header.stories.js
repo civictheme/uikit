@@ -9,9 +9,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    is_multiline: {
-      control: { type: 'boolean' },
-    },
     content_top1: {
       control: { type: 'text' },
     },

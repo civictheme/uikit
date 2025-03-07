@@ -9,6 +9,7 @@
   * - items: [array] Array of menu items.
   * - title: [string] Navigation title.
   * - type: [string] One of: none, inline, dropdown, drawer.
+  * - variant: [string] One of: primary, secondary.
   * - dropdown_columns: [integer] Number of columns in the dropdown drawer.
   * - dropdown_columns_fill: [boolean] Fill columns.
   * - is_animated: [boolean] Use animation for transitions.
@@ -20,8 +21,9 @@
 
 {% set menu_id = menu_id|default('navigation') %}
 {% set dropdown_class = 'ct-navigation--%s'|format(type|default('none')) %}
+{% set variant_class = variant ? 'ct-navigation--%s'|format(variant) : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, dropdown_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, dropdown_class, variant_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
   {% if type in ['dropdown', 'drawer'] %}

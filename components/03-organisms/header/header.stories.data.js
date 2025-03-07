@@ -12,7 +12,6 @@ import MobileNavigationTrigger from '../mobile-navigation/mobile-navigation-trig
 const defaultExport = {
   args: (theme = 'light', options = {}) => ({
     theme,
-    is_multiline: false,
     content_top1: '',
     content_top2: Paragraph({
       theme,
@@ -23,6 +22,7 @@ const defaultExport = {
       name: 'secondary',
       title: null,
       type: 'dropdown',
+      variant: 'secondary',
       modifier_class: 'ct-flex-justify-content-end',
     }),
     content_middle1: '',
@@ -33,6 +33,7 @@ const defaultExport = {
         name: 'primary',
         title: null,
         type: 'drawer',
+        variant: 'primary',
         modifier_class: 'ct-flex-justify-content-end',
       }).trim(),
       Search({
@@ -71,7 +72,6 @@ export const HeaderMultilineData = {
     const defaultData = defaultExport.args(theme, options);
     return {
       ...defaultData,
-      is_multiline: true,
       content_middle3: [
         Button({
           theme,
@@ -92,6 +92,7 @@ export const HeaderMultilineData = {
           name: 'primary',
           title: null,
           type: 'drawer',
+          variant: 'primary',
           modifier_class: 'ct-flex-justify-content-end',
         }).trim(),
         Search({
