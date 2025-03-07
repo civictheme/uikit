@@ -1,5 +1,5 @@
 import Component from './header.twig';
-import HeaderData from './header.stories.data';
+import HeaderData, { HeaderMultilineData } from './header.stories.data';
 
 const meta = {
   title: 'Organisms/Header',
@@ -53,6 +53,13 @@ export const HeaderDark = {
     },
   },
   args: HeaderData.args('dark'),
+};
+
+export const HeaderMultiline = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: HeaderMultilineData.args('light'),
 };
 
 export const HeaderWithMobileNavSearchLink = {
