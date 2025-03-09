@@ -78,14 +78,31 @@ export const HeaderMultilineData = {
           text: 'Support',
           type: 'primary',
           kind: 'link',
+          modifier_class: 'hide-xxs show-m',
         }).trim(),
         Button({
           theme,
           text: 'Request a demo',
           type: 'secondary',
           kind: 'link',
+          modifier_class: 'hide-xxs show-m',
         }).trim(),
-      ],
+        MobileNavigationTrigger({
+          theme,
+          icon: 'bars',
+          text: 'Menu',
+        }).trim(),
+        MobileNavigationPanel({
+          ...MobileNavigationStory.args,
+          top_menu: MobileNavigationStory.args.top_menu.concat({
+            title: 'Search',
+            url: '/search',
+            icon: 'magnifier',
+            in_active_trail: false,
+            is_expanded: false,
+          }),
+        }).trim(),
+      ].join(''),
       content_bottom1: [
         Navigation({
           ...NavigationData.args(theme),
@@ -99,24 +116,7 @@ export const HeaderMultilineData = {
           theme,
           text: 'Search',
           url: '/search',
-          modifier_class: `ct-flex-justify-content-end ${options.mobileSearchLink ? 'hide-xxs show-m-flex' : ''}`,
-        }).trim(),
-        MobileNavigationTrigger({
-          theme,
-          icon: 'bars',
-          text: 'Menu',
-        }).trim(),
-        MobileNavigationPanel({
-          ...MobileNavigationStory.args,
-          top_menu: options.mobileSearchLink
-            ? MobileNavigationStory.args.top_menu.concat({
-              title: 'Search',
-              url: '/search',
-              icon: 'magnifier',
-              in_active_trail: false,
-              is_expanded: false,
-            })
-            : MobileNavigationStory.args.top_menu,
+          modifier_class: 'ct-flex-justify-content-end hide-xxs show-m-flex',
         }).trim(),
       ].join(''),
     };
