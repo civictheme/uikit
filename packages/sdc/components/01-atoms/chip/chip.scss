@@ -15,6 +15,10 @@
     display: none;
   }
 
+  &#{$root}--link .ct-chip__dismiss {
+    display: inline;
+  }
+
   #{$root}__input[checked] + .ct-chip__dismiss {
     display: inline;
   }
