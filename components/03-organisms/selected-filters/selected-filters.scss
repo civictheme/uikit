@@ -37,25 +37,12 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--ct-spacing-1);
+    gap: ct-spacing(1);
   }
 
   &__clear {
     display: flex;
     align-items: center;
-  }
-
-  // Theme variations
-  &.ct-theme-light {
-    .ct-selected-filters__title {
-      color: var(--ct-color-text-light);
-    }
-  }
-
-  &.ct-theme-dark {
-    .ct-selected-filters__title {
-      color: var(--ct-color-text-dark);
-    }
   }
 
   @include ct-component-theme($root) using($root, $theme) {

@@ -11,6 +11,19 @@
  *   - is_new_window: [boolean] Open link in a new window.
  *   - is_external: [boolean] Link is external or not.
  * - filters: [string] Exposed filters.
+ * - selected_filters: [object] Selected filters.
+ *   - title: [string] Title.
+ *   - filters: [array] Filters.
+ *   - clear_link: [object] Clear link object.
+ *     - text: [string] Text.
+ *     - url: [string] URL.
+ * - selected_filters_clear_url: [object] Clear link object.
+ *   - text (string): Text of the clear all link.
+ *   - url (string): URL of the clear all link.
+ *   - type (string, optional): Type of the clear all link: 'primary', 'secondary'.
+ *   - size (string, optional): Size of the clear all link: 'regular', 'large'.
+ *   - icon (string, optional): Icon of the clear all link.
+ *   - icon_placement (string, optional): Icon placement of the clear all link: 'before', 'after'.
  * - results_count: [string] Results count.
  * - rows_above: [string] Content above rows.
  * - rows: [string] Rows content.
@@ -117,8 +130,8 @@
                   <div class="col-xxs-12">
                     {% include '@organisms/selected-filters/selected-filters.twig' with {
                       theme: theme,
-                      title: selected_filters.title|default('Selected filters:'),
-                      filters: selected_filters.filters,
+                      title: 'Selected filters:'|t,
+                      filters: selected_filters,
                       clear_link: selected_filters_clear_url,
                     } only %}
                   </div>
