@@ -3,20 +3,21 @@
  * @file
  * CivicTheme Chip component.
  *
- * Props:
- * - theme: [string] Theme variation (light or dark).
- * - kind: [string] Chip kind (default, input).
- * - size: [string] Chip size (large, regular, small).
+ * Variables:
+ * - theme: [string] Theme: light, dark.
+ * - kind: [string] Chip kind: default, input.
+ * - size: [string] Chip size: large, regular, small.
  * - content: [string] Chip text.
  * - is_selected: [boolean] Whether the chip is selected (for filter chips).
+ * - is_disabled: [boolean] Disabled or not.
+ * - is_dismissible: [boolean] Can be dismissed or not.
  * - is_multiple: [boolean] Whether multiple selection is allowed.
  * - group_parent: [string] Additional parent selector for radio group.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
-
-{% set kind = kind in ['default', 'input'] ? kind : 'default' %}
+{% set kind = kind in ['default', 'input', 'link'] ? kind : 'default' %}
 {% set kind_class = kind ? 'ct-chip--%s'|format(kind) : '' %}
 {% set size = size in ['large', 'regular', 'small'] ? size : 'regular' %}
 {% set size_class = 'ct-chip--%s'|format(size) %}
@@ -47,6 +48,22 @@
         } only %}
       {% endif %}
     </label>
+  {% elseif kind == 'link' %}
+    <a
+      href="{{ url }}"
+      class="ct-chip {{ modifier_class -}}"
+      alt="{{ label }}"
+      data-component-name="chip"
+      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    >
+      {{- content -}}
+      {% if is_dismissible %}
+        {% include '@base/icon/icon.twig' with {
+          symbol: 'cancel',
+          modifier_class: 'ct-chip__dismiss',
+        } only %}
+      {% endif %}
+    </a>
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"

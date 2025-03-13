@@ -1,0 +1,68 @@
+// Selected filters component styles.
+.ct-selected-filters {
+  $root: &;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: ct-spacing(2);
+  flex-direction: column;
+  padding-top: ct-spacing(3);
+  padding-bottom: ct-spacing(3);
+
+  @include ct-breakpoint(m) {
+    align-items: center;
+    flex-direction: row;
+    padding-top: ct-spacing(5);
+    padding-bottom: ct-spacing(5);
+    border-bottom: solid ct-particle(0.125);
+  }
+
+  &__active-filters {
+    display: flex;
+    gap: ct-spacing(2);
+    flex: 1;
+    flex-direction: column;
+
+    @include ct-breakpoint(m) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @include ct-typography('label-regular');
+
+    white-space: nowrap;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ct-spacing-1);
+  }
+
+  &__clear {
+    display: flex;
+    align-items: center;
+  }
+
+  // Theme variations
+  &.ct-theme-light {
+    .ct-selected-filters__title {
+      color: var(--ct-color-text-light);
+    }
+  }
+
+  &.ct-theme-dark {
+    .ct-selected-filters__title {
+      color: var(--ct-color-text-dark);
+    }
+  }
+
+  @include ct-component-theme($root) using($root, $theme) {
+    border-bottom-color: ct-component-var($root, $theme, border-color);
+
+    #{$root}__title {
+      color: ct-component-var($root, $theme, title, color);
+    }
+  }
+} 
