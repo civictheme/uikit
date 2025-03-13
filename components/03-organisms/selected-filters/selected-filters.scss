@@ -6,14 +6,11 @@
   flex-wrap: wrap;
   gap: ct-spacing(2);
   flex-direction: column;
-  padding-top: ct-spacing(3);
   padding-bottom: ct-spacing(3);
 
   @include ct-breakpoint(m) {
     align-items: center;
     flex-direction: row;
-    padding-top: ct-spacing(5);
-    padding-bottom: ct-spacing(5);
     border-bottom: solid ct-particle(0.125);
   }
 
