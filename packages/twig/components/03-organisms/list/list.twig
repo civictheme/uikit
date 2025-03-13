@@ -11,12 +11,7 @@
  *   - is_new_window: [boolean] Open link in a new window.
  *   - is_external: [boolean] Link is external or not.
  * - filters: [string] Exposed filters.
- * - selected_filters: [object] Selected filters.
- *   - title: [string] Title.
- *   - filters: [array] Filters.
- *   - clear_link: [object] Clear link object.
- *     - text: [string] Text.
- *     - url: [string] URL.
+ * - selected_filters: [array] Filters.
  * - selected_filters_clear_url: [object] Clear link object.
  *   - text (string): Text of the clear all link.
  *   - url (string): URL of the clear all link.
@@ -113,30 +108,35 @@
       {% endif %}
     {% endblock %}
 
-    {% block list_block %}
+    {% block list %}
       {% block filters_block %}
-        {% if filters or selected_filters -%}
+        {% if filters -%}
           <div class="ct-list__filters">
             <div class="container">
-              {% if filters %}
-                <div class="row">
-                  <div class="col-xxs-12">
-                    {{ filters|raw }}
-                  </div>
+              <div class="row">
+                <div class="col-xxs-12">
+                  {{ filters|raw }}
                 </div>
-              {% endif %}
-              {% if selected_filters %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endblock %}
+
+      {% block selected_filters %}
+        {% if selected_filters -%}
+          <div class="ct-list__selected-filters">
+            <div class="container">
                 <div class="row">
                   <div class="col-xxs-12">
                     {% include '@organisms/selected-filters/selected-filters.twig' with {
                       theme: theme,
                       title: 'Selected filters:'|t,
                       filters: selected_filters,
-                      clear_link: selected_filters_clear_url,
+                      clear_link: selected_filters_clear_link,
                     } only %}
                   </div>
                 </div>
-              {% endif %}
             </div>
           </div>
         {% endif %}
