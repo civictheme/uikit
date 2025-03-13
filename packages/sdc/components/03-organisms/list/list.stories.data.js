@@ -52,7 +52,7 @@ export default {
         { text: 'Filter 9', url: '#', label: 'Remove filter: Filter 9' },
         { text: 'Filter 10', url: '#', label: 'Remove filter: Filter 10' },
       ],
-      selected_filters_clear_url: {
+      selected_filters_clear_link: {
         text: 'Clear all',
         url: '#',
         type: 'secondary',
