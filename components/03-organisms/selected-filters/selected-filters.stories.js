@@ -34,6 +34,9 @@ const meta = {
 export default meta;
 
 export const SelectedFilters = {
+  parameters: {
+    layout: 'fullscreen',
+  },
   args: {
     theme: 'light',
     title: 'Selected filters: ',
@@ -66,6 +69,12 @@ export const SelectedFilters = {
 };
 
 export const SelectedFiltersDark = {
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
   args: {
     ...SelectedFilters.args,
     theme: 'dark',
