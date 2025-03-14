@@ -9,6 +9,8 @@
   padding-bottom: ct-spacing(3);
 
   @include ct-breakpoint(m) {
+    padding-left: ct-spacing(4);
+    padding-right: ct-spacing(4);
     align-items: start;
     flex-direction: row;
     border-bottom: solid ct-particle(0.125);

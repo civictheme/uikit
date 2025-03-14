@@ -9,8 +9,11 @@
   border-bottom: solid ct-particle(0.125);
   padding-top: ct-spacing(3);
   padding-bottom: ct-spacing(3);
-  padding-left: ct-spacing(4);
-  padding-right: ct-spacing(4);
+
+  @include ct-breakpoint(m) {
+    padding-left: ct-spacing(4);
+    padding-right: ct-spacing(4);
+  }
 
   #{$root}__title {
     @include ct-typography('label-regular');
