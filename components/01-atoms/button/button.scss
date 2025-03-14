@@ -79,4 +79,12 @@
       padding: 0;
     }
   }
+
+  // Full width on mobile.
+  &--full-width-mobile {
+    @include ct-breakpoint-upto(m) {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }

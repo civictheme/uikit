@@ -11,6 +11,14 @@
  *   - is_new_window: [boolean] Open link in a new window.
  *   - is_external: [boolean] Link is external or not.
  * - filters: [string] Exposed filters.
+ * - selected_filters: [array] Filters.
+ * - selected_filters_clear_link: [object] Clear link object.
+ *   - text (string): Text of the clear all link.
+ *   - url (string): URL of the clear all link.
+ *   - type (string, optional): Type of the clear all link: 'primary', 'secondary'.
+ *   - size (string, optional): Size of the clear all link: 'regular', 'large'.
+ *   - icon (string, optional): Icon of the clear all link.
+ *   - icon_placement (string, optional): Icon placement of the clear all link: 'before', 'after'.
  * - results_count: [string] Results count.
  * - rows_above: [string] Content above rows.
  * - rows: [string] Rows content.
@@ -110,6 +118,25 @@
                   {{ filters|raw }}
                 </div>
               </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endblock %}
+
+      {% block selected_filters %}
+        {% if selected_filters -%}
+          <div class="ct-list__selected-filters">
+            <div class="container">
+                <div class="row">
+                  <div class="col-xxs-12">
+                    {% include '@organisms/selected-filters/selected-filters.twig' with {
+                      theme: theme,
+                      title: 'Selected filters:'|t,
+                      filters: selected_filters,
+                      clear_link: selected_filters_clear_link,
+                    } only %}
+                  </div>
+                </div>
             </div>
           </div>
         {% endif %}
