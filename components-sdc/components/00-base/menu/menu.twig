@@ -71,7 +71,7 @@
 
       <li class="{{- item_classes|join(' ') -}}" {{- item_attributes|raw -}}>
 
-        {% include '@atoms/link/link.twig' with {
+        {% include 'civictheme:link' with {
           theme: theme,
           text: item.title,
           title: item.title,

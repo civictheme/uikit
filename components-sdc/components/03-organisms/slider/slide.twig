@@ -37,7 +37,7 @@
       {% if image is not empty %}
 		    <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
           <div class="ct-slide__image">
-            {% include '@atoms/image/image.twig' with {
+            {% include 'civictheme:image' with {
               theme: theme,
               url: image.url,
               alt: image.alt,
@@ -59,7 +59,7 @@
 
         {% block tags %}
           {% if tags %}
-            {% include '@molecules/tag-list/tag-list.twig' with {
+            {% include 'civictheme:tag-list' with {
               theme: theme,
               tags: tags,
               modifier_class: 'ct-slide__tags'
@@ -69,7 +69,7 @@
 
         {% block content %}
           {% if title is not empty %}
-            {% include '@atoms/heading/heading.twig' with {
+            {% include 'civictheme:heading' with {
               theme: theme,
               content: title,
               level: 2,
@@ -80,7 +80,7 @@
           {% block date %}
             {% if date is not empty %}
               {% set date_content %}
-                {% include '@base/datetime/datetime.twig' with {
+                {% include 'civictheme:datetime' with {
                   start: date,
                   start_iso: date_iso ?? null,
                   end: date_end ?? null,
@@ -89,7 +89,7 @@
               {% endset %}
 
               <div class="ct-slide__date">
-                {% include '@atoms/tag/tag.twig' with {
+                {% include 'civictheme:tag' with {
                   theme: theme,
                   type: date_end ? 'secondary' : 'tertiary',
                   content: date_content,
@@ -101,7 +101,7 @@
           {% endblock %}
 
           {% if content is not empty %}
-            {% include '@atoms/paragraph/paragraph.twig' with {
+            {% include 'civictheme:paragraph' with {
               theme: theme,
               content: content,
               allow_html: true,
@@ -114,7 +114,7 @@
               {% set link_items = [] %}
               {% for link in links %}
                 {% set link_item %}
-                  {% include '@atoms/button/button.twig' with {
+                  {% include 'civictheme:button' with {
                     theme: theme,
                     kind: 'link',
                     type: loop.index == 1 ? 'primary' : 'secondary',
@@ -128,7 +128,7 @@
                 {% set link_items = link_items|merge([link_item]) %}
               {% endfor %}
 
-              {% include '@base/item-list/item-list.twig' with {
+              {% include 'civictheme:item-list' with {
                 items: link_items,
                 size: 'small',
                 modifier_class: 'ct-slide__links',

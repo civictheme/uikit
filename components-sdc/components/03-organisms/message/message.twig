@@ -32,7 +32,7 @@
 >
   {% if icons[type] is defined %}
     <div class="ct-message__icon">
-      {% include "@base/icon/icon.twig" with {
+      {% include "civictheme:icon" with {
         symbol: icons[type],
         size: 'regular',
       } only %}

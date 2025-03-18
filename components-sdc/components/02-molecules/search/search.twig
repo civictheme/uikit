@@ -19,7 +19,7 @@
 {%- endset %}
 
 <div class="ct-search {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-  {% include '@atoms/link/link.twig' with {
+  {% include 'civictheme:link' with {
     theme: theme|default('light'),
     text: search_text,
     url: url,

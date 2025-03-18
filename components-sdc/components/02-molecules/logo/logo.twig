@@ -41,7 +41,7 @@
         <span class="ct-logo__stripe {% if type == 'inline' %}hide-xxs show-l{% endif %}"></span>
       {% endif %}
       {% for breakpoint, img in logo %}
-        {% include '@atoms/image/image.twig' with {
+        {% include 'civictheme:image' with {
           theme: theme,
           url: img.url,
           alt: img.alt,

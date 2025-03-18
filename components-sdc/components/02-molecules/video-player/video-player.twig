@@ -30,7 +30,7 @@
     {% block video %}
       <div class="ct-video-player__wrapper">
         {% if sources is not empty %}
-          {% include '@atoms/video/video.twig' with {
+          {% include 'civictheme:video' with {
             sources: sources,
             poster: poster,
             width: width,
@@ -42,7 +42,7 @@
           {% if title is not empty %}
             {% set attributes = attributes ~ 'title="' ~ title ~ '"' %}
           {% endif %}
-          {% include '@atoms/iframe/iframe.twig' with {
+          {% include 'civictheme:iframe' with {
             url: embedded_source,
             attributes: attributes,
             width: width,
@@ -58,7 +58,7 @@
       <div class="ct-video-player__links">
         {% if transcript_link.url is defined and transcript_link.url is not empty %}
           <div class="ct-video-player__links__transcript">
-            {% include '@atoms/button/button.twig' with {
+            {% include 'civictheme:button' with {
               kind: 'link',
               theme: theme,
               type: 'tertiary',

@@ -20,7 +20,7 @@
 
 {% if url is not empty %}
   <figure class="ct-figure {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% include '@atoms/image/image.twig' with {
+    {% include 'civictheme:image' with {
       theme: theme,
       url: url,
       alt: alt,
@@ -31,7 +31,7 @@
 
     {% if caption is not empty %}
       <figcaption class="ct-figure__caption">
-        {% include '@base/icon/icon.twig' with {
+        {% include 'civictheme:icon' with {
           symbol: 'image',
         } only %}
         {{ caption }}

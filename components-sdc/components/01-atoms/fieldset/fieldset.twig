@@ -28,7 +28,7 @@
 
 <fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 	{% if legend is not empty %}
-		{% include '@atoms/label/label.twig' with {
+		{% include 'civictheme:label' with {
 			theme: theme,
 			tag: 'legend',
 			size: 'large',
@@ -41,7 +41,7 @@
 
 	<div class="ct-fieldset__wrapper">
 		{% if description is not empty and (description_display == 'before' or description_display == 'invisible') %}
-			{% include '@atoms/paragraph/paragraph.twig' with {
+			{% include 'civictheme:paragraph' with {
 				theme: theme,
 				content: description,
 				allow_html: true,
@@ -50,7 +50,7 @@
 		{% endif %}
 
 		{% if message %}
-			{% include '@atoms/field-message/field-message.twig' with {
+			{% include 'civictheme:field-message' with {
 				theme: theme,
 				type: message_type,
 				content: message,
@@ -76,7 +76,7 @@
 		{% endif %}
 
 		{% if description is not empty and description_display == 'after' %}
-			{% include '@atoms/paragraph/paragraph.twig' with {
+			{% include 'civictheme:paragraph' with {
 				theme: theme,
 				content: description,
 				allow_html: true,

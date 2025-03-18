@@ -51,7 +51,7 @@
                       </div>
 
                       <div class="ct-accordion__panels__panel__content" data-collapsible-panel aria-hidden="{% if is_expanded %}false{% else %}true{% endif %}">
-                        {% include '@atoms/paragraph/paragraph.twig' with {
+                        {% include 'civictheme:paragraph' with {
                           theme: theme,
                           content: panel.content,
                           allow_html: true,

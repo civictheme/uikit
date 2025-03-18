@@ -38,7 +38,7 @@
   {% block image %}
     {% if image.url is not empty or image_over is not empty %}
       <div class="ct-event-card__image">
-        {% include '@atoms/image/image.twig' with {
+        {% include 'civictheme:image' with {
           theme: theme,
           url: image.url,
           alt: image.alt,
@@ -68,7 +68,7 @@
       {% block date %}
         {% if date is not empty %}
           {% set date_content %}
-            {% include '@base/datetime/datetime.twig' with {
+            {% include 'civictheme:datetime' with {
               start: date,
               start_iso: date_iso ?? null,
               end: date_end ?? null,
@@ -77,7 +77,7 @@
           {% endset %}
 
           <div class="ct-event-card__date">
-            {% include '@atoms/tag/tag.twig' with {
+            {% include 'civictheme:tag' with {
               theme: theme,
               type: 'secondary',
               content: date_content,
@@ -92,7 +92,7 @@
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}
-              {% include '@atoms/link/link.twig' with {
+              {% include 'civictheme:link' with {
                 theme: theme,
                 text: title,
                 url: link.url,
@@ -103,7 +103,7 @@
             {% endif %}
           {% endset %}
 
-          {% include '@atoms/heading/heading.twig' with {
+          {% include 'civictheme:heading' with {
             content: title_content,
             level: 4,
             theme: theme,
@@ -122,7 +122,7 @@
 
       {% block location %}
         {% if location %}
-          {% include '@atoms/paragraph/paragraph.twig' with {
+          {% include 'civictheme:paragraph' with {
             theme: theme,
             content: location,
             allow_html: true,
@@ -133,7 +133,7 @@
 
       {% block summary %}
         {% if summary is not empty %}
-          {% include '@atoms/paragraph/paragraph.twig' with {
+          {% include 'civictheme:paragraph' with {
             theme: theme,
             content: summary,
             allow_html: true,
@@ -146,14 +146,14 @@
         {% if tags or with_link %}
           <div class="ct-event-card__tags">
             {% if tags %}
-              {% include '@molecules/tag-list/tag-list.twig' with {
+              {% include 'civictheme:tag-list' with {
                 theme: theme,
                 tags: tags,
               } only %}
             {% endif %}
 
             {% if with_link %}
-              {% include '@atoms/link/link.twig' with {
+              {% include 'civictheme:link' with {
                 theme: theme,
                 url: link.url,
                 is_new_window: link.is_new_window,

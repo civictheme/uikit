@@ -21,7 +21,7 @@
 
 {% if text is not empty %}
   {% set link_content %}
-    {%- include '@base/text-icon/text-icon.twig' with {
+    {%- include 'civictheme:text-icon' with {
       text: text,
       is_new_window: is_new_window,
       is_external: is_external,

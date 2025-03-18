@@ -46,7 +46,7 @@
               <div class="col-xxs-12 col-m-9">
                 {% block title %}
                   {% if title -%}
-                    {% include '@atoms/heading/heading.twig' with {
+                    {% include 'civictheme:heading' with {
                       content: title,
                       level: 2,
                       theme: theme,
@@ -59,7 +59,7 @@
                 {% block link_above %}
                   {% if link_above %}
                     <div class="ct-list__link-above ct-flex-justify-content-center">
-                      {% include '@atoms/button/button.twig' with {
+                      {% include 'civictheme:button' with {
                         theme: theme,
                         type: 'secondary',
                         kind: 'link',
@@ -87,7 +87,7 @@
           <div class="container">
             <div class="row">
               <div class="col-xxs-12">
-                {% include '@atoms/paragraph/paragraph.twig' with {
+                {% include 'civictheme:paragraph' with {
                   content: content,
                   allow_html: true,
                   theme: theme,
@@ -175,7 +175,7 @@
           <div class="container ct-list__empty-results">
             <div class="row">
               <div class="col-xxs-12">
-                {% include '@atoms/paragraph/paragraph.twig' with {
+                {% include 'civictheme:paragraph' with {
                   content: empty,
                   allow_html: true,
                   theme: theme,
@@ -191,7 +191,7 @@
     {% block list_below %}
       {% if link_below %}
         <div class="ct-list__link-below ct-flex-justify-content-center">
-          {% include '@atoms/button/button.twig' with {
+          {% include 'civictheme:button' with {
             theme: theme,
             type: 'secondary',
             kind: 'link',

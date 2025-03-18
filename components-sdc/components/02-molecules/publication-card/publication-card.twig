@@ -37,7 +37,7 @@
     {% block image %}
       {% if image.url is not empty %}
         <div class="ct-publication-card__image">
-          {% include '@atoms/image/image.twig' with {
+          {% include 'civictheme:image' with {
             theme: theme,
             url: image.url,
             alt: image.alt,
@@ -66,7 +66,7 @@
       {% block title %}
         {% if title is not empty %}
           {% set title_content %}
-            {% include '@atoms/link/link.twig' with {
+            {% include 'civictheme:link' with {
               theme: theme,
               text: title,
               url: file.url,
@@ -76,7 +76,7 @@
             } only %}
           {% endset %}
 
-          {% include '@atoms/heading/heading.twig' with {
+          {% include 'civictheme:heading' with {
             content: title_content,
             level: 4,
             theme: theme,
@@ -95,7 +95,7 @@
 
       {% block summary %}
         {% if summary is not empty %}
-          {% include '@atoms/paragraph/paragraph.twig' with {
+          {% include 'civictheme:paragraph' with {
             theme: theme,
             content: summary,
             allow_html: true,
@@ -111,7 +111,7 @@
           {% set extension = ' <span class="ct-publication-card__link__extension">(%s)</span>'|format(file.ext ?? file.size) %}
         {% endif %}
 
-        {% include '@atoms/link/link.twig' with {
+        {% include 'civictheme:link' with {
           theme: theme,
           text: file.name ~ extension,
           title: 'Download %s'|format(file.name),

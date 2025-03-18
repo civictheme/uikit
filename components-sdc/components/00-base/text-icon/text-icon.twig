@@ -24,7 +24,7 @@
 
     {%- if icon -%}
       {%- set icon_markup -%}
-        {%- include '@base/icon/icon.twig' with {
+        {%- include 'civictheme:icon' with {
           symbol: icon,
           modifier_class: icon_class|default(''),
         } only -%}
@@ -55,7 +55,7 @@
         {# Add external icon #}
         {%- if is_external and not icon_single_only -%}
           {%- set is_external_content -%}
-            {%- include '@base/icon/icon.twig' with {
+            {%- include 'civictheme:icon' with {
               symbol: 'upper-right-arrow',
             } only -%}
           {%- endset -%}

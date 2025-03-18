@@ -3,7 +3,7 @@
  * @file
  * Mobile Navigation Menu component.
  *
- * Copied from '@base/menu/menu.twig' with some additions.
+ * Copied from 'civictheme:menu' with some additions.
  *
  * Used to output hierarchical menu structure.
  *
@@ -29,7 +29,7 @@
 {% import _self as menus %}
 
 {#
-Copied as-is from '@base/menu/menu.twig'.
+Copied as-is from 'civictheme:menu'.
 #}
 {% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
   {% if items %}
@@ -62,7 +62,7 @@ Copied as-is from '@base/menu/menu.twig'.
 
       <li class="{{ item_classes|join(' ') }}" {{ item_attributes }}>
 
-        {% include '@atoms/link/link.twig' with {
+        {% include 'civictheme:link' with {
           theme: theme,
           text: item.title,
           title: item.title,
@@ -100,7 +100,7 @@ Overrides for generation of child links.
 #}
 {% macro menu_links_below(items, menu_level, modifier_class, theme, parent_item) %}
 
-  {% include '@atoms/button/button.twig' with {
+  {% include 'civictheme:button' with {
     theme: theme,
     kind: 'button',
     icon: 'right-arrow-2',
@@ -111,12 +111,12 @@ Overrides for generation of child links.
 
   <div data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link">
     <div data-flyout-panel>
-      {% include '@organisms/mobile-navigation/mobile-navigation-close.twig' with {
+      {% include 'civictheme:mobile-navigation' with {
         theme: theme,
       } only %}
 
       <div class="ct-mobile-navigation__close-trigger">
-        {% include '@atoms/button/button.twig' with {
+        {% include 'civictheme:button' with {
           theme: theme,
           kind: 'button',
           icon: 'left-arrow-outline',

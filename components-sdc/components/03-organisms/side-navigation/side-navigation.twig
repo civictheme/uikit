@@ -19,13 +19,13 @@
 
 {% if items is not empty %}
   <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% include '@organisms/skip-link/skip-link.twig' with {
+    {% include 'civictheme:skip-link' with {
       theme: theme,
       url: '#main-content',
     } only %}
     {% if title %}
       {% block title %}
-        {% include '@atoms/heading/heading.twig' with {
+        {% include 'civictheme:heading' with {
           content: title,
           level: 2,
           theme: theme,
@@ -33,7 +33,7 @@
         } only %}
       {% endblock %}
     {% endif %}
-    {% include '@base/menu/menu.twig' with {
+    {% include 'civictheme:menu' with {
       theme: theme,
       items: items,
       modifier_class: 'ct-side-navigation__menu',

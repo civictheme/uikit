@@ -47,7 +47,7 @@
               {% if title is not empty or content is not empty %}
                 <div class="ct-attachment__inner">
                   {% if title is not empty %}
-                    {% include '@atoms/heading/heading.twig' with {
+                    {% include 'civictheme:heading' with {
                       theme: theme,
                       content: title,
                       level: 4,
@@ -56,7 +56,7 @@
                   {% endif %}
 
                   {% if content is not empty %}
-                    {% include '@atoms/paragraph/paragraph.twig' with {
+                    {% include 'civictheme:paragraph' with {
                       theme: theme,
                       content: content,
                       size: 'small',
@@ -72,7 +72,7 @@
               {% set link_items = [] %}
               {% for file in files %}
                 {%- set link %}
-                  {% include '@base/icon/icon.twig' with {
+                  {% include 'civictheme:icon' with {
                     symbol: file.icon ? file.icon : 'download-file',
                     size: 'large',
                     modifier_class: 'ct-attachment__links__link__icon',
@@ -85,7 +85,7 @@
                       {% set extension = ' <span class="ct-attachment__links__link__extension">(%s)</span>'|format(file.ext ?? file.size) %}
                     {% endif %}
 
-                    {% include '@atoms/link/link.twig' with {
+                    {% include 'civictheme:link' with {
                       theme: theme,
                       text: file.name ~ extension,
                       title: 'Download %s'|format(file.name),
@@ -94,7 +94,7 @@
                     } only %}
 
                     {% if file.changed is not empty %}
-                      {% include '@atoms/paragraph/paragraph.twig' with {
+                      {% include 'civictheme:paragraph' with {
                         theme: theme,
                         content: 'LAST UPDATED: ' ~ file.changed,
                         size: 'small',
@@ -106,7 +106,7 @@
                 {% set link_items = link_items|merge([link]) %}
               {% endfor %}
 
-              {% include '@base/item-list/item-list.twig' with {
+              {% include 'civictheme:item-list' with {
                 items: link_items,
                 direction: 'vertical',
                 modifier_class: 'ct-attachment__links',

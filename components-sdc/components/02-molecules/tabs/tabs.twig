@@ -43,7 +43,7 @@
 {% set link_items = [] %}
 {% for k, link in links %}
   {%- set link %}
-    {% include '@atoms/link/link.twig' with {
+    {% include 'civictheme:link' with {
       theme: theme,
       text: link.text,
       url: link.url,
@@ -58,7 +58,7 @@
 
 {% if panels is not empty or link_items is not empty %}
   <div class="ct-tabs {{ modifier_class -}}" data-tabs-panel {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% include '@base/item-list/item-list.twig' with {
+    {% include 'civictheme:item-list' with {
       items: link_items,
       no_gap: true,
       modifier_class: 'ct-tabs__links',

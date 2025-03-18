@@ -34,7 +34,7 @@
 
       {% block title %}
         {% if title is not empty %}
-          {% include '@atoms/heading/heading.twig' with {
+          {% include 'civictheme:heading' with {
             theme: theme,
             content: title,
             level: 4,
@@ -49,7 +49,7 @@
           {% for link in links %}
             {% if link.text is not empty %}
               {% set list_item %}
-                {% include '@atoms/link/link.twig' with {
+                {% include 'civictheme:link' with {
                   theme: theme,
                   text: link.text,
                   url: link.url,
@@ -60,7 +60,7 @@
               {% set list_items = list_items|merge([list_item]) %}
             {% endif %}
           {% endfor %}
-          {% include '@base/item-list/item-list.twig' with {
+          {% include 'civictheme:item-list' with {
             items: list_items,
             direction: 'vertical',
             modifier_class: 'ct-service-card__links',

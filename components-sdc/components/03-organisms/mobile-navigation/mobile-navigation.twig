@@ -18,7 +18,7 @@
 
 <div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link">
   <div data-flyout-panel class="ct-mobile-navigation__panel">
-    {% include '@organisms/mobile-navigation/mobile-navigation-close.twig' with {
+    {% include 'civictheme:mobile-navigation' with {
       theme: theme,
     } only %}
 
@@ -33,7 +33,7 @@
     {% block top_menu %}
       {% if top_menu is not empty %}
         <div class="ct-mobile-navigation__top-menu-wrapper">
-          {% include '@organisms/mobile-navigation/mobile-navigation-menu.twig' with {
+          {% include 'civictheme:mobile-navigation' with {
             theme: theme,
             items: top_menu,
             modifier_class: 'ct-mobile-navigation__top-menu',
@@ -45,7 +45,7 @@
     {% block bottom_menu %}
       {% if bottom_menu is not empty %}
         <div class="ct-mobile-navigation__bottom-menu-wrapper">
-          {% include '@organisms/mobile-navigation/mobile-navigation-menu.twig' with {
+          {% include 'civictheme:mobile-navigation' with {
             theme: theme,
             items: bottom_menu,
             modifier_class: 'ct-mobile-navigation__bottom-menu',

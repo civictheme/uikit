@@ -33,14 +33,14 @@
         {% set tag_items = [] %}
         {% for tag in tags %}
           {% set tag_item %}
-            {% include '@atoms/tag/tag.twig' with {
+            {% include 'civictheme:tag' with {
               theme: theme,
               content: tag,
             } only %}
           {% endset %}
           {% set tag_items = tag_items|merge([tag_item]) %}
         {% endfor %}
-        {% include '@base/item-list/item-list.twig' with {
+        {% include 'civictheme:item-list' with {
           items: tag_items,
           size: 'small',
           modifier_class: 'ct-tag-list__content',

@@ -39,7 +39,7 @@
           <div class="ct-slider__container" data-slider>
             {% block top_controls %}
               {% if title is not empty %}
-                {% include '@atoms/heading/heading.twig' with {
+                {% include 'civictheme:heading' with {
                   theme: theme,
                   content: title,
                   level: 3,
@@ -59,7 +59,7 @@
             {% block controls %}
               <div class="ct-slider__controls">
                 <div class="ct-slider__controls__inner">
-                  {% include '@atoms/button/button.twig' with {
+                  {% include 'civictheme:button' with {
                     theme: theme,
                     text: previous_label|default('Previous'),
                     type: 'secondary',
@@ -68,7 +68,7 @@
                     modifier_class: 'ct-slider__controls__previous',
                     attributes: 'data-slider-previous',
                   } only %}
-                  {% include '@atoms/button/button.twig' with {
+                  {% include 'civictheme:button' with {
                     theme: theme,
                     text: next_label|default('Next'),
                     type: 'secondary',
@@ -79,7 +79,7 @@
                   } only %}
                 </div>
 
-                {% include '@atoms/tag/tag.twig' with {
+                {% include 'civictheme:tag' with {
                   theme: theme,
                   content: 'Slide 1',
                   modifier_class: 'ct-slider__controls__progress-indicator',

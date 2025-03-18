@@ -41,7 +41,7 @@
           {% if title is not empty %}
             {% set title_content %}
               {% if with_link %}
-                {% include '@atoms/link/link.twig' with {
+                {% include 'civictheme:link' with {
                   theme: theme,
                   text: title,
                   url: link.url,
@@ -54,7 +54,7 @@
               {% endif %}
             {% endset %}
 
-            {% include '@atoms/heading/heading.twig' with {
+            {% include 'civictheme:heading' with {
               content: title_content,
               level: 4,
               theme: theme,
@@ -73,7 +73,7 @@
 
         {% block summary %}
           {% if summary is not empty %}
-            {% include '@atoms/paragraph/paragraph.twig' with {
+            {% include 'civictheme:paragraph' with {
               theme: theme,
               content: summary,
               allow_html: true,
@@ -86,7 +86,7 @@
           {% if tags or with_link %}
             <div class="ct-snippet__tags">
               {% if tags %}
-                {% include '@molecules/tag-list/tag-list.twig' with {
+                {% include 'civictheme:tag-list' with {
                   theme: theme,
                   tags: tags,
                 } only %}

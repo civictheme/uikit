@@ -43,7 +43,7 @@
               {% if address is not empty %}
                 {% set attributes = atributes ~ 'title="' ~ address ~ '"' %}
               {% endif %}
-              {% include '@atoms/iframe/iframe.twig' with {
+              {% include 'civictheme:iframe' with {
                 url: url,
                 attributes: attributes,
                 modifier_class: 'ct-map__iframe',
@@ -53,7 +53,7 @@
 
           {% block links %}
             {% if view_url is not empty %}
-              {% include '@atoms/button/button.twig' with {
+              {% include 'civictheme:button' with {
                 kind: 'link',
                 theme: theme,
                 type: 'tertiary',

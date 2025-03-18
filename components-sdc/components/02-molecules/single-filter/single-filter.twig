@@ -50,7 +50,7 @@
                   {% set item_attributes = item.attributes is defined and item.attributes is not empty ? item.attributes : '' %}
                   {% set item_name = item.name is defined ? item.name : (is_multiple ? 'single-filter-' ~ loop.index : 'single-filter') %}
                   {% set item_attributes = 'name' not in item_attributes ? item_attributes ~ ' name="' ~ item_name ~ '"' : item_attributes %}
-                  {% include '@atoms/chip/chip.twig' with {
+                  {% include 'civictheme:chip' with {
                     theme: theme,
                     kind: 'input',
                     size: 'small',
@@ -74,14 +74,14 @@
 
             <div class="ct-single-filter__wrapper">
               <div class="ct-single-filter__items">
-                {% include '@base/item-list/item-list.twig' with {
+                {% include 'civictheme:item-list' with {
                   items: filter_items,
                   size: 'small',
                   modifier_class: 'ct-single-filter__list',
                 } only %}
               </div>
               <div class="ct-single-filter__actions">
-                {% include '@atoms/button/button.twig' with {
+                {% include 'civictheme:button' with {
                   theme: theme,
                   kind: 'button',
                   type: 'primary',
@@ -94,7 +94,7 @@
                 } only %}
 
                 {% if reset_text is not empty %}
-                  {% include '@atoms/button/button.twig' with {
+                  {% include 'civictheme:button' with {
                     theme: theme,
                     kind: 'reset',
                     type: 'secondary',

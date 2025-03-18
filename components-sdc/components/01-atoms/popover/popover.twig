@@ -22,7 +22,7 @@
 
 {% if content is not empty %}
   <div class="ct-popover {{ modifier_class -}}" data-collapsible data-collapsible-collapsed data-collapsible-group="{{ group|default('') }}" data-collapsible-duration="250" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% include '@atoms/link/link.twig' with {
+    {% include 'civictheme:link' with {
       theme: theme,
       text: trigger.text,
       url: trigger.url is defined ? trigger.url : null,

@@ -27,7 +27,7 @@
       {% set items_rendered = [] %}
       {% for item in items %}
         {%- set item_rendered %}
-          {% include '@atoms/button/button.twig' with {
+          {% include 'civictheme:button' with {
             theme: theme,
             kind: 'link',
             type: 'tertiary',
@@ -44,7 +44,7 @@
         {% set items_rendered = items_rendered|merge([item_rendered]) %}
       {% endfor %}
 
-      {% include '@base/item-list/item-list.twig' with {
+      {% include 'civictheme:item-list' with {
         items: items_rendered,
         direction: 'horizontal',
         modifier_class: 'ct-social-links__list',

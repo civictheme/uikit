@@ -33,7 +33,7 @@
       {% block image %}
         {% if image.url is defined and image.url is not empty %}
           <div class="ct-subject-card__image">
-            {% include '@atoms/image/image.twig' with {
+            {% include 'civictheme:image' with {
               theme: theme,
               url: image.url,
               alt: image.alt,
@@ -54,7 +54,7 @@
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}
-              {% include '@atoms/link/link.twig' with {
+              {% include 'civictheme:link' with {
                 theme: theme,
                 text: title,
                 url: link.url,
@@ -69,7 +69,7 @@
             {% endif %}
           {% endset %}
 
-          {% include '@atoms/heading/heading.twig' with {
+          {% include 'civictheme:heading' with {
             content: title_content,
             level: 4,
             theme: theme,

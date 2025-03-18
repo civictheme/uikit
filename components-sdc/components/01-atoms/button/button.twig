@@ -38,7 +38,7 @@
 {% set button_content %}
   {%- if allow_html -%}
     {% set icon_markup %}
-      {%- include '@base/icon/icon.twig' with {
+      {%- include 'civictheme:icon' with {
         symbol: icon,
         modifier_class: 'ct-button__icon',
       } only -%}
@@ -49,7 +49,7 @@
       {{ text|raw }}{{- icon_markup -}}
     {% endif %}
   {%- else -%}
-    {%- include '@base/text-icon/text-icon.twig' with {
+    {%- include 'civictheme:text-icon' with {
       text: text,
       is_new_window: is_new_window,
       is_external: is_external,

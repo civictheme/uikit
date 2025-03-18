@@ -30,7 +30,7 @@
    {% set content_markup %}
      {% if icon %}
        {% set icon_markup %}
-         {% include '@base/icon/icon.twig' with {
+         {% include 'civictheme:icon' with {
            symbol: icon,
            modifier_class: 'ct-tag__icon',
          } only %}
@@ -55,7 +55,7 @@
 
   {% if is_external %}
     {% set is_external_content %}
-      {% include '@base/icon/icon.twig' with {
+      {% include 'civictheme:icon' with {
         symbol: 'upper-right-arrow',
       } only %}
     {% endset %}

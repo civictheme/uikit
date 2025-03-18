@@ -47,7 +47,7 @@
             {% set filters_items = [] %}
             {% for filter in filters %}
               {% set filters_item %}
-                {% include '@atoms/popover/popover.twig' with {
+                {% include 'civictheme:popover' with {
                   theme: theme,
                   content: filter.content,
                   trigger: {
@@ -74,7 +74,7 @@
 
               <div class="col">
                 <div class="ct-flex-row-align-middle">
-                  {% include '@base/item-list/item-list.twig' with {
+                  {% include 'civictheme:item-list' with {
                     items: filters_items,
                     size: 'large',
                     modifier_class: 'ct-group-filter__filters',
@@ -85,7 +85,7 @@
 
               <div class="col col--no-grow">
                 <div class="ct-flex-row-align-middle">
-                  {% include '@atoms/button/button.twig' with {
+                  {% include 'civictheme:button' with {
                     theme: theme,
                     kind: 'button',
                     type: 'secondary',

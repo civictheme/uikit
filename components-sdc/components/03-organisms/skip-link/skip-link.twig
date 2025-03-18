@@ -17,7 +17,7 @@
 
 {% if text is not empty %}
   <div class="ct-skip-link {{ modifier_class -}}">
-    {% include '@atoms/link/link.twig' with {
+    {% include 'civictheme:link' with {
       theme: theme,
       text: text,
       url: url,

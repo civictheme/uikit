@@ -40,7 +40,7 @@
       {% if not image_as_icon %}
         {% if image.url is not empty %}
           <div class="ct-navigation-card__image">
-            {% include '@atoms/image/image.twig' with {
+            {% include 'civictheme:image' with {
               theme: theme,
               url: image.url,
               alt: image.alt,
@@ -71,14 +71,14 @@
         {% if icon is not empty or (with_image and image_as_icon) %}
           <div class="ct-navigation-card__icon">
             {% if icon is not empty %}
-              {% include '@base/icon/icon.twig' with {
+              {% include 'civictheme:icon' with {
                 symbol: icon,
                 size: 'extra-large',
               } only %}
             {% endif %}
             {% if image_as_icon and with_image %}
               <div class="ct-icon ct-icon--size-extra-large ct-navigation-card__icon__image">
-                {% include '@atoms/image/image.twig' with {
+                {% include 'civictheme:image' with {
                   theme: theme,
                   url: image.url,
                   alt: image.alt,
@@ -93,7 +93,7 @@
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}
-              {% include '@atoms/link/link.twig' with {
+              {% include 'civictheme:link' with {
                 theme: theme,
                 text: title,
                 url: link.url,
@@ -108,7 +108,7 @@
             {% endif %}
           {% endset %}
 
-          {% include '@atoms/heading/heading.twig' with {
+          {% include 'civictheme:heading' with {
             content: title_content,
             level: 4,
             theme: theme,
@@ -127,7 +127,7 @@
 
       {% block summary %}
         {% if summary is not empty %}
-          {% include '@atoms/paragraph/paragraph.twig' with {
+          {% include 'civictheme:paragraph' with {
             theme: theme,
             content: summary,
             allow_html: true,

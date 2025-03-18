@@ -49,7 +49,7 @@
                   {% block content_left %}
                     <div class="ct-promo__inner">
                       {% if title %}
-                        {% include '@atoms/heading/heading.twig' with {
+                        {% include 'civictheme:heading' with {
                           content: title,
                           level: 4,
                           theme: theme,
@@ -58,7 +58,7 @@
                       {% endif %}
 
                       {% if content is not empty %}
-                        {% include '@atoms/paragraph/paragraph.twig' with {
+                        {% include 'civictheme:paragraph' with {
                           theme: theme,
                           content: content,
                           allow_html: true,
@@ -71,7 +71,7 @@
                   {% block content_right %}
                     {% if link %}
                       <div class="ct-promo__links">
-                        {% include '@atoms/button/button.twig' with {
+                        {% include 'civictheme:button' with {
                           theme: theme,
                           type: 'secondary',
                           kind: 'link',

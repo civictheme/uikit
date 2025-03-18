@@ -38,9 +38,9 @@
         {%- if (not active_is_link or link.url is empty) and (loop.index == links_count) -%}
           <span class="ct-breadcrumb__links__link ct-breadcrumb__links__link--active" aria-current="location">{{ link.text }}</span>
         {%- else -%}
-          {%- include '@atoms/link/link.twig' with link only -%}
+          {%- include 'civictheme:link' with link only -%}
           {%- if loop.index < links_count -%}
-            {%- include '@base/icon/icon.twig' with {
+            {%- include 'civictheme:icon' with {
               symbol: 'right-arrow-1',
               modifier_class: 'ct-breadcrumb__links__separator',
             } only -%}
@@ -64,17 +64,17 @@
 
     {% if parent %}
       {% set parent_link_item %}
-        {% include '@atoms/link/link.twig' with parent only %}
+        {% include 'civictheme:link' with parent only %}
       {% endset %}
 
-      {% include '@base/item-list/item-list.twig' with {
+      {% include 'civictheme:item-list' with {
         direction: 'horizontal',
         items: [parent_link_item],
         modifier_class: 'ct-breadcrumb__links show-xxs-flex hide-m',
       } only %}
     {% endif %}
 
-    {% include '@base/item-list/item-list.twig' with {
+    {% include 'civictheme:item-list' with {
       direction: 'horizontal',
       items: link_items,
       no_gap: true,

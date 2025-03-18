@@ -45,7 +45,7 @@
                     {% if title is not empty %}
                       {% set title_content %}
                         {% if link.url is defined and link.url is not empty %}
-                          {% include '@atoms/link/link.twig' with {
+                          {% include 'civictheme:link' with {
                             theme: theme,
                             text: title,
                             url: link.url,
@@ -61,7 +61,7 @@
                         {% endif %}
                       {% endset %}
 
-                      {% include '@atoms/heading/heading.twig' with {
+                      {% include 'civictheme:heading' with {
                         content: title_content,
                         level: 4,
                         theme: theme,
@@ -71,7 +71,7 @@
                   {% endblock %}
 
                   {% if content is not empty %}
-                    {% include '@atoms/paragraph/paragraph.twig' with {
+                    {% include 'civictheme:paragraph' with {
                       theme: theme,
                       content: content,
                       allow_html: true,

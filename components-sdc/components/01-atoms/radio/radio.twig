@@ -35,7 +35,7 @@
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   />
   {% if label is not empty %}
-    {% include '@atoms/label/label.twig' with {
+    {% include 'civictheme:label' with {
       theme: theme,
       content: label,
       for: id,

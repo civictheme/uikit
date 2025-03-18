@@ -41,7 +41,7 @@
             {% if title is not empty or content is not empty %}
               <div class="ct-callout__inner">
                 {% if title %}
-                  {% include '@atoms/heading/heading.twig' with {
+                  {% include 'civictheme:heading' with {
                     content: title,
                     level: 4,
                     theme: theme,
@@ -50,7 +50,7 @@
                 {% endif %}
 
                 {% if content is not empty %}
-                  {% include '@atoms/paragraph/paragraph.twig' with {
+                  {% include 'civictheme:paragraph' with {
                     theme: theme,
                     content: content,
                     allow_html: true,
@@ -65,7 +65,7 @@
             {% set link_items = [] %}
             {% for link in links %}
               {%- set link %}
-                {% include '@atoms/button/button.twig' with {
+                {% include 'civictheme:button' with {
                   theme: theme,
                   kind: 'link',
                   type: loop.index > 1 ? 'secondary' : 'primary',
@@ -78,7 +78,7 @@
               {% set link_items = link_items|merge([link]) %}
             {% endfor %}
 
-            {% include '@base/item-list/item-list.twig' with {
+            {% include 'civictheme:item-list' with {
               items: link_items,
               size: 'small',
               modifier_class: 'ct-callout__links',

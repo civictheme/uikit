@@ -40,7 +40,7 @@
 
     {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pagination__items_per_page">
-        {%- include '@molecules/field/field.twig' with {
+        {%- include 'civictheme:field' with {
           title: items_per_page_title,
           type: 'select',
           orientation: 'horizontal',
@@ -58,7 +58,7 @@
       {% if items.first is not empty %}
         <li class="ct-pagination__item ct-pagination__item--first hide-xxs show-m">
           {% set attributes = 'title="Go to first page"' %}
-          {% include '@atoms/link/link.twig' with {
+          {% include 'civictheme:link' with {
             theme: theme,
             text: items.first.text|default('First'),
             url: items.first.href,
@@ -79,7 +79,7 @@
           {% set attributes = 'title="Go to previous page"' %}
         {% endif %}
 
-        {% include '@atoms/link/link.twig' with {
+        {% include 'civictheme:link' with {
           theme: theme,
           text: items.previous.text|default('Prev'),
           url: items.previous.href,
@@ -108,7 +108,7 @@
           {% else %}
             {% set attributes = 'title="Go to page %s of %s"'|format(key, items.pages|length) %}
           {% endif %}
-          {% include '@atoms/link/link.twig' with {
+          {% include 'civictheme:link' with {
             theme: theme,
             text: key,
             title: title,
@@ -138,7 +138,7 @@
           {% set attributes = 'title="Go to next page"' %}
         {% endif %}
 
-        {% include '@atoms/link/link.twig' with {
+        {% include 'civictheme:link' with {
           theme: theme,
           text: items.next.text|default('Next'),
           title: title,
@@ -156,7 +156,7 @@
       {% if items.last %}
         {% set attributes = 'title="Go to last page"' %}
         <li class="ct-pagination__item ct-pagination__item--last hide-xxs show-m">
-          {% include '@atoms/link/link.twig' with {
+          {% include 'civictheme:link' with {
             theme: theme,
             text: items.last.text|default('Last'),
             url: items.last.href,
