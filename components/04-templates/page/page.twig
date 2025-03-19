@@ -31,13 +31,9 @@
     } only %}
   {% endblock %}
 
-  <a id="banner"></a>
-
   {% block banner %}
     {% if banner is not empty %}
       {{ banner|raw }}
-    {% else %}
-      <a id="main-content" tabindex="-1" aria-hidden="true"></a>
     {% endif %}
   {% endblock %}
 
@@ -71,6 +67,7 @@
       is_contained: content_contained,
       content_bottom: content_bottom,
       vertical_spacing: vertical_spacing,
+      attributes: (banner is empty) ? 'id="main-content" tabindex="-1"' : '',
     } only %}
   {% endblock %}
 
