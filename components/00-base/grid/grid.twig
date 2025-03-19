@@ -19,6 +19,7 @@
  * - template_column_count: [number] Number of columns in the row. If 0 - the
  *   auto columns will be used where column width will be calculated
  *   automatically. Defaults to 0.
+ * - auto_breakpoint: [boolean] Switch between columns (starting at template_column_count) as the screen reduces.
  * - fill_width: [boolean] Stretch "hanging" items to the full width of the row.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
@@ -35,46 +36,62 @@
 {% set modifier_class = modifier_class|default('') %}
 
 {% if template_column_count > 0 %}
-	{% set column_class = column_class|default('') %}
-	{% set template_column_count = template_column_count in [1, 2, 3, 4, 6, 12] ? template_column_count : 12 %}
-	{% set column_class = 'col-xxs-12 col-m-%s %s'|format(12 // template_column_count, column_class)|trim %}
+  {% set column_class = column_class|default('') %}
+  {% set template_column_count = template_column_count in [1, 2, 3, 4, 6, 12] ? template_column_count : 12 %}
+  {% if auto_breakpoint and template_column_count <= 6 %}
+    {% set breakpoints = {1: 'xxs', 2: 'm', 3: 'xl', 4: 'xxl', 6: 'xxl'} %}
+    {% set column_class = [] %}
+    {% for i in 1..template_column_count %}
+      {% if i != 5 and not (template_column_count == 6 and i == 4) %}
+        {% set bp = breakpoints[i] %}
+        {% if bp %}
+          {% set col = 12 // i %}
+          {% set column_class = column_class|merge(['col-%s-%s'|format(bp, col)]) %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% set column_class = column_class|join(' ') %}
+  {% else %}
+    {% set column_class = 'col-xxs-12 col-m-%s %s'|format(12 // template_column_count, column_class)|trim %}
+  {% endif %}
 {% else %}
-	{% set column_class = ('col ' ~ column_class|default(''))|trim %}
+  {% set template_column_count = items|length %}
+  {% set column_class = ('col ' ~ column_class|default(''))|trim %}
 {% endif %}
 
 {% set row_classes = ['row'] %}
 {% if fill_width %}
-	{% set row_classes = row_classes|merge(['row--fill-width']) %}
+  {% set row_classes = row_classes|merge(['row--fill-width']) %}
 {% endif %}
 {% set row_classes = row_classes|merge([row_class]) %}
 
 {% set container_class = '' %}
 {% if use_container %}
-	{% set container_class = ((is_fluid ? 'container-fluid' : 'container') ~ ' ' ~ modifier_class)|trim %}
+  {% set container_class = ((is_fluid ? 'container-fluid' : 'container') ~ ' ' ~ modifier_class)|trim %}
 {% else %}
-	{# Propagade modifier class to row class if container is not used. #}
-	{% if modifier_class is not empty %}
-		{% set row_classes = row_classes|merge([modifier_class]) %}
-	{% endif %}
-	{% set row_attributes = (row_attributes ~ ' ' ~ attributes)|trim %}
+  {# Propagate modifier class to row class if container is not used. #}
+  {% if modifier_class is not empty %}
+    {% set row_classes = row_classes|merge([modifier_class]) %}
+  {% endif %}
+  {% set row_attributes = (row_attributes ~ ' ' ~ attributes)|trim %}
 {% endif %}
 
 {% set row_class_string = row_classes|join(' ')|trim %}
 
 {% if items is not empty %}
-	{% if use_container %}
-	<div class="{{ container_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %} aria-live="polite">
-	{% endif %}
-		<{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
-			{% for item in items %}
-				{% if item is not empty %}
-					<{{ column_element }} class="{{ column_class }}" {% if column_attributes is not empty %}{{ column_attributes|raw }}{% endif %}>
-						{{ item|raw }}
-					</{{ column_element }}>
-				{% endif %}
-			{% endfor %}
+  {% if use_container %}
+  <div class="{{ container_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %} aria-live="polite">
+  {% endif %}
+    <{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
+      {% for item in items %}
+        {% if item is not empty %}
+          <{{ column_element }} class="{{ column_class }}" {% if column_attributes is not empty %}{{ column_attributes|raw }}{% endif %}>
+            {{ item|raw }}
+          </{{ column_element }}>
+        {% endif %}
+      {% endfor %}
     </{{ row_element }}>
-	{% if use_container %}
-	</div>
-	{% endif %}
+  {% if use_container %}
+  </div>
+  {% endif %}
 {% endif %}
