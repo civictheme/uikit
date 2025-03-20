@@ -1,3 +1,5 @@
+import './logo.css'; /* generated */
+
 import Component from './logo.twig';
 import LogoData from './logo.stories.data';
 

@@ -1,3 +1,12 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import '../../01-atoms/heading/heading.css'; /* generated */
+import '../../01-atoms/link/link.css'; /* generated */
+import '../../01-atoms/paragraph/paragraph.css'; /* generated */
+import '../../02-molecules/breadcrumb/breadcrumb.css'; /* generated */
+import '../../02-molecules/navigation-card/navigation-card.css'; /* generated */
+import './banner.css'; /* generated */
+
 import Component from './banner.twig';
 import BannerData from './banner.stories.data';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved

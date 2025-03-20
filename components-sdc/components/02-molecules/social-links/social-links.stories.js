@@ -1,3 +1,7 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import './social-links.css'; /* generated */
+
 import Component from './social-links.twig';
 import Icon from '../../00-base/icon/icon.twig';
 

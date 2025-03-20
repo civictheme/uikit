@@ -1,3 +1,5 @@
+import './textarea.css'; /* generated */
+
 import Component from './textarea.twig';
 
 const meta = {

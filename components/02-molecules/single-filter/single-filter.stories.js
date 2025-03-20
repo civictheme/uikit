@@ -1,3 +1,4 @@
+import 'single-filter.js';  /* generated */
 import Component from './single-filter.twig';
 import SingleFilterData from './single-filter.stories.data';
 

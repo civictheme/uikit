@@ -1,3 +1,5 @@
+import '../../01-atoms/link/link.css'; /* generated */
+
 import Component from './menu.twig';
 
 const meta = {

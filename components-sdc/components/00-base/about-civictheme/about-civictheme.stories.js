@@ -1,3 +1,8 @@
+import '../../01-atoms/heading/heading.css'; /* generated */
+import '../../01-atoms/paragraph/paragraph.css'; /* generated */
+import '../../02-molecules/basic-content/basic-content.css'; /* generated */
+import '../../02-molecules/logo/logo.css'; /* generated */
+
 import Component from './about-civictheme.stories.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

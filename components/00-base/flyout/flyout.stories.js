@@ -1,3 +1,4 @@
+import 'flyout.js';  /* generated */
 import Component from './flyout.stories.twig';
 
 const meta = {

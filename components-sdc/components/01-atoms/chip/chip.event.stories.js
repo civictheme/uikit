@@ -1,3 +1,6 @@
+import './chip.component.js'; /* generated */
+import './chip.css'; /* generated */
+
 /**
  * @file
  * Chip component event binding example.

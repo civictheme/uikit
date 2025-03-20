@@ -1,3 +1,6 @@
+import '../label/label.css'; /* generated */
+import './checkbox.css'; /* generated */
+
 import Component from './checkbox.twig';
 
 const meta = {

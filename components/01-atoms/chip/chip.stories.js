@@ -1,3 +1,4 @@
+import 'chip.js';  /* generated */
 import Component from './chip.twig';
 import './chip.event.stories';
 

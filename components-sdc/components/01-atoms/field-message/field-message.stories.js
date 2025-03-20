@@ -1,3 +1,5 @@
+import './field-message.css'; /* generated */
+
 import Component from './field-message.twig';
 
 const meta = {

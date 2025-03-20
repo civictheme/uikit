@@ -1,3 +1,9 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import '../../01-atoms/heading/heading.css'; /* generated */
+import '../../01-atoms/paragraph/paragraph.css'; /* generated */
+import './promo.css'; /* generated */
+
 import Component from './promo.twig';
 
 const meta = {

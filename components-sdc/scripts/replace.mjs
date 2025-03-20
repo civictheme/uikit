@@ -29,15 +29,15 @@ function findStoriesFiles(dir) {
 async function processStoriesFiles() {
   for (const filePath of storiesFiles) {
     const fileData = fs.readFileSync(filePath, 'utf8');
-    const matches = fileData.matchAll(/@(base|atoms|molecules|organisms)\/([^/]+)\/[^/]+\.twig/gi);
+    const matches = fileData.matchAll(/@(base|atoms|molecules|organisms)\/([^/]+)\/([^/]+)\.twig/gi);
     const matchesArray = Array.from(matches).reverse();
     let updateData = fileData;
 
     matchesArray.forEach(match => {
       const idx = match.index;
       const str = match[0];
-      const link = match[2];
-      updateData = updateData.substring(0, idx) + 'civictheme:' + link + updateData.substring(idx + str.length);
+      const twigName = match[3];
+      updateData = updateData.substring(0, idx) + 'civictheme:' + twigName + updateData.substring(idx + str.length);
     });
 
     fs.writeFileSync(filePath, updateData, 'utf8');

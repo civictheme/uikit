@@ -1,3 +1,6 @@
+import '../link/link.css'; /* generated */
+import './popover.css'; /* generated */
+
 import Component from './popover.twig';
 
 const meta = {

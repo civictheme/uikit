@@ -1,3 +1,6 @@
+import '../../01-atoms/paragraph/paragraph.css'; /* generated */
+import './accordion.css'; /* generated */
+
 import Component from './accordion.twig';
 
 const meta = {

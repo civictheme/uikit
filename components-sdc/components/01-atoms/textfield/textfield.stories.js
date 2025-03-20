@@ -1,3 +1,5 @@
+import './textfield.css'; /* generated */
+
 import Component from './textfield.twig';
 
 const meta = {

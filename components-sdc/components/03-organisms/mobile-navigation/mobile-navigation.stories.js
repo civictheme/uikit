@@ -1,3 +1,8 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import '../../01-atoms/link/link.css'; /* generated */
+import './mobile-navigation.css'; /* generated */
+
 import MobileNavigationPanel from './mobile-navigation.twig';
 import MobileNavigationTrigger from './mobile-navigation-trigger.twig';
 

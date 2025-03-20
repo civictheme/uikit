@@ -11,9 +11,17 @@
 			theme: 'light',
 			logos: logos,
 		} only %}
+		{% set heading_content %}
+			A design system by
+			{% include 'civictheme:content-link' with {
+				theme: 'dark',
+				text: 'Salsa Digital',
+				url: 'https://salsa.digital/',
+			} only %}
+		{% endset %}
 		{% include 'civictheme:heading' with {
 			theme: 'dark',
-			content: 'A design system by <a class="ct-content-link ct-theme-dark" href="https://salsa.digital/">Salsa Digital</a>',
+			content: heading_content,
 			level: 4,
 			modifier_class: 'ct-text-align-center',
 		} only %}

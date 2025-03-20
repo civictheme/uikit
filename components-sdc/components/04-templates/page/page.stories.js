@@ -1,3 +1,18 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import '../../01-atoms/heading/heading.css'; /* generated */
+import '../../01-atoms/link/link.css'; /* generated */
+import '../../01-atoms/paragraph/paragraph.css'; /* generated */
+import '../../02-molecules/back-to-top/back-to-top.css'; /* generated */
+import '../../02-molecules/basic-content/basic-content.css'; /* generated */
+import '../../02-molecules/breadcrumb/breadcrumb.css'; /* generated */
+import '../../03-organisms/banner/banner.css'; /* generated */
+import '../../03-organisms/footer/footer.css'; /* generated */
+import '../../03-organisms/header/header.css'; /* generated */
+import '../../03-organisms/side-navigation/side-navigation.css'; /* generated */
+import '../../03-organisms/skip-link/skip-link.css'; /* generated */
+import './page.css'; /* generated */
+
 import Component from './page.twig';
 import PageData from './page.stories.data';
 

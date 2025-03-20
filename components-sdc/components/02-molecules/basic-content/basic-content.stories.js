@@ -1,3 +1,13 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import '../../01-atoms/content-link/content-link.css'; /* generated */
+import '../../01-atoms/iframe/iframe.css'; /* generated */
+import '../../01-atoms/table/table.component.js'; /* generated */
+import '../../01-atoms/table/table.css'; /* generated */
+import '../figure/figure.css'; /* generated */
+import '../video-player/video-player.css'; /* generated */
+import './basic-content.css'; /* generated */
+
 import Component from './basic-content.twig';
 import BasicContentData from './basic-content.stories.data';
 

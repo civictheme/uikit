@@ -1,3 +1,6 @@
+import './table.component.js'; /* generated */
+import './table.css'; /* generated */
+
 import Component from './table.twig';
 
 const getRows = function (theme) {

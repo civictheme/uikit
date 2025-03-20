@@ -1,3 +1,4 @@
+import 'layout.js';  /* generated */
 import Component from './layout.twig';
 
 const meta = {

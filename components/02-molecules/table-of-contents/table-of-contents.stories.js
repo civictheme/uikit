@@ -1,3 +1,4 @@
+import 'table-of-contents.js';  /* generated */
 import Component from './table-of-contents.stories.twig';
 
 const meta = {

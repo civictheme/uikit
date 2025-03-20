@@ -1,3 +1,10 @@
+import '../../01-atoms/button/button.component.js'; /* generated */
+import '../../01-atoms/button/button.css'; /* generated */
+import '../../01-atoms/chip/chip.component.js'; /* generated */
+import '../../01-atoms/chip/chip.css'; /* generated */
+import './single-filter.component.js'; /* generated */
+import './single-filter.css'; /* generated */
+
 import Component from './single-filter.twig';
 import SingleFilterData from './single-filter.stories.data';
 

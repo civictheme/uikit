@@ -1,3 +1,5 @@
+import './content-link.css'; /* generated */
+
 import Component from './content-link.twig';
 
 const meta = {

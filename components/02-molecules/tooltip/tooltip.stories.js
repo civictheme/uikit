@@ -1,3 +1,4 @@
+import 'tooltip.js';  /* generated */
 import Component from './tooltip.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
