@@ -1,8 +1,3 @@
-import '../../01-atoms/button/button.component.js'; /* generated */
-import '../../01-atoms/button/button.css'; /* generated */
-import '../../01-atoms/iframe/iframe.css'; /* generated */
-import './video-player.css'; /* generated */
-
 import Component from './video-player.twig';
 
 const meta = {

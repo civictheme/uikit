@@ -12,7 +12,9 @@ grep --include=*.twig -rnw ../components -e "@\(base\|atoms\|molecules\|organism
 # ----
 
 echo "-> Sync assets:"
-rsync -a --delete ../../assets/ ../assets/
+cd ../
+ln -s ../assets ./assets
+cd scripts
 
 # ----
 
@@ -20,8 +22,3 @@ echo "-> Build"
 cd ../
 npm run dist
 cd scripts
-
-# ----
-
-echo "-> Add story import dependencies"
-node story-imports.mjs

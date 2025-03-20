@@ -1,5 +1,3 @@
-import './webform.css'; /* generated */
-
 import Component from './webform.twig';
 
 const meta = {

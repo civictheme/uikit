@@ -1,6 +1,3 @@
-import '../../01-atoms/link/link.css'; /* generated */
-import './breadcrumb.css'; /* generated */
-
 import Components from './breadcrumb.twig';
 
 const meta = {

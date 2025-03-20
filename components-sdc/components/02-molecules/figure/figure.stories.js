@@ -1,5 +1,3 @@
-import './figure.css'; /* generated */
-
 import Component from './figure.twig';
 
 const meta = {

@@ -1,4 +1,3 @@
-import 'group-filter.js';  /* generated */
 import Component from './group-filter.twig';
 import GroupFilterData from './group-filter.stories.data';
 

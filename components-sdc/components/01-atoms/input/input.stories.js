@@ -1,5 +1,3 @@
-import './input.css'; /* generated */
-
 import Component from './input.twig';
 
 const meta = {

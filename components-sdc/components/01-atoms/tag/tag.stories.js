@@ -1,5 +1,3 @@
-import './tag.css'; /* generated */
-
 import Component from './tag.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

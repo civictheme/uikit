@@ -1,4 +1,3 @@
-import 'tabs.js';  /* generated */
 import Component from './tabs.twig';
 
 const meta = {

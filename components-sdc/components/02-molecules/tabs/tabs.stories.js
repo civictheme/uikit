@@ -1,7 +1,3 @@
-import '../../01-atoms/link/link.css'; /* generated */
-import './tabs.component.js'; /* generated */
-import './tabs.css'; /* generated */
-
 import Component from './tabs.twig';
 
 const meta = {

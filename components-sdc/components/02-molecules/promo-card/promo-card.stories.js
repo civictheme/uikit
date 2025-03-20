@@ -1,9 +1,3 @@
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import '../../01-atoms/paragraph/paragraph.css'; /* generated */
-import '../../01-atoms/tag/tag.css'; /* generated */
-import './promo-card.css'; /* generated */
-
 import Component from './promo-card.twig';
 import PromoCardData from './promo-card.stories.data';
 

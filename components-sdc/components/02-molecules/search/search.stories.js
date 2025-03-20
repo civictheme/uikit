@@ -1,6 +1,3 @@
-import '../../01-atoms/link/link.css'; /* generated */
-import './search.css'; /* generated */
-
 import Component from './search.twig';
 
 const meta = {

@@ -1,4 +1,3 @@
-import 'slider.js';  /* generated */
 import Component from './slider.twig';
 
 import Slide from './slide.twig';

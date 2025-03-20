@@ -1,5 +1,3 @@
-import './field-description.css'; /* generated */
-
 import Component from './field-description.twig';
 
 const meta = {

@@ -1,6 +1,3 @@
-import './tooltip.component.js'; /* generated */
-import './tooltip.css'; /* generated */
-
 import Component from './tooltip.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

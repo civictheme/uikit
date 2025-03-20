@@ -1,6 +1,3 @@
-import './button.component.js'; /* generated */
-import './button.css'; /* generated */
-
 import Component from './button.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

@@ -1,7 +1,3 @@
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import './navigation.css'; /* generated */
-
 import Component from './navigation.twig';
 import NavigationData from './navigation.stories.data';
 

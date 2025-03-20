@@ -1,12 +1,3 @@
-import '../../01-atoms/button/button.component.js'; /* generated */
-import '../../01-atoms/button/button.css'; /* generated */
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import '../../02-molecules/logo/logo.css'; /* generated */
-import '../../02-molecules/social-links/social-links.css'; /* generated */
-import '../navigation/navigation.css'; /* generated */
-import './footer.css'; /* generated */
-
 import Component from './footer.twig';
 import FooterData from './footer.stories.data';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved

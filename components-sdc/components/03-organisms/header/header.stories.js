@@ -1,14 +1,3 @@
-import '../../01-atoms/button/button.component.js'; /* generated */
-import '../../01-atoms/button/button.css'; /* generated */
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import '../../01-atoms/paragraph/paragraph.css'; /* generated */
-import '../../02-molecules/logo/logo.css'; /* generated */
-import '../../02-molecules/search/search.css'; /* generated */
-import '../mobile-navigation/mobile-navigation.css'; /* generated */
-import '../navigation/navigation.css'; /* generated */
-import './header.css'; /* generated */
-
 import Component from './header.twig';
 import HeaderData from './header.stories.data';
 

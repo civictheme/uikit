@@ -1,4 +1,3 @@
-import 'table.js';  /* generated */
 import Component from './table.twig';
 
 const getRows = function (theme) {

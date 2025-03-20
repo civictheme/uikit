@@ -1,5 +1,3 @@
-import './paragraph.css'; /* generated */
-
 import Component from './paragraph.twig';
 
 const meta = {

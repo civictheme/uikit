@@ -458,24 +458,7 @@ async function splitCssBuild() {
     ].join('\n')
 
     fs.writeFileSync(`${DIR_OUT}/civictheme.base.js`, newBaseJs, 'utf-8')
-
-    // Output component JS
-    const componentJs = [
-      ...globSync(`${DIR_COMPONENTS_IN}/01-atoms/**/!(*.stories|*.test|*.data|*.stories.data).js`),
-      ...globSync(`${DIR_COMPONENTS_IN}/02-molecules/**/!(*.stories|*.test|*.data|*.stories.data).js`),
-      ...globSync(`${DIR_COMPONENTS_IN}/03-organisms/**/!(*.stories|*.test|*.data|*.stories.data).js`),
-      ...globSync(`${DIR_COMPONENTS_IN}/04-templates/**/!(*.stories|*.test|*.stories.data).js`),
-    ]
-    componentJs.forEach(filename => {
-      const newFilename = filename.substring(0, filename.lastIndexOf('.')) + '.component.js'
-      const jsdata = stripJS(fs.readFileSync(filename, 'utf-8'))
-      const newFile = [
-        JS_LINT_EXCLUSION_HEADER,
-        `document.addEventListener('DOMContentLoaded', () => {\n${jsdata}\n});`
-      ].join('\n')
-      fs.writeFileSync(newFilename, newFile, 'utf-8')
-    })
-    successReporter(`Saved: Split JS (components) ${time()}`)
+    successReporter(`Saved: Split JS (base) ${time()}`)
   }
 }
 

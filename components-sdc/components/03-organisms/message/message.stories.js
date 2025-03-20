@@ -1,5 +1,3 @@
-import './message.css'; /* generated */
-
 import Component from './message.twig';
 
 const meta = {

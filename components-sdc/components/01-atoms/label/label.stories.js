@@ -1,5 +1,3 @@
-import './label.css'; /* generated */
-
 import Component from './label.twig';
 
 const meta = {

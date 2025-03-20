@@ -1,4 +1,3 @@
-import 'responsive.js';  /* generated */
 import Component from './responsive.stories.twig';
 
 const meta = {

@@ -1,6 +1,3 @@
-import '../label/label.css'; /* generated */
-import './radio.css'; /* generated */
-
 import Component from './radio.twig';
 
 const meta = {

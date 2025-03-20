@@ -1,6 +1,3 @@
-import '../../01-atoms/link/link.css'; /* generated */
-import './skip-link.css'; /* generated */
-
 import Component from './skip-link.twig';
 
 const meta = {

@@ -1,4 +1,3 @@
-import 'collapsible.js';  /* generated */
 import Component from './collapsible.stories.twig';
 
 const meta = {

@@ -1,8 +1,3 @@
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import '../../01-atoms/paragraph/paragraph.css'; /* generated */
-import './next-step.css'; /* generated */
-
 import Component from './next-step.twig';
 
 const meta = {

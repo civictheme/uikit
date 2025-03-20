@@ -1,6 +1,3 @@
-import './alert.component.js'; /* generated */
-import './alert.css'; /* generated */
-
 import Component from './alert.twig';
 
 const meta = {

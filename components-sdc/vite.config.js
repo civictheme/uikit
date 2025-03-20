@@ -1,10 +1,15 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import twig from 'vite-plugin-twig-drupal';
 
 export default defineConfig(({ mode }) => ({
   plugins: [
     // This plugin allow watching files in the ./dist folder.
+    twig({
+      namespaces: {
+        civictheme: './components',
+      },
+    }),
     {
       name: 'watch-dist',
       configureServer: (server) => {
@@ -13,8 +18,7 @@ export default defineConfig(({ mode }) => ({
           ignored: [
             '**/.git/**',
             '**/node_modules/**',
-            '**/.logs/**',
-            '*.test.js'
+            '**/.logs/**'
           ]
         }
       }

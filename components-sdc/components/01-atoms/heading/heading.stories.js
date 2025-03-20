@@ -1,5 +1,3 @@
-import './heading.css'; /* generated */
-
 import Component from './heading.twig';
 
 const meta = {

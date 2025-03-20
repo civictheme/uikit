@@ -1,4 +1,3 @@
-import 'scrollspy.js';  /* generated */
 import Component from './scrollspy.stories.twig';
 
 const meta = {

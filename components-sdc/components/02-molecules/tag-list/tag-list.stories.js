@@ -1,5 +1,3 @@
-import '../../01-atoms/tag/tag.css'; /* generated */
-
 import Component from './tag-list.twig';
 
 const meta = {

@@ -1,4 +1,3 @@
-import 'alert.js';  /* generated */
 import Component from './alert.twig';
 
 const meta = {

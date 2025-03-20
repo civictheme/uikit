@@ -1,5 +1,3 @@
-import './select.css'; /* generated */
-
 import Component from './select.twig';
 
 const meta = {

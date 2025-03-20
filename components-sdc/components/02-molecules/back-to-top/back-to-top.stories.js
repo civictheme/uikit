@@ -1,5 +1,3 @@
-import './back-to-top.stories.css'; /* generated */
-
 import Component from './back-to-top.stories.twig';
 
 const meta = {

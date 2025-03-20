@@ -1,5 +1,3 @@
-import './iframe.css'; /* generated */
-
 import Component from './iframe.twig';
 
 const meta = {

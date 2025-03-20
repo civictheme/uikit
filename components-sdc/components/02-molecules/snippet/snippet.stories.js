@@ -1,9 +1,3 @@
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import '../../01-atoms/paragraph/paragraph.css'; /* generated */
-import '../../01-atoms/tag/tag.css'; /* generated */
-import './snippet.css'; /* generated */
-
 import Component from './snippet.twig';
 import SnippetData from './snippet.stories.data';
 

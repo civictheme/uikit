@@ -1,6 +1,3 @@
-import './chip.component.js'; /* generated */
-import './chip.css'; /* generated */
-
 import Component from './chip.twig';
 import './chip.event.stories';
 

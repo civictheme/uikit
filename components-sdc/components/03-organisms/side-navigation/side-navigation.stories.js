@@ -1,8 +1,3 @@
-import '../../01-atoms/heading/heading.css'; /* generated */
-import '../../01-atoms/link/link.css'; /* generated */
-import '../skip-link/skip-link.css'; /* generated */
-import './side-navigation.css'; /* generated */
-
 import Component from './side-navigation.twig';
 import SideNavigationData from './side-navigation.stories.data';
 
