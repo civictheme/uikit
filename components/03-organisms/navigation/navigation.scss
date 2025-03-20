@@ -38,7 +38,6 @@
   }
 
   &#{$root}--primary {
-    // Common styles for all variants in middle section
     #{$root}__items {
       height: 100%;
       min-height: ct-spacing(8); // Taller height for primary navigation
@@ -142,10 +141,8 @@
   }
 
   &#{$root}--secondary {
-    // Common styles for all variants in top section
     #{$root}__items {
       height: 100%;
-      min-height: ct-spacing(6); // Ensure consistent height
 
       #{$root}__menu {
         &.ct-menu--level-0 {

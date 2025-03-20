@@ -110,13 +110,12 @@ export const HeaderMultilineData = {
           title: null,
           type: 'drawer',
           variant: 'primary',
-          modifier_class: 'ct-flex-justify-content-end',
         }).trim(),
         Search({
           theme,
           text: 'Search',
           url: '/search',
-          modifier_class: 'ct-flex-justify-content-end hide-xxs show-m-flex',
+          modifier_class: 'hide-xxs show-m-flex',
         }).trim(),
       ].join(''),
     };

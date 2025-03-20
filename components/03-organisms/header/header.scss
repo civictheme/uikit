@@ -22,10 +22,6 @@
     padding-bottom: ct-particle(2);
   }
 
-  &__bottom {
-    padding-bottom: ct-particle(2);
-  }
-
   &__content-middle2 {
     height: 100%;
     display: flex;
@@ -38,29 +34,25 @@
     }
   }
 
-  &__content-bottom1,
   &__content-middle3 {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__content-bottom1 {
     @include ct-print-hide();
 
-    & {
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-    }
+    display: flex;
   }
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, border-color);
+    @include ct-component-property($root, $theme, background-color);
 
     #{$root}__top {
       @include ct-component-property($root, $theme, top, background-color);
       @include ct-component-property($root, $theme, top, color);
-    }
-
-    #{$root}__bottom,
-    #{$root}__middle {
-      @include ct-component-property($root, $theme, middle, background-color);
-      @include ct-component-property($root, $theme, middle, border-color);
     }
   }
 }
