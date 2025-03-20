@@ -9,7 +9,7 @@ import { MobileNavigation as MobileNavigationStory } from '../mobile-navigation/
 import MobileNavigationPanel from '../mobile-navigation/mobile-navigation.twig';
 import MobileNavigationTrigger from '../mobile-navigation/mobile-navigation-trigger.twig';
 
-const defaultExport = {
+const HeaderData = {
   args: (theme = 'light', options = {}) => ({
     theme,
     content_top1: '',
@@ -65,11 +65,11 @@ const defaultExport = {
   }),
 };
 
-export default defaultExport;
+export default HeaderData;
 
 export const HeaderMultilineData = {
   args: (theme = 'light', options = {}) => {
-    const defaultData = defaultExport.args(theme, options);
+    const defaultData = HeaderData.args(theme, options);
     return {
       ...defaultData,
       content_middle3: [
