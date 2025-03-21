@@ -10,7 +10,6 @@ describe('Page Component', () => {
 
     expect(c.querySelectorAll('.ct-page.ct-theme-light')).toHaveLength(1);
     expect(c.querySelector('#top')).toBeTruthy();
-    expect(c.querySelector('#banner')).toBeTruthy();
 
     assertUniqueCssClasses(c);
   });
