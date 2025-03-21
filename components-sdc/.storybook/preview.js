@@ -1,4 +1,4 @@
-import '../dist/civictheme.stories.css'; // eslint-disable-line import/no-unresolved
+import '../dist/civictheme.stories.css?module'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.base.css'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.variables.css'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.base'; // eslint-disable-line import/no-unresolved

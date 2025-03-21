@@ -17,20 +17,20 @@
     "ia32"
   ],
   "scripts": {
-    "dist": "node build.js base build styles styles_storybook styles_variables styles_stories js_storybook assets constants",
+    "dist": "node build.js base build styles_storybook styles_variables styles_stories assets constants sdc",
     "storybook": "storybook dev -p 6006"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.1",
-    "@storybook/addon-essentials": "8.5.2",
-    "@storybook/addon-links": "8.5.2",
-    "@storybook/html-vite": "8.5.2",
-    "@storybook/manager-api": "8.5.2",
-    "@storybook/theming": "8.5.2",
+    "@storybook/addon-essentials": "8.6.7",
+    "@storybook/addon-links": "8.6.7",
+    "@storybook/html-vite": "8.6.7",
+    "@storybook/manager-api": "8.6.7",
+    "@storybook/theming": "8.6.7",
     "@whitespace/storybook-addon-html": "^6.1.1",
     "glob": "^11.0.1",
     "sass-embedded": "1.77.5",
-    "storybook": "8.5.2",
+    "storybook": "8.6.7",
     "vite": "^6.0.0",
     "vite-plugin-twig-drupal": "^1.6.0"
   },

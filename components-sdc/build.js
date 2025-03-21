@@ -38,6 +38,7 @@ const config = {
   styles_stories: false,
   js_drupal: false,
   js_storybook: false,
+  sdc: false,
   assets: false,
   constants: false,
   base: false,
@@ -338,7 +339,7 @@ async function build() {
     buildJavascript()
     buildAssetsDirectory()
     await buildConstants()
-    splitCssBuild()
+    await splitCssBuild()
   } catch (error) {
     errorReporter(error);
   }
@@ -385,10 +386,8 @@ function lintExclusions() {
 }
 
 async function splitCssBuild() {
-  const runSplitCss = true
-  const runSplitJs = true
-
-  if (runSplitCss) {
+  if (config.sdc) {
+    // ------------------------------------------------------------------------- SPLIT CSS
     // Output back into components directory.
     const SPLIT_CSS_HEADER = '/**\n * This file was automatically generated. Please run `npm run dist` to update.\n */\n\n';
 
@@ -432,33 +431,36 @@ async function splitCssBuild() {
       fs.writeFileSync(`${DIR_COMPONENTS_IN}/${styleDir}/${styleName}.css`, SPLIT_CSS_HEADER + result.css);
     }));
     successReporter(`Saved: Split styles (components) ${time()}`)
-  }
 
-  if (runSplitJs) {
+    // ------------------------------------------------------------------------- SPLIT JS
     // Create Base JS
-    // Load libraries and assets immediately
+    // Load libraries and assets
     const libJs = [
       ...JS_LIB_IMPORTS,
       ...globSync(JS_ASSET_IMPORTS)
-    ].map(filename => {
-      return stripJS(fs.readFileSync(filename, 'utf-8'))
-    }).join('\n')
+    ].map(filename => stripJS(fs.readFileSync(filename, 'utf-8'))).join('\n')
 
     // Load base components after DOM is ready
-    const baseComponentJs = [
-      ...globSync(`${DIR_COMPONENTS_IN}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`)
-    ].map(filename => {
-      return stripJS(fs.readFileSync(filename, 'utf-8'))
-    }).join('\n')
+    const SPLIT_JS_BASE = `${DIR_COMPONENTS_IN}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`
+    const baseComponentJs = globSync(SPLIT_JS_BASE).map(filename => stripJS(fs.readFileSync(filename, 'utf-8'))).join('\n')
 
+    // Write drupal js base
+    const newDrupalBaseJs = [
+      JS_LINT_EXCLUSION_HEADER,
+      libJs,
+      `Drupal.behaviors.civictheme_base = {attach: function (context, settings) {\n${baseComponentJs}\n}};`
+    ].join('\n')
+    fs.writeFileSync(`${DIR_OUT}/civictheme.drupal.base.js`, newDrupalBaseJs, 'utf-8')
+    successReporter(`Saved: Compiled split javascript base (drupal) ${time()}`)
+
+    // Write vanilla js base
     const newBaseJs = [
       JS_LINT_EXCLUSION_HEADER,
       libJs,
       `document.addEventListener('DOMContentLoaded', () => {\n${baseComponentJs}\n});`
     ].join('\n')
-
     fs.writeFileSync(`${DIR_OUT}/civictheme.base.js`, newBaseJs, 'utf-8')
-    successReporter(`Saved: Split JS (base) ${time()}`)
+    successReporter(`Saved: Compiled split javascript base (storybook) ${time()}`)
   }
 }
 

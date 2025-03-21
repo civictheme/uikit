@@ -1,10 +1,12 @@
 import dependencies from './ct-dependencies'; // eslint-disable-line import/no-unresolved
 
 const config = {
-  stories: ['../components/**/*.stories.js'],
+  stories: [
+    '../components/**/*.stories.js',
+  ],
   addons: [
-    '@storybook/addon-essentials',
     '@storybook/addon-links',
+    '@storybook/addon-essentials',
     '@whitespace/storybook-addon-html',
   ],
   framework: {
@@ -47,4 +49,4 @@ const config = {
     return config;
   },
 }
-export default config
+export default config;
