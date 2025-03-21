@@ -1,0 +1,56 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-field-description {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 0) {
+  .ct-field-description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+@media (min-width: 768px) {
+  .ct-field-description {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+@media (min-width: 0) {
+  .ct-field-description--large {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+@media (min-width: 768px) {
+  .ct-field-description--large {
+    font-size: 1.25rem;
+    line-height: 2.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.ct-field-description.ct-theme-light {
+  color: var(--ct-field-description-light-color);
+}
+.ct-field-description.ct-theme-light a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-description.ct-theme-dark {
+  color: var(--ct-field-description-dark-color);
+}
+.ct-field-description.ct-theme-dark a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}

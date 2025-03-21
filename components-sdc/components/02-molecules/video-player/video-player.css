@@ -1,0 +1,36 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-video-player__wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 1.5rem;
+  height: 0;
+  overflow: hidden;
+}
+.ct-video-player__wrapper iframe,
+.ct-video-player__wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ct-video-player__links {
+  display: flex;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .ct-video-player__links {
+    margin-top: 1.5rem;
+  }
+}
+.ct-video-player__links__transcript {
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .ct-video-player__links__transcript {
+    padding-right: 1.5rem;
+  }
+}

@@ -1,0 +1,80 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+@media (min-width: 0) {
+  .ct-link {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-link {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+.ct-link {
+  text-decoration: none;
+}
+.ct-link:hover {
+  text-decoration: none;
+}
+.ct-link--active, .ct-link:active {
+  text-decoration: underline;
+}
+.ct-link:focus-visible {
+  text-decoration: none;
+}
+.ct-link[disabled] {
+  pointer-events: none;
+  user-select: none;
+  opacity: 50%;
+}
+.ct-link {
+  padding: 0.1875rem 0 0.125rem;
+  word-break: break-word;
+}
+.ct-link:focus-visible {
+  outline-offset: 0;
+  outline-width: 0.1875rem;
+  outline-style: solid;
+  outline-color: var(--ct-color-light-interaction-focus);
+  border-radius: 0.25rem;
+}
+.ct-link.ct-link--only-icon {
+  display: inline-block;
+  line-height: 0;
+  padding: 0.5rem;
+  margin: -0.5rem;
+}
+.ct-link.ct-theme-light {
+  color: var(--ct-link-light-color);
+}
+.ct-link.ct-theme-light:hover, .ct-link.ct-theme-light:visited:hover {
+  color: var(--ct-link-light-hover-color);
+}
+.ct-link.ct-theme-light:visited {
+  color: var(--ct-link-light-visited-color);
+}
+.ct-link.ct-theme-light.ct-link--active, .ct-link.ct-theme-light:active {
+  color: var(--ct-link-light-active-color);
+}
+.ct-link.ct-theme-dark {
+  color: var(--ct-link-dark-color);
+}
+.ct-link.ct-theme-dark:hover, .ct-link.ct-theme-dark:visited:hover {
+  color: var(--ct-link-dark-hover-color);
+}
+.ct-link.ct-theme-dark:visited {
+  color: var(--ct-link-dark-visited-color);
+}
+.ct-link.ct-theme-dark.ct-link--active, .ct-link.ct-theme-dark:active {
+  color: var(--ct-link-dark-active-color);
+}

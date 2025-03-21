@@ -1,0 +1,91 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-navigation-card {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+.ct-navigation-card:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+.ct-navigation-card:active {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.ct-navigation-card {
+  position: relative;
+  border-radius: 0.25rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+@container (min-width: 36rem) {
+  .ct-navigation-card {
+    flex-direction: row;
+  }
+}
+.ct-navigation-card .ct-navigation-card__image {
+  position: relative;
+}
+.ct-navigation-card .ct-navigation-card__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.ct-navigation-card .ct-navigation-card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ct-navigation-card .ct-navigation-card__image {
+  height: 17.5rem;
+  width: auto;
+  min-width: auto;
+}
+@container (min-width: 36rem) {
+  .ct-navigation-card .ct-navigation-card__image {
+    width: 30%;
+    min-width: 18rem;
+    height: auto;
+    min-height: 16rem;
+    flex-shrink: 0;
+  }
+}
+.ct-navigation-card .ct-navigation-card__content {
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.ct-navigation-card .ct-navigation-card__icon {
+  margin-bottom: 1rem;
+  color: inherit;
+}
+.ct-navigation-card .ct-navigation-card__icon__image img {
+  height: 1em;
+  width: 1em;
+  object-fit: cover;
+}
+.ct-navigation-card .ct-navigation-card__title {
+  margin-bottom: 1rem;
+}
+.ct-navigation-card .ct-navigation-card__title__link {
+  font-size: inherit;
+  line-height: inherit;
+  display: flex;
+  column-gap: 1rem;
+}
+.ct-navigation-card .ct-navigation-card__title__link .ct-link__icon {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.ct-navigation-card.ct-navigation-card--with-link .ct-navigation-card__summary {
+  padding-right: 1.5rem;
+}
+.ct-navigation-card.ct-theme-light {
+  background-color: var(--ct-navigation-card-light-background-color);
+  color: var(--ct-navigation-card-light-icon-color);
+}
+.ct-navigation-card.ct-theme-dark {
+  background-color: var(--ct-navigation-card-dark-background-color);
+  color: var(--ct-navigation-card-dark-icon-color);
+}

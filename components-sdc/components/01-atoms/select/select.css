@@ -1,0 +1,128 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-select {
+  appearance: none;
+  margin: 0;
+}
+.ct-select[disabled] {
+  opacity: 40%;
+  pointer-events: none;
+}
+@media (min-width: 0) {
+  .ct-select {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-select {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+.ct-select {
+  width: 100%;
+  min-width: 5.5625rem;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 0.0625rem;
+  padding: 0.8125rem 3.3125rem 0.8125rem 1rem;
+  background-position: calc(100% - 0.0625rem);
+  background-repeat: no-repeat;
+  background-size: 2.3125rem;
+}
+.ct-select:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+.ct-select.ct-theme-light {
+  background-image: url("data:image/svg+xml,%3Csvg width='38' height='28' viewBox='0 0 38 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0H0V28H1V0Z' fill='black' fill-opacity='0.6'/%3E%3Cpath d='M17.0916 13.1714L19 13.1666C19 13.1666 20.7334 13.1666 20.9083 13.1666C21.0831 13.1666 21.0831 13.1666 21.0831 13.1666L21.5 13.1714C21.5 13.1714 21.7189 13.1497 21.8204 13.1074C21.922 13.0651 22.0141 13.0031 22.0916 12.9249C22.1697 12.8475 22.2317 12.7553 22.274 12.6538C22.3163 12.5522 22.3381 12.4433 22.3381 12.3333C22.3381 12.2233 22.3163 12.1144 22.274 12.0128C22.2317 11.9113 22.1697 11.8191 22.0916 11.7416L19.5916 9.24162C19.5141 9.16351 19.422 9.10151 19.3204 9.05921C19.2189 9.0169 19.11 8.99512 19 8.99512C18.8899 8.99512 18.781 9.0169 18.6795 9.05921C18.5779 9.10151 18.4858 9.16351 18.4083 9.24162L15.9083 11.7416C15.7514 11.8985 15.6632 12.1114 15.6632 12.3333C15.6632 12.5552 15.7514 12.768 15.9083 12.9249C16.0652 13.0819 16.278 13.17 16.5 13.17C16.7219 13.17 17.0916 13.1714 17.0916 13.1714ZM20.9083 15.6666H19H17.0916C16.9165 15.6666 16.9165 15.6632 16.8202 15.6632C16.4998 15.6632 16.6098 15.6632 16.5 15.6632C16.3901 15.6632 16.2813 15.6848 16.1797 15.7269C16.0782 15.7689 15.986 15.8306 15.9083 15.9083C15.8306 15.986 15.769 16.0782 15.7269 16.1797C15.6849 16.2813 15.6632 16.3901 15.6632 16.4999C15.6632 16.6098 15.6849 16.7186 15.7269 16.8202C15.769 16.9217 15.8306 17.0139 15.9083 17.0916L18.4083 19.5916C18.4858 19.6697 18.5779 19.7317 18.6795 19.774C18.781 19.8163 18.8899 19.8381 19 19.8381C19.11 19.8381 19.2189 19.8163 19.3204 19.774C19.422 19.7317 19.5141 19.6697 19.5916 19.5916L22.0916 17.0916C22.2485 16.9347 22.3367 16.7219 22.3367 16.4999C22.3367 16.278 22.2485 16.0652 22.0916 15.9083C21.9347 15.7514 21.7219 15.6632 21.5 15.6632C21.278 15.6632 21.0831 15.6666 20.9083 15.6666Z' fill='black' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+}
+.ct-select.ct-theme-light[multiple] {
+  background: none;
+}
+.ct-select.ct-theme-light:focus-visible {
+  outline-color: var(--ct-select-light-outline-color);
+}
+.ct-select.ct-theme-light:not(.ct-select--is-invalid) {
+  color: var(--ct-select-light-color);
+  border-color: var(--ct-select-light-border-color);
+  background-color: var(--ct-select-light-background-color);
+}
+.ct-select.ct-theme-light:not(.ct-select--is-invalid)::placeholder {
+  color: var(--ct-select-light-color);
+}
+.ct-select.ct-theme-light:not(.ct-select--is-invalid) option:checked {
+  background-color: var(--ct-select-light-option-background-color);
+  color: var(--ct-select-light-option-color);
+}
+.ct-select.ct-theme-light:not(.ct-select--is-invalid):hover {
+  color: var(--ct-select-light-hover-color);
+  border-color: var(--ct-select-light-hover-border-color);
+  background-color: var(--ct-select-light-hover-background-color);
+  box-shadow: inset 0 0 0 0.0625rem var(--ct-select-light-hover-border-color);
+}
+.ct-select.ct-theme-light:not(.ct-select--is-invalid):focus-visible {
+  color: var(--ct-select-light-focus-color);
+  border-color: var(--ct-select-light-focus-border-color);
+  background-color: var(--ct-select-light-focus-background-color);
+}
+.ct-select.ct-theme-light.ct-select--is-invalid {
+  color: var(--ct-select-light-invalid-color);
+  border-color: var(--ct-select-light-invalid-border-color);
+  background-color: var(--ct-select-light-invalid-background-color);
+  box-shadow: inset 0 0 0 0.0625rem var(--ct-select-light-invalid-border-color);
+}
+.ct-select.ct-theme-light.ct-select--is-invalid::placeholder {
+  color: var(--ct-select-light-invalid-color);
+}
+.ct-select.ct-theme-dark {
+  background-image: url("data:image/svg+xml,%3Csvg width='38' height='28' viewBox='0 0 38 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0H0V28H1V0Z' fill='white' fill-opacity='0.9'/%3E%3Cpath d='M17.0916 13.1714L19 13.1666C19 13.1666 20.7334 13.1666 20.9083 13.1666C21.0831 13.1666 21.0831 13.1666 21.0831 13.1666L21.5 13.1714C21.5 13.1714 21.7189 13.1497 21.8204 13.1074C21.922 13.0651 22.0141 13.0031 22.0916 12.9249C22.1697 12.8475 22.2317 12.7553 22.274 12.6538C22.3163 12.5522 22.3381 12.4433 22.3381 12.3333C22.3381 12.2233 22.3163 12.1144 22.274 12.0128C22.2317 11.9113 22.1697 11.8191 22.0916 11.7416L19.5916 9.24162C19.5141 9.16351 19.422 9.10151 19.3204 9.05921C19.2189 9.0169 19.11 8.99512 19 8.99512C18.8899 8.99512 18.781 9.0169 18.6795 9.05921C18.5779 9.10151 18.4858 9.16351 18.4083 9.24162L15.9083 11.7416C15.7514 11.8985 15.6632 12.1114 15.6632 12.3333C15.6632 12.5552 15.7514 12.768 15.9083 12.9249C16.0652 13.0819 16.278 13.17 16.5 13.17C16.7219 13.17 17.0916 13.1714 17.0916 13.1714ZM20.9083 15.6666H19H17.0916C16.9165 15.6666 16.9165 15.6632 16.8202 15.6632C16.4998 15.6632 16.6098 15.6632 16.5 15.6632C16.3901 15.6632 16.2813 15.6848 16.1797 15.7269C16.0782 15.7689 15.986 15.8306 15.9083 15.9083C15.8306 15.986 15.769 16.0782 15.7269 16.1797C15.6849 16.2813 15.6632 16.3901 15.6632 16.4999C15.6632 16.6098 15.6849 16.7186 15.7269 16.8202C15.769 16.9217 15.8306 17.0139 15.9083 17.0916L18.4083 19.5916C18.4858 19.6697 18.5779 19.7317 18.6795 19.774C18.781 19.8163 18.8899 19.8381 19 19.8381C19.11 19.8381 19.2189 19.8163 19.3204 19.774C19.422 19.7317 19.5141 19.6697 19.5916 19.5916L22.0916 17.0916C22.2485 16.9347 22.3367 16.7219 22.3367 16.4999C22.3367 16.278 22.2485 16.0652 22.0916 15.9083C21.9347 15.7514 21.7219 15.6632 21.5 15.6632C21.278 15.6632 21.0831 15.6666 20.9083 15.6666Z' fill='white' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
+}
+.ct-select.ct-theme-dark[multiple] {
+  background: none;
+}
+.ct-select.ct-theme-dark:focus-visible {
+  outline-color: var(--ct-select-dark-outline-color);
+}
+.ct-select.ct-theme-dark:not(.ct-select--is-invalid) {
+  color: var(--ct-select-dark-color);
+  border-color: var(--ct-select-dark-border-color);
+  background-color: var(--ct-select-dark-background-color);
+}
+.ct-select.ct-theme-dark:not(.ct-select--is-invalid)::placeholder {
+  color: var(--ct-select-dark-color);
+}
+.ct-select.ct-theme-dark:not(.ct-select--is-invalid) option:checked {
+  background-color: var(--ct-select-dark-option-background-color);
+  color: var(--ct-select-dark-option-color);
+}
+.ct-select.ct-theme-dark:not(.ct-select--is-invalid):hover {
+  color: var(--ct-select-dark-hover-color);
+  border-color: var(--ct-select-dark-hover-border-color);
+  background-color: var(--ct-select-dark-hover-background-color);
+  box-shadow: inset 0 0 0 0.0625rem var(--ct-select-dark-hover-border-color);
+}
+.ct-select.ct-theme-dark:not(.ct-select--is-invalid):focus-visible {
+  color: var(--ct-select-dark-focus-color);
+  border-color: var(--ct-select-dark-focus-border-color);
+  background-color: var(--ct-select-dark-focus-background-color);
+}
+.ct-select.ct-theme-dark.ct-select--is-invalid {
+  color: var(--ct-select-dark-invalid-color);
+  border-color: var(--ct-select-dark-invalid-border-color);
+  background-color: var(--ct-select-dark-invalid-background-color);
+  box-shadow: inset 0 0 0 0.0625rem var(--ct-select-dark-invalid-border-color);
+}
+.ct-select.ct-theme-dark.ct-select--is-invalid::placeholder {
+  color: var(--ct-select-dark-invalid-color);
+}
