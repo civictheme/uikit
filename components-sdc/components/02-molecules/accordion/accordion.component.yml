@@ -1,0 +1,76 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Accordion component
+status: experimental
+description: Accordion component with expandable panels
+props:
+  type: object
+  properties:
+    content_top:
+      type: string
+      title: Content_top
+      description: Content slot
+    expand_all:
+      type: boolean
+      title: Expand_all
+      description: Expand all panels or not
+    panels:
+      type: array
+      title: Panels
+      description: Array of panels
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            description: Panel title
+          content:
+            type: string
+            description: Panel content
+          expanded:
+            type: boolean
+            description: Panel is expanded or not
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content slot
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    with_background:
+      type: boolean
+      title: With_background
+      description: With background or not
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  content_top:
+    title: Content top
+    description: Top content block
+    required: false
+  content:
+    title: Content
+    description: Main content block
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Bottom content block
+    required: false

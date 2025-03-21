@@ -1,0 +1,49 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Logo component
+status: experimental
+description: >-
+  Logo component that can display primary and secondary logos in different
+  configurations
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    type:
+      type: string
+      title: Type
+      description: Type of logo display configuration
+      enum:
+        - default
+        - stacked
+        - inline
+        - inline-stacked
+      default: default
+    logos:
+      type: object
+      title: Logos
+      description: Object containing primary and secondary logo configurations
+    url:
+      type: string
+      title: Url
+      description: Optional URL that wraps the logo
+    title:
+      type: string
+      title: Title
+      description: Optional logo title attribute
+      default: Click to go to the homepage
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional CSS classes
+slots: {}

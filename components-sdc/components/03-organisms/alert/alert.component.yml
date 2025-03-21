@@ -1,0 +1,48 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Alert component
+status: experimental
+description: Alert component for displaying various types of messages
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme of the alert
+      enum:
+        - light
+        - dark
+    type:
+      type: string
+      title: Type
+      description: Alert type
+      enum:
+        - info
+        - error
+        - warning
+        - success
+    id:
+      type: string
+      title: Id
+      description: ID of the alert
+    title:
+      type: string
+      title: Title
+      description: Title of the alert
+    description:
+      type: string
+      title: Description
+      description: Description content of the alert
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional CSS classes
+slots: {}
+libraryOverrides:
+  js:
+    alert.js: {}

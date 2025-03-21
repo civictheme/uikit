@@ -1,0 +1,65 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Navigation component
+status: experimental
+description: Navigation component with multiple display types
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    name:
+      type: string
+      title: Name
+      description: Navigation name for <nav> element
+    items:
+      type: array
+      title: Items
+      description: Array of menu items
+    title:
+      type: string
+      title: Title
+      description: Navigation title
+    type:
+      type: string
+      title: Type
+      description: 'One of: none, inline, dropdown, drawer'
+      enum:
+        - none
+        - inline
+        - dropdown
+        - drawer
+    dropdown_columns:
+      type: integer
+      title: Dropdown_columns
+      description: Number of columns in the dropdown drawer
+    dropdown_columns_fill:
+      type: boolean
+      title: Dropdown_columns_fill
+      description: Fill columns
+    is_animated:
+      type: boolean
+      title: Is_animated
+      description: Use animation for transitions
+    menu_id:
+      type: string
+      title: Menu_id
+      description: Optional menu ID used for grouping dropdown items
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  title:
+    title: Title
+    description: Slot for custom title rendering
+    required: false

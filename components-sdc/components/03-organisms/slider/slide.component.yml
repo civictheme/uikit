@@ -1,0 +1,116 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Slider Slide component
+status: experimental
+description: A slide component for sliders
+props:
+  type: object
+  properties:
+    content_top:
+      type: string
+      title: Content_top
+      description: Content slot
+    image:
+      type: object
+      title: Image
+    image_position:
+      type: string
+      title: Image_position
+      description: Image position
+      enum:
+        - left
+        - right
+    tags:
+      type: array
+      title: Tags
+      description: Array of tags
+    title:
+      type: string
+      title: Title
+      description: Title
+    date:
+      type: string
+      title: Date
+      description: Start date and time
+    date_iso:
+      type: string
+      title: Date_iso
+      description: Start date and time in ISO format
+    date_end:
+      type: string
+      title: Date_end
+      description: Optional end date and time
+    date_end_iso:
+      type: string
+      title: Date_end_iso
+      description: Optional end date and time in ISO format
+    content:
+      type: string
+      title: Content
+      description: Content text
+    links:
+      type: array
+      title: Links
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            description: Link text
+          url:
+            type: string
+            description: Link URL
+          is_new_window:
+            type: boolean
+            description: Open link in a new window
+          is_external:
+            type: boolean
+            description: Link is external or not
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content slot
+    theme:
+      type: string
+      title: Theme
+      description: Theme
+      enum:
+        - light
+        - dark
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  image:
+    title: Image
+    description: Image block slot
+    required: false
+  content_top:
+    title: Content top
+    description: Content top block slot
+    required: false
+  tags:
+    title: Tags
+    description: Tags block slot
+    required: false
+  content:
+    title: Content
+    description: Main content block slot
+    required: false
+  date:
+    title: Date
+    description: Date block slot
+    required: false
+  links:
+    title: Links
+    description: Links block slot
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Content bottom block slot
+    required: false

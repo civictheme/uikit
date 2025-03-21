@@ -1,0 +1,41 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Heading component
+status: experimental
+description: A heading component with configurable level and theme
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme
+      enum:
+        - light
+        - dark
+      default: light
+    content:
+      type: string
+      title: Content
+      description: Content
+    level:
+      type: string
+      title: Level
+      description: Heading level
+      enum:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+      default: '2'
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}
