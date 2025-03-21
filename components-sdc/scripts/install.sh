@@ -11,10 +11,8 @@ grep --include=*.twig -rnw ../components -e "@\(base\|atoms\|molecules\|organism
 
 # ----
 
-echo "-> Sync assets:"
-cd ../
-ln -s ../assets ./assets
-cd scripts
+find "../components" -type d -name "__snapshots__" -exec rm -rf {} \;
+find "../components" -name "*.test.js" -exec rm -rf {} \;
 
 # ----
 
