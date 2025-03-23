@@ -4,16 +4,16 @@
  * Selected filters component.
  *
  * Variables:
- * - theme (string, optional): Theme: 'light', 'dark'.
- * - title (string): Title of the selected filters section.
- * - filters (array): Array of filter objects with url, text, and label properties.
- * - clear_link (object, optional): Clear all link configuration.
- *   - text (string): Text of the clear all link.
- *   - url (string): URL of the clear all link.
- *   - type (string, optional): Type of the clear all link: 'primary', 'secondary'.
- *   - size (string, optional): Size of the clear all link: 'regular', 'large'.
- *   - icon (string, optional): Icon of the clear all link.
- *   - icon_placement (string, optional): Icon placement of the clear all link: 'before', 'after'.
+ * - theme [string]: Theme: 'light', 'dark'.
+ * - id [string]: Id for selected filters.
+ * - title [string]: Title of the selected filters section.
+ * - filters [string]: Array of filter objects with url, text, and label properties.
+ * - clear_link [object]: Clear all link configuration.
+ *   - text [string]: Text of the clear all link.
+ *   - url [string]: URL of the clear all link.
+ *   - type [string]: Type of the clear all link: 'primary', 'secondary'.
+ *   - icon [string]: Icon of the clear all link.
+ *   - icon_placement [string]: Icon placement of the clear all link: 'before', 'after'.
  */
 #}
 
@@ -52,12 +52,11 @@
         theme: theme,
         kind: 'link',
         type: clear_link.type|default('secondary'),
-        size: clear_link.size|default('regular'),
+        size: 'small',
         icon: clear_link.icon|default('close-outline'),
         icon_placement: clear_link.icon_placement|default('after'),
         text: clear_link.text|default('Clear all'),
         url: clear_link.url,
-        attributes: clear_link.attributes,
       } only %}
     </div>
   {% endif %}

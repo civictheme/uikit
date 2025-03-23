@@ -18,6 +18,7 @@ const meta = {
       options: {
         Default: 'default',
         Input: 'input',
+        Link: 'link',
       },
     },
     size: {
@@ -57,7 +58,10 @@ export const Chip = {
     theme: 'light',
     kind: 'default',
     size: 'regular',
-    content: 'Chip label',
+    url: '#',
+    label: 'Link chip label',
+    content: 'Chip content',
+    is_dismissible: true,
     is_selected: false,
     is_multiple: false,
   },

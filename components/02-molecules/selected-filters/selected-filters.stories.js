@@ -1,7 +1,7 @@
 import Component from './selected-filters.twig';
 
 const meta = {
-  title: 'Organisms/Selected Filters',
+  title: 'Molecule/Selected Filters',
   component: Component,
   argTypes: {
     theme: {

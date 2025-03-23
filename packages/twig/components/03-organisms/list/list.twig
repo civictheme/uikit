@@ -12,7 +12,7 @@
  *   - is_external: [boolean] Link is external or not.
  * - filters: [string] Exposed filters.
  * - selected_filters: [array] Filters.
- * - selected_filters_clear_url: [object] Clear link object.
+ * - selected_filters_clear_link: [object] Clear link object.
  *   - text (string): Text of the clear all link.
  *   - url (string): URL of the clear all link.
  *   - type (string, optional): Type of the clear all link: 'primary', 'secondary'.
@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="row">
                   <div class="col-xxs-12">
-                    {% include '@organisms/selected-filters/selected-filters.twig' with {
+                    {% include '@molecules/selected-filters/selected-filters.twig' with {
                       theme: theme,
                       title: 'Selected filters:'|t,
                       filters: selected_filters,
