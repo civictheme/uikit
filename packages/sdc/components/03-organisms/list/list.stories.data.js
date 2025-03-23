@@ -40,7 +40,7 @@ export default {
       },
       content: 'Example content',
       filters: options.group ? GroupFilter(GroupFilterData.args(theme)) : SingleFilter(SingleFilterData.args(theme)),
-      selected_filters: [
+      selected_filters: options.group ? [
         { text: 'Filter 1', url: '#', label: 'Remove filter: Filter 1' },
         { text: 'Filter 2', url: '#', label: 'Remove filter: Filter 2' },
         { text: 'Filter 3', url: '#', label: 'Remove filter: Filter 3' },
@@ -51,13 +51,10 @@ export default {
         { text: 'Filter 8', url: '#', label: 'Remove filter: Filter 8' },
         { text: 'Filter 9', url: '#', label: 'Remove filter: Filter 9' },
         { text: 'Filter 10', url: '#', label: 'Remove filter: Filter 10' },
-      ],
+      ] : [],
       selected_filters_clear_link: {
         text: 'Clear all',
         url: '#',
-        type: 'secondary',
-        size: 'regular',
-        icon: 'close-outline',
       },
       results_count: 'Showing 1 of 6',
       rows_above: Paragraph({
