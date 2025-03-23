@@ -1,4 +1,4 @@
-const template = 'components/03-organisms/selected-filters/selected-filters.twig';
+const template = 'components/02-molecules/selected-filters/selected-filters.twig';
 
 describe('Selected Filters Component', () => {
   test('renders with required attributes', async () => {
@@ -47,9 +47,6 @@ describe('Selected Filters Component', () => {
         text: 'Clear all',
         url: '#clear',
         type: 'secondary',
-        size: 'regular',
-        icon: 'close-outline',
-        icon_placement: 'after',
       },
     });
 
