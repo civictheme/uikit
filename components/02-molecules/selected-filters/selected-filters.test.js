@@ -55,7 +55,7 @@ describe('Selected Filters Component', () => {
     expect(clearButton.textContent.trim()).toContain('Clear all');
     expect(clearButton.getAttribute('href')).toEqual('#clear');
     expect(clearButton.classList.contains('ct-button--secondary')).toBe(true);
-    expect(clearButton.classList.contains('ct-button--regular')).toBe(true);
+    expect(clearButton.classList.contains('ct-button--small')).toBe(true);
 
     assertUniqueCssClasses(c);
   });
