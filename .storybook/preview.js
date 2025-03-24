@@ -1,5 +1,5 @@
 import '../dist/civictheme.storybook.css'; // eslint-disable-line import/no-unresolved
-import '../dist/civictheme.stories.css'; // eslint-disable-line import/no-unresolved
+import '../dist/civictheme.stories.css?module'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.storybook'; // eslint-disable-line import/no-unresolved, import/extensions
 
 export default {
