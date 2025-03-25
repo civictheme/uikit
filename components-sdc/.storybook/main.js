@@ -1,4 +1,7 @@
 import dependencies from './ct-dependencies'; // eslint-disable-line import/no-unresolved
+import path from 'path'
+
+const componentPath = path.resolve(__dirname, '../components');
 
 const config = {
   stories: [
@@ -36,7 +39,7 @@ const config = {
       name: 'sdc-js-wrapper',
       transform: (code, id) => {
         // Only process js files in the component directory that are not stories.
-        if (id.indexOf('/components/') >= 0 && id.endsWith('.js') && !id.endsWith('stories.js') && !id.endsWith('stories.data.js')) {
+        if (id.indexOf(componentPath) >= 0 && id.endsWith('.js') && !id.endsWith('stories.js') && !id.endsWith('stories.data.js')) {
           return {
             code: `document.addEventListener('DOMContentLoaded', () => {\n${code}\n});`,
             map: null

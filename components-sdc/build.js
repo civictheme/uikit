@@ -36,9 +36,11 @@ const config = {
   styles_layout: false,
   styles_variables: false,
   styles_stories: false,
+  styles_theme: false,
   js_drupal: false,
   js_storybook: false,
-  sdc: false,
+  sdc_base: false,
+  sdc_components: false,
   assets: false,
   constants: false,
   base: false,
@@ -56,13 +58,13 @@ if (['cli', 'lintex'].indexOf(flags[0]) >= 0) {
     config.build = buildWatchFlagCount === 0 || flags.indexOf('build') >= 0
     config.watch = flags.indexOf('watch') >= 0
     config.combine = true
-    config.styles = true
     config.styles_storybook = true
     config.styles_editor = true
     config.styles_variables = true
     config.styles_stories = true
-    config.js_drupal = true
-    config.js_storybook = true
+    config.styles_theme = true
+    config.sdc_base = true
+    config.sdc_components = true
     config.assets = true
     config.constants = true
   } else {
@@ -107,6 +109,7 @@ const STYLE_VARIABLE_FILE_OUT   = `${DIR_OUT}/${STYLE_NAME}.variables.css`
 const STYLE_ADMIN_FILE_OUT      = `${DIR_OUT}/${STYLE_NAME}.admin.css`
 const STYLE_LAYOUT_FILE_OUT     = `${DIR_OUT}/${STYLE_NAME}.layout.css`
 const STYLE_STORIES_FILE_OUT    = `${DIR_OUT}/${STYLE_NAME}.stories.css`
+const STYLE_THEME_FILE_OUT      = `${DIR_OUT}/${STYLE_NAME}.theme.css`
 
 const DIR_CT_ASSETS             = `/themes/${DRUPAL_THEME_FOLDER}/${THEME_NAME}/dist/assets/`
 const DIR_SB_ASSETS             = `/assets/`
@@ -128,6 +131,12 @@ const CONSTANTS_SCSS_IMPORTER   = fullPath(`./.storybook/importer.scss_variables
 const CONSTANTS_BACKGROUND_UTIL = `${COMPONENT_DIR}/00-base/background/background.utils.js`
 const CONSTANTS_ICON_UTIL       = `${COMPONENT_DIR}/00-base/icon/icon.utils.js`
 const CONSTANTS_LOGO_UTIL       = `${COMPONENT_DIR}/02-molecules/logo/logo.utils.js`
+
+const SPLIT_CSS_HEADER             = '/**\n * This file was automatically generated. Please run `npm run dist` to update.\n */\n\n';
+const SPLIT_CSS_BASE_FILE          = `${DIR_OUT}/${STYLE_NAME}.base.css`;
+const SPLIT_JS_BASE_FILE           = `${DIR_OUT}/${SCRIPT_NAME}.drupal.base.js`
+const SPLIT_JS_BASE_STORYBOOK_FILE = `${DIR_OUT}/${SCRIPT_NAME}.base.js`
+const SPLIT_JS_BASE                = `${COMPONENT_DIR}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`
 
 if (config.build) {
   build()
@@ -336,15 +345,32 @@ async function build() {
     buildStylesLayout()
     buildStylesVariables()
     buildStylesStories()
+    buildStylesTheme()
+    buildStylesSdcBase()
+    await buildStylesSdcComponents()
+    buildStylesSdcCopyBack()
     buildJavascript()
+    buildJavascriptSdcBase()
     buildAssetsDirectory()
     await buildConstants()
-    await splitCssBuild()
   } catch (error) {
     errorReporter(error);
   }
 
   console.log(`Time taken: ${time(true)}`)
+}
+
+function buildStylesTheme() {
+  if (config.styles_theme) {
+    const themecss = [
+      VAR_CT_ASSETS_DIRECTORY,
+      getImportsFromGlob(STYLE_THEME_FILE_IN, PATH),
+    ].join('\n')
+
+    const compiled = sass.compileString(themecss, { loadPaths: [COMPONENT_DIR, PATH] })
+    fs.writeFileSync(STYLE_THEME_FILE_OUT, sortCssLines(compiled.css), 'utf-8')
+    successReporter(`Saved: Component styles (theme) ${time()}`)
+  }
 }
 
 function watch() {
@@ -385,35 +411,33 @@ function lintExclusions() {
   })
 }
 
-async function splitCssBuild() {
-  if (config.sdc) {
-    // ------------------------------------------------------------------------- SPLIT CSS
-    // Output back into components directory.
-    const SPLIT_CSS_HEADER = '/**\n * This file was automatically generated. Please run `npm run dist` to update.\n */\n\n';
-
-    // Generate the base.css file.
+function buildStylesSdcBase() {
+  if (config.sdc_base) {
     const baseCss = [
       VAR_CT_ASSETS_DIRECTORY,
       `@import '00-base/variables';`,
-      getImportsFromGlob(`00-base/**/!(*.stories|variables|_variables.*).scss`, DIR_COMPONENTS_IN),
+      getImportsFromGlob(`00-base/**/!(*.stories|variables|_variables.*).scss`, COMPONENT_DIR),
     ].join('\n');
-    const baseResult = sass.compileString(baseCss, { loadPaths: [DIR_COMPONENTS_IN] });
-    const compiledImportAtTop = sortCssLines(baseResult.css)
-    fs.writeFileSync(`${DIR_OUT}/civictheme.base.css`, SPLIT_CSS_HEADER + compiledImportAtTop);
-    successReporter(`Saved: Split styles (base) ${time()}`)
+    const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] });
+    fs.writeFileSync(SPLIT_CSS_BASE_FILE, SPLIT_CSS_HEADER + sortCssLines(compiled.css));
+    successReporter(`Saved: SDC styles (base) ${time()}`)
+  }
+}
 
-    // Generate the individual component css files.
+async function buildStylesSdcComponents() {
+  if (config.sdc_components) {
+    // TODO - we need to also output the style to the components out folder.
     const fileList = [
-      ...globSync(`01-atoms/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
-      ...globSync(`02-molecules/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
-      ...globSync(`03-organisms/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
-      ...globSync(`04-templates/**/*.scss`, { cwd: DIR_COMPONENTS_IN })
+      ...globSync(`01-atoms/**/*.scss`, { cwd: COMPONENT_DIR }),
+      ...globSync(`02-molecules/**/*.scss`, { cwd: COMPONENT_DIR }),
+      ...globSync(`03-organisms/**/*.scss`, { cwd: COMPONENT_DIR }),
+      ...globSync(`04-templates/**/*.scss`, { cwd: COMPONENT_DIR })
     ];
 
     const componentDependencies = [
       VAR_CT_ASSETS_DIRECTORY,
       `@import '00-base/variables';`,
-      getImportsFromGlob(`00-base/mixins/**/*.scss`, DIR_COMPONENTS_IN)
+      getImportsFromGlob(`00-base/mixins/**/*.scss`, COMPONENT_DIR)
     ].join('\n')
 
     await Promise.all(fileList.map(async filePath => {
@@ -425,33 +449,52 @@ async function splitCssBuild() {
       const styleData = `${componentDependencies}\n@import '${filePath}';`;
 
       // Compile SCSS asynchronously.
-      const result = await sass.compileStringAsync(styleData, { loadPaths: [DIR_COMPONENTS_IN] });
+      const result = await sass.compileStringAsync(styleData, { loadPaths: [COMPONENT_DIR] });
 
       // Write to directory.
-      fs.writeFileSync(`${DIR_COMPONENTS_IN}/${styleDir}/${styleName}.css`, SPLIT_CSS_HEADER + result.css);
+      fs.writeFileSync(`${COMPONENT_DIR}/${styleDir}/${styleName}.css`, SPLIT_CSS_HEADER + result.css);
     }));
-    successReporter(`Saved: Split styles (components) ${time()}`)
+    successReporter(`Saved: SDC styles (components) ${time()}`)
+  }
+}
 
-    // ------------------------------------------------------------------------- SPLIT JS
-    // Create Base JS
-    // Load libraries and assets
+function buildStylesSdcCopyBack() {
+  if (config.sdc_components && !config.base) {
+    // Copy back the css files to the components directory.
+    const originFileList = [
+      ...globSync(`01-atoms/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
+      ...globSync(`02-molecules/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
+      ...globSync(`03-organisms/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
+      ...globSync(`04-templates/**/*.scss`, { cwd: DIR_COMPONENTS_IN })
+    ].map(i => {
+      const cssFileName = `${i.substring(0, i.lastIndexOf('.'))}.css`
+      return {
+        from: `${COMPONENT_DIR}/${cssFileName}`,
+        to: `${DIR_COMPONENTS_IN}/${cssFileName}`
+      }
+    }).forEach(file => fs.copyFileSync(file.from, file.to))
+  }
+  successReporter(`Saved: Copied SDC files to components ${time()}`)
+}
+
+function buildJavascriptSdcBase() {
+  if (config.sdc_base) {
     const libJs = [
       ...JS_LIB_IMPORTS,
       ...globSync(JS_ASSET_IMPORTS)
     ].map(filename => stripJS(fs.readFileSync(filename, 'utf-8'))).join('\n')
 
     // Load base components after DOM is ready
-    const SPLIT_JS_BASE = `${DIR_COMPONENTS_IN}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`
     const baseComponentJs = globSync(SPLIT_JS_BASE).map(filename => stripJS(fs.readFileSync(filename, 'utf-8'))).join('\n')
 
     // Write drupal js base
     const newDrupalBaseJs = [
       JS_LINT_EXCLUSION_HEADER,
       libJs,
-      `Drupal.behaviors.civictheme_base = {attach: function (context, settings) {\n${baseComponentJs}\n}};`
+      `Drupal.behaviors.${THEME_NAME} = {attach: function (context, settings) {\n${baseComponentJs}\n}};`
     ].join('\n')
-    fs.writeFileSync(`${DIR_OUT}/civictheme.drupal.base.js`, newDrupalBaseJs, 'utf-8')
-    successReporter(`Saved: Compiled split javascript base (drupal) ${time()}`)
+    fs.writeFileSync(SPLIT_JS_BASE_FILE, newDrupalBaseJs, 'utf-8')
+    successReporter(`Saved: SDC javascript base (drupal) ${time()}`)
 
     // Write vanilla js base
     const newBaseJs = [
@@ -459,8 +502,8 @@ async function splitCssBuild() {
       libJs,
       `document.addEventListener('DOMContentLoaded', () => {\n${baseComponentJs}\n});`
     ].join('\n')
-    fs.writeFileSync(`${DIR_OUT}/civictheme.base.js`, newBaseJs, 'utf-8')
-    successReporter(`Saved: Compiled split javascript base (storybook) ${time()}`)
+    fs.writeFileSync(SPLIT_JS_BASE_STORYBOOK_FILE, newBaseJs, 'utf-8')
+    successReporter(`Saved: SDC javascript base (storybook) ${time()}`)
   }
 }
 

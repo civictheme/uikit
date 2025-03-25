@@ -17,7 +17,7 @@
     "ia32"
   ],
   "scripts": {
-    "dist": "node build.js base build styles_storybook styles_variables styles_stories assets constants sdc",
+    "dist": "node build.js base build styles_storybook styles_variables styles_stories assets constants sdc_base sdc_components",
     "storybook": "storybook dev -p 6006"
   },
   "devDependencies": {
