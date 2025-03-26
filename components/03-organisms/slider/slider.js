@@ -25,7 +25,6 @@ function CivicThemeSlider(el) {
   this.animationTimeout = null;
 
   this.updateProgress();
-  this.updateControlsState();
   this.hideAllSlidesExceptCurrent();
 
   this.refresh();
@@ -120,36 +119,28 @@ CivicThemeSlider.prototype.updateDisplaySlide = function () {
   }, duration);
 };
 
-CivicThemeSlider.prototype.updateControlsState = function () {
-  this.prev.disabled = (this.currentSlide === 0);
-  if (this.prev.disabled) {
-    this.prev.classList.remove('focus');
-    this.prev.blur();
-  }
-  this.next.disabled = (this.currentSlide === (this.totalSlides - 1));
-  if (this.next.disabled) {
-    this.next.classList.remove('focus');
-    this.next.blur();
-  }
-};
-
 CivicThemeSlider.prototype.previousClick = function () {
-  this.currentSlide--;
-  this.currentSlide = this.currentSlide < 0 ? 0 : this.currentSlide;
+  // Go to last slide if current slide is the first slide.
+  if (this.currentSlide === 0) {
+    this.currentSlide = this.totalSlides - 1;
+  } else {
+    this.currentSlide--;
+  }
   this.rail.style.left = `${this.currentSlide * -100}%`;
   this.updateProgress();
   this.updateDisplaySlide();
-  this.updateControlsState();
 };
 
 CivicThemeSlider.prototype.nextClick = function () {
-  this.currentSlide++;
-  const total = this.totalSlides - 1;
-  this.currentSlide = this.currentSlide > total ? total : this.currentSlide;
+  // Go to first slide if current slide is the last slide.
+  if (this.currentSlide === (this.totalSlides - 1)) {
+    this.currentSlide = 0;
+  } else {
+    this.currentSlide++;
+  }
   this.rail.style.left = `${this.currentSlide * -100}%`;
   this.updateProgress();
   this.updateDisplaySlide();
-  this.updateControlsState();
 };
 
 CivicThemeSlider.prototype.updateProgress = function () {
