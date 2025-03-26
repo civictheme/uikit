@@ -11,11 +11,6 @@ grep --include=*.twig -rnw ../components -e "@\(base\|atoms\|molecules\|organism
 
 # ----
 
-find "../components" -type d -name "__snapshots__" -exec rm -rf {} \;
-find "../components" -name "*.test.js" -exec rm -rf {} \;
-
-# ----
-
 echo "-> Build"
 cd ../
 npm run dist

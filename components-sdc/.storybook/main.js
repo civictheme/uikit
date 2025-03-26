@@ -1,5 +1,3 @@
-import path from 'path'
-
 const config = {
   stories: [
     '../components/**/*.stories.js',
@@ -14,5 +12,5 @@ const config = {
     options: {},
   },
   staticDirs: [{ from: '../dist/assets', to: '/assets' }, './static'],
-}
+};
 export default config;

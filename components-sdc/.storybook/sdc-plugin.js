@@ -3,10 +3,11 @@ import path from 'path';
 import { globSync } from 'glob';
 
 /**
- * Scans story files and their dependencies to find and return a list of component assets.
+ * Scans story files and their dependencies to find and return a list of
+ * component assets.
  *
- * This function recursively scans story files, their data files and Twig templates to find
- * all component dependencies. It looks for:
+ * This function recursively scans story files, their data files and Twig
+ * templates to find all component dependencies. It looks for:
  * - Direct Twig imports in story files
  * - Nested data file imports
  * - Twig includes within templates
@@ -17,9 +18,9 @@ import { globSync } from 'glob';
  *
  * @param {string} storiesPath - Path to the story file to scan
  * @param {string} componentDirectory - Root directory containing all components
- * @returns {string[]} Array of unique, sorted paths to component assets (CSS/JS files)
+ * @returns {string[]} Array of paths to component assets
  */
-function getDependencyImports (storiesPath, componentDirectory) {
+function getDependencyImports(storiesPath, componentDirectory) {
   const dir = path.dirname(storiesPath);
   const twigFiles = new Set(); // Store unique twig files to scan
   const scannedFiles = new Set(); // Prevent infinite recursion
@@ -31,15 +32,13 @@ function getDependencyImports (storiesPath, componentDirectory) {
     const dataContent = fs.readFileSync(dataPath, 'utf8');
 
     // Add twig imports
-    [...dataContent.matchAll(/import.*from\s+'([^']*\.twig)'/g)]
-      .forEach(match => twigFiles.add(path.resolve(currentDir, match[1])));
+    dataContent.matchAll(/import.*from\s+'([^']*\.twig)'/g).forEach((match) => twigFiles.add(path.resolve(currentDir, match[1])));
 
     // Scan nested data files
-    [...dataContent.matchAll(/import.*from\s+'([^']*\.stories\.data)'/g)]
-      .forEach(match => {
-        const nestedPath = path.resolve(currentDir, match[1] + '.js');
-        scanDataFile(nestedPath, path.dirname(nestedPath));
-      });
+    dataContent.matchAll(/import.*from\s+'([^']*\.stories\.data)'/g).forEach((match) => {
+      const nestedPath = path.resolve(currentDir, `${match[1]}.js`);
+      scanDataFile(nestedPath, path.dirname(nestedPath));
+    });
   };
 
   // Scans a twig file for includes and adds dependencies
@@ -48,16 +47,15 @@ function getDependencyImports (storiesPath, componentDirectory) {
     scannedFiles.add(twigPath);
 
     const twigContent = fs.readFileSync(twigPath, 'utf8');
-    [...twigContent.matchAll(/include\s+'civictheme:([^']+)'/g)]
-      .forEach(match => {
-        const componentPath = path.join(path.dirname(twigPath), '../../', match[1]);
-        const componentName = path.basename(componentPath);
-        const dependencyPath = globSync(`${componentDirectory}/**/${componentName}.twig`);
-        if (dependencyPath.length > 0) {
-          const dependencyTwigPath = path.join(path.dirname(dependencyPath[0]), `${componentName}.twig`);
-          twigFiles.add(path.resolve(dependencyTwigPath));
-        }
-      });
+    twigContent.matchAll(/include\s+'civictheme:([^']+)'/g).forEach((match) => {
+      const componentPath = path.join(path.dirname(twigPath), `../../${match[1]}`);
+      const componentName = path.basename(componentPath);
+      const dependencyPath = globSync(`${componentDirectory}/**/${componentName}.twig`);
+      if (dependencyPath.length > 0) {
+        const dependencyTwigPath = path.join(path.dirname(dependencyPath[0]), `${componentName}.twig`);
+        twigFiles.add(path.resolve(dependencyTwigPath));
+      }
+    });
   };
 
   // Initial scan of stories file
@@ -65,12 +63,10 @@ function getDependencyImports (storiesPath, componentDirectory) {
     const storiesContent = fs.readFileSync(storiesPath, 'utf8');
 
     // Add direct twig imports
-    [...storiesContent.matchAll(/import.*from\s+'([^']*\.twig)'/g)]
-      .forEach(match => twigFiles.add(path.resolve(dir, match[1])));
+    storiesContent.matchAll(/import.*from\s+'([^']*\.twig)'/g).forEach((match) => twigFiles.add(path.resolve(dir, match[1])));
 
     // Scan data files
-    [...storiesContent.matchAll(/import.*from\s+'([^']*\.stories\.data)'/g)]
-      .forEach(match => scanDataFile(path.resolve(dir, match[1] + '.js'), dir));
+    storiesContent.matchAll(/import.*from\s+'([^']*\.stories\.data)'/g).forEach((match) => scanDataFile(path.resolve(dir, `${match[1]}.js`), dir));
   }
 
   // Process all found twig files
@@ -78,7 +74,7 @@ function getDependencyImports (storiesPath, componentDirectory) {
 
   // Generate imports for all found components
   const imports = [];
-  scannedFiles.forEach(twigPath => {
+  scannedFiles.forEach((twigPath) => {
     const componentDir = path.dirname(twigPath);
     const componentName = path.basename(twigPath, '.twig');
 
@@ -102,34 +98,32 @@ function getDependencyImports (storiesPath, componentDirectory) {
   return [...new Set(imports)].sort();
 }
 
-export default (options = {}) => {
-  return {
-    name: 'sdc-plugin',
-    enforce: 'pre',
-    transform: (code, id) => {
-      const componentDir = path.resolve(__dirname, options.path ?? '../components');
-      const isWithinComponentDir = id.indexOf(componentDir) >= 0;
+export default (options = {}) => ({
+  name: 'sdc-plugin',
+  enforce: 'pre',
+  transform: (code, id) => {
+    const componentDir = path.resolve(__dirname, options.path || '../components');
+    const isWithinComponentDir = id.indexOf(componentDir) >= 0;
 
-      if (isWithinComponentDir) {
-        // For stories - resolve their dependencies.
-        if (id.endsWith('.stories.js')) {
-          // Add all dependency imports to story.
-          const loadedDependencies = getDependencyImports(id, componentDir).map(i => `import '${i}';`).join('\n');
-          return {
-            code: `${loadedDependencies}\n${code}`,
-            map: null,
-          };
-        }
-        // For component js files - wrap in DOMContentLoaded event.
-        else if (id.endsWith('.js') && !id.endsWith('stories.data.js')) {
-          return {
-            code: `document.addEventListener('DOMContentLoaded', () => {\n${code}\n});`,
-            map: null,
-          };
-        }
+    if (isWithinComponentDir) {
+      // For stories - resolve their dependencies.
+      if (id.endsWith('.stories.js')) {
+        const imports = getDependencyImports(id, componentDir).map((i) => `import '${i}';`).join('\n');
+        return {
+          code: `${imports}\n${code}`,
+          map: null,
+        };
       }
 
-      return null;
+      // For component js files - wrap in DOMContentLoaded event.
+      if (id.endsWith('.js') && !id.endsWith('stories.data.js')) {
+        return {
+          code: `document.addEventListener('DOMContentLoaded', () => {\n${code}\n});`,
+          map: null,
+        };
+      }
     }
-  }
-}
+
+    return null;
+  },
+});

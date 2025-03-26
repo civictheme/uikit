@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subject Card Component does not render when title is empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Subject Card Component renders with content slots 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-subject-card ct-theme-light  "
+  >
+    
+    
+    <div
+      class="ct-subject-card__content"
+    >
+      
+                    
+                        
+      <div
+        class="ct-subject-card__image__over"
+      >
+        
+            Image overlay content
+          
+      </div>
+      
+              
+                        
+          
+
+
+  
+      <h4
+        class="ct-heading ct-theme-light ct-subject-card__title"
+      >
+                                  Subject Card Title
+                      
+      </h4>
+      
+                  
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Subject Card Component renders with link and image 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-subject-card ct-theme-light ct-subject-card--with-image "
+  >
+    
+    
+    <div
+      class="ct-subject-card__content"
+    >
+      
+                        
+      <div
+        class="ct-subject-card__image"
+      >
+        
+            
+
+  
+        <img
+          alt="Image Alt Text"
+          class="ct-image ct-theme-light "
+          src="https://example.com/image.jpg"
+        />
+        
+          
+      </div>
+      
+              
+                    
+                        
+          
+
+
+  
+      <h4
+        class="ct-heading ct-theme-light ct-subject-card__title"
+      >
+                                  
+        <a
+          class="ct-link ct-theme-light     ct-subject-card__title__link"
+          href="https://example.com/read-more"
+        >
+          Subject Card Title
+        </a>
+                              
+      </h4>
+      
+                  
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Subject Card Component renders with optional attributes 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-subject-card ct-theme-dark ct-subject-card--with-image custom-class"
+    data-test="true"
+  >
+    
+    
+    <div
+      class="ct-subject-card__content"
+    >
+      
+                        
+      <div
+        class="ct-subject-card__image"
+      >
+        
+            
+
+  
+        <img
+          alt="Image Alt Text"
+          class="ct-image ct-theme-dark "
+          src="https://example.com/image.jpg"
+        />
+        
+          
+      </div>
+      
+              
+                        
+      <div
+        class="ct-subject-card__image__over"
+      >
+        
+            Image overlay content
+          
+      </div>
+      
+              
+                        
+          
+
+
+  
+      <h4
+        class="ct-heading ct-theme-dark ct-subject-card__title"
+      >
+                                  
+        <a
+          class="ct-link ct-theme-dark     ct-subject-card__title__link"
+          href="https://example.com/read-more"
+          target="_blank"
+        >
+          Subject Card Title
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
+        </a>
+                              
+      </h4>
+      
+                  
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
+
+exports[`Subject Card Component renders with required attributes 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-subject-card ct-theme-light  "
+  >
+    
+    
+    <div
+      class="ct-subject-card__content"
+    >
+      
+                    
+                    
+                        
+          
+
+
+  
+      <h4
+        class="ct-heading ct-theme-light ct-subject-card__title"
+      >
+                                  Subject Card Title
+                      
+      </h4>
+      
+                  
+    </div>
+    
+  
+  </div>
+  
+
+</div>
+`;
