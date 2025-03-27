@@ -262,6 +262,96 @@ function buildStylesStories() {
   }
 }
 
+function buildStylesTheme() {
+  if (config.styles_theme) {
+    const themecss = [
+      VAR_CT_ASSETS_DIRECTORY,
+      getImportsFromGlob(STYLE_THEME_FILE_IN, PATH),
+    ].join('\n')
+
+    const compiled = sass.compileString(themecss, { loadPaths: [COMPONENT_DIR, PATH] })
+    fs.writeFileSync(STYLE_THEME_FILE_OUT, sortCssLines(compiled.css), 'utf-8')
+    successReporter(`Saved: Component styles (theme) ${time()}`)
+  }
+}
+
+function buildStylesSdcBase() {
+  if (config.sdc_base) {
+    const baseCss = [
+      ...STYLE_SDC_COMMON_INCLUDES,
+      getImportsFromGlob(STYLE_SDC_BASE_IMPORTS, COMPONENT_DIR),
+    ].join('\n')
+    const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] })
+    fs.writeFileSync(STYLE_SDC_BASE_FILE_OUT, SDC_HEADER + sortCssLines(compiled.css))
+    successReporter(`Saved: SDC styles (base) ${time()}`)
+  }
+}
+
+async function buildStylesSdcComponents() {
+  if (config.sdc_components) {
+    const componentFiles = globSync(SDC_STYLE_FILES_IN, { cwd: SDC_COMPONENT_DIR })
+
+    const componentDependencies = [
+      ...STYLE_SDC_COMMON_INCLUDES,
+      getImportsFromGlob(STYLE_SDC_MIXIN_IMPORTS, SDC_COMPLETE_COMPONENT_DIR)
+    ].join('\n')
+
+    await Promise.all(componentFiles.map(async (filePath) => {
+      const separator = filePath.lastIndexOf('/') + 1
+      const styleDir = filePath.substring(0, separator)
+      const styleName = filePath.substring(separator, filePath.lastIndexOf('.'))
+      const styleData = `${componentDependencies}\n@import '${filePath}';`
+      const result = await sass.compileStringAsync(styleData, { loadPaths: [SDC_COMPLETE_COMPONENT_DIR] })
+      fs.writeFileSync(`${SDC_COMPONENT_DIR}/${styleDir}/${styleName}.css`, SDC_HEADER + result.css)
+    }))
+    successReporter(`Saved: SDC styles (components) ${time()}`)
+  }
+}
+
+function buildStylesSdcCopyBack() {
+  if (config.sdc_components && !config.base) {
+    // Copy generated css files into the complete components directory.
+    globSync(SDC_STYLE_FILES_IN, { cwd: SDC_COMPONENT_DIR }).map(path => {
+      const filename = `${path.substring(0, path.lastIndexOf('.'))}.css`
+      return {
+        from: `${SDC_COMPONENT_DIR}/${filename}`,
+        to: `${SDC_COMPLETE_COMPONENT_DIR}/${filename}`
+      }
+    }).forEach(file => fs.copyFileSync(file.from, file.to))
+    successReporter(`Saved: SDC styles copied to combined components ${time()}`)
+  }
+}
+
+function buildJavascriptSdcBase() {
+  if (config.sdc_base) {
+    const libJs = [
+      ...JS_LIB_IMPORTS,
+      ...globSync(JS_ASSET_IMPORTS)
+    ].map(loadJSFile).join('\n')
+
+    // Load base components after DOM is ready
+    const baseComponentJs = globSync(JS_SDC_BASE_IMPORTS).map(loadJSFile).join('\n')
+
+    // Write JS file with drupal behaviour wrapper.
+    const newDrupalBaseJs = [
+      JS_LINT_EXCLUSION_HEADER,
+      libJs,
+      `Drupal.behaviors.${THEME_NAME} = {attach: function (context, settings) {\n${baseComponentJs}\n}};`
+    ].join('\n')
+    fs.writeFileSync(JS_SDC_BASE_FILE_OUT, newDrupalBaseJs, 'utf-8')
+    successReporter(`Saved: SDC javascript base (drupal) ${time()}`)
+
+    // Write JS file with dom content loaded wrapper.
+    const newBaseJs = [
+      JS_LINT_EXCLUSION_HEADER,
+      libJs,
+      `document.addEventListener('DOMContentLoaded', () => {\n${baseComponentJs}\n});`
+    ].join('\n')
+    fs.writeFileSync(JS_SDC_STORYBOOK_BASE_FILE_OUT, newBaseJs, 'utf-8')
+    successReporter(`Saved: SDC javascript base (storybook) ${time()}`)
+  }
+}
+
 function buildJavascript() {
   if (config.js_drupal || config.js_storybook) {
     const libJs = [
@@ -355,19 +445,6 @@ async function build() {
   console.log(`Time taken: ${time(true)}`)
 }
 
-function buildStylesTheme() {
-  if (config.styles_theme) {
-    const themecss = [
-      VAR_CT_ASSETS_DIRECTORY,
-      getImportsFromGlob(STYLE_THEME_FILE_IN, PATH),
-    ].join('\n')
-
-    const compiled = sass.compileString(themecss, { loadPaths: [COMPONENT_DIR, PATH] })
-    fs.writeFileSync(STYLE_THEME_FILE_OUT, sortCssLines(compiled.css), 'utf-8')
-    successReporter(`Saved: Component styles (theme) ${time()}`)
-  }
-}
-
 function watch() {
   console.log(`Watching: ${path.relative(PATH, DIR_COMPONENTS_IN)}/`)
   const supportedExtensions = ['scss', 'js', 'twig']
@@ -404,83 +481,6 @@ function lintExclusions() {
       fs.writeFileSync(filename, `${header}${data}`, 'utf-8')
     }
   })
-}
-
-function buildStylesSdcBase() {
-  if (config.sdc_base) {
-    const baseCss = [
-      ...STYLE_SDC_COMMON_INCLUDES,
-      getImportsFromGlob(STYLE_SDC_BASE_IMPORTS, COMPONENT_DIR),
-    ].join('\n')
-    const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] })
-    fs.writeFileSync(STYLE_SDC_BASE_FILE_OUT, SDC_HEADER + sortCssLines(compiled.css))
-    successReporter(`Saved: SDC styles (base) ${time()}`)
-  }
-}
-
-async function buildStylesSdcComponents() {
-  if (config.sdc_components) {
-    const componentFiles = globSync(SDC_STYLE_FILES_IN, { cwd: SDC_COMPONENT_DIR })
-
-    const componentDependencies = [
-      ...STYLE_SDC_COMMON_INCLUDES,
-      getImportsFromGlob(STYLE_SDC_MIXIN_IMPORTS, SDC_COMPLETE_COMPONENT_DIR)
-    ].join('\n')
-
-    await Promise.all(componentFiles.map(async (filePath) => {
-      const separator = filePath.lastIndexOf('/') + 1
-      const styleDir = filePath.substring(0, separator)
-      const styleName = filePath.substring(separator, filePath.lastIndexOf('.'))
-      const styleData = `${componentDependencies}\n@import '${filePath}';`
-      const result = await sass.compileStringAsync(styleData, { loadPaths: [SDC_COMPLETE_COMPONENT_DIR] })
-      fs.writeFileSync(`${SDC_COMPONENT_DIR}/${styleDir}/${styleName}.css`, SDC_HEADER + result.css)
-    }))
-    successReporter(`Saved: SDC styles (components) ${time()}`)
-  }
-}
-
-function buildStylesSdcCopyBack() {
-  if (config.sdc_components && !config.base) {
-    // Copy generated css files into the complete components directory.
-    globSync(SDC_STYLE_FILES_IN, { cwd: SDC_COMPONENT_DIR }).map(path => {
-      const filename = `${path.substring(0, path.lastIndexOf('.'))}.css`
-      return {
-        from: `${SDC_COMPONENT_DIR}/${filename}`,
-        to: `${SDC_COMPLETE_COMPONENT_DIR}/${filename}`
-      }
-    }).forEach(file => fs.copyFileSync(file.from, file.to))
-    successReporter(`Saved: SDC styles copied to combined components ${time()}`)
-  }
-}
-
-function buildJavascriptSdcBase() {
-  if (config.sdc_base) {
-    const libJs = [
-      ...JS_LIB_IMPORTS,
-      ...globSync(JS_ASSET_IMPORTS)
-    ].map(loadJSFile).join('\n')
-
-    // Load base components after DOM is ready
-    const baseComponentJs = globSync(JS_SDC_BASE_IMPORTS).map(loadJSFile).join('\n')
-
-    // Write JS file with drupal behaviour wrapper.
-    const newDrupalBaseJs = [
-      JS_LINT_EXCLUSION_HEADER,
-      libJs,
-      `Drupal.behaviors.${THEME_NAME} = {attach: function (context, settings) {\n${baseComponentJs}\n}};`
-    ].join('\n')
-    fs.writeFileSync(JS_SDC_BASE_FILE_OUT, newDrupalBaseJs, 'utf-8')
-    successReporter(`Saved: SDC javascript base (drupal) ${time()}`)
-
-    // Write JS file with dom content loaded wrapper.
-    const newBaseJs = [
-      JS_LINT_EXCLUSION_HEADER,
-      libJs,
-      `document.addEventListener('DOMContentLoaded', () => {\n${baseComponentJs}\n});`
-    ].join('\n')
-    fs.writeFileSync(JS_SDC_STORYBOOK_BASE_FILE_OUT, newBaseJs, 'utf-8')
-    successReporter(`Saved: SDC javascript base (storybook) ${time()}`)
-  }
 }
 
 // ----------------------------------------------------------------------------- UTILITIES
