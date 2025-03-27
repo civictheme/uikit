@@ -132,11 +132,17 @@ const CONSTANTS_BACKGROUND_UTIL = `${COMPONENT_DIR}/00-base/background/backgroun
 const CONSTANTS_ICON_UTIL       = `${COMPONENT_DIR}/00-base/icon/icon.utils.js`
 const CONSTANTS_LOGO_UTIL       = `${COMPONENT_DIR}/02-molecules/logo/logo.utils.js`
 
-const SPLIT_CSS_HEADER             = '/**\n * This file was automatically generated. Please run `npm run dist` to update.\n */\n\n';
-const SPLIT_CSS_BASE_FILE          = `${DIR_OUT}/${STYLE_NAME}.base.css`;
-const SPLIT_JS_BASE_FILE           = `${DIR_OUT}/${SCRIPT_NAME}.drupal.base.js`
-const SPLIT_JS_BASE_STORYBOOK_FILE = `${DIR_OUT}/${SCRIPT_NAME}.base.js`
-const SPLIT_JS_BASE                = `${COMPONENT_DIR}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`
+const STYLE_SDC_COMMON_INCLUDES      = [VAR_CT_ASSETS_DIRECTORY, `@import '00-base/variables';`]
+const STYLE_SDC_MIXIN_IMPORTS        = `00-base/mixins/**/*.scss`
+const STYLE_SDC_BASE_IMPORTS         = `00-base/**/!(*.stories|variables|_variables.*).scss`
+const STYLE_SDC_BASE_FILE_OUT        = `${DIR_OUT}/${STYLE_NAME}.base.css`;
+const JS_SDC_BASE_FILE_OUT           = `${DIR_OUT}/${SCRIPT_NAME}.drupal.base.js`
+const JS_SDC_STORYBOOK_BASE_FILE_OUT = `${DIR_OUT}/${SCRIPT_NAME}.base.js`
+const JS_SDC_BASE_IMPORTS            = `${COMPONENT_DIR}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`
+const SDC_HEADER                     = '/**\n * This file was automatically generated. Please run `npm run dist` to update.\n */\n\n';
+const SDC_STYLE_FILES_IN             = `!(00-base)/**/*.scss`
+const SDC_COMPONENT_DIR              = config.base ? DIR_COMPONENTS_IN : DIR_COMPONENTS_IN
+const SDC_COMPLETE_COMPONENT_DIR     = config.base ? DIR_COMPONENTS_IN : DIR_COMPONENTS_OUT
 
 if (config.build) {
   build()
@@ -258,34 +264,22 @@ function buildStylesStories() {
 
 function buildJavascript() {
   if (config.js_drupal || config.js_storybook) {
-    const jsComponents = []
-    const jsOutData = []
+    const libJs = [
+      ...JS_LIB_IMPORTS,
+      ...globSync(JS_ASSET_IMPORTS)
+    ].map(loadJSFile).join('\n')
 
-    // Add header.
-    jsOutData.push(JS_LINT_EXCLUSION_HEADER)
-
-    // Third party imports.
-    JS_LIB_IMPORTS.forEach(filename => {
-      jsOutData.push(stripJS(fs.readFileSync(filename, 'utf-8')))
-    })
-
-    // Civictheme asset imports.
-    globSync(JS_ASSET_IMPORTS).forEach(filename => {
-      jsOutData.push(stripJS(fs.readFileSync(filename, 'utf-8')))
-    })
-
-    // Civictheme component imports.
-    globSync(JS_CIVIC_IMPORTS).forEach(filename => {
-      const name = `${THEME_NAME}_${filename.split('/').reverse()[0].replace('.js', '').replace(/-/g, '_')}`
-      const body = fs.readFileSync(filename, 'utf-8')
-      jsComponents.push({ name, body })
-    })
+    const components = globSync(JS_CIVIC_IMPORTS).map(filename => ({
+      name: `${THEME_NAME}_${filename.split('/').reverse()[0].replace('.js', '').replace(/-/g, '_')}`,
+      body: fs.readFileSync(filename, 'utf-8')
+    }))
 
     // Write JS file with drupal behaviour wrapper.
     if (config.js_drupal) {
       fs.writeFileSync(JS_FILE_OUT, [
-        ...jsOutData,
-        ...jsComponents.map(i => {
+        JS_LINT_EXCLUSION_HEADER,
+        libJs,
+        ...components.map(i => {
           return `Drupal.behaviors.${i.name} = {attach: function (context, settings) {\n${i.body}\n}};`
         })
       ].join('\n'), 'utf-8')
@@ -295,8 +289,9 @@ function buildJavascript() {
     // Write JS file with dom content loaded wrapper.
     if (config.js_storybook) {
       fs.writeFileSync(JS_STORYBOOK_FILE_OUT, [
-        ...jsOutData,
-        ...jsComponents.map(i => {
+        JS_LINT_EXCLUSION_HEADER,
+        libJs,
+        ...components.map(i => {
           return `document.addEventListener('DOMContentLoaded', () => {\n${i.body}\n});`
         })
       ].join('\n'), 'utf-8')
@@ -414,67 +409,48 @@ function lintExclusions() {
 function buildStylesSdcBase() {
   if (config.sdc_base) {
     const baseCss = [
-      VAR_CT_ASSETS_DIRECTORY,
-      `@import '00-base/variables';`,
-      getImportsFromGlob(`00-base/**/!(*.stories|variables|_variables.*).scss`, COMPONENT_DIR),
-    ].join('\n');
-    const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] });
-    fs.writeFileSync(SPLIT_CSS_BASE_FILE, SPLIT_CSS_HEADER + sortCssLines(compiled.css));
+      ...STYLE_SDC_COMMON_INCLUDES,
+      getImportsFromGlob(STYLE_SDC_BASE_IMPORTS, COMPONENT_DIR),
+    ].join('\n')
+    const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] })
+    fs.writeFileSync(STYLE_SDC_BASE_FILE_OUT, SDC_HEADER + sortCssLines(compiled.css))
     successReporter(`Saved: SDC styles (base) ${time()}`)
   }
 }
 
 async function buildStylesSdcComponents() {
   if (config.sdc_components) {
-    // TODO - we need to also output the style to the components out folder.
-    const fileList = [
-      ...globSync(`01-atoms/**/*.scss`, { cwd: COMPONENT_DIR }),
-      ...globSync(`02-molecules/**/*.scss`, { cwd: COMPONENT_DIR }),
-      ...globSync(`03-organisms/**/*.scss`, { cwd: COMPONENT_DIR }),
-      ...globSync(`04-templates/**/*.scss`, { cwd: COMPONENT_DIR })
-    ];
+    const componentFiles = globSync(SDC_STYLE_FILES_IN, { cwd: SDC_COMPONENT_DIR })
 
     const componentDependencies = [
-      VAR_CT_ASSETS_DIRECTORY,
-      `@import '00-base/variables';`,
-      getImportsFromGlob(`00-base/mixins/**/*.scss`, COMPONENT_DIR)
+      ...STYLE_SDC_COMMON_INCLUDES,
+      getImportsFromGlob(STYLE_SDC_MIXIN_IMPORTS, SDC_COMPLETE_COMPONENT_DIR)
     ].join('\n')
 
-    await Promise.all(fileList.map(async filePath => {
-      const separator = filePath.lastIndexOf('/') + 1;
-      const styleDir = filePath.substring(0, separator);
-      const styleName = filePath.substring(separator, filePath.lastIndexOf('.'));
-
-      // Create a sass header to import base mixins.
-      const styleData = `${componentDependencies}\n@import '${filePath}';`;
-
-      // Compile SCSS asynchronously.
-      const result = await sass.compileStringAsync(styleData, { loadPaths: [COMPONENT_DIR] });
-
-      // Write to directory.
-      fs.writeFileSync(`${COMPONENT_DIR}/${styleDir}/${styleName}.css`, SPLIT_CSS_HEADER + result.css);
-    }));
+    await Promise.all(componentFiles.map(async (filePath) => {
+      const separator = filePath.lastIndexOf('/') + 1
+      const styleDir = filePath.substring(0, separator)
+      const styleName = filePath.substring(separator, filePath.lastIndexOf('.'))
+      const styleData = `${componentDependencies}\n@import '${filePath}';`
+      const result = await sass.compileStringAsync(styleData, { loadPaths: [SDC_COMPLETE_COMPONENT_DIR] })
+      fs.writeFileSync(`${SDC_COMPONENT_DIR}/${styleDir}/${styleName}.css`, SDC_HEADER + result.css)
+    }))
     successReporter(`Saved: SDC styles (components) ${time()}`)
   }
 }
 
 function buildStylesSdcCopyBack() {
   if (config.sdc_components && !config.base) {
-    // Copy back the css files to the components directory.
-    const originFileList = [
-      ...globSync(`01-atoms/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
-      ...globSync(`02-molecules/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
-      ...globSync(`03-organisms/**/*.scss`, { cwd: DIR_COMPONENTS_IN }),
-      ...globSync(`04-templates/**/*.scss`, { cwd: DIR_COMPONENTS_IN })
-    ].map(i => {
-      const cssFileName = `${i.substring(0, i.lastIndexOf('.'))}.css`
+    // Copy generated css files into the complete components directory.
+    globSync(SDC_STYLE_FILES_IN, { cwd: SDC_COMPONENT_DIR }).map(path => {
+      const filename = `${path.substring(0, path.lastIndexOf('.'))}.css`
       return {
-        from: `${COMPONENT_DIR}/${cssFileName}`,
-        to: `${DIR_COMPONENTS_IN}/${cssFileName}`
+        from: `${SDC_COMPONENT_DIR}/${filename}`,
+        to: `${SDC_COMPLETE_COMPONENT_DIR}/${filename}`
       }
     }).forEach(file => fs.copyFileSync(file.from, file.to))
+    successReporter(`Saved: SDC styles copied to combined components ${time()}`)
   }
-  successReporter(`Saved: Copied SDC files to components ${time()}`)
 }
 
 function buildJavascriptSdcBase() {
@@ -482,27 +458,27 @@ function buildJavascriptSdcBase() {
     const libJs = [
       ...JS_LIB_IMPORTS,
       ...globSync(JS_ASSET_IMPORTS)
-    ].map(filename => stripJS(fs.readFileSync(filename, 'utf-8'))).join('\n')
+    ].map(loadJSFile).join('\n')
 
     // Load base components after DOM is ready
-    const baseComponentJs = globSync(SPLIT_JS_BASE).map(filename => stripJS(fs.readFileSync(filename, 'utf-8'))).join('\n')
+    const baseComponentJs = globSync(JS_SDC_BASE_IMPORTS).map(loadJSFile).join('\n')
 
-    // Write drupal js base
+    // Write JS file with drupal behaviour wrapper.
     const newDrupalBaseJs = [
       JS_LINT_EXCLUSION_HEADER,
       libJs,
       `Drupal.behaviors.${THEME_NAME} = {attach: function (context, settings) {\n${baseComponentJs}\n}};`
     ].join('\n')
-    fs.writeFileSync(SPLIT_JS_BASE_FILE, newDrupalBaseJs, 'utf-8')
+    fs.writeFileSync(JS_SDC_BASE_FILE_OUT, newDrupalBaseJs, 'utf-8')
     successReporter(`Saved: SDC javascript base (drupal) ${time()}`)
 
-    // Write vanilla js base
+    // Write JS file with dom content loaded wrapper.
     const newBaseJs = [
       JS_LINT_EXCLUSION_HEADER,
       libJs,
       `document.addEventListener('DOMContentLoaded', () => {\n${baseComponentJs}\n});`
     ].join('\n')
-    fs.writeFileSync(SPLIT_JS_BASE_STORYBOOK_FILE, newBaseJs, 'utf-8')
+    fs.writeFileSync(JS_SDC_STORYBOOK_BASE_FILE_OUT, newBaseJs, 'utf-8')
     successReporter(`Saved: SDC javascript base (storybook) ${time()}`)
   }
 }
@@ -540,6 +516,10 @@ function loadStyleFile(path, cwd) {
   })
 
   return result.join('\n')
+}
+
+function loadJSFile(filename) {
+  return stripJS(fs.readFileSync(filename, 'utf-8'))
 }
 
 function stripJS(js) {
