@@ -1,0 +1,64 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Page template
+status: experimental
+description: Page template component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    links:
+      type: array
+      title: Links
+      description: Array of links
+    items:
+      type: array
+      title: Items
+      description: Array of alternative links
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+    banner:
+      type: string
+      title: Banner
+      description: Banner content
+    highlighted:
+      type: string
+      title: Highlighted
+      description: Highlighted content
+slots:
+  header:
+    title: Header
+    description: Header block content
+    required: false
+  banner:
+    title: Banner
+    description: Banner block content
+    required: false
+  highlighted:
+    title: Highlighted
+    description: Highlighted block content
+    required: false
+  content:
+    title: Content
+    description: Main content block
+    required: false
+  footer:
+    title: Footer
+    description: Footer block content
+    required: false
+  back_to_top:
+    title: Back to top
+    description: Back to top block content
+    required: false

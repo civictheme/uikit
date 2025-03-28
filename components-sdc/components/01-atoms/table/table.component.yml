@@ -1,0 +1,59 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Table component
+status: experimental
+description: Renders a configurable table with header, rows, footer and caption.
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+      default: light
+    caption:
+      type: string
+      title: Caption
+      description: Table caption
+    caption_position:
+      type: string
+      title: Caption_position
+      description: The position of caption
+      enum:
+        - before
+        - after
+    header:
+      type: array
+      title: Header
+      description: Array of header cells
+    rows:
+      type: array
+      title: Rows
+      description: Array of rows
+    footer:
+      type: array
+      title: Footer
+      description: Array of footer cells
+    is_striped:
+      type: boolean
+      title: Is_striped
+      description: Flag to show as striped
+    is_data_table:
+      type: boolean
+      title: Is_data_table
+      description: Flag to show as a data table
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}
+libraryOverrides:
+  js:
+    table.js: {}

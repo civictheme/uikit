@@ -1,0 +1,945 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Component renders collapsible menu 1`] = `
+<div>
+  
+
+
+
+
+
+            
+  <ul
+    class="ct-menu ct-menu--level-0 ct-theme-light "
+    data-component-name="ct-menu"
+  >
+    
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/"
+        title="Home"
+      >
+        Home
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/about"
+        title="About"
+      >
+        About
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                                                
+      
+                                                              
+                    
+      
+    <li
+      aria-expanded="true"
+      class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children ct-menu__item--active-trail "
+      data-collapsible=""
+      data-collapsible-duration="0"
+    >
+      
+
+        
+      <a
+        aria-current="page"
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/services"
+        title="Services"
+      >
+        Services
+      </a>
+      
+                  
+      <a
+        aria-expanded="true"
+        class="ct-menu__item__link-trigger"
+        data-collapsible-trigger=""
+        href="#"
+        title="Expand Services menu"
+      />
+      
+        
+                                                  
+      <div
+        aria-hidden="false"
+        class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+        data-collapsible-panel=""
+      >
+        
+        
+        <ul
+          class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+        >
+          
+    
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/consulting"
+              title="Consulting"
+            >
+              Consulting
+            </a>
+            
+        
+        
+      
+          </li>
+          
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/development"
+              title="Development"
+            >
+              Development
+            </a>
+            
+        
+        
+      
+          </li>
+          
+    
+            
+        </ul>
+        
+      
+      </div>
+      
+      
+
+      
+    </li>
+    
+    
+          
+  </ul>
+  
+      
+
+</div>
+`;
+
+exports[`Menu Component renders menu items with additional attributes 1`] = `
+<div>
+  
+
+
+
+
+
+            
+  <ul
+    class="ct-menu ct-menu--level-0 ct-theme-light "
+    data-component-name="ct-menu"
+  >
+    
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+      data-extra="extra-home"
+      data-test="home"
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/"
+        title="Home"
+      >
+        Home
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+      data-extra="extra-about"
+      data-test="about"
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/about"
+        title="About"
+      >
+        About
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+                                                              
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
+      data-extra="extra-services"
+      data-test="services"
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/services"
+        title="Services"
+      >
+        Services
+      </a>
+      
+        
+                            
+      <div
+        class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+      >
+        
+        
+        <ul
+          class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+        >
+          
+    
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+            data-extra="extra-consulting"
+            data-test="consulting"
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/consulting"
+              title="Consulting"
+            >
+              Consulting
+            </a>
+            
+        
+        
+      
+          </li>
+          
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+            data-extra="extra-development"
+            data-test="development"
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/development"
+              title="Development"
+            >
+              Development
+            </a>
+            
+        
+        
+      
+          </li>
+          
+    
+            
+        </ul>
+        
+      
+      </div>
+      
+      
+
+      
+    </li>
+    
+    
+          
+  </ul>
+  
+      
+
+</div>
+`;
+
+exports[`Menu Component renders menu items with correct attributes 1`] = `
+<div>
+  
+
+
+
+
+
+            
+  <ul
+    class="ct-menu ct-menu--level-0 ct-theme-light "
+    data-component-name="ct-menu"
+  >
+    
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+      data-test="home"
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/"
+        title="Home"
+      >
+        Home
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+      data-test="about"
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/about"
+        title="About"
+      >
+        About
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+                                                              
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
+      data-test="services"
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/services"
+        title="Services"
+      >
+        Services
+      </a>
+      
+        
+                            
+      <div
+        class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+      >
+        
+        
+        <ul
+          class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+        >
+          
+    
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+            data-test="consulting"
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/consulting"
+              title="Consulting"
+            >
+              Consulting
+            </a>
+            
+        
+        
+      
+          </li>
+          
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+            data-test="development"
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/development"
+              title="Development"
+            >
+              Development
+            </a>
+            
+        
+        
+      
+          </li>
+          
+    
+            
+        </ul>
+        
+      
+      </div>
+      
+      
+
+      
+    </li>
+    
+    
+          
+  </ul>
+  
+      
+
+</div>
+`;
+
+exports[`Menu Component renders with default values - submenu 1`] = `
+<div>
+  
+
+
+
+
+
+            
+  <ul
+    class="ct-menu ct-menu--level-0 ct-theme-light "
+    data-component-name="ct-menu"
+  >
+    
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/"
+        title="Home"
+      >
+        Home
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/about"
+        title="About"
+      >
+        About
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+                                                              
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/services"
+        title="Services"
+      >
+        Services
+      </a>
+      
+        
+                            
+      <div
+        class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+      >
+        
+        
+        <ul
+          class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+        >
+          
+    
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/consulting"
+              title="Consulting"
+            >
+              Consulting
+            </a>
+            
+        
+        
+      
+          </li>
+          
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-light     ct-menu__item__link"
+              href="/services/development"
+              title="Development"
+            >
+              Development
+            </a>
+            
+        
+        
+      
+          </li>
+          
+    
+            
+        </ul>
+        
+      
+      </div>
+      
+      
+
+      
+    </li>
+    
+    
+          
+  </ul>
+  
+      
+
+</div>
+`;
+
+exports[`Menu Component renders with default values 1`] = `
+<div>
+  
+
+
+
+
+
+            
+  <ul
+    class="ct-menu ct-menu--level-0 ct-theme-light "
+    data-component-name="ct-menu"
+  >
+    
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/"
+        title="Home"
+      >
+        Home
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-light     ct-menu__item__link"
+        href="/about"
+        title="About"
+      >
+        About
+      </a>
+      
+        
+        
+      
+    </li>
+    
+    
+          
+  </ul>
+  
+      
+
+</div>
+`;
+
+exports[`Menu Component renders with theme and custom classes 1`] = `
+<div>
+  
+
+
+
+
+
+            
+  <ul
+    class="ct-menu ct-menu--level-0 ct-theme-dark custom-modifier"
+    data-component-name="ct-menu"
+  >
+    
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-dark     ct-menu__item__link"
+        href="/"
+        title="Home"
+      >
+        Home
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+            
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0   "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-dark     ct-menu__item__link"
+        href="/about"
+        title="About"
+      >
+        About
+      </a>
+      
+        
+        
+      
+    </li>
+    
+          
+                  
+      
+                                                              
+                    
+      
+    <li
+      class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  "
+    >
+      
+
+        
+      <a
+        class="ct-link ct-theme-dark     ct-menu__item__link"
+        href="/services"
+        title="Services"
+      >
+        Services
+      </a>
+      
+        
+                            
+      <div
+        class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-1"
+      >
+        
+        
+        <ul
+          class="ct-menu ct-menu__sub-menu ct-menu--level-1"
+        >
+          
+    
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-dark     ct-menu__item__link"
+              href="/services/consulting"
+              title="Consulting"
+            >
+              Consulting
+            </a>
+            
+        
+        
+      
+          </li>
+          
+          
+                  
+      
+            
+                    
+      
+          <li
+            class="ct-menu__item ct-menu__item--level-1   "
+          >
+            
+
+        
+            <a
+              class="ct-link ct-theme-dark     ct-menu__item__link"
+              href="/services/development"
+              title="Development"
+            >
+              Development
+            </a>
+            
+        
+        
+      
+          </li>
+          
+    
+            
+        </ul>
+        
+      
+      </div>
+      
+      
+
+      
+    </li>
+    
+    
+          
+  </ul>
+  
+      
+
+</div>
+`;

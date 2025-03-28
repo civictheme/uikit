@@ -1,0 +1,44 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Side Navigation component
+status: experimental
+description: Side Navigation component for rendering navigational menu items
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    items:
+      type: array
+      title: Items
+      description: Array of menu items
+    title:
+      type: string
+      title: Title
+      description: Navigation title
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  title:
+    title: Title
+    description: Slot for customizing the title rendering
+    required: false

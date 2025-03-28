@@ -1,0 +1,116 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Layout component
+status: experimental
+description: Layout component with configurable sidebars and content areas
+props:
+  type: object
+  properties:
+    content_top:
+      type: string
+      title: Content_top
+      description: Content top slot
+    sidebar_top_left:
+      type: string
+      title: Sidebar_top_left
+      description: Top left sidebar slot
+    sidebar_top_left_attributes:
+      type: string
+      title: Sidebar_top_left_attributes
+      description: Top left sidebar attributes
+    sidebar_top_right:
+      type: string
+      title: Sidebar_top_right
+      description: Top right sidebar slot
+    sidebar_top_right_attributes:
+      type: string
+      title: Sidebar_top_right_attributes
+      description: Top right sidebar attributes
+    content:
+      type: string
+      title: Content
+      description: Content slot
+    content_attributes:
+      type: string
+      title: Content_attributes
+      description: Content attributes
+    sidebar_bottom_left:
+      type: string
+      title: Sidebar_bottom_left
+      description: Bottom left sidebar slot
+    sidebar_bottom_left_attributes:
+      type: string
+      title: Sidebar_bottom_left_attributes
+      description: Bottom left sidebar attributes
+    sidebar_bottom_right:
+      type: string
+      title: Sidebar_bottom_right
+      description: Bottom right sidebar slot
+    sidebar_bottom_right_attributes:
+      type: string
+      title: Sidebar_bottom_right_attributes
+      description: Bottom right sidebar attributes
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content bottom slot
+    hide_sidebar_left:
+      type: boolean
+      title: Hide_sidebar_left
+      description: Whether to force hide the left sidebar
+    hide_sidebar_right:
+      type: boolean
+      title: Hide_sidebar_right
+      description: Whether to force hide the right sidebar
+    is_contained:
+      type: boolean
+      title: Is_contained
+      description: Whether the page is to be contained
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  content_top:
+    title: Content top
+    description: Content top block
+    required: false
+  content:
+    title: Content
+    description: Main content block
+    required: false
+  sidebar_top_left:
+    title: Sidebar top left
+    description: Top left sidebar block
+    required: false
+  sidebar_top_right:
+    title: Sidebar top right
+    description: Top right sidebar block
+    required: false
+  sidebar_bottom_left:
+    title: Sidebar bottom left
+    description: Bottom left sidebar block
+    required: false
+  sidebar_bottom_right:
+    title: Sidebar bottom right
+    description: Bottom right sidebar block
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Content bottom block
+    required: false
+libraryOverrides:
+  js:
+    layout.js: {}

@@ -1,0 +1,85 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Callout component
+status: experimental
+description: >-
+  Callout component that displays content with optional title, links and themed
+  styling
+props:
+  type: object
+  properties:
+    content_top:
+      type: string
+      title: Content_top
+      description: Content slot
+    title:
+      type: string
+      title: Title
+      description: Title text
+    content:
+      type: string
+      title: Content
+      description: Content text
+    links:
+      type: array
+      title: Links
+      description: Array of link objects
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            description: Link text
+          url:
+            type: string
+            description: Link URL
+          is_new_window:
+            type: boolean
+            description: Open link in the new window
+          is_external:
+            type: boolean
+            description: Link is external
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content slot
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  content_top:
+    title: Content top
+    description: Top content block
+    required: false
+  content:
+    title: Content
+    description: Main content block
+    required: false
+  links:
+    title: Links
+    description: Links content block
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Bottom content block
+    required: false

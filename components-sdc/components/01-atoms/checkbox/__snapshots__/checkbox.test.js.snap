@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Component does not render when name or id is empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Checkbox Component does not render when name or id is empty 2`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Checkbox Component renders with optional attributes 1`] = `
+<div>
+  
+
+  
+  <input
+    checked=""
+    class="ct-checkbox ct-theme-dark ct-checkbox--is-invalid custom-class"
+    data-test="true"
+    disabled=""
+    id="test-checkbox-id"
+    name="test-checkbox"
+    required=""
+    type="checkbox"
+    value="test-value"
+  />
+  
+      
+
+
+  <label
+    class="ct-label ct-theme-dark ct-label--small  ct-checkbox__label"
+    for="test-checkbox-id"
+  >
+    
+    Test Label  
+  </label>
+    
+</div>
+`;
+
+exports[`Checkbox Component renders with required attributes 1`] = `
+<div>
+  
+
+  
+  <input
+    class="ct-checkbox ct-theme-light"
+    id="test-checkbox-id"
+    name="test-checkbox"
+    type="checkbox"
+    value=""
+  />
+  
+  
+</div>
+`;

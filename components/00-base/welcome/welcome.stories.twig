@@ -11,9 +11,17 @@
 			theme: 'light',
 			logos: logos,
 		} only %}
+		{% set heading_content %}
+			A design system by
+			{% include '@atoms/content-link/content-link.twig' with {
+				theme: 'dark',
+				text: 'Salsa Digital',
+				url: 'https://salsa.digital/',
+			} only %}
+		{% endset %}
 		{% include '@atoms/heading/heading.twig' with {
 			theme: 'dark',
-			content: 'A design system by <a class="ct-content-link ct-theme-dark" href="https://salsa.digital/">Salsa Digital</a>',
+			content: heading_content,
 			level: 4,
 			modifier_class: 'ct-text-align-center',
 		} only %}

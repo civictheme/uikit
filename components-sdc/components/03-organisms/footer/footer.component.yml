@@ -1,0 +1,93 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Footer component
+status: experimental
+description: Footer component with configurable content sections
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+      default: light
+    content_top1:
+      type: string
+      title: Content_top1
+      description: Content slot
+    content_top2:
+      type: string
+      title: Content_top2
+      description: Content slot
+    content_middle1:
+      type: string
+      title: Content_middle1
+      description: Content slot
+    content_middle2:
+      type: string
+      title: Content_middle2
+      description: Content slot
+    content_middle3:
+      type: string
+      title: Content_middle3
+      description: Content slot
+    content_middle4:
+      type: string
+      title: Content_middle4
+      description: Content slot
+    content_bottom1:
+      type: string
+      title: Content_bottom1
+      description: Content slot
+    content_bottom2:
+      type: string
+      title: Content_bottom2
+      description: Content slot
+    background_image:
+      type: string
+      title: Background_image
+      description: Background inline image displayed behind content
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  content_top1:
+    title: Content top1
+    description: Top section first column content block
+    required: false
+  content_top2:
+    title: Content top2
+    description: Top section second column content block
+    required: false
+  content_middle1:
+    title: Content middle1
+    description: Middle section first column content block
+    required: false
+  content_middle2:
+    title: Content middle2
+    description: Middle section second column content block
+    required: false
+  content_middle3:
+    title: Content middle3
+    description: Middle section third column content block
+    required: false
+  content_middle4:
+    title: Content middle4
+    description: Middle section fourth column content block
+    required: false
+  content_middle5:
+    title: Content middle5
+    description: Middle section full width content block
+    required: false
+  content_bottom1:
+    title: Content bottom1
+    description: Bottom section first column content block
+    required: false
+  content_bottom2:
+    title: Content bottom2
+    description: Bottom section second column content block
+    required: false

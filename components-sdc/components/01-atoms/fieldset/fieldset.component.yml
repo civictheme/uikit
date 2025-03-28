@@ -1,0 +1,79 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Fieldset component
+status: experimental
+description: Fieldset component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    legend:
+      type: string
+      title: Legend
+      description: Legend for the fieldset
+    description:
+      type: string
+      title: Description
+      description: Description for the fieldset
+    description_display:
+      type: string
+      title: Description_display
+      description: 'Description display: before, after, invisible'
+      enum:
+        - before
+        - after
+        - invisible
+      default: before
+    message:
+      type: string
+      title: Message
+      description: Message content
+    message_type:
+      type: string
+      title: Message_type
+      description: 'Type of the message: error, warning, info, success'
+      enum:
+        - error
+        - warning
+        - info
+        - success
+      default: error
+    fields:
+      type: string
+      title: Fields
+      description: Fields content
+    is_required:
+      type: boolean
+      title: Is_required
+      description: Denote if the fieldset is required
+    required_text:
+      type: string
+      title: Required_text
+      description: Text to display within label element when required
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes for the fieldset
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+    prefix:
+      type: string
+      title: Prefix
+      description: The content to add before the fieldset children
+    suffix:
+      type: string
+      title: Suffix
+      description: The content to add after the fieldset children
+slots:
+  fields:
+    title: Fields
+    description: Slot for custom fields content
+    required: false

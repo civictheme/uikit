@@ -1,0 +1,34 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Icon component
+status: experimental
+description: A component for rendering SVG icons
+props:
+  type: object
+  properties:
+    symbol:
+      type: string
+      title: Symbol
+      description: Required icon name
+    size:
+      type: string
+      title: Size
+      description: Optional icon size
+    alt:
+      type: string
+      title: Alt
+      description: Optional alternate text of the image
+    attributes:
+      type: string
+      title: Attributes
+      description: Optional additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Optional additional classes
+    assets_dir:
+      type: string
+      title: Assets_dir
+      description: Optional assets directory to get icons from
+      default: '@civictheme/../assets'
+slots: {}

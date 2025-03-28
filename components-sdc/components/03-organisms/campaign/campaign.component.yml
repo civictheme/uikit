@@ -1,0 +1,110 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Campaign component
+status: experimental
+description: Campaign component with image and content sections
+props:
+  type: object
+  properties:
+    content_top:
+      type: string
+      title: Content_top
+      description: Content slot
+    image:
+      type: object
+      title: Image
+    image_position:
+      type: string
+      title: Image_position
+      description: Image position
+      enum:
+        - left
+        - right
+      default: right
+    tags:
+      type: array
+      title: Tags
+      description: Array of tags
+    title:
+      type: string
+      title: Title
+      description: Title
+    date:
+      type: string
+      title: Date
+      description: Date
+    content:
+      type: string
+      title: Content
+      description: Content
+    links:
+      type: array
+      title: Links
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            description: Link text
+          url:
+            type: string
+            description: Link URL
+          is_new_window:
+            type: boolean
+            description: Open link in the new window
+          is_external:
+            type: boolean
+            description: Link is external
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content slot
+    theme:
+      type: string
+      title: Theme
+      description: Theme
+      enum:
+        - light
+        - dark
+      default: light
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  content_top:
+    title: Content top
+    description: Content top block
+    required: false
+  tags:
+    title: Tags
+    description: Tags block
+    required: false
+  content:
+    title: Content
+    description: Main content block
+    required: false
+  links:
+    title: Links
+    description: Links block
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Content bottom block
+    required: false
+  image:
+    title: Image
+    description: Image block
+    required: false

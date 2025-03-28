@@ -1,0 +1,94 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Navigation Card component
+status: experimental
+description: Navigation Card component
+props:
+  type: object
+  properties:
+    content_top:
+      type: string
+      title: Content_top
+      description: Content slot
+    image_over:
+      type: string
+      title: Image_over
+      description: Content slot for image over
+    content_middle:
+      type: string
+      title: Content_middle
+      description: Content slot
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content slot
+    image:
+      type: object
+      title: Image
+    image_as_icon:
+      type: boolean
+      title: Image_as_icon
+      description: Show image as an icon
+    icon:
+      type: string
+      title: Icon
+      description: Icon name
+    title:
+      type: string
+      title: Title
+      description: The text of card title
+    summary:
+      type: string
+      title: Summary
+      description: Summary of the card
+    link:
+      type: object
+      title: Link
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  image:
+    title: Image
+    description: Image block
+    required: false
+  image_over:
+    title: Image over
+    description: Image over block
+    required: false
+  content_top:
+    title: Content top
+    description: Content top block
+    required: false
+  icon:
+    title: Icon
+    description: Icon block
+    required: false
+  title:
+    title: Title
+    description: Title block
+    required: false
+  content_middle:
+    title: Content middle
+    description: Content middle block
+    required: false
+  summary:
+    title: Summary
+    description: Summary block
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Content bottom block
+    required: false

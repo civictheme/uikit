@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label Component allows HTML content 1`] = `
+<div>
+  
+
+
+  <label
+    class="ct-label ct-theme-light ct-label--regular  "
+  >
+    
+    Start 
+    <strong>
+      prefix
+    </strong>
+     middle 
+    <script>
+      alert(‘XSS’)
+    </script>
+     end  
+  </label>
+</div>
+`;
+
+exports[`Label Component does not render when content is empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Label Component renders with default tag and size when invalid values are provided 1`] = `
+<div>
+  
+
+
+  <label
+    class="ct-label ct-theme-light ct-label--regular  "
+  >
+    
+    Sample label  
+  </label>
+</div>
+`;
+
+exports[`Label Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  <legend
+    class="ct-label ct-theme-dark ct-label--large ct-label--required custom-class"
+    data-test="true"
+    for="input-id"
+  >
+    
+    Sample label 
+    <span
+      class="ct-label__required"
+    >
+      (custom-required)
+    </span>
+      
+  </legend>
+</div>
+`;
+
+exports[`Label Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  <label
+    class="ct-label ct-theme-light ct-label--regular  "
+  >
+    
+    Sample label  
+  </label>
+</div>
+`;
+
+exports[`Label Component strips HTML content 1`] = `
+<div>
+  
+
+
+  <label
+    class="ct-label ct-theme-light ct-label--regular  "
+  >
+    
+    Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
+  </label>
+</div>
+`;
+
+exports[`Label Component strips HTML tags from attribute values 1`] = `
+<div>
+  
+
+
+  <label
+    class="ct-label ct-theme-light ct-label--regular  "
+    data-test="<script>alert(1)</script>"
+  >
+    
+    Sample label  
+  </label>
+</div>
+`;

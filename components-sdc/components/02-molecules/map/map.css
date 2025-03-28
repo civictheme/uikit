@@ -1,0 +1,27 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-map.ct-map--with-background {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+.ct-map .ct-map__canvas {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding: 0 0 56.25% 0;
+}
+.ct-map .ct-map__iframe {
+  position: absolute;
+}
+.ct-map .ct-map__link {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.ct-map.ct-theme-light.ct-map--with-background {
+  background-color: var(--ct-map-light-wrapper-background-color);
+}
+.ct-map.ct-theme-dark.ct-map--with-background {
+  background-color: var(--ct-map-dark-wrapper-background-color);
+}

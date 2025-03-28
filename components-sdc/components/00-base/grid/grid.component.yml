@@ -1,0 +1,82 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Grid component
+status: experimental
+description: >-
+  A flexible grid layout component with configurable columns and container
+  options
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      title: Items
+      description: Array of column items
+    row_element:
+      type: string
+      title: Row_element
+      description: Row element
+      default: div
+    row_class:
+      type: string
+      title: Row_class
+      description: Optional row class override. Defaults to 'row'
+    row_attributes:
+      type: string
+      title: Row_attributes
+      description: Additional row attributes
+    column_element:
+      type: string
+      title: Column_element
+      description: Column element
+      default: div
+    column_class:
+      type: string
+      title: Column_class
+      description: >-
+        Optional column class override. Defaults to 'col' if column
+        auto-generation is not required, otherwise appended to auto-generated
+        column class list
+    column_attributes:
+      type: string
+      title: Column_attributes
+      description: Additional column attributes
+    use_container:
+      type: boolean
+      title: Use_container
+      description: Whether to use container or not
+      default: true
+    is_fluid:
+      type: boolean
+      title: Is_fluid
+      description: Whether the grid is fluid or not. Applies only if use_container is true
+      default: false
+    template_column_count:
+      type: number
+      title: Template_column_count
+      description: >-
+        Number of columns in the row. If 0 - auto columns will be used where
+        column width will be calculated automatically
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 12
+      default: 0
+    fill_width:
+      type: boolean
+      title: Fill_width
+      description: Stretch 'hanging' items to the full width of the row
+      default: false
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}

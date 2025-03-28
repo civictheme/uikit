@@ -1,0 +1,44 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Text Icon component
+status: experimental
+description: A component that displays text with optional icons
+props:
+  type: object
+  properties:
+    text:
+      type: string
+      title: Text
+      description: Link text
+    is_new_window:
+      type: boolean
+      title: Is_new_window
+      description: Open in a new window
+    is_external:
+      type: boolean
+      title: Is_external
+      description: Link is external
+    icon:
+      type: string
+      title: Icon
+      description: Icon name
+    icon_placement:
+      type: string
+      title: Icon_placement
+      description: 'Icon position: before, after'
+      enum:
+        - before
+        - after
+    icon_class:
+      type: string
+      title: Icon_class
+      description: Class for custom icon
+    icon_group_disabled:
+      type: boolean
+      title: Icon_group_disabled
+      description: Disable icon and last word grouping
+    icon_single_only:
+      type: boolean
+      title: Icon_single_only
+      description: Only show 1 icon. If icon and is_external, external will take preference
+slots: {}

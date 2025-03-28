@@ -1,0 +1,134 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: List component
+status: experimental
+description: List component for displaying content in a structured format
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+      description: Title
+    link_above:
+      type: object
+      title: Link_above
+    filters:
+      type: string
+      title: Filters
+      description: Exposed filters
+    results_count:
+      type: string
+      title: Results_count
+      description: Results count
+    rows_above:
+      type: string
+      title: Rows_above
+      description: Content above rows
+    rows:
+      type: string
+      title: Rows
+      description: Rows content
+    rows_below:
+      type: string
+      title: Rows_below
+      description: Content below rows
+    empty:
+      type: string
+      title: Empty
+      description: Empty results content
+    pagination:
+      type: string
+      title: Pagination
+      description: Pagination slot
+    footer:
+      type: string
+      title: Footer
+      description: Footer slot
+    link_below:
+      type: object
+      title: Link_below
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    with_background:
+      type: boolean
+      title: With_background
+      description: With background or not
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  header:
+    title: Header
+    description: Header section of the list
+    required: false
+  title:
+    title: Title
+    description: Title section
+    required: false
+  link_above:
+    title: Link above
+    description: Link above section
+    required: false
+  content:
+    title: Content
+    description: Main content section
+    required: false
+  list:
+    title: List
+    description: List section
+    required: false
+  filters:
+    title: Filters
+    description: Filters section
+    required: false
+  rows:
+    title: Rows
+    description: Rows section
+    required: false
+  rows_above:
+    title: Rows above
+    description: Content above rows section
+    required: false
+  results_count:
+    title: Results count
+    description: Results count section
+    required: false
+  rows_below:
+    title: Rows below
+    description: Content below rows section
+    required: false
+  empty:
+    title: Empty
+    description: Empty results section
+    required: false
+  list_below:
+    title: List below
+    description: Content below list section
+    required: false
+  pagination:
+    title: Pagination
+    description: Pagination section
+    required: false
+  footer:
+    title: Footer
+    description: Footer section
+    required: false

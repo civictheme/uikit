@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Content Component does not render when content is empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Basic Content Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-basic-content ct-theme-dark ct-vertical-spacing-inset--both ct-basic-content--with-background custom-class"
+    data-test="true"
+  >
+    
+          
+    <div
+      class="container"
+    >
+      
+        
+      <div
+        class="row"
+      >
+        
+          
+        <div
+          class="col-xxs-12"
+        >
+          
+            This is basic content with options.          
+        </div>
+        
+        
+      </div>
+      
+      
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;
+
+exports[`Basic Content Component renders with required attributes 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-basic-content ct-theme-light   "
+  >
+    
+          
+    <div
+      class="container"
+    >
+      
+        
+      <div
+        class="row"
+      >
+        
+          
+        <div
+          class="col-xxs-12"
+        >
+          
+            This is basic content.          
+        </div>
+        
+        
+      </div>
+      
+      
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;
+
+exports[`Basic Content Component renders without containment 1`] = `
+<div>
+  
+
+
+  
+  <div
+    class="ct-basic-content ct-theme-light   "
+  >
+    
+    This content is not contained.  
+  </div>
+  
+
+</div>
+`;

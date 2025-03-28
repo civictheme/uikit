@@ -1,0 +1,130 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-label {
+  display: block;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 0) {
+  .ct-label {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-label {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 0) {
+  .ct-label.ct-label--extra-large {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-label.ct-label--extra-large {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+@media (min-width: 0) {
+  .ct-label.ct-label--large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-label.ct-label--large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+@media (min-width: 0) {
+  .ct-label.ct-label--regular {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-label.ct-label--regular {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 0) {
+  .ct-label.ct-label--small {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-label.ct-label--small {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 0) {
+  .ct-label.ct-label--extra-small {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-label.ct-label--extra-small {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.ct-label.ct-theme-light {
+  color: var(--ct-label-light-color);
+}
+.ct-label.ct-theme-light .ct-label__required {
+  color: var(--ct-label-light-required-color);
+}
+.ct-label.ct-theme-dark {
+  color: var(--ct-label-dark-color);
+}
+.ct-label.ct-theme-dark .ct-label__required {
+  color: var(--ct-label-dark-required-color);
+}
