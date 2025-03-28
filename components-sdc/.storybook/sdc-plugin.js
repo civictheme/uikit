@@ -82,7 +82,9 @@ function getDependencyImports(storiesPath, componentDirectory) {
     const cssPath = path.join(componentDir, `${componentName}.css`);
     if (fs.existsSync(cssPath)) {
       const relativePath = path.relative(dir, cssPath);
-      imports.push(relativePath.startsWith('.') ? relativePath : `./${relativePath}`);
+      const importPath = relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
+      const suffix = componentName.endsWith('.stories') ? '?module' : '';
+      imports.push(`${importPath}${suffix}`);
     }
 
     // Add JS if exists and not a stories file
