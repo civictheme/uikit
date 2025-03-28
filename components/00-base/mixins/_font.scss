@@ -88,7 +88,6 @@
       }
 
       $local-src-list: ();
-      $extra-src: null;
 
       @each $path in $uri {
         @if string.index($path, 'http') == 1 {
@@ -99,8 +98,6 @@
 
           // Handle special case for EOT and IE.
           @if $format == 'eot' {
-            $extra-src: url('#{$path}');
-            $path: '#{$path}?#iefix';
             $format: 'embedded-opentype';
           }
 
@@ -124,10 +121,6 @@
 
         @font-face {
           font-family: $font-family;
-
-          @if $extra-src {
-            src: $extra-src;
-          }
 
           src: $local-src-list;
 
