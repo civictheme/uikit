@@ -22,10 +22,12 @@
 #}
 
 {% set type = type|default('information') %}
+{%- set content = description|default(content) -%}
 {% set type_class = 'ct-message--%s'|format(type) %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set with_background_class = with_background ? 'ct-message--with-background' : '' %}
 {% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing-inset--%s'|format(vertical_spacing) : '' %}
+{%- set has_aria = has_aria is not defined ? true : has_aria -%}
 {% set modifier_class = '%s %s %s %s %s'|format(
   theme_class,
   type_class,
@@ -33,12 +35,6 @@
   vertical_spacing_class,
   modifier_class|default(''))
 %}
-
-{%- set has_aria = has_aria is not defined ? true : has_aria -%}
-
-{# Support deprecated 'description' parameter. #}
-{%- set content = description|default(content) -%}
-
 {% set icons = {
   information: 'information-mark',
   warning: 'exclamation-mark-2',
