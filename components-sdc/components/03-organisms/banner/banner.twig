@@ -32,20 +32,20 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_decorative_class, modifier_class|default('')) %}
 
-{% if content_top1 is not empty or content_top2 is not empty or content_top3 is not empty or site_section is not empty or title is not empty or content_middle is not empty or content is not empty or content_below is not empty or content_bottom is not empty %}
-  <div class="ct-banner {{ modifier_class -}}" id="main-content" tabindex="-1" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if content_top1  or content_top2  or content_top3  or site_section  or title  or content_middle  or content  or content_below  or content_bottom  %}
+  <div class="ct-banner {{ modifier_class -}}" id="main-content" tabindex="-1" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-banner__wrapper">
       <div
         class="ct-banner__inner {% if background_image_blend_mode %}ct-background--{{ background_image_blend_mode|default('normal') }}{% endif %}"
-        {% if background_image and background_image.url is defined and background_image.url is not empty %}style="background-image: url('{{ background_image.url }}');"{% endif %}
+        {% if background_image and background_image.url is defined and background_image.url  %}style="background-image: url('{{ background_image.url }}');"{% endif %}
       >
-        {% if background_image and background_image.alt is defined and background_image.alt is not empty %}
+        {% if background_image and background_image.alt is defined and background_image.alt  %}
         <span role="img" aria-label="{{ background_image.alt }}"> </span>
         {% endif %}
 
         <div class="container">
 
-          {% if content_top1 is not empty %}
+          {% if content_top1  %}
             <div class="row">
               {%- block content_top1 %}
                 <div class="col-xxs-12">
@@ -57,11 +57,11 @@
             </div>
           {% endif %}
 
-          {% if breadcrumb is not empty or content_top2 is not empty %}
+          {% if breadcrumb  or content_top2  %}
             <div class="row">
               {% block breadcrumb %}
-                {% if breadcrumb is not empty %}
-                  <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
+                {% if breadcrumb  %}
+                  <div class="{% if featured_image  %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                     {% include 'civictheme:breadcrumb' with {
                       theme: theme,
                       links: breadcrumb.links,
@@ -72,7 +72,7 @@
                 {% endif %}
               {% endblock %}
 
-              {% if content_top2 is not empty %}
+              {% if content_top2  %}
                 {%- block content_top2 %}
                   <div class="col-xxs-12 col-m-6">
                     <div class="ct-banner__content-top2">
@@ -84,7 +84,7 @@
             </div>
           {% endif %}
 
-          {% if content_top3 is not empty %}
+          {% if content_top3  %}
             <div class="row">
               {%- block content_top3 %}
                 <div class="col-xxs-12">
@@ -96,7 +96,7 @@
             </div>
           {% endif %}
 
-          {% if site_section is not empty %}
+          {% if site_section  %}
             <div class="row">
               {%- block site_section %}
                 <div class="col-xxs-12">
@@ -111,10 +111,10 @@
             </div>
           {% endif %}
 
-          {% if title is not empty %}
+          {% if title  %}
             <div class="row">
               {%- block title %}
-                <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
+                <div class="{% if featured_image  %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                   {% include 'civictheme:heading' with {
                     theme: theme,
                     content: title,
@@ -126,10 +126,10 @@
             </div>
           {% endif %}
 
-          {% if content_middle is not empty %}
+          {% if content_middle  %}
             <div class="row">
               {%- block content_middle %}
-                <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
+                <div class="{% if featured_image  %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                   <div class="ct-banner__content-middle">
                     {{- content_middle|raw -}}
                   </div>
@@ -138,10 +138,10 @@
             </div>
           {% endif %}
 
-          {% if content is not empty %}
+          {% if content  %}
             <div class="row">
               {%- block content %}
-                <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
+                <div class="{% if featured_image  %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                   <div class="ct-banner__content">
                     {{- content|raw -}}
                   </div>
@@ -154,7 +154,7 @@
       </div>
 
       {% block featured_image %}
-        {% if featured_image is not empty %}
+        {% if featured_image  %}
           <div class="ct-banner__featured-image__wrapper">
             {% include 'civictheme:image' with {
               theme: theme,
@@ -167,7 +167,7 @@
       {% endblock %}
     </div>
 
-    {% if content_below is not empty %}
+    {% if content_below  %}
       <div class="container">
         <div class="row">
           {%- block content_below %}
@@ -181,7 +181,7 @@
       </div>
     {% endif %}
 
-    {% if content_bottom is not empty %}
+    {% if content_bottom  %}
       <div class="container">
         <div class="row">
           {%- block content_bottom %}

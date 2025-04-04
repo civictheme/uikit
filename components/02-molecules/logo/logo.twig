@@ -28,11 +28,11 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, type_class, modifier_class|default('')) %}
 
-{% if logos is not empty %}
-  {% if url is not empty %}
-    <a class="ct-logo {{ modifier_class -}}" href="{{ url }}" title="{{ title|default('Click to go to the homepage') }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if logos  %}
+  {% if url  %}
+    <a class="ct-logo {{ modifier_class -}}" href="{{ url }}" title="{{ title|default('Click to go to the homepage') }}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
   {% else %}
-    <div class="ct-logo {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+    <div class="ct-logo {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
   {% endif %}
 
   {% for logo_type, logo in logos %}
@@ -51,7 +51,7 @@
     {% endif %}
   {% endfor %}
 
-  {% if url is not empty %}
+  {% if url  %}
     </a>
   {% else %}
     </div>

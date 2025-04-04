@@ -28,7 +28,7 @@
   role="{% if type == 'error' %}alert{% else %}contentinfo{% endif %}"
   aria-label="{{ type }}"
   aria-live="assertive"
-  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  {% if attributes  %}{{- attributes|raw -}}{% endif %}
 >
   {% if icons[type] is defined %}
     <div class="ct-message__icon">

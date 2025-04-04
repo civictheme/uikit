@@ -36,10 +36,10 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
 
-<div class="ct-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-list {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
   <div class="ct-list__inner">
     {% block header %}
-      {% if title is not empty or link_above is not empty %}
+      {% if title  or link_above  %}
         <div class="ct-list__header">
           <div class="container">
             <div class="row">
@@ -206,7 +206,7 @@
         </div>
       {% endif %}
 
-      {% if pagination is defined and pagination is not empty %}
+      {% if pagination is defined and pagination  %}
         <div class="ct-list__results-below">
           {% block pagination %}
             <div class="container">
@@ -224,7 +224,7 @@
     {% endblock %}
 
     {% block footer %}
-      {% if footer is not empty -%}
+      {% if footer  -%}
         <footer class="ct-list__footer">
           <div class="container">
             <div class="row">

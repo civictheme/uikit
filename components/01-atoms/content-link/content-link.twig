@@ -19,7 +19,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_external, modifier_class|default('')) %}
 
-{% if text is not empty %}
+{% if text  %}
   {% set link_content %}
     {%- include '@base/text-icon/text-icon.twig' with {
       text: text,
@@ -30,10 +30,10 @@
 
   <a
     class="ct-content-link {{ modifier_class -}}"
-    {% if url is not empty %}href="{{ url }}"{% endif %}
-    {% if title is not empty %}title="{{ title }}"{% endif %}
+    {% if url  %}href="{{ url }}"{% endif %}
+    {% if title  %}title="{{ title }}"{% endif %}
     {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes  %}{{- attributes|raw -}}{% endif %}
   >
     {{- link_content -}}
   </a>

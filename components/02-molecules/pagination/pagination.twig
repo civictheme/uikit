@@ -30,15 +30,15 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if items is not empty %}
+{% if items  %}
   <nav
     class="ct-pagination {{ modifier_class -}}" role="navigation"
-    {% if heading_id is not empty %}aria-labelledby="{{ heading_id }}"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if heading_id  %}aria-labelledby="{{ heading_id }}"{% endif %}
+    {% if attributes  %}{{- attributes|raw -}}{% endif %}
   >
-    <h4 {% if heading_id is not empty %}id="{{ heading_id }}"{% endif %} class="ct-visually-hidden">{{ 'Pagination' }}</h4>
+    <h4 {% if heading_id  %}id="{{ heading_id }}"{% endif %} class="ct-visually-hidden">{{ 'Pagination' }}</h4>
 
-    {% if items_per_page_options is defined and items_per_page_options is not empty %}
+    {% if items_per_page_options is defined and items_per_page_options  %}
       <div class="ct-pagination__items_per_page">
         {%- include '@molecules/field/field.twig' with {
           title: items_per_page_title,
@@ -55,7 +55,7 @@
 
     <ul class="ct-pagination__items {{ items_modifier_class }}">
       {# Print first item if we are not on the first page. #}
-      {% if items.first is not empty %}
+      {% if items.first  %}
         <li class="ct-pagination__item ct-pagination__item--first hide-xxs show-m">
           {% set attributes = 'title="Go to first page"' %}
           {% include '@atoms/link/link.twig' with {

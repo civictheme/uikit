@@ -31,10 +31,10 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
+<div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes  %}{{ attributes|raw -}}{% endif %}>
 	<div class="row ct-slide__row">
     {% block image %}
-      {% if image is not empty %}
+      {% if image  %}
 		    <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
           <div class="ct-slide__image">
             {% include 'civictheme:image' with {
@@ -50,7 +50,7 @@
     <div class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center">
       <div class="ct-slide__inner">
         {% block content_top %}
-          {% if content_top is not empty %}
+          {% if content_top  %}
             <div class="ct-slide__content-top">
               {{- content_top|raw -}}
             </div>
@@ -68,7 +68,7 @@
         {% endblock %}
 
         {% block content %}
-          {% if title is not empty %}
+          {% if title  %}
             {% include 'civictheme:heading' with {
               theme: theme,
               content: title,
@@ -78,7 +78,7 @@
           {% endif %}
 
           {% block date %}
-            {% if date is not empty %}
+            {% if date  %}
               {% set date_content %}
                 {% include 'civictheme:datetime' with {
                   start: date,
@@ -100,7 +100,7 @@
             {% endif %}
           {% endblock %}
 
-          {% if content is not empty %}
+          {% if content  %}
             {% include 'civictheme:paragraph' with {
               theme: theme,
               content: content,
@@ -110,7 +110,7 @@
           {% endif %}
 
           {% block links %}
-            {% if links is not empty %}
+            {% if links  %}
               {% set link_items = [] %}
               {% for link in links %}
                 {% set link_item %}
@@ -138,7 +138,7 @@
         {% endblock %}
 
         {% block content_bottom %}
-          {% if content_bottom is not empty %}
+          {% if content_bottom  %}
             <div class="ct-slide__content-bottom">
               {{- content_bottom|raw -}}
             </div>

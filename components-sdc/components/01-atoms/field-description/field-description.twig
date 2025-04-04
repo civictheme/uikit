@@ -18,8 +18,8 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, size_class, modifier_class|default('')) %}
 
-{% if content is not empty -%}
-  <div class="ct-field-description {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if content  -%}
+  <div class="ct-field-description {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% if allow_html|default(false) %}
       {{- content|raw -}}
     {% else %}

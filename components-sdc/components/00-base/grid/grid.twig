@@ -53,7 +53,7 @@
 	{% set container_class = ((is_fluid ? 'container-fluid' : 'container') ~ ' ' ~ modifier_class)|trim %}
 {% else %}
 	{# Propagade modifier class to row class if container is not used. #}
-	{% if modifier_class is not empty %}
+	{% if modifier_class  %}
 		{% set row_classes = row_classes|merge([modifier_class]) %}
 	{% endif %}
 	{% set row_attributes = (row_attributes ~ ' ' ~ attributes)|trim %}
@@ -61,14 +61,14 @@
 
 {% set row_class_string = row_classes|join(' ')|trim %}
 
-{% if items is not empty %}
+{% if items  %}
 	{% if use_container %}
-	<div class="{{ container_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %} aria-live="polite">
+	<div class="{{ container_class }}" {% if attributes  %}{{- attributes|raw -}}{% endif %} aria-live="polite">
 	{% endif %}
-		<{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
+		<{{ row_element }} class="{{ row_class_string }}" {% if row_attributes  %}{{ row_attributes|raw }}{% endif %}>
 			{% for item in items %}
-				{% if item is not empty %}
-					<{{ column_element }} class="{{ column_class }}" {% if column_attributes is not empty %}{{ column_attributes|raw }}{% endif %}>
+				{% if item  %}
+					<{{ column_element }} class="{{ column_class }}" {% if column_attributes  %}{{ column_attributes|raw }}{% endif %}>
 						{{ item|raw }}
 					</{{ column_element }}>
 				{% endif %}

@@ -26,19 +26,19 @@
  */
 #}
 
-{% set with_image = image.url is not empty %}
+{% set with_image = image.url  %}
 {% set with_image_class = with_image ? 'ct-navigation-card--with-image' : '' %}
-{% set with_link = link is not empty and link.url is defined and link.url is not empty %}
+{% set with_link = link  and link.url is defined and link.url  %}
 {% set with_link_class = with_link ? 'ct-navigation-card--with-link' : '' %}
 {% set image_as_icon_class = image_as_icon ? 'ct-navigation-card--image-as-icon' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s'|format(theme_class, with_image_class, with_link_class, image_as_icon_class, modifier_class|default('')) %}
 
-{% if title is not empty %}
-  <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if title  %}
+  <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% block image %}
       {% if not image_as_icon %}
-        {% if image.url is not empty %}
+        {% if image.url  %}
           <div class="ct-navigation-card__image">
             {% include '@atoms/image/image.twig' with {
               theme: theme,
@@ -60,7 +60,7 @@
 
     <div class="ct-navigation-card__content">
       {% block content_top %}
-        {% if content_top is not empty %}
+        {% if content_top  %}
           <div class="ct-navigation-card__content-top">
             {{- content_top|raw -}}
           </div>
@@ -68,9 +68,9 @@
       {% endblock %}
 
       {% block icon %}
-        {% if icon is not empty or (with_image and image_as_icon) %}
+        {% if icon  or (with_image and image_as_icon) %}
           <div class="ct-navigation-card__icon">
-            {% if icon is not empty %}
+            {% if icon  %}
               {% include '@base/icon/icon.twig' with {
                 symbol: icon,
                 size: 'extra-large',
@@ -90,7 +90,7 @@
       {% endblock %}
 
       {% block title %}
-        {% if title is not empty %}
+        {% if title  %}
           {% set title_content %}
             {% if with_link %}
               {% include '@atoms/link/link.twig' with {
@@ -118,7 +118,7 @@
       {% endblock %}
 
       {% block content_middle %}
-        {% if content_middle is not empty %}
+        {% if content_middle  %}
           <div class="ct-navigation-card__content-middle">
             {{- content_middle|raw -}}
           </div>
@@ -126,7 +126,7 @@
       {% endblock %}
 
       {% block summary %}
-        {% if summary is not empty %}
+        {% if summary  %}
           {% include '@atoms/paragraph/paragraph.twig' with {
             theme: theme,
             content: summary,
@@ -137,7 +137,7 @@
       {% endblock %}
 
       {% block content_bottom %}
-        {% if content_bottom is not empty %}
+        {% if content_bottom  %}
           <div class="ct-navigation-card__content-bottom">
             {{- content_bottom|raw -}}
           </div>
