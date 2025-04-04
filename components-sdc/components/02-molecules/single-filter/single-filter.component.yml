@@ -76,15 +76,12 @@ slots:
   content_top:
     title: Content top
     description: Top content slot
-    required: false
   filters:
     title: Filters
     description: Main filters content
-    required: false
   content_bottom:
     title: Content bottom
     description: Bottom content slot
-    required: false
 libraryOverrides:
   js:
     single-filter.js: {}
