@@ -15,9 +15,9 @@
 
 {%- set assets_dir = assets_dir|default('@civictheme/../assets') -%}
 
-{%- if symbol is not empty %}
+{%- if symbol  %}
   {%- set source = source(assets_dir ~ '/icons/' ~ symbol ~ '.svg', true) -%}
-  {%- if source is not empty -%}
+  {%- if source  -%}
     {%- set size_class = size ? 'ct-icon--size-' ~ size : '' -%}
     {%- set base_class = 'ct-icon ' ~ size_class -%}
     {%- set modifier = modifier_class|default('') -%}

@@ -19,14 +19,14 @@
 
 {% set type = type in ['primary', 'secondary', 'tertiary'] ? type : 'primary' %}
 {% set type_class = 'ct-tag--%s'|format(type) %}
-{% set icon_class = icon is not empty ? 'ct-tag--with-icon' : '' %}
+{% set icon_class = icon  ? 'ct-tag--with-icon' : '' %}
 {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
 {% set icon_placement_class = icon ? 'ct-tag--icon-%s'|format(icon_placement|default('before')) : '' %}
 {% set is_external = is_external ? 'ct-tag--external' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, type_class, icon_class, icon_placement_class, is_external, modifier_class|default('')) %}
 
-{% if content|trim is not empty %}
+{% if content|trim  %}
    {% set content_markup %}
      {% if icon %}
        {% set icon_markup %}
@@ -61,13 +61,13 @@
     {% endset %}
   {% endif %}
 
-  {% set tag = url is not empty ? 'a' : 'span' %}
+  {% set tag = url  ? 'a' : 'span' %}
   <{{ tag }}
   class="ct-tag {{ modifier_class -}}"
-    {% if url is not empty %}href="{{ url }}"{% endif %}
-    {% if url is not empty %}title="{{- content -}}"{% endif %}
-    {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if url  %}href="{{ url }}"{% endif %}
+    {% if url  %}title="{{- content -}}"{% endif %}
+    {% if url  and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
+    {% if attributes  %}{{- attributes|raw -}}{% endif %}
   >
     {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
   </{{ tag }}>

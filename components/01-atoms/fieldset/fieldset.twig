@@ -26,8 +26,8 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}
 
-<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-	{% if legend is not empty %}
+<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
+	{% if legend  %}
 		{% include '@atoms/label/label.twig' with {
 			theme: theme,
 			tag: 'legend',
@@ -40,7 +40,7 @@
 	{% endif %}
 
 	<div class="ct-fieldset__wrapper">
-		{% if description is not empty and (description_display == 'before' or description_display == 'invisible') %}
+		{% if description  and (description_display == 'before' or description_display == 'invisible') %}
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,
@@ -59,23 +59,23 @@
 			} only %}
 		{% endif %}
 
-		{% if prefix is not empty %}
+		{% if prefix  %}
 			<div class="ct-fieldset__prefix">{{- prefix|raw -}}</div>
 		{% endif %}
 
 		{% block fields %}
-			{% if fields is not empty %}
+			{% if fields  %}
 				<div class="ct-fieldset__fields">
 					{{- fields|raw -}}
 				</div>
 			{% endif %}
 		{% endblock %}
 
-		{% if suffix is not empty %}
+		{% if suffix  %}
 			<div class="ct-fieldset__suffix">{{- suffix|raw -}}</div>
 		{% endif %}
 
-		{% if description is not empty and description_display == 'after' %}
+		{% if description  and description_display == 'after' %}
 			{% include '@atoms/paragraph/paragraph.twig' with {
 				theme: theme,
 				content: description,

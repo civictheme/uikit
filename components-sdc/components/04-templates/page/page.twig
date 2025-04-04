@@ -15,7 +15,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-page {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-page {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
   <a id="top" tab-index="-1" aria-hidden="true"></a>
 
   {% block header %}
@@ -32,12 +32,12 @@
   {% endblock %}
 
   {% block banner %}
-    {% if banner is not empty %}
+    {% if banner  %}
       {{ banner|raw }}
     {% endif %}
   {% endblock %}
 
-  {% if highlighted is not empty %}
+  {% if highlighted  %}
     {% block highlighted %}
       <div class="container">
         <div class="row">

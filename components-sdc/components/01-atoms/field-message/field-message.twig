@@ -24,8 +24,8 @@
   success: 'approve',
 } %}
 
-{% if content is not empty -%}
-  <div class="ct-field-message {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if content  -%}
+  <div class="ct-field-message {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% if icons[type] is defined %}
       {% include "civictheme:icon" with {
         symbol: icons[type],

@@ -67,7 +67,7 @@
 	{% set control = [{name: name}] %}
 {% else %}
 	{% set first_key = control|keys|first %}
-	{% set control = first_key is not empty and first_key matches '/^[0-9]+$/' ? control : [control] %}
+	{% set control = first_key  and first_key matches '/^[0-9]+$/' ? control : [control] %}
 {% endif %}
 
 {% set _controls = [] %}
@@ -95,10 +95,10 @@
 
 {% if control[0].name is defined %}
 	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
-		{% if title is not empty and title_display != 'hidden' and type != 'hidden' %}
+		{% if title  and title_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {
 				theme: theme,
-				content: label is not empty ? label : title,
+				content: label  ? label : title,
 				is_required: is_required,
 				required_text: required_text,
 				for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
@@ -110,13 +110,13 @@
 			{% if (description) and type != 'hidden' %}
 				{% include '@atoms/field-description/field-description.twig' with {
 					theme: theme,
-					content: description ? description : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					content: description ? description : (is_invalid ? (label  ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__description',
 				} only %}
 			{% endif %}
 
-			{% if prefix is not empty %}
+			{% if prefix  %}
 				<div class="ct-field__prefix">{{- prefix|raw -}}</div>
 			{% endif %}
 
@@ -153,7 +153,7 @@
 				{% include '@atoms/input/input.twig' with control0 only %}
 			{% endif %}
 
-			{% if suffix is not empty %}
+			{% if suffix  %}
 				<div class="ct-field__suffix">{{- suffix|raw -}}</div>
 			{% endif %}
 
@@ -161,7 +161,7 @@
 				{% include '@atoms/field-message/field-message.twig' with {
 					theme: theme,
 					type: is_invalid ? 'error' : 'information',
-					content: message is defined and message.content is defined ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
+					content: message is defined and message.content is defined ? message.content : (is_invalid ? (title  ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
 					allow_html: true,
 					modifier_class: 'ct-field__message',
 					attributes: message.attributes|default('')

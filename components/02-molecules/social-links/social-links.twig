@@ -20,8 +20,8 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, with_border_class, modifier_class|default('')) %}
 
-{% if items is not empty %}
-  <div class="ct-social-links {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if items  %}
+  <div class="ct-social-links {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
 
     {% block items %}
       {% set items_rendered = [] %}
@@ -38,7 +38,7 @@
             is_new_window: true,
             allow_html: true,
             modifier_class: 'ct-social-links__button',
-            attributes: item.title is defined and item.title is not empty ? ' title="' ~ item.title ~ '"' : '',
+            attributes: item.title is defined and item.title  ? ' title="' ~ item.title ~ '"' : '',
           } only %}
         {% endset -%}
         {% set items_rendered = items_rendered|merge([item_rendered]) %}

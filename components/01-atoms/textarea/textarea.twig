@@ -21,7 +21,7 @@
 {% set is_invalid_class = is_invalid ? 'ct-textarea--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-{% if name is not empty %}
+{% if name  %}
   <textarea
     class="ct-textarea {{ modifier_class -}}"
     name="{{ name }}"
@@ -30,6 +30,6 @@
     {% if is_disabled %}disabled{% endif %}
     {% if is_required %}required{% endif %}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes  %}{{- attributes|raw -}}{% endif %}
   />{{ value|default('') }}</textarea>
 {% endif %}

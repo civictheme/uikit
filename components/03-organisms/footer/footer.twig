@@ -21,14 +21,14 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if content_top1 is not empty or content_top2 is not empty or content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_middle4 is not empty or content_bottom1 is not empty or content_bottom2 is not empty %}
+{% if content_top1  or content_top2  or content_middle1  or content_middle2  or content_middle3  or content_middle4  or content_bottom1  or content_bottom2  %}
   <footer class="ct-footer {{ modifier_class -}}" role="contentinfo" data-component-name="ct-footer" {% if background_image %}style="background-image: url('{{ background_image }}')"{% endif %}>
 
-    {% if content_top1 is not empty or content_top2 is not empty %}
+    {% if content_top1  or content_top2  %}
       <div class="container ct-footer__top">
         <div class="row">
 
-          {% if content_top1 is not empty %}
+          {% if content_top1  %}
             {%- block content_top1 %}
               <div class="col-xxs-12 col-m-6">
                 <div class="ct-footer__top__content-top1">
@@ -38,7 +38,7 @@
             {% endblock -%}
           {% endif %}
 
-          {% if content_top2 is not empty %}
+          {% if content_top2  %}
             {%- block content_top2 %}
               <div class="col-xxs-12 col-m-6">
                 <div class="ct-footer__top__content-top2">
@@ -52,11 +52,11 @@
       </div>
     {% endif %}
 
-    {% if content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_middle4 is not empty or content_middle5 is not empty %}
+    {% if content_middle1  or content_middle2  or content_middle3  or content_middle4  or content_middle5  %}
       <div class="container ct-footer__middle">
         <div class="row">
 
-          {% if content_middle1 is not empty %}
+          {% if content_middle1  %}
             {%- block content_middle1 %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle1">
@@ -66,7 +66,7 @@
             {% endblock -%}
           {% endif %}
 
-          {% if content_middle2 is not empty %}
+          {% if content_middle2  %}
             {%- block content_middle2 %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle2">
@@ -76,7 +76,7 @@
             {% endblock -%}
           {% endif %}
 
-          {% if content_middle3 is not empty %}
+          {% if content_middle3  %}
             {%- block content_middle3 %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle3">
@@ -86,7 +86,7 @@
             {% endblock -%}
           {% endif %}
 
-          {% if content_middle4 is not empty %}
+          {% if content_middle4  %}
             {%- block content_middle4 %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle4">
@@ -96,7 +96,7 @@
             {% endblock -%}
           {% endif %}
 
-          {% if content_middle5 is not empty %}
+          {% if content_middle5  %}
             {%- block content_middle5 %}
               <div class="col-xxs-12">
                 <div class="ct-footer__middle__content-middle5">
@@ -110,11 +110,11 @@
       </div>
     {% endif %}
 
-    {% if content_bottom1 is not empty or content_bottom2 is not empty %}
+    {% if content_bottom1  or content_bottom2  %}
       <div class="container ct-footer__bottom">
         <div class="row">
 
-          {% if content_bottom1 is not empty %}
+          {% if content_bottom1  %}
             {%- block content_bottom1 %}
               <div class="col-xxs-12 col-m-7">
                 <div class="ct-footer__bottom__content-bottom1">
@@ -124,7 +124,7 @@
             {% endblock -%}
           {% endif %}
 
-          {% if content_bottom2 is not empty %}
+          {% if content_bottom2  %}
             {%- block content_bottom2 %}
               <div class="col-xxs-12 col-m-5">
                 <div class="ct-footer__bottom__content-bottom2">

@@ -24,13 +24,13 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
-<div class="ct-callout {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-callout {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
   <div class="container">
     <div class="row">
       <div class="col-xxs-12">
         <div class="ct-callout__wrapper">
           {% block content_top %}
-            {% if content_top is not empty %}
+            {% if content_top  %}
               <div class="ct-callout__content-top">
                 {{- content_top|raw -}}
               </div>
@@ -38,7 +38,7 @@
           {% endblock %}
 
           {% block content %}
-            {% if title is not empty or content is not empty %}
+            {% if title  or content  %}
               <div class="ct-callout__inner">
                 {% if title %}
                   {% include '@atoms/heading/heading.twig' with {
@@ -49,7 +49,7 @@
                   } only %}
                 {% endif %}
 
-                {% if content is not empty %}
+                {% if content  %}
                   {% include '@atoms/paragraph/paragraph.twig' with {
                     theme: theme,
                     content: content,
@@ -86,7 +86,7 @@
           {% endblock %}
 
           {% block content_bottom %}
-            {% if content_bottom is not empty %}
+            {% if content_bottom  %}
               <div class="ct-callout__content-bottom">
                 {{- content_bottom|raw -}}
               </div>

@@ -21,16 +21,16 @@
  */
 #}
 
-{% set with_link = link is not empty and link.url is defined and link.url is not empty %}
+{% set with_link = link  and link.url is defined and link.url  %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if title is not empty %}
-  <div class="ct-snippet {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if title  %}
+  <div class="ct-snippet {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% block content %}
       <div class="ct-snippet__content">
         {% block content_top %}
-          {% if content_top is not empty %}
+          {% if content_top  %}
             <div class="ct-snippet__content-top">
               {{- content_top|raw -}}
             </div>
@@ -38,7 +38,7 @@
         {% endblock %}
 
         {% block title %}
-          {% if title is not empty %}
+          {% if title  %}
             {% set title_content %}
               {% if with_link %}
                 {% include 'civictheme:link' with {
@@ -64,7 +64,7 @@
         {% endblock %}
 
         {% block content_middle %}
-          {% if content_middle is not empty %}
+          {% if content_middle  %}
             <div class="ct-snippet__content-middle">
               {{- content_middle|raw -}}
             </div>
@@ -72,7 +72,7 @@
         {% endblock %}
 
         {% block summary %}
-          {% if summary is not empty %}
+          {% if summary  %}
             {% include 'civictheme:paragraph' with {
               theme: theme,
               content: summary,
@@ -96,7 +96,7 @@
         {% endblock %}
 
         {% block content_bottom %}
-          {% if content_bottom is not empty %}
+          {% if content_bottom  %}
             <div class="ct-snippet__content-bottom">
               {{- content_bottom|raw -}}
             </div>

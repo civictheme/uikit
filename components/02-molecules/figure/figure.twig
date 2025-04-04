@@ -18,8 +18,8 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if url is not empty %}
-  <figure class="ct-figure {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if url  %}
+  <figure class="ct-figure {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% include '@atoms/image/image.twig' with {
       theme: theme,
       url: url,
@@ -29,7 +29,7 @@
       modifier_class: 'ct-figure__image',
     } only %}
 
-    {% if caption is not empty %}
+    {% if caption  %}
       <figcaption class="ct-figure__caption">
         {% include '@base/icon/icon.twig' with {
           symbol: 'image',

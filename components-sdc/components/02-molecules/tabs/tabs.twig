@@ -27,7 +27,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {# Create links from panels if not provided. #}
-{% if links is empty and panels is not empty %}
+{% if links is empty and panels  %}
   {% set links = [] %}
   {% for k, panel in panels %}
     {% set link_id = panel.id ~ '-tab' %}
@@ -56,18 +56,18 @@
   {% set link_items = link_items|merge([link]) %}
 {% endfor %}
 
-{% if panels is not empty or link_items is not empty %}
-  <div class="ct-tabs {{ modifier_class -}}" data-tabs-panel {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if panels  or link_items  %}
+  <div class="ct-tabs {{ modifier_class -}}" data-tabs-panel {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% include 'civictheme:item-list' with {
       items: link_items,
       no_gap: true,
       modifier_class: 'ct-tabs__links',
     } only %}
 
-    {% if panels is not empty %}
+    {% if panels  %}
       <div class="ct-tabs__panels">
         {% for k, panel in panels %}
-          {% if panel.content is not empty %}
+          {% if panel.content  %}
             <div class="ct-tabs__panels__panel {% if panel.is_selected %}selected{% endif %}" data-tabs-panel id="{{ panel.id }}" role="tabpanel" aria-labelledby="{{ links[k].link_id }}">
               {{ panel.content|raw }}
             </div>

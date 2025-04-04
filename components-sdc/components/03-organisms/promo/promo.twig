@@ -29,15 +29,15 @@
 
 {% set is_contained = is_contained is not defined or is_contained != false ? true : false %}
 
-{% if title is not empty or content is not empty %}
-  <div class="ct-promo {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if title  or content  %}
+  <div class="ct-promo {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% if is_contained %}
       <div class="container">
         <div class="row">
           <div class="col-xxs-12">
             {% endif %}
               {% block content_top %}
-                {% if content_top is not empty %}
+                {% if content_top  %}
                   <div class="ct-promo__content-top">
                     {{ content_top|raw }}
                   </div>
@@ -57,7 +57,7 @@
                         } only %}
                       {% endif %}
 
-                      {% if content is not empty %}
+                      {% if content  %}
                         {% include 'civictheme:paragraph' with {
                           theme: theme,
                           content: content,
@@ -89,7 +89,7 @@
               {% endblock %}
 
               {% block content_bottom %}
-                {% if content_bottom is not empty %}
+                {% if content_bottom  %}
                   <div class="ct-promo__content-bottom">
                     {{ content_bottom|raw }}
                   </div>

@@ -27,14 +27,14 @@
   success: 'megaphone',
 } %}
 
-{% if description is not empty %}
+{% if description  %}
   <div
     class="ct-alert {{ modifier_class -}}"
     data-alert-id="{{ id }}"
     data-alert-type="{{ type }}"
     data-component-name="ct-alert"
     role="alert"
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes  %}{{- attributes|raw -}}{% endif %}
   >
     <div class="container">
       <div class="row">

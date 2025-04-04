@@ -17,8 +17,8 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
-{% if items is not empty %}
-  <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if items  %}
+  <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes  %}{{- attributes|raw -}}{% endif %}>
     {% include '@organisms/skip-link/skip-link.twig' with {
       theme: theme,
       url: '#main-content',
