@@ -65,15 +65,12 @@ slots:
   content_top:
     title: Content top
     description: Content top slot
-    required: false
   filters:
     title: Filters
     description: Filters content slot
-    required: false
   content_bottom:
     title: Content bottom
     description: Content bottom slot
-    required: false
 libraryOverrides:
   js:
     group-filter.js: {}

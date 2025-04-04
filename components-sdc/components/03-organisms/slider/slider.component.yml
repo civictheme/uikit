@@ -61,23 +61,18 @@ slots:
   content_top:
     title: Content top
     description: Top content block
-    required: false
   top_controls:
     title: Top controls
     description: Top controls block containing title
-    required: false
   slides:
     title: Slides
     description: Slides content block
-    required: false
   controls:
     title: Controls
     description: Navigation controls block
-    required: false
   content_bottom:
     title: Content bottom
     description: Bottom content block
-    required: false
 libraryOverrides:
   js:
     slider.js: {}
