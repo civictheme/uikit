@@ -1,0 +1,58 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Video component
+status: experimental
+description: >-
+  Video component that can display videos from different sources with transcript
+  links
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Title for the iframe
+    url:
+      type: string
+      title: Url
+      description: URL of the video
+    width:
+      type: string
+      title: Width
+      description: Width of the iframe
+    height:
+      type: string
+      title: Height
+      description: Height of the video
+    transcript_link:
+      type: object
+      title: Transcript_link
+      description: Video transcript link
+    oembed:
+      type: string
+      title: Oembed
+      description: oEmbed provided iframe container
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  video:
+    title: Video
+    description: Video content block
+    required: false
+  links:
+    title: Links
+    description: Links content block including transcript
+    required: false

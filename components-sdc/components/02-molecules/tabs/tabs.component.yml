@@ -1,0 +1,73 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Tabs component
+status: experimental
+description: Tabs component with panels and optional links
+props:
+  type: object
+  properties:
+    panels:
+      type: array
+      title: Panels
+      description: Array of panels
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            description: Panel title
+          content:
+            type: string
+            description: Panel content
+          id:
+            type: string
+            description: Panel id
+          is_selected:
+            type: boolean
+            description: Panel is selected or not
+    links:
+      type: array
+      title: Links
+      description: Optional array of links (if not provided - will be generated from panel)
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            description: Link text
+          url:
+            type: string
+            description: Link URL
+          modifier_class:
+            type: string
+            description: Additional link classes
+          attributes:
+            type: string
+            description: Additional link attributes
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional classes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}
+libraryOverrides:
+  js:
+    tabs.js: {}

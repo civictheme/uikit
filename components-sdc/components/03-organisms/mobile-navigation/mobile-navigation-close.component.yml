@@ -1,0 +1,30 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Mobile Navigation Close component
+status: experimental
+description: Mobile Navigation Close component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme color scheme
+      enum:
+        - light
+        - dark
+      default: light
+    text:
+      type: string
+      title: Text
+      description: Text for the button
+      default: Close
+    attributes:
+      type: string
+      title: Attributes
+      description: Button tag attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}

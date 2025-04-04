@@ -1,0 +1,127 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Banner component
+status: experimental
+description: >-
+  A banner component with multiple content sections and optional
+  background/featured images
+props:
+  type: object
+  properties:
+    content_top1:
+      type: string
+      title: Content_top1
+      description: Content slot
+    breadcrumb:
+      type: array
+      title: Breadcrumb
+      description: Breadcrumb links
+    content_top2:
+      type: string
+      title: Content_top2
+      description: Content slot
+    content_top3:
+      type: string
+      title: Content_top3
+      description: Content slot
+    content_middle:
+      type: string
+      title: Content_middle
+      description: Content slot
+    content:
+      type: string
+      title: Content
+      description: Content slot
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content slot
+    content_below:
+      type: string
+      title: Content_below
+      description: Content slot
+    site_section:
+      type: string
+      title: Site_section
+      description: Site section
+    title:
+      type: string
+      title: Title
+      description: Title
+    is_decorative:
+      type: boolean
+      title: Is_decorative
+      description: Show as decorative
+    featured_image:
+      type: object
+      title: Featured_image
+      description: Featured image object
+    background_image:
+      type: object
+      title: Background_image
+      description: Background image object
+    background_image_blend_mode:
+      type: string
+      title: Background_image_blend_mode
+      description: Type of the background image blending
+      default: normal
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+    attributes:
+      type: string
+      title: Attributes
+      description: Banner attributes
+slots:
+  content_top1:
+    title: Content top1
+    description: Content top 1 block
+    required: false
+  breadcrumb:
+    title: Breadcrumb
+    description: Breadcrumb block
+    required: false
+  content_top2:
+    title: Content top2
+    description: Content top 2 block
+    required: false
+  content_top3:
+    title: Content top3
+    description: Content top 3 block
+    required: false
+  site_section:
+    title: Site section
+    description: Site section block
+    required: false
+  title:
+    title: Title
+    description: Title block
+    required: false
+  content_middle:
+    title: Content middle
+    description: Content middle block
+    required: false
+  content:
+    title: Content
+    description: Main content block
+    required: false
+  featured_image:
+    title: Featured image
+    description: Featured image block
+    required: false
+  content_below:
+    title: Content below
+    description: Content below block
+    required: false
+  content_bottom:
+    title: Content bottom
+    description: Content bottom block
+    required: false

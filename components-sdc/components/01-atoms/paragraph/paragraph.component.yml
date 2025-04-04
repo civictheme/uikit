@@ -1,0 +1,43 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Paragraph component
+status: experimental
+description: A paragraph component with theme and size variations
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variant
+      enum:
+        - light
+        - dark
+    content:
+      type: string
+      title: Content
+      description: The description's content
+    size:
+      type: string
+      title: Size
+      description: Size variant
+      enum:
+        - extra-large
+        - large
+        - regular
+        - small
+      default: regular
+    allow_html:
+      type: boolean
+      title: Allow_html
+      description: Allow HTML in text
+      default: false
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}

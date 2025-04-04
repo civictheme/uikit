@@ -1,0 +1,41 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Webform component
+status: experimental
+description: A webform component with configurable theme and spacing options
+props:
+  type: object
+  properties:
+    referenced_webform:
+      type: string
+      title: Referenced_webform
+      description: Rendered webform
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+      default: light
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+    with_background:
+      type: boolean
+      title: With_background
+      description: With background or not
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}

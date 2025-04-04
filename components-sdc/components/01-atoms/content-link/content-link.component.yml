@@ -1,0 +1,45 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Content Link component
+status: experimental
+description: Content Link component for displaying themed links
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+      default: light
+    text:
+      type: string
+      title: Text
+      description: Button text
+    url:
+      type: string
+      title: Url
+      description: URL
+    title:
+      type: string
+      title: Title
+      description: Defines the title of a link
+    is_new_window:
+      type: boolean
+      title: Is_new_window
+      description: Open in a new window
+    is_external:
+      type: boolean
+      title: Is_external
+      description: Link is external
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}

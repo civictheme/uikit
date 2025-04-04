@@ -1,0 +1,61 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Tag component
+status: experimental
+description: A configurable tag/label component that can be rendered as a link
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    type:
+      type: string
+      title: Type
+      description: 'Type: primary, secondary, tertiary'
+      enum:
+        - primary
+        - secondary
+        - tertiary
+      default: primary
+    content:
+      type: string
+      title: Content
+      description: Content
+    icon:
+      type: string
+      title: Icon
+      description: Icon name
+    icon_placement:
+      type: string
+      title: Icon_placement
+      description: 'Icon position: before, after'
+      enum:
+        - before
+        - after
+      default: after
+    url:
+      type: string
+      title: Url
+      description: Optional URL to convert to a link
+    is_new_window:
+      type: boolean
+      title: Is_new_window
+      description: Open in a new window. Only if url is provided
+    is_external:
+      type: boolean
+      title: Is_external
+      description: Link is external
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}
