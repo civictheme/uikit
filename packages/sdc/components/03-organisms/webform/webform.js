@@ -23,7 +23,7 @@ function CivicThemeWebform(el) {
       }
       errorMessage.focus();
       errorMessage.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   }
