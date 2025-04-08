@@ -12,12 +12,12 @@ function CivicThemeWebform(el) {
 
   this.el = el;
 
-  // Check for form errors and scroll to error message if present
+  // Check for form errors and scroll to error message if present.
   const fieldErrors = this.el.querySelectorAll('.ct-field-message--error');
   if (fieldErrors.length > 0) {
     const errorMessage = document.querySelector('.ct-message--error');
     if (errorMessage) {
-      // Make error message focusable if it's not a link
+      // Make error message focusable if it's not a link.
       if (!errorMessage.matches('a')) {
         errorMessage.setAttribute('tabindex', '-1');
       }
