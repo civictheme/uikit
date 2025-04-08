@@ -95,9 +95,6 @@
 {% set field_wrapper = type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 
 {% if control[0].name is defined %}
-	{% if attributes is not empty %}
-		{% set attributes = attributes|without('aria-invalid') %}
-	{% endif %}
 	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
 		{% if title is not empty and title_display != 'hidden' and type not in ['hidden', 'checkbox', 'radio'] %}
 			{% include '@atoms/label/label.twig' with {
