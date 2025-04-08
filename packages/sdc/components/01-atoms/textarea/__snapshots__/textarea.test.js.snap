@@ -14,6 +14,7 @@ exports[`Textarea Component renders with optional attributes 1`] = `
 
   
   <textarea
+    aria-invalid="true"
     class="ct-textarea ct-theme-dark ct-textarea--is-invalid custom-class"
     data-test="true"
     disabled=""
