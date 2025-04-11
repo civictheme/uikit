@@ -7,6 +7,7 @@ describe('Group Filter Component', () => {
         { title: 'Filter 1', content: 'Content 1' },
         { title: 'Filter 2', content: 'Content 2' },
       ],
+      group_id: '42',
     });
 
     expect(c.querySelectorAll('.ct-group-filter')).toHaveLength(1);
@@ -26,6 +27,7 @@ describe('Group Filter Component', () => {
         { title: 'Filter 1', content: 'Content 1' },
         { title: 'Filter 2', content: 'Content 2' },
       ],
+      group_id: '42',
     });
 
     expect(c.querySelectorAll('.ct-group-filter')).toHaveLength(1);
@@ -44,6 +46,7 @@ describe('Group Filter Component', () => {
         { title: 'Filter 1', content: 'Content 1' },
         { title: 'Filter 2', content: 'Content 2' },
       ],
+      group_id: '42',
     });
 
     expect(c.querySelectorAll('.ct-group-filter')).toHaveLength(1);
@@ -61,6 +64,7 @@ describe('Group Filter Component', () => {
         { title: 'Filter 1', content: 'Content 1' },
         { title: 'Filter 2', content: 'Content 2' },
       ],
+      group_id: '42',
     });
 
     expect(c.querySelectorAll('.ct-group-filter')).toHaveLength(1);
@@ -79,6 +83,7 @@ describe('Group Filter Component', () => {
       ],
       attributes: 'data-test="true"',
       modifier_class: 'custom-modifier',
+      group_id: '42',
     });
 
     expect(c.querySelectorAll('.ct-group-filter.custom-modifier')).toHaveLength(1);
