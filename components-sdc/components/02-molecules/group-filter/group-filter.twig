@@ -16,6 +16,7 @@
  * - theme: [string] Theme: light, dark.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
+ * - group_id: [string] Unique id for filter group.
  */
 #}
 
@@ -43,7 +44,7 @@
           {% endif %}
 
           {% block filters %}
-            {% set group = 'ct-group-filter--group-' ~ random(1000, 9999) %}
+            {% set group = 'ct-group-filter--group-' ~ group_id|default(random(1000,999)) %}
             {% set filters_items = [] %}
             {% for filter in filters %}
               {% set filters_item %}
