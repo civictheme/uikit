@@ -86,31 +86,24 @@ slots:
   content_top:
     title: Content top
     description: Content top block
-    required: false
   content:
     title: Content
     description: Main content block
-    required: false
   sidebar_top_left:
     title: Sidebar top left
     description: Top left sidebar block
-    required: false
   sidebar_top_right:
     title: Sidebar top right
     description: Top right sidebar block
-    required: false
   sidebar_bottom_left:
     title: Sidebar bottom left
     description: Bottom left sidebar block
-    required: false
   sidebar_bottom_right:
     title: Sidebar bottom right
     description: Bottom right sidebar block
-    required: false
   content_bottom:
     title: Content bottom
     description: Content bottom block
-    required: false
 libraryOverrides:
   js:
     layout.js: {}

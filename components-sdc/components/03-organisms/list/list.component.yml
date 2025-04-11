@@ -79,56 +79,42 @@ slots:
   header:
     title: Header
     description: Header section of the list
-    required: false
   title:
     title: Title
     description: Title section
-    required: false
   link_above:
     title: Link above
     description: Link above section
-    required: false
   content:
     title: Content
     description: Main content section
-    required: false
   list:
     title: List
     description: List section
-    required: false
   filters:
     title: Filters
     description: Filters section
-    required: false
   rows:
     title: Rows
     description: Rows section
-    required: false
   rows_above:
     title: Rows above
     description: Content above rows section
-    required: false
   results_count:
     title: Results count
     description: Results count section
-    required: false
   rows_below:
     title: Rows below
     description: Content below rows section
-    required: false
   empty:
     title: Empty
     description: Empty results section
-    required: false
   list_below:
     title: List below
     description: Content below list section
-    required: false
   pagination:
     title: Pagination
     description: Pagination section
-    required: false
   footer:
     title: Footer
     description: Footer section
-    required: false
