@@ -1,0 +1,51 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Table of contents
+status: experimental
+description: Table of contents component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Title text for the table of contents
+    position:
+      type: string
+      title: Position
+      description: Position of the TOC
+      enum:
+        - before
+        - after
+        - prepend
+        - append
+    links:
+      type: array
+      title: Links
+      description: Array of links { url, title }
+      items:
+        type: object
+        properties:
+          url:
+            type: string
+          title:
+            type: string
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}
+libraryOverrides:
+  js:
+    table-of-contents.js: {}

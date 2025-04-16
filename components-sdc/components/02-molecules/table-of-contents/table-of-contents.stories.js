@@ -11,12 +11,6 @@ const meta = {
     title: {
       control: { type: 'text' },
     },
-    anchor_selector: {
-      control: { type: 'text' },
-    },
-    scope_selector: {
-      control: { type: 'text' },
-    },
     position: {
       control: { type: 'radio' },
       options: ['before', 'after', 'prepend', 'append'],
@@ -33,6 +27,30 @@ const meta = {
 export default meta;
 
 export const TableOfContents = {
+  args: {
+    theme: 'light',
+    title: 'On this page',
+    links: [
+      {
+        title: 'Link 1',
+        url: '/',
+      },
+      {
+        title: 'Link 2',
+        url: '/',
+      },
+      {
+        title: 'Link 3',
+        url: '/',
+      },
+    ],
+    position: 'before',
+    modifier_class: '',
+    attributes: '',
+  },
+};
+
+export const TableOfContentsAutomatic = {
   parameters: {
     layout: 'centered',
   },

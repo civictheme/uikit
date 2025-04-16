@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Table of contents component.
+ *
+ * Variables:
+ * - theme: [string] Theme: light, dark.
+ * - title: [string] Title text for the table of contents.
+ * - position: [string] Position of the TOC: 'before', 'after', 'prepend', 'append'
+ * - links: [array] Array of links { url, title }.
+ * - attributes: [string] Additional attributes.
+ * - modifier_class: [string] Additional classes.
+ */
+#}
+
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set position_class = 'ct-table-of-contents--position-%s'|format(position|default('before')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, position_class, modifier_class|default('')) %}
+
+<div class="ct-table-of-contents {{ modifier_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  {% if title %}
+    <h2 class="ct-table-of-contents__title">{{ title }}</h2>
+  {% endif %}
+  {% if links %}
+    <ul class="ct-table-of-contents__links">
+      {% for link in links %}
+        <li class="ct-table-of-contents__link-item">
+          <a class="ct-table-of-contents__link" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

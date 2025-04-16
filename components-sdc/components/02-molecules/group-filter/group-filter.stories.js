@@ -38,7 +38,7 @@ const meta = {
     },
     group_id: {
       control: { type: 'text' },
-    }
+    },
   },
 };
 

@@ -27,7 +27,7 @@
 {% if content is not empty -%}
   <div class="ct-field-message {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% if icons[type] is defined %}
-      {% include "@base/icon/icon.twig" with {
+      {% include '@base/icon/icon.twig' with {
         symbol: icons[type],
         size: 'regular',
         modifier_class: 'ct-field-message__icon',

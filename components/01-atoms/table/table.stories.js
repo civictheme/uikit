@@ -1,27 +1,29 @@
 import Component from './table.twig';
+import Link from '../link/link.twig';
 
 const getRows = function (theme) {
   return [
     [
-      `<a class="ct-link ct-theme-${theme}" href="#" title="Row 1 with link">Row 1 with link</a>`,
+      Link({ theme, text: 'Row 1 with link', url: '#', title: 'Row 1 with link' }),
       'Description summary on odd row with vertical spacing',
       'Another column',
       'One more column column',
     ],
     [
+      Link({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
       `<a class="ct-link ct-theme-${theme}" href="#" title="Row 1 with link">Row 2 with link</a>`,
       'Description summary on even row',
       'Another column',
       'One more column column',
     ],
     [
-      `<a class="ct-link ct-theme-${theme}" href="#" title="Row 1 with link">Row 3 with link</a>`,
+      Link({ theme, text: 'Row 3 with link', url: '#', title: 'Row 3 with link' }),
       'Description summary on odd row with vertical spacing',
       'Another column',
       'One more column column',
     ],
     [
-      `<a class="ct-link ct-theme-${theme}" href="#" title="Row 1 with link">Row 5 with link</a>`,
+      Link({ theme, text: 'Row 4 with link', url: '#', title: 'Row 4 with link' }),
       'Description summary on even row',
       'Another column',
       'One more column column',
