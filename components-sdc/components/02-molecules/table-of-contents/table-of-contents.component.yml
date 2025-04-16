@@ -29,7 +29,7 @@ props:
     links:
       type: array
       title: Links
-      description: Array of links { url, title }
+      description: Array of links. If provided, the TOC will be generated from the links.
       items:
         type: object
         properties:
@@ -37,6 +37,14 @@ props:
             type: string
           title:
             type: string
+    anchor_selector:
+      type: string
+      title: Anchor selector
+      description: CSS selector for headings to include in TOC (e.g. 'h2, h3')
+    scope_selector:
+      type: string
+      title: Scope selector
+      description: CSS selector for the content area to generate TOC from
     attributes:
       type: string
       title: Attributes
@@ -45,7 +53,10 @@ props:
       type: string
       title: Modifier_class
       description: Additional classes
-slots: {}
+slots:
+  content:
+    title: Content
+    description: Content to display in the table of contents
 libraryOverrides:
   js:
     table-of-contents.js: {}

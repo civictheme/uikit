@@ -7,7 +7,7 @@
  * - theme: [string] Theme: light, dark.
  * - title: [string] Title text for the table of contents.
  * - position: [string] Position of the TOC: 'before', 'after', 'prepend', 'append'
- * - links: [array] Array of links { url, title }.
+ * - links: [array] Array of links [{ url, title }]. If provided, the TOC will be generated from the links.
  * - anchor_selector: [string] CSS selector for headings to include in TOC (e.g. 'h2, h3').
  * - scope_selector: [string] CSS selector for the content area to generate TOC from.
  * - attributes: [string] Additional attributes.
@@ -41,5 +41,9 @@
     data-table-of-contents-anchor-selector="{{ anchor_selector }}"
     data-table-of-contents-anchor-scope-selector="{{ scope_selector }}"
     data-table-of-contents-position="{{ position }}"
-  >{{ content|raw }}</div>
+  >
+    {%- block content -%}
+      {{- content|raw -}}
+    {%- endblock -%}
+  </div>
 {% endif %}
