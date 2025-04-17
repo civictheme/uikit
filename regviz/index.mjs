@@ -10,13 +10,14 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
 import path from 'path';
-import { loadConfig, saveConfig, initConfig } from './lib/config.js';
+import { loadConfig, saveConfig, initConfig } from './lib/config.mjs';
 import { 
   executeCaptureCommand, 
   executeCompareCommand, 
   executeCleanCommand 
-} from './lib/commands/index.js';
-import { runInteractiveMenu } from './lib/interactive.js';
+} from './lib/commands/index.mjs';
+import { runInteractiveMenu } from './lib/interactive.mjs';
+import { startServer } from './lib/server.mjs';
 
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -138,6 +139,39 @@ program
   .action(async (options) => {
     try {
       await executeCleanCommand(options);
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+      process.exit(1);
+    }
+  });
+
+// Server command
+program
+  .command('serve')
+  .description('Start a web server to view comparisons and screenshots')
+  .option('-p, --port <port>', 'Port to run the server on', '3000')
+  .option('-d, --detached', 'Run server in detached mode (background)', false)
+  .action(async (options) => {
+    try {
+      const port = parseInt(options.port, 10);
+      const server = await startServer({
+        port,
+        detached: options.detached
+      });
+      
+      if (!options.detached) {
+        console.log(`Server running at http://localhost:${port}`);
+        console.log('Press Ctrl+C to stop');
+        
+        // Keep the process running unless Ctrl+C is pressed
+        process.on('SIGINT', () => {
+          console.log('Shutting down server...');
+          server.close(() => {
+            console.log('Server stopped');
+            process.exit(0);
+          });
+        });
+      }
     } catch (error) {
       console.error(`Error: ${error.message}`);
       process.exit(1);

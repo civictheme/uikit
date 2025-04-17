@@ -24,17 +24,17 @@ jest.mock('child_process', () => ({
 }));
 
 // Import after mocking
-import { executeCaptureCommand } from '../lib/commands/capture.js';
-import { executeCompareCommand } from '../lib/commands/compare.js';
-import { compareScreenshots } from '../lib/compare.js';
-import { createSnapshot } from '../lib/sources/index.js';
+import { executeCaptureCommand } from '../lib/commands/capture.mjs';
+import { executeCompareCommand } from '../lib/commands/compare.mjs';
+import { compareScreenshots } from '../lib/compare.mjs';
+import { createSnapshot } from '../lib/sources/index.mjs';
 
 // Mock the sources and screenshot modules
-jest.mock('../lib/sources/index.js', () => ({
+jest.mock('../lib/sources/index.mjs', () => ({
   createSnapshot: jest.fn().mockResolvedValue({ success: true }),
 }));
 
-jest.mock('../lib/compare.js', () => ({
+jest.mock('../lib/compare.mjs', () => ({
   compareScreenshots: jest.fn().mockResolvedValue(true),
 }));
 
@@ -163,8 +163,8 @@ describe('Command execution tests', () => {
     test('should follow correct workflow during capture', async () => {
       // Mock the configuration adding function
       const addScreenshotSetSpy = jest.fn();
-      jest.mock('../lib/config.js', () => ({
-        ...jest.requireActual('../lib/config.js'),
+      jest.mock('../lib/config.mjs', () => ({
+        ...jest.requireActual('../lib/config.mjs'),
         addScreenshotSet: addScreenshotSetSpy,
       }), { virtual: true });
 

@@ -5,14 +5,13 @@
 export default {
   testEnvironment: 'node',
   transform: {}, // We're using ES modules, so no transform needed
-  extensionsToTreatAsEsm: ['.js'],
   moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1'
+    '^(\\.{1,2}/.*)\\.mjs$': '$1'
   },
-  testMatch: ['**/regviz/tests/**/*.test.js'],
+  testMatch: ['regviz/tests/**/*.test.mjs'],
   collectCoverageFrom: [
-    '**/regviz/lib/**/*.js',
-    '**/regviz/index.js',
+    '**/regviz/lib/**/*.mjs',
+    '**/regviz/index.mjs',
     '!**/node_modules/**',
   ],
   coverageDirectory: '.logs/coverage-regviz',

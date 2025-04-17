@@ -20,9 +20,9 @@ jest.mock('path', () => ({
 }));
 
 // Import modules after mocking
-import { getDataPath } from '../lib/config.js';
-import { executeCaptureCommand } from '../lib/commands/capture.js';
-import { executeCompareCommand } from '../lib/commands/compare.js';
+import { getDataPath } from '../lib/config.mjs';
+import { executeCaptureCommand } from '../lib/commands/capture.mjs';
+import { executeCompareCommand } from '../lib/commands/compare.mjs';
 
 describe('Naming pattern tests', () => {
   // Reset mocks before each test
@@ -77,7 +77,7 @@ describe('Naming pattern tests', () => {
     
     beforeEach(async () => {
       // Import the capture module to access the real implementation
-      originalModule = await import('../lib/commands/capture.js');
+      originalModule = await import('../lib/commands/capture.mjs');
       
       // Override executeCaptureCommand to track calls to the internal functions
       jest.spyOn(originalModule, 'executeCaptureCommand').mockImplementation(
@@ -156,7 +156,7 @@ describe('Naming pattern tests', () => {
     
     beforeEach(async () => {
       // Import the compare module to access the real implementation
-      originalModule = await import('../lib/commands/compare.js');
+      originalModule = await import('../lib/commands/compare.mjs');
       
       // Override executeCompareCommand to track calls to the internal functions
       jest.spyOn(originalModule, 'executeCompareCommand').mockImplementation(

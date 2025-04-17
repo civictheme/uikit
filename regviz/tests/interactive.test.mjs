@@ -18,14 +18,14 @@ jest.mock('inquirer', () => ({
   prompt: jest.fn(),
 }));
 
-jest.mock('../lib/commands/capture.js', () => ({
-  executeCaptureCommand: jest.fn().mockResolvedValue({ 
+jest.mock('../lib/commands/capture.mjs', () => ({
+  executeCaptureCommand: jest.fn().mockResolvedValue({
     name: 'set--test--components',
     exists: false,
   }),
 }));
 
-jest.mock('../lib/commands/compare.js', () => ({
+jest.mock('../lib/commands/compare.mjs', () => ({
   executeCompareCommand: jest.fn().mockResolvedValue({
     name: 'diff--test--vs--test',
     exists: false,
@@ -33,16 +33,17 @@ jest.mock('../lib/commands/compare.js', () => ({
 }));
 
 // Import after mocking
-import { 
+import {
   runInteractiveMenu,
   handleCaptureInteractive,
-  handleCompareInteractive 
-} from '../lib/interactive.js';
+  handleCompareInteractive
+} from '../lib/interactive.mjs';
+import {formatDisplayName} from "../lib/utils.mjs";
 
 describe('Interactive mode tests', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    
+
     // Mock configuration
     fs.readFileSync.mockReturnValue(JSON.stringify({
       screenshot_sets: {
@@ -67,7 +68,7 @@ describe('Interactive mode tests', () => {
       }
     }));
     fs.existsSync.mockReturnValue(true);
-    
+
     // Mock inquirer responses
     inquirer.prompt.mockImplementation(async (questions) => {
       // Default behaviors for different questions
@@ -82,7 +83,7 @@ describe('Interactive mode tests', () => {
       } else if (questions[0].name === 'continueAction') {
         return { continueAction: false };
       }
-      
+
       // Default empty response for other questions
       return {};
     });
@@ -95,9 +96,9 @@ describe('Interactive mode tests', () => {
   describe('Main menu', () => {
     test('should exit when exit option is selected', async () => {
       inquirer.prompt.mockResolvedValueOnce({ action: 'exit' });
-      
+
       await runInteractiveMenu();
-      
+
       expect(inquirer.prompt).toHaveBeenCalledWith(
         expect.arrayContaining([
           expect.objectContaining({
@@ -107,17 +108,17 @@ describe('Interactive mode tests', () => {
         ])
       );
     });
-    
+
     test('should call capture handler when capture is selected', async () => {
       // Mock the handleCaptureInteractive function
       const mockHandleCaptureInteractive = jest.fn();
-      const originalModule = await import('../lib/interactive.js');
+      const originalModule = await import('../lib/interactive.mjs');
       originalModule.handleCaptureInteractive = mockHandleCaptureInteractive;
-      
+
       inquirer.prompt.mockResolvedValueOnce({ action: 'capture' });
-      
+
       await runInteractiveMenu();
-      
+
       expect(mockHandleCaptureInteractive).toHaveBeenCalled();
     });
   });
@@ -135,26 +136,26 @@ describe('Interactive mode tests', () => {
         .mockResolvedValueOnce({ name: '' })
         // Continue action prompt
         .mockResolvedValueOnce({ continueAction: false });
-        
+
       // Import the original function to test
-      const { handleCaptureInteractive, executeCaptureCommand } = await import('../lib/interactive.js');
-      
+      const { handleCaptureInteractive, executeCaptureCommand } = await import('../lib/interactive.mjs');
+
       // Mock the execute function to track calls
       const mockExecuteCaptureCommand = jest.fn().mockResolvedValue({
         name: 'set--main--components',
         exists: false
       });
-      
+
       // Replace the real implementation temporarily
       const originalExecuteCaptureCommand = executeCaptureCommand;
       global.executeCaptureCommand = mockExecuteCaptureCommand;
-      
+
       // Call the function under test
       await handleCaptureInteractive();
-      
+
       // Restore the original implementation
       global.executeCaptureCommand = originalExecuteCaptureCommand;
-      
+
       // Verify the name pattern was used without confirmation prompt
       expect(mockExecuteCaptureCommand).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -178,26 +179,26 @@ describe('Interactive mode tests', () => {
         .mockResolvedValueOnce({ name: '' })
         // Continue action prompt
         .mockResolvedValueOnce({ continueAction: false });
-        
+
       // Import the original function to test
-      const { handleCompareInteractive, executeCompareCommand } = await import('../lib/interactive.js');
-      
+      const { handleCompareInteractive, executeCompareCommand } = await import('../lib/interactive.mjs');
+
       // Mock the execute function to track calls
       const mockExecuteCompareCommand = jest.fn().mockResolvedValue({
         name: 'diff--main--vs--current',
         exists: false
       });
-      
+
       // Replace the real implementation temporarily
       const originalExecuteCompareCommand = executeCompareCommand;
       global.executeCompareCommand = mockExecuteCompareCommand;
-      
+
       // Call the function under test
       await handleCompareInteractive();
-      
+
       // Restore the original implementation
       global.executeCompareCommand = originalExecuteCompareCommand;
-      
+
       // Verify the name pattern was used without confirmation prompt
       expect(mockExecuteCompareCommand).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -206,6 +207,43 @@ describe('Interactive mode tests', () => {
           name: expect.stringContaining('diff--')
         })
       );
+    });
+  });
+
+  describe('formatDisplayName function', () => {
+    test('should format main branch names correctly', () => {
+      const formatted = formatDisplayName('set--main--components');
+      expect(formatted).toBe('Main branch (Components)');
+    });
+
+    test('should format current branch names correctly', () => {
+      const formatted = formatDisplayName('set--current--feature-branch--components');
+      expect(formatted).toBe('Branch: feature-branch (Components)');
+    });
+
+    test('should format release versions correctly', () => {
+      const formatted = formatDisplayName('set--release--1.2.3--components');
+      expect(formatted).toBe('Release: 1.2.3 (Components)');
+    });
+
+    test('should handle SDC framework correctly', () => {
+      const formatted = formatDisplayName('set--main--sdc');
+      expect(formatted).toBe('Main branch (SDC)');
+    });
+
+    test('should handle custom frameworks correctly', () => {
+      const formatted = formatDisplayName('set--current--feature-branch--custom');
+      expect(formatted).toBe('Branch: feature-branch (custom)');
+    });
+
+    test('should return original name for non-matching format', () => {
+      const formatted = formatDisplayName('some-arbitrary-name');
+      expect(formatted).toBe('some-arbitrary-name');
+    });
+
+    test('should handle partial patterns gracefully', () => {
+      const formatted = formatDisplayName('set--current');
+      expect(formatted).toBe('set--current');
     });
   });
 });
