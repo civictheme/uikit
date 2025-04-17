@@ -47,14 +47,6 @@ export function loadConfig() {
   try {
     if (fs.existsSync(CONFIG_FILE)) {
       const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
-      
-      // Migrate old format if needed
-      if (config.baselines || config.targets) {
-        const migratedConfig = migrateConfig(config);
-        saveConfig(migratedConfig);
-        return migratedConfig;
-      }
-      
       return config;
     }
   } catch (error) {
@@ -62,56 +54,6 @@ export function loadConfig() {
   }
   
   return DEFAULT_CONFIG;
-}
-
-/**
- * Migrate old configuration format to new format.
- * 
- * @param {Object} oldConfig - The old configuration.
- * @returns {Object} The migrated configuration.
- */
-function migrateConfig(oldConfig) {
-  const newConfig = {
-    screenshot_sets: {},
-    comparisons: oldConfig.comparisons || {}
-  };
-  
-  // Migrate baselines to screenshot_sets
-  if (oldConfig.baselines) {
-    Object.entries(oldConfig.baselines).forEach(([name, data]) => {
-      newConfig.screenshot_sets[name] = {
-        ...data,
-        role: 'baseline'
-      };
-    });
-  }
-  
-  // Migrate targets to screenshot_sets
-  if (oldConfig.targets) {
-    Object.entries(oldConfig.targets).forEach(([name, data]) => {
-      newConfig.screenshot_sets[name] = {
-        ...data,
-        role: 'target'
-      };
-    });
-  }
-  
-  // Update comparisons to reference screenshot_sets
-  if (oldConfig.comparisons) {
-    Object.entries(oldConfig.comparisons).forEach(([name, data]) => {
-      newConfig.comparisons[name] = {
-        ...data,
-        source: data.baseline,
-        target: data.target
-      };
-      
-      // Remove old properties
-      delete newConfig.comparisons[name].baseline;
-    });
-  }
-  
-  console.log('Configuration migrated to new format');
-  return newConfig;
 }
 
 /**
@@ -141,14 +83,20 @@ export function saveConfig(config) {
 export function getDataPath(type, name) {
   const baseDir = path.join(process.cwd(), 'screenshots');
   
-  switch (type) {
-    case 'set':
-      return path.join(baseDir, `set-${name}`);
-    case 'comparison':
-      return path.join(baseDir, `diff-${name}`);
-    default:
-      throw new Error(`Unknown data type: ${type}`);
+  // For backward compatibility with older names 
+  if (!name.startsWith('set--') && !name.startsWith('diff--')) {
+    switch (type) {
+      case 'set':
+        return path.join(baseDir, `set-${name}`);
+      case 'comparison':
+        return path.join(baseDir, `diff-${name}`);
+      default:
+        throw new Error(`Unknown data type: ${type}`);
+    }
   }
+  
+  // For new naming pattern with built-in type prefix
+  return path.join(baseDir, name);
 }
 
 /**

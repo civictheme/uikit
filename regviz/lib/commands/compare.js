@@ -20,8 +20,11 @@ function generateComparisonName(sourceName, targetName, config) {
   const sourceSet = config.screenshot_sets[sourceName];
   const targetSet = config.screenshot_sets[targetName];
   
-  // Create a concise description for the name
-  let name = '';
+  // Create a concise description for the name with a 'diff' prefix
+  let name = 'diff';
+  
+  // Add source info with double-hyphen
+  name += '--';
   
   // Add source info based on its source type or name
   if (sourceSet && sourceSet.source) {
@@ -32,14 +35,14 @@ function generateComparisonName(sourceName, targetName, config) {
     } else if (sourceSet.source === 'current' && sourceSet.branch) {
       name += `branch-${sourceSet.branch.replace(/[^a-zA-Z0-9-_]/g, '-')}`;
     } else {
-      name += sourceName.split('-')[0]; // Use the first part of the source name
+      name += sourceName.split('--')[1] || sourceName; // Try to get source part from new format
     }
   } else {
-    name += sourceName.split('-')[0]; // Use the first part of the source name
+    name += sourceName.split('--')[1] || sourceName; // Try to get source part from new format
   }
   
-  // Add vs
-  name += '-vs-';
+  // Add vs with double-hyphen
+  name += '--vs--';
   
   // Add target info based on its source type or name
   if (targetSet && targetSet.source) {
@@ -50,10 +53,10 @@ function generateComparisonName(sourceName, targetName, config) {
     } else if (targetSet.source === 'current' && targetSet.branch) {
       name += `branch-${targetSet.branch.replace(/[^a-zA-Z0-9-_]/g, '-')}`;
     } else {
-      name += targetName.split('-')[0]; // Use the first part of the target name
+      name += targetName.split('--')[1] || targetName; // Try to get source part from new format
     }
   } else {
-    name += targetName.split('-')[0]; // Use the first part of the target name
+    name += targetName.split('--')[1] || targetName; // Try to get source part from new format
   }
   
   return name;
@@ -73,8 +76,7 @@ export async function executeCompareCommand(options) {
     const config = loadConfig();
     const forceOverwrite = options.force || false;
     
-    // For backward compatibility, alias baseline to source
-    const sourceName = options.source || options.baseline;
+    const sourceName = options.source;
     const targetName = options.target;
     
     // Validate source and target
@@ -125,7 +127,7 @@ export async function executeCompareCommand(options) {
     
     // Run the comparison
     const success = await compareScreenshots({
-      baselineDir: sourceDir,  // Keep parameter names compatible with compareScreenshots
+      sourceDir,
       targetDir,
       outputDir
     });

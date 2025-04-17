@@ -30,7 +30,9 @@
     "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'",
     "diff": "npm run build-storybook && npm --prefix components-sdc run build-storybook && node screenshots.js",
     "regviz": "node regviz/index.js",
-    "regviz:interactive": "node regviz/index.js interactive"
+    "regviz:interactive": "node regviz/index.js interactive",
+    "test:regviz": "node --experimental-vm-modules node_modules/.bin/jest --config regviz/jest.config.js",
+    "test:regviz:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config regviz/jest.config.js --coverage"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.1",

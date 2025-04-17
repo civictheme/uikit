@@ -5,7 +5,7 @@
  */
 
 import inquirer from 'inquirer';
-import { loadConfig } from './config.js';
+import { loadConfig, getDataPath } from './config.js';
 import {
   executeCaptureCommand,
   executeCompareCommand,
@@ -192,7 +192,10 @@ async function handleCaptureInteractive() {
         }
 
         // Generate the name using the same logic as in capture.js
-        let name = options.source;
+        let name = 'set';
+        
+        // Add double-hyphen and source type
+        name += `--${options.source}`;
 
         if (options.source === 'release' && options.version) {
           name += `-${options.version}`;
@@ -202,33 +205,14 @@ async function handleCaptureInteractive() {
         }
 
         const targetName = options.target === 'components-sdc' ? 'sdc' : 'components';
-        name += `-${targetName}`;
+        name += `--${targetName}`;
 
-        console.log(`\nAuto-generated name: ${name}`);
-
-        const { confirmName } = await inquirer.prompt([
-          {
-            type: 'confirm',
-            name: 'confirmName',
-            message: 'Use this auto-generated name?',
-            default: true
-          }
-        ]);
-
-        if (!confirmName) {
-          const { customName } = await inquirer.prompt([
-            {
-              type: 'input',
-              name: 'customName',
-              message: 'Enter a custom name:',
-              validate: (input) => input.trim() !== '' ? true : 'Name cannot be empty'
-            }
-          ]);
-
-          options.name = customName;
-        } else {
-          options.name = name;
-        }
+        // Get the output directory
+        const outputDir = getDataPath('set', name);
+        console.log(`\nUsing auto-generated name: ${name}`);
+        console.log(`Screenshots will be stored in: ${outputDir}`);
+        
+        options.name = name;
       } catch (error) {
         console.error(`Error generating name: ${error.message}`);
       }
@@ -310,14 +294,13 @@ async function handleCompareInteractive() {
     // Prepare choices from all screenshot sets
     const screenshotSets = Object.entries(config.screenshot_sets || {}).map(([name, set]) => {
       const sourceInfo = set.source ? ` from ${set.source}` : '';
-      const roleInfo = set.role ? ` (${set.role})` : '';
       return {
-        name: `${name}${sourceInfo}${roleInfo}`,
+        name: `${name}${sourceInfo}`,
         value: name
       };
     });
     
-    // Filter choices for source (traditionally baselines)
+    // Filter choices for source
     const sourceChoices = [...screenshotSets];
     
     // First choose the source
@@ -368,7 +351,12 @@ async function handleCompareInteractive() {
       // Generate a preview name based on similar logic to compare.js
       const sourceSet = config.screenshot_sets[options.source];
       const targetSet = config.screenshot_sets[options.target];
-      let name = '';
+      
+      // Create a concise description for the name with a 'diff' prefix
+      let name = 'diff';
+      
+      // Add source info with double-hyphen
+      name += '--';
       
       // Add source info
       if (sourceSet && sourceSet.source) {
@@ -379,14 +367,14 @@ async function handleCompareInteractive() {
         } else if (sourceSet.source === 'current' && sourceSet.branch) {
           name += `branch-${sourceSet.branch.replace(/[^a-zA-Z0-9-_]/g, '-')}`;
         } else {
-          name += options.source.split('-')[0];
+          name += options.source.split('--')[1] || options.source;
         }
       } else {
-        name += options.source.split('-')[0];
+        name += options.source.split('--')[1] || options.source;
       }
       
-      // Add vs
-      name += '-vs-';
+      // Add vs with double-hyphen
+      name += '--vs--';
       
       // Add target info
       if (targetSet && targetSet.source) {
@@ -397,37 +385,18 @@ async function handleCompareInteractive() {
         } else if (targetSet.source === 'current' && targetSet.branch) {
           name += `branch-${targetSet.branch.replace(/[^a-zA-Z0-9-_]/g, '-')}`;
         } else {
-          name += options.target.split('-')[0];
+          name += options.target.split('--')[1] || options.target;
         }
       } else {
-        name += options.target.split('-')[0];
+        name += options.target.split('--')[1] || options.target;
       }
       
-      console.log(`\nAuto-generated name: ${name}`);
+      // Get the output directory
+      const outputDir = getDataPath('comparison', name);
+      console.log(`\nUsing auto-generated name: ${name}`);
+      console.log(`Comparison report will be stored in: ${outputDir}`);
       
-      const { confirmName } = await inquirer.prompt([
-        {
-          type: 'confirm',
-          name: 'confirmName',
-          message: 'Use this auto-generated name?',
-          default: true
-        }
-      ]);
-      
-      if (!confirmName) {
-        const { customName } = await inquirer.prompt([
-          {
-            type: 'input',
-            name: 'customName',
-            message: 'Enter a custom name:',
-            validate: (input) => input.trim() !== '' ? true : 'Name cannot be empty'
-          }
-        ]);
-        
-        options.name = customName;
-      } else {
-        options.name = name;
-      }
+      options.name = name;
     }
     
     // Initial attempt to execute the comparison
@@ -503,8 +472,7 @@ async function handleListInteractive() {
       } else {
         Object.entries(config.screenshot_sets).forEach(([name, set]) => {
           const sourceInfo = set.source ? ` from ${set.source}` : '';
-          const roleInfo = set.role ? ` (${set.role})` : '';
-          console.log(`  - ${name}${sourceInfo}${roleInfo}`);
+          console.log(`  - ${name}${sourceInfo}`);
         });
       }
     }
@@ -515,9 +483,7 @@ async function handleListInteractive() {
         console.log('  No comparisons available');
       } else {
         Object.entries(config.comparisons).forEach(([name, comparison]) => {
-          const sourceRef = comparison.source || comparison.baseline;
-          const targetRef = comparison.target;
-          console.log(`  - ${name}: ${sourceRef} vs ${targetRef}`);
+          console.log(`  - ${name}: ${comparison.source} vs ${comparison.target}`);
         });
       }
     }
@@ -588,9 +554,8 @@ async function handleCleanInteractive() {
             message: 'Select screenshot set to remove:',
             choices: Object.entries(config.screenshot_sets).map(([name, set]) => {
               const sourceInfo = set.source ? ` from ${set.source}` : '';
-              const roleInfo = set.role ? ` (${set.role})` : '';
               return {
-                name: `${name}${sourceInfo}${roleInfo}`,
+                name: `${name}${sourceInfo}`,
                 value: name
               };
             })
@@ -622,10 +587,8 @@ async function handleCleanInteractive() {
             name: 'comparison',
             message: 'Select comparison to remove:',
             choices: Object.entries(config.comparisons).map(([name, comparison]) => {
-              const sourceRef = comparison.source || comparison.baseline;
-              const targetRef = comparison.target;
               return {
-                name: `${name}: ${sourceRef} vs ${targetRef}`,
+                name: `${name}: ${comparison.source} vs ${comparison.target}`,
                 value: name
               };
             })
