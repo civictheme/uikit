@@ -6,12 +6,6 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-// Get the directory name of the current module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // Configuration file path
 const CONFIG_DIR = path.join(process.cwd(), 'visual-diff', 'config');
@@ -20,23 +14,8 @@ const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 // Default configuration
 const DEFAULT_CONFIG = {
   screenshot_sets: {},
-  comparisons: {}
+  comparisons: {},
 };
-
-/**
- * Initialize configuration if it doesn't exist.
- *
- * @returns {Object} The loaded or initialized configuration.
- */
-export function initConfig() {
-  ensureDirectory(CONFIG_DIR);
-
-  if (!fs.existsSync(CONFIG_FILE)) {
-    saveConfig(DEFAULT_CONFIG);
-    console.log(`Configuration initialized at ${CONFIG_FILE}`);
-  }
-  return loadConfig();
-}
 
 /**
  * Load configuration from file.
@@ -53,6 +32,17 @@ export function loadConfig() {
   }
 
   return DEFAULT_CONFIG;
+}
+
+/**
+ * Ensure a directory exists.
+ *
+ * @param {string} dirPath - The directory path.
+ */
+export function ensureDirectory(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
 }
 
 /**
@@ -74,6 +64,21 @@ export function saveConfig(config) {
 }
 
 /**
+ * Initialize configuration if it doesn't exist.
+ *
+ * @returns {Object} The loaded or initialized configuration.
+ */
+export function initConfig() {
+  ensureDirectory(CONFIG_DIR);
+
+  if (!fs.existsSync(CONFIG_FILE)) {
+    saveConfig(DEFAULT_CONFIG);
+    console.log(`Configuration initialized at ${CONFIG_FILE}`);
+  }
+  return loadConfig();
+}
+
+/**
  * Get the directory path for a specific type of data.
  *
  * @param {string} name - The name of the data item.
@@ -84,17 +89,6 @@ export function getDataPath(name) {
   ensureDirectory(baseDir);
 
   return path.join(baseDir, name);
-}
-
-/**
- * Ensure a directory exists.
- *
- * @param {string} dirPath - The directory path.
- */
-export function ensureDirectory(dirPath) {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
 }
 
 /**

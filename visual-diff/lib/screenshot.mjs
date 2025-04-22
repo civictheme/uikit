@@ -8,10 +8,10 @@ import fs from 'fs';
 import path from 'path';
 import http from 'http';
 import handler from 'serve-handler';
-import {ensureDirectory} from './config.mjs';
+import { Cluster } from 'puppeteer-cluster';
+import { ensureDirectory } from './config.mjs';
 
-import {determineOptimalConcurrency} from "./utils.mjs";
-import { Cluster }  from 'puppeteer-cluster';
+import { determineOptimalConcurrency } from './utils.mjs';
 /**
  * Start a static server for the given directory.
  *
@@ -20,11 +20,9 @@ import { Cluster }  from 'puppeteer-cluster';
  * @returns {Promise<http.Server>} The server instance.
  */
 function startStaticServer(directory, port) {
-  const server = http.createServer((request, response) => {
-    return handler(request, response, {
-      public: directory
-    });
-  });
+  const server = http.createServer((request, response) => handler(request, response, {
+    public: directory,
+  }));
 
   return new Promise((resolve, reject) => {
     server.listen(port, () => {
@@ -53,13 +51,13 @@ function getStoryIdsFromIndexJson(staticDir) {
   const indexContent = fs.readFileSync(indexPath, 'utf-8');
   const indexData = JSON.parse(indexContent);
 
-  // Filter out entries that aren't stories (e.g., docs pages)
-  const storyEntries = Object.entries(indexData.entries)
-    .filter(([_, entry]) => entry.type === 'story' && !entry.id.includes('--docs'));
+  // Filter out entries that aren't stories (e.g., docs pages).
+  const storyEntries = Object.values(indexData.entries)
+    .filter((entry) => entry.type === 'story' && !entry.id.includes('--docs'));
 
-  return storyEntries.map(([_, entry]) => ({
+  return storyEntries.map((entry) => ({
     id: entry.id,
-    title: entry.title
+    title: entry.title,
   }));
 }
 
@@ -76,12 +74,10 @@ export async function captureScreenshots({
   storybookDir,
   outputDir,
   port = 6006,
-  concurrency = determineOptimalConcurrency()
+  concurrency = determineOptimalConcurrency(),
 }) {
   ensureDirectory(outputDir);
   let server = null;
-  let browser = null;
-
   try {
     server = await startStaticServer(storybookDir, port);
 
@@ -93,21 +89,21 @@ export async function captureScreenshots({
     console.log(`Found ${storyIds.length} stories`);
 
     // Filter out docs pages from story IDs.
-    const storiesToCapture = storyIds.filter(({id}) => !id.includes('--docs'));
+    const storiesToCapture = storyIds.filter(({ id }) => !id.includes('--docs'));
     console.log(`Concurrent operations limited to ${concurrency}`);
     const cluster = await Cluster.launch({
       concurrency: Cluster.CONCURRENCY_BROWSER,
       maxConcurrency: concurrency,
     });
-    await cluster.task(async ({ page, filePath }) => {
+    await cluster.task(async ({ page, data: { storyUrl, filePath } }) => {
+      console.log(`Capturing: ${storyUrl} to ${filePath}`);
       await page.goto(storyUrl);
       await page.screenshot({
         path: filePath,
-        fullPage: true
+        fullPage: true,
       });
     });
-    const promises = [];
-    storiesToCapture.map(({id: storyId, title}) => {
+    storiesToCapture.forEach(({ id: storyId }) => {
       const storyPath = storyId.replace(/--/g, '/');
       const fileName = `${storyPath}.png`;
       const filePath = path.join(outputDir, fileName);
@@ -116,22 +112,18 @@ export async function captureScreenshots({
         fs.mkdirSync(fileDir, { recursive: true });
       }
       const storyUrl = `${url}/iframe?id=${storyId}&viewMode=story`;
-      console.log(`Capturing: ${storyUrl}`);
-      cluster.queue(storyUrl, filePath);
+      cluster.queue({ storyUrl, filePath });
     });
     await cluster.idle();
     await cluster.close();
     console.log(`Screenshots captured to ${outputDir}`);
-
   } catch (error) {
     console.error('Error capturing screenshots:', error);
     throw error;
   } finally {
-
     // Close server
     if (server) {
       server.close();
     }
   }
 }
-

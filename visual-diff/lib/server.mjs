@@ -8,16 +8,13 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import { loadConfig, getDataPath } from './config.mjs';
 import { formatDisplayName } from './utils.mjs';
 
-// Get the directory name of the current module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 // Path to the templates directory
-const TEMPLATES_DIR = path.join(__dirname, 'templates');
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+const TEMPLATES_DIR = path.join(dirname, 'templates');
 
 // Content type mapping
 const CONTENT_TYPES = {
@@ -31,29 +28,6 @@ const CONTENT_TYPES = {
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
 };
-
-/**
- * Generate the home page HTML.
- *
- * @returns {string} The HTML for the home page.
- */
-function generateHomePage() {
-  const config = loadConfig();
-  const templatePath = path.join(TEMPLATES_DIR, 'homepage.html');
-
-  try {
-    // Read the template file
-    const template = fs.readFileSync(templatePath, 'utf8');
-
-    // Replace the placeholder with the comparison list
-    return template.replace('{{COMPARISON_LIST}}', generateComparisonList(config));
-  } catch (error) {
-    console.error(`Error reading template file: ${error.message}`);
-    // Return a simple fallback if template can't be read
-    return `<html><body><h1>RegViz - Visual Regression Reports</h1>
-      <div>${generateComparisonList(config)}</div></body></html>`;
-  }
-}
 
 /**
  * Generate HTML for the comparison list.
@@ -91,6 +65,73 @@ function generateComparisonList(config) {
 }
 
 /**
+ * Generate the home page HTML.
+ *
+ * @returns {string} The HTML for the home page.
+ */
+function generateLandingPage() {
+  const config = loadConfig();
+  const templatePath = path.join(TEMPLATES_DIR, 'homepage.html');
+
+  try {
+    // Read the template file
+    const template = fs.readFileSync(templatePath, 'utf8');
+
+    // Replace the placeholder with the comparison list
+    return template.replace('{{COMPARISON_LIST}}', generateComparisonList(config));
+  } catch (error) {
+    console.error(`Error reading template file: ${error.message}`);
+    // Return a simple fallback if template can't be read
+    return `<html><body><h1>RegViz - Visual Regression Reports</h1>
+      <div>${generateComparisonList(config)}</div></body></html>`;
+  }
+}
+
+/**
+ * Serve a static file.
+ *
+ * @param {string} filePath - The path to the file.
+ * @param {http.ServerResponse} res - The response object.
+ */
+function serveStaticFile(filePath, res) {
+  fs.stat(filePath, (err, stats) => {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        res.writeHead(404);
+        res.end('File not found');
+      } else {
+        res.writeHead(500);
+        res.end('Internal server error');
+      }
+      return;
+    }
+
+    // If the path is a directory, try to serve index.html
+    if (stats.isDirectory()) {
+      serveStaticFile(path.join(filePath, 'index.html'), res);
+      return;
+    }
+
+    // Determine content type based on file extension
+    const ext = path.extname(filePath);
+    const contentType = CONTENT_TYPES[ext] || 'application/octet-stream';
+
+    // Serve the file
+    fs.readFile(filePath, (error, data) => {
+      if (error) {
+        res.writeHead(500);
+        res.end('Internal server error');
+        return;
+      }
+
+      res.setHeader('Content-Type', contentType);
+      res.writeHead(200);
+      res.end(data);
+    });
+  });
+}
+
+/**
  * Start the HTTP server.
  *
  * @param {Object} options - The server options.
@@ -109,7 +150,7 @@ export async function startServer(options = {}) {
     if (urlPath === '/' || urlPath === '/index.html') {
       res.setHeader('Content-Type', 'text/html');
       res.writeHead(200);
-      res.end(generateHomePage());
+      res.end(generateLandingPage());
       return;
     }
 
@@ -173,50 +214,6 @@ export async function startServer(options = {}) {
 
     server.on('error', (error) => {
       reject(error);
-    });
-  });
-}
-
-/**
- * Serve a static file.
- *
- * @param {string} filePath - The path to the file.
- * @param {http.ServerResponse} res - The response object.
- */
-function serveStaticFile(filePath, res) {
-  fs.stat(filePath, (err, stats) => {
-    if (err) {
-      if (err.code === 'ENOENT') {
-        res.writeHead(404);
-        res.end('File not found');
-      } else {
-        res.writeHead(500);
-        res.end('Internal server error');
-      }
-      return;
-    }
-
-    // If the path is a directory, try to serve index.html
-    if (stats.isDirectory()) {
-      serveStaticFile(path.join(filePath, 'index.html'), res);
-      return;
-    }
-
-    // Determine content type based on file extension
-    const ext = path.extname(filePath);
-    const contentType = CONTENT_TYPES[ext] || 'application/octet-stream';
-
-    // Serve the file
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        res.writeHead(500);
-        res.end('Internal server error');
-        return;
-      }
-
-      res.setHeader('Content-Type', contentType);
-      res.writeHead(200);
-      res.end(data);
     });
   });
 }

@@ -27,7 +27,8 @@
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "test:ci": "npm run test-unit:ci",
     "test-unit:ci": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
-    "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'",
+    "lint": "eslint ./components ./.storybook ./tests ./visual-diff/**/*.mjs && stylelint 'components/**/*.scss'",
+    "lint:fix": "eslint ./components ./.storybook ./tests ./visual-diff/**/*.mjs --fix",
     "diff": "node visual-diff/index.mjs interactive",
     "diff:command": "node visual-diff/index.mjs",
     "regviz:serve": "node visual-diff/index.mjs serve"
