@@ -1,5 +1,5 @@
 /**
- * Configuration management for RegViz.
+ * Configuration management for Visual Diff.
  *
  * Handles loading, saving, and initialization of configuration.
  */
@@ -14,8 +14,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Configuration file path
-const CONFIG_DIR = path.join(process.cwd(), 'regviz', 'config');
-const CONFIG_FILE = path.join(CONFIG_DIR, 'regviz.json');
+const CONFIG_DIR = path.join(process.cwd(), 'visual-diff', 'config');
+const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 
 // Default configuration
 const DEFAULT_CONFIG = {
@@ -80,7 +80,7 @@ export function saveConfig(config) {
  * @returns {string} The directory path.
  */
 export function getDataPath(name) {
-  const baseDir = path.join(process.cwd(), 'regviz', 'screenshots');
+  const baseDir = path.join(process.cwd(), 'visual-diff', 'screenshots');
   ensureDirectory(baseDir);
 
   return path.join(baseDir, name);

@@ -203,7 +203,7 @@ export function determineOptimalConcurrency() {
     const maxConcurrency = Math.min(
         cpuCount * 2,
         memoryBasedLimit,
-        24
+        100
     );
 
     return Math.max(1, maxConcurrency);

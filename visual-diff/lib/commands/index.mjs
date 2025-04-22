@@ -1,6 +1,6 @@
 /**
- * Commands for RegViz.
- * 
+ * Commands for Visual Diff.
+ *
  * Exports all command implementations.
  */
 

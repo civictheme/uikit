@@ -1,5 +1,5 @@
 /**
- * Compare command for RegViz.
+ * Compare command for Visual Diff.
  *
  * Handles comparing two sets of screenshots.
  */
@@ -83,11 +83,11 @@ export async function executeCompareCommand(options) {
 
     // Validate source and target
     if (!sourceName || !config.screenshot_sets[sourceName]) {
-      throw new Error(`Source screenshot set "${sourceName}" not found. Use 'regviz list --sets' to see available screenshot sets.`);
+      throw new Error(`Source screenshot set "${sourceName}" not found. Use 'npm run visual-diff -- list --sets' to see available screenshot sets.`);
     }
 
     if (!targetName || !config.screenshot_sets[targetName]) {
-      throw new Error(`Target screenshot set "${targetName}" not found. Use 'regviz list --sets' to see available screenshot sets.`);
+      throw new Error(`Target screenshot set "${targetName}" not found. Use ''npm run visual-diff -- list --sets' to see available screenshot sets.`);
     }
 
     const name = options.name || generateComparisonName(sourceName, targetName, config);

@@ -1,5 +1,5 @@
 /**
- * Release source handler for RegViz.
+ * Release source handler for Visual Diff.
  *
  * Handles creating a snapshot from the latest release or specific version.
  */

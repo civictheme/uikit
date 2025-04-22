@@ -1,5 +1,5 @@
 /**
- * Comparison module for RegViz.
+ * Comparison module for Visual Diff.
  *
  * Handles comparing screenshots using reg-cli.
  */

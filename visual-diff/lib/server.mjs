@@ -40,11 +40,11 @@ const CONTENT_TYPES = {
 function generateHomePage() {
   const config = loadConfig();
   const templatePath = path.join(TEMPLATES_DIR, 'homepage.html');
-  
+
   try {
     // Read the template file
     const template = fs.readFileSync(templatePath, 'utf8');
-    
+
     // Replace the placeholder with the comparison list
     return template.replace('{{COMPARISON_LIST}}', generateComparisonList(config));
   } catch (error) {
@@ -160,7 +160,7 @@ export async function startServer(options = {}) {
 
   return new Promise((resolve, reject) => {
     server.listen(port, () => {
-      console.log(`RegViz server started on http://localhost:${port}`);
+      console.log(`Visual Diff server started on http://localhost:${port}`);
 
       if (detached) {
         // If detached, don't keep the process running

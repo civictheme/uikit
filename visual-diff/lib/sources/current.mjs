@@ -1,5 +1,5 @@
 /**
- * Current branch source handler for RegViz.
+ * Current branch source handler for Visual Diff.
  *
  * Handles creating a snapshot from the current branch.
  */

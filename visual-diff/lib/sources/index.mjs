@@ -1,6 +1,6 @@
 /**
- * Source handlers for RegViz.
- * 
+ * Source handlers for Visual Diff.
+ *
  * Handles creating snapshots from different sources.
  */
 
@@ -10,7 +10,7 @@ import { createReleaseSnapshot } from './release.mjs';
 
 /**
  * Create a snapshot from a source.
- * 
+ *
  * @param {Object} options - The options.
  * @param {string} options.source - The source (main, current, release).
  * @param {string} options.outputDir - The output directory for screenshots.
@@ -20,7 +20,7 @@ import { createReleaseSnapshot } from './release.mjs';
  */
 export async function createSnapshot(options) {
   const { source } = options;
-  
+
   switch (source) {
     case 'main':
       return createMainSnapshot(options);

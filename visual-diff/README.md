@@ -20,13 +20,13 @@ RegViz is a visual difference testing tool for CivicTheme UIKit, enabling compar
 The tool is built into the CivicTheme UIKit repository and can be used via npm scripts:
 
 ```bash
-npm run regviz [command] [options]
+npm run visual-diff [command] [options]
 ```
 
 You can also run it directly with Node.js:
 
 ```bash
-node regviz/index.js [command] [options]
+node visual-diff/index.js [command] [options]
 ```
 
 ### Interactive Mode
@@ -34,11 +34,11 @@ node regviz/index.js [command] [options]
 For a more user-friendly experience, you can run the tool in interactive mode, which presents menu prompts for all commands and options:
 
 ```bash
-npm run regviz interactive
+npm run visual-diff interactive
 # or shorter alias
-npm run regviz i
+npm run visual-diff i
 # or use the dedicated script
-npm run regviz:interactive
+npm run visual-diff:interactive
 ```
 
 Interactive mode guides you through each step with intuitive prompts, making it easier to select sources, targets, and other options without needing to remember command syntax.
@@ -50,7 +50,7 @@ Interactive mode guides you through each step with intuitive prompts, making it 
 Capture screenshots from a specific source:
 
 ```bash
-npm run regviz capture [options]
+npm run visual-diff capture [options]
 ```
 
 Options:
@@ -71,13 +71,13 @@ If a set already exists, you'll be warned and given the option to:
 Examples:
 ```bash
 # Capture current branch components
-npm run regviz:command capture
+npm run visual-diff:command capture
 
 # Capture main branch SDC components
-npm run regviz capture --source main --target components-sdc
+npm run visual-diff capture --source main --target components-sdc
 
 # Capture specific release
-npm run regviz capture --source release --version 1.10.0
+npm run visual-diff capture --source release --version 1.10.0
 ```
 
 #### Compare
@@ -85,7 +85,7 @@ npm run regviz capture --source release --version 1.10.0
 Compare two sets of screenshots:
 
 ```bash
-npm run regviz compare [options]
+npm run visual-diff compare [options]
 ```
 
 Options:
@@ -101,10 +101,10 @@ If a comparison with the same name already exists, you'll be warned and given th
 Examples:
 ```bash
 # Compare main branch to current branch
-npm run regviz:command -- compare --source main-components-20250417 --target current-components-20250417
+npm run visual-diff:command -- compare --source main-components-20250417 --target current-components-20250417
 
 # Compare specific releases
-npm run regviz:command compare --source release-1.8.0 --target release-1.9.0
+npm run visual-diff:command compare --source release-1.8.0 --target release-1.9.0
 ```
 
 #### List
@@ -112,7 +112,7 @@ npm run regviz:command compare --source release-1.8.0 --target release-1.9.0
 List available baselines, targets, or comparisons:
 
 ```bash
-npm run regviz:command -- list [options]
+npm run visual-diff:command -- list [options]
 ```
 
 Options:
@@ -124,10 +124,10 @@ Options:
 Examples:
 ```bash
 # List all data
-npm run regviz:command -- list
+npm run visual-diff:command -- list
 
 # List only sets
-npm run regviz:command -- list --sets
+npm run visual-diff:command -- list --sets
 
 # List only comparisons
 npm run regvis:command -- list --comparisions
@@ -138,7 +138,7 @@ npm run regvis:command -- list --comparisions
 Remove baselines, targets, or comparisons:
 
 ```bash
-npm run regviz:command clean [options]
+npm run visual-diff:command clean [options]
 ```
 
 Options:
@@ -149,10 +149,10 @@ Options:
 Examples:
 ```bash
 # Remove a specific baseline
-npm run regviz:command clean --set set--current--feature-add-reg-suit--sdc
+npm run visual-diff:command clean --set set--current--feature-add-reg-suit--sdc
 
 # Remove all data
-npm run regviz:command clean --all
+npm run visual-diff:command clean --all
 ```
 
 ## Configuration
@@ -170,13 +170,13 @@ A typical workflow for comparing current branch to main:
 
 ```bash
 # Capture current branch components
-npm run regviz:command -- capture --source current --target components-sdc
+npm run visual-diff:command -- capture --source current --target components-sdc
 
 # Capture current branch components (overwriting existing)
-npm run regviz capture -- --source current --targets components --force
+npm run visual-diff capture -- --source current --targets components --force
 
 # Compare the two
-npm run regviz compare -- --baseline main-baseline --target current-feature
+npm run visual-diff compare -- --baseline main-baseline --target current-feature
 ```
 
 After running the compare command, you can view the results in the generated HTML report.

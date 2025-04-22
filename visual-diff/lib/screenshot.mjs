@@ -1,19 +1,17 @@
 /**
- * Screenshot capture module for RegViz.
+ * Screenshot capture module for Visual Diff.
  *
  * Handles capturing screenshots from Storybook.
  */
 
-import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import http from 'http';
 import handler from 'serve-handler';
-import pLimit from 'p-limit';
 import {ensureDirectory} from './config.mjs';
 
 import {determineOptimalConcurrency} from "./utils.mjs";
-
+import { Cluster }  from 'puppeteer-cluster';
 /**
  * Start a static server for the given directory.
  *
@@ -85,13 +83,7 @@ export async function captureScreenshots({
   let browser = null;
 
   try {
-    // Start static server
     server = await startStaticServer(storybookDir, port);
-
-    // Launch browser
-    browser = await puppeteer.launch({
-      headless: true
-    });
 
     const url = `http://localhost:${port}`;
     console.log(`Processing Storybook at ${url}`);
@@ -100,59 +92,41 @@ export async function captureScreenshots({
     const storyIds = getStoryIdsFromIndexJson(storybookDir);
     console.log(`Found ${storyIds.length} stories`);
 
-    // Filter out docs pages
+    // Filter out docs pages from story IDs.
     const storiesToCapture = storyIds.filter(({id}) => !id.includes('--docs'));
-
-    // Create a limit function for concurrent operations
     console.log(`Concurrent operations limited to ${concurrency}`);
-    const limit = pLimit(concurrency);
-
-    // Create an array of promises
-    const promises = storiesToCapture.map(({id: storyId, title}) => {
-      return limit(async () => {
-        const page = await browser.newPage();
-
-        try {
-          const storyPath = storyId.replace(/--/g, '/');
-          const fileName = `${storyPath}.png`;
-          const filePath = path.join(outputDir, fileName);
-
-          // Ensure directory exists
-          const fileDir = path.dirname(filePath);
-          if (!fs.existsSync(fileDir)) {
-            fs.mkdirSync(fileDir, { recursive: true });
-          }
-
-          // Navigate to story
-          const storyUrl = `${url}/iframe?id=${storyId}&viewMode=story`;
-          console.log(`Capturing: ${storyUrl}`);
-          await page.goto(storyUrl, { waitUntil: 'networkidle0' });
-
-          // Take screenshot
-          await page.screenshot({
-            path: filePath,
-            fullPage: true
-          });
-        } catch (error) {
-          console.error(`Error capturing ${storyId}:`, error);
-        } finally {
-          await page.close();
-        }
+    const cluster = await Cluster.launch({
+      concurrency: Cluster.CONCURRENCY_BROWSER,
+      maxConcurrency: concurrency,
+    });
+    await cluster.task(async ({ page, filePath }) => {
+      await page.goto(storyUrl);
+      await page.screenshot({
+        path: filePath,
+        fullPage: true
       });
     });
-
-    // Wait for all promises to resolve
-    await Promise.all(promises);
+    const promises = [];
+    storiesToCapture.map(({id: storyId, title}) => {
+      const storyPath = storyId.replace(/--/g, '/');
+      const fileName = `${storyPath}.png`;
+      const filePath = path.join(outputDir, fileName);
+      const fileDir = path.dirname(filePath);
+      if (!fs.existsSync(fileDir)) {
+        fs.mkdirSync(fileDir, { recursive: true });
+      }
+      const storyUrl = `${url}/iframe?id=${storyId}&viewMode=story`;
+      console.log(`Capturing: ${storyUrl}`);
+      cluster.queue(storyUrl, filePath);
+    });
+    await cluster.idle();
+    await cluster.close();
     console.log(`Screenshots captured to ${outputDir}`);
 
   } catch (error) {
     console.error('Error capturing screenshots:', error);
     throw error;
   } finally {
-    // Close browser
-    if (browser) {
-      await browser.close();
-    }
 
     // Close server
     if (server) {

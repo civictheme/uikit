@@ -33,7 +33,7 @@ export async function executeCleanCommand(options) {
     }
     if (options.all) {
       // Remove all data
-      console.log('Removing all RegViz data...');
+      console.log('Removing all Visual Diff data...');
 
       // Remove all screenshot sets
       Object.entries(config.screenshot_sets || {}).forEach(([name, set]) => {
@@ -59,7 +59,7 @@ export async function executeCleanCommand(options) {
         comparisons: {}
       });
 
-      console.log('All RegViz data has been removed.');
+      console.log('All Visual Diff data has been removed.');
       return true;
     }
 

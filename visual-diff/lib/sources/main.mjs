@@ -1,6 +1,6 @@
 /**
- * Main branch source handler for RegViz.
- * 
+ * Main branch source handler for Visual Diff.
+ *
  * Handles creating a snapshot from the main branch.
  */
 
@@ -12,7 +12,7 @@ import { captureScreenshots } from '../screenshot.mjs';
 
 /**
  * Create a snapshot from the main branch.
- * 
+ *
  * @param {Object} options - The options.
  * @param {string} options.outputDir - The output directory for screenshots.
  * @param {string} options.targetDir - The target directory to capture (components or components-sdc).
@@ -23,32 +23,32 @@ export async function createMainSnapshot({
   targetDir = 'components'
 }) {
   ensureDirectory(outputDir);
-  
+
   // Create a temporary directory for the main branch
   const tempDir = path.join(process.cwd(), '.tmp-main-branch');
-  
+
   try {
     // Clean up if the temporary directory already exists
     if (fs.existsSync(tempDir)) {
       fs.rmSync(tempDir, { recursive: true, force: true });
     }
-    
+
     console.log('Cloning main branch...');
     // Get the repo URL from git config
     const repoUrl = execSync('git config --get remote.origin.url').toString().trim();
-    
+
     // Clone the repo
     execSync(`git clone ${repoUrl} ${tempDir} --depth 1 --branch main`, {
       stdio: 'inherit'
     });
-    
+
     // Install dependencies
     console.log('Installing dependencies...');
     execSync('npm install', {
       stdio: 'inherit',
       cwd: tempDir
     });
-    
+
     // Build Storybook
     console.log('Building Storybook...');
     if (targetDir === 'components-sdc') {
@@ -62,17 +62,17 @@ export async function createMainSnapshot({
         cwd: tempDir
       });
     }
-    
+
     // Get the current commit hash
     const commitHash = execSync('git rev-parse HEAD', {
       cwd: tempDir
     }).toString().trim();
-    
+
     // Define Storybook directory based on target
     const storybookDir = targetDir === 'components-sdc'
       ? path.join(tempDir, 'components-sdc/storybook-static')
       : path.join(tempDir, 'storybook-static');
-    
+
     // Capture screenshots
     console.log(`Capturing screenshots from ${targetDir} in main branch...`);
     await captureScreenshots({
@@ -80,7 +80,7 @@ export async function createMainSnapshot({
       outputDir,
       port: 6009 // Use a different port to avoid conflicts
     });
-    
+
     // Return snapshot data
     return {
       type: 'main',

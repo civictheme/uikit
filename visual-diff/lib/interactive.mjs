@@ -1,5 +1,5 @@
 /**
- * Interactive CLI menu for RegViz.
+ * Interactive CLI menu for Visual Diff.
  *
  * Provides an interactive menu interface for the RegViz CLI.
  */
@@ -460,7 +460,7 @@ export async function handleCleanInteractive() {
         {
           type: 'confirm',
           name: 'confirmAll',
-          message: 'Are you sure you want to remove ALL RegViz data? This cannot be undone.',
+          message: 'Are you sure you want to remove ALL Visual Diff data? This cannot be undone.',
           default: false
         }
       ]);
