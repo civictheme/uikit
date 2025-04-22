@@ -28,11 +28,9 @@
     "test:ci": "npm run test-unit:ci",
     "test-unit:ci": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
     "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'",
-    "diff": "npm run build-storybook && npm --prefix components-sdc run build-storybook && node screenshots.js",
     "regviz": "node regviz/index.mjs interactive",
-    "regviz:serve": "node regviz/index.mjs serve",
-    "test:regviz": "node --experimental-vm-modules node_modules/.bin/jest --config regviz/jest.config.mjs",
-    "test:regviz:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config regviz/jest.config.mjs --coverage"
+    "regviz:command": "node regviz/index.mjs",
+    "regviz:serve": "node regviz/index.mjs serve"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.1",

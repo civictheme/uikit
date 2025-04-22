@@ -1,6 +1,6 @@
 /**
  * RegViz - Visual Difference CLI for CivicTheme UIKit
- * 
+ *
  * A command-line tool to capture screenshots and compare visual differences
  * between different versions of CivicTheme components.
  */
@@ -11,10 +11,10 @@ import { dirname } from 'path';
 import fs from 'fs';
 import path from 'path';
 import { loadConfig, saveConfig, initConfig } from './lib/config.mjs';
-import { 
-  executeCaptureCommand, 
-  executeCompareCommand, 
-  executeCleanCommand 
+import {
+  executeCaptureCommand,
+  executeCompareCommand,
+  executeCleanCommand
 } from './lib/commands/index.mjs';
 import { runInteractiveMenu } from './lib/interactive.mjs';
 import { startServer } from './lib/server.mjs';
@@ -57,8 +57,7 @@ program
   .command('capture')
   .description('Capture screenshots from a specific source')
   .option('-s, --source <source>', 'Source for screenshots (main|release|current)', 'current')
-  .option('-t, --target <target>', 'Target directory (components|components-sdc)', 'components')
-  .option('-n, --name <name>', 'Name for this capture set')
+  .option('-t, --target <target>', 'Target component directory (components|components-sdc)', 'components')
   .option('-v, --version <version>', 'Specific release version (only for release source)')
   .option('-f, --force', 'Force overwrite if the capture already exists')
   .action(async (options) => {
@@ -76,7 +75,6 @@ program
   .description('Compare two sets of screenshots')
   .option('-s, --source <name>', 'First (source) screenshot set name')
   .option('-t, --target <name>', 'Second (target) screenshot set name')
-  .option('-n, --name <name>', 'Name for this comparison')
   .option('-f, --force', 'Force overwrite if the comparison already exists')
   .action(async (options) => {
     try {
@@ -97,12 +95,12 @@ program
   .action((options) => {
     try {
       const config = loadConfig();
-      
+
       const showAll = options.all || (!options.sets && !options.comparisons);
-      
+
       if (showAll || options.sets) {
         console.log('\nAvailable screenshot sets:');
-        
+
         if (!config.screenshot_sets || Object.keys(config.screenshot_sets).length === 0) {
           console.log('  No screenshot sets available');
         } else {
@@ -158,11 +156,11 @@ program
         port,
         detached: options.detached
       });
-      
+
       if (!options.detached) {
         console.log(`Server running at http://localhost:${port}`);
         console.log('Press Ctrl+C to stop');
-        
+
         // Keep the process running unless Ctrl+C is pressed
         process.on('SIGINT', () => {
           console.log('Shutting down server...');
