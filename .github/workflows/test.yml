@@ -39,7 +39,7 @@ jobs:
         run: composer lint
 
       - name: Build
-        run: npm run build && npm --prefix components-sdc build
+        run: npm run build && npm run --prefix components-sdc build
 
       - name: Run tests
         run: npm run test:ci
