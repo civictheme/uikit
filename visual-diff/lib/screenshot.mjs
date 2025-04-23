@@ -97,14 +97,11 @@ export async function captureScreenshots({
     });
     await cluster.task(async ({ page, data: { storyUrl, filePath } }) => {
       console.log(`Capturing: ${storyUrl} to ${filePath}`);
-      await page.goto(storyUrl, {waitUntil: 'domcontentloaded'});
-      await page.waitForNetworkIdle({idleTime: 2000});
-      setTimeout(async() => {
-        await page.screenshot({
-          path: filePath,
-          fullPage: true,
-        });
-      }, 2000);
+      await page.goto(storyUrl, {waitUntil: ['domcontentloaded', 'networkidle0']});
+      await page.screenshot({
+        path: filePath,
+        fullPage: true,
+      });
     });
     storiesToCapture.forEach(({ id: storyId }) => {
       const storyPath = storyId.replace(/--/g, '/');
