@@ -11,11 +11,9 @@ import { dirname } from 'path';
 import fs from 'fs';
 import path from 'path';
 import { loadConfig, saveConfig, initConfig } from './lib/config.mjs';
-import {
-  executeCaptureCommand,
-  executeCompareCommand,
-  executeCleanCommand
-} from './lib/commands/index.mjs';
+import { executeCompareCommand } from './lib/commands/compare.mjs';
+import  { executeCaptureCommand } from './lib/commands/capture.mjs';
+import { executeCleanCommand } from './lib/commands/clean.mjs';
 import { runInteractiveMenu } from './lib/interactive.mjs';
 import { startServer } from './lib/server.mjs';
 
