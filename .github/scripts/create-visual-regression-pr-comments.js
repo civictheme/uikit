@@ -7,7 +7,7 @@ const path = require('path');
 /**
  * Creates a PR comment with the visual regression results.
  */
-export default async function createVisualRegressionPrComments({github, context}) {
+module.exports = function createVisualRegressionPrComments({github, context}) {
     try {
         const configPath = 'visual-diff/config/config.json';
         const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
