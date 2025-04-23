@@ -27,7 +27,7 @@ jobs:
         uses: shivammathur/setup-php@v2
 
       - name: Install NPM dependencies
-        run: npm install && npx playwright install
+        run: npm install && npx playwright install && npm --prefix components-sdc install
 
       - name: Install PHP dependencies
         run: composer install
@@ -39,7 +39,7 @@ jobs:
         run: composer lint
 
       - name: Build
-        run: npm run build
+        run: npm run build && npm run --prefix components-sdc build
 
       - name: Run tests
         run: npm run test:ci
