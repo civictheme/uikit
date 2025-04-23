@@ -31,6 +31,7 @@
     "lint:fix": "eslint ./components ./.storybook ./tests ./visual-diff/**/*.mjs --fix",
     "diff": "node visual-diff/index.mjs interactive",
     "diff:command": "node visual-diff/index.mjs",
+    "diff:snapshot": "./scripts/snapshot-diff.sh",
     "diff:serve": "node visual-diff/index.mjs serve"
   },
   "devDependencies": {
