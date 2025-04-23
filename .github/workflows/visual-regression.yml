@@ -69,8 +69,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            pwd
-            ls -alt
             const script = require('./.github/scripts/create-visual-regression-pr-comments.js')
             script({github, context})
           
