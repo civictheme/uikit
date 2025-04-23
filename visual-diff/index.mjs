@@ -21,22 +21,18 @@ import { startServer } from './lib/server.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Read package.json for version
 const packageJsonPath = path.join(dirname(__dirname), 'package.json');
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
-// Initialize the program
 const program = new Command();
 
 program
-  .name('regviz')
+  .name('visual-diff')
   .description('Visual difference testing tool for CivicTheme UIKit')
   .version(packageJson.version || '1.0.0');
 
-// Initialize configuration if it doesn't exist
 initConfig();
 
-// Interactive mode
 program
   .command('interactive')
   .alias('i')
@@ -50,7 +46,6 @@ program
     }
   });
 
-// Capture command
 program
   .command('capture')
   .description('Capture screenshots from a specific source')
@@ -67,7 +62,6 @@ program
     }
   });
 
-// Compare command
 program
   .command('compare')
   .description('Compare two sets of screenshots')
@@ -83,7 +77,6 @@ program
     }
   });
 
-// List command
 program
   .command('list')
   .description('List available screenshot sets or comparisons')
@@ -125,7 +118,6 @@ program
     }
   });
 
-// Clean command
 program
   .command('clean')
   .description('Remove screenshot sets or comparisons')
@@ -141,7 +133,6 @@ program
     }
   });
 
-// Server command
 program
   .command('serve')
   .description('Start a web server to view comparisons and screenshots')

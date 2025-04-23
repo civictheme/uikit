@@ -32,10 +32,8 @@ export async function executeCleanCommand(options) {
       return;
     }
     if (options.all) {
-      // Remove all data
       console.log('Removing all Visual Diff data...');
 
-      // Remove all screenshot sets
       Object.entries(config.screenshot_sets || {}).forEach(([name, set]) => {
         if (set.directory && fs.existsSync(set.directory)) {
           fs.rmSync(set.directory, { recursive: true, force: true });
@@ -44,7 +42,6 @@ export async function executeCleanCommand(options) {
         }
       });
 
-      // Remove all comparisons
       Object.entries(config.comparisons || {}).forEach(([name, comparison]) => {
         if (comparison.reportDirectory && fs.existsSync(comparison.reportDirectory)) {
           fs.rmSync(comparison.reportDirectory, { recursive: true, force: true });
@@ -53,7 +50,7 @@ export async function executeCleanCommand(options) {
         }
       });
 
-      // Reset the configuration
+      // Reset the configuration.
       saveConfig({
         screenshot_sets: {},
         comparisons: {}
@@ -64,7 +61,6 @@ export async function executeCleanCommand(options) {
     }
 
     if (setToRemove) {
-      // Remove a specific screenshot set
       const { removeScreenshotSet } = await import('../config.mjs');
 
       if (!config.screenshot_sets || !config.screenshot_sets[setToRemove]) {
@@ -83,7 +79,6 @@ export async function executeCleanCommand(options) {
     }
 
     if (comparisonToRemove) {
-      // Remove a specific comparison
       if (!config.comparisons || !config.comparisons[comparisonToRemove]) {
         console.error(`Comparison "${comparisonToRemove}" not found.`);
         return;

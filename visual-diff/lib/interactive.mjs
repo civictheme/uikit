@@ -22,7 +22,6 @@ export async function handleCompareInteractive() {
   try {
     const config = loadConfig();
 
-    // Check if we have screenshot sets
     if (!config.screenshot_sets || Object.keys(config.screenshot_sets).length < 2) {
       console.log('Not enough screenshot sets available. At least two sets are needed for comparison.');
 
@@ -45,16 +44,13 @@ export async function handleCompareInteractive() {
       return;
     }
 
-    // Prepare choices from all screenshot sets with human-readable names
     const screenshotSets = Object.keys(config.screenshot_sets || {}).map((name) => ({
       name: formatDisplayName(name),
       value: name,
     }));
 
-    // Filter choices for source
     const sourceChoices = [...screenshotSets];
 
-    // First choose the source
     const sourceAnswer = await inquirer.prompt([
       {
         type: 'list',
@@ -64,7 +60,6 @@ export async function handleCompareInteractive() {
       },
     ]);
 
-    // Then choose the target (ensuring it's different from the source)
     const targetChoices = screenshotSets.filter((choice) => choice.value !== sourceAnswer.source);
 
     if (targetChoices.length === 0) {
@@ -81,7 +76,6 @@ export async function handleCompareInteractive() {
       },
     ]);
 
-    // Add the source from previous prompt
     answers.source = sourceAnswer.source;
 
     const options = {
@@ -91,18 +85,13 @@ export async function handleCompareInteractive() {
       interactive: true,
     };
 
-    // If user didn't provide a name, preview the auto-generated name
-    // Generate a preview name based on similar logic to compare.js
     const sourceSet = config.screenshot_sets[options.source];
     const targetSet = config.screenshot_sets[options.target];
 
-    // Create a concise description for the name with a 'diff' prefix
     let name = 'diff';
 
-    // Add source info with double-hyphen
     name += '--';
 
-    // Add source info
     if (sourceSet && sourceSet.source) {
       if (sourceSet.source === 'main') {
         name += 'main';
@@ -116,11 +105,8 @@ export async function handleCompareInteractive() {
     } else {
       name += options.source.split('--')[1] || options.source;
     }
-
-    // Add vs with double-hyphen
     name += '--vs--';
 
-    // Add target info
     if (targetSet && targetSet.source) {
       if (targetSet.source === 'main') {
         name += 'main';
@@ -135,16 +121,13 @@ export async function handleCompareInteractive() {
       name += options.target.split('--')[1] || options.target;
     }
 
-    // Get the output directory
     const outputDir = getDataPath(name);
     console.log(`Comparison report will be stored in: ${outputDir}`);
 
     options.name = name;
 
-    // Initial attempt to execute the comparison
     const result = await executeCompareCommand(options);
 
-    // If a comparison with this name already exists, prompt for confirmation
     if (result && result.requiresConfirmation) {
       console.log(`\nA comparison named "${result.name}" already exists.`);
 
@@ -158,7 +141,6 @@ export async function handleCompareInteractive() {
       ]);
 
       if (confirmOverwrite) {
-        // Re-run with confirmation flag
         options.confirmedOverwrite = true;
         await executeCompareCommand(options);
       } else {
@@ -166,7 +148,6 @@ export async function handleCompareInteractive() {
       }
     }
 
-    // Ask if user wants to continue
     const { continueAction } = await inquirer.prompt([
       {
         type: 'confirm',
@@ -237,7 +218,6 @@ export async function handleCaptureInteractive() {
       },
     ]);
 
-    // First gather information for name generation
     if (answers.source === 'current' && !answers.name) {
       try {
         const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
@@ -247,7 +227,6 @@ export async function handleCaptureInteractive() {
       }
     }
 
-    // Collect basic options
     const options = {
       source: answers.source,
       target: answers.target,
@@ -256,14 +235,11 @@ export async function handleCaptureInteractive() {
       interactive: true,
     };
 
-    // Preview and confirm auto-generated name if user didn't provide one
     try {
-      // Get branch information for current source
       if (options.source === 'current') {
         Object.assign(options, getBranchData());
       }
 
-      // Get the output directory
       options.name = generateSetName(options);
       const { name } = options;
       const outputDir = getDataPath(name);
@@ -273,10 +249,8 @@ export async function handleCaptureInteractive() {
       console.error(`Error generating name: ${error.message}`);
     }
 
-    // Initial attempt to check if the capture already exists
     const result = await executeCaptureCommand(options);
 
-    // If a capture with this name already exists, prompt for confirmation
     if (result && result.requiresConfirmation) {
       console.log(`\nA screenshot set named "${result.name}" already exists.`);
 
@@ -290,7 +264,6 @@ export async function handleCaptureInteractive() {
       ]);
 
       if (confirmOverwrite) {
-        // Re-run with confirmation flag
         options.confirmedOverwrite = true;
         await executeCaptureCommand(options);
       } else {
@@ -298,7 +271,6 @@ export async function handleCaptureInteractive() {
       }
     }
 
-    // Ask if user wants to continue
     const { continueAction } = await inquirer.prompt([
       {
         type: 'confirm',

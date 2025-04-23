@@ -24,7 +24,6 @@ export async function createCurrentSnapshot({
   ensureDirectory(outputDir);
 
   try {
-    // Build Storybook
     console.log('Building Storybook...');
     if (targetDir === 'components-sdc') {
       execSync('npm --prefix components-sdc run build-storybook', {
@@ -36,26 +35,23 @@ export async function createCurrentSnapshot({
       });
     }
 
-    // Get the current commit hash
+    // Get the current commit hash.
     const commitHash = execSync('git rev-parse HEAD').toString().trim();
 
-    // Define Storybook directory based on target
+    // Define Storybook directory based on target.
     const storybookDir = targetDir === 'components-sdc'
       ? path.join(process.cwd(), 'components-sdc/storybook-static')
       : path.join(process.cwd(), 'storybook-static');
 
-    // Capture screenshots
     console.log(`Capturing screenshots from ${targetDir} in current branch...`);
     await captureScreenshots({
       storybookDir,
       outputDir,
-      port: 6010 // Use a different port to avoid conflicts
+      port: 6010
     });
 
-    // Get current branch name
     const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
-    // Return snapshot data
     return {
       type: 'current',
       date: new Date().toISOString(),

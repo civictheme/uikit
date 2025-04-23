@@ -11,12 +11,10 @@ import { fileURLToPath } from 'url';
 import { loadConfig, getDataPath } from './config.mjs';
 import { formatDisplayName } from './utils.mjs';
 
-// Path to the templates directory
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 const TEMPLATES_DIR = path.join(dirname, 'templates');
 
-// Content type mapping
 const CONTENT_TYPES = {
   '.html': 'text/html',
   '.css': 'text/css',
@@ -74,14 +72,10 @@ function generateLandingPage() {
   const templatePath = path.join(TEMPLATES_DIR, 'homepage.html');
 
   try {
-    // Read the template file
     const template = fs.readFileSync(templatePath, 'utf8');
-
-    // Replace the placeholder with the comparison list
     return template.replace('{{COMPARISON_LIST}}', generateComparisonList(config));
   } catch (error) {
     console.error(`Error reading template file: ${error.message}`);
-    // Return a simple fallback if template can't be read
     return `<html><body><h1>RegViz - Visual Regression Reports</h1>
       <div>${generateComparisonList(config)}</div></body></html>`;
   }
@@ -112,7 +106,6 @@ function serveStaticFile(filePath, res) {
       return;
     }
 
-    // Determine content type based on file extension
     const ext = path.extname(filePath);
     const contentType = CONTENT_TYPES[ext] || 'application/octet-stream';
 
@@ -143,10 +136,8 @@ export async function startServer(options = {}) {
   const { port = 3000, detached = false } = options;
 
   const server = http.createServer((req, res) => {
-    // Extract URL path
     const urlPath = decodeURI(req.url.split('?')[0]);
 
-    // Handle root path (home page)
     if (urlPath === '/' || urlPath === '/index.html') {
       res.setHeader('Content-Type', 'text/html');
       res.writeHead(200);
@@ -154,12 +145,10 @@ export async function startServer(options = {}) {
       return;
     }
 
-    // Handle report paths
     if (urlPath.startsWith('/report/')) {
       const configName = urlPath.split('/')[2];
       const filePath = urlPath.split('/').slice(3).join('/');
 
-      // Get config to check if report exists
       const config = loadConfig();
       if (!config.comparisons[configName] && !config.screenshot_sets[configName]) {
         res.writeHead(404);
@@ -174,12 +163,9 @@ export async function startServer(options = {}) {
       return;
     }
 
-    // Handle screenshot paths
     if (urlPath.startsWith('/screenshots/')) {
       const setName = urlPath.split('/')[2];
       const filePath = urlPath.split('/').slice(3).join('/');
-
-      // Get config to check if screenshot set exists
       const config = loadConfig();
       if (!config.screenshot_sets[setName] && !config.screenshot_sets[setName]) {
         res.writeHead(404);
@@ -193,8 +179,6 @@ export async function startServer(options = {}) {
       serveStaticFile(fullPath, res);
       return;
     }
-
-    // Return 404 for everything else
     res.writeHead(404);
     res.end('Not found');
   });

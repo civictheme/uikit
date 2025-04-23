@@ -7,11 +7,10 @@
 import fs from 'fs';
 import path from 'path';
 
-// Configuration file path
+// Configuration file path.
 const CONFIG_DIR = path.join(process.cwd(), 'visual-diff', 'config');
 const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 
-// Default configuration
 const DEFAULT_CONFIG = {
   screenshot_sets: {},
   comparisons: {},

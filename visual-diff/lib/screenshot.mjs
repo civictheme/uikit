@@ -51,14 +51,13 @@ function getStoryIdsFromIndexJson(staticDir) {
   const indexContent = fs.readFileSync(indexPath, 'utf-8');
   const indexData = JSON.parse(indexContent);
 
-  // Filter out entries that aren't stories (e.g., docs pages).
   const storyEntries = Object.values(indexData.entries)
     .filter((entry) => entry.type === 'story' && !entry.id.includes('--docs'));
 
   return storyEntries.map((entry) => ({
     id: entry.id,
     title: entry.title,
-  }));
+  })).filter(({ id }) => !id.includes('--docs'));
 }
 
 /**
@@ -84,12 +83,9 @@ export async function captureScreenshots({
     const url = `http://localhost:${port}`;
     console.log(`Processing Storybook at ${url}`);
 
-    // Get all story IDs
     const storyIds = getStoryIdsFromIndexJson(storybookDir);
     console.log(`Found ${storyIds.length} stories`);
 
-    // Filter out docs pages from story IDs.
-    const storiesToCapture = storyIds.filter(({ id }) => !id.includes('--docs'));
     console.log(`Concurrent operations limited to ${concurrency}`);
     const cluster = await Cluster.launch({
       concurrency: Cluster.CONCURRENCY_BROWSER,
@@ -121,7 +117,6 @@ export async function captureScreenshots({
     console.error('Error capturing screenshots:', error);
     throw error;
   } finally {
-    // Close server
     if (server) {
       server.close();
     }

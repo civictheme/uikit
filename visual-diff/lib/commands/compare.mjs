@@ -28,7 +28,6 @@ function generateComparisonName(sourceName, targetName, config) {
   // Add source info with double-hyphen
   name += '--';
 
-  // Add source info based on its source type or name
   if (sourceSet && sourceSet.source) {
     if (sourceSet.source === 'main') {
       name += 'main';
@@ -43,10 +42,8 @@ function generateComparisonName(sourceName, targetName, config) {
     name += sourceName.split('--')[1] || sourceName; // Try to get source part from new format
   }
 
-  // Add vs with double-hyphen
   name += '--vs--';
 
-  // Add target info based on its source type or name
   if (targetSet && targetSet.source) {
     if (targetSet.source === 'main') {
       name += 'main';
@@ -81,7 +78,6 @@ export async function executeCompareCommand(options) {
     const sourceName = options.source;
     const targetName = options.target;
 
-    // Validate source and target
     if (!sourceName || !config.screenshot_sets[sourceName]) {
       throw new Error(`Source screenshot set "${sourceName}" not found. Use 'npm run visual-diff -- list --sets' to see available screenshot sets.`);
     }
@@ -92,15 +88,12 @@ export async function executeCompareCommand(options) {
 
     const name = options.name || generateComparisonName(sourceName, targetName, config);
 
-    // Check if this comparison already exists
     const comparisonExists = config.comparisons[name];
 
-    // If the comparison exists and we're not forcing overwrite, handle appropriately
     if (comparisonExists && !forceOverwrite && !options.confirmedOverwrite) {
       console.warn(`Warning: A comparison named "${name}" already exists.`);
       console.warn(`To overwrite it, run the command again with --force or confirm when prompted.`);
 
-      // If in interactive mode, the calling function should handle the confirmation
       if (!options.interactive) {
         return {
           name,
@@ -116,7 +109,6 @@ export async function executeCompareCommand(options) {
     const targetDir = config.screenshot_sets[targetName].directory;
     const outputDir = getDataPath(name);
 
-    // Proceed with the comparison
     ensureDirectory(outputDir);
 
     console.log(`Comparing source "${sourceName}" to target "${targetName}"...`);
@@ -127,7 +119,6 @@ export async function executeCompareCommand(options) {
       console.log(`Note: Overwriting existing comparison "${name}".`);
     }
 
-    // Run the comparison
     await compareScreenshots({
       sourceDir,
       targetDir,

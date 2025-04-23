@@ -27,42 +27,34 @@ export async function createReleaseSnapshot({
 }) {
   ensureDirectory(outputDir);
 
-  // Determine the version to use
   const releaseTag = version || getLatestReleaseTag();
   console.log(`Using release tag: ${releaseTag}`);
 
-  // Create a temporary directory for the release
   const tempDir = path.join(process.cwd(), `.tmp-release-${releaseTag}`);
 
   try {
-    // Clean up if the temporary directory already exists
     if (fs.existsSync(tempDir)) {
       fs.rmSync(tempDir, { recursive: true, force: true });
     }
 
     console.log(`Cloning repository and checking out release tag ${releaseTag}...`);
-    // Get the repo URL from git config
     const repoUrl = execSync('git config --get remote.origin.url').toString().trim();
 
-    // Clone the repo (without specifying a branch)
     execSync(`git clone ${repoUrl} ${tempDir} --depth 1`, {
       stdio: 'inherit'
     });
 
-    // Fetch tags and checkout the specific tag
     execSync(`git fetch --tags && git checkout ${releaseTag}`, {
       stdio: 'inherit',
       cwd: tempDir
     });
 
-    // Install dependencies
     console.log('Installing dependencies...');
     execSync('npm install', {
       stdio: 'inherit',
       cwd: tempDir
     });
 
-    // Build Storybook
     console.log('Building Storybook...');
     if (targetDir === 'components-sdc') {
       execSync('npm --prefix components-sdc run build-storybook', {
@@ -76,17 +68,15 @@ export async function createReleaseSnapshot({
       });
     }
 
-    // Define Storybook directory based on target
     const storybookDir = targetDir === 'components-sdc'
       ? path.join(tempDir, 'components-sdc/storybook-static')
       : path.join(tempDir, 'storybook-static');
 
-    // Capture screenshots
     console.log(`Capturing screenshots from ${targetDir} in release ${releaseTag}...`);
     await captureScreenshots({
       storybookDir,
       outputDir,
-      port: 6011 // Use a different port to avoid conflicts
+      port: 6011
     });
 
     // Return snapshot data

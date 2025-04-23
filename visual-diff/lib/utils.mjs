@@ -13,24 +13,21 @@ import os from 'os';
 export function getCompatibleReleaseTags() {
   try {
     // First compatible release is 1.10.
-    // Released March 2025.
+    // Released March 2025 (with new storybook).
     const startYear = 2025;
 
-    // Get all tags sorted by commit date (newest first)
+    // Get all tags sorted by commit date (newest first).
     const tagsWithDates = execSync(
       'git for-each-ref --sort=-creatordate --format="%(refname:short) %(creatordate:short)" refs/tags/',
     ).toString().trim();
 
-    // Parse the output to get tags with their dates
+    // Parse the output to get tags with their dates.
     const tagData = tagsWithDates.split('\n').map((line) => {
       const [tag, date] = line.trim().split(' ');
       return { tag, date, year: date ? parseInt(date.split('-')[0], 10) : null };
     });
-
-    // Filter for version tags from the current year
-    const versionTagRegex = /^v?(\d+\.\d+(\.\d+)*)$/;
     return tagData
-      .filter((data) => data.year === startYear && versionTagRegex.test(data.tag))
+      .filter((data) => data.year === startYear)
       .map((data) => data.tag);
   } catch (error) {
     console.error('Error getting release tags:', error);
@@ -45,27 +42,15 @@ export function getCompatibleReleaseTags() {
  */
 export function getLatestReleaseTag() {
   try {
-    // Get the current year's tags
     const currentYearTags = getCompatibleReleaseTags();
 
     if (currentYearTags.length > 0) {
       console.log(`Using latest release tag: ${currentYearTags[0]}`);
       return currentYearTags[0];
     }
-
-    // Fall back to all tags if no current year tags
-    const tags = execSync('git tag --sort=-v:refname').toString().trim().split('\n');
-
-    // Find the first tag that looks like a version
-    const versionTagRegex = /^v?(\d+\.\d+(\.\d+)*)$/;
-    const latestTag = tags.find((tag) => versionTagRegex.test(tag));
-
-    if (!latestTag) {
-      throw new Error('No version tags found');
-    }
-
-    console.log(`No current year tags found. Using latest overall tag: ${latestTag}`);
-    return latestTag;
+    // UIKit has a release for this year.
+    // So there is a problem if this fails.
+    throw new Error('No version tags found');
   } catch (error) {
     console.error('Error getting latest release tag:', error);
     throw error;
@@ -88,7 +73,7 @@ export function formatDisplayName(name) {
     let branch = '';
     let framework = 'components';
 
-    // Handle different format variations
+    // Handle different format variations.
     if (parts.length === 3) {
       // Format: "set--main--sdc" or "set--main--components"
       if (type === 'main' || type === 'release') {
