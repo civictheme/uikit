@@ -70,7 +70,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const script = require('./.github/scripts/create-visual-regression-pr-comments.js')
-            script({github, context})
+            script({github, context, require})
           
           
           

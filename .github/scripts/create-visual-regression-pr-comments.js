@@ -1,13 +1,13 @@
 /**
  * Github action script to generate a comment for visual regression tests.
  */
-const fs = require('fs');
-const path = require('path');
 
 /**
  * Creates a PR comment with the visual regression results.
  */
-module.exports = function createVisualRegressionPrComments({github, context}) {
+module.exports = function createVisualRegressionPrComments({github, context, require}) {
+    const fs = require('fs');
+    const path = require('path');
     try {
         const configPath = 'visual-diff/config/config.json';
         const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
