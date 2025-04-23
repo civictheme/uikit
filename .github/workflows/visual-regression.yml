@@ -69,77 +69,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs');
-            const path = require('path');
-            
-            try {
-              const configPath = 'visual-diff/config/config.json';
-              if (!fs.existsSync(configPath)) {
-                console.log('No visual regression config found');
-                return;
-              }
-              
-              const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-              const comparisons = config.comparisons || {};
-              
-              if (Object.keys(comparisons).length === 0) {
-                console.log('No visual regression comparisons found');
-                return;
-              }
-              
-              let commentBody = '## Visual Regression Test Results\n\n';
-              let hasChanges = false;
-              
-              for (const [name, comparison] of Object.entries(comparisons)) {
-                try {
-                  const reportPath = path.join(comparison.reportDirectory, 'reg.json');
-                  if (fs.existsSync(reportPath)) {
-                    const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-                    const newImages = report.newItems || [];
-                    const deletedImages = report.deletedItems || [];
-                    const changedImages = report.failedItems || [];
-                    
-                    if (newImages.length > 0 || deletedImages.length > 0 || changedImages.length > 0) {
-                      hasChanges = true;
-                      commentBody += `### ${name}\n\n`;
-                      commentBody += `- **Source**: ${comparison.source}\n`;
-                      commentBody += `- **Target**: ${comparison.target}\n`;
-                      commentBody += `- **New Images**: ${newImages.length}\n`;
-                      commentBody += `- **Deleted Images**: ${deletedImages.length}\n`;
-                      commentBody += `- **Changed Images**: ${changedImages.length}\n\n`;
-                      
-                      if (changedImages.length > 0) {
-                        commentBody += 'Changed components:\n';
-                        changedImages.slice(0, 10).forEach(item => {
-                          commentBody += `- ${item.replace(/\.[^/.]+$/, '')}\n`;
-                        });
-                        
-                        if (changedImages.length > 10) {
-                          commentBody += `- ... and ${changedImages.length - 10} more\n`;
-                        }
-                        commentBody += '\n';
-                      }
-                    }
-                  }
-                } catch (err) {
-                  console.error(`Error processing comparison ${name}:`, err);
-                }
-              }
-              
-              if (hasChanges) {
-               commentBody += '⚠️ Visual changes detected! Please review the artifacts for details.\n';
-                commentBody += `[View full workflow run](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID})\n`;
-                commentBody += 'Download the artifacts from the Actions tab to view the full visual regression report.\n';
-              } else {
-                commentBody += '✅ No visual changes detected between components.\n';
-                commentBody += `[View full workflow run](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID})\n`;
-              }
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: commentBody
-              });
-            } catch (error) {
-              console.error('Error generating PR comment:', error);
-            }
+            pwd
+            ls -alt
+            const script = require('./.github/scripts/create-visual-regression-pr-comments.js')
+            script({github, context})
+          
+          
+          
+
