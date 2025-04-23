@@ -25,10 +25,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install && npx playwright install
+        run: npm install && npx playwright install && npm --prefix components-sdc install
 
       - name: Build Storybook
-        run: npm run build
+        run: npm run build && npm run --prefix components-sdc build
 
       - name: Run visual regression tests
         run: |
