@@ -60,6 +60,7 @@ jobs:
           name: visual-regression-reports
           path: |
             visual-diff/screenshots/diff--*
+            visual-diff/screenshots/set--*
             visual-diff/config/config.json
           if-no-files-found: warn
 
@@ -126,12 +127,13 @@ jobs:
               }
               
               if (hasChanges) {
-                commentBody += '⚠️ Visual changes detected! Please review the artifacts for details.\n';
+               commentBody += '⚠️ Visual changes detected! Please review the artifacts for details.\n';
+                commentBody += `[View full workflow run](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID})\n`;
                 commentBody += 'Download the artifacts from the Actions tab to view the full visual regression report.\n';
               } else {
-                commentBody += '✅ No visual changes detected between components.';
+                commentBody += '✅ No visual changes detected between components.\n';
+                commentBody += `[View full workflow run](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID})\n`;
               }
-              
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
