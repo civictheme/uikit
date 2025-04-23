@@ -30,7 +30,7 @@ export async function compareScreenshots({
     console.log(`Results will be saved to ${outputDir}`);
     const concurrency = determineOptimalConcurrency();
     execSync(
-      `npx reg-cli ${sourceDir} ${targetDir} ${outputDir} --concurrency ${concurrency} --report ${outputDir}/index.html --json ${outputDir}/reg.json`,
+      `npx reg-cli ${sourceDir} ${targetDir} ${outputDir} --additionalDetection client --concurrency ${concurrency} --report ${outputDir}/index.html --json ${outputDir}/reg.json`,
       { stdio: 'inherit' },
     );
 
