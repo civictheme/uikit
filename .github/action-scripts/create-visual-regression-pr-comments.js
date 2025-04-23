@@ -5,7 +5,7 @@
 /**
  * Creates a PR comment with the visual regression results.
  */
-module.exports = function createVisualRegressionPrComments({github, context, require}) {
+export default function createVisualRegressionPrComments({github, context, require}) {
     const fs = require('fs');
     const path = require('path');
     try {

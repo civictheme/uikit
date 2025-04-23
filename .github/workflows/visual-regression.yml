@@ -25,10 +25,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install && npx playwright install && npm --prefix components-sdc install
+        run: npm install && npx playwright install
 
       - name: Build Storybook
-        run: npm run build && npm run --prefix components-sdc build
+        run: npm run build
 
       - name: Run visual regression tests
         run: |
@@ -60,7 +60,6 @@ jobs:
           name: visual-regression-reports
           path: |
             visual-diff/screenshots/diff--*
-            visual-diff/screenshots/set--*
             visual-diff/config/config.json
           if-no-files-found: warn
 
@@ -69,8 +68,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const script = require('./.github/scripts/create-visual-regression-pr-comments.js')
-            script({github, context, require})
+            const { default: createVisualRegressionPrComments } = await import('${{ github.workspace }}/.github/action-scripts/create-visual-regression-pr-comments.js')
+            createVisualRegressionPrComments({github, context, require})
           
           
           
