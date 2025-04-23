@@ -10,8 +10,8 @@ import http from 'http';
 import handler from 'serve-handler';
 import { Cluster } from 'puppeteer-cluster';
 import { ensureDirectory } from './config.mjs';
-
 import { determineOptimalConcurrency } from './utils.mjs';
+
 /**
  * Start a static server for the given directory.
  *
@@ -93,13 +93,13 @@ export async function captureScreenshots({
     });
     await cluster.task(async ({ page, data: { storyUrl, filePath } }) => {
       console.log(`Capturing: ${storyUrl} to ${filePath}`);
-      await page.goto(storyUrl, {waitUntil: ['domcontentloaded', 'networkidle0']});
+      await page.goto(storyUrl, { waitUntil: ['domcontentloaded', 'networkidle0'] });
       await page.screenshot({
         path: filePath,
         fullPage: true,
       });
     });
-    storiesToCapture.forEach(({ id: storyId }) => {
+    storyIds.forEach(({ id: storyId }) => {
       const storyPath = storyId.replace(/--/g, '/');
       const fileName = `${storyPath}.png`;
       const filePath = path.join(outputDir, fileName);
