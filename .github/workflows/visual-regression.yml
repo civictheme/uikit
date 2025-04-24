@@ -1,0 +1,79 @@
+name: Visual Regression Testing
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install NPM dependencies
+        run: npm install && npx playwright install && npm --prefix components-sdc install
+
+      - name: Build Storybook
+        run: npm run build && npm run --prefix components-sdc build
+
+      - name: Run visual regression tests
+        run: |
+          # Capture screenshots for the main branch components
+          npm run diff:command -- capture --source main --target components --force
+          
+          # Capture screenshots for the current branch components
+          npm run diff:command -- capture --source current --target components --force
+          
+          # Capture screenshots for the current branch SDC components
+          npm run diff:command -- capture --source current --target components-sdc --force
+          
+          # List the available screenshot sets
+          npm run diff:command -- list --sets
+          
+          # Compare main vs current branch components
+          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "set--main--twig" | awk '{print $2}')
+          TARGET_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
+          npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME" --force
+          
+          # Compare main vs current branch SDC components
+          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
+          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "sdc" | awk '{print $2}')
+          npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME" --force
+
+      - name: Deploy to Netlify
+        if: matrix.node-version == 22
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish-dir: './visual-diff/screenshots'
+          production-branch: main
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_VISUAL_REGRESSION_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        timeout-minutes: 1
+
+      - name: Comment on PR with visual regression results
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { default: createVisualRegressionPrComments } = await import('${{ github.workspace }}/.github/action-scripts/create-visual-regression-pr-comments.js')
+            createVisualRegressionPrComments({github, context, require})
+          
+          
+          
+

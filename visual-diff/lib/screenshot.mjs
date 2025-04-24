@@ -90,6 +90,10 @@ export async function captureScreenshots({
     const cluster = await Cluster.launch({
       concurrency: Cluster.CONCURRENCY_BROWSER,
       maxConcurrency: concurrency,
+      puppeteerOptions: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        headless: true,
+      },
     });
     await cluster.task(async ({ page, data: { storyUrl, filePath } }) => {
       console.log(`Capturing: ${storyUrl} to ${filePath}`);

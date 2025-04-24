@@ -41,7 +41,7 @@ function generateComparisonList(config) {
   let html = '<div class="card-list">';
 
   Object.entries(config.comparisons).forEach(([name, comparison]) => {
-    const reportUrl = `/report/${name}/index.html`;
+    const reportUrl = `/${name}/index.html`;
     const sourceName = formatDisplayName(comparison.source);
     const targetName = formatDisplayName(comparison.target);
     const date = new Date(comparison.date).toLocaleString();
@@ -84,8 +84,7 @@ function generateLandingPage() {
 /**
  * Generate and write the index.html file to disk.
  *
- * @param {string} outputPath - Path where the index.html file should be written.
- *                             If not provided, it will be written to data directory.
+ * @param {string} outputPath
  * @returns {Promise<void>}
  */
 export async function generateAndWriteIndexHtml(outputPath) {
@@ -145,72 +144,50 @@ function serveStaticFile(filePath, res) {
   });
 }
 
-/**
- * Start the HTTP server.
- *
- * @param {Object} options - The server options.
- * @param {number} options.port - The port to listen on.
- * @param {boolean} options.detached - Whether to run in detached mode.
- * @returns {Promise<http.Server>} The server instance.
- */
 export async function startServer(options = {}) {
   const { port = 3000, detached = false } = options;
+
+  // Define the screenshots directory as the root serving directory
+  const screenshotsDir = path.resolve('./visual-diff/screenshots');
+
   const server = http.createServer((req, res) => {
+    // Decode and clean the URL path
     const urlPath = decodeURI(req.url.split('?')[0]);
+    console.log(`Request for ${urlPath}`);
+    // Map the URL path to a file path within the screenshots directory
+    let filePath = path.join(screenshotsDir, urlPath);
 
-    if (urlPath === '/' || urlPath === '/index.html') {
-      // Serve the static index.html file if it exists
-      const staticIndexPath = path.join(getDataPath(''), 'index.html');
-
-      if (fs.existsSync(staticIndexPath)) {
-        // Read the static file and serve it
-        serveStaticFile(staticIndexPath, res);
-      }
-
-      return;
+    // Check if the path is a directory
+    let isDirectory = false;
+    try {
+      isDirectory = fs.statSync(filePath).isDirectory();
+    } catch (error) {
+      // Path doesn't exist, will be handled as 404 below
     }
 
-    if (urlPath.startsWith('/report/')) {
-      const configName = urlPath.split('/')[2];
-      const filePath = urlPath.split('/').slice(3).join('/');
-
-      const config = loadConfig();
-      if (!config.comparisons[configName] && !config.screenshot_sets[configName]) {
+    // If it's a directory, try to serve index.html from that directory
+    if (isDirectory) {
+      filePath = path.join(filePath, 'index.html');
+      console.log(`Request for ${urlPath} resolved to ${filePath}`);
+    }
+    console.log(`Serving ${filePath}`);
+    // Check if the file exists
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+      if (err) {
+        // File doesn't exist
         res.writeHead(404);
-        res.end('Report not found');
+        res.end('Not found');
         return;
       }
 
-      const configDir = getDataPath(configName);
-      const fullPath = path.join(configDir, filePath || 'index.html');
-
-      serveStaticFile(fullPath, res);
-      return;
-    }
-
-    if (urlPath.startsWith('/screenshots/')) {
-      const setName = urlPath.split('/')[2];
-      const filePath = urlPath.split('/').slice(3).join('/');
-      const config = loadConfig();
-      if (!config.screenshot_sets[setName] && !config.screenshot_sets[setName]) {
-        res.writeHead(404);
-        res.end('Screenshot set not found');
-        return;
-      }
-
-      const screenshotDir = getDataPath(setName);
-      const fullPath = path.join(screenshotDir, filePath || 'index.html');
-
-      serveStaticFile(fullPath, res);
-      return;
-    }
-    res.writeHead(404);
-    res.end('Not found');
+      // Serve the file
+      serveStaticFile(filePath, res);
+    });
   });
 
   return new Promise((resolve, reject) => {
     server.listen(port, () => {
-      console.log(`Visual Diff server started on http://localhost:${port}`);
+      console.log(`Server started on http://localhost:${port} serving files from ${screenshotsDir}`);
 
       if (detached) {
         // If detached, don't keep the process running
