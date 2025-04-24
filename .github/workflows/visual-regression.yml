@@ -14,21 +14,17 @@ jobs:
         node-version: [22]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Required for comparing with main branch
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: npm install && npx playwright install
+      - name: Install NPM dependencies
+        run: npm install && npx playwright install && npm --prefix components-sdc install
 
       - name: Build Storybook
-        run: npm run build
+        run: npm run build && npm run --prefix components-sdc build
 
       - name: Run visual regression tests
         run: |
