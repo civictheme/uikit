@@ -63,11 +63,11 @@ export default function createVisualRegressionPrComments({github, context, requi
  * @returns {{passedItemsCount, failedItemsCount, deletedItemsCount, shortDescription: boolean}}
  */
 function getVisualDiffResults(results) {
+    console.log('diff results:', results);
     return {
-        passedItemsCount: results.passedItemsCount.length,
-        failedItemsCount: results.failedItemsCount.length,
-        deletedItemsCount: results.deletedItemsCount.length,
-        shortDescription: this._shortDescription,
+        passedItemsCount: results.passedItemsCount ? results.passedItemsCount.length : 0,
+        failedItemsCount: results.failedItemsCount ? results.failedItemsCount.length : 0,
+        deletedItemsCount: results.deletedItemsCount ? results.deletedItemsCount.length : 0,
     };
 }
 
