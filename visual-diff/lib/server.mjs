@@ -82,6 +82,27 @@ function generateLandingPage() {
 }
 
 /**
+ * Generate and write the index.html file to disk.
+ *
+ * @param {string} outputPath - Path where the index.html file should be written.
+ *                             If not provided, it will be written to data directory.
+ * @returns {Promise<void>}
+ */
+export async function generateAndWriteIndexHtml(outputPath) {
+  try {
+    const html = generateLandingPage();
+    const dataPath = outputPath || path.join(getDataPath(''), 'index.html');
+
+    fs.writeFileSync(dataPath, html);
+    console.log(`Index.html generated at: ${dataPath}`);
+    return dataPath;
+  } catch (error) {
+    console.error('Error generating index.html:', error);
+    throw error;
+  }
+}
+
+/**
  * Serve a static file.
  *
  * @param {string} filePath - The path to the file.
@@ -134,14 +155,18 @@ function serveStaticFile(filePath, res) {
  */
 export async function startServer(options = {}) {
   const { port = 3000, detached = false } = options;
-
   const server = http.createServer((req, res) => {
     const urlPath = decodeURI(req.url.split('?')[0]);
 
     if (urlPath === '/' || urlPath === '/index.html') {
-      res.setHeader('Content-Type', 'text/html');
-      res.writeHead(200);
-      res.end(generateLandingPage());
+      // Serve the static index.html file if it exists
+      const staticIndexPath = path.join(getDataPath(''), 'index.html');
+
+      if (fs.existsSync(staticIndexPath)) {
+        // Read the static file and serve it
+        serveStaticFile(staticIndexPath, res);
+      }
+
       return;
     }
 

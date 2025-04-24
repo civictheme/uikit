@@ -6,6 +6,7 @@
 
 import { loadConfig, addComparison, getDataPath, ensureDirectory } from '../config.mjs';
 import { compareScreenshots } from '../compare.mjs';
+import { generateAndWriteIndexHtml } from '../server.mjs';
 
 import {determineOptimalConcurrency} from "../utils.mjs";
 
@@ -137,6 +138,9 @@ export async function executeCompareCommand(options) {
     console.log(`Comparison "${name}" has been created.`);
     console.log(`View the report at ${outputDir}/index.html`);
 
+    // Generate the index.html file after comparison
+    const indexPath = await generateAndWriteIndexHtml();
+    console.log(`Main index.html updated at ${indexPath}`);
 
     return {
       name,
