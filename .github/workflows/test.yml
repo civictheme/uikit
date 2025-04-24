@@ -41,6 +41,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Check snapshots
+        run: npm run diff:snapshot
+
       - name: Run tests
         run: npm run test:ci
 
