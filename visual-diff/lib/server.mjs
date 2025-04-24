@@ -41,7 +41,7 @@ function generateComparisonList(config) {
   let html = '<div class="card-list">';
 
   Object.entries(config.comparisons).forEach(([name, comparison]) => {
-    const reportUrl = `/report/${name}/index.html`;
+    const reportUrl = `/${name}/index.html`;
     const sourceName = formatDisplayName(comparison.source);
     const targetName = formatDisplayName(comparison.target);
     const date = new Date(comparison.date).toLocaleString();

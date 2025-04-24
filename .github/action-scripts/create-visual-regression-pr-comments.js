@@ -31,10 +31,7 @@ export default function createVisualRegressionPrComments({github, context, requi
                     const results = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
                     const params = getVisualDiffResults(results);
                     const commentBody = createCommentBody({
-                        passedItemsCount: params.comparisonResult.passedItems.length,
-                        failedItemsCount: params.comparisonResult.diffItems.length,
-                        newItemsCount: params.comparisonResult.newItems.length,
-                        deletedItemsCount: params.comparisonResult.deletedItems.length,
+                        ...params,
                         shortDescription: `Visual Difference Results comparing ${screenshotSetTarget.branch} branch ${screenshotSetTarget.framework} to ${screenshotSetSource.branch} branch ${screenshotSetTarget.framework}`,
                     });
                     github.rest.issues.createComment({
