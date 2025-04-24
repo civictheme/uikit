@@ -5,7 +5,7 @@
  */
 
 import { execSync } from 'child_process';
-import { ensureDirectory } from './config.mjs';
+import { ensureDirectory } from './screenshot-set-manager.mjs';
 
 import { determineOptimalConcurrency } from './utils.mjs';
 

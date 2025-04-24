@@ -9,7 +9,7 @@ import path from 'path';
 import http from 'http';
 import handler from 'serve-handler';
 import { Cluster } from 'puppeteer-cluster';
-import { ensureDirectory } from './config.mjs';
+import { ensureDirectory } from './screenshot-set-manager.mjs';
 import { determineOptimalConcurrency } from './utils.mjs';
 
 /**

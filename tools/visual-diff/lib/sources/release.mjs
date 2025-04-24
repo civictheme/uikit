@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
-import {ensureDirectory} from '../config.mjs';
+import {ensureDirectory} from '../screenshot-set-manager.mjs';
 import {captureScreenshots} from '../screenshot.mjs';
 import {getLatestReleaseTag} from "../utils.mjs";
 

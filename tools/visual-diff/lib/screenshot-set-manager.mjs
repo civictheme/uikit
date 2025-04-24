@@ -1,7 +1,7 @@
 /**
- * Configuration management for Visual Diff.
+ * Screenshot set management for Visual Diff.
  *
- * Handles loading, saving, and initialization of configuration.
+ * Handles loading, saving, and initialization of screenshot set data.
  */
 
 import fs from 'fs';
@@ -9,7 +9,7 @@ import path from 'path';
 
 // Configuration file path.
 const CONFIG_DIR = path.join(process.cwd(), 'tools', 'visual-diff', 'config');
-const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
+const CONFIG_FILE = path.join(CONFIG_DIR, '.screenshot-sets.json');
 
 const DEFAULT_CONFIG = {
   screenshot_sets: {},
@@ -17,17 +17,17 @@ const DEFAULT_CONFIG = {
 };
 
 /**
- * Load configuration from file.
+ * Load screenshot sets from file.
  *
- * @returns {Object} The loaded configuration.
+ * @returns {Object} The loaded screenshot sets.
  */
-export function loadConfig() {
+export function loadScreenshotSets() {
   try {
     if (fs.existsSync(CONFIG_FILE)) {
       return JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
     }
   } catch (error) {
-    console.error(`Error loading configuration: ${error.message}`);
+    console.error(`Error loading screenshot sets: ${error.message}`);
   }
 
   return DEFAULT_CONFIG;
@@ -45,36 +45,36 @@ export function ensureDirectory(dirPath) {
 }
 
 /**
- * Save configuration to file.
+ * Save screenshot sets to file.
  *
- * @param {Object} config - The configuration to save.
+ * @param {Object} config - The screenshot sets to save.
  * @returns {boolean} Whether the save was successful.
  */
-export function saveConfig(config) {
+export function saveScreenshotSets(config) {
   try {
     ensureDirectory(CONFIG_DIR);
     fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2), 'utf8');
-    console.log(`Configuration saved at ${CONFIG_FILE}`);
+    console.log(`Screenshot sets saved at ${CONFIG_FILE}`);
     return true;
   } catch (error) {
-    console.error(`Error saving configuration: ${error.message}`);
+    console.error(`Error saving screenshot sets: ${error.message}`);
     return false;
   }
 }
 
 /**
- * Initialize configuration if it doesn't exist.
+ * Initialize screenshot sets if they don't exist.
  *
- * @returns {Object} The loaded or initialized configuration.
+ * @returns {Object} The loaded or initialized screenshot sets.
  */
-export function initConfig() {
+export function initScreenshotSets() {
   ensureDirectory(CONFIG_DIR);
 
   if (!fs.existsSync(CONFIG_FILE)) {
-    saveConfig(DEFAULT_CONFIG);
-    console.log(`Configuration initialized at ${CONFIG_FILE}`);
+    saveScreenshotSets(DEFAULT_CONFIG);
+    console.log(`Screenshot sets initialized at ${CONFIG_FILE}`);
   }
-  return loadConfig();
+  return loadScreenshotSets();
 }
 
 /**
@@ -98,9 +98,9 @@ export function getDataPath(name) {
  * @returns {boolean} Whether the operation was successful.
  */
 export function addScreenshotSet(name, data) {
-  const config = loadConfig();
+  const config = loadScreenshotSets();
   config.screenshot_sets[name] = data;
-  return saveConfig(config);
+  return saveScreenshotSets(config);
 }
 
 /**
@@ -111,9 +111,9 @@ export function addScreenshotSet(name, data) {
  * @returns {boolean} Whether the operation was successful.
  */
 export function addComparison(name, data) {
-  const config = loadConfig();
+  const config = loadScreenshotSets();
   config.comparisons[name] = data;
-  return saveConfig(config);
+  return saveScreenshotSets(config);
 }
 
 /**
@@ -123,10 +123,10 @@ export function addComparison(name, data) {
  * @returns {boolean} Whether the operation was successful.
  */
 export function removeScreenshotSet(name) {
-  const config = loadConfig();
+  const config = loadScreenshotSets();
   if (config.screenshot_sets[name]) {
     delete config.screenshot_sets[name];
-    return saveConfig(config);
+    return saveScreenshotSets(config);
   }
   return false;
 }
@@ -138,10 +138,10 @@ export function removeScreenshotSet(name) {
  * @returns {boolean} Whether the operation was successful.
  */
 export function removeComparison(name) {
-  const config = loadConfig();
+  const config = loadScreenshotSets();
   if (config.comparisons[name]) {
     delete config.comparisons[name];
-    return saveConfig(config);
+    return saveScreenshotSets(config);
   }
   return false;
 }

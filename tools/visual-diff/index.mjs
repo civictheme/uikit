@@ -10,7 +10,6 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
 import path from 'path';
-import { loadConfig, saveConfig, initConfig } from './lib/config.mjs';
 import { executeCompareCommand } from './lib/commands/compare.mjs';
 import  { executeCaptureCommand } from './lib/commands/capture.mjs';
 import { executeCleanCommand } from './lib/commands/clean.mjs';
@@ -31,7 +30,7 @@ program
   .description('Visual difference testing tool for CivicTheme UIKit')
   .version(packageJson.version || '1.0.0');
 
-initConfig();
+initScreenshotSets();
 
 program
   .command('interactive')
@@ -85,7 +84,7 @@ program
   .option('-a, --all', 'List all available data')
   .action((options) => {
     try {
-      const config = loadConfig();
+      const config = loadScreenshotSets();
 
       const showAll = options.all || (!options.sets && !options.comparisons);
 

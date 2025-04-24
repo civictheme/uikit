@@ -6,10 +6,10 @@
 
 import fs from 'fs';
 import {
-  loadConfig,
-  saveConfig,
+  loadScreenshotSets,
+  saveScreenshotSets,
   removeComparison, removeScreenshotSet
-} from '../config.mjs';
+} from '../screenshot-set-manager.mjs';
 
 /**
  * Execute the clean command.
@@ -22,7 +22,7 @@ import {
  */
 export async function executeCleanCommand(options) {
   try {
-    const config = loadConfig();
+    const config = loadScreenshotSets();
 
     const setToRemove = options.set;
     const comparisonToRemove = options.comparison;
@@ -51,7 +51,7 @@ export async function executeCleanCommand(options) {
       });
 
       // Reset the configuration.
-      saveConfig({
+      saveScreenshotSets({
         screenshot_sets: {},
         comparisons: {}
       });
@@ -61,7 +61,7 @@ export async function executeCleanCommand(options) {
     }
 
     if (setToRemove) {
-      const { removeScreenshotSet } = await import('../config.mjs');
+      const { removeScreenshotSet } = await import('../screenshot-set-manager.mjs');
 
       if (!config.screenshot_sets || !config.screenshot_sets[setToRemove]) {
         console.error(`Screenshot set "${setToRemove}" not found.`);

@@ -6,7 +6,7 @@
 
 import inquirer from 'inquirer';
 import { execSync } from 'child_process';
-import { getDataPath, loadConfig } from './config.mjs';
+import { getDataPath, loadScreenshotSets as loadConfig } from './screenshot-set-manager.mjs';
 import { executeCaptureCommand } from './commands/capture.mjs';
 import { executeCompareCommand } from './commands/compare.mjs';
 import { executeCleanCommand } from './commands/clean.mjs';

@@ -8,7 +8,7 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { loadConfig, getDataPath } from './config.mjs';
+import { loadScreenshotSets as loadConfig, getDataPath } from './screenshot-set-manager.mjs';
 import { formatDisplayName } from './utils.mjs';
 
 const filename = fileURLToPath(import.meta.url);

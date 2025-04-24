@@ -6,7 +6,7 @@
 
 import path from 'path';
 import { createSnapshot } from '../sources/index.mjs';
-import { getDataPath, ensureDirectory } from '../config.mjs';
+import { getDataPath, ensureDirectory } from '../screenshot-set-manager.mjs';
 import { generateSetName, getBranchData } from "../utils.mjs";
 
 /**
@@ -37,7 +37,7 @@ export async function executeCaptureCommand(options) {
     const outputDir = getDataPath(name);
 
     // Load configuration to check for existing captures.
-    const config = await import('../config.mjs').then(module => module.loadConfig());
+    const config = await import('../screenshot-set-manager.mjs').then(module => module.loadScreenshotSets());
     const captureExists = config.screenshot_sets[name];
 
     // If the capture exists and we're not forcing overwrite, handle appropriately.
@@ -76,7 +76,7 @@ export async function executeCaptureCommand(options) {
     });
 
     // Add to configuration using the new screenshot_sets concept
-    const { addScreenshotSet } = await import('../config.mjs');
+    const { addScreenshotSet } = await import('../screenshot-set-manager.mjs');
     addScreenshotSet(name, {
       ...snapshotData,
       directory: outputDir,

@@ -6,7 +6,7 @@
 
 import { execSync } from 'child_process';
 import path from 'path';
-import { ensureDirectory } from '../config.mjs';
+import { ensureDirectory } from '../screenshot-set-manager.mjs';
 import { captureScreenshots } from '../screenshot.mjs';
 
 /**
