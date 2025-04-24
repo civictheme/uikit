@@ -148,7 +148,7 @@ export async function startServer(options = {}) {
   const { port = 3000, detached = false } = options;
 
   // Define the screenshots directory as the root serving directory
-  const screenshotsDir = path.resolve('./visual-diff/screenshots');
+  const screenshotsDir = path.resolve('./tools/visual-diff/screenshots');
 
   const server = http.createServer((req, res) => {
     // Decode and clean the URL path

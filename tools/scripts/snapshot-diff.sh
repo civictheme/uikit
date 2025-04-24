@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define your directories
-TWIG_COMPONENTS="components"
-SDC_TWIG_COMPONENTS="components-sdc/components"
+TWIG_COMPONENTS="packages/twig/components"
+SDC_TWIG_COMPONENTS="packages/sdc/components"
 
 # Flag to track if any differences were found
 found_differences=0

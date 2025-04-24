@@ -1,8 +1,8 @@
 {
-  "name": "components-sdc",
+  "name": "@civictheme/uikit-sdc",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
-  "description": "CivicTheme UI Kit with Storybook integration - modified for Single Directory Components.",
+  "description": "CivicTheme UI Kit for Single Directory Components (Drupal)",
   "keywords": [
     "ui kit",
     "uikit",
@@ -38,10 +38,11 @@
     "storybook": "storybook dev -p 6007",
     "build-storybook": "npm run dist && storybook build",
     "dev": "npm run dist && node build.js cli \"dist:watch\" \"storybook\"",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "test:ci": "npm run test-unit:ci",
-    "test-unit:ci": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
-    "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'"
+    "test": "node --experimental-vm-modules ../../node_modules/.bin/jest",
+    "test:ci": "npm run test-unit:ci", 
+    "test-unit:ci": "node --experimental-vm-modules ../../node_modules/.bin/jest --coverage",
+    "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'",
+    "lint:fix": "eslint ./components ./.storybook ./tests --fix"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.1",

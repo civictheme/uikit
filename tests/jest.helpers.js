@@ -27,11 +27,11 @@ const wrappedRender = async (template, props = {}, namespaces = {}, twigCallback
 
 global.dom = async function (template, props = {}, matchSnapshot = true) {
   const { container } = await wrappedRender(template, props, {
-    base: 'components/00-base',
-    atoms: 'components/01-atoms',
-    molecules: 'components/02-molecules',
-    organisms: 'components/03-organisms',
-    templates: 'components/04-templates',
+    base: 'packages/twig/components/00-base',
+    atoms: 'packages/twig/components/01-atoms',
+    molecules: 'packages/twig/components/02-molecules',
+    organisms: 'packages/twig/components/03-organisms',
+    templates: 'packages/twig/components/04-templates',
   });
 
   if (matchSnapshot) {

@@ -16,5 +16,5 @@ jobs:
     steps:
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
-          path: storybook-static
-          install_command: npm install
+          path: packages/twig/storybook-static
+          install_command: npm install --workspaces

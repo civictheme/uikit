@@ -9,5 +9,6 @@ export default {
     '**/tests/**/*.{js,jsx,twig}',
     '!**/*.stories.js',
   ],
+  // Use a custom jest helper for the twig package
   setupFiles: ['<rootDir>/tests/jest.helpers.js'],
 };

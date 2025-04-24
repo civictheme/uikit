@@ -1,0 +1,69 @@
+{
+  "screenshot_sets": {
+    "set--current--feature-add-reg-suit--twig": {
+      "type": "current",
+      "date": "2025-04-23T02:47:10.477Z",
+      "directory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/set--current--feature-add-reg-suit--twig",
+      "commit": "f573a5c837a0e3b95ea43f52fc02f71296944a66",
+      "branch": "feature/add-reg-suit",
+      "targetDir": "components",
+      "source": "current",
+      "captureDirectory": "components"
+    },
+    "set--current--feature-add-reg-suit--sdc": {
+      "type": "current",
+      "date": "2025-04-23T01:29:23.508Z",
+      "directory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/set--current--feature-add-reg-suit--sdc",
+      "commit": "f00d9662b7aea19f4ac3d1c87ebe72cab74cc5c0",
+      "branch": "feature/add-reg-suit",
+      "targetDir": "components-sdc",
+      "source": "current",
+      "captureDirectory": "components-sdc"
+    },
+    "set--main--twig": {
+      "type": "main",
+      "date": "2025-04-23T04:20:22.512Z",
+      "directory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/set--main--twig",
+      "commit": "db3dd4c4f2e620044ff67cc2857c3fcac991fd08",
+      "targetDir": "components",
+      "source": "main",
+      "captureDirectory": "components"
+    },
+    "set--current--feature-add-regviz-regression-workflow--twig": {
+      "type": "current",
+      "date": "2025-04-23T04:20:38.968Z",
+      "directory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/set--current--feature-add-regviz-regression-workflow--twig",
+      "commit": "dfaf599423607e4e41a60d49d8ae5235cc5b5277",
+      "branch": "feature/add-regviz-regression-workflow",
+      "targetDir": "components",
+      "source": "current",
+      "captureDirectory": "components"
+    },
+    "set--current--feature-add-regviz-regression-workflow--sdc": {
+      "type": "current",
+      "date": "2025-04-23T04:20:56.804Z",
+      "directory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/set--current--feature-add-regviz-regression-workflow--sdc",
+      "commit": "dfaf599423607e4e41a60d49d8ae5235cc5b5277",
+      "branch": "feature/add-regviz-regression-workflow",
+      "targetDir": "components-sdc",
+      "source": "current",
+      "captureDirectory": "components-sdc"
+    }
+  },
+  "comparisons": {
+    "diff--branch-feature-add-reg-suit--vs--branch-feature-add-reg-suit": {
+      "source": "set--current--feature-add-reg-suit--twig",
+      "target": "set--current--feature-add-reg-suit--sdc",
+      "date": "2025-04-24T04:24:48.283Z",
+      "reportDirectory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/diff--branch-feature-add-reg-suit--vs--branch-feature-add-reg-suit",
+      "completed": true
+    },
+    "diff--main--vs--branch-feature-add-regviz-regression-workflow": {
+      "source": "set--main--twig",
+      "target": "set--current--feature-add-regviz-regression-workflow--twig",
+      "date": "2025-04-23T04:26:24.531Z",
+      "reportDirectory": "/home/rgaunt/work/civictheme-uikit/visual-diff/screenshots/diff--main--vs--branch-feature-add-regviz-regression-workflow",
+      "completed": true
+    }
+  }
+}

@@ -8,7 +8,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Configuration file path.
-const CONFIG_DIR = path.join(process.cwd(), 'visual-diff', 'config');
+const CONFIG_DIR = path.join(process.cwd(), 'tools', 'visual-diff', 'config');
 const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 
 const DEFAULT_CONFIG = {
@@ -84,7 +84,7 @@ export function initConfig() {
  * @returns {string} The directory path.
  */
 export function getDataPath(name) {
-  const baseDir = path.join(process.cwd(), 'visual-diff', 'screenshots');
+  const baseDir = path.join(process.cwd(), 'tools', 'visual-diff', 'screenshots');
   ensureDirectory(baseDir);
 
   return path.join(baseDir, name);
