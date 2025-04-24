@@ -13,6 +13,9 @@
 .sb-show-main {
   overflow-y: scroll;
 
+  // Prevent animation to reduce false positives in diff tool.
+  transition: background-color 0s !important;
+
   // Remove padding so we can clearly see where the edges of the elements sit.
   &.sb-main-fullscreen,
   &.sb-main-centered {

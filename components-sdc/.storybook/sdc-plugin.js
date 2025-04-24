@@ -47,7 +47,7 @@ function getDependencyImports(storiesPath, componentDirectory) {
     scannedFiles.add(twigPath);
 
     const twigContent = fs.readFileSync(twigPath, 'utf8');
-    twigContent.matchAll(/include\s+'civictheme:([^']+)'/g).forEach((match) => {
+    twigContent.matchAll(/include\s+(?:'|")civictheme:([^'"]+)(?:'|")/g).forEach((match) => {
       const componentPath = path.join(path.dirname(twigPath), `../../${match[1]}`);
       const componentName = path.basename(componentPath);
       const dependencyPath = globSync(`${componentDirectory}/**/${componentName}.twig`);

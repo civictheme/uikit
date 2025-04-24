@@ -63,6 +63,45 @@ npx npm-check-updates -u --target minor
 
 All commits to `main` branch are built as a Storybook and automatically deployed to https://civictheme-uikit.netlify.app/
 
+### Visual Regression Testing
+
+CivicTheme UI Kit includes a visual regression testing workflow that automatically captures screenshots of components in both main and feature branches and compares them to detect visual changes.
+
+#### Running Visual Tests Locally
+
+To run visual regression tests locally:
+
+```bash
+# Run in interactive mode
+npm run diff
+
+# Capture screenshots for main branch components
+npm run diff:command -- capture --source main --target components
+
+# Capture screenshots for current branch components
+npm run diff:command -- capture --source current --target components
+
+# Capture screenshots for current branch sdc components
+npm run diff:command -- capture --source current --target components-sdc
+
+# Compare main vs current branch
+npm run diff:command -- compare --source [main-set-name] --target [current-set-name]
+
+# Serve the visual comparison report
+npm run diff:serve
+```
+
+#### CI Integration
+
+Visual regression tests run automatically on pull requests. The GitHub Action:
+
+1. Captures screenshots from main and PR branches
+2. Generates comparison reports
+3. Uploads reports as GitHub artifacts
+4. Comments on the PR with a summary of visual changes
+
+To view the full report, download the artifacts from the GitHub Actions tab.
+
 ### Build assets
 
     npm run build

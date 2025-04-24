@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Diff - Visual Regression Reports</title>
+  <style>
+    body {
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f7f9;
+    }
+    h1 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      color: #2c3e50;
+      text-align: center;
+    }
+    .card {
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.4em;
+      color: #2c3e50;
+      margin-bottom: 12px;
+    }
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+    }
+    .empty-message {
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 6px;
+    }
+    .timestamp {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 8px;
+    }
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    button.view-btn {
+      padding: 8px 16px;
+      background-color: #0366d6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    button.view-btn:hover {
+      background-color: #0050b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visual Diff - Visual Regression Reports</h1>
+
+  <div class="section">
+    <h2>Comparison Reports</h2>
+    {{COMPARISON_LIST}}
+  </div>
+</body>
+</html>

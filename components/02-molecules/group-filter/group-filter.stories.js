@@ -36,6 +36,9 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
+    group_id: {
+      control: { type: 'text' },
+    },
   },
 };
 
