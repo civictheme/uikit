@@ -32,7 +32,7 @@ export default function createVisualRegressionPrComments({github, context, requi
                     const params = getVisualDiffResults(results);
                     const commentBody = createCommentBody({
                         ...params,
-                        shortDescription: `Visual Difference Results comparing ${screenshotSetTarget.branch} branch ${screenshotSetTarget.framework} to ${screenshotSetSource.branch} branch ${screenshotSetTarget.framework}`,
+                        shortDescription: false,
                     });
                     github.rest.issues.createComment({
                         issue_number: context.issue.number,
