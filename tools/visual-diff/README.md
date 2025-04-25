@@ -54,15 +54,15 @@ npm run visual-diff capture [options]
 ```
 
 Options:
-- `-s, --source <source>`: Source for screenshots (main|release|current). Default: "current"
-- `-t, --target <target>`: Target directory (components|components-sdc). Default: "components"
-- `-v, --version <version>`: Specific release version (only for release source)
+- `-s, --source <sourceValue>`: Source identifier (e.g., main, current_branch, tag name). Default: "current_branch"
+- `-t, --type <sourceType>`: Source type (current_branch, branch, tag). Default: "current_branch"
+- `-p, --package <package>`: Package to capture (twig, sdc). Default: "twig"
 - `-f, --force`: Force overwrite if the capture already exists
 
 Set name will be auto-generated based on the options you've selected:
-- For m``ain branch: `main-[components|sdc]`
-- For current branch: `current-[branch-name]-[components|sdc]`
-- For releases: `release-[version]-[components|sdc]```
+- For current branch: `current--[branch-name]--[package]`
+- For branches: `branch--[branch-name]--[package]`
+- For tags: `tag--[tag-name]--[package]`
 
 If a set already exists, you'll be warned and given the option to:
 - Use the `--force` flag to overwrite existing captures
@@ -70,14 +70,17 @@ If a set already exists, you'll be warned and given the option to:
 
 Examples:
 ```bash
-# Capture current branch components
-npm run visual-diff:command capture
+# Capture current branch twig components
+npm run visual-diff capture
 
-# Capture main branch SDC components
-npm run visual-diff capture --source main --target components-sdc
+# Capture main branch twig components
+npm run visual-diff capture --source main --type branch --package twig
 
-# Capture specific release
-npm run visual-diff capture --source release --version 1.10.0
+# Capture SDC components on current branch
+npm run visual-diff capture --source current_branch --package sdc
+
+# Capture specific tag
+npm run visual-diff capture --source 1.10.0 --type tag --package twig
 ```
 
 #### Compare
@@ -157,11 +160,96 @@ npm run visual-diff:command clean --all
 
 ## Configuration
 
-RegViz stores its configuration in a `.regviz.json` file in the project root. This file tracks all baselines, targets, and comparisons, as well as their respective directories.
+The visual difference tool uses two configuration files:
+
+1. `.screenshot-sets.json` - Stores information about captured screenshots and comparisons
+2. `config.json` - Configures available screenshot sources and packages
+
+### Screenshot Sources Configuration
+
+The `config.json` file defines which branches, tags, and packages are available for screenshot capture. The structure is as follows:
+
+```json
+{
+  "screenshot_sources": {
+    "current_branch": {
+      "packages": {
+        "twig": "packages/twig",
+        "sdc": "packages/sdc"
+      }
+    },
+    "branches": {
+      "main": {
+        "packages": {
+          "twig": "components"
+        }
+      }
+    },
+    "tags": {
+      "1.10": {
+        "packages": {
+          "twig": "components"
+        }
+      }
+    }
+  }
+}
+```
+
+#### Configuration Structure:
+
+- `current_branch`: Configuration for the current working directory
+- `branches`: Named branches that can be captured (e.g., "main", "project/sdc")
+- `tags`: Specific release tags that can be captured
+
+Each source has a `packages` object that defines which component packages are available and their directory paths.
+
+### Adding New Branches or Tags
+
+To add a new branch or tag to the configuration:
+
+1. Edit the `tools/visual-diff/config/config.json` file
+2. Add a new entry under either `branches` or `tags`
+3. Define the available packages and their directory paths
+
+Example adding a new branch:
+```json
+"branches": {
+  "main": {
+    "packages": {
+      "twig": "components"
+    }
+  },
+  "feature/new-branch": {
+    "packages": {
+      "twig": "components",
+      "sdc": "components-sdc"
+    }
+  }
+}
+```
+
+Example adding a new tag:
+```json
+"tags": {
+  "1.10": {
+    "packages": {
+      "twig": "components"
+    }
+  },
+  "2.0.0": {
+    "packages": {
+      "twig": "packages/twig",
+      "sdc": "packages/sdc"
+    }
+  }
+}
+```
+
+### Screenshot Data Storage
 
 Screenshot data is stored in the `screenshots` directory with the following structure:
-- `screenshots/baseline-*`: Baseline screenshots
-- `screenshots/target-*`: Target screenshots
+- `screenshots/[set-name]`: Screenshot sets
 - `screenshots/diff-*`: Comparison results
 
 ## Workflow Example

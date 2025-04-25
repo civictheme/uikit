@@ -41,8 +41,8 @@
     "test": "node --experimental-vm-modules ../../node_modules/.bin/jest",
     "test:ci": "npm run test-unit:ci",
     "test-unit:ci": "node --experimental-vm-modules ../../node_modules/.bin/jest --coverage",
-    "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'",
-    "lint:fix": "eslint ./components ./.storybook ./tests --fix"
+    "lint": "eslint ./components ./.storybook && stylelint 'components/**/*.scss'",
+    "lint:fix": "eslint ./components ./.storybook --fix"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.1",

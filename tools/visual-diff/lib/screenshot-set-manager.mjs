@@ -78,12 +78,12 @@ export function initScreenshotSets() {
 }
 
 /**
- * Get the directory path for a specific type of data.
+ * Get the screenshot directory path for a specific type of data.
  *
  * @param {string} name - The name of the data item.
  * @returns {string} The directory path.
  */
-export function getDataPath(name) {
+export function getScreenshotPath(name) {
   const baseDir = path.join(process.cwd(), 'tools', 'visual-diff', 'screenshots');
   ensureDirectory(baseDir);
 

@@ -16,6 +16,8 @@ Notes:
 */
 
 import fs from 'fs'
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
 import path from 'path'
 import { globSync } from 'glob'
 import { execSync, spawn } from 'child_process'
@@ -115,7 +117,7 @@ const VAR_SB_ASSETS_DIRECTORY   = `$ct-assets-directory: '${DIR_SB_ASSETS}';`
 const JS_FILE_OUT               = `${DIR_OUT}/${SCRIPT_NAME}.js`
 const JS_STORYBOOK_FILE_OUT     = `${DIR_OUT}/${SCRIPT_NAME}.storybook.js`
 const JS_CIVIC_IMPORTS          = `${COMPONENT_DIR}/**/!(*.stories|*.stories.data|*.component|*.min|*.test|*.script|*.utils).js`
-const JS_LIB_IMPORTS            = [fullPath('./node_modules/@popperjs/core/dist/umd/popper.js')]
+const JS_LIB_IMPORTS            = [path.join(modulePath('@popperjs/core').replace('dist/cjs/popper.js', 'dist/umd/popper.js'))]
 const JS_ASSET_IMPORTS          = [
                                     `${DIR_CIVICTHEME}/assets/js/**/*.js`,
                                     `${DIR_ASSETS_IN}/js/**/*.js`,
@@ -428,6 +430,45 @@ function stripJS(js) {
 function fullPath(filepath) {
   return path.resolve(PATH, filepath)
 }
+
+function modulePath(moduleName) {
+  // Get the current file's directory
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+  // Create a require function based on the current module
+  const require = createRequire(import.meta.url);
+
+  try {
+    // Try to resolve the module path using Node's resolution algorithm
+    return require.resolve(moduleName);
+  } catch (error) {
+    // If that fails, try with explicit paths
+
+    // Try local node_modules
+    const localModule = path.resolve(process.cwd(), 'node_modules', moduleName);
+    if (fs.existsSync(localModule)) {
+      return localModule;
+    }
+
+    // Try relative to current file
+    const fileRelativeModule = path.resolve(__dirname, 'node_modules', moduleName);
+    if (fs.existsSync(fileRelativeModule)) {
+      return fileRelativeModule;
+    }
+
+    // If in a workspace, try the root node_modules
+    const workspaceRootPath = path.resolve(process.cwd(), '..', '..');
+    const workspaceModule = path.resolve(workspaceRootPath, 'node_modules', moduleName);
+    if (fs.existsSync(workspaceModule)) {
+      return workspaceModule;
+    }
+
+    // If all else fails, return the module name
+    console.warn(`Could not resolve path for module: ${moduleName}`);
+    return moduleName;
+  }
+}
+
 
 function time(full) {
   const now = new Date().getTime()

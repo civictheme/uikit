@@ -6,35 +6,53 @@
 
 import path from 'path';
 import { createSnapshot } from '../sources/index.mjs';
-import { getDataPath, ensureDirectory } from '../screenshot-set-manager.mjs';
+import { getScreenshotPath, ensureDirectory } from '../screenshot-set-manager.mjs';
 import { generateSetName, getBranchData } from "../utils.mjs";
+import {getDirectoryForSource, isPackageAllowed, SOURCE_TYPES} from '../config.mjs';
 
 /**
  * Execute the capture command.
  *
  * @param {Object} options - The command options.
- * @param {string} options.source - The source (main, current, release).
- * @param {string} options.target - The target directory (components or components-sdc).
- * @param {string} options.name - The name for this capture set.
+ * @param {string} options.source - The source identifier (e.g. branch name, tag name).
+ * @param {string} options.sourceType - The source type from SOURCE_TYPES.
+ * @param {string} options.package - The package to capture (e.g. twig, sdc).
+ * @param {string} options.force - Force overwrite if the comparison already exists.
  * @returns {Promise<void>}
  */
 export async function executeCaptureCommand(options) {
   try {
-    const source = options.source || 'current';
-    const targetDir = options.target || 'components';
+    const source = options.source;
+    const sourceType = options.sourceType;
+    const packageName = options.package;
     const forceOverwrite = options.force || false;
 
-    // Get branch information for current source
-    if (source === 'current' && !options.branch) {
+    if (!source || !sourceType || !packageName) {
+      throw new Error('Missing required parameters: sourceValue, sourceType, and package are required');
+    }
+
+    if (!isPackageAllowed(source, sourceType, packageName)) {
+      throw new Error(`Package ${packageName} is not allowed for source ${source} of type ${sourceType}`);
+    }
+
+    // Get the directory from config
+    const targetDir = getDirectoryForSource(source, sourceType, packageName);
+
+    if (!targetDir) {
+      throw new Error(`No directory configured for source ${source} with package ${packageName}`);
+    }
+
+    // Get branch information for current branch
+    if (sourceType === SOURCE_TYPES.CURRENT_BRANCH && !options.branch) {
       options = {
         ...options,
         ...getBranchData(),
       }
     }
 
-    const name = options.name || generateSetName(options);
+    const name = generateSetName(options);
 
-    const outputDir = getDataPath(name);
+    const outputDir = getScreenshotPath(name);
 
     // Load configuration to check for existing captures.
     const config = await import('../screenshot-set-manager.mjs').then(module => module.loadScreenshotSets());
@@ -56,10 +74,9 @@ export async function executeCaptureCommand(options) {
       }
     }
 
-    // Proceed with the capture if the user confirmed, forced overwrite, or it's a new capture
     ensureDirectory(outputDir);
 
-    console.log(`Capturing screenshots from ${source} source for ${targetDir}...`);
+    console.log(`Capturing screenshots from ${source} ${sourceType} for ${targetDir}...`);
     console.log(`Output directory: ${outputDir}`);
     console.log(`Screenshot set name: ${name}`);
 
@@ -69,10 +86,9 @@ export async function executeCaptureCommand(options) {
 
     // Create the snapshot
     const snapshotData = await createSnapshot({
-      source,
+      ...options,
       outputDir,
       targetDir,
-      version: options.version
     });
 
     // Add to configuration using the new screenshot_sets concept
@@ -80,7 +96,9 @@ export async function executeCaptureCommand(options) {
     addScreenshotSet(name, {
       ...snapshotData,
       directory: outputDir,
-      source,
+      sourceType,
+      sourceValue: source,
+      packageName,
       captureDirectory: targetDir
     });
 

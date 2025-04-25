@@ -6,7 +6,8 @@
 
 import inquirer from 'inquirer';
 import { execSync } from 'child_process';
-import { getDataPath, loadScreenshotSets as loadConfig } from './screenshot-set-manager.mjs';
+import { getScreenshotPath, loadScreenshotSets as loadConfig } from './screenshot-set-manager.mjs';
+import { loadScreenshotSources, loadAvailablePackages, SOURCE_TYPES } from './config.mjs';
 import { executeCaptureCommand } from './commands/capture.mjs';
 import { executeCompareCommand } from './commands/compare.mjs';
 import { executeCleanCommand } from './commands/clean.mjs';
@@ -121,7 +122,7 @@ export async function handleCompareInteractive() {
       name += options.target.split('--')[1] || options.target;
     }
 
-    const outputDir = getDataPath(name);
+    const outputDir = getScreenshotPath(name);
     console.log(`Comparison report will be stored in: ${outputDir}`);
 
     options.name = name;
@@ -173,52 +174,61 @@ export async function handleCompareInteractive() {
  */
 export async function handleCaptureInteractive() {
   try {
-    const answers = await inquirer.prompt([
+    // Get sources from config
+    const sources = loadScreenshotSources();
+
+    if (sources.length === 0) {
+      console.log('No screenshot sources configured. Please update config.json first.');
+      return;
+    }
+
+    // First get source information
+    const sourceAnswers = await inquirer.prompt([
       {
         type: 'list',
         name: 'source',
         message: 'Select source for screenshots:',
-        choices: [
-          { name: 'Current branch', value: 'current' },
-          { name: 'Main branch', value: 'main' },
-          { name: 'Release', value: 'release' },
-        ],
-        default: 'current',
-      },
-      {
-        type: 'list',
-        name: 'target',
-        message: 'Select target directory:',
-        choices: [
-          { name: 'Components', value: 'components' },
-          { name: 'SDC Components', value: 'components-sdc' },
-        ],
-        default: 'components',
-      },
-      {
-        type: 'list',
-        name: 'version',
-        message: 'Select release version:',
-        choices: async () => {
-          try {
-            return getCompatibleReleaseTags();
-          } catch (error) {
-            console.error('Error getting release tags:', error);
-            return [{ name: 'Custom version', value: 'custom' }];
-          }
-        },
-        when: (answersState) => answersState.source === 'release',
-      },
-      {
-        type: 'input',
-        name: 'customVersion',
-        message: 'Enter custom release version:',
-        validate: (input) => (input.trim() !== '' ? true : 'Version cannot be empty'),
-        when: (answersState) => answersState.source === 'release' && answersState.version === 'custom',
-      },
+        choices: sources,
+        default: 'current_branch',
+      }
     ]);
 
-    if (answers.source === 'current' && !answers.name) {
+    // Find the selected source
+    const selectedSource = sources.find(s => s.value === sourceAnswers.source);
+    const sourceType = selectedSource.sourceType;
+
+    // Get packages for the selected source
+    const packageChoices = loadAvailablePackages(sourceAnswers.source, sourceType);
+
+    if (packageChoices.length === 0) {
+      console.log(`No packages configured for source: ${selectedSource.name}. Please update config.json first.`);
+      return;
+    }
+
+    // Get tag version if needed
+    let versionInfo = {};
+    if (sourceType === SOURCE_TYPES.TAG) {
+      // For tags, we already have the version from the tag selection
+      versionInfo.version = sourceAnswers.source;
+    } else if (sourceType === SOURCE_TYPES.BRANCH && sourceAnswers.source !== 'main') {
+      // For non-main branches, we don't need additional version info
+    } else if (sourceType === SOURCE_TYPES.CURRENT_BRANCH) {
+      // For current branch, we'll get branch info later
+    }
+
+    // Now select the package
+    const packageAnswer = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'package',
+        message: 'Select component package:',
+        choices: packageChoices,
+        default: packageChoices[0].value,
+      }
+    ]);
+
+    // Display branch info for current branch
+    if (sourceType === SOURCE_TYPES.CURRENT_BRANCH) {
       try {
         const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
         console.log(`\nDetected current branch: ${branch}`);
@@ -227,22 +237,51 @@ export async function handleCaptureInteractive() {
       }
     }
 
+    // Build options for the capture command
     const options = {
-      source: answers.source,
-      target: answers.target,
+      source: sourceAnswers.source,  // The actual selected value
+      sourceType: sourceType,
+      package: packageAnswer.package,
       name: undefined,
-      version: (answers.version === 'custom' ? answers.customVersion : answers.version) || undefined,
       interactive: true,
     };
 
+    // Add version if this is a tag/release
+    if (versionInfo.version) {
+      options.version = versionInfo.version;
+    }
+
     try {
-      if (options.source === 'current') {
+      // Get current branch info if needed
+      if (sourceType === SOURCE_TYPES.CURRENT_BRANCH) {
         Object.assign(options, getBranchData());
       }
 
-      options.name = generateSetName(options);
+      // Generate a name for this capture
+      const nameParts = [];
+
+      // Add source type to name
+      if (sourceType === SOURCE_TYPES.CURRENT_BRANCH) {
+        nameParts.push('current');
+        if (options.branch) {
+          nameParts.push(options.branch.replace(/[^a-zA-Z0-9-_]/g, '-'));
+        }
+      } else if (sourceType === SOURCE_TYPES.BRANCH) {
+        nameParts.push('branch');
+        nameParts.push(sourceAnswers.source.replace(/[^a-zA-Z0-9-_]/g, '-'));
+      } else if (sourceType === SOURCE_TYPES.TAG) {
+        nameParts.push('tag');
+        nameParts.push(sourceAnswers.source.replace(/[^a-zA-Z0-9-_]/g, '-'));
+      }
+
+      // Add package to name
+      nameParts.push(packageAnswer.package);
+
+      // Create the name with double dashes between parts
+      options.name = nameParts.join('--');
+
       const { name } = options;
-      const outputDir = getDataPath(name);
+      const outputDir = getScreenshotPath(name);
       console.log(`\nUsing auto-generated name: ${name}`);
       console.log(`Screenshots will be stored in: ${outputDir}`);
     } catch (error) {

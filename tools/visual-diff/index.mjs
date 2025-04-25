@@ -6,29 +6,21 @@
  */
 
 import { Command } from 'commander';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import fs from 'fs';
-import path from 'path';
 import { executeCompareCommand } from './lib/commands/compare.mjs';
 import  { executeCaptureCommand } from './lib/commands/capture.mjs';
 import { executeCleanCommand } from './lib/commands/clean.mjs';
 import { runInteractiveMenu } from './lib/interactive.mjs';
 import { startServer } from './lib/server.mjs';
+import { initScreenshotSets } from "./lib/screenshot-set-manager.mjs";
 
 // Get the directory name of the current module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const packageJsonPath = path.join(dirname(__dirname), 'package.json');
-const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
 const program = new Command();
 
 program
   .name('visual-diff')
   .description('Visual difference testing tool for CivicTheme UIKit')
-  .version(packageJson.version || '1.0.0');
+  .version('1.0.0', '-v, --version', 'Output the current version');
 
 initScreenshotSets();
 
@@ -48,13 +40,20 @@ program
 program
   .command('capture')
   .description('Capture screenshots from a specific source')
-  .option('-s, --source <source>', 'Source for screenshots (main|release|current)', 'current')
-  .option('-t, --target <target>', 'Target component directory (components|components-sdc)', 'components')
-  .option('-v, --version <version>', 'Specific release version (only for release source)')
+  .option('-s, --source <source>', 'Source identifier (e.g., main, current_branch, tag name)', 'current_branch')
+  .option('-t, --type <sourceType>', 'Source type (current_branch, branch, tag)', 'current_branch')
+  .option('-p, --package <package>', 'Package to capture (twig, sdc)', 'twig')
   .option('-f, --force', 'Force overwrite if the capture already exists')
   .action(async (options) => {
     try {
-      await executeCaptureCommand(options);
+      // Convert command line options to the new format
+      const captureOptions = {
+        source: options.source,
+        sourceType: options.source === 'current_branch' ? 'current_branch' : options.type,
+        package: options.package,
+        force: options.force
+      };
+      await executeCaptureCommand(captureOptions);
     } catch (error) {
       console.error(`Error: ${error.message}`);
       process.exit(1);

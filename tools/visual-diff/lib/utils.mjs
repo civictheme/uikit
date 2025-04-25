@@ -121,38 +121,51 @@ export function formatDisplayName(name) {
  * @returns {string} The framework name.
  */
 export function getFrameworkName(directory) {
+  // Map directory paths to package names
   const frameworks = {
-    components: 'twig',
+    'packages/twig': 'twig',
+    'packages/sdc': 'sdc',
+    'components': 'twig',
     'components-sdc': 'sdc',
   };
 
-  if (!frameworks[directory]) {
-    throw new Error(`Unknown framework: ${directory}`);
+  // Return the framework name if it exists
+  if (frameworks[directory]) {
+    return frameworks[directory];
   }
 
-  return frameworks[directory];
+  // Extract just the last part of the path
+  const parts = directory.split('/');
+  return parts[parts.length - 1];
 }
 
 /**
  * Generate a name for a screenshot set.
  *
- * @param options
- * @returns {string}
+ * @param {Object} options - The options object.
+ * @param {string} options.sourceType - The source type (current_branch, branch, tag).
+ * @param {string} options.source - The source value (branch name, tag name).
+ * @param {string} options.package - The package name (twig, sdc).
+ * @param {Object} [options.branch] - Branch information for current branch (from getBranchData).
+ * @param {string} [options.safeBranch] - Safe branch name for current branch.
+ * @returns {string} The generated set name.
  */
 export function generateSetName(options) {
-  let name = 'set';
-  name += `--${options.source}`;
-
-  if (options.source === 'release' && options.version) {
-    name += `--${options.version}`;
-  } else if (options.source === 'current' && options.branch) {
-    name += `--${options.safeBranch}`;
+  const { sourceType, source, package: packageName } = options;
+  const parts = [];
+  if (sourceType === 'current_branch') {
+    parts.push('current');
+    parts.push(options.safeBranch);
+  } else if (sourceType === 'branch') {
+    parts.push('branch');
+    parts.push(source.replace(/[^a-zA-Z0-9-_]/g, '-'));
+  } else if (sourceType === 'tag') {
+    parts.push('tag');
+    parts.push(source.replace(/[^a-zA-Z0-9-_]/g, '-'));
   }
+  parts.push(packageName);
 
-  const targetName = getFrameworkName(options.target);
-  name += `--${targetName}`;
-
-  return name;
+  return parts.join('--');
 }
 
 /**

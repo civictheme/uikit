@@ -4,7 +4,7 @@
  * Handles comparing two sets of screenshots.
  */
 
-import { loadScreenshotSets, addComparison, getDataPath, ensureDirectory } from '../screenshot-set-manager.mjs';
+import { loadScreenshotSets, addComparison, getScreenshotPath, ensureDirectory } from '../screenshot-set-manager.mjs';
 import { compareScreenshots } from '../compare.mjs';
 import { generateAndWriteIndexHtml } from '../server.mjs';
 
@@ -108,7 +108,7 @@ export async function executeCompareCommand(options) {
 
     const sourceDir = config.screenshot_sets[sourceName].directory;
     const targetDir = config.screenshot_sets[targetName].directory;
-    const outputDir = getDataPath(name);
+    const outputDir = getScreenshotPath(name);
 
     ensureDirectory(outputDir);
 

@@ -8,7 +8,7 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { loadScreenshotSets as loadConfig, getDataPath } from './screenshot-set-manager.mjs';
+import { loadScreenshotSets as loadConfig, getScreenshotPath } from './screenshot-set-manager.mjs';
 import { formatDisplayName } from './utils.mjs';
 
 const filename = fileURLToPath(import.meta.url);
@@ -90,7 +90,7 @@ function generateLandingPage() {
 export async function generateAndWriteIndexHtml(outputPath) {
   try {
     const html = generateLandingPage();
-    const dataPath = outputPath || path.join(getDataPath(''), 'index.html');
+    const dataPath = outputPath || path.join(getScreenshotPath(''), 'index.html');
 
     fs.writeFileSync(dataPath, html);
     console.log(`Index.html generated at: ${dataPath}`);

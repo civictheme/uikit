@@ -5,58 +5,45 @@
  */
 
 import { execSync } from 'child_process';
-import path from 'path';
 import { ensureDirectory } from '../screenshot-set-manager.mjs';
 import { captureScreenshots } from '../screenshot.mjs';
+import {buildStoryBook, captureScreenshotsForSource, installDependencies} from "./utils.mjs";
 
 /**
  * Create a snapshot from the current branch.
  *
  * @param {Object} options - The options.
+ * @param {string} options.source - The source identifier (e.g. branch name, tag name).
+ * @param {string} options.sourceType - The source type from SOURCE_TYPES.
+ * @param {string} options.package - The package to capture (e.g. twig, sdc).
+ * @param {string} options.force - Force overwrite if the comparison already exists.
  * @param {string} options.outputDir - The output directory for screenshots.
- * @param {string} options.targetDir - The target directory to capture (components or components-sdc).
+ * @param {string} options.targetDir - The target directory to capture.
  * @returns {Promise<Object>} The snapshot data.
  */
 export async function createCurrentSnapshot({
+  source,
+  sourceType,
   outputDir,
+  package: packageName,
   targetDir = 'components'
 }) {
   ensureDirectory(outputDir);
 
   try {
-    console.log('Building Storybook...');
-    if (targetDir === 'components-sdc') {
-      execSync('npm --prefix components-sdc run build-storybook', {
-        stdio: 'inherit'
-      });
-    } else {
-      execSync('npm run build-storybook', {
-        stdio: 'inherit'
-      });
-    }
-
-    // Get the current commit hash.
-    const commitHash = execSync('git rev-parse HEAD').toString().trim();
-
-    // Define Storybook directory based on target.
-    const storybookDir = targetDir === 'components-sdc'
-      ? path.join(process.cwd(), 'components-sdc/storybook-static')
-      : path.join(process.cwd(), 'storybook-static');
-
-    console.log(`Capturing screenshots from ${targetDir} in current branch...`);
-    await captureScreenshots({
-      storybookDir,
-      outputDir,
-      port: 6010
-    });
+    installDependencies()
+    buildStoryBook();
+    await captureScreenshotsForSource(process.cwd(), source, sourceType, packageName, outputDir);
 
     const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
     return {
-      type: 'current',
+      source,
+      sourceType,
+      package: packageName,
       date: new Date().toISOString(),
       directory: outputDir,
-      commit: commitHash,
+      commit: execSync('git rev-parse HEAD').toString().trim(),
       branch: branchName,
       targetDir
     };
