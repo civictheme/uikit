@@ -41,15 +41,18 @@ function generateComparisonList(config) {
   let html = '<div class="card-list">';
 
   Object.entries(config.comparisons).forEach(([name, comparison]) => {
-    const reportUrl = `/${name}/index.html`;
-    const sourceName = formatDisplayName(comparison.source);
-    const targetName = formatDisplayName(comparison.target);
-    const date = new Date(comparison.date).toLocaleString();
+    const source = config.screenshot_sets[comparison.source];
+    const target = config.screenshot_sets[comparison.target];
 
+    const reportUrl = `/${name}/index.html`;
+    const sourceName = formatDisplayName(source.source, source.sourceType, source.packageName);
+    const targetName = formatDisplayName(target.source, target.sourceType, target.packageName);
+    const date = new Date(comparison.date).toLocaleString();
+    const cardTitle = `Visual regression of ${targetName} against ${sourceName}`;
     html += `
     <div class="card">
       <a href="${reportUrl}" style="display: block; text-decoration: none; color: inherit;">
-        <h3>${formatDisplayName(name)}</h3>
+        <h3>${cardTitle}</h3>
         <p>Source: ${sourceName}<br>Target: ${targetName}</p>
         <p class="timestamp">Created: ${date}</p>
         <p><button class="view-btn">View Comparison Report</button></p>
@@ -84,13 +87,12 @@ function generateLandingPage() {
 /**
  * Generate and write the index.html file to disk.
  *
- * @param {string} outputPath
  * @returns {Promise<void>}
  */
-export async function generateAndWriteIndexHtml(outputPath) {
+export async function generateAndWriteIndexHtml() {
   try {
     const html = generateLandingPage();
-    const dataPath = outputPath || path.join(getScreenshotPath(''), 'index.html');
+    const dataPath = path.join(getScreenshotPath(''), 'index.html');
 
     fs.writeFileSync(dataPath, html);
     console.log(`Index.html generated at: ${dataPath}`);

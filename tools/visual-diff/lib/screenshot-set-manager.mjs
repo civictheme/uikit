@@ -97,7 +97,7 @@ export function getScreenshotPath(name) {
  * @param {Object} data - The screenshot set data.
  * @returns {boolean} Whether the operation was successful.
  */
-export function addScreenshotSet(name, data) {
+export function addScreenshotSetToConfig(name, data) {
   const config = loadScreenshotSets();
   config.screenshot_sets[name] = data;
   return saveScreenshotSets(config);
@@ -110,7 +110,7 @@ export function addScreenshotSet(name, data) {
  * @param {Object} data - The comparison data.
  * @returns {boolean} Whether the operation was successful.
  */
-export function addComparison(name, data) {
+export function addComparisonToConfiguration(name, data) {
   const config = loadScreenshotSets();
   config.comparisons[name] = data;
   return saveScreenshotSets(config);
@@ -122,7 +122,7 @@ export function addComparison(name, data) {
  * @param {string} name - The name of the screenshot set.
  * @returns {boolean} Whether the operation was successful.
  */
-export function removeScreenshotSet(name) {
+export function removeScreenshotSetFromConfig(name) {
   const config = loadScreenshotSets();
   if (config.screenshot_sets[name]) {
     delete config.screenshot_sets[name];

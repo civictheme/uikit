@@ -15,7 +15,7 @@ const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 export const SOURCE_TYPES = {
   CURRENT_BRANCH: 'current_branch',
   BRANCH: 'branch',
-  TAG: 'tag'
+  TAG: 'tag',
 };
 
 /**
@@ -49,19 +49,19 @@ export function loadConfig() {
     screenshot_sources: {
       current_branch: {
         packages: {
-          twig: "packages/twig",
-          sdc: "packages/sdc"
-        }
+          twig: 'packages/twig',
+          sdc: 'packages/sdc',
+        },
       },
       branches: {
         main: {
           packages: {
-            twig: "components"
-          }
-        }
+            twig: 'components',
+          },
+        },
       },
-      tags: {}
-    }
+      tags: {},
+    },
   };
 }
 
@@ -96,24 +96,24 @@ export function loadScreenshotSources() {
   sources.push({
     name: 'Current branch',
     value: 'current_branch',
-    sourceType: SOURCE_TYPES.CURRENT_BRANCH
+    sourceType: SOURCE_TYPES.CURRENT_BRANCH,
   });
 
   // Add branches
-  Object.keys(config.screenshot_sources.branches || {}).forEach(branch => {
+  Object.keys(config.screenshot_sources.branches || {}).forEach((branch) => {
     sources.push({
       name: `Branch: ${branch}`,
       value: branch,
-      sourceType: SOURCE_TYPES.BRANCH
+      sourceType: SOURCE_TYPES.BRANCH,
     });
   });
 
   // Add tags
-  Object.keys(config.screenshot_sources.tags || {}).forEach(tag => {
+  Object.keys(config.screenshot_sources.tags || {}).forEach((tag) => {
     sources.push({
       name: `Release: ${tag}`,
       value: tag,
-      sourceType: SOURCE_TYPES.TAG
+      sourceType: SOURCE_TYPES.TAG,
     });
   });
 
@@ -141,9 +141,9 @@ export function loadAvailablePackages(source, sourceType) {
   }
 
   // Convert to choices array
-  return Object.keys(packages).map(pkg => ({
+  return Object.keys(packages).map((pkg) => ({
     name: pkg,
-    value: pkg
+    value: pkg,
   }));
 }
 

@@ -16,7 +16,6 @@ import {buildStoryBook, captureScreenshotsForSource, installDependencies} from "
  * @param {string} options.source - The source identifier (e.g. branch name, tag name).
  * @param {string} options.sourceType - The source type from SOURCE_TYPES.
  * @param {string} options.package - The package to capture (e.g. twig, sdc).
- * @param {string} options.force - Force overwrite if the comparison already exists.
  * @param {string} options.outputDir - The output directory for screenshots.
  * @param {string} options.targetDir - The target directory to capture.
  * @returns {Promise<Object>} The snapshot data.

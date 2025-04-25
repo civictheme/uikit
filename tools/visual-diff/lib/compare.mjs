@@ -12,17 +12,16 @@ import { determineOptimalConcurrency } from './utils.mjs';
 /**
  * Compare two sets of screenshots using reg-cli.
  *
- * @param {Object} options - CLI options.
- * @param {string} options.sourceDir - Source screenshots directory.
- * @param {string} options.targetDir - Target screenshots directory.
- * @param {string} options.outputDir - Output directory for comparison results.
+ * @param {string} sourceDir - Source screenshots directory.
+ * @param {string} targetDir - Target screenshots directory.
+ * @param {string} outputDir - Output directory for comparison results.
  * @returns {Promise<void>}
  */
-export async function compareScreenshots({
+export async function compareScreenshots(
   sourceDir,
   targetDir,
   outputDir,
-}) {
+) {
   ensureDirectory(outputDir);
 
   try {

@@ -16,7 +16,7 @@ describe('Collapsible utility', () => {
 
   beforeEach(() => {
     jest.resetModules();
-    jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => cb());
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => cb());
   });
 
   afterEach(() => {

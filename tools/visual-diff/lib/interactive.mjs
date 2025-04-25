@@ -6,12 +6,12 @@
 
 import inquirer from 'inquirer';
 import { execSync } from 'child_process';
-import { getScreenshotPath, loadScreenshotSets as loadConfig } from './screenshot-set-manager.mjs';
+import { getScreenshotPath, loadScreenshotSets } from './screenshot-set-manager.mjs';
 import { loadScreenshotSources, loadAvailablePackages, SOURCE_TYPES } from './config.mjs';
 import { executeCaptureCommand } from './commands/capture.mjs';
 import { executeCompareCommand } from './commands/compare.mjs';
 import { executeCleanCommand } from './commands/clean.mjs';
-import { formatDisplayName, generateSetName, getBranchData, getCompatibleReleaseTags } from './utils.mjs';
+import { formatDisplayName, generateDiffName, getBranchData, getSourceOptions } from './utils.mjs';
 import { startServer } from './server.mjs';
 
 /**
@@ -21,7 +21,7 @@ import { startServer } from './server.mjs';
  */
 export async function handleCompareInteractive() {
   try {
-    const config = loadConfig();
+    const config = loadScreenshotSets();
 
     if (!config.screenshot_sets || Object.keys(config.screenshot_sets).length < 2) {
       console.log('Not enough screenshot sets available. At least two sets are needed for comparison.');
@@ -45,14 +45,8 @@ export async function handleCompareInteractive() {
       return;
     }
 
-    const screenshotSets = Object.keys(config.screenshot_sets || {}).map((name) => ({
-      name: formatDisplayName(name),
-      value: name,
-    }));
-
-    const sourceChoices = [...screenshotSets];
-
-    const sourceAnswer = await inquirer.prompt([
+    const sourceChoices = getSourceOptions();
+    const { source: sourceName } = await inquirer.prompt([
       {
         type: 'list',
         name: 'source',
@@ -61,14 +55,14 @@ export async function handleCompareInteractive() {
       },
     ]);
 
-    const targetChoices = screenshotSets.filter((choice) => choice.value !== sourceAnswer.source);
+    const targetChoices = sourceChoices.filter((choice) => choice.value !== sourceName);
 
     if (targetChoices.length === 0) {
       console.log('No other screenshot sets available to compare with.');
       return;
     }
 
-    const answers = await inquirer.prompt([
+    const { target: targetName } = await inquirer.prompt([
       {
         type: 'list',
         name: 'target',
@@ -77,78 +71,14 @@ export async function handleCompareInteractive() {
       },
     ]);
 
-    answers.source = sourceAnswer.source;
-
     const options = {
-      source: answers.source,
-      target: answers.target,
-      name: undefined,
-      interactive: true,
+      sourceName,
+      targetName,
     };
 
-    const sourceSet = config.screenshot_sets[options.source];
-    const targetSet = config.screenshot_sets[options.target];
+    options.name = generateDiffName(sourceName, targetName);
 
-    let name = 'diff';
-
-    name += '--';
-
-    if (sourceSet && sourceSet.source) {
-      if (sourceSet.source === 'main') {
-        name += 'main';
-      } else if (sourceSet.source === 'release' && sourceSet.version) {
-        name += `release-${sourceSet.version}`;
-      } else if (sourceSet.source === 'current' && sourceSet.branch) {
-        name += `branch-${sourceSet.branch.replace(/[^a-zA-Z0-9-_]/g, '-')}`;
-      } else {
-        name += options.source.split('--')[1] || options.source;
-      }
-    } else {
-      name += options.source.split('--')[1] || options.source;
-    }
-    name += '--vs--';
-
-    if (targetSet && targetSet.source) {
-      if (targetSet.source === 'main') {
-        name += 'main';
-      } else if (targetSet.source === 'release' && targetSet.version) {
-        name += `release-${targetSet.version}`;
-      } else if (targetSet.source === 'current' && targetSet.branch) {
-        name += `branch-${targetSet.branch.replace(/[^a-zA-Z0-9-_]/g, '-')}`;
-      } else {
-        name += options.target.split('--')[1] || options.target;
-      }
-    } else {
-      name += options.target.split('--')[1] || options.target;
-    }
-
-    const outputDir = getScreenshotPath(name);
-    console.log(`Comparison report will be stored in: ${outputDir}`);
-
-    options.name = name;
-
-    const result = await executeCompareCommand(options);
-
-    if (result && result.requiresConfirmation) {
-      console.log(`\nA comparison named "${result.name}" already exists.`);
-
-      const { confirmOverwrite } = await inquirer.prompt([
-        {
-          type: 'confirm',
-          name: 'confirmOverwrite',
-          message: 'Do you want to overwrite the existing comparison?',
-          default: false,
-        },
-      ]);
-
-      if (confirmOverwrite) {
-        options.confirmedOverwrite = true;
-        await executeCompareCommand(options);
-      } else {
-        console.log('Comparison operation cancelled.');
-      }
-    }
-
+    await executeCompareCommand(sourceName, targetName);
     const { continueAction } = await inquirer.prompt([
       {
         type: 'confirm',
@@ -190,12 +120,12 @@ export async function handleCaptureInteractive() {
         message: 'Select source for screenshots:',
         choices: sources,
         default: 'current_branch',
-      }
+      },
     ]);
 
     // Find the selected source
-    const selectedSource = sources.find(s => s.value === sourceAnswers.source);
-    const sourceType = selectedSource.sourceType;
+    const selectedSource = sources.find((s) => s.value === sourceAnswers.source);
+    const { sourceType } = selectedSource;
 
     // Get packages for the selected source
     const packageChoices = loadAvailablePackages(sourceAnswers.source, sourceType);
@@ -206,7 +136,7 @@ export async function handleCaptureInteractive() {
     }
 
     // Get tag version if needed
-    let versionInfo = {};
+    const versionInfo = {};
     if (sourceType === SOURCE_TYPES.TAG) {
       // For tags, we already have the version from the tag selection
       versionInfo.version = sourceAnswers.source;
@@ -224,7 +154,7 @@ export async function handleCaptureInteractive() {
         message: 'Select component package:',
         choices: packageChoices,
         default: packageChoices[0].value,
-      }
+      },
     ]);
 
     // Display branch info for current branch
@@ -239,8 +169,8 @@ export async function handleCaptureInteractive() {
 
     // Build options for the capture command
     const options = {
-      source: sourceAnswers.source,  // The actual selected value
-      sourceType: sourceType,
+      source: sourceAnswers.source, // The actual selected value
+      sourceType,
       package: packageAnswer.package,
       name: undefined,
       interactive: true,
@@ -349,15 +279,15 @@ export async function handleListInteractive() {
       },
     ]);
 
-    const config = loadConfig();
+    const config = loadScreenshotSets();
 
     if (listType === 'all' || listType === 'sets') {
       console.log('\nAvailable screenshot sets:');
       if (!config.screenshot_sets || Object.keys(config.screenshot_sets).length === 0) {
         console.log('  No screenshot sets available');
       } else {
-        Object.keys(config.screenshot_sets).forEach((name) => {
-          console.log(`  - ${formatDisplayName(name)}`);
+        Object.values(config.screenshot_sets).forEach((screenshotSet) => {
+          console.log(`  - ${formatDisplayName(screenshotSet.source, screenshotSet.package)}`);
         });
       }
     }
@@ -399,7 +329,7 @@ export async function handleListInteractive() {
  */
 export async function handleCleanInteractive() {
   try {
-    const config = loadConfig();
+    const config = loadScreenshotSets();
 
     const { cleanType } = await inquirer.prompt([
       {
@@ -433,15 +363,13 @@ export async function handleCleanInteractive() {
       if (!config.screenshot_sets || Object.keys(config.screenshot_sets).length === 0) {
         console.log('No screenshot sets available to clean.');
       } else {
+        const sourceOptions = getSourceOptions();
         const { set } = await inquirer.prompt([
           {
             type: 'list',
             name: 'set',
             message: 'Select screenshot set to remove:',
-            choices: Object.keys(config.screenshot_sets).map((name) => ({
-              name: formatDisplayName(name),
-              value: name,
-            })),
+            choices: sourceOptions,
           },
         ]);
 
