@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install NPM dependencies
-        run: npm install --workspaces && npx playwright install
+        run: npm install --workspaces && npm install && npx playwright install
 
       - name: Build Storybook
         run: npm run build

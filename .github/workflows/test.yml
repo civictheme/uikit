@@ -28,7 +28,7 @@ jobs:
         uses: shivammathur/setup-php@v2
 
       - name: Install NPM dependencies
-        run: npm install --workspaces && npx playwright install
+        run: npm install --workspaces && npm install && npx playwright install
 
       - name: Install PHP dependencies
         run: composer install
