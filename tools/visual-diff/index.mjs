@@ -11,7 +11,7 @@ import {executeCaptureCommand} from './lib/commands/capture.mjs';
 import {executeCleanCommand} from './lib/commands/clean.mjs';
 import {runInteractiveMenu} from './lib/interactive.mjs';
 import {startServer} from './lib/server.mjs';
-import {initScreenshotSets} from "./lib/screenshot-set-manager.mjs";
+import {initScreenshotSets, loadScreenshotSets} from "./lib/screenshot-set-manager.mjs";
 
 // Get the directory name of the current module
 

@@ -42,13 +42,13 @@ jobs:
           npm run diff:command -- list --sets
           
           # Compare main vs current branch components
-          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "set--main--twig" | awk '{print $2}')
-          TARGET_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
+          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "branch--main--twig" | awk '{print $2}')
+          TARGET_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
           npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME"
           
           # Compare main vs current branch SDC components
-          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
-          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "sdc" | awk '{print $2}')
+          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
+          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "sdc" | awk '{print $2}')
           npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME"
 
       - name: Deploy to Netlify
