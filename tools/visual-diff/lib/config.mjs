@@ -168,9 +168,9 @@ export function getDirectoryForSource(source, sourceType, packageName, directory
   if (sourceType === SOURCE_TYPES.CURRENT_BRANCH) {
     packagePath = config.screenshot_sources.current_branch.packages[packageName][directoryType];
   } else if (sourceType === SOURCE_TYPES.BRANCH) {
-    packagePath = (config.screenshot_sources.branches[source] || {}).packages[packageName][directoryType];
+    packagePath = (config.screenshot_sources.branches[source]) ? config.screenshot_sources.branches[source].packages[packageName][directoryType] : {};
   } else if (sourceType === SOURCE_TYPES.TAG) {
-    packagePath = (config.screenshot_sources.tags[source] || {}).packages[packageName][directoryType];
+    packagePath = (config.screenshot_sources.tags[source]) ? config.screenshot_sources.tags[source].packages[packageName][directoryType] : {};
   }
 
   return packagePath;

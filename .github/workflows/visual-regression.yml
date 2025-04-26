@@ -29,14 +29,14 @@ jobs:
 
       - name: Run visual regression tests
         run: |
-          # Capture screenshots for the main branch components
-          npm run diff:command -- capture --source main --type components --force
+          # Capture screenshots for the main branch twig components
+          npm run diff:command -- capture --source main --type branch --package twig --force
           
           # Capture screenshots for the current branch components
-          npm run diff:command -- capture --source current --type components --force
+          npm run diff:command -- capture --source current_branch --package twig --force
           
           # Capture screenshots for the current branch SDC components
-          npm run diff:command -- capture --source current --type components-sdc --force
+          npm run diff:command -- capture --source current_branch --package sdc --force
           
           # List the available screenshot sets
           npm run diff:command -- list --sets
@@ -44,12 +44,12 @@ jobs:
           # Compare main vs current branch components
           SOURCE_NAME=$(npm run diff:command -- list --sets | grep "set--main--twig" | awk '{print $2}')
           TARGET_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
-          npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME" --force
+          npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME"
           
           # Compare main vs current branch SDC components
           SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
           TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "sdc" | awk '{print $2}')
-          npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME" --force
+          npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME"
 
       - name: Deploy to Netlify
         if: matrix.node-version == 22
