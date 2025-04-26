@@ -56,7 +56,7 @@ jobs:
         uses: nwtgck/actions-netlify@v3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: './visual-diff/screenshots'
+          publish-dir: './tools/visual-diff/screenshots'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
