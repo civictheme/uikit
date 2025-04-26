@@ -48,18 +48,37 @@ jobs:
       - name: Run tests
         run: npm run test:ci
 
-      - name: Upload coverage report as an artifact
+      - name: Upload twig coverage report as an artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{github.job}}-code-coverage-report-${{ matrix.node-version }}
-          path: ./.logs/coverage
+          name: ${{github.job}}-twig-code-coverage-report-${{ matrix.node-version }}
+          path: ./packages/twig/.logs/coverage
           if-no-files-found: error
 
-      - name: Upload coverage report to Codecov
+      - name: Upload twig coverage report as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{github.job}}-sdc-code-coverage-report-${{ matrix.node-version }}
+          path: ./packages/sdc/.logs/coverage
+          if-no-files-found: error
+
+      - name: Upload twig coverage report to Codecov
         uses: codecov/codecov-action@v5
         if: ${{ env.CODECOV_TOKEN != '' }}
         with:
-          files: ./.logs/coverage/clover.xml
+          files: ./packages/twig/.logs/coverage/clover.xml
+          flags: twig
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload sdc coverage report to Codecov
+        uses: codecov/codecov-action@v5
+        if: ${{ env.CODECOV_TOKEN != '' }}
+        with:
+          files: ./packages/sdc/.logs/coverage/clover.xml
+          flags: sdc
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
         env:
