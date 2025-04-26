@@ -89,7 +89,7 @@ jobs:
         uses: nwtgck/actions-netlify@v3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: './storybook-static'
+          publish-dir: './packages/twig/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
@@ -105,7 +105,7 @@ jobs:
         uses: nwtgck/actions-netlify@v3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: './components-sdc/storybook-static'
+          publish-dir: './packages/sdc/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
