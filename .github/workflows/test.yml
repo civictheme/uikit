@@ -85,6 +85,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Deploy Twig Components to Netlify
+        id: netlify-twig
         if: matrix.node-version == 22
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -92,15 +93,16 @@ jobs:
           publish-dir: './packages/twig/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
+          enable-pull-request-comment: false
+          enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'components-twig'
+          alias: 'twig'
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
       - name: Deploy SDC Components Storybook to Netlify
+        id: netlify-sdc
         if: matrix.node-version == 22
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -108,11 +110,28 @@ jobs:
           publish-dir: './packages/sdc/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
+          enable-pull-request-comment: false
+          enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'components-sdc'
+          alias: 'sdc'
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
+      - name: Find ID of existing deployment message
+        uses: peter-evans/find-comment@v3
+        id: netlify-deploy-message
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: 'CivicTheme UI Kit Deployments'
+      - name: Create or update deployment message
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            CivicTheme UI Kit Deployments:
+            - [twig](${{ steps.netlify-twig.outputs.deploy-url }})
+            - [sdc](${{ steps.netlify-sdc.outputs.deploy-url }})
+          edit-mode: replace
