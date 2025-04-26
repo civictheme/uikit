@@ -54,7 +54,7 @@ jobs:
       - name: Deploy to Netlify
         id: netlify-visual-regression
         if: matrix.node-version == 22
-        uses: nwtgck/actions-netlify@v3.0
+        uses: 'nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: './tools/visual-diff/screenshots'
@@ -77,19 +77,19 @@ jobs:
             const deploymentUrl = ${{ steps.netlify-deploy-message.outputs.comment-id }}
             createVisualRegressionPrComments({require, core})
       - name: Find ID of existing deployment message
-        uses: peter-evans/find-comment@v3
+        uses: 'peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e'
         id: netlify-visual-regression-message
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: 'CivicTheme UI Kit Deployments'
       - name: Create or update deployment message
-        uses: peter-evans/create-or-update-comment@v4
+        uses: 'peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043'
         with:
           comment-id: ${{ steps.netlify-visual-regression-message.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            :camera View [Visual Regression](${{ steps.netlify-visual-regression.outputs.deploy-url }})
+            📷 View [Visual Regression](${{ steps.netlify-visual-regression.outputs.deploy-url }})
             
             ${{ steps.visual-regression-message.outputs.comment }}
           edit-mode: replace
