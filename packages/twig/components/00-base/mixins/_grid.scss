@@ -26,14 +26,14 @@
 
     // Use vw instead of % so it calculates on viewport and not parent container.
     & {
-      max-width: calc(100vw - #{$_width});
+      max-width: max(calc(100vw - #{$_width}), 0);
     }
 
     // Set width for container at each breakpoint accounting for offsets at this
     // breakpoint.
     @each $bp, $value in $ct-breakpoints {
       @include ct-breakpoint($bp) {
-        max-width: map.get($ct-breakpoints, $bp) - (map.get($ct-grid-offsets, $bp) * 2);
+        max-width: max(map.get($ct-breakpoints, $bp) - (map.get($ct-grid-offsets, $bp) * 2), 0);
       }
     }
   }

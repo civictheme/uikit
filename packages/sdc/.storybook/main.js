@@ -13,4 +13,5 @@ const config = {
   },
   staticDirs: [{ from: '../dist/assets', to: '/assets' }, './static'],
 };
+
 export default config;
