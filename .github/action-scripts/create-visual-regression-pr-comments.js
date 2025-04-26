@@ -5,7 +5,7 @@
 /**
  * Creates a PR comment with the visual regression results.
  */
-export default function createVisualRegressionPrComments({github, context, require}) {
+export default function createVisualRegressionPrComments({require, core}) {
     const fs = require('fs');
     const path = require('path');
     try {
@@ -23,12 +23,7 @@ export default function createVisualRegressionPrComments({github, context, requi
                         ...params,
                         shortDescription: false,
                     });
-                    github.rest.issues.createComment({
-                        issue_number: context.issue.number,
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        body: commentBody
-                    });
+                    core.setOutput('comment', commentBody);
 
                 }
             } catch (err) {

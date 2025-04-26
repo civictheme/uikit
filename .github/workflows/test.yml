@@ -131,7 +131,7 @@ jobs:
           comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            CivicTheme UI Kit Deployments:
-            - [twig](${{ steps.netlify-twig.outputs.deploy-url }})
-            - [sdc](${{ steps.netlify-sdc.outputs.deploy-url }})
+            :art CivicTheme UI Kit Deployments:
+            - :package [twig](${{ steps.netlify-twig.outputs.deploy-url }})
+            - :package [sdc](${{ steps.netlify-sdc.outputs.deploy-url }})
           edit-mode: replace
