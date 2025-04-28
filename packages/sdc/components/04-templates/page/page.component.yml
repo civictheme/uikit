@@ -127,6 +127,49 @@ props:
       type: string
       title: Content_bottom
       description: Content bottom slot
+    footer_theme:
+      type: string
+      title: Theme
+      description: 'Footer Theme: light, dark'
+      enum:
+        - light
+        - dark
+    footer_top_1:
+      type: string
+      title: Footer Top 1
+      description: Content slot
+    footer_top_2:
+      type: string
+      title: Footer Top 2
+      description: Content slot
+    footer_middle_1:
+      type: string
+      title: Footer Middle 1
+      description: Content slot
+    footer_middle_2:
+      type: string
+      title: Footer Middle 2
+      description: Content slot
+    footer_middle_3:
+      type: string
+      title: Footer Middle 3
+      description: Content slot
+    footer_middle_4:
+      type: string
+      title: Footer Middle 4
+      description: Content slot
+    footer_bottom_1:
+      type: string
+      title: Footer bottom 1
+      description: Content slot
+    footer_bottom_2:
+      type: string
+      title: Footer bottom 2
+      description: Content slot
+    footer_background_image:
+      type: string
+      title: Footer Background image
+      description: Background inline image displayed behind content
     content_contained:
       type: boolean
       title: Is content contained

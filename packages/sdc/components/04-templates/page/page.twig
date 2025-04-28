@@ -32,6 +32,16 @@
  * - content_contained [boolean] - Whether page contnet is
  * - content_bottom [string]
  * - vertical_spacing: [string] With top, bottom or both vertical spaces.
+ * - footer_theme: [string] Theme: light, dark.
+ * - footer_background_image [string] Footer Background image.
+ * - footer_top_1: [string] Footer top 1.
+ * - footer_top_2: [string] Footer top 1.
+ * - footer_middle_1: [string] Footer middle 1.
+ * - footer_middle_2: [string] Footer middle 2.
+ * - footer_middle_3: [string] Footer middle 3.
+ * - footer_middle_4: [string] Footer middle 4.
+ * - footer_bottom_1: [string] Footer bottom 1.
+ * - footer_bottom_2: [string] Footer bottom 2.
  */
 #}
 
@@ -97,7 +107,6 @@
   {% block footer %}
     {% include 'civictheme:footer' with {
       theme: footer_theme,
-      logo: footer_logo,
       background_image: footer_background_image,
       content_top1: footer_top_1,
       content_top2: footer_top_2,
