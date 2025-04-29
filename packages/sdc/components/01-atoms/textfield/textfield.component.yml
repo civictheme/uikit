@@ -18,6 +18,9 @@ props:
       type: string
       title: Name
       description: DOM name
+    id:
+      type: string
+      title: DOM Element ID
     value:
       type: string
       title: Value

@@ -31,6 +31,10 @@ props:
         - visible
         - invisible
         - hidden
+    label:
+      type: string
+      title: Label
+      description: Field label
     description:
       type: string
       title: Description
@@ -80,6 +84,19 @@ props:
         - array
       title: Control
       description: Object or array of objects with control's properties
+    options:
+      type:
+        - array
+      title: List of options for input
+      description: List of options for input
+    is_multiple:
+      type: boolean
+      title: Is multiple
+      description: Whether the field allows multiple values
+    placeholder:
+      type: string
+      title: Placeholder text
+      description: Placeholder text for field.
     message:
       type: object
       title: Message

@@ -39,6 +39,7 @@ props:
       description: Highlighted content
     header_theme:
       title: Theme
+      type: enum
       description: 'Theme: light, dark'
       enum:
         - light
@@ -83,10 +84,6 @@ props:
       type: boolean
       title: Hide sidebar right
       description: Whether to force hide the left sidebar
-    sidebar:
-      type: string
-      title: Sidebar
-      description: Legacy sidebar content slot.
     sidebar_top_left:
       type: string
       title: Sidebar_top_left
@@ -127,6 +124,14 @@ props:
       type: string
       title: Sidebar_bottom_right_attributes
       description: Bottom right sidebar attributes
+    sidebar:
+      type: string
+      title: Sidebar (legacy)
+      description: Legacy sidebar content slot.
+    sidebar_attributes:
+      type: string
+      title: Sidebar attributes (legacy)
+      description: Legacy sidebar attributes
     content_bottom:
       type: string
       title: Content_bottom

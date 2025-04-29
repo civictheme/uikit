@@ -23,6 +23,31 @@ props:
       type: string
       title: Url
       description: URL of the video
+    poster:
+      type: string
+      title: Poster
+      description: Optional URL of the video poster image
+    sources:
+      type: array
+      title: Sources
+      description: Array of video sources
+      items:
+        type: object
+        properties:
+          url:
+            type: string
+            description: URL of the source
+          type:
+            type: string
+            description: Type name like 'video/mp4'
+    embedded_source:
+      type: string
+      title: Iframe Url
+      description: URL for the iframe src
+    raw_source:
+      type: string
+      title: HTML of video player
+      description: Raw HTML of embedded video player (already rendered).
     width:
       type: string
       title: Width
