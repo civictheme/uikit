@@ -15,6 +15,10 @@ props:
       title: Title
       description: Title for filters
       default: 'Filter results by:'
+    group_id:
+      type: string
+      title: Group filter ID
+      description: Unique id for filter group
     form_attributes:
       type: string
       title: Form_attributes

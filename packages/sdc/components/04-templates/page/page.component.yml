@@ -83,6 +83,10 @@ props:
       type: boolean
       title: Hide sidebar right
       description: Whether to force hide the left sidebar
+    sidebar:
+      type: string
+      title: Sidebar
+      description: Legacy sidebar content slot.
     sidebar_top_left:
       type: string
       title: Sidebar_top_left

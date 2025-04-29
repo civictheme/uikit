@@ -41,7 +41,7 @@
             <div class="ct-map__canvas">
               {% set attributes = 'allowfullscreen data-chromatic="ignore"' %}
               {% if address is not empty %}
-                {% set attributes = atributes ~ 'title="' ~ address ~ '"' %}
+                {% set attributes = attributes ~ 'title="' ~ address ~ '"' %}
               {% endif %}
               {% include '@atoms/iframe/iframe.twig' with {
                 url: url,
