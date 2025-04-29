@@ -53,5 +53,5 @@ function getLogos() {
 }
 
 export default {
-  getLogos
-}
+  getLogos,
+};
