@@ -19,5 +19,5 @@ function getBackgrounds() {
 }
 
 export default {
-  getBackgrounds
-}
+  getBackgrounds,
+};

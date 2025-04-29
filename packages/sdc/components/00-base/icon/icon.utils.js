@@ -31,5 +31,5 @@ function getIcons() {
 }
 
 export default {
-  getIcons
-}
+  getIcons,
+};
