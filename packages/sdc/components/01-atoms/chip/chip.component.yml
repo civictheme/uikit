@@ -36,14 +36,6 @@ props:
       type: boolean
       title: Is_selected
       description: Is the button selected (for filter chips)
-    is_disabled:
-      type: boolean
-      title: Is_disabled
-      description: Disabled or not
-    is_dismissible:
-      type: boolean
-      title: Is_dismissible
-      description: Can be dismissed or not
     is_multiple:
       type: boolean
       title: Is_multiple

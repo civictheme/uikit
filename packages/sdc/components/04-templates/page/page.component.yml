@@ -13,14 +13,6 @@ props:
       enum:
         - light
         - dark
-    links:
-      type: array
-      title: Links
-      description: Array of links
-    items:
-      type: array
-      title: Items
-      description: Array of alternative links
     attributes:
       type: string
       title: Attributes

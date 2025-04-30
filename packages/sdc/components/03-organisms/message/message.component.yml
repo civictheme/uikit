@@ -18,11 +18,15 @@ props:
       title: Type
       description: Message type
       enum:
-        - info
+        - information
         - error
         - warning
         - success
       default: information
+    title:
+      type: string
+      title: Title
+      description: Message title
     description:
       type: string
       title: Description
@@ -31,10 +35,6 @@ props:
       type: string
       title: Modifier_class
       description: Additional classes
-    title:
-      type: string
-      title: Title
-      description: Message title
     attributes:
       type: object
       title: Attributes

@@ -29,10 +29,6 @@ props:
       type: object
       title: Link
       description: Link object
-    is_external:
-      type: boolean
-      title: Is_external
-      description: Link is external
     attributes:
       type: string
       title: Attributes

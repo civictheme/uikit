@@ -19,10 +19,6 @@ props:
       type: string
       title: Title
       description: Title for the iframe
-    url:
-      type: string
-      title: Url
-      description: URL of the video
     poster:
       type: string
       title: Poster
@@ -60,10 +56,6 @@ props:
       type: object
       title: Transcript_link
       description: Video transcript link
-    oembed:
-      type: string
-      title: Oembed
-      description: oEmbed provided iframe container
     attributes:
       type: string
       title: Attributes
