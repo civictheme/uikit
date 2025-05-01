@@ -22,13 +22,13 @@ props:
       type: string
       title: Content_bottom
       description: Content slot
-    primary_navigation_items:
+    top_menu:
       type: array
-      title: Primary_navigation_items
+      title: Top_menu
       description: Array of menu items
-    secondary_navigation_items:
+    bottom_menu:
       type: array
-      title: Secondary_navigation_items
+      title: Bottom_menu
       description: Array of menu items
     modifier_class:
       type: string

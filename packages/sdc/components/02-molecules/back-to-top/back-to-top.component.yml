@@ -5,39 +5,5 @@ status: experimental
 description: A component that provides a back to top button functionality
 props:
   type: object
-  properties:
-    kind:
-      type: string
-      title: Kind
-      default: link
-    type:
-      type: string
-      title: Type
-      default: primary
-    icon:
-      type: string
-      title: Icon
-      default: up-arrow
-    url:
-      type: string
-      title: Url
-      default: '#top'
-    text:
-      type: string
-      title: Text
-      default: >-
-        <span class="ct-visually-hidden">Return focus to the top of the
-        page</span>
-    allow_html:
-      type: boolean
-      title: Allow_html
-      default: true
-    attributes:
-      type: string
-      title: Attributes
-      default: data-skip-to-target
-    modifier_class:
-      type: string
-      title: Modifier_class
-      default: ct-back-to-top__button
+  properties: {}
 slots: {}

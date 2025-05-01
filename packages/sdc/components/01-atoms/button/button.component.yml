@@ -83,6 +83,10 @@ props:
       type: boolean
       title: Is_disabled
       description: Disabled or not
+    is_dismissable:
+      type: boolean
+      title: Is Dismissable
+      description: Whether the button can be dismissed
     attributes:
       type: string
       title: Attributes

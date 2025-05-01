@@ -13,6 +13,10 @@ props:
       enum:
         - light
         - dark
+    title:
+      type: string
+      title: Title of active page
+      description: Title used as the active page in pagination
     heading_id:
       type: string
       title: Heading_id
@@ -73,6 +77,10 @@ props:
       type: object
       title: Items_per_page_attributes
       description: Attributes for select element
+    total_pages:
+      type: string
+      title: Total number of pages
+      description: Total number of pages of results
     use_ellipsis:
       type: boolean
       title: Use_ellipsis

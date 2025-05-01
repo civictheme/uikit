@@ -155,7 +155,9 @@ exports[`Map Component renders with optional attributes 1`] = `
 
 
             <iframe
+              allowfullscreen=""
               class="ct-iframe ct-theme-light   ct-map__iframe"
+              data-chromatic="ignore"
               src="https://www.example.com/map"
               title="123 Main St, Anytown, USA"
             />

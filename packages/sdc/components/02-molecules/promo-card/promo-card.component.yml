@@ -37,6 +37,13 @@ props:
       type: string
       title: Date_iso
       description: Start date and time in ISO format
+    date_end:
+      type: string
+      title: Formatted end time.
+      description:
+    date_end_iso:
+      type: string
+      title: End date in ISO format.
     title:
       type: string
       title: Title

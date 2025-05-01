@@ -11,7 +11,7 @@ const meta = {
     },
     position: {
       control: { type: 'radio' },
-      options: ['auto', 'left', 'right', 'top', 'bottom'],
+      options: ['auto', 'auto-start', 'auto-end', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'right', 'right-start', 'right-end', 'left', 'left-start', 'left-end'],
     },
     icon: {
       control: { type: 'select' },
@@ -23,6 +23,12 @@ const meta = {
         ...Object.keys(Constants.SCSS_VARIABLES['ct-icon-sizes-default']),
         ...Object.keys(Constants.SCSS_VARIABLES['ct-icon-sizes']),
       ],
+    },
+    title: {
+      control: { type: 'text' },
+    },
+    content: {
+      control: { type: 'text' },
     },
     modifier_class: {
       control: { type: 'text' },

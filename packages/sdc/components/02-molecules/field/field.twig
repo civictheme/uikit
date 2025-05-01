@@ -17,6 +17,7 @@
  * - type: [string] Type defined by a control type. Required.
  * - title: [string] Title. Optional.
  * - title_display: [string] Title display: visible, invisible, hidden. Optional.
+ * - label: [string] Field Label
  * - description: [string] Description. Optional.
  * - name: [string] DOM name. Required, propagated.
  * - value: [string] DOM value. Optional, propagated.
@@ -33,11 +34,16 @@
  *   - name: [string] Control DOM name. Propagated from `name` if not defined.
  *   - value: [string] Control DOM value. Propagated from `value` if not defined.
  *   - id: [string] Control DOM id. Optional.
+ *   - options: [array] Options for the field input.
  *   - is_required: [boolean] Denote if the control is required. Propagated from `is_required` if not defined.
+ *   - is_multiple: [boolean] Whether the field allows multiple values.
  *   - is_invalid: [boolean] Denote if the control is invalid. Propagated from `is_invalid` if not defined.
  *   - is_disabled: [boolean] Denote if the control is disabled. Propagated from `is_disabled` if not defined.
  *   - attributes: [string] Control additional attributes. Optional.
  *   - modifier_class: [string] Control additional classes. Optional.
+ * - options: [array] Options for the field input.
+ * - is_multiple: [boolean] Whether the field allows multiple values.
+ * - placeholder: [string] Placeholder text for field.
  * - message: [object] Message object for showing messages.
  *   - content: [string] Message content
  *   - attributes: [string] Message attributes.

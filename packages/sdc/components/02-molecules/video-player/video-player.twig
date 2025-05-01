@@ -6,7 +6,12 @@
  * Variables:
  * - theme: [string] Theme: light, dark.
  * - title: [string] Title for the iframe.
- * - url: [string] URL of the video.
+ * - sources: [array] Array of sources:
+ *   - url: [string] URL of the source.
+ *   - type: [string] Type name like 'video/mp4'.
+ * - embedded_source: [string] URL for the iframe.
+ * - raw_source: [string] HTML of raw embedded video player
+ * - poster: [string] Optional URL of the video poster image.
  * - width: [string] Width of the iframe.
  * - height: [string] Height of the video.
  * - transcript_link: [object] Video transcript link.
@@ -16,7 +21,6 @@
  *   - is_new_window: [boolean] Open in a new window or not.
  *   - is_external: [boolean] If link is external or not.
  *   - attributes: [string] Additional attributes.
- * - oembed: [string] oEmbed provided iframe container.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
