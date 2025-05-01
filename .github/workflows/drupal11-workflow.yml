@@ -1,0 +1,89 @@
+name: Drupal 11 CI with SDC Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+      - 'project/**'
+  push:
+    branches:
+      - main
+
+jobs:
+  drupal-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, mysql, curl, intl, gd, zip
+        tools: composer:v2
+
+    - name: Setup Drupal
+      uses: bluehorndigital/setup-drupal@v1
+      with:
+        version: '^11.0'
+        dependencies: 'drush/drush:^12'
+
+    - name: Install sdc_devel module
+      run: |
+        cd ~/drupal
+        composer require drupal/sdc_devel
+
+    - name: Install Drupal site
+      run: |
+        cd ~/drupal
+        vendor/bin/drush site-install standard --db-url=mysql://root:@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name="Drupal 11 Test" -y
+
+    - name: Create civictheme_sdc theme
+      run: |
+        # Create theme directory
+        cd ~/drupal
+        mkdir -p web/themes/custom/civictheme_sdc/components
+        
+        # Create theme info file
+        cat << EOF > web/themes/custom/civictheme_sdc/civictheme_sdc.info.yml
+        name: CivicTheme SDC
+        type: theme
+        description: 'A theme for testing SDC components'
+        core_version_requirement: ^11
+        EOF
+
+    - name: Copy components from repository
+      run: |
+        # Copy the SDC components to the theme
+        cp -r ${{ github.workspace }}/packages/sdc/components/* ~/drupal/web/themes/custom/civictheme_sdc/components/
+
+    - name: Enable theme and module
+      run: |
+        cd ~/drupal
+        vendor/bin/drush en sdc_devel -y
+        vendor/bin/drush en civictheme_sdc -y
+
+    - name: Validate SDC Components
+      run: |
+        cd ~/drupal
+        vendor/bin/drush sdcv civictheme_sdc
+
+    - name: Check status
+      run: |
+        cd ~/drupal
+        vendor/bin/drush status
+        vendor/bin/drush pm:list --type=module --status=enabled
+        vendor/bin/drush theme:list --status=enabled
