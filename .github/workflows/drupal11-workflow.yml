@@ -31,7 +31,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2'
+        php-version: '8.3'
         extensions: mbstring, xml, ctype, iconv, mysql, curl, intl, gd, zip
         tools: composer:v2
 
@@ -39,7 +39,7 @@ jobs:
       uses: bluehorndigital/setup-drupal@v1
       with:
         version: '^11.0'
-        dependencies: 'drush/drush:^12'
+        dependencies: 'drush/drush:^13'
 
     - name: Install sdc_devel module
       run: |
@@ -80,10 +80,3 @@ jobs:
       run: |
         cd ~/drupal
         vendor/bin/drush sdcv civictheme_sdc
-
-    - name: Check status
-      run: |
-        cd ~/drupal
-        vendor/bin/drush status
-        vendor/bin/drush pm:list --type=module --status=enabled
-        vendor/bin/drush theme:list --status=enabled
