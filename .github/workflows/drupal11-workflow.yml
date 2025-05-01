@@ -57,6 +57,7 @@ jobs:
         name: CivicTheme SDC
         type: theme
         description: 'A theme for testing SDC components'
+        base theme: stark
         core_version_requirement: ^11
         EOF
 
@@ -69,7 +70,8 @@ jobs:
       run: |
         cd ~/drupal
         vendor/bin/drush en sdc_devel -y
-        vendor/bin/drush en civictheme_sdc -y
+        vendor/bin/drush theme-enable civictheme_sdc
+        vendor/bin/drush config-set system.theme default civictheme_sdc
 
     - name: Validate SDC Components
       run: |
