@@ -39,10 +39,11 @@ jobs:
       uses: bluehorndigital/setup-drupal@v1.1.0
       with:
         version: '^11.1'
-        dependencies: 'drush/drush drupal/sdc_devel'
+        dependencies: 'drush/drush'
     - name: Install Drupal site
       run: |
         cd ~/drupal
+        vendor/bin/composer require drupal/sdc_devel
         vendor/bin/drush site-install minimal --db-url=mysql://root:@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name="Drupal 11 Test" -y
 
     - name: Create civictheme_sdc theme
