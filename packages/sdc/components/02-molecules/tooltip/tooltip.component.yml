@@ -1,0 +1,54 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Tooltip component
+status: experimental
+description: A tooltip component that displays information in a popup
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+      default: light
+    icon:
+      type: string
+      title: Symbol
+      description: Symbol to use in the button
+      default: userinterface_informationmark
+    text:
+      type: string
+      title: Text
+      description: Text to display within the popup
+    title:
+      type: string
+      title: Title
+      description: Text used within the button title and for screen readers
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+    content:
+      type: string
+      title: Content
+      description: Content to display in the tooltip
+    position:
+      type: string
+      title: Position
+      description: Position of the tooltip
+    icon_size:
+      type: string
+      title: Icon_size
+      description: Size of the icon
+      default: large
+slots: {}
+libraryOverrides:
+  js:
+    tooltip.js: {}

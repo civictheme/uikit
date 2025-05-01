@@ -4,7 +4,8 @@ on:
   pull_request:
     branches:
       - main
-      - 'feature/**'
+      - 'project/**'
+      - 'project/**'
 
 jobs:
   visual-regression:
@@ -21,59 +22,78 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install NPM dependencies
-        run: npm install && npx playwright install && npm --prefix components-sdc install
+        run: npm install --workspaces && npm install && npx playwright install
 
       - name: Build Storybook
-        run: npm run build && npm run --prefix components-sdc build
+        run: npm run build
 
       - name: Run visual regression tests
         run: |
-          # Capture screenshots for the main branch components
-          npm run diff:command -- capture --source main --target components --force
+          # Capture screenshots for the main branch twig components
+          npm run diff:command -- capture --source main --type branch --package twig --force
           
           # Capture screenshots for the current branch components
-          npm run diff:command -- capture --source current --target components --force
+          npm run diff:command -- capture --source current_branch --package twig --force
           
           # Capture screenshots for the current branch SDC components
-          npm run diff:command -- capture --source current --target components-sdc --force
+          npm run diff:command -- capture --source current_branch --package sdc --force
           
           # List the available screenshot sets
           npm run diff:command -- list --sets
           
           # Compare main vs current branch components
-          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "set--main--twig" | awk '{print $2}')
-          TARGET_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
-          npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME" --force
+          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "branch--main--twig" | awk '{print $2}')
+          TARGET_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
+          npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME"
           
           # Compare main vs current branch SDC components
-          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "twig" | awk '{print $2}')
-          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "set--current--" | grep "sdc" | awk '{print $2}')
-          npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME" --force
+          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
+          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "sdc" | awk '{print $2}')
+          npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME"
 
       - name: Deploy to Netlify
+        id: netlify-visual-regression
         if: matrix.node-version == 22
-        uses: nwtgck/actions-netlify@v3.0
+        uses: 'nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: './visual-diff/screenshots'
+          publish-dir: './tools/visual-diff/screenshots'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
+          enable-pull-request-comment: false
+          enable-commit-comment: false
           overwrites-pull-request-comment: true
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_VISUAL_REGRESSION_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
-
-      - name: Comment on PR with visual regression results
+      - name: Generate the visual regression message.
+        id: visual-regression-message
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { default: createVisualRegressionPrComments } = await import('${{ github.workspace }}/.github/action-scripts/create-visual-regression-pr-comments.js')
-            createVisualRegressionPrComments({github, context, require})
-          
-          
-          
+            const deploymentUrl = ${{ steps.netlify-deploy-message.outputs.comment-id }}
+            createVisualRegressionPrComments({require, core})
+      - name: Find ID of existing deployment message
+        uses: 'peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e'
+        id: netlify-visual-regression-message
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: 'CivicTheme UI Kit Deployments'
+      - name: Create or update deployment message
+        uses: 'peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043'
+        with:
+          comment-id: ${{ steps.netlify-visual-regression-message.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            📷 View [Visual Regression](${{ steps.netlify-visual-regression.outputs.deploy-url }})
+            
+            ${{ steps.visual-regression-message.outputs.comment }}
+          edit-mode: replace
+
+
+
 

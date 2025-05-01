@@ -5,41 +5,25 @@
 /**
  * Creates a PR comment with the visual regression results.
  */
-export default function createVisualRegressionPrComments({github, context, require}) {
+export default function createVisualRegressionPrComments({require, core}) {
     const fs = require('fs');
     const path = require('path');
     try {
-        const configPath = 'visual-diff/config/config.json';
+        const configPath = 'tools/visual-diff/config/.screenshot-sets.json';
         const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        const screenshotSets = config.screenshot_sets || {};
         const comparisons = config.comparisons || {};
 
         for (const [name, comparison] of Object.entries(comparisons)) {
             try {
                 const reportPath = path.join(comparison.reportDirectory, 'reg.json');
                 if (fs.existsSync(reportPath)) {
-                    const comparisonSource = comparison.source;
-                    const comparisonTarget = comparison.target;
-                    const screenshotSetSource = {
-                        branch: screenshotSets[comparisonSource].branch || 'main',
-                        framework: screenshotSets[comparisonSource].target || 'components',
-                    };
-                    const screenshotSetTarget = {
-                        branch: screenshotSets[comparisonTarget].branch || 'main',
-                        framework: screenshotSets[comparisonTarget].target || 'components',
-                    };
                     const results = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
                     const params = getVisualDiffResults(results);
                     const commentBody = createCommentBody({
                         ...params,
                         shortDescription: false,
                     });
-                    github.rest.issues.createComment({
-                        issue_number: context.issue.number,
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        body: commentBody
-                    });
+                    core.setOutput('comment', commentBody);
 
                 }
             } catch (err) {
@@ -60,11 +44,12 @@ export default function createVisualRegressionPrComments({github, context, requi
  * @returns {{passedItemsCount, failedItemsCount, deletedItemsCount, shortDescription: boolean}}
  */
 function getVisualDiffResults(results) {
+    console.log(results);
     return {
-        failedItemsCount: results.failedItemsCount ? results.failedItemsCount.length : 0,
-        newItemsCount: results.newItemsCount ? results.newItems.length : 0,
-        deletedItemsCount: results.deletedItemsCount ? results.deletedItemsCount.length : 0,
-        passedItemsCount: results.passedItemsCount ? results.passedItemsCount.length : 0,
+        failedItemsCount: results.failedItems ? results.failedItems.length : 0,
+        newItemsCount: results.newItems ? results.newItems.length : 0,
+        deletedItemsCount: results.deletedItems ? results.deletedItems.length : 0,
+        passedItemsCount: results.passedItems ? results.passedItems.length : 0,
     };
 }
 

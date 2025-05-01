@@ -1,9 +1,10 @@
 .logs
+.tmp
 .twig-cs-fixer.cache
 composer.lock
 dist
 node_modules
 storybook-static
 vendor
-visual-diff/config/config.json
-visual-diff/screenshots
+tools/visual-diff/config/.screenshot-sets.json
+tools/visual-diff/screenshots

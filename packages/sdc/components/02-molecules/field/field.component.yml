@@ -1,0 +1,119 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Field component
+status: experimental
+description: >-
+  Used as a main entry point to build any form fields. Supports both simple and
+  complex controls.
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    type:
+      type: string
+      title: Type
+      description: Type defined by a control type
+    title:
+      type: string
+      title: Title
+      description: Title
+    title_display:
+      type: string
+      title: Title_display
+      description: 'Title display: visible, invisible, hidden'
+      enum:
+        - visible
+        - invisible
+        - hidden
+    label:
+      type: string
+      title: Label
+      description: Field label
+    description:
+      type: string
+      title: Description
+      description: Description
+    name:
+      type: string
+      title: Name
+      description: DOM name
+    value:
+      type: string
+      title: Value
+      description: DOM value
+    id:
+      type: string
+      title: Id
+      description: Control DOM id
+    is_invalid:
+      type: boolean
+      title: Is_invalid
+      description: Denote if the control is invalid
+    is_disabled:
+      type: boolean
+      title: Is_disabled
+      description: Denote if the control is disabled
+    is_required:
+      type: boolean
+      title: Is_required
+      description: Denote if the control is required
+    required_text:
+      type: string
+      title: Required_text
+      description: Text to display within label element when required
+    orientation:
+      type: string
+      title: Orientation
+      description: 'Elements orientation: vertical or horizontal'
+      enum:
+        - vertical
+        - horizontal
+    is_inline:
+      type: boolean
+      title: Is_inline
+      description: Denote if the complex control is shown inline
+    control:
+      type:
+        - object
+        - array
+      title: Control
+      description: Object or array of objects with control's properties
+    options:
+      type:
+        - array
+      title: List of options for input
+      description: List of options for input
+    is_multiple:
+      type: boolean
+      title: Is multiple
+      description: Whether the field allows multiple values
+    placeholder:
+      type: string
+      title: Placeholder text
+      description: Placeholder text for field.
+    message:
+      type: object
+      title: Message
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+    prefix:
+      type: string
+      title: Prefix
+      description: The content to add before the field
+    suffix:
+      type: string
+      title: Suffix
+      description: The content to add after the field
+slots: {}

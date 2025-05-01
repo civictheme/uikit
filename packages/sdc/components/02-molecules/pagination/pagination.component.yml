@@ -1,0 +1,96 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Pagination component
+status: experimental
+description: Pagination navigation component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title of active page
+      description: Title used as the active page in pagination
+    heading_id:
+      type: string
+      title: Heading_id
+      description: Heading id
+    items:
+      type: array
+      title: Items
+      description: Array of pagination items
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            description: Item text
+          href:
+            type: string
+            description: Item link
+    items_modifier_class:
+      type: string
+      title: Items_modifier_class
+      description: Items modifier class
+    current:
+      type: string
+      title: Current
+      description: Current page number
+    items_per_page_title:
+      type: string
+      title: Items_per_page_title
+      description: Title for 'items per page' field
+    items_per_page_options:
+      type: array
+      title: Items_per_page_options
+      description: Array of options for items per page
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+            description: Option type
+          label:
+            type: string
+            description: Option label
+          value:
+            type: string
+            description: Option value
+          selected:
+            type: string
+            description: Flag whether option is selected
+    items_per_page_name:
+      type: string
+      title: Items_per_page_name
+      description: Name for items per page
+    items_per_page_id:
+      type: string
+      title: Items_per_page_id
+      description: Id for items per page
+    items_per_page_attributes:
+      type: object
+      title: Items_per_page_attributes
+      description: Attributes for select element
+    total_pages:
+      type: string
+      title: Total number of pages
+      description: Total number of pages of results
+    use_ellipsis:
+      type: boolean
+      title: Use_ellipsis
+      description: Flag whether ellipsis to be shown
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots: {}

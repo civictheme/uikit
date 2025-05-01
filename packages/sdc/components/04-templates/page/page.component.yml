@@ -1,0 +1,204 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Page template
+status: experimental
+description: Page template component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+    banner:
+      type: string
+      title: Banner
+      description: Banner content
+    highlighted:
+      type: string
+      title: Highlighted
+      description: Highlighted content
+    header_theme:
+      title: Theme
+      type: enum
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    header_top_1:
+      title: Header Top 1
+      description: Content for Header top 1
+      type: string
+    header_top_2:
+      title: Header Top 2
+      description: Content for Header top 2
+      type: string
+    header_top_3:
+      title: Header Top 3
+      description: Content for Header top 3
+      type: string
+    header_middle_1:
+      title: Header Middle 1
+      description: Content for Header middle 1
+      type: string
+    header_middle_2:
+      title: Header Middle 2
+      description: Content for Header middle 12
+      type: string
+    header_middle_3:
+      title: Header Middle 3
+      description: Content for Header middle 3
+      type: string
+    header_bottom_1:
+      title: Header bottom 1
+      description: Content for Header bottom 1
+      type: string
+    content_top:
+      title: Layout Content top slot.
+      type: string
+      description: Layout Content top slot.
+    hide_sidebar_left:
+      type: boolean
+      title: Hide sidebar left
+      description: Whether to force hide the left sidebar
+    hide_sidebar_right:
+      type: boolean
+      title: Hide sidebar right
+      description: Whether to force hide the left sidebar
+    sidebar_top_left:
+      type: string
+      title: Sidebar_top_left
+      description: Top left sidebar slot
+    sidebar_top_left_attributes:
+      type: string
+      title: Sidebar_top_left_attributes
+      description: Top left sidebar attributes
+    sidebar_top_right:
+      type: string
+      title: Sidebar_top_right
+      description: Top right sidebar slot
+    sidebar_top_right_attributes:
+      type: string
+      title: Sidebar_top_right_attributes
+      description: Top right sidebar attributes
+    content:
+      type: string
+      title: Content
+      description: Content slot
+    content_attributes:
+      type: string
+      title: Content_attributes
+      description: Content attributes
+    sidebar_bottom_left:
+      type: string
+      title: Sidebar_bottom_left
+      description: Bottom left sidebar slot
+    sidebar_bottom_left_attributes:
+      type: string
+      title: Sidebar_bottom_left_attributes
+      description: Bottom left sidebar attributes
+    sidebar_bottom_right:
+      type: string
+      title: Sidebar_bottom_right
+      description: Bottom right sidebar slot
+    sidebar_bottom_right_attributes:
+      type: string
+      title: Sidebar_bottom_right_attributes
+      description: Bottom right sidebar attributes
+    sidebar:
+      type: string
+      title: Sidebar (legacy)
+      description: Legacy sidebar content slot.
+    sidebar_attributes:
+      type: string
+      title: Sidebar attributes (legacy)
+      description: Legacy sidebar attributes
+    content_bottom:
+      type: string
+      title: Content_bottom
+      description: Content bottom slot
+    footer_theme:
+      type: string
+      title: Theme
+      description: 'Footer Theme: light, dark'
+      enum:
+        - light
+        - dark
+    footer_top_1:
+      type: string
+      title: Footer Top 1
+      description: Content slot
+    footer_top_2:
+      type: string
+      title: Footer Top 2
+      description: Content slot
+    footer_middle_1:
+      type: string
+      title: Footer Middle 1
+      description: Content slot
+    footer_middle_2:
+      type: string
+      title: Footer Middle 2
+      description: Content slot
+    footer_middle_3:
+      type: string
+      title: Footer Middle 3
+      description: Content slot
+    footer_middle_4:
+      type: string
+      title: Footer Middle 4
+      description: Content slot
+    footer_bottom_1:
+      type: string
+      title: Footer bottom 1
+      description: Content slot
+    footer_bottom_2:
+      type: string
+      title: Footer bottom 2
+      description: Content slot
+    footer_background_image:
+      type: string
+      title: Footer Background image
+      description: Background inline image displayed behind content
+    content_contained:
+      type: boolean
+      title: Is content contained
+      description: Whether the page is to be contained
+    vertical_spacing:
+      type: string
+      title: Vertical_spacing
+      description: With top, bottom or both vertical spaces
+      enum:
+        - top
+        - bottom
+        - both
+slots:
+  header:
+    title: Header
+    description: Header block content
+  banner:
+    title: Banner
+    description: Banner block content
+  highlighted:
+    title: Highlighted
+    description: Highlighted block content
+  content:
+    title: Content
+    description: Main content block
+  footer:
+    title: Footer
+    description: Footer block content
+  back_to_top:
+    title: Back to top
+    description: Back to top block content

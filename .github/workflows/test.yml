@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 'feature/**'
+      - 'project/**'
   push:
     branches:
       - main
@@ -27,7 +28,7 @@ jobs:
         uses: shivammathur/setup-php@v2
 
       - name: Install NPM dependencies
-        run: npm install && npx playwright install && npm --prefix components-sdc install
+        run: npm install --workspaces && npm install && npx playwright install
 
       - name: Install PHP dependencies
         run: composer install
@@ -39,7 +40,7 @@ jobs:
         run: composer lint
 
       - name: Build
-        run: npm run build && npm run --prefix components-sdc build
+        run: npm run build
 
       - name: Check snapshots
         run: npm run diff:snapshot
@@ -47,52 +48,90 @@ jobs:
       - name: Run tests
         run: npm run test:ci
 
-      - name: Upload coverage report as an artifact
+      - name: Upload twig coverage report as an artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{github.job}}-code-coverage-report-${{ matrix.node-version }}
-          path: ./.logs/coverage
+          name: ${{github.job}}-twig-code-coverage-report-${{ matrix.node-version }}
+          path: ./packages/twig/.logs/coverage
           if-no-files-found: error
 
-      - name: Upload coverage report to Codecov
+      - name: Upload twig coverage report as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{github.job}}-sdc-code-coverage-report-${{ matrix.node-version }}
+          path: ./packages/sdc/.logs/coverage
+          if-no-files-found: error
+
+      - name: Upload twig coverage report to Codecov
         uses: codecov/codecov-action@v5
         if: ${{ env.CODECOV_TOKEN != '' }}
         with:
-          files: ./.logs/coverage/clover.xml
+          files: ./packages/twig/.logs/coverage/clover.xml
+          flags: twig
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload sdc coverage report to Codecov
+        uses: codecov/codecov-action@v5
+        if: ${{ env.CODECOV_TOKEN != '' }}
+        with:
+          files: ./packages/sdc/.logs/coverage/clover.xml
+          flags: sdc
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Deploy Twig Components to Netlify
+        id: netlify-twig
         if: matrix.node-version == 22
-        uses: nwtgck/actions-netlify@v3.0
+        uses: 'nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: './storybook-static'
+          publish-dir: './packages/twig/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
+          enable-pull-request-comment: false
+          enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'components-twig'
+          alias: 'twig'
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
       - name: Deploy SDC Components Storybook to Netlify
+        id: netlify-sdc
         if: matrix.node-version == 22
-        uses: nwtgck/actions-netlify@v3.0
+        uses: 'nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish-dir: './components-sdc/storybook-static'
+          publish-dir: './packages/sdc/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
+          enable-pull-request-comment: false
+          enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'components-sdc'
+          alias: 'sdc'
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
+      - name: Find ID of existing deployment message
+        uses: 'peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e'
+        id: netlify-deploy-message
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: 'CivicTheme UI Kit Deployments'
+      - name: Create or update deployment message
+        uses: 'peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043'
+        with:
+          comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            🎨 CivicTheme UI Kit Deployments:
+            - 📦 [twig](${{ steps.netlify-twig.outputs.deploy-url }})
+            - :📦 [sdc](${{ steps.netlify-sdc.outputs.deploy-url }})
+          edit-mode: replace

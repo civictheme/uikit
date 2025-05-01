@@ -1,0 +1,49 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Subject Card
+status: experimental
+description: Subject Card component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: 'Theme: light, dark'
+      enum:
+        - light
+        - dark
+    image_over:
+      type: string
+      title: Image_over
+      description: Content slot
+    image:
+      type: object
+      title: Image
+      description: Image object
+    title:
+      type: string
+      title: Title
+      description: Card title
+    link:
+      type: object
+      title: Link
+      description: Link object
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes
+    modifier_class:
+      type: string
+      title: Modifier_class
+      description: Additional classes
+slots:
+  image:
+    title: Image
+    description: Image block slot
+  image_over:
+    title: Image over
+    description: Image over block slot
+  title:
+    title: Title
+    description: Title block slot
