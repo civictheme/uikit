@@ -38,13 +38,8 @@ jobs:
     - name: Setup Drupal
       uses: bluehorndigital/setup-drupal@v1
       with:
-        version: '^11.0'
-        dependencies: 'drush/drush:^13'
-
-    - name: Install sdc_devel module
-      run: |
-        cd ~/drupal
-        composer require drupal/sdc_devel
+        version: '^11.1'
+        dependencies: 'drush/drush:^13 drupal/sdc_devel'
 
     - name: Install Drupal site
       run: |
