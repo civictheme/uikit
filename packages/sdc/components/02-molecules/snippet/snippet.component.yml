@@ -15,15 +15,15 @@ props:
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the snippet
+      description: Top content area
     content_middle:
       type: string
       title: Content Middle
-      description: Content slot for the middle of the snippet
+      description: Middle content area
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the snippet
+      description: Bottom content area
     title:
       type: string
       title: Title

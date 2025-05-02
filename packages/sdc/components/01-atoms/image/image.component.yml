@@ -15,19 +15,19 @@ props:
     url:
       type: string
       title: URL
-      description: URL of the image
+      description: Image URL
     alt:
       type: string
       title: Alt text
-      description: Alternate text of the image
+      description: Image alt text
     width:
       type: string
       title: Width
-      description: Width of the image
+      description: Image width
     height:
       type: string
       title: Height
-      description: Height of the image
+      description: Image height
     attributes:
       type: string
       title: Attributes

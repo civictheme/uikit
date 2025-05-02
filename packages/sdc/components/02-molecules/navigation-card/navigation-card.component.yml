@@ -65,19 +65,19 @@ props:
     content_top:
       type: string
       title: Top content
-      description: Content displayed at the top of the card
+      description: Top card content
     image_over:
       type: string
       title: Image overlay
-      description: Content displayed over the image
+      description: Image overlay content
     content_middle:
       type: string
       title: Middle content
-      description: Content displayed in the middle of the card
+      description: Middle card content
     content_bottom:
       type: string
       title: Bottom content
-      description: Content displayed at the bottom of the card
+      description: Bottom card content
     attributes:
       type: string
       title: Attributes
