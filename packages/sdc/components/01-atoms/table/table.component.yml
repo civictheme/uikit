@@ -27,13 +27,13 @@ props:
     header:
       type: array
       title: Header
-      description: Array of header cells
+      description: List of header cells
       items:
         type: string
     rows:
       type: array
       title: Rows
-      description: Array of table rows
+      description: List of table rows
       items:
         type: array
         items:
@@ -41,7 +41,7 @@ props:
     footer:
       type: array
       title: Footer
-      description: Array of footer cells
+      description: List of footer cells
       items:
         type: string
     is_striped:

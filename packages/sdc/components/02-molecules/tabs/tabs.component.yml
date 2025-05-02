@@ -15,7 +15,7 @@ props:
     panels:
       type: array
       title: Panels
-      description: Array of tab panels
+      description: List of tab panels
       items:
         type: object
         properties:
@@ -38,7 +38,7 @@ props:
     links:
       type: array
       title: Links
-      description: Optional array of links (if not provided - will be generated from panels)
+      description: Optional List of links (if not provided - will be generated from panels)
       items:
         type: object
         properties:

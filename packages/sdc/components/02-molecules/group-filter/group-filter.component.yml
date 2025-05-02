@@ -28,7 +28,7 @@ props:
     filters:
       type: array
       title: Filters
-      description: Array of filter objects
+      description: List of filter objects
       items:
         type: object
         properties:

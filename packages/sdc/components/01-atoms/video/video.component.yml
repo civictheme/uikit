@@ -23,7 +23,7 @@ props:
     sources:
       type: array
       title: Sources
-      description: Array of video sources
+      description: List of video sources
       items:
         type: object
         properties:

@@ -23,7 +23,7 @@ props:
     files:
       type: array
       title: Files
-      description: Array of file attachments
+      description: List of file attachments
       items:
         type: object
         properties:

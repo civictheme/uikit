@@ -39,7 +39,7 @@ props:
     tags:
       type: array
       title: Tags
-      description: Array of tags for the campaign
+      description: List of tags for the campaign
     title:
       type: string
       title: Title
@@ -55,7 +55,7 @@ props:
     links:
       type: array
       title: Links
-      description: Array of campaign links
+      description: List of campaign links
       items:
         type: object
         properties:

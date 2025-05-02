@@ -19,7 +19,7 @@ props:
     panels:
       type: array
       title: Panels
-      description: Array of accordion panels
+      description: List of accordion panels
       items:
         type: object
         properties:

@@ -27,7 +27,7 @@ props:
     options:
       type: array
       title: Options
-      description: Array of select options
+      description: List of select options
       items:
         type: object
         properties:
@@ -57,7 +57,7 @@ props:
           options:
             type: array
             title: Nested options
-            description: Array of options (applies to optgroup type)
+            description: List of options (applies to optgroup type)
             items:
               type: object
               properties:

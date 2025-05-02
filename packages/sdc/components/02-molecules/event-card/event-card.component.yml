@@ -69,7 +69,7 @@ props:
     tags:
       type: array
       title: Tags
-      description: Array of event tags
+      description: List of event tags
       items:
         type: object
     content_top:

@@ -80,7 +80,7 @@ props:
     control:
       type: [object, array]
       title: Control
-      description: Object or array of objects with control's properties (required for complex controls)
+      description: Object or List of objects with control's properties (required for complex controls)
     options:
       type: array
       title: Options
