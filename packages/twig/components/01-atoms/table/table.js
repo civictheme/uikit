@@ -1,6 +1,5 @@
 /**
- * @file
- * Table component.
+ * CivicTheme Table component.
  */
 function CivicThemeTable(el) {
   if (!el) {

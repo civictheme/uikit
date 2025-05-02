@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Footer component stories.
+ */
+
 import Component from './footer.twig';
 import FooterData from './footer.stories.data';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved

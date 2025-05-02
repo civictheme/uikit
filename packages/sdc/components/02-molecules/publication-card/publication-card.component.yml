@@ -8,110 +8,110 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     image:
       type: object
       title: Image
-      description: Image for the card
+      description: Card image.
       properties:
         url:
           type: string
           title: URL
-          description: Image URL
+          description: File URL.
         alt:
           type: string
           title: Alt text
-          description: Image alt text
+          description: Image alt text.
     image_over:
       type: string
       title: Image Over
-      description: Content slot for overlay on the image
+      description: Image overlay content.
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the card
+      description: Top content area.
     title:
       type: string
       title: Title
-      description: The text of card title
+      description: Card title text.
     content_middle:
       type: string
       title: Content Middle
-      description: Content slot for the middle of the card
+      description: Middle content area.
     summary:
       type: string
       title: Summary
-      description: Summary of the card
+      description: Card summary.
     file:
       type: object
       title: File
-      description: File object for download
+      description: File object for download.
       properties:
         name:
           type: string
           title: Name
-          description: File name (as it appears to the user)
+          description: File name (as it appears to the user).
         ext:
           type: string
           title: Extension
-          description: File extension
+          description: File extension.
         url:
           type: string
           title: URL
-          description: File URL
+          description: File URL.
         size:
           type: string
           title: Size
-          description: File size (as it appears to the user)
+          description: File size (as it appears to the user).
         created:
           type: string
           title: Created
-          description: File created date
+          description: File created date.
         changed:
           type: string
           title: Changed
-          description: File changed date
+          description: File changed date.
         icon:
           type: string
           title: Icon
-          description: File type icon name
+          description: File type icon name.
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the card
+      description: Bottom content area.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   image_slot:
     title: Image Slot
-    description: Content for the image area
+    description: Image area content
   image_over_slot:
     title: Image Over Slot
-    description: Content for the image over area
+    description: Image overlay content
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   title_slot:
     title: Title Slot
-    description: Content for the title area
+    description: Title area content
   content_middle_slot:
     title: Content Middle Slot
-    description: Content for the content middle area
+    description: Middle content area content
   summary_slot:
     title: Summary Slot
-    description: Content for the summary area
+    description: Summary area content
   link_slot:
     title: Link Slot
-    description: Content for the link area
+    description: Link area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

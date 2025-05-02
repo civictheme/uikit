@@ -8,47 +8,47 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     title:
       type: string
       title: Title
-      description: Next step title
+      description: Next step title.
     content:
       type: string
       title: Content
-      description: Next step content
+      description: Next step content.
     link:
       type: object
       title: Link
-      description: Next step link
+      description: Next step link.
       properties:
         url:
           type: string
           title: URL
-          description: Link URL
+          description: Link URL.
         is_new_window:
           type: boolean
           title: New window
-          description: Whether to open link in a new window
+          description: Whether to open link in a new window.
         is_external:
           type: boolean
           title: External
-          description: Whether the link is external
+          description: Whether the link is external.
     content_top:
       type: string
       title: Top content
-      description: Content displayed above the next step
+      description: Top next step content.
     content_bottom:
       type: string
       title: Bottom content
-      description: Content displayed below the next step
+      description: Bottom next step content.
     vertical_spacing:
       type: string
       title: Vertical spacing
-      description: Vertical spacing position (top, bottom, both)
+      description: Vertical spacing position (top, bottom, both).
       enum:
         - top
         - bottom
@@ -56,21 +56,21 @@ props:
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content area content
   title_slot:
     title: Title Slot
-    description: Content for the title area
+    description: Title area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

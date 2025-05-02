@@ -1,13 +1,14 @@
 {#
 /**
  * @file
- * Table of Contents component.
+ * CivicTheme Table of Contents component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - title: [string] Title text for the table of contents.
- * - position: [string] Position of the TOC: 'before', 'after', 'prepend', 'append'.
- * - links: [array] List of links for the table of contents:
+ * - title: [string] Link title.
+ * - position: [string] TOC position ('before', 'after', 'prepend', 'append').
+ * - links: [array] Table of contents links:
+ *   Each item contains:
  *   - title: [string] Link title.
  *   - url: [string] Link URL.
  * - anchor_selector: [string] CSS selector for headings to include in TOC (e.g. 'h2, h3').

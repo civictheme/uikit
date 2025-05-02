@@ -1,25 +1,33 @@
 {#
 /**
  * @file
- * Mobile Navigation component.
+ * CivicTheme Mobile Navigation component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the navigation.
- * - content_bottom: [string] Content slot for the bottom of the navigation.
- * - top_menu: [array] List of menu items for the top section:
+ * - content_top: [string] Top content area.
+ * - content_bottom: [string] Bottom content area.
+ * - top_menu: [array] Top section menu items:
+ *   Each item contains:
  *   - title: [string] Menu item title.
  *   - url: [string] Menu item URL.
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
- *   - below: [array] List of submenu items.
- * - bottom_menu: [array] List of menu items for the bottom section:
+ *   - below: [array] Submenu items.
+ * - bottom_menu: [array] Bottom section menu items:
+ *   Each item contains:
  *   - title: [string] Menu item title.
  *   - url: [string] Menu item URL.
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
- *   - below: [array] List of submenu items.
+ *   - below: [array] Submenu items.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - top_menu_slot: [slot] Top menu area content
+ * - bottom_menu_slot: [slot] Bottom menu area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

@@ -1,24 +1,26 @@
 {#
 /**
  * @file
- * Select component.
+ * CivicTheme Select component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - id: [string] DOM ID attribute.
  * - name: [string] DOM name (required).
  * - is_multiple: [boolean] Whether to allow multiple selections.
- * - options: [array] List of select options:
+ * - options: [array] Options (applies to optgroup type):
+ *   Each item contains:
  *   - type: [string] Option type (option group or option).
  *   - label: [string] Option label.
  *   - value: [string] Option value.
  *   - is_selected: [boolean] Whether the option is selected.
- *   - is_disabled: [boolean] Whether the option is disabled.
- *   - options: [array] List of options (applies to optgroup type):
+ *   - is_disabled: [boolean] Whether the select is disabled.
+ *   - options: [array] Options (applies to optgroup type):
+ *     Each item contains:
  *     - label: [string] Option label.
  *     - value: [string] Option value.
  *     - is_selected: [boolean] Whether the option is selected.
- *     - is_disabled: [boolean] Whether the option is disabled.
+ *     - is_disabled: [boolean] Whether the select is disabled.
  * - is_invalid: [boolean] Whether the select is invalid.
  * - is_disabled: [boolean] Whether the select is disabled.
  * - is_required: [boolean] Whether the select is required.

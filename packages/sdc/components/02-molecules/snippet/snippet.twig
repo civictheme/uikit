@@ -1,23 +1,32 @@
 {#
 /**
  * @file
- * Snippet component.
+ * CivicTheme Snippet component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the snippet.
- * - content_middle: [string] Content slot for the middle of the snippet.
- * - content_bottom: [string] Content slot for the bottom of the snippet.
- * - title: [string] Title text for the snippet.
- * - summary: [string] Summary text for the snippet.
- * - link: [object] Link object for the snippet:
+ * - content_top: [string] Top content area.
+ * - content_middle: [string] Middle content area.
+ * - content_bottom: [string] Bottom content area.
+ * - title: [string] Snippet title text.
+ * - summary: [string] Snippet summary text.
+ * - link: [object] Snippet link object:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - tags: [array] List of tags for the snippet.
+ * - tags: [array] Snippet tags.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_slot: [slot] Content area content
+ * - content_top_slot: [slot] Top content area content
+ * - title_slot: [slot] Title area content
+ * - content_middle_slot: [slot] Middle content area content
+ * - summary_slot: [slot] Summary area content
+ * - content_tags_slot: [slot] Tags area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

@@ -8,23 +8,23 @@ props:
     text:
       type: string
       title: Text
-      description: Text content
+      description: Text content.
     is_new_window:
       type: boolean
       title: New window
-      description: Whether to open in a new window
+      description: Whether to open in a new window.
     is_external:
       type: boolean
       title: External
-      description: Whether the link is external
+      description: Whether the link is external.
     icon:
       type: string
       title: Icon
-      description: Icon name
+      description: Icon name.
     icon_placement:
       type: string
       title: Icon placement
-      description: Icon position (before or after)
+      description: Icon position (before or after).
       enum:
         - before
         - after
@@ -32,12 +32,12 @@ props:
     icon_class:
       type: string
       title: Icon class
-      description: Class for custom icon
+      description: Class for custom icon.
     icon_group_disabled:
       type: boolean
       title: Disable icon grouping
-      description: Whether to disable icon and last word grouping
+      description: Whether to disable icon and last word grouping.
     icon_single_only:
       type: boolean
       title: Single icon only
-      description: Whether to show only one icon (if both icon and is_external are present, external takes preference)
+      description: Whether to show only one icon (if both icon and is_external are present, external takes preference).

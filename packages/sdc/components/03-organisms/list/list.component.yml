@@ -1,103 +1,103 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: List
 status: stable
-description: List component for displaying a collection of items with filtering and pagination
+description: List component for item collections with filtering and pagination
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     title:
       type: string
       title: Title
-      description: List title
+      description: List title.
     link_above:
       type: object
       title: Link Above
-      description: Link object to display above the list
+      description: Above list link object.
       properties:
         text:
           type: string
           title: Text
-          description: Link text
+          description: Link text.
         url:
           type: string
           title: URL
-          description: Link URL
+          description: Link URL.
         is_new_window:
           type: boolean
           title: New Window
-          description: Whether to open link in a new window
+          description: Whether to open link in a new window.
         is_external:
           type: boolean
           title: External
-          description: Whether the link is external
+          description: Whether the link is external.
     content:
       type: string
       title: Content
-      description: Main content for the list
+      description: List main content.
     filters:
       type: string
       title: Filters
-      description: Exposed filters content
+      description: Exposed filters content.
     results_count:
       type: string
       title: Results Count
-      description: Results count text
+      description: Results count text.
     rows_above:
       type: string
       title: Rows Above
-      description: Content to display above the rows
+      description: Above rows content.
     rows:
       type: string
       title: Rows
-      description: Rows content
+      description: Rows content.
     rows_below:
       type: string
       title: Rows Below
-      description: Content to display below the rows
+      description: Below rows content.
     empty:
       type: string
       title: Empty
-      description: Content to display when there are no results
+      description: No results content.
     pagination:
       type: string
       title: Pagination
-      description: Pagination content
+      description: Pagination content.
     footer:
       type: string
       title: Footer
-      description: Footer content
+      description: Footer content.
     link_below:
       type: object
       title: Link Below
-      description: Link object to display below the list
+      description: Below list link object.
       properties:
         text:
           type: string
           title: Text
-          description: Link text
+          description: Link text.
         url:
           type: string
           title: URL
-          description: Link URL
+          description: Link URL.
         is_new_window:
           type: boolean
           title: New Window
-          description: Whether to open link in a new window
+          description: Whether to open link in a new window.
         is_external:
           type: boolean
           title: External
-          description: Whether the link is external
+          description: Whether the link is external.
     vertical_spacing:
       type: string
       title: Vertical Spacing
-      description: Vertical spacing for the list
+      description: List vertical spacing (top, bottom, or both).
       enum:
         - top
         - bottom
@@ -105,55 +105,55 @@ props:
     with_background:
       type: boolean
       title: With Background
-      description: Whether to display with a background
+      description: Whether to display with a background.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   header_slot:
     title: Header Slot
-    description: Content for the header area
+    description: Header content
   title_slot:
     title: Title Slot
-    description: Content for the title area
+    description: Title content
   link_above_slot:
     title: Link Above Slot
-    description: Content for the link above area
+    description: Link above content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content
   list_slot:
     title: List Slot
-    description: Content for the list area
+    description: List content
   filters_slot:
     title: Filters Slot
-    description: Content for the filters area
+    description: Filters content
   rows_slot:
     title: Rows Slot
-    description: Content for the rows area
+    description: Rows content
   rows_above_slot:
     title: Rows Above Slot
-    description: Content for the rows above area
+    description: Rows above content
   results_count_slot:
     title: Results Count Slot
-    description: Content for the results count area
+    description: Results count content
   rows_below_slot:
     title: Rows Below Slot
-    description: Content for the rows below area
+    description: Rows below content
   empty_slot:
     title: Empty Slot
-    description: Content for the empty area
+    description: Empty content
   list_below_slot:
     title: List Below Slot
-    description: Content for the list below area
+    description: List below content
   pagination_slot:
     title: Pagination Slot
-    description: Content for the pagination area
+    description: Pagination content
   footer_slot:
     title: Footer Slot
-    description: Content for the footer area
+    description: Footer content

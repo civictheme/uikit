@@ -1,28 +1,37 @@
 {#
 /**
  * @file
- * Campaign component.
+ * CivicTheme Campaign component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the campaign.
- * - image: [object] Campaign image object:
+ * - content_top: [string] Top content.
+ * - image: [object] Campaign image:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
- * - image_position: [string] Position of the image relative to content (left or right).
- * - tags: [array] List of tags for the campaign.
+ * - image_position: [string] Image position relative to content (left or right).
+ * - tags: [array] Campaign tags.
  * - title: [string] Campaign title.
  * - date: [string] Campaign date.
- * - content: [string] Main content for the campaign.
- * - links: [array] List of campaign links:
+ * - content: [string] Campaign main content.
+ * - links: [array] Campaign links:
+ *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_bottom: [string] Content slot for the bottom of the campaign.
- * - vertical_spacing: [string] Vertical spacing for the campaign (top, bottom, or both).
+ * - content_bottom: [string] Bottom campaign content.
+ * - vertical_spacing: [string] Campaign vertical spacing (top, bottom, or both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content
+ * - tags_slot: [slot] Tags content
+ * - content_slot: [slot] Content
+ * - links_slot: [slot] Links content
+ * - content_bottom_slot: [slot] Bottom content
+ * - image_slot: [slot] Image content
  */
 #}
 

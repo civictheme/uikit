@@ -1,25 +1,31 @@
 {#
 /**
  * @file
- * Single Filter component.
+ * CivicTheme Single Filter component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the filter.
+ * - content_top: [string] Top content area.
  * - title: [string] Title for filters.
  * - form_attributes: [string] Form attributes (if empty, the form will not be printed).
  * - form_hidden_fields: [string] Form hidden fields.
  * - items: [array] Filter links:
+ *   Each item contains:
  *   - text: [string] Link text.
  *   - name: [string] Optional name attribute.
  *   - is_selected: [boolean] Whether the item is selected.
- *   - attributes: [string] Additional attributes.
+ *   - attributes: [string] Additional HTML attributes.
  * - submit_text: [string] Text on the submit button.
  * - reset_text: [string] Text on the reset button.
- * - content_bottom: [string] Content slot for the bottom of the filter.
+ * - content_bottom: [string] Bottom content area.
  * - is_multiple: [boolean] Whether to allow selection of multiple filter values.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - filters_slot: [slot] Filters area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

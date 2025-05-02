@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Field component stories.
+ */
+
 import Component from './field.twig';
 import FieldData from './field.stories.data';
 

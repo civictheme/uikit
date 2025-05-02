@@ -1,14 +1,14 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Paragraph
 status: stable
-description: Paragraph component for displaying text content
+description: Paragraph component for text content
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
@@ -16,11 +16,11 @@ props:
     content:
       type: string
       title: Content
-      description: Paragraph content
+      description: Paragraph content.
     size:
       type: string
       title: Size
-      description: Paragraph size (extra-large, large, regular, small)
+      description: Paragraph size (extra-large, large, regular, small).
       enum:
         - extra-large
         - large
@@ -30,13 +30,13 @@ props:
     allow_html:
       type: boolean
       title: Allow HTML
-      description: Whether to allow HTML in content
+      description: Whether to allow HTML in content.
       default: false
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.

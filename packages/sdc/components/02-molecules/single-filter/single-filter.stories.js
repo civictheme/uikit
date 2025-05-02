@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Single Filter component stories.
+ */
+
 import Component from './single-filter.twig';
 import SingleFilterData from './single-filter.stories.data';
 

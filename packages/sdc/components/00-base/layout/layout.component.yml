@@ -8,47 +8,47 @@ props:
     content_top:
       type: string
       title: Content top
-      description: Content for top of main content area
+      description: Main content area top content.
     sidebar_top_left:
       type: string
       title: Sidebar top left
-      description: Content for top left sidebar
+      description: Top left sidebar content.
     sidebar_top_right:
       type: string
       title: Sidebar top right
-      description: Content for top right sidebar
+      description: Top right sidebar content.
     content:
       type: string
       title: Content
-      description: Main content
+      description: Main content.
     sidebar_bottom_left:
       type: string
       title: Sidebar bottom left
-      description: Content for bottom left sidebar
+      description: Bottom left sidebar content.
     sidebar_bottom_right:
       type: string
       title: Sidebar bottom right
-      description: Content for bottom right sidebar
+      description: Bottom right sidebar content.
     content_bottom:
       type: string
       title: Content bottom
-      description: Content for bottom of main content area
+      description: Main content area bottom content.
     hide_sidebar_left:
       type: boolean
       title: Hide left sidebar
-      description: Whether to hide the left sidebar
+      description: Whether to hide the left sidebar.
     hide_sidebar_right:
       type: boolean
       title: Hide right sidebar
-      description: Whether to hide the right sidebar
+      description: Whether to hide the right sidebar.
     is_contained:
       type: boolean
       title: Is contained
-      description: Whether the page content should be contained
+      description: Whether the page content should be contained.
     vertical_spacing:
       type: string
       title: Vertical spacing
-      description: Controls vertical spacing (top, bottom, or both)
+      description: Controls vertical spacing (top, bottom, or both).
       enum:
         - top
         - bottom
@@ -56,50 +56,50 @@ props:
     sidebar_top_left_attributes:
       type: string
       title: Sidebar top left attributes
-      description: HTML attributes for top left sidebar
+      description: HTML attributes for top left sidebar.
     sidebar_top_right_attributes:
       type: string
       title: Sidebar top right attributes
-      description: HTML attributes for top right sidebar
+      description: HTML attributes for top right sidebar.
     content_attributes:
       type: string
       title: Content attributes
-      description: HTML attributes for main content
+      description: HTML attributes for main content.
     sidebar_bottom_left_attributes:
       type: string
       title: Sidebar bottom left attributes
-      description: HTML attributes for bottom left sidebar
+      description: HTML attributes for bottom left sidebar.
     sidebar_bottom_right_attributes:
       type: string
       title: Sidebar bottom right attributes
-      description: HTML attributes for bottom right sidebar
+      description: HTML attributes for bottom right sidebar.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content area content
   sidebar_top_left_slot:
     title: Sidebar Top Left Slot
-    description: Content for the sidebar top left area
+    description: Sidebar top left area content
   sidebar_top_right_slot:
     title: Sidebar Top Right Slot
-    description: Content for the sidebar top right area
+    description: Sidebar top right area content
   sidebar_bottom_left_slot:
     title: Sidebar Bottom Left Slot
-    description: Content for the sidebar bottom left area
+    description: Sidebar bottom left area content
   sidebar_bottom_right_slot:
     title: Sidebar Bottom Right Slot
-    description: Content for the sidebar bottom right area
+    description: Sidebar bottom right area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

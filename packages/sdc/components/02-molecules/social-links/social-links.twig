@@ -1,11 +1,12 @@
 {#
 /**
  * @file
- * Social Links component.
+ * CivicTheme Social Links component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - items: [array] List of social media links:
+ * - items: [array] Social media links:
+ *   Each item contains:
  *   - title: [string] Title to be added to the 'title' attribute.
  *   - icon: [string] Icon name from the existing icon set.
  *   - icon_html: [string] Alternative icon HTML for embedding.
@@ -13,6 +14,9 @@
  * - with_border: [boolean] Whether icons have borders.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - items_slot: [slot] Items area content
  */
 #}
 

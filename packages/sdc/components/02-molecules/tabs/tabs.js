@@ -1,6 +1,5 @@
 /**
- * @file
- * Tabs component.
+ * CivicTheme Tabs component.
  */
 function CivicThemeTabs(el, selectedIndex) {
   if (!el) {

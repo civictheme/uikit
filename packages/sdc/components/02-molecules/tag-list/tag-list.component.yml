@@ -1,33 +1,33 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Tag List
 status: stable
-description: Component for displaying a list of tags
+description: Component for tags
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the tag list
+      description: Top content area.
     tags:
       type: array
       title: Tags
-      description: List of tags
+      description: Tags.
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the tag list
+      description: Bottom content area.
     vertical_spacing:
       type: string
       title: Vertical Spacing
-      description: Vertical spacing for the tag list
+      description: Tag list vertical spacing (none, top, bottom, both).
       enum:
         - none
         - top
@@ -36,18 +36,18 @@ props:
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

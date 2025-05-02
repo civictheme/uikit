@@ -8,55 +8,55 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     title:
       type: string
       title: Title
-      description: Title of the video
+      description: Video title.
     has_controls:
       type: boolean
       title: Controls
-      description: Whether the video should have controls
+      description: Whether the video should have controls.
     sources:
       type: array
       title: Sources
-      description: List of video sources
+      description: Video sources.
       items:
         type: object
         properties:
           url:
             type: string
             title: URL
-            description: URL of the source
+            description: Source URL.
           type:
             type: string
             title: Type
-            description: MIME type (like 'video/mp4')
+            description: MIME type (like 'video/mp4').
     poster:
       type: string
       title: Poster
-      description: URL of the video poster image
+      description: Video poster URL.
     width:
       type: string
       title: Width
-      description: Width of the video
+      description: Video width.
     height:
       type: string
       title: Height
-      description: Height of the video
+      description: Video height.
     fallback_text:
       type: string
       title: Fallback text
-      description: Message for browsers not supporting HTML5 video
+      description: Message for browsers not supporting HTML5 video.
       default: "Your browser doesn't support HTML5 video."
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.

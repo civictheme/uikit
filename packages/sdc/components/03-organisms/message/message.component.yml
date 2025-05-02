@@ -1,21 +1,21 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Message
 status: stable
-description: Message component for displaying various types of notifications
+description: Message component for various notification types
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     type:
       type: string
       title: Type
-      description: Message type
+      description: Message type (information, error, warning, success).
       enum:
         - information
         - error
@@ -24,16 +24,16 @@ props:
     title:
       type: string
       title: Title
-      description: Title text
+      description: Title text.
     description:
       type: string
       title: Description
-      description: Description text
+      description: Description text.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.

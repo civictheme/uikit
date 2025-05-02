@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Message component stories.
+ */
+
 import Component from './message.twig';
 
 const meta = {

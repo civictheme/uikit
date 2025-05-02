@@ -1,20 +1,22 @@
 {#
 /**
  * @file
- * Tabs component.
+ * CivicTheme Tabs component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - panels: [array] List of tab panels:
+ * - panels: [array] Tab panels:
+ *   Each item contains:
  *   - title: [string] Panel title.
  *   - content: [string] Panel content.
  *   - id: [string] Panel ID.
  *   - is_selected: [boolean] Whether the panel is selected.
- * - links: [array] Optional List of links (if not provided - will be generated from panels):
+ * - links: [array] Optional links (if not provided - will be generated from panels):
+ *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
- *   - modifier_class: [string] Additional link classes.
- *   - attributes: [string] Additional link attributes.
+ *   - modifier_class: [string] Additional CSS classes.
+ *   - attributes: [string] Additional HTML attributes.
  * - vertical_spacing: [string] Vertical spacing for the tabs (none, top, bottom, both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.

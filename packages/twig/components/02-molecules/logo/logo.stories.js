@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Logo component stories.
+ */
+
 import Component from './logo.twig';
 import LogoData from './logo.stories.data';
 

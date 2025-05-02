@@ -1,47 +1,47 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Slider
 status: stable
-description: Slider component for displaying a carousel of content
+description: Content carousel slider component
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the slider
+      description: Top content.
     title:
       type: string
       title: Title
-      description: Slider title
+      description: Slider title.
     slides:
       type: string
       title: Slides
-      description: HTML content for slides
+      description: Slides HTML content.
     previous_label:
       type: string
       title: Previous Label
-      description: Text for previous button
+      description: Text for previous button.
       default: Previous
     next_label:
       type: string
       title: Next Label
-      description: Text for next button
+      description: Text for next button.
       default: Next
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the slider
+      description: Bottom content.
     vertical_spacing:
       type: string
       title: Vertical Spacing
-      description: Vertical spacing for the slider
+      description: Slider vertical spacing (top, bottom, or both).
       enum:
         - top
         - bottom
@@ -49,28 +49,28 @@ props:
     with_background:
       type: boolean
       title: With Background
-      description: Whether to display with a background
+      description: Whether to display with a background.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content
   top_controls_slot:
     title: Top Controls Slot
-    description: Content for the top controls area
+    description: Top controls content
   slides_slot:
     title: Slides Slot
-    description: Content for the slides area
+    description: Slides content
   controls_slot:
     title: Controls Slot
-    description: Content for the controls area
+    description: Controls content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content

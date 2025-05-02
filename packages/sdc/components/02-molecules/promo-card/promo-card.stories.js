@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Promo Card component stories.
+ */
+
 import Component from './promo-card.twig';
 import PromoCardData from './promo-card.stories.data';
 

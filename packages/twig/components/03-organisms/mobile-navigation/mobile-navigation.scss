@@ -1,10 +1,11 @@
 //
-// Mobile Navigation component.
+// CivicTheme Mobile Navigation component styles.
 //
-// Note: typography and icon sizes are specified explicitly as these elements
-// have custom appearance unique to mobile menu (i.e., no responsive sizing).
 
 @use 'sass:math';
+
+// Note: typography and icon sizes are specified explicitly as these elements
+// have custom appearance unique to mobile menu (i.e., no responsive sizing).
 
 $ct-mobile-navigation-spacing: ct-spacing(2);
 

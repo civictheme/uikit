@@ -1,13 +1,14 @@
 {#
 /**
  * @file
- * Attachment component.
+ * CivicTheme Attachment component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - title: [string] Attachment title.
  * - content: [string] Attachment content.
- * - files: [array] List of file attachments:
+ * - files: [array] File attachments:
+ *   Each item contains:
  *   - name: [string] File name (as it appears to the user).
  *   - ext: [string] File extension.
  *   - url: [string] File URL.
@@ -15,12 +16,18 @@
  *   - created: [string] File created date.
  *   - changed: [string] File modified date.
  *   - icon: [string] File type icon name.
- * - content_top: [string] Content displayed above the attachment.
- * - content_bottom: [string] Content displayed below the attachment.
+ * - content_top: [string] Attachment top content.
+ * - content_bottom: [string] Attachment bottom content.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - links_slot: [slot] Links area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

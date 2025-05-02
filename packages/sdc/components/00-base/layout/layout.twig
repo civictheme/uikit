@@ -1,16 +1,16 @@
 {#
 /**
  * @file
- * Layout component.
+ * CivicTheme Layout component.
  *
  * Variables:
- * - content_top: [string] Content for top of main content area.
- * - sidebar_top_left: [string] Content for top left sidebar.
- * - sidebar_top_right: [string] Content for top right sidebar.
+ * - content_top: [string] Main content area top content.
+ * - sidebar_top_left: [string] Top left sidebar content.
+ * - sidebar_top_right: [string] Top right sidebar content.
  * - content: [string] Main content.
- * - sidebar_bottom_left: [string] Content for bottom left sidebar.
- * - sidebar_bottom_right: [string] Content for bottom right sidebar.
- * - content_bottom: [string] Content for bottom of main content area.
+ * - sidebar_bottom_left: [string] Bottom left sidebar content.
+ * - sidebar_bottom_right: [string] Bottom right sidebar content.
+ * - content_bottom: [string] Main content area bottom content.
  * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
  * - hide_sidebar_right: [boolean] Whether to hide the right sidebar.
  * - is_contained: [boolean] Whether the page content should be contained.
@@ -22,6 +22,15 @@
  * - sidebar_bottom_right_attributes: [string] HTML attributes for bottom right sidebar.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - sidebar_top_left_slot: [slot] Sidebar top left area content
+ * - sidebar_top_right_slot: [slot] Sidebar top right area content
+ * - sidebar_bottom_left_slot: [slot] Sidebar bottom left area content
+ * - sidebar_bottom_right_slot: [slot] Sidebar bottom right area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

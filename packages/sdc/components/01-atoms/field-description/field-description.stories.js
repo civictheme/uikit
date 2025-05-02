@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Field Description component stories.
+ */
+
 import Component from './field-description.twig';
 
 const meta = {

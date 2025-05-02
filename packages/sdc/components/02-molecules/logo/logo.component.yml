@@ -8,14 +8,14 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     type:
       type: string
       title: Type
-      description: Logo display type
+      description: Logo display type (default, stacked, inline, inline-stacked).
       enum:
         - default
         - stacked
@@ -25,7 +25,7 @@ props:
     logos:
       type: object
       title: Logos
-      description: Object with primary and secondary logo configurations
+      description: Object with 'primary' and 'secondary' keys.
       properties:
         primary:
           type: object
@@ -40,11 +40,11 @@ props:
                 url:
                   type: string
                   title: URL
-                  description: Logo image URL
+                  description: Optional URL that wraps the logo.
                 alt:
                   type: string
                   title: Alt text
-                  description: Logo image alt text
+                  description: Logo image alt text.
             desktop:
               type: object
               title: Desktop
@@ -53,11 +53,11 @@ props:
                 url:
                   type: string
                   title: URL
-                  description: Logo image URL
+                  description: Optional URL that wraps the logo.
                 alt:
                   type: string
                   title: Alt text
-                  description: Logo image alt text
+                  description: Logo image alt text.
         secondary:
           type: object
           title: Secondary logo
@@ -71,11 +71,11 @@ props:
                 url:
                   type: string
                   title: URL
-                  description: Logo image URL
+                  description: Optional URL that wraps the logo.
                 alt:
                   type: string
                   title: Alt text
-                  description: Logo image alt text
+                  description: Logo image alt text.
             desktop:
               type: object
               title: Desktop
@@ -84,25 +84,25 @@ props:
                 url:
                   type: string
                   title: URL
-                  description: Logo image URL
+                  description: Optional URL that wraps the logo.
                 alt:
                   type: string
                   title: Alt text
-                  description: Logo image alt text
+                  description: Logo image alt text.
     url:
       type: string
       title: URL
-      description: Optional URL that wraps the logo
+      description: Optional URL that wraps the logo.
     title:
       type: string
       title: Title
-      description: Optional logo title attribute
+      description: Optional logo title attribute.
       default: 'Click to go to the homepage'
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.

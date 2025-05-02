@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Subject Card component stories.
+ */
+
 import Component from './subject-card.twig';
 
 const meta = {

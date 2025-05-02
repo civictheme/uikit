@@ -1,3 +1,7 @@
+/**
+ * CivicTheme List component stories.
+ */
+
 import Component from './list.twig';
 import ListData from './list.stories.data';
 

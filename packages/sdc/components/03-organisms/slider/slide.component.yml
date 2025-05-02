@@ -8,116 +8,116 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the slide
+      description: Top content area.
     image:
       type: object
       title: Image
-      description: Slide image object
+      description: Slide image object.
       properties:
         url:
           type: string
           title: URL
-          description: Image URL
+          description: Link URL.
         alt:
           type: string
           title: Alt
-          description: Image alt text
+          description: Image alt text.
     image_position:
       type: string
       title: Image Position
-      description: Position of the image
+      description: Image position (left or right).
       enum:
         - left
         - right
     tags:
       type: array
       title: Tags
-      description: List of tags
+      description: Tags.
     title:
       type: string
       title: Title
-      description: Slide title
+      description: Slide title.
     date:
       type: string
       title: Date
-      description: Start date and time
+      description: Start date and time.
     date_iso:
       type: string
       title: ISO Date
-      description: Start date and time in ISO format
+      description: Start date and time in ISO format.
     date_end:
       type: string
       title: End Date
-      description: Optional end date and time
+      description: Optional end date and time.
     date_end_iso:
       type: string
       title: ISO End Date
-      description: Optional end date and time in ISO format
+      description: Optional end date and time in ISO format.
     content:
       type: string
       title: Content
-      description: Content text
+      description: Content text.
     links:
       type: array
       title: Links
-      description: List of link objects
+      description: Link objects.
       items:
         type: object
         properties:
           text:
             type: string
             title: Text
-            description: Link text
+            description: Link text.
           url:
             type: string
             title: URL
-            description: Link URL
+            description: Link URL.
           is_new_window:
             type: boolean
             title: New Window
-            description: Whether to open link in a new window
+            description: Whether to open link in a new window.
           is_external:
             type: boolean
             title: External
-            description: Whether the link is external
+            description: Whether the link is external.
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the slide
+      description: Bottom slide content.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   image_slot:
     title: Image Slot
-    description: Content for the image area
+    description: Image area content
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   tags_slot:
     title: Tags Slot
-    description: Content for the tags area
+    description: Tags area content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content area content
   date_slot:
     title: Date Slot
-    description: Content for the date area
+    description: Date area content
   links_slot:
     title: Links Slot
-    description: Content for the links area
+    description: Links area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Page Template component stories.
+ */
+
 import Component from './page.twig';
 import PageData from './page.stories.data';
 

@@ -8,24 +8,24 @@ props:
     start:
       type: string
       title: Start time
-      description: Formatted start time
+      description: Formatted start time.
     start_iso:
       type: string
       title: Start time ISO
-      description: Start time in ISO format
+      description: Start time in ISO format.
     end:
       type: string
       title: End time
-      description: Formatted end time
+      description: Formatted end time.
     end_iso:
       type: string
       title: End time ISO
-      description: End time in ISO format
+      description: End time in ISO format.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional classes.

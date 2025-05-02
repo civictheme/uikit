@@ -1,30 +1,40 @@
 {#
 /**
  * @file
- * Slider Slide component.
+ * CivicTheme Slider Slide component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the slide.
+ * - content_top: [string] Top content area.
  * - image: [object] Slide image object:
- *   - url: [string] Image URL.
+ *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
- * - image_position: [string] Position of the image (left or right).
- * - tags: [array] List of tags.
+ * - image_position: [string] Image position (left or right).
+ * - tags: [array] Tags.
  * - title: [string] Slide title.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
  * - date_end: [string] Optional end date and time.
  * - date_end_iso: [string] Optional end date and time in ISO format.
  * - content: [string] Content text.
- * - links: [array] List of link objects:
+ * - links: [array] Link objects:
+ *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_bottom: [string] Content slot for the bottom of the slide.
+ * - content_bottom: [string] Bottom slide content.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - image_slot: [slot] Image area content
+ * - content_top_slot: [slot] Top content area content
+ * - tags_slot: [slot] Tags area content
+ * - content_slot: [slot] Content area content
+ * - date_slot: [slot] Date area content
+ * - links_slot: [slot] Links area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

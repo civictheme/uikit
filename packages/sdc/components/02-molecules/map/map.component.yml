@@ -1,46 +1,46 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Map
 status: stable
-description: Component for displaying interactive maps with supporting information
+description: Component for interactive maps with supporting information
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     address:
       type: string
       title: Address
-      description: Optional address
+      description: Optional address.
     url:
       type: string
       title: URL
-      description: URL for the map iframe
+      description: URL for the map iframe.
     view_url:
       type: string
       title: View URL
-      description: URL for the external map
+      description: URL for the external map.
     view_text:
       type: string
       title: View text
-      description: Text for the external map link
+      description: Text for the external map link.
       default: 'View in Google Maps'
     content_top:
       type: string
       title: Top content
-      description: Content displayed above the map
+      description: Map top content.
     content_bottom:
       type: string
       title: Bottom content
-      description: Content displayed below the map
+      description: Map bottom content.
     vertical_spacing:
       type: string
       title: Vertical spacing
-      description: Vertical spacing position (top, bottom, both)
+      description: Vertical spacing position (top, bottom, both).
       enum:
         - top
         - bottom
@@ -48,25 +48,25 @@ props:
     with_background:
       type: boolean
       title: With background
-      description: Whether to display with a background
+      description: Whether to display with a background.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   map_slot:
     title: Map Slot
-    description: Content for the map area
+    description: Map area content
   links_slot:
     title: Links Slot
-    description: Content for the links area
+    description: Links area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

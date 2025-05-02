@@ -1,20 +1,27 @@
 {#
 /**
  * @file
- * Slider component.
+ * CivicTheme Slider component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the slider.
+ * - content_top: [string] Top content.
  * - title: [string] Slider title.
- * - slides: [string] HTML content for slides.
+ * - slides: [string] Slides HTML content.
  * - previous_label: [string] Text for previous button.
  * - next_label: [string] Text for next button.
- * - content_bottom: [string] Content slot for the bottom of the slider.
- * - vertical_spacing: [string] Vertical spacing for the slider (top, bottom, or both).
+ * - content_bottom: [string] Bottom content.
+ * - vertical_spacing: [string] Slider vertical spacing (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content
+ * - top_controls_slot: [slot] Top controls content
+ * - slides_slot: [slot] Slides content
+ * - controls_slot: [slot] Controls content
+ * - content_bottom_slot: [slot] Bottom content
  */
 #}
 

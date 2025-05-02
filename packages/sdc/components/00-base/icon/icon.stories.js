@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Icon component stories.
+ */
+
 import Component from './icon.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

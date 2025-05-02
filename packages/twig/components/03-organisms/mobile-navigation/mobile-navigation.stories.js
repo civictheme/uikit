@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Mobile Navigation component stories.
+ */
+
 import MobileNavigationPanel from './mobile-navigation.twig';
 import MobileNavigationTrigger from './mobile-navigation-trigger.twig';
 

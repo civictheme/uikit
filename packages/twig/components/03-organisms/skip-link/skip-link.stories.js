@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Skip Link component stories.
+ */
+
 import Component from './skip-link.twig';
 
 const meta = {

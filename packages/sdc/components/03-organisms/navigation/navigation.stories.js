@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Navigation component stories.
+ */
+
 import Component from './navigation.twig';
 import NavigationData from './navigation.stories.data';
 

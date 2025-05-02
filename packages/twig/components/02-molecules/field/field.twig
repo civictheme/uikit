@@ -1,56 +1,35 @@
 {#
 /**
  * @file
- * Field component.
- *
- * Used as a main entry point to build any form fields.
- *
- * This component supports both simple and complex controls.
- *
- * For simple controls, the properties `name`, `value`, `is_invalid`,
- * `is_disabled`, and `is_required` can be defined at the top level.
- * For group controls, like radio or checkbox, these properties will be
- * propagated to `control` prop, unless explicitly defined there.
+ * CivicTheme Field component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark. Optional.
- * - type: [string] Type defined by a control type. Required.
- * - title: [string] Title. Optional.
- * - title_display: [string] Title display: visible, invisible, hidden. Optional.
- * - label: [string] Field Label
- * - description: [string] Description. Optional.
- * - name: [string] DOM name. Required, propagated.
- * - value: [string] DOM value. Optional, propagated.
- * - id: [string] Control DOM id. Optional, propagated.
- * - is_invalid: [boolean] Denote if the control is invalid. Optional, propagated.
- * - is_disabled: [boolean] Denote if the control is disabled. Optional, propagated.
- * - is_required: [boolean] Denote if the control is required. Optional, propagated.
- * - required_text: [string] Text to display within label element when required. Optional, propagated.
- * - orientation: [string] Elements orientation: vertical or horizontal. Optional.
- * - is_inline: [boolean] Denote if the complex control is shown inline. Optional.
- * - control: [object | array[object]] Object or array of objects with control's
- *   properties. Required for complex controls.
- *   - label: [string] Control label. Required only for a radio group or checkbox.
- *   - name: [string] Control DOM name. Propagated from `name` if not defined.
- *   - value: [string] Control DOM value. Propagated from `value` if not defined.
- *   - id: [string] Control DOM id. Optional.
- *   - options: [array] Options for the field input.
- *   - is_required: [boolean] Denote if the control is required. Propagated from `is_required` if not defined.
- *   - is_multiple: [boolean] Whether the field allows multiple values.
- *   - is_invalid: [boolean] Denote if the control is invalid. Propagated from `is_invalid` if not defined.
- *   - is_disabled: [boolean] Denote if the control is disabled. Propagated from `is_disabled` if not defined.
- *   - attributes: [string] Control additional attributes. Optional.
- *   - modifier_class: [string] Control additional classes. Optional.
+ * - theme: [string] Theme variation (light or dark).
+ * - type: [string] Type defined by a control type (required).
+ * - title: [string] Field title.
+ * - title_display: [string] How to display the field title (visible, invisible, hidden).
+ * - label: [string] Control label (required only for a radio group or checkbox).
+ * - description: [string] Field description.
+ * - name: [string] Control DOM name (propagated from `name` if not defined).
+ * - value: [string] Control DOM value (propagated from `value` if not defined).
+ * - id: [string] Control DOM ID.
+ * - is_invalid: [boolean] Whether the control is invalid (propagated from `is_invalid` if not defined).
+ * - is_disabled: [boolean] Whether the control is disabled (propagated from `is_disabled` if not defined).
+ * - is_required: [boolean] Whether the control is required (propagated from `is_required` if not defined).
+ * - required_text: [string] Text to display within label element when required (propagated).
+ * - orientation: [string] Elements orientation (vertical or horizontal).
+ * - is_inline: [boolean] Whether the complex control is shown inline.
+ * - control: [object,array] Object or objects collection with control's properties (required for complex controls).
  * - options: [array] Options for the field input.
  * - is_multiple: [boolean] Whether the field allows multiple values.
  * - placeholder: [string] Placeholder text for field.
- * - message: [object] Message object for showing messages.
- *   - content: [string] Message content
- *   - attributes: [string] Message attributes.
- * - attributes: [string] Additional attributes. Optional.
- * - modifier_class: [string] Additional classes. Optional.
- * - prefix: [string] The content to add before the field.
- * - suffix: [string] The content to add after the field.
+ * - message: [object] Message object for showing messages:
+ *   - content: [string] Message content.
+ *   - attributes: [string] Additional HTML attributes.
+ * - prefix: [string] Content to add before the field.
+ * - suffix: [string] Content to add after the field.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

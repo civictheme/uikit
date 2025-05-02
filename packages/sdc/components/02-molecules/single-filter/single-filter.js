@@ -1,6 +1,5 @@
 /**
- * @file
- * Single Filter component.
+ * CivicTheme Single Filter component.
  */
 function CivicThemeSingleFilterComponent(el) {
   if (this.el) {

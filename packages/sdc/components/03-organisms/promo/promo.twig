@@ -1,11 +1,11 @@
 {#
 /**
  * @file
- * Promo component.
+ * CivicTheme Promo component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the promo.
+ * - content_top: [string] Top content area.
  * - title: [string] Title text.
  * - content: [string] Main content text.
  * - is_contained: [boolean] Whether the content is contained in a container.
@@ -14,11 +14,18 @@
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_bottom: [string] Content slot for the bottom of the promo.
+ * - content_bottom: [string] Bottom promo content.
  * - vertical_spacing: [string] Vertical spacing for the promo (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - content_left_slot: [slot] Left content area content
+ * - content_right_slot: [slot] Right content area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

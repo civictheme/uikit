@@ -1,22 +1,28 @@
 {#
 /**
  * @file
- * Group Filter component.
+ * CivicTheme Group Filter component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - title: [string] Title for filters.
+ * - title: [string] Filter title.
  * - form_attributes: [string] Form attributes (if empty, the form will not be printed).
  * - form_hidden_fields: [string] Form hidden fields.
- * - filters: [array] List of filter objects:
+ * - filters: [array] Filter objects:
+ *   Each item contains:
  *   - title: [string] Filter title.
  *   - content: [string] Filter content.
  * - submit_text: [string] Text on the submit button.
- * - content_top: [string] Content displayed above the filters.
- * - content_bottom: [string] Content displayed below the filters.
+ * - content_top: [string] Filters top content.
+ * - content_bottom: [string] Filters bottom content.
  * - group_id: [string] Unique ID for filter group.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - filters_slot: [slot] Filters area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

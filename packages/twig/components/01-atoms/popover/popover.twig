@@ -1,19 +1,26 @@
 {#
 /**
  * @file
- * Popover component.
+ * CivicTheme Popover component.
  *
  * Variables:
- * - trigger: [object] Trigger link object:
- *   - text: [string] Text.
- *   - url: [string] Optional URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - content: [string] Content of popover panel.
- * - group: [string] Group name.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - trigger: [object] Popover trigger link object:
+ *   - text: [string] Trigger text.
+ *   - url: [string] Optional URL for the trigger.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content: [string] Popover panel content.
+ * - content_top: [string] Top popover content.
+ * - content_bottom: [string] Bottom popover content.
+ * - group: [string] Group name for controlling multiple popovers together.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 
@@ -34,7 +41,7 @@
     <div class="ct-popover__content" data-collapsible-panel>
       <div class="ct-popover__content__inner">
 
-        {% block content_top %}
+        {% block content_top_slot %}
           {% if content_top is not empty %}
             <div class="ct-popover__content-top">
               {{- content_top|raw -}}
@@ -42,11 +49,11 @@
           {% endif %}
         {% endblock %}
 
-        {% block content %}
+        {% block content_slot %}
           {{- content|raw -}}
         {% endblock %}
 
-        {% block content_bottom %}
+        {% block content_bottom_slot %}
           {% if content_bottom is not empty %}
             <div class="ct-popover__content-bottom">
               {{- content_bottom|raw -}}

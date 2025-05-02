@@ -1,32 +1,45 @@
 {#
 /**
  * @file
- * Promo Card component.
+ * CivicTheme Promo Card component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - image_over: [string] Content slot for image over.
- * - content_middle: [string] Content slot.
- * - content_bottom: [string] Content slot for bottom of Card.
- * - image: [object] Image object:
- *   - url: [string] Image URL.
+ * - theme: [string] Theme variation (light or dark).
+ * - image: [object] Card image:
+ *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
  * - subtitle: [string] Subtitle text.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
  * - date_end: [string] Formatted end time.
  * - date_end_iso: [string] End time in ISO format.
- * - title: [string] Title.
- * - summary: [string] Summary.
- * - link: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - tags: [array] Array of tags.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class:[string] Additional classes.
+ * - title: [string] Card title text.
+ * - summary: [string] Card summary.
+ * - link: [object] Card link object:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - tags: [array] Card tags.
+ * - content_top: [string] Top content area.
+ * - image_over: [string] Image overlay content.
+ * - content_middle: [string] Middle content area.
+ * - content_bottom: [string] Bottom content area.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - image_slot: [slot] Image area content
+ * - image_over_slot: [slot] Image overlay content
+ * - content_slot: [slot] Content area content
+ * - content_top_slot: [slot] Top content area content
+ * - subtitle_slot: [slot] Subtitle area content
+ * - date_slot: [slot] Date area content
+ * - title_slot: [slot] Title area content
+ * - content_middle_slot: [slot] Middle content area content
+ * - summary_slot: [slot] Summary area content
+ * - content_tags_slot: [slot] Tags area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 
@@ -39,7 +52,7 @@
 
 {% if title is not empty %}
   <div class="ct-promo-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% block image %}
+    {% block image_slot %}
       {% if image.url is not empty or image_over is not empty %}
         <div class="ct-promo-card__image">
           {% include '@atoms/image/image.twig' with {
@@ -48,7 +61,7 @@
             alt: image.alt,
           } only %}
 
-          {% block image_over %}
+          {% block image_over_slot %}
             {% if image_over is not empty %}
               <div class="ct-promo-card__image__over">
                 {{ image_over }}
@@ -59,9 +72,9 @@
       {% endif %}
     {% endblock %}
 
-    {% block content %}
+    {% block content_slot %}
       <div class="ct-promo-card__content">
-        {% block content_top %}
+        {% block content_top_slot %}
           {% if content_top is not empty %}
             <div class="ct-promo-card__content-top">
               {{- content_top|raw -}}
@@ -69,7 +82,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block subtitle %}
+        {% block subtitle_slot %}
           {% if subtitle is not empty %}
             <div class="ct-promo-card__subtitle">
               {% include '@atoms/tag/tag.twig' with {
@@ -81,14 +94,14 @@
           {% endif %}
         {% endblock %}
 
-        {% block date %}
+        {% block date_slot %}
           {% if date is not empty %}
             {% set date_content %}
               {% include '@base/datetime/datetime.twig' with {
                 start: date,
-                start_iso: date_iso ?? null,
-                end: date_end ?? null,
-                end_iso: date_end_iso ?? null,
+                start_iso: date_iso|default(null),
+                end: date_end|default(null),
+                end_iso: date_end_iso|default(null),
               } only %}
             {% endset %}
 
@@ -104,7 +117,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block title %}
+        {% block title_slot %}
           {% if title is not empty %}
             {% set title_content %}
               {% if with_link %}
@@ -130,7 +143,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_middle %}
+        {% block content_middle_slot %}
           {% if content_middle is not empty %}
             <div class="ct-promo-card__content-middle">
               {{- content_middle|raw -}}
@@ -138,7 +151,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block summary %}
+        {% block summary_slot %}
           {% if summary is not empty %}
             {% include '@atoms/paragraph/paragraph.twig' with {
               theme: theme,
@@ -149,7 +162,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_tags %}
+        {% block content_tags_slot %}
           {% if tags or with_link %}
             <div class="ct-promo-card__tags">
               {% if tags %}
@@ -174,7 +187,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_bottom %}
+        {% block content_bottom_slot %}
           {% if content_bottom is not empty %}
             <div class="ct-promo-card__content-bottom">
               {{- content_bottom|raw -}}

@@ -1,22 +1,29 @@
 {#
 /**
  * @file
- * Callout component.
+ * CivicTheme Callout component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - title: [string] Title text.
  * - content: [string] Content text.
- * - links: [array] List of callout links:
+ * - links: [array] Callout links:
+ *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_top: [string] Content displayed above the callout.
- * - content_bottom: [string] Content displayed below the callout.
+ * - content_top: [string] Callout top content.
+ * - content_bottom: [string] Callout bottom content.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - links_slot: [slot] Links area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Video Player component stories.
+ */
+
 import Component from './video-player.twig';
 
 const meta = {

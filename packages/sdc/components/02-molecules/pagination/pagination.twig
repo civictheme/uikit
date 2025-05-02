@@ -1,12 +1,12 @@
 {#
 /**
  * @file
- * Pagination component.
+ * CivicTheme Pagination component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - heading_id: [string] Heading ID for accessibility.
- * - title: [string] Title of active page.
+ * - title: [string] Active page title.
  * - items: [object] Object containing pagination items:
  *   - first: [object] First page link:
  *     - text: [string] Link text.
@@ -23,16 +23,17 @@
  *     - href: [string] Link URL.
  * - items_modifier_class: [string] Additional classes for pagination items.
  * - current: [string] Current page number.
- * - items_per_page_title: [string] Title for 'items per page' field.
- * - items_per_page_options: [array] List of options for items per page:
+ * - items_per_page_title: [string] Items per page field title.
+ * - items_per_page_options: [array] Options for items per page:
+ *   Each item contains:
  *   - type: [string] Option type ('option').
  *   - label: [string] Option label.
  *   - value: [string] Option value.
  *   - selected: [string] Whether the option is selected.
- * - items_per_page_name: [string] Name for items per page select field.
- * - items_per_page_id: [string] ID for items per page select field.
- * - items_per_page_attributes: [string] Attributes for items per page select element.
- * - total_pages: [string] Total number of pages.
+ * - items_per_page_name: [string] Items per page select field name.
+ * - items_per_page_id: [string] Items per page select field ID.
+ * - items_per_page_attributes: [string] Items per page select element attributes.
+ * - total_pages: [string] Total pages count.
  * - use_ellipsis: [boolean] Whether ellipsis should be shown.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.

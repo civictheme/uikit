@@ -1,56 +1,56 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Navigation
 status: stable
-description: Navigation component for displaying a menu with various display types
+description: Navigation component for menu with various display types
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     name:
       type: string
       title: Name
-      description: Navigation name for nav element
+      description: Navigation name for nav element.
     items:
       type: array
       title: Items
-      description: List of menu items
+      description: Menu items
       items:
         type: object
         properties:
           title:
             type: string
             title: Title
-            description: Menu item title
+            description: Navigation title.
           url:
             type: string
             title: URL
-            description: Menu item URL
+            description: Menu item URL.
           in_active_trail:
             type: boolean
             title: In Active Trail
-            description: Whether the item is in the active trail
+            description: Whether the item is in the active trail.
           is_expanded:
             type: boolean
             title: Expanded
-            description: Whether the item is expanded
+            description: Whether the item is expanded.
           below:
             type: array
             title: Below
-            description: List of submenu items
+            description: Submenu items.
     title:
       type: string
       title: Title
-      description: Navigation title
+      description: Navigation title.
     type:
       type: string
       title: Type
-      description: Navigation display type
+      description: Navigation display type (none, inline, dropdown, drawer).
       enum:
         - none
         - inline
@@ -59,28 +59,28 @@ props:
     dropdown_columns:
       type: integer
       title: Dropdown Columns
-      description: Number of columns in the dropdown drawer
+      description: Dropdown drawer column count.
     dropdown_columns_fill:
       type: boolean
       title: Dropdown Columns Fill
-      description: Whether to fill columns
+      description: Whether to fill columns.
     is_animated:
       type: boolean
       title: Animated
-      description: Whether to use animation for transitions
+      description: Whether to use animation for transitions.
     menu_id:
       type: string
       title: Menu ID
-      description: Optional menu ID used for grouping dropdown items
+      description: Optional menu ID used for grouping dropdown items.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   title_slot:
     title: Title Slot
-    description: Content for the title area
+    description: Title area content

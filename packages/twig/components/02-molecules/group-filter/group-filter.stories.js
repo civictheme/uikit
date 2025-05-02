@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Group Filter component stories.
+ */
+
 import Component from './group-filter.twig';
 import GroupFilterData from './group-filter.stories.data';
 

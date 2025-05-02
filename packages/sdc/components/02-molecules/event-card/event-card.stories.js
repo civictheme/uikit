@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Event Card component stories.
+ */
+
 import Component from './event-card.twig';
 
 const meta = {

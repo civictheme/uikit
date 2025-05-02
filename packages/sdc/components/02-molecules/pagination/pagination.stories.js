@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Pagination component stories.
+ */
+
 import Component from './pagination.twig';
 import PaginationData from './pagination.stories.data';
 

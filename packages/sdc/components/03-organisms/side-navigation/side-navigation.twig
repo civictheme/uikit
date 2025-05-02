@@ -1,20 +1,24 @@
 {#
 /**
  * @file
- * Side Navigation component.
+ * CivicTheme Side Navigation component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - items: [array] List of menu items:
- *   - title: [string] Menu item title.
+ * - items: [array] Menu items:
+ *   Each item contains:
+ *   - title: [string] Navigation title.
  *   - url: [string] Menu item URL.
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
- *   - below: [array] List of submenu items.
+ *   - below: [array] Submenu items.
  * - title: [string] Navigation title.
- * - vertical_spacing: [string] Vertical spacing for the navigation (top, bottom, or both).
+ * - vertical_spacing: [string] Navigation vertical spacing (top, bottom, or both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - title_slot: [slot] Title area content
  */
 #}
 

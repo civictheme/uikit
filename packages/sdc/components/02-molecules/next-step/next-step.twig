@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Next Step component.
+ * CivicTheme Next Step component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
@@ -11,11 +11,17 @@
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_top: [string] Content displayed above the next step.
- * - content_bottom: [string] Content displayed below the next step.
+ * - content_top: [string] Top next step content.
+ * - content_bottom: [string] Bottom next step content.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - title_slot: [slot] Title area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

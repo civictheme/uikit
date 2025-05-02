@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Radio component stories.
+ */
+
 import Component from './radio.twig';
 
 const meta = {

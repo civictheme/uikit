@@ -1,21 +1,26 @@
 {#
 /**
  * @file
- * Popover component.
+ * CivicTheme Popover component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - trigger: [object] Trigger link object:
+ * - trigger: [object] Popover trigger link object:
  *   - text: [string] Trigger text.
  *   - url: [string] Optional URL for the trigger.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content: [string] Content of popover panel.
- * - content_top: [string] Content for the top section of the popover.
- * - content_bottom: [string] Content for the bottom section of the popover.
+ * - content: [string] Popover panel content.
+ * - content_top: [string] Top popover content.
+ * - content_bottom: [string] Bottom popover content.
  * - group: [string] Group name for controlling multiple popovers together.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

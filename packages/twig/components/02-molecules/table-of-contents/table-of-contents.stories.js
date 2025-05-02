@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Table of Contents component stories.
+ */
+
 import Component from './table-of-contents.twig';
 import BasicContent from '../basic-content/basic-content.twig';
 

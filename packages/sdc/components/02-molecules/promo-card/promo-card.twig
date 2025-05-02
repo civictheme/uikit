@@ -1,32 +1,45 @@
 {#
 /**
  * @file
- * Promo Card component.
+ * CivicTheme Promo Card component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - image: [object] Image for the card:
- *   - url: [string] Image URL.
+ * - image: [object] Card image:
+ *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
  * - subtitle: [string] Subtitle text.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
  * - date_end: [string] Formatted end time.
  * - date_end_iso: [string] End time in ISO format.
- * - title: [string] Title text for the card.
- * - summary: [string] Summary text for the card.
- * - link: [object] Link object for the card:
+ * - title: [string] Card title text.
+ * - summary: [string] Card summary.
+ * - link: [object] Card link object:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - tags: [array] List of tags for the card.
- * - content_top: [string] Content slot for the top of the card.
- * - image_over: [string] Content slot for overlay on the image.
- * - content_middle: [string] Content slot for the middle of the card.
- * - content_bottom: [string] Content slot for the bottom of the card.
+ * - tags: [array] Card tags.
+ * - content_top: [string] Top content area.
+ * - image_over: [string] Image overlay content.
+ * - content_middle: [string] Middle content area.
+ * - content_bottom: [string] Bottom content area.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - image_slot: [slot] Image area content
+ * - image_over_slot: [slot] Image overlay content
+ * - content_slot: [slot] Content area content
+ * - content_top_slot: [slot] Top content area content
+ * - subtitle_slot: [slot] Subtitle area content
+ * - date_slot: [slot] Date area content
+ * - title_slot: [slot] Title area content
+ * - content_middle_slot: [slot] Middle content area content
+ * - summary_slot: [slot] Summary area content
+ * - content_tags_slot: [slot] Tags area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

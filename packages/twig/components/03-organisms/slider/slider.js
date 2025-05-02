@@ -1,6 +1,6 @@
 // phpcs:ignoreFile
 /**
- * Slider component.
+ * CivicTheme Slider component.
  */
 function CivicThemeSlider(el) {
   if (el.getAttribute('data-slider') === 'true' || this.el) {

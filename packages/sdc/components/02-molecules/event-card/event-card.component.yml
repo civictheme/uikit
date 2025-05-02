@@ -8,125 +8,125 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     image:
       type: object
       title: Image
-      description: Event image
+      description: Event image.
       properties:
         url:
           type: string
           title: URL
-          description: Image URL
+          description: Link URL.
         alt:
           type: string
           title: Alt text
-          description: Image alt text
+          description: Image alt text.
     title:
       type: string
       title: Title
-      description: Event title
+      description: Event title.
     summary:
       type: string
       title: Summary
-      description: Event summary
+      description: Event summary.
     date:
       type: string
       title: Date
-      description: Start date and time
+      description: Start date and time.
     date_iso:
       type: string
       title: ISO date
-      description: Start date and time in ISO format
+      description: Start date and time in ISO format.
     date_end:
       type: string
       title: End date
-      description: End date and time
+      description: End date and time.
     date_end_iso:
       type: string
       title: ISO end date
-      description: End date and time in ISO format
+      description: End date and time in ISO format.
     location:
       type: string
       title: Location
-      description: Event location
+      description: Event location.
     link:
       type: object
       title: Link
-      description: Optional link
+      description: Optional link.
       properties:
         url:
           type: string
           title: URL
-          description: Link URL
+          description: Link URL.
         is_new_window:
           type: boolean
           title: New window
-          description: Whether to open in a new window
+          description: Whether to open in a new window.
     tags:
       type: array
       title: Tags
-      description: List of event tags
+      description: Event tags.
       items:
         type: object
     content_top:
       type: string
       title: Top content
-      description: Content displayed at the top of the card
+      description: Card top content.
     image_over:
       type: string
       title: Image overlay
-      description: Content displayed over the image
+      description: Image overlay content.
     content_middle:
       type: string
       title: Middle content
-      description: Content displayed in the middle of the card
+      description: Card middle content.
     content_bottom:
       type: string
       title: Bottom content
-      description: Content displayed at the bottom of the card
+      description: Card bottom content.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   image_slot:
     title: Image Slot
-    description: Content for the image area
+    description: Image area content
   image_over_slot:
     title: Image Over Slot
-    description: Content for the image over area
+    description: Image overlay content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content area content
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   date_slot:
     title: Date Slot
-    description: Content for the date area
+    description: Date area content
   title_slot:
     title: Title Slot
-    description: Content for the title area
+    description: Title area content
   content_middle_slot:
     title: Content Middle Slot
-    description: Content for the content middle area
+    description: Middle content area content
   location_slot:
     title: Location Slot
-    description: Content for the location area
+    description: Location area content
   summary_slot:
     title: Summary Slot
-    description: Content for the summary area
+    description: Summary area content
   content_tags_slot:
     title: Content Tags Slot
-    description: Content for the content tags area
+    description: Tags area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

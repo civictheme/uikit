@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Tag List component stories.
+ */
+
 import Component from './tag-list.twig';
 
 const meta = {

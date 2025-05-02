@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Map component.
+ * CivicTheme Map component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
@@ -9,12 +9,18 @@
  * - url: [string] URL for the map iframe.
  * - view_url: [string] URL for the external map.
  * - view_text: [string] Text for the external map link.
- * - content_top: [string] Content displayed above the map.
- * - content_bottom: [string] Content displayed below the map.
+ * - content_top: [string] Map top content.
+ * - content_bottom: [string] Map bottom content.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - map_slot: [slot] Map area content
+ * - links_slot: [slot] Links area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

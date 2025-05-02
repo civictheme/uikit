@@ -1,33 +1,33 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Iframe
 status: stable
-description: Component for embedding external content in an iframe
+description: Component for iframe embedded external content
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     url:
       type: string
       title: URL
-      description: URL for the iframe src
+      description: Iframe URL.
     width:
       type: integer
       title: Width
-      description: Width of the iframe
+      description: Iframe width.
     height:
       type: integer
       title: Height
-      description: Height of the iframe
+      description: Iframe height.
     vertical_spacing:
       type: string
       title: Vertical spacing
-      description: Vertical spacing position (top, bottom, both)
+      description: Vertical spacing position (top, bottom, both).
       enum:
         - top
         - bottom
@@ -35,12 +35,12 @@ props:
     with_background:
       type: boolean
       title: With background
-      description: Whether to include a background
+      description: Whether to include a background.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.

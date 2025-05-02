@@ -8,55 +8,55 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the promo
+      description: Top content area.
     title:
       type: string
       title: Title
-      description: Title text
+      description: Title text.
     content:
       type: string
       title: Content
-      description: Main content text
+      description: Main content text.
     is_contained:
       type: boolean
       title: Contained
-      description: Whether the content is contained in a container
+      description: Whether the content is contained in a container.
     link:
       type: object
       title: Link
-      description: Call-to-action link
+      description: Call-to-action link.
       properties:
         text:
           type: string
           title: Text
-          description: Link text
+          description: Link text.
         url:
           type: string
           title: URL
-          description: Link URL
+          description: Link URL.
         is_new_window:
           type: boolean
           title: New Window
-          description: Whether to open link in a new window
+          description: Whether to open link in a new window.
         is_external:
           type: boolean
           title: External
-          description: Whether the link is external
+          description: Whether the link is external.
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the promo
+      description: Bottom promo content.
     vertical_spacing:
       type: string
       title: Vertical Spacing
-      description: Vertical spacing for the promo
+      description: Vertical spacing for the promo (top, bottom, or both).
       enum:
         - top
         - bottom
@@ -64,28 +64,28 @@ props:
     with_background:
       type: boolean
       title: With Background
-      description: Whether to display with a background
+      description: Whether to display with a background.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   content_slot:
     title: Content Slot
-    description: Content for the content area
+    description: Content area content
   content_left_slot:
     title: Content Left Slot
-    description: Content for the content left area
+    description: Left content area content
   content_right_slot:
     title: Content Right Slot
-    description: Content for the content right area
+    description: Right content area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

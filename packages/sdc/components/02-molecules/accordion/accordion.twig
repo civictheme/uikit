@@ -1,21 +1,27 @@
 {#
 /**
  * @file
- * Accordion component.
+ * CivicTheme Accordion component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - expand_all: [boolean] Whether to expand all panels by default.
- * - panels: [array] List of accordion panels:
+ * - panels: [array] Accordion panels:
+ *   Each item contains:
  *   - title: [string] Panel title.
  *   - content: [string] Panel content.
  *   - expanded: [boolean] Whether the panel is expanded by default.
- * - content_top: [string] Content displayed above the accordion.
- * - content_bottom: [string] Content displayed below the accordion.
+ * - content_top: [string] Accordion top content.
+ * - content_bottom: [string] Accordion bottom content.
  * - with_background: [boolean] Whether to display with a background.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - content_slot: [slot] Content area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Item List component stories.
+ */
+
 import Component from './item-list.twig';
 
 const meta = {

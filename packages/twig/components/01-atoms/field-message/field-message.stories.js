@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Field Message component stories.
+ */
+
 import Component from './field-message.twig';
 
 const meta = {

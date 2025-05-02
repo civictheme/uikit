@@ -1,32 +1,36 @@
 {#
 /**
  * @file
- * Banner component.
+ * CivicTheme Banner component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top1: [string] Content slot for top section.
+ * - content_top1: [string] Top section content.
  * - breadcrumb: [object] Breadcrumb navigation:
- *   - links: [array] List of breadcrumb links.
+ *   - links: [array] Breadcrumb links.
  *   - active_is_link: [boolean] Whether the active item is a link.
- * - content_top2: [string] Content slot for second top section.
- * - content_top3: [string] Content slot for third top section.
- * - content_middle: [string] Content slot for middle section.
- * - content: [string] Main content slot.
- * - content_bottom: [string] Content slot for bottom section.
- * - content_below: [string] Content slot for section below the banner.
+ * - content_top2: [string] Second top section content.
+ * - content_top3: [string] Third top section content.
+ * - content_middle: [string] Middle section content.
+ * - content: [string] Main content.
+ * - content_bottom: [string] Bottom section content.
+ * - content_below: [string] Below banner section content.
  * - site_section: [string] Site section name.
  * - title: [string] Banner title.
  * - is_decorative: [boolean] Whether to show as decorative.
- * - featured_image: [object] Featured image object:
+ * - featured_image: [object] Featured image:
  *   - url: [string] Image source URL.
  *   - alt: [string] Image alt text.
- * - background_image: [object] Background image object:
+ * - background_image: [object] Background image:
  *   - url: [string] Image source URL.
  *   - alt: [string] Image alt text.
- * - background_image_blend_mode: [string] Type of background image blending. Defaults to 'normal'.
+ * - background_image_blend_mode: [string] Background image blending type. Defaults to 'normal'.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - breadcrumb_slot: [slot] Breadcrumb content
+ * - featured_image_slot: [slot] Featured image content
  */
 #}
 

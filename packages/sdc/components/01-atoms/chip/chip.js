@@ -1,6 +1,5 @@
 /**
- * @file
- * Chip component.
+ * CivicTheme Chip component.
  */
 
 function CivicThemeChip(el) {

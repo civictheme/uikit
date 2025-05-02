@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Tag component stories.
+ */
+
 import Component from './tag.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

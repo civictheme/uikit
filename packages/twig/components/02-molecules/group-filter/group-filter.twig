@@ -1,22 +1,28 @@
 {#
 /**
  * @file
- * Group Filter component.
+ * CivicTheme Group Filter component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - title: [string] Title for filters.
- * - form_attributes: [string] Form attributes. If empty - the form will not be printed.
+ * - theme: [string] Theme variation (light or dark).
+ * - title: [string] Filter title.
+ * - form_attributes: [string] Form attributes (if empty, the form will not be printed).
  * - form_hidden_fields: [string] Form hidden fields.
- * - filters: [array] Filter object:
+ * - filters: [array] Filter objects:
+ *   Each item contains:
  *   - title: [string] Filter title.
  *   - content: [string] Filter content.
  * - submit_text: [string] Text on the submit button.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
- * - group_id: [string] Unique id for filter group.
+ * - content_top: [string] Filters top content.
+ * - content_bottom: [string] Filters bottom content.
+ * - group_id: [string] Unique ID for filter group.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - filters_slot: [slot] Filters area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 
@@ -36,14 +42,14 @@
         <div class="col-xxs-12">
 
           {% if content_top is not empty %}
-            {% block content_top %}
+            {% block content_top_slot %}
               <div class="ct-group-filter__content-top">
                 {{- content_top|raw -}}
               </div>
             {% endblock %}
           {% endif %}
 
-          {% block filters %}
+          {% block filters_slot %}
             {% set group = 'ct-group-filter--group-' ~ group_id|default(random(1000, 999)) %}
             {% set filters_items = [] %}
             {% for filter in filters %}
@@ -110,7 +116,7 @@
             {% endif %}
           {% endblock %}
 
-          {% block content_bottom %}
+          {% block content_bottom_slot %}
             {% if content_bottom is not empty %}
               <div class="ct-group-filter__content-bottom">
                 {{- content_bottom|raw -}}

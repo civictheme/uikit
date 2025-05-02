@@ -8,7 +8,7 @@ props:
     direction:
       type: string
       title: Direction
-      description: List direction (horizontal or vertical)
+      description: List direction (horizontal or vertical).
       enum:
         - horizontal
         - vertical
@@ -16,7 +16,7 @@ props:
     size:
       type: string
       title: Size
-      description: List size (large, regular, or small)
+      description: List size (large, regular, or small).
       enum:
         - large
         - regular
@@ -25,16 +25,16 @@ props:
     no_gap:
       type: boolean
       title: No gap
-      description: Whether to render without gaps
+      description: Whether to render without gaps.
     items:
       type: array
       title: Items
-      description: List items
+      description: List items.
     attributes:
       type: string
       title: Attributes
-      description: Additional HTML attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.

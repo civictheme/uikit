@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Button component stories.
+ */
+
 import Component from './button.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

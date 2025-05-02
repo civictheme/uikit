@@ -1,34 +1,50 @@
 {#
 /**
  * @file
- * List component.
+ * CivicTheme List component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - title: [string] List title.
- * - link_above: [object] Link object to display above the list:
+ * - link_above: [object] Above list link object:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content: [string] Main content for the list.
+ * - content: [string] List main content.
  * - filters: [string] Exposed filters content.
  * - results_count: [string] Results count text.
- * - rows_above: [string] Content to display above the rows.
+ * - rows_above: [string] Above rows content.
  * - rows: [string] Rows content.
- * - rows_below: [string] Content to display below the rows.
- * - empty: [string] Content to display when there are no results.
+ * - rows_below: [string] Below rows content.
+ * - empty: [string] No results content.
  * - pagination: [string] Pagination content.
  * - footer: [string] Footer content.
- * - link_below: [object] Link object to display below the list:
+ * - link_below: [object] Below list link object:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - vertical_spacing: [string] Vertical spacing for the list (top, bottom, or both).
+ * - vertical_spacing: [string] List vertical spacing (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - header_slot: [slot] Header content
+ * - title_slot: [slot] Title content
+ * - link_above_slot: [slot] Link above content
+ * - content_slot: [slot] Content
+ * - list_slot: [slot] List content
+ * - filters_slot: [slot] Filters content
+ * - rows_slot: [slot] Rows content
+ * - rows_above_slot: [slot] Rows above content
+ * - results_count_slot: [slot] Results count content
+ * - rows_below_slot: [slot] Rows below content
+ * - empty_slot: [slot] Empty content
+ * - list_below_slot: [slot] List below content
+ * - pagination_slot: [slot] Pagination content
+ * - footer_slot: [slot] Footer content
  */
 #}
 

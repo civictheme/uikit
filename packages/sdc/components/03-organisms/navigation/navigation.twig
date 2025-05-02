@@ -1,25 +1,29 @@
 {#
 /**
  * @file
- * Navigation component.
+ * CivicTheme Navigation component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - name: [string] Navigation name for nav element.
- * - items: [array] List of menu items:
- *   - title: [string] Menu item title.
+ * - items: [array] Menu items:
+ *   Each item contains:
+ *   - title: [string] Navigation title.
  *   - url: [string] Menu item URL.
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
- *   - below: [array] List of submenu items.
+ *   - below: [array] Submenu items.
  * - title: [string] Navigation title.
- * - type: [string] Navigation display type: none, inline, dropdown, drawer.
- * - dropdown_columns: [integer] Number of columns in the dropdown drawer.
+ * - type: [string] Navigation display type (none, inline, dropdown, drawer).
+ * - dropdown_columns: [integer] Dropdown drawer column count.
  * - dropdown_columns_fill: [boolean] Whether to fill columns.
  * - is_animated: [boolean] Whether to use animation for transitions.
  * - menu_id: [string] Optional menu ID used for grouping dropdown items.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - title_slot: [slot] Title area content
  */
 #}
 

@@ -8,86 +8,86 @@ props:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     content_top:
       type: string
       title: Content Top
-      description: Content slot for the top of the navigation
+      description: Top content area.
     content_bottom:
       type: string
       title: Content Bottom
-      description: Content slot for the bottom of the navigation
+      description: Bottom content area.
     top_menu:
       type: array
       title: Top Menu
-      description: List of menu items for the top section
+      description: Top section menu items.
       items:
         type: object
         properties:
           title:
             type: string
             title: Title
-            description: Menu item title
+            description: Menu item title.
           url:
             type: string
             title: URL
-            description: Menu item URL
+            description: Menu item URL.
           in_active_trail:
             type: boolean
             title: In Active Trail
-            description: Whether the item is in the active trail
+            description: Whether the item is in the active trail.
           is_expanded:
             type: boolean
             title: Expanded
-            description: Whether the item is expanded
+            description: Whether the item is expanded.
           below:
             type: array
             title: Below
-            description: List of submenu items
+            description: Submenu items.
     bottom_menu:
       type: array
       title: Bottom Menu
-      description: List of menu items for the bottom section
+      description: Bottom section menu items.
       items:
         type: object
         properties:
           title:
             type: string
             title: Title
-            description: Menu item title
+            description: Menu item title.
           url:
             type: string
             title: URL
-            description: Menu item URL
+            description: Menu item URL.
           in_active_trail:
             type: boolean
             title: In Active Trail
-            description: Whether the item is in the active trail
+            description: Whether the item is in the active trail.
           is_expanded:
             type: boolean
             title: Expanded
-            description: Whether the item is expanded
+            description: Whether the item is expanded.
           below:
             type: array
             title: Below
-            description: List of submenu items
+            description: Submenu items.
     modifier_class:
       type: string
       title: Modifier Class
-      description: Additional CSS classes
+      description: Additional CSS classes.
 slots:
   content_top_slot:
     title: Content Top Slot
-    description: Content for the content top area
+    description: Top content area content
   top_menu_slot:
     title: Top Menu Slot
-    description: Content for the top menu area
+    description: Top menu area content
   bottom_menu_slot:
     title: Bottom Menu Slot
-    description: Content for the bottom menu area
+    description: Bottom menu area content
   content_bottom_slot:
     title: Content Bottom Slot
-    description: Content for the content bottom area
+    description: Bottom content area content

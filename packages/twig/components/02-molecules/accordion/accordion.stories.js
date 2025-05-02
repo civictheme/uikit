@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Accordion component stories.
+ */
+
 import Component from './accordion.twig';
 
 const meta = {

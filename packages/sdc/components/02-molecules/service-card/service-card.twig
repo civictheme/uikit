@@ -1,20 +1,27 @@
 {#
 /**
  * @file
- * Service Card component.
+ * CivicTheme Service Card component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Content slot for the top of the card.
- * - title: [string] The text of card title.
- * - links: [array] List of links for the card:
+ * - content_top: [string] Top content area.
+ * - title: [string] Card title text.
+ * - links: [array] Card links:
+ *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_bottom: [string] Content slot for the bottom of the card.
+ * - content_bottom: [string] Bottom content area.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area
+ * - title_slot: [slot] Title area content
+ * - links_slot: [slot] Links area content
+ * - content_bottom_slot: [slot] Bottom content area
  */
 #}
 

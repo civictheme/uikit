@@ -1,26 +1,26 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Menu
 status: stable
-description: Menu component for displaying hierarchical navigation
+description: Menu component for hierarchical navigation
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variation (light or dark)
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     items:
       type: array
       title: Items
-      description: Menu links array with hierarchical structure
+      description: Menu links array.
     is_collapsible:
       type: boolean
       title: Is collapsible
-      description: Whether to collapse the menu
+      description: Whether to collapse the menu.
     modifier_class:
       type: string
       title: Modifier classes
-      description: Additional CSS classes
+      description: Additional CSS classes.

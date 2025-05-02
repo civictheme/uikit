@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Label component stories.
+ */
+
 import Component from './label.twig';
 
 const meta = {

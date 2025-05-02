@@ -1,21 +1,26 @@
 {#
 /**
  * @file
- * Logo component.
+ * CivicTheme Logo component.
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - type: [string] Logo display type:
-     - default: Display a Primary logo.
-     - stacked: Display both Primary and Secondary logos stacked vertically.
-     - inline: Display both primary and secondary logos inline horizontally.
-       On mobile, Secondary logo will be hidden.
-     - inline-stacked: Display both primary and secondary logos inline horizontally.
-       On mobile, this will automatically convert to 'stacked'.
+ * - type: [string] Logo display type (default, stacked, inline, inline-stacked).
  * - logos: [object] Object with 'primary' and 'secondary' keys:
- *   - breakpoint: [object] Object with 'mobile' and 'desktop' keys:
- *     - url: [string] Logo image URL.
- *     - alt: [string] Logo image alt text.
+ *   - primary: [object] Primary logo configuration:
+ *     - mobile: [object] Mobile logo configuration:
+ *       - url: [string] Optional URL that wraps the logo.
+ *       - alt: [string] Logo image alt text.
+ *     - desktop: [object] Desktop logo configuration:
+ *       - url: [string] Optional URL that wraps the logo.
+ *       - alt: [string] Logo image alt text.
+ *   - secondary: [object] Secondary logo configuration:
+ *     - mobile: [object] Mobile logo configuration:
+ *       - url: [string] Optional URL that wraps the logo.
+ *       - alt: [string] Logo image alt text.
+ *     - desktop: [object] Desktop logo configuration:
+ *       - url: [string] Optional URL that wraps the logo.
+ *       - alt: [string] Logo image alt text.
  * - url: [string] Optional URL that wraps the logo.
  * - title: [string] Optional logo title attribute.
  * - attributes: [string] Additional HTML attributes.
