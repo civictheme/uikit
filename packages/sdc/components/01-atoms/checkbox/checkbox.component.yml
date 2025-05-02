@@ -31,19 +31,19 @@ props:
     is_checked:
       type: boolean
       title: Checked
-      description: Whether to mark the checkbox as checked
+      description: Whether the checkbox is checked
     is_required:
       type: boolean
       title: Required
-      description: Whether to mark the checkbox as required
+      description: Whether the checkbox is required
     is_invalid:
       type: boolean
       title: Invalid
-      description: Whether to mark the checkbox as invalid
+      description: Whether the checkbox is invalid
     is_disabled:
       type: boolean
       title: Disabled
-      description: Whether to mark the checkbox as disabled
+      description: Whether the checkbox is disabled
     attributes:
       type: string
       title: Attributes
