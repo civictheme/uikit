@@ -1,15 +1,14 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Table of contents
-status: experimental
-description: Table of contents component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Table of Contents
+status: stable
+description: Component for displaying a table of contents with links to sections of a page
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
@@ -29,34 +28,35 @@ props:
     links:
       type: array
       title: Links
-      description: Array of links. If provided, the TOC will be generated from the links.
+      description: Array of links for the table of contents
       items:
         type: object
         properties:
-          url:
-            type: string
           title:
             type: string
+            title: Title
+            description: Link title
+          url:
+            type: string
+            title: URL
+            description: Link URL
     anchor_selector:
       type: string
-      title: Anchor selector
-      description: CSS selector for headings to include in TOC (e.g. 'h2, h3')
+      title: Anchor Selector
+      description: CSS selector for headings to include in TOC
     scope_selector:
       type: string
-      title: Scope selector
+      title: Scope Selector
       description: CSS selector for the content area to generate TOC from
+    content:
+      type: string
+      title: Content
+      description: Content (only displays when links are not provided)
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots:
-  content:
-    title: Content
-    description: Content to display in the table of contents
-libraryOverrides:
-  js:
-    table-of-contents.js: {}
+      title: Modifier Class
+      description: Additional CSS classes

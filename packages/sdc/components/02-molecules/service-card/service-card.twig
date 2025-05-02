@@ -4,17 +4,17 @@
  * Service Card component.
  *
  * Variables:
- * - content_top: [string] Content slot.
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Content slot for the top of the card.
  * - title: [string] The text of card title.
- * - links: [array] Links array:
- *   - title [string] Title.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - links: [array] Array of links for the card:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content_bottom: [string] Content slot for the bottom of the card.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -24,7 +24,7 @@
 {% if title is not empty %}
   <div class="ct-service-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-service-card__content">
-      {% block content_top %}
+      {% block content_top_slot %}
         {% if content_top is not empty %}
           <div class="ct-service-card__content-top">
             {{- content_top|raw -}}
@@ -32,7 +32,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block title %}
+      {% block title_slot %}
         {% if title is not empty %}
           {% include 'civictheme:heading' with {
             theme: theme,
@@ -43,7 +43,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block links %}
+      {% block links_slot %}
         {% if links is not empty %}
           {% set list_items = [] %}
           {% for link in links %}
@@ -68,7 +68,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block content_bottom %}
+      {% block content_bottom_slot %}
         {% if content_bottom is not empty %}
           <div class="ct-service-card__content-bottom">
             {{- content_bottom|raw -}}

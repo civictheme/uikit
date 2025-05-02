@@ -1,18 +1,18 @@
 {#
 /**
  * @file
- * Social links Component.
+ * Social Links component.
  *
  * Variables:
- * - items: [array] Array of items:
- *   - title: [string] Title to be added to the 'title' attribute
+ * - theme: [string] Theme variation (light or dark).
+ * - items: [array] Array of social media links:
+ *   - title: [string] Title to be added to the 'title' attribute.
  *   - icon: [string] Icon name from the existing icon set.
- *   - icon_html [string] Alternative icon HTML for embedding.
+ *   - icon_html: [string] Alternative icon HTML for embedding.
  *   - url: [string] Link URL.
  * - with_border: [boolean] Whether icons have borders.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -23,7 +23,7 @@
 {% if items is not empty %}
   <div class="ct-social-links {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
 
-    {% block items %}
+    {% block items_slot %}
       {% set items_rendered = [] %}
       {% for item in items %}
         {%- set item_rendered %}

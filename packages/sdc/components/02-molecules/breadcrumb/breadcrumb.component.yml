@@ -1,42 +1,41 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Breadcrumb component
-status: experimental
-description: Breadcrumb navigation component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Breadcrumb
+status: stable
+description: Navigation component displaying hierarchical path links
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
-      default: light
     links:
       type: array
       title: Links
-      description: Array of link objects
+      description: Array of breadcrumb links
       items:
         type: object
         properties:
           text:
             type: string
+            title: Text
             description: Link text
           url:
             type: string
+            title: URL
             description: Link URL
     active_is_link:
       type: boolean
-      title: Active_is_link
-      description: Show active element as a link
+      title: Active is link
+      description: Whether to show the active element as a link
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes

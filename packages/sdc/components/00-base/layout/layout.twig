@@ -4,24 +4,24 @@
  * Layout component.
  *
  * Variables:
- * - content_top: Content top slot.
- * - sidebar_top_left: Top left sidebar slot.
- * - sidebar_top_left_attributes: Top left sidebar attributes.
- * - sidebar_top_right: Top right sidebar slot.
- * - sidebar_top_right_attributes: Top right sidebar attributes.
- * - content: Content slot.
- * - content_attributes: Content attributes.
- * - sidebar_bottom_left: Bottom left sidebar slot.
- * - sidebar_bottom_left_attributes: Bottom left sidebar attributes.
- * - sidebar_bottom_right: Bottom right sidebar slot.
- * - sidebar_bottom_right_attributes: Bottom right sidebar attributes.
- * - content_bottom: Content bottom slot.
- * - hide_sidebar_left: Whether to force hide the left sidebar.
- * - hide_sidebar_right: Whether to force hide the right sidebar.
- * - is_contained: Whether the page is to be contained.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - content_top: [string] Content for top of main content area.
+ * - sidebar_top_left: [string] Content for top left sidebar.
+ * - sidebar_top_right: [string] Content for top right sidebar.
+ * - content: [string] Main content.
+ * - sidebar_bottom_left: [string] Content for bottom left sidebar.
+ * - sidebar_bottom_right: [string] Content for bottom right sidebar.
+ * - content_bottom: [string] Content for bottom of main content area.
+ * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
+ * - hide_sidebar_right: [boolean] Whether to hide the right sidebar.
+ * - is_contained: [boolean] Whether the page content should be contained.
+ * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
+ * - sidebar_top_left_attributes: [string] HTML attributes for top left sidebar.
+ * - sidebar_top_right_attributes: [string] HTML attributes for top right sidebar.
+ * - content_attributes: [string] HTML attributes for main content.
+ * - sidebar_bottom_left_attributes: [string] HTML attributes for bottom left sidebar.
+ * - sidebar_bottom_right_attributes: [string] HTML attributes for bottom right sidebar.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -47,7 +47,7 @@
 
 {% if content %}
 	<main class="ct-layout {{ modifier_class -}}" role="main" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-		{% block content_top %}
+		{% block content_top_slot %}
 			{% if content_top is not empty %}
 				{{- content_top|raw -}}
 			{% endif %}
@@ -55,7 +55,7 @@
 
 		<div class="ct-layout__inner {{ is_contained_class }}">
 			{% if content is not empty %}
-				{% block content %}
+				{% block content_slot %}
 					<section class="ct-layout__main" {% if content_attributes is not empty %}{{- content_attributes|raw -}}{% endif %}>
 						{{- content|raw -}}
 					</section>
@@ -63,7 +63,7 @@
 			{% endif %}
 
 			{% if sidebar_top_left is not empty and has_sidebar_left %}
-				{% block sidebar_top_left %}
+				{% block sidebar_top_left_slot %}
 					<aside class="ct-layout__sidebar_top_left" {% if sidebar_top_left_attributes is not empty %}{{- sidebar_top_left_attributes|raw -}}{% endif %}>
 						{{- sidebar_top_left|raw -}}
 					</aside>
@@ -71,7 +71,7 @@
 			{% endif %}
 
 			{% if sidebar_top_right is not empty and has_sidebar_right %}
-				{% block sidebar_top_right %}
+				{% block sidebar_top_right_slot %}
 					<aside class="ct-layout__sidebar_top_right" {% if sidebar_top_right_attributes is not empty %}{{- sidebar_top_right_attributes|raw -}}{% endif %}>
 						{{- sidebar_top_right|raw -}}
 					</aside>
@@ -79,7 +79,7 @@
 			{% endif %}
 
 			{% if sidebar_bottom_left is not empty and has_sidebar_left %}
-				{% block sidebar_bottom_left %}
+				{% block sidebar_bottom_left_slot %}
 					<aside class="ct-layout__sidebar_bottom_left" {% if sidebar_bottom_left_attributes is not empty %}{{- sidebar_bottom_left_attributes|raw -}}{% endif %}>
 						{{- sidebar_bottom_left|raw -}}
 					</aside>
@@ -87,7 +87,7 @@
 			{% endif %}
 
 			{% if sidebar_bottom_right is not empty and has_sidebar_right %}
-				{% block sidebar_bottom_right %}
+				{% block sidebar_bottom_right_slot %}
 					<aside class="ct-layout__sidebar_bottom_right" {% if sidebar_bottom_right_attributes is not empty %}{{- sidebar_bottom_right_attributes|raw -}}{% endif %}>
 						{{- sidebar_bottom_right|raw -}}
 					</aside>
@@ -95,7 +95,7 @@
 			{% endif %}
 		</div>
 
-		{% block content_bottom %}
+		{% block content_bottom_slot %}
 			{% if content_bottom is not empty %}
 				{{- content_bottom|raw -}}
 			{% endif %}

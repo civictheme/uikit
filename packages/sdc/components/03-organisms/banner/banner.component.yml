@@ -1,116 +1,112 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Banner component
-status: experimental
-description: >-
-  A banner component with multiple content sections and optional
-  background/featured images
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Banner
+status: stable
+description: Banner component with multiple content areas, breadcrumb, featured image and background
 props:
   type: object
   properties:
-    content_top1:
-      type: string
-      title: Content_top1
-      description: Content slot
-    breadcrumb:
-      type: array
-      title: Breadcrumb
-      description: Breadcrumb links
-    content_top2:
-      type: string
-      title: Content_top2
-      description: Content slot
-    content_top3:
-      type: string
-      title: Content_top3
-      description: Content slot
-    content_middle:
-      type: string
-      title: Content_middle
-      description: Content slot
-    content:
-      type: string
-      title: Content
-      description: Content slot
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot
-    content_below:
-      type: string
-      title: Content_below
-      description: Content slot
-    site_section:
-      type: string
-      title: Site_section
-      description: Site section
-    title:
-      type: string
-      title: Title
-      description: Title
-    is_decorative:
-      type: boolean
-      title: Is_decorative
-      description: Show as decorative
-    featured_image:
-      type: object
-      title: Featured_image
-      description: Featured image object
-    background_image:
-      type: object
-      title: Background_image
-      description: Background image object
-    background_image_blend_mode:
-      type: string
-      title: Background_image_blend_mode
-      description: Type of the background image blending
-      default: normal
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
-    modifier_class:
+    content_top1:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Content Top 1
+      description: Content slot for top section
+    breadcrumb:
+      type: object
+      title: Breadcrumb
+      description: Breadcrumb navigation
+      properties:
+        links:
+          type: array
+          title: Links
+          description: Array of breadcrumb links
+        active_is_link:
+          type: boolean
+          title: Active Is Link
+          description: Whether the active item is a link
+    content_top2:
+      type: string
+      title: Content Top 2
+      description: Content slot for second top section
+    content_top3:
+      type: string
+      title: Content Top 3
+      description: Content slot for third top section
+    content_middle:
+      type: string
+      title: Content Middle
+      description: Content slot for middle section
+    content:
+      type: string
+      title: Content
+      description: Main content slot
+    content_bottom:
+      type: string
+      title: Content Bottom
+      description: Content slot for bottom section
+    content_below:
+      type: string
+      title: Content Below
+      description: Content slot for section below the banner
+    site_section:
+      type: string
+      title: Site Section
+      description: Site section name
+    title:
+      type: string
+      title: Title
+      description: Banner title
+    is_decorative:
+      type: boolean
+      title: Decorative
+      description: Whether to show as decorative
+    featured_image:
+      type: object
+      title: Featured Image
+      description: Featured image object
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Image source URL
+        alt:
+          type: string
+          title: Alt
+          description: Image alt text
+    background_image:
+      type: object
+      title: Background Image
+      description: Background image object
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Image source URL
+        alt:
+          type: string
+          title: Alt
+          description: Image alt text
+    background_image_blend_mode:
+      type: string
+      title: Background Image Blend Mode
+      description: Type of background image blending
     attributes:
       type: string
       title: Attributes
-      description: Banner attributes
+      description: Additional HTML attributes
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  content_top1:
-    title: Content top1
-    description: Content top 1 block
-  breadcrumb:
-    title: Breadcrumb
-    description: Breadcrumb block
-  content_top2:
-    title: Content top2
-    description: Content top 2 block
-  content_top3:
-    title: Content top3
-    description: Content top 3 block
-  site_section:
-    title: Site section
-    description: Site section block
-  title:
-    title: Title
-    description: Title block
-  content_middle:
-    title: Content middle
-    description: Content middle block
-  content:
-    title: Content
-    description: Main content block
-  featured_image:
-    title: Featured image
-    description: Featured image block
-  content_below:
-    title: Content below
-    description: Content below block
-  content_bottom:
-    title: Content bottom
-    description: Content bottom block
+  breadcrumb_slot:
+    title: "Breadcrumb Slot"
+    description: "Content for the breadcrumb area"
+  featured_image_slot:
+    title: "Featured Image Slot"
+    description: "Content for the featured image area"

@@ -1,28 +1,28 @@
 {#
 /**
  * @file
- * Video component.
+ * Video Player component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
+ * - theme: [string] Theme variation (light or dark).
  * - title: [string] Title for the iframe.
- * - sources: [array] Array of sources:
+ * - sources: [array] Array of video sources:
  *   - url: [string] URL of the source.
  *   - type: [string] Type name like 'video/mp4'.
  * - embedded_source: [string] URL for the iframe.
- * - raw_source: [string] HTML of raw embedded video player
+ * - raw_source: [string] HTML of raw embedded video player.
  * - poster: [string] Optional URL of the video poster image.
  * - width: [string] Width of the iframe.
  * - height: [string] Height of the video.
- * - transcript_link: [object] Video transcript link.
+ * - transcript_link: [object] Video transcript link:
  *   - text: [string] Button text.
  *   - title: [string] Button title.
  *   - url: [string] URL for the link button.
- *   - is_new_window: [boolean] Open in a new window or not.
- *   - is_external: [boolean] If link is external or not.
+ *   - is_new_window: [boolean] Whether to open in a new window.
+ *   - is_external: [boolean] Whether the link is external.
  *   - attributes: [string] Additional attributes.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -31,7 +31,7 @@
 
 {% if sources is not empty or embedded_source is not empty or raw_source is not empty %}
   <div class="ct-video-player {{ modifier_class -}}">
-    {% block video %}
+    {% block video_slot %}
       <div class="ct-video-player__wrapper">
         {% if sources is not empty %}
           {% include 'civictheme:video' with {
@@ -58,7 +58,7 @@
       </div>
     {% endblock %}
 
-    {% block links %}
+    {% block links_slot %}
       <div class="ct-video-player__links">
         {% if transcript_link.url is defined and transcript_link.url is not empty %}
           <div class="ct-video-player__links__transcript">

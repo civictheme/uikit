@@ -1,17 +1,14 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Video component
-status: experimental
-description: >-
-  Video component that can display videos from different sources with transcript
-  links
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Video Player
+status: stable
+description: Component for displaying videos with various source options
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
@@ -19,10 +16,6 @@ props:
       type: string
       title: Title
       description: Title for the iframe
-    poster:
-      type: string
-      title: Poster
-      description: Optional URL of the video poster image
     sources:
       type: array
       title: Sources
@@ -32,18 +25,24 @@ props:
         properties:
           url:
             type: string
+            title: URL
             description: URL of the source
           type:
             type: string
+            title: Type
             description: Type name like 'video/mp4'
     embedded_source:
       type: string
-      title: Iframe Url
-      description: URL for the iframe src
+      title: Embedded Source
+      description: URL for the iframe
     raw_source:
       type: string
-      title: HTML of video player
-      description: Raw HTML of embedded video player (already rendered).
+      title: Raw Source
+      description: HTML of raw embedded video player
+    poster:
+      type: string
+      title: Poster
+      description: Optional URL of the video poster image
     width:
       type: string
       title: Width
@@ -54,20 +53,45 @@ props:
       description: Height of the video
     transcript_link:
       type: object
-      title: Transcript_link
+      title: Transcript Link
       description: Video transcript link
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Button text
+        title:
+          type: string
+          title: Title
+          description: Button title
+        url:
+          type: string
+          title: URL
+          description: URL for the link button
+        is_new_window:
+          type: boolean
+          title: New Window
+          description: Whether to open in a new window
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external
+        attributes:
+          type: string
+          title: Attributes
+          description: Additional attributes
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  video:
-    title: Video
-    description: Video content block
-  links:
-    title: Links
-    description: Links content block including transcript
+  video_slot:
+    title: "Video Slot"
+    description: "Content for the video area"
+  links_slot:
+    title: "Links Slot"
+    description: "Content for the links area"

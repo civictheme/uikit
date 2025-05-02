@@ -4,22 +4,23 @@
  * Button component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - kind: [string] Button kind: submit, reset, button, link.
- * - type: [string] Button type: primary, primary, secondary, tertiary.
- * - size: [string] Button size: large, regular, small.
+ * - theme: [string] Theme variation (light or dark).
+ * - kind: [string] Button kind (submit, reset, button, link).
+ * - type: [string] Button type (primary, secondary, tertiary).
+ * - size: [string] Button size (large, regular, small).
  * - icon: [string] Icon name.
- * - icon_placement: [string] Icon position: left, right
+ * - icon_placement: [string] Icon position (before or after).
  * - icon_group_disabled: [boolean] Disable icon and last word grouping.
- * - icon_single_only: [boolean] Only show 1 icon. If icon and is_external, external will take preference.
+ * - icon_single_only: [boolean] Only show 1 icon (if both icon and is_external are present, external takes preference).
  * - text: [string] Button text.
  * - url: [string] URL for the link button.
  * - allow_html: [boolean] Allow HTML in text.
- * - is_new_window: [boolean] Open in a new window or not.
- * - is_external: [boolean] If link is external or not.
- * - is_disabled: [boolean] Disabled or not.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - is_new_window: [boolean] Open in a new window.
+ * - is_external: [boolean] Indicates if the link is external.
+ * - is_disabled: [boolean] Indicates if the button is disabled.
+ * - is_dismissable: [boolean] Indicates if the button can be dismissed.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

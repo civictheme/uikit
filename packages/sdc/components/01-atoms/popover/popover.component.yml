@@ -1,45 +1,69 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Popover component
-status: experimental
-description: A popover component with trigger and content panel
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Popover
+status: stable
+description: Interactive popover component for displaying content in a collapsible panel
 props:
   type: object
   properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark)
+      enum:
+        - light
+        - dark
     trigger:
       type: object
       title: Trigger
-      description: Trigger link object
+      description: Trigger link object for the popover
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Trigger text
+        url:
+          type: string
+          title: URL
+          description: Optional URL for the trigger
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open link in a new window
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external
     content:
       type: string
       title: Content
       description: Content of popover panel
+    content_top:
+      type: string
+      title: Top content
+      description: Content for the top section of the popover
+    content_bottom:
+      type: string
+      title: Bottom content
+      description: Content for the bottom section of the popover
     group:
       type: string
       title: Group
-      description: Group name
-    theme:
-      type: string
-      title: Theme
-      description: 'Theme: light, dark'
-      enum:
-        - light
-        - dark
+      description: Group name for controlling multiple popovers together
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes
 slots:
-  content_top:
-    title: Content top
-    description: Top content block
-  content:
-    title: Content
-    description: Main content block
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

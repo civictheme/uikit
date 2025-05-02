@@ -1,9 +1,7 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Back to Top component
-status: experimental
-description: A component that provides a back to top button functionality
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Back to Top
+status: stable
+description: Button component that allows users to quickly return to the top of the page
 props:
   type: object
   properties: {}
-slots: {}

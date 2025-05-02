@@ -4,13 +4,13 @@
  * Tag List component.
  *
  * Variables:
- * - content_top: [string] Content slot.
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Content slot for the top of the tag list.
  * - tags: [array] Array of tags.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - attributes: [string] Additional attributes.
- * - modifier_class:[string] Additional classes.
+ * - content_bottom: [string] Content slot for the bottom of the tag list.
+ * - vertical_spacing: [string] Vertical spacing for the tag list (none, top, bottom, both).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -20,7 +20,7 @@
 
 {% if tags is not empty %}
   <div class="ct-tag-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% block content_top %}
+    {% block content_top_slot %}
       {% if content_top is not empty %}
         <div class="ct-tag-list__content-top">
           {{- content_top|raw -}}
@@ -28,7 +28,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block content %}
+    {% block content_slot %}
       {% if tags %}
         {% set tag_items = [] %}
         {% for tag in tags %}
@@ -48,7 +48,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block content_bottom %}
+    {% block content_bottom_slot %}
       {% if content_bottom is not empty %}
         <div class="ct-tag-list__content-bottom">
           {{- content_bottom|raw -}}

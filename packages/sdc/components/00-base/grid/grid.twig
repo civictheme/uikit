@@ -6,22 +6,17 @@
  * Variables:
  * - items: [array] Array of column items.
  * - row_element: [string] Row element.
- * - row_class: [string] Optional row class override. Deffaults to 'row'.
+ * - row_class: [string] Optional row class override (defaults to 'row').
  * - row_attributes: [string] Additional row attributes.
  * - column_element: [string] Column element.
- * - column_class: [string] Optional column class override. Defaults to 'col' if
- *   column auto-generation is not required (template_column_count is 0),
- *   otherwise it is appended to the auto-generated column class list.
+ * - column_class: [string] Optional column class override (defaults to 'col' if template_column_count is 0).
  * - column_attributes: [string] Additional column attributes.
  * - use_container: [boolean] Whether to use container or not.
- * - is_fluid: [boolean] Whether the grid is fluid or not. Defaults to false.
- *   Applies only if `use_container` is true.
- * - template_column_count: [number] Number of columns in the row. If 0 - the
- *   auto columns will be used where column width will be calculated
- *   automatically. Defaults to 0.
+ * - is_fluid: [boolean] Whether the grid is fluid or not (applies only if use_container is true).
+ * - template_column_count: [number] Number of columns in the row (0 for auto columns).
  * - fill_width: [boolean] Stretch "hanging" items to the full width of the row.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

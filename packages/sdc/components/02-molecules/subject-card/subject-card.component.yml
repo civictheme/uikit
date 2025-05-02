@@ -1,26 +1,34 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
 name: Subject Card
-status: experimental
-description: Subject Card component
+status: stable
+description: Card component for displaying a subject with image and title
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
-    image_over:
-      type: string
-      title: Image_over
-      description: Content slot
     image:
       type: object
       title: Image
-      description: Image object
+      description: Image for the card
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Image URL
+        alt:
+          type: string
+          title: Alt text
+          description: Image alt text
+    image_over:
+      type: string
+      title: Image Over
+      description: Content slot for overlay on the image
     title:
       type: string
       title: Title
@@ -28,22 +36,31 @@ props:
     link:
       type: object
       title: Link
-      description: Link object
+      description: Link object for the card
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Link URL
+        is_new_window:
+          type: boolean
+          title: New Window
+          description: Whether to open link in a new window
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  image:
-    title: Image
-    description: Image block slot
-  image_over:
-    title: Image over
-    description: Image over block slot
-  title:
-    title: Title
-    description: Title block slot
+  image_slot:
+    title: "Image Slot"
+    description: "Content for the image area"
+  image_over_slot:
+    title: "Image Over Slot"
+    description: "Content for the image over area"
+  title_slot:
+    title: "Title Slot"
+    description: "Content for the title area"

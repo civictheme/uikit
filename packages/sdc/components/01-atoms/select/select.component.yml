@@ -1,91 +1,99 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Select component
-status: experimental
-description: A select form control component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Select
+status: stable
+description: Select dropdown form element with customizable options and states
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
-      default: light
+    id:
+      type: string
+      title: ID
+      description: DOM ID attribute
     name:
       type: string
       title: Name
-      description: DOM name
-    id:
-      type: string
-      title: DOM Element ID
+      description: DOM name (required)
     is_multiple:
       type: boolean
-      title: Is_multiple
-      description: Is multiple
+      title: Multiple
+      description: Whether to allow multiple selections
     options:
       type: array
       title: Options
-      description: Options
+      description: Array of select options
       items:
         type: object
         properties:
           type:
             type: string
-            description: 'Option type: option group (optgroup) or option (option)'
+            title: Type
+            description: Option type (option group or option)
             enum:
               - optgroup
               - option
           label:
             type: string
+            title: Label
             description: Option label
           value:
             type: string
+            title: Value
             description: Option value
           is_selected:
             type: boolean
-            description: Flag whether option is selected
+            title: Selected
+            description: Whether the option is selected
           is_disabled:
             type: boolean
-            description: Flag whether option is disabled
+            title: Disabled
+            description: Whether the option is disabled
           options:
             type: array
+            title: Nested options
             description: Array of options (applies to optgroup type)
             items:
               type: object
               properties:
                 label:
                   type: string
+                  title: Label
                   description: Option label
                 value:
                   type: string
+                  title: Value
                   description: Option value
                 is_selected:
                   type: boolean
-                  description: Flag whether option is selected
+                  title: Selected
+                  description: Whether the option is selected
                 is_disabled:
                   type: boolean
-                  description: Flag whether option is disabled
+                  title: Disabled
+                  description: Whether the option is disabled
     is_invalid:
       type: boolean
-      title: Is_invalid
-      description: Denote if the control is invalid
+      title: Invalid
+      description: Whether to mark the select as invalid
     is_disabled:
       type: boolean
-      title: Is_disabled
-      description: Denote if the control is disabled
+      title: Disabled
+      description: Whether to mark the select as disabled
     is_required:
       type: boolean
-      title: Is_required
-      description: Denote if the control is required
+      title: Required
+      description: Whether to mark the select as required
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes

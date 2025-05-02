@@ -1,30 +1,30 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Promo Card component
-status: experimental
-description: A promo card component that displays content with optional image and link
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Promo Card
+status: stable
+description: Card component for displaying promotional content with image, title, summary, date, and tags
 props:
   type: object
   properties:
-    content_top:
+    theme:
       type: string
-      title: Content_top
-      description: Content slot
-    image_over:
-      type: string
-      title: Image_over
-      description: Content slot for image over
-    content_middle:
-      type: string
-      title: Content_middle
-      description: Content slot
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot for bottom of Card
+      title: Theme
+      description: Theme variation (light or dark)
+      enum:
+        - light
+        - dark
     image:
       type: object
       title: Image
+      description: Image for the card
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Image URL
+        alt:
+          type: string
+          title: Alt text
+          description: Image alt text
     subtitle:
       type: string
       title: Subtitle
@@ -35,76 +35,104 @@ props:
       description: Start date and time
     date_iso:
       type: string
-      title: Date_iso
+      title: ISO Date
       description: Start date and time in ISO format
     date_end:
       type: string
-      title: Formatted end time.
-      description:
+      title: End Date
+      description: Formatted end time
     date_end_iso:
       type: string
-      title: End date in ISO format.
+      title: ISO End Date
+      description: End time in ISO format
     title:
       type: string
       title: Title
-      description: Title
+      description: Title text for the card
     summary:
       type: string
       title: Summary
-      description: Summary
+      description: Summary text for the card
     link:
       type: object
       title: Link
+      description: Link object for the card
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Link text
+        url:
+          type: string
+          title: URL
+          description: Link URL
+        is_new_window:
+          type: boolean
+          title: New Window
+          description: Whether to open link in a new window
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external
     tags:
       type: array
       title: Tags
-      description: Array of tags
-    theme:
+      description: Array of tags for the card
+    content_top:
       type: string
-      title: Theme
-      description: 'Theme: light, dark'
-      enum:
-        - light
-        - dark
+      title: Content Top
+      description: Content slot for the top of the card
+    image_over:
+      type: string
+      title: Image Over
+      description: Content slot for overlay on the image
+    content_middle:
+      type: string
+      title: Content Middle
+      description: Content slot for the middle of the card
+    content_bottom:
+      type: string
+      title: Content Bottom
+      description: Content slot for the bottom of the card
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  image:
-    title: Image
-    description: Image block slot
-  image_over:
-    title: Image over
-    description: Image over block slot
-  content:
-    title: Content
-    description: Main content block slot
-  content_top:
-    title: Content top
-    description: Top content block slot
-  subtitle:
-    title: Subtitle
-    description: Subtitle block slot
-  date:
-    title: Date
-    description: Date block slot
-  title:
-    title: Title
-    description: Title block slot
-  content_middle:
-    title: Content middle
-    description: Middle content block slot
-  summary:
-    title: Summary
-    description: Summary block slot
-  content_tags:
-    title: Content tags
-    description: Tags content block slot
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block slot
+  image_slot:
+    title: "Image Slot"
+    description: "Content for the image area"
+  image_over_slot:
+    title: "Image Over Slot"
+    description: "Content for the image over area"
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  subtitle_slot:
+    title: "Subtitle Slot"
+    description: "Content for the subtitle area"
+  date_slot:
+    title: "Date Slot"
+    description: "Content for the date area"
+  title_slot:
+    title: "Title Slot"
+    description: "Content for the title area"
+  content_middle_slot:
+    title: "Content Middle Slot"
+    description: "Content for the content middle area"
+  summary_slot:
+    title: "Summary Slot"
+    description: "Content for the summary area"
+  content_tags_slot:
+    title: "Content Tags Slot"
+    description: "Content for the content tags area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

@@ -1,15 +1,14 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Message component
-status: experimental
-description: Displays a message with different themes and types
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Message
+status: stable
+description: Message component for displaying various types of notifications
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme variant
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
@@ -22,21 +21,19 @@ props:
         - error
         - warning
         - success
-      default: information
     title:
       type: string
       title: Title
-      description: Message title
+      description: Title text
     description:
       type: string
       title: Description
       description: Description text
-    modifier_class:
-      type: string
-      title: Modifier_class
-      description: Additional classes
     attributes:
-      type: object
+      type: string
       title: Attributes
       description: Additional HTML attributes
-slots: {}
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes

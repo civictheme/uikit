@@ -1,33 +1,31 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Datetime component
-status: experimental
-description: A component for displaying date and time ranges
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: DateTime
+status: stable
+description: Date/time component with configurable formatting options
 props:
   type: object
   properties:
     start:
       type: string
-      title: Start
+      title: Start time
       description: Formatted start time
     start_iso:
       type: string
-      title: Start_iso
+      title: Start time ISO
       description: Start time in ISO format
     end:
       type: string
-      title: End
+      title: End time
       description: Formatted end time
     end_iso:
       type: string
-      title: End_iso
+      title: End time ISO
       description: End time in ISO format
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes

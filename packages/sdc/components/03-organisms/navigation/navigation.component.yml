@@ -1,26 +1,48 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Navigation component
-status: experimental
-description: Navigation component with multiple display types
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Navigation
+status: stable
+description: Navigation component for displaying a menu with various display types
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
     name:
       type: string
       title: Name
-      description: Navigation name for <nav> element
+      description: Navigation name for nav element
     items:
       type: array
       title: Items
       description: Array of menu items
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Title
+            description: Menu item title
+          url:
+            type: string
+            title: URL
+            description: Menu item URL
+          in_active_trail:
+            type: boolean
+            title: In Active Trail
+            description: Whether the item is in the active trail
+          is_expanded:
+            type: boolean
+            title: Expanded
+            description: Whether the item is expanded
+          below:
+            type: array
+            title: Below
+            description: Array of submenu items
     title:
       type: string
       title: Title
@@ -28,7 +50,7 @@ props:
     type:
       type: string
       title: Type
-      description: 'One of: none, inline, dropdown, drawer'
+      description: Navigation display type
       enum:
         - none
         - inline
@@ -36,29 +58,29 @@ props:
         - drawer
     dropdown_columns:
       type: integer
-      title: Dropdown_columns
+      title: Dropdown Columns
       description: Number of columns in the dropdown drawer
     dropdown_columns_fill:
       type: boolean
-      title: Dropdown_columns_fill
-      description: Fill columns
+      title: Dropdown Columns Fill
+      description: Whether to fill columns
     is_animated:
       type: boolean
-      title: Is_animated
-      description: Use animation for transitions
+      title: Animated
+      description: Whether to use animation for transitions
     menu_id:
       type: string
-      title: Menu_id
+      title: Menu ID
       description: Optional menu ID used for grouping dropdown items
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  title:
-    title: Title
-    description: Slot for custom title rendering
+  title_slot:
+    title: "Title Slot"
+    description: "Content for the title area"

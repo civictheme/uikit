@@ -4,15 +4,15 @@
  * Header component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - content_top1: [string] Content slot.
- * - content_top2: [string] Content slot.
- * - content_top3: [string] Content slot.
- * - content_middle1: [string] Content slot.
- * - content_middle2: [string] Content slot.
- * - content_middle3: [string] Content slot.
- * - content_bottom1: [string] Content slot.
- * - modifier_class: [string] Additional classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top1: [string] First content slot in the top section.
+ * - content_top2: [string] Second content slot in the top section.
+ * - content_top3: [string] Third content slot in the top section.
+ * - content_middle1: [string] First content slot in the middle section.
+ * - content_middle2: [string] Second content slot in the middle section.
+ * - content_middle3: [string] Third content slot in the middle section.
+ * - content_bottom1: [string] Content slot in the bottom section.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -26,7 +26,7 @@
       <div class="ct-header__top hide-xxs show-m">
 
         {% if content_top1 is not empty %}
-          {% block content_top1 %}
+          {% block content_top1_slot %}
             <div class="container">
               <div class="row">
                 <div class="col-xxs-12">
@@ -43,7 +43,7 @@
           <div class="container">
             <div class="row">
 
-              {% block content_top2 %}
+              {% block content_top2_slot %}
                 <div class="col-xxs-12 col-m-4">
                   <div class="ct-header__content-top2">
                     {{ content_top2|raw }}
@@ -51,7 +51,7 @@
                 </div>
               {% endblock %}
 
-              {% block content_top3 %}
+              {% block content_top3_slot %}
                 <div class="col-xxs-12 col-m-8">
                   <div class="ct-header__content-top3">
                     {{ content_top3|raw }}
@@ -69,7 +69,7 @@
       <div class="ct-header__middle">
 
         {% if content_middle1 is not empty %}
-          {% block content_middle1 %}
+          {% block content_middle1_slot %}
             <div class="container">
               <div class="row">
                 <div class="col-xxs-12">
@@ -86,7 +86,7 @@
           <div class="container">
             <div class="row row--no-wrap">
               {% if content_middle2 is not empty %}
-                {% block content_middle2 %}
+                {% block content_middle2_slot %}
                   <div class="col col--no-grow">
                     <div class="ct-header__content-middle2">
                       {{ content_middle2|raw }}
@@ -96,7 +96,7 @@
               {% endif %}
 
               {% if content_middle3 is not empty %}
-                {% block content_middle3 %}
+                {% block content_middle3_slot %}
                   <div class="col">
                     <div class="ct-header__content-middle3">
                       {{ content_middle3|raw }}
@@ -111,7 +111,7 @@
     {% endif %}
 
     {% if content_bottom1 is not empty %}
-      {% block content_bottom1 %}
+      {% block content_bottom1_slot %}
         <div class="container">
           <div class="row">
             <div class="col-xxs-12">

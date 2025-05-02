@@ -1,15 +1,21 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Promo component
-status: experimental
-description: Promo component for displaying content with optional title and link
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Promo
+status: stable
+description: Promotional component with title, content, and call-to-action link
 props:
   type: object
   properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark)
+      enum:
+        - light
+        - dark
     content_top:
       type: string
-      title: Content_top
-      description: Content slot
+      title: Content Top
+      description: Content slot for the top of the promo
     title:
       type: string
       title: Title
@@ -17,59 +23,69 @@ props:
     content:
       type: string
       title: Content
-      description: Content
+      description: Main content text
     is_contained:
       type: boolean
-      title: Is_contained
-      description: Contained or not
+      title: Contained
+      description: Whether the content is contained in a container
     link:
       type: object
       title: Link
-      description: Link
+      description: Call-to-action link
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Link text
+        url:
+          type: string
+          title: URL
+          description: Link URL
+        is_new_window:
+          type: boolean
+          title: New Window
+          description: Whether to open link in a new window
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external
     content_bottom:
       type: string
-      title: Content_bottom
-      description: Content slot
-    theme:
-      type: string
-      title: Theme
-      description: 'Theme: light, dark'
-      enum:
-        - light
-        - dark
+      title: Content Bottom
+      description: Content slot for the bottom of the promo
     vertical_spacing:
       type: string
-      title: Vertical_spacing
-      description: With top, bottom or both vertical spaces
+      title: Vertical Spacing
+      description: Vertical spacing for the promo
       enum:
         - top
         - bottom
         - both
     with_background:
       type: boolean
-      title: With_background
-      description: With background or not
+      title: With Background
+      description: Whether to display with a background
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  content_top:
-    title: Content top
-    description: Top content block
-  content:
-    title: Content
-    description: Main content block
-  content_left:
-    title: Content left
-    description: Left content block
-  content_right:
-    title: Content right
-    description: Right content block
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  content_left_slot:
+    title: "Content Left Slot"
+    description: "Content for the content left area"
+  content_right_slot:
+    title: "Content Right Slot"
+    description: "Content for the content right area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

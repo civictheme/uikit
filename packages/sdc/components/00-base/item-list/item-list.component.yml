@@ -1,7 +1,6 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Link List component
-status: experimental
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Item List
+status: stable
 description: A list component that can display items horizontally or vertically
 props:
   type: object
@@ -9,7 +8,7 @@ props:
     direction:
       type: string
       title: Direction
-      description: 'Direction: horizontal, vertical'
+      description: List direction (horizontal or vertical)
       enum:
         - horizontal
         - vertical
@@ -17,7 +16,7 @@ props:
     size:
       type: string
       title: Size
-      description: 'Size: large, regular, small'
+      description: List size (large, regular, or small)
       enum:
         - large
         - regular
@@ -25,18 +24,17 @@ props:
       default: regular
     no_gap:
       type: boolean
-      title: No_gap
-      description: Render without gaps
+      title: No gap
+      description: Whether to render without gaps
     items:
       type: array
       title: Items
-      description: Items array
+      description: List items
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes

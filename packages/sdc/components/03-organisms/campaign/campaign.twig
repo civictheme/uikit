@@ -4,25 +4,25 @@
  * Campaign component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - image: [object] Image object:
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Content slot for the top of the campaign.
+ * - image: [object] Campaign image object:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
- * - image_position: [string] left / right
- * - tags: [array] Array of tags.
- * - title: [string] Title.
- * - date: [string] Date.
- * - content: [string] Content.
- * - links: [array] Array of link objects containing:
+ * - image_position: [string] Position of the image relative to content (left or right).
+ * - tags: [array] Array of tags for the campaign.
+ * - title: [string] Campaign title.
+ * - date: [string] Campaign date.
+ * - content: [string] Main content for the campaign.
+ * - links: [array] Array of campaign links:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Open link in the new window.
- *   - is_external: [boolean] Link is external.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content_bottom: [string] Content slot for the bottom of the campaign.
+ * - vertical_spacing: [string] Vertical spacing for the campaign (top, bottom, or both).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -37,7 +37,7 @@
 		<div class="row row--vertically-spaced">
 			<div class="col-xxs-12 {% if image_position == 'right' %}col-m-5 col-m-offset-1{% else %}col-m-5 col-m-offset-1{% endif %} ct-flex-align-self-center">
 				<div class="ct-campaign__inner">
-					{% block content_top %}
+					{% block content_top_slot %}
 						{% if content_top is not empty %}
 							<div class="ct-campaign__content-top">
 								{{ content_top|raw }}
@@ -45,7 +45,7 @@
 						{% endif %}
 					{% endblock %}
 
-					{% block tags %}
+					{% block tags_slot %}
 						{% if tags %}
 							{% include 'civictheme:tag-list' with {
 								theme: theme,
@@ -55,7 +55,7 @@
 						{% endif %}
 					{% endblock %}
 
-					{% block content %}
+					{% block content_slot %}
 						{% if title is not empty %}
 							{% include 'civictheme:heading' with {
 								theme: theme,
@@ -83,7 +83,7 @@
 							} only %}
 						{% endif %}
 
-						{% block links %}
+						{% block links_slot %}
 							{% if links is not empty %}
 								{% set link_items = [] %}
 								{% for link in links %}
@@ -110,7 +110,7 @@
 						{% endblock %}
 					{% endblock %}
 
-					{% block content_bottom %}
+					{% block content_bottom_slot %}
 						{% if content_bottom is not empty %}
 							<div class="ct-campaign__content-bottom">
 								{{ content_bottom|raw }}
@@ -120,7 +120,7 @@
 				</div>
 			</div>
 			<div class="col-xxs-12 first {% if image_position == 'right' %}col-m-5 col-m-offset-1 last-m{% else %}col-m-5 first-m{% endif %} ct-flex-align-self-start">
-				{% block image %}
+				{% block image_slot %}
 					{% if image is not empty %}
 						<div class="ct-campaign__image">
 							{% include 'civictheme:image' with {

@@ -1,111 +1,132 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Event Card component
-status: experimental
-description: A card component for displaying event information
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Event Card
+status: stable
+description: Card component for displaying event information with date, location, and details
 props:
   type: object
   properties:
-    content_top:
+    theme:
       type: string
-      title: Content_top
-      description: Content slot
-    image_over:
-      type: string
-      title: Image_over
-      description: Content slot for image over
-    content_middle:
-      type: string
-      title: Content_middle
-      description: Content slot
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot for bottom of Card
+      title: Theme
+      description: Theme variation (light or dark)
+      enum:
+        - light
+        - dark
     image:
       type: object
       title: Image
+      description: Event image
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Image URL
+        alt:
+          type: string
+          title: Alt text
+          description: Image alt text
     title:
       type: string
       title: Title
-      description: Title
+      description: Event title
     summary:
       type: string
       title: Summary
-      description: Summary
+      description: Event summary
     date:
       type: string
       title: Date
       description: Start date and time
     date_iso:
       type: string
-      title: Date_iso
+      title: ISO date
       description: Start date and time in ISO format
     date_end:
       type: string
-      title: Date_end
-      description: Optional end date and time
+      title: End date
+      description: End date and time
     date_end_iso:
       type: string
-      title: Date_end_iso
-      description: Optional end date and time in ISO format
+      title: ISO end date
+      description: End date and time in ISO format
     location:
       type: string
       title: Location
-      description: Location
+      description: Event location
     link:
       type: object
       title: Link
+      description: Optional link
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Link URL
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open in a new window
     tags:
       type: array
       title: Tags
-      description: Array of tags
-    theme:
+      description: Array of event tags
+      items:
+        type: object
+    content_top:
       type: string
-      title: Theme
-      description: 'Theme: light, dark'
-      enum:
-        - light
-        - dark
+      title: Top content
+      description: Content displayed at the top of the card
+    image_over:
+      type: string
+      title: Image overlay
+      description: Content displayed over the image
+    content_middle:
+      type: string
+      title: Middle content
+      description: Content displayed in the middle of the card
+    content_bottom:
+      type: string
+      title: Bottom content
+      description: Content displayed at the bottom of the card
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes
 slots:
-  image:
-    title: Image
-    description: Image block slot
-  image_over:
-    title: Image over
-    description: Image over content block slot
-  content:
-    title: Content
-    description: Main content block slot
-  content_top:
-    title: Content top
-    description: Top content block slot
-  date:
-    title: Date
-    description: Date block slot
-  title:
-    title: Title
-    description: Title block slot
-  content_middle:
-    title: Content middle
-    description: Middle content block slot
-  location:
-    title: Location
-    description: Location block slot
-  summary:
-    title: Summary
-    description: Summary block slot
-  content_tags:
-    title: Content tags
-    description: Tags content block slot
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block slot
+  image_slot:
+    title: "Image Slot"
+    description: "Content for the image area"
+  image_over_slot:
+    title: "Image Over Slot"
+    description: "Content for the image over area"
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  date_slot:
+    title: "Date Slot"
+    description: "Content for the date area"
+  title_slot:
+    title: "Title Slot"
+    description: "Content for the title area"
+  content_middle_slot:
+    title: "Content Middle Slot"
+    description: "Content for the content middle area"
+  location_slot:
+    title: "Location Slot"
+    description: "Content for the location area"
+  summary_slot:
+    title: "Summary Slot"
+    description: "Content for the summary area"
+  content_tags_slot:
+    title: "Content Tags Slot"
+    description: "Content for the content tags area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

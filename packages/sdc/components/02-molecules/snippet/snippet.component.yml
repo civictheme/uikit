@@ -1,73 +1,89 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Snippet component
-status: experimental
-description: A snippet component for displaying content with title, summary and tags
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Snippet
+status: stable
+description: Component for displaying a content snippet with title, summary, tags, and link
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content_top
-      description: Content slot
-    content_middle:
-      type: string
-      title: Content_middle
-      description: Content slot
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot for bottom of Card
-    title:
-      type: string
-      title: Title
-      description: Title
-    summary:
-      type: string
-      title: Summary
-      description: Summary
-    link:
-      type: object
-      title: Link
-      description: Link object
-    tags:
-      type: array
-      title: Tags
-      description: Array of tags
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
+    content_top:
+      type: string
+      title: Content Top
+      description: Content slot for the top of the snippet
+    content_middle:
+      type: string
+      title: Content Middle
+      description: Content slot for the middle of the snippet
+    content_bottom:
+      type: string
+      title: Content Bottom
+      description: Content slot for the bottom of the snippet
+    title:
+      type: string
+      title: Title
+      description: Title text for the snippet
+    summary:
+      type: string
+      title: Summary
+      description: Summary text for the snippet
+    link:
+      type: object
+      title: Link
+      description: Link object for the snippet
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Link text
+        url:
+          type: string
+          title: URL
+          description: Link URL
+        is_new_window:
+          type: boolean
+          title: New Window
+          description: Whether to open link in a new window
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external
+    tags:
+      type: array
+      title: Tags
+      description: Array of tags for the snippet
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  content:
-    title: Content
-    description: Main content block
-  content_top:
-    title: Content top
-    description: Top content block
-  title:
-    title: Title
-    description: Title block
-  content_middle:
-    title: Content middle
-    description: Middle content block
-  summary:
-    title: Summary
-    description: Summary block
-  content_tags:
-    title: Content tags
-    description: Tags content block
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  title_slot:
+    title: "Title Slot"
+    description: "Content for the title area"
+  content_middle_slot:
+    title: "Content Middle Slot"
+    description: "Content for the content middle area"
+  summary_slot:
+    title: "Summary Slot"
+    description: "Content for the summary area"
+  content_tags_slot:
+    title: "Content Tags Slot"
+    description: "Content for the content tags area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

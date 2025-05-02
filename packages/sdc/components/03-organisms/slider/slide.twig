@@ -4,27 +4,27 @@
  * Slider Slide component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - image: [object] Image object:
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Content slot for the top of the slide.
+ * - image: [object] Slide image object:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
- * - image_position: [string] left / right
+ * - image_position: [string] Position of the image (left or right).
  * - tags: [array] Array of tags.
- * - title: [string] Title.
+ * - title: [string] Slide title.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
  * - date_end: [string] Optional end date and time.
  * - date_end_iso: [string] Optional end date and time in ISO format.
  * - content: [string] Content text.
- * - links: [array] Array of link objects with the properties:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - links: [array] Array of link objects:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content_bottom: [string] Content slot for the bottom of the slide.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -33,7 +33,7 @@
 
 <div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
 	<div class="row ct-slide__row">
-    {% block image %}
+    {% block image_slot %}
       {% if image is not empty %}
 		    <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
           <div class="ct-slide__image">
@@ -49,7 +49,7 @@
 
     <div class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center">
       <div class="ct-slide__inner">
-        {% block content_top %}
+        {% block content_top_slot %}
           {% if content_top is not empty %}
             <div class="ct-slide__content-top">
               {{- content_top|raw -}}
@@ -57,7 +57,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block tags %}
+        {% block tags_slot %}
           {% if tags %}
             {% include 'civictheme:tag-list' with {
               theme: theme,
@@ -67,7 +67,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content %}
+        {% block content_slot %}
           {% if title is not empty %}
             {% include 'civictheme:heading' with {
               theme: theme,
@@ -77,7 +77,7 @@
             } only %}
           {% endif %}
 
-          {% block date %}
+          {% block date_slot %}
             {% if date is not empty %}
               {% set date_content %}
                 {% include 'civictheme:datetime' with {
@@ -109,7 +109,7 @@
             } only %}
           {% endif %}
 
-          {% block links %}
+          {% block links_slot %}
             {% if links is not empty %}
               {% set link_items = [] %}
               {% for link in links %}
@@ -137,7 +137,7 @@
           {% endblock %}
         {% endblock %}
 
-        {% block content_bottom %}
+        {% block content_bottom_slot %}
           {% if content_bottom is not empty %}
             <div class="ct-slide__content-bottom">
               {{- content_bottom|raw -}}

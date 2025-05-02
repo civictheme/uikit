@@ -1,41 +1,38 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Image component
-status: experimental
-description: Image component that renders an HTML img element with configurable attributes
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Image
+status: stable
+description: Basic image component for displaying images
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
-      default: light
     url:
       type: string
-      title: Url
+      title: URL
       description: URL of the image
     alt:
       type: string
-      title: Alt
+      title: Alt text
       description: Alternate text of the image
     width:
       type: string
       title: Width
-      description: Width
+      description: Width of the image
     height:
       type: string
       title: Height
-      description: Height
+      description: Height of the image
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes

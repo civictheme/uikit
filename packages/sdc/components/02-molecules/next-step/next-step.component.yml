@@ -1,42 +1,54 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Next Steps component
-status: experimental
-description: Next Steps component for displaying content with optional link
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Next Step
+status: stable
+description: Component for displaying prominent action or next step suggestion
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content_top
-      description: Content slot
-    title:
-      type: string
-      title: Title
-      description: Title
-    content:
-      type: string
-      title: Content
-      description: Content
-    link:
-      type: object
-      title: Link
-      description: Link object
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
+    title:
+      type: string
+      title: Title
+      description: Next step title
+    content:
+      type: string
+      title: Content
+      description: Next step content
+    link:
+      type: object
+      title: Link
+      description: Next step link
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Link URL
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open link in a new window
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external
+    content_top:
+      type: string
+      title: Top content
+      description: Content displayed above the next step
+    content_bottom:
+      type: string
+      title: Bottom content
+      description: Content displayed below the next step
     vertical_spacing:
       type: string
-      title: Vertical_spacing
-      description: With top, bottom or both vertical spaces
+      title: Vertical spacing
+      description: Vertical spacing position (top, bottom, both)
       enum:
         - top
         - bottom
@@ -44,21 +56,21 @@ props:
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes
 slots:
-  content_top:
-    title: Content top
-    description: Top content block
-  content:
-    title: Content
-    description: Main content block
-  title:
-    title: Title
-    description: Title block
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  title_slot:
+    title: "Title Slot"
+    description: "Content for the title area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

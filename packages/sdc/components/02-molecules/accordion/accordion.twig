@@ -4,18 +4,18 @@
  * Accordion component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - expand_all: [boolean] Expand all panels or not.
- * - panels: [array] Array of panels:
+ * - theme: [string] Theme variation (light or dark).
+ * - expand_all: [boolean] Whether to expand all panels by default.
+ * - panels: [array] Array of accordion panels:
  *   - title: [string] Panel title.
  *   - content: [string] Panel content.
- *   - expanded: [boolean] Panel is expanded or not.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - with_background: [boolean] With background or not.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ *   - expanded: [boolean] Whether the panel is expanded by default.
+ * - content_top: [string] Content displayed above the accordion.
+ * - content_bottom: [string] Content displayed below the accordion.
+ * - with_background: [boolean] Whether to display with a background.
+ * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -29,7 +29,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
-          {% block content_top %}
+          {% block content_top_slot %}
             {% if content_top is not empty %}
               <div class="ct-accordion__content-top">
                 {{- content_top|raw -}}
@@ -37,7 +37,7 @@
             {% endif %}
           {% endblock %}
 
-          {% block content %}
+          {% block content_slot %}
             <div class="ct-accordion__content">
               <ul class="ct-accordion__panels">
                 {% for panel in panels %}
@@ -65,7 +65,7 @@
             </div>
           {% endblock %}
 
-          {% block content_bottom %}
+          {% block content_bottom_slot %}
             {% if content_bottom is not empty %}
               <div class="ct-accordion__content-bottom">
                 {{- content_bottom|raw -}}

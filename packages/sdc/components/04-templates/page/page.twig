@@ -4,43 +4,46 @@
  * Page template.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
- * - header_theme [string] Theme: light, dark.
- * - header_top_1 [string] Content slot.
- * - header_top_2 [string] Content slot.
- * - header_top_3 [string] Content slot.
- * - header_middle_1 [string] Content slot.
- * - header_middle_2 [string] Content slot.
- * - header_middle_3 [string] Content slot.
- * - header_bottom_1 [string] Content slot.
- * - content_top [string] Content top.
- * - hide_sidebar_left [boolean] Hide sidebar left.
- * - hide_sidebar_right [boolean] Hide sidebar right.
- * - sidebar [string] Legacy sidebar content slot.
- * - sidebar_top_left [string] Sidebar top left.
- * - sidebar_top_left_attributes [string]
- * - sidebar_top_right [string]
- * - sidebar_top_right_attributes [string]
- * - content [string]
- * - content_attributes [string]
- * - sidebar_bottom_left [string]
- * - sidebar_bottom_left_attributes [string]
- * - sidebar_bottom_right [string]
- * - content_contained [boolean] - Whether page content is
- * - content_bottom [string]
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - footer_theme: [string] Theme: light, dark.
- * - footer_background_image [string] Footer Background image.
- * - footer_top_1: [string] Footer top 1.
- * - footer_top_2: [string] Footer top 1.
- * - footer_middle_1: [string] Footer middle 1.
- * - footer_middle_2: [string] Footer middle 2.
- * - footer_middle_3: [string] Footer middle 3.
- * - footer_middle_4: [string] Footer middle 4.
- * - footer_bottom_1: [string] Footer bottom 1.
- * - footer_bottom_2: [string] Footer bottom 2.
+ * - theme: [string] Theme variation (light or dark).
+ * - banner: [string] Banner content.
+ * - highlighted: [string] Highlighted content.
+ * - header_theme: [string] Theme variation for header (light or dark).
+ * - header_top_1: [string] Content for header top section 1.
+ * - header_top_2: [string] Content for header top section 2.
+ * - header_top_3: [string] Content for header top section 3.
+ * - header_middle_1: [string] Content for header middle section 1.
+ * - header_middle_2: [string] Content for header middle section 2.
+ * - header_middle_3: [string] Content for header middle section 3.
+ * - header_bottom_1: [string] Content for header bottom section 1.
+ * - content_top: [string] Content for top of main content area.
+ * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
+ * - hide_sidebar_right: [boolean] Whether to hide the right sidebar.
+ * - sidebar: [string] Legacy sidebar content.
+ * - sidebar_top_left: [string] Content for top left sidebar.
+ * - sidebar_top_left_attributes: [string] HTML attributes for top left sidebar.
+ * - sidebar_top_right: [string] Content for top right sidebar.
+ * - sidebar_top_right_attributes: [string] HTML attributes for top right sidebar.
+ * - content: [string] Main content.
+ * - content_attributes: [string] HTML attributes for main content.
+ * - sidebar_bottom_left: [string] Content for bottom left sidebar.
+ * - sidebar_bottom_left_attributes: [string] HTML attributes for bottom left sidebar.
+ * - sidebar_bottom_right: [string] Content for bottom right sidebar.
+ * - sidebar_bottom_right_attributes: [string] HTML attributes for bottom right sidebar.
+ * - content_contained: [boolean] Whether page content should be contained.
+ * - content_bottom: [string] Content for bottom of main content area.
+ * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
+ * - footer_theme: [string] Theme variation for footer (light or dark).
+ * - footer_background_image: [string] Background image for footer.
+ * - footer_top_1: [string] Content for footer top section 1.
+ * - footer_top_2: [string] Content for footer top section 2.
+ * - footer_middle_1: [string] Content for footer middle section 1.
+ * - footer_middle_2: [string] Content for footer middle section 2.
+ * - footer_middle_3: [string] Content for footer middle section 3.
+ * - footer_middle_4: [string] Content for footer middle section 4.
+ * - footer_bottom_1: [string] Content for footer bottom section 1.
+ * - footer_bottom_2: [string] Content for footer bottom section 2.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -50,7 +53,7 @@
 <div class="ct-page {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <a id="top" tab-index="-1" aria-hidden="true"></a>
 
-  {% block header %}
+  {% block header_slot %}
     {% include 'civictheme:header' with {
       theme: header_theme,
       content_top1: header_top_1,
@@ -63,14 +66,14 @@
     } only %}
   {% endblock %}
 
-  {% block banner %}
+  {% block banner_slot %}
     {% if banner is not empty %}
       {{ banner|raw }}
     {% endif %}
   {% endblock %}
 
   {% if highlighted is not empty %}
-    {% block highlighted %}
+    {% block highlighted_slot %}
       <div class="container">
         <div class="row">
           <div class="col-xxs-12">
@@ -81,7 +84,7 @@
     {% endblock %}
   {% endif %}
 
-  {% block content %}
+  {% block content_slot %}
     {% include 'civictheme:layout' with {
       content_top: content_top,
       hide_sidebar_left: hide_sidebar_left,
@@ -103,7 +106,7 @@
     } only %}
   {% endblock %}
 
-  {% block footer %}
+  {% block footer_slot %}
     {% include 'civictheme:footer' with {
       theme: footer_theme,
       background_image: footer_background_image,
@@ -118,7 +121,7 @@
     } only %}
   {% endblock %}
 
-  {% block back_to_top %}
+  {% block back_to_top_slot %}
     {% include 'civictheme:back-to-top' %}
   {% endblock %}
 </div>

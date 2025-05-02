@@ -1,109 +1,105 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Layout component
-status: experimental
-description: Layout component with configurable sidebars and content areas
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Layout
+status: stable
+description: Layout component for creating responsive page layouts with sidebars
 props:
   type: object
   properties:
     content_top:
       type: string
-      title: Content_top
-      description: Content top slot
+      title: Content top
+      description: Content for top of main content area
     sidebar_top_left:
       type: string
-      title: Sidebar_top_left
-      description: Top left sidebar slot
-    sidebar_top_left_attributes:
-      type: string
-      title: Sidebar_top_left_attributes
-      description: Top left sidebar attributes
+      title: Sidebar top left
+      description: Content for top left sidebar
     sidebar_top_right:
       type: string
-      title: Sidebar_top_right
-      description: Top right sidebar slot
-    sidebar_top_right_attributes:
-      type: string
-      title: Sidebar_top_right_attributes
-      description: Top right sidebar attributes
+      title: Sidebar top right
+      description: Content for top right sidebar
     content:
       type: string
       title: Content
-      description: Content slot
-    content_attributes:
-      type: string
-      title: Content_attributes
-      description: Content attributes
+      description: Main content
     sidebar_bottom_left:
       type: string
-      title: Sidebar_bottom_left
-      description: Bottom left sidebar slot
-    sidebar_bottom_left_attributes:
-      type: string
-      title: Sidebar_bottom_left_attributes
-      description: Bottom left sidebar attributes
+      title: Sidebar bottom left
+      description: Content for bottom left sidebar
     sidebar_bottom_right:
       type: string
-      title: Sidebar_bottom_right
-      description: Bottom right sidebar slot
-    sidebar_bottom_right_attributes:
-      type: string
-      title: Sidebar_bottom_right_attributes
-      description: Bottom right sidebar attributes
+      title: Sidebar bottom right
+      description: Content for bottom right sidebar
     content_bottom:
       type: string
-      title: Content_bottom
-      description: Content bottom slot
+      title: Content bottom
+      description: Content for bottom of main content area
     hide_sidebar_left:
       type: boolean
-      title: Hide_sidebar_left
-      description: Whether to force hide the left sidebar
+      title: Hide left sidebar
+      description: Whether to hide the left sidebar
     hide_sidebar_right:
       type: boolean
-      title: Hide_sidebar_right
-      description: Whether to force hide the right sidebar
+      title: Hide right sidebar
+      description: Whether to hide the right sidebar
     is_contained:
       type: boolean
-      title: Is_contained
-      description: Whether the page is to be contained
+      title: Is contained
+      description: Whether the page content should be contained
     vertical_spacing:
       type: string
-      title: Vertical_spacing
-      description: With top, bottom or both vertical spaces
+      title: Vertical spacing
+      description: Controls vertical spacing (top, bottom, or both)
       enum:
         - top
         - bottom
         - both
+    sidebar_top_left_attributes:
+      type: string
+      title: Sidebar top left attributes
+      description: HTML attributes for top left sidebar
+    sidebar_top_right_attributes:
+      type: string
+      title: Sidebar top right attributes
+      description: HTML attributes for top right sidebar
+    content_attributes:
+      type: string
+      title: Content attributes
+      description: HTML attributes for main content
+    sidebar_bottom_left_attributes:
+      type: string
+      title: Sidebar bottom left attributes
+      description: HTML attributes for bottom left sidebar
+    sidebar_bottom_right_attributes:
+      type: string
+      title: Sidebar bottom right attributes
+      description: HTML attributes for bottom right sidebar
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes
 slots:
-  content_top:
-    title: Content top
-    description: Content top block
-  content:
-    title: Content
-    description: Main content block
-  sidebar_top_left:
-    title: Sidebar top left
-    description: Top left sidebar block
-  sidebar_top_right:
-    title: Sidebar top right
-    description: Top right sidebar block
-  sidebar_bottom_left:
-    title: Sidebar bottom left
-    description: Bottom left sidebar block
-  sidebar_bottom_right:
-    title: Sidebar bottom right
-    description: Bottom right sidebar block
-  content_bottom:
-    title: Content bottom
-    description: Content bottom block
-libraryOverrides:
-  js:
-    layout.js: {}
+  content_top_slot:
+    title: "Content Top Slot"
+    description: "Content for the content top area"
+  content_slot:
+    title: "Content Slot"
+    description: "Content for the content area"
+  sidebar_top_left_slot:
+    title: "Sidebar Top Left Slot"
+    description: "Content for the sidebar top left area"
+  sidebar_top_right_slot:
+    title: "Sidebar Top Right Slot"
+    description: "Content for the sidebar top right area"
+  sidebar_bottom_left_slot:
+    title: "Sidebar Bottom Left Slot"
+    description: "Content for the sidebar bottom left area"
+  sidebar_bottom_right_slot:
+    title: "Sidebar Bottom Right Slot"
+    description: "Content for the sidebar bottom right area"
+  content_bottom_slot:
+    title: "Content Bottom Slot"
+    description: "Content for the content bottom area"

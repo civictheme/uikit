@@ -4,20 +4,20 @@
  * Snippet component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - content_middle: [string] Content slot.
- * - content_bottom: [string] Content slot for bottom of Card.
- * - title: [string] Title.
- * - summary: [string] Summary.
- * - link: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - tags: [array] Array of tags.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class:[string] Additional classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Content slot for the top of the snippet.
+ * - content_middle: [string] Content slot for the middle of the snippet.
+ * - content_bottom: [string] Content slot for the bottom of the snippet.
+ * - title: [string] Title text for the snippet.
+ * - summary: [string] Summary text for the snippet.
+ * - link: [object] Link object for the snippet:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - tags: [array] Array of tags for the snippet.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
@@ -27,9 +27,9 @@
 
 {% if title is not empty %}
   <div class="ct-snippet {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% block content %}
+    {% block content_slot %}
       <div class="ct-snippet__content">
-        {% block content_top %}
+        {% block content_top_slot %}
           {% if content_top is not empty %}
             <div class="ct-snippet__content-top">
               {{- content_top|raw -}}
@@ -37,7 +37,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block title %}
+        {% block title_slot %}
           {% if title is not empty %}
             {% set title_content %}
               {% if with_link %}
@@ -63,7 +63,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_middle %}
+        {% block content_middle_slot %}
           {% if content_middle is not empty %}
             <div class="ct-snippet__content-middle">
               {{- content_middle|raw -}}
@@ -71,7 +71,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block summary %}
+        {% block summary_slot %}
           {% if summary is not empty %}
             {% include 'civictheme:paragraph' with {
               theme: theme,
@@ -82,7 +82,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_tags %}
+        {% block content_tags_slot %}
           {% if tags or with_link %}
             <div class="ct-snippet__tags">
               {% if tags %}
@@ -95,7 +95,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_bottom %}
+        {% block content_bottom_slot %}
           {% if content_bottom is not empty %}
             <div class="ct-snippet__content-bottom">
               {{- content_bottom|raw -}}

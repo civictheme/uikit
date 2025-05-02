@@ -4,14 +4,14 @@
  * Chip component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - kind: [string] Chip kind: default, input.
- * - size: [string] Chip size: large, regular, small.
+ * - theme: [string] Theme variation (light or dark).
+ * - kind: [string] Chip kind (default, input).
+ * - size: [string] Chip size (large, regular, small).
  * - content: [string] Chip text.
- * - is_selected: [boolean] Is the button selected (for filter chips).
- * - is_multiple: [boolean] Can be multiple.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - is_selected: [boolean] Whether the chip is selected (for filter chips).
+ * - is_multiple: [boolean] Whether multiple selection is allowed.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 {% set kind = kind in ['default', 'input'] ? kind : 'default' %}

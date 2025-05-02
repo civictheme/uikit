@@ -1,70 +1,68 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Header component
-status: experimental
-description: Header component with configurable content slots
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Header
+status: stable
+description: Header component with multiple content sections for site header
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark)
       enum:
         - light
         - dark
-      default: light
     content_top1:
       type: string
-      title: Content_top1
-      description: Content slot
+      title: Content Top 1
+      description: First content slot in the top section
     content_top2:
       type: string
-      title: Content_top2
-      description: Content slot
+      title: Content Top 2
+      description: Second content slot in the top section
     content_top3:
       type: string
-      title: Content_top3
-      description: Content slot
+      title: Content Top 3
+      description: Third content slot in the top section
     content_middle1:
       type: string
-      title: Content_middle1
-      description: Content slot
+      title: Content Middle 1
+      description: First content slot in the middle section
     content_middle2:
       type: string
-      title: Content_middle2
-      description: Content slot
+      title: Content Middle 2
+      description: Second content slot in the middle section
     content_middle3:
       type: string
-      title: Content_middle3
-      description: Content slot
+      title: Content Middle 3
+      description: Third content slot in the middle section
     content_bottom1:
       type: string
-      title: Content_bottom1
-      description: Content slot
+      title: Content Bottom 1
+      description: Content slot in the bottom section
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes
 slots:
-  content_top1:
-    title: Content top1
-    description: Top section content slot 1
-  content_top2:
-    title: Content top2
-    description: Top section content slot 2
-  content_top3:
-    title: Content top3
-    description: Top section content slot 3
-  content_middle1:
-    title: Content middle1
-    description: Middle section content slot 1
-  content_middle2:
-    title: Content middle2
-    description: Middle section content slot 2
-  content_middle3:
-    title: Content middle3
-    description: Middle section content slot 3
-  content_bottom1:
-    title: Content bottom1
-    description: Bottom section content slot
+  content_top1_slot:
+    title: "Content Top1 Slot"
+    description: "Content for the content top1 area"
+  content_top2_slot:
+    title: "Content Top2 Slot"
+    description: "Content for the content top2 area"
+  content_top3_slot:
+    title: "Content Top3 Slot"
+    description: "Content for the content top3 area"
+  content_middle1_slot:
+    title: "Content Middle1 Slot"
+    description: "Content for the content middle1 area"
+  content_middle2_slot:
+    title: "Content Middle2 Slot"
+    description: "Content for the content middle2 area"
+  content_middle3_slot:
+    title: "Content Middle3 Slot"
+    description: "Content for the content middle3 area"
+  content_bottom1_slot:
+    title: "Content Bottom1 Slot"
+    description: "Content for the content bottom1 area"
