@@ -32,7 +32,7 @@
             kind: 'link',
             type: 'tertiary',
             icon: item.icon_html is not defined or item.icon_html is empty ? item.icon : null,
-            text: item.icon_html|default(null),
+            text: item.icon_html ?? null,
             url: item.url,
             is_external: false,
             is_new_window: true,

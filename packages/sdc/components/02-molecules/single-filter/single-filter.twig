@@ -55,7 +55,7 @@
                     kind: 'input',
                     size: 'small',
                     is_multiple: is_multiple,
-                    is_selected: item.is_selected|default(false),
+                    is_selected: item.is_selected ?? false,
                     content: item.text,
                     attributes: item_attributes,
                   } only %}
