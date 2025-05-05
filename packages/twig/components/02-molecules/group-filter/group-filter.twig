@@ -49,8 +49,8 @@
             {% endblock %}
           {% endif %}
 
-          {% block filters_slot %}
-            {% set group = 'ct-group-filter--group-' ~ group_id|default(random(1000, 999)) %}
+          {% block filters %}
+            {% set group = 'ct-group-filter--group-' ~ group_id|default(random(0, 999)) %}
             {% set filters_items = [] %}
             {% for filter in filters %}
               {% set filters_item %}
