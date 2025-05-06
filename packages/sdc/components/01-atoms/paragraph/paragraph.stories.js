@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Paragraph component stories.
+ */
+
 import Component from './paragraph.twig';
 
 const meta = {

@@ -1,30 +1,29 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Fieldset component
-status: experimental
-description: Fieldset component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Fieldset
+status: stable
+description: Fieldset component for grouping form elements with legend and description
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     legend:
       type: string
       title: Legend
-      description: Legend for the fieldset
+      description: Legend for the fieldset.
     description:
       type: string
       title: Description
-      description: Description for the fieldset
+      description: Description for the fieldset.
     description_display:
       type: string
-      title: Description_display
-      description: 'Description display: before, after, invisible'
+      title: Description display
+      description: Description display position (before, after, invisible).
       enum:
         - before
         - after
@@ -33,46 +32,46 @@ props:
     message:
       type: string
       title: Message
-      description: Message content
+      description: Message content.
     message_type:
       type: string
-      title: Message_type
-      description: 'Type of the message: error, warning, info, success'
+      title: Message type
+      description: Message type (error, information, warning, success).
       enum:
         - error
+        - information
         - warning
-        - info
         - success
       default: error
     fields:
       type: string
       title: Fields
-      description: Fields content
+      description: Fields content.
     is_required:
       type: boolean
-      title: Is_required
-      description: Denote if the fieldset is required
+      title: Required
+      description: Whether the fieldset is required.
     required_text:
       type: string
-      title: Required_text
-      description: Text to display within label element when required
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional attributes for the fieldset
-    modifier_class:
-      type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Required text
+      description: Text to display within label element when required.
     prefix:
       type: string
       title: Prefix
-      description: The content to add before the fieldset children
+      description: The content to add before the fieldset children.
     suffix:
       type: string
       title: Suffix
-      description: The content to add after the fieldset children
+      description: The content to add after the fieldset children.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
 slots:
-  fields:
-    title: Fields
-    description: Slot for custom fields content
+  fields_slot:
+    title: Fields Slot
+    description: Fields area content

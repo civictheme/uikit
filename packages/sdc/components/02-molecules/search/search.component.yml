@@ -1,33 +1,30 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Search component
-status: experimental
-description: Search component with theme variants
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Search
+status: stable
+description: Search component with icon and text
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     text:
       type: string
       title: Text
-      description: Text for the link
+      description: Text for the search link.
     url:
       type: string
-      title: Url
-      description: Search page URL
+      title: URL
+      description: Search page URL.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier Class
+      description: Additional CSS classes.

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Basic Content component stories.
+ */
+
 import Component from './basic-content.twig';
 import BasicContentData from './basic-content.stories.data';
 

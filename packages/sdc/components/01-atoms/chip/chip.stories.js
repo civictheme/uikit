@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Chip component stories.
+ */
+
 import Component from './chip.twig';
 import './chip.event.stories';
 

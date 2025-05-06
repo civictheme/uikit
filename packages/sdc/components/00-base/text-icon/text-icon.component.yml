@@ -1,44 +1,43 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Text Icon component
-status: experimental
-description: A component that displays text with optional icons
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Text Icon
+status: stable
+description: Component for combining text with icons
 props:
   type: object
   properties:
     text:
       type: string
       title: Text
-      description: Link text
+      description: Text content.
     is_new_window:
       type: boolean
-      title: Is_new_window
-      description: Open in a new window
+      title: New window
+      description: Whether to open in a new window.
     is_external:
       type: boolean
-      title: Is_external
-      description: Link is external
+      title: External
+      description: Whether the link is external.
     icon:
       type: string
       title: Icon
-      description: Icon name
+      description: Icon name.
     icon_placement:
       type: string
-      title: Icon_placement
-      description: 'Icon position: before, after'
+      title: Icon placement
+      description: Icon position (before or after).
       enum:
         - before
         - after
+      default: after
     icon_class:
       type: string
-      title: Icon_class
-      description: Class for custom icon
+      title: Icon class
+      description: Class for custom icon.
     icon_group_disabled:
       type: boolean
-      title: Icon_group_disabled
-      description: Disable icon and last word grouping
+      title: Disable icon grouping
+      description: Whether to disable icon and last word grouping.
     icon_single_only:
       type: boolean
-      title: Icon_single_only
-      description: Only show 1 icon. If icon and is_external, external will take preference
-slots: {}
+      title: Single icon only
+      description: Whether to show only one icon (if both icon and is_external are present, external takes preference).

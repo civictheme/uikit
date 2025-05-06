@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Table component stories.
+ */
+
 import Component from './table.twig';
 import Link from '../link/link.twig';
 

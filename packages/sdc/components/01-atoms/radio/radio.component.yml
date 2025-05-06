@@ -1,57 +1,54 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Radio component
-status: experimental
-description: Radio input form control component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Radio
+status: stable
+description: Radio button form element with customizable appearance and states
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     name:
       type: string
       title: Name
-      description: DOM name
+      description: DOM name (required).
     id:
       type: string
-      title: Id
-      description: DOM id
+      title: ID
+      description: DOM id (required).
     value:
       type: string
       title: Value
-      description: DOM value
+      description: DOM value.
     label:
       type: string
       title: Label
-      description: Label content
+      description: Label content.
     is_checked:
       type: boolean
-      title: Is_checked
-      description: Denote if the control is checked
+      title: Checked
+      description: Whether the radio is checked.
     is_required:
       type: boolean
-      title: Is_required
-      description: Denote if the control is required
+      title: Required
+      description: Whether the radio is required.
     is_invalid:
       type: boolean
-      title: Is_invalid
-      description: Denote if the control is invalid
+      title: Invalid
+      description: Whether the radio is invalid.
     is_disabled:
       type: boolean
-      title: Is_disabled
-      description: Denote if the control is disabled
+      title: Disabled
+      description: Whether the radio is disabled.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

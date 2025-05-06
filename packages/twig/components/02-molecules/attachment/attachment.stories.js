@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Attachment component stories.
+ */
+
 import Component from './attachment.twig';
 
 const meta = {

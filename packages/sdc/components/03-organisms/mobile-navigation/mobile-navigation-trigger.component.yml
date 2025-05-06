@@ -1,29 +1,27 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Mobile Navigation Menu Trigger component
-status: experimental
-description: Mobile Navigation Menu Trigger component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mobile Navigation Trigger
+status: stable
+description: Button component for triggering the mobile navigation panel
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme - light or dark
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     text:
       type: string
       title: Text
-      description: Button text
+      description: Button text.
     icon:
       type: string
       title: Icon
-      description: Icon symbol name
+      description: Icon symbol name.
       default: bars
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier Class
+      description: Additional CSS classes.

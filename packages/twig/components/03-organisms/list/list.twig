@@ -1,33 +1,50 @@
 {#
 /**
  * @file
- * List component.
+ * CivicTheme List component.
  *
  * Variables:
- * - title: [string] Title.
- * - link_above: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - filters: [string] Exposed filters.
- * - results_count: [string] Results count.
- * - rows_above: [string] Content above rows.
+ * - theme: [string] Theme variation (light or dark).
+ * - title: [string] List title.
+ * - link_above: [object] Above list link object:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content: [string] List main content.
+ * - filters: [string] Exposed filters content.
+ * - results_count: [string] Results count text.
+ * - rows_above: [string] Above rows content.
  * - rows: [string] Rows content.
- * - rows_below: [string] Content below rows.
- * - empty: [string] Empty results content.
- * - pagination: [string] Pagination slot.
- * - footer: [string] Footer slot.
- * - link_below: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - theme: [string] Theme: light, dark.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - with_background: [boolean] With background or not.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - rows_below: [string] Below rows content.
+ * - empty: [string] No results content.
+ * - pagination: [string] Pagination content.
+ * - footer: [string] Footer content.
+ * - link_below: [object] Below list link object:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - vertical_spacing: [string] List vertical spacing (top, bottom, or both).
+ * - with_background: [boolean] Whether to display with a background.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - header_slot: [slot] Header content
+ * - title_slot: [slot] Title content
+ * - link_above_slot: [slot] Link above content
+ * - content_slot: [slot] Content
+ * - list_slot: [slot] List content
+ * - filters_slot: [slot] Filters content
+ * - rows_slot: [slot] Rows content
+ * - rows_above_slot: [slot] Rows above content
+ * - results_count_slot: [slot] Results count content
+ * - rows_below_slot: [slot] Rows below content
+ * - empty_slot: [slot] Empty content
+ * - list_below_slot: [slot] List below content
+ * - pagination_slot: [slot] Pagination content
+ * - footer_slot: [slot] Footer content
  */
 #}
 
@@ -38,13 +55,13 @@
 
 <div class="ct-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <div class="ct-list__inner">
-    {% block header %}
+    {% block header_slot %}
       {% if title is not empty or link_above is not empty %}
         <div class="ct-list__header">
           <div class="container">
             <div class="row">
               <div class="col-xxs-12 col-m-9">
-                {% block title %}
+                {% block title_slot %}
                   {% if title -%}
                     {% include '@atoms/heading/heading.twig' with {
                       content: title,
@@ -56,7 +73,7 @@
                 {% endblock %}
               </div>
               <div class="col-xxs-12 col-m-3">
-                {% block link_above %}
+                {% block link_above_slot %}
                   {% if link_above %}
                     <div class="ct-list__link-above ct-flex-justify-content-center">
                       {% include '@atoms/button/button.twig' with {
@@ -81,7 +98,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block content %}
+    {% block content_slot %}
       {% if content %}
         <div class="ct-list__content">
           <div class="container">
@@ -100,8 +117,8 @@
       {% endif %}
     {% endblock %}
 
-    {% block list %}
-      {% block filters %}
+    {% block list_slot %}
+      {% block filters_slot %}
         {% if filters -%}
           <div class="ct-list__filters">
             <div class="container">
@@ -115,10 +132,10 @@
         {% endif %}
       {% endblock %}
 
-      {% block rows %}
+      {% block rows_slot %}
         {% if rows -%}
 
-          {% block rows_above %}
+          {% block rows_above_slot %}
             {% if rows_above -%}
               <div class="container ct-list__rows-above">
                 <div class="row">
@@ -135,7 +152,7 @@
             {% endif %}
           {% endblock %}
 
-          {% block results_count %}
+          {% block results_count_slot %}
             {% if results_count -%}
               <div class="container">
                 <div class="row">
@@ -151,7 +168,7 @@
             {{ rows|raw }}
           </div>
 
-          {% block rows_below %}
+          {% block rows_below_slot %}
             {% if rows_below %}
               <div class="container ct-list__rows-below">
                 <div class="row">
@@ -170,7 +187,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block empty %}
+      {% block empty_slot %}
         {% if empty is defined and (rows is not defined or rows is empty) -%}
           <div class="container ct-list__empty-results">
             <div class="row">
@@ -188,7 +205,7 @@
       {% endblock %}
     {% endblock %}
 
-    {% block list_below %}
+    {% block list_below_slot %}
       {% if link_below %}
         <div class="ct-list__link-below ct-flex-justify-content-center">
           {% include '@atoms/button/button.twig' with {
@@ -208,7 +225,7 @@
 
       {% if pagination is defined and pagination is not empty %}
         <div class="ct-list__results-below">
-          {% block pagination %}
+          {% block pagination_slot %}
             <div class="container">
               <div class="row">
                 <div class="col-xxs-12">
@@ -223,7 +240,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block footer %}
+    {% block footer_slot %}
       {% if footer is not empty -%}
         <footer class="ct-list__footer">
           <div class="container">

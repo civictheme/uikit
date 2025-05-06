@@ -1,15 +1,24 @@
 {#
 /**
  * @file
- * Side Navigation component.
+ * CivicTheme Side Navigation component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - items: [array] Array of menu items.
+ * - theme: [string] Theme variation (light or dark).
+ * - items: [array] Menu items:
+ *   Each item contains:
+ *   - title: [string] Navigation title.
+ *   - url: [string] Menu item URL.
+ *   - in_active_trail: [boolean] Whether the item is in the active trail.
+ *   - is_expanded: [boolean] Whether the item is expanded.
+ *   - below: [array] Submenu items.
  * - title: [string] Navigation title.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - vertical_spacing: [string] Navigation vertical spacing (top, bottom, or both).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - title_slot: [slot] Title area content
  */
 #}
 
@@ -24,7 +33,7 @@
       url: '#main-content',
     } only %}
     {% if title %}
-      {% block title %}
+      {% block title_slot %}
         {% include 'civictheme:heading' with {
           content: title,
           level: 2,

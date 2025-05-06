@@ -1,59 +1,62 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Table component
-status: experimental
-description: Renders a configurable table with header, rows, footer and caption.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Table
+status: stable
+description: Table component for tabular data with styling options
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     caption:
       type: string
       title: Caption
-      description: Table caption
+      description: Table caption.
     caption_position:
       type: string
-      title: Caption_position
-      description: The position of caption
+      title: Caption position
+      description: Caption position (before, after).
       enum:
         - before
         - after
+      default: before
     header:
       type: array
       title: Header
-      description: Array of header cells
+      description: Header cells.
+      items:
+        type: string
     rows:
       type: array
       title: Rows
-      description: Array of rows
+      description: Table rows.
+      items:
+        type: array
+        items:
+          type: string
     footer:
       type: array
       title: Footer
-      description: Array of footer cells
+      description: Footer cells.
+      items:
+        type: string
     is_striped:
       type: boolean
-      title: Is_striped
-      description: Flag to show as striped
+      title: Striped
+      description: Whether to show table with striped rows.
     is_data_table:
       type: boolean
-      title: Is_data_table
-      description: Flag to show as a data table
+      title: Data table
+      description: Whether to show as a data table.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
-libraryOverrides:
-  js:
-    table.js: {}
+      title: Modifier classes
+      description: Additional CSS classes.

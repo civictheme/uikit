@@ -1,25 +1,19 @@
 {#
 /**
  * @file
- * Mobile Navigation Menu component.
- *
- * Copied from 'civictheme:menu' with some additions.
- *
- * Used to output hierarchical menu structure.
- *
- * Specific navigation component implementations that use menu hierarchies
- * should extend this template and may override 'menu_item_link' and
- * 'menu_item_below' blocks with specific markup.
+ * CivicTheme Mobile Navigation Menu component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - items: [array] Menu links array. Each item contains:
- *   - title: [string] The title of the link.
- *   - url: [string] The link url.
+ * - theme: [string] Theme variation (light or dark).
+ * - items: [array] Menu links:
+ *   Each item contains:
+ *   - title: [string] Link title.
+ *   - url: [string] Link URL.
  *   - icon: [string] Icon name.
- *   - below: [array] Array of submenu items.
- *   - is_expanded: [boolean] Flag if the current item has visible child.
- *   - in_active_trail: [boolean] Flag if the current item is in the active trail.
+ *   - below: [array] Submenu items.
+ *   - is_expanded: [boolean] Whether the current item has visible children.
+ *   - in_active_trail: [boolean] Whether the current item is in the active trail.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

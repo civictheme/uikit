@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Checkbox component stories.
+ */
+
 import Component from './checkbox.twig';
 
 const meta = {

@@ -1,18 +1,5 @@
 /**
- * Table of Contents component.
- *
- * Attaches to markup with 'data-table-of-contents-position' attribute.
- *
- * Available attributes:
- * - data-table-of-contents-position: Placed on the target element to init TOC.
- *   Values are: before, after, prepend, append. Value defaults to 'before'.
- * - data-table-of-contents-theme (optional): Theme of the TOC. Values are:
- *   light, dark. Defaults to 'light'.
- * - data-table-of-contents-anchor-selector (optional): The selector of the
- *   anchors. Defaults to 'h2'.
- * - data-table-of-contents-anchor-scope-selector (optional): The scope for
- *   the anchors. Defaults to '.ct-basic-content'.
- * - data-table-of-contents-title (optional): The title of TOC.
+ * CivicTheme Table of Contents component.
  */
 
 function CivicThemeTableOfContents(el) {

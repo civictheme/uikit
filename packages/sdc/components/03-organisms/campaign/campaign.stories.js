@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Campaign component stories.
+ */
+
 import Component from './campaign.twig';
 
 const meta = {

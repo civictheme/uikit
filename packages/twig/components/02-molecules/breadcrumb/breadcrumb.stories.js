@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Breadcrumb component stories.
+ */
+
 import Components from './breadcrumb.twig';
 
 const meta = {

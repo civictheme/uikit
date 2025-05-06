@@ -1,84 +1,58 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Footer component
-status: experimental
-description: Footer component with configurable content sections
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Footer
+status: stable
+description: Footer component with multiple content sections for site footer
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     content_top1:
       type: string
-      title: Content_top1
-      description: Content slot
+      title: Content Top 1
+      description: Top section first content slot.
     content_top2:
       type: string
-      title: Content_top2
-      description: Content slot
+      title: Content Top 2
+      description: Top section second content slot.
     content_middle1:
       type: string
-      title: Content_middle1
-      description: Content slot
+      title: Content Middle 1
+      description: Middle section first content slot.
     content_middle2:
       type: string
-      title: Content_middle2
-      description: Content slot
+      title: Content Middle 2
+      description: Middle section second content slot.
     content_middle3:
       type: string
-      title: Content_middle3
-      description: Content slot
+      title: Content Middle 3
+      description: Middle section third content slot.
     content_middle4:
       type: string
-      title: Content_middle4
-      description: Content slot
+      title: Content Middle 4
+      description: Middle section fourth content slot.
+    content_middle5:
+      type: string
+      title: Content Middle 5
+      description: Middle section fifth content slot.
     content_bottom1:
       type: string
-      title: Content_bottom1
-      description: Content slot
+      title: Content Bottom 1
+      description: Bottom section first content slot.
     content_bottom2:
       type: string
-      title: Content_bottom2
-      description: Content slot
+      title: Content Bottom 2
+      description: Bottom section second content slot.
     background_image:
       type: string
-      title: Background_image
-      description: Background inline image displayed behind content
+      title: Background Image
+      description: Content background inline image.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots:
-  content_top1:
-    title: Content top1
-    description: Top section first column content block
-  content_top2:
-    title: Content top2
-    description: Top section second column content block
-  content_middle1:
-    title: Content middle1
-    description: Middle section first column content block
-  content_middle2:
-    title: Content middle2
-    description: Middle section second column content block
-  content_middle3:
-    title: Content middle3
-    description: Middle section third column content block
-  content_middle4:
-    title: Content middle4
-    description: Middle section fourth column content block
-  content_middle5:
-    title: Content middle5
-    description: Middle section full width content block
-  content_bottom1:
-    title: Content bottom1
-    description: Bottom section first column content block
-  content_bottom2:
-    title: Content bottom2
-    description: Bottom section second column content block
+      title: Modifier Class
+      description: Additional CSS classes.

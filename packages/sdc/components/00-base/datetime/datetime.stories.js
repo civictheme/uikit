@@ -1,3 +1,7 @@
+/**
+ * CivicTheme DateTime component stories.
+ */
+
 import Component from './datetime.twig';
 
 const meta = {

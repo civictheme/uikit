@@ -1,28 +1,38 @@
 {#
 /**
  * @file
- * Navigation Card component.
+ * CivicTheme Navigation Card component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - image_over: [string] Content slot for image over.
- * - content_middle: [string] Content slot.
- * - content_bottom: [string] Content slot.
- * - image: [object] Image object:
- *   - url: [string] Image URL.
+ * - theme: [string] Theme variation (light or dark).
+ * - image: [object] Card image:
+ *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
- * - image_as_icon: [boolean] Show image as an icon.
+ * - image_as_icon: [boolean] Whether to show the image as an icon.
  * - icon: [string] Icon name.
- * - title: [string] The text of card title.
- * - summary: [string] Summary of the card.
+ * - title: [string] Card title text.
+ * - summary: [string] Card summary.
  * - link: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content_top: [string] Card top content.
+ * - image_over: [string] Image overlay content.
+ * - content_middle: [string] Card middle content.
+ * - content_bottom: [string] Card bottom content.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - image_slot: [slot] Image area content
+ * - image_over_slot: [slot] Image overlay content
+ * - content_top_slot: [slot] Top content area content
+ * - icon_slot: [slot] Icon area content
+ * - title_slot: [slot] Title area content
+ * - content_middle_slot: [slot] Middle content area content
+ * - summary_slot: [slot] Summary area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 
@@ -36,7 +46,7 @@
 
 {% if title is not empty %}
   <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% block image %}
+    {% block image_slot %}
       {% if not image_as_icon %}
         {% if image.url is not empty %}
           <div class="ct-navigation-card__image">
@@ -46,7 +56,7 @@
               alt: image.alt,
             } only %}
 
-            {% block image_over %}
+            {% block image_over_slot %}
               {% if image_over %}
                 <div class="ct-navigation-card__image__over">
                   {{ image_over }}
@@ -59,7 +69,7 @@
     {% endblock %}
 
     <div class="ct-navigation-card__content">
-      {% block content_top %}
+      {% block content_top_slot %}
         {% if content_top is not empty %}
           <div class="ct-navigation-card__content-top">
             {{- content_top|raw -}}
@@ -67,7 +77,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block icon %}
+      {% block icon_slot %}
         {% if icon is not empty or (with_image and image_as_icon) %}
           <div class="ct-navigation-card__icon">
             {% if icon is not empty %}
@@ -89,7 +99,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block title %}
+      {% block title_slot %}
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}
@@ -117,7 +127,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block content_middle %}
+      {% block content_middle_slot %}
         {% if content_middle is not empty %}
           <div class="ct-navigation-card__content-middle">
             {{- content_middle|raw -}}
@@ -125,7 +135,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block summary %}
+      {% block summary_slot %}
         {% if summary is not empty %}
           {% include 'civictheme:paragraph' with {
             theme: theme,
@@ -136,7 +146,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block content_bottom %}
+      {% block content_bottom_slot %}
         {% if content_bottom is not empty %}
           <div class="ct-navigation-card__content-bottom">
             {{- content_bottom|raw -}}

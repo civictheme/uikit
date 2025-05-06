@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Back to Top component stories.
+ */
+
 import Component from './back-to-top.stories.twig';
 
 const meta = {

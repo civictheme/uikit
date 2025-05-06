@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Textarea component stories.
+ */
+
 import Component from './textarea.twig';
 
 const meta = {

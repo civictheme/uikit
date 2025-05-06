@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Social Links component stories.
+ */
+
 import Component from './social-links.twig';
 import Icon from '../../00-base/icon/icon.twig';
 

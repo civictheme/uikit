@@ -1,78 +1,76 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Slider component
-status: experimental
-description: A slider component with navigation controls and content slots
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Slider
+status: stable
+description: Content carousel slider component
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content_top
-      description: Content slot
-    title:
-      type: string
-      title: Title
-      description: Slider title
-    slides:
-      type: string
-      title: Slides
-      description: Slides
-    previous_label:
-      type: string
-      title: Previous_label
-      description: Text for previous button
-    next_label:
-      type: string
-      title: Next_label
-      description: Text for next button
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
+    content_top:
+      type: string
+      title: Content Top
+      description: Top content.
+    title:
+      type: string
+      title: Title
+      description: Slider title.
+    slides:
+      type: string
+      title: Slides
+      description: Slides HTML content.
+    previous_label:
+      type: string
+      title: Previous Label
+      description: Text for previous button.
+      default: Previous
+    next_label:
+      type: string
+      title: Next Label
+      description: Text for next button.
+      default: Next
+    content_bottom:
+      type: string
+      title: Content Bottom
+      description: Bottom content.
     vertical_spacing:
       type: string
-      title: Vertical_spacing
-      description: With top, bottom or both vertical spaces
+      title: Vertical Spacing
+      description: Slider vertical spacing (top, bottom, or both).
       enum:
         - top
         - bottom
         - both
     with_background:
       type: boolean
-      title: With_background
-      description: With background or not
+      title: With Background
+      description: Whether to display with a background.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes.
 slots:
-  content_top:
-    title: Content top
-    description: Top content block
-  top_controls:
-    title: Top controls
-    description: Top controls block containing title
-  slides:
-    title: Slides
-    description: Slides content block
-  controls:
-    title: Controls
-    description: Navigation controls block
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block
-libraryOverrides:
-  js:
-    slider.js: {}
+  content_top_slot:
+    title: Content Top Slot
+    description: Top content
+  top_controls_slot:
+    title: Top Controls Slot
+    description: Top controls content
+  slides_slot:
+    title: Slides Slot
+    description: Slides content
+  controls_slot:
+    title: Controls Slot
+    description: Controls content
+  content_bottom_slot:
+    title: Content Bottom Slot
+    description: Bottom content

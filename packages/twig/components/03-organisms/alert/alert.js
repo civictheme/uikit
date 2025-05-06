@@ -1,10 +1,5 @@
 /**
- * Alert component.
- *
- * Attaches to markup with 'data-component-name="ct-alerts"' attribute.
- *
- * Available attributes:
- * - data-alert-endpoint: Alert REST configurable API endpoint.
+ * CivicTheme Alert component.
  */
 function CivicThemeAlert(el) {
   // Use "data-alert"'s attribute value to identify if this

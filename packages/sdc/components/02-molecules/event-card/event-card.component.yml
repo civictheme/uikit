@@ -1,111 +1,132 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Event Card component
-status: experimental
-description: A card component for displaying event information
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Event Card
+status: stable
+description: Card component for displaying event information with date, location, and details
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content_top
-      description: Content slot
-    image_over:
-      type: string
-      title: Image_over
-      description: Content slot for image over
-    content_middle:
-      type: string
-      title: Content_middle
-      description: Content slot
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot for bottom of Card
-    image:
-      type: object
-      title: Image
-    title:
-      type: string
-      title: Title
-      description: Title
-    summary:
-      type: string
-      title: Summary
-      description: Summary
-    date:
-      type: string
-      title: Date
-      description: Start date and time
-    date_iso:
-      type: string
-      title: Date_iso
-      description: Start date and time in ISO format
-    date_end:
-      type: string
-      title: Date_end
-      description: Optional end date and time
-    date_end_iso:
-      type: string
-      title: Date_end_iso
-      description: Optional end date and time in ISO format
-    location:
-      type: string
-      title: Location
-      description: Location
-    link:
-      type: object
-      title: Link
-    tags:
-      type: array
-      title: Tags
-      description: Array of tags
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
+    image:
+      type: object
+      title: Image
+      description: Event image.
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Link URL.
+        alt:
+          type: string
+          title: Alt text
+          description: Image alt text.
+    title:
+      type: string
+      title: Title
+      description: Event title.
+    summary:
+      type: string
+      title: Summary
+      description: Event summary.
+    date:
+      type: string
+      title: Date
+      description: Start date and time.
+    date_iso:
+      type: string
+      title: ISO date
+      description: Start date and time in ISO format.
+    date_end:
+      type: string
+      title: End date
+      description: End date and time.
+    date_end_iso:
+      type: string
+      title: ISO end date
+      description: End date and time in ISO format.
+    location:
+      type: string
+      title: Location
+      description: Event location.
+    link:
+      type: object
+      title: Link
+      description: Optional link.
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Link URL.
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open in a new window.
+    tags:
+      type: array
+      title: Tags
+      description: Event tags.
+      items:
+        type: object
+    content_top:
+      type: string
+      title: Top content
+      description: Card top content.
+    image_over:
+      type: string
+      title: Image overlay
+      description: Image overlay content.
+    content_middle:
+      type: string
+      title: Middle content
+      description: Card middle content.
+    content_bottom:
+      type: string
+      title: Bottom content
+      description: Card bottom content.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes.
 slots:
-  image:
-    title: Image
-    description: Image block slot
-  image_over:
-    title: Image over
-    description: Image over content block slot
-  content:
-    title: Content
-    description: Main content block slot
-  content_top:
-    title: Content top
-    description: Top content block slot
-  date:
-    title: Date
-    description: Date block slot
-  title:
-    title: Title
-    description: Title block slot
-  content_middle:
-    title: Content middle
-    description: Middle content block slot
-  location:
-    title: Location
-    description: Location block slot
-  summary:
-    title: Summary
-    description: Summary block slot
-  content_tags:
-    title: Content tags
-    description: Tags content block slot
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block slot
+  image_slot:
+    title: Image Slot
+    description: Image area content
+  image_over_slot:
+    title: Image Over Slot
+    description: Image overlay content
+  content_slot:
+    title: Content Slot
+    description: Content area content
+  content_top_slot:
+    title: Content Top Slot
+    description: Top content area content
+  date_slot:
+    title: Date Slot
+    description: Date area content
+  title_slot:
+    title: Title Slot
+    description: Title area content
+  content_middle_slot:
+    title: Content Middle Slot
+    description: Middle content area content
+  location_slot:
+    title: Location Slot
+    description: Location area content
+  summary_slot:
+    title: Summary Slot
+    description: Summary area content
+  content_tags_slot:
+    title: Content Tags Slot
+    description: Tags area content
+  content_bottom_slot:
+    title: Content Bottom Slot
+    description: Bottom content area content

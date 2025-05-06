@@ -1,80 +1,77 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Group Filter component
-status: experimental
-description: A component that displays grouped filters with a submit button
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Group Filter
+status: stable
+description: Component for multiple filters in a group with a single submit button
 props:
   type: object
   properties:
-    content_top:
+    theme:
       type: string
-      title: Content_top
-      description: Content slot
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
     title:
       type: string
       title: Title
-      description: Title for filters
+      description: Filter title.
       default: 'Filter results by:'
-    group_id:
-      type: string
-      title: Group filter ID
-      description: Unique id for filter group
     form_attributes:
       type: string
-      title: Form_attributes
-      description: Form attributes. If empty - the form will not be printed
+      title: Form attributes
+      description: Form attributes (if empty, the form will not be printed).
     form_hidden_fields:
       type: string
-      title: Form_hidden_fields
-      description: Form hidden fields
+      title: Hidden fields
+      description: Form hidden fields.
     filters:
       type: array
       title: Filters
-      description: Filter object
+      description: Filter objects.
       items:
         type: object
         properties:
           title:
             type: string
-            description: Filter title
+            title: Title
+            description: Filter title.
           content:
             type: string
-            description: Filter content
+            title: Content
+            description: Filter content.
     submit_text:
       type: string
-      title: Submit_text
-      description: Text on the submit button
-      default: Apply filters
+      title: Submit text
+      description: Text on the submit button.
+      default: 'Apply filters'
+    content_top:
+      type: string
+      title: Top content
+      description: Filters top content.
     content_bottom:
       type: string
-      title: Content_bottom
-      description: Content slot
-    theme:
+      title: Bottom content
+      description: Filters bottom content.
+    group_id:
       type: string
-      title: Theme
-      description: 'Theme: light, dark'
-      enum:
-        - light
-        - dark
-      default: light
+      title: Group ID
+      description: Unique ID for filter group.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes.
 slots:
-  content_top:
-    title: Content top
-    description: Content top slot
-  filters:
-    title: Filters
-    description: Filters content slot
-  content_bottom:
-    title: Content bottom
-    description: Content bottom slot
-libraryOverrides:
-  js:
-    group-filter.js: {}
+  content_top_slot:
+    title: Content Top Slot
+    description: Top content area content
+  filters_slot:
+    title: Filters Slot
+    description: Filters area content
+  content_bottom_slot:
+    title: Content Bottom Slot
+    description: Bottom content area content

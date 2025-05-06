@@ -1,22 +1,21 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Tag component
-status: experimental
-description: A configurable tag/label component that can be rendered as a link
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Tag
+status: stable
+description: Tag component for categorization elements with various styles
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     type:
       type: string
       title: Type
-      description: 'Type: primary, secondary, tertiary'
+      description: Tag type (primary, secondary, tertiary).
       enum:
         - primary
         - secondary
@@ -25,37 +24,36 @@ props:
     content:
       type: string
       title: Content
-      description: Content
+      description: Tag content.
     icon:
       type: string
       title: Icon
-      description: Icon name
+      description: Icon name.
     icon_placement:
       type: string
-      title: Icon_placement
-      description: 'Icon position: before, after'
+      title: Icon placement
+      description: Icon position (before, after).
       enum:
         - before
         - after
       default: after
     url:
       type: string
-      title: Url
-      description: Optional URL to convert to a link
+      title: URL
+      description: Optional URL to convert to a link.
     is_new_window:
       type: boolean
-      title: Is_new_window
-      description: Open in a new window. Only if url is provided
+      title: New window
+      description: Whether to open in a new window (only if URL is provided).
     is_external:
       type: boolean
-      title: Is_external
-      description: Link is external
+      title: External
+      description: Whether the link is external.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

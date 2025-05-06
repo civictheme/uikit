@@ -1,45 +1,42 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Figure component
-status: experimental
-description: A figure component with image and optional caption
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Figure
+status: stable
+description: Component for displaying images with optional captions
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     url:
       type: string
-      title: Url
-      description: URL of the image
+      title: URL
+      description: Image URL.
     alt:
       type: string
-      title: Alt
-      description: Alternate text of the image
+      title: Alt text
+      description: Image alt text.
     width:
       type: string
       title: Width
-      description: Width
+      description: Image width.
     height:
       type: string
       title: Height
-      description: Height
+      description: Image height.
     caption:
       type: string
       title: Caption
-      description: Caption for the image
+      description: Image caption.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

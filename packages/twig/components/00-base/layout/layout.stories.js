@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Layout component stories.
+ */
+
 import Component from './layout.twig';
 
 const meta = {

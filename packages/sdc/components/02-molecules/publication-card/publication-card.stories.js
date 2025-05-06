@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Publication Card component stories.
+ */
+
 import Component from './publication-card.twig';
 
 const meta = {

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Grid component stories.
+ */
+
 import Component from './grid.twig';
 
 const meta = {

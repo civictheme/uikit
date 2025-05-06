@@ -1,86 +1,113 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Navigation Card component
-status: experimental
-description: Navigation Card component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Navigation Card
+status: stable
+description: Card component for navigation with title, summary, and link
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content_top
-      description: Content slot
-    image_over:
-      type: string
-      title: Image_over
-      description: Content slot for image over
-    content_middle:
-      type: string
-      title: Content_middle
-      description: Content slot
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot
-    image:
-      type: object
-      title: Image
-    image_as_icon:
-      type: boolean
-      title: Image_as_icon
-      description: Show image as an icon
-    icon:
-      type: string
-      title: Icon
-      description: Icon name
-    title:
-      type: string
-      title: Title
-      description: The text of card title
-    summary:
-      type: string
-      title: Summary
-      description: Summary of the card
-    link:
-      type: object
-      title: Link
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
+    image:
+      type: object
+      title: Image
+      description: Card image.
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Link URL.
+        alt:
+          type: string
+          title: Alt text
+          description: Image alt text.
+    image_as_icon:
+      type: boolean
+      title: Image as icon
+      description: Whether to show the image as an icon.
+    icon:
+      type: string
+      title: Icon
+      description: Icon name.
+    title:
+      type: string
+      title: Title
+      description: Card title text.
+    summary:
+      type: string
+      title: Summary
+      description: Card summary.
+    link:
+      type: object
+      title: Link
+      description: Link object.
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Link text.
+        url:
+          type: string
+          title: URL
+          description: Link URL.
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open link in a new window.
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external.
+    content_top:
+      type: string
+      title: Top content
+      description: Card top content.
+    image_over:
+      type: string
+      title: Image overlay
+      description: Image overlay content.
+    content_middle:
+      type: string
+      title: Middle content
+      description: Card middle content.
+    content_bottom:
+      type: string
+      title: Bottom content
+      description: Card bottom content.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier classes
+      description: Additional CSS classes.
 slots:
-  image:
-    title: Image
-    description: Image block
-  image_over:
-    title: Image over
-    description: Image over block
-  content_top:
-    title: Content top
-    description: Content top block
-  icon:
-    title: Icon
-    description: Icon block
-  title:
-    title: Title
-    description: Title block
-  content_middle:
-    title: Content middle
-    description: Content middle block
-  summary:
-    title: Summary
-    description: Summary block
-  content_bottom:
-    title: Content bottom
-    description: Content bottom block
+  image_slot:
+    title: Image Slot
+    description: Image area content
+  image_over_slot:
+    title: Image Over Slot
+    description: Image overlay content
+  content_top_slot:
+    title: Content Top Slot
+    description: Top content area content
+  icon_slot:
+    title: Icon Slot
+    description: Icon area content
+  title_slot:
+    title: Title Slot
+    description: Title area content
+  content_middle_slot:
+    title: Content Middle Slot
+    description: Middle content area content
+  summary_slot:
+    title: Summary Slot
+    description: Summary area content
+  content_bottom_slot:
+    title: Content Bottom Slot
+    description: Bottom content area content

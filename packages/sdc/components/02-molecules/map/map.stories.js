@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Map component stories.
+ */
+
 import Component from './map.twig';
 
 const meta = {

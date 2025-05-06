@@ -1,18 +1,21 @@
 {#
 /**
  * @file
- * Table of contents component.
+ * CivicTheme Table of Contents component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - title: [string] Title text for the table of contents.
- * - position: [string] Position of the TOC: 'before', 'after', 'prepend', 'append'
- * - links: [array] Array of links [{ url, title }]. If provided, the TOC will be generated from the links.
+ * - theme: [string] Theme variation (light or dark).
+ * - title: [string] Link title.
+ * - position: [string] TOC position ('before', 'after', 'prepend', 'append').
+ * - links: [array] Table of contents links:
+ *   Each item contains:
+ *   - title: [string] Link title.
+ *   - url: [string] Link URL.
  * - anchor_selector: [string] CSS selector for headings to include in TOC (e.g. 'h2, h3').
  * - scope_selector: [string] CSS selector for the content area to generate TOC from.
- * - content: [string] Content. Only displays when links are not provided.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - content: [string] Content (only displays when links are not provided).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

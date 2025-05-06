@@ -1,30 +1,36 @@
 {#
 /**
  * @file
- * Banner component.
+ * CivicTheme Banner component.
  *
  * Variables:
- * - content_top1: [string] Content slot.
- * - breadcrumb: [array] Breadcrumb links.
- * - content_top2: [string] Content slot.
- * - content_top3: [string] Content slot.
- * - content_middle: [string] Content slot.
- * - content: [string] Content slot.
- * - content_bottom: [string] Content slot.
- * - content_below: [string] Content slot.
- * - site_section: [string] Site section.
- * - title: [string] Title.
- * - is_decorative: [boolean] Show as decorative.
- * - featured_image: [object] Featured image object:
- *   - url: [string] Source.
- *   - alt: [string] Alt text.
- * - background_image: [string] URL to a background image.
- *   - url: [string] Source.
- *   - alt: [string] Alt text.
- * - background_image_blend_mode: [string] Type of the backgeound image blending. Defaults to 'normal'.
- * - theme: [string] Theme: light, dark.
- * - modifier_class: [string] Additional classes.
- * - attributes: [string] Banner attributes.
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top1: [string] Top section content.
+ * - breadcrumb: [object] Breadcrumb navigation:
+ *   - links: [array] Breadcrumb links.
+ *   - active_is_link: [boolean] Whether the active item is a link.
+ * - content_top2: [string] Second top section content.
+ * - content_top3: [string] Third top section content.
+ * - content_middle: [string] Middle section content.
+ * - content: [string] Main content.
+ * - content_bottom: [string] Bottom section content.
+ * - content_below: [string] Below banner section content.
+ * - site_section: [string] Site section name.
+ * - title: [string] Banner title.
+ * - is_decorative: [boolean] Whether to show as decorative.
+ * - featured_image: [object] Featured image:
+ *   - url: [string] Image source URL.
+ *   - alt: [string] Image alt text.
+ * - background_image: [object] Background image:
+ *   - url: [string] Image source URL.
+ *   - alt: [string] Image alt text.
+ * - background_image_blend_mode: [string] Background image blending type. Defaults to 'normal'.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - breadcrumb_slot: [slot] Breadcrumb content
+ * - featured_image_slot: [slot] Featured image content
  */
 #}
 
@@ -59,7 +65,7 @@
 
           {% if breadcrumb is not empty or content_top2 is not empty %}
             <div class="row">
-              {% block breadcrumb %}
+              {% block breadcrumb_slot %}
                 {% if breadcrumb is not empty %}
                   <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                     {% include 'civictheme:breadcrumb' with {
@@ -153,7 +159,7 @@
         </div>
       </div>
 
-      {% block featured_image %}
+      {% block featured_image_slot %}
         {% if featured_image is not empty %}
           <div class="ct-banner__featured-image__wrapper">
             {% include 'civictheme:image' with {

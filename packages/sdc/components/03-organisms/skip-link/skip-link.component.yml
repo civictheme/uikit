@@ -1,6 +1,5 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Skip Link component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Skip Link
 status: experimental
 description: Skip Link component for accessibility navigation
 props:
@@ -9,7 +8,7 @@ props:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
@@ -17,14 +16,13 @@ props:
     text:
       type: string
       title: Text
-      description: Link text
+      description: Link text.
       default: Skip to main content
     url:
       type: string
-      title: Url
-      description: Link URL
+      title: URL
+      description: Link URL.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

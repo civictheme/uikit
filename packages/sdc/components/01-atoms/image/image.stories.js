@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Image component stories.
+ */
+
 import Component from './image.twig';
 
 const meta = {

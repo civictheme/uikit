@@ -1,52 +1,50 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Textfield component
-status: experimental
-description: A text input field component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Textfield
+status: stable
+description: Single-line text input form element with customizable appearance and states
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     name:
       type: string
       title: Name
-      description: DOM name
+      description: DOM name (required).
     id:
       type: string
-      title: DOM Element ID
+      title: ID
+      description: DOM ID attribute.
     value:
       type: string
       title: Value
-      description: The value
+      description: The textfield value.
     placeholder:
       type: string
       title: Placeholder
-      description: Placeholder text
+      description: Placeholder text.
     is_invalid:
       type: boolean
-      title: Is_invalid
-      description: Denote if the control is invalid
+      title: Invalid
+      description: Whether the textfield is invalid.
     is_disabled:
       type: boolean
-      title: Is_disabled
-      description: Denote if the control is disabled
+      title: Disabled
+      description: Whether the textfield is disabled.
     is_required:
       type: boolean
-      title: Is_required
-      description: Denote if the control is required
+      title: Required
+      description: Whether the textfield is required.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

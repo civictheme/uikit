@@ -1,16 +1,34 @@
 {#
 /**
-  * @file
-  * Mobile Navigation component.
-  *
-  * Variables:
-  * - theme: [string] Theme: light, dark.
-  * - content_top: [string] Content slot.
-  * - content_bottom: [string] Content slot.
-  * - top_menu: [array] Array of menu items.
-  * - bottom_menu: [array] Array of menu items.
-  * - modifier_class: [string] Additional classes.
-  */
+ * @file
+ * CivicTheme Mobile Navigation component.
+ *
+ * Variables:
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Top content area.
+ * - content_bottom: [string] Bottom content area.
+ * - top_menu: [array] Top section menu items:
+ *   Each item contains:
+ *   - title: [string] Menu item title.
+ *   - url: [string] Menu item URL.
+ *   - in_active_trail: [boolean] Whether the item is in the active trail.
+ *   - is_expanded: [boolean] Whether the item is expanded.
+ *   - below: [array] Submenu items.
+ * - bottom_menu: [array] Bottom section menu items:
+ *   Each item contains:
+ *   - title: [string] Menu item title.
+ *   - url: [string] Menu item URL.
+ *   - in_active_trail: [boolean] Whether the item is in the active trail.
+ *   - is_expanded: [boolean] Whether the item is expanded.
+ *   - below: [array] Submenu items.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top_slot: [slot] Top content area content
+ * - top_menu_slot: [slot] Top menu area content
+ * - bottom_menu_slot: [slot] Bottom menu area content
+ * - content_bottom_slot: [slot] Bottom content area content
+ */
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
@@ -22,7 +40,7 @@
       theme: theme,
     } only %}
 
-    {% block content_top %}
+    {% block content_top_slot %}
       {% if content_top is not empty %}
         <div class="ct-mobile-navigation__content_top">
           {{ content_top|raw }}
@@ -30,7 +48,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block top_menu %}
+    {% block top_menu_slot %}
       {% if top_menu is not empty %}
         <div class="ct-mobile-navigation__top-menu-wrapper">
           {% include '@organisms/mobile-navigation/mobile-navigation-menu.twig' with {
@@ -42,7 +60,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block bottom_menu %}
+    {% block bottom_menu_slot %}
       {% if bottom_menu is not empty %}
         <div class="ct-mobile-navigation__bottom-menu-wrapper">
           {% include '@organisms/mobile-navigation/mobile-navigation-menu.twig' with {
@@ -54,7 +72,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block content_bottom %}
+    {% block content_bottom_slot %}
       {% if content_bottom is not empty %}
         <div class="ct-mobile-navigation__content_bottom">
           {{ content_bottom|raw }}

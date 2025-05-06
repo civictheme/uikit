@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Callout component stories.
+ */
+
 import Components from './callout.twig';
 
 const meta = {

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Iframe component stories.
+ */
+
 import Component from './iframe.twig';
 
 const meta = {

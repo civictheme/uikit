@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Popover component stories.
+ */
+
 import Component from './popover.twig';
 
 const meta = {

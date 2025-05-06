@@ -1,19 +1,25 @@
 {#
 /**
  * @file
- * Table component.
+ * CivicTheme Table component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
+ * - theme: [string] Theme variation (light or dark).
  * - caption: [string] Table caption.
- * - caption_position: [string] The position of caption: before, after
- * - header: [array] Array of header cells.
- * - rows: [array] Array of rows.
- * - footer: [array] Array of footer cells.
- * - is_striped: [boolean] Flag to show as striped.
- * - is_data_table: [boolean] Flag to show as a data table.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - caption_position: [string] Caption position (before, after).
+ * - header: [array] Header cells.
+ *   Each item contains:
+ *     [string] items
+ * - rows: [array] Table rows.
+ *   Each item contains:
+ *     [array] items
+ * - footer: [array] Footer cells.
+ *   Each item contains:
+ *     [string] items
+ * - is_striped: [boolean] Whether to show table with striped rows.
+ * - is_data_table: [boolean] Whether to show as a data table.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

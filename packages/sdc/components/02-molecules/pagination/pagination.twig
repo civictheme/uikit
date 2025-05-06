@@ -1,30 +1,42 @@
 {#
 /**
  * @file
- * Pagination component.
+ * CivicTheme Pagination component.
  *
  * Variables:
- * - theme: [string] Theme: light, dark.
- * - heading_id: [string] Heading id.
- * - title: [string] Title of active page.
- * - items: [array] Array of pagination items:
- *   - text: [string] Item text.
- *   - href: [string] Item link.
- * - items_modifier_class: [string] Items modifier class.
+ * - theme: [string] Theme variation (light or dark).
+ * - heading_id: [string] Heading ID for accessibility.
+ * - title: [string] Active page title.
+ * - items: [object] Object containing pagination items:
+ *   - first: [object] First page link:
+ *     - text: [string] Link text.
+ *     - href: [string] Link URL.
+ *   - previous: [object] Previous page link:
+ *     - text: [string] Link text.
+ *     - href: [string] Link URL.
+ *   - pages: [object] Object containing page links.
+ *   - next: [object] Next page link:
+ *     - text: [string] Link text.
+ *     - href: [string] Link URL.
+ *   - last: [object] Last page link:
+ *     - text: [string] Link text.
+ *     - href: [string] Link URL.
+ * - items_modifier_class: [string] Additional classes for pagination items.
  * - current: [string] Current page number.
- * - items_per_page_title: [string] Title for "items per page" field.
- * - items_per_page_options: [array] Array of options (applies to optgroup type):
- *   - type: [string] Option type ('option')
+ * - items_per_page_title: [string] Items per page field title.
+ * - items_per_page_options: [array] Options for items per page:
+ *   Each item contains:
+ *   - type: [string] Option type ('option').
  *   - label: [string] Option label.
  *   - value: [string] Option value.
- *   - selected: [string] Flag whether option is selected.
- * - items_per_page_name: [string] Name for items per page.
- * - items_per_page_id: [string] Id for items per page.
- * - items_per_page_attributes: attributes for select element.
- * - total_pages: [string] Total number of pages.
- * - use_ellipsis: [boolean] Flag whether ellipsis to be shown.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ *   - selected: [string] Whether the option is selected.
+ * - items_per_page_name: [string] Items per page select field name.
+ * - items_per_page_id: [string] Items per page select field ID.
+ * - items_per_page_attributes: [string] Items per page select element attributes.
+ * - total_pages: [string] Total pages count.
+ * - use_ellipsis: [boolean] Whether ellipsis should be shown.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

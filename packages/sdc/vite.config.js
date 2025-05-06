@@ -21,8 +21,7 @@ export default defineConfig(({ mode }) => ({
           ...server.watcher.options,
           ignored: [
             '**/.git/**',
-            '**/node_modules/**',
-            '**/.logs/**',
+            '**/node_modules.logs/**',
           ]
         }
       }

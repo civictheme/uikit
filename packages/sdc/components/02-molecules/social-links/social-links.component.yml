@@ -1,50 +1,53 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Social links Component
-status: experimental
-description: A component to display social media links
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Social Links
+status: stable
+description: Component for social media links with icons
 props:
   type: object
   properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
     items:
       type: array
       title: Items
-      description: Array of social link items
+      description: Social media links.
       items:
         type: object
         properties:
           title:
             type: string
-            description: Title to be added to the 'title' attribute
+            title: Title
+            description: Title to be added to the 'title' attribute.
           icon:
             type: string
-            description: Icon name from the existing icon set
+            title: Icon
+            description: Icon name from the existing icon set.
           icon_html:
             type: string
-            description: Alternative icon HTML for embedding
+            title: Icon HTML
+            description: Alternative icon HTML for embedding.
           url:
             type: string
-            description: Link URL
+            title: URL
+            description: Link URL.
     with_border:
       type: boolean
-      title: With_border
-      description: Whether icons have borders
-    theme:
-      type: string
-      title: Theme
-      description: 'Theme: light, dark'
-      enum:
-        - light
-        - dark
+      title: With Border
+      description: Whether icons have borders.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes.
 slots:
-  items:
-    title: Items
-    description: Block for customizing the rendering of social link items
+  items_slot:
+    title: Items Slot
+    description: Items area content

@@ -1,52 +1,26 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Menu component
-status: experimental
-description: Used to output hierarchical menu structure
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Menu
+status: stable
+description: Menu component for hierarchical navigation
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     items:
       type: array
       title: Items
-      description: Menu links array
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            description: The title of the link
-          url:
-            type: string
-            description: The link url
-          below:
-            type: array
-            description: Array of submenu items
-          is_expanded:
-            type: boolean
-            description: Flag if the current item has visible child
-          in_active_trail:
-            type: boolean
-            description: Flag if the current item is in the active trail
+      description: Menu links array.
     is_collapsible:
       type: boolean
-      title: Is_collapsible
-      description: Flag whether to collapse the menu
+      title: Is collapsible
+      description: Whether to collapse the menu.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots:
-  menu_links:
-    title: Menu links
-    description: Macro for rendering menu links
-  menu_links_below:
-    title: Menu links below
-    description: Macro for rendering submenu links
+      title: Modifier classes
+      description: Additional CSS classes.

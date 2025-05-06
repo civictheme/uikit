@@ -1,57 +1,49 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Mobile Navigation Menu component
-status: experimental
-description: >-
-  Used to output hierarchical menu structure. Copied from 'civictheme:menu' with
-  some additions.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mobile Navigation Menu
+status: stable
+description: Menu component for the mobile navigation panel
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: Theme color scheme
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
     items:
       type: array
       title: Items
-      description: Menu links array
+      description: Menu links.
       items:
         type: object
         properties:
           title:
             type: string
-            description: The title of the link
+            title: Title
+            description: Link title.
           url:
             type: string
-            description: The link url
+            title: URL
+            description: Link URL.
           icon:
             type: string
-            description: Icon name
+            title: Icon
+            description: Icon name.
           below:
             type: array
-            description: Array of submenu items
+            title: Below
+            description: Submenu items.
           is_expanded:
             type: boolean
-            description: Flag if the current item has visible child
+            title: Expanded
+            description: Whether the current item has visible children.
           in_active_trail:
             type: boolean
-            description: Flag if the current item is in the active trail
+            title: In Active Trail
+            description: Whether the current item is in the active trail.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional CSS classes
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes
-slots:
-  menu_item_link:
-    title: Menu item link
-    description: Block for menu item link markup
-  menu_item_below:
-    title: Menu item below
-    description: Block for submenu items markup
+      title: Modifier Class
+      description: Additional CSS classes.

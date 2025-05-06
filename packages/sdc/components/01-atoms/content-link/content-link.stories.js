@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Content Link component stories.
+ */
+
 import Component from './content-link.twig';
 
 const meta = {

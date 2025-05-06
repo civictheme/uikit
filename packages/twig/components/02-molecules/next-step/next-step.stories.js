@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Next Step component stories.
+ */
+
 import Component from './next-step.twig';
 
 const meta = {

@@ -1,56 +1,54 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Textarea component
-status: experimental
-description: A textarea form input component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Textarea
+status: stable
+description: Multi-line text input form element with customizable appearance and states
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
     name:
       type: string
       title: Name
-      description: DOM name
+      description: DOM name (required).
     id:
       type: string
-      title: DOM Element ID
+      title: ID
+      description: DOM ID attribute.
     value:
       type: string
       title: Value
-      description: The value
+      description: The textarea value.
     placeholder:
       type: string
       title: Placeholder
-      description: Placeholder text
+      description: Placeholder text.
     rows:
       type: integer
       title: Rows
-      description: Optional number of rows
+      description: Display rows count.
     is_invalid:
       type: boolean
-      title: Is_invalid
-      description: Denote if the control is invalid
+      title: Invalid
+      description: Whether the textarea is invalid.
     is_disabled:
       type: boolean
-      title: Is_disabled
-      description: Denote if the control is disabled
+      title: Disabled
+      description: Whether the textarea is disabled.
     is_required:
       type: boolean
-      title: Is_required
-      description: Denote if the control is required
+      title: Required
+      description: Whether the textarea is required.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

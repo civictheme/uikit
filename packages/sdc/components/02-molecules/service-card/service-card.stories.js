@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Service Card component stories.
+ */
+
 import Component from './service-card.twig';
 
 const meta = {

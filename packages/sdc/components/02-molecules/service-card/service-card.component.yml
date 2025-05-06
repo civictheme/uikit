@@ -1,67 +1,70 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Service Card component
-status: experimental
-description: A card component for displaying services with title, content and links
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Service Card
+status: stable
+description: Card component for displaying service information with links
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content_top
-      description: Content slot
-    title:
-      type: string
-      title: Title
-      description: The text of card title
-    links:
-      type: array
-      title: Links
-      description: Links array
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            description: Title
-          url:
-            type: string
-            description: URL
-          is_new_window:
-            type: boolean
-            description: Open link in a new window
-          is_external:
-            type: boolean
-            description: Link is external or not
-    content_bottom:
-      type: string
-      title: Content_bottom
-      description: Content slot
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
+    content_top:
+      type: string
+      title: Content Top
+      description: Top content area.
+    title:
+      type: string
+      title: Title
+      description: Card title text.
+    links:
+      type: array
+      title: Links
+      description: Card links.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Link text.
+          url:
+            type: string
+            title: URL
+            description: Link URL.
+          is_new_window:
+            type: boolean
+            title: New Window
+            description: Whether to open link in a new window.
+          is_external:
+            type: boolean
+            title: External
+            description: Whether the link is external.
+    content_bottom:
+      type: string
+      title: Content Bottom
+      description: Bottom content area.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
+      title: Modifier Class
+      description: Additional CSS classes.
 slots:
-  content_top:
-    title: Content top
-    description: Top content block
-  title:
-    title: Title
-    description: Title block
-  links:
-    title: Links
-    description: Links block
-  content_bottom:
-    title: Content bottom
-    description: Bottom content block
+  content_top_slot:
+    title: Content Top Slot
+    description: Top content area
+  title_slot:
+    title: Title Slot
+    description: Title area content
+  links_slot:
+    title: Links Slot
+    description: Links area content
+  content_bottom_slot:
+    title: Content Bottom Slot
+    description: Bottom content area

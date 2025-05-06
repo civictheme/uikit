@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Promo component stories.
+ */
+
 import Component from './promo.twig';
 
 const meta = {

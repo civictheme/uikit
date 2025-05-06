@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Heading component stories.
+ */
+
 import Component from './heading.twig';
 
 const meta = {

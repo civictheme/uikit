@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Figure component stories.
+ */
+
 import Component from './figure.twig';
 
 const meta = {

@@ -1,57 +1,54 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
-name: Input component
-status: experimental
-description: Input form control component
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Input
+status: stable
+description: Generic input form element with customizable appearance and states
 props:
   type: object
   properties:
     theme:
       type: string
       title: Theme
-      description: 'Theme: light, dark'
+      description: Theme variation (light or dark).
       enum:
         - light
         - dark
-      default: light
+    type:
+      type: string
+      title: Input type
+      description: Input type (text, password, email, etc.).
     name:
       type: string
       title: Name
-      description: DOM name
+      description: DOM name (required).
+    id:
+      type: string
+      title: ID
+      description: DOM id.
     value:
       type: string
       title: Value
-      description: The input value
+      description: The input value.
     placeholder:
       type: string
       title: Placeholder
-      description: Placeholder text
+      description: Placeholder text.
     is_invalid:
       type: boolean
-      title: Is_invalid
-      description: Denote if the control is invalid
+      title: Invalid
+      description: Whether the input is invalid.
     is_disabled:
       type: boolean
-      title: Is_disabled
-      description: Denote if the control is disabled
+      title: Disabled
+      description: Whether the input is disabled.
     is_required:
       type: boolean
-      title: Is_required
-      description: Denote if the control is required
+      title: Required
+      description: Whether the input is required.
     attributes:
       type: string
       title: Attributes
-      description: Additional attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
-      title: Modifier_class
-      description: Additional classes
-    type:
-      type: string
-      title: Type
-      description: Input type attribute
-    id:
-      type: string
-      title: Id
-      description: Input id attribute
-slots: {}
+      title: Modifier classes
+      description: Additional CSS classes.

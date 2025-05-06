@@ -1,30 +1,40 @@
 {#
 /**
  * @file
- * Slider Slide component.
+ * CivicTheme Slider Slide component.
  *
  * Variables:
- * - content_top: [string] Content slot.
- * - image: [object] Image object:
- *   - url: [string] Image URL.
+ * - theme: [string] Theme variation (light or dark).
+ * - content_top: [string] Top content area.
+ * - image: [object] Slide image object:
+ *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
- * - image_position: [string] left / right
- * - tags: [array] Array of tags.
- * - title: [string] Title.
+ * - image_position: [string] Image position (left or right).
+ * - tags: [array] Tags.
+ * - title: [string] Slide title.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
  * - date_end: [string] Optional end date and time.
  * - date_end_iso: [string] Optional end date and time in ISO format.
  * - content: [string] Content text.
- * - links: [array] Array of link objects with the properties:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - content_bottom: [string] Content slot.
- * - theme: [string] Theme: light, dark.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * - links: [array] Link objects:
+ *   Each item contains:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - content_bottom: [string] Bottom slide content.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - image_slot: [slot] Image area content
+ * - content_top_slot: [slot] Top content area content
+ * - tags_slot: [slot] Tags area content
+ * - content_slot: [slot] Content area content
+ * - date_slot: [slot] Date area content
+ * - links_slot: [slot] Links area content
+ * - content_bottom_slot: [slot] Bottom content area content
  */
 #}
 
@@ -33,7 +43,7 @@
 
 <div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
 	<div class="row ct-slide__row">
-    {% block image %}
+    {% block image_slot %}
       {% if image is not empty %}
 		    <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
           <div class="ct-slide__image">
@@ -49,7 +59,7 @@
 
     <div class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center">
       <div class="ct-slide__inner">
-        {% block content_top %}
+        {% block content_top_slot %}
           {% if content_top is not empty %}
             <div class="ct-slide__content-top">
               {{- content_top|raw -}}
@@ -57,7 +67,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block tags %}
+        {% block tags_slot %}
           {% if tags %}
             {% include '@molecules/tag-list/tag-list.twig' with {
               theme: theme,
@@ -67,7 +77,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content %}
+        {% block content_slot %}
           {% if title is not empty %}
             {% include '@atoms/heading/heading.twig' with {
               theme: theme,
@@ -77,13 +87,13 @@
             } only %}
           {% endif %}
 
-          {% block date %}
+          {% block date_slot %}
             {% if date is not empty %}
               {% set date_content %}
                 {% include '@base/datetime/datetime.twig' with {
                   start: date,
-                  start_iso: date_iso ?? null,
-                  end: date_end ?? null,
+                  start_iso: date_iso|default(null),
+                  end: date_end|default(null),
                   end_iso: date_end_iso ?? null,
                 } only %}
               {% endset %}
@@ -109,7 +119,7 @@
             } only %}
           {% endif %}
 
-          {% block links %}
+          {% block links_slot %}
             {% if links is not empty %}
               {% set link_items = [] %}
               {% for link in links %}
@@ -137,7 +147,7 @@
           {% endblock %}
         {% endblock %}
 
-        {% block content_bottom %}
+        {% block content_bottom_slot %}
           {% if content_bottom is not empty %}
             <div class="ct-slide__content-bottom">
               {{- content_bottom|raw -}}

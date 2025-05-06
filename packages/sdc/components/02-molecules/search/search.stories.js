@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Search component stories.
+ */
+
 import Component from './search.twig';
 
 const meta = {

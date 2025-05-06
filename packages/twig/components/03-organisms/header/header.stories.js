@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Header component stories.
+ */
+
 import Component from './header.twig';
 import HeaderData from './header.stories.data';
 

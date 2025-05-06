@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Alert component stories.
+ */
+
 import Component from './alert.twig';
 
 const meta = {

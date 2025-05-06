@@ -42,7 +42,9 @@
     "test:ci": "npm run test-unit:ci",
     "test-unit:ci": "node --experimental-vm-modules ../../node_modules/.bin/jest --coverage",
     "lint": "eslint ./components ./.storybook ./tests && stylelint 'components/**/*.scss'",
-    "lint:fix": "eslint ./components ./.storybook ./tests --fix"
+    "lint:fix": "eslint ./components ./.storybook ./tests --fix",
+    "gen-twig-headers": "node scripts/generate-twig-headers.js",
+    "update-twig": "node scripts/generate-twig-headers.js"
   },
   "devDependencies": {
     "@alexskrypnyk/scss-variables-extractor": "^0.1.1",

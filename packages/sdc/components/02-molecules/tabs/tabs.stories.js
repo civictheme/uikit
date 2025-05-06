@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Tabs component stories.
+ */
+
 import Component from './tabs.twig';
 
 const meta = {

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Snippet component stories.
+ */
+
 import Component from './snippet.twig';
 import SnippetData from './snippet.stories.data';
 

@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Webform component stories.
+ */
+
 import Component from './webform.twig';
 
 const meta = {

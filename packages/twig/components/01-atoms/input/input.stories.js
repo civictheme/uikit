@@ -1,3 +1,7 @@
+/**
+ * CivicTheme Input component stories.
+ */
+
 import Component from './input.twig';
 
 const meta = {
