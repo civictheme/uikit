@@ -21,6 +21,17 @@
   "workspaces": [
     "packages/*"
   ],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm",
+    "arm64",
+    "ia32"
+  ],
   "scripts": {
     "build": "npm run build --workspaces",
     "dist": "npm run dist --workspaces",
@@ -65,5 +76,8 @@
     "stylelint-config-standard": "^23.0.0",
     "stylelint-config-standard-scss": "^2.0.1",
     "twig-testing-library": "^1.2.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.40.2"
   }
 }
