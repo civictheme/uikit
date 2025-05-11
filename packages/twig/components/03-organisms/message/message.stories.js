@@ -1,7 +1,3 @@
-/**
- * CivicTheme Message component stories.
- */
-
 import Component from './message.twig';
 
 const meta = {
@@ -16,8 +12,18 @@ const meta = {
       control: { type: 'select' },
       options: ['information', 'error', 'warning', 'success'],
     },
-    description: {
+    content: {
       control: { type: 'text' },
+    },
+    vertical_spacing: {
+      control: { type: 'radio' },
+      options: ['none', 'top', 'bottom', 'both'],
+    },
+    with_background: {
+      control: { type: 'boolean' },
+    },
+    has_aria: {
+      control: { type: 'boolean' },
     },
     attributes: {
       control: { type: 'text' },
@@ -38,7 +44,10 @@ export const Message = {
     theme: 'light',
     title: 'The information on this page is currently being updated.',
     type: 'information',
-    description: 'Message description',
+    content: 'Message description',
+    vertical_spacing: 'none',
+    with_background: false,
+    has_aria: true,
     attributes: '',
     modifier_class: '',
   },
