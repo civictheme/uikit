@@ -15,22 +15,32 @@
     margin-bottom: ct-spacing();
 
     .ct-navigation {
-      $root-dropdown: '.ct-navigation';
+      $root-nav: '.ct-navigation';
 
-      &#{$root-dropdown}--dropdown {
-        #{$root-dropdown}__items {
-          #{$root-dropdown}__menu {
+      // Common styles for all variants in top section
+      #{$root-nav}__items {
+        height: 100%;
+        min-height: ct-spacing(6); // Ensure consistent height
+
+        #{$root-nav}__menu {
+          &.ct-menu--level-0 {
+            gap: ct-spacing(3); // Wider spacing for top navigation
+            height: 100%;
+            align-items: center;
+          }
+        }
+      }
+
+      &#{$root-nav}--dropdown,
+      &#{$root-nav}--inline {
+        #{$root-nav}__items {
+          #{$root-nav}__menu {
             .ct-menu__item {
-              // Links - level 0.
+              // Links - level 0
               &--level-0 {
-                margin-right: ct-spacing(2);
-
-                &:last-child {
-                  margin-right: 0;
-                }
-
                 > .ct-link {
                   text-align: center;
+                  padding-block: ct-spacing();
                 }
               }
             }
@@ -62,104 +72,146 @@
     }
 
     .ct-navigation {
-      $root-drawer: '.ct-navigation';
+      $root-nav: '.ct-navigation';
 
-      &#{$root-drawer}--drawer {
-        #{$root-drawer}__items {
-          #{$root-drawer}__menu {
+      // Common styles for all variants in middle section
+      #{$root-nav}__items {
+        height: 100%;
+        min-height: ct-spacing(8); // Taller height for primary navigation
+
+        #{$root-nav}__menu {
+          &.ct-menu--level-0 {
+            gap: ct-spacing(0);
+          }
+
+          .ct-menu__item--level-0 {
+            border-bottom: solid ct-particle(0.5);
+
+            > .ct-link {
+              position: relative;
+              padding: ct-spacing(2);
+              font-weight: 500;
+              display: block;
+              text-align: center;
+
+              &::after {
+                right: ct-spacing();
+                margin-top: -1 * ct-particle(0.25);
+                top: ct-spacing(2);
+              }
+            }
+
+            &.ct-menu__item--active-trail > .ct-link::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+
+      @include ct-component-theme($root-nav) using($root-nav, $theme) {
+        #{$root-nav}__items {
+          #{$root-nav}__menu {
             .ct-menu__item {
               // Links - level 0.
               &--level-0 {
-                border-bottom: solid ct-particle(0.5);
+                border-bottom-color: ct-component-var($root-nav, $theme, menu-item, border-color);
+
+                &:hover {
+                  border-bottom-color: ct-component-var($root-nav, $theme, menu-item, hover, border-color);
+                }
+
+                &:active {
+                  border-bottom-color: ct-component-var($root-nav, $theme, menu-item, active, border-color);
+                }
+
+                &[data-collapsible] {
+                  @if $theme == 'light' {
+                    color: $ct-navigation-light-menu-color;
+                  }
+                  @else {
+                    color: $ct-navigation-dark-menu-color;
+                  }
+
+                  border-bottom-color: ct-component-var($root-nav, $theme, menu, border-color);
+
+                  &:hover {
+                    @if $theme == 'light' {
+                      color: $ct-navigation-light-menu-hover-color;
+                    }
+                    @else {
+                      color: $ct-navigation-dark-menu-hover-color;
+                    }
+
+                    border-bottom-color: ct-component-var($root-nav, $theme, menu-item, hover, border-color);
+                  }
+
+                  &:active {
+                    border-bottom-color: ct-component-var($root-nav, $theme, menu-item, active, border-color);
+                  }
+                }
+
+                &[data-collapsible-collapsed] {
+                  border-bottom-color: ct-component-var($root-nav, $theme, menu-item, border-color);
+                }
+
+                &.ct-menu__item--active-trail {
+                  border-bottom-color: ct-component-var($root-nav, $theme, menu, border-color);
+                }
 
                 > .ct-link {
-                  display: block;
-                  padding: ct-spacing(2);
-                  text-align: center;
+                  @include ct-component-property($root-nav, $theme, menu, color);
 
-                  &::after {
-                    right: ct-spacing();
-                    margin-top: -1 * ct-particle(0.25);
-                    top: ct-spacing(2);
+                  &:hover {
+                    @include ct-component-property($root-nav, $theme, menu, hover, color);
+                  }
+
+                  &[aria-expanded='true'],
+                  &:active {
+                    @include ct-component-property($root-nav, $theme, menu, active, color);
                   }
                 }
               }
             }
           }
         }
+      }
 
-        @include ct-component-theme($root-drawer) using($root-drawer, $theme) {
-          #{$root-drawer}__items {
-            #{$root-drawer}__menu {
-              .ct-menu__item {
-                // Links - level 0.
-                &--level-0 {
-                  border-bottom-color: ct-component-var($root-drawer, $theme, drawer-menu-item, border-color);
+      $root-drawer: '.ct-navigation';
 
+      @include ct-component-theme($root-drawer) using($root-drawer, $theme) {
+        #{$root-drawer}__items {
+          #{$root-drawer}__menu {
+            .ct-menu__item {
+              // Links - level 0.
+              &--level-0 {
+                &:hover {
+                  @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
+                }
+
+                &:active {
+                  @include ct-component-property($root-drawer, $theme, drawer-menu-item, active, background-color);
+                }
+
+                &[data-collapsible] {
                   &:hover {
                     @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
-
-                    border-bottom-color: ct-component-var($root-drawer, $theme, drawer-menu-item, hover, border-color);
                   }
 
                   &:active {
                     @include ct-component-property($root-drawer, $theme, drawer-menu-item, active, background-color);
+                  }
+                }
 
-                    border-bottom-color: ct-component-var($root-drawer, $theme, drawer-menu-item, active, border-color);
+                > .ct-link {
+                  @include ct-component-property($root-drawer, $theme, drawer-menu-item, background-color);
+
+                  &:hover {
+                    @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
                   }
 
-                  &[data-collapsible] {
-                    @if $theme == 'light' {
-                      color: $ct-navigation-light-drawer-color;
-                    }
-                    @else {
-                      color: $ct-navigation-dark-drawer-color;
-                    }
-
-                    border-bottom-color: ct-component-var($root-drawer, $theme, drawer, border-color);
-
-                    &:hover {
-                      @if $theme == 'light' {
-                        color: $ct-navigation-light-drawer-hover-color;
-                      }
-                      @else {
-                        color: $ct-navigation-dark-drawer-hover-color;
-                      }
-
-                      @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
-
-                      border-bottom-color: ct-component-var($root-drawer, $theme, drawer-menu-item, hover, border-color);
-                    }
-
-                    &:active {
-                      @include ct-component-property($root-drawer, $theme, drawer-menu-item, active, background-color);
-
-                      border-bottom-color: ct-component-var($root-drawer, $theme, drawer-menu-item, active, border-color);
-                    }
-                  }
-
-                  &[data-collapsible-collapsed] {
-                    border-bottom-color: ct-component-var($root-drawer, $theme, drawer-menu-item, border-color);
-                  }
-
-                  &.ct-menu__item--active-trail {
-                    border-bottom-color: ct-component-var($root-drawer, $theme, drawer, border-color);
-                  }
-
-                  > .ct-link {
-                    @include ct-component-property($root-drawer, $theme, drawer-menu-item, background-color);
-                    @include ct-component-property($root-drawer, $theme, drawer, color);
-
-                    &:hover {
-                      @include ct-component-property($root-drawer, $theme, drawer-menu-item, hover, background-color);
-                      @include ct-component-property($root-drawer, $theme, drawer, hover, color);
-                    }
-
-                    &[aria-expanded='true'],
-                    &:active {
-                      @include ct-component-property($root-drawer, $theme, drawer-menu-item, active, background-color);
-                      @include ct-component-property($root-drawer, $theme, drawer, active, color);
-                    }
+                  &[aria-expanded='true'],
+                  &:active {
+                    @include ct-component-property($root-drawer, $theme, drawer-menu-item, active, background-color);
                   }
                 }
               }
