@@ -7,19 +7,27 @@
 
   border-bottom: solid ct-particle(0.125);
 
+  &__top {
+    padding-top: ct-spacing();
+    padding-bottom: ct-spacing();
+  }
+
   &__content-top2 {
-    margin-top: ct-spacing();
-    margin-bottom: ct-spacing();
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   &__content-top3 {
-    margin-top: ct-spacing();
-    margin-bottom: ct-spacing();
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   &__middle {
-    padding-top: ct-particle(2);
-    padding-bottom: ct-particle(2);
+    padding-top: ct-spacing(2);
+    padding-bottom: ct-spacing(2);
   }
 
   &__content-middle2 {
@@ -29,20 +37,12 @@
   }
 
   &__content-middle3 {
-    .ct-button {
-      margin-left: ct-particle(1);
-    }
-  }
-
-  &__content-middle3 {
     height: 100%;
     display: flex;
     justify-content: flex-end;
   }
 
   &__content-bottom1 {
-    @include ct-print-hide();
-
     display: flex;
   }
 

@@ -40,7 +40,6 @@
   &#{$root}--primary {
     #{$root}__items {
       height: 100%;
-      min-height: ct-spacing(8); // Taller height for primary navigation
 
       #{$root}__menu {
         &.ct-menu--level-0 {
@@ -53,7 +52,7 @@
           > .ct-link {
             position: relative;
             padding: ct-spacing(2);
-            font-weight: 500;
+            font-weight: 600;
             display: block;
             text-align: center;
 
@@ -146,7 +145,7 @@
 
       #{$root}__menu {
         &.ct-menu--level-0 {
-          gap: ct-spacing(3); // Wider spacing for top navigation
+          gap: ct-spacing(2);
           height: 100%;
           align-items: center;
         }

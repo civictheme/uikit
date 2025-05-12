@@ -1,3 +1,4 @@
+import ItemList from '../../00-base/item-list/item-list.twig';
 import Logo from '../../02-molecules/logo/logo.twig';
 import LogoData from '../../02-molecules/logo/logo.stories.data';
 import Paragraph from '../../01-atoms/paragraph/paragraph.twig';
@@ -16,6 +17,7 @@ const HeaderData = {
     content_top2: Paragraph({
       theme,
       content: 'A design system by Salsa Digital',
+      no_margin: true,
     }).trim(),
     content_top3: Navigation({
       ...NavigationData.args(theme),
@@ -73,19 +75,25 @@ export const HeaderMultilineData = {
     return {
       ...defaultData,
       content_middle3: [
-        Button({
-          theme,
-          text: 'Support',
-          type: 'primary',
-          kind: 'link',
-          modifier_class: 'hide-xxs show-m',
-        }).trim(),
-        Button({
-          theme,
-          text: 'Request a demo',
-          type: 'secondary',
-          kind: 'link',
-          modifier_class: 'hide-xxs show-m',
+        ItemList({
+          items: [
+            Button({
+              theme,
+              text: 'Support',
+              type: 'primary',
+              kind: 'link',
+              url: '#',
+              modifier_class: 'hide-xxs show-m',
+            }).trim(),
+            Button({
+              theme,
+              text: 'Request a demo',
+              type: 'secondary',
+              kind: 'link',
+              url: '#',
+              modifier_class: 'hide-xxs show-m',
+            }).trim(),
+          ]
         }).trim(),
         MobileNavigationTrigger({
           theme,
