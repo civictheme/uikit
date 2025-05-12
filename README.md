@@ -156,6 +156,26 @@ a non-zero status if any component needs updating.
 > Note: If the SDC and Twig implementations significantly diverge in the future, we will switch
 > to only updating the docblock headers rather than the entire component.
 
+#### Validating SDC schema
+
+SDC components are validated using `sdc_devel` module running on a vanilla 
+Drupal site.
+
+To build and run a local Drupal site with SDC components run the following commands:
+```bash
+./devtools/assemble.sh     # Assemble the codebase
+./devtools/start.sh        # Start the PHP server
+./devtools/provision.sh    # Provision the Drupal website
+```
+
+You can stop the server with `./devtools/stop.sh`.
+
+To validate the SDC schema, run the following command:
+
+```bash
+build/vendor/bin/drush sdc-devel:validate civictheme_sdc
+```
+
 ### Check and fix code style
 
     npm run lint

@@ -14,71 +14,45 @@ jobs:
   test-drupal-sdc:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_DATABASE: drupal
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    env:
+      DRUPAL_VERSION: 11.1
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Upgrade sqlite3
+        run: |
+          wget https://www.sqlite.org/2024/sqlite-autoconf-3450300.tar.gz -O /tmp/sqlite.tar.gz
+          tar -xzf /tmp/sqlite.tar.gz -C /tmp
+          cd /tmp/sqlite-autoconf-3450300
+          ./configure CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA=1" --prefix=/usr/local
+          make && sudo make install
+          sudo ldconfig
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
-          extensions: mbstring, xml, ctype, iconv, mysql, curl, intl, gd, zip
-          tools: composer:v2
+          php-version: 8.3
+          extensions: gd, sqlite, pdo_sqlite
+          coverage: pcov
 
-      - name: Cache Composer dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.composer/cache
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+      - name: Assemble the codebase
+        run: .devtools/assemble.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Drupal project
-        uses: bluehorndigital/setup-drupal@v1.1.0
-        with:
-          path: drupal
-          version: '^11.1'
-          dependencies: 'drush/drush'
+      - name: Start built-in PHP server
+        run: .devtools/start.sh
 
-      - name: Add Drupal dependencies
-        run: composer require drupal/sdc_devel
-        working-directory: drupal
-
-      - name: Install Drupal site
-        run: vendor/bin/drush site-install minimal --db-url=mysql://root:@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name="Drupal 11" -y
-        working-directory: drupal
-
-      - name: Create custom theme
-        run: |
-          mkdir -p web/themes/custom/civictheme_sdc/components
-          cat << EOF > web/themes/custom/civictheme_sdc/civictheme_sdc.info.yml
-          name: CivicTheme SDC
-          type: theme
-          description: 'A theme for testing SDC components'
-          base theme: stark
-          core_version_requirement: ^11
-          EOF
-        working-directory: drupal
-
-      - name: Copy SDC components into custom theme
-        run: cp -r ${{ github.workspace }}/packages/sdc/components/* drupal/web/themes/custom/civictheme_sdc/components/
-
-      - name: Enable theme and modules
-        run: |
-          vendor/bin/drush en sdc_devel -y
-          vendor/bin/drush theme:enable civictheme_sdc
-          vendor/bin/drush config:set system.theme default civictheme_sdc -y
-        working-directory: drupal
+      - name: Provision site
+        run: .devtools/provision.sh
 
       - name: Lint SDC components
         run: |
@@ -88,5 +62,5 @@ jobs:
             echo "Validation failed: Warning found in output."
             exit 1
           fi
-        working-directory: drupal
+        working-directory: build
         continue-on-error: ${{ vars.CI_DRUPAL_SDC_LINT_IGNORE_FAILURE == '1' }}
