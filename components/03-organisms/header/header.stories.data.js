@@ -93,7 +93,7 @@ export const HeaderMultilineData = {
               url: '#',
               modifier_class: 'hide-xxs show-m',
             }).trim(),
-          ]
+          ],
         }).trim(),
         MobileNavigationTrigger({
           theme,
