@@ -34,6 +34,10 @@
     @include ct-typography('label-regular');
 
     white-space: nowrap;
+
+    @include ct-breakpoint(m) {
+      padding-top: ct-spacing();
+    }
   }
 
   &__list {
