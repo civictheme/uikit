@@ -36,11 +36,11 @@
  */
 #}
 
-{% set type = type|default('hidden') %}
-{% set title_display = title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
-{% set is_invalid = is_invalid ? is_invalid : false %}
-{% set is_disabled = is_disabled ? is_disabled : false %}
-{% set is_required = is_required ? is_required : false %}
+{% set type = type is defined ? type : 'hidden' %}
+{% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
+{% set is_invalid = is_invalid is defined ? is_invalid : false %}
+{% set is_disabled = is_disabled is defined ? is_disabled : false %}
+{% set is_required = is_required is defined ? is_required : false %}
 {% set orientation = orientation in ['vertical', 'horizontal'] ? orientation : 'vertical' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type) %}
@@ -51,7 +51,7 @@
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 
 {# Initialise empty control and convert to an array. #}
-{% if not control or control is not iterable %}
+{% if control is not defined or control is not iterable %}
 	{% set control = [{name: name}] %}
 {% else %}
 	{% set first_key = control|keys|first %}
@@ -64,27 +64,27 @@
 	{% set default_multiple = is_multiple ? is_multiple : false %}
 	{% set field_is_multiple = control_multiple ? control_multiple : default_multiple %}
 	{% set c = {
-		theme: c.theme|default(theme),
-		label: c.label|default(title),
-		name: c.name|default(name),
-		value: c.value|default(value),
-		id: c.id|default(id),
-		options: c.options|default(options|default([])),
-		is_multiple: field_is_multiple,
-		placeholder: placeholder|default(''),
-		is_required: c.is_required|default(is_required),
-		required_text: c.required_text|default(required_text),
+		theme: c.theme is defined ? c.theme : theme,
+		label: c.label is defined ? c.label : title,
+		name: c.name is defined ? c.name : name,
+		value: c.value is defined ? c.value : value,
+		id: c.id is defined ? c.id : id,
+		options: c.options is defined ? c.options : options is defined ? options : [],
+		is_multiple: c.is_multiple is defined ? c.is_multiple : is_multiple is defined ? is_multiple : false,
+		placeholder: placeholder is defined ? placeholder : '',
+		is_required: c.is_required is defined ? c.is_required : is_required,
+		required_text: c.required_text ? c.required_text : required_text,
 		is_invalid: is_invalid,
-		is_disabled: c.is_disabled|default(is_disabled),
-		is_checked: c.is_checked ? c.is_checked : false,
-		attributes: c.attributes|default(''),
-		modifier_class: c.modifier_class ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
+		is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
+		is_checked: c.is_checked is defined ? c.is_checked : false,
+		attributes: c.attributes is defined ? c.attributes : '',
+		modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
 	} %}
 	{% set _controls = _controls|merge([c]) %}
 {% endfor %}
 {% set control = _controls %}
 
-{% if control[0].name %}
+{% if control[0].name is defined %}
 	<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
 		{% if title and title_display != 'hidden' and type != 'hidden' %}
 			{% include '@atoms/label/label.twig' with {

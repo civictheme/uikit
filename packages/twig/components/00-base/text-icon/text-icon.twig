@@ -21,7 +21,6 @@
 {%- set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' -%}
 
 {%- set content_markup -%}
-  <span class="ct-text-icon" {% if attributes %}{{ attributes|raw }}{% endif %}>
   {%- if icon or is_external -%}
 
     {%- if icon -%}
@@ -33,7 +32,7 @@
       {%- endset -%}
     {%- endif -%}
 
-    {%- if text -%}
+    {%- if text is not empty -%}
 
       {%- if icon and icon_placement == 'before' and not is_external -%}
         {{- icon_markup -}}{{- text|raw -}}
@@ -79,12 +78,11 @@
   {%- else -%}
     {{- text|raw -}}
   {%- endif -%}
-  </span>
 {%- endset -%}
 
 {%- if is_new_window -%}
   {%- set is_new_window_content -%}
-    <span class="ct-visually-hidden">(Opens in a new tab/window)</span>
+    <span class="ct-visually-hidden" {% if attributes %}{{ attributes|raw }}{% endif %}>(Opens in a new tab/window)</span>
   {%- endset -%}
 {%- endif -%}
 

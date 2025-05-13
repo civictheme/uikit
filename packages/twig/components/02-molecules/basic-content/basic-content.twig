@@ -19,7 +19,9 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
 
-{% if content %}
+{% set is_contained = is_contained is not defined or is_contained != false ? true : false %}
+
+{% if content is not empty %}
   <div class="ct-basic-content {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     {% if is_contained %}
       <div class="container">

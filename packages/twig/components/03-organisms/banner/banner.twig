@@ -43,9 +43,9 @@
     <div class="ct-banner__wrapper">
       <div
         class="ct-banner__inner {% if background_image_blend_mode %}ct-background--{{ background_image_blend_mode|default('normal') }}{% endif %}"
-        {% if background_image and background_image.url %}style="background-image: url('{{ background_image.url }}');"{% endif %}
+        {% if background_image and background_image.url is defined and background_image.url is not empty %}style="background-image: url('{{ background_image.url }}');"{% endif %}
       >
-        {% if background_image and background_image.alt %}
+        {% if background_image and background_image.alt is defined and background_image.alt is not empty %}
         <span role="img" aria-label="{{ background_image.alt }}"> </span>
         {% endif %}
 

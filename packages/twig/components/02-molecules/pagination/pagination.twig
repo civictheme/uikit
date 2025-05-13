@@ -52,7 +52,7 @@
   >
     <h4 {% if heading_id %}id="{{ heading_id }}"{% endif %} class="ct-visually-hidden">{{ 'Pagination' }}</h4>
 
-    {% if items_per_page_options %}
+    {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pagination__items_per_page">
         {%- include '@molecules/field/field.twig' with {
           title: items_per_page_title,

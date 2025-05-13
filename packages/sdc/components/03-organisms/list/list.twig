@@ -188,7 +188,7 @@
       {% endblock %}
 
       {% block empty_slot %}
-        {% if empty and not rows -%}
+        {% if empty is defined and (rows is not defined or rows is empty) -%}
           <div class="container ct-list__empty-results">
             <div class="row">
               <div class="col-xxs-12">
@@ -223,7 +223,7 @@
         </div>
       {% endif %}
 
-      {% if pagination %}
+      {% if pagination is defined and pagination is not empty %}
         <div class="ct-list__results-below">
           {% block pagination_slot %}
             <div class="container">

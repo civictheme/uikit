@@ -38,12 +38,14 @@
     <div class="container">
       <div class="row">
         <div class="ct-alert__title col-xxs-12 col-m-3">
-          <span class="ct-alert__icon">
-            {% include '@base/icon/icon.twig' with {
-              symbol: icons[type],
+          {% if icons[type] is defined %}
+            <span class="ct-alert__icon">
+              {% include '@base/icon/icon.twig' with {
+                symbol: icons[type],
               size: 'regular',
-            } only %}
-          </span>
+              } only %}
+            </span>
+          {% endif %}
           {{ title|raw }}
         </div>
 
