@@ -4,11 +4,11 @@
  * CivicTheme Back to Top component.
  *
  * Variables:
-{{variables}}
+ * - attributes: [string] Additional HTML attributes.
  */
 #}
 
-<div class="ct-back-to-top" data-component-name="back-to-top" data-scrollspy data-scrollspy-offset="400">
+<div class="ct-back-to-top" data-component-name="back-to-top" data-scrollspy data-scrollspy-offset="400" {% if attributes %}{{- attributes|raw -}}{% endif %}>
   {% include 'civictheme:button' with {
     kind: 'link',
     type: 'primary',

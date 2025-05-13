@@ -19,7 +19,7 @@
  */
 #}
 
-{% if links is not empty or scope_selector is not empty %}
+{% if links or scope_selector %}
   <div class="container">
     <div class="row">
       <div class="col-xxs-12">
@@ -28,7 +28,7 @@
           {% set position_class = 'ct-table-of-contents--position-%s'|format(position|default('before')) %}
           {% set modifier_class = '%s %s %s'|format(theme_class, position_class, modifier_class|default('')) %}
 
-          <div class="ct-table-of-contents {{ modifier_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+          <div class="ct-table-of-contents {{ modifier_class }}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
             {% if title %}
               <h2 class="ct-table-of-contents__title">{{ title }}</h2>
             {% endif %}

@@ -47,6 +47,8 @@ props:
             type: array
             title: Below
             description: Submenu items.
+            items:
+              type: object
     bottom_menu:
       type: array
       title: Bottom Menu
@@ -74,6 +76,12 @@ props:
             type: array
             title: Below
             description: Submenu items.
+            items:
+              type: object
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

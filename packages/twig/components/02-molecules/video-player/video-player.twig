@@ -34,11 +34,11 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if sources is not empty or embedded_source is not empty or raw_source is not empty %}
+{% if sources or embedded_source or raw_source %}
   <div class="ct-video-player {{ modifier_class -}}">
     {% block video_slot %}
       <div class="ct-video-player__wrapper">
-        {% if sources is not empty %}
+        {% if sources %}
           {% include '@atoms/video/video.twig' with {
             sources: sources,
             poster: poster,
@@ -46,9 +46,9 @@
             height: height,
             has_controls: true,
           } only %}
-        {% elseif embedded_source is not empty %}
+        {% elseif embedded_source %}
           {% set attributes = '%s %s'|format('allowfullscreen data-chromatic="ignore"', attributes|default('')) %}
-          {% if title is not empty %}
+          {% if title %}
             {% set attributes = attributes ~ 'title="' ~ title ~ '"' %}
           {% endif %}
           {% include '@atoms/iframe/iframe.twig' with {
@@ -65,7 +65,7 @@
 
     {% block links_slot %}
       <div class="ct-video-player__links">
-        {% if transcript_link.url is defined and transcript_link.url is not empty %}
+        {% if transcript_link.url %}
           <div class="ct-video-player__links__transcript">
             {% include '@atoms/button/button.twig' with {
               kind: 'link',

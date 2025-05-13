@@ -14,6 +14,8 @@
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
  *   - below: [array] Submenu items.
+ *     Each item contains:
+ *       [object] items
  * - bottom_menu: [array] Bottom section menu items:
  *   Each item contains:
  *   - title: [string] Menu item title.
@@ -21,6 +23,9 @@
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
  *   - below: [array] Submenu items.
+ *     Each item contains:
+ *       [object] items
+ * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -34,14 +39,14 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link">
+<div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link" {% if attributes %}{{ attributes|raw }}{% endif %}>
   <div data-flyout-panel class="ct-mobile-navigation__panel">
     {% include 'civictheme:mobile-navigation-close' with {
       theme: theme,
     } only %}
 
     {% block content_top_slot %}
-      {% if content_top is not empty %}
+      {% if content_top %}
         <div class="ct-mobile-navigation__content_top">
           {{ content_top|raw }}
         </div>
@@ -49,7 +54,7 @@
     {% endblock %}
 
     {% block top_menu_slot %}
-      {% if top_menu is not empty %}
+      {% if top_menu %}
         <div class="ct-mobile-navigation__top-menu-wrapper">
           {% include 'civictheme:mobile-navigation-menu' with {
             theme: theme,
@@ -61,7 +66,7 @@
     {% endblock %}
 
     {% block bottom_menu_slot %}
-      {% if bottom_menu is not empty %}
+      {% if bottom_menu %}
         <div class="ct-mobile-navigation__bottom-menu-wrapper">
           {% include 'civictheme:mobile-navigation-menu' with {
             theme: theme,
@@ -73,7 +78,7 @@
     {% endblock %}
 
     {% block content_bottom_slot %}
-      {% if content_bottom is not empty %}
+      {% if content_bottom %}
         <div class="ct-mobile-navigation__content_bottom">
           {{ content_bottom|raw }}
         </div>

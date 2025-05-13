@@ -78,6 +78,13 @@ props:
       type: array
       title: Tags
       description: Card tags.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text
     content_top:
       type: string
       title: Content Top

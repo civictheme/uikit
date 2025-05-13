@@ -5,6 +5,10 @@ description: Component for combining text with icons
 props:
   type: object
   properties:
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
     text:
       type: string
       title: Text

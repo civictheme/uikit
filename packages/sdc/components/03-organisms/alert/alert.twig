@@ -15,8 +15,8 @@
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set type = type|default('information') %}
-{% set type_class = 'ct-alert--%s'|format(type|default('information')) %}
+{% set type = type in ['information', 'warning', 'error', 'success'] ? type : 'information' %}
+{% set type_class = 'ct-alert--%s'|format(type) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, type_class, modifier_class|default('')) %}
 
 {% set icons = {
@@ -26,26 +26,24 @@
   success: 'megaphone',
 } %}
 
-{% if description is not empty %}
+{% if description %}
   <div
     class="ct-alert {{ modifier_class -}}"
     data-alert-id="{{ id }}"
     data-alert-type="{{ type }}"
     data-component-name="ct-alert"
     role="alert"
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes %}{{- attributes|raw -}}{% endif %}
   >
     <div class="container">
       <div class="row">
         <div class="ct-alert__title col-xxs-12 col-m-3">
-          {% if icons[type] is defined %}
-            <span class="ct-alert__icon">
-              {% include 'civictheme:icon' with {
-                symbol: icons[type],
-                size: 'regular',
-              } only %}
-            </span>
-          {% endif %}
+          <span class="ct-alert__icon">
+            {% include 'civictheme:icon' with {
+              symbol: icons[type],
+              size: 'regular',
+            } only %}
+          </span>
           {{ title|raw }}
         </div>
 

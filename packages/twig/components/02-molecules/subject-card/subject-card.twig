@@ -23,17 +23,17 @@
  */
 #}
 
-{% set with_link = link is not empty and link.url is defined and link.url is not empty %}
-{% set with_image = image.url is defined and image.url is not empty %}
+{% set with_link = link and link.url %}
+{% set with_image = image.url %}
 {% set with_image_class = with_image ? 'ct-subject-card--with-image' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, with_image_class, modifier_class|default('')) %}
 
-{% if title is not empty %}
-  <div class="ct-subject-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if title %}
+  <div class="ct-subject-card {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-subject-card__content">
       {% block image_slot %}
-        {% if image.url is defined and image.url is not empty %}
+        {% if image.url %}
           <div class="ct-subject-card__image">
             {% include '@atoms/image/image.twig' with {
               theme: theme,
@@ -45,7 +45,7 @@
       {% endblock %}
 
       {% block image_over_slot %}
-        {% if image_over is not empty %}
+        {% if image_over %}
           <div class="ct-subject-card__image__over">
             {{ image_over }}
           </div>
@@ -53,7 +53,7 @@
       {% endblock %}
 
       {% block title_slot %}
-        {% if title is not empty %}
+        {% if title %}
           {% set title_content %}
             {% if with_link %}
               {% include '@atoms/link/link.twig' with {

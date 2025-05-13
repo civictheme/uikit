@@ -25,13 +25,13 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, size_class, required_class, modifier_class|default('')) %}
 
-{% if content is not empty -%}
+{% if content -%}
   <{{ tag }}
     class="ct-label {{ modifier_class -}}"
-    {% if for is not empty %} for="{{ for }}" {% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if for %} for="{{ for }}" {% endif %}
+    {% if attributes %}{{- attributes|raw -}}{% endif %}
   >
-    {% if allow_html|default(false) %}
+    {% if allow_html ? allow_html : false %}
       {{- content|raw -}}
     {% else %}
       {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}

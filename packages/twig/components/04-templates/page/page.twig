@@ -59,7 +59,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-page {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-page {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
   <a id="top" tab-index="-1" aria-hidden="true"></a>
 
   {% block header_slot %}
@@ -76,12 +76,12 @@
   {% endblock %}
 
   {% block banner_slot %}
-    {% if banner is not empty %}
+    {% if banner %}
       {{ banner|raw }}
     {% endif %}
   {% endblock %}
 
-  {% if highlighted is not empty %}
+  {% if highlighted %}
     {% block highlighted_slot %}
       <div class="container">
         <div class="row">
@@ -111,7 +111,7 @@
       is_contained: content_contained,
       content_bottom: content_bottom,
       vertical_spacing: vertical_spacing,
-      attributes: (banner is empty) ? 'id="main-content" tabindex="-1"' : '',
+      attributes: (not banner) ? 'id="main-content" tabindex="-1"' : '',
     } only %}
   {% endblock %}
 

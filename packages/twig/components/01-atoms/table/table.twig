@@ -29,13 +29,13 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s'|format(theme_class, caption_position_class, striped_class, data_table_class, modifier_class|default('')) %}
 
-{% if rows is not empty or header is not empty or footer is not empty or caption is not empty %}
-  <table class="ct-table {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if rows or header or footer or caption %}
+  <table class="ct-table {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     {% if caption %}
       <caption>{{ caption }}</caption>
     {% endif %}
 
-    {% if header is not empty %}
+    {% if header %}
       <thead>
         <tr>
           {% for item in header %}
@@ -45,12 +45,12 @@
       </thead>
     {% endif %}
 
-    {% if rows is not empty %}
+    {% if rows %}
       <tbody>
       {% for row in rows %}
         <tr>
           {% for col in row %}
-            <td {% if header is not empty and header[loop.index0] %}data-title="{{ header[loop.index0] }}"{% endif %}>
+            <td {% if header and header[loop.index0] %}data-title="{{ header[loop.index0] }}"{% endif %}>
               {{ col|raw }}
             </td>
           {% endfor %}
@@ -59,7 +59,7 @@
       </tbody>
     {% endif %}
 
-    {% if footer is not empty %}
+    {% if footer %}
       <tfoot>
         <tr>
           {% for item in footer %}

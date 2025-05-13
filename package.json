@@ -41,6 +41,7 @@
     "dev:twig": "npm run dev --workspace=packages/twig",
     "dev:sdc": "npm run dev --workspace=packages/sdc",
     "test": "npm run test --workspaces",
+    "test:update-snapshot": "npm run test --workspaces -- --updateSnapshot",
     "test:all": "node --experimental-vm-modules node_modules/.bin/jest",
     "test:ci": "npm run test:ci --workspaces",
     "lint": "npm run lint --workspaces && eslint ./tools/visual-diff/**/*.mjs ./tools/scripts/**/*.js",

@@ -27,12 +27,12 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if content is not empty %}
-  <div class="ct-popover {{ modifier_class -}}" data-collapsible data-collapsible-collapsed data-collapsible-group="{{ group|default('') }}" data-collapsible-duration="250" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if content %}
+  <div class="ct-popover {{ modifier_class -}}" data-collapsible data-collapsible-collapsed data-collapsible-group="{{ group|default('') }}" data-collapsible-duration="250" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     {% include '@atoms/link/link.twig' with {
       theme: theme,
       text: trigger.text,
-      url: trigger.url is defined ? trigger.url : null,
+      url: trigger.url ? trigger.url : null,
       is_new_window: trigger.is_new_window,
       modifier_class: 'ct-popover__link',
       attributes: 'data-collapsible-trigger tabindex="0"',
@@ -42,7 +42,7 @@
       <div class="ct-popover__content__inner">
 
         {% block content_top_slot %}
-          {% if content_top is not empty %}
+          {% if content_top %}
             <div class="ct-popover__content-top">
               {{- content_top|raw -}}
             </div>
@@ -54,7 +54,7 @@
         {% endblock %}
 
         {% block content_bottom_slot %}
-          {% if content_bottom is not empty %}
+          {% if content_bottom %}
             <div class="ct-popover__content-bottom">
               {{- content_bottom|raw -}}
             </div>

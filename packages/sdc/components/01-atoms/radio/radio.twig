@@ -22,7 +22,7 @@
 {% set is_invalid_class = is_invalid ? 'ct-radio--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-{% if name is not empty and id is not empty %}
+{% if name and id %}
   <input
     type="radio"
     class="ct-radio {{ modifier_class -}}"
@@ -32,9 +32,9 @@
     {% if is_checked %}checked{% endif %}
     {% if is_required %}required{% endif %}
     {% if is_disabled %}disabled{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes %}{{- attributes|raw -}}{% endif %}
   />
-  {% if label is not empty %}
+  {% if label %}
     {% include 'civictheme:label' with {
       theme: theme,
       content: label,

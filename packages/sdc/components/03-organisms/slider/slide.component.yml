@@ -40,6 +40,13 @@ props:
       type: array
       title: Tags
       description: Tags.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text
     title:
       type: string
       title: Title

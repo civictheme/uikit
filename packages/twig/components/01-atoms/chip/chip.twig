@@ -23,7 +23,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, kind_class, size_class, selected_class, multiple_class, modifier_class|default('')) %}
 
-{% if content is not empty %}
+{% if content %}
   {% if kind == 'input' %}
     <label
       class="ct-chip {{ modifier_class -}}"
@@ -34,7 +34,7 @@
         class="ct-chip__input"
         type="{% if is_multiple %}checkbox{% else %}radio{% endif %}"
         {% if is_selected %}checked="checked"{% endif %}
-        {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+        {% if attributes %}{{- attributes|raw -}}{% endif %}
       >
       {{- content -}}
       {% if is_multiple %}
@@ -48,7 +48,7 @@
     <span
       class="ct-chip {{ modifier_class -}}"
       data-component-name="chip"
-      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+      {% if attributes %}{{- attributes|raw -}}{% endif %}
     >
       {{- content -}}
     </span>

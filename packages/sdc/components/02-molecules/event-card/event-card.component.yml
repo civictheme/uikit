@@ -72,6 +72,15 @@ props:
       description: Event tags.
       items:
         type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text.
+          url:
+            type: string
+            title: URL
+            description: Tag URL.
     content_top:
       type: string
       title: Top content

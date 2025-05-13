@@ -24,16 +24,14 @@
   success: 'approve',
 } %}
 
-{% if content is not empty -%}
-  <div class="ct-field-message {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% if icons[type] is defined %}
-      {% include '@base/icon/icon.twig' with {
-        symbol: icons[type],
-        size: 'regular',
-        modifier_class: 'ct-field-message__icon',
-      } only %}
-    {% endif %}
-    {% if allow_html|default(false) %}
+{% if content -%}
+  <div class="ct-field-message {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
+    {% include '@base/icon/icon.twig' with {
+      symbol: icons[type],
+      size: 'regular',
+      modifier_class: 'ct-field-message__icon',
+    } only %}
+    {% if allow_html ? allow_html : false %}
       {{- content|raw -}}
     {% else %}
       {{- content -}}

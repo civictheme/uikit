@@ -44,6 +44,10 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
 slots:
   content_top1_slot:
     title: Content Top1 Slot

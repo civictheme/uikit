@@ -34,17 +34,17 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
 
-{% set is_contained = is_contained is not defined or is_contained != false ? true : false %}
+{% set is_contained = not is_contained ? true : is_contained %}
 
-{% if title is not empty or content is not empty %}
-  <div class="ct-promo {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if title or content %}
+  <div class="ct-promo {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     {% if is_contained %}
       <div class="container">
         <div class="row">
           <div class="col-xxs-12">
             {% endif %}
               {% block content_top_slot %}
-                {% if content_top is not empty %}
+                {% if content_top %}
                   <div class="ct-promo__content-top">
                     {{ content_top|raw }}
                   </div>
@@ -64,7 +64,7 @@
                         } only %}
                       {% endif %}
 
-                      {% if content is not empty %}
+                      {% if content %}
                         {% include '@atoms/paragraph/paragraph.twig' with {
                           theme: theme,
                           content: content,
@@ -85,8 +85,8 @@
                           size: 'large',
                           text: link.text,
                           url: link.url,
-                          is_new_window: link.is_new_window is defined ? link.is_new_window : false,
-                          is_external: link.is_external is defined ? link.is_external : false,
+                          is_new_window: link.is_new_window ? link.is_new_window : false,
+                          is_external: link.is_external ? link.is_external : false,
                           modifier_class: 'ct-promo__button',
                         } only %}
                       </div>
@@ -96,7 +96,7 @@
               {% endblock %}
 
               {% block content_bottom_slot %}
-                {% if content_bottom is not empty %}
+                {% if content_bottom %}
                   <div class="ct-promo__content-bottom">
                     {{ content_bottom|raw }}
                   </div>

@@ -18,9 +18,10 @@
  * - link: [object] Optional link:
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open in a new window.
- * - tags: [array] Event tags.
+ * - tags: [array] Event tags:
  *   Each item contains:
- *     [object] items
+ *   - text: [string] Tag text.
+ *   - url: [string] Tag URL.
  * - content_top: [string] Card top content.
  * - image_over: [string] Image overlay content.
  * - content_middle: [string] Card middle content.
@@ -43,16 +44,16 @@
  */
 #}
 
-{% set with_image = image.url is not empty %}
+{% set with_image = image.url %}
 {% set with_image_class = with_image ? 'ct-event-card--with-image' : '' %}
-{% set with_link = link is not empty and link.url is defined and link.url is not empty %}
+{% set with_link = link and link.url %}
 {% set image_over_class = image_over ? 'ct-event-card--image-over' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_image_class, image_over_class, modifier_class|default('')) %}
 
-<div class="ct-event-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-event-card {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
   {% block image_slot %}
-    {% if image.url is not empty or image_over is not empty %}
+    {% if image.url or image_over %}
       <div class="ct-event-card__image">
         {% include '@atoms/image/image.twig' with {
           theme: theme,
@@ -61,7 +62,7 @@
         } only %}
 
         {% block image_over_slot %}
-          {% if image_over is not empty %}
+          {% if image_over %}
             <div class="ct-event-card__image__over">
               {{ image_over }}
             </div>
@@ -74,7 +75,7 @@
   {% block content_slot %}
     <div class="ct-event-card__content">
       {% block content_top_slot %}
-        {% if content_top is not empty %}
+        {% if content_top %}
           <div class="ct-event-card__content-top">
             {{- content_top|raw -}}
           </div>
@@ -82,7 +83,7 @@
       {% endblock %}
 
       {% block date_slot %}
-        {% if date is not empty %}
+        {% if date %}
           {% set date_content %}
             {% include '@base/datetime/datetime.twig' with {
               start: date,
@@ -105,7 +106,7 @@
       {% endblock %}
 
       {% block title_slot %}
-        {% if title is not empty %}
+        {% if title %}
           {% set title_content %}
             {% if with_link %}
               {% include '@atoms/link/link.twig' with {
@@ -129,7 +130,7 @@
       {% endblock %}
 
       {% block content_middle_slot %}
-        {% if content_middle is not empty %}
+        {% if content_middle %}
           <div class="ct-event-card__middle">
             {{- content_middle|raw -}}
           </div>
@@ -148,7 +149,7 @@
       {% endblock %}
 
       {% block summary_slot %}
-        {% if summary is not empty %}
+        {% if summary %}
           {% include '@atoms/paragraph/paragraph.twig' with {
             theme: theme,
             content: summary,
@@ -184,7 +185,7 @@
       {% endblock %}
 
       {% block content_bottom_slot %}
-        {% if content_bottom is not empty %}
+        {% if content_bottom %}
           <div class="ct-event-card__content-bottom">
             {{- content_bottom|raw -}}
           </div>

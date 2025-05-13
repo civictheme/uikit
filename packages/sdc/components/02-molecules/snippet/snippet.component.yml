@@ -57,6 +57,13 @@ props:
       type: array
       title: Tags
       description: Snippet tags.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text
     attributes:
       type: string
       title: Attributes

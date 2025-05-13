@@ -32,7 +32,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, dropdown_class, modifier_class|default('')) %}
 
-{% if items is not empty %}
+{% if items %}
   {% if type in ['dropdown', 'drawer'] %}
     {% for key in items|keys %}
       {% if items[key].below %}
@@ -65,7 +65,7 @@
     {% endfor %}
   {% endif %}
 
-  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-navigation {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     {% if title %}
       {% block title_slot %}
         {% include '@atoms/heading/heading.twig' with {
@@ -79,7 +79,7 @@
 
     <nav
       class="ct-navigation__items"
-      {% if name is not empty %}aria-label="{{ name }}"{% endif %}
+      {% if name %}aria-label="{{ name }}"{% endif %}
     >
       {% include '@base/menu/menu.twig' with {
         theme: theme,

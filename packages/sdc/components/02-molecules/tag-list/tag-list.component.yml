@@ -20,6 +20,13 @@ props:
       type: array
       title: Tags
       description: Tags.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text
     content_bottom:
       type: string
       title: Content Bottom

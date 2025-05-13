@@ -4,6 +4,7 @@
  * CivicTheme Text Icon component.
  *
  * Variables:
+ * - attributes: [string] Additional HTML attributes.
  * - text: [string] Text content.
  * - is_new_window: [boolean] Whether to open in a new window.
  * - is_external: [boolean] Whether the link is external.
@@ -20,6 +21,7 @@
 {%- set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' -%}
 
 {%- set content_markup -%}
+  <span class="ct-text-icon" {% if attributes %}{{ attributes|raw }}{% endif %}>
   {%- if icon or is_external -%}
 
     {%- if icon -%}
@@ -31,7 +33,7 @@
       {%- endset -%}
     {%- endif -%}
 
-    {%- if text is not empty -%}
+    {%- if text -%}
 
       {%- if icon and icon_placement == 'before' and not is_external -%}
         {{- icon_markup -}}{{- text|raw -}}
@@ -77,6 +79,7 @@
   {%- else -%}
     {{- text|raw -}}
   {%- endif -%}
+  </span>
 {%- endset -%}
 
 {%- if is_new_window -%}

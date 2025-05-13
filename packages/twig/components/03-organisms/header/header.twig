@@ -13,6 +13,7 @@
  * - content_middle3: [string] Middle section third content slot.
  * - content_bottom1: [string] Bottom section content slot.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [string] Additional HTML attributes.
  *
  * Slots:
  * - content_top1_slot: [slot] Top1 content area content
@@ -28,13 +29,13 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if content_top1 is not empty or content_top2 is not empty or content_top3 is not empty or content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_bottom1 is not empty %}
-  <header class="ct-header {{ modifier_class -}}" role="banner">
+{% if content_top1 or content_top2 or content_top3 or content_middle1 or content_middle2 or content_middle3 or content_bottom1 %}
+  <header class="ct-header {{ modifier_class -}}" role="banner" {% if attributes %}{{- attributes|raw -}}{% endif %}>
 
-    {% if content_top1 is not empty or content_top2 is not empty or content_top3 is not empty %}
+    {% if content_top1 or content_top2 or content_top3 %}
       <div class="ct-header__top hide-xxs show-m">
 
-        {% if content_top1 is not empty %}
+        {% if content_top1 %}
           {% block content_top1_slot %}
             <div class="container">
               <div class="row">
@@ -48,7 +49,7 @@
           {% endblock %}
         {% endif %}
 
-        {% if content_top2 is not empty or content_top3 is not empty %}
+        {% if content_top2 or content_top3 %}
           <div class="container">
             <div class="row">
 
@@ -74,10 +75,10 @@
       </div>
     {% endif %}
 
-    {% if content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty %}
+    {% if content_middle1 or content_middle2 or content_middle3 %}
       <div class="ct-header__middle">
 
-        {% if content_middle1 is not empty %}
+        {% if content_middle1 %}
           {% block content_middle1_slot %}
             <div class="container">
               <div class="row">
@@ -91,10 +92,10 @@
           {% endblock %}
         {% endif %}
 
-        {% if content_middle2 is not empty or content_middle3 is not empty %}
+        {% if content_middle2 or content_middle3 %}
           <div class="container">
             <div class="row row--no-wrap">
-              {% if content_middle2 is not empty %}
+              {% if content_middle2 %}
                 {% block content_middle2_slot %}
                   <div class="col col--no-grow">
                     <div class="ct-header__content-middle2">
@@ -104,7 +105,7 @@
                 {% endblock %}
               {% endif %}
 
-              {% if content_middle3 is not empty %}
+              {% if content_middle3 %}
                 {% block content_middle3_slot %}
                   <div class="col">
                     <div class="ct-header__content-middle3">
@@ -119,7 +120,7 @@
       </div>
     {% endif %}
 
-    {% if content_bottom1 is not empty %}
+    {% if content_bottom1 %}
       {% block content_bottom1_slot %}
         <div class="container">
           <div class="row">

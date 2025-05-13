@@ -6,7 +6,9 @@
  * Variables:
  * - theme: [string] Theme variation (light or dark).
  * - content_top: [string] Top content area.
- * - tags: [array] Tags.
+ * - tags: [array] Tags:
+ *   Each item contains:
+ *   - text: [string] Tag text
  * - content_bottom: [string] Bottom content area.
  * - vertical_spacing: [string] Tag list vertical spacing (none, top, bottom, both).
  * - attributes: [string] Additional HTML attributes.
@@ -23,10 +25,10 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
-{% if tags is not empty %}
-  <div class="ct-tag-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if tags %}
+  <div class="ct-tag-list {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     {% block content_top_slot %}
-      {% if content_top is not empty %}
+      {% if content_top %}
         <div class="ct-tag-list__content-top">
           {{- content_top|raw -}}
         </div>
@@ -54,7 +56,7 @@
     {% endblock %}
 
     {% block content_bottom_slot %}
-      {% if content_bottom is not empty %}
+      {% if content_bottom %}
         <div class="ct-tag-list__content-bottom">
           {{- content_bottom|raw -}}
         </div>

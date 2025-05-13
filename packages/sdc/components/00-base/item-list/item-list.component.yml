@@ -28,6 +28,8 @@ props:
       description: Whether to render without gaps.
     items:
       type: array
+      items:
+        type: string
       title: Items
       description: List items.
     attributes:

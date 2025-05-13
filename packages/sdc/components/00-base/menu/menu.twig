@@ -5,7 +5,14 @@
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - items: [array] Menu links array.
+ * - items: [array] Menu links array:
+ *   Each item contains:
+ *   - title: [string] Menu item title.
+ *   - url: [string] Menu item URL.
+ *   - below: [array] Submenu items:
+ *     Each item contains:
+ *     - title: [string] Menu item title.
+ *     - url: [string] Menu item URL.
  * - is_collapsible: [boolean] Whether to collapse the menu.
  * - modifier_class: [string] Additional CSS classes.
  */
@@ -71,8 +78,8 @@
           url: item.url,
           modifier_class: 'ct-menu__item__link',
           attributes: item.link_attributes|default('') ~ aria_current,
-          is_new_window: item.is_new_window is defined ? item.is_new_window : false,
-          is_external: item.is_external is defined ? item.is_external : false,
+          is_new_window: item.is_new_window ? item.is_new_window : false,
+          is_external: item.is_external ? item.is_external : false,
         } only %}
 
         {% if is_collapsible and item.below %}
@@ -80,7 +87,7 @@
         {% endif %}
 
         {% if item.below %}
-          {{- menus.menu_links_below(item.below, menu_level + 1, classes, theme, is_collapsible, key) -}}
+          {{- menus.menu_links_below(item.below, menu_level + 1, modifier_class, theme, is_collapsible, key) -}}
         {% endif %}
 
       </li>
