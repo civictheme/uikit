@@ -14,11 +14,16 @@
  *   - type [string]: Type of the clear all link: 'primary', 'secondary'.
  *   - icon [string]: Icon of the clear all link.
  *   - icon_placement [string]: Icon placement of the clear all link: 'before', 'after'.
+ * - attributes: [string] Additional attributes.
+ * - modifier_class: [string] Additional classes
  */
 #}
 
-{% set id = id|default("selected-filters") %}
-<div class="ct-selected-filters{% if theme %} ct-theme-{{ theme }}{% endif %}">
+{% set id = id|default('selected-filters') %}
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
+
+<div class="ct-selected-filters {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <div class="ct-selected-filters__active-filters">
     <div class="ct-selected-filters__title" id="{{ id }}">{{ title }}</div>
     {% set items = [] %}

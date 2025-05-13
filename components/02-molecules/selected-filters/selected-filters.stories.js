@@ -1,12 +1,15 @@
 import Component from './selected-filters.twig';
 
 const meta = {
-  title: 'Molecule/Selected Filters',
+  title: 'Molecules/List/Selected Filters',
   component: Component,
   argTypes: {
     theme: {
       control: { type: 'radio' },
       options: ['light', 'dark'],
+    },
+    id: {
+      control: { type: 'text' },
     },
     title: {
       control: { type: 'text' },
@@ -35,7 +38,7 @@ export default meta;
 
 export const SelectedFilters = {
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
   },
   args: {
     theme: 'light',
@@ -65,12 +68,14 @@ export const SelectedFilters = {
       icon: 'close-outline',
       icon_placement: 'after',
     },
+    attributes: '',
+    modifier_class: '',
   },
 };
 
 export const SelectedFiltersDark = {
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     backgrounds: {
       default: 'Dark',
     },
