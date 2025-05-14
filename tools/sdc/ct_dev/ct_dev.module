@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * CivicTheme Development module.
+ */
+
+/**
+ * Implements hook_twig_validator_rule_info_alter().
+ */
+function ct_dev_twig_validator_rule_info_alter(array &$info) {
+  // @see https://www.drupal.org/project/sdc_devel/issues/3517321
+  $rule_name_ignore = -1;
+  $rule_name_allow = 0;
+  $rule_name_error = 3;
+  $rule_name_warning = 4;
+  $rule_name_notice = 5;
+
+  $info['filter']['rule_on_name'][$rule_name_ignore][] = 'raw';
+}

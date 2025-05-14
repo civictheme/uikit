@@ -158,23 +158,7 @@ a non-zero status if any component needs updating.
 
 #### Validating SDC schema
 
-SDC components are validated using `sdc_devel` module running on a vanilla 
-Drupal site.
-
-To build and run a local Drupal site with SDC components run the following commands:
-```bash
-./devtools/assemble.sh     # Assemble the codebase
-./devtools/start.sh        # Start the PHP server
-./devtools/provision.sh    # Provision the Drupal website
-```
-
-You can stop the server with `./devtools/stop.sh`.
-
-To validate the SDC schema, run the following command:
-
-```bash
-build/vendor/bin/drush sdc-devel:validate civictheme_sdc
-```
+See `tools/sdc/README.md` for more information on how to validate the SDC schema.
 
 ### Check and fix code style
 

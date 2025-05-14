@@ -43,16 +43,11 @@ jobs:
           extensions: gd, sqlite, pdo_sqlite
           coverage: pcov
 
-      - name: Assemble the codebase
-        run: .devtools/assemble.sh
+      - name: Build the Drupal site
+        run: ./build.sh
+        working-directory: tools/sdc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Start built-in PHP server
-        run: .devtools/start.sh
-
-      - name: Provision site
-        run: .devtools/provision.sh
 
       - name: Lint SDC components
         run: |
@@ -62,5 +57,5 @@ jobs:
             echo "Validation failed: Warning found in output."
             exit 1
           fi
-        working-directory: build
+        working-directory: tools/sdc/build
         continue-on-error: ${{ vars.CI_DRUPAL_SDC_LINT_IGNORE_FAILURE == '1' }}
