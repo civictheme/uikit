@@ -115,7 +115,7 @@ export async function captureScreenshots({
               mask.style.width = Math.ceil(rect.width) + 'px';
               mask.style.height = Math.ceil(rect.height) + 'px';
               mask.style.pointerEvents = 'none';
-              mask.style.background = 'red';
+              mask.style.background = 'magenta';
               document.body.appendChild(mask);
             });`,
         );
