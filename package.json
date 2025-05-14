@@ -44,6 +44,7 @@
     "test:all": "node --experimental-vm-modules node_modules/.bin/jest",
     "test:ci": "npm run test:ci --workspaces",
     "lint": "npm run lint --workspaces && eslint ./tools/visual-diff/**/*.mjs ./tools/scripts/**/*.js",
+    "lint:sdc": "bash -c '[ -x tools/sdc/build/vendor/drush/drush ] && tools/sdc/build/vendor/bin/drush sdc-devel:validate civictheme_sdc || echo \"See tools/sdc/README.md to find out how to run\"'",
     "lint:fix": "npm run lint:fix --workspaces && eslint ./tools/visual-diff/**/*.mjs ./tools/scripts/**/*.js --fix",
     "diff": "node tools/visual-diff/index.mjs interactive",
     "diff:command": "node tools/visual-diff/index.mjs",
