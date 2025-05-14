@@ -1,4 +1,12 @@
 {
+  "masking": {
+    "selectors": [
+      ".ct-iframe",
+      ".ct-map--canvas",
+      ".ct-video-player",
+      ".ct-video"
+    ]
+  },
   "screenshot_sources": {
     "current_branch": {
       "packages": {

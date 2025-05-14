@@ -46,6 +46,14 @@ export function loadConfig() {
 
   // Return default configuration if file doesn't exist or there's an error
   return {
+    masking: {
+      selectors: [
+        '.ct-iframe',
+        '.ct-map--canvas',
+        '.ct-video-player',
+        '.ct-video',
+      ],
+    },
     screenshot_sources: {
       current_branch: {
         packages: {
