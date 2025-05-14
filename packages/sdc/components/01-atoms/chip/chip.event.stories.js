@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Example of how to bind to the 'ct.chip.dismiss' event triggered on Chip
   // with 'data-chip-dismiss' attribute.
-  document.querySelectorAll('.ct-chip').forEach((el) => {
+  document.querySelectorAll('[data-component-name="chip"]').forEach((el) => {
     if (!el.hasAttribute('story-processed')) {
       el.addEventListener('ct.chip.dismiss', storiesAlert);
       el.setAttribute('story-processed', 1);

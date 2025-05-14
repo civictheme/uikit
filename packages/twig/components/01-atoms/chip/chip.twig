@@ -54,7 +54,6 @@
       href="{{ url }}"
       class="ct-chip {{ modifier_class -}}"
       alt="{{ label }}"
-      data-component-name="chip"
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
       {{- content -}}
@@ -68,7 +67,6 @@
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"
-      data-component-name="chip"
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
       {{- content -}}
