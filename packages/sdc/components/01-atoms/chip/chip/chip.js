@@ -103,12 +103,12 @@ CivicThemeChip.prototype.dismissClickEvent = function (e) {
  * Find chip element.
  */
 CivicThemeChip.prototype.findChip = function (el) {
-  if (el.dataset.componentName === 'chip') {
+  if (el.classList.contains('ct-chip')) {
     return el;
   }
-  return el.closest('[data-component-name="chip"]');
+  return el.closest('.ct-chip');
 };
 
-document.querySelectorAll('[data-component-name="chip"]').forEach((el) => {
+document.querySelectorAll('.ct-chip').forEach((el) => {
   new CivicThemeChip(el);
 });
