@@ -188,9 +188,13 @@ run_start() {
   sleep "${WEBSERVER_WAIT_TIMEOUT}"
 
   note "Checking that the server was started."
-  netstat_opts='-tulpn'
-  [ "$(uname)" == "Darwin" ] && netstat_opts='-anv' || true
-  netstat "${netstat_opts[@]}" | grep -q "${WEBSERVER_PORT}" || (echo "ERROR: Unable to start inbuilt PHP server" && cat /tmp/php.log && exit 1)
+  if [ "$(uname)" == "Darwin" ]; then
+    # macOS uses netstat
+    netstat -anv | grep -q "${WEBSERVER_PORT}" || (echo "ERROR: Unable to start inbuilt PHP server" && cat /tmp/php.log && exit 1)
+  else
+    # Linux (including Ubuntu) uses ss
+    command -v ss >/dev/null 2>&1 && ss -tulpn | grep -q ":${WEBSERVER_PORT}" || (echo "ERROR: Unable to start inbuilt PHP server" && cat /tmp/php.log && exit 1)
+  fi
 
   pass "Server started successfully."
 
