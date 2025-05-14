@@ -156,6 +156,10 @@ a non-zero status if any component needs updating.
 > Note: If the SDC and Twig implementations significantly diverge in the future, we will switch
 > to only updating the docblock headers rather than the entire component.
 
+#### Validating SDC schema
+
+See `tools/sdc/README.md` for more information on how to validate the SDC schema.
+
 ### Check and fix code style
 
     npm run lint
