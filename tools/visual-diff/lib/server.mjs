@@ -8,8 +8,9 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { loadScreenshotSets as loadConfig, getScreenshotPath } from './screenshot-set-manager.mjs';
+import { loadScreenshotSets, getScreenshotPath } from './screenshot-set-manager.mjs';
 import { formatDisplayName } from './utils.mjs';
+import { loadConfig } from './config.mjs';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -71,16 +72,20 @@ function generateComparisonList(config) {
  * @returns {string} The HTML for the home page.
  */
 function generateLandingPage() {
+  const screenshotSets = loadScreenshotSets();
   const config = loadConfig();
   const templatePath = path.join(TEMPLATES_DIR, 'homepage.html');
 
   try {
     const template = fs.readFileSync(templatePath, 'utf8');
-    return template.replace('{{COMPARISON_LIST}}', generateComparisonList(config));
+    const maskingSelectors = config.masking.selectors.map((selector) => `<li>${selector}</li>`).join('');
+    return template
+      .replace('{{COMPARISON_LIST}}', generateComparisonList(screenshotSets))
+      .replace('{{MASK_SELECTORS}}', maskingSelectors);
   } catch (error) {
     console.error(`Error reading template file: ${error.message}`);
     return `<html><body><h1>RegViz - Visual Regression Reports</h1>
-      <div>${generateComparisonList(config)}</div></body></html>`;
+      <div>${generateComparisonList(screenshotSets)}</div></body></html>`;
   }
 }
 

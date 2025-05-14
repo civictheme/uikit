@@ -11,6 +11,7 @@ import handler from 'serve-handler';
 import { Cluster } from 'puppeteer-cluster';
 import { ensureDirectory } from './screenshot-set-manager.mjs';
 import { determineOptimalConcurrency } from './utils.mjs';
+import { loadConfig } from './config.mjs';
 
 /**
  * Start a static server for the given directory.
@@ -75,6 +76,7 @@ export async function captureScreenshots({
   port = 6006,
   concurrency = determineOptimalConcurrency(),
 }) {
+  const config = loadConfig();
   ensureDirectory(outputDir);
   let server = null;
   try {
@@ -95,9 +97,29 @@ export async function captureScreenshots({
         headless: true,
       },
     });
-    await cluster.task(async ({ page, data: { storyUrl, filePath } }) => {
-      console.log(`Capturing: ${storyUrl} to ${filePath}`);
+    await cluster.task(async ({ page, data: { storyUrl, filePath, selectors } }) => {
       await page.goto(storyUrl, { waitUntil: ['domcontentloaded', 'networkidle0'] });
+      console.log(`Capturing: ${storyUrl} to ${filePath}`);
+      for (const selector of selectors) {
+        // String JS script passed into page context.
+        // eslint-disable-next-line no-await-in-loop
+        await page.evaluate(
+          `document.querySelectorAll('${selector}').forEach((el) => {
+              const rect = el.getBoundingClientRect();
+              const mask = document.createElement('visual-diff-mask');
+              mask.style.position = 'absolute';
+              mask.style.top = rect.top + 'px';
+              mask.style.left = rect.left + 'px';
+              mask.style.zIndex = 'calc(infinity)';
+              mask.style.display = 'block';
+              mask.style.width = Math.ceil(rect.width) + 'px';
+              mask.style.height = Math.ceil(rect.height) + 'px';
+              mask.style.pointerEvents = 'none';
+              mask.style.background = 'red';
+              document.body.appendChild(mask);
+            });`,
+        );
+      }
       await page.screenshot({
         path: filePath,
         fullPage: true,
@@ -112,7 +134,7 @@ export async function captureScreenshots({
         fs.mkdirSync(fileDir, { recursive: true });
       }
       const storyUrl = `${url}/iframe?id=${storyId}&viewMode=story`;
-      cluster.queue({ storyUrl, filePath });
+      cluster.queue({ storyUrl, filePath, selectors: config.masking.selectors || [] });
     });
     await cluster.idle();
     await cluster.close();
