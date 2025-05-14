@@ -28,11 +28,11 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-{% if title is not empty %}
-  <div class="ct-service-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+{% if title %}
+  <div class="ct-service-card {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-service-card__content">
       {% block content_top_slot %}
-        {% if content_top is not empty %}
+        {% if content_top %}
           <div class="ct-service-card__content-top">
             {{- content_top|raw -}}
           </div>
@@ -40,7 +40,7 @@
       {% endblock %}
 
       {% block title_slot %}
-        {% if title is not empty %}
+        {% if title %}
           {% include 'civictheme:heading' with {
             theme: theme,
             content: title,
@@ -51,17 +51,17 @@
       {% endblock %}
 
       {% block links_slot %}
-        {% if links is not empty %}
+        {% if links %}
           {% set list_items = [] %}
           {% for link in links %}
-            {% if link.text is not empty %}
+            {% if link.text %}
               {% set list_item %}
                 {% include 'civictheme:link' with {
                   theme: theme,
                   text: link.text,
                   url: link.url,
-                  is_new_window: link.is_new_window is defined ? link.is_new_window : false,
-                  is_external: link.is_external is defined ? link.is_external : false,
+                  is_new_window: link.is_new_window ? link.is_new_window : false,
+                  is_external: link.is_external ? link.is_external : false,
                 } only %}
               {% endset %}
               {% set list_items = list_items|merge([list_item]) %}
@@ -76,7 +76,7 @@
       {% endblock %}
 
       {% block content_bottom_slot %}
-        {% if content_bottom is not empty %}
+        {% if content_bottom %}
           <div class="ct-service-card__content-bottom">
             {{- content_bottom|raw -}}
           </div>

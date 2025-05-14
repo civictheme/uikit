@@ -12,6 +12,11 @@ The root of the repo is located at:
 /Users/o_o/www/civictheme/uikit
 ```
 
+only look in this path 
+```
+/Users/o_o/www/civictheme/uikit/packages/sdc/components
+```
+
 Run all commands from the following directory:
 
 ```
@@ -50,7 +55,7 @@ To retrieve the <component_name> - use the output of the command above. DO NOT S
 After making a change, run a unit test to validate the rendered Twig output from the root of the repo:
 ```bash
 cd /Users/o_o/www/civictheme/uikit
-npm run test
+npm run test --workspace=@civictheme/uikit-sdc
 ```
 
 ---
@@ -91,6 +96,8 @@ If an issue cannot be resolved and requires an exception:
 - Reason: <Reason for skipping, e.g. "Requires external library", "Specification conflict", etc.>
 ```
 
+Do not add `All unit tests now pass` to the log.
+
 ---
 
 ## 🛑 Important Rules
@@ -112,3 +119,4 @@ If an issue cannot be resolved and requires an exception:
 - ❌ **Do not replace** expressions using `default('true')` or `default('false')` with ternary (`? :`) or `if` expressions.
 - ❌ **Do not modify** `.gitignore`.
 - ❌ **Do not skip components**
+- ❌ **do not use <slot> for replacing markup!**
