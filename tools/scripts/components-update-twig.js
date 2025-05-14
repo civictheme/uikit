@@ -491,6 +491,14 @@ function processComponents(srcDir, dstDir, dryRun, checkMode) {
 
   // Build a complete namespace mapping for all components
   const namespaceMapping = buildNamespaceMapping(srcDir, srcFiles);
+
+  // Log the namespace mapping for debugging
+  console.log('\nNamespace mapping:');
+  Object.entries(namespaceMapping).forEach(([key, value]) => {
+    console.log(`  ${key} => ${value}`);
+  });
+  console.log('');
+
   let processed = 0;
   let assetProcessed = 0;
   const skipped = 0;
@@ -521,6 +529,7 @@ function processComponents(srcDir, dstDir, dryRun, checkMode) {
         // Check if content is already up to date
         if (dstContent === transformedContent) {
           needsThisUpdate = false;
+          console.log(`Component ${relPath} is up to date`);
         }
       }
 
@@ -679,6 +688,9 @@ function processHeaders(srcDir, dstDir, dryRun, checkMode) {
         // If destination already has docblock, check if it matches
         if (dstDocblock.trim() === srcDocblock.trim()) {
           // Docblocks match, no update needed
+          if (checkMode) {
+            console.log(`Component ${relPath} docblock is up to date`);
+          }
           processed++;
           return;
         }
