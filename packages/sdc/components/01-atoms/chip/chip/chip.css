@@ -1,0 +1,193 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-chip {
+  cursor: pointer;
+  border: 0.0625rem solid transparent;
+  border-radius: 3rem;
+}
+.ct-chip {
+  text-decoration: none;
+}
+.ct-chip:hover {
+  text-decoration: none;
+}
+.ct-chip--active, .ct-chip:active {
+  text-decoration: none;
+}
+.ct-chip:focus-visible {
+  text-decoration: none;
+}
+.ct-chip .ct-chip__dismiss {
+  display: none;
+}
+.ct-chip .ct-chip__input[checked] + .ct-chip__dismiss {
+  display: inline;
+}
+.ct-chip {
+  display: inline-block;
+  text-decoration: none;
+  outline-offset: 0.125rem;
+  outline-width: 0.1875rem;
+}
+.ct-chip {
+  transition: all 0.25s ease;
+}
+.ct-chip:focus-visible, .ct-chip:hover, .ct-chip:active {
+  text-decoration: none;
+}
+.ct-chip[disabled] {
+  text-decoration: none;
+  pointer-events: none;
+  user-select: none;
+  opacity: 50%;
+}
+.ct-chip input {
+  position: absolute !important;
+  clip: rect(0.0625rem, 0.0625rem, 0.0625rem, 0.0625rem);
+  overflow: hidden;
+  height: 1px !important;
+  width: 1px !important;
+  word-wrap: normal;
+}
+.ct-chip input.ct-focusable:active, .ct-chip input.ct-focusable:focus-visible, .ct-chip input.ct-focusable:hover {
+  position: static !important;
+  overflow: visible;
+  clip: auto;
+  width: auto !important;
+  height: auto !important;
+}
+.ct-chip.ct-theme-light {
+  background-color: var(--ct-color-light-interaction-text);
+  border-color: var(--ct-color-light-interaction-background);
+  color: var(--ct-color-light-interaction-background);
+}
+.ct-chip.ct-theme-light:hover {
+  background-color: var(--ct-color-light-interaction-text);
+  border-color: var(--ct-color-light-interaction-hover-background);
+  color: var(--ct-color-light-interaction-hover-background);
+}
+.ct-chip.ct-theme-light:focus-visible, .ct-chip.ct-theme-light.focus {
+  outline-color: var(--ct-color-light-interaction-focus);
+  outline-style: solid;
+}
+.ct-chip.ct-theme-light.selected, .ct-chip.ct-theme-light.selected:hover, .ct-chip.ct-theme-light.selected:active, .ct-chip.ct-theme-light.selected:hover:active {
+  background-color: var(--ct-color-light-interaction-background);
+  border-color: var(--ct-color-light-interaction-background);
+  color: var(--ct-color-light-interaction-hover-text);
+}
+.ct-chip.ct-theme-light:active, .ct-chip.ct-theme-light.active {
+  background-color: var(--ct-color-light-interaction-background);
+  border-color: var(--ct-color-light-interaction-background);
+  color: var(--ct-color-light-interaction-hover-text);
+}
+.ct-chip.ct-theme-light.active:hover {
+  background-color: var(--ct-color-light-interaction-hover-background);
+  border-color: var(--ct-color-light-interaction-hover-background);
+  color: var(--ct-color-light-interaction-text);
+}
+.ct-chip.ct-theme-dark {
+  background-color: var(--ct-color-dark-interaction-text);
+  border-color: var(--ct-color-dark-interaction-background);
+  color: var(--ct-color-dark-interaction-background);
+}
+.ct-chip.ct-theme-dark:hover {
+  background-color: var(--ct-color-dark-interaction-text);
+  border-color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-color-dark-interaction-hover-background);
+}
+.ct-chip.ct-theme-dark:focus-visible, .ct-chip.ct-theme-dark.focus {
+  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-style: solid;
+}
+.ct-chip.ct-theme-dark.selected, .ct-chip.ct-theme-dark.selected:hover, .ct-chip.ct-theme-dark.selected:active, .ct-chip.ct-theme-dark.selected:hover:active {
+  background-color: var(--ct-color-dark-interaction-background);
+  border-color: var(--ct-color-dark-interaction-background);
+  color: var(--ct-color-dark-interaction-hover-text);
+}
+.ct-chip.ct-theme-dark:active, .ct-chip.ct-theme-dark.active {
+  background-color: var(--ct-color-dark-interaction-background);
+  border-color: var(--ct-color-dark-interaction-background);
+  color: var(--ct-color-dark-interaction-hover-text);
+}
+.ct-chip.ct-theme-dark.active:hover {
+  background-color: var(--ct-color-dark-interaction-hover-background);
+  border-color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-color-dark-interaction-text);
+}
+@media (min-width: 0) {
+  .ct-chip--large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-chip--large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+.ct-chip--large {
+  padding: 1rem 3rem;
+}
+.ct-chip--large__dismiss {
+  margin-left: 1.5rem;
+}
+@media (min-width: 0) {
+  .ct-chip--regular {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-chip--regular {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+.ct-chip--regular {
+  padding: 0.875rem 2.5rem;
+}
+.ct-chip--regular__dismiss {
+  margin-left: 1.5rem;
+}
+@media (min-width: 0) {
+  .ct-chip--small {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-chip--small {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.ct-chip--small {
+  border-width: 0.0625rem;
+}
+.ct-chip--small {
+  padding: 0.5rem 2rem;
+}
+.ct-chip--small__dismiss {
+  margin-left: 1rem;
+}

@@ -93,10 +93,10 @@ CivicThemeChip.prototype.changeEvent = function (e) {
  * Find Chip element.
  */
 CivicThemeChip.prototype.findChip = function (el) {
-  if (el.classList.contains('ct-chip')) {
+  if (el.dataset.componentName === 'chip') {
     return el;
   }
-  return el.closest('.ct-chip');
+  return el.closest('[data-component-name="chip"]');
 };
 
 document.querySelectorAll('[data-component-name="chip"]').forEach((el) => {
