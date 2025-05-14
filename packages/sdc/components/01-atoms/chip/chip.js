@@ -109,6 +109,6 @@ CivicThemeChip.prototype.findChip = function (el) {
   return el.closest('.ct-chip');
 };
 
-document.querySelectorAll('.ct-chip').forEach((el) => {
+document.querySelectorAll('[data-component-name="chip"]').forEach((el) => {
   new CivicThemeChip(el);
 });
