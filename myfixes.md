@@ -46,3 +46,10 @@ This file tracks the fixes applied to SDC components.
   - Added attributes property to component schema to fix unused variable warning
   - Updated Twig template to render the HTML attributes parameter
   - Updated component documentation to include attributes parameter
+
+### Component: mobile-navigation-trigger
+- Action: Fixed
+- Description: 
+  - Added attributes property to component schema to fix unused variable warning
+  - Updated Twig template to combine custom attributes with default attributes
+  - Updated component documentation to include attributes parameter
