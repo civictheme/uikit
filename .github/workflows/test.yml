@@ -2,6 +2,7 @@ name: Test
 permissions:
   contents: read
   pull-requests: write
+  deployments: write
 
 on:
   pull_request:
