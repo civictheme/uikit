@@ -55,7 +55,7 @@
                 {% if item.text is not empty %}
                   {% set item_attributes = item.attributes is defined and item.attributes is not empty ? item.attributes : '' %}
                   {% set multiple_name = is_multiple ? 'single-filter-' ~ loop.index : 'single-filter' %}
-                          {% set item_name = item.name is defined ? item.name : multiple_name %}
+                  {% set item_name = item.name is defined ? item.name : multiple_name %}
                   {% set item_attributes = 'name' not in item_attributes ? item_attributes ~ ' name="' ~ item_name ~ '"' : item_attributes %}
                   {% include 'civictheme:chip' with {
                     theme: theme,
