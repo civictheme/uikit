@@ -7,3 +7,9 @@ This file tracks the fixes applied to SDC components.
 - Description: 
   - Removed unnecessary `is not empty` checks and replaced with direct variable testing
   - Fixed boolean default values by using ternary conditional expressions instead of default filter
+
+### Component: promo-card
+- Action: Fixed
+- Description: 
+  - Fixed schema definition by adding missing items property to the tags array
+  - Added proper type definitions for tag objects including text, url, and is_new_window properties
