@@ -31,21 +31,21 @@ jobs:
         run: |
           # Capture screenshots for the main branch twig components
           npm run diff:command -- capture --source main --type branch --package twig --force
-          
+
           # Capture screenshots for the current branch components
           npm run diff:command -- capture --source current_branch --package twig --force
-          
+
           # Capture screenshots for the current branch SDC components
           npm run diff:command -- capture --source current_branch --package sdc --force
-          
+
           # List the available screenshot sets
           npm run diff:command -- list --sets
-          
+
           # Compare main vs current branch components
           SOURCE_NAME=$(npm run diff:command -- list --sets | grep "branch--main--twig" | awk '{print $2}')
           TARGET_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
           npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME"
-          
+
           # Compare main vs current branch SDC components
           SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
           TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "sdc" | awk '{print $2}')
@@ -74,7 +74,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { default: createVisualRegressionPrComments } = await import('${{ github.workspace }}/.github/action-scripts/create-visual-regression-pr-comments.js')
-            const deploymentUrl = ${{ steps.netlify-deploy-message.outputs.comment-id }}
+            const deploymentUrl = ${{ steps.netlify-visual-regression.outputs.deploy-url }}
             createVisualRegressionPrComments({require, core})
       - name: Find ID of existing deployment message
         uses: 'peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e'
@@ -90,7 +90,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             📷 View [Visual Regression](${{ steps.netlify-visual-regression.outputs.deploy-url }})
-            
+
             ${{ steps.visual-regression-message.outputs.comment }}
           edit-mode: replace
 
