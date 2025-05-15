@@ -1,4 +1,7 @@
 name: Visual Regression Testing
+permissions:
+  contents: read
+  pull-requests: write
 
 on:
   pull_request:
@@ -7,10 +10,8 @@ on:
       - 'project/**'
       - 'feature/**'
 
-permissions:
-  contents: read
-  pull-requests: write
-  
+
+
 jobs:
   visual-regression:
     runs-on: ubuntu-latest
