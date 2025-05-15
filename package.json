@@ -57,7 +57,10 @@
     "components:check": "npm run components:check:sdc && npm run components:check:twig",
     "components:check:sdc": "node tools/scripts/components-update-sdc.js packages/sdc --check",
     "components:check:twig": "node tools/scripts/components-update-twig.js packages/sdc/components packages/twig/components --check",
-    "components:check:twig:headers": "node tools/scripts/components-update-twig.js packages/sdc/components packages/twig/components --headers-only --check"
+    "components:check:twig:headers": "node tools/scripts/components-update-twig.js packages/sdc/components packages/twig/components --headers-only --check",
+    "version-sync": "node tools/scripts/version-sync.js",
+    "prepublishOnly": "npm run build && npm run lint && npm run test",
+    "publish-packages": "npm run prepublishOnly && npm publish --workspace=packages/twig --workspace=packages/sdc"
   },
   "devDependencies": {
     "commander": "^13.1.0",

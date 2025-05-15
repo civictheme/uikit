@@ -179,7 +179,9 @@ See `tools/sdc/README.md` for more information on how to validate the SDC schema
 Releases to GitHub and NPM are automated via GitHub Actions, but initiated
 manually.
 
-To release a new version, go to
+### Releasing the main package
+
+To release a new version of the main package, go to
 the [Release package](https://github.com/civictheme/uikit/actions/workflows/release-manual.yml)
 GitHub Action, click on the `Run workflow` button, and enter the release
 level: `patch` or `minor`.
@@ -187,6 +189,54 @@ level: `patch` or `minor`.
 After the release is complete, the new version will be available on
 [GitHub](https://github.com/civictheme/uikit/releases)
 and [NPM](https://www.npmjs.com/package/@civictheme/uikit).
+
+### Publishing individual packages
+
+To publish individual packages (@civictheme/twig and @civictheme/sdc), go to
+the [Publish packages](https://github.com/civictheme/uikit/actions/workflows/publish-packages.yml)
+GitHub Action, click on the `Run workflow` button, and choose options:
+
+- **Release level**: `patch`, `minor`, `major`, `specific`, or `prerelease`
+- **Version**: Custom version when using `specific` level
+- **Prerelease**: Identifier like `alpha` or `beta` (for prerelease level)
+- **Prerelease-id**: Numeric identifier for prerelease versions
+- **NPM tag**: Distribution tag like `latest`, `next`, `alpha`, `beta`
+
+#### Examples:
+
+- For a standard release: Use level `patch` with npm-tag `latest`
+- For alpha release: Use level `prerelease` with prerelease `alpha` and npm-tag `alpha`
+- For specific version: Use level `specific` with version `1.11.0-beta.2` and npm-tag `beta`
+
+This will:
+1. Update version numbers across all package.json files
+2. Build and test all packages
+3. Publish both packages to NPM with the specified tag
+4. Create a GitHub release with release notes
+
+### Testing locally
+
+You can also publish packages locally for testing:
+
+```bash
+# Update versions across all packages
+npm run version-sync 1.10.1
+
+# For alpha/beta releases
+npm run version-sync 1.10.1-alpha.1
+
+# Build, lint, test, and publish to NPM
+npm run publish-packages
+
+# Publish with a specific tag
+npm run publish-packages -- --tag alpha
+
+# Or use npm link for local testing without publishing
+cd packages/twig
+npm link
+cd /path/to/your/project
+npm link @civictheme/twig
+```
 
 ---
 

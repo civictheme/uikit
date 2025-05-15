@@ -1,0 +1,106 @@
+name: Publish packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-level:
+        description: 'Release level (one of): patch, minor, major, specific, or prerelease'
+        required: true
+        default: 'patch'
+      version:
+        description: 'Specific version (only used if release-level is "specific")'
+        required: false
+      prerelease:
+        description: 'Prerelease identifier (e.g., alpha, beta) - only used with prerelease level'
+        required: false
+        default: 'alpha'
+      prerelease-id:
+        description: 'Numeric identifier for the prerelease (optional)'
+        required: false
+      npm-tag:
+        description: 'NPM distribution tag (e.g., latest, next, alpha, beta)'
+        required: false
+        default: 'latest'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GHA_BOT_PAT }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm install --workspaces && npm install
+
+      - name: Configure git
+        run: |
+          git config --global user.email "${GITHUB_ACTOR_ID}+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions publish workflow"
+
+      - name: Determine version
+        id: version
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          if [ "${{ github.event.inputs.release-level }}" = "specific" ]; then
+            VERSION=${{ github.event.inputs.version }}
+          elif [ "${{ github.event.inputs.release-level }}" = "prerelease" ]; then
+            PRERELEASE="${{ github.event.inputs.prerelease }}"
+            PRERELEASE_ID="${{ github.event.inputs.prerelease-id }}"
+            
+            if [ -n "$PRERELEASE_ID" ]; then
+              VERSION=$(npx semver $CURRENT_VERSION -i prerelease --preid $PRERELEASE $PRERELEASE_ID)
+            else
+              VERSION=$(npx semver $CURRENT_VERSION -i prerelease --preid $PRERELEASE)
+            fi
+          else
+            VERSION=$(npx semver $CURRENT_VERSION -i ${{ github.event.inputs.release-level }})
+          fi
+          
+          echo "NEW_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "NPM_TAG=${{ github.event.inputs.npm-tag }}" >> $GITHUB_ENV
+          echo "New version will be: $VERSION (NPM tag: ${{ github.event.inputs.npm-tag }})"
+
+      - name: Update version across all packages
+        run: npm run version-sync ${{ env.NEW_VERSION }}
+
+      - name: Check code style
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Commit package.json changes and create tag
+        run: |
+          git add "**/package.json"
+          git commit -m "Released version ${{ env.NEW_VERSION }}"
+          git tag v${{ env.NEW_VERSION }}
+
+      - name: Publish packages to NPM
+        run: npm run publish-packages -- --tag ${{ env.NPM_TAG }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push changes to repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git push origin && git push --tags
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: v${{ env.NEW_VERSION }}
+          tag_name: v${{ env.NEW_VERSION }}
+          generate_release_notes: true
