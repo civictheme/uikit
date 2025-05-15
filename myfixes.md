@@ -59,3 +59,10 @@ This file tracks the fixes applied to SDC components.
 - Description: 
   - Enhanced the tag item object schema with proper property definitions
   - Added text, url, and is_new_window properties to define the tag structure
+
+### Component: header
+- Action: Fixed
+- Description: 
+  - Added attributes property to component schema to fix unused variable warning
+  - Updated Twig template to properly use the attributes parameter
+  - Updated component documentation to include attributes parameter
