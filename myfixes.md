@@ -53,3 +53,9 @@ This file tracks the fixes applied to SDC components.
   - Added attributes property to component schema to fix unused variable warning
   - Updated Twig template to combine custom attributes with default attributes
   - Updated component documentation to include attributes parameter
+
+### Component: campaign
+- Action: Fixed
+- Description: 
+  - Enhanced the tag item object schema with proper property definitions
+  - Added text, url, and is_new_window properties to define the tag structure
