@@ -23,15 +23,29 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
+        with:
+          tools: composer:v2
+          coverage: none
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
       - name: Install NPM dependencies
-        run: npm install --workspaces && npm install && npx playwright install
+        run: npm ci --workspaces && npm ci
 
       - name: Install PHP dependencies
-        run: composer install
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install --no-progress
 
       - name: Check coding standards
         run: npm run lint
@@ -58,7 +72,7 @@ jobs:
           path: ./packages/twig/.logs/coverage
           if-no-files-found: error
 
-      - name: Upload twig coverage report as an artifact
+      - name: Upload sdc coverage report as an artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{github.job}}-sdc-code-coverage-report-${{ matrix.node-version }}
