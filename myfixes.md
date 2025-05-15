@@ -66,3 +66,10 @@ This file tracks the fixes applied to SDC components.
   - Added attributes property to component schema to fix unused variable warning
   - Updated Twig template to properly use the attributes parameter
   - Updated component documentation to include attributes parameter
+
+### Component: text-icon
+- Action: Skipped
+- Reason: 
+  - The text-icon component is a utility component without a container element
+  - Adding a wrapper span element to apply attributes causes test failures across many components
+  - This component is used by other components like links and buttons which handle their own attributes
