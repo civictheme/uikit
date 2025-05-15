@@ -215,3 +215,13 @@ This file tracks the fixes applied to SDC components.
   - Changed from `icon_group_disabled|default(false)` to `icon_group_disabled is defined ? icon_group_disabled : false`
   - Changed from `icon_single_only|default(false)` to `icon_single_only is defined ? icon_single_only : false`
   - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: single-filter
+- Action: Fixed
+- Description:
+  - Fixed chained ternary issue in the item_name variable setting
+  - Replaced complex chained ternary with intermediate variable
+  - Changed from `item.name is defined ? item.name : (is_multiple ? 'single-filter-' ~ loop.index : 'single-filter')` to use a multiple_name intermediate variable
+  - Fixed boolean default filter in is_selected parameter with a ternary condition
+  - Changed from `item.is_selected|default(false)` to `item.is_selected is defined ? item.is_selected : false`
+  - This maintains the same functionality while following validation rules
