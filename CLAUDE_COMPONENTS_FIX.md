@@ -80,6 +80,7 @@ For **each component** (starting from the **last** and proceeding **in reverse o
   - Revert the most recent change.
   - Retry with an alternative fix.
   - Repeat until successful or mark as an exception.
+  - **Only update snapshots and accept these updates if there are only changes to white spaces. If there are other changes, consider this test as failed and stop execution.**
 
 ### d. **Logging Changes**
 Record each action in `myfixes.md`:
