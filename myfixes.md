@@ -102,3 +102,10 @@ This file tracks the fixes applied to SDC components.
   - Fixed unused `key` variable by using `for item in items` instead of `for key, item in items`
   - Fixed unknown variable error by replacing `classes` with `modifier_class` in the menu_links_below call
   - Maintained compatibility with related components to ensure tests continue to pass
+
+### Component: group-filter
+- Action: Fixed
+- Description:
+  - Fixed unused variable warning for `filters_slot` by renaming the `filters` block to `filters_slot`
+  - This ensures the block name matches the slot name defined in the component schema
+  - Maintained the same functionality while fixing the validation issue
