@@ -225,3 +225,38 @@ This file tracks the fixes applied to SDC components.
   - Fixed boolean default filter in is_selected parameter with a ternary condition
   - Changed from `item.is_selected|default(false)` to `item.is_selected is defined ? item.is_selected : false`
   - This maintains the same functionality while following validation rules
+  
+### Component: checkbox
+- Action: Verified
+- Description:
+  - Component was thoroughly checked and has no validation issues
+  - All boolean parameters are correctly handled without default filters
+  - Component schema and implementation follow best practices
+
+### Component: chip
+- Action: Verified
+- Description:
+  - Component was thoroughly checked and has no validation issues
+  - Boolean values are used directly without default filters
+  - Component schema properly defines all expected properties
+
+### Component: radio
+- Action: Verified
+- Description:
+  - Component was thoroughly checked and has no validation issues
+  - All boolean parameters are correctly handled without default filters
+  - Component schema and implementation follow best practices
+
+### Component: select
+- Action: Verified
+- Description:
+  - Component was thoroughly checked and has no validation issues
+  - All arrays in schema properly define their item structures
+  - Boolean values are handled correctly without default filters
+
+### Component: textarea
+- Action: Verified
+- Description:
+  - Component was thoroughly checked and has no validation issues
+  - No boolean default filters are used in the implementation
+  - Component schema and implementation follow best practices
