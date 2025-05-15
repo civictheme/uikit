@@ -199,3 +199,11 @@ This file tracks the fixes applied to SDC components.
   - Changed from `hide_sidebar_right|default(false)` to `hide_sidebar_right is defined ? hide_sidebar_right : false`
   - Changed from `is_contained|default(false)` to `is_contained is defined ? is_contained : false`
   - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: button
+- Action: Fixed
+- Description:
+  - Fixed boolean default filter issues in the text-icon include
+  - Changed from `icon_group_disabled|default(false)` to `icon_group_disabled is defined ? icon_group_disabled : false`
+  - Changed from `icon_single_only|default(false)` to `icon_single_only is defined ? icon_single_only : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
