@@ -31,7 +31,7 @@
     {% if for is not empty %} for="{{ for }}" {% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {% if allow_html|default(false) %}
+    {% if allow_html is defined ? allow_html : false %}
       {{- content|raw -}}
     {% else %}
       {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}

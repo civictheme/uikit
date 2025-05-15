@@ -5,6 +5,8 @@
  *
  * Variables:
  * - items: [array] Column items.
+ *   Each item contains:
+ *     [string] items
  * - row_element: [string] Row element.
  * - row_class: [string] Optional row class override (defaults to 'row').
  * - row_attributes: [string] Additional row attributes.
@@ -20,9 +22,9 @@
  */
 #}
 
-{% set use_container = use_container|default(true) %}
-{% set is_fluid = is_fluid|default(false) %}
-{% set fill_width = fill_width|default(false) %}
+{% set use_container = use_container is defined ? use_container : true %}
+{% set is_fluid = is_fluid is defined ? is_fluid : false %}
+{% set fill_width = fill_width is defined ? fill_width : false %}
 {% set row_element = row_element|default('div') %}
 {% set column_element = column_element|default('div') %}
 {% set template_column_count = template_column_count|default(0) %}

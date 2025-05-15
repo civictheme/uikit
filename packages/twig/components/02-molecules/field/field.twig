@@ -20,7 +20,10 @@
  * - orientation: [string] Elements orientation (vertical or horizontal).
  * - is_inline: [boolean] Whether the complex control is shown inline.
  * - control: [object,array] Object or objects collection with control's properties (required for complex controls).
- * - options: [array] Options for the field input.
+ * - options: [array] Options for the field input:
+ *   Each item contains:
+ *   - value: [string] Option value
+ *   - label: [string] Option label
  * - is_multiple: [boolean] Whether the field allows multiple values.
  * - placeholder: [string] Placeholder text for field.
  * - message: [object] Message object for showing messages:
@@ -57,14 +60,24 @@
 
 {% set _controls = [] %}
 {% for c in control %}
+	{% set default_options = [] %}
+	{% if options is defined %}
+		{% set default_options = options %}
+	{% endif %}
+	
+	{% set default_is_multiple = false %}
+	{% if is_multiple is defined %}
+		{% set default_is_multiple = is_multiple %}
+	{% endif %}
+	
 	{% set c = {
 		theme: c.theme is defined ? c.theme : theme,
 		label: c.label is defined ? c.label : title,
 		name: c.name is defined ? c.name : name,
 		value: c.value is defined ? c.value : value,
 		id: c.id is defined ? c.id : id,
-		options: c.options is defined ? c.options : options is defined ? options : [],
-		is_multiple: c.is_multiple is defined ? c.is_multiple : is_multiple is defined ? is_multiple : false,
+		options: c.options is defined ? c.options : default_options,
+		is_multiple: c.is_multiple is defined ? c.is_multiple : default_is_multiple,
 		placeholder: placeholder is defined ? placeholder : '',
 		is_required: c.is_required is defined ? c.is_required : is_required,
 		required_text: c.required_text ? c.required_text : required_text,
@@ -93,9 +106,19 @@
 
 		<div class="ct-field__wrapper">
 			{% if (description) and type != 'hidden' %}
+				{% set error_message = 'Field has an error' %}
+				{% if label is not empty %}
+					{% set error_message = 'Field <em>' ~ label ~ '</em> has an error' %}
+				{% endif %}
+				
+				{% set description_content = description %}
+				{% if not description and is_invalid %}
+					{% set description_content = error_message %}
+				{% endif %}
+				
 				{% include '@atoms/field-description/field-description.twig' with {
 					theme: theme,
-					content: description ? description : (is_invalid ? (label is not empty ? 'Field <em>' ~ label ~ '</em> has an error' : 'Field has an error') : null),
+					content: description_content,
 					allow_html: true,
 					modifier_class: 'ct-field__description',
 				} only %}
@@ -143,10 +166,24 @@
 			{% endif %}
 
 			{% if (message or is_invalid) and type != 'hidden' %}
+				{% set error_message = 'Field has an error' %}
+				{% if title is not empty %}
+					{% set error_message = 'Field <em>' ~ title ~ '</em> has an error' %}
+				{% endif %}
+				
+				{% set message_content = null %}
+				{% if is_invalid %}
+					{% set message_content = error_message %}
+				{% endif %}
+				
+				{% if message is defined and message.content is defined %}
+					{% set message_content = message.content %}
+				{% endif %}
+				
 				{% include '@atoms/field-message/field-message.twig' with {
 					theme: theme,
 					type: is_invalid ? 'error' : 'information',
-					content: message is defined and message.content is defined ? message.content : (is_invalid ? (title is not empty ? 'Field <em>' ~ title ~ '</em> has an error' : 'Field has an error') : null),
+					content: message_content,
 					allow_html: true,
 					modifier_class: 'ct-field__message',
 					attributes: message.attributes|default('')

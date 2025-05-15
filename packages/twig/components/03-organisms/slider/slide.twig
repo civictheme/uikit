@@ -10,7 +10,11 @@
  *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
  * - image_position: [string] Image position (left or right).
- * - tags: [array] Tags.
+ * - tags: [array] Tags:
+ *   Each item contains:
+ *   - text: [string] Tag text.
+ *   - url: [string] Tag URL.
+ *   - is_new_window: [boolean] Whether to open tag in a new window.
  * - title: [string] Slide title.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
@@ -94,7 +98,7 @@
                   start: date,
                   start_iso: date_iso|default(null),
                   end: date_end|default(null),
-                  end_iso: date_end_iso ?? null,
+                  end_iso: date_end_iso|default(null),
                 } only %}
               {% endset %}
 

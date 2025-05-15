@@ -25,7 +25,7 @@
 {#
 Copied as-is from '@base/menu/menu.twig'.
 #}
-{% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
+{% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible) %}
   {% if items %}
     {% if menu_level == 0 %}
       <ul class="ct-menu ct-menu--level-{{ menu_level }} {{ modifier_class -}} " data-component-name="ct-menu" {{- attributes|default('') -}}>
@@ -38,7 +38,7 @@ Copied as-is from '@base/menu/menu.twig'.
         <ul class="ct-menu ct-menu__sub-menu ct-menu--level-{{ menu_level }}">
     {% endif %}
 
-    {% for key, item in items %}
+    {% for item in items %}
       {% set item_classes = [
         'ct-menu__item',
         'ct-menu__item--level-' ~ menu_level,
@@ -74,7 +74,7 @@ Copied as-is from '@base/menu/menu.twig'.
         {% endif %}
 
         {% if item.below %}
-          {{ menus.menu_links_below(item.below, menu_level + 1, classes, theme, item) }}
+          {{ menus.menu_links_below(item.below, menu_level + 1, modifier_class, theme, item) }}
         {% endif %}
 
       </li>

@@ -5,7 +5,20 @@
  *
  * Variables:
  * - theme: [string] Theme variation (light or dark).
- * - items: [array] Menu links array.
+ * - items: [array] Menu links array:
+ *   Each item contains:
+ *   - title: [string] Title of the menu item.
+ *   - url: [string] URL of the menu item.
+ *   - in_active_trail: [boolean] Whether the item is in the active trail.
+ *   - is_expanded: [boolean] Whether the item is expanded.
+ *   - attributes: [string] Additional HTML attributes for the item.
+ *   - link_attributes: [string] Additional HTML attributes for the link.
+ *   - modifier_class: [string] Additional CSS classes for the item.
+ *   - is_new_window: [boolean] Whether to open the link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ *   - below: [array] Submenu items.
+ *     Each item contains:
+ *       [object] items
  * - is_collapsible: [boolean] Whether to collapse the menu.
  * - modifier_class: [string] Additional CSS classes.
  */
