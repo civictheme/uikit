@@ -81,6 +81,9 @@ run_assemble() {
   info "Merging configuration from extension's composer.json."
   php -r "echo json_encode(array_replace_recursive(json_decode(file_get_contents('../../composer.json'), true),json_decode(file_get_contents('build/composer.json'), true)),JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);" >"build/composer2.json" && mv -f "build/composer2.json" "build/composer.json"
 
+  composer --working-dir="build" config allow-plugins.cweagans/composer-patches true
+  composer --working-dir="build" config --json extra.patches.drupal/sdc_devel '{"Allow attributes": "../patches/sdc_devel-allow-attributes.patch"}'
+
   if [ -n "${GITHUB_TOKEN:-}" ]; then
     info "Adding GitHub authentication token if provided."
     composer --working-dir="build" config --global github-oauth.github.com "${GITHUB_TOKEN}"
@@ -95,7 +98,7 @@ run_assemble() {
   composer --working-dir="build" install
 
   info "Installing development dependencies."
-  composer --working-dir="build" require drupal/sdc_devel drush/drush
+  composer --working-dir="build" require cweagans/composer-patches:^1.7 drupal/sdc_devel drush/drush
 
   info "Creating custom theme"
   mkdir -p build/web/themes/custom/civictheme_sdc
