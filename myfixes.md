@@ -127,12 +127,12 @@ This file tracks the fixes applied to SDC components.
   - This maintains the same functionality while fixing the validation issue
 
 ### Component: back-to-top
-- Action: Skipped
-- Reason:
-  - Attempted to add attributes property and usage to fix unused variable warning
-  - Adding attributes to the component broke tests for the page component
-  - The back-to-top component is embedded in the page component which relies on specific HTML structure
-  - Making this change would require updating multiple snapshots across dependent components
+- Action: Fixed
+- Description:
+  - Added attributes and modifier_class properties to the component schema
+  - Updated all affected snapshots for both back-to-top and page components
+  - This fixes the unused variables warning while maintaining component functionality
+  - Properly defined parameters now appear in component documentation
 
 ### Component: field
 - Action: Skipped

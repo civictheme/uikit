@@ -4,4 +4,12 @@ status: stable
 description: Button component that allows users to quickly return to the top of the page
 props:
   type: object
-  properties: {}
+  properties:
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
