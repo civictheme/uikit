@@ -39,73 +39,73 @@
 {% if title is not empty or content is not empty %}
   <div class="ct-promo {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% if is_contained %}
-      <div class="container">
-        <div class="row">
-          <div class="col-xxs-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxs-12">
+          {% endif %}
+          {% block content_top_slot %}
+            {% if content_top is not empty %}
+              <div class="ct-promo__content-top">
+                {{ content_top|raw }}
+              </div>
             {% endif %}
-              {% block content_top_slot %}
-                {% if content_top is not empty %}
-                  <div class="ct-promo__content-top">
-                    {{ content_top|raw }}
-                  </div>
-                {% endif %}
-              {% endblock %}
+          {% endblock %}
 
-              {% block content_slot %}
-                <div class="ct-promo__wrapper">
-                  {% block content_left_slot %}
-                    <div class="ct-promo__inner">
-                      {% if title %}
-                        {% include 'civictheme:heading' with {
-                          content: title,
-                          level: 4,
-                          theme: theme,
-                          modifier_class: 'ct-promo__title',
-                        } only %}
-                      {% endif %}
+          {% block content_slot %}
+            <div class="ct-promo__wrapper">
+              {% block content_left_slot %}
+                <div class="ct-promo__inner">
+                  {% if title %}
+                    {% include 'civictheme:heading' with {
+                      content: title,
+                      level: 4,
+                      theme: theme,
+                      modifier_class: 'ct-promo__title',
+                    } only %}
+                  {% endif %}
 
-                      {% if content is not empty %}
-                        {% include 'civictheme:paragraph' with {
-                          theme: theme,
-                          content: content,
-                          allow_html: true,
-                          modifier_class: 'ct-promo__content',
-                        } only %}
-                      {% endif %}
-                    </div>
-                  {% endblock %}
-
-                  {% block content_right_slot %}
-                    {% if link %}
-                      <div class="ct-promo__links">
-                        {% include 'civictheme:button' with {
-                          theme: theme,
-                          type: 'secondary',
-                          kind: 'link',
-                          size: 'large',
-                          text: link.text,
-                          url: link.url,
-                          is_new_window: link.is_new_window is defined ? link.is_new_window : false,
-                          is_external: link.is_external is defined ? link.is_external : false,
-                          modifier_class: 'ct-promo__button',
-                        } only %}
-                      </div>
-                    {% endif %}
-                  {% endblock %}
+                  {% if content is not empty %}
+                    {% include 'civictheme:paragraph' with {
+                      theme: theme,
+                      content: content,
+                      allow_html: true,
+                      modifier_class: 'ct-promo__content',
+                    } only %}
+                  {% endif %}
                 </div>
               {% endblock %}
 
-              {% block content_bottom_slot %}
-                {% if content_bottom is not empty %}
-                  <div class="ct-promo__content-bottom">
-                    {{ content_bottom|raw }}
+              {% block content_right_slot %}
+                {% if link %}
+                  <div class="ct-promo__links">
+                    {% include 'civictheme:button' with {
+                      theme: theme,
+                      type: 'secondary',
+                      kind: 'link',
+                      size: 'large',
+                      text: link.text,
+                      url: link.url,
+                      is_new_window: link.is_new_window is defined ? link.is_new_window : false,
+                      is_external: link.is_external is defined ? link.is_external : false,
+                      modifier_class: 'ct-promo__button',
+                    } only %}
                   </div>
                 {% endif %}
               {% endblock %}
-            {% if is_contained %}
-          </div>
+            </div>
+          {% endblock %}
+
+          {% block content_bottom_slot %}
+            {% if content_bottom is not empty %}
+              <div class="ct-promo__content-bottom">
+                {{ content_bottom|raw }}
+              </div>
+            {% endif %}
+          {% endblock %}
+          {% if is_contained %}
         </div>
       </div>
+    </div>
     {% endif %}
   </div>
 {% endif %}

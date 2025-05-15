@@ -46,10 +46,10 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 <div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
-	<div class="row ct-slide__row">
+  <div class="row ct-slide__row">
     {% block image_slot %}
       {% if image is not empty %}
-		    <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
+        <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
           <div class="ct-slide__image">
             {% include 'civictheme:image' with {
               theme: theme,

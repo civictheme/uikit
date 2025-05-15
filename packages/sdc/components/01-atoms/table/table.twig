@@ -37,11 +37,11 @@
 
     {% if header is not empty %}
       <thead>
-        <tr>
-          {% for item in header %}
-            <th scope="col">{{ item }}</th>
-          {% endfor %}
-        </tr>
+      <tr>
+        {% for item in header %}
+          <th scope="col">{{ item }}</th>
+        {% endfor %}
+      </tr>
       </thead>
     {% endif %}
 
@@ -61,11 +61,11 @@
 
     {% if footer is not empty %}
       <tfoot>
-        <tr>
-          {% for item in footer %}
-            <th scope="col">{{ item }}</th>
-          {% endfor %}
-        </tr>
+      <tr>
+        {% for item in footer %}
+          <th scope="col">{{ item }}</th>
+        {% endfor %}
+      </tr>
       </tfoot>
     {% endif %}
   </table>

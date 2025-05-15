@@ -27,25 +27,25 @@
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, type_class, icon_class, icon_placement_class, is_external, modifier_class|default('')) %}
 
 {% if content|trim is not empty %}
-   {% set content_markup %}
-     {% if icon %}
-       {% set icon_markup %}
-         {% include '@base/icon/icon.twig' with {
-           symbol: icon,
-           modifier_class: 'ct-tag__icon',
-         } only %}
-       {% endset %}
+  {% set content_markup %}
+    {% if icon %}
+      {% set icon_markup %}
+        {% include '@base/icon/icon.twig' with {
+          symbol: icon,
+          modifier_class: 'ct-tag__icon',
+        } only %}
+      {% endset %}
 
-       {% if icon_placement == 'before' %}
-         {{- icon_markup -}}{{- content|raw -}}
-       {% else %}
-         {{- content|raw -}}{{- icon_markup -}}
-       {% endif %}
+      {% if icon_placement == 'before' %}
+        {{- icon_markup -}}{{- content|raw -}}
+      {% else %}
+        {{- content|raw -}}{{- icon_markup -}}
+      {% endif %}
 
-     {% else %}
-       {{- content|raw -}}
-     {% endif %}
-   {% endset %}
+    {% else %}
+      {{- content|raw -}}
+    {% endif %}
+  {% endset %}
 
   {% if is_new_window %}
     {% set is_new_window_content %}
@@ -64,11 +64,11 @@
   {% set tag = url is not empty ? 'a' : 'span' %}
   <{{ tag }}
   class="ct-tag {{ modifier_class -}}"
-    {% if url is not empty %}href="{{ url }}"{% endif %}
-    {% if url is not empty %}title="{{- content -}}"{% endif %}
-    {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  {% if url is not empty %}href="{{ url }}"{% endif %}
+  {% if url is not empty %}title="{{- content -}}"{% endif %}
+  {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
+  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
+  {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
   </{{ tag }}>
 {% endif %}

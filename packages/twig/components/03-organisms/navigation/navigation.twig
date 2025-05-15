@@ -59,8 +59,8 @@
   {% else %}
     {% for key in items|keys %}
       {% if items[key].below %}
-          {% set items_without_below = items[key]|merge({'below': null}) %}
-          {% set items = items|merge({(key): items_without_below}) %}
+        {% set items_without_below = items[key]|merge({'below': null}) %}
+        {% set items = items|merge({(key): items_without_below}) %}
       {% endif %}
     {% endfor %}
   {% endif %}

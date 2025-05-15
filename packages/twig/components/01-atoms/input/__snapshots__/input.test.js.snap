@@ -12,7 +12,7 @@ exports[`Input Component renders with optional attributes 1`] = `
 <div>
   
 
-	
+  
   <input
     class="ct-input ct-theme-dark ct-input--is-invalid custom-class"
     data-test="true"
@@ -33,7 +33,7 @@ exports[`Input Component renders with required attributes 1`] = `
 <div>
   
 
-	
+  
   <input
     class="ct-input ct-theme-light"
     name="test-input"
@@ -49,7 +49,7 @@ exports[`Input Component strips HTML tags from attribute values 1`] = `
 <div>
   
 
-	
+  
   <input
     class="ct-input ct-theme-light"
     data-test="<script>alert(1)</script>"
