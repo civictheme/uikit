@@ -74,6 +74,10 @@ props:
             type: array
             title: Below
             description: Submenu items.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
