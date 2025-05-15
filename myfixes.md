@@ -73,3 +73,10 @@ This file tracks the fixes applied to SDC components.
   - The text-icon component is a utility component without a container element
   - Adding a wrapper span element to apply attributes causes test failures across many components
   - This component is used by other components like links and buttons which handle their own attributes
+
+### Component: tag-list
+- Action: Fixed
+- Description:
+  - Fixed schema definition by adding proper items structure to the tags array
+  - Added string type definition for tag items
+  - This ensures proper validation of the tags array in the component schema
