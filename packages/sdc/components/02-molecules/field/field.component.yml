@@ -85,6 +85,17 @@ props:
       type: array
       title: Options
       description: Options for the field input.
+      items:
+        type: object
+        properties:
+          value:
+            type: string
+            title: Value
+            description: Option value
+          label:
+            type: string
+            title: Label
+            description: Option label
     is_multiple:
       type: boolean
       title: Multiple

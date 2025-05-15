@@ -23,15 +23,15 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
 {% if name is not empty %}
-	<input
-		type="{{ type }}"
-		class="ct-input {{ modifier_class -}}"
-		name="{{ name }}"
-		{% if value is not empty %}value="{{ value }}"{% endif %}
-		{% if id %}id="{{ id }}"{% endif %}
-		{% if is_disabled %}disabled{% endif %}
-		{% if is_required %}required{% endif %}
-		{% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-		{% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
-	/>
+  <input
+    type="{{ type }}"
+    class="ct-input {{ modifier_class -}}"
+    name="{{ name }}"
+    {% if value is not empty %}value="{{ value }}"{% endif %}
+    {% if id %}id="{{ id }}"{% endif %}
+    {% if is_disabled %}disabled{% endif %}
+    {% if is_required %}required{% endif %}
+    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  />
 {% endif %}

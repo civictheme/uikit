@@ -1,0 +1,12 @@
+diff --git a/src/TwigValidator/TwigVariableCollectorVisitor.php b/src/TwigValidator/TwigVariableCollectorVisitor.php
+index 50d38e6..29fd55f 100644
+--- a/src/TwigValidator/TwigVariableCollectorVisitor.php
++++ b/src/TwigValidator/TwigVariableCollectorVisitor.php
+@@ -24,6 +24,7 @@ final class TwigVariableCollectorVisitor implements NodeVisitorInterface {
+    * @var array
+    */
+   public const ALLOW_NOT_SET_VARIABLE = [
++    'attributes' => 'object',
+     'variant' => 'string',
+     'loop' => '',
+     '_self' => '',

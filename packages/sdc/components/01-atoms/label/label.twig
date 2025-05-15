@@ -27,14 +27,14 @@
 
 {% if content is not empty -%}
   <{{ tag }}
-    class="ct-label {{ modifier_class -}}"
-    {% if for is not empty %} for="{{ for }}" {% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  class="ct-label {{ modifier_class -}}"
+  {% if for is not empty %} for="{{ for }}" {% endif %}
+  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    {% if allow_html|default(false) %}
-      {{- content|raw -}}
-    {% else %}
-      {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}
-    {% endif %}
+  {% if allow_html is defined ? allow_html : false %}
+    {{- content|raw -}}
+  {% else %}
+    {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}
+  {% endif %}
   </{{ tag }}>
 {%- endif %}

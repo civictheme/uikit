@@ -40,6 +40,10 @@ props:
       type: string
       title: Content Bottom 1
       description: Bottom section content slot.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

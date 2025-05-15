@@ -7,7 +7,14 @@ import Component from './back-to-top.stories.twig';
 const meta = {
   title: 'Molecules/Back To Top',
   component: Component,
-  argTypes: {},
+  argTypes: {
+    attributes: {
+      control: { type: 'text' },
+    },
+    modifier_class: {
+      control: { type: 'text' },
+    },
+  },
 };
 
 export default meta;

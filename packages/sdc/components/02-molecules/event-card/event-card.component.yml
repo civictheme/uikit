@@ -72,6 +72,19 @@ props:
       description: Event tags.
       items:
         type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text.
+          url:
+            type: string
+            title: URL
+            description: Tag URL.
+          is_new_window:
+            type: boolean
+            title: New Window
+            description: Whether to open tag in a new window.
     content_top:
       type: string
       title: Top content

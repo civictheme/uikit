@@ -10,7 +10,11 @@
  *   - url: [string] Link URL.
  *   - alt: [string] Image alt text.
  * - image_position: [string] Image position (left or right).
- * - tags: [array] Tags.
+ * - tags: [array] Tags:
+ *   Each item contains:
+ *   - text: [string] Tag text.
+ *   - url: [string] Tag URL.
+ *   - is_new_window: [boolean] Whether to open tag in a new window.
  * - title: [string] Slide title.
  * - date: [string] Start date and time.
  * - date_iso: [string] Start date and time in ISO format.
@@ -42,10 +46,10 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 <div class="ct-slide {{ modifier_class -}}" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
-	<div class="row ct-slide__row">
+  <div class="row ct-slide__row">
     {% block image_slot %}
       {% if image is not empty %}
-		    <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
+        <div class="col-xxs-12 col-m-5 first {% if image_position == 'right' %}col-m-offset-1 last-m{% else %}first-m{% endif %}">
           <div class="ct-slide__image">
             {% include '@atoms/image/image.twig' with {
               theme: theme,
@@ -94,7 +98,7 @@
                   start: date,
                   start_iso: date_iso|default(null),
                   end: date_end|default(null),
-                  end_iso: date_end_iso ?? null,
+                  end_iso: date_end_iso|default(null),
                 } only %}
               {% endset %}
 

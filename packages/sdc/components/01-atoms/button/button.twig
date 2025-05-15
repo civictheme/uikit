@@ -56,8 +56,8 @@
       is_external: is_external,
       icon: icon,
       icon_placement: icon_placement,
-      icon_group_disabled: icon_group_disabled|default(false),
-      icon_single_only: icon_single_only|default(false),
+      icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,
+      icon_single_only: icon_single_only is defined ? icon_single_only : false,
       icon_class: 'ct-button__icon',
     } only -%}
   {%- endif -%}

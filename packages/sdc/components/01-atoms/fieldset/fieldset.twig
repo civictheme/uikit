@@ -30,61 +30,61 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}
 
 <fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-	{% if legend is not empty %}
-		{% include 'civictheme:label' with {
-			theme: theme,
-			tag: 'legend',
-			size: 'large',
-			content: legend,
-			is_required: is_required,
-			required_text: required_text,
-			modifier_class: 'ct-fieldset__legend',
-		} only %}
-	{% endif %}
+  {% if legend is not empty %}
+    {% include 'civictheme:label' with {
+      theme: theme,
+      tag: 'legend',
+      size: 'large',
+      content: legend,
+      is_required: is_required,
+      required_text: required_text,
+      modifier_class: 'ct-fieldset__legend',
+    } only %}
+  {% endif %}
 
-	<div class="ct-fieldset__wrapper">
-		{% if description is not empty and (description_display == 'before' or description_display == 'invisible') %}
-			{% include 'civictheme:paragraph' with {
-				theme: theme,
-				content: description,
-				allow_html: true,
-				modifier_class: 'ct-fieldset__description ' ~ (description_display == 'invisible' ? 'ct-fieldset__description--invisible ct-visually-hidden' : 'ct-fieldset__description--before'),
-			} only %}
-		{% endif %}
+  <div class="ct-fieldset__wrapper">
+    {% if description is not empty and (description_display == 'before' or description_display == 'invisible') %}
+      {% include 'civictheme:paragraph' with {
+        theme: theme,
+        content: description,
+        allow_html: true,
+        modifier_class: 'ct-fieldset__description ' ~ (description_display == 'invisible' ? 'ct-fieldset__description--invisible ct-visually-hidden' : 'ct-fieldset__description--before'),
+      } only %}
+    {% endif %}
 
-		{% if message %}
-			{% include 'civictheme:field-message' with {
-				theme: theme,
-				type: message_type,
-				content: message,
-				allow_html: true,
-				modifier_class: 'ct-fieldset__message',
-			} only %}
-		{% endif %}
+    {% if message %}
+      {% include 'civictheme:field-message' with {
+        theme: theme,
+        type: message_type,
+        content: message,
+        allow_html: true,
+        modifier_class: 'ct-fieldset__message',
+      } only %}
+    {% endif %}
 
-		{% if prefix is not empty %}
-			<div class="ct-fieldset__prefix">{{- prefix|raw -}}</div>
-		{% endif %}
+    {% if prefix is not empty %}
+      <div class="ct-fieldset__prefix">{{- prefix|raw -}}</div>
+    {% endif %}
 
-		{% block fields_slot %}
-			{% if fields is not empty %}
-				<div class="ct-fieldset__fields">
-					{{- fields|raw -}}
-				</div>
-			{% endif %}
-		{% endblock %}
+    {% block fields_slot %}
+      {% if fields is not empty %}
+        <div class="ct-fieldset__fields">
+          {{- fields|raw -}}
+        </div>
+      {% endif %}
+    {% endblock %}
 
-		{% if suffix is not empty %}
-			<div class="ct-fieldset__suffix">{{- suffix|raw -}}</div>
-		{% endif %}
+    {% if suffix is not empty %}
+      <div class="ct-fieldset__suffix">{{- suffix|raw -}}</div>
+    {% endif %}
 
-		{% if description is not empty and description_display == 'after' %}
-			{% include 'civictheme:paragraph' with {
-				theme: theme,
-				content: description,
-				allow_html: true,
-				modifier_class: 'ct-fieldset__description ct-fieldset__description--after',
-			} only %}
-		{% endif %}
-	</div>
+    {% if description is not empty and description_display == 'after' %}
+      {% include 'civictheme:paragraph' with {
+        theme: theme,
+        content: description,
+        allow_html: true,
+        modifier_class: 'ct-fieldset__description ct-fieldset__description--after',
+      } only %}
+    {% endif %}
+  </div>
 </fieldset>

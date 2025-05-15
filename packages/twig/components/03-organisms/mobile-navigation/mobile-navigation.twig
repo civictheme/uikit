@@ -21,6 +21,7 @@
  *   - in_active_trail: [boolean] Whether the item is in the active trail.
  *   - is_expanded: [boolean] Whether the item is expanded.
  *   - below: [array] Submenu items.
+ * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -34,7 +35,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link">
+<div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link" {% if attributes %}{{ attributes|raw }}{% endif %}>
   <div data-flyout-panel class="ct-mobile-navigation__panel">
     {% include '@organisms/mobile-navigation/mobile-navigation-close.twig' with {
       theme: theme,

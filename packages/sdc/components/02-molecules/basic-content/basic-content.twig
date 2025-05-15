@@ -19,20 +19,20 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
 
-{% set is_contained = is_contained is not defined or is_contained != false ? true : false %}
+{% set is_contained = is_contained is defined ? is_contained : true %}
 
 {% if content is not empty %}
   <div class="ct-basic-content {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% if is_contained %}
-      <div class="container">
-        <div class="row">
-          <div class="col-xxs-12">
-            {% endif %}
-              {{- content|raw -}}
-            {% if is_contained %}
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxs-12">
+          {% endif %}
+          {{- content|raw -}}
+          {% if is_contained %}
         </div>
       </div>
+    </div>
     {% endif %}
   </div>
 {% endif %}

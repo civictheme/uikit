@@ -30,6 +30,9 @@ props:
       type: array
       title: Items
       description: List items.
+      items:
+        type: string
+        description: HTML content for each list item.
     attributes:
       type: string
       title: Attributes

@@ -20,6 +20,9 @@ props:
       type: array
       title: Tags
       description: Tags.
+      items:
+        type: string
+        description: Tag content. Can be a string or an object with text property.
     content_bottom:
       type: string
       title: Content Bottom

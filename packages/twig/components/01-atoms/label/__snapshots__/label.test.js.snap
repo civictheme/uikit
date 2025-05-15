@@ -9,7 +9,7 @@ exports[`Label Component allows HTML content 1`] = `
     class="ct-label ct-theme-light ct-label--regular  "
   >
     
-    Start 
+  Start 
     <strong>
       prefix
     </strong>
@@ -39,7 +39,7 @@ exports[`Label Component renders with default tag and size when invalid values a
     class="ct-label ct-theme-light ct-label--regular  "
   >
     
-    Sample label  
+  Sample label  
   </label>
 </div>
 `;
@@ -55,7 +55,7 @@ exports[`Label Component renders with optional attributes 1`] = `
     for="input-id"
   >
     
-    Sample label 
+  Sample label 
     <span
       class="ct-label__required"
     >
@@ -75,7 +75,7 @@ exports[`Label Component renders with required attributes 1`] = `
     class="ct-label ct-theme-light ct-label--regular  "
   >
     
-    Sample label  
+  Sample label  
   </label>
 </div>
 `;
@@ -89,7 +89,7 @@ exports[`Label Component strips HTML content 1`] = `
     class="ct-label ct-theme-light ct-label--regular  "
   >
     
-    Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
+  Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
   </label>
 </div>
 `;
@@ -104,7 +104,7 @@ exports[`Label Component strips HTML tags from attribute values 1`] = `
     data-test="<script>alert(1)</script>"
   >
     
-    Sample label  
+  Sample label  
   </label>
 </div>
 `;
