@@ -87,3 +87,10 @@ This file tracks the fixes applied to SDC components.
   - Fixed schema definition by adding proper items structure to the items array
   - Replaced boolean default filters with ternary conditions for use_container, is_fluid, and fill_width
   - This ensures proper validation of the boolean properties and items array in the component schema
+
+### Component: menu
+- Action: Fixed
+- Description:
+  - Fixed schema definition by adding proper items structure to the items array with detailed menu item properties
+  - Fixed unknown variable error by removing `classes` parameter from the menu_links_below macro call
+  - Added comprehensive item structure including title, url, below, attributes, and link properties
