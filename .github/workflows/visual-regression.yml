@@ -3,6 +3,7 @@ permissions:
   contents: read
   pull-requests: write
   deployments: write
+  statuses: write
 
 on:
   pull_request:
@@ -26,9 +27,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install NPM dependencies
-        run: npm install --workspaces && npm install && npx playwright install
+        run: npm ci --workspaces && npm ci && npx playwright install
 
       - name: Build Storybook
         run: npm run build
