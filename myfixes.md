@@ -190,3 +190,12 @@ This file tracks the fixes applied to SDC components.
   - Fixed schema definition by adding proper items structure to items array
   - Added string type definition for list items
   - This ensures proper validation of the items array in the component schema
+
+### Component: layout
+- Action: Fixed
+- Description:
+  - Fixed multiple boolean default filter issues by replacing them with ternary conditions
+  - Changed from `hide_sidebar_left|default(false)` to `hide_sidebar_left is defined ? hide_sidebar_left : false`
+  - Changed from `hide_sidebar_right|default(false)` to `hide_sidebar_right is defined ? hide_sidebar_right : false`
+  - Changed from `is_contained|default(false)` to `is_contained is defined ? is_contained : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
