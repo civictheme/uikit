@@ -19,3 +19,9 @@ This file tracks the fixes applied to SDC components.
 - Description: 
   - Enhanced the tag item object schema with proper property definitions 
   - Added text, url, and is_new_window properties to define the tag structure
+
+### Component: slide
+- Action: Fixed
+- Description: 
+  - Added proper definition for tags array items structure
+  - Replaced null ternary operator (??) with default filter for date_end_iso parameter

@@ -94,7 +94,7 @@
                   start: date,
                   start_iso: date_iso|default(null),
                   end: date_end|default(null),
-                  end_iso: date_end_iso ?? null,
+                  end_iso: date_end_iso|default(null),
                 } only %}
               {% endset %}
 
