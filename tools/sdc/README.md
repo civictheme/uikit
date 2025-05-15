@@ -5,7 +5,7 @@ This directory contains scripts used for SDC development.
 These can be used locally and in the CI environment.
 
 SDC components are validated using `sdc_devel` module running on a vanilla
-Drupal site.
+Drupal site. 
 
 Run the commands from the `tools/sdc` directory.
 
@@ -30,4 +30,4 @@ build/vendor/bin/drush sdc-devel:validate civictheme_sdc
 
 To add exclusions to the validation rules, update the `ct_dev/ct_dev.module` file.
 This module is symlinked into the built Drupal site, so changes will be reflected
-momentarily.
+momentarily. Do not forget to clear Drupal cache after making changes to this file.
