@@ -169,3 +169,24 @@ This file tracks the fixes applied to SDC components.
   - Fixed boolean default filter usage with a ternary condition
   - Changed from `allow_html|default(false)` to `allow_html is defined ? allow_html : false`
   - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: field-description
+- Action: Fixed
+- Description:
+  - Fixed boolean default filter usage with a ternary condition
+  - Changed from `allow_html|default(false)` to `allow_html is defined ? allow_html : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: field-message
+- Action: Fixed
+- Description:
+  - Fixed boolean default filter usage with a ternary condition
+  - Changed from `allow_html|default(false)` to `allow_html is defined ? allow_html : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: item-list
+- Action: Fixed
+- Description:
+  - Fixed schema definition by adding proper items structure to items array
+  - Added string type definition for list items
+  - This ensures proper validation of the items array in the component schema
