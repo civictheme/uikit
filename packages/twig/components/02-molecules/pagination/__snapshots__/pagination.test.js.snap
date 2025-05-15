@@ -213,16 +213,16 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
 
 
-	
-						
-			
-			
+  
+          
+    
+      
       <div
         class="ct-field ct-theme-dark ct-field--select ct-field--horizontal    ct-pagination__items_per_page__field ct-field--horizontal--fluid"
         data-test="items-per-page"
       >
         
-					
+          
 
 
         <label
@@ -230,56 +230,56 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           for="items-per-page"
         >
           
-    Items per page  
+  Items per page  
         </label>
-        		
-		
+            
+    
         <div
           class="ct-field__wrapper"
         >
           
-			
-			
-							
+      
+      
+              
 
-	
+  
           <select
             class="ct-select ct-theme-dark  ct-field__control"
             id="items-per-page"
             name="itemsPerPage"
           >
             
-														
+                            
             <option
               value="10"
             >
               10
             </option>
             
-																					
+                                          
             <option
               value="20"
             >
               20
             </option>
             
-																					
+                                          
             <option
               value="50"
             >
               50
             </option>
             
-										
+                    
           </select>
           
 
-			
-			
-					
+      
+      
+          
         </div>
         
-	
+  
       </div>
       
 

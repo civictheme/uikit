@@ -6,25 +6,25 @@ exports[`Field Component Field Component - empty title with textfield renders 0 
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         name="testname"
@@ -32,12 +32,12 @@ exports[`Field Component Field Component - empty title with textfield renders 0 
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -50,37 +50,37 @@ exports[`Field Component Field Component - hidden title with hidden input render
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-															
+      
+      
+                              
 
-	
+  
       <input
         class="ct-input ct-theme-light  ct-field__control"
         name="testname"
         type="hidden"
       />
       
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -93,25 +93,25 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         name="testname"
@@ -119,12 +119,12 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -137,34 +137,34 @@ exports[`Field Component Field Component - invisible title with textfield render
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title ct-visually-hidden"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         name="testname"
@@ -172,12 +172,12 @@ exports[`Field Component Field Component - invisible title with textfield render
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -190,37 +190,37 @@ exports[`Field Component Field Component - visible title with hidden input rende
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-															
+      
+      
+                              
 
-	
+  
       <input
         class="ct-input ct-theme-light  ct-field__control"
         name="testname"
         type="hidden"
       />
       
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -233,34 +233,34 @@ exports[`Field Component Field Component - visible title with textfield renders 
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         name="testname"
@@ -268,12 +268,12 @@ exports[`Field Component Field Component - visible title with textfield renders 
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -286,16 +286,16 @@ exports[`Field Component default input 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--email ct-field--vertical    custom-modifier"
     data-test="true"
   >
     
-					
+          
 
 
     <label
@@ -303,19 +303,19 @@ exports[`Field Component default input 1`] = `
       for="testid"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-															
+      
+      
+                              
 
-	
+  
       <input
         class="ct-input ct-theme-light  ct-field__control"
         id="testid"
@@ -324,12 +324,12 @@ exports[`Field Component default input 1`] = `
         value="testvalue"
       />
       
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -342,37 +342,37 @@ exports[`Field Component default values 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-															
+      
+      
+                              
 
-	
+  
       <input
         class="ct-input ct-theme-light  ct-field__control"
         name="test"
         type="hidden"
       />
       
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -385,25 +385,25 @@ exports[`Field Component field messages custom message renders correctly when me
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         name="testname"
@@ -411,12 +411,12 @@ exports[`Field Component field messages custom message renders correctly when me
       />
       
 
-			
-			
-															
-												
-																	
-				
+      
+      
+                      
+                
+                          
+        
 
 
       <div
@@ -445,10 +445,10 @@ exports[`Field Component field messages custom message renders correctly when me
         
         Custom error message  
       </div>
-      					
+                
     </div>
     
-	
+  
   </div>
   
 
@@ -461,25 +461,25 @@ exports[`Field Component field messages default message renders when field is in
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical   ct-field--invalid "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light ct-textfield--is-invalid ct-field__control"
         name="testname"
@@ -487,12 +487,12 @@ exports[`Field Component field messages default message renders when field is in
       />
       
 
-			
-			
-															
-																					
-								
-				
+      
+      
+                      
+                                  
+        
+        
 
 
       <div
@@ -520,10 +520,10 @@ exports[`Field Component field messages default message renders when field is in
         
         Field has an error  
       </div>
-      					
+                
     </div>
     
-	
+  
   </div>
   
 
@@ -536,34 +536,34 @@ exports[`Field Component field messages default message renders when message obj
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical   ct-field--invalid "
   >
     
-					
+          
 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test input  
+  Test input  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light ct-textfield--is-invalid ct-field__control"
         name="testname"
@@ -571,12 +571,12 @@ exports[`Field Component field messages default message renders when message obj
       />
       
 
-			
-			
-																								
-																					
-								
-				
+      
+      
+                                        
+                                  
+        
+        
 
 
       <div
@@ -609,10 +609,10 @@ exports[`Field Component field messages default message renders when message obj
         </em>
          has an error  
       </div>
-      					
+                
     </div>
     
-	
+  
   </div>
   
 
@@ -625,35 +625,35 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
 
 
 
-		
-			
-			
-					
-			
-			
+    
+    
+    
+        
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-			
-																																								
+      
+      
+      
+                                                                                
 
   
       <ul
@@ -664,7 +664,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
         <li
           class="ct-item-list__item"
         >
-          													
+                                    
 
   
           <input
@@ -684,16 +684,16 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
             for="testid"
           >
             
-    Test Title  
+  Test Title  
           </label>
-            											
+                                  
         </li>
         
                         
         <li
           class="ct-item-list__item"
         >
-          													
+                                    
 
   
           <input
@@ -714,21 +714,21 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
             for="testid2"
           >
             
-    Test Title  
+  Test Title  
           </label>
-            											
+                                  
         </li>
         
             
       </ul>
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -741,17 +741,17 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
 
 
 
-		
-			
-			
-					
-			
-			
+    
+    
+    
+        
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
@@ -759,19 +759,19 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
       for="testid"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control custom-modifier"
         data-test="true"
@@ -782,12 +782,12 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -800,36 +800,36 @@ exports[`Field Component multiple control as array propagation with mixed levels
 
 
 
-		
-			
-			
-					
-			
-			
+    
+    
+    
+        
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical    custom-modifier-parent"
     data-test-parent="true"
   >
     
-					
+          
 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-			
-																																								
+      
+      
+      
+                                                                                
 
   
       <ul
@@ -840,7 +840,7 @@ exports[`Field Component multiple control as array propagation with mixed levels
         <li
           class="ct-item-list__item"
         >
-          													
+                                    
 
   
           <input
@@ -860,16 +860,16 @@ exports[`Field Component multiple control as array propagation with mixed levels
             for="testid1"
           >
             
-    Checkbox 1  
+  Checkbox 1  
           </label>
-            											
+                                  
         </li>
         
                         
         <li
           class="ct-item-list__item"
         >
-          													
+                                    
 
   
           <input
@@ -888,21 +888,21 @@ exports[`Field Component multiple control as array propagation with mixed levels
             for="testid2"
           >
             
-    Checkbox 2  
+  Checkbox 2  
           </label>
-            											
+                                  
         </li>
         
             
       </ul>
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -915,10 +915,10 @@ exports[`Field Component nothing is rendered if name is not provided 1`] = `
 
 
 
-	
-			
-			
-		
+  
+    
+    
+    
 </div>
 `;
 
@@ -928,35 +928,35 @@ exports[`Field Component radio 1`] = `
 
 
 
-		
-			
-			
-					
-			
-			
+    
+    
+    
+        
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--radio ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-			
-																																								
+      
+      
+      
+                                                                                
 
   
       <ul
@@ -967,7 +967,7 @@ exports[`Field Component radio 1`] = `
         <li
           class="ct-item-list__item"
         >
-          													
+                                    
 
   
           <input
@@ -987,16 +987,16 @@ exports[`Field Component radio 1`] = `
             for="testid"
           >
             
-    Test Title  
+  Test Title  
           </label>
-            											
+                                  
         </li>
         
                         
         <li
           class="ct-item-list__item"
         >
-          													
+                                    
 
   
           <input
@@ -1017,21 +1017,21 @@ exports[`Field Component radio 1`] = `
             for="testid2"
           >
             
-    Test Title  
+  Test Title  
           </label>
-            											
+                                  
         </li>
         
             
       </ul>
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -1044,23 +1044,23 @@ exports[`Field Component required, disabled, and description 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical ct-field--required ct-field--disabled  "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-															
-												
-				
+                      
+                
+        
 
 
       <div
@@ -1069,11 +1069,11 @@ exports[`Field Component required, disabled, and description 1`] = `
         
     This is a description  
       </div>
-      			
-			
-							
+            
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         disabled=""
@@ -1083,12 +1083,12 @@ exports[`Field Component required, disabled, and description 1`] = `
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -1101,16 +1101,16 @@ exports[`Field Component select 1`] = `
 
 
 
-	
-						
-			
-			
+  
+          
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--select ct-field--vertical    custom-modifier"
     data-test="true"
   >
     
-					
+          
 
 
     <label
@@ -1118,35 +1118,35 @@ exports[`Field Component select 1`] = `
       for="testid"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <select
         class="ct-select ct-theme-light  ct-field__control"
         id="testid"
         name="testname"
       >
         
-													
+                          
       </select>
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -1159,15 +1159,15 @@ exports[`Field Component single control as array propagation 1`] = `
 
 
 
-		
-			
-			
-			
+    
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
@@ -1175,19 +1175,19 @@ exports[`Field Component single control as array propagation 1`] = `
       for="testid"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control custom-modifier"
         data-test="true"
@@ -1198,12 +1198,12 @@ exports[`Field Component single control as array propagation 1`] = `
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -1216,15 +1216,15 @@ exports[`Field Component single control as object propagation 1`] = `
 
 
 
-		
-			
-			
-			
+    
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    "
   >
     
-					
+          
 
 
     <label
@@ -1232,19 +1232,19 @@ exports[`Field Component single control as object propagation 1`] = `
       for="testid"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control custom-modifier"
         data-test="true"
@@ -1255,12 +1255,12 @@ exports[`Field Component single control as object propagation 1`] = `
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -1273,16 +1273,16 @@ exports[`Field Component textarea with all attributes 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textarea ct-field--vertical ct-field--required  ct-field--invalid custom-modifier"
     data-test="true"
   >
     
-					
+          
 
 
     <label
@@ -1290,7 +1290,7 @@ exports[`Field Component textarea with all attributes 1`] = `
       for="testid"
     >
       
-    Test Title 
+  Test Title 
       <span
         class="ct-label__required"
       >
@@ -1298,15 +1298,15 @@ exports[`Field Component textarea with all attributes 1`] = `
       </span>
         
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
   
       <textarea
@@ -1319,12 +1319,12 @@ exports[`Field Component textarea with all attributes 1`] = `
       </textarea>
       
 
-			
-			
-																								
-																					
-								
-				
+      
+      
+                                        
+                                  
+        
+        
 
 
       <div
@@ -1356,10 +1356,10 @@ exports[`Field Component textarea with all attributes 1`] = `
         </em>
          has an error  
       </div>
-      					
+                
     </div>
     
-	
+  
   </div>
   
 
@@ -1372,16 +1372,16 @@ exports[`Field Component textfield 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    custom-modifier"
     data-test="true"
   >
     
-					
+          
 
 
     <label
@@ -1389,19 +1389,19 @@ exports[`Field Component textfield 1`] = `
       for="testid"
     >
       
-    Test Title  
+  Test Title  
     </label>
-    		
-		
+        
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-light  ct-field__control"
         id="testid"
@@ -1411,12 +1411,12 @@ exports[`Field Component textfield 1`] = `
       />
       
 
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 
@@ -1429,25 +1429,25 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-dark ct-field--textfield ct-field--horizontal   ct-field--invalid "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-							
+      
+      
+              
 
-	
+  
       <input
         class="ct-textfield ct-theme-dark ct-textfield--is-invalid ct-field__control"
         name="testname"
@@ -1455,12 +1455,12 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
       />
       
 
-			
-			
-															
-																					
-								
-				
+      
+      
+                      
+                                  
+        
+        
 
 
       <div
@@ -1488,10 +1488,10 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
         
         Field has an error  
       </div>
-      					
+                
     </div>
     
-	
+  
   </div>
   
 
@@ -1504,25 +1504,25 @@ exports[`Field Component values 1`] = `
 
 
 
-	
-			
-			
-			
+  
+    
+    
+      
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    "
   >
     
-		
-		
+    
+    
     <div
       class="ct-field__wrapper"
     >
       
-			
-			
-															
+      
+      
+                              
 
-	
+  
       <input
         class="ct-input ct-theme-light  ct-field__control"
         name="testname"
@@ -1530,12 +1530,12 @@ exports[`Field Component values 1`] = `
         value="testvalue"
       />
       
-			
-			
-					
+      
+      
+          
     </div>
     
-	
+  
   </div>
   
 

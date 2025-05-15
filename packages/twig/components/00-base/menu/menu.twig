@@ -109,12 +109,12 @@
 {% endmacro %}
 
 {#
-  Separate macro to allow "cleaner" overrides of parts of the menu.
+Separate macro to allow "cleaner" overrides of parts of the menu.
 
-  Twig does not support overridable blocks in macro, so the only option is to
-  clone this whole file and override it as required.
-  The main macro is split into multiple macros to allow to override only the
-  required parts while preserving (cloned) main generation macro.
+Twig does not support overridable blocks in macro, so the only option is to
+clone this whole file and override it as required.
+The main macro is split into multiple macros to allow to override only the
+required parts while preserving (cloned) main generation macro.
 #}
 {% macro menu_links_below(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
   {{ menus.menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) }}
