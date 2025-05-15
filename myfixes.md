@@ -207,3 +207,11 @@ This file tracks the fixes applied to SDC components.
   - Changed from `icon_group_disabled|default(false)` to `icon_group_disabled is defined ? icon_group_disabled : false`
   - Changed from `icon_single_only|default(false)` to `icon_single_only is defined ? icon_single_only : false`
   - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: link
+- Action: Fixed
+- Description:
+  - Fixed boolean default filter issues in the text-icon include
+  - Changed from `icon_group_disabled|default(false)` to `icon_group_disabled is defined ? icon_group_disabled : false`
+  - Changed from `icon_single_only|default(false)` to `icon_single_only is defined ? icon_single_only : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
