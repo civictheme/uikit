@@ -25,3 +25,10 @@ This file tracks the fixes applied to SDC components.
 - Description: 
   - Added proper definition for tags array items structure
   - Replaced null ternary operator (??) with default filter for date_end_iso parameter
+
+### Component: skip-link
+- Action: Fixed
+- Description: 
+  - Added attributes property to component schema to fix unused variable warning
+  - Updated component Twig template to use attributes parameter
+  - Updated component documentation to include attributes parameter

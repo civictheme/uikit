@@ -22,6 +22,10 @@ props:
       type: string
       title: URL
       description: Link URL.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
