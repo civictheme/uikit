@@ -13,3 +13,9 @@ This file tracks the fixes applied to SDC components.
 - Description: 
   - Fixed schema definition by adding missing items property to the tags array
   - Added proper type definitions for tag objects including text, url, and is_new_window properties
+
+### Component: event-card
+- Action: Fixed
+- Description: 
+  - Enhanced the tag item object schema with proper property definitions 
+  - Added text, url, and is_new_window properties to define the tag structure
