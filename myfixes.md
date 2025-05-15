@@ -94,3 +94,11 @@ This file tracks the fixes applied to SDC components.
   - Fixed schema definition by adding proper items structure to the items array with detailed menu item properties
   - Fixed unknown variable error by removing `classes` parameter from the menu_links_below macro call
   - Added comprehensive item structure including title, url, below, attributes, and link properties
+
+### Component: mobile-navigation-menu
+- Action: Fixed
+- Description:
+  - Fixed unused variables issues by removing the unused `parent_key` parameter from the menu_links macro
+  - Fixed unused `key` variable by using `for item in items` instead of `for key, item in items`
+  - Fixed unknown variable error by replacing `classes` with `modifier_class` in the menu_links_below call
+  - Maintained compatibility with related components to ensure tests continue to pass
