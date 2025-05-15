@@ -109,3 +109,63 @@ This file tracks the fixes applied to SDC components.
   - Fixed unused variable warning for `filters_slot` by renaming the `filters` block to `filters_slot`
   - This ensures the block name matches the slot name defined in the component schema
   - Maintained the same functionality while fixing the validation issue
+
+### Component: promo
+- Action: Fixed
+- Description:
+  - Fixed ternary test with boolean result issue in the is_contained variable setting
+  - Replaced complex conditional expression with a simpler ternary operator
+  - Changed from `is_contained is not defined or is_contained != false ? true : false` to `is_contained is defined ? is_contained : true`
+  - This maintains the same functionality while fixing the validation issue
+
+### Component: basic-content
+- Action: Fixed
+- Description:
+  - Fixed ternary test with boolean result issue in the is_contained variable setting
+  - Replaced complex conditional expression with a simpler ternary operator
+  - Changed from `is_contained is not defined or is_contained != false ? true : false` to `is_contained is defined ? is_contained : true`
+  - This maintains the same functionality while fixing the validation issue
+
+### Component: back-to-top
+- Action: Skipped
+- Reason:
+  - Attempted to add attributes property and usage to fix unused variable warning
+  - Adding attributes to the component broke tests for the page component
+  - The back-to-top component is embedded in the page component which relies on specific HTML structure
+  - Making this change would require updating multiple snapshots across dependent components
+
+### Component: field
+- Action: Skipped
+- Reason:
+  - Component has multiple chained ternary operations which are flagged in validation
+  - Attempted to fix by using intermediate variables but this broke tests due to whitespace changes
+  - Component is used by many other components and changing it would require updating numerous snapshots
+  - Decision was made to skip to avoid breaking dependent components
+
+### Component: snippet
+- Action: Fixed
+- Description:
+  - Fixed schema definition by adding proper items structure to the tags array
+  - Added object type definition with text, url, and is_new_window properties for tag items
+  - This ensures proper validation of the tags array in the component schema
+
+### Component: attachment
+- Action: Fixed
+- Description:
+  - Replaced null ternary operator (??) with default filter
+  - Changed from `file.ext ?? file.size` to `file.ext|default(file.size)` in the extension parameter
+  - This maintains the same functionality while following Twig best practices
+
+### Component: paragraph
+- Action: Fixed
+- Description:
+  - Fixed boolean default filter usage with a ternary condition
+  - Changed from `allow_html|default(false)` to `allow_html is defined ? allow_html : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
+
+### Component: label
+- Action: Fixed
+- Description:
+  - Fixed boolean default filter usage with a ternary condition
+  - Changed from `allow_html|default(false)` to `allow_html is defined ? allow_html : false`
+  - This maintains the same functionality while avoiding the default filter with booleans
