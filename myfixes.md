@@ -80,3 +80,10 @@ This file tracks the fixes applied to SDC components.
   - Fixed schema definition by adding proper items structure to the tags array
   - Added string type definition for tag items
   - This ensures proper validation of the tags array in the component schema
+
+### Component: grid
+- Action: Fixed
+- Description:
+  - Fixed schema definition by adding proper items structure to the items array
+  - Replaced boolean default filters with ternary conditions for use_container, is_fluid, and fill_width
+  - This ensures proper validation of the boolean properties and items array in the component schema

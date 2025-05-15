@@ -9,6 +9,9 @@ props:
       type: array
       title: Items
       description: Column items.
+      items:
+        type: string
+        description: Content of a grid item. Can include HTML.
     row_element:
       type: string
       title: Row element
