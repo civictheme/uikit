@@ -3,48 +3,56 @@
  * @file
  * CivicTheme List component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - title: [string] List title.
- * - link_above: [object] Above list link object:
- *   - text: [string] Link text.
- *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Whether to open link in a new window.
- *   - is_external: [boolean] Whether the link is external.
- * - content: [string] List main content.
- * - filters: [string] Exposed filters content.
- * - results_count: [string] Results count text.
- * - rows_above: [string] Above rows content.
- * - rows: [string] Rows content.
- * - rows_below: [string] Below rows content.
- * - empty: [string] No results content.
- * - pagination: [string] Pagination content.
- * - footer: [string] Footer content.
- * - link_below: [object] Below list link object:
- *   - text: [string] Link text.
- *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Whether to open link in a new window.
- *   - is_external: [boolean] Whether the link is external.
  * - vertical_spacing: [string] List vertical spacing (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - link_above: [object] Above list link object.
+ *   Each property contains:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - link_below: [object] Below list link object.
+ *   Each property contains:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - rows_above: [array] Above rows content.
+ *   Each item contains:
+ *   - items [string]
+ * - rows_below: [array] Below rows content.
+ *   Each item contains:
+ *   - items [string]
  *
  * Slots:
- * - header_slot: [slot] Header content
- * - title_slot: [slot] Title content
- * - link_above_slot: [slot] Link above content
- * - content_slot: [slot] Content
- * - list_slot: [slot] List content
- * - filters_slot: [slot] Filters content
- * - rows_slot: [slot] Rows content
- * - rows_above_slot: [slot] Rows above content
- * - results_count_slot: [slot] Results count content
- * - rows_below_slot: [slot] Rows below content
- * - empty_slot: [slot] Empty content
- * - list_below_slot: [slot] List below content
- * - pagination_slot: [slot] Pagination content
- * - footer_slot: [slot] Footer content
+ * - title: List title.
+ * - content: List main content.
+ * - filters: Exposed filters content.
+ * - results_count: Results count text.
+ * - rows: Rows content.
+ * - empty: No results content.
+ * - pagination: Pagination content.
+ * - footer: Footer content.
+ *
+ * Blocks:
+ * - header_block
+ * - title_block
+ * - link_above_block
+ * - content_block
+ * - list_block
+ * - filters_block
+ * - rows_block
+ * - rows_above_block
+ * - results_count_block
+ * - rows_below_block
+ * - empty_block
+ * - list_below_block
+ * - pagination_block
+ * - footer_block
  */
 #}
 
@@ -55,13 +63,13 @@
 
 <div class="ct-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <div class="ct-list__inner">
-    {% block header_slot %}
+    {% block header_block %}
       {% if title is not empty or link_above is not empty %}
         <div class="ct-list__header">
           <div class="container">
             <div class="row">
               <div class="col-xxs-12 col-m-9">
-                {% block title_slot %}
+                {% block title_block %}
                   {% if title -%}
                     {% include '@atoms/heading/heading.twig' with {
                       content: title,
@@ -73,7 +81,7 @@
                 {% endblock %}
               </div>
               <div class="col-xxs-12 col-m-3">
-                {% block link_above_slot %}
+                {% block link_above_block %}
                   {% if link_above %}
                     <div class="ct-list__link-above ct-flex-justify-content-center">
                       {% include '@atoms/button/button.twig' with {
@@ -98,7 +106,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block content_slot %}
+    {% block content_block %}
       {% if content %}
         <div class="ct-list__content">
           <div class="container">
@@ -117,8 +125,8 @@
       {% endif %}
     {% endblock %}
 
-    {% block list_slot %}
-      {% block filters_slot %}
+    {% block list_block %}
+      {% block filters_block %}
         {% if filters -%}
           <div class="ct-list__filters">
             <div class="container">
@@ -132,10 +140,10 @@
         {% endif %}
       {% endblock %}
 
-      {% block rows_slot %}
+      {% block rows_block %}
         {% if rows -%}
 
-          {% block rows_above_slot %}
+          {% block rows_above_block %}
             {% if rows_above -%}
               <div class="container ct-list__rows-above">
                 <div class="row">
@@ -152,7 +160,7 @@
             {% endif %}
           {% endblock %}
 
-          {% block results_count_slot %}
+          {% block results_count_block %}
             {% if results_count -%}
               <div class="container">
                 <div class="row">
@@ -168,7 +176,7 @@
             {{ rows|raw }}
           </div>
 
-          {% block rows_below_slot %}
+          {% block rows_below_block %}
             {% if rows_below %}
               <div class="container ct-list__rows-below">
                 <div class="row">
@@ -187,7 +195,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block empty_slot %}
+      {% block empty_block %}
         {% if empty is defined and (rows is not defined or rows is empty) -%}
           <div class="container ct-list__empty-results">
             <div class="row">
@@ -205,7 +213,7 @@
       {% endblock %}
     {% endblock %}
 
-    {% block list_below_slot %}
+    {% block list_below_block %}
       {% if link_below %}
         <div class="ct-list__link-below ct-flex-justify-content-center">
           {% include '@atoms/button/button.twig' with {
@@ -225,7 +233,7 @@
 
       {% if pagination is defined and pagination is not empty %}
         <div class="ct-list__results-below">
-          {% block pagination_slot %}
+          {% block pagination_block %}
             <div class="container">
               <div class="row">
                 <div class="col-xxs-12">
@@ -240,7 +248,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block footer_slot %}
+    {% block footer_block %}
       {% if footer is not empty -%}
         <footer class="ct-list__footer">
           <div class="container">

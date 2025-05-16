@@ -12,10 +12,21 @@ props:
       enum:
         - light
         - dark
-    content_top:
+    image_position:
       type: string
-      title: Content Top
-      description: Top content area.
+      title: Image Position
+      description: Image position (left or right).
+      enum:
+        - left
+        - right
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
     image:
       type: object
       title: Image
@@ -24,22 +35,15 @@ props:
         url:
           type: string
           title: URL
-          description: Link URL.
+          description: Image URL.
         alt:
           type: string
-          title: Alt
+          title: Alt text
           description: Image alt text.
-    image_position:
-      type: string
-      title: Image Position
-      description: Image position (left or right).
-      enum:
-        - left
-        - right
     tags:
       type: array
       title: Tags
-      description: Tags.
+      description: Tags array.
       items:
         type: object
         properties:
@@ -55,34 +59,18 @@ props:
             type: boolean
             title: New Window
             description: Whether to open tag in a new window.
-    title:
-      type: string
-      title: Title
-      description: Slide title.
-    date:
-      type: string
-      title: Date
-      description: Start date and time.
     date_iso:
       type: string
       title: ISO Date
       description: Start date and time in ISO format.
-    date_end:
-      type: string
-      title: End Date
-      description: Optional end date and time.
     date_end_iso:
       type: string
       title: ISO End Date
       description: Optional end date and time in ISO format.
-    content:
-      type: string
-      title: Content
-      description: Content text.
     links:
       type: array
       title: Links
-      description: Link objects.
+      description: Link objects array.
       items:
         type: object
         properties:
@@ -102,37 +90,24 @@ props:
             type: boolean
             title: External
             description: Whether the link is external.
-    content_bottom:
+    date:
       type: string
-      title: Content Bottom
-      description: Bottom slide content.
-    attributes:
+      title: Date
+      description: Start date and time.
+    date_end:
       type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
+      title: End Date
+      description: Optional end date and time.
 slots:
-  image_slot:
-    title: Image Slot
-    description: Image area content
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  tags_slot:
-    title: Tags Slot
-    description: Tags area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  date_slot:
-    title: Date Slot
-    description: Date area content
-  links_slot:
-    title: Links Slot
-    description: Links area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area.
+  title:
+    title: Title
+    description: Slide title.
+  content:
+    title: Content
+    description: Content text.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom slide content.

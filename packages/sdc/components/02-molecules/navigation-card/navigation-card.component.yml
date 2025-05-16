@@ -12,6 +12,18 @@ props:
       enum:
         - light
         - dark
+    image_as_icon:
+      type: boolean
+      title: Image as icon
+      description: Whether to show the image as an icon.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
     image:
       type: object
       title: Image
@@ -25,22 +37,6 @@ props:
           type: string
           title: Alt text
           description: Image alt text.
-    image_as_icon:
-      type: boolean
-      title: Image as icon
-      description: Whether to show the image as an icon.
-    icon:
-      type: string
-      title: Icon
-      description: Icon name.
-    title:
-      type: string
-      title: Title
-      description: Card title text.
-    summary:
-      type: string
-      title: Summary
-      description: Card summary.
     link:
       type: object
       title: Link
@@ -62,52 +58,25 @@ props:
           type: boolean
           title: External
           description: Whether the link is external.
-    content_top:
-      type: string
-      title: Top content
-      description: Card top content.
-    image_over:
-      type: string
-      title: Image overlay
-      description: Image overlay content.
-    content_middle:
-      type: string
-      title: Middle content
-      description: Card middle content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Card bottom content.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier classes
-      description: Additional CSS classes.
 slots:
-  image_slot:
-    title: Image Slot
-    description: Image area content
-  image_over_slot:
-    title: Image Over Slot
-    description: Image overlay content
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  icon_slot:
-    title: Icon Slot
-    description: Icon area content
-  title_slot:
-    title: Title Slot
-    description: Title area content
-  content_middle_slot:
-    title: Content Middle Slot
-    description: Middle content area content
-  summary_slot:
-    title: Summary Slot
-    description: Summary area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  icon:
+    title: Icon
+    description: Icon name.
+  title:
+    title: Title
+    description: Card title text.
+  summary:
+    title: Summary
+    description: Card summary.
+  content_top:
+    title: Top content
+    description: Card top content.
+  image_over:
+    title: Image overlay
+    description: Image overlay content.
+  content_middle:
+    title: Middle content
+    description: Card middle content.
+  content_bottom:
+    title: Bottom content
+    description: Card bottom content.

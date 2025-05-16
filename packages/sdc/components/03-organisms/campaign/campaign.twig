@@ -3,39 +3,42 @@
  * @file
  * CivicTheme Campaign component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Top content.
- * - image: [object] Campaign image:
+ * - image_position: [string] Image position relative to content (left or right).
+ * - vertical_spacing: [string] Campaign vertical spacing (top, bottom, or both).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ * - image: [object] Campaign image.
+ *   Each property contains:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
- * - image_position: [string] Image position relative to content (left or right).
  * - tags: [array] Campaign tags:
  *   Each item contains:
  *   - text: [string] Tag text.
  *   - url: [string] Tag URL.
  *   - is_new_window: [boolean] Whether to open tag in a new window.
- * - title: [string] Campaign title.
- * - date: [string] Campaign date.
- * - content: [string] Campaign main content.
  * - links: [array] Campaign links:
  *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_bottom: [string] Bottom campaign content.
- * - vertical_spacing: [string] Campaign vertical spacing (top, bottom, or both).
- * - attributes: [string] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
- * - content_top_slot: [slot] Top content
- * - tags_slot: [slot] Tags content
- * - content_slot: [slot] Content
- * - links_slot: [slot] Links content
- * - content_bottom_slot: [slot] Bottom content
- * - image_slot: [slot] Image content
+ * - content_top: Top content.
+ * - title: Campaign title.
+ * - date: Campaign date.
+ * - content: Campaign main content.
+ * - content_bottom: Bottom campaign content.
+ *
+ * Blocks:
+ * - content_top_block
+ * - tags_block
+ * - content_block
+ * - links_block
+ * - content_bottom_block
+ * - image_block
  */
 #}
 
@@ -50,7 +53,7 @@
     <div class="row row--vertically-spaced">
       <div class="col-xxs-12 {% if image_position == 'right' %}col-m-5 col-m-offset-1{% else %}col-m-5 col-m-offset-1{% endif %} ct-flex-align-self-center">
         <div class="ct-campaign__inner">
-          {% block content_top_slot %}
+          {% block content_top_block %}
             {% if content_top is not empty %}
               <div class="ct-campaign__content-top">
                 {{ content_top|raw }}
@@ -58,7 +61,7 @@
             {% endif %}
           {% endblock %}
 
-          {% block tags_slot %}
+          {% block tags_block %}
             {% if tags %}
               {% include 'civictheme:tag-list' with {
                 theme: theme,
@@ -68,7 +71,7 @@
             {% endif %}
           {% endblock %}
 
-          {% block content_slot %}
+          {% block content_block %}
             {% if title is not empty %}
               {% include 'civictheme:heading' with {
                 theme: theme,
@@ -96,7 +99,7 @@
               } only %}
             {% endif %}
 
-            {% block links_slot %}
+            {% block links_block %}
               {% if links is not empty %}
                 {% set link_items = [] %}
                 {% for link in links %}
@@ -123,7 +126,7 @@
             {% endblock %}
           {% endblock %}
 
-          {% block content_bottom_slot %}
+          {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-campaign__content-bottom">
                 {{ content_bottom|raw }}
@@ -133,7 +136,7 @@
         </div>
       </div>
       <div class="col-xxs-12 first {% if image_position == 'right' %}col-m-5 col-m-offset-1 last-m{% else %}col-m-5 first-m{% endif %} ct-flex-align-self-start">
-        {% block image_slot %}
+        {% block image_block %}
           {% if image is not empty %}
             <div class="ct-campaign__image">
               {% include 'civictheme:image' with {

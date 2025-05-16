@@ -3,34 +3,28 @@
  * @file
  * CivicTheme Snippet component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Top content area.
- * - content_middle: [string] Middle content area.
- * - content_bottom: [string] Bottom content area.
- * - title: [string] Snippet title text.
- * - summary: [string] Snippet summary text.
- * - link: [object] Snippet link object:
- *   - text: [string] Link text.
- *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Whether to open link in a new window.
- *   - is_external: [boolean] Whether the link is external.
- * - tags: [array] Snippet tags:
- *   Each item contains:
- *   - text: [string] Tag text.
- *   - url: [string] Tag URL.
- *   - is_new_window: [boolean] Whether to open tag link in a new window.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
- * - content_slot: [slot] Content area content
- * - content_top_slot: [slot] Top content area content
- * - title_slot: [slot] Title area content
- * - content_middle_slot: [slot] Middle content area content
- * - summary_slot: [slot] Summary area content
- * - content_tags_slot: [slot] Tags area content
- * - content_bottom_slot: [slot] Bottom content area content
+ * - content_top: Top content area.
+ * - content_middle: Middle content area.
+ * - content_bottom: Bottom content area.
+ * - title: Snippet title text.
+ * - summary: Snippet summary text.
+ * - link: Snippet link object.
+ * - tags: Snippet tags.
+ *
+ * Blocks:
+ * - content_block
+ * - content_top_block
+ * - title_block
+ * - content_middle_block
+ * - summary_block
+ * - content_tags_block
+ * - content_bottom_block
  */
 #}
 
@@ -40,9 +34,9 @@
 
 {% if title is not empty %}
   <div class="ct-snippet {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {% block content_slot %}
+    {% block content_block %}
       <div class="ct-snippet__content">
-        {% block content_top_slot %}
+        {% block content_top_block %}
           {% if content_top is not empty %}
             <div class="ct-snippet__content-top">
               {{- content_top|raw -}}
@@ -50,7 +44,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block title_slot %}
+        {% block title_block %}
           {% if title is not empty %}
             {% set title_content %}
               {% if with_link %}
@@ -76,7 +70,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_middle_slot %}
+        {% block content_middle_block %}
           {% if content_middle is not empty %}
             <div class="ct-snippet__content-middle">
               {{- content_middle|raw -}}
@@ -84,7 +78,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block summary_slot %}
+        {% block summary_block %}
           {% if summary is not empty %}
             {% include '@atoms/paragraph/paragraph.twig' with {
               theme: theme,
@@ -95,7 +89,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_tags_slot %}
+        {% block content_tags_block %}
           {% if tags or with_link %}
             <div class="ct-snippet__tags">
               {% if tags %}
@@ -108,7 +102,7 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_bottom_slot %}
+        {% block content_bottom_block %}
           {% if content_bottom is not empty %}
             <div class="ct-snippet__content-bottom">
               {{- content_bottom|raw -}}

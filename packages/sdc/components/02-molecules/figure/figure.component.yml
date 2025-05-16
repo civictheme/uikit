@@ -12,26 +12,6 @@ props:
       enum:
         - light
         - dark
-    url:
-      type: string
-      title: URL
-      description: Image URL.
-    alt:
-      type: string
-      title: Alt text
-      description: Image alt text.
-    width:
-      type: string
-      title: Width
-      description: Image width.
-    height:
-      type: string
-      title: Height
-      description: Image height.
-    caption:
-      type: string
-      title: Caption
-      description: Image caption.
     attributes:
       type: string
       title: Attributes
@@ -40,3 +20,19 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+slots:
+  url:
+    title: URL
+    description: Image URL.
+  alt:
+    title: Alt text
+    description: Image alt text.
+  width:
+    title: Width
+    description: Image width.
+  height:
+    title: Height
+    description: Image height.
+  caption:
+    title: Caption
+    description: Image caption.

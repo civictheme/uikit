@@ -3,25 +3,27 @@
  * @file
  * CivicTheme Service Card component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Top content area.
- * - title: [string] Card title text.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - links: [array] Card links:
  *   Each item contains:
  *   - text: [string] Link text.
  *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_new_window: [boolean] Whether to open the link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content_bottom: [string] Bottom content area.
- * - attributes: [string] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
- * - content_top_slot: [slot] Top content area
- * - title_slot: [slot] Title area content
- * - links_slot: [slot] Links area content
- * - content_bottom_slot: [slot] Bottom content area
+ * - content_top: Top content area.
+ * - title: Card title text.
+ * - content_bottom: Bottom content area.
+ *
+ * Blocks:
+ * - content_top_block
+ * - title_block
+ * - links_block
+ * - content_bottom_block
  */
 #}
 
@@ -31,7 +33,7 @@
 {% if title %}
   <div class="ct-service-card {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-service-card__content">
-      {% block content_top_slot %}
+      {% block content_top_block %}
         {% if content_top %}
           <div class="ct-service-card__content-top">
             {{- content_top|raw -}}
@@ -39,7 +41,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block title_slot %}
+      {% block title_block %}
         {% if title %}
           {% include 'civictheme:heading' with {
             theme: theme,
@@ -50,7 +52,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block links_slot %}
+      {% block links_block %}
         {% if links %}
           {% set list_items = [] %}
           {% for link in links %}
@@ -75,7 +77,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block content_bottom_slot %}
+      {% block content_bottom_block %}
         {% if content_bottom %}
           <div class="ct-service-card__content-bottom">
             {{- content_bottom|raw -}}

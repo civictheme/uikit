@@ -20,48 +20,40 @@ props:
         url:
           type: string
           title: URL
-          description: Link URL.
+          description: Image URL.
         alt:
           type: string
           title: Alt text
           description: Image alt text.
-    subtitle:
+    attributes:
       type: string
-      title: Subtitle
-      description: Subtitle text.
-    date:
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
       type: string
-      title: Date
-      description: Start date and time.
+      title: Modifier Class
+      description: Additional CSS classes.
     date_iso:
       type: string
       title: ISO Date
       description: Start date and time in ISO format.
-    date_end:
+    date:
       type: string
-      title: End Date
-      description: Formatted end time.
+      title: Date
+      description: Start date and time.
     date_end_iso:
       type: string
       title: ISO End Date
       description: End time in ISO format.
-    title:
+    date_end:
       type: string
-      title: Title
-      description: Card title text.
-    summary:
-      type: string
-      title: Summary
-      description: Card summary.
+      title: End Date
+      description: Formatted end time.
     link:
       type: object
       title: Link
       description: Card link object.
       properties:
-        text:
-          type: string
-          title: Text
-          description: Link text.
         url:
           type: string
           title: URL
@@ -69,7 +61,7 @@ props:
         is_new_window:
           type: boolean
           title: New Window
-          description: Whether to open link in a new window.
+          description: Whether to open the link in a new window.
         is_external:
           type: boolean
           title: External
@@ -92,62 +84,26 @@ props:
           is_new_window:
             type: boolean
             title: New Window
-            description: Whether to open tag in a new window.
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content area.
-    image_over:
-      type: string
-      title: Image Over
-      description: Image overlay content.
-    content_middle:
-      type: string
-      title: Content Middle
-      description: Middle content area.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content area.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
+            description: Whether to open the tag in a new window.
 slots:
-  image_slot:
-    title: Image Slot
-    description: Image area content
-  image_over_slot:
-    title: Image Over Slot
-    description: Image overlay content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  subtitle_slot:
-    title: Subtitle Slot
-    description: Subtitle area content
-  date_slot:
-    title: Date Slot
-    description: Date area content
-  title_slot:
-    title: Title Slot
-    description: Title area content
-  content_middle_slot:
-    title: Content Middle Slot
-    description: Middle content area content
-  summary_slot:
-    title: Summary Slot
-    description: Summary area content
-  content_tags_slot:
-    title: Content Tags Slot
-    description: Tags area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  subtitle:
+    title: Subtitle
+    description: Subtitle text.
+  title:
+    title: Title
+    description: Card title text.
+  summary:
+    title: Summary
+    description: Card summary.
+  content_top:
+    title: Content Top
+    description: Top content area.
+  image_over:
+    title: Image Over
+    description: Image overlay content.
+  content_middle:
+    title: Content Middle
+    description: Middle content area.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

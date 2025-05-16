@@ -3,27 +3,31 @@
  * @file
  * CivicTheme Navigation component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
  * - name: [string] Navigation name for nav element.
- * - items: [array] Menu items:
- *   Each item contains:
- *   - title: [string] Navigation title.
- *   - url: [string] Menu item URL.
- *   - in_active_trail: [boolean] Whether the item is in the active trail.
- *   - is_expanded: [boolean] Whether the item is expanded.
- *   - below: [array] Submenu items.
- * - title: [string] Navigation title.
+ * - menu_id: [string] Optional menu ID used for grouping dropdown items.
  * - type: [string] Navigation display type (none, inline, dropdown, drawer).
  * - dropdown_columns: [integer] Dropdown drawer column count.
  * - dropdown_columns_fill: [boolean] Whether to fill columns.
  * - is_animated: [boolean] Whether to use animation for transitions.
- * - menu_id: [string] Optional menu ID used for grouping dropdown items.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - items: [array] Menu items:
+ *   Each item contains:
+ *   - title: [string] Navigation item title.
+ *   - url: [string] URL of the menu item.
+ *   - in_active_trail: [boolean] Whether the item is in the active trail.
+ *   - is_expanded: [boolean] Whether the item is expanded.
+ *   - below: [array] Submenu items.
+ *     Each item contains:
+ *     - items [object]
  *
  * Slots:
- * - title_slot: [slot] Title area content
+ * - title: Navigation title.
+ *
+ * Blocks:
+ * - title_block
  */
 #}
 
@@ -67,7 +71,7 @@
 
   <div class="ct-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     {% if title %}
-      {% block title_slot %}
+      {% block title_block %}
         {% include 'civictheme:heading' with {
           theme: theme,
           level: 2,

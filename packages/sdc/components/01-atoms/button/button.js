@@ -1,6 +1,7 @@
 /**
  * CivicTheme Button component.
  */
+
 function CivicThemeButton(el) {
   if (el.getAttribute('data-button') === 'true') {
     return;

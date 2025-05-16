@@ -12,6 +12,23 @@ props:
       enum:
         - light
         - dark
+    vertical_spacing:
+      type: string
+      title: Vertical Spacing
+      description: Vertical spacing for the tabs (none, top, bottom, both).
+      enum:
+        - none
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
     panels:
       type: array
       title: Panels
@@ -58,20 +75,3 @@ props:
             type: string
             title: Attributes
             description: Additional HTML attributes.
-    vertical_spacing:
-      type: string
-      title: Vertical Spacing
-      description: Vertical spacing for the tabs (none, top, bottom, both).
-      enum:
-        - none
-        - top
-        - bottom
-        - both
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.

@@ -3,23 +3,27 @@
  * @file
  * CivicTheme Subject Card component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - image: [object] Card image:
- *   - url: [string] Link URL.
- *   - alt: [string] Image alt text.
- * - image_over: [string] Image overlay content.
- * - title: [string] Card title.
- * - link: [object] Card link object:
- *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Whether to open link in a new window.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - image: [object] Card image.
+ *   Each property contains:
+ *   - url: [string] Image URL.
+ *   - alt: [string] Image alt text.
+ * - link: [object] Card link object.
+ *   Each property contains:
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open the link in a new window.
  *
  * Slots:
- * - image_slot: [slot] Image area content
- * - image_over_slot: [slot] Image overlay content
- * - title_slot: [slot] Title area content
+ * - image_over: Image overlay content.
+ * - title: Card title.
+ *
+ * Blocks:
+ * - image_block
+ * - image_over_block
+ * - title_block
  */
 #}
 
@@ -32,7 +36,7 @@
 {% if title is not empty %}
   <div class="ct-subject-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="ct-subject-card__content">
-      {% block image_slot %}
+      {% block image_block %}
         {% if image.url is defined and image.url is not empty %}
           <div class="ct-subject-card__image">
             {% include '@atoms/image/image.twig' with {
@@ -44,7 +48,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block image_over_slot %}
+      {% block image_over_block %}
         {% if image_over is not empty %}
           <div class="ct-subject-card__image__over">
             {{ image_over }}
@@ -52,7 +56,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block title_slot %}
+      {% block title_block %}
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}

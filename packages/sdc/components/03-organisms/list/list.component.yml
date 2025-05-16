@@ -12,88 +12,6 @@ props:
       enum:
         - light
         - dark
-    title:
-      type: string
-      title: Title
-      description: List title.
-    link_above:
-      type: object
-      title: Link Above
-      description: Above list link object.
-      properties:
-        text:
-          type: string
-          title: Text
-          description: Link text.
-        url:
-          type: string
-          title: URL
-          description: Link URL.
-        is_new_window:
-          type: boolean
-          title: New Window
-          description: Whether to open link in a new window.
-        is_external:
-          type: boolean
-          title: External
-          description: Whether the link is external.
-    content:
-      type: string
-      title: Content
-      description: List main content.
-    filters:
-      type: string
-      title: Filters
-      description: Exposed filters content.
-    results_count:
-      type: string
-      title: Results Count
-      description: Results count text.
-    rows_above:
-      type: string
-      title: Rows Above
-      description: Above rows content.
-    rows:
-      type: string
-      title: Rows
-      description: Rows content.
-    rows_below:
-      type: string
-      title: Rows Below
-      description: Below rows content.
-    empty:
-      type: string
-      title: Empty
-      description: No results content.
-    pagination:
-      type: string
-      title: Pagination
-      description: Pagination content.
-    footer:
-      type: string
-      title: Footer
-      description: Footer content.
-    link_below:
-      type: object
-      title: Link Below
-      description: Below list link object.
-      properties:
-        text:
-          type: string
-          title: Text
-          description: Link text.
-        url:
-          type: string
-          title: URL
-          description: Link URL.
-        is_new_window:
-          type: boolean
-          title: New Window
-          description: Whether to open link in a new window.
-        is_external:
-          type: boolean
-          title: External
-          description: Whether the link is external.
     vertical_spacing:
       type: string
       title: Vertical Spacing
@@ -114,46 +32,84 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    link_above:
+      type: object
+      title: Link Above
+      description: Above list link object.
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Link text.
+        url:
+          type: string
+          title: URL
+          description: Link URL.
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open link in a new window.
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external.
+    link_below:
+      type: object
+      title: Link Below
+      description: Below list link object.
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Link text.
+        url:
+          type: string
+          title: URL
+          description: Link URL.
+        is_new_window:
+          type: boolean
+          title: New window
+          description: Whether to open link in a new window.
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external.
+    rows_above:
+      type: array
+      title: Rows Above
+      description: Above rows content.
+      items:
+        type: string
+        description: Content to display above rows.
+    rows_below:
+      type: array
+      title: Rows Below
+      description: Below rows content.
+      items:
+        type: string
+        description: Content to display below rows.
 slots:
-  header_slot:
-    title: Header Slot
-    description: Header content
-  title_slot:
-    title: Title Slot
-    description: Title content
-  link_above_slot:
-    title: Link Above Slot
-    description: Link above content
-  content_slot:
-    title: Content Slot
-    description: Content
-  list_slot:
-    title: List Slot
-    description: List content
-  filters_slot:
-    title: Filters Slot
-    description: Filters content
-  rows_slot:
-    title: Rows Slot
-    description: Rows content
-  rows_above_slot:
-    title: Rows Above Slot
-    description: Rows above content
-  results_count_slot:
-    title: Results Count Slot
-    description: Results count content
-  rows_below_slot:
-    title: Rows Below Slot
-    description: Rows below content
-  empty_slot:
-    title: Empty Slot
-    description: Empty content
-  list_below_slot:
-    title: List Below Slot
-    description: List below content
-  pagination_slot:
-    title: Pagination Slot
-    description: Pagination content
-  footer_slot:
-    title: Footer Slot
-    description: Footer content
+  title:
+    title: Title
+    description: List title.
+  content:
+    title: Content
+    description: List main content.
+  filters:
+    title: Filters
+    description: Exposed filters content.
+  results_count:
+    title: Results Count
+    description: Results count text.
+  rows:
+    title: Rows
+    description: Rows content.
+  empty:
+    title: Empty
+    description: No results content.
+  pagination:
+    title: Pagination
+    description: Pagination content.
+  footer:
+    title: Footer
+    description: Footer content.

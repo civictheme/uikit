@@ -3,14 +3,13 @@
  * @file
  * CivicTheme Fieldset component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
  * - legend: [string] Legend for the fieldset.
  * - description: [string] Description for the fieldset.
  * - description_display: [string] Description display position (before, after, invisible).
  * - message: [string] Message content.
  * - message_type: [string] Message type (error, information, warning, success).
- * - fields: [string] Fields content.
  * - is_required: [boolean] Whether the fieldset is required.
  * - required_text: [string] Text to display within label element when required.
  * - prefix: [string] The content to add before the fieldset children.
@@ -19,7 +18,10 @@
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
- * - fields_slot: [slot] Fields area content
+ * - fields: Fields content.
+ *
+ * Blocks:
+ * - fields_block
  */
 #}
 
@@ -66,7 +68,7 @@
       <div class="ct-fieldset__prefix">{{- prefix|raw -}}</div>
     {% endif %}
 
-    {% block fields_slot %}
+    {% block fields_block %}
       {% if fields is not empty %}
         <div class="ct-fieldset__fields">
           {{- fields|raw -}}

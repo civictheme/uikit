@@ -3,56 +3,58 @@
  * @file
  * CivicTheme Page Template component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
- * - banner: [string] Banner content.
- * - highlighted: [string] Highlighted content.
  * - header_theme: [string] Theme variation for header (light or dark).
- * - header_top_1: [string] Header top section 1 content.
- * - header_top_2: [string] Header top section 2 content.
- * - header_top_3: [string] Header top section 3 content.
- * - header_middle_1: [string] Header middle section 1 content.
- * - header_middle_2: [string] Header middle section 2 content.
- * - header_middle_3: [string] Header middle section 3 content.
- * - header_bottom_1: [string] Header bottom section 1 content.
- * - content_top: [string] Main content area top content.
  * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
  * - hide_sidebar_right: [boolean] Whether to hide the right sidebar.
- * - sidebar_top_left: [string] Top left sidebar content.
- * - sidebar_top_left_attributes: [string] HTML attributes for top left sidebar.
- * - sidebar_top_right: [string] Top right sidebar content.
- * - sidebar_top_right_attributes: [string] HTML attributes for top right sidebar.
- * - content: [string] Main content.
- * - content_attributes: [string] HTML attributes for main content.
- * - sidebar_bottom_left: [string] Bottom left sidebar content.
- * - sidebar_bottom_left_attributes: [string] HTML attributes for bottom left sidebar.
- * - sidebar_bottom_right: [string] Bottom right sidebar content.
- * - sidebar_bottom_right_attributes: [string] HTML attributes for bottom right sidebar.
- * - sidebar: [string] Legacy sidebar content.
- * - sidebar_attributes: [string] Legacy sidebar HTML attributes
- * - content_bottom: [string] Main content area bottom content.
  * - content_contained: [boolean] Whether page content should be contained.
  * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
  * - footer_theme: [string] Theme variation for footer (light or dark).
  * - footer_background_image: [string] Background image for footer.
- * - footer_top_1: [string] Footer top section 1 content.
- * - footer_top_2: [string] Footer top section 2 content.
- * - footer_middle_1: [string] Footer middle section 1 content.
- * - footer_middle_2: [string] Footer middle section 2 content.
- * - footer_middle_3: [string] Footer middle section 3 content.
- * - footer_middle_4: [string] Footer middle section 4 content.
- * - footer_bottom_1: [string] Footer bottom section 1 content.
- * - footer_bottom_2: [string] Footer bottom section 2 content.
  *
  * Slots:
- * - header_slot: [slot] Header area content
- * - banner_slot: [slot] Banner area content
- * - highlighted_slot: [slot] Highlighted area content
- * - content_slot: [slot] Content area content
- * - footer_slot: [slot] Footer area content
- * - back_to_top_slot: [slot] Back to top area content
+ * - banner: Banner content.
+ * - highlighted: Highlighted content.
+ * - header_top_1: Header top section 1 content.
+ * - header_top_2: Header top section 2 content.
+ * - header_top_3: Header top section 3 content.
+ * - header_middle_1: Header middle section 1 content.
+ * - header_middle_2: Header middle section 2 content.
+ * - header_middle_3: Header middle section 3 content.
+ * - header_bottom_1: Header bottom section 1 content.
+ * - content_top: Main content area top content.
+ * - sidebar_top_left: Top left sidebar content.
+ * - sidebar_top_left_attributes: HTML attributes for top left sidebar.
+ * - sidebar_top_right: Top right sidebar content.
+ * - sidebar_top_right_attributes: HTML attributes for top right sidebar.
+ * - content: Main content.
+ * - content_attributes: HTML attributes for main content.
+ * - sidebar_bottom_left: Bottom left sidebar content.
+ * - sidebar_bottom_left_attributes: HTML attributes for bottom left sidebar.
+ * - sidebar_bottom_right: Bottom right sidebar content.
+ * - sidebar_bottom_right_attributes: HTML attributes for bottom right sidebar.
+ * - sidebar: Legacy sidebar content.
+ * - sidebar_attributes: Legacy sidebar HTML attributes
+ * - content_bottom: Main content area bottom content.
+ * - footer_top_1: Footer top section 1 content.
+ * - footer_top_2: Footer top section 2 content.
+ * - footer_middle_1: Footer middle section 1 content.
+ * - footer_middle_2: Footer middle section 2 content.
+ * - footer_middle_3: Footer middle section 3 content.
+ * - footer_middle_4: Footer middle section 4 content.
+ * - footer_bottom_1: Footer bottom section 1 content.
+ * - footer_bottom_2: Footer bottom section 2 content.
+ *
+ * Blocks:
+ * - header_block
+ * - banner_block
+ * - highlighted_block
+ * - content_block
+ * - footer_block
+ * - back_to_top_block
  */
 #}
 
@@ -62,7 +64,7 @@
 <div class="ct-page {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   <a id="top" tab-index="-1" aria-hidden="true"></a>
 
-  {% block header_slot %}
+  {% block header_block %}
     {% include 'civictheme:header' with {
       theme: header_theme,
       content_top1: header_top_1,
@@ -75,14 +77,14 @@
     } only %}
   {% endblock %}
 
-  {% block banner_slot %}
+  {% block banner_block %}
     {% if banner is not empty %}
       {{ banner|raw }}
     {% endif %}
   {% endblock %}
 
   {% if highlighted is not empty %}
-    {% block highlighted_slot %}
+    {% block highlighted_block %}
       <div class="container">
         <div class="row">
           <div class="col-xxs-12">
@@ -93,7 +95,7 @@
     {% endblock %}
   {% endif %}
 
-  {% block content_slot %}
+  {% block content_block %}
     {% include 'civictheme:layout' with {
       content_top: content_top,
       hide_sidebar_left: hide_sidebar_left,
@@ -115,7 +117,7 @@
     } only %}
   {% endblock %}
 
-  {% block footer_slot %}
+  {% block footer_block %}
     {% include 'civictheme:footer' with {
       theme: footer_theme,
       background_image: footer_background_image,
@@ -130,7 +132,7 @@
     } only %}
   {% endblock %}
 
-  {% block back_to_top_slot %}
+  {% block back_to_top_block %}
     {% include 'civictheme:back-to-top' with {} only %}
   {% endblock %}
 </div>

@@ -1,0 +1,67 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: My Slider
+status: stable
+description: Component for testing purposes.
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    simple_prop:
+      type: string
+      title: Simple Prop
+      description: A simple string property.
+    complex_object:
+      type: object
+      title: Complex Object
+      description: A complex object property.
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Object text.
+        url:
+          type: string
+          title: URL
+          description: Object URL.
+        is_active:
+          type: boolean
+          title: Active
+          description: Whether the object is active.
+    array_prop:
+      type: array
+      title: Array Prop
+      description: An array property.
+      items:
+        type: string
+        description: Array items.
+    nested_array:
+      type: array
+      title: Nested Array
+      description: A nested array property.
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            title: ID
+            description: Item ID.
+          value:
+            type: string
+            title: Value
+            description: Item value.
+slots:
+  title:
+    title: Title
+    description: Component title.
+  content:
+    title: Content
+    description: Component content.
+  footer:
+    title: Footer
+    description: Component footer.

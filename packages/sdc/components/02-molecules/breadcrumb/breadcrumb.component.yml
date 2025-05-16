@@ -12,6 +12,18 @@ props:
       enum:
         - light
         - dark
+    active_is_link:
+      type: boolean
+      title: Active is link
+      description: Whether to show the active element as a link.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
     links:
       type: array
       title: Links
@@ -27,15 +39,4 @@ props:
             type: string
             title: URL
             description: Link URL.
-    active_is_link:
-      type: boolean
-      title: Active is link
-      description: Whether to show the active element as a link.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier classes
-      description: Additional CSS classes.
+slots:

@@ -12,6 +12,14 @@ props:
       enum:
         - light
         - dark
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
     image:
       type: object
       title: Image
@@ -20,19 +28,11 @@ props:
         url:
           type: string
           title: URL
-          description: Link URL.
+          description: Image URL.
         alt:
           type: string
           title: Alt text
           description: Image alt text.
-    image_over:
-      type: string
-      title: Image Over
-      description: Image overlay content.
-    title:
-      type: string
-      title: Title
-      description: Card title.
     link:
       type: object
       title: Link
@@ -45,22 +45,11 @@ props:
         is_new_window:
           type: boolean
           title: New Window
-          description: Whether to open link in a new window.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
+          description: Whether to open the link in a new window.
 slots:
-  image_slot:
-    title: Image Slot
-    description: Image area content
-  image_over_slot:
-    title: Image Over Slot
-    description: Image overlay content
-  title_slot:
-    title: Title Slot
-    description: Title area content
+  image_over:
+    title: Image Over
+    description: Image overlay content.
+  title:
+    title: Title
+    description: Card title.

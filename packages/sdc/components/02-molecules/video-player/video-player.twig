@@ -3,31 +3,32 @@
  * @file
  * CivicTheme Video Player component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
  * - title: [string] Button title.
- * - sources: [array] Video sources:
- *   Each item contains:
- *   - url: [string] URL for the link button.
- *   - type: [string] Type name like 'video/mp4'.
- * - embedded_source: [string] Iframe URL.
- * - raw_source: [string] HTML of raw embedded video player.
  * - poster: [string] Optional video poster URL.
  * - width: [string] Video width.
  * - height: [string] Video height.
- * - transcript_link: [object] Video transcript link:
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ * - sources: [array] Video sources:
+ *   Each item contains:
+ *   - url: [string] URL for the video source.
+ *   - type: [string] Type name like 'video/mp4'.
+ * - embedded_source: [string] Iframe URL.
+ * - raw_source: [string] HTML of raw embedded video player.
+ * - transcript_link: [object] Video transcript link.
+ *   Each property contains:
  *   - text: [string] Button text.
  *   - title: [string] Button title.
  *   - url: [string] URL for the link button.
  *   - is_new_window: [boolean] Whether to open in a new window.
  *   - is_external: [boolean] Whether the link is external.
  *   - attributes: [string] Additional HTML attributes.
- * - attributes: [string] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
  *
- * Slots:
- * - video_slot: [slot] Video area content
- * - links_slot: [slot] Links area content
+ * Blocks:
+ * - video_block
+ * - links_block
  */
 #}
 
@@ -36,7 +37,7 @@
 
 {% if sources is not empty or embedded_source is not empty or raw_source is not empty %}
   <div class="ct-video-player {{ modifier_class -}}">
-    {% block video_slot %}
+    {% block video_block %}
       <div class="ct-video-player__wrapper">
         {% if sources is not empty %}
           {% include 'civictheme:video' with {
@@ -63,7 +64,7 @@
       </div>
     {% endblock %}
 
-    {% block links_slot %}
+    {% block links_block %}
       <div class="ct-video-player__links">
         {% if transcript_link.url is defined and transcript_link.url is not empty %}
           <div class="ct-video-player__links__transcript">

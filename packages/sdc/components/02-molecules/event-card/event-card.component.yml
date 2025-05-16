@@ -25,34 +25,22 @@ props:
           type: string
           title: Alt text
           description: Image alt text.
-    title:
-      type: string
-      title: Title
-      description: Event title.
-    summary:
-      type: string
-      title: Summary
-      description: Event summary.
-    date:
-      type: string
-      title: Date
-      description: Start date and time.
     date_iso:
       type: string
       title: ISO date
       description: Start date and time in ISO format.
-    date_end:
+    date:
       type: string
-      title: End date
-      description: End date and time.
+      title: Date
+      description: Date area content.
     date_end_iso:
       type: string
       title: ISO end date
       description: End date and time in ISO format.
-    location:
+    date_end:
       type: string
-      title: Location
-      description: Event location.
+      title: End date
+      description: End date and time.
     link:
       type: object
       title: Link
@@ -85,22 +73,6 @@ props:
             type: boolean
             title: New Window
             description: Whether to open tag in a new window.
-    content_top:
-      type: string
-      title: Top content
-      description: Card top content.
-    image_over:
-      type: string
-      title: Image overlay
-      description: Image overlay content.
-    content_middle:
-      type: string
-      title: Middle content
-      description: Card middle content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Card bottom content.
     attributes:
       type: string
       title: Attributes
@@ -110,36 +82,24 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  image_slot:
-    title: Image Slot
-    description: Image area content
-  image_over_slot:
-    title: Image Over Slot
-    description: Image overlay content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  date_slot:
-    title: Date Slot
-    description: Date area content
-  title_slot:
-    title: Title Slot
-    description: Title area content
-  content_middle_slot:
-    title: Content Middle Slot
-    description: Middle content area content
-  location_slot:
-    title: Location Slot
-    description: Location area content
-  summary_slot:
-    title: Summary Slot
-    description: Summary area content
-  content_tags_slot:
-    title: Content Tags Slot
-    description: Tags area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  image_over:
+    title: Image Over
+    description: Image overlay content.
+  content_top:
+    title: Content Top
+    description: Top content area content.
+  title:
+    title: Title
+    description: Title area content.
+  content_middle:
+    title: Content Middle
+    description: Middle content area content.
+  location:
+    title: Location
+    description: Location area content.
+  summary:
+    title: Summary
+    description: Summary area content.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area content.

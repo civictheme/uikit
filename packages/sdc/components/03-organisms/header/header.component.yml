@@ -12,34 +12,6 @@ props:
       enum:
         - light
         - dark
-    content_top1:
-      type: string
-      title: Content Top 1
-      description: Top section first content slot.
-    content_top2:
-      type: string
-      title: Content Top 2
-      description: Top section second content slot.
-    content_top3:
-      type: string
-      title: Content Top 3
-      description: Top section third content slot.
-    content_middle1:
-      type: string
-      title: Content Middle 1
-      description: Middle section first content slot.
-    content_middle2:
-      type: string
-      title: Content Middle 2
-      description: Middle section second content slot.
-    content_middle3:
-      type: string
-      title: Content Middle 3
-      description: Middle section third content slot.
-    content_bottom1:
-      type: string
-      title: Content Bottom 1
-      description: Bottom section content slot.
     attributes:
       type: string
       title: Attributes
@@ -49,24 +21,24 @@ props:
       title: Modifier Class
       description: Additional CSS classes.
 slots:
-  content_top1_slot:
-    title: Content Top1 Slot
-    description: Top1 content area content
-  content_top2_slot:
-    title: Content Top2 Slot
-    description: Top2 content area content
-  content_top3_slot:
-    title: Content Top3 Slot
-    description: Top3 content area content
-  content_middle1_slot:
-    title: Content Middle1 Slot
-    description: Middle1 content area content
-  content_middle2_slot:
-    title: Content Middle2 Slot
-    description: Middle2 content area content
-  content_middle3_slot:
-    title: Content Middle3 Slot
-    description: Middle3 content area content
-  content_bottom1_slot:
-    title: Content Bottom1 Slot
-    description: Bottom1 content area content
+  content_top1:
+    title: Content Top 1
+    description: Top section first content slot.
+  content_top2:
+    title: Content Top 2
+    description: Top section second content slot.
+  content_top3:
+    title: Content Top 3
+    description: Top section third content slot.
+  content_middle1:
+    title: Content Middle 1
+    description: Middle section first content slot.
+  content_middle2:
+    title: Content Middle 2
+    description: Middle section second content slot.
+  content_middle3:
+    title: Content Middle 3
+    description: Middle section third content slot.
+  content_bottom1:
+    title: Content Bottom 1
+    description: Bottom section content slot.
