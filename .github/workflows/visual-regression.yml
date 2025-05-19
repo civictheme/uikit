@@ -1,4 +1,9 @@
 name: Visual Regression Testing
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: write
+  statuses: write
 
 on:
   pull_request:
@@ -6,6 +11,8 @@ on:
       - main
       - 'project/**'
       - 'feature/**'
+
+
 
 jobs:
   visual-regression:
@@ -20,9 +27,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install NPM dependencies
-        run: npm install --workspaces && npm install && npx playwright install
+        run: npm ci --workspaces && npm ci && npx playwright install
 
       - name: Build Storybook
         run: npm run build
@@ -31,21 +45,21 @@ jobs:
         run: |
           # Capture screenshots for the main branch twig components
           npm run diff:command -- capture --source main --type branch --package twig --force
-          
+
           # Capture screenshots for the current branch components
           npm run diff:command -- capture --source current_branch --package twig --force
-          
+
           # Capture screenshots for the current branch SDC components
           npm run diff:command -- capture --source current_branch --package sdc --force
-          
+
           # List the available screenshot sets
           npm run diff:command -- list --sets
-          
+
           # Compare main vs current branch components
           SOURCE_NAME=$(npm run diff:command -- list --sets | grep "branch--main--twig" | awk '{print $2}')
           TARGET_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
           npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME"
-          
+
           # Compare main vs current branch SDC components
           SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
           TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "sdc" | awk '{print $2}')
@@ -90,7 +104,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             📷 View [Visual Regression](${{ steps.netlify-visual-regression.outputs.deploy-url }})
-            
+
             ${{ steps.visual-regression-message.outputs.comment }}
           edit-mode: replace
 
