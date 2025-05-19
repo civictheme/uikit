@@ -25,7 +25,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install && npx playwright install
+        run: npm install --workspaces && npm install && npx playwright install
 
       - name: Check code style
         run: npm run lint

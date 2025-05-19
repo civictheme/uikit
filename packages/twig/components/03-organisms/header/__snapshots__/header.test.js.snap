@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component does not render when all slots are empty 1`] = `
+<div>
+  
+
+
+
+</div>
+`;
+
+exports[`Header Component renders with all attributes provided 1`] = `
+<div>
+  
+
+
+  
+  <header
+    class="ct-header ct-theme-dark additional-class"
+    role="banner"
+  >
+    
+
+          
+    <div
+      class="ct-header__top hide-xxs show-m"
+    >
+      
+
+                              
+      <div
+        class="container"
+      >
+        
+              
+        <div
+          class="row"
+        >
+          
+                
+          <div
+            class="col-xxs-12"
+          >
+            
+                  
+            <div
+              class="ct-header__content-top1"
+            >
+              
+                    Top content 1
+                  
+            </div>
+            
+                
+          </div>
+          
+              
+        </div>
+        
+            
+      </div>
+      
+                  
+                  
+      <div
+        class="container"
+      >
+        
+            
+        <div
+          class="row"
+        >
+          
+
+                              
+          <div
+            class="col-xxs-12 col-m-4"
+          >
+            
+                  
+            <div
+              class="ct-header__content-top2"
+            >
+              
+                    Top content 2
+                  
+            </div>
+            
+                
+          </div>
+          
+              
+                              
+          <div
+            class="col-xxs-12 col-m-8"
+          >
+            
+                  
+            <div
+              class="ct-header__content-top3"
+            >
+              
+                    Top content 3
+                  
+            </div>
+            
+                
+          </div>
+          
+              
+            
+        </div>
+        
+          
+      </div>
+      
+              
+    </div>
+    
+    
+          
+    <div
+      class="ct-header__middle"
+    >
+      
+
+                              
+      <div
+        class="container"
+      >
+        
+              
+        <div
+          class="row"
+        >
+          
+                
+          <div
+            class="col-xxs-12"
+          >
+            
+                  
+            <div
+              class="ct-header__content-middle1"
+            >
+              
+                    Middle content 1
+                  
+            </div>
+            
+                
+          </div>
+          
+              
+        </div>
+        
+            
+      </div>
+      
+                  
+                  
+      <div
+        class="container"
+      >
+        
+            
+        <div
+          class="row row--no-wrap"
+        >
+          
+                                                
+          <div
+            class="col col--no-grow"
+          >
+            
+                    
+            <div
+              class="ct-header__content-middle2"
+            >
+              
+                      Middle content 2
+                    
+            </div>
+            
+                  
+          </div>
+          
+                              
+                                                
+          <div
+            class="col"
+          >
+            
+                    
+            <div
+              class="ct-header__content-middle3"
+            >
+              
+                      Middle content 3
+                    
+            </div>
+            
+                  
+          </div>
+          
+                                          
+        </div>
+        
+          
+      </div>
+      
+              
+    </div>
+    
+    
+                  
+    <div
+      class="container"
+    >
+      
+          
+      <div
+        class="row"
+      >
+        
+            
+        <div
+          class="col-xxs-12"
+        >
+          
+              
+          <div
+            class="ct-header__content-bottom1"
+          >
+            
+                Bottom content 1
+              
+          </div>
+          
+            
+        </div>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+          
+  
+  </header>
+  
+
+</div>
+`;
+
+exports[`Header Component renders with some attributes missing 1`] = `
+<div>
+  
+
+
+  
+  <header
+    class="ct-header ct-theme-light "
+    role="banner"
+  >
+    
+
+          
+    <div
+      class="ct-header__top hide-xxs show-m"
+    >
+      
+
+                              
+      <div
+        class="container"
+      >
+        
+              
+        <div
+          class="row"
+        >
+          
+                
+          <div
+            class="col-xxs-12"
+          >
+            
+                  
+            <div
+              class="ct-header__content-top1"
+            >
+              
+                    Top content 1
+                  
+            </div>
+            
+                
+          </div>
+          
+              
+        </div>
+        
+            
+      </div>
+      
+                  
+              
+    </div>
+    
+    
+          
+    <div
+      class="ct-header__middle"
+    >
+      
+
+        
+                  
+      <div
+        class="container"
+      >
+        
+            
+        <div
+          class="row row--no-wrap"
+        >
+          
+                                                
+          <div
+            class="col col--no-grow"
+          >
+            
+                    
+            <div
+              class="ct-header__content-middle2"
+            >
+              
+                      Middle content 2
+                    
+            </div>
+            
+                  
+          </div>
+          
+                              
+                          
+        </div>
+        
+          
+      </div>
+      
+              
+    </div>
+    
+    
+                  
+    <div
+      class="container"
+    >
+      
+          
+      <div
+        class="row"
+      >
+        
+            
+        <div
+          class="col-xxs-12"
+        >
+          
+              
+          <div
+            class="ct-header__content-bottom1"
+          >
+            
+                Bottom content 1
+              
+          </div>
+          
+            
+        </div>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+          
+  
+  </header>
+  
+
+</div>
+`;

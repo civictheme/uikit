@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * CivicTheme Mobile Navigation Trigger component.
+ *
+ * Props:
+ * - theme: [string] Theme variation (light or dark).
+ * - text: [string] Button text.
+ * - icon: [string] Icon symbol name.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ */
+#}
+
+{% set modifier_class = 'ct-mobile-navigation-trigger %s'|format(modifier_class|default('')) %}
+{% set icon = icon|default('bars') %}
+
+{% include 'civictheme:button' with {
+  theme: theme,
+  kind: 'button',
+  icon: icon,
+  icon_placement: 'after',
+  size: 'small',
+  text: text,
+  modifier_class: modifier_class,
+  attributes: attributes ? attributes ~ ' data-flyout-open-trigger data-flyout-target=".ct-mobile-navigation" aria-expanded="false"' : 'data-flyout-open-trigger data-flyout-target=".ct-mobile-navigation" aria-expanded="false"',
+} only %}

@@ -1,0 +1,132 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-field-message {
+  display: block;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  border-width: 0.0625rem;
+  border-style: solid;
+}
+@media (min-width: 0) {
+  .ct-field-message {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+@media (min-width: 768px) {
+  .ct-field-message {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.ct-field-message .ct-field-message__icon {
+  vertical-align: top;
+  vertical-align: top;
+  line-height: 100%;
+}
+@media (min-width: 0) {
+  .ct-field-message .ct-field-message__icon {
+    margin-top: 0.125rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-field-message .ct-field-message__icon {
+    margin-top: 0.25rem;
+  }
+}
+.ct-field-message.ct-field-message--information.ct-theme-light {
+  background-color: #d9ebf5;
+  color: var(--ct-color-light-body);
+  border-color: var(--ct-color-light-information);
+}
+.ct-field-message.ct-field-message--information.ct-theme-light .ct-field-message__icon {
+  color: var(--ct-color-light-body);
+}
+.ct-field-message.ct-field-message--information.ct-theme-light a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--information.ct-theme-dark {
+  background-color: #3d9dca;
+  color: var(--ct-color-dark-body);
+  border-color: var(--ct-color-dark-information);
+}
+.ct-field-message.ct-field-message--information.ct-theme-dark .ct-field-message__icon {
+  color: var(--ct-color-dark-body);
+}
+.ct-field-message.ct-field-message--information.ct-theme-dark a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--warning.ct-theme-light {
+  background-color: #f7e5d9;
+  color: var(--ct-color-light-body);
+  border-color: var(--ct-color-light-warning);
+}
+.ct-field-message.ct-field-message--warning.ct-theme-light .ct-field-message__icon {
+  color: var(--ct-color-light-body);
+}
+.ct-field-message.ct-field-message--warning.ct-theme-light a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--warning.ct-theme-dark {
+  background-color: #b66a36;
+  color: var(--ct-color-dark-body);
+  border-color: var(--ct-color-dark-warning);
+}
+.ct-field-message.ct-field-message--warning.ct-theme-dark .ct-field-message__icon {
+  color: var(--ct-color-dark-body);
+}
+.ct-field-message.ct-field-message--warning.ct-theme-dark a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--error.ct-theme-light {
+  background-color: #f8e1e1;
+  color: var(--ct-color-light-body);
+  border-color: var(--ct-color-light-error);
+}
+.ct-field-message.ct-field-message--error.ct-theme-light .ct-field-message__icon {
+  color: var(--ct-color-light-body);
+}
+.ct-field-message.ct-field-message--error.ct-theme-light a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--error.ct-theme-dark {
+  background-color: #ba4542;
+  color: var(--ct-color-dark-body);
+  border-color: var(--ct-color-dark-error);
+}
+.ct-field-message.ct-field-message--error.ct-theme-dark .ct-field-message__icon {
+  color: var(--ct-color-dark-body);
+}
+.ct-field-message.ct-field-message--error.ct-theme-dark a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--success.ct-theme-light {
+  background-color: #d9edec;
+  color: var(--ct-color-light-body);
+  border-color: var(--ct-color-light-success);
+}
+.ct-field-message.ct-field-message--success.ct-theme-light .ct-field-message__icon {
+  color: var(--ct-color-light-body);
+}
+.ct-field-message.ct-field-message--success.ct-theme-light a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}
+.ct-field-message.ct-field-message--success.ct-theme-dark {
+  background-color: #0e8d8b;
+  color: var(--ct-color-dark-body);
+  border-color: var(--ct-color-dark-success);
+}
+.ct-field-message.ct-field-message--success.ct-theme-dark .ct-field-message__icon {
+  color: var(--ct-color-dark-body);
+}
+.ct-field-message.ct-field-message--success.ct-theme-dark a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+  color: inherit;
+}

@@ -1,0 +1,99 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Select
+status: stable
+description: Select dropdown form element with customizable options and states
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    id:
+      type: string
+      title: ID
+      description: DOM ID attribute.
+    name:
+      type: string
+      title: Name
+      description: DOM name (required).
+    is_multiple:
+      type: boolean
+      title: Multiple
+      description: Whether to allow multiple selections.
+    options:
+      type: array
+      title: Options
+      description: Options (applies to optgroup type)
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+            title: Type
+            description: Option type (option group or option).
+            enum:
+              - optgroup
+              - option
+          label:
+            type: string
+            title: Label
+            description: Option label.
+          value:
+            type: string
+            title: Value
+            description: Option value.
+          is_selected:
+            type: boolean
+            title: Selected
+            description: Whether the option is selected.
+          is_disabled:
+            type: boolean
+            title: Disabled
+            description: Whether the select is disabled.
+          options:
+            type: array
+            title: Nested options
+            description: Options (applies to optgroup type)
+            items:
+              type: object
+              properties:
+                label:
+                  type: string
+                  title: Label
+                  description: Option label.
+                value:
+                  type: string
+                  title: Value
+                  description: Option value.
+                is_selected:
+                  type: boolean
+                  title: Selected
+                  description: Whether the option is selected.
+                is_disabled:
+                  type: boolean
+                  title: Disabled
+                  description: Whether the select is disabled.
+    is_invalid:
+      type: boolean
+      title: Invalid
+      description: Whether the select is invalid.
+    is_disabled:
+      type: boolean
+      title: Disabled
+      description: Whether the select is disabled.
+    is_required:
+      type: boolean
+      title: Required
+      description: Whether the select is required.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

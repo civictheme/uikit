@@ -1,0 +1,51 @@
+<div class="test-component">
+  {% block header_block %}
+    <div class="test-component__header">
+      {% if title %}
+        <h2>{{ title }}</h2>
+      {% endif %}
+    </div>
+  {% endblock %}
+
+  {% block content_block %}
+    <div class="test-component__content">
+      {% if content %}
+        {{ content|raw }}
+      {% endif %}
+
+      {% if complex_object %}
+        <a href="{{ complex_object.url }}" class="{{ complex_object.is_active ? 'active' : '' }}">
+          {{ complex_object.text }}
+        </a>
+      {% endif %}
+    </div>
+  {% endblock %}
+
+  {%- block array_items_block -%}
+    {% if array_prop is not empty %}
+      <ul class="test-component__items">
+        {% for item in array_prop %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endblock %}
+
+  {% block nested_array_block -%}
+    {% if nested_array is not empty %}
+      <div class="test-component__nested">
+        {% for item in nested_array %}
+          <div id="{{ item.id }}">{{ item.value }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {%- block footer_block %}
+    {% if footer %}
+      <div class="test-component__footer">
+        {{ footer|raw }}
+      </div>
+    {% endif %}
+  {% endblock %}
+</div>

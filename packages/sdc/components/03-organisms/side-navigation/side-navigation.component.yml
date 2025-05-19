@@ -1,0 +1,61 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Side Navigation
+status: stable
+description: Side navigation component for vertical navigation menu
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    vertical_spacing:
+      type: string
+      title: Vertical Spacing
+      description: Navigation vertical spacing (top, bottom, or both).
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
+    items:
+      type: array
+      title: Items
+      description: Menu items.
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Title
+            description: Navigation title.
+          url:
+            type: string
+            title: URL
+            description: Menu item URL.
+          in_active_trail:
+            type: boolean
+            title: In Active Trail
+            description: Whether the item is in the active trail.
+          is_expanded:
+            type: boolean
+            title: Is Expanded
+            description: Whether the item is expanded.
+          below:
+            type: array
+            title: Below
+            description: Submenu items.
+slots:
+  title:
+    title: Title
+    description: Navigation title.

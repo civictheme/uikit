@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * CivicTheme Message component.
+ *
+ * Props:
+ * - theme: [string] Theme variation (light or dark).
+ * - type: [string] Message type (information, error, warning, success).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - title: Title text.
+ * - description: Description text.
+ */
+#}
+
+{% set type = type|default('information') %}
+{% set type_class = 'ct-message--%s'|format(type) %}
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, type_class, modifier_class|default('')) %}
+
+{% set icons = {
+  information: 'information-mark',
+  warning: 'exclamation-mark-2',
+  error: 'exclamation-mark-1',
+  success: 'approve',
+} %}
+
+<div
+  class="ct-message {{ modifier_class -}}"
+  role="{% if type == 'error' %}alert{% else %}contentinfo{% endif %}"
+  aria-label="{{ type }}"
+  aria-live="assertive"
+  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+>
+  {% if icons[type] is defined %}
+    <div class="ct-message__icon">
+      {% include 'civictheme:icon' with {
+        symbol: icons[type],
+        size: 'regular',
+      } only %}
+    </div>
+  {% endif %}
+
+  <div class="ct-message__content">
+    {% if title %}
+      <div class="ct-message__title">{{ title }}</div>
+    {% endif %}
+
+    {% if description %}
+      <div class="ct-message__summary">{{ description|striptags('<strong>,<a>,<pre>,<ul>,<ol>,<li>')|raw }}</div>
+    {% endif %}
+  </div>
+</div>
