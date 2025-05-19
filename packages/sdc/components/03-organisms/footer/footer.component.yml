@@ -12,42 +12,6 @@ props:
       enum:
         - light
         - dark
-    content_top1:
-      type: string
-      title: Content Top 1
-      description: Top section first content slot.
-    content_top2:
-      type: string
-      title: Content Top 2
-      description: Top section second content slot.
-    content_middle1:
-      type: string
-      title: Content Middle 1
-      description: Middle section first content slot.
-    content_middle2:
-      type: string
-      title: Content Middle 2
-      description: Middle section second content slot.
-    content_middle3:
-      type: string
-      title: Content Middle 3
-      description: Middle section third content slot.
-    content_middle4:
-      type: string
-      title: Content Middle 4
-      description: Middle section fourth content slot.
-    content_middle5:
-      type: string
-      title: Content Middle 5
-      description: Middle section fifth content slot.
-    content_bottom1:
-      type: string
-      title: Content Bottom 1
-      description: Bottom section first content slot.
-    content_bottom2:
-      type: string
-      title: Content Bottom 2
-      description: Bottom section second content slot.
     background_image:
       type: string
       title: Background Image
@@ -60,3 +24,31 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+slots:
+  content_top1:
+    title: Content Top 1
+    description: Top section first content slot.
+  content_top2:
+    title: Content Top 2
+    description: Top section second content slot.
+  content_middle1:
+    title: Content Middle 1
+    description: Middle section first content slot.
+  content_middle2:
+    title: Content Middle 2
+    description: Middle section second content slot.
+  content_middle3:
+    title: Content Middle 3
+    description: Middle section third content slot.
+  content_middle4:
+    title: Content Middle 4
+    description: Middle section fourth content slot.
+  content_middle5:
+    title: Content Middle 5
+    description: Middle section fifth content slot.
+  content_bottom1:
+    title: Content Bottom 1
+    description: Bottom section first content slot.
+  content_bottom2:
+    title: Content Bottom 2
+    description: Bottom section second content slot.

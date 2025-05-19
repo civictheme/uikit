@@ -46,9 +46,7 @@ const TEMPLATES = {
  * @file
  * CivicTheme {{componentName}} component.
  *
- * Variables:
-{{variables}}
- */
+{{propsSection}}{{slotsSection}}{{blocksSection}} */
 #}`,
 
   // JS file header
@@ -79,8 +77,10 @@ const TEMPLATES = {
  */
 #}`,
 
-  // Template for each variable line - we'll use a single template and handle indentation dynamically
-  variable: ' * {{indent}}- {{name}}: [{{type}}] {{description}}',
+  // Template for each type of item
+  prop: ' * {{indent}}- {{name}}: [{{type}}] {{description}}',
+  slot: ' * - {{name}}: {{description}}',
+  block: ' * - {{name}}',
 };
 
 /**
@@ -242,6 +242,7 @@ function readYamlFile(yamlPath) {
     description: yamlData.description || '',
     properties: {},
     slots: {},
+    blocks: {},
   };
 
   // Extract properties from props section
@@ -249,47 +250,161 @@ function readYamlFile(yamlPath) {
     result.properties = yamlData.props.properties;
   }
 
-  // Extract slots
+  // Extract slots with their metadata
   if (yamlData.slots) {
-    result.slots = yamlData.slots;
+    // Process each slot and its metadata
+    Object.entries(yamlData.slots).forEach(([slotName, slotData]) => {
+      // Basic slot metadata
+      result.slots[slotName] = {
+        title: slotData.title || slotName,
+        description: slotData.description || '',
+      };
+      
+      // If the slot has items (like for repeating content)
+      if (slotData.items) {
+        result.slots[slotName].items = slotData.items;
+      }
+    });
+  }
+
+  // Handle blocks documentation - check if the twig file exists for this component
+  const dir = path.dirname(yamlPath);
+  const componentName = path.basename(yamlPath, '.component.yml');
+  const twigPath = path.join(dir, `${componentName}.twig`);
+  
+  // First check if there's an existing docblock with blocks documentation
+  if (fs.existsSync(twigPath)) {
+    const twigContent = fs.readFileSync(twigPath, 'utf8');
+    const docblockMatch = twigContent.match(/{#\s*\/\*\*[\s\S]*?\*\/\s*#}/);
+    
+    if (docblockMatch && docblockMatch[0].includes(' * Blocks:')) {
+      // If there's existing blocks documentation, parse it
+      const blockLines = docblockMatch[0].split('\n')
+        .filter(line => line.includes(' * - ') && line.includes(': [block]'))
+        .map(line => {
+          // Extract block name and description from existing docblock
+          const matches = line.match(/ \* - ([a-zA-Z0-9_]+): \[block\] (.*)/);
+          if (matches && matches.length >= 3) {
+            return { name: matches[1], description: matches[2] };
+          }
+          return null;
+        })
+        .filter(Boolean);
+        
+      // Add parsed blocks to result
+      blockLines.forEach(block => {
+        result.blocks[block.name] = {
+          description: block.description,
+        };
+      });
+    } else {
+      // If no blocks documentation exists, extract blocks from twig file
+      const blocks = extractTwigBlocks(twigPath);
+      
+      // For each block, try to find a corresponding slot with a similar name
+      Object.keys(blocks).forEach(blockName => {
+        // Many blocks follow the pattern: content_block, content_top_block, etc.
+        // Try to find a matching slot by removing "_block" suffix
+        let slotName = blockName.replace('_block', '');
+        
+        // If we have a slot with this name, use its description as a base
+        if (result.slots[slotName]) {
+          result.blocks[blockName] = {
+            description: `Block for ${result.slots[slotName].description}`
+          };
+        } else {
+          // If no matching slot, use a generic description
+          result.blocks[blockName] = {
+            description: `Block for ${blockName} implementation`
+          };
+        }
+      });
+    }
   }
 
   return result;
 }
 
 /**
- * Generate variables section for twig docblock.
+ * Generate props section for twig docblock.
  *
  * @param {Object} properties - Component properties from YAML
- * @param {Object} slots - Component slots from YAML
- * @returns {string} Formatted variables section
+ * @returns {string} Formatted props section
  */
-function generateVariablesSection(properties, slots) {
-  const variablesLines = [];
+function generatePropsSection(properties) {
+  if (Object.keys(properties).length === 0) {
+    return '';
+  }
+
+  const propLines = [' * Props:'];
 
   // Process regular properties
   Object.entries(properties).forEach(([propName, propData]) => {
-    variablesLines.push(...generatePropertyLines(propName, propData));
+    propLines.push(...generatePropertyLines(propName, propData));
   });
 
-  // Add slots as a separate section if they exist
-  if (Object.keys(slots).length > 0) {
-    variablesLines.push(' *');
-    variablesLines.push(' * Slots:');
+  return propLines.join('\n') + '\n';
+}
 
-    Object.entries(slots).forEach(([slotName, slotData]) => {
-      const template = TEMPLATES.variable;
-      const line = template
-        .replace('{{indent}}', '')
-        .replace('{{name}}', slotName)
-        .replace('{{type}}', 'slot')
-        .replace('{{description}}', slotData.description || '');
-
-      variablesLines.push(line);
-    });
+/**
+ * Generate slots section for twig docblock.
+ *
+ * @param {Object} slots - Component slots from YAML
+ * @returns {string} Formatted slots section
+ */
+function generateSlotsSection(slots) {
+  if (Object.keys(slots).length === 0) {
+    return '';
   }
 
-  return variablesLines.join('\n');
+  const slotLines = [' *', ' * Slots:'];
+
+  Object.entries(slots).forEach(([slotName, slotData]) => {
+    const template = TEMPLATES.slot;
+    const line = template
+      .replace('{{name}}', slotName)
+      .replace('{{description}}', slotData.description || '');
+
+    slotLines.push(line);
+  });
+
+  return slotLines.join('\n') + '\n';
+}
+
+/**
+ * Generate blocks section for twig docblock.
+ *
+ * @param {Object} blocks - Component Twig blocks
+ * @param {Array} blockNames - Additional block names to include
+ * @returns {string} Formatted blocks section
+ */
+function generateBlocksSection(blocks = {}, blockNames = []) {
+  const allBlockNames = new Set([...Object.keys(blocks), ...blockNames]);
+  
+  if (allBlockNames.size === 0) {
+    return '';
+  }
+
+  const blockLines = [' *', ' * Blocks:'];
+
+  // Use preserved order from the blockNames array, which is based on the actual
+  // order of blocks in the Twig file. This maintains compatibility with existing files.
+  let orderedBlockNames = [...blockNames];
+  
+  // Add any blocks from the blocks object that weren't in blockNames
+  Object.keys(blocks).forEach(blockName => {
+    if (!orderedBlockNames.includes(blockName)) {
+      orderedBlockNames.push(blockName);
+    }
+  });
+  
+  orderedBlockNames.forEach(blockName => {
+    const template = TEMPLATES.block;
+    const line = template.replace('{{name}}', blockName);
+    blockLines.push(line);
+  });
+
+  return blockLines.join('\n') + '\n';
 }
 
 /**
@@ -309,12 +424,13 @@ function generatePropertyLines(propName, propData, depth = 0) {
   // Create indentation string based on depth
   const indent = '  '.repeat(depth);
 
-  // Format the description - add a colon for objects/arrays with nested properties
+  // Format the description
   let formattedDesc = description;
-  const hasNestedItems = (type === 'object' && propData.properties && Object.keys(propData.properties).length > 0)
-    || (type === 'array' && propData.items && propData.items.properties && Object.keys(propData.items.properties).length > 0);
-
-  if (hasNestedItems) {
+  const isComplexObject = (type === 'object' && propData.properties && Object.keys(propData.properties).length > 0);
+  const isNestedArray = (type === 'array' && propData.items && propData.items.properties && Object.keys(propData.items.properties).length > 0);
+  
+  // Only add colon to nested arrays, not to objects
+  if (isNestedArray) {
     // Add a colon if not already present
     if (!formattedDesc.endsWith(':')) {
       formattedDesc = formattedDesc.endsWith('.')
@@ -324,7 +440,7 @@ function generatePropertyLines(propName, propData, depth = 0) {
   }
 
   // Create the line from the template
-  const line = TEMPLATES.variable
+  const line = TEMPLATES.prop
     .replace('{{indent}}', indent)
     .replace('{{name}}', propName)
     .replace('{{type}}', type)
@@ -334,6 +450,9 @@ function generatePropertyLines(propName, propData, depth = 0) {
 
   // Handle nested properties for objects
   if (type === 'object' && propData.properties) {
+    // Add "Each property contains:" line for objects
+    lines.push(' *   Each property contains:');
+    
     Object.entries(propData.properties).forEach(([nestedName, nestedData]) => {
       lines.push(...generatePropertyLines(nestedName, nestedData, depth + 1));
     });
@@ -347,7 +466,7 @@ function generatePropertyLines(propName, propData, depth = 0) {
     // For simple array items (no properties)
     if (propData.items.type && !propData.items.properties) {
       const itemType = propData.items.type || 'any';
-      lines.push(` * ${indent}    [${itemType}] items`);
+      lines.push(` * ${indent}  - items [${itemType}]`);
     // For object array items with properties
     } else if (propData.items.properties) {
       // Process all item properties recursively
@@ -387,19 +506,24 @@ function detectFileType(filePath) {
  *
  * @param {string} fileType - Type of file (js, scss, twig, etc.)
  * @param {string} componentName - Name of the component
- * @param {string} variablesSection - Variables section for twig files
+ * @param {string} propsSection - Props section for twig files
+ * @param {string} slotsSection - Slots section for twig files
+ * @param {string} blocksSection - Blocks section for twig files
  * @returns {string} Generated docblock header
  */
-function generateDocblock(fileType, componentName, variablesSection = '') {
+function generateDocblock(fileType, componentName, propsSection = '', slotsSection = '', blocksSection = '') {
   // Get the template for this file type, or use js template as fallback
   const template = TEMPLATES[fileType] || TEMPLATES.js;
 
   // Replace placeholders
   let docblock = template.replace(/\{\{componentName\}\}/g, componentName);
 
-  // Only add variables section for twig files
-  if (fileType === 'twig' && variablesSection) {
-    docblock = docblock.replace('{{variables}}', variablesSection);
+  // Only add sections for twig files
+  if (fileType === 'twig' || fileType === 'stories.twig') {
+    docblock = docblock
+      .replace('{{propsSection}}', propsSection)
+      .replace('{{slotsSection}}', slotsSection)
+      .replace('{{blocksSection}}', blocksSection);
   }
 
   return docblock;
@@ -410,12 +534,14 @@ function generateDocblock(fileType, componentName, variablesSection = '') {
  *
  * @param {string} filePath - Path to the file to update
  * @param {string} componentName - Component name
- * @param {string} variablesSection - Variables section for twig files
+ * @param {Object} properties - Component properties
+ * @param {Object} slots - Component slots
+ * @param {Object} blocks - Component blocks
  * @param {boolean} dryRun - If true, don't write to files
  * @param {boolean} checkMode - If true, just check if updates are needed
  * @returns {Object} Result with success status and needsUpdate flag
  */
-function updateFileHeader(filePath, componentName, variablesSection, dryRun, checkMode) {
+function updateFileHeader(filePath, componentName, properties, slots, blocks, dryRun, checkMode) {
   try {
     // Check if file exists
     if (!fs.existsSync(filePath)) {
@@ -425,8 +551,19 @@ function updateFileHeader(filePath, componentName, variablesSection, dryRun, che
     // Detect file type
     const fileType = detectFileType(filePath);
 
-    // Generate docblock for this file type
-    const docblock = generateDocblock(fileType, componentName, variablesSection);
+    // For Twig files, extract block names from the file first so they can be included in the header
+    let blockNames = [];
+    if (fileType === 'twig' || fileType === 'stories.twig') {
+      blockNames = extractTwigBlockNames(filePath);
+    }
+
+    // Generate sections for twig files
+    const propsSection = generatePropsSection(properties);
+    const slotsSection = generateSlotsSection(slots);
+    const blocksSection = generateBlocksSection(blocks, blockNames);
+
+    // Generate docblock
+    const docblock = generateDocblock(fileType, componentName, propsSection, slotsSection, blocksSection);
 
     // Read current file content
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -434,26 +571,20 @@ function updateFileHeader(filePath, componentName, variablesSection, dryRun, che
     // Create new content
     let newContent;
     let needsUpdate = false;
-    let existingHeader = '';
 
-    // Handle each file type differently
+    // Handle each file type differently - completely remove headers and regenerate
     if (fileType === 'twig' || fileType === 'stories.twig') {
-      // For Twig files, look for {# /**...*/ #} blocks
-      const docblockPattern = /\{#\s*\/\*\*[\s\S]*?\*\/\s*#\}/;
-      const match = fileContent.match(docblockPattern);
-
-      if (match) {
-        [existingHeader] = match;
-        // Check if headers are different
-        if (existingHeader.trim() !== docblock.trim()) {
-          needsUpdate = true;
-          newContent = fileContent.replace(docblockPattern, docblock);
-        }
-      } else {
-        // No existing header, add one
-        needsUpdate = true;
-        newContent = `${docblock}\n\n${fileContent}`;
-      }
+      // For Twig files, completely remove {# /**...*/ #} blocks
+      const docblockPattern = /\{#\s*\/\*\*[\s\S]*?\*\/\s*#\}\s*\n*/;
+      
+      // Strip the header completely, regardless of if one exists
+      const codeContent = fileContent.replace(docblockPattern, '');
+      const expectedContent = `${docblock}\n\n${codeContent}`;
+      
+      // Compare expected vs current to determine if update is needed
+      needsUpdate = fileContent !== expectedContent;
+      newContent = expectedContent;
+      
     } else if (fileType === 'scss' || fileType === 'stories.scss') {
       // For SCSS files, remove all consecutive // lines at the beginning of the file
       // Split the content into lines
@@ -468,37 +599,22 @@ function updateFileHeader(filePath, componentName, variablesSection, dryRun, che
 
       // Get the content without the comment header
       const codeContent = lines.slice(contentStartIndex).join('\n');
-
-      // Check if existing header differs from our template
-      const existingHeaderLines = lines.slice(0, contentStartIndex).join('\n');
-
-      // We always need to update SCSS files since we're completely replacing the header
-      needsUpdate = true;
-      newContent = `${docblock}\n\n${codeContent}`;
-
-      // For check mode, handle finding existing slash-style comments
-      if (checkMode || dryRun) {
-        if (existingHeaderLines.trim() === docblock.trim()) {
-          needsUpdate = false;
-        }
-      }
+      const expectedContent = `${docblock}\n\n${codeContent}`;
+      
+      // Compare expected vs current to determine if update is needed
+      needsUpdate = fileContent !== expectedContent;
+      newContent = expectedContent;
     } else {
-      // For JS and other files, look for /** ... */ blocks
-      const docblockPattern = /\/\*\*[\s\S]*?\*\//;
-      const match = fileContent.match(docblockPattern);
-
-      if (match) {
-        [existingHeader] = match;
-        // Check if headers are different
-        if (existingHeader.trim() !== docblock.trim()) {
-          needsUpdate = true;
-          newContent = fileContent.replace(docblockPattern, docblock);
-        }
-      } else {
-        // No existing header, add one
-        needsUpdate = true;
-        newContent = `${docblock}\n\n${fileContent}`;
-      }
+      // For JS and other files, completely remove /** ... */ blocks
+      const docblockPattern = /\/\*\*[\s\S]*?\*\/\s*\n*/;
+      
+      // Strip the header completely, regardless of if one exists
+      const codeContent = fileContent.replace(docblockPattern, '');
+      const expectedContent = `${docblock}\n\n${codeContent}`;
+      
+      // Compare expected vs current to determine if update is needed
+      needsUpdate = fileContent !== expectedContent;
+      newContent = expectedContent;
     }
 
     if (checkMode && needsUpdate) {
@@ -515,6 +631,11 @@ function updateFileHeader(filePath, componentName, variablesSection, dryRun, che
 
     // Only write if an update is needed
     if (needsUpdate) {
+      // Make sure content ends with newline
+      if (!newContent.endsWith('\n')) {
+        newContent += '\n';
+      }
+      
       // Write updated content back to file
       fs.writeFileSync(filePath, newContent, 'utf8');
       console.log(`\x1b[32mComponent ${filePath} UPDATED\x1b[0m`);
@@ -524,6 +645,109 @@ function updateFileHeader(filePath, componentName, variablesSection, dryRun, che
   } catch (error) {
     console.error(`Error processing ${filePath}: ${error.message}`);
     return { success: false, needsUpdate: false, reason: 'error', error };
+  }
+}
+
+/**
+ * Extracts Twig block names from a file.
+ *
+ * @param {string} filePath - Path to the twig file
+ * @returns {Object} Object with block names as keys and basic info as values
+ */
+function extractTwigBlocks(filePath) {
+  try {
+    if (!fs.existsSync(filePath) || !filePath.endsWith('.twig')) {
+      return {};
+    }
+
+    const content = fs.readFileSync(filePath, 'utf8');
+    
+    // Enhanced regex that handles variations of whitespace and hyphens 
+    // This will match:
+    // - {% block name %} - standard
+    // - {%- block name %} - with leading hyphen
+    // - {% block name -%} - with trailing hyphen
+    // - {%- block name -%} - with both hyphens
+    // - and all variations with different whitespace
+    const blockRegex = /\{%[-]?\s*block\s+([a-zA-Z0-9_]+)(?:\s*[-]?%}|[^}]*[-]?%})/g;
+    
+    const blocks = new Set(); // Use a Set to avoid duplicates
+    let match;
+
+    while ((match = blockRegex.exec(content)) !== null) {
+      blocks.add(match[1]);
+    }
+
+    // Also try to match endblock with names, handling variations with hyphens
+    const endBlockRegex = /\{%[-]?\s*endblock\s+([a-zA-Z0-9_]+)\s*[-]?%}/g;
+    while ((match = endBlockRegex.exec(content)) !== null) {
+      blocks.add(match[1]);
+    }
+
+    // Convert to object with name:description format
+    const blocksObj = {};
+    Array.from(blocks).forEach(blockName => {
+      blocksObj[blockName] = {
+        description: `Twig block: ${blockName}`
+      };
+    });
+
+    return blocksObj;
+  } catch (error) {
+    console.error(`Error extracting Twig blocks from ${filePath}: ${error.message}`);
+    return {};
+  }
+}
+
+/**
+ * Extract just the names of Twig blocks from a file.
+ *
+ * @param {string} filePath - Path to the twig file
+ * @returns {Array} Array of block names
+ */
+function extractTwigBlockNames(filePath) {
+  try {
+    if (!fs.existsSync(filePath) || !filePath.endsWith('.twig')) {
+      return [];
+    }
+
+    const content = fs.readFileSync(filePath, 'utf8');
+    
+    // Enhanced regex that handles variations of whitespace and hyphens 
+    // This will match:
+    // - {% block name %} - standard
+    // - {%- block name %} - with leading hyphen
+    // - {% block name -%} - with trailing hyphen
+    // - {%- block name -%} - with both hyphens
+    // - and all variations with different whitespace
+    const blockRegex = /\{%[-]?\s*block\s+([a-zA-Z0-9_]+)(?:\s*[-]?%}|[^}]*[-]?%})/g;
+    
+    const blockNames = []; // Use an array to preserve declaration order
+    const addedBlocks = new Set(); // Use a Set to avoid duplicates
+    let match;
+
+    while ((match = blockRegex.exec(content)) !== null) {
+      const blockName = match[1];
+      if (!addedBlocks.has(blockName)) {
+        blockNames.push(blockName);
+        addedBlocks.add(blockName);
+      }
+    }
+
+    // Also try to match endblock with names, handling variations with hyphens
+    const endBlockRegex = /\{%[-]?\s*endblock\s+([a-zA-Z0-9_]+)\s*[-]?%}/g;
+    while ((match = endBlockRegex.exec(content)) !== null) {
+      const blockName = match[1];
+      if (!addedBlocks.has(blockName)) {
+        blockNames.push(blockName);
+        addedBlocks.add(blockName);
+      }
+    }
+
+    return blockNames;
+  } catch (error) {
+    console.error(`Error extracting Twig block names from ${filePath}: ${error.message}`);
+    return [];
   }
 }
 
@@ -570,9 +794,9 @@ function generateComponentHeaders(yamlPath, dryRun = false, checkMode = false) {
 
     // Parse YAML file
     const yamlData = readYamlFile(yamlPath);
-
-    // Generate variables section for twig files
-    const variablesSection = generateVariablesSection(yamlData.properties, yamlData.slots);
+    
+    // Ensure YAML file ends with a newline
+    ensureFileEndsWithNewline(yamlPath, dryRun);
 
     // Find all component files
     const componentFiles = findComponentFiles(dir, componentName);
@@ -591,7 +815,9 @@ function generateComponentHeaders(yamlPath, dryRun = false, checkMode = false) {
       const result = updateFileHeader(
         filePath,
         yamlData.name || componentName,
-        variablesSection,
+        yamlData.properties,
+        yamlData.slots,
+        yamlData.blocks,
         dryRun,
         checkMode,
       );
@@ -617,6 +843,42 @@ function generateComponentHeaders(yamlPath, dryRun = false, checkMode = false) {
   } catch (error) {
     console.error(`Error processing ${yamlPath}: ${error.message}`);
     return { success: false, needsUpdate: false };
+  }
+}
+
+/**
+ * Ensures that a file ends with a newline character.
+ * 
+ * @param {string} filePath - Path to the file to check
+ * @param {boolean} dryRun - If true, don't write to files
+ * @returns {boolean} True if the file needed a newline added, false otherwise
+ */
+function ensureFileEndsWithNewline(filePath, dryRun = false) {
+  try {
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+      return false;
+    }
+
+    // Read the file content
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    // Check if the file already ends with a newline
+    if (!content.endsWith('\n')) {
+      if (!dryRun) {
+        // Add newline and write back to file
+        fs.writeFileSync(filePath, content + '\n', 'utf8');
+        console.log(`Added missing newline to ${filePath}`);
+      } else {
+        console.log(`Would add missing newline to ${filePath}`);
+      }
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error(`Error ensuring newline at end of ${filePath}: ${error.message}`);
+    return false;
   }
 }
 
@@ -652,13 +914,32 @@ function findFiles(pattern) {
  * @returns {Object} Results with counts
  */
 function processDirectory(dirPath, recursive = false, dryRun = false, checkMode = false) {
+  // Pattern for finding component YAML files
   const pattern = recursive
     ? `${dirPath} -name "*.component.yml" -type f`
     : `${dirPath} -maxdepth 1 -name "*.component.yml" -type f`;
 
+  // Find all component YAML files
   const files = findFiles(pattern);
 
   console.log(`Found ${files.length} component YAML files in ${dirPath}${recursive ? ' (recursive)' : ''}`);
+
+  // Pattern for finding all YAML files (to ensure all have newlines)
+  const allYamlPattern = recursive
+    ? `${dirPath} -name "*.yml" -o -name "*.yaml" -type f`
+    : `${dirPath} -maxdepth 1 -name "*.yml" -o -name "*.yaml" -type f`;
+    
+  // Find all YAML files
+  const allYamlFiles = findFiles(allYamlPattern);
+  
+  console.log(`Found ${allYamlFiles.length} total YAML files to check for newlines`);
+  
+  // Ensure all YAML files end with newlines
+  if (!checkMode) {
+    allYamlFiles.forEach((yamlFile) => {
+      ensureFileEndsWithNewline(yamlFile, dryRun);
+    });
+  }
 
   let processed = 0;
   let skipped = 0;
@@ -709,6 +990,11 @@ function processFile(filePath, dryRun = false, checkMode = false) {
       needsUpdate: 0,
       total: 1,
     };
+  }
+
+  // Ensure the YAML file ends with a newline if not in check mode
+  if (!checkMode) {
+    ensureFileEndsWithNewline(filePath, dryRun);
   }
 
   try {

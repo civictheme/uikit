@@ -1,6 +1,7 @@
 /**
  * CivicTheme Table component.
  */
+
 function CivicThemeTable(el) {
   if (!el) {
     return;

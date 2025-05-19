@@ -3,25 +3,28 @@
  * @file
  * CivicTheme Next Step component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - title: [string] Next step title.
- * - content: [string] Next step content.
- * - link: [object] Next step link:
- *   - url: [string] Link URL.
- *   - is_new_window: [boolean] Whether to open link in a new window.
- *   - is_external: [boolean] Whether the link is external.
- * - content_top: [string] Top next step content.
- * - content_bottom: [string] Bottom next step content.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - link: [object] Next step link.
+ *   Each property contains:
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
  *
  * Slots:
- * - content_top_slot: [slot] Top content area content
- * - content_slot: [slot] Content area content
- * - title_slot: [slot] Title area content
- * - content_bottom_slot: [slot] Bottom content area content
+ * - title: Next step title.
+ * - content: Next step content.
+ * - content_top: Top next step content.
+ * - content_bottom: Bottom next step content.
+ *
+ * Blocks:
+ * - content_top_block
+ * - content_block
+ * - title_block
+ * - content_bottom_block
  */
 #}
 
@@ -35,7 +38,7 @@
       <div class="row">
         <div class="col-xxs-12">
           <div class="ct-next-step__wrapper">
-            {% block content_top_slot %}
+            {% block content_top_block %}
               {% if content_top is not empty %}
                 <div class="ct-next-step__content-top">
                   {{- content_top|raw -}}
@@ -43,10 +46,10 @@
               {% endif %}
             {% endblock %}
 
-            {% block content_slot %}
+            {% block content_block %}
               {% if title is not empty or content is not empty %}
                 <div class="ct-next-step__inner">
-                  {% block title_slot %}
+                  {% block title_block %}
                     {% if title is not empty %}
                       {% set title_content %}
                         {% if link.url is defined and link.url is not empty %}
@@ -87,7 +90,7 @@
               {% endif %}
             {% endblock %}
 
-            {% block content_bottom_slot %}
+            {% block content_bottom_block %}
               {% if content_bottom is not empty %}
                 <div class="ct-next-step__content-bottom">
                   {{- content_bottom|raw -}}

@@ -12,31 +12,6 @@ props:
       enum:
         - light
         - dark
-    address:
-      type: string
-      title: Address
-      description: Optional address.
-    url:
-      type: string
-      title: URL
-      description: URL for the map iframe.
-    view_url:
-      type: string
-      title: View URL
-      description: URL for the external map.
-    view_text:
-      type: string
-      title: View text
-      description: Text for the external map link.
-      default: 'View in Google Maps'
-    content_top:
-      type: string
-      title: Top content
-      description: Map top content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Map bottom content.
     vertical_spacing:
       type: string
       title: Vertical spacing
@@ -57,16 +32,27 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+    address:
+      type: string
+      title: Address
+      description: Optional address.
+    url:
+      type: string
+      title: URL
+      description: URL for the map iframe.
+    view_url:
+      type: string
+      title: View URL
+      description: URL for the external map.
+    view_text:
+      type: string
+      title: View text
+      description: Text for the external map link.
+      default: 'View in Google Maps'
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  map_slot:
-    title: Map Slot
-    description: Map area content
-  links_slot:
-    title: Links Slot
-    description: Links area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Top content
+    description: Map top content.
+  content_bottom:
+    title: Bottom content
+    description: Map bottom content.

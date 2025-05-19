@@ -3,24 +3,27 @@
  * @file
  * CivicTheme Popover component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - trigger: [object] Popover trigger link object:
+ * - trigger: [object] Popover trigger link object.
+ *   Each property contains:
  *   - text: [string] Trigger text.
  *   - url: [string] Optional URL for the trigger.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - content: [string] Popover panel content.
- * - content_top: [string] Top popover content.
- * - content_bottom: [string] Bottom popover content.
  * - group: [string] Group name for controlling multiple popovers together.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
- * - content_top_slot: [slot] Top content area content
- * - content_slot: [slot] Content area content
- * - content_bottom_slot: [slot] Bottom content area content
+ * - content: Popover panel content.
+ * - content_top: Top popover content.
+ * - content_bottom: Bottom popover content.
+ *
+ * Blocks:
+ * - content_top_block
+ * - content_block
+ * - content_bottom_block
  */
 #}
 
@@ -41,7 +44,7 @@
     <div class="ct-popover__content" data-collapsible-panel>
       <div class="ct-popover__content__inner">
 
-        {% block content_top_slot %}
+        {% block content_top_block %}
           {% if content_top is not empty %}
             <div class="ct-popover__content-top">
               {{- content_top|raw -}}
@@ -49,11 +52,11 @@
           {% endif %}
         {% endblock %}
 
-        {% block content_slot %}
+        {% block content_block %}
           {{- content|raw -}}
         {% endblock %}
 
-        {% block content_bottom_slot %}
+        {% block content_bottom_block %}
           {% if content_bottom is not empty %}
             <div class="ct-popover__content-bottom">
               {{- content_bottom|raw -}}

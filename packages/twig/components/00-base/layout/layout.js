@@ -1,6 +1,7 @@
 /**
  * CivicTheme Layout component.
  */
+
 function CivicThemeLayout(el) {
   this.el = el;
   this.grid = el.querySelector(':scope > .ct-layout__inner');

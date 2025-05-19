@@ -46,14 +46,6 @@ props:
         - regular
         - small
         - extra-small
-    title:
-      type: string
-      title: Title
-      description: Text used within the button title and for screen readers.
-    content:
-      type: string
-      title: Content
-      description: Text to display within the popup.
     attributes:
       type: string
       title: Attributes
@@ -62,3 +54,10 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+slots:
+  title:
+    title: Title
+    description: Text used within the button title and for screen readers.
+  content:
+    title: Content
+    description: Text to display within the popup.

@@ -1,6 +1,7 @@
 /**
  * CivicTheme Tabs component.
  */
+
 function CivicThemeTabs(el, selectedIndex) {
   if (!el) {
     return;

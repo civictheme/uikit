@@ -12,14 +12,22 @@ props:
       enum:
         - light
         - dark
-    title:
+    vertical_spacing:
       type: string
-      title: Title
-      description: Title text.
-    content:
+      title: Vertical spacing
+      description: Vertical spacing position (top, bottom, both).
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
       type: string
-      title: Content
-      description: Content text.
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
     links:
       type: array
       title: Links
@@ -43,40 +51,16 @@ props:
             type: boolean
             title: External
             description: Whether the link is external.
-    content_top:
-      type: string
-      title: Top content
-      description: Callout top content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Callout bottom content.
-    vertical_spacing:
-      type: string
-      title: Vertical spacing
-      description: Vertical spacing position (top, bottom, both).
-      enum:
-        - top
-        - bottom
-        - both
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier classes
-      description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  links_slot:
-    title: Links Slot
-    description: Links area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  title:
+    title: Title
+    description: Title text.
+  content:
+    title: Content
+    description: Content text.
+  content_top:
+    title: Top content
+    description: Callout top content.
+  content_bottom:
+    title: Bottom content
+    description: Callout bottom content.
