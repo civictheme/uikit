@@ -12,14 +12,6 @@ props:
       enum:
         - light
         - dark
-    text:
-      type: string
-      title: Text
-      description: Text for the search link.
-    url:
-      type: string
-      title: URL
-      description: Search page URL.
     attributes:
       type: string
       title: Attributes
@@ -28,3 +20,10 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+slots:
+  text:
+    title: Text
+    description: Text for the search link.
+  url:
+    title: URL
+    description: Search page URL.

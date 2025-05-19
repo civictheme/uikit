@@ -12,57 +12,6 @@ props:
       enum:
         - light
         - dark
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content area.
-    title:
-      type: string
-      title: Title
-      description: Title for filters.
-    form_attributes:
-      type: string
-      title: Form Attributes
-      description: Form attributes (if empty, the form will not be printed).
-    form_hidden_fields:
-      type: string
-      title: Form Hidden Fields
-      description: Form hidden fields.
-    items:
-      type: array
-      title: Items
-      description: Filter links.
-      items:
-        type: object
-        properties:
-          text:
-            type: string
-            title: Text
-            description: Link text.
-          name:
-            type: string
-            title: Name
-            description: Optional name attribute.
-          is_selected:
-            type: boolean
-            title: Selected
-            description: Whether the item is selected.
-          attributes:
-            type: string
-            title: Attributes
-            description: Additional HTML attributes.
-    submit_text:
-      type: string
-      title: Submit Text
-      description: Text on the submit button.
-    reset_text:
-      type: string
-      title: Reset Text
-      description: Text on the reset button.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content area.
     is_multiple:
       type: boolean
       title: Multiple
@@ -76,12 +25,27 @@ props:
       title: Modifier Class
       description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  filters_slot:
-    title: Filters Slot
-    description: Filters area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area.
+  title:
+    title: Title
+    description: Title for filters.
+  form_attributes:
+    title: Form Attributes
+    description: Form attributes (if empty, the form will not be printed).
+  form_hidden_fields:
+    title: Form Hidden Fields
+    description: Form hidden fields.
+  items:
+    title: Items
+    description: Filter links.
+  submit_text:
+    title: Submit Text
+    description: Text on the submit button.
+  reset_text:
+    title: Reset Text
+    description: Text on the reset button.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

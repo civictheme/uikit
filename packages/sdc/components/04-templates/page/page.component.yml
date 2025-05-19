@@ -20,14 +20,6 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
-    banner:
-      type: string
-      title: Banner
-      description: Banner content.
-    highlighted:
-      type: string
-      title: Highlighted
-      description: Highlighted content.
     header_theme:
       type: string
       title: Header theme
@@ -35,38 +27,6 @@ props:
       enum:
         - light
         - dark
-    header_top_1:
-      type: string
-      title: Header top 1
-      description: Header top section 1 content.
-    header_top_2:
-      type: string
-      title: Header top 2
-      description: Header top section 2 content.
-    header_top_3:
-      type: string
-      title: Header top 3
-      description: Header top section 3 content.
-    header_middle_1:
-      type: string
-      title: Header middle 1
-      description: Header middle section 1 content.
-    header_middle_2:
-      type: string
-      title: Header middle 2
-      description: Header middle section 2 content.
-    header_middle_3:
-      type: string
-      title: Header middle 3
-      description: Header middle section 3 content.
-    header_bottom_1:
-      type: string
-      title: Header bottom 1
-      description: Header bottom section 1 content.
-    content_top:
-      type: string
-      title: Content top
-      description: Main content area top content.
     hide_sidebar_left:
       type: boolean
       title: Hide left sidebar
@@ -75,58 +35,6 @@ props:
       type: boolean
       title: Hide right sidebar
       description: Whether to hide the right sidebar.
-    sidebar_top_left:
-      type: string
-      title: Sidebar top left
-      description: Top left sidebar content.
-    sidebar_top_left_attributes:
-      type: string
-      title: Sidebar top left attributes
-      description: HTML attributes for top left sidebar.
-    sidebar_top_right:
-      type: string
-      title: Sidebar top right
-      description: Top right sidebar content.
-    sidebar_top_right_attributes:
-      type: string
-      title: Sidebar top right attributes
-      description: HTML attributes for top right sidebar.
-    content:
-      type: string
-      title: Content
-      description: Main content.
-    content_attributes:
-      type: string
-      title: Content attributes
-      description: HTML attributes for main content.
-    sidebar_bottom_left:
-      type: string
-      title: Sidebar bottom left
-      description: Bottom left sidebar content.
-    sidebar_bottom_left_attributes:
-      type: string
-      title: Sidebar bottom left attributes
-      description: HTML attributes for bottom left sidebar.
-    sidebar_bottom_right:
-      type: string
-      title: Sidebar bottom right
-      description: Bottom right sidebar content.
-    sidebar_bottom_right_attributes:
-      type: string
-      title: Sidebar bottom right attributes
-      description: HTML attributes for bottom right sidebar.
-    sidebar:
-      type: string
-      title: Sidebar (legacy)
-      description: Legacy sidebar content.
-    sidebar_attributes:
-      type: string
-      title: Sidebar attributes (legacy)
-      description: Legacy sidebar HTML attributes
-    content_bottom:
-      type: string
-      title: Content bottom
-      description: Main content area bottom content.
     content_contained:
       type: boolean
       title: Content contained
@@ -150,54 +58,97 @@ props:
       type: string
       title: Footer background image
       description: Background image for footer.
-    footer_top_1:
-      type: string
-      title: Footer top 1
-      description: Footer top section 1 content.
-    footer_top_2:
-      type: string
-      title: Footer top 2
-      description: Footer top section 2 content.
-    footer_middle_1:
-      type: string
-      title: Footer middle 1
-      description: Footer middle section 1 content.
-    footer_middle_2:
-      type: string
-      title: Footer middle 2
-      description: Footer middle section 2 content.
-    footer_middle_3:
-      type: string
-      title: Footer middle 3
-      description: Footer middle section 3 content.
-    footer_middle_4:
-      type: string
-      title: Footer middle 4
-      description: Footer middle section 4 content.
-    footer_bottom_1:
-      type: string
-      title: Footer bottom 1
-      description: Footer bottom section 1 content.
-    footer_bottom_2:
-      type: string
-      title: Footer bottom 2
-      description: Footer bottom section 2 content.
 slots:
-  header_slot:
-    title: Header Slot
-    description: Header area content
-  banner_slot:
-    title: Banner Slot
-    description: Banner area content
-  highlighted_slot:
-    title: Highlighted Slot
-    description: Highlighted area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  footer_slot:
-    title: Footer Slot
-    description: Footer area content
-  back_to_top_slot:
-    title: Back To Top Slot
-    description: Back to top area content
+  banner:
+    title: Banner
+    description: Banner content.
+  highlighted:
+    title: Highlighted
+    description: Highlighted content.
+  header_top_1:
+    title: Header top 1
+    description: Header top section 1 content.
+  header_top_2:
+    title: Header top 2
+    description: Header top section 2 content.
+  header_top_3:
+    title: Header top 3
+    description: Header top section 3 content.
+  header_middle_1:
+    title: Header middle 1
+    description: Header middle section 1 content.
+  header_middle_2:
+    title: Header middle 2
+    description: Header middle section 2 content.
+  header_middle_3:
+    title: Header middle 3
+    description: Header middle section 3 content.
+  header_bottom_1:
+    title: Header bottom 1
+    description: Header bottom section 1 content.
+  content_top:
+    title: Content top
+    description: Main content area top content.
+  sidebar_top_left:
+    title: Sidebar top left
+    description: Top left sidebar content.
+  sidebar_top_left_attributes:
+    title: Sidebar top left attributes
+    description: HTML attributes for top left sidebar.
+  sidebar_top_right:
+    title: Sidebar top right
+    description: Top right sidebar content.
+  sidebar_top_right_attributes:
+    title: Sidebar top right attributes
+    description: HTML attributes for top right sidebar.
+  content:
+    title: Content
+    description: Main content.
+  content_attributes:
+    title: Content attributes
+    description: HTML attributes for main content.
+  sidebar_bottom_left:
+    title: Sidebar bottom left
+    description: Bottom left sidebar content.
+  sidebar_bottom_left_attributes:
+    title: Sidebar bottom left attributes
+    description: HTML attributes for bottom left sidebar.
+  sidebar_bottom_right:
+    title: Sidebar bottom right
+    description: Bottom right sidebar content.
+  sidebar_bottom_right_attributes:
+    title: Sidebar bottom right attributes
+    description: HTML attributes for bottom right sidebar.
+  sidebar:
+    title: Sidebar (legacy)
+    description: Legacy sidebar content.
+  sidebar_attributes:
+    title: Sidebar attributes (legacy)
+    description: Legacy sidebar HTML attributes
+  content_bottom:
+    title: Content bottom
+    description: Main content area bottom content.
+  footer_top_1:
+    title: Footer top 1
+    description: Footer top section 1 content.
+  footer_top_2:
+    title: Footer top 2
+    description: Footer top section 2 content.
+  footer_middle_1:
+    title: Footer middle 1
+    description: Footer middle section 1 content.
+  footer_middle_2:
+    title: Footer middle 2
+    description: Footer middle section 2 content.
+  footer_middle_3:
+    title: Footer middle 3
+    description: Footer middle section 3 content.
+  footer_middle_4:
+    title: Footer middle 4
+    description: Footer middle section 4 content.
+  footer_bottom_1:
+    title: Footer bottom 1
+    description: Footer bottom section 1 content.
+  footer_bottom_2:
+    title: Footer bottom 2
+    description: Footer bottom section 2 content.

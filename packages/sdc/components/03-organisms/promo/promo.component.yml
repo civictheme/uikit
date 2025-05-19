@@ -12,22 +12,30 @@ props:
       enum:
         - light
         - dark
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content area.
-    title:
-      type: string
-      title: Title
-      description: Title text.
-    content:
-      type: string
-      title: Content
-      description: Main content text.
     is_contained:
       type: boolean
       title: Contained
       description: Whether the content is contained in a container.
+    vertical_spacing:
+      type: string
+      title: Vertical Spacing
+      description: Vertical spacing for the promo (top, bottom, or both).
+      enum:
+        - top
+        - bottom
+        - both
+    with_background:
+      type: boolean
+      title: With Background
+      description: Whether to display with a background.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
     link:
       type: object
       title: Link
@@ -49,43 +57,16 @@ props:
           type: boolean
           title: External
           description: Whether the link is external.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom promo content.
-    vertical_spacing:
-      type: string
-      title: Vertical Spacing
-      description: Vertical spacing for the promo (top, bottom, or both).
-      enum:
-        - top
-        - bottom
-        - both
-    with_background:
-      type: boolean
-      title: With Background
-      description: Whether to display with a background.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_left_slot:
-    title: Content Left Slot
-    description: Left content area content
-  content_right_slot:
-    title: Content Right Slot
-    description: Right content area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area.
+  title:
+    title: Title
+    description: Title text.
+  content:
+    title: Content
+    description: Main content text.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom promo content.

@@ -12,76 +12,6 @@ props:
       enum:
         - light
         - dark
-    image:
-      type: object
-      title: Image
-      description: Card image.
-      properties:
-        url:
-          type: string
-          title: URL
-          description: File URL.
-        alt:
-          type: string
-          title: Alt text
-          description: Image alt text.
-    image_over:
-      type: string
-      title: Image Over
-      description: Image overlay content.
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content area.
-    title:
-      type: string
-      title: Title
-      description: Card title text.
-    content_middle:
-      type: string
-      title: Content Middle
-      description: Middle content area.
-    summary:
-      type: string
-      title: Summary
-      description: Card summary.
-    file:
-      type: object
-      title: File
-      description: File object for download.
-      properties:
-        name:
-          type: string
-          title: Name
-          description: File name (as it appears to the user).
-        ext:
-          type: string
-          title: Extension
-          description: File extension.
-        url:
-          type: string
-          title: URL
-          description: File URL.
-        size:
-          type: string
-          title: Size
-          description: File size (as it appears to the user).
-        created:
-          type: string
-          title: Created
-          description: File created date.
-        changed:
-          type: string
-          title: Changed
-          description: File changed date.
-        icon:
-          type: string
-          title: Icon
-          description: File type icon name.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content area.
     attributes:
       type: string
       title: Attributes
@@ -90,28 +20,56 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    image:
+      type: object
+      title: Image
+      description: Card image.
+      properties:
+        url:
+          type: string
+          title: URL
+          description: Image URL.
+        alt:
+          type: string
+          title: Alt text
+          description: Image alt text.
+    file:
+      type: object
+      title: File
+      description: File object for download.
+      properties:
+        name:
+          type: string
+          title: Name
+          description: File name.
+        url:
+          type: string
+          title: URL
+          description: File URL.
+        ext:
+          type: string
+          title: Extension
+          description: File extension.
+        size:
+          type: string
+          title: Size
+          description: File size.
 slots:
-  image_slot:
-    title: Image Slot
-    description: Image area content
-  image_over_slot:
-    title: Image Over Slot
-    description: Image overlay content
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  title_slot:
-    title: Title Slot
-    description: Title area content
-  content_middle_slot:
-    title: Content Middle Slot
-    description: Middle content area content
-  summary_slot:
-    title: Summary Slot
-    description: Summary area content
-  link_slot:
-    title: Link Slot
-    description: Link area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  image_over:
+    title: Image Over
+    description: Image overlay content.
+  content_top:
+    title: Content Top
+    description: Top content area.
+  title:
+    title: Title
+    description: Card title text.
+  content_middle:
+    title: Content Middle
+    description: Middle content area.
+  summary:
+    title: Summary
+    description: Card summary.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

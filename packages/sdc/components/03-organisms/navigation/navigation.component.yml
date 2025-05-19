@@ -16,37 +16,10 @@ props:
       type: string
       title: Name
       description: Navigation name for nav element.
-    items:
-      type: array
-      title: Items
-      description: Menu items
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            title: Title
-            description: Navigation title.
-          url:
-            type: string
-            title: URL
-            description: Menu item URL.
-          in_active_trail:
-            type: boolean
-            title: In Active Trail
-            description: Whether the item is in the active trail.
-          is_expanded:
-            type: boolean
-            title: Expanded
-            description: Whether the item is expanded.
-          below:
-            type: array
-            title: Below
-            description: Submenu items.
-    title:
+    menu_id:
       type: string
-      title: Title
-      description: Navigation title.
+      title: Menu ID
+      description: Optional menu ID used for grouping dropdown items.
     type:
       type: string
       title: Type
@@ -68,10 +41,6 @@ props:
       type: boolean
       title: Animated
       description: Whether to use animation for transitions.
-    menu_id:
-      type: string
-      title: Menu ID
-      description: Optional menu ID used for grouping dropdown items.
     attributes:
       type: string
       title: Attributes
@@ -80,7 +49,37 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    items:
+      type: array
+      title: Items
+      description: Menu items
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Title
+            description: Navigation item title.
+          url:
+            type: string
+            title: URL
+            description: URL of the menu item.
+          in_active_trail:
+            type: boolean
+            title: In Active Trail
+            description: Whether the item is in the active trail.
+          is_expanded:
+            type: boolean
+            title: Is Expanded
+            description: Whether the item is expanded.
+          below:
+            type: array
+            title: Below
+            description: Submenu items.
+            items:
+              type: object
+              description: Submenu item with the same structure as parent items.
 slots:
-  title_slot:
-    title: Title Slot
-    description: Title area content
+  title:
+    title: Title
+    description: Navigation title.

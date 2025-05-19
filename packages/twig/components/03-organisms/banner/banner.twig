@@ -3,34 +3,48 @@
  * @file
  * CivicTheme Banner component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - content_top1: [string] Top section content.
- * - breadcrumb: [object] Breadcrumb navigation:
- *   - links: [array] Breadcrumb links.
- *   - active_is_link: [boolean] Whether the active item is a link.
- * - content_top2: [string] Second top section content.
- * - content_top3: [string] Third top section content.
- * - content_middle: [string] Middle section content.
- * - content: [string] Main content.
- * - content_bottom: [string] Bottom section content.
- * - content_below: [string] Below banner section content.
- * - site_section: [string] Site section name.
- * - title: [string] Banner title.
  * - is_decorative: [boolean] Whether to show as decorative.
- * - featured_image: [object] Featured image:
- *   - url: [string] Image source URL.
- *   - alt: [string] Image alt text.
- * - background_image: [object] Background image:
- *   - url: [string] Image source URL.
- *   - alt: [string] Image alt text.
  * - background_image_blend_mode: [string] Background image blending type. Defaults to 'normal'.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - breadcrumb: [object] Breadcrumb navigation.
+ *   Each property contains:
+ *   - links: [array] Breadcrumb links.
+ *   - active_is_link: [boolean] Whether the active item is a link.
+ * - featured_image: [object] Featured image.
+ *   Each property contains:
+ *   - url: [string] Image source URL.
+ *   - alt: [string] Image alt text.
+ * - background_image: [object] Background image.
+ *   Each property contains:
+ *   - url: [string] Image source URL.
+ *   - alt: [string] Image alt text.
  *
  * Slots:
- * - breadcrumb_slot: [slot] Breadcrumb content
- * - featured_image_slot: [slot] Featured image content
+ * - content_top1: Top section content.
+ * - content_top2: Second top section content.
+ * - content_top3: Third top section content.
+ * - content_middle: Middle section content.
+ * - content: Main content.
+ * - content_bottom: Bottom section content.
+ * - content_below: Below banner section content.
+ * - site_section: Site section name.
+ * - title: Banner title.
+ *
+ * Blocks:
+ * - content_top1_block
+ * - breadcrumb_block
+ * - content_top2_block
+ * - content_top3_block
+ * - site_section_block
+ * - title_block
+ * - content_middle_block
+ * - content_block
+ * - featured_image_block
+ * - content_below_block
+ * - content_bottom_block
  */
 #}
 
@@ -53,7 +67,7 @@
 
           {% if content_top1 is not empty %}
             <div class="row">
-              {%- block content_top1 %}
+              {%- block content_top1_block %}
                 <div class="col-xxs-12">
                   <div class="ct-banner__content-top">
                     {{- content_top1|raw -}}
@@ -65,7 +79,7 @@
 
           {% if breadcrumb is not empty or content_top2 is not empty %}
             <div class="row">
-              {% block breadcrumb_slot %}
+              {% block breadcrumb_block %}
                 {% if breadcrumb is not empty %}
                   <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                     {% include '@molecules/breadcrumb/breadcrumb.twig' with {
@@ -79,7 +93,7 @@
               {% endblock %}
 
               {% if content_top2 is not empty %}
-                {%- block content_top2 %}
+                {%- block content_top2_block %}
                   <div class="col-xxs-12 col-m-6">
                     <div class="ct-banner__content-top2">
                       {{- content_top2|raw -}}
@@ -92,7 +106,7 @@
 
           {% if content_top3 is not empty %}
             <div class="row">
-              {%- block content_top3 %}
+              {%- block content_top3_block %}
                 <div class="col-xxs-12">
                   <div class="ct-banner__content-top3">
                     {{- content_top3|raw -}}
@@ -104,7 +118,7 @@
 
           {% if site_section is not empty %}
             <div class="row">
-              {%- block site_section %}
+              {%- block site_section_block %}
                 <div class="col-xxs-12">
                   {% include '@atoms/heading/heading.twig' with {
                     theme: theme,
@@ -119,7 +133,7 @@
 
           {% if title is not empty %}
             <div class="row">
-              {%- block title %}
+              {%- block title_block %}
                 <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                   {% include '@atoms/heading/heading.twig' with {
                     theme: theme,
@@ -134,7 +148,7 @@
 
           {% if content_middle is not empty %}
             <div class="row">
-              {%- block content_middle %}
+              {%- block content_middle_block %}
                 <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                   <div class="ct-banner__content-middle">
                     {{- content_middle|raw -}}
@@ -146,7 +160,7 @@
 
           {% if content is not empty %}
             <div class="row">
-              {%- block content %}
+              {%- block content_block %}
                 <div class="{% if featured_image is not empty %}col-xxs-12 col-m-6{% else %}col-xxs-12{% endif %}">
                   <div class="ct-banner__content">
                     {{- content|raw -}}
@@ -159,7 +173,7 @@
         </div>
       </div>
 
-      {% block featured_image_slot %}
+      {% block featured_image_block %}
         {% if featured_image is not empty %}
           <div class="ct-banner__featured-image__wrapper">
             {% include '@atoms/image/image.twig' with {
@@ -176,7 +190,7 @@
     {% if content_below is not empty %}
       <div class="container">
         <div class="row">
-          {%- block content_below %}
+          {%- block content_below_block %}
             <div class="col-xxs-12">
               <div class="ct-banner__content-below">
                 {{- content_below|raw -}}
@@ -190,7 +204,7 @@
     {% if content_bottom is not empty %}
       <div class="container">
         <div class="row">
-          {%- block content_bottom %}
+          {%- block content_bottom_block %}
             <div class="col-xxs-12">
               <div class="ct-banner__content-bottom">
                 {{- content_bottom|raw -}}

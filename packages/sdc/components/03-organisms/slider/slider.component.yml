@@ -12,18 +12,6 @@ props:
       enum:
         - light
         - dark
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content.
-    title:
-      type: string
-      title: Title
-      description: Slider title.
-    slides:
-      type: string
-      title: Slides
-      description: Slides HTML content.
     previous_label:
       type: string
       title: Previous Label
@@ -34,10 +22,6 @@ props:
       title: Next Label
       description: Text for next button.
       default: Next
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content.
     vertical_spacing:
       type: string
       title: Vertical Spacing
@@ -58,19 +42,17 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    slides:
+      type: string
+      title: Slides
+      description: Slides HTML content.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content
-  top_controls_slot:
-    title: Top Controls Slot
-    description: Top controls content
-  slides_slot:
-    title: Slides Slot
-    description: Slides content
-  controls_slot:
-    title: Controls Slot
-    description: Controls content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content
+  content_top:
+    title: Content Top
+    description: Top content.
+  title:
+    title: Title
+    description: Slider title.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content.

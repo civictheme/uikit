@@ -3,19 +3,21 @@
  * @file
  * CivicTheme Table of Contents component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
  * - title: [string] Link title.
  * - position: [string] TOC position ('before', 'after', 'prepend', 'append').
- * - links: [array] Table of contents links:
- *   Each item contains:
- *   - title: [string] Link title.
- *   - url: [string] Link URL.
  * - anchor_selector: [string] CSS selector for headings to include in TOC (e.g. 'h2, h3').
  * - scope_selector: [string] CSS selector for the content area to generate TOC from.
- * - content: [string] Content (only displays when links are not provided).
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - links: Table of contents links.
+ * - content: Content (only displays when links are not provided).
+ *
+ * Blocks:
+ * - content_block
  */
 #}
 
@@ -50,7 +52,7 @@
             data-table-of-contents-anchor-scope-selector="{{ scope_selector }}"
             data-table-of-contents-position="{{ position }}"
           >
-            {%- block content -%}
+            {%- block content_block -%}
               {{- content|raw -}}
             {%- endblock -%}
           </div>

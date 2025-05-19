@@ -43,10 +43,6 @@ props:
         - warning
         - success
       default: error
-    fields:
-      type: string
-      title: Fields
-      description: Fields content.
     is_required:
       type: boolean
       title: Required
@@ -72,6 +68,6 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  fields_slot:
-    title: Fields Slot
-    description: Fields area content
+  fields:
+    title: Fields
+    description: Fields content.

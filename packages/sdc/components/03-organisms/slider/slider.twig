@@ -3,25 +3,27 @@
  * @file
  * CivicTheme Slider component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - content_top: [string] Top content.
- * - title: [string] Slider title.
- * - slides: [string] Slides HTML content.
  * - previous_label: [string] Text for previous button.
  * - next_label: [string] Text for next button.
- * - content_bottom: [string] Bottom content.
  * - vertical_spacing: [string] Slider vertical spacing (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - slides: [string] Slides HTML content.
  *
  * Slots:
- * - content_top_slot: [slot] Top content
- * - top_controls_slot: [slot] Top controls content
- * - slides_slot: [slot] Slides content
- * - controls_slot: [slot] Controls content
- * - content_bottom_slot: [slot] Bottom content
+ * - content_top: Top content.
+ * - title: Slider title.
+ * - content_bottom: Bottom content.
+ *
+ * Blocks:
+ * - content_top_block
+ * - top_controls_block
+ * - slides_block
+ * - controls_block
+ * - content_bottom_block
  */
 #}
 
@@ -35,7 +37,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
-          {% block content_top_slot %}
+          {% block content_top_block %}
             {% if content_top is not empty %}
               <div class="ct-slider__content__top">
                 {{- content_top|raw -}}
@@ -44,7 +46,7 @@
           {% endblock %}
 
           <div class="ct-slider__container" data-slider>
-            {% block top_controls_slot %}
+            {% block top_controls_block %}
               {% if title is not empty %}
                 {% include 'civictheme:heading' with {
                   theme: theme,
@@ -55,7 +57,7 @@
               {% endif %}
             {% endblock %}
 
-            {% block slides_slot %}
+            {% block slides_block %}
               <div class="ct-slider__slides" data-slider-panel>
                 <div class="ct-slider__slides__inner" data-slider-rail>
                   {{- slides|raw -}}
@@ -63,7 +65,7 @@
               </div>
             {% endblock %}
 
-            {% block controls_slot %}
+            {% block controls_block %}
               <div class="ct-slider__controls">
                 <div class="ct-slider__controls__inner">
                   {% include 'civictheme:button' with {
@@ -96,7 +98,7 @@
             {% endblock %}
           </div>
 
-          {% block content_bottom_slot %}
+          {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-slider__content__bottom">
                 {{- content_bottom|raw -}}

@@ -1,6 +1,7 @@
 /**
  * CivicTheme Alert component.
  */
+
 function CivicThemeAlert(el) {
   // Use "data-alert"'s attribute value to identify if this
   // component was already initialised.

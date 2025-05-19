@@ -3,20 +3,33 @@
  * @file
  * CivicTheme Footer component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
- * - content_top1: [string] Top section first content slot.
- * - content_top2: [string] Top section second content slot.
- * - content_middle1: [string] Middle section first content slot.
- * - content_middle2: [string] Middle section second content slot.
- * - content_middle3: [string] Middle section third content slot.
- * - content_middle4: [string] Middle section fourth content slot.
- * - content_middle5: [string] Middle section fifth content slot.
- * - content_bottom1: [string] Bottom section first content slot.
- * - content_bottom2: [string] Bottom section second content slot.
  * - background_image: [string] Content background inline image.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ *
+ * Slots:
+ * - content_top1: Top section first content slot.
+ * - content_top2: Top section second content slot.
+ * - content_middle1: Middle section first content slot.
+ * - content_middle2: Middle section second content slot.
+ * - content_middle3: Middle section third content slot.
+ * - content_middle4: Middle section fourth content slot.
+ * - content_middle5: Middle section fifth content slot.
+ * - content_bottom1: Bottom section first content slot.
+ * - content_bottom2: Bottom section second content slot.
+ *
+ * Blocks:
+ * - content_top1_block
+ * - content_top2_block
+ * - content_middle1_block
+ * - content_middle2_block
+ * - content_middle3_block
+ * - content_middle4_block
+ * - content_middle5_block
+ * - content_bottom1_block
+ * - content_bottom2_block
  */
 #}
 
@@ -31,7 +44,7 @@
         <div class="row">
 
           {% if content_top1 is not empty %}
-            {%- block content_top1 %}
+            {%- block content_top1_block %}
               <div class="col-xxs-12 col-m-6">
                 <div class="ct-footer__top__content-top1">
                   {{- content_top1|raw -}}
@@ -41,7 +54,7 @@
           {% endif %}
 
           {% if content_top2 is not empty %}
-            {%- block content_top2 %}
+            {%- block content_top2_block %}
               <div class="col-xxs-12 col-m-6">
                 <div class="ct-footer__top__content-top2">
                   {{- content_top2|raw -}}
@@ -59,7 +72,7 @@
         <div class="row">
 
           {% if content_middle1 is not empty %}
-            {%- block content_middle1 %}
+            {%- block content_middle1_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle1">
                   {{- content_middle1|raw -}}
@@ -69,7 +82,7 @@
           {% endif %}
 
           {% if content_middle2 is not empty %}
-            {%- block content_middle2 %}
+            {%- block content_middle2_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle2">
                   {{- content_middle2|raw -}}
@@ -79,7 +92,7 @@
           {% endif %}
 
           {% if content_middle3 is not empty %}
-            {%- block content_middle3 %}
+            {%- block content_middle3_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle3">
                   {{- content_middle3|raw -}}
@@ -89,7 +102,7 @@
           {% endif %}
 
           {% if content_middle4 is not empty %}
-            {%- block content_middle4 %}
+            {%- block content_middle4_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle4">
                   {{- content_middle4|raw -}}
@@ -99,7 +112,7 @@
           {% endif %}
 
           {% if content_middle5 is not empty %}
-            {%- block content_middle5 %}
+            {%- block content_middle5_block %}
               <div class="col-xxs-12">
                 <div class="ct-footer__middle__content-middle5">
                   {{- content_middle5|raw -}}
@@ -117,7 +130,7 @@
         <div class="row">
 
           {% if content_bottom1 is not empty %}
-            {%- block content_bottom1 %}
+            {%- block content_bottom1_block %}
               <div class="col-xxs-12 col-m-7">
                 <div class="ct-footer__bottom__content-bottom1">
                   {{- content_bottom1|raw -}}
@@ -127,7 +140,7 @@
           {% endif %}
 
           {% if content_bottom2 is not empty %}
-            {%- block content_bottom2 %}
+            {%- block content_bottom2_block %}
               <div class="col-xxs-12 col-m-5">
                 <div class="ct-footer__bottom__content-bottom2">
                   {{- content_bottom2|raw -}}

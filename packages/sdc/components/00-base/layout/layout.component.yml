@@ -5,34 +5,6 @@ description: Layout component for creating responsive page layouts with sidebars
 props:
   type: object
   properties:
-    content_top:
-      type: string
-      title: Content top
-      description: Main content area top content.
-    sidebar_top_left:
-      type: string
-      title: Sidebar top left
-      description: Top left sidebar content.
-    sidebar_top_right:
-      type: string
-      title: Sidebar top right
-      description: Top right sidebar content.
-    content:
-      type: string
-      title: Content
-      description: Main content.
-    sidebar_bottom_left:
-      type: string
-      title: Sidebar bottom left
-      description: Bottom left sidebar content.
-    sidebar_bottom_right:
-      type: string
-      title: Sidebar bottom right
-      description: Bottom right sidebar content.
-    content_bottom:
-      type: string
-      title: Content bottom
-      description: Main content area bottom content.
     hide_sidebar_left:
       type: boolean
       title: Hide left sidebar
@@ -82,24 +54,24 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  sidebar_top_left_slot:
-    title: Sidebar Top Left Slot
-    description: Sidebar top left area content
-  sidebar_top_right_slot:
-    title: Sidebar Top Right Slot
-    description: Sidebar top right area content
-  sidebar_bottom_left_slot:
-    title: Sidebar Bottom Left Slot
-    description: Sidebar bottom left area content
-  sidebar_bottom_right_slot:
-    title: Sidebar Bottom Right Slot
-    description: Sidebar bottom right area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Main content area top content.
+  sidebar_top_left:
+    title: Sidebar Top Left
+    description: Top left sidebar content.
+  sidebar_top_right:
+    title: Sidebar Top Right
+    description: Top right sidebar content.
+  content:
+    title: Content
+    description: Main content.
+  sidebar_bottom_left:
+    title: Sidebar Bottom Left
+    description: Bottom left sidebar content.
+  sidebar_bottom_right:
+    title: Sidebar Bottom Right
+    description: Bottom right sidebar content.
+  content_bottom:
+    title: Content Bottom
+    description: Main content area bottom content.

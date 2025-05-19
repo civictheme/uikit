@@ -12,14 +12,14 @@ props:
       enum:
         - light
         - dark
-    content_top:
+    attributes:
       type: string
-      title: Content Top
-      description: Top content area.
-    content_bottom:
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
       type: string
-      title: Content Bottom
-      description: Bottom content area.
+      title: Modifier Class
+      description: Additional CSS classes.
     top_menu:
       type: array
       title: Top Menu
@@ -37,7 +37,7 @@ props:
             description: Menu item URL.
           in_active_trail:
             type: boolean
-            title: In Active Trail
+            title: Active Trail
             description: Whether the item is in the active trail.
           is_expanded:
             type: boolean
@@ -45,7 +45,7 @@ props:
             description: Whether the item is expanded.
           below:
             type: array
-            title: Below
+            title: Submenu
             description: Submenu items.
     bottom_menu:
       type: array
@@ -64,7 +64,7 @@ props:
             description: Menu item URL.
           in_active_trail:
             type: boolean
-            title: In Active Trail
+            title: Active Trail
             description: Whether the item is in the active trail.
           is_expanded:
             type: boolean
@@ -72,26 +72,12 @@ props:
             description: Whether the item is expanded.
           below:
             type: array
-            title: Below
+            title: Submenu
             description: Submenu items.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  top_menu_slot:
-    title: Top Menu Slot
-    description: Top menu area content
-  bottom_menu_slot:
-    title: Bottom Menu Slot
-    description: Bottom menu area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

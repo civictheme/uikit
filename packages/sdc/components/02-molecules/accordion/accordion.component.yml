@@ -16,33 +16,6 @@ props:
       type: boolean
       title: Expand all
       description: Whether to expand all panels by default.
-    panels:
-      type: array
-      title: Panels
-      description: Accordion panels.
-      items:
-        type: object
-        properties:
-          title: 
-            type: string
-            title: Title
-            description: Panel title.
-          content:
-            type: string
-            title: Content
-            description: Panel content.
-          expanded:
-            type: boolean
-            title: Expanded
-            description: Whether the panel is expanded by default.
-    content_top:
-      type: string
-      title: Top content
-      description: Accordion top content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Accordion bottom content.
     with_background:
       type: boolean
       title: With background
@@ -63,14 +36,29 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+    panels:
+      type: array
+      title: Panels
+      description: Accordion panels.
+      items:
+        type: object
+        properties:
+          title: 
+            type: string
+            title: Title
+            description: Panel title.
+          content:
+            type: string
+            title: Content
+            description: Panel content.
+          expanded:
+            type: boolean
+            title: Expanded
+            description: Whether the panel is expanded by default.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
-
+  content_top:
+    title: Top content
+    description: Accordion top content.
+  content_bottom:
+    title: Bottom content
+    description: Accordion bottom content.

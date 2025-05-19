@@ -12,66 +12,6 @@ props:
       enum:
         - light
         - dark
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content area.
-    content_middle:
-      type: string
-      title: Content Middle
-      description: Middle content area.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content area.
-    title:
-      type: string
-      title: Title
-      description: Snippet title text.
-    summary:
-      type: string
-      title: Summary
-      description: Snippet summary text.
-    link:
-      type: object
-      title: Link
-      description: Snippet link object.
-      properties:
-        text:
-          type: string
-          title: Text
-          description: Link text.
-        url:
-          type: string
-          title: URL
-          description: Link URL.
-        is_new_window:
-          type: boolean
-          title: New Window
-          description: Whether to open link in a new window.
-        is_external:
-          type: boolean
-          title: External
-          description: Whether the link is external.
-    tags:
-      type: array
-      title: Tags
-      description: Snippet tags.
-      items:
-        type: object
-        properties:
-          text:
-            type: string
-            title: Text
-            description: Tag text.
-          url:
-            type: string
-            title: URL
-            description: Tag URL.
-          is_new_window:
-            type: boolean
-            title: New Window
-            description: Whether to open tag link in a new window.
     attributes:
       type: string
       title: Attributes
@@ -81,24 +21,24 @@ props:
       title: Modifier Class
       description: Additional CSS classes.
 slots:
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  title_slot:
-    title: Title Slot
-    description: Title area content
-  content_middle_slot:
-    title: Content Middle Slot
-    description: Middle content area content
-  summary_slot:
-    title: Summary Slot
-    description: Summary area content
-  content_tags_slot:
-    title: Content Tags Slot
-    description: Tags area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area.
+  content_middle:
+    title: Content Middle
+    description: Middle content area.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.
+  title:
+    title: Title
+    description: Snippet title text.
+  summary:
+    title: Summary
+    description: Snippet summary text.
+  link:
+    title: Link
+    description: Snippet link object.
+  tags:
+    title: Tags
+    description: Snippet tags.

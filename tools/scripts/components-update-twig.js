@@ -286,6 +286,42 @@ function findFiles(baseDir, extension, excludePatterns = []) {
 }
 
 /**
+ * Ensures that a file ends with a newline character.
+ * 
+ * @param {string} filePath - Path to the file to check
+ * @param {boolean} dryRun - If true, don't write to files
+ * @returns {boolean} True if the file needed a newline added, false otherwise
+ */
+function ensureFileEndsWithNewline(filePath, dryRun = false) {
+  try {
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+      return false;
+    }
+
+    // Read the file content
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    // Check if the file already ends with a newline
+    if (!content.endsWith('\n')) {
+      if (!dryRun) {
+        // Add newline and write back to file
+        fs.writeFileSync(filePath, content + '\n', 'utf8');
+        console.log(`Added missing newline to ${filePath}`);
+      } else {
+        console.log(`Would add missing newline to ${filePath}`);
+      }
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error(`Error ensuring newline at end of ${filePath}: ${error.message}`);
+    return false;
+  }
+}
+
+/**
  * Extract docblock header from a twig file.
  *
  * @param {string} content - Twig file content
@@ -488,6 +524,23 @@ function processComponents(srcDir, dstDir, dryRun, checkMode) {
   // Find all asset files (not twig, not component.yml)
   const assetFiles = findAssetFiles(srcDir);
   console.log(`Found ${assetFiles.length} asset files to copy`);
+  
+  // Find all YAML files to ensure they have newlines
+  if (!checkMode) {
+    console.log(`Checking source YAML files for newlines...`);
+    const yamlFiles = findFiles(srcDir, 'yml');
+    yamlFiles.forEach(yamlFile => {
+      const fullPath = path.join(srcDir, yamlFile);
+      ensureFileEndsWithNewline(fullPath, dryRun);
+    });
+    
+    // Also ensure all twig files in source have newlines
+    console.log(`Checking source Twig files for newlines...`);
+    srcFiles.forEach(twigFile => {
+      const fullPath = path.join(srcDir, twigFile);
+      ensureFileEndsWithNewline(fullPath, dryRun);
+    });
+  }
 
   // Build a complete namespace mapping for all components
   const namespaceMapping = buildNamespaceMapping(srcDir, srcFiles);
@@ -553,6 +606,11 @@ function processComponents(srcDir, dstDir, dryRun, checkMode) {
           fs.mkdirSync(dstDirPath, { recursive: true });
         }
 
+        // Make sure content ends with newline
+        if (!transformedContent.endsWith('\n')) {
+          transformedContent += '\n';
+        }
+        
         // Write transformed content to destination file
         fs.writeFileSync(dstPath, transformedContent, 'utf8');
         console.log(`\x1b[32mComponent ${relPath} ${fileExists ? 'UPDATED' : 'CREATED'}\x1b[0m`);
@@ -647,6 +705,37 @@ function processHeaders(srcDir, dstDir, dryRun, checkMode) {
   const dstCount = dstAllFiles.length;
 
   console.log(`Found ${dstCount} valid twig files in destination directory (excluding .stories.twig)`);
+  
+  // Find all YAML files to ensure they have newlines
+  if (!checkMode) {
+    // Check source YAML and Twig files for newlines
+    console.log(`Checking source YAML files for newlines...`);
+    const srcYamlFiles = findFiles(srcDir, 'yml');
+    srcYamlFiles.forEach(yamlFile => {
+      const fullPath = path.join(srcDir, yamlFile);
+      ensureFileEndsWithNewline(fullPath, dryRun);
+    });
+    
+    console.log(`Checking source Twig files for newlines...`);
+    srcFiles.forEach(twigFile => {
+      const fullPath = path.join(srcDir, twigFile);
+      ensureFileEndsWithNewline(fullPath, dryRun);
+    });
+    
+    // Check destination YAML and Twig files for newlines
+    console.log(`Checking destination YAML files for newlines...`);
+    const dstYamlFiles = findFiles(dstDir, 'yml');
+    dstYamlFiles.forEach(yamlFile => {
+      const fullPath = path.join(dstDir, yamlFile);
+      ensureFileEndsWithNewline(fullPath, dryRun);
+    });
+    
+    console.log(`Checking destination Twig files for newlines...`);
+    dstAllFiles.forEach(twigFile => {
+      const fullPath = path.join(dstDir, twigFile);
+      ensureFileEndsWithNewline(fullPath, dryRun);
+    });
+  }
 
   let processed = 0;
   let skipped = 0;
@@ -718,6 +807,11 @@ function processHeaders(srcDir, dstDir, dryRun, checkMode) {
           return;
         }
 
+        // Make sure content ends with newline
+        if (!newDstContent.endsWith('\n')) {
+          newDstContent += '\n';
+        }
+        
         // Write updated content to destination file
         fs.writeFileSync(dstPath, newDstContent, 'utf8');
         console.log(`\x1b[32mComponent ${relPath} UPDATED\x1b[0m`);

@@ -22,6 +22,14 @@ props:
         - inline
         - inline-stacked
       default: default
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
     logos:
       type: object
       title: Logos
@@ -98,11 +106,4 @@ props:
       title: Title
       description: Optional logo title attribute.
       default: 'Click to go to the homepage'
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier classes
-      description: Additional CSS classes.
+slots:
