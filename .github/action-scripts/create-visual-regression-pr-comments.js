@@ -50,7 +50,6 @@ function getVisualDiffResults(results) {
         newItemsCount: results.newItems ? results.newItems.length : 0,
         deletedItemsCount: results.deletedItems ? results.deletedItems.length : 0,
         passedItemsCount: results.passedItems ? results.passedItems.length : 0,
-        reportUrl: results.reportUrl || '',
     };
 }
 

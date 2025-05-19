@@ -88,7 +88,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { default: createVisualRegressionPrComments } = await import('${{ github.workspace }}/.github/action-scripts/create-visual-regression-pr-comments.js')
-            const deploymentUrl = ${{ steps.netlify-visual-regression.outputs.deploy-url }}
+            const deploymentUrl = ${{ steps.netlify-deploy-message.outputs.comment-id }}
             createVisualRegressionPrComments({require, core})
       - name: Find ID of existing deployment message
         uses: 'peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e'
