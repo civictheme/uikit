@@ -1,0 +1,149 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Pagination
+status: stable
+description: Component for navigating through multiple pages of content
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    heading_id:
+      type: string
+      title: Heading ID
+      description: Heading ID for accessibility.
+    items_modifier_class:
+      type: string
+      title: Items modifier class
+      description: Additional classes for pagination items.
+    items_per_page_title:
+      type: string
+      title: Items per page title
+      description: Items per page field title.
+      default: 'Items per page'
+    items_per_page_name:
+      type: string
+      title: Items per page name
+      description: Items per page select field name.
+    items_per_page_id:
+      type: string
+      title: Items per page ID
+      description: Items per page select field ID.
+    items_per_page_attributes:
+      type: string
+      title: Items per page attributes
+      description: Items per page select element attributes.
+    use_ellipsis:
+      type: boolean
+      title: Use ellipsis
+      description: Whether ellipsis should be shown.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
+    items:
+      type: object
+      title: Items
+      description: Object containing pagination items.
+      properties:
+        first:
+          type: object
+          title: First page
+          description: First page link.
+          properties:
+            text:
+              type: string
+              title: Text
+              description: Link text.
+              default: 'First'
+            href:
+              type: string
+              title: URL
+              description: Link URL.
+        previous:
+          type: object
+          title: Previous page
+          description: Previous page link.
+          properties:
+            text:
+              type: string
+              title: Text
+              description: Link text.
+              default: 'Prev'
+            href:
+              type: string
+              title: URL
+              description: Link URL.
+        pages:
+          type: object
+          title: Pages
+          description: Object containing page links.
+        next:
+          type: object
+          title: Next page
+          description: Next page link.
+          properties:
+            text:
+              type: string
+              title: Text
+              description: Link text.
+              default: 'Next'
+            href:
+              type: string
+              title: URL
+              description: Link URL.
+        last:
+          type: object
+          title: Last page
+          description: Last page link.
+          properties:
+            text:
+              type: string
+              title: Text
+              description: Link text.
+              default: 'Last'
+            href:
+              type: string
+              title: URL
+              description: Link URL.
+    items_per_page_options:
+      type: array
+      title: Items per page options
+      description: Options for items per page.
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+            title: Type
+            description: Option type ('option').
+          label:
+            type: string
+            title: Label
+            description: Option label.
+          value:
+            type: string
+            title: Value
+            description: Option value.
+          selected:
+            type: string
+            title: Selected
+            description: Whether the option is selected.
+slots:
+  title:
+    title: Title
+    description: Active page title.
+  current:
+    title: Current page
+    description: Current page number.
+  total_pages:
+    title: Total pages
+    description: Total pages count.

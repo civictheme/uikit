@@ -1,0 +1,29 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-snippet {
+  position: relative;
+  width: 100%;
+}
+.ct-snippet .ct-snippet__content {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.ct-snippet .ct-snippet__title {
+  margin-bottom: 1rem;
+}
+.ct-snippet .ct-snippet__title__link {
+  font-size: inherit;
+  line-height: inherit;
+}
+.ct-snippet .ct-snippet__tags {
+  display: flex;
+  margin-top: 1rem;
+}
+.ct-snippet.ct-theme-light {
+  background-color: var(--ct-snippet-light-background-color);
+}
+.ct-snippet.ct-theme-dark {
+  background-color: var(--ct-snippet-dark-background-color);
+}

@@ -1,0 +1,83 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Mobile Navigation
+status: stable
+description: Mobile navigation component for responsive navigation menu
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
+    top_menu:
+      type: array
+      title: Top Menu
+      description: Top section menu items.
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Title
+            description: Menu item title.
+          url:
+            type: string
+            title: URL
+            description: Menu item URL.
+          in_active_trail:
+            type: boolean
+            title: Active Trail
+            description: Whether the item is in the active trail.
+          is_expanded:
+            type: boolean
+            title: Expanded
+            description: Whether the item is expanded.
+          below:
+            type: array
+            title: Submenu
+            description: Submenu items.
+    bottom_menu:
+      type: array
+      title: Bottom Menu
+      description: Bottom section menu items.
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Title
+            description: Menu item title.
+          url:
+            type: string
+            title: URL
+            description: Menu item URL.
+          in_active_trail:
+            type: boolean
+            title: Active Trail
+            description: Whether the item is in the active trail.
+          is_expanded:
+            type: boolean
+            title: Expanded
+            description: Whether the item is expanded.
+          below:
+            type: array
+            title: Submenu
+            description: Submenu items.
+slots:
+  content_top:
+    title: Content Top
+    description: Top content area.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

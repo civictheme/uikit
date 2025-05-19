@@ -1,0 +1,594 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Component does not render when all content slots are empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Banner Component renders with all attributes provided 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-banner ct-theme-dark ct-banner--decorative additional-class"
+    data-test="true"
+    id="main-content"
+    tabindex="-1"
+  >
+    
+    
+    <div
+      class="ct-banner__wrapper"
+    >
+      
+      
+      <div
+        class="ct-banner__inner ct-background--multiply"
+        style="background-image: url('https://example.com/background.jpg');"
+      >
+        
+                  
+        <span
+          aria-label="Background Image"
+          role="img"
+        >
+           
+        </span>
+        
+        
+        
+        <div
+          class="container"
+        >
+          
+
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12"
+            >
+              
+                  
+              <div
+                class="ct-banner__content-top"
+              >
+                Top Content 1
+              </div>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+                      
+          <div
+            class="row"
+          >
+            
+                                                
+            <div
+              class="col-xxs-12 col-m-6"
+            >
+              
+                    
+
+    
+  
+              <nav
+                aria-label="breadcrumb"
+                class="ct-breadcrumb ct-theme-dark ct-banner__breadcrumb"
+              >
+                
+    
+          
+      
+                              
+      
+          
+          
+      
+
+  
+                <ul
+                  class="ct-item-list ct-item-list--horizontal ct-item-list--regular  ct-breadcrumb__links show-xxs-flex hide-m"
+                >
+                  
+                  
+                  <li
+                    class="ct-item-list__item"
+                  >
+                            
+                    <a
+                      class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
+                      href="/"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="ct-icon  ct-link__icon"
+                        height="24"
+                        role="img"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
+
+                        <path
+                          d="M16.9999 11H9.4099L12.7099 7.71C12.8982 7.52169 13.004 7.2663 13.004 7C13.004 6.7337 12.8982 6.4783 12.7099 6.29C12.5216 6.10169 12.2662 5.99591 11.9999 5.99591C11.7336 5.99591 11.4782 6.10169 11.2899 6.29L6.2899 11.29C6.19886 11.3851 6.12749 11.4972 6.0799 11.62C5.97988 11.8635 5.97988 12.1365 6.0799 12.38C6.12749 12.5027 6.19886 12.6149 6.2899 12.71L11.2899 17.71C11.3829 17.8037 11.4935 17.8781 11.6153 17.9289C11.7372 17.9797 11.8679 18.0058 11.9999 18.0058C12.1319 18.0058 12.2626 17.9797 12.3845 17.9289C12.5063 17.8781 12.6169 17.8037 12.7099 17.71C12.8036 17.617 12.878 17.5064 12.9288 17.3846C12.9796 17.2627 13.0057 17.132 13.0057 17C13.0057 16.868 12.9796 16.7373 12.9288 16.6154C12.878 16.4936 12.8036 16.383 12.7099 16.29L9.4099 13H16.9999C17.2651 13 17.5195 12.8946 17.707 12.7071C17.8945 12.5196 17.9999 12.2652 17.9999 12C17.9999 11.7348 17.8945 11.4804 17.707 11.2929C17.5195 11.1054 17.2651 11 16.9999 11Z"
+                        />
+                        
+
+                      </svg>
+                      
+Home
+                    </a>
+                          
+                  </li>
+                  
+            
+                </ul>
+                
+    
+    
+
+  
+                <ul
+                  class="ct-item-list ct-item-list--horizontal ct-item-list--regular ct-item-list--no-gap ct-breadcrumb__links hide-xxs show-m-flex"
+                >
+                  
+                  
+                  <li
+                    class="ct-item-list__item"
+                  >
+                    <a
+                      class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                    <svg
+                      aria-hidden="true"
+                      class="ct-icon  ct-breadcrumb__links__separator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
+
+                      <path
+                        d="M15.5397 11.29L9.87974 5.64C9.78677 5.54627 9.67617 5.47188 9.55431 5.42111C9.43246 5.37034 9.30175 5.3442 9.16974 5.3442C9.03773 5.3442 8.90702 5.37034 8.78516 5.42111C8.6633 5.47188 8.5527 5.54627 8.45974 5.64C8.27349 5.82736 8.16895 6.08081 8.16895 6.345C8.16895 6.60918 8.27349 6.86264 8.45974 7.05L13.4097 12.05L8.45974 17C8.27349 17.1874 8.16895 17.4408 8.16895 17.705C8.16895 17.9692 8.27349 18.2226 8.45974 18.41C8.55235 18.5045 8.6628 18.5797 8.78467 18.6312C8.90655 18.6826 9.03743 18.7094 9.16974 18.71C9.30204 18.7094 9.43293 18.6826 9.5548 18.6312C9.67668 18.5797 9.78712 18.5045 9.87974 18.41L15.5397 12.76C15.6412 12.6664 15.7223 12.5527 15.7777 12.4262C15.8331 12.2997 15.8617 12.1631 15.8617 12.025C15.8617 11.8869 15.8331 11.7503 15.7777 11.6238C15.7223 11.4973 15.6412 11.3836 15.5397 11.29Z"
+                      />
+                      
+
+                    </svg>
+                    
+
+                  </li>
+                  
+                        
+                  <li
+                    class="ct-item-list__item"
+                  >
+                    <a
+                      aria-current="location"
+                      class="ct-link ct-theme-dark  ct-link--active   ct-breadcrumb__links__link ct-breadcrumb__links__link--active"
+                      href="/section"
+                    >
+                      Section
+                    </a>
+                  </li>
+                  
+            
+                </ul>
+                
+  
+              </nav>
+              
+                  
+            </div>
+            
+                              
+                                
+            <div
+              class="col-xxs-12 col-m-6"
+            >
+              
+                    
+              <div
+                class="ct-banner__content-top2"
+              >
+                Top Content 2
+              </div>
+              
+                  
+            </div>
+            
+                            
+          </div>
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12"
+            >
+              
+                  
+              <div
+                class="ct-banner__content-top3"
+              >
+                Top Content 3
+              </div>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12"
+            >
+              
+                  
+
+
+  
+              <h5
+                class="ct-heading ct-theme-dark ct-banner__site-section"
+              >
+                Site Section
+              </h5>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12 col-m-6"
+            >
+              
+                  
+
+
+  
+              <h1
+                class="ct-heading ct-theme-dark ct-banner__title"
+              >
+                Banner Title
+              </h1>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12 col-m-6"
+            >
+              
+                  
+              <div
+                class="ct-banner__content-middle"
+              >
+                Middle Content
+              </div>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12 col-m-6"
+            >
+              
+                  
+              <div
+                class="ct-banner__content"
+              >
+                Main Content
+              </div>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+        
+        </div>
+        
+      
+      </div>
+      
+
+                        
+      <div
+        class="ct-banner__featured-image__wrapper"
+      >
+        
+            
+
+  
+        <img
+          alt="Featured Image"
+          class="ct-image ct-theme-dark ct-banner__featured-image"
+          src="https://example.com/image.jpg"
+        />
+        
+          
+      </div>
+      
+                  
+    </div>
+    
+
+          
+    <div
+      class="container"
+    >
+      
+        
+      <div
+        class="row"
+      >
+                    
+        <div
+          class="col-xxs-12"
+        >
+          
+              
+          <div
+            class="ct-banner__content-below"
+          >
+            Below Content
+          </div>
+          
+            
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+    
+          
+    <div
+      class="container"
+    >
+      
+        
+      <div
+        class="row"
+      >
+                    
+        <div
+          class="col-xxs-12"
+        >
+          
+              
+          <div
+            class="ct-banner__content-bottom"
+          >
+            Bottom Content
+          </div>
+          
+            
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;
+
+exports[`Banner Component renders with only required attributes 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-banner ct-theme-light  "
+    id="main-content"
+    tabindex="-1"
+  >
+    
+    
+    <div
+      class="ct-banner__wrapper"
+    >
+      
+      
+      <div
+        class="ct-banner__inner "
+      >
+        
+        
+        
+        <div
+          class="container"
+        >
+          
+
+          
+          
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12"
+            >
+              
+                  
+
+
+  
+              <h1
+                class="ct-heading ct-theme-light ct-banner__title"
+              >
+                Banner Title
+              </h1>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+          
+          
+        
+        </div>
+        
+      
+      </div>
+      
+
+                        
+    </div>
+    
+
+    
+      
+  </div>
+  
+
+</div>
+`;
+
+exports[`Banner Component renders without additional attributes and classes 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-banner ct-theme-light  "
+    id="main-content"
+    tabindex="-1"
+  >
+    
+    
+    <div
+      class="ct-banner__wrapper"
+    >
+      
+      
+      <div
+        class="ct-banner__inner "
+      >
+        
+        
+        
+        <div
+          class="container"
+        >
+          
+
+          
+          
+          
+          
+                      
+          <div
+            class="row"
+          >
+                            
+            <div
+              class="col-xxs-12"
+            >
+              
+                  
+
+
+  
+              <h1
+                class="ct-heading ct-theme-light ct-banner__title"
+              >
+                Banner Title
+              </h1>
+              
+                
+            </div>
+            
+              
+          </div>
+          
+          
+          
+          
+        
+        </div>
+        
+      
+      </div>
+      
+
+                        
+    </div>
+    
+
+    
+      
+  </div>
+  
+
+</div>
+`;

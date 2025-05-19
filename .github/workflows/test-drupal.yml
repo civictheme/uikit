@@ -1,0 +1,64 @@
+name: Test Drupal
+permissions:
+  contents: read
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+      - 'project/**'
+  push:
+    branches:
+      - main
+
+
+
+jobs:
+  test-drupal-sdc:
+    runs-on: ubuntu-latest
+
+    env:
+      DRUPAL_VERSION: 11.1
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Upgrade sqlite3
+        run: |
+          wget https://www.sqlite.org/2024/sqlite-autoconf-3450300.tar.gz -O /tmp/sqlite.tar.gz
+          tar -xzf /tmp/sqlite.tar.gz -C /tmp
+          cd /tmp/sqlite-autoconf-3450300
+          ./configure CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA=1" --prefix=/usr/local
+          make && sudo make install
+          sudo ldconfig
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: gd, sqlite, pdo_sqlite
+          coverage: pcov
+
+      - name: Build the Drupal site
+        run: ./build.sh
+        working-directory: tools/sdc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Lint SDC components
+        run: |
+          output=$(vendor/bin/drush sdc-devel:validate civictheme_sdc)
+          echo "${output}"
+          if echo "${output}" | grep -q 'Warning'; then
+            echo "Validation failed: Warning found in output."
+            exit 1
+          fi
+        working-directory: tools/sdc/build
+        continue-on-error: ${{ vars.CI_DRUPAL_SDC_LINT_IGNORE_FAILURE == '1' }}

@@ -1,0 +1,51 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Chip
+status: stable
+description: Interactive chip component for filters, tags and input elements
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    kind:
+      type: string
+      title: Kind
+      description: Chip kind (default, input).
+      enum:
+        - default
+        - input
+      default: default
+    size:
+      type: string
+      title: Size
+      description: Chip size (large, regular, small).
+      enum:
+        - large
+        - regular
+        - small
+      default: regular
+    content:
+      type: string
+      title: Content
+      description: Chip text.
+    is_selected:
+      type: boolean
+      title: Selected
+      description: Whether the chip is selected (for filter chips).
+    is_multiple:
+      type: boolean
+      title: Multiple
+      description: Whether multiple selection is allowed.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

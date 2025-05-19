@@ -1,0 +1,64 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Accordion
+status: stable
+description: Collapsible accordion component with expandable panels
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    expand_all:
+      type: boolean
+      title: Expand all
+      description: Whether to expand all panels by default.
+    with_background:
+      type: boolean
+      title: With background
+      description: Whether to display with a background.
+    vertical_spacing:
+      type: string
+      title: Vertical spacing
+      description: Vertical spacing position (top, bottom, both).
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
+    panels:
+      type: array
+      title: Panels
+      description: Accordion panels.
+      items:
+        type: object
+        properties:
+          title: 
+            type: string
+            title: Title
+            description: Panel title.
+          content:
+            type: string
+            title: Content
+            description: Panel content.
+          expanded:
+            type: boolean
+            title: Expanded
+            description: Whether the panel is expanded by default.
+slots:
+  content_top:
+    title: Top content
+    description: Accordion top content.
+  content_bottom:
+    title: Bottom content
+    description: Accordion bottom content.

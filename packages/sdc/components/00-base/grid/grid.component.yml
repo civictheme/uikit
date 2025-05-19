@@ -1,0 +1,68 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Grid
+status: stable
+description: Grid component for creating responsive layouts
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      title: Items
+      description: Column items.
+      items:
+        type: string
+        description: Content of a grid item. Can include HTML.
+    row_element:
+      type: string
+      title: Row element
+      description: Row element.
+      default: div
+    row_class:
+      type: string
+      title: Row class
+      description: Optional row class override (defaults to 'row').
+    row_attributes:
+      type: string
+      title: Row attributes
+      description: Additional row attributes.
+    column_element:
+      type: string
+      title: Column element
+      description: Column element.
+      default: div
+    column_class:
+      type: string
+      title: Column class
+      description: Optional column class override (defaults to 'col' if template_column_count is 0).
+    column_attributes:
+      type: string
+      title: Column attributes
+      description: Additional column attributes.
+    use_container:
+      type: boolean
+      title: Use container
+      description: Whether to use container or not.
+      default: true
+    is_fluid:
+      type: boolean
+      title: Is fluid
+      description: Whether the grid is fluid or not (applies only if use_container is true).
+      default: false
+    template_column_count:
+      type: number
+      title: Template column count
+      description: Row columns count (0 for auto columns).
+      default: 0
+    fill_width:
+      type: boolean
+      title: Fill width
+      description: Stretch "hanging" items to row full width.
+      default: false
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

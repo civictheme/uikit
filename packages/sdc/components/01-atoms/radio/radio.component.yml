@@ -1,0 +1,54 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Radio
+status: stable
+description: Radio button form element with customizable appearance and states
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    name:
+      type: string
+      title: Name
+      description: DOM name (required).
+    id:
+      type: string
+      title: ID
+      description: DOM id (required).
+    value:
+      type: string
+      title: Value
+      description: DOM value.
+    label:
+      type: string
+      title: Label
+      description: Label content.
+    is_checked:
+      type: boolean
+      title: Checked
+      description: Whether the radio is checked.
+    is_required:
+      type: boolean
+      title: Required
+      description: Whether the radio is required.
+    is_invalid:
+      type: boolean
+      title: Invalid
+      description: Whether the radio is invalid.
+    is_disabled:
+      type: boolean
+      title: Disabled
+      description: Whether the radio is disabled.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

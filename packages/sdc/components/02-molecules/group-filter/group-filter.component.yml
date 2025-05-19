@@ -1,0 +1,66 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Group Filter
+status: stable
+description: Component for multiple filters in a group with a single submit button
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Filter title.
+      default: 'Filter results by:'
+    form_attributes:
+      type: string
+      title: Form attributes
+      description: Form attributes (if empty, the form will not be printed).
+    form_hidden_fields:
+      type: string
+      title: Hidden fields
+      description: Form hidden fields.
+    filters:
+      type: array
+      title: Filters
+      description: Filter objects.
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            title: Title
+            description: Filter title.
+          content:
+            type: string
+            title: Content
+            description: Filter content.
+    submit_text:
+      type: string
+      title: Submit text
+      description: Text on the submit button.
+      default: 'Apply filters'
+    group_id:
+      type: string
+      title: Group ID
+      description: Unique ID for filter group.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
+slots:
+  content_top:
+    title: Content Top
+    description: Top content area content.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area content.

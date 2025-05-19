@@ -1,0 +1,56 @@
+{
+  "masking": {
+    "selectors": [
+      ".ct-iframe",
+      ".ct-map--canvas",
+      ".ct-video-player",
+      ".ct-video"
+    ]
+  },
+  "screenshot_sources": {
+    "current_branch": {
+      "packages": {
+        "twig": {
+          "path": "packages/twig",
+          "storybookPath": "packages/twig/storybook-static"
+        },
+        "sdc": {
+          "path": "packages/sdc",
+          "storybookPath": "packages/sdc/storybook-static"
+        }
+      }
+    },
+    "branches": {
+      "main": {
+        "packages": {
+          "twig": {
+            "path": "components",
+            "storybookPath": "storybook-static"
+          }
+        }
+      },
+      "project/sdc": {
+        "packages": {
+          "twig": {
+            "path": "components",
+            "storybookPath": "storybook-static"
+          },
+          "sdc": {
+            "path": "components-sdc",
+            "storybookPath": "components-sdc/storybook-static"
+          }
+        }
+      }
+    },
+    "tags": {
+      "v1.10.0": {
+        "packages": {
+          "twig": {
+            "path": "components",
+            "storybookPath": "storybook-static"
+          }
+        }
+      }
+    }
+  }
+}

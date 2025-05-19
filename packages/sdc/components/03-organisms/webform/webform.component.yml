@@ -1,0 +1,38 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Webform
+status: stable
+description: Drupal webforms component with styling
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    vertical_spacing:
+      type: string
+      title: Vertical Spacing
+      description: Webform vertical spacing (top, bottom, or both).
+      enum:
+        - top
+        - bottom
+        - both
+    with_background:
+      type: boolean
+      title: With Background
+      description: Whether to display with a background.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
+slots:
+  referenced_webform:
+    title: Referenced Webform
+    description: Rendered webform HTML.
