@@ -20,19 +20,19 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+    url:
+      title: URL
+      description: Image URL.
+    alt:
+      title: Alt text
+      description: Image alt text.
+    width:
+      title: Width
+      description: Image width.
+    height:
+      title: Height
+      description: Image height.
 slots:
-  url:
-    title: URL
-    description: Image URL.
-  alt:
-    title: Alt text
-    description: Image alt text.
-  width:
-    title: Width
-    description: Image width.
-  height:
-    title: Height
-    description: Image height.
   caption:
     title: Caption
     description: Image caption.
