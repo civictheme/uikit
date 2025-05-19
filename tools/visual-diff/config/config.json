@@ -24,12 +24,12 @@
       "main": {
         "packages": {
           "twig": {
-            "path": "components",
-            "storybookPath": "storybook-static"
+            "path": "packages/twig",
+            "storybookPath": "packages/twig/storybook-static"
           },
           "sdc": {
-            "path": "components-sdc",
-            "storybookPath": "components-sdc/storybook-static"
+            "path": "packages/sdc",
+            "storybookPath": "packages/sdc/storybook-static"
           }
         }
       }
