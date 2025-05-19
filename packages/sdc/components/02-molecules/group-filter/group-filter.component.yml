@@ -45,14 +45,6 @@ props:
       title: Submit text
       description: Text on the submit button.
       default: 'Apply filters'
-    content_top:
-      type: string
-      title: Top content
-      description: Filters top content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Filters bottom content.
     group_id:
       type: string
       title: Group ID
@@ -66,12 +58,9 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  filters_slot:
-    title: Filters Slot
-    description: Filters area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area content.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area content.

@@ -12,10 +12,22 @@ props:
       enum:
         - light
         - dark
-    content_top1:
+    is_decorative:
+      type: boolean
+      title: Decorative
+      description: Whether to show as decorative.
+    background_image_blend_mode:
       type: string
-      title: Content Top 1
-      description: Top section content.
+      title: Background Image Blend Mode
+      description: Background image blending type. Defaults to 'normal'.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
     breadcrumb:
       type: object
       title: Breadcrumb
@@ -29,42 +41,6 @@ props:
           type: boolean
           title: Active Is Link
           description: Whether the active item is a link.
-    content_top2:
-      type: string
-      title: Content Top 2
-      description: Second top section content.
-    content_top3:
-      type: string
-      title: Content Top 3
-      description: Third top section content.
-    content_middle:
-      type: string
-      title: Content Middle
-      description: Middle section content.
-    content:
-      type: string
-      title: Content
-      description: Main content.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom section content.
-    content_below:
-      type: string
-      title: Content Below
-      description: Below banner section content.
-    site_section:
-      type: string
-      title: Site Section
-      description: Site section name.
-    title:
-      type: string
-      title: Title
-      description: Banner title.
-    is_decorative:
-      type: boolean
-      title: Decorative
-      description: Whether to show as decorative.
     featured_image:
       type: object
       title: Featured Image
@@ -76,7 +52,7 @@ props:
           description: Image source URL.
         alt:
           type: string
-          title: Alt
+          title: Alt text
           description: Image alt text.
     background_image:
       type: object
@@ -89,24 +65,33 @@ props:
           description: Image source URL.
         alt:
           type: string
-          title: Alt
+          title: Alt text
           description: Image alt text.
-    background_image_blend_mode:
-      type: string
-      title: Background Image Blend Mode
-      description: Background image blending type. Defaults to 'normal'.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
 slots:
-  breadcrumb_slot:
-    title: Breadcrumb Slot
-    description: Breadcrumb content
-  featured_image_slot:
-    title: Featured Image Slot
-    description: Featured image content
+  content_top1:
+    title: Content Top 1
+    description: Top section content.
+  content_top2:
+    title: Content Top 2
+    description: Second top section content.
+  content_top3:
+    title: Content Top 3
+    description: Third top section content.
+  content_middle:
+    title: Content Middle
+    description: Middle section content.
+  content:
+    title: Content
+    description: Main content.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom section content.
+  content_below:
+    title: Content Below
+    description: Below banner section content.
+  site_section:
+    title: Site Section
+    description: Site section name.
+  title:
+    title: Title
+    description: Banner title.

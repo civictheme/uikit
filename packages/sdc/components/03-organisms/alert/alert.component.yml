@@ -25,14 +25,6 @@ props:
       type: string
       title: ID
       description: Unique identifier for the alert.
-    title:
-      type: string
-      title: Title
-      description: Alert title.
-    description:
-      type: string
-      title: Description
-      description: Alert description content.
     attributes:
       type: string
       title: Attributes
@@ -41,3 +33,10 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+slots:
+  title:
+    title: Title
+    description: Alert title.
+  description:
+    title: Description
+    description: Alert description content.

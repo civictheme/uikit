@@ -12,21 +12,6 @@ props:
       enum:
         - light
         - dark
-    content_top:
-      type: string
-      title: Content Top
-      description: Top content area.
-    tags:
-      type: array
-      title: Tags
-      description: Tags.
-      items:
-        type: string
-        description: Tag content. Can be a string or an object with text property.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content area.
     vertical_spacing:
       type: string
       title: Vertical Spacing
@@ -44,13 +29,29 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    tags:
+      type: array
+      title: Tags
+      description: Tags.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Text
+            description: Tag text.
+          url:
+            type: string
+            title: URL
+            description: Tag URL.
+          is_new_window:
+            type: boolean
+            title: New Window
+            description: Whether to open the tag in a new window.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

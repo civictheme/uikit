@@ -3,28 +3,35 @@
  * @file
  * CivicTheme Logo component.
  *
- * Variables:
+ * Props:
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Logo display type (default, stacked, inline, inline-stacked).
- * - logos: [object] Object with 'primary' and 'secondary' keys:
- *   - primary: [object] Primary logo configuration:
- *     - mobile: [object] Mobile logo configuration:
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ * - logos: [object] Object with 'primary' and 'secondary' keys.
+ *   Each property contains:
+ *   - primary: [object] Primary logo configuration
+ *   Each property contains:
+ *     - mobile: [object] Mobile logo configuration
+ *   Each property contains:
  *       - url: [string] Optional URL that wraps the logo.
  *       - alt: [string] Logo image alt text.
- *     - desktop: [object] Desktop logo configuration:
+ *     - desktop: [object] Desktop logo configuration
+ *   Each property contains:
  *       - url: [string] Optional URL that wraps the logo.
  *       - alt: [string] Logo image alt text.
- *   - secondary: [object] Secondary logo configuration:
- *     - mobile: [object] Mobile logo configuration:
+ *   - secondary: [object] Secondary logo configuration
+ *   Each property contains:
+ *     - mobile: [object] Mobile logo configuration
+ *   Each property contains:
  *       - url: [string] Optional URL that wraps the logo.
  *       - alt: [string] Logo image alt text.
- *     - desktop: [object] Desktop logo configuration:
+ *     - desktop: [object] Desktop logo configuration
+ *   Each property contains:
  *       - url: [string] Optional URL that wraps the logo.
  *       - alt: [string] Logo image alt text.
  * - url: [string] Optional URL that wraps the logo.
  * - title: [string] Optional logo title attribute.
- * - attributes: [string] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
  */
 #}
 

@@ -1,6 +1,7 @@
 /**
  * CivicTheme Single Filter component.
  */
+
 function CivicThemeSingleFilterComponent(el) {
   if (this.el) {
     return;

@@ -12,14 +12,14 @@ props:
       enum:
         - light
         - dark
-    content_top:
+    attributes:
       type: string
-      title: Content Top
-      description: Top content area.
-    title:
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
       type: string
-      title: Title
-      description: Card title text.
+      title: Modifier Class
+      description: Additional CSS classes.
     links:
       type: array
       title: Links
@@ -38,33 +38,18 @@ props:
           is_new_window:
             type: boolean
             title: New Window
-            description: Whether to open link in a new window.
+            description: Whether to open the link in a new window.
           is_external:
             type: boolean
             title: External
             description: Whether the link is external.
-    content_bottom:
-      type: string
-      title: Content Bottom
-      description: Bottom content area.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area
-  title_slot:
-    title: Title Slot
-    description: Title area content
-  links_slot:
-    title: Links Slot
-    description: Links area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area
+  content_top:
+    title: Content Top
+    description: Top content area.
+  title:
+    title: Title
+    description: Card title text.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area.

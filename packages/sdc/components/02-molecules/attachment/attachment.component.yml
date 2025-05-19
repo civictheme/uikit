@@ -55,14 +55,6 @@ props:
             type: string
             title: Icon
             description: File type icon name.
-    content_top:
-      type: string
-      title: Top content
-      description: Attachment top content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Attachment bottom content.
     vertical_spacing:
       type: string
       title: Vertical spacing
@@ -84,15 +76,9 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  links_slot:
-    title: Links Slot
-    description: Links area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content_top:
+    title: Content Top
+    description: Top content area content.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area content.

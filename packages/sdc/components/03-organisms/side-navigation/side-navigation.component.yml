@@ -12,6 +12,22 @@ props:
       enum:
         - light
         - dark
+    vertical_spacing:
+      type: string
+      title: Vertical Spacing
+      description: Navigation vertical spacing (top, bottom, or both).
+      enum:
+        - top
+        - bottom
+        - both
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
     items:
       type: array
       title: Items
@@ -33,33 +49,13 @@ props:
             description: Whether the item is in the active trail.
           is_expanded:
             type: boolean
-            title: Expanded
+            title: Is Expanded
             description: Whether the item is expanded.
           below:
             type: array
             title: Below
             description: Submenu items.
-    title:
-      type: string
-      title: Title
-      description: Navigation title.
-    vertical_spacing:
-      type: string
-      title: Vertical Spacing
-      description: Navigation vertical spacing (top, bottom, or both).
-      enum:
-        - top
-        - bottom
-        - both
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier Class
-      description: Additional CSS classes.
 slots:
-  title_slot:
-    title: Title Slot
-    description: Title area content
+  title:
+    title: Title
+    description: Navigation title.

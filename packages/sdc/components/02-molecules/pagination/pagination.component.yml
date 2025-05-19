@@ -16,10 +16,39 @@ props:
       type: string
       title: Heading ID
       description: Heading ID for accessibility.
-    title:
+    items_modifier_class:
       type: string
-      title: Title
-      description: Active page title.
+      title: Items modifier class
+      description: Additional classes for pagination items.
+    items_per_page_title:
+      type: string
+      title: Items per page title
+      description: Items per page field title.
+      default: 'Items per page'
+    items_per_page_name:
+      type: string
+      title: Items per page name
+      description: Items per page select field name.
+    items_per_page_id:
+      type: string
+      title: Items per page ID
+      description: Items per page select field ID.
+    items_per_page_attributes:
+      type: string
+      title: Items per page attributes
+      description: Items per page select element attributes.
+    use_ellipsis:
+      type: boolean
+      title: Use ellipsis
+      description: Whether ellipsis should be shown.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
     items:
       type: object
       title: Items
@@ -85,19 +114,6 @@ props:
               type: string
               title: URL
               description: Link URL.
-    items_modifier_class:
-      type: string
-      title: Items modifier class
-      description: Additional classes for pagination items.
-    current:
-      type: string
-      title: Current page
-      description: Current page number.
-    items_per_page_title:
-      type: string
-      title: Items per page title
-      description: Items per page field title.
-      default: 'Items per page'
     items_per_page_options:
       type: array
       title: Items per page options
@@ -121,31 +137,13 @@ props:
             type: string
             title: Selected
             description: Whether the option is selected.
-    items_per_page_name:
-      type: string
-      title: Items per page name
-      description: Items per page select field name.
-    items_per_page_id:
-      type: string
-      title: Items per page ID
-      description: Items per page select field ID.
-    items_per_page_attributes:
-      type: string
-      title: Items per page attributes
-      description: Items per page select element attributes.
-    total_pages:
-      type: string
-      title: Total pages
-      description: Total pages count.
-    use_ellipsis:
-      type: boolean
-      title: Use ellipsis
-      description: Whether ellipsis should be shown.
-    attributes:
-      type: string
-      title: Attributes
-      description: Additional HTML attributes.
-    modifier_class:
-      type: string
-      title: Modifier classes
-      description: Additional CSS classes.
+slots:
+  title:
+    title: Title
+    description: Active page title.
+  current:
+    title: Current page
+    description: Current page number.
+  total_pages:
+    title: Total pages
+    description: Total pages count.

@@ -33,18 +33,6 @@ props:
           type: boolean
           title: External
           description: Whether the link is external.
-    content:
-      type: string
-      title: Content
-      description: Popover panel content.
-    content_top:
-      type: string
-      title: Top content
-      description: Top popover content.
-    content_bottom:
-      type: string
-      title: Bottom content
-      description: Bottom popover content.
     group:
       type: string
       title: Group
@@ -58,12 +46,12 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  content_top_slot:
-    title: Content Top Slot
-    description: Top content area content
-  content_slot:
-    title: Content Slot
-    description: Content area content
-  content_bottom_slot:
-    title: Content Bottom Slot
-    description: Bottom content area content
+  content:
+    title: Content
+    description: Popover panel content.
+  content_top:
+    title: Top Content
+    description: Top popover content.
+  content_bottom:
+    title: Bottom Content
+    description: Bottom popover content.

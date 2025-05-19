@@ -12,29 +12,6 @@ props:
       enum:
         - light
         - dark
-    items:
-      type: array
-      title: Items
-      description: Social media links.
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            title: Title
-            description: Title to be added to the 'title' attribute.
-          icon:
-            type: string
-            title: Icon
-            description: Icon name from the existing icon set.
-          icon_html:
-            type: string
-            title: Icon HTML
-            description: Alternative icon HTML for embedding.
-          url:
-            type: string
-            title: URL
-            description: Link URL.
     with_border:
       type: boolean
       title: With Border
@@ -47,7 +24,27 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    items:
+      type: array
+      title: Items
+      description: Social media links.
+      items:
+        type: object
+        properties:
+          icon:
+            type: string
+            title: Icon
+            description: Icon identifier.
+          icon_html:
+            type: string
+            title: Icon HTML
+            description: Custom HTML for icon.
+          url:
+            type: string
+            title: URL
+            description: Link URL.
+          title:
+            type: string
+            title: Title
+            description: Link title attribute.
 slots:
-  items_slot:
-    title: Items Slot
-    description: Items area content
