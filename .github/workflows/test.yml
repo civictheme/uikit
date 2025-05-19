@@ -141,7 +141,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
       - name: Find ID of existing deployment message
-        uses: 'peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e'
+        uses: 'peter-evans/find-comment@14614d7a55fa5b53e634f9e6c068317a3f7b6ab1'
         id: netlify-deploy-message
         with:
           issue-number: ${{ github.event.pull_request.number }}
