@@ -109,7 +109,7 @@ jobs:
       - name: Deploy Twig Components to Netlify
         id: netlify-twig
         if: matrix.node-version == 22
-        uses: 'nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654'
+        uses: 'nwtgck/actions-netlify@f242d4c9f946f94d2ed8413888eaf35e1f7e848d'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: './packages/twig/storybook-static'
@@ -126,7 +126,7 @@ jobs:
       - name: Deploy SDC Components Storybook to Netlify
         id: netlify-sdc
         if: matrix.node-version == 22
-        uses: 'nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654'
+        uses: 'nwtgck/actions-netlify@f242d4c9f946f94d2ed8413888eaf35e1f7e848d'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: './packages/sdc/storybook-static'
