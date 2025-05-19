@@ -11,7 +11,9 @@ jobs:
 
     steps:
       - name: Create issue body file
-        run: echo "${{ github.event.issue.body }}" > ${{ runner.temp }}/_github_workflow/issue.md
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: echo "$ISSUE_BODY" > ${{ runner.temp }}/_github_workflow/issue.md
 
       - name: Convert GitHub markdown to Jira markup
         uses: docker://pandoc/core:3.6
