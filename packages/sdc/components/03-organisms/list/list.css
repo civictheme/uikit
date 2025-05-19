@@ -1,0 +1,81 @@
+/**
+ * This file was automatically generated. Please run `npm run dist` to update.
+ */
+
+.ct-list.ct-list--with-background {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+.ct-list__inner > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .ct-list__inner > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+.ct-list__link-above {
+  margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .ct-list__link-above {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    margin-left: auto;
+    margin-top: 0;
+  }
+}
+.ct-list__results-count {
+  margin: 0;
+}
+@media (min-width: 0) {
+  .ct-list__results-count {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .ct-list__results-count {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+.ct-list__rows .col,
+.ct-list__rows [class*=col-] {
+  container-type: inline-size;
+}
+.ct-list__link-below {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.ct-list.ct-theme-light.ct-list__content, .ct-list.ct-theme-light.ct-list__header, .ct-list.ct-theme-light.ct-list__rows-header {
+  color: var(--ct-list-light-color);
+}
+.ct-list.ct-theme-light .ct-list__results-count {
+  color: var(--ct-list-light-results-count-color);
+}
+.ct-list.ct-theme-light.ct-list--with-background {
+  background-color: var(--ct-list-light-background-color);
+}
+.ct-list.ct-theme-light.ct-list--with-background .ct-list__results-below {
+  background-color: var(--ct-list-light-background-color);
+}
+.ct-list.ct-theme-dark.ct-list__content, .ct-list.ct-theme-dark.ct-list__header, .ct-list.ct-theme-dark.ct-list__rows-header {
+  color: var(--ct-list-dark-color);
+}
+.ct-list.ct-theme-dark .ct-list__results-count {
+  color: var(--ct-list-dark-results-count-color);
+}
+.ct-list.ct-theme-dark.ct-list--with-background {
+  background-color: var(--ct-list-dark-background-color);
+}
+.ct-list.ct-theme-dark.ct-list--with-background .ct-list__results-below {
+  background-color: var(--ct-list-dark-background-color);
+}

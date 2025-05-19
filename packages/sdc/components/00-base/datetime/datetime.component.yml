@@ -1,0 +1,31 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: DateTime
+status: stable
+description: Date/time component with configurable formatting options
+props:
+  type: object
+  properties:
+    start:
+      type: string
+      title: Start time
+      description: Formatted start time.
+    start_iso:
+      type: string
+      title: Start time ISO
+      description: Start time in ISO format.
+    end:
+      type: string
+      title: End time
+      description: Formatted end time.
+    end_iso:
+      type: string
+      title: End time ISO
+      description: End time in ISO format.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional classes.

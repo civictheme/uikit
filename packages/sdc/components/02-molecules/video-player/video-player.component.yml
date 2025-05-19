@@ -1,0 +1,91 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Video Player
+status: stable
+description: Component for displaying videos with various source options
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Button title.
+    poster:
+      type: string
+      title: Poster
+      description: Optional video poster URL.
+    width:
+      type: string
+      title: Width
+      description: Video width.
+    height:
+      type: string
+      title: Height
+      description: Video height.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
+    sources:
+      type: array
+      title: Sources
+      description: Video sources.
+      items:
+        type: object
+        properties:
+          url:
+            type: string
+            title: URL
+            description: URL for the video source.
+          type:
+            type: string
+            title: Type
+            description: Type name like 'video/mp4'.
+    embedded_source:
+      type: string
+      title: Embedded Source
+      description: Iframe URL.
+    raw_source:
+      type: string
+      title: Raw Source
+      description: HTML of raw embedded video player.
+    transcript_link:
+      type: object
+      title: Transcript Link
+      description: Video transcript link.
+      properties:
+        text:
+          type: string
+          title: Text
+          description: Button text.
+        title:
+          type: string
+          title: Title
+          description: Button title.
+        url:
+          type: string
+          title: URL
+          description: URL for the link button.
+        is_new_window:
+          type: boolean
+          title: New Window
+          description: Whether to open in a new window.
+        is_external:
+          type: boolean
+          title: External
+          description: Whether the link is external.
+        attributes:
+          type: string
+          title: Attributes
+          description: Additional HTML attributes.
+slots:

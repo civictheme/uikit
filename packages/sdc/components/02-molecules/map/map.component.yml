@@ -1,0 +1,58 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Map
+status: stable
+description: Component for interactive maps with supporting information
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    vertical_spacing:
+      type: string
+      title: Vertical spacing
+      description: Vertical spacing position (top, bottom, both).
+      enum:
+        - top
+        - bottom
+        - both
+    with_background:
+      type: boolean
+      title: With background
+      description: Whether to display with a background.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
+    address:
+      type: string
+      title: Address
+      description: Optional address.
+    url:
+      type: string
+      title: URL
+      description: URL for the map iframe.
+    view_url:
+      type: string
+      title: View URL
+      description: URL for the external map.
+    view_text:
+      type: string
+      title: View text
+      description: Text for the external map link.
+      default: 'View in Google Maps'
+slots:
+  content_top:
+    title: Top content
+    description: Map top content.
+  content_bottom:
+    title: Bottom content
+    description: Map bottom content.

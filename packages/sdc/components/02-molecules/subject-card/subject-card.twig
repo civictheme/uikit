@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * CivicTheme Subject Card component.
+ *
+ * Props:
+ * - theme: [string] Theme variation (light or dark).
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ * - image: [object] Card image.
+ *   Each property contains:
+ *   - url: [string] Image URL.
+ *   - alt: [string] Image alt text.
+ * - link: [object] Card link object.
+ *   Each property contains:
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open the link in a new window.
+ *
+ * Slots:
+ * - image_over: Image overlay content.
+ * - title: Card title.
+ *
+ * Blocks:
+ * - image_block
+ * - image_over_block
+ * - title_block
+ */
+#}
+
+{% set with_link = link is not empty and link.url is defined and link.url is not empty %}
+{% set with_image = image.url is defined and image.url is not empty %}
+{% set with_image_class = with_image ? 'ct-subject-card--with-image' : '' %}
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, with_image_class, modifier_class|default('')) %}
+
+{% if title is not empty %}
+  <div class="ct-subject-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+    <div class="ct-subject-card__content">
+      {% block image_block %}
+        {% if image.url is defined and image.url is not empty %}
+          <div class="ct-subject-card__image">
+            {% include 'civictheme:image' with {
+              theme: theme,
+              url: image.url,
+              alt: image.alt,
+            } only %}
+          </div>
+        {% endif %}
+      {% endblock %}
+
+      {% block image_over_block %}
+        {% if image_over is not empty %}
+          <div class="ct-subject-card__image__over">
+            {{ image_over }}
+          </div>
+        {% endif %}
+      {% endblock %}
+
+      {% block title_block %}
+        {% if title is not empty %}
+          {% set title_content %}
+            {% if with_link %}
+              {% include 'civictheme:link' with {
+                theme: theme,
+                text: title,
+                url: link.url,
+                is_new_window: link.is_new_window,
+                is_external: false,
+                icon: not with_image and with_link ? 'right-arrow-2' : '',
+                icon_group_disabled: true,
+                modifier_class: 'ct-subject-card__title__link',
+              } only %}
+            {% else %}
+              {{ title }}
+            {% endif %}
+          {% endset %}
+
+          {% include 'civictheme:heading' with {
+            content: title_content,
+            level: 4,
+            theme: theme,
+            modifier_class: 'ct-subject-card__title',
+          } only %}
+        {% endif %}
+      {% endblock %}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,38 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Field Description
+status: stable
+description: Component for form field description text
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    content:
+      type: string
+      title: Content
+      description: The description's content.
+    size:
+      type: string
+      title: Size
+      description: Description size (large, regular).
+      enum:
+        - large
+        - regular
+      default: regular
+    allow_html:
+      type: boolean
+      title: Allow HTML
+      description: Whether to allow HTML in text.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

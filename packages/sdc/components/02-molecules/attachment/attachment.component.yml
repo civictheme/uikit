@@ -1,0 +1,84 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Attachment
+status: stable
+description: Component for displaying file attachments with metadata
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Attachment title.
+    content:
+      type: string
+      title: Content
+      description: Attachment content.
+    files:
+      type: array
+      title: Files
+      description: File attachments.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            title: Name
+            description: File name (as it appears to the user).
+          ext:
+            type: string
+            title: Extension
+            description: File extension.
+          url:
+            type: string
+            title: URL
+            description: File URL.
+          size:
+            type: string
+            title: Size
+            description: File size (as it appears to the user).
+          created:
+            type: string
+            title: Created date
+            description: File created date.
+          changed:
+            type: string
+            title: Modified date
+            description: File modified date.
+          icon:
+            type: string
+            title: Icon
+            description: File type icon name.
+    vertical_spacing:
+      type: string
+      title: Vertical spacing
+      description: Vertical spacing position (top, bottom, both).
+      enum:
+        - top
+        - bottom
+        - both
+    with_background:
+      type: boolean
+      title: With background
+      description: Whether to display with a background.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
+slots:
+  content_top:
+    title: Content Top
+    description: Top content area content.
+  content_bottom:
+    title: Content Bottom
+    description: Bottom content area content.

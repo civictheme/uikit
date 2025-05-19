@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Icon
+status: stable
+description: Icon component for SVG icons
+props:
+  type: object
+  properties:
+    symbol:
+      type: string
+      title: Symbol
+      description: Icon name (required).
+    size:
+      type: string
+      title: Size
+      description: Icon size.
+    alt:
+      type: string
+      title: Alt text
+      description: Icon alt text.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
+    assets_dir:
+      type: string
+      title: Assets directory
+      description: Directory containing icon assets.
+      default: '@civictheme/../assets'

@@ -1,0 +1,62 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Video
+status: stable
+description: HTML5 video component with multiple source and configuration options
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Video title.
+    has_controls:
+      type: boolean
+      title: Controls
+      description: Whether the video should have controls.
+    sources:
+      type: array
+      title: Sources
+      description: Video sources.
+      items:
+        type: object
+        properties:
+          url:
+            type: string
+            title: URL
+            description: Source URL.
+          type:
+            type: string
+            title: Type
+            description: MIME type (like 'video/mp4').
+    poster:
+      type: string
+      title: Poster
+      description: Video poster URL.
+    width:
+      type: string
+      title: Width
+      description: Video width.
+    height:
+      type: string
+      title: Height
+      description: Video height.
+    fallback_text:
+      type: string
+      title: Fallback text
+      description: Message for browsers not supporting HTML5 video.
+      default: "Your browser doesn't support HTML5 video."
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

@@ -1,0 +1,70 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Link
+status: stable
+description: Link component with configurable styles and states
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    text:
+      type: string
+      title: Text
+      description: Link text.
+    url:
+      type: string
+      title: URL
+      description: Link URL.
+    title:
+      type: string
+      title: Title
+      description: Title attribute for the link.
+    is_new_window:
+      type: boolean
+      title: New window
+      description: Open link in a new window.
+    is_external:
+      type: boolean
+      title: External
+      description: Indicates if the link is external.
+    is_active:
+      type: boolean
+      title: Active
+      description: Indicates if the link is active
+    is_disabled:
+      type: boolean
+      title: Disabled
+      description: Indicates if the link is disabled.
+    icon:
+      type: string
+      title: Icon
+      description: Icon name.
+    icon_placement:
+      type: string
+      title: Icon placement
+      description: Icon position (before or after).
+      enum:
+        - before
+        - after
+      default: after
+    icon_group_disabled:
+      type: boolean
+      title: Disable icon grouping
+      description: Disable icon and last word grouping.
+    icon_single_only:
+      type: boolean
+      title: Single icon only
+      description: Only show 1 icon (if both icon and is_external are present, external takes preference).
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.
