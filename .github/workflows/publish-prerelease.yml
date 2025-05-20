@@ -1,0 +1,92 @@
+name: Publish Pre-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-version:
+        description: 'Target version being developed (e.g. 1.11.0)'
+        required: true
+        default: '1.11.0'
+      prerelease-type:
+        description: 'Pre-release type (rc or beta)'
+        required: true
+        default: 'rc'
+        type: choice
+        options:
+          - 'rc'
+          - 'beta'
+      prerelease-number:
+        description: 'Pre-release number (e.g. 0, 1, 2)'
+        required: true
+        default: '0'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-prerelease:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GHA_BOT_PAT }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm install --workspaces && npm install && npx playwright install
+
+      - name: Check code style
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Configure git
+        run: |
+          git config --global user.email "${GITHUB_ACTOR_ID}+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions pre-release workflow"
+
+      - name: Set pre-release version
+        run: |
+          # Create pre-release version based on target version
+          TARGET_VERSION="${{ github.event.inputs.target-version }}"
+          PRERELEASE_TYPE="${{ github.event.inputs.prerelease-type }}"
+          PRERELEASE_NUMBER="${{ github.event.inputs.prerelease-number }}"
+          PRERELEASE_VERSION="${TARGET_VERSION}-${PRERELEASE_TYPE}.${PRERELEASE_NUMBER}"
+          echo "PRERELEASE_VERSION=${PRERELEASE_VERSION}" >> ${GITHUB_ENV}
+          echo "RELEASE_TAG=${PRERELEASE_TYPE}" >> ${GITHUB_ENV}
+
+          # Update versions in all packages
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          cd packages/sdc
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          cd ../twig
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          cd ../..
+
+      - name: Publish SDC package
+        run: cd packages/sdc && npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Publish Twig package
+        run: cd packages/twig && npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Report pre-release publish
+        run: |
+          echo "✅ Published pre-release packages:"
+          echo "  - @civictheme/sdc@${PRERELEASE_VERSION} (tag: ${{ env.RELEASE_TAG }})"
+          echo "  - @civictheme/twig@${PRERELEASE_VERSION} (tag: ${{ env.RELEASE_TAG }})"
+          echo ""
+          echo "These packages can be installed with:"
+          echo "npm install @civictheme/sdc@${{ env.RELEASE_TAG }}"
+          echo "npm install @civictheme/twig@${{ env.RELEASE_TAG }}"
