@@ -118,11 +118,11 @@ This will build:
 ### Updating components
 
 Components schema for both `components/twig` and `components/sdc` directories is
-maintained in the `*.component.yml` files within `components/sdc` directory. 
+maintained in the `*.component.yml` files within `components/sdc` directory.
 The schema is strict and allows to be a source of truth for the components.
 
-We currently synchronize the entire component implementation between SDC and Twig components, 
-not just the docblock headers. This includes proper namespace handling, converting 
+We currently synchronize the entire component implementation between SDC and Twig components,
+not just the docblock headers. This includes proper namespace handling, converting
 `civictheme:` namespaces to path-based references like `@atoms/button/button.twig`.
 
 To update components, run:
@@ -197,42 +197,16 @@ To publish pre-release versions for testing, go to the
 GitHub Action and click on `Run workflow`. You'll need to specify:
 
 1. **Target version** - The future version these pre-releases are building toward (e.g., `1.11.0`)
-2. **Pre-release type** - Choose between `rc` (release candidate) or `beta` 
+2. **Pre-release type** - Choose between `rc` (release candidate) or `beta`
 3. **Pre-release number** - The sequence number for this pre-release (e.g., `0`, `1`, `2`)
 
 This will publish packages with versions like `1.11.0-rc.0` to NPM with the corresponding tag.
 
-Users can install these pre-release versions using:
+Pre-release version can be installed with:
 ```bash
 npm install @civictheme/sdc@rc
 npm install @civictheme/twig@rc
 ```
-
-### Testing locally
-
-You can also publish packages locally for testing:
-
-```bash
-# Update versions across all packages
-npm run version-sync 1.10.1
-
-# For alpha/beta releases
-npm run version-sync 1.10.1-alpha.1
-
-# Build, lint, test, and publish to NPM
-npm run publish-packages
-
-# Publish with a specific tag
-npm run publish-packages -- --tag alpha
-
-# Or use npm link for local testing without publishing
-cd packages/twig
-npm link
-cd /path/to/your/project
-npm link @civictheme/twig
-```
-
----
 
 For additional information, please refer to
 the [Documentation site](https://docs.civictheme.io/ui-kit)
