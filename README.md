@@ -1,8 +1,8 @@
-<p align="center">  
+<p align="center">
   <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logos/logo_secondary_dark_desktop.png">
   <img height=100px src="assets/logos/logo_secondary_light_desktop.png" alt="CivicTheme logo">
-  </picture>  
+  </picture>
 </p>
 
 <h1 align="center">CivicTheme - UI Kit</h1>
@@ -46,8 +46,8 @@ or download the latest release from [GitHub](https://github.com/civictheme/uikit
 
 Contributions are welcome!
 
-If a specific change is being proposed (either a new feature or a bug fix), you 
-can [create an issue](https://github.com/civictheme/uikit/issues/new) documenting the proposed 
+If a specific change is being proposed (either a new feature or a bug fix), you
+can [create an issue](https://github.com/civictheme/uikit/issues/new) documenting the proposed
 change.
 
 ## Maintenance
@@ -190,29 +190,23 @@ After the release is complete, the new version will be available on
 [GitHub](https://github.com/civictheme/uikit/releases)
 and [NPM](https://www.npmjs.com/package/@civictheme/uikit).
 
-### Publishing individual packages
+### Publishing pre-releases
 
-To publish individual packages (@civictheme/twig and @civictheme/sdc), go to
-the [Publish packages](https://github.com/civictheme/uikit/actions/workflows/publish-packages.yml)
-GitHub Action, click on the `Run workflow` button, and choose options:
+To publish pre-release versions for testing, go to the
+[Publish Pre-release](https://github.com/civictheme/uikit/actions/workflows/publish-prerelease.yml)
+GitHub Action and click on `Run workflow`. You'll need to specify:
 
-- **Release level**: `patch`, `minor`, `major`, `specific`, or `prerelease`
-- **Version**: Custom version when using `specific` level
-- **Prerelease**: Identifier like `alpha` or `beta` (for prerelease level)
-- **Prerelease-id**: Numeric identifier for prerelease versions
-- **NPM tag**: Distribution tag like `latest`, `next`, `alpha`, `beta`
+1. **Target version** - The future version these pre-releases are building toward (e.g., `1.11.0`)
+2. **Pre-release type** - Choose between `rc` (release candidate) or `beta` 
+3. **Pre-release number** - The sequence number for this pre-release (e.g., `0`, `1`, `2`)
 
-#### Examples:
+This will publish packages with versions like `1.11.0-rc.0` to NPM with the corresponding tag.
 
-- For a standard release: Use level `patch` with npm-tag `latest`
-- For alpha release: Use level `prerelease` with prerelease `alpha` and npm-tag `alpha`
-- For specific version: Use level `specific` with version `1.11.0-beta.2` and npm-tag `beta`
-
-This will:
-1. Update version numbers across all package.json files
-2. Build and test all packages
-3. Publish both packages to NPM with the specified tag
-4. Create a GitHub release with release notes
+Users can install these pre-release versions using:
+```bash
+npm install @civictheme/sdc@rc
+npm install @civictheme/twig@rc
+```
 
 ### Testing locally
 

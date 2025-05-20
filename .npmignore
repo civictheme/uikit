@@ -1,16 +1,44 @@
-**/*.test.*
+# Cache, vendor, storybook and log directories.
+.logs
+.tmp
+.twig-cs-fixer.cache
+node_modules
+storybook-static
+composer.json
+
+# Development configuration
 .editorconfig
 .eslintignore
 .eslintrc.yml
-.gitattributes
-.github
-.gitignore
-.npmignore
 .stylelintignore
 .stylelintrc.json
 .twig-cs-fixer.php
-composer.json
 jest.config.js
 renovate.json
-tests
-webpack
+
+tools/
+
+# Documentation
+docs/
+*.md
+!README.md
+!LICENSE.md
+
+# Test files
+**/*.test.*
+tests/
+__tests__/
+__mocks__/
+
+# Development / source maps
+**/*.map
+
+# Do not exclude these distribution directories
+!packages/sdc/dist/
+!packages/twig/dist/
+!packages/sdc/components/**/*.css
+!packages/twig/components/**/*.css
+
+# Include assets like images and fonts
+!packages/sdc/assets/
+!packages/twig/assets/

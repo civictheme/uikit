@@ -30,9 +30,6 @@ jobs:
       - name: Check code style
         run: npm run lint
 
-      - name: Build
-        run: npm run build
-
       - name: Run tests
         run: npm run test:ci
 
@@ -55,6 +52,20 @@ jobs:
           echo "RELEASE_TAG=latest" >> ${GITHUB_ENV}
         env:
           RELEASE_LEVEL: ${{ github.event.inputs.release-level }}
+
+      - name: Build distribution assets
+        run: |
+          # Clean existing dist directories
+          rm -rf packages/sdc/dist packages/twig/dist
+          
+          # Run full build process to generate distribution assets
+          npm run dist
+          
+          # Verify build output
+          echo "SDC distribution assets:"
+          ls -la packages/sdc/dist || echo "No dist directory found"
+          echo "Twig distribution assets:"  
+          ls -la packages/twig/dist || echo "No dist directory found"
 
       - name: Commit package.json changes and create tag
         run: |
