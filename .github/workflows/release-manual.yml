@@ -58,8 +58,11 @@ jobs:
 
       - name: Commit package.json changes and create tag
         run: |
-          git add "package.json"
-          git add "packages/sdc/package.json" "packages/twig/package.json"
+          # Add package files
+          git add "package.json" "package-lock.json"
+          git add "packages/sdc/package.json" "packages/sdc/package-lock.json"
+          git add "packages/twig/package.json" "packages/twig/package-lock.json"
+          
           git commit -m "Released version ${{ env.NEW_VERSION }}."
           git tag ${{ env.NEW_VERSION }}
 

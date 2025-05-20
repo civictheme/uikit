@@ -62,7 +62,7 @@ jobs:
           PRERELEASE_VERSION="${TARGET_VERSION}-${PRERELEASE_TYPE}.${PRERELEASE_NUMBER}"
           echo "PRERELEASE_VERSION=${PRERELEASE_VERSION}" >> ${GITHUB_ENV}
           echo "RELEASE_TAG=${PRERELEASE_TYPE}" >> ${GITHUB_ENV}
-
+          
           # Update versions in all packages
           npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
           cd packages/sdc
