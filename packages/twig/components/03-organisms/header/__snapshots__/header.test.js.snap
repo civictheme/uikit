@@ -213,28 +213,36 @@ exports[`Header Component renders with all attributes provided 1`] = `
     </div>
     
     
-                  
+          
     <div
-      class="container"
+      class="ct-header__bottom"
     >
       
-          
+                  
       <div
-        class="row"
+        class="container"
       >
         
             
         <div
-          class="col-xxs-12"
+          class="row"
         >
           
-              
+            
           <div
-            class="ct-header__content-bottom1"
+            class="col-xxs-12"
           >
             
+              
+            <div
+              class="ct-header__content-bottom1"
+            >
+              
                 Bottom content 1
               
+            </div>
+            
+            
           </div>
           
             
@@ -243,11 +251,10 @@ exports[`Header Component renders with all attributes provided 1`] = `
           
       </div>
       
-        
+              
     </div>
     
-          
-  
+      
   </header>
   
 
@@ -355,28 +362,36 @@ exports[`Header Component renders with some attributes missing 1`] = `
     </div>
     
     
-                  
+          
     <div
-      class="container"
+      class="ct-header__bottom"
     >
       
-          
+                  
       <div
-        class="row"
+        class="container"
       >
         
             
         <div
-          class="col-xxs-12"
+          class="row"
         >
           
-              
+            
           <div
-            class="ct-header__content-bottom1"
+            class="col-xxs-12"
           >
             
+              
+            <div
+              class="ct-header__content-bottom1"
+            >
+              
                 Bottom content 1
               
+            </div>
+            
+            
           </div>
           
             
@@ -385,11 +400,10 @@ exports[`Header Component renders with some attributes missing 1`] = `
           
       </div>
       
-        
+              
     </div>
     
-          
-  
+      
   </header>
   
 
