@@ -33,8 +33,9 @@
 
 {% set menu_id = menu_id|default('navigation') %}
 {% set dropdown_class = 'ct-navigation--%s'|format(type|default('none')) %}
+{% set variant_class = variant ? 'ct-navigation--%s'|format(variant) : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, dropdown_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, dropdown_class, variant_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
   {% if type in ['dropdown', 'drawer'] %}
