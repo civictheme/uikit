@@ -15,10 +15,17 @@
 .ct-back-to-top .ct-back-to-top__button, .ct-back-to-top .ct-back-to-top__button:focus-visible, .ct-back-to-top .ct-back-to-top__button:active, .ct-back-to-top .ct-back-to-top__button:visited, .ct-back-to-top .ct-back-to-top__button:hover {
   border-radius: 6rem;
   padding: 0.5rem;
-  background-color: var(--ct-color-light-interaction-background);
-  border-color: var(--ct-color-light-background-light);
-  color: var(--ct-color-light-interaction-text);
   line-height: 0;
   outline-color: var(--ct-color-light-interaction-focus);
   appearance: none;
+}
+.ct-back-to-top .ct-back-to-top__button.ct-theme-light {
+  background-color: var(--ct-color-light-interaction-background);
+  border-color: var(--ct-color-light-background-light);
+  color: var(--ct-color-light-interaction-text);
+}
+.ct-back-to-top .ct-back-to-top__button.ct-theme-dark {
+  background-color: var(--ct-color-light-interaction-background);
+  border-color: var(--ct-color-light-background-light);
+  color: var(--ct-color-light-interaction-text);
 }
