@@ -123,18 +123,20 @@
     {% endif %}
 
     {% if content_bottom1 is not empty %}
-      {% block content_bottom1_block %}
-        <div class="container">
-          <div class="row">
-            <div class="col-xxs-12">
-              <div class="ct-header__content-bottom1">
-                {{ content_bottom1|raw }}
+      <div class="ct-header__bottom">
+        {% block content_bottom1_block %}
+          <div class="container">
+            <div class="row">
+              <div class="col-xxs-12">
+                <div class="ct-header__content-bottom1">
+                  {{ content_bottom1|raw }}
+                </div>
+              </div>
               </div>
             </div>
           </div>
-        </div>
-      {% endblock %}
+        {% endblock %}
+      </div>
     {% endif %}
-
   </header>
 {% endif %}
