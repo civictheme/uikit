@@ -4,7 +4,7 @@
 
 @media print {
   .ct-footer {
-    display: none;
+    display: none !important;
   }
 }
 .ct-footer {

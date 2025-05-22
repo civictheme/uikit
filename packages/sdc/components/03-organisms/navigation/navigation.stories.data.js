@@ -4,6 +4,7 @@ export default {
     name: '',
     title: 'Navigation title',
     type: 'none',
+    variant: 'none',
     items: [
       {
         title: 'Menu item 1',
