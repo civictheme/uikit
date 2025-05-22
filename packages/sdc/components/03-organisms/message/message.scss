@@ -8,6 +8,8 @@
   $root: &;
 
   #{$root}__inner {
+    @include ct-typography('text-regular');
+
     display: flex;
     flex-wrap: nowrap;
     border-radius: $ct-message-border-radius;
@@ -16,25 +18,23 @@
     margin: ct-spacing(3) 0;
     width: 100%;
     box-sizing: border-box;
-
-    @include ct-typography('text-regular');
   }
 
   #{$root}__icon {
-    margin-right: ct-spacing(2);
-
     @include ct-icon-align-with-text('text-regular');
+
+    margin-right: ct-spacing(2);
   }
 
   #{$root}__title {
     font-weight: 600;
   }
 
-  #{$root}__summary {
+  #{$root}__content {
     margin-top: ct-spacing();
     margin-bottom: 0;
 
-    // Reset the spacing of the summary if title is not present.
+    // Reset the spacing of the content if title is not present.
     &:first-child {
       margin-top: 0;
     }
@@ -48,11 +48,11 @@
   }
 
   @include ct-component-theme($root) using($root, $theme) {
-    $types: ('information', 'warning', 'error', 'success');
-
     &#{$root}--with-background {
       @include ct-component-property($root, $theme, background-color);
     }
+
+    $types: ('information', 'warning', 'error', 'success');
 
     @each $type in $types {
       &#{$root}--#{$type} #{$root}__inner {
