@@ -54,10 +54,10 @@ jobs:
 
       - name: Lint SDC components
         run: |
-          output=$(vendor/bin/drush sdc-devel:validate civictheme_sdc)
+          output=$(vendor/bin/drush sdc-devel:validate civictheme_sdc 2>&1)
           echo "${output}"
-          if echo "${output}" | grep -q 'Warning'; then
-            echo "Validation failed: Warning found in output."
+          if echo "${output}" | grep -E -q '\b(Error|Warning)\b'; then
+            echo "Validation failed"
             exit 1
           fi
         working-directory: tools/sdc/build
