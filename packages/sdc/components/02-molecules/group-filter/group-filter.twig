@@ -52,7 +52,7 @@
           {% endif %}
 
           {% block filters_block %}
-            {% set group = 'ct-group-filter--group-' ~ group_id|default(random(0, 999)) %}
+            {% set group = 'ct-group-filter--group-' ~ group_id|default(random(1000, 9999)) %}
             {% set filters_items = [] %}
             {% for filter in filters %}
               {% set filters_item %}
