@@ -32,10 +32,10 @@ props:
       title: Allow HTML
       description: Whether to allow HTML in content.
       default: false
-    no_margin:
+    no_spacing:
       type: boolean
-      title: No margin
-      description: Disable default margin.
+      title: No spacing
+      description: Disable default spacing.
       default: false
     attributes:
       type: string
