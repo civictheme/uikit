@@ -33,19 +33,7 @@ const meta = {
     content: {
       control: { type: 'text' },
     },
-    url: {
-      control: { type: 'text' },
-    },
-    label: {
-      control: { type: 'text' },
-    },
     is_selected: {
-      control: { type: 'boolean' },
-    },
-    is_disabled: {
-      control: { type: 'boolean' },
-    },
-    is_dismissible: {
       control: { type: 'boolean' },
     },
     is_multiple: {
@@ -70,26 +58,7 @@ export const Chip = {
     theme: 'light',
     kind: 'default',
     size: 'regular',
-    content: 'Chip default',
-    is_selected: false,
-    is_multiple: false,
-    is_disabled: false,
-  },
-};
-
-export const ChipLink = {
-  parameters: {
-    layout: 'centered',
-  },
-  args: {
-    theme: 'light',
-    kind: 'link',
-    size: 'regular',
-    url: '#',
-    label: 'Chip label',
-    content: 'Chip link',
-    is_disabled: false,
-    is_dismissible: true,
+    content: 'Chip label',
     is_selected: false,
     is_multiple: false,
   },

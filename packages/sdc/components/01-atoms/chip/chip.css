@@ -22,9 +22,6 @@
 .ct-chip .ct-chip__dismiss {
   display: none;
 }
-.ct-chip.ct-chip--link .ct-chip__dismiss {
-  display: inline;
-}
 .ct-chip .ct-chip__input[checked] + .ct-chip__dismiss {
   display: inline;
 }

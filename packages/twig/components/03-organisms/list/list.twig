@@ -1,41 +1,59 @@
 {#
 /**
  * @file
- * List component.
+ * CivicTheme List component.
  *
- * Variables:
- * - title: [string] Title.
- * - link_above: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - filters: [string] Exposed filters.
- * - selected_filters: [array] Filters.
- * - selected_filters_clear_link: [object] Clear link object.
- *   - text (string): Text of the clear all link.
- *   - url (string): URL of the clear all link.
- *   - type (string, optional): Type of the clear all link: 'primary', 'secondary'.
- *   - size (string, optional): Size of the clear all link: 'regular', 'large'.
- *   - icon (string, optional): Icon of the clear all link.
- *   - icon_placement (string, optional): Icon placement of the clear all link: 'before', 'after'.
- * - results_count: [string] Results count.
- * - rows_above: [string] Content above rows.
- * - rows: [string] Rows content.
- * - rows_below: [string] Content below rows.
- * - empty: [string] Empty results content.
- * - pagination: [string] Pagination slot.
- * - footer: [string] Footer slot.
- * - link_below: [object] Link object:
- *   - text: [string] Text.
- *   - url: [string] URL.
- *   - is_new_window: [boolean] Open link in a new window.
- *   - is_external: [boolean] Link is external or not.
- * - theme: [string] Theme: light, dark.
- * - vertical_spacing: [string] With top, bottom or both vertical spaces.
- * - with_background: [boolean] With background or not.
- * - attributes: [string] Additional attributes.
- * - modifier_class: [string] Additional classes.
+ * Props:
+ * - theme: [string] Theme variation (light or dark).
+ * - vertical_spacing: [string] List vertical spacing (top, bottom, or both).
+ * - with_background: [boolean] Whether to display with a background.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ * - link_above: [object] Above list link object.
+ *   Each property contains:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - link_below: [object] Below list link object.
+ *   Each property contains:
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
+ * - rows_above: [array] Above rows content.
+ *   Each item contains:
+ *   - items [string]
+ * - rows_below: [array] Below rows content.
+ *   Each item contains:
+ *   - items [string]
+ *
+ * Slots:
+ * - title: List title.
+ * - content: List main content.
+ * - filters: Exposed filters content.
+ * - results_count: Results count text.
+ * - rows: Rows content.
+ * - empty: No results content.
+ * - pagination: Pagination content.
+ * - footer: Footer content.
+ *
+ * Blocks:
+ * - header_block
+ * - title_block
+ * - link_above_block
+ * - content_block
+ * - list_block
+ * - filters_block
+ * - selected_filters
+ * - rows_block
+ * - rows_above_block
+ * - results_count_block
+ * - rows_below_block
+ * - empty_block
+ * - list_below_block
+ * - pagination_block
+ * - footer_block
  */
 #}
 
@@ -108,7 +126,7 @@
       {% endif %}
     {% endblock %}
 
-    {% block list %}
+    {% block list_block %}
       {% block filters_block %}
         {% if filters -%}
           <div class="ct-list__filters">
@@ -197,7 +215,7 @@
         {% endif %}
       {% endblock %}
 
-      {% block empty %}
+      {% block empty_block %}
         {% if empty is defined and (rows is not defined or rows is empty) -%}
           <div class="container ct-list__empty-results">
             <div class="row">
