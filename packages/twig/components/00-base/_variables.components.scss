@@ -999,13 +999,13 @@ $ct-alert-dark-divider-color: ct-color-dark('interaction-background') !default;
 $ct-alert-dark-error-background-color: ct-color-shade(ct-color-constant-dark('error'), 20) !default;
 $ct-alert-dark-error-color: ct-color-dark('body') !default;
 $ct-alert-dark-error-icon-color: $ct-alert-dark-error-color !default;
-$ct-alert-dark-information-background-color: ct-color-shade(ct-color-constant-dark('information'), 20) !default;
+$ct-alert-dark-information-background-color: ct-color-shade(ct-color-constant-dark('information'), 39) !default;
 $ct-alert-dark-information-color: ct-color-dark('body') !default;
 $ct-alert-dark-information-icon-color: $ct-alert-dark-information-color !default;
-$ct-alert-dark-success-background-color: ct-color-shade(ct-color-constant-dark('success'), 20) !default;
+$ct-alert-dark-success-background-color: ct-color-shade(ct-color-constant-dark('success'), 30) !default;
 $ct-alert-dark-success-color: ct-color-dark('body') !default;
 $ct-alert-dark-success-icon-color: $ct-alert-dark-success-color !default;
-$ct-alert-dark-warning-background-color: ct-color-shade(ct-color-constant-dark('warning'), 20) !default;
+$ct-alert-dark-warning-background-color: ct-color-shade(ct-color-constant-dark('warning'), 28) !default;
 $ct-alert-dark-warning-color: ct-color-dark('body') !default;
 $ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-color !default;
 
