@@ -16,7 +16,7 @@
  */
 #}
 
-{% set kind = kind in ['default', 'input'] ? kind : 'default' %}
+{% set kind = kind in ['default', 'input', 'link'] ? kind : 'default' %}
 {% set kind_class = kind ? 'ct-chip--%s'|format(kind) : '' %}
 {% set size = size in ['large', 'regular', 'small'] ? size : 'regular' %}
 {% set size_class = 'ct-chip--%s'|format(size) %}
@@ -41,16 +41,30 @@
       >
       {{- content -}}
       {% if is_multiple %}
-        {% include 'civictheme:icon' with {
+        {% include 'civictheme:icon.twig' with {
           symbol: 'cancel',
           modifier_class: 'ct-chip__dismiss',
         } only %}
       {% endif %}
     </label>
+  {% elseif kind == 'link' %}
+    <a
+      href="{{ url }}"
+      class="ct-chip {{ modifier_class -}}"
+      alt="{{ label }}"
+      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    >
+      {{- content -}}
+      {% if is_dismissible %}
+        {% include 'civictheme:icon.twig' with {
+          symbol: 'cancel',
+          modifier_class: 'ct-chip__dismiss',
+        } only %}
+      {% endif %}
+    </a>
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"
-      data-component-name="chip"
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
       {{- content -}}
