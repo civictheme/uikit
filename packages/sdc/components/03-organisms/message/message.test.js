@@ -20,7 +20,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing-inset--both');
     expect(c.querySelector('.ct-message').classList).toContain('additional-class');
     expect(c.querySelector('.ct-message__title').textContent.trim()).toBe('this is title message.');
-    expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is an error message.');
+    expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is an error message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBe('alert');
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBe('error');
     expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('assertive');
@@ -37,7 +37,7 @@ describe('Message Component', () => {
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
     expect(c.querySelector('.ct-message').classList).toContain('ct-theme-light');
     expect(c.querySelector('.ct-message').classList).toContain('ct-message--information');
-    expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is a default message.');
+    expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is a default message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBe('contentinfo');
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBe('information');
     expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('assertive');
@@ -49,6 +49,7 @@ describe('Message Component', () => {
     const c = await dom(template, {
       theme: 'light',
       type: 'success',
+      title: 'this is title message.',
       content: '',
       modifier_class: 'additional-class',
     });
@@ -57,7 +58,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message').classList).toContain('ct-theme-light');
     expect(c.querySelector('.ct-message').classList).toContain('ct-message--success');
     expect(c.querySelector('.ct-message').classList).toContain('additional-class');
-    expect(c.querySelector('.ct-message__summary')).toBeNull();
+    expect(c.querySelector('.ct-message__content')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('role')).toBe('contentinfo');
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBe('success');
     expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBe('assertive');
@@ -78,7 +79,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message').classList).toContain('ct-theme-light');
     expect(c.querySelector('.ct-message').classList).toContain('ct-message--success');
     expect(c.querySelector('.ct-message').classList).toContain('additional-class');
-    expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is a default message.');
+    expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is a default message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBeNull();
@@ -97,7 +98,7 @@ describe('Message Component', () => {
 
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
     expect(c.querySelector('.ct-message').classList).toContain('ct-message--with-background');
-    expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is a default message.');
+    expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is a default message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBeNull();
@@ -116,7 +117,7 @@ describe('Message Component', () => {
 
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
     expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing-inset--both');
-    expect(c.querySelector('.ct-message__summary').textContent.trim()).toBe('This is a default message.');
+    expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is a default message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-live')).toBeNull();
@@ -133,11 +134,9 @@ describe('Message Component', () => {
       modifier_class: '',
     });
 
-    expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
-    expect(c.querySelector('.ct-message').classList).toContain('ct-theme-light');
-    expect(c.querySelector('.ct-message').classList).toContain('ct-message--warning');
+    expect(c.querySelectorAll('.ct-message')).toHaveLength(0);
     expect(c.querySelector('.ct-message__title')).toBeNull();
-    expect(c.querySelector('.ct-message__summary')).toBeNull();
+    expect(c.querySelector('.ct-message__content')).toBeNull();
 
     assertUniqueCssClasses(c);
   });
