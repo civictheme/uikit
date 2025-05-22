@@ -236,45 +236,158 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
             class="row"
           >
             
-            
+              
             <div
               class="col-xxs-12"
             >
               
-              
+                
               <div
                 class="ct-header__content-bottom1"
               >
                 
-                Header Bottom 1
-              
+                  Header Bottom 1
+                
               </div>
               
-            
+              
             </div>
             
-            
+              
           </div>
           
-          
+            
         </div>
         
-              
+          
       </div>
       
-      
+              
     </header>
-    
+  </div>
+  
+      
   
             
-    <strong>
-      Banner Content
-    </strong>
-    
+  <strong>
+    Banner Content
+  </strong>
+  
       
             
+  <div
+    class="container"
+  >
+    
+        
     <div
-      class="container"
+      class="row"
+    >
+      
+          
+      <div
+        class="col-xxs-12"
+      >
+        
+            
+        <strong>
+          Highlighted Content
+        </strong>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+      
+  </div>
+  
+      
+      
+
+
+
+
+
+  
+  <main
+    class="ct-layout ct-vertical-spacing--top"
+    role="main"
+  >
+    
+          Content Top    
+    
+    <div
+      class="ct-layout__inner container"
+    >
+      
+                        
+      <section
+        class="ct-layout__main"
+        data-content="true"
+      >
+        Main Content
+      </section>
+      
+              
+                        
+      <aside
+        class="ct-layout__sidebar_top_left"
+        data-sidebar-top-left="true"
+      >
+        Sidebar Top Left
+      </aside>
+      
+              
+                        
+      <aside
+        class="ct-layout__sidebar_top_right"
+        data-sidebar-top-right="true"
+      >
+        Sidebar Top Right
+      </aside>
+      
+              
+                        
+      <aside
+        class="ct-layout__sidebar_bottom_left"
+        data-sidebar-bottom-left="true"
+      >
+        Sidebar Bottom Left
+      </aside>
+      
+              
+                        
+      <aside
+        class="ct-layout__sidebar_bottom_right"
+        data-sidebar-bottom-right="true"
+      >
+        Sidebar Bottom Right
+      </aside>
+      
+                  
+    </div>
+    
+
+          Content Bottom      
+  </main>
+  
+  
+      
+
+  
+  <footer
+    class="ct-footer ct-theme-light "
+    data-component-name="ct-footer"
+    role="contentinfo"
+    style="background-image: url('Footer Background Image')"
+  >
+    
+
+          
+    <div
+      class="container ct-footer__top"
     >
       
         
@@ -282,346 +395,233 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
         class="row"
       >
         
-          
+
+                        
         <div
-          class="col-xxs-12"
+          class="col-xxs-12 col-m-6"
         >
           
-            
-          <strong>
-            Highlighted Content
-          </strong>
+                
+          <div
+            class="ct-footer__top__content-top1"
+          >
+            Footer Top 1
+          </div>
           
-          
+              
         </div>
         
+            
+                        
+        <div
+          class="col-xxs-12 col-m-6"
+        >
+          
+                
+          <div
+            class="ct-footer__top__content-top2"
+          >
+            Footer Top 2
+          </div>
+          
+              
+        </div>
+        
+            
         
       </div>
       
       
     </div>
     
-      
-      
-
-
-
-
-
-  
-    <main
-      class="ct-layout ct-vertical-spacing--top"
-      role="main"
-    >
-      
-          Content Top    
-    
-      <div
-        class="ct-layout__inner container"
-      >
-        
-                        
-        <section
-          class="ct-layout__main"
-          data-content="true"
-        >
-          Main Content
-        </section>
-        
-              
-                        
-        <aside
-          class="ct-layout__sidebar_top_left"
-          data-sidebar-top-left="true"
-        >
-          Sidebar Top Left
-        </aside>
-        
-              
-                        
-        <aside
-          class="ct-layout__sidebar_top_right"
-          data-sidebar-top-right="true"
-        >
-          Sidebar Top Right
-        </aside>
-        
-              
-                        
-        <aside
-          class="ct-layout__sidebar_bottom_left"
-          data-sidebar-bottom-left="true"
-        >
-          Sidebar Bottom Left
-        </aside>
-        
-              
-                        
-        <aside
-          class="ct-layout__sidebar_bottom_right"
-          data-sidebar-bottom-right="true"
-        >
-          Sidebar Bottom Right
-        </aside>
-        
-                  
-      </div>
-      
-
-          Content Bottom      
-    </main>
-    
-  
-      
-
-  
-    <footer
-      class="ct-footer ct-theme-light "
-      data-component-name="ct-footer"
-      role="contentinfo"
-      style="background-image: url('Footer Background Image')"
-    >
-      
-
-          
-      <div
-        class="container ct-footer__top"
-      >
-        
-        
-        <div
-          class="row"
-        >
-          
-
-                        
-          <div
-            class="col-xxs-12 col-m-6"
-          >
-            
-                
-            <div
-              class="ct-footer__top__content-top1"
-            >
-              Footer Top 1
-            </div>
-            
-              
-          </div>
-          
-            
-                        
-          <div
-            class="col-xxs-12 col-m-6"
-          >
-            
-                
-            <div
-              class="ct-footer__top__content-top2"
-            >
-              Footer Top 2
-            </div>
-            
-              
-          </div>
-          
-            
-        
-        </div>
-        
-      
-      </div>
-      
     
           
-      <div
-        class="container ct-footer__middle"
-      >
-        
-        
-        <div
-          class="row"
-        >
-          
-
-                        
-          <div
-            class="col-xxs-12 col-m-3"
-          >
-            
-                
-            <div
-              class="ct-footer__middle__content-middle1"
-            >
-              Footer Middle 1
-            </div>
-            
-              
-          </div>
-          
-            
-                        
-          <div
-            class="col-xxs-12 col-m-3"
-          >
-            
-                
-            <div
-              class="ct-footer__middle__content-middle2"
-            >
-              Footer Middle 2
-            </div>
-            
-              
-          </div>
-          
-            
-                        
-          <div
-            class="col-xxs-12 col-m-3"
-          >
-            
-                
-            <div
-              class="ct-footer__middle__content-middle3"
-            >
-              Footer Middle 3
-            </div>
-            
-              
-          </div>
-          
-            
-                        
-          <div
-            class="col-xxs-12 col-m-3"
-          >
-            
-                
-            <div
-              class="ct-footer__middle__content-middle4"
-            >
-              Footer Middle 4
-            </div>
-            
-              
-          </div>
-          
-            
-          
-        
-        </div>
-        
-      
-      </div>
-      
-    
-          
-      <div
-        class="container ct-footer__bottom"
-      >
-        
-        
-        <div
-          class="row"
-        >
-          
-
-                        
-          <div
-            class="col-xxs-12 col-m-7"
-          >
-            
-                
-            <div
-              class="ct-footer__bottom__content-bottom1"
-            >
-              Footer Bottom 1
-            </div>
-            
-              
-          </div>
-          
-            
-                        
-          <div
-            class="col-xxs-12 col-m-5"
-          >
-            
-                
-            <div
-              class="ct-footer__bottom__content-bottom2"
-            >
-              Footer Bottom 2
-            </div>
-            
-              
-          </div>
-          
-            
-        
-        </div>
-        
-      
-      </div>
-      
-    
-  
-    </footer>
-    
-  
-      
-
-
     <div
-      class="ct-back-to-top "
-      data-component-name="back-to-top"
-      data-scrollspy=""
-      data-scrollspy-offset="400"
+      class="container ct-footer__middle"
     >
       
-  
-
-  
-      <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
-        data-component-name="button"
-        data-skip-to-target=""
-        href="#top"
-        role="button"
+        
+      <div
+        class="row"
       >
-                  
-        <span
-          class="ct-visually-hidden"
-        >
-          Return focus to the top of the page
-        </span>
-        <svg
-          aria-hidden="true"
-          class="ct-icon  ct-button__icon"
-          height="24"
-          role="img"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          
-
-          <path
-            d="M17.7102 11.29L12.7102 6.29C12.6151 6.19896 12.5029 6.1276 12.3802 6.08C12.1367 5.97999 11.8636 5.97999 11.6202 6.08C11.4974 6.1276 11.3853 6.19896 11.2902 6.29L6.29019 11.29C6.19695 11.3832 6.12299 11.4939 6.07253 11.6158C6.02207 11.7376 5.99609 11.8681 5.99609 12C5.99609 12.2663 6.10188 12.5217 6.29019 12.71C6.47849 12.8983 6.73388 13.0041 7.00019 13.0041C7.26649 13.0041 7.52188 12.8983 7.71019 12.71L11.0002 9.41V17C11.0002 17.2652 11.1055 17.5196 11.2931 17.7071C11.4806 17.8946 11.735 18 12.0002 18C12.2654 18 12.5198 17.8946 12.7073 17.7071C12.8948 17.5196 13.0002 17.2652 13.0002 17V9.41L16.2902 12.71C16.3831 12.8037 16.4937 12.8781 16.6156 12.9289C16.7375 12.9797 16.8682 13.0058 17.0002 13.0058C17.1322 13.0058 17.2629 12.9797 17.3848 12.9289C17.5066 12.8781 17.6172 12.8037 17.7102 12.71C17.8039 12.617 17.8783 12.5064 17.9291 12.3846C17.9798 12.2627 18.006 12.132 18.006 12C18.006 11.868 17.9798 11.7373 17.9291 11.6154C17.8783 11.4936 17.8039 11.383 17.7102 11.29Z"
-          />
-          
-
-        </svg>
         
 
-      </a>
+                        
+        <div
+          class="col-xxs-12 col-m-3"
+        >
+          
+                
+          <div
+            class="ct-footer__middle__content-middle1"
+          >
+            Footer Middle 1
+          </div>
+          
+              
+        </div>
+        
+            
+                        
+        <div
+          class="col-xxs-12 col-m-3"
+        >
+          
+                
+          <div
+            class="ct-footer__middle__content-middle2"
+          >
+            Footer Middle 2
+          </div>
+          
+              
+        </div>
+        
+            
+                        
+        <div
+          class="col-xxs-12 col-m-3"
+        >
+          
+                
+          <div
+            class="ct-footer__middle__content-middle3"
+          >
+            Footer Middle 3
+          </div>
+          
+              
+        </div>
+        
+            
+                        
+        <div
+          class="col-xxs-12 col-m-3"
+        >
+          
+                
+          <div
+            class="ct-footer__middle__content-middle4"
+          >
+            Footer Middle 4
+          </div>
+          
+              
+        </div>
+        
+            
+          
+        
+      </div>
       
-
+      
     </div>
     
+    
+          
+    <div
+      class="container ct-footer__bottom"
+    >
+      
+        
+      <div
+        class="row"
+      >
+        
+
+                        
+        <div
+          class="col-xxs-12 col-m-7"
+        >
+          
+                
+          <div
+            class="ct-footer__bottom__content-bottom1"
+          >
+            Footer Bottom 1
+          </div>
+          
+              
+        </div>
+        
+            
+                        
+        <div
+          class="col-xxs-12 col-m-5"
+        >
+          
+                
+          <div
+            class="ct-footer__bottom__content-bottom2"
+          >
+            Footer Bottom 2
+          </div>
+          
+              
+        </div>
+        
+            
+        
+      </div>
+      
+      
+    </div>
+    
+    
   
+  </footer>
+  
+  
+      
+
+
+  <div
+    class="ct-back-to-top "
+    data-component-name="back-to-top"
+    data-scrollspy=""
+    data-scrollspy-offset="400"
+  >
+    
+  
+
+  
+    <a
+      class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
+      data-component-name="button"
+      data-skip-to-target=""
+      href="#top"
+      role="button"
+    >
+                
+      <span
+        class="ct-visually-hidden"
+      >
+        Return focus to the top of the page
+      </span>
+      <svg
+        aria-hidden="true"
+        class="ct-icon  ct-button__icon"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+
+        <path
+          d="M17.7102 11.29L12.7102 6.29C12.6151 6.19896 12.5029 6.1276 12.3802 6.08C12.1367 5.97999 11.8636 5.97999 11.6202 6.08C11.4974 6.1276 11.3853 6.19896 11.2902 6.29L6.29019 11.29C6.19695 11.3832 6.12299 11.4939 6.07253 11.6158C6.02207 11.7376 5.99609 11.8681 5.99609 12C5.99609 12.2663 6.10188 12.5217 6.29019 12.71C6.47849 12.8983 6.73388 13.0041 7.00019 13.0041C7.26649 13.0041 7.52188 12.8983 7.71019 12.71L11.0002 9.41V17C11.0002 17.2652 11.1055 17.5196 11.2931 17.7071C11.4806 17.8946 11.735 18 12.0002 18C12.2654 18 12.5198 17.8946 12.7073 17.7071C12.8948 17.5196 13.0002 17.2652 13.0002 17V9.41L16.2902 12.71C16.3831 12.8037 16.4937 12.8781 16.6156 12.9289C16.7375 12.9797 16.8682 13.0058 17.0002 13.0058C17.1322 13.0058 17.2629 12.9797 17.3848 12.9289C17.5066 12.8781 17.6172 12.8037 17.7102 12.71C17.8039 12.617 17.8783 12.5064 17.9291 12.3846C17.9798 12.2627 18.006 12.132 18.006 12C18.006 11.868 17.9798 11.7373 17.9291 11.6154C17.8783 11.4936 17.8039 11.383 17.7102 11.29Z"
+        />
+        
+
+      </svg>
+      
+
+    </a>
+    
+
   </div>
+  
   
 
 </div>
@@ -743,7 +743,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
@@ -888,7 +888,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
@@ -1033,7 +1033,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
@@ -1164,7 +1164,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
@@ -1256,7 +1256,7 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
@@ -1347,7 +1347,7 @@ exports[`Page Component renders with default values 1`] = `
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
@@ -1439,7 +1439,7 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
 
   
       <a
-        class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
+        class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
         href="#top"
