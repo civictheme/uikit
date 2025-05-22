@@ -12,8 +12,6 @@ on:
       - 'project/**'
       - 'feature/**'
 
-
-
 jobs:
   visual-regression:
     runs-on: ubuntu-latest
@@ -81,7 +79,8 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_VISUAL_REGRESSION_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
-      - name: Generate the visual regression message.
+
+      - name: Generate the visual regression message
         id: visual-regression-message
         uses: actions/github-script@v7
         with:
@@ -90,14 +89,16 @@ jobs:
             const { default: createVisualRegressionPrComments } = await import('${{ github.workspace }}/.github/action-scripts/create-visual-regression-pr-comments.js')
             const deploymentUrl = ${{ steps.netlify-deploy-message.outputs.comment-id }}
             createVisualRegressionPrComments({require, core})
-      - name: Find ID of existing deployment message
+
+      - name: Find ID of existing deployment message on a PR
         uses: 'peter-evans/find-comment@14614d7a55fa5b53e634f9e6c068317a3f7b6ab1'
         id: netlify-visual-regression-message
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: 'CivicTheme UI Kit Deployments'
-      - name: Create or update deployment message
+
+      - name: Create or update deployment message on a PR
         uses: 'peter-evans/create-or-update-comment@70cab5820c914a684c6c1db2c5537c3279e31860'
         with:
           comment-id: ${{ steps.netlify-visual-regression-message.outputs.comment-id }}
@@ -107,7 +108,3 @@ jobs:
 
             ${{ steps.visual-regression-message.outputs.comment }}
           edit-mode: replace
-
-
-
-
