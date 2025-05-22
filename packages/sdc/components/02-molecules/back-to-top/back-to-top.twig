@@ -12,7 +12,7 @@
 <div class="ct-back-to-top {{ modifier_class|default('') }}" data-component-name="back-to-top" data-scrollspy data-scrollspy-offset="400" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
   {% include 'civictheme:button' with {
     kind: 'link',
-    type: 'primary',
+    type: '',
     icon: 'up-arrow',
     url: '#top',
     text: '<span class="ct-visually-hidden">Return focus to the top of the page</span>',
