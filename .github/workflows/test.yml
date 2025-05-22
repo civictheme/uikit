@@ -123,6 +123,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
+
       - name: Deploy SDC Components Storybook to Netlify
         id: netlify-sdc
         if: matrix.node-version == 22
@@ -140,20 +141,24 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
-      - name: Find ID of existing deployment message
+
+      - name: Find ID of existing deployment message for a PR
         uses: 'peter-evans/find-comment@14614d7a55fa5b53e634f9e6c068317a3f7b6ab1'
         id: netlify-deploy-message
+        if: github.event_name == 'pull_request'
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: 'CivicTheme UI Kit Deployments'
-      - name: Create or update deployment message
+
+      - name: Create or update deployment message on a PR
         uses: 'peter-evans/create-or-update-comment@70cab5820c914a684c6c1db2c5537c3279e31860'
+        if: github.event_name == 'pull_request'
         with:
           comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             🎨 CivicTheme UI Kit Deployments:
             - 📦 [twig](${{ steps.netlify-twig.outputs.deploy-url }})
-            - :📦 [sdc](${{ steps.netlify-sdc.outputs.deploy-url }})
+            - 📦 [sdc](${{ steps.netlify-sdc.outputs.deploy-url }})
           edit-mode: replace
