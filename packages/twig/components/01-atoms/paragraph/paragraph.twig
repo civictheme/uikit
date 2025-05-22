@@ -8,7 +8,7 @@
  * - content: [string] Paragraph content.
  * - size: [string] Paragraph size (extra-large, large, regular, small).
  * - allow_html: [boolean] Whether to allow HTML in content.
- * - no_margin: [boolean] Disable default margin.
+ * - no_spacing: [boolean] Disable default spacing.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
@@ -16,8 +16,8 @@
 
 {% set size_class = 'ct-paragraph--%s'|format(size|default('regular')) %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set no_margin_class = no_margin ? 'ct-paragraph--no-margin' : '' %}
-{% set modifier_class = '%s %s %s %s'|format(theme_class, size_class, no_margin_class, modifier_class|default('')) %}
+{% set no_spacing_class = no_spacing ? 'ct-paragraph--no-margin' : '' %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, size_class, no_spacing_class, modifier_class|default('')) %}
 
 {% if content is not empty -%}
   <div class="ct-paragraph {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
