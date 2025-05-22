@@ -6,35 +6,26 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Message type (information, error, warning, success).
- * - title: [string] Title text.
- * - description: [string] Description text.
- * - content: [string] Content text.
+ * - has_aria: [boolean] Apply ARIA attributes to behave as a page notification.
  * - with_background: [boolean] Whether to show a background.
  * - vertical_spacing: [string] Vertical spacing: top, bottom, both.
- * - has_aria: [boolean] Apply ARIA attributes to behave as a page notification.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  *
  * Slots:
  * - title: Title text.
- * - description: Description text.
+ * - content: Content text.
  */
 #}
 
-{% set type = type|default('information') %}
-{%- set content = description|default(content) -%}
+{% set type = in ['information', 'error', 'warning', 'success'] ? type : 'information' %}
 {% set type_class = 'ct-message--%s'|format(type) %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set with_background_class = with_background ? 'ct-message--with-background' : '' %}
 {% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing-inset--%s'|format(vertical_spacing) : '' %}
-{%- set has_aria = has_aria is not defined ? true : has_aria -%}
-{% set modifier_class = '%s %s %s %s %s'|format(
-  theme_class,
-  type_class,
-  with_background_class,
-  vertical_spacing_class,
-  modifier_class|default(''))
-%}
+{% set has_aria = has_aria is not defined ? true : has_aria %}
+{% set modifier_class = '%s %s %s %s %s'|format(theme_class, type_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
+
 {% set icons = {
   information: 'information-mark',
   warning: 'exclamation-mark-2',
@@ -42,37 +33,39 @@
   success: 'approve',
 } %}
 
-<div class="ct-message {{ modifier_class }}"
-  {% if has_aria %}
-    role="{{ type == 'error' ? 'alert' : 'contentinfo' }}"
-    aria-label="{{ type }}"
-    aria-live="assertive"
-  {% endif %}
-  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
->
-  <div class="ct-message__inner">
-    {% if icons[type] is defined %}
-      <div class="ct-message__icon">
-        {% include "civictheme:icon" with {
-          symbol: icons[type],
-          size: 'regular',
-        } only %}
-      </div>
+{% if title or content %}
+  <div class="ct-message {{ modifier_class }}"
+    {% if has_aria %}
+      role="{{ type == 'error' ? 'alert' : 'contentinfo' }}"
+      aria-label="{{ type }}"
+      aria-live="assertive"
     {% endif %}
-
-    <div class="ct-message__content">
-      {% if title %}
-        <div class="ct-message__title">{{ title }}</div>
+    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  >
+    <div class="ct-message__inner">
+      {% if icons[type] is defined %}
+        <div class="ct-message__icon">
+          {% include "civictheme:icon" with {
+            symbol: icons[type],
+            size: 'regular',
+          } only %}
+        </div>
       {% endif %}
 
-      {% if content %}
-        {% include '@atoms/paragraph/paragraph.twig' with {
-          theme: theme,
-          content: content,
-          allow_html: true,
-          modifier_class: 'ct-message__summary',
-        } only %}
-      {% endif %}
+      <div class="ct-message__content">
+        {% if title %}
+          <div class="ct-message__title">{{ title }}</div>
+        {% endif %}
+
+        {% if content %}
+          {% include 'civictheme:paragraph' with {
+            theme: theme,
+            content: content,
+            allow_html: true,
+            modifier_class: 'ct-message__summary',
+          } only %}
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
+{% endif %}

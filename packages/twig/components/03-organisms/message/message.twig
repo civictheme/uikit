@@ -16,10 +16,19 @@
 #}
 
 {% set type = type|default('information') %}
+{%- set content = description|default(content) -%}
 {% set type_class = 'ct-message--%s'|format(type) %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, type_class, modifier_class|default('')) %}
-
+{% set with_background_class = with_background ? 'ct-message--with-background' : '' %}
+{% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing-inset--%s'|format(vertical_spacing) : '' %}
+{%- set has_aria = has_aria is not defined ? true : has_aria -%}
+{% set modifier_class = '%s %s %s %s %s'|format(
+  theme_class,
+  type_class,
+  with_background_class,
+  vertical_spacing_class,
+  modifier_class|default(''))
+%}
 {% set icons = {
   information: 'information-mark',
   warning: 'exclamation-mark-2',
@@ -27,29 +36,37 @@
   success: 'approve',
 } %}
 
-<div
-  class="ct-message {{ modifier_class -}}"
-  role="{% if type == 'error' %}alert{% else %}contentinfo{% endif %}"
-  aria-label="{{ type }}"
-  aria-live="assertive"
+<div class="ct-message {{ modifier_class }}"
+  {% if has_aria %}
+    role="{{ type == 'error' ? 'alert' : 'contentinfo' }}"
+    aria-label="{{ type }}"
+    aria-live="assertive"
+  {% endif %}
   {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
 >
-  {% if icons[type] is defined %}
-    <div class="ct-message__icon">
-      {% include '@base/icon/icon.twig' with {
-        symbol: icons[type],
-        size: 'regular',
-      } only %}
+  <div class="ct-message__inner">
+    {% if icons[type] is defined %}
+      <div class="ct-message__icon">
+        {% include "@base/icon/icon.twig" with {
+          symbol: icons[type],
+          size: 'regular',
+        } only %}
+      </div>
+    {% endif %}
+
+    <div class="ct-message__content">
+      {% if title %}
+        <div class="ct-message__title">{{ title }}</div>
+      {% endif %}
+
+      {% if content %}
+        {% include '@atoms/paragraph/paragraph.twig' with {
+          theme: theme,
+          content: content,
+          allow_html: true,
+          modifier_class: 'ct-message__summary',
+        } only %}
+      {% endif %}
     </div>
-  {% endif %}
-
-  <div class="ct-message__content">
-    {% if title %}
-      <div class="ct-message__title">{{ title }}</div>
-    {% endif %}
-
-    {% if description %}
-      <div class="ct-message__summary">{{ description|striptags('<strong>,<a>,<pre>,<ul>,<ol>,<li>')|raw }}</div>
-    {% endif %}
   </div>
 </div>
