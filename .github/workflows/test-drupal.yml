@@ -54,9 +54,9 @@ jobs:
 
       - name: Lint SDC components
         run: |
-          output=$(vendor/bin/drush sdc-devel:validate --format=yaml 2>&1)
+          output=$(vendor/bin/drush sdc-devel:validate civictheme_sdc 2>&1)
           echo "${output}"
-          if echo "${output}" | grep -E -q 'Warning|Error'; then
+          if echo "${output}" | grep -E -q '\b(Error|Warning)\b'; then
             echo "Validation failed"
             exit 1
           fi
