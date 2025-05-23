@@ -11,6 +11,10 @@
   display: block;
   margin-bottom: ct-spacing();
 
+  &--no-margin {
+    margin-bottom: 0;
+  }
+
   @include ct-content();
 
   @each $size in $sizes {
