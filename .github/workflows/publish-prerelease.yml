@@ -1,0 +1,81 @@
+name: Publish Pre-release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish-prerelease:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GHA_BOT_PAT }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm install --workspaces && npm install && npx playwright install
+
+      - name: Check code style
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Configure git
+        run: |
+          git config --global user.email "${GITHUB_ACTOR_ID}+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions pre-release workflow"
+
+      - name: Set pre-release version
+        run: |
+          # Get current version from package.json
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          # Extract major, minor, and patch
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+          
+          # Increment minor version for next release
+          NEXT_MINOR=$((MINOR + 1))
+          PRERELEASE_VERSION="${MAJOR}.${NEXT_MINOR}.0-dev"
+          
+          echo "PRERELEASE_VERSION=${PRERELEASE_VERSION}" >> ${GITHUB_ENV}
+          echo "RELEASE_TAG=dev" >> ${GITHUB_ENV}
+          
+          # Update versions in all packages
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          cd packages/sdc
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          cd ../twig
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          cd ../..
+
+      - name: Publish @civictheme/sdc package
+        working-directory: packages/sdc
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Publish @civictheme/twig package
+        working-directory: packages/twig
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Report pre-release publish
+        run: |
+          echo "✅ Published dev pre-release packages:"
+          echo "  - @civictheme/sdc@${PRERELEASE_VERSION} (tag: dev)"
+          echo "  - @civictheme/twig@${PRERELEASE_VERSION} (tag: dev)"
+          echo ""
+          echo "These packages can be installed with:"
+          echo "npm install @civictheme/sdc@dev"
+          echo "npm install @civictheme/twig@dev"
