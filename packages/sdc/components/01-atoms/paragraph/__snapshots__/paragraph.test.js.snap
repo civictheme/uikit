@@ -14,7 +14,7 @@ exports[`Paragraph Component renders HTML tags in content when allow_html is tru
 
 
   <div
-    class="ct-paragraph ct-theme-light ct-paragraph--regular "
+    class="ct-paragraph ct-theme-light ct-paragraph--regular  "
   >
     
     
@@ -32,7 +32,7 @@ exports[`Paragraph Component renders with optional attributes 1`] = `
 
 
   <div
-    class="ct-paragraph ct-theme-dark ct-paragraph--large custom-class"
+    class="ct-paragraph ct-theme-dark ct-paragraph--large  custom-class"
     data-test="true"
   >
     
@@ -47,7 +47,7 @@ exports[`Paragraph Component renders with required attributes 1`] = `
 
 
   <div
-    class="ct-paragraph ct-theme-light ct-paragraph--regular "
+    class="ct-paragraph ct-theme-light ct-paragraph--regular  "
   >
     
     Sample content  
@@ -61,7 +61,7 @@ exports[`Paragraph Component strips HTML content 1`] = `
 
 
   <div
-    class="ct-paragraph ct-theme-light ct-paragraph--regular "
+    class="ct-paragraph ct-theme-light ct-paragraph--regular  "
   >
     
     Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
