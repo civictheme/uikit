@@ -53,20 +53,6 @@ jobs:
         env:
           RELEASE_LEVEL: ${{ github.event.inputs.release-level }}
 
-      - name: Build distribution assets
-        run: |
-          # Clean existing dist directories
-          rm -rf packages/sdc/dist packages/twig/dist
-          
-          # Run full build process to generate distribution assets
-          npm run dist
-          
-          # Verify build output
-          echo "SDC distribution assets:"
-          ls -la packages/sdc/dist || echo "No dist directory found"
-          echo "Twig distribution assets:"  
-          ls -la packages/twig/dist || echo "No dist directory found"
-
       - name: Commit package.json changes and create tag
         run: |
           # Add package files
@@ -77,13 +63,15 @@ jobs:
           git commit -m "Released version ${{ env.NEW_VERSION }}."
           git tag ${{ env.NEW_VERSION }}
 
-      - name: Publish SDC package
-        run: cd packages/sdc && npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+      - name: Publish @civictheme/sdc package
+        working-directory: packages/sdc
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
-      - name: Publish Twig package
-        run: cd packages/twig && npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+      - name: Publish @civictheme/twig package
+        working-directory: packages/twig
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 

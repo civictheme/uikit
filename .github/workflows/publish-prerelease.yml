@@ -1,24 +1,9 @@
 name: Publish Pre-release
 
 on:
-  workflow_dispatch:
-    inputs:
-      target-version:
-        description: 'Target version being developed (e.g. 1.11.0)'
-        required: true
-        default: '1.11.0'
-      prerelease-type:
-        description: 'Pre-release type (rc or beta)'
-        required: true
-        default: 'rc'
-        type: choice
-        options:
-          - 'rc'
-          - 'beta'
-      prerelease-number:
-        description: 'Pre-release number (e.g. 0, 1, 2)'
-        required: true
-        default: '0'
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -52,13 +37,18 @@ jobs:
 
       - name: Set pre-release version
         run: |
-          # Create pre-release version based on target version
-          TARGET_VERSION="${{ github.event.inputs.target-version }}"
-          PRERELEASE_TYPE="${{ github.event.inputs.prerelease-type }}"
-          PRERELEASE_NUMBER="${{ github.event.inputs.prerelease-number }}"
-          PRERELEASE_VERSION="${TARGET_VERSION}-${PRERELEASE_TYPE}.${PRERELEASE_NUMBER}"
+          # Get current version from package.json
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          # Extract major, minor, and patch
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+          
+          # Increment minor version for next release
+          NEXT_MINOR=$((MINOR + 1))
+          PRERELEASE_VERSION="${MAJOR}.${NEXT_MINOR}.0-dev"
+          
           echo "PRERELEASE_VERSION=${PRERELEASE_VERSION}" >> ${GITHUB_ENV}
-          echo "RELEASE_TAG=${PRERELEASE_TYPE}" >> ${GITHUB_ENV}
+          echo "RELEASE_TAG=dev" >> ${GITHUB_ENV}
           
           # Update versions in all packages
           npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
@@ -68,36 +58,24 @@ jobs:
           npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
           cd ../..
 
-      - name: Build distribution assets
-        run: |
-          # Clean existing dist directories
-          rm -rf packages/sdc/dist packages/twig/dist
-          
-          # Run full build process to generate distribution assets
-          npm run dist
-          
-          # Verify build output
-          echo "SDC distribution assets:"
-          ls -la packages/sdc/dist || echo "No dist directory found"
-          echo "Twig distribution assets:"  
-          ls -la packages/twig/dist || echo "No dist directory found"
-
-      - name: Publish SDC package
-        run: cd packages/sdc && npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+      - name: Publish @civictheme/sdc package
+        working-directory: packages/sdc
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
-      - name: Publish Twig package
-        run: cd packages/twig && npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+      - name: Publish @civictheme/twig package
+        working-directory: packages/twig
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
       - name: Report pre-release publish
         run: |
-          echo "✅ Published pre-release packages:"
-          echo "  - @civictheme/sdc@${PRERELEASE_VERSION} (tag: ${{ env.RELEASE_TAG }})"
-          echo "  - @civictheme/twig@${PRERELEASE_VERSION} (tag: ${{ env.RELEASE_TAG }})"
+          echo "✅ Published dev pre-release packages:"
+          echo "  - @civictheme/sdc@${PRERELEASE_VERSION} (tag: dev)"
+          echo "  - @civictheme/twig@${PRERELEASE_VERSION} (tag: dev)"
           echo ""
           echo "These packages can be installed with:"
-          echo "npm install @civictheme/sdc@${{ env.RELEASE_TAG }}"
-          echo "npm install @civictheme/twig@${{ env.RELEASE_TAG }}"
+          echo "npm install @civictheme/sdc@dev"
+          echo "npm install @civictheme/twig@dev"
