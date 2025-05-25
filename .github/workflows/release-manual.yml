@@ -30,11 +30,51 @@ jobs:
       - name: Check code style
         run: npm run lint
 
-      - name: Build
-        run: npm run build
-
       - name: Run tests
         run: npm run test:ci
+
+      - name: Verify package contents
+        run: |
+          # Expected directories
+          EXPECTED_SDC="dist components assets"
+          EXPECTED_TWIG="dist components assets"
+
+          failed=0
+          for pkg in sdc twig; do
+            echo "=== Verifying @civictheme/$pkg package contents ==="
+            npm pack --workspace=packages/$pkg --quiet
+            tarball=$(ls -t civictheme-$pkg-*.tgz | head -1)
+
+            # Get expected dirs for this package
+            expected_var="EXPECTED_${pkg^^}"
+            expected_dirs="${!expected_var}"
+
+            # Check each directory
+            missing_dirs=""
+            for dir in $expected_dirs; do
+              if tar -tzf "$tarball" | grep -q "^package/${dir}/"; then
+                echo "✅ $dir"
+              else
+                echo "❌ $dir (MISSING)"
+                missing_dirs="$missing_dirs $dir"
+                failed=1
+              fi
+            done
+
+            rm -f "$tarball"
+
+            if [ -n "$missing_dirs" ]; then
+              echo "❌ Package $pkg is missing required directories:$missing_dirs"
+            else
+              echo "✅ Package $pkg contains all required directories"
+            fi
+            echo ""
+          done
+
+          if [ $failed -eq 1 ]; then
+            echo "❌ Package verification failed!"
+            exit 1
+          fi
 
       - name: Configure git
         run: |
@@ -44,17 +84,33 @@ jobs:
       - name: Bump release version
         run: |
           echo "NEW_VERSION=$(npm --no-git-tag-version version ${RELEASE_LEVEL})" >> ${GITHUB_ENV}
+
+          # Update versions in workspace packages
+          npm version ${RELEASE_LEVEL} --no-git-tag-version --workspace=packages/sdc
+          npm version ${RELEASE_LEVEL} --no-git-tag-version --workspace=packages/twig
+
           echo "RELEASE_TAG=latest" >> ${GITHUB_ENV}
         env:
           RELEASE_LEVEL: ${{ github.event.inputs.release-level }}
 
       - name: Commit package.json changes and create tag
         run: |
+          # Add package files
           git add "package.json"
+          git add "packages/sdc/package.json"
+          git add "packages/twig/package.json"
+
           git commit -m "Released version ${{ env.NEW_VERSION }}."
           git tag ${{ env.NEW_VERSION }}
 
-      - name: Publish
+      - name: Publish @civictheme/sdc package
+        working-directory: packages/sdc
+        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Publish @civictheme/twig package
+        working-directory: packages/twig
         run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
