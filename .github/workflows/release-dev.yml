@@ -1,0 +1,72 @@
+name: Publish Pre-release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GHA_BOT_PAT }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm install --workspaces && npm install && npx playwright install
+
+      - name: Check code style
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Set pre-release version
+        run: |
+          # Get current version from package.json
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+
+          # Extract major, minor, and patch
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+
+          # Increment minor version for next release
+          NEXT_MINOR=$((MINOR + 1))
+          DEV_VERSION="${MAJOR}.${NEXT_MINOR}.0-dev"
+
+          echo "DEV_VERSION=${DEV_VERSION}" >> ${GITHUB_ENV}
+
+          # Update versions in all packages
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version --workspace=packages/sdc
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version --workspace=packages/twig
+
+      - name: Publish @civictheme/sdc package
+        working-directory: packages/sdc
+        run: npm publish --verbose --access public --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Publish @civictheme/twig package
+        working-directory: packages/twig
+        run: npm publish --verbose --access public --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
+
+      - name: Report dev version publish
+        run: |
+          echo "✅ Published dev pre-release packages:"
+          echo "  - @civictheme/sdc@${DEV_VERSION}"
+          echo "  - @civictheme/twig@${DEV_VERSION}"
+          echo ""
+          echo "These packages can be installed with:"
+          echo "npm install @civictheme/sdc@dev"
+          echo "npm install @civictheme/twig@dev"
