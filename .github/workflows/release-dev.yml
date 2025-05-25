@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  publish-prerelease:
+  publish-dev:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,51 +30,41 @@ jobs:
       - name: Run tests
         run: npm run test:ci
 
-      - name: Configure git
-        run: |
-          git config --global user.email "${GITHUB_ACTOR_ID}+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "GitHub Actions pre-release workflow"
-
       - name: Set pre-release version
         run: |
           # Get current version from package.json
           CURRENT_VERSION=$(node -p "require('./package.json').version")
-          
+
           # Extract major, minor, and patch
           IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
-          
+
           # Increment minor version for next release
           NEXT_MINOR=$((MINOR + 1))
-          PRERELEASE_VERSION="${MAJOR}.${NEXT_MINOR}.0-dev"
-          
-          echo "PRERELEASE_VERSION=${PRERELEASE_VERSION}" >> ${GITHUB_ENV}
-          echo "RELEASE_TAG=dev" >> ${GITHUB_ENV}
-          
-          # Update versions in all packages
-          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
-          cd packages/sdc
-          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
-          cd ../twig
-          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
-          cd ../..
+          DEV_VERSION="${MAJOR}.${NEXT_MINOR}.0-dev"
+
+          echo "DEV_VERSION=${DEV_VERSION}" >> ${GITHUB_ENV}
 
       - name: Publish @civictheme/sdc package
         working-directory: packages/sdc
-        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: |
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version
+          npm publish --verbose --access public --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
       - name: Publish @civictheme/twig package
         working-directory: packages/twig
-        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: |
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version
+          npm publish --verbose --access public --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
-      - name: Report pre-release publish
+      - name: Report dev version publish
         run: |
           echo "✅ Published dev pre-release packages:"
-          echo "  - @civictheme/sdc@${PRERELEASE_VERSION} (tag: dev)"
-          echo "  - @civictheme/twig@${PRERELEASE_VERSION} (tag: dev)"
+          echo "  - @civictheme/sdc@${DEV_VERSION}"
+          echo "  - @civictheme/twig@${DEV_VERSION}"
           echo ""
           echo "These packages can be installed with:"
           echo "npm install @civictheme/sdc@dev"
