@@ -44,19 +44,20 @@ jobs:
 
           echo "DEV_VERSION=${DEV_VERSION}" >> ${GITHUB_ENV}
 
+          # Update versions in all packages
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version --workspace=packages/sdc
+          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version --workspace=packages/twig
+
       - name: Publish @civictheme/sdc package
         working-directory: packages/sdc
-        run: |
-          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version
-          npm publish --verbose --access public --tag dev
+        run: npm publish --verbose --access public --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
       - name: Publish @civictheme/twig package
         working-directory: packages/twig
-        run: |
-          npm version ${DEV_VERSION} --no-git-tag-version --allow-same-version
-          npm publish --verbose --access public --tag dev
+        run: npm publish --verbose --access public --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 

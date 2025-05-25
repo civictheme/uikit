@@ -41,14 +41,11 @@ jobs:
       - name: Bump release version
         run: |
           echo "NEW_VERSION=$(npm --no-git-tag-version version ${RELEASE_LEVEL})" >> ${GITHUB_ENV}
-          
+
           # Update versions in workspace packages
-          cd packages/sdc
-          npm version ${RELEASE_LEVEL} --no-git-tag-version
-          cd ../twig
-          npm version ${RELEASE_LEVEL} --no-git-tag-version
-          cd ../..
-          
+          npm version ${RELEASE_LEVEL} --no-git-tag-version --workspace=packages/sdc
+          npm version ${RELEASE_LEVEL} --no-git-tag-version --workspace=packages/twig
+
           echo "RELEASE_TAG=latest" >> ${GITHUB_ENV}
         env:
           RELEASE_LEVEL: ${{ github.event.inputs.release-level }}
@@ -56,10 +53,10 @@ jobs:
       - name: Commit package.json changes and create tag
         run: |
           # Add package files
-          git add "package.json" "package-lock.json"
-          git add "packages/sdc/package.json" "packages/sdc/package-lock.json"
-          git add "packages/twig/package.json" "packages/twig/package-lock.json"
-          
+          git add "package.json"
+          git add "packages/sdc/package.json"
+          git add "packages/twig/package.json"
+
           git commit -m "Released version ${{ env.NEW_VERSION }}."
           git tag ${{ env.NEW_VERSION }}
 
