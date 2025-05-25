@@ -1,18 +1,30 @@
-name: Release package
+name: Publish Pre-release
 
 on:
   workflow_dispatch:
     inputs:
-      release-level:
-        description: 'Release level (one of): patch or minor'
+      target-version:
+        description: 'Target version being developed (e.g. 1.11.0)'
         required: true
-        default: 'minor'
+        default: '1.11.0'
+      prerelease-type:
+        description: 'Pre-release type (rc or beta)'
+        required: true
+        default: 'rc'
+        type: choice
+        options:
+          - 'rc'
+          - 'beta'
+      prerelease-number:
+        description: 'Pre-release number (e.g. 0, 1, 2)'
+        required: true
+        default: '0'
 
 permissions:
   contents: write
 
 jobs:
-  release-package:
+  publish-prerelease:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -76,56 +88,39 @@ jobs:
             exit 1
           fi
 
-      - name: Configure git
+      - name: Set pre-release version
         run: |
-          git config --global user.email "${GITHUB_ACTOR_ID}+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "GitHub Actions release workflow"
+          # Create pre-release version based on target version
+          TARGET_VERSION="${{ github.event.inputs.target-version }}"
+          PRERELEASE_TYPE="${{ github.event.inputs.prerelease-type }}"
+          PRERELEASE_NUMBER="${{ github.event.inputs.prerelease-number }}"
+          PRERELEASE_VERSION="${TARGET_VERSION}-${PRERELEASE_TYPE}.${PRERELEASE_NUMBER}"
+          echo "PRERELEASE_VERSION=${PRERELEASE_VERSION}" >> ${GITHUB_ENV}
+          echo "RELEASE_TAG=${PRERELEASE_TYPE}" >> ${GITHUB_ENV}
 
-      - name: Bump release version
-        run: |
-          echo "NEW_VERSION=$(npm --no-git-tag-version version ${RELEASE_LEVEL})" >> ${GITHUB_ENV}
-
-          # Update versions in workspace packages
-          npm version ${RELEASE_LEVEL} --no-git-tag-version --workspace=packages/sdc
-          npm version ${RELEASE_LEVEL} --no-git-tag-version --workspace=packages/twig
-
-          echo "RELEASE_TAG=latest" >> ${GITHUB_ENV}
-        env:
-          RELEASE_LEVEL: ${{ github.event.inputs.release-level }}
-
-      - name: Commit package.json changes and create tag
-        run: |
-          # Add package files
-          git add "package.json"
-          git add "packages/sdc/package.json"
-          git add "packages/twig/package.json"
-
-          git commit -m "Released version ${{ env.NEW_VERSION }}."
-          git tag ${{ env.NEW_VERSION }}
+          # Update versions in all packages
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version --workspace=packages/sdc
+          npm version ${PRERELEASE_VERSION} --no-git-tag-version --allow-same-version --workspace=packages/twig
 
       - name: Publish @civictheme/sdc package
         working-directory: packages/sdc
-        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: npm publish --verbose --access public --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
       - name: Publish @civictheme/twig package
         working-directory: packages/twig
-        run: npm publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: npm publish --verbose --access public --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_BOT_PAT }}
 
-      - name: Push changes to repository
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin && git push --tags
-
-      - name: Publish release on GitHub
-        uses: release-drafter/release-drafter@v6
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          name: ${{ env.NEW_VERSION }}
-          tag: ${{ env.NEW_VERSION }}
-          version: ${{ env.NEW_VERSION }}
-          publish: true
+      - name: Report pre-release publish
+        run: |
+          echo "✅ Published pre-release packages:"
+          echo "  - @civictheme/sdc@${PRERELEASE_VERSION} (tag: ${{ env.RELEASE_TAG }})"
+          echo "  - @civictheme/twig@${PRERELEASE_VERSION} (tag: ${{ env.RELEASE_TAG }})"
+          echo ""
+          echo "These packages can be installed with:"
+          echo "npm install @civictheme/sdc@${{ env.RELEASE_TAG }}"
+          echo "npm install @civictheme/twig@${{ env.RELEASE_TAG }}"
