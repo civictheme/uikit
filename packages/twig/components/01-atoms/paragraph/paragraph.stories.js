@@ -22,7 +22,7 @@ const meta = {
     allow_html: {
       control: { type: 'boolean' },
     },
-    no_spacing: {
+    no_margin: {
       control: { type: 'boolean' },
     },
     modifier_class: {
@@ -45,7 +45,7 @@ export const Paragraph = {
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.',
     size: 'regular',
     allow_html: false,
-    no_spacing: false,
+    no_margin: false,
     modifier_class: '',
     attributes: '',
   },
