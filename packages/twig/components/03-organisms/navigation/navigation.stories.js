@@ -26,6 +26,10 @@ const meta = {
       control: { type: 'radio' },
       options: ['none', 'inline', 'dropdown', 'drawer'],
     },
+    variant: {
+      control: { type: 'radio' },
+      options: ['none', 'primary', 'secondary'],
+    },
     dropdown_columns: {
       control: { type: 'number' },
     },
