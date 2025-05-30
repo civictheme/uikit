@@ -18,7 +18,6 @@ const meta = {
       options: {
         Default: 'default',
         Input: 'input',
-        Link: 'link',
       },
     },
     size: {
