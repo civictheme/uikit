@@ -38,7 +38,7 @@
   {% if auto_breakpoint and template_column_count <= 6 %}
     {% set breakpoints = {1: 'xxs', 2: 'm', 3: 'xl', 4: 'xxl', 6: 'xxl'} %}
     {% set column_class = [] %}
-    {% for i in 1..template_column_count %}
+    {% for i in range(1, template_column_count) %}
       {% if i != 5 and not (template_column_count == 6 and i == 4) %}
         {% set bp = breakpoints[i] %}
         {% if bp %}
