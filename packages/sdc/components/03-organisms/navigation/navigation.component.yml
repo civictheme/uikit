@@ -29,6 +29,13 @@ props:
         - inline
         - dropdown
         - drawer
+    variant:
+      type: string
+      title: Variant
+      description: 'One of: primary, secondary.'
+      enum:
+        - primary
+        - secondary
     dropdown_columns:
       type: integer
       title: Dropdown Columns

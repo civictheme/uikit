@@ -2872,7 +2872,7 @@ ul.row {
 
 @media print {
   .ct-layout__sidebar_top_left, .ct-layout__sidebar_top_right, .ct-layout__sidebar_bottom_left, .ct-layout__sidebar_bottom_right {
-    display: none;
+    display: none !important;
   }
 }
 .ct-layout.ct-vertical-spacing--top .ct-layout.ct-vertical-spacing--top,

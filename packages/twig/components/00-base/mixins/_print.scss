@@ -21,6 +21,6 @@
 // Shorthand to hide elements for print.
 @mixin ct-print-hide() {
   @media print {
-    display: none;
+    display: none !important;
   }
 }
