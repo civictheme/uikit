@@ -10,7 +10,7 @@ exports[`Message Component does not render when description and title are empty 
   <div
     aria-label="warning"
     aria-live="assertive"
-    class="ct-message ct-theme-light ct-message--warning "
+    class="ct-message ct-theme-light ct-message--warning  "
     role="contentinfo"
   >
     
@@ -68,7 +68,7 @@ exports[`Message Component renders with all attributes provided 1`] = `
   <div
     aria-label="error"
     aria-live="assertive"
-    class="ct-message ct-theme-dark ct-message--error additional-class"
+    class="ct-message ct-theme-dark ct-message--error  additional-class"
     role="alert"
   >
     
@@ -140,7 +140,7 @@ exports[`Message Component renders with default type and theme 1`] = `
   <div
     aria-label="information"
     aria-live="assertive"
-    class="ct-message ct-theme-light ct-message--information "
+    class="ct-message ct-theme-light ct-message--information  "
     role="contentinfo"
   >
     
@@ -205,7 +205,7 @@ exports[`Message Component renders without description 1`] = `
   <div
     aria-label="success"
     aria-live="assertive"
-    class="ct-message ct-theme-light ct-message--success additional-class"
+    class="ct-message ct-theme-light ct-message--success  additional-class"
     role="contentinfo"
   >
     

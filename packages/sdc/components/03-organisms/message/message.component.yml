@@ -21,6 +21,14 @@ props:
         - error
         - warning
         - success
+    vertical_spacing:
+      type: string
+      title: Vertical spacing
+      description: Vertical spacing position (top, bottom, both).
+      enum:
+        - top
+        - bottom
+        - both
     attributes:
       type: string
       title: Attributes

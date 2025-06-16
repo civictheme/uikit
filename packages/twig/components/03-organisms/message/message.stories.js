@@ -16,6 +16,10 @@ const meta = {
       control: { type: 'select' },
       options: ['information', 'error', 'warning', 'success'],
     },
+    vertical_spacing: {
+      control: { type: 'radio' },
+      options: ['none', 'top', 'bottom', 'both'],
+    },
     description: {
       control: { type: 'text' },
     },
