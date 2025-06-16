@@ -77,4 +77,19 @@ describe('Message Component', () => {
 
     assertUniqueCssClasses(c);
   });
+
+  test('renders with vertical spacing', async () => {
+    const c = await dom(template, {
+      theme: 'dark',
+      type: 'error',
+      title: 'this is title message.',
+      description: 'This is an error message.',
+      vertical_spacing: 'both',
+      modifier_class: 'additional-class',
+    });
+
+    expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing--both');
+
+    assertUniqueCssClasses(c);
+  });
 });
