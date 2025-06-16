@@ -7,13 +7,13 @@
 .ct-message {
   $root: &;
 
+  box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
   justify-content: stretch;
   border-radius: $ct-message-border-radius;
   border-left: solid ct-particle(0.75) transparent;
   padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(1);
-  margin: ct-spacing(3) 0;
   width: 100%;
 
   @include ct-typography('text-regular');
