@@ -44,7 +44,7 @@
       >
       {{- content -}}
       {% if is_multiple %}
-        {% include '@base/icon/icon.twig.twig' with {
+        {% include '@base/icon/icon.twig' with {
           symbol: 'cancel',
           modifier_class: 'ct-chip__dismiss',
         } only %}
@@ -59,7 +59,7 @@
     >
       {{- content -}}
       {% if is_dismissible %}
-        {% include '@base/icon/icon.twig.twig' with {
+        {% include '@base/icon/icon.twig' with {
           symbol: 'cancel',
           modifier_class: 'ct-chip__dismiss',
         } only %}
