@@ -9,6 +9,9 @@
     border-radius: $ct-callout-border-radius;
     padding: ct-spacing(3) ct-spacing(3);
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: ct-spacing(2);
 
     @include ct-breakpoint(m) {
       padding: ct-spacing(3) ct-spacing(5) ct-spacing(4) ct-spacing(3);
@@ -17,12 +20,10 @@
     @include ct-highlight-stripe-vertical($ct-callout-stripe-width, $ct-callout-border-radius, 0);
   }
 
-  &__title {
-    margin-bottom: ct-spacing(2);
-  }
-
-  &__content {
-    margin-bottom: ct-spacing(2);
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ct-spacing(2);
   }
 
   @include ct-component-theme($root) using($root, $theme) {

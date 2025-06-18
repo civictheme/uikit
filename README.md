@@ -1,8 +1,8 @@
-<p align="center">  
+<p align="center">
   <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logos/logo_secondary_dark_desktop.png">
   <img height=100px src="assets/logos/logo_secondary_light_desktop.png" alt="CivicTheme logo">
-  </picture>  
+  </picture>
 </p>
 
 <h1 align="center">CivicTheme - UI Kit</h1>
@@ -46,8 +46,8 @@ or download the latest release from [GitHub](https://github.com/civictheme/uikit
 
 Contributions are welcome!
 
-If a specific change is being proposed (either a new feature or a bug fix), you 
-can [create an issue](https://github.com/civictheme/uikit/issues/new) documenting the proposed 
+If a specific change is being proposed (either a new feature or a bug fix), you
+can [create an issue](https://github.com/civictheme/uikit/issues/new) documenting the proposed
 change.
 
 ## Maintenance
@@ -118,11 +118,11 @@ This will build:
 ### Updating components
 
 Components schema for both `components/twig` and `components/sdc` directories is
-maintained in the `*.component.yml` files within `components/sdc` directory. 
+maintained in the `*.component.yml` files within `components/sdc` directory.
 The schema is strict and allows to be a source of truth for the components.
 
-We currently synchronize the entire component implementation between SDC and Twig components, 
-not just the docblock headers. This includes proper namespace handling, converting 
+We currently synchronize the entire component implementation between SDC and Twig components,
+not just the docblock headers. This includes proper namespace handling, converting
 `civictheme:` namespaces to path-based references like `@atoms/button/button.twig`.
 
 To update components, run:
@@ -179,7 +179,9 @@ See `tools/sdc/README.md` for more information on how to validate the SDC schema
 Releases to GitHub and NPM are automated via GitHub Actions, but initiated
 manually.
 
-To release a new version, go to
+### Releasing the main package
+
+To release a new version of the main package, go to
 the [Release package](https://github.com/civictheme/uikit/actions/workflows/release-manual.yml)
 GitHub Action, click on the `Run workflow` button, and enter the release
 level: `patch` or `minor`.
@@ -188,7 +190,23 @@ After the release is complete, the new version will be available on
 [GitHub](https://github.com/civictheme/uikit/releases)
 and [NPM](https://www.npmjs.com/package/@civictheme/uikit).
 
----
+### Publishing pre-releases
+
+To publish pre-release versions for testing, go to the
+[Publish Pre-release](https://github.com/civictheme/uikit/actions/workflows/publish-prerelease.yml)
+GitHub Action and click on `Run workflow`. You'll need to specify:
+
+1. **Target version** - The future version these pre-releases are building toward (e.g., `1.11.0`)
+2. **Pre-release type** - Choose between `rc` (release candidate) or `beta`
+3. **Pre-release number** - The sequence number for this pre-release (e.g., `0`, `1`, `2`)
+
+This will publish packages with versions like `1.11.0-rc.0` to NPM with the corresponding tag.
+
+Pre-release version can be installed with:
+```bash
+npm install @civictheme/sdc@rc
+npm install @civictheme/twig@rc
+```
 
 For additional information, please refer to
 the [Documentation site](https://docs.civictheme.io/ui-kit)

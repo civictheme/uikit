@@ -13,6 +13,7 @@
   bottom: 4rem;
 }
 .ct-back-to-top .ct-back-to-top__button, .ct-back-to-top .ct-back-to-top__button:focus-visible, .ct-back-to-top .ct-back-to-top__button:active, .ct-back-to-top .ct-back-to-top__button:visited, .ct-back-to-top .ct-back-to-top__button:hover {
+  display: inline-block;
   border-radius: 6rem;
   padding: 0.5rem;
   background-color: var(--ct-color-light-interaction-background);
@@ -20,5 +21,10 @@
   color: var(--ct-color-light-interaction-text);
   line-height: 0;
   outline-color: var(--ct-color-light-interaction-focus);
+  outline-offset: 0.125rem;
+  outline-width: 0.1875rem;
   appearance: none;
+}
+.ct-back-to-top .ct-back-to-top__button:focus-visible {
+  outline-style: solid;
 }
