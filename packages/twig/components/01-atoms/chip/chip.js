@@ -8,60 +8,32 @@ function CivicThemeChip(el) {
   }
 
   this.el = el;
-  this.el.setAttribute('data-chip', 'true');
-  this.dismissible = this.el.hasAttribute('data-chip-dismiss');
 
-  this.el.addEventListener('click', this.clickEvent.bind(this));
+  this.el.addEventListener('change', this.changeEvent.bind(this));
   this.el.addEventListener('focusin', this.focusinEvent.bind(this));
   this.el.addEventListener('focusout', this.focusoutEvent.bind(this));
 
-  if (this.dismissible) {
-    this.el.addEventListener('click', this.dismissClickEvent.bind(this));
-  }
+  // Mark as initialized.
+  this.el.setAttribute('data-chip', 'true');
 }
 
 /**
- * Click event handler.
+ * Toggle the checked value.
  */
-CivicThemeChip.prototype.clickEvent = function (e) {
-  if (/input/i.test(e.target.tagName)) {
-    let isChecked = false;
-    const input = e.target;
-    if (input.getAttribute('type') === 'checkbox') {
-      isChecked = input.getAttribute('checked');
-    } else if (input.getAttribute('type') === 'radio') {
-      // "Uncheck" all but current radio in this group.
-      const name = input.getAttribute('name');
-      const radios = document.querySelectorAll(`input[type=radio][name="${name}"]`);
-      for (const i in radios) {
-        if (Object.prototype.hasOwnProperty.call(radios, i) && radios[i] !== input) {
-          this.setChecked(radios[i], false);
-        }
-      }
-    } else {
-      return;
-    }
-    this.setChecked(input, !isChecked);
-
-    if (isChecked) {
-      // Dispatch custom event when click on input label.
-      this.el.dispatchEvent(new CustomEvent('ct.chip.dismiss', { bubbles: true }));
-    }
-  }
-};
-
-/**
- * Set the checked value.
- */
-CivicThemeChip.prototype.setChecked = function (input, check) {
+CivicThemeChip.prototype.setChecked = function (input, isChecked) {
   const chip = this.findChip(input);
   if (chip && !chip.hasAttribute('disabled')) {
-    if (check) {
+    if (isChecked) {
       input.setAttribute('checked', 'checked');
       chip.classList.add('active');
     } else {
       input.removeAttribute('checked');
       chip.classList.remove('active');
+
+      const dismissable = chip.hasAttribute('data-chip-dismiss');
+      if (dismissable && !input.checked) {
+        this.el.dispatchEvent(new CustomEvent('ct.chip.dismiss', { bubbles: true }));
+      }
     }
   }
 };
@@ -87,20 +59,37 @@ CivicThemeChip.prototype.focusoutEvent = function (e) {
 };
 
 /**
- * Click event handler for dismiss chip.
+ * Change event handler.
  */
-CivicThemeChip.prototype.dismissClickEvent = function (e) {
+CivicThemeChip.prototype.changeEvent = function (e) {
   const chip = this.findChip(e.target);
-  if (chip) {
-    const input = chip.getElementsByTagName('input');
-    if (input.length <= 0) {
-      this.el.dispatchEvent(new CustomEvent('ct.chip.dismiss', { bubbles: true }));
+  if (!chip) {
+    return;
+  }
+
+  const input = chip.querySelector('input');
+  if (!input) {
+    return;
+  }
+
+  // For radios, check current and uncheck others in this group.
+  if (input.getAttribute('type') === 'radio') {
+    const name = input.getAttribute('name');
+    const radios = document.querySelectorAll(`input[type=radio][name="${name}"]`);
+    for (const i in radios) {
+      if (Object.prototype.hasOwnProperty.call(radios, i) && radios[i] !== input) {
+        this.setChecked(radios[i], false);
+      }
     }
+
+    this.setChecked(input, true);
+  } else {
+    this.setChecked(input, input.checked);
   }
 };
 
 /**
- * Find chip element.
+ * Find Chip element.
  */
 CivicThemeChip.prototype.findChip = function (el) {
   if (el.classList.contains('ct-chip')) {
