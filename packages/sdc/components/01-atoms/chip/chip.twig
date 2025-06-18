@@ -39,7 +39,7 @@
       >
       {{- content -}}
       {% if is_multiple %}
-        {% include 'civictheme:icon.twig' with {
+        {% include 'civictheme:icon' with {
           symbol: 'cancel',
           modifier_class: 'ct-chip__dismiss',
         } only %}
@@ -54,7 +54,7 @@
     >
       {{- content -}}
       {% if is_dismissible %}
-        {% include 'civictheme:icon.twig' with {
+        {% include 'civictheme:icon' with {
           symbol: 'cancel',
           modifier_class: 'ct-chip__dismiss',
         } only %}
