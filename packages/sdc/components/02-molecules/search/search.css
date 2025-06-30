@@ -4,7 +4,7 @@
 
 @media print {
   .ct-search {
-    display: none;
+    display: none !important;
   }
 }
 .ct-search {
@@ -60,39 +60,39 @@
 }
 .ct-search.ct-theme-light > .ct-link {
   background-color: var(--ct-navigation-light-drawer-menu-item-background-color);
-  color: var(--ct-navigation-light-drawer-color);
+  color: var(--ct-navigation-light-menu-color);
 }
 .ct-search.ct-theme-light > .ct-link {
-  border-bottom-color: var(--ct-navigation-light-drawer-menu-item-border-color);
+  border-bottom-color: var(--ct-navigation-light-menu-item-border-color);
 }
 @media (min-width: 768px) {
   .ct-search.ct-theme-light > .ct-link:hover {
     background-color: var(--ct-navigation-light-drawer-menu-item-hover-background-color);
-    color: var(--ct-navigation-light-drawer-hover-color);
-    border-bottom-color: var(--ct-navigation-light-drawer-menu-item-hover-border-color);
+    color: var(--ct-navigation-light-menu-hover-color);
+    border-bottom-color: var(--ct-navigation-light-menu-item-hover-border-color);
   }
 }
 .ct-search.ct-theme-light > .ct-link[aria-expanded=true], .ct-search.ct-theme-light > .ct-link:active {
   background-color: var(--ct-navigation-light-drawer-menu-item-active-background-color);
-  color: var(--ct-navigation-light-drawer-active-color);
-  border-bottom-color: var(--ct-navigation-light-drawer-menu-item-active-border-color);
+  color: var(--ct-navigation-light-menu-active-color);
+  border-bottom-color: var(--ct-navigation-light-menu-item-active-border-color);
 }
 .ct-search.ct-theme-dark > .ct-link {
   background-color: var(--ct-navigation-dark-drawer-menu-item-background-color);
-  color: var(--ct-navigation-dark-drawer-color);
+  color: var(--ct-navigation-dark-menu-color);
 }
 .ct-search.ct-theme-dark > .ct-link {
-  border-bottom-color: var(--ct-navigation-dark-drawer-menu-item-border-color);
+  border-bottom-color: var(--ct-navigation-dark-menu-item-border-color);
 }
 @media (min-width: 768px) {
   .ct-search.ct-theme-dark > .ct-link:hover {
     background-color: var(--ct-navigation-dark-drawer-menu-item-hover-background-color);
-    color: var(--ct-navigation-dark-drawer-hover-color);
-    border-bottom-color: var(--ct-navigation-dark-drawer-menu-item-hover-border-color);
+    color: var(--ct-navigation-dark-menu-hover-color);
+    border-bottom-color: var(--ct-navigation-dark-menu-item-hover-border-color);
   }
 }
 .ct-search.ct-theme-dark > .ct-link[aria-expanded=true], .ct-search.ct-theme-dark > .ct-link:active {
   background-color: var(--ct-navigation-dark-drawer-menu-item-active-background-color);
-  color: var(--ct-navigation-dark-drawer-active-color);
-  border-bottom-color: var(--ct-navigation-dark-drawer-menu-item-active-border-color);
+  color: var(--ct-navigation-dark-menu-active-color);
+  border-bottom-color: var(--ct-navigation-dark-menu-item-active-border-color);
 }

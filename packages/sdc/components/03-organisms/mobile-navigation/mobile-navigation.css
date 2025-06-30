@@ -333,7 +333,7 @@
 }
 @media print {
   .ct-mobile-navigation-trigger {
-    display: none;
+    display: none !important;
   }
 }
 .ct-mobile-navigation-trigger {
