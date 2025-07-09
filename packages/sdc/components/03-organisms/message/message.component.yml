@@ -24,7 +24,7 @@ props:
     vertical_spacing:
       type: string
       title: Vertical Spacing
-      description: Tag list vertical spacing (none, top, bottom, both).
+      description: Message vertical spacing (none, top, bottom, both).
       enum:
         - none
         - top
