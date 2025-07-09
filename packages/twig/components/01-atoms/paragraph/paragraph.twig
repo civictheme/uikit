@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * CivicTheme Paragraph component.
+ *
+ * Props:
+ * - theme: [string] Theme variation (light or dark).
+ * - content: [string] Paragraph content.
+ * - size: [string] Paragraph size (extra-large, large, regular, small).
+ * - allow_html: [boolean] Whether to allow HTML in content.
+ * - no_margin: [boolean] Disable default margin.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ */
+#}
+
+{% set size_class = 'ct-paragraph--%s'|format(size|default('regular')) %}
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set no_margin_class = no_margin ? 'ct-paragraph--no-margin' : '' %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, size_class, no_margin_class, modifier_class|default('')) %}
+
+{% if content is not empty -%}
+  <div class="ct-paragraph {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+    {% if allow_html is defined ? allow_html : false %}
+      {{- content|raw -}}
+    {% else %}
+      {{- content -}}
+    {% endif %}
+  </div>
+{%- endif %}

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * CivicTheme Icon component.
+ *
+ * Props:
+ * - symbol: [string] Icon name (required).
+ * - size: [string] Icon size.
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ * - assets_dir: [string] Directory containing icon assets.
+ */
+#}
+
+{%- set assets_dir = assets_dir|default('@civictheme/../assets') -%}
+
+{%- if symbol is not empty %}
+  {%- set source = source(assets_dir ~ '/icons/' ~ symbol ~ '.svg', true) -%}
+  {%- if source is not empty -%}
+    {%- set size_class = size ? 'ct-icon--size-' ~ size : '' -%}
+    {%- set base_class = 'ct-icon ' ~ size_class -%}
+    {%- set modifier = modifier_class|default('') -%}
+    {%- set aria_attributes = 'aria-hidden="true" role="img"' -%}
+    {%- set additional_attributes = attributes|default('') -%}
+    {%- set attributes = 'class="' ~ base_class ~ ' ' ~ modifier ~ '" ' ~ aria_attributes ~ ' ' ~ additional_attributes -%}
+    {{- source|replace({'<svg ': '<svg ' ~ attributes ~ ' '})|raw -}}
+  {%- endif -%}
+{%- endif -%}

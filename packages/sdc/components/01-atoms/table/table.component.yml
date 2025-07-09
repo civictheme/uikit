@@ -1,0 +1,62 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Table
+status: stable
+description: Table component for tabular data with styling options
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    caption:
+      type: string
+      title: Caption
+      description: Table caption.
+    caption_position:
+      type: string
+      title: Caption position
+      description: Caption position (before, after).
+      enum:
+        - before
+        - after
+      default: before
+    header:
+      type: array
+      title: Header
+      description: Header cells.
+      items:
+        type: string
+    rows:
+      type: array
+      title: Rows
+      description: Table rows.
+      items:
+        type: array
+        items:
+          type: string
+    footer:
+      type: array
+      title: Footer
+      description: Footer cells.
+      items:
+        type: string
+    is_striped:
+      type: boolean
+      title: Striped
+      description: Whether to show table with striped rows.
+    is_data_table:
+      type: boolean
+      title: Data table
+      description: Whether to show as a data table.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier classes
+      description: Additional CSS classes.

@@ -1,0 +1,430 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Promo Card Component does not render when title is empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Promo Card Component renders with link when provided 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-promo-card ct-theme-light   "
+  >
+    
+              
+          
+    <div
+      class="ct-promo-card__content"
+    >
+      
+                          
+                          
+                          
+                              
+            
+
+
+  
+      <h4
+        class="ct-heading ct-theme-light ct-promo-card__title"
+      >
+                                      
+        <a
+          class="ct-link ct-theme-light     ct-promo-card__title__link"
+          href="https://example.com"
+        >
+          Promo Card Title
+        </a>
+                                  
+      </h4>
+      
+                  
+                          
+                              
+
+
+      <div
+        class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-promo-card__summary"
+      >
+        
+    This is the summary of the promo card.  
+      </div>
+                        
+                              
+      <div
+        class="ct-promo-card__tags"
+      >
+        
+              
+                              
+        <a
+          aria-hidden="true"
+          class="ct-link ct-theme-light    ct-link--only-icon ct-promo-card__tags__link"
+          href="https://example.com"
+          tabindex="-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="ct-icon  ct-link__icon"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+
+            <path
+              d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z"
+            />
+            
+
+          </svg>
+          
+
+        </a>
+                                  
+      </div>
+      
+                  
+                                
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;
+
+exports[`Promo Card Component renders with optional attributes 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-promo-card ct-theme-dark ct-promo-card--with-image ct-promo-card--image-over custom-class"
+    data-test="true"
+  >
+    
+                  
+    <div
+      class="ct-promo-card__image"
+    >
+      
+          
+
+  
+      <img
+        alt="Image description"
+        class="ct-image ct-theme-dark "
+        src="https://example.com/image.jpg"
+      />
+      
+
+                                    
+      <div
+        class="ct-promo-card__image__over"
+      >
+        
+                Image over content
+              
+      </div>
+      
+                              
+    </div>
+    
+          
+          
+    <div
+      class="ct-promo-card__content"
+    >
+      
+                              
+      <div
+        class="ct-promo-card__content-top"
+      >
+        Top content
+      </div>
+      
+                  
+                              
+      <div
+        class="ct-promo-card__subtitle"
+      >
+        
+              
+
+  
+  
+  
+    
+        <span
+          class="ct-tag ct-theme-dark ct-tag--tertiary    "
+        >
+              Subtitle text  
+        </span>
+        
+            
+      </div>
+      
+                  
+                              
+            
+      <div
+        class="ct-promo-card__date"
+      >
+        
+              
+
+  
+  
+  
+    
+        <span
+          class="ct-tag ct-theme-dark ct-tag--tertiary    "
+        >
+                              
+          <span
+            class="ct-datetime "
+          >
+            
+    
+            <time
+              class="ct-timestamp__start"
+              datetime="2023-12-01T00:00:00Z"
+            >
+              2023-12-01
+            </time>
+            
+      
+          </span>
+          
+              
+        </span>
+        
+            
+      </div>
+      
+                  
+                              
+            
+
+
+  
+      <h4
+        class="ct-heading ct-theme-dark ct-promo-card__title"
+      >
+                                      
+        <a
+          class="ct-link ct-theme-dark     ct-promo-card__title__link"
+          href="https://example.com"
+          target="_blank"
+        >
+          Promo Card Title
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
+        </a>
+                                  
+      </h4>
+      
+                  
+                              
+      <div
+        class="ct-promo-card__content-middle"
+      >
+        Middle content
+      </div>
+      
+                  
+                              
+
+
+      <div
+        class="ct-paragraph ct-theme-dark ct-paragraph--regular  ct-promo-card__summary"
+      >
+        
+    This is the summary of the promo card.  
+      </div>
+                        
+                              
+      <div
+        class="ct-promo-card__tags"
+      >
+        
+                              
+
+  
+        <div
+          class="ct-tag-list ct-theme-dark  "
+        >
+          
+              
+                                                                                          
+
+  
+          <ul
+            class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-tag-list__content"
+          >
+            
+                  
+            <li
+              class="ct-item-list__item"
+            >
+                          
+
+  
+  
+  
+    
+              <span
+                class="ct-tag ct-theme-dark ct-tag--primary    "
+              >
+                    Tag1  
+              </span>
+              
+          
+            </li>
+            
+                        
+            <li
+              class="ct-item-list__item"
+            >
+                          
+
+  
+  
+  
+    
+              <span
+                class="ct-tag ct-theme-dark ct-tag--primary    "
+              >
+                    Tag2  
+              </span>
+              
+          
+            </li>
+            
+            
+          </ul>
+          
+          
+                
+        </div>
+        
+              
+                              
+        <a
+          aria-hidden="true"
+          class="ct-link ct-theme-dark    ct-link--only-icon ct-promo-card__tags__link"
+          href="https://example.com"
+          tabindex="-1"
+          target="_blank"
+        >
+          <svg
+            aria-hidden="true"
+            class="ct-icon  ct-link__icon"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+
+            <path
+              d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z"
+            />
+            
+
+          </svg>
+          
+
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
+        </a>
+                                  
+      </div>
+      
+                  
+                              
+      <div
+        class="ct-promo-card__content-bottom"
+      >
+        Bottom content
+      </div>
+      
+                        
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;
+
+exports[`Promo Card Component renders with required attributes 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-promo-card ct-theme-light   "
+  >
+    
+              
+          
+    <div
+      class="ct-promo-card__content"
+    >
+      
+                          
+                          
+                          
+                              
+            
+
+
+  
+      <h4
+        class="ct-heading ct-theme-light ct-promo-card__title"
+      >
+                                      Promo Card Title
+                          
+      </h4>
+      
+                  
+                          
+                              
+
+
+      <div
+        class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-promo-card__summary"
+      >
+        
+    This is the summary of the promo card.  
+      </div>
+                        
+                          
+                                
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;

@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * CivicTheme Back to Top component.
+ *
+ * Props:
+ * - attributes: [string] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
+ */
+#}
+
+<div class="ct-back-to-top {{ modifier_class|default('') }}" data-component-name="back-to-top" data-scrollspy data-scrollspy-offset="400" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  {% include 'civictheme:button' with {
+    kind: 'link',
+    type: '',
+    icon: 'up-arrow',
+    url: '#top',
+    text: '<span class="ct-visually-hidden">Return focus to the top of the page</span>',
+    allow_html: true,
+    attributes: 'data-skip-to-target',
+    modifier_class: 'ct-back-to-top__button',
+  } only %}
+</div>

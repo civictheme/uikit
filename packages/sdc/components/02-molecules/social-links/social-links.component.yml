@@ -1,0 +1,50 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Social Links
+status: stable
+description: Component for social media links with icons
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      enum:
+        - light
+        - dark
+    with_border:
+      type: boolean
+      title: With Border
+      description: Whether icons have borders.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
+    items:
+      type: array
+      title: Items
+      description: Social media links.
+      items:
+        type: object
+        properties:
+          icon:
+            type: string
+            title: Icon
+            description: Icon identifier.
+          icon_html:
+            type: string
+            title: Icon HTML
+            description: Custom HTML for icon.
+          url:
+            type: string
+            title: URL
+            description: Link URL.
+          title:
+            type: string
+            title: Title
+            description: Link title attribute.
+slots:

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textfield Component does not render when name is empty 1`] = `
+<div>
+  
+
+
+</div>
+`;
+
+exports[`Textfield Component renders with optional attributes 1`] = `
+<div>
+  
+
+  
+  <input
+    class="ct-textfield ct-theme-dark ct-textfield--is-invalid custom-class"
+    data-test="true"
+    disabled=""
+    name="test-textfield"
+    placeholder="Enter text here"
+    required=""
+    type="text"
+    value="Sample text"
+  />
+  
+
+</div>
+`;
+
+exports[`Textfield Component renders with required attributes 1`] = `
+<div>
+  
+
+  
+  <input
+    class="ct-textfield ct-theme-light"
+    name="test-textfield"
+    type="text"
+    value="Sample text"
+  />
+  
+
+</div>
+`;
+
+exports[`Textfield Component strips HTML tags from attribute values 1`] = `
+<div>
+  
+
+  
+  <input
+    class="ct-textfield ct-theme-light"
+    data-test="<script>alert(1)</script>"
+    name="test-textfield"
+    type="text"
+    value="Sample text"
+  />
+  
+
+</div>
+`;

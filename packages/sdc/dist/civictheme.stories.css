@@ -1,0 +1,3385 @@
+.story-container {
+  margin-bottom: 1rem;
+}
+@media (min-width: 0) {
+  .story-container .story-container__title {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-container .story-container__title {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+.story-container .story-container__title {
+  margin: 0 auto;
+}
+.story-container .story-container__title {
+  max-width: calc(100vw - 48px);
+}
+@media (min-width: 368px) {
+  .story-container .story-container__title {
+    max-width: 320px;
+  }
+}
+@media (min-width: 576px) {
+  .story-container .story-container__title {
+    max-width: 528px;
+  }
+}
+@media (min-width: 768px) {
+  .story-container .story-container__title {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .story-container .story-container__title {
+    max-width: 896px;
+  }
+}
+@media (min-width: 1280px) {
+  .story-container .story-container__title {
+    max-width: 1184px;
+  }
+}
+@media (min-width: 1440px) {
+  .story-container .story-container__title {
+    max-width: 1248px;
+  }
+}
+.story-container .story-container__title {
+  border-bottom: solid 0.0625rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+@media (min-width: 0) {
+  .story-container .story-container__subtitle {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-container .story-container__subtitle {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+.story-container .story-container__subtitle {
+  margin: 0 auto;
+}
+.story-container .story-container__subtitle {
+  max-width: calc(100vw - 48px);
+}
+@media (min-width: 368px) {
+  .story-container .story-container__subtitle {
+    max-width: 320px;
+  }
+}
+@media (min-width: 576px) {
+  .story-container .story-container__subtitle {
+    max-width: 528px;
+  }
+}
+@media (min-width: 768px) {
+  .story-container .story-container__subtitle {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .story-container .story-container__subtitle {
+    max-width: 896px;
+  }
+}
+@media (min-width: 1280px) {
+  .story-container .story-container__subtitle {
+    max-width: 1184px;
+  }
+}
+@media (min-width: 1440px) {
+  .story-container .story-container__subtitle {
+    max-width: 1248px;
+  }
+}
+.story-container .story-container__subtitle {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.story-container .story-container__content {
+  margin: 0 auto;
+}
+.story-container .story-container__content {
+  max-width: calc(100vw - 48px);
+}
+@media (min-width: 368px) {
+  .story-container .story-container__content {
+    max-width: 320px;
+  }
+}
+@media (min-width: 576px) {
+  .story-container .story-container__content {
+    max-width: 528px;
+  }
+}
+@media (min-width: 768px) {
+  .story-container .story-container__content {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .story-container .story-container__content {
+    max-width: 896px;
+  }
+}
+@media (min-width: 1280px) {
+  .story-container .story-container__content {
+    max-width: 1184px;
+  }
+}
+@media (min-width: 1440px) {
+  .story-container .story-container__content {
+    max-width: 1248px;
+  }
+}
+.story-container .story-container__content {
+  margin-bottom: 2rem;
+}
+.story-container .story-container__subcontent {
+  margin-bottom: 2rem;
+}
+.story-container.story-container--columns {
+  display: flex;
+}
+.story-container.story-container--columns--2 .story-container__column {
+  width: 50%;
+  padding: 1rem;
+}
+.story-container .story-container__column {
+  flex: 1;
+}
+.story-container .story-container__column--light {
+  background: var(--ct-color-light-background-light);
+}
+.story-container .story-container__column--light .story-container__title,
+.story-container .story-container__column--light .story-container__subtitle {
+  color: var(--ct-color-light-heading);
+}
+.story-container .story-container__column--light .story-container__content,
+.story-container .story-container__column--light .story-container__subcontent {
+  color: var(--ct-color-light-body);
+}
+.story-container .story-container__column--dark {
+  background: var(--ct-color-dark-background);
+}
+.story-container .story-container__column--dark .story-container__title,
+.story-container .story-container__column--dark .story-container__subtitle {
+  color: var(--ct-color-dark-heading);
+}
+.story-container .story-container__column--dark .story-container__content,
+.story-container .story-container__column--dark .story-container__subcontent {
+  color: var(--ct-color-dark-body);
+}
+
+code {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #e1e1e8;
+  color: #d63384;
+  display: inline-block;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.9em;
+  padding: 0 0.25em;
+  vertical-align: top;
+}
+
+#root > .story-docs {
+  border: solid 0.0625rem #ccc;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 60%;
+  text-align: center;
+  line-height: 150%;
+}
+#root > .story-docs.story-docs-size--small {
+  max-width: 368px;
+}
+#root > .story-docs.story-docs-size--medium {
+  max-width: 576px;
+}
+#root > .story-docs.story-docs-size--large {
+  margin: 4rem auto;
+  min-width: 1440px;
+}
+#root > .story-docs.story-docs-size--fluid {
+  width: fit-content;
+  max-width: 80%;
+}
+@media (min-width: 0) {
+  #root > .story-docs #root > .story-docs__title {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  #root > .story-docs #root > .story-docs__title {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+#root > .story-docs #root > .story-docs__content {
+  margin-bottom: 2rem;
+}
+#root .test-docs-align-right {
+  text-align: right !important;
+}
+#root .test-docs-align-right > * {
+  text-align: right !important;
+}
+
+.sb-show-main {
+  overflow-y: scroll;
+  transition: background-color 0s !important;
+}
+.sb-show-main.sb-main-fullscreen #root, .sb-show-main.sb-main-centered #root {
+  padding: 0;
+}
+
+#root {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+#root > .story-layout.story-layout-size--small {
+  max-width: 336px;
+}
+@media (min-width: 576px) {
+  #root > .story-layout.story-layout-size--small {
+    max-width: 544px;
+  }
+}
+#root > .story-layout.story-layout-size--medium {
+  max-width: 768px;
+}
+#root > .story-layout.story-layout-size--large {
+  max-width: 1440px;
+}
+#root > .story-layout.story-layout--resizable {
+  border: solid 0.0625rem yellowgreen;
+  padding: 1rem;
+  width: 85vw;
+  height: 95vh;
+  resize: horizontal;
+  overflow: auto;
+}
+#root > .story-layout.story-layout--container {
+  container-type: inline-size;
+}
+#root > .story-layout.story-layout--resizable.story-layout-size--small, #root > .story-layout.story-layout--container.story-layout-size--small {
+  max-width: initial;
+  width: 27rem;
+}
+#root > .story-layout.story-layout--resizable.story-layout-size--medium, #root > .story-layout.story-layout--container.story-layout-size--medium {
+  max-width: initial;
+  width: 40rem;
+}
+#root > .story-layout.story-layout--resizable.story-layout-size--large, #root > .story-layout.story-layout--container.story-layout-size--large {
+  max-width: initial;
+  width: 94rem;
+}
+
+.sb-main-fullscreen #root .story-layout.story-layout--centered-vertically {
+  margin-top: 30vh;
+}
+
+.story-placeholder,
+.story-placeholder--hugged,
+.story-placeholder--fixed {
+  display: inline-block;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: rgba(84, 137, 146, 0.3);
+  border: dashed 1px rgba(84, 137, 146, 0.7);
+  color: #1c2e31;
+}
+.ct-theme-dark .story-placeholder,
+.ct-theme-dark .story-placeholder--hugged,
+.ct-theme-dark .story-placeholder--fixed {
+  background-color: rgba(110, 162, 171, 0.7);
+  border: dashed 1px rgba(239, 245, 246, 0.9);
+  color: #eff5f6;
+}
+
+.story-placeholder {
+  width: 100%;
+}
+
+.story-placeholder--hugged {
+  width: auto;
+}
+
+.story-placeholder--fixed {
+  width: 184px;
+}
+
+.story-slot {
+  display: grid;
+  align-items: center;
+  background-color: rgba(128, 0, 128, 0.3);
+  padding: 1em;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  border: dotted 0.0625rem purple;
+  white-space: nowrap;
+  height: 100%;
+}
+.ct-theme-dark .story-slot {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: dotted 0.0625rem purple;
+}
+.story-slot code {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+.story-slot--image_over {
+  position: absolute;
+  top: 4em;
+  left: 0;
+  right: 0;
+}
+
+.story-about-civictheme {
+  background-color: #003f56;
+}
+.story-about-civictheme .ct-logo .ct-logo__image--mobile {
+  max-height: 3rem;
+}
+.story-about-civictheme .ct-logo .ct-logo__image--desktop {
+  max-height: 6rem;
+}
+.story-about-civictheme .ct-heading {
+  margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .story-about-civictheme .ct-heading {
+    margin-top: 0;
+  }
+}
+.story-about-civictheme .ct-item-list__item {
+  display: flex;
+  padding-left: 0;
+  align-items: center;
+}
+.story-about-civictheme .ct-item-list__item .ct-paragraph {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.story-about-civictheme .ct-item-list__item .ct-icon {
+  overflow: visible;
+}
+
+.story-background-wrapper {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.story-background-wrapper .ct-background {
+  height: 100%;
+  width: 100%;
+}
+
+.story-menu-multiple-inline-with-absolute-panels [data-collapsible] {
+  position: relative;
+}
+
+.story-menu-multiple-inline-with-absolute-panels [data-collapsible] [data-collapsible-panel] {
+  top: 1.5em;
+}
+
+.story-menu-multiple-inline-with-absolute-panels ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.story-menu-multiple-inline-with-absolute-panels ul li {
+  white-space: nowrap;
+}
+
+.story-menu-multiple-inline-with-absolute-panels ul li[data-collapsible] li a {
+  display: block;
+  padding: 1em;
+}
+
+.story-menu-multiple-inline-with-absolute-panels ul li[data-collapsible] li a:hover {
+  background: cornflowerblue;
+}
+
+.story-menu-focus *:focus {
+  outline: solid 2px green;
+}
+
+.story-menu-focus button:focus {
+  outline: solid 2px orange;
+}
+
+.story-menu-focus [data-collapsible-trigger]:focus {
+  outline: solid 2px red;
+}
+
+.story-colors-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+.story-colors-wrapper .story-color-light--brand1 {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--brand1 .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  position: relative;
+  background-color: #00698f;
+}
+.story-colors-wrapper .story-color-light--brand1 .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--brand1 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--brand1 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--brand1 .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--brand1 .story-color-text::after {
+  content: "#00698F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--brand2 {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--brand2 .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #7f8e98;
+  position: relative;
+  background-color: #e6e9eb;
+}
+.story-colors-wrapper .story-color-light--brand2 .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--brand2 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--brand2 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--brand2 .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--brand2 .story-color-text::after {
+  content: "#E6E9EB";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--brand3 {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--brand3 .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #0b0b0b;
+  position: relative;
+  background-color: #121313;
+}
+.story-colors-wrapper .story-color-light--brand3 .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--brand3 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--brand3 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--brand3 .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--brand3 .story-color-text::after {
+  content: "#121313";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--brand1 {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--brand1 .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #00a2d3;
+  position: relative;
+  background-color: #61daff;
+}
+.story-colors-wrapper .story-color-dark--brand1 .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--brand1 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--brand1 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--brand1 .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--brand1 .story-color-text::after {
+  content: "#61DAFF";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--brand2 {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--brand2 .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #00232f;
+  position: relative;
+  background-color: #003a4f;
+}
+.story-colors-wrapper .story-color-dark--brand2 .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--brand2 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--brand2 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--brand2 .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--brand2 .story-color-text::after {
+  content: "#003A4F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--brand3 {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--brand3 .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  position: relative;
+  background-color: #00698f;
+}
+.story-colors-wrapper .story-color-dark--brand3 .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--brand3 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--brand3 .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--brand3 .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--brand3 .story-color-text::after {
+  content: "#00698F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--heading {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--heading .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #001922;
+  position: relative;
+  background-color: #002a39;
+}
+.story-colors-wrapper .story-color-light--heading .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--heading .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--heading .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--heading .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--heading .story-color-text::after {
+  content: "#002A39";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--body {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--body .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #1f292c;
+  position: relative;
+  background-color: #33444a;
+}
+.story-colors-wrapper .story-color-light--body .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--body .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--body .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--body .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--body .story-color-text::after {
+  content: "#33444A";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--background-light {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--background-light .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #989898;
+  position: relative;
+  background-color: #fdfdfd;
+}
+.story-colors-wrapper .story-color-light--background-light .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--background-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--background-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--background-light .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--background-light .story-color-text::after {
+  content: "#FDFDFD";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--background {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--background .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #7f8e98;
+  position: relative;
+  background-color: #e6e9eb;
+}
+.story-colors-wrapper .story-color-light--background .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--background .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--background .story-color-text::after {
+  content: "#E6E9EB";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--background-dark {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--background-dark .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #6c7073;
+  position: relative;
+  background-color: #b8babc;
+}
+.story-colors-wrapper .story-color-light--background-dark .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--background-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--background-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--background-dark .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--background-dark .story-color-text::after {
+  content: "#B8BABC";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--border-light {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--border-light .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #67696b;
+  position: relative;
+  background-color: #adafb0;
+}
+.story-colors-wrapper .story-color-light--border-light .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--border-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--border-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--border-light .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--border-light .story-color-text::after {
+  content: "#ADAFB0";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--border {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--border .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #373838;
+  position: relative;
+  background-color: #5c5d5e;
+}
+.story-colors-wrapper .story-color-light--border .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--border .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--border .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--border .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--border .story-color-text::after {
+  content: "#5C5D5E";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--border-dark {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--border-dark .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #0e0e0e;
+  position: relative;
+  background-color: #171718;
+}
+.story-colors-wrapper .story-color-light--border-dark .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--border-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--border-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--border-dark .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--border-dark .story-color-text::after {
+  content: "#171718";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--interaction-text {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--interaction-text .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #8ba2a2;
+  position: relative;
+  background-color: #fafbfb;
+}
+.story-colors-wrapper .story-color-light--interaction-text .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--interaction-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--interaction-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--interaction-text .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--interaction-text .story-color-text::after {
+  content: "#FAFBFB";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--interaction-background {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--interaction-background .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  position: relative;
+  background-color: #00698f;
+}
+.story-colors-wrapper .story-color-light--interaction-background .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--interaction-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--interaction-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--interaction-background .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--interaction-background .story-color-text::after {
+  content: "#00698F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-text {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-text .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #8ba2a2;
+  position: relative;
+  background-color: #fafbfb;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-text .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--interaction-hover-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--interaction-hover-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--interaction-hover-text .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-text .story-color-text::after {
+  content: "#FAFBFB";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-background {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-background .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #002634;
+  position: relative;
+  background-color: #003f56;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-background .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--interaction-hover-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--interaction-hover-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--interaction-hover-background .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--interaction-hover-background .story-color-text::after {
+  content: "#003F56";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--interaction-focus {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--interaction-focus .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #4f2494;
+  position: relative;
+  background-color: #8b5cd7;
+}
+.story-colors-wrapper .story-color-light--interaction-focus .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--interaction-focus .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--interaction-focus .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--interaction-focus .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--interaction-focus .story-color-text::after {
+  content: "#8B5CD7";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--highlight {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--highlight .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #0b0b0b;
+  position: relative;
+  background-color: #121313;
+}
+.story-colors-wrapper .story-color-light--highlight .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--highlight .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--highlight .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--highlight .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--highlight .story-color-text::after {
+  content: "#121313";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--information {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--information .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #004a73;
+  position: relative;
+  background-color: #007cbf;
+}
+.story-colors-wrapper .story-color-light--information .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--information .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--information .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--information .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--information .story-color-text::after {
+  content: "#007CBF";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--warning {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--warning .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #793100;
+  position: relative;
+  background-color: #c95100;
+}
+.story-colors-wrapper .story-color-light--warning .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--warning .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--warning .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--warning .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--warning .story-color-text::after {
+  content: "#C95100";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--error {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--error .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #7d201f;
+  position: relative;
+  background-color: #ce3836;
+}
+.story-colors-wrapper .story-color-light--error .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--error .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--error .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--error .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--error .story-color-text::after {
+  content: "#CE3836";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-light--success {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-light--success .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #004f4e;
+  position: relative;
+  background-color: #008482;
+}
+.story-colors-wrapper .story-color-light--success .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-light--success .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-light--success .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-light--success .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-light--success .story-color-text::after {
+  content: "#008482";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--heading {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--heading .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #2ecbff;
+  position: relative;
+  background-color: #f7fdff;
+}
+.story-colors-wrapper .story-color-dark--heading .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--heading .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--heading .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--heading .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--heading .story-color-text::after {
+  content: "#F7FDFF";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--body {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--body .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #25c8ff;
+  position: relative;
+  background-color: #e7f9ff;
+}
+.story-colors-wrapper .story-color-dark--body .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--body .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--body .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--body .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--body .story-color-text::after {
+  content: "#E7F9FF";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--background-light {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--background-light .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #082935;
+  position: relative;
+  background-color: #0d4458;
+}
+.story-colors-wrapper .story-color-dark--background-light .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--background-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--background-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--background-light .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--background-light .story-color-text::after {
+  content: "#0D4458";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--background {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--background .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #00232f;
+  position: relative;
+  background-color: #003a4f;
+}
+.story-colors-wrapper .story-color-dark--background .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--background .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--background .story-color-text::after {
+  content: "#003A4F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--background-dark {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--background-dark .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #001921;
+  position: relative;
+  background-color: #002937;
+}
+.story-colors-wrapper .story-color-dark--background-dark .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--background-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--background-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--background-dark .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--background-dark .story-color-text::after {
+  content: "#002937";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--border-light {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--border-light .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #58757f;
+  position: relative;
+  background-color: #a6bac1;
+}
+.story-colors-wrapper .story-color-dark--border-light .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--border-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--border-light .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--border-light .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--border-light .story-color-text::after {
+  content: "#A6BAC1";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--border {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--border .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #102f3a;
+  position: relative;
+  background-color: #1a4e61;
+}
+.story-colors-wrapper .story-color-dark--border .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--border .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--border .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--border .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--border .story-color-text::after {
+  content: "#1A4E61";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--border-dark {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--border-dark .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #001921;
+  position: relative;
+  background-color: #002937;
+}
+.story-colors-wrapper .story-color-dark--border-dark .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--border-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--border-dark .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--border-dark .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--border-dark .story-color-text::after {
+  content: "#002937";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--interaction-text {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--interaction-text .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #00232f;
+  position: relative;
+  background-color: #003a4f;
+}
+.story-colors-wrapper .story-color-dark--interaction-text .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--interaction-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--interaction-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--interaction-text .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--interaction-text .story-color-text::after {
+  content: "#003A4F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--interaction-background {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--interaction-background .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #00a2d3;
+  position: relative;
+  background-color: #61daff;
+}
+.story-colors-wrapper .story-color-dark--interaction-background .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--interaction-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--interaction-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--interaction-background .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--interaction-background .story-color-text::after {
+  content: "#61DAFF";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-text {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #001921;
+  position: relative;
+  background-color: #002937;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-text::after {
+  content: "#002937";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-background {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #00bff9;
+  position: relative;
+  background-color: #a0e9ff;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-text::after {
+  content: "#A0E9FF";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--interaction-focus {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--interaction-focus .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #4f2494;
+  position: relative;
+  background-color: #8b5cd7;
+}
+.story-colors-wrapper .story-color-dark--interaction-focus .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--interaction-focus .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--interaction-focus .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--interaction-focus .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--interaction-focus .story-color-text::after {
+  content: "#8B5CD7";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--highlight {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--highlight .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  position: relative;
+  background-color: #00698f;
+}
+.story-colors-wrapper .story-color-dark--highlight .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--highlight .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--highlight .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--highlight .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--highlight .story-color-text::after {
+  content: "#00698F";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--information {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--information .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #0385c2;
+  position: relative;
+  background-color: #4cc4fc;
+}
+.story-colors-wrapper .story-color-dark--information .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--information .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--information .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--information .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--information .story-color-text::after {
+  content: "#4CC4FC";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--warning {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--warning .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #9a4c17;
+  position: relative;
+  background-color: #e38444;
+}
+.story-colors-wrapper .story-color-dark--warning .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--warning .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--warning .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--warning .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--warning .story-color-text::after {
+  content: "#E38444";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--error {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--error .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #a71916;
+  position: relative;
+  background-color: #e85653;
+}
+.story-colors-wrapper .story-color-dark--error .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--error .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--error .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--error .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--error .story-color-text::after {
+  content: "#E85653";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+.story-colors-wrapper .story-color-dark--success {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+  width: 6rem;
+}
+.story-colors-wrapper .story-color-dark--success .story-color-element {
+  display: block;
+  height: 3.75rem;
+  box-shadow: inset 0 0 0 0.0625rem #0b6a68;
+  position: relative;
+  background-color: #12b0ae;
+}
+.story-colors-wrapper .story-color-dark--success .story-color-text {
+  display: block;
+}
+@media (min-width: 0) {
+  .story-colors-wrapper .story-color-dark--success .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+  }
+}
+@media (min-width: 768px) {
+  .story-colors-wrapper .story-color-dark--success .story-color-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+.story-colors-wrapper .story-color-dark--success .story-color-text {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.story-colors-wrapper .story-color-dark--success .story-color-text::after {
+  content: "#12B0AE";
+  font-family: "Courier New", monospace, sans-serif;
+  text-align: center;
+  display: block;
+  position: absolute;
+  line-height: 150%;
+  width: 100%;
+}
+
+.story-elevation-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+.story-elevation-wrapper .story-elevation--1 {
+  width: 10rem;
+  height: 10rem;
+  margin: 3rem 5rem 6rem 0;
+  border-radius: 0.25rem;
+  position: relative;
+  background-color: white;
+}
+.story-elevation-wrapper .story-elevation--1 {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.story-elevation-wrapper .story-elevation--2 {
+  width: 10rem;
+  height: 10rem;
+  margin: 3rem 5rem 6rem 0;
+  border-radius: 0.25rem;
+  position: relative;
+  background-color: white;
+}
+.story-elevation-wrapper .story-elevation--2 {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+.story-elevation-wrapper .story-elevation--3 {
+  width: 10rem;
+  height: 10rem;
+  margin: 3rem 5rem 6rem 0;
+  border-radius: 0.25rem;
+  position: relative;
+  background-color: white;
+}
+.story-elevation-wrapper .story-elevation--3 {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+.story-elevation-wrapper .story-elevation--4 {
+  width: 10rem;
+  height: 10rem;
+  margin: 3rem 5rem 6rem 0;
+  border-radius: 0.25rem;
+  position: relative;
+  background-color: white;
+}
+.story-elevation-wrapper .story-elevation--4 {
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2);
+}
+
+#flyout-story1 [data-flyout-panel] {
+  box-shadow: 0 0 0.0625rem 0.0625rem #f00 inset;
+  padding: 1rem;
+}
+
+#flyout-story2 [data-flyout-panel] {
+  box-shadow: 0 0 0.0625rem 0.0625rem #00f inset;
+  padding: 1rem;
+}
+
+#flyout-story3 [data-flyout-panel] {
+  box-shadow: 0 0 0.0625rem 0.0625rem #0f0 inset;
+  padding: 1rem;
+}
+
+#flyout-story4 [data-flyout-panel] {
+  box-shadow: 0 0 0.0625rem 0.0625rem #c95100 inset;
+  padding: 1rem;
+}
+
+#flyout-story5 [data-flyout-panel] {
+  box-shadow: 0 0 0.0625rem 0.0625rem #b388ff inset;
+  padding: 1rem;
+}
+
+.story-fonts-wrapper .story-font--thin--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--thin--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--thin--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--thin--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--extralight--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 200;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--extralight--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 200;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--extralight--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--extralight--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--regular--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--regular--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--regular--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--regular--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--medium--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--medium--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--medium--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--medium--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--semibold--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--semibold--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--semibold--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--semibold--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--bold--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--bold--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--bold--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--bold--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--extrabold--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--extrabold--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--extrabold--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--extrabold--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--black--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--black--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--black--primary {
+  font-family: "Lexend", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+}
+.story-fonts-wrapper .story-font--italic--black--secondary {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.story-grid-outlines .container,
+.story-grid-outlines .container-fluid {
+  background-color: rgba(255, 0, 0, 0.025);
+  box-shadow: 0 0 1px 1px red inset;
+}
+.story-grid-outlines .container .row,
+.story-grid-outlines .container ul,
+.story-grid-outlines .container-fluid .row,
+.story-grid-outlines .container-fluid ul {
+  counter-reset: story-coloumn-counter;
+  background-color: rgba(255, 165, 0, 0.2);
+  outline: 1px solid rgba(255, 165, 0, 0.2);
+}
+.story-grid-outlines .container .row > .col,
+.story-grid-outlines .container .row > [class*=col-],
+.story-grid-outlines .container .row > li,
+.story-grid-outlines .container ul > .col,
+.story-grid-outlines .container ul > [class*=col-],
+.story-grid-outlines .container ul > li,
+.story-grid-outlines .container-fluid .row > .col,
+.story-grid-outlines .container-fluid .row > [class*=col-],
+.story-grid-outlines .container-fluid .row > li,
+.story-grid-outlines .container-fluid ul > .col,
+.story-grid-outlines .container-fluid ul > [class*=col-],
+.story-grid-outlines .container-fluid ul > li {
+  counter-increment: story-coloumn-counter;
+  position: relative;
+}
+.story-grid-outlines .container .row > .col::after,
+.story-grid-outlines .container .row > [class*=col-]::after,
+.story-grid-outlines .container .row > li::after,
+.story-grid-outlines .container ul > .col::after,
+.story-grid-outlines .container ul > [class*=col-]::after,
+.story-grid-outlines .container ul > li::after,
+.story-grid-outlines .container-fluid .row > .col::after,
+.story-grid-outlines .container-fluid .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > li::after,
+.story-grid-outlines .container-fluid ul > .col::after,
+.story-grid-outlines .container-fluid ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > li::after {
+  content: counter(story-coloumn-counter) " of " attr(data-story-total-columns);
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 0.6em;
+}
+.story-grid-outlines .container .row > .col .row,
+.story-grid-outlines .container .row > .col ul,
+.story-grid-outlines .container .row > [class*=col-] .row,
+.story-grid-outlines .container .row > [class*=col-] ul,
+.story-grid-outlines .container .row > li .row,
+.story-grid-outlines .container .row > li ul,
+.story-grid-outlines .container ul > .col .row,
+.story-grid-outlines .container ul > .col ul,
+.story-grid-outlines .container ul > [class*=col-] .row,
+.story-grid-outlines .container ul > [class*=col-] ul,
+.story-grid-outlines .container ul > li .row,
+.story-grid-outlines .container ul > li ul,
+.story-grid-outlines .container-fluid .row > .col .row,
+.story-grid-outlines .container-fluid .row > .col ul,
+.story-grid-outlines .container-fluid .row > [class*=col-] .row,
+.story-grid-outlines .container-fluid .row > [class*=col-] ul,
+.story-grid-outlines .container-fluid .row > li .row,
+.story-grid-outlines .container-fluid .row > li ul,
+.story-grid-outlines .container-fluid ul > .col .row,
+.story-grid-outlines .container-fluid ul > .col ul,
+.story-grid-outlines .container-fluid ul > [class*=col-] .row,
+.story-grid-outlines .container-fluid ul > [class*=col-] ul,
+.story-grid-outlines .container-fluid ul > li .row,
+.story-grid-outlines .container-fluid ul > li ul {
+  counter-reset: story-column-nested-counter;
+}
+.story-grid-outlines .container .row > .col .row > .col,
+.story-grid-outlines .container .row > .col .row > [class*=col-],
+.story-grid-outlines .container .row > .col .row > li,
+.story-grid-outlines .container .row > .col ul > .col,
+.story-grid-outlines .container .row > .col ul > [class*=col-],
+.story-grid-outlines .container .row > .col ul > li,
+.story-grid-outlines .container .row > [class*=col-] .row > .col,
+.story-grid-outlines .container .row > [class*=col-] .row > [class*=col-],
+.story-grid-outlines .container .row > [class*=col-] .row > li,
+.story-grid-outlines .container .row > [class*=col-] ul > .col,
+.story-grid-outlines .container .row > [class*=col-] ul > [class*=col-],
+.story-grid-outlines .container .row > [class*=col-] ul > li,
+.story-grid-outlines .container .row > li .row > .col,
+.story-grid-outlines .container .row > li .row > [class*=col-],
+.story-grid-outlines .container .row > li .row > li,
+.story-grid-outlines .container .row > li ul > .col,
+.story-grid-outlines .container .row > li ul > [class*=col-],
+.story-grid-outlines .container .row > li ul > li,
+.story-grid-outlines .container ul > .col .row > .col,
+.story-grid-outlines .container ul > .col .row > [class*=col-],
+.story-grid-outlines .container ul > .col .row > li,
+.story-grid-outlines .container ul > .col ul > .col,
+.story-grid-outlines .container ul > .col ul > [class*=col-],
+.story-grid-outlines .container ul > .col ul > li,
+.story-grid-outlines .container ul > [class*=col-] .row > .col,
+.story-grid-outlines .container ul > [class*=col-] .row > [class*=col-],
+.story-grid-outlines .container ul > [class*=col-] .row > li,
+.story-grid-outlines .container ul > [class*=col-] ul > .col,
+.story-grid-outlines .container ul > [class*=col-] ul > [class*=col-],
+.story-grid-outlines .container ul > [class*=col-] ul > li,
+.story-grid-outlines .container ul > li .row > .col,
+.story-grid-outlines .container ul > li .row > [class*=col-],
+.story-grid-outlines .container ul > li .row > li,
+.story-grid-outlines .container ul > li ul > .col,
+.story-grid-outlines .container ul > li ul > [class*=col-],
+.story-grid-outlines .container ul > li ul > li,
+.story-grid-outlines .container-fluid .row > .col .row > .col,
+.story-grid-outlines .container-fluid .row > .col .row > [class*=col-],
+.story-grid-outlines .container-fluid .row > .col .row > li,
+.story-grid-outlines .container-fluid .row > .col ul > .col,
+.story-grid-outlines .container-fluid .row > .col ul > [class*=col-],
+.story-grid-outlines .container-fluid .row > .col ul > li,
+.story-grid-outlines .container-fluid .row > [class*=col-] .row > .col,
+.story-grid-outlines .container-fluid .row > [class*=col-] .row > [class*=col-],
+.story-grid-outlines .container-fluid .row > [class*=col-] .row > li,
+.story-grid-outlines .container-fluid .row > [class*=col-] ul > .col,
+.story-grid-outlines .container-fluid .row > [class*=col-] ul > [class*=col-],
+.story-grid-outlines .container-fluid .row > [class*=col-] ul > li,
+.story-grid-outlines .container-fluid .row > li .row > .col,
+.story-grid-outlines .container-fluid .row > li .row > [class*=col-],
+.story-grid-outlines .container-fluid .row > li .row > li,
+.story-grid-outlines .container-fluid .row > li ul > .col,
+.story-grid-outlines .container-fluid .row > li ul > [class*=col-],
+.story-grid-outlines .container-fluid .row > li ul > li,
+.story-grid-outlines .container-fluid ul > .col .row > .col,
+.story-grid-outlines .container-fluid ul > .col .row > [class*=col-],
+.story-grid-outlines .container-fluid ul > .col .row > li,
+.story-grid-outlines .container-fluid ul > .col ul > .col,
+.story-grid-outlines .container-fluid ul > .col ul > [class*=col-],
+.story-grid-outlines .container-fluid ul > .col ul > li,
+.story-grid-outlines .container-fluid ul > [class*=col-] .row > .col,
+.story-grid-outlines .container-fluid ul > [class*=col-] .row > [class*=col-],
+.story-grid-outlines .container-fluid ul > [class*=col-] .row > li,
+.story-grid-outlines .container-fluid ul > [class*=col-] ul > .col,
+.story-grid-outlines .container-fluid ul > [class*=col-] ul > [class*=col-],
+.story-grid-outlines .container-fluid ul > [class*=col-] ul > li,
+.story-grid-outlines .container-fluid ul > li .row > .col,
+.story-grid-outlines .container-fluid ul > li .row > [class*=col-],
+.story-grid-outlines .container-fluid ul > li .row > li,
+.story-grid-outlines .container-fluid ul > li ul > .col,
+.story-grid-outlines .container-fluid ul > li ul > [class*=col-],
+.story-grid-outlines .container-fluid ul > li ul > li {
+  counter-increment: story-column-nested-counter;
+}
+.story-grid-outlines .container .row > .col .row > .col::after,
+.story-grid-outlines .container .row > .col .row > [class*=col-]::after,
+.story-grid-outlines .container .row > .col .row > li::after,
+.story-grid-outlines .container .row > .col ul > .col::after,
+.story-grid-outlines .container .row > .col ul > [class*=col-]::after,
+.story-grid-outlines .container .row > .col ul > li::after,
+.story-grid-outlines .container .row > [class*=col-] .row > .col::after,
+.story-grid-outlines .container .row > [class*=col-] .row > [class*=col-]::after,
+.story-grid-outlines .container .row > [class*=col-] .row > li::after,
+.story-grid-outlines .container .row > [class*=col-] ul > .col::after,
+.story-grid-outlines .container .row > [class*=col-] ul > [class*=col-]::after,
+.story-grid-outlines .container .row > [class*=col-] ul > li::after,
+.story-grid-outlines .container .row > li .row > .col::after,
+.story-grid-outlines .container .row > li .row > [class*=col-]::after,
+.story-grid-outlines .container .row > li .row > li::after,
+.story-grid-outlines .container .row > li ul > .col::after,
+.story-grid-outlines .container .row > li ul > [class*=col-]::after,
+.story-grid-outlines .container .row > li ul > li::after,
+.story-grid-outlines .container ul > .col .row > .col::after,
+.story-grid-outlines .container ul > .col .row > [class*=col-]::after,
+.story-grid-outlines .container ul > .col .row > li::after,
+.story-grid-outlines .container ul > .col ul > .col::after,
+.story-grid-outlines .container ul > .col ul > [class*=col-]::after,
+.story-grid-outlines .container ul > .col ul > li::after,
+.story-grid-outlines .container ul > [class*=col-] .row > .col::after,
+.story-grid-outlines .container ul > [class*=col-] .row > [class*=col-]::after,
+.story-grid-outlines .container ul > [class*=col-] .row > li::after,
+.story-grid-outlines .container ul > [class*=col-] ul > .col::after,
+.story-grid-outlines .container ul > [class*=col-] ul > [class*=col-]::after,
+.story-grid-outlines .container ul > [class*=col-] ul > li::after,
+.story-grid-outlines .container ul > li .row > .col::after,
+.story-grid-outlines .container ul > li .row > [class*=col-]::after,
+.story-grid-outlines .container ul > li .row > li::after,
+.story-grid-outlines .container ul > li ul > .col::after,
+.story-grid-outlines .container ul > li ul > [class*=col-]::after,
+.story-grid-outlines .container ul > li ul > li::after,
+.story-grid-outlines .container-fluid .row > .col .row > .col::after,
+.story-grid-outlines .container-fluid .row > .col .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > .col .row > li::after,
+.story-grid-outlines .container-fluid .row > .col ul > .col::after,
+.story-grid-outlines .container-fluid .row > .col ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > .col ul > li::after,
+.story-grid-outlines .container-fluid .row > [class*=col-] .row > .col::after,
+.story-grid-outlines .container-fluid .row > [class*=col-] .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > [class*=col-] .row > li::after,
+.story-grid-outlines .container-fluid .row > [class*=col-] ul > .col::after,
+.story-grid-outlines .container-fluid .row > [class*=col-] ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > [class*=col-] ul > li::after,
+.story-grid-outlines .container-fluid .row > li .row > .col::after,
+.story-grid-outlines .container-fluid .row > li .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > li .row > li::after,
+.story-grid-outlines .container-fluid .row > li ul > .col::after,
+.story-grid-outlines .container-fluid .row > li ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > li ul > li::after,
+.story-grid-outlines .container-fluid ul > .col .row > .col::after,
+.story-grid-outlines .container-fluid ul > .col .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > .col .row > li::after,
+.story-grid-outlines .container-fluid ul > .col ul > .col::after,
+.story-grid-outlines .container-fluid ul > .col ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > .col ul > li::after,
+.story-grid-outlines .container-fluid ul > [class*=col-] .row > .col::after,
+.story-grid-outlines .container-fluid ul > [class*=col-] .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > [class*=col-] .row > li::after,
+.story-grid-outlines .container-fluid ul > [class*=col-] ul > .col::after,
+.story-grid-outlines .container-fluid ul > [class*=col-] ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > [class*=col-] ul > li::after,
+.story-grid-outlines .container-fluid ul > li .row > .col::after,
+.story-grid-outlines .container-fluid ul > li .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > li .row > li::after,
+.story-grid-outlines .container-fluid ul > li ul > .col::after,
+.story-grid-outlines .container-fluid ul > li ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > li ul > li::after {
+  content: "Nested " counter(story-column-nested-counter) " of " attr(data-story-total-columns);
+  left: auto;
+  font-size: 0.4em;
+}
+.story-grid-outlines .container .row > .col .story-placeholder,
+.story-grid-outlines .container .row > [class*=col-] .story-placeholder,
+.story-grid-outlines .container .row > li .story-placeholder,
+.story-grid-outlines .container ul > .col .story-placeholder,
+.story-grid-outlines .container ul > [class*=col-] .story-placeholder,
+.story-grid-outlines .container ul > li .story-placeholder,
+.story-grid-outlines .container-fluid .row > .col .story-placeholder,
+.story-grid-outlines .container-fluid .row > [class*=col-] .story-placeholder,
+.story-grid-outlines .container-fluid .row > li .story-placeholder,
+.story-grid-outlines .container-fluid ul > .col .story-placeholder,
+.story-grid-outlines .container-fluid ul > [class*=col-] .story-placeholder,
+.story-grid-outlines .container-fluid ul > li .story-placeholder {
+  position: relative;
+}
+.story-grid-outlines .container .row > .col .story-placeholder::before,
+.story-grid-outlines .container .row > [class*=col-] .story-placeholder::before,
+.story-grid-outlines .container .row > li .story-placeholder::before,
+.story-grid-outlines .container ul > .col .story-placeholder::before,
+.story-grid-outlines .container ul > [class*=col-] .story-placeholder::before,
+.story-grid-outlines .container ul > li .story-placeholder::before,
+.story-grid-outlines .container-fluid .row > .col .story-placeholder::before,
+.story-grid-outlines .container-fluid .row > [class*=col-] .story-placeholder::before,
+.story-grid-outlines .container-fluid .row > li .story-placeholder::before,
+.story-grid-outlines .container-fluid ul > .col .story-placeholder::before,
+.story-grid-outlines .container-fluid ul > [class*=col-] .story-placeholder::before,
+.story-grid-outlines .container-fluid ul > li .story-placeholder::before {
+  content: "100%";
+  color: grey;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.6em;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: nowrap;
+}
+.story-grid-outlines .container .row > .col .story-placeholder--hugged,
+.story-grid-outlines .container .row > [class*=col-] .story-placeholder--hugged,
+.story-grid-outlines .container .row > li .story-placeholder--hugged,
+.story-grid-outlines .container ul > .col .story-placeholder--hugged,
+.story-grid-outlines .container ul > [class*=col-] .story-placeholder--hugged,
+.story-grid-outlines .container ul > li .story-placeholder--hugged,
+.story-grid-outlines .container-fluid .row > .col .story-placeholder--hugged,
+.story-grid-outlines .container-fluid .row > [class*=col-] .story-placeholder--hugged,
+.story-grid-outlines .container-fluid .row > li .story-placeholder--hugged,
+.story-grid-outlines .container-fluid ul > .col .story-placeholder--hugged,
+.story-grid-outlines .container-fluid ul > [class*=col-] .story-placeholder--hugged,
+.story-grid-outlines .container-fluid ul > li .story-placeholder--hugged {
+  position: relative;
+}
+.story-grid-outlines .container .row > .col .story-placeholder--hugged::before,
+.story-grid-outlines .container .row > [class*=col-] .story-placeholder--hugged::before,
+.story-grid-outlines .container .row > li .story-placeholder--hugged::before,
+.story-grid-outlines .container ul > .col .story-placeholder--hugged::before,
+.story-grid-outlines .container ul > [class*=col-] .story-placeholder--hugged::before,
+.story-grid-outlines .container ul > li .story-placeholder--hugged::before,
+.story-grid-outlines .container-fluid .row > .col .story-placeholder--hugged::before,
+.story-grid-outlines .container-fluid .row > [class*=col-] .story-placeholder--hugged::before,
+.story-grid-outlines .container-fluid .row > li .story-placeholder--hugged::before,
+.story-grid-outlines .container-fluid ul > .col .story-placeholder--hugged::before,
+.story-grid-outlines .container-fluid ul > [class*=col-] .story-placeholder--hugged::before,
+.story-grid-outlines .container-fluid ul > li .story-placeholder--hugged::before {
+  content: "auto";
+  color: grey;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.6em;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: nowrap;
+}
+.story-grid-outlines .container .row > .col .story-placeholder--fixed,
+.story-grid-outlines .container .row > [class*=col-] .story-placeholder--fixed,
+.story-grid-outlines .container .row > li .story-placeholder--fixed,
+.story-grid-outlines .container ul > .col .story-placeholder--fixed,
+.story-grid-outlines .container ul > [class*=col-] .story-placeholder--fixed,
+.story-grid-outlines .container ul > li .story-placeholder--fixed,
+.story-grid-outlines .container-fluid .row > .col .story-placeholder--fixed,
+.story-grid-outlines .container-fluid .row > [class*=col-] .story-placeholder--fixed,
+.story-grid-outlines .container-fluid .row > li .story-placeholder--fixed,
+.story-grid-outlines .container-fluid ul > .col .story-placeholder--fixed,
+.story-grid-outlines .container-fluid ul > [class*=col-] .story-placeholder--fixed,
+.story-grid-outlines .container-fluid ul > li .story-placeholder--fixed {
+  position: relative;
+}
+.story-grid-outlines .container .row > .col .story-placeholder--fixed::before,
+.story-grid-outlines .container .row > [class*=col-] .story-placeholder--fixed::before,
+.story-grid-outlines .container .row > li .story-placeholder--fixed::before,
+.story-grid-outlines .container ul > .col .story-placeholder--fixed::before,
+.story-grid-outlines .container ul > [class*=col-] .story-placeholder--fixed::before,
+.story-grid-outlines .container ul > li .story-placeholder--fixed::before,
+.story-grid-outlines .container-fluid .row > .col .story-placeholder--fixed::before,
+.story-grid-outlines .container-fluid .row > [class*=col-] .story-placeholder--fixed::before,
+.story-grid-outlines .container-fluid .row > li .story-placeholder--fixed::before,
+.story-grid-outlines .container-fluid ul > .col .story-placeholder--fixed::before,
+.story-grid-outlines .container-fluid ul > [class*=col-] .story-placeholder--fixed::before,
+.story-grid-outlines .container-fluid ul > li .story-placeholder--fixed::before {
+  content: "184px";
+  color: grey;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.6em;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: nowrap;
+}
+.story-grid-outlines .container .row > [class*=col-],
+.story-grid-outlines .container ul > [class*=col-],
+.story-grid-outlines .container-fluid .row > [class*=col-],
+.story-grid-outlines .container-fluid ul > [class*=col-] {
+  background-color: rgba(0, 128, 0, 0.1);
+  outline: 1px solid rgba(0, 128, 0, 0.5);
+}
+.story-grid-outlines .container .row > [class*=col-]::after,
+.story-grid-outlines .container ul > [class*=col-]::after,
+.story-grid-outlines .container-fluid .row > [class*=col-]::after,
+.story-grid-outlines .container-fluid ul > [class*=col-]::after {
+  color: green;
+}
+.story-grid-outlines .container .row > .col,
+.story-grid-outlines .container .row > li,
+.story-grid-outlines .container ul > .col,
+.story-grid-outlines .container ul > li,
+.story-grid-outlines .container-fluid .row > .col,
+.story-grid-outlines .container-fluid .row > li,
+.story-grid-outlines .container-fluid ul > .col,
+.story-grid-outlines .container-fluid ul > li {
+  background-color: rgba(0, 0, 255, 0.1);
+  outline: 1px solid rgba(0, 0, 255, 0.5);
+}
+.story-grid-outlines .container .row > .col::after,
+.story-grid-outlines .container .row > li::after,
+.story-grid-outlines .container ul > .col::after,
+.story-grid-outlines .container ul > li::after,
+.story-grid-outlines .container-fluid .row > .col::after,
+.story-grid-outlines .container-fluid .row > li::after,
+.story-grid-outlines .container-fluid ul > .col::after,
+.story-grid-outlines .container-fluid ul > li::after {
+  color: blue;
+}
+.story-grid-outlines .container-fluid {
+  background-color: rgba(128, 0, 128, 0.025);
+  box-shadow: 0 0 1px 1px purple inset;
+}
+.story-grid-outlines.grid-story-docs {
+  row-gap: 1em;
+}
+.story-grid-outlines.grid-story-docs > * {
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.story-grid-outlines.grid-story-docs .grid-story-docs-color-container-contained::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: red;
+  margin-right: 0.5em;
+  vertical-align: top;
+}
+.story-grid-outlines.grid-story-docs .grid-story-docs-color-container-fluid::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: purple;
+  margin-right: 0.5em;
+  vertical-align: top;
+}
+.story-grid-outlines.grid-story-docs .grid-story-docs-color-row::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: orange;
+  margin-right: 0.5em;
+  vertical-align: top;
+}
+.story-grid-outlines.grid-story-docs .grid-story-docs-color-template-column::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: green;
+  margin-right: 0.5em;
+  vertical-align: top;
+}
+.story-grid-outlines.grid-story-docs .grid-story-docs-color-auto-column::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: blue;
+  margin-right: 0.5em;
+  vertical-align: top;
+}
+.story-grid-outlines.grid-story-docs .grid-story-docs-color-placeholder::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: grey;
+  margin-right: 0.5em;
+  vertical-align: top;
+}
+.story-grid-outlines .story-container__title,
+.story-grid-outlines .story-container__subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 0 1px 1px #25324d inset;
+}
+.story-grid-outlines .story-container__title {
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+}
+.story-grid-outlines .story-container__subtitle {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.story-docs.story-docs--conditional:has(+ .story-grid-outlines) {
+  display: block;
+}
+
+.story-docs.story-docs--conditional:not(:has(+ .story-grid-outlines)) {
+  display: none;
+}
+
+.ct-layout .ct-layout .story-placeholder {
+  background-color: rgba(107, 83, 148, 0.3);
+  border: dashed 1px rgba(107, 83, 148, 0.7);
+  color: #241c32;
+}
+
+.story-layout-outlines {
+  overflow: auto;
+  background-color: rgba(0, 0, 255, 0.025);
+  box-shadow: 0 0 1px 1px blue inset;
+}
+.story-layout-outlines .ct-layout {
+  background-color: rgba(0, 128, 0, 0.025);
+  box-shadow: 0 0 1px 1px green inset;
+}
+.story-layout-outlines .ct-layout__main,
+.story-layout-outlines .ct-layout__sidebar_top_left,
+.story-layout-outlines .ct-layout__sidebar_top_right,
+.story-layout-outlines .ct-layout__sidebar_bottom_left,
+.story-layout-outlines .ct-layout__sidebar_bottom_right {
+  background-color: rgba(255, 165, 0, 0.025);
+  box-shadow: 0 0 1px 1px orange inset;
+}
+.story-layout-outlines .container,
+.story-layout-outlines .container-fluid {
+  background-color: rgba(255, 0, 0, 0.025);
+  box-shadow: 0 0 1px 1px red inset;
+}
+.story-layout-outlines .container-fluid {
+  background-color: rgba(128, 0, 128, 0.025);
+  box-shadow: 0 0 1px 1px purple inset;
+}
+
+.ct-menu__item--active-trail > .ct-menu__item__link::after {
+  content: " (A)";
+}
+
+.story-container__page-content.story-scrollspy {
+  height: 2000px;
+}
+.story-container__page-content.story-scrollspy::before {
+  box-shadow: 0 0 0.0625rem 0.0625rem #f00 inset;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  content: "";
+}
+.story-container__page-content.story-scrollspy::after {
+  box-shadow: 0 0 0.0625rem 0.0625rem #00f inset;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  content: "";
+}
+
+.story-scrollspy-target1 {
+  position: fixed;
+  bottom: 6rem;
+  right: 6rem;
+}
+
+.story-scrollspy-target2 {
+  position: fixed;
+  bottom: 10px;
+  right: 6rem;
+}
+
+.story-scrollspy-target1.ct-scrollspy-scrolled {
+  border: solid 0.0625rem red;
+}
+
+.story-scrollspy-target2.ct-scrollspy-scrolled {
+  border: solid 0.0625rem blue;
+}
+
+.story-spacing-wrapper div {
+  position: relative;
+  width: 100%;
+  min-height: 0.5rem;
+}
+.story-spacing-wrapper .story-spacing--1 {
+  box-sizing: border-box;
+  padding: 0.5rem 0 0 0.5rem;
+  background-color: #d8f6ff;
+}
+.story-spacing-wrapper .story-spacing--1::before {
+  content: "spacing 1";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--2 {
+  box-sizing: border-box;
+  padding: 1rem 0 0 1rem;
+  background-color: #b0edff;
+}
+.story-spacing-wrapper .story-spacing--2::before {
+  content: "spacing 2";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--3 {
+  box-sizing: border-box;
+  padding: 1.5rem 0 0 1.5rem;
+  background-color: #d8f6ff;
+}
+.story-spacing-wrapper .story-spacing--3::before {
+  content: "spacing 3";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--4 {
+  box-sizing: border-box;
+  padding: 2rem 0 0 2rem;
+  background-color: #b0edff;
+}
+.story-spacing-wrapper .story-spacing--4::before {
+  content: "spacing 4";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--5 {
+  box-sizing: border-box;
+  padding: 2.5rem 0 0 2.5rem;
+  background-color: #d8f6ff;
+}
+.story-spacing-wrapper .story-spacing--5::before {
+  content: "spacing 5";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--6 {
+  box-sizing: border-box;
+  padding: 3rem 0 0 3rem;
+  background-color: #b0edff;
+}
+.story-spacing-wrapper .story-spacing--6::before {
+  content: "spacing 6";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--7 {
+  box-sizing: border-box;
+  padding: 3.5rem 0 0 3.5rem;
+  background-color: #d8f6ff;
+}
+.story-spacing-wrapper .story-spacing--7::before {
+  content: "spacing 7";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--8 {
+  box-sizing: border-box;
+  padding: 4rem 0 0 4rem;
+  background-color: #b0edff;
+}
+.story-spacing-wrapper .story-spacing--8::before {
+  content: "spacing 8";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--9 {
+  box-sizing: border-box;
+  padding: 4.5rem 0 0 4.5rem;
+  background-color: #d8f6ff;
+}
+.story-spacing-wrapper .story-spacing--9::before {
+  content: "spacing 9";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--10 {
+  box-sizing: border-box;
+  padding: 5rem 0 0 5rem;
+  background-color: #b0edff;
+}
+.story-spacing-wrapper .story-spacing--10::before {
+  content: "spacing 10";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.story-spacing-wrapper .story-spacing--11 {
+  box-sizing: border-box;
+  padding: 5.5rem 0 0 5.5rem;
+  background-color: #d8f6ff;
+}
+.story-spacing-wrapper .story-spacing--11::before {
+  content: "spacing 11";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.story-vertical-spacing-wrapper .story-vertical-spacing-container {
+  box-shadow: 0 0 0.0625rem 0.0625rem red inset;
+  position: relative;
+  overflow: hidden;
+}
+.story-vertical-spacing-wrapper .story-vertical-spacing-container::before {
+  border: 0.0625rem solid red;
+  color: red;
+  content: "Component container";
+  padding: 2px;
+  position: absolute;
+  z-index: 10000;
+  left: 0;
+}
+.story-vertical-spacing-wrapper .story-vertical-spacing {
+  box-shadow: 0 0 0.0625rem 0.0625rem blue inset;
+  position: relative;
+}
+.story-vertical-spacing-wrapper .story-vertical-spacing::before {
+  border: 0.0625rem solid blue;
+  color: blue;
+  content: "Component";
+  padding: 2px;
+  position: absolute;
+  z-index: 10000;
+  right: 0;
+}
+
+.story-welcome {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003f56;
+}
+
+.story-welcome__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.story-welcome__inner .ct-logo {
+  margin-bottom: 2em;
+}
+.story-welcome__inner .ct-logo .ct-logo__image {
+  max-height: 5em;
+}
+.story-welcome__inner .ct-paragraph {
+  margin-top: 2em;
+  max-width: 50em;
+}
+
+.story-container__page-content.story-ct-back-to-top {
+  height: 2000px;
+}
+.story-container__page-content.story-ct-back-to-top::before {
+  box-shadow: 0 0 0.0625rem 0.0625rem #f00 inset;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  content: "";
+}
+
+@media (min-width: 768px) {
+  .story-container__page-content.story-ct-mobile-navigation .ct-mobile-navigation {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .story-container__page-content.story-ct-mobile-navigation .ct-mobile-navigation-trigger {
+    display: inline;
+  }
+}

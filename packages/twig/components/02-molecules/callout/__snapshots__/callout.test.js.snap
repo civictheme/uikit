@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Callout Component renders with multiple links 1`] = `
+<div>
+  
+
+
+
+  <div
+    class="ct-callout ct-theme-light  "
+  >
+    
+  
+    <div
+      class="container"
+    >
+      
+    
+      <div
+        class="row"
+      >
+        
+      
+        <div
+          class="col-xxs-12"
+        >
+          
+        
+          <div
+            class="ct-callout__wrapper"
+          >
+                                  
+                                                                                            
+            
+
+  
+            <ul
+              class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-callout__links"
+            >
+              
+                  
+              <li
+                class="ct-item-list__item"
+              >
+                                
+
+  
+                <a
+                  class="ct-button ct-theme-light ct-button--primary ct-button--link ct-button--regular   "
+                  data-component-name="button"
+                  href="https://example.com"
+                  role="button"
+                >
+                  Link 1
+                </a>
+                
+              
+              </li>
+              
+                        
+              <li
+                class="ct-item-list__item"
+              >
+                                
+
+  
+                <a
+                  class="ct-button ct-theme-light ct-button--secondary ct-button--link ct-button--regular   "
+                  data-component-name="button"
+                  href="https://example.com"
+                  role="button"
+                >
+                  Link 2
+                </a>
+                
+              
+              </li>
+              
+                        
+              <li
+                class="ct-item-list__item"
+              >
+                                
+
+  
+                <a
+                  class="ct-button ct-theme-light ct-button--secondary ct-button--link ct-button--regular   "
+                  data-component-name="button"
+                  href="https://example.com"
+                  role="button"
+                >
+                  Link 3
+                </a>
+                
+              
+              </li>
+              
+            
+            </ul>
+            
+                                        
+          </div>
+          
+      
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Callout Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+
+  <div
+    class="ct-callout ct-theme-dark ct-vertical-spacing-inset--both custom-class"
+    data-test="true"
+  >
+    
+  
+    <div
+      class="container"
+    >
+      
+    
+      <div
+        class="row"
+      >
+        
+      
+        <div
+          class="col-xxs-12"
+        >
+          
+        
+          <div
+            class="ct-callout__wrapper"
+          >
+                                      
+            <div
+              class="ct-callout__content-top"
+            >
+              Top content
+            </div>
+            
+                      
+                                    
+            <div
+              class="ct-callout__inner"
+            >
+              
+                                  
+
+
+  
+              <h4
+                class="ct-heading ct-theme-dark ct-callout__title"
+              >
+                Callout Title
+              </h4>
+              
+                
+                                  
+
+
+              <div
+                class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-paragraph--no-margin ct-callout__content"
+              >
+                
+    This is the main content of the callout.  
+              </div>
+                                            
+            </div>
+            
+                                                                      
+            
+
+  
+            <ul
+              class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-callout__links"
+            >
+              
+                  
+              <li
+                class="ct-item-list__item"
+              >
+                                
+
+  
+                <a
+                  class="ct-button ct-theme-dark ct-button--primary ct-button--link ct-button--regular  ct-button--external "
+                  data-component-name="button"
+                  href="https://example.com"
+                  role="button"
+                  target="_blank"
+                >
+                  Link 
+                  <span
+                    class="ct-text-icon__group"
+                  >
+                    1  
+                    <svg
+                      aria-hidden="true"
+                      class="ct-icon  "
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
+
+                      <path
+                        d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      />
+                      
+
+                    </svg>
+                    
+
+                  </span>
+                  <span
+                    class="ct-visually-hidden"
+                  >
+                    (Opens in a new tab/window)
+                  </span>
+                </a>
+                
+              
+              </li>
+              
+                        
+              <li
+                class="ct-item-list__item"
+              >
+                                
+
+  
+                <a
+                  class="ct-button ct-theme-dark ct-button--secondary ct-button--link ct-button--regular   "
+                  data-component-name="button"
+                  href="https://example.com"
+                  role="button"
+                >
+                  Link 2
+                </a>
+                
+              
+              </li>
+              
+            
+            </ul>
+            
+                                    
+            <div
+              class="ct-callout__content-bottom"
+            >
+              Bottom content
+            </div>
+            
+                              
+          </div>
+          
+      
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Callout Component renders with required attributes 1`] = `
+<div>
+  
+
+
+
+  <div
+    class="ct-callout ct-theme-light  "
+  >
+    
+  
+    <div
+      class="container"
+    >
+      
+    
+      <div
+        class="row"
+      >
+        
+      
+        <div
+          class="col-xxs-12"
+        >
+          
+        
+          <div
+            class="ct-callout__wrapper"
+          >
+                                  
+                                    
+            <div
+              class="ct-callout__inner"
+            >
+              
+                
+                                  
+
+
+              <div
+                class="ct-paragraph ct-theme-light ct-paragraph--regular ct-paragraph--no-margin ct-callout__content"
+              >
+                
+    This is the main content of the callout.  
+              </div>
+                                            
+            </div>
+            
+                                              
+            
+
+                                        
+          </div>
+          
+      
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
