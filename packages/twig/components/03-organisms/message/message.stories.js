@@ -16,12 +16,21 @@ const meta = {
       control: { type: 'select' },
       options: ['information', 'error', 'warning', 'success'],
     },
+    title: {
+      control: { type: 'text' },
+    },
+    content: {
+      control: { type: 'text' },
+    },
     vertical_spacing: {
       control: { type: 'radio' },
       options: ['none', 'top', 'bottom', 'both'],
     },
-    description: {
-      control: { type: 'text' },
+    with_background: {
+      control: { type: 'boolean' },
+    },
+    has_aria: {
+      control: { type: 'boolean' },
     },
     attributes: {
       control: { type: 'text' },
@@ -40,9 +49,12 @@ export const Message = {
   },
   args: {
     theme: 'light',
-    title: 'The information on this page is currently being updated.',
     type: 'information',
-    description: 'Message description',
+    title: 'The information on this page is currently being updated.',
+    content: 'Message description',
+    vertical_spacing: 'none',
+    with_background: false,
+    has_aria: true,
     attributes: '',
     modifier_class: '',
   },

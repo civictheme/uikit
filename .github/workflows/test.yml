@@ -143,7 +143,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Find ID of existing deployment message for a PR
-        uses: 'peter-evans/find-comment@f0e153abb8ec9ad36a9278240e241bd884eba8f7'
+        uses: 'peter-evans/find-comment@7d1160ed5a994c611ecacf2bba39ea02073685a6'
         id: netlify-deploy-message
         if: github.event_name == 'pull_request'
         with:
@@ -152,7 +152,7 @@ jobs:
           body-includes: 'CivicTheme UI Kit Deployments'
 
       - name: Create or update deployment message on a PR
-        uses: 'peter-evans/create-or-update-comment@e5c3b7cef58546e37d0e9e64128fa39d4c31706a'
+        uses: 'peter-evans/create-or-update-comment@4feedfc69c7773aff6dac1f1ab6fff8cfa955150'
         if: github.event_name == 'pull_request'
         with:
           comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}
