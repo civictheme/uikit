@@ -91,7 +91,7 @@ jobs:
             createVisualRegressionPrComments({require, core})
 
       - name: Find ID of existing deployment message on a PR
-        uses: 'peter-evans/find-comment@7bc0026f1021fea42b36c6b3f0c703b4f7b3d71d'
+        uses: 'peter-evans/find-comment@7d1160ed5a994c611ecacf2bba39ea02073685a6'
         id: netlify-visual-regression-message
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -99,7 +99,7 @@ jobs:
           body-includes: 'CivicTheme UI Kit Deployments'
 
       - name: Create or update deployment message on a PR
-        uses: 'peter-evans/create-or-update-comment@998d73b60e291c5ff04ef95d7a7021dede2b9878'
+        uses: 'peter-evans/create-or-update-comment@4feedfc69c7773aff6dac1f1ab6fff8cfa955150'
         with:
           comment-id: ${{ steps.netlify-visual-regression-message.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}

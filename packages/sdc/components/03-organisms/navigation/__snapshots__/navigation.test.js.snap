@@ -23,7 +23,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                                         
   
   <div
-    class="ct-navigation ct-theme-dark ct-navigation--drawer "
+    class="ct-navigation ct-theme-dark ct-navigation--drawer ct-navigation--primary "
   >
     
     
@@ -32,7 +32,7 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
       class="ct-navigation__items"
     >
       
-      
+    
 
 
 
@@ -215,7 +215,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
                                                 
   
   <div
-    class="ct-navigation ct-theme-dark ct-navigation--dropdown additional-class"
+    class="ct-navigation ct-theme-dark ct-navigation--dropdown ct-navigation--primary additional-class"
   >
     
                   
@@ -234,7 +234,7 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
       class="ct-navigation__items"
     >
       
-      
+    
 
 
 
@@ -369,7 +369,7 @@ exports[`Navigation Component renders with only required attributes 1`] = `
                   
   
   <div
-    class="ct-navigation ct-theme-light ct-navigation--none "
+    class="ct-navigation ct-theme-light ct-navigation--none  "
   >
     
     
@@ -378,7 +378,7 @@ exports[`Navigation Component renders with only required attributes 1`] = `
       class="ct-navigation__items"
     >
       
-      
+    
 
 
 
@@ -438,7 +438,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
                             
   
   <div
-    class="ct-navigation ct-theme-light ct-navigation--none "
+    class="ct-navigation ct-theme-light ct-navigation--none ct-navigation--secondary "
   >
     
     
@@ -447,7 +447,7 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
       class="ct-navigation__items"
     >
       
-      
+    
 
 
 
