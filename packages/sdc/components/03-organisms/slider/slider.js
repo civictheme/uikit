@@ -26,7 +26,6 @@ function CivicThemeSlider(el) {
 
   this.updateProgress();
   this.addSlideAriaAttributes();
-  this.updateControlsState();
   this.hideAllSlidesExceptCurrent();
 
   this.refresh();
