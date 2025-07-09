@@ -51,8 +51,13 @@ props:
     template_column_count:
       type: number
       title: Template column count
-      description: Row columns count (0 for auto columns).
+      description: Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
       default: 0
+    auto_breakpoint:
+      type: boolean
+      title: Auto breakpoint
+      description: Switch between columns (starting at template_column_count) as the screen reduces.
+      default: false
     fill_width:
       type: boolean
       title: Fill width
