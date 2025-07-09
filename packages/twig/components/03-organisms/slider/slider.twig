@@ -33,7 +33,15 @@
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {% if slides is not empty %}
-  <div class="ct-slider {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div
+    role="region"
+    {% if title is not empty %}
+      aria-label="{{ title }}"
+    {% else %}
+      aria-label="Slider"
+    {% endif %}
+    aria-roledescription="carousel"
+    class="ct-slider {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
