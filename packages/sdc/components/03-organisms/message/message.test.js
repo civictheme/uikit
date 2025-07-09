@@ -17,7 +17,7 @@ describe('Message Component', () => {
     expect(c.querySelector('.ct-message').classList).toContain('ct-theme-dark');
     expect(c.querySelector('.ct-message').classList).toContain('ct-message--error');
     expect(c.querySelector('.ct-message').classList).toContain('ct-message--with-background');
-    expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing-inset--both');
+    expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing--both');
     expect(c.querySelector('.ct-message').classList).toContain('additional-class');
     expect(c.querySelector('.ct-message__title').textContent.trim()).toBe('this is title message.');
     expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is an error message.');
@@ -116,7 +116,7 @@ describe('Message Component', () => {
     });
 
     expect(c.querySelectorAll('.ct-message')).toHaveLength(1);
-    expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing-inset--both');
+    expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing--both');
     expect(c.querySelector('.ct-message__content').textContent.trim()).toBe('This is a default message.');
     expect(c.querySelector('.ct-message').getAttribute('role')).toBeNull();
     expect(c.querySelector('.ct-message').getAttribute('aria-label')).toBeNull();
@@ -137,6 +137,21 @@ describe('Message Component', () => {
     expect(c.querySelectorAll('.ct-message')).toHaveLength(0);
     expect(c.querySelector('.ct-message__title')).toBeNull();
     expect(c.querySelector('.ct-message__content')).toBeNull();
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with vertical spacing', async () => {
+    const c = await dom(template, {
+      theme: 'dark',
+      type: 'error',
+      title: 'this is title message.',
+      description: 'This is an error message.',
+      vertical_spacing: 'both',
+      modifier_class: 'additional-class',
+    });
+
+    expect(c.querySelector('.ct-message').classList).toContain('ct-vertical-spacing--both');
 
     assertUniqueCssClasses(c);
   });

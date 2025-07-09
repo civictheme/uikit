@@ -1853,6 +1853,7 @@ function CivicThemeSlider(el) {
   this.animationTimeout = null;
 
   this.updateProgress();
+  this.addSlideAriaAttributes();
   this.hideAllSlidesExceptCurrent();
 
   this.refresh();
@@ -1912,6 +1913,12 @@ CivicThemeSlider.prototype.refresh = function () {
 CivicThemeSlider.prototype.enableSlideInteraction = function () {
   this.rail.querySelectorAll('a, button').forEach((link) => {
     link.removeAttribute('tabindex');
+  });
+};
+
+CivicThemeSlider.prototype.addSlideAriaAttributes = function () {
+  this.slides.forEach((slide, idx) => {
+    slide.setAttribute('aria-label', `Slide ${idx + 1} of ${this.totalSlides}`);
   });
 };
 

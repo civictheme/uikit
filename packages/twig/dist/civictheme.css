@@ -10177,14 +10177,14 @@ ol ol ol {
 }
 
 .ct-message .ct-message__inner {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: stretch;
   border-radius: 0.25rem;
   border-left: solid 0.375rem transparent;
   padding: 1.5rem 1.5rem 1.5rem 0.5rem;
-  margin: 1.5rem 0;
   width: 100%;
-  box-sizing: border-box;
 }
 @media (min-width: 0) {
   .ct-message .ct-message__inner {
