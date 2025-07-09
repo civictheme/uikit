@@ -10176,18 +10176,18 @@ ol ol ol {
   background-color: var(--ct-list-dark-background-color);
 }
 
-.ct-message {
+.ct-message .ct-message__inner {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: stretch;
   border-radius: 0.25rem;
   border-left: solid 0.375rem transparent;
   padding: 1.5rem 1.5rem 1.5rem 0.5rem;
   margin: 1.5rem 0;
   width: 100%;
+  box-sizing: border-box;
 }
 @media (min-width: 0) {
-  .ct-message {
+  .ct-message .ct-message__inner {
     font-size: 0.875rem;
     line-height: 1.5rem;
     font-family: "Lexend", sans-serif;
@@ -10196,7 +10196,7 @@ ol ol ol {
   }
 }
 @media (min-width: 768px) {
-  .ct-message {
+  .ct-message .ct-message__inner {
     font-size: 1rem;
     line-height: 1.75rem;
     font-family: "Lexend", sans-serif;
@@ -10205,9 +10205,9 @@ ol ol ol {
   }
 }
 .ct-message .ct-message__icon {
-  margin-right: 1rem;
   vertical-align: top;
   line-height: 100%;
+  margin-right: 1rem;
 }
 @media (min-width: 0) {
   .ct-message .ct-message__icon {
@@ -10222,71 +10222,84 @@ ol ol ol {
 .ct-message .ct-message__title {
   font-weight: 600;
 }
-.ct-message .ct-message__summary {
+.ct-message .ct-message__content {
   margin-top: 0.5rem;
+  margin-bottom: 0;
 }
-.ct-message.ct-theme-light.ct-message--information {
+.ct-message .ct-message__content:first-child {
+  margin-top: 0;
+}
+.ct-message[class*=ct-vertical-spacing-] .ct-message__inner {
+  margin: 0;
+}
+.ct-message.ct-theme-light.ct-message--with-background {
+  background-color: var(--ct-message-light-background-color);
+}
+.ct-message.ct-theme-light.ct-message--information .ct-message__inner {
   background-color: var(--ct-message-light-information-background-color);
   color: var(--ct-message-light-information-color);
   border-color: var(--ct-message-light-information-border-color);
 }
-.ct-message.ct-theme-light.ct-message--information .ct-message__icon {
+.ct-message.ct-theme-light.ct-message--information .ct-message__inner .ct-message__icon {
   color: var(--ct-message-light-information-icon-color);
 }
-.ct-message.ct-theme-light.ct-message--warning {
+.ct-message.ct-theme-light.ct-message--warning .ct-message__inner {
   background-color: var(--ct-message-light-warning-background-color);
   color: var(--ct-message-light-warning-color);
   border-color: var(--ct-message-light-warning-border-color);
 }
-.ct-message.ct-theme-light.ct-message--warning .ct-message__icon {
+.ct-message.ct-theme-light.ct-message--warning .ct-message__inner .ct-message__icon {
   color: var(--ct-message-light-warning-icon-color);
 }
-.ct-message.ct-theme-light.ct-message--error {
+.ct-message.ct-theme-light.ct-message--error .ct-message__inner {
   background-color: var(--ct-message-light-error-background-color);
   color: var(--ct-message-light-error-color);
   border-color: var(--ct-message-light-error-border-color);
 }
-.ct-message.ct-theme-light.ct-message--error .ct-message__icon {
+.ct-message.ct-theme-light.ct-message--error .ct-message__inner .ct-message__icon {
   color: var(--ct-message-light-error-icon-color);
 }
-.ct-message.ct-theme-light.ct-message--success {
+.ct-message.ct-theme-light.ct-message--success .ct-message__inner {
   background-color: var(--ct-message-light-success-background-color);
   color: var(--ct-message-light-success-color);
   border-color: var(--ct-message-light-success-border-color);
 }
-.ct-message.ct-theme-light.ct-message--success .ct-message__icon {
+.ct-message.ct-theme-light.ct-message--success .ct-message__inner .ct-message__icon {
   color: var(--ct-message-light-success-icon-color);
 }
-.ct-message.ct-theme-dark.ct-message--information {
+.ct-message.ct-theme-dark.ct-message--with-background {
+  background-color: var(--ct-message-dark-background-color);
+}
+.ct-message.ct-theme-dark.ct-message--information .ct-message__inner {
   background-color: var(--ct-message-dark-information-background-color);
   color: var(--ct-message-dark-information-color);
   border-color: var(--ct-message-dark-information-border-color);
 }
-.ct-message.ct-theme-dark.ct-message--information .ct-message__icon {
+.ct-message.ct-theme-dark.ct-message--information .ct-message__inner .ct-message__icon {
   color: var(--ct-message-dark-information-icon-color);
 }
-.ct-message.ct-theme-dark.ct-message--warning {
+.ct-message.ct-theme-dark.ct-message--warning .ct-message__inner {
   background-color: var(--ct-message-dark-warning-background-color);
   color: var(--ct-message-dark-warning-color);
   border-color: var(--ct-message-dark-warning-border-color);
 }
-.ct-message.ct-theme-dark.ct-message--warning .ct-message__icon {
+.ct-message.ct-theme-dark.ct-message--warning .ct-message__inner .ct-message__icon {
   color: var(--ct-message-dark-warning-icon-color);
 }
-.ct-message.ct-theme-dark.ct-message--error {
+.ct-message.ct-theme-dark.ct-message--error .ct-message__inner {
   background-color: var(--ct-message-dark-error-background-color);
   color: var(--ct-message-dark-error-color);
   border-color: var(--ct-message-dark-error-border-color);
 }
-.ct-message.ct-theme-dark.ct-message--error .ct-message__icon {
+.ct-message.ct-theme-dark.ct-message--error .ct-message__inner .ct-message__icon {
   color: var(--ct-message-dark-error-icon-color);
 }
-.ct-message.ct-theme-dark.ct-message--success {
+.ct-message.ct-theme-dark.ct-message--success .ct-message__inner {
   background-color: var(--ct-message-dark-success-background-color);
   color: var(--ct-message-dark-success-color);
   border-color: var(--ct-message-dark-success-border-color);
 }
-.ct-message.ct-theme-dark.ct-message--success .ct-message__icon {
+.ct-message.ct-theme-dark.ct-message--success .ct-message__inner .ct-message__icon {
   color: var(--ct-message-dark-success-icon-color);
 }
 
@@ -12375,6 +12388,7 @@ html {
   --ct-list-dark-background-color: var(--ct-color-dark-background);
   --ct-list-dark-color: var(--ct-color-dark-body);
   --ct-list-dark-results-count-color: var(--ct-color-dark-heading);
+  --ct-message-light-background-color: var(--ct-color-light-background);
   --ct-message-light-error-background-color: #f5d7d7;
   --ct-message-light-error-border-color: var(--ct-color-light-error);
   --ct-message-light-error-color: var(--ct-color-light-body);
@@ -12391,19 +12405,20 @@ html {
   --ct-message-light-warning-border-color: var(--ct-color-light-warning);
   --ct-message-light-warning-color: var(--ct-color-light-body);
   --ct-message-light-warning-icon-color: var(--ct-color-light-body);
+  --ct-message-dark-background-color: var(--ct-color-dark-background);
   --ct-message-dark-error-background-color: #ba4542;
   --ct-message-dark-error-border-color: var(--ct-color-dark-error);
   --ct-message-dark-error-color: var(--ct-color-dark-body);
   --ct-message-dark-error-icon-color: var(--ct-color-dark-body);
-  --ct-message-dark-information-background-color: #3d9dca;
+  --ct-message-dark-information-background-color: #2e789a;
   --ct-message-dark-information-border-color: var(--ct-color-dark-information);
   --ct-message-dark-information-color: var(--ct-color-dark-body);
   --ct-message-dark-information-icon-color: var(--ct-color-dark-body);
   --ct-message-dark-success-border-color: var(--ct-color-dark-success);
-  --ct-message-dark-success-background-color: #0e8d8b;
+  --ct-message-dark-success-background-color: #0d7b7a;
   --ct-message-dark-success-color: var(--ct-color-dark-body);
   --ct-message-dark-success-icon-color: var(--ct-color-dark-body);
-  --ct-message-dark-warning-background-color: #b66a36;
+  --ct-message-dark-warning-background-color: #a35f31;
   --ct-message-dark-warning-border-color: var(--ct-color-dark-warning);
   --ct-message-dark-warning-color: var(--ct-color-dark-body);
   --ct-message-dark-warning-icon-color: var(--ct-color-dark-body);
