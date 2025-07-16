@@ -37,6 +37,7 @@ describe('Promo Card Component', () => {
     expect(element).not.toBeNull();
     expect(element.classList.contains('ct-theme-dark')).toBe(true);
     expect(element.classList.contains('ct-promo-card--with-image')).toBe(true);
+    expect(element.classList.contains('ct-promo-card--card-clickable')).toBe(true);
     expect(element.classList.contains('custom-class')).toBe(true);
     expect(element.getAttribute('data-test')).toEqual('true');
 

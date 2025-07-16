@@ -90,14 +90,12 @@
         {% endblock %}
 
         {% block content_tags_block %}
-          {% if tags or with_link %}
+          {% if tags %}
             <div class="ct-snippet__tags">
-              {% if tags %}
-                {% include 'civictheme:tag-list' with {
-                  theme: theme,
-                  tags: tags,
-                } only %}
-              {% endif %}
+              {% include 'civictheme:tag-list' with {
+                theme: theme,
+                tags: tags,
+              } only %}
             </div>
           {% endif %}
         {% endblock %}
