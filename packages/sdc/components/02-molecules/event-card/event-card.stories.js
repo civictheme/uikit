@@ -30,6 +30,9 @@ const meta = {
     link: {
       control: { type: 'object' },
     },
+    is_title_click: {
+      control: { type: 'boolean' },
+    },
     image: {
       control: { type: 'object' },
     },
@@ -80,6 +83,7 @@ export const EventCard = {
       url: 'https://example.com/event',
       is_new_window: false,
     },
+    is_title_click: false,
     image: {
       url: './demo/images/demo1.jpg',
       alt: 'Image alt text',
