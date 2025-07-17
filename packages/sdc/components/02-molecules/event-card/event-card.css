@@ -140,6 +140,7 @@
   position: relative;
   width: 2rem;
   height: 2rem;
+  pointer-events: none;
 }
 .ct-event-card .ct-event-card__link-graphic::before {
   content: "";
