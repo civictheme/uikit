@@ -998,8 +998,14 @@ $ct-subject-card-image-width-mobile: auto !default;
 $ct-subject-card-image-height-desktop: ct-particle(28) !default;
 $ct-subject-card-image-width-desktop: auto !default;
 $ct-subject-card-light-background-color: ct-color-light('background-light') !default;
+$ct-subject-card-light-hover-outline-color: ct-color-light('border') !default;
+$ct-subject-card-light-title-color: ct-color-light('heading') !default;
+$ct-subject-card-light-title-hover-color: ct-color-light('interaction-background') !default;
 $ct-subject-card-light-image-opacity: 30% !default;
 $ct-subject-card-dark-background-color: ct-color-dark('background') !default;
+$ct-subject-card-dark-hover-outline-color: ct-color-dark('border') !default;
+$ct-subject-card-dark-title-color: ct-color-dark('heading') !default;
+$ct-subject-card-dark-title-hover-color: ct-color-dark('interaction-background') !default;
 $ct-subject-card-dark-image-opacity: 20% !default;
 
 //
