@@ -46,6 +46,10 @@ props:
           type: boolean
           title: New Window
           description: Whether to open the link in a new window.
+    is_title_click:
+      type: boolean
+      title: Title click
+      description: Whether to make only the title clickable instead of the whole card.
 slots:
   image_over:
     title: Image Over
