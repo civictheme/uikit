@@ -92,7 +92,7 @@ export const ListNavigationCard = {
   parameters: {
     layout: 'padded',
   },
-  args: ListData.args('light', { component: 'navigation' }),
+  args: ListData.args('light', { component: 'navigation', columnCount: 1 }),
 };
 
 export const ListSnippet = {

@@ -122,6 +122,7 @@
   position: relative;
   width: 2rem;
   height: 2rem;
+  pointer-events: none;
 }
 .ct-promo-card .ct-promo-card__link-graphic::before {
   content: "";

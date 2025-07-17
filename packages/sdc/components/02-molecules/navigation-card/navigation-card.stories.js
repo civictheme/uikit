@@ -33,6 +33,9 @@ const meta = {
       control: { type: 'select' },
       options: Constants.ICONS, // replace with actual icon options
     },
+    is_title_click: {
+      control: { type: 'boolean' },
+    },
     image_over: {
       control: { type: 'text' },
     },

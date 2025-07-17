@@ -44,9 +44,11 @@
 {% set with_image_class = with_image ? 'ct-navigation-card--with-image' : '' %}
 {% set with_link = link is not empty and link.url is defined and link.url is not empty %}
 {% set with_link_class = with_link ? 'ct-navigation-card--with-link' : '' %}
+{% set is_card_clickable = with_link and is_title_click is empty %}
+{% set card_clickable_class = is_card_clickable ? 'ct-navigation-card--card-clickable' : '' %}
 {% set image_as_icon_class = image_as_icon ? 'ct-navigation-card--image-as-icon' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s'|format(theme_class, with_image_class, with_link_class, image_as_icon_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, with_image_class, with_link_class, image_as_icon_class, card_clickable_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
   <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
@@ -107,27 +109,16 @@
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}
-              {% include 'civictheme:link' with {
-                theme: theme,
-                text: title,
-                url: link.url,
-                is_new_window: link.is_new_window,
-                is_external: false,
-                icon: 'right-arrow-2',
-                icon_group_disabled: true,
-                modifier_class: 'ct-navigation-card__title__link',
-              } only %}
+              <a
+                class="ct-navigation-card__title-link"
+                href="{{ link.url }}"
+                {% if link.is_new_window %}target="_blank"{% endif %}
+              >{{ title }}</a>
             {% else %}
               {{ title }}
             {% endif %}
           {% endset %}
-
-          {% include 'civictheme:heading' with {
-            content: title_content,
-            level: 4,
-            theme: theme,
-            modifier_class: 'ct-navigation-card__title',
-          } only %}
+          <div class='ct-navigation-card__title'>{{ title_content }}</div>
         {% endif %}
       {% endblock %}
 
@@ -157,6 +148,15 @@
           </div>
         {% endif %}
       {% endblock %}
+
+      {% if is_card_clickable %}
+        <div class="ct-navigation-card__link-graphic">
+          {% include 'civictheme:icon' with {
+            symbol: 'right-arrow-2',
+            size: 'regular',
+          } only %}
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endif %}
