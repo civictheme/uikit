@@ -67,10 +67,6 @@ export const EventCard = {
     layout: 'centered',
   },
   args: {
-    content_top: '',
-    image_over: '',
-    content_middle: '',
-    content_bottom: '',
     theme: 'light',
     date: '20 Jan 2023 11:00',
     date_iso: '',
@@ -94,5 +90,9 @@ export const EventCard = {
     ],
     modifier_class: '',
     attributes: '',
+    content_top: '',
+    image_over: '',
+    content_middle: '',
+    content_bottom: '',
   },
 };
