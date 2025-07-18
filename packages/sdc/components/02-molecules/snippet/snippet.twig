@@ -86,7 +86,7 @@
         {% endblock %}
 
         {% block content_tags_block %}
-          {% if tags or (show_as_card and with_link) %}
+          {% if tags or is_card_clickable %}
             <div class="ct-snippet__tags">
               {% if tags %}
                 {% include 'civictheme:tag-list' with {
