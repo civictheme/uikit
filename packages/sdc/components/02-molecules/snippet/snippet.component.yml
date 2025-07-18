@@ -12,6 +12,14 @@ props:
       enum:
         - light
         - dark
+    show_as_card:
+      type: boolean
+      title: Show as Card
+      description: Display the snippet as a card with border and elevation. When combined with a link, makes the entire card clickable.
+    is_title_click:
+      type: boolean
+      title: Title click
+      description: Whether to make only the title clickable instead of the whole card. Only works when show_as_card is true.
     attributes:
       type: string
       title: Attributes

@@ -11,6 +11,8 @@ export default {
       'Tag 1',
       'Tag 2',
     ],
+    show_as_card: false,
+    is_title_click: false,
     content_top: '',
     content_middle: '',
     content_bottom: '',
