@@ -17,6 +17,7 @@
  *   - url: [string] File URL.
  *   - ext: [string] File extension.
  *   - size: [string] File size.
+ * - filename_prefix: [string] Description of file details for accessibility.
  *
  * Slots:
  * - image_over: Image overlay content.
@@ -40,8 +41,19 @@
 
 {% set with_image = image.url is not empty %}
 {% set with_image_class = with_image ? 'ct-publication-card--with-image' : '' %}
+{% set with_file = file is not empty and file.url is defined and file.url is not empty %}
+{% set is_card_clickable = with_file and is_title_click is empty and title is not empty %}
+{% set card_clickable_class = is_card_clickable ? 'ct-publication-card--card-clickable' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, with_image_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, with_image_class, card_clickable_class, modifier_class|default('')) %}
+
+{% set filename_prefix = filename_prefix|default('File details:') %}
+{% set has_ext = file.ext is not empty %}
+{% set has_size = file.size is not empty %}
+{% set extension_text = (has_ext and has_size) ? '%s, %s'|format(file.ext, file.size) : file.ext|default(file.size|default('')) %}
+{% set extension_text = extension_text ? '(%s)'|format(extension_text) : '' %}
+{% set filename_text = file.name is not empty ? file.name : '' %}
+{% set filename = '%s %s'|format(filename_text, extension_text)|trim %}
 
 {% if file is not empty %}
   <div class="ct-publication-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
@@ -77,22 +89,26 @@
       {% block title_block %}
         {% if title is not empty %}
           {% set title_content %}
-            {% include 'civictheme:link' with {
-              theme: theme,
-              text: title,
-              url: file.url,
-              icon: 'download',
-              icon_group_disabled: true,
-              modifier_class: 'ct-publication-card__title__link',
-            } only %}
+            {% if with_file %}
+              {% set title_label = filename ? '%s. %s %s'|format(title, filename_prefix, filename) : '' %}
+              <a
+                class="ct-publication-card__title-link"
+                href="{{ file.url }}"
+                {% if title_label %}aria-label="{{ title_label }}"{% endif %}
+              >{{ title }}</a>
+            {% else %}
+              {{ title }}
+            {% endif %}
           {% endset %}
 
-          {% include 'civictheme:heading' with {
-            content: title_content,
-            level: 4,
-            theme: theme,
-            modifier_class: 'ct-publication-card__title',
-          } only %}
+          <div class="ct-publication-card__title-bar">
+            <div class="ct-publication-card__title">{{ title_content }}</div>
+            {% include 'civictheme:icon' with {
+              symbol: 'download',
+              size: 'regular',
+              modifier_class: 'ct-publication-card__title-icon',
+            } only %}
+          </div>
         {% endif %}
       {% endblock %}
 
@@ -116,19 +132,21 @@
       {% endblock %}
 
       {% block link_block %}
-        {% if file.ext is not empty and file.size is not empty %}
-          {% set extension = ' <span class="ct-publication-card__link__extension">(%s, %s)</span>'|format(file.ext, file.size) %}
-        {% elseif file.ext is not empty or file.size is not empty %}
-          {% set extension = ' <span class="ct-publication-card__link__extension">(%s)</span>'|format(file.ext|default(file.size)) %}
+        {% if filename is not empty %}
+          {% if title is not empty %}
+            <div class="ct-publication-card__filename">
+              <span class="ct-visually-hidden">{{ filename_prefix }}</span>
+              {{ filename }}
+            </div>
+          {% else %}
+            {% include 'civictheme:link' with {
+              theme: theme,
+              text: filename,
+              url: file.url,
+              modifier_class: 'ct-publication-card__link'
+            } only %}
+          {% endif %}
         {% endif %}
-
-        {% include 'civictheme:link' with {
-          theme: theme,
-          text: file.name ~ extension,
-          title: 'Download %s'|format(file.name),
-          url: file.url,
-          modifier_class: 'ct-publication-card__link'
-        } only %}
       {% endblock %}
 
       {% block content_bottom_block %}

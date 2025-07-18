@@ -54,6 +54,14 @@ props:
           type: string
           title: Size
           description: File size.
+    is_title_click:
+      type: boolean
+      title: Title click
+      description: Whether to make only the title clickable instead of the whole card.
+    filename_prefix:
+      type: string
+      title: Filename Prefix
+      description: Description of file details for accessibility.
 slots:
   image_over:
     title: Image Over
