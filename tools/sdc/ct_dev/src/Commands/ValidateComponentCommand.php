@@ -22,12 +22,21 @@ class ValidateComponentCommand extends DrushCommands {
     $components_path = DRUPAL_ROOT . '/themes/custom/civictheme_sdc/components';
     $errors = [];
 
+    if (!is_dir($components_path)) {
+      throw new \Exception("Components directory not found: {$components_path}");
+    }
+
     foreach (new \DirectoryIterator($components_path) as $fileinfo) {
       if ($fileinfo->isDot() || !$fileinfo->isDir()) continue;
 
       $component_file = $fileinfo->getPathname() . '/' . $fileinfo->getFilename() . '.component.yml';
       if (file_exists($component_file)) {
-        $definition = Yaml::parseFile($component_file);
+        try {
+          $definition = Yaml::parseFile($component_file);
+        } catch (\Exception $e) {
+          $errors[] = "[✘] {$fileinfo->getFilename()} - Invalid YAML: " . $e->getMessage();
+          continue;
+        }
         try {
           $component_validator->validateDefinition($definition);
           $this->output()->writeln("[✔] {$fileinfo->getFilename()} valid.");

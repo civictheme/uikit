@@ -54,8 +54,6 @@ jobs:
       
       - name: Validate SDC components
         run: |
-          ./build/vendor/bin/drush ct_dev:validate-components
-        run: |
           output=$(vendor/bin/drush ct_dev:validate-components 2>&1)
           echo "${output}"
           if echo "${output}" | grep -E -q '\b(failed|Failed)\b'; then
