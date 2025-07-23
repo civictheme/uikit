@@ -51,6 +51,19 @@ jobs:
         working-directory: tools/sdc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Validate SDC components
+        run: |
+          ./build/vendor/bin/drush ct_dev:validate-components
+        run: |
+          output=$(vendor/bin/drush ct_dev:validate-components 2>&1)
+          echo "${output}"
+          if echo "${output}" | grep -E -q '\b(failed|Failed)\b'; then
+            echo "Component validation failed"
+            exit 1
+          fi
+        working-directory: tools/sdc/build
+        continue-on-error: ${{ vars.CI_DRUPAL_SDC_VALIDATE_IGNORE_FAILURE == '1' }}
 
       - name: Lint SDC components
         run: |
