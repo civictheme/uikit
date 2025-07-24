@@ -5,8 +5,6 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - show_as_card: [boolean] Display the snippet as a card with border and elevation.
- * - is_title_click: [boolean] Whether to make only the title clickable instead of the whole card.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
@@ -31,11 +29,8 @@
 #}
 
 {% set with_link = link is not empty and link.url is defined and link.url is not empty %}
-{% set is_card_clickable = show_as_card and with_link and is_title_click is empty %}
-{% set card_clickable_class = is_card_clickable ? 'ct-snippet--card-clickable' : '' %}
-{% set show_as_card_class = show_as_card ? 'ct-snippet--card' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s'|format(theme_class, show_as_card_class, card_clickable_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
   <div class="ct-snippet {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
@@ -80,29 +75,19 @@
               theme: theme,
               content: summary,
               allow_html: true,
+              no_margin: true,
               modifier_class: 'ct-snippet__summary',
             } only %}
           {% endif %}
         {% endblock %}
 
         {% block content_tags_block %}
-          {% if tags or is_card_clickable %}
+          {% if tags %}
             <div class="ct-snippet__tags">
-              {% if tags %}
-                {% include 'civictheme:tag-list' with {
-                  theme: theme,
-                  tags: tags,
-                } only %}
-              {% endif %}
-
-              {% if is_card_clickable %}
-                <div class="ct-snippet__link-graphic">
-                  {% include 'civictheme:icon' with {
-                    symbol: 'right-arrow-2',
-                    size: 'regular',
-                  } only %}
-                </div>
-              {% endif %}
+              {% include 'civictheme:tag-list' with {
+                theme: theme,
+                tags: tags,
+              } only %}
             </div>
           {% endif %}
         {% endblock %}

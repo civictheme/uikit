@@ -9,47 +9,25 @@
 
   position: relative;
   width: 100%;
+  display: flex;
 
-  &--card {
-    @include ct-elevation(2);
-
-    border-radius: $ct-promo-card-border-radius;
-    overflow: hidden;
-
-    &:hover {
-      outline: 1px solid transparent;
-    }
-
-    #{$root}__content {
-      padding: ct-spacing(3);
-    }
-  }
-
-  &:not(#{$root}--card) {
-    #{$root}__content {
-      padding-top: ct-spacing(1);
-      padding-bottom: ct-spacing(1);
-    }
-  }
-
-  &--card-clickable {
-    @include ct-elevation-interaction();
-
-    #{$root}__title-link {
-      @include ct-link-cover-parent();
-    }
+  #{$root}__content {
+    padding-top: ct-spacing(1);
+    padding-bottom: ct-spacing(1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: ct-spacing(2);
   }
 
   #{$root}__title {
     @include ct-typography('heading-4');
-
-    margin-bottom: ct-spacing(2);
   }
 
   #{$root}__title-link {
     @include ct-font-size-inherit();
 
-    text-decoration: none;
+    text-decoration: underline;
 
     &:focus-visible {
       @include ct-outline();
@@ -57,7 +35,7 @@
     }
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     &:visited {
@@ -65,72 +43,18 @@
     }
   }
 
-  #{$root}__tags {
-    display: flex;
-    margin-top: ct-spacing(2);
-  }
-
-  #{$root}__link-graphic {
-    @include ct-flex-align-right();
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: ct-spacing(4);
-    height: ct-spacing(4);
-    pointer-events: none;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      opacity: $ct-snippet-link-graphic-hover-opacity;
-      border-radius: 100%;
-    }
-  }
-
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, background-color);
-
-    &#{$root}--card {
-      @include ct-component-property($root, $theme, card, background-color);
-    }
-
-    &#{$root}--card-clickable {
-      &:hover {
-        @include ct-component-property($root, $theme, hover, outline-color);
-
-        #{$root}__title-link {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
-
-        #{$root}__link-graphic {
-          &::before {
-            @include ct-component-property($root, $theme, link, graphic, hover, background-color);
-          }
-        }
-      }
-    }
-
-    &:not(#{$root}--card-clickable) {
-      #{$root}__title-link {
-        &:hover {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
-      }
-    }
 
     #{$root}__title,
     #{$root}__title-link {
       @include ct-component-property($root, $theme, title, color);
     }
 
-    #{$root}__link-graphic {
-      @include ct-component-property($root, $theme, link, graphic, color);
+    #{$root}__title-link {
+      &:hover {
+        @include ct-component-property($root, $theme, title, hover, color);
+      }
     }
   }
 }
