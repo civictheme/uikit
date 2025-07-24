@@ -101,3 +101,57 @@ export const ListSnippet = {
   },
   args: ListData.args('light', { component: 'snippet', columnCount: 1 }),
 };
+
+export const ListPromoCardEqualHeights = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: ListData.args('light', {
+    component: 'promo',
+    items: [
+      {
+        title: 'Duis in nulla.',
+        tags: [
+          'Tag small text',
+          'Tag with large text that spans over two lines',
+        ],
+      },
+      {
+        title: 'Veniam occaecat deserunt sint dolor minim dolore occaecat.',
+        tags: [
+          'Tag with large text that spans over two lines',
+          'Tag small text',
+        ],
+      },
+      { title: 'Do anim occaecat dolor cupidatat est eu sunt labore non aute nisi proident ullamco pariatur ut ex pariatur.' },
+    ],
+  }),
+};
+
+export const ListEventCardEqualHeights = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: ListData.args('light', {
+    component: 'event',
+    items: [
+      { title: 'Duis in nulla.' },
+      { title: 'Veniam occaecat deserunt sint dolor minim dolore occaecat.' },
+      { title: 'Do anim occaecat dolor cupidatat est eu sunt labore non aute nisi proident ullamco pariatur ut ex pariatur.' },
+    ],
+  }),
+};
+
+export const ListNavigationEqualHeights = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: ListData.args('light', {
+    component: 'navigation',
+    items: [
+      { title: 'Duis in nulla.' },
+      { title: 'Veniam occaecat deserunt sint dolor minim dolore occaecat.' },
+      { title: 'Do anim occaecat dolor cupidatat est eu sunt labore non aute nisi proident ullamco pariatur ut ex pariatur.' },
+    ],
+  }),
+};

@@ -25,12 +25,6 @@ const meta = {
     tags: {
       control: { type: 'array' },
     },
-    show_as_card: {
-      control: { type: 'boolean' },
-    },
-    is_title_click: {
-      control: { type: 'boolean' },
-    },
     content_top: {
       control: { type: 'text' },
     },

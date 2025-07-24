@@ -136,6 +136,7 @@
             theme: theme,
             content: summary,
             allow_html: true,
+            no_margin: true,
             modifier_class: 'ct-navigation-card__summary',
           } only %}
         {% endif %}
@@ -150,11 +151,13 @@
       {% endblock %}
 
       {% if is_card_clickable %}
-        <div class="ct-navigation-card__link-graphic">
-          {% include 'civictheme:icon' with {
-            symbol: 'right-arrow-2',
-            size: 'regular',
-          } only %}
+        <div class="ct-navigation-card__tags">
+          <div class="ct-navigation-card__link-graphic">
+            {% include 'civictheme:icon' with {
+              symbol: 'right-arrow-2',
+              size: 'regular',
+            } only %}
+          </div>
         </div>
       {% endif %}
     </div>

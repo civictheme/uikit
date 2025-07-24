@@ -7,6 +7,8 @@
   border-radius: 0.25rem;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .ct-promo-card {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
@@ -63,15 +65,10 @@
 }
 .ct-promo-card .ct-promo-card__content {
   padding: 1.5rem;
-}
-.ct-promo-card .ct-promo-card__subtitle {
-  margin-bottom: 1rem;
-}
-.ct-promo-card .ct-promo-card__date {
-  margin-bottom: 1rem;
-}
-.ct-promo-card .ct-promo-card__title {
-  margin-bottom: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 @media (min-width: 0) {
   .ct-promo-card .ct-promo-card__title {
@@ -111,7 +108,9 @@
 }
 .ct-promo-card .ct-promo-card__tags {
   display: flex;
-  margin-top: 1rem;
+  margin-top: auto;
+  align-items: flex-end;
+  gap: 0.5rem;
 }
 .ct-promo-card .ct-promo-card__link-graphic {
   margin-left: auto;

@@ -1021,21 +1021,12 @@ $ct-subject-card-dark-image-opacity: 20% !default;
 //
 // List/Snippet.
 //
-$ct-snippet-link-graphic-hover-opacity: 0.1 !default;
 $ct-snippet-light-background-color: transparent !default;
-$ct-snippet-light-card-background-color: ct-color-light('background-light') !default;
-$ct-snippet-light-hover-outline-color: ct-color-light('border') !default;
-$ct-snippet-light-title-color: ct-color-light('heading') !default;
+$ct-snippet-light-title-color: ct-color-light('interaction-background') !default;
 $ct-snippet-light-title-hover-color: ct-color-light('interaction-background') !default;
-$ct-snippet-light-link-graphic-color: ct-color-light('interaction-background') !default;
-$ct-snippet-light-link-graphic-hover-background-color: ct-color-light('interaction-background') !default;
 $ct-snippet-dark-background-color: transparent !default;
-$ct-snippet-dark-card-background-color: ct-color-dark('background') !default;
-$ct-snippet-dark-hover-outline-color: ct-color-dark('border') !default;
 $ct-snippet-dark-title-color: ct-color-dark('heading') !default;
 $ct-snippet-dark-title-hover-color: ct-color-dark('interaction-background') !default;
-$ct-snippet-dark-link-graphic-color: ct-color-dark('interaction-background') !default;
-$ct-snippet-dark-link-graphic-hover-background-color: ct-color-dark('interaction-background') !default;
 
 ////////////////////////////////////////////////////////////////////////////////
 //                               ORGANISMS                                    //

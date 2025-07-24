@@ -58,6 +58,10 @@
     width: 100%;
     padding: ct-spacing(3);
     box-sizing: border-box;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: ct-spacing(2);
   }
 
   #{$root}__icon {
@@ -71,8 +75,6 @@
 
   #{$root}__title {
     @include ct-typography('heading-4');
-
-    margin-bottom: ct-spacing(2);
   }
 
   #{$root}__title-link {
@@ -92,6 +94,10 @@
     &:visited {
       color: inherit;
     }
+  }
+
+  #{$root}__tags {
+    margin-top: auto;
   }
 
   #{$root}__link-graphic {
@@ -114,12 +120,6 @@
       right: 0;
       opacity: $ct-navigation-card-link-graphic-hover-opacity;
       border-radius: 100%;
-    }
-  }
-
-  &#{$root}--with-link {
-    #{$root}__summary {
-      padding-right: ct-spacing(3);
     }
   }
 
