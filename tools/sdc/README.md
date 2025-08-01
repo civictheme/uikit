@@ -5,7 +5,7 @@ This directory contains scripts used for SDC development.
 These can be used locally and in the CI environment.
 
 SDC components are validated using `sdc_devel` module running on a vanilla
-Drupal site. 
+Drupal site.
 
 Run the commands from the `tools/sdc` directory.
 
@@ -35,7 +35,7 @@ momentarily. Do not forget to clear Drupal cache after making changes to this fi
 To test the validity of a component definition, use the following command:
 
 ```bash
-build/vendor/bin/drush ct_dev:validate-component-definition <components_path>
+build/vendor/bin/drush ct_dev:validate-component-definition 'themes/custom/civictheme_sdc/components'
 ```
 
 This command checks the specified component definition files for schema compliance and reports any issues found.
