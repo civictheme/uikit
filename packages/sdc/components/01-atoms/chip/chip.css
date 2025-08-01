@@ -10,13 +10,16 @@
 .ct-chip {
   text-decoration: none;
 }
-.ct-chip:hover {
+.ct-chip .ct-text-icon__text {
   text-decoration: none;
 }
-.ct-chip--active, .ct-chip:active {
+.ct-chip:hover .ct-text-icon__text {
   text-decoration: none;
 }
-.ct-chip:focus-visible {
+.ct-chip--active .ct-text-icon__text, .ct-chip:active .ct-text-icon__text {
+  text-decoration: none;
+}
+.ct-chip:focus-visible .ct-text-icon__text {
   text-decoration: none;
 }
 .ct-chip .ct-chip__dismiss {

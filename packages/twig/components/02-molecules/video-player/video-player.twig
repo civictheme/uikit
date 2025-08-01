@@ -67,11 +67,9 @@
     {% block links_block %}
       <div class="ct-video-player__links">
         {% if transcript_link.url is defined and transcript_link.url is not empty %}
-          <div class="ct-video-player__links__transcript">
-            {% include '@atoms/button/button.twig' with {
-              kind: 'link',
+          <div class="ct-video-player__links-transcript">
+            {% include '@atoms/link/link.twig' with {
               theme: theme,
-              type: 'tertiary',
               text: transcript_link.text,
               title: transcript_link.title,
               url: transcript_link.url,

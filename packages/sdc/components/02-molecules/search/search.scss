@@ -18,7 +18,8 @@
     @include ct-typography('label-regular');
 
     & {
-      text-decoration: none;
+      @include ct-link-no-decoration();
+
       border-bottom: solid ct-particle(0.5);
       padding-left: ct-spacing(2);
       padding-right: ct-spacing(2);

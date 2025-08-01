@@ -98,7 +98,11 @@ exports[`Snippet Component renders with link and tags 1`] = `
           class="ct-link ct-theme-light     ct-snippet__title__link"
           href="https://example.com/read-more"
         >
-          Snippet Title
+          <span
+            class="ct-text-icon__text"
+          >
+            Snippet Title
+          </span>
         </a>
                                   
       </h4>
@@ -222,7 +226,11 @@ exports[`Snippet Component renders with optional attributes 1`] = `
           href="https://example.com/read-more"
           target="_blank"
         >
-          Snippet Title
+          <span
+            class="ct-text-icon__text"
+          >
+            Snippet Title
+          </span>
           <span
             class="ct-visually-hidden"
           >

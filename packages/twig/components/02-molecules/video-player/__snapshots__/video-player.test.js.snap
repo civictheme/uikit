@@ -208,22 +208,19 @@ exports[`Video Component renders with transcript link 1`] = `
       
                   
       <div
-        class="ct-video-player__links__transcript"
+        class="ct-video-player__links-transcript"
       >
         
             
-
-  
         <a
-          class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--small   "
-          data-component-name="button"
+          class="ct-link ct-theme-light"
           href="transcript.html"
-          role="button"
           target="_blank"
+          title="Transcript"
         >
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-button__icon"
+            class="ct-icon  ct-link__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -239,15 +236,20 @@ exports[`Video Component renders with transcript link 1`] = `
 
           </svg>
           
-View Transcript
+
+          <span
+            class="ct-text-icon__text"
+          >
+            View Transcript
+          </span>
+           
           <span
             class="ct-visually-hidden"
           >
             (Opens in a new tab/window)
           </span>
         </a>
-        
-          
+                  
       </div>
       
               

@@ -15,7 +15,7 @@ const getRows = function (theme) {
     ],
     [
       Link({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
-      `<a class="ct-link ct-theme-${theme}" href="#" title="Row 1 with link">Row 2 with link</a>`,
+      Link({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
       'Description summary on even row',
       'Another column',
       'One more column column',

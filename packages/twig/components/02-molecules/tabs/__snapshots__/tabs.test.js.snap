@@ -44,7 +44,11 @@ exports[`Tabs Component renders with generated links from panels 1`] = `
           id="tab1-tab"
           role="tab"
         >
-          Tab 1
+          <span
+            class="ct-text-icon__text"
+          >
+            Tab 1
+          </span>
         </a>
           
       </li>
@@ -62,7 +66,11 @@ exports[`Tabs Component renders with generated links from panels 1`] = `
           id="tab2-tab"
           role="tab"
         >
-          Tab 2
+          <span
+            class="ct-text-icon__text"
+          >
+            Tab 2
+          </span>
         </a>
           
       </li>
@@ -146,7 +154,11 @@ exports[`Tabs Component renders with optional attributes 1`] = `
           id="tab1-tab"
           role="tab"
         >
-          Tab 1
+          <span
+            class="ct-text-icon__text"
+          >
+            Tab 1
+          </span>
         </a>
           
       </li>
@@ -164,7 +176,11 @@ exports[`Tabs Component renders with optional attributes 1`] = `
           id="tab2-tab"
           role="tab"
         >
-          Tab 2
+          <span
+            class="ct-text-icon__text"
+          >
+            Tab 2
+          </span>
         </a>
           
       </li>
@@ -247,7 +263,11 @@ exports[`Tabs Component renders with required attributes 1`] = `
           id="tab1-tab"
           role="tab"
         >
-          Tab 1
+          <span
+            class="ct-text-icon__text"
+          >
+            Tab 1
+          </span>
         </a>
           
       </li>
@@ -265,7 +285,11 @@ exports[`Tabs Component renders with required attributes 1`] = `
           id="tab2-tab"
           role="tab"
         >
-          Tab 2
+          <span
+            class="ct-text-icon__text"
+          >
+            Tab 2
+          </span>
         </a>
           
       </li>
