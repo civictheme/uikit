@@ -30,17 +30,13 @@ exports[`Snippet Component renders with content slots 1`] = `
       </div>
       
                   
-                              
-            
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-snippet__title"
+                                          
+      <div
+        class="ct-snippet__title"
       >
                                       Snippet Title
                           
-      </h4>
+      </div>
       
                   
                               
@@ -85,23 +81,20 @@ exports[`Snippet Component renders with link and tags 1`] = `
     >
       
                           
-                              
-            
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-snippet__title"
+                                          
+      <div
+        class="ct-snippet__title"
       >
                                       
         <a
-          class="ct-link ct-theme-light     ct-snippet__title__link"
+          class="ct-snippet__title-link"
           href="https://example.com/read-more"
         >
           Snippet Title
         </a>
-                                  
-      </h4>
+        
+                          
+      </div>
       
                   
                           
@@ -111,7 +104,7 @@ exports[`Snippet Component renders with link and tags 1`] = `
         class="ct-snippet__tags"
       >
         
-                              
+              
 
   
         <div
@@ -171,7 +164,7 @@ exports[`Snippet Component renders with link and tags 1`] = `
                 
         </div>
         
-                          
+            
       </div>
       
                   
@@ -208,29 +201,21 @@ exports[`Snippet Component renders with optional attributes 1`] = `
       </div>
       
                   
-                              
-            
-
-
-  
-      <h4
-        class="ct-heading ct-theme-dark ct-snippet__title"
+                                          
+      <div
+        class="ct-snippet__title"
       >
                                       
         <a
-          class="ct-link ct-theme-dark     ct-snippet__title__link"
+          class="ct-snippet__title-link"
           href="https://example.com/read-more"
           target="_blank"
         >
           Snippet Title
-          <span
-            class="ct-visually-hidden"
-          >
-            (Opens in a new tab/window)
-          </span>
         </a>
-                                  
-      </h4>
+        
+                          
+      </div>
       
                   
                               
@@ -245,7 +230,7 @@ exports[`Snippet Component renders with optional attributes 1`] = `
 
 
       <div
-        class="ct-paragraph ct-theme-dark ct-paragraph--regular  ct-snippet__summary"
+        class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-paragraph--no-margin ct-snippet__summary"
       >
         
     This is the summary of the snippet.  
@@ -256,7 +241,7 @@ exports[`Snippet Component renders with optional attributes 1`] = `
         class="ct-snippet__tags"
       >
         
-                              
+              
 
   
         <div
@@ -316,7 +301,7 @@ exports[`Snippet Component renders with optional attributes 1`] = `
                 
         </div>
         
-                          
+            
       </div>
       
                   
@@ -352,17 +337,13 @@ exports[`Snippet Component renders with required attributes 1`] = `
     >
       
                           
-                              
-            
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-snippet__title"
+                                          
+      <div
+        class="ct-snippet__title"
       >
                                       Snippet Title
                           
-      </h4>
+      </div>
       
                   
                           
@@ -370,7 +351,7 @@ exports[`Snippet Component renders with required attributes 1`] = `
 
 
       <div
-        class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-snippet__summary"
+        class="ct-paragraph ct-theme-light ct-paragraph--regular ct-paragraph--no-margin ct-snippet__summary"
       >
         
     This is the summary of the snippet.  
