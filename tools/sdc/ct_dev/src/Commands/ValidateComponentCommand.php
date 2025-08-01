@@ -16,6 +16,22 @@ use Symfony\Component\Yaml\Yaml;
 class ValidateComponentCommand extends DrushCommands {
 
   /**
+   * Defines the component validator.
+   *
+   * @var \Drupal\Core\Theme\Component\ComponentValidator
+   */
+  protected ComponentValidator $componentValidator;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct() {
+    parent::__construct();
+    $this->componentValidator = new ComponentValidator();
+    $this->componentValidator->setValidator();
+  }
+
+  /**
    * Validates all component definitions in a given path.
    *
    * @param string $components_path
@@ -29,19 +45,13 @@ class ValidateComponentCommand extends DrushCommands {
     }
 
     $component_files = [];
-    foreach (new \DirectoryIterator($components_path) as $fileinfo) {
-      if ($fileinfo->isDot() || !$fileinfo->isDir()) {
-        continue;
-      }
-      $subdir = $fileinfo->getPathname();
-      foreach (new \DirectoryIterator($subdir) as $subfileinfo) {
-        if ($subfileinfo->isDot() || !$subfileinfo->isDir()) {
-          continue;
-        }
-        $component_file = $subfileinfo->getPathname() . '/' . $subfileinfo->getFilename() . '.component.yml';
-        if (file_exists($component_file)) {
-          $component_files[] = $component_file;
-        }
+    $iterator = new \RecursiveIteratorIterator(
+      new \RecursiveDirectoryIterator($components_path),
+      \RecursiveIteratorIterator::SELF_FIRST
+    );
+    foreach ($iterator as $file) {
+      if ($file->isFile() && $file->getExtension() === 'yml' && str_ends_with($file->getFilename(), '.component.yml')) {
+        $component_files[] = $file->getPathname();
       }
     }
 
@@ -95,9 +105,7 @@ class ValidateComponentCommand extends DrushCommands {
    * @throws \Drupal\Core\Render\Component\Exception\InvalidComponentException
    */
   public function validateComponentFile(array $definition): void {
-    $component_validator = new ComponentValidator();
-    $component_validator->setValidator();
-    $component_validator->validateDefinition($definition, TRUE);
+    $this->componentValidator->validateDefinition($definition, TRUE);
   }
 
 }

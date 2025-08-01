@@ -51,7 +51,7 @@ jobs:
         working-directory: tools/sdc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Validate SDC components
         run: |
           output=$(vendor/bin/drush ct_dev:validate-component-definition ../web/themes/custom/civictheme_sdc/components 2>&1)
