@@ -48,25 +48,16 @@
           {% if title is not empty %}
             {% set title_content %}
               {% if with_link %}
-                {% include '@atoms/link/link.twig' with {
-                  theme: theme,
-                  text: title,
-                  url: link.url,
-                  is_new_window: link.is_new_window,
-                  is_external: false,
-                  modifier_class: 'ct-snippet__title__link',
-                } only %}
+                <a
+                  class="ct-snippet__title-link"
+                  href="{{ link.url }}"
+                  {% if link.is_new_window %}target="_blank"{% endif %}
+                >{{ title }}</a>
               {% else %}
                 {{ title }}
               {% endif %}
             {% endset %}
-
-            {% include '@atoms/heading/heading.twig' with {
-              content: title_content,
-              level: 4,
-              theme: theme,
-              modifier_class: 'ct-snippet__title',
-            } only %}
+            <div class='ct-snippet__title'>{{ title_content }}</div>
           {% endif %}
         {% endblock %}
 
@@ -84,20 +75,19 @@
               theme: theme,
               content: summary,
               allow_html: true,
+              no_margin: true,
               modifier_class: 'ct-snippet__summary',
             } only %}
           {% endif %}
         {% endblock %}
 
         {% block content_tags_block %}
-          {% if tags or with_link %}
+          {% if tags %}
             <div class="ct-snippet__tags">
-              {% if tags %}
-                {% include '@molecules/tag-list/tag-list.twig' with {
-                  theme: theme,
-                  tags: tags,
-                } only %}
-              {% endif %}
+              {% include '@molecules/tag-list/tag-list.twig' with {
+                theme: theme,
+                tags: tags,
+              } only %}
             </div>
           {% endif %}
         {% endblock %}

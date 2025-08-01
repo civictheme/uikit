@@ -15,6 +15,7 @@
  *   Each property contains:
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open the link in a new window.
+ * - is_title_click: [boolean] Whether to make only the title clickable instead of the whole card.
  *
  * Slots:
  * - image_over: Image overlay content.
@@ -30,8 +31,10 @@
 {% set with_link = link is not empty and link.url is defined and link.url is not empty %}
 {% set with_image = image.url is defined and image.url is not empty %}
 {% set with_image_class = with_image ? 'ct-subject-card--with-image' : '' %}
+{% set is_card_clickable = with_link and is_title_click is empty %}
+{% set card_clickable_class = is_card_clickable ? 'ct-subject-card--card-clickable' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, with_image_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, with_image_class, card_clickable_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
   <div class="ct-subject-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
@@ -60,27 +63,17 @@
         {% if title is not empty %}
           {% set title_content %}
             {% if with_link %}
-              {% include '@atoms/link/link.twig' with {
-                theme: theme,
-                text: title,
-                url: link.url,
-                is_new_window: link.is_new_window,
-                is_external: false,
-                icon: not with_image and with_link ? 'right-arrow-2' : '',
-                icon_group_disabled: true,
-                modifier_class: 'ct-subject-card__title__link',
-              } only %}
+              <a
+                class="ct-subject-card__title-link"
+                href="{{ link.url }}"
+                {% if link.is_new_window %}target="_blank"{% endif %}
+              >{{ title }}</a>
             {% else %}
               {{ title }}
             {% endif %}
           {% endset %}
 
-          {% include '@atoms/heading/heading.twig' with {
-            content: title_content,
-            level: 4,
-            theme: theme,
-            modifier_class: 'ct-subject-card__title',
-          } only %}
+          <div class='ct-subject-card__title'>{{ title_content }}</div>
         {% endif %}
       {% endblock %}
     </div>
