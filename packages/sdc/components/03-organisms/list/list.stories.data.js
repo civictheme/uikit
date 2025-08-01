@@ -18,16 +18,16 @@ import PaginationData from '../../02-molecules/pagination/pagination.stories.dat
 export default {
   args: (theme = 'light', options = {}) => {
     const components = {
-      promo:      { data: PromoCardData.args('light'),      render: PromoCard },
-      event:      { data: EventCardData.args('light'),      render: EventCard },
+      promo: { data: PromoCardData.args('light'), render: PromoCard },
+      event: { data: EventCardData.args('light'), render: EventCard },
       navigation: { data: NavigationCardData.args('light'), render: NavigationCard },
-      snippet:    { data: SnippetData.args(theme),          render: Snippet },
-    }
+      snippet: { data: SnippetData.args(theme), render: Snippet },
+    };
     const component = options.component || 'promo';
-    const render = components[component].render
-    const defaultData = components[component].data
+    const { render } = components[component];
+    const defaultData = components[component].data;
     const itemData = options.items || Array.from(Array(6), () => ({}));
-    const items = itemData.map(data => render({ ...defaultData, ...data }));
+    const items = itemData.map((data) => render({ ...defaultData, ...data }));
     return {
       theme,
       title: 'My List Title',
