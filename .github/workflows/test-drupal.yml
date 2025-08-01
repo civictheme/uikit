@@ -54,7 +54,7 @@ jobs:
       
       - name: Validate SDC components
         run: |
-          output=$(vendor/bin/drush ct_dev:validate-components 2>&1)
+          output=$(vendor/bin/drush ct_dev:validate-component-definition ../web/themes/custom/civictheme_sdc/components 2>&1)
           echo "${output}"
           if echo "${output}" | grep -E -q '\b(failed|Failed)\b'; then
             echo "Component validation failed"

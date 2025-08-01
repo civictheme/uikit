@@ -31,3 +31,11 @@ build/vendor/bin/drush sdc-devel:validate civictheme_sdc
 To add exclusions to the validation rules, update the `ct_dev/ct_dev.module` file.
 This module is symlinked into the built Drupal site, so changes will be reflected
 momentarily. Do not forget to clear Drupal cache after making changes to this file.
+
+To test the validity of a component definition, use the following command:
+
+```bash
+build/vendor/bin/drush ct_dev:validate-component-definition <components_path>
+```
+
+This command checks the specified component definition files for schema compliance and reports any issues found.
