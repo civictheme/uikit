@@ -34,6 +34,9 @@ const meta = {
     image_over: {
       control: { type: 'text' },
     },
+    is_title_click: {
+      control: { type: 'boolean' },
+    },
     content_top: {
       control: { type: 'text' },
     },

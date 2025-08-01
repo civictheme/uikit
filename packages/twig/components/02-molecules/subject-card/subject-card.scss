@@ -5,12 +5,24 @@
 .ct-subject-card {
   $root: &;
 
-  @include ct-elevation-interaction();
-
   & {
+    @include ct-elevation(2);
+
     position: relative;
-    border-radius: $ct-service-card-border-radius;
+    border-radius: $ct-subject-card-border-radius;
     width: 100%;
+
+    &:hover {
+      outline: 1px solid transparent;
+    }
+  }
+
+  &--card-clickable {
+    @include ct-elevation-interaction();
+
+    #{$root}__title-link {
+      @include ct-link-cover-parent();
+    }
   }
 
   #{$root}__content {
@@ -43,25 +55,55 @@
   }
 
   #{$root}__title {
+    @include ct-typography('heading-4');
+
     z-index: 1;
   }
 
-  #{$root}__title__link {
+  #{$root}__title-link {
     @include ct-font-size-inherit();
-    @include ct-link-cover-parent();
-    @include ct-link-wide();
 
-    & {
-      flex-direction: column;
+    text-decoration: none;
+
+    &:focus-visible {
+      @include ct-outline();
+      @include ct-outline-border();
     }
 
-    .ct-link__icon {
-      @include ct-icon-size();
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: inherit;
     }
   }
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, background-color);
+
+    &#{$root}--card-clickable {
+      &:hover {
+        @include ct-component-property($root, $theme, hover, outline-color);
+
+        #{$root}__title-link {
+          @include ct-component-property($root, $theme, title, hover, color);
+        }
+      }
+    }
+
+    &:not(#{$root}--card-clickable) {
+      #{$root}__title-link {
+        &:hover {
+          @include ct-component-property($root, $theme, title, hover, color);
+        }
+      }
+    }
+
+    #{$root}__title,
+    #{$root}__title-link {
+      @include ct-component-property($root, $theme, title, color);
+    }
 
     #{$root}__image {
       @include ct-component-property($root, $theme, image, opacity);

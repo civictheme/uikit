@@ -42,6 +42,7 @@ describe('Event Card Component', () => {
     expect(element).not.toBeNull();
     expect(element.classList.contains('ct-theme-dark')).toBe(true);
     expect(element.classList.contains('custom-class')).toBe(true);
+    expect(element.classList.contains('ct-event-card--card-clickable')).toBe(true);
     expect(element.getAttribute('data-test')).toEqual('true');
 
     expect(c.querySelector('.ct-event-card__content-top').textContent.trim()).toEqual('Top content');
@@ -62,7 +63,7 @@ describe('Event Card Component', () => {
     expect(image.getAttribute('src')).toEqual('https://example.com/image.jpg');
     expect(image.getAttribute('alt')).toEqual('Image description');
 
-    const titleLink = c.querySelector('.ct-event-card__title__link');
+    const titleLink = c.querySelector('.ct-event-card__title-link');
     expect(titleLink).toBeTruthy();
     expect(titleLink.getAttribute('href')).toEqual('https://example.com');
 
