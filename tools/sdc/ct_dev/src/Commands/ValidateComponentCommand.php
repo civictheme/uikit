@@ -43,7 +43,7 @@ class ValidateComponentCommand extends DrushCommands {
     if (!is_dir($components_path)) {
       throw new \Exception("Components directory not found: {$components_path}");
     }
-
+    $this->output()->writeln(sprintf('Validating components in %s', $components_path));
     $component_files = [];
     $iterator = new \RecursiveIteratorIterator(
       new \RecursiveDirectoryIterator($components_path),
@@ -60,6 +60,8 @@ class ValidateComponentCommand extends DrushCommands {
     }
 
     $errors = [];
+    $valid_count = 0;
+
     foreach ($component_files as $component_file) {
       try {
         $definition = Yaml::parseFile($component_file);
@@ -80,20 +82,28 @@ class ValidateComponentCommand extends DrushCommands {
           ]
         );
         $this->validateComponentFile($definition);
-        $this->output()->writeln("[✔] " . basename($component_file) . " valid.");
+        $valid_count++;
       }
       catch (\Exception $e) {
-        $errors[] = "[✘] " . basename($component_file) . " - " . $e->getMessage();
+        $errors[] = [
+          'file' => basename($component_file),
+          'error' => $e->getMessage(),
+        ];
       }
     }
 
+    // Display summary
     if ($errors) {
+      if ($valid_count > 0) {
+        $this->output()->writeln(sprintf("\n✅ %d components are valid", $valid_count));
+      }
+      $this->output()->writeln("\nFailed components:");
       foreach ($errors as $error) {
-        $this->output()->writeln($error);
+        $this->output()->writeln(sprintf("❌ %s - %s", $error['file'], $error['error']));
       }
       throw new \Exception("Component validation failed.");
     }
-    $this->output()->writeln("All components valid.");
+    $this->output()->writeln(sprintf("\n✅ All components are valid (%d components)", $valid_count));
   }
 
   /**
