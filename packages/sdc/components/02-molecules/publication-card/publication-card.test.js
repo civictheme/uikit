@@ -14,7 +14,7 @@ describe('Publication Card Component', () => {
 
     expect(c.querySelectorAll('.ct-publication-card')).toHaveLength(1);
     expect(c.querySelector('.ct-publication-card__title').textContent.trim()).toEqual('Publication Card Title');
-    expect(c.querySelector('.ct-publication-card__link').textContent.trim()).toContain('Sample File (PDF, 2MB)');
+    expect(c.querySelector('.ct-publication-card__filename').textContent.trim()).toContain('Sample File (PDF, 2MB)');
 
     assertUniqueCssClasses(c);
   });
@@ -59,7 +59,7 @@ describe('Publication Card Component', () => {
     expect(image.getAttribute('src')).toEqual('https://example.com/image.jpg');
     expect(image.getAttribute('alt')).toEqual('Image description');
 
-    const fileLink = c.querySelector('.ct-publication-card__link');
+    const fileLink = c.querySelector('.ct-publication-card__filename');
     expect(fileLink).toBeTruthy();
     expect(fileLink.textContent.trim()).toContain('Sample File (PDF, 2MB)');
 
