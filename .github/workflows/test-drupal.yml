@@ -52,6 +52,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Run ct_dev kernel tests
+        run: vendor/bin/phpunit -c ../ct_dev/phpunit.xml.dist
+        working-directory: tools/sdc/build
+
       - name: Validate SDC components
         run: |
           output=$(vendor/bin/drush ct_dev:validate-component-definition ../web/themes/custom/civictheme_sdc/components 2>&1)
