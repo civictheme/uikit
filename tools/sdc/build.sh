@@ -98,7 +98,7 @@ run_assemble() {
   composer --working-dir="build" install
 
   info "Installing development dependencies."
-  composer --working-dir="build" require cweagans/composer-patches:^1.7 drupal/sdc_devel drush/drush
+  composer --working-dir="build" require cweagans/composer-patches:^1.7 drupal/sdc_devel drush/drush drupal/core-dev
 
   info "Creating custom theme"
   mkdir -p build/web/themes/custom/civictheme_sdc
