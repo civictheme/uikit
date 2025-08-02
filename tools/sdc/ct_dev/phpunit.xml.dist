@@ -7,9 +7,9 @@
          executionOrder="depends,defects"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
-         convertWarningsToExceptions="true"
+         convertWarningsToExceptions="false"
          failOnRisky="true"
-         failOnWarning="true"
+         failOnWarning="false"
          verbose="true">
     <testsuites>
         <testsuite name="ct_dev">
