@@ -47,7 +47,7 @@
             {{- icon_markup|raw -}}
           {%- endif -%}
           {%- if is_external and not icon_single_only -%}
-            {%- include 'civictheme:icon' with { symbol: 'upper-right-arrow' } only -%}
+            {%- include 'civictheme:icon' with {symbol: 'upper-right-arrow'} only -%}
           {%- endif -%}
         {%- endset -%}
         {%- if show_full_text %} {% endif -%}{# This line adds some space between full text and after icons #}
