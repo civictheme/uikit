@@ -46,13 +46,14 @@ function CivicThemeCollapsible(el) {
     iconEl.classList.add('ct-collapsible__icon');
     // If multiple words - use last word and icon grouping.
     if (this.iconGroupEnabled) {
+      const wrapText = (text) => `<span class="ct-text-icon__text">${text}</span>`;
       const text = this.trigger.innerText.trim();
       const lastWordIndex = text.lastIndexOf(' ');
       const lastWord = lastWordIndex >= 0 ? text.substring(lastWordIndex + 1) : text;
       const firstWords = lastWordIndex >= 0 ? text.substring(0, lastWordIndex + 1) : '';
-      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${lastWord} </span>`);
+      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${wrapText(lastWord)} </span>`);
       iconGroupEl.append(iconEl);
-      this.trigger.innerHTML = firstWords;
+      this.trigger.innerHTML = wrapText(firstWords);
       this.trigger.append(iconGroupEl);
     } else {
       this.trigger.append(iconEl);

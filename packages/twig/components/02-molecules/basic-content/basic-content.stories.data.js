@@ -109,6 +109,14 @@ export default {
         },
       ],
       poster: 'demo/videos/demo_poster.png',
+      transcript_link: {
+        text: 'View transcript',
+        title: 'Open transcription in a new window',
+        url: 'https://example.com',
+        is_new_window: true,
+        is_external: false,
+        attributes: '',
+      },
     })
     }
       ${

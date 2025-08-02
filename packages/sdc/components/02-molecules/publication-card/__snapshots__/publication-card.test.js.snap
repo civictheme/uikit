@@ -34,11 +34,15 @@ exports[`Publication Card Component renders file link with extension and size 1`
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        Sample File 
         <span
-          class="ct-publication-card__link__extension"
+          class="ct-text-icon__text"
         >
-          (PDF, 2MB)
+          Sample File 
+          <span
+            class="ct-publication-card__link__extension"
+          >
+            (PDF, 2MB)
+          </span>
         </span>
       </a>
             
@@ -116,7 +120,12 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
           class="ct-link ct-theme-dark     ct-publication-card__title__link"
           href="https://example.com/sample.pdf"
         >
-          Publication Card Title 
+          <span
+            class="ct-text-icon__text"
+          >
+            Publication Card Title
+          </span>
+           
           <svg
             aria-hidden="true"
             class="ct-icon  ct-link__icon"
@@ -166,11 +175,15 @@ exports[`Publication Card Component renders with optional attributes 1`] = `
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        Sample File 
         <span
-          class="ct-publication-card__link__extension"
+          class="ct-text-icon__text"
         >
-          (PDF, 2MB)
+          Sample File 
+          <span
+            class="ct-publication-card__link__extension"
+          >
+            (PDF, 2MB)
+          </span>
         </span>
       </a>
             
@@ -220,7 +233,12 @@ exports[`Publication Card Component renders with required attributes 1`] = `
           class="ct-link ct-theme-light     ct-publication-card__title__link"
           href="https://example.com/sample.pdf"
         >
-          Publication Card Title 
+          <span
+            class="ct-text-icon__text"
+          >
+            Publication Card Title
+          </span>
+           
           <svg
             aria-hidden="true"
             class="ct-icon  ct-link__icon"
@@ -254,11 +272,15 @@ exports[`Publication Card Component renders with required attributes 1`] = `
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        Sample File 
         <span
-          class="ct-publication-card__link__extension"
+          class="ct-text-icon__text"
         >
-          (PDF, 2MB)
+          Sample File 
+          <span
+            class="ct-publication-card__link__extension"
+          >
+            (PDF, 2MB)
+          </span>
         </span>
       </a>
             
@@ -307,11 +329,15 @@ exports[`Publication Card Component renders with summary when provided 1`] = `
         href="https://example.com/sample.pdf"
         title="Download Sample File"
       >
-        Sample File 
         <span
-          class="ct-publication-card__link__extension"
+          class="ct-text-icon__text"
         >
-          (PDF, 2MB)
+          Sample File 
+          <span
+            class="ct-publication-card__link__extension"
+          >
+            (PDF, 2MB)
+          </span>
         </span>
       </a>
             
