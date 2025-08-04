@@ -237,20 +237,6 @@
   text-decoration: none;
   padding: 0.1875rem 0 0.25rem;
 }
-.ct-basic-content a:not(.ct-button):visited.ct-theme-light {
-  color: var(--ct-basic-content a:not(ct-button):visited-light-visited-color);
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-light:hover {
-  border-color: var(--ct-basic-content a:not(ct-button):visited-light-visited-hover-border-color);
-  color: var(--ct-basic-content a:not(ct-button):visited-light-visited-hover-color);
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-dark {
-  color: var(--ct-basic-content a:not(ct-button):visited-dark-visited-color);
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-dark:hover {
-  border-color: var(--ct-basic-content a:not(ct-button):visited-dark-visited-hover-border-color);
-  color: var(--ct-basic-content a:not(ct-button):visited-dark-visited-hover-color);
-}
 @media (min-width: 0) {
   .ct-basic-content blockquote {
     font-size: 1.125rem;
@@ -599,6 +585,13 @@
   background-color: var(--ct-color-light-interaction-hover-background);
   color: var(--ct-color-light-interaction-hover-text);
 }
+.ct-basic-content.ct-theme-light a:not(.ct-button):visited {
+  color: var(--ct-color-light-body);
+}
+.ct-basic-content.ct-theme-light a:not(.ct-button):visited:hover {
+  border-color: var(--ct-color-light-interaction-focus);
+  color: var(--ct-color-light-interaction-hover-text);
+}
 .ct-basic-content.ct-theme-light blockquote {
   color: var(--ct-color-light-body);
   background-color: var(--ct-color-light-background-light);
@@ -703,6 +696,13 @@
 }
 .ct-basic-content.ct-theme-dark a:not(.ct-button):hover {
   background-color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-color-dark-interaction-hover-text);
+}
+.ct-basic-content.ct-theme-dark a:not(.ct-button):visited {
+  color: var(--ct-color-dark-body);
+}
+.ct-basic-content.ct-theme-dark a:not(.ct-button):visited:hover {
+  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 .ct-basic-content.ct-theme-dark blockquote {
