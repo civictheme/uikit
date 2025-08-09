@@ -14,7 +14,7 @@ exports[`Subject Card Component renders with content slots 1`] = `
 
   
   <div
-    class="ct-subject-card ct-theme-light  "
+    class="ct-subject-card ct-theme-light   "
   >
     
     
@@ -35,15 +35,12 @@ exports[`Subject Card Component renders with content slots 1`] = `
               
                         
           
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-subject-card__title"
+      <div
+        class="ct-subject-card__title"
       >
                                   Subject Card Title
                       
-      </h4>
+      </div>
       
                   
     </div>
@@ -61,7 +58,7 @@ exports[`Subject Card Component renders with link and image 1`] = `
 
   
   <div
-    class="ct-subject-card ct-theme-light ct-subject-card--with-image "
+    class="ct-subject-card ct-theme-light ct-subject-card--with-image ct-subject-card--card-clickable "
   >
     
     
@@ -90,21 +87,19 @@ exports[`Subject Card Component renders with link and image 1`] = `
                     
                         
           
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-subject-card__title"
+      <div
+        class="ct-subject-card__title"
       >
                                   
         <a
-          class="ct-link ct-theme-light     ct-subject-card__title__link"
+          class="ct-subject-card__title-link"
           href="https://example.com/read-more"
         >
           Subject Card Title
         </a>
-                              
-      </h4>
+        
+                      
+      </div>
       
                   
     </div>
@@ -122,7 +117,7 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
 
   
   <div
-    class="ct-subject-card ct-theme-dark ct-subject-card--with-image custom-class"
+    class="ct-subject-card ct-theme-dark ct-subject-card--with-image ct-subject-card--card-clickable custom-class"
     data-test="true"
   >
     
@@ -161,27 +156,20 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
               
                         
           
-
-
-  
-      <h4
-        class="ct-heading ct-theme-dark ct-subject-card__title"
+      <div
+        class="ct-subject-card__title"
       >
                                   
         <a
-          class="ct-link ct-theme-dark     ct-subject-card__title__link"
+          class="ct-subject-card__title-link"
           href="https://example.com/read-more"
           target="_blank"
         >
           Subject Card Title
-          <span
-            class="ct-visually-hidden"
-          >
-            (Opens in a new tab/window)
-          </span>
         </a>
-                              
-      </h4>
+        
+                      
+      </div>
       
                   
     </div>
@@ -199,7 +187,7 @@ exports[`Subject Card Component renders with required attributes 1`] = `
 
   
   <div
-    class="ct-subject-card ct-theme-light  "
+    class="ct-subject-card ct-theme-light   "
   >
     
     
@@ -211,15 +199,12 @@ exports[`Subject Card Component renders with required attributes 1`] = `
                     
                         
           
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-subject-card__title"
+      <div
+        class="ct-subject-card__title"
       >
                                   Subject Card Title
                       
-      </h4>
+      </div>
       
                   
     </div>

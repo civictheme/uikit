@@ -3,15 +3,6 @@
  */
 
 .ct-service-card {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
-}
-.ct-service-card:hover {
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
-}
-.ct-service-card:active {
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
-}
-.ct-service-card {
   position: relative;
 }
 .ct-service-card::before {
@@ -29,6 +20,9 @@
   position: relative;
   border-radius: 0.25rem;
   width: 100%;
+}
+.ct-service-card {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 .ct-service-card .ct-service-card__content {
   padding: 1.5rem;

@@ -9,6 +9,7 @@
  *   Each property contains:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
+ * - is_title_click: [boolean] Whether to make only the title clickable instead of the whole card.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - date_iso: [string] Start date and time in ISO format.
@@ -53,9 +54,11 @@
 {% set with_image = image.url is not empty %}
 {% set with_image_class = with_image ? 'ct-promo-card--with-image' : '' %}
 {% set with_link = link is not empty and link.url is defined and link.url is not empty %}
+{% set is_card_clickable = with_link and is_title_click is empty %}
+{% set card_clickable_class = is_card_clickable ? 'ct-promo-card--card-clickable' : '' %}
 {% set image_over_class = image_over ? 'ct-promo-card--image-over' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s'|format(theme_class, with_image_class, image_over_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s'|format(theme_class, with_image_class, image_over_class, card_clickable_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
   <div class="ct-promo-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
@@ -128,25 +131,16 @@
           {% if title is not empty %}
             {% set title_content %}
               {% if with_link %}
-                {% include 'civictheme:link' with {
-                  theme: theme,
-                  text: title,
-                  url: link.url,
-                  is_new_window: link.is_new_window,
-                  is_external: false,
-                  modifier_class: 'ct-promo-card__title__link',
-                } only %}
+                <a
+                  class="ct-promo-card__title-link"
+                  href="{{ link.url }}"
+                  {% if link.is_new_window %}target="_blank"{% endif %}
+                >{{ title }}</a>
               {% else %}
                 {{ title }}
               {% endif %}
             {% endset %}
-
-            {% include 'civictheme:heading' with {
-              content: title_content,
-              level: 4,
-              theme: theme,
-              modifier_class: 'ct-promo-card__title',
-            } only %}
+            <div class='ct-promo-card__title'>{{ title_content }}</div>
           {% endif %}
         {% endblock %}
 
@@ -164,6 +158,7 @@
               theme: theme,
               content: summary,
               allow_html: true,
+              no_margin: true,
               modifier_class: 'ct-promo-card__summary',
             } only %}
           {% endif %}
@@ -179,16 +174,13 @@
                 } only %}
               {% endif %}
 
-              {% if with_link %}
-                {% include 'civictheme:link' with {
-                  theme: theme,
-                  url: link.url,
-                  is_new_window: link.is_new_window,
-                  is_external: false,
-                  icon: 'right-arrow-2',
-                  modifier_class: 'ct-promo-card__tags__link',
-                  attributes: 'aria-hidden="true" tabindex="-1"',
-                } only %}
+              {% if is_card_clickable %}
+                <div class="ct-promo-card__link-graphic">
+                  {% include 'civictheme:icon' with {
+                    symbol: 'right-arrow-2',
+                    size: 'regular',
+                  } only %}
+                </div>
               {% endif %}
             </div>
           {% endif %}

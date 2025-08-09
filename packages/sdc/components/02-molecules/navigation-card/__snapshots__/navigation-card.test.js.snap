@@ -14,7 +14,7 @@ exports[`Navigation Card Component renders with image as icon 1`] = `
 
   
   <div
-    class="ct-navigation-card ct-theme-light ct-navigation-card--with-image  ct-navigation-card--image-as-icon "
+    class="ct-navigation-card ct-theme-light ct-navigation-card--with-image  ct-navigation-card--image-as-icon  "
   >
     
               
@@ -50,22 +50,19 @@ exports[`Navigation Card Component renders with image as icon 1`] = `
       </div>
       
               
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-navigation-card__title"
+                                  
+      <div
+        class="ct-navigation-card__title"
       >
                                   Card Title
                       
-      </h4>
+      </div>
       
               
                     
                     
-                        
+                    
+          
     </div>
     
   
@@ -81,7 +78,7 @@ exports[`Navigation Card Component renders with link when provided 1`] = `
 
   
   <div
-    class="ct-navigation-card ct-theme-light  ct-navigation-card--with-link  "
+    class="ct-navigation-card ct-theme-light  ct-navigation-card--with-link  ct-navigation-card--card-clickable "
   >
     
                             
@@ -92,23 +89,48 @@ exports[`Navigation Card Component renders with link when provided 1`] = `
       
                     
                     
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-navigation-card__title"
+                                  
+      <div
+        class="ct-navigation-card__title"
       >
                                   
         <a
-          class="ct-link ct-theme-light     ct-navigation-card__title__link"
+          class="ct-navigation-card__title-link"
           href="https://example.com"
         >
-          Card Title 
+          Card Title
+        </a>
+        
+                      
+      </div>
+      
+              
+                    
+                        
+
+
+      <div
+        class="ct-paragraph ct-theme-light ct-paragraph--regular ct-paragraph--no-margin ct-navigation-card__summary"
+      >
+        
+    This is a summary of the card.  
+      </div>
+                    
+                    
+              
+      <div
+        class="ct-navigation-card__tags"
+      >
+        
+          
+        <div
+          class="ct-navigation-card__link-graphic"
+        >
+          
+            
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-icon--size-regular "
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -124,24 +146,13 @@ exports[`Navigation Card Component renders with link when provided 1`] = `
 
           </svg>
           
-
-        </a>
-                              
-      </h4>
-      
-              
-                    
-                        
-
-
-      <div
-        class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-navigation-card__summary"
-      >
+          
+        </div>
         
-    This is a summary of the card.  
+        
       </div>
-                    
-                        
+      
+          
     </div>
     
   
@@ -157,7 +168,7 @@ exports[`Navigation Card Component renders with optional attributes, no icon, im
 
   
   <div
-    class="ct-navigation-card ct-theme-dark ct-navigation-card--with-image ct-navigation-card--with-link  custom-class"
+    class="ct-navigation-card ct-theme-dark ct-navigation-card--with-image ct-navigation-card--with-link  ct-navigation-card--card-clickable custom-class"
     data-test="true"
   >
     
@@ -203,24 +214,63 @@ exports[`Navigation Card Component renders with optional attributes, no icon, im
       
               
                     
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-dark ct-navigation-card__title"
+                                  
+      <div
+        class="ct-navigation-card__title"
       >
                                   
         <a
-          class="ct-link ct-theme-dark     ct-navigation-card__title__link"
+          class="ct-navigation-card__title-link"
           href="https://example.com"
           target="_blank"
         >
-          Card Title 
+          Card Title
+        </a>
+        
+                      
+      </div>
+      
+              
+                        
+      <div
+        class="ct-navigation-card__content-middle"
+      >
+        Middle content
+      </div>
+      
+              
+                        
+
+
+      <div
+        class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-paragraph--no-margin ct-navigation-card__summary"
+      >
+        
+    This is a summary of the card.  
+      </div>
+                    
+                        
+      <div
+        class="ct-navigation-card__content-bottom"
+      >
+        Bottom content
+      </div>
+      
+              
+              
+      <div
+        class="ct-navigation-card__tags"
+      >
+        
+          
+        <div
+          class="ct-navigation-card__link-graphic"
+        >
+          
+            
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-icon--size-regular "
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -236,43 +286,13 @@ exports[`Navigation Card Component renders with optional attributes, no icon, im
 
           </svg>
           
-
-          <span
-            class="ct-visually-hidden"
-          >
-            (Opens in a new tab/window)
-          </span>
-        </a>
-                              
-      </h4>
-      
-              
-                        
-      <div
-        class="ct-navigation-card__content-middle"
-      >
-        Middle content
-      </div>
-      
-              
-                        
-
-
-      <div
-        class="ct-paragraph ct-theme-dark ct-paragraph--regular  ct-navigation-card__summary"
-      >
+          
+        </div>
         
-    This is a summary of the card.  
-      </div>
-                    
-                        
-      <div
-        class="ct-navigation-card__content-bottom"
-      >
-        Bottom content
+        
       </div>
       
-                  
+          
     </div>
     
   
@@ -288,7 +308,7 @@ exports[`Navigation Card Component renders with optional attributes, with icon 1
 
   
   <div
-    class="ct-navigation-card ct-theme-dark ct-navigation-card--with-image ct-navigation-card--with-link ct-navigation-card--image-as-icon custom-class"
+    class="ct-navigation-card ct-theme-dark ct-navigation-card--with-image ct-navigation-card--with-link ct-navigation-card--image-as-icon ct-navigation-card--card-clickable custom-class"
     data-test="true"
   >
     
@@ -351,24 +371,63 @@ exports[`Navigation Card Component renders with optional attributes, with icon 1
       </div>
       
               
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-dark ct-navigation-card__title"
+                                  
+      <div
+        class="ct-navigation-card__title"
       >
                                   
         <a
-          class="ct-link ct-theme-dark     ct-navigation-card__title__link"
+          class="ct-navigation-card__title-link"
           href="https://example.com"
           target="_blank"
         >
-          Card Title 
+          Card Title
+        </a>
+        
+                      
+      </div>
+      
+              
+                        
+      <div
+        class="ct-navigation-card__content-middle"
+      >
+        Middle content
+      </div>
+      
+              
+                        
+
+
+      <div
+        class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-paragraph--no-margin ct-navigation-card__summary"
+      >
+        
+    This is a summary of the card.  
+      </div>
+                    
+                        
+      <div
+        class="ct-navigation-card__content-bottom"
+      >
+        Bottom content
+      </div>
+      
+              
+              
+      <div
+        class="ct-navigation-card__tags"
+      >
+        
+          
+        <div
+          class="ct-navigation-card__link-graphic"
+        >
+          
+            
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-icon--size-regular "
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -384,43 +443,13 @@ exports[`Navigation Card Component renders with optional attributes, with icon 1
 
           </svg>
           
-
-          <span
-            class="ct-visually-hidden"
-          >
-            (Opens in a new tab/window)
-          </span>
-        </a>
-                              
-      </h4>
-      
-              
-                        
-      <div
-        class="ct-navigation-card__content-middle"
-      >
-        Middle content
-      </div>
-      
-              
-                        
-
-
-      <div
-        class="ct-paragraph ct-theme-dark ct-paragraph--regular  ct-navigation-card__summary"
-      >
+          
+        </div>
         
-    This is a summary of the card.  
-      </div>
-                    
-                        
-      <div
-        class="ct-navigation-card__content-bottom"
-      >
-        Bottom content
+        
       </div>
       
-                  
+          
     </div>
     
   
@@ -436,7 +465,7 @@ exports[`Navigation Card Component renders with required attributes 1`] = `
 
   
   <div
-    class="ct-navigation-card ct-theme-light    "
+    class="ct-navigation-card ct-theme-light     "
   >
     
                             
@@ -447,17 +476,13 @@ exports[`Navigation Card Component renders with required attributes 1`] = `
       
                     
                     
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-navigation-card__title"
+                                  
+      <div
+        class="ct-navigation-card__title"
       >
                                   Card Title
                       
-      </h4>
+      </div>
       
               
                     
@@ -465,13 +490,14 @@ exports[`Navigation Card Component renders with required attributes 1`] = `
 
 
       <div
-        class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-navigation-card__summary"
+        class="ct-paragraph ct-theme-light ct-paragraph--regular ct-paragraph--no-margin ct-navigation-card__summary"
       >
         
     This is a summary of the card.  
       </div>
                     
-                        
+                    
+          
     </div>
     
   

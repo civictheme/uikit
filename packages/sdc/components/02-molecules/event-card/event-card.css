@@ -3,19 +3,35 @@
  */
 
 .ct-event-card {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
-}
-.ct-event-card:hover {
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
-}
-.ct-event-card:active {
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
-}
-.ct-event-card {
   position: relative;
   border-radius: 0.25rem;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ct-event-card {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+.ct-event-card:hover {
+  outline: 1px solid transparent;
+}
+.ct-event-card--card-clickable {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+.ct-event-card--card-clickable:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+.ct-event-card--card-clickable:active {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.ct-event-card--card-clickable .ct-event-card__title-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .ct-event-card:not(.ct-event-card--with-image) {
   position: relative;
@@ -49,16 +65,46 @@
 }
 .ct-event-card .ct-event-card__content {
   padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.ct-event-card .ct-event-card__date {
-  margin-bottom: 1rem;
+@media (min-width: 0) {
+  .ct-event-card .ct-event-card__title {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+  }
 }
-.ct-event-card .ct-event-card__title {
-  margin-bottom: 1rem;
+@media (min-width: 768px) {
+  .ct-event-card .ct-event-card__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+  }
 }
-.ct-event-card .ct-event-card__title__link {
+.ct-event-card .ct-event-card__title-link {
   font-size: inherit;
   line-height: inherit;
+  text-decoration: none;
+}
+.ct-event-card .ct-event-card__title-link:focus-visible {
+  outline-offset: 0;
+  outline-width: 0.1875rem;
+  outline-style: solid;
+  outline-color: var(--ct-color-light-interaction-focus);
+  border-radius: 0.25rem;
+}
+.ct-event-card .ct-event-card__title-link:hover {
+  text-decoration: underline;
+}
+.ct-event-card .ct-event-card__title-link:visited {
+  color: inherit;
 }
 @media (min-width: 0) {
   .ct-event-card .ct-event-card__location {
@@ -77,36 +123,80 @@
     font-weight: 600;
     letter-spacing: -0.1px;
   }
-}
-.ct-event-card .ct-event-card__location {
-  margin-bottom: 1rem;
 }
 .ct-event-card .ct-event-card__tags {
   display: flex;
-  margin-top: 1rem;
+  margin-top: auto;
+  align-items: flex-end;
+  gap: 0.5rem;
 }
-.ct-event-card .ct-event-card__tags__link {
+.ct-event-card .ct-event-card__link-graphic {
   margin-left: auto;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
 }
-@media (min-width: 0) {
-  .ct-event-card .ct-event-card__tags__link .ct-link__icon {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 768px) {
-  .ct-event-card .ct-event-card__tags__link .ct-link__icon {
-    font-size: 1.25rem;
-  }
+.ct-event-card .ct-event-card__link-graphic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.1;
+  border-radius: 100%;
 }
 .ct-event-card.ct-theme-light {
   background-color: var(--ct-event-card-light-background-color);
+}
+.ct-event-card.ct-theme-light.ct-event-card--card-clickable:hover {
+  outline-color: var(--ct-event-card-light-hover-outline-color);
+}
+.ct-event-card.ct-theme-light.ct-event-card--card-clickable:hover .ct-event-card__title-link {
+  color: var(--ct-event-card-light-title-hover-color);
+}
+.ct-event-card.ct-theme-light.ct-event-card--card-clickable:hover .ct-event-card__link-graphic::before {
+  background-color: var(--ct-event-card-light-link-graphic-hover-background-color);
+}
+.ct-event-card.ct-theme-light:not(.ct-event-card--card-clickable) .ct-event-card__title-link:hover {
+  color: var(--ct-event-card-light-title-hover-color);
+}
+.ct-event-card.ct-theme-light .ct-event-card__title,
+.ct-event-card.ct-theme-light .ct-event-card__title-link {
+  color: var(--ct-event-card-light-title-color);
+}
+.ct-event-card.ct-theme-light .ct-event-card__link-graphic {
+  color: var(--ct-event-card-light-link-graphic-color);
 }
 .ct-event-card.ct-theme-light.ct-event-card:not(.ct-event-card--with-image)::before {
   background-color: var(--ct-event-card-light-stripe-background-color);
 }
 .ct-event-card.ct-theme-dark {
   background-color: var(--ct-event-card-dark-background-color);
+}
+.ct-event-card.ct-theme-dark.ct-event-card--card-clickable:hover {
+  outline-color: var(--ct-event-card-dark-hover-outline-color);
+}
+.ct-event-card.ct-theme-dark.ct-event-card--card-clickable:hover .ct-event-card__title-link {
+  color: var(--ct-event-card-dark-title-hover-color);
+}
+.ct-event-card.ct-theme-dark.ct-event-card--card-clickable:hover .ct-event-card__link-graphic::before {
+  background-color: var(--ct-event-card-dark-link-graphic-hover-background-color);
+}
+.ct-event-card.ct-theme-dark:not(.ct-event-card--card-clickable) .ct-event-card__title-link:hover {
+  color: var(--ct-event-card-dark-title-hover-color);
+}
+.ct-event-card.ct-theme-dark .ct-event-card__title,
+.ct-event-card.ct-theme-dark .ct-event-card__title-link {
+  color: var(--ct-event-card-dark-title-color);
+}
+.ct-event-card.ct-theme-dark .ct-event-card__link-graphic {
+  color: var(--ct-event-card-dark-link-graphic-color);
 }
 .ct-event-card.ct-theme-dark.ct-event-card:not(.ct-event-card--with-image)::before {
   background-color: var(--ct-event-card-dark-stripe-background-color);
