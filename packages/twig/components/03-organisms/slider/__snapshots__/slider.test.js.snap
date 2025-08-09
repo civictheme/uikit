@@ -124,7 +124,13 @@ exports[`Slider Component renders with all attributes provided 1`] = `
 
                   </svg>
                   
-Previous Slide
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Previous Slide
+                  </span>
+                   
                 </button>
                 
                   
@@ -135,11 +141,20 @@ Previous Slide
                   data-component-name="button"
                   data-slider-next=""
                 >
-                  Next 
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Next 
+                  </span>
                   <span
                     class="ct-text-icon__group"
                   >
-                    Slide 
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      Slide
+                    </span>
+                     
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-button__icon"
@@ -304,7 +319,13 @@ exports[`Slider Component renders with only required attributes 1`] = `
 
                   </svg>
                   
-Previous
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Previous
+                  </span>
+                   
                 </button>
                 
                   
@@ -315,11 +336,20 @@ Previous
                   data-component-name="button"
                   data-slider-next=""
                 >
-                   
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                     
+                  </span>
                   <span
                     class="ct-text-icon__group"
                   >
-                    Next 
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      Next
+                    </span>
+                     
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-button__icon"
@@ -494,7 +524,13 @@ exports[`Slider Component renders without some attributes 1`] = `
 
                   </svg>
                   
-Previous Slide
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Previous Slide
+                  </span>
+                   
                 </button>
                 
                   
@@ -505,11 +541,20 @@ Previous Slide
                   data-component-name="button"
                   data-slider-next=""
                 >
-                  Next 
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Next 
+                  </span>
                   <span
                     class="ct-text-icon__group"
                   >
-                    Slide 
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      Slide
+                    </span>
+                     
                     <svg
                       aria-hidden="true"
                       class="ct-icon  ct-button__icon"

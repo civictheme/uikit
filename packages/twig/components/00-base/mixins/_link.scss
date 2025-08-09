@@ -74,39 +74,49 @@
 //
 @mixin ct-link-decoration($underline: false, $underline-hover: true, $underline-active: true, $underline-focus: true) {
   & {
-    @if $underline {
-      text-decoration: underline;
-    }
-    @else {
-      text-decoration: none;
+    text-decoration: none;
+
+    .ct-text-icon__text {
+      @if $underline {
+        text-decoration: underline;
+      }
+      @else {
+        text-decoration: none;
+      }
     }
   }
 
   &:hover {
-    @if $underline-hover {
-      text-decoration: underline;
-    }
-    @else {
-      text-decoration: none;
+    .ct-text-icon__text {
+      @if $underline-hover {
+        text-decoration: underline;
+      }
+      @else {
+        text-decoration: none;
+      }
     }
   }
 
   &--active,
   &:active {
-    @if $underline-active {
-      text-decoration: underline;
-    }
-    @else {
-      text-decoration: none;
+    .ct-text-icon__text {
+      @if $underline-active {
+        text-decoration: underline;
+      }
+      @else {
+        text-decoration: none;
+      }
     }
   }
 
   &:focus-visible {
-    @if $underline-focus {
-      text-decoration: underline;
-    }
-    @else {
-      text-decoration: none;
+    .ct-text-icon__text {
+      @if $underline-focus {
+        text-decoration: underline;
+      }
+      @else {
+        text-decoration: none;
+      }
     }
   }
 }

@@ -114,7 +114,11 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 1
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 1
+                        </span>
                       </a>
                       
     
@@ -164,7 +168,11 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 2
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 2
+                        </span>
                       </a>
                       
     
@@ -239,7 +247,13 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
 
                   </svg>
                   
-Apply filters
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Apply filters
+                  </span>
+                   
                 </button>
                 
                 
@@ -377,7 +391,11 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 1
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 1
+                        </span>
                       </a>
                       
     
@@ -427,7 +445,11 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 2
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 2
+                        </span>
                       </a>
                       
     
@@ -502,7 +524,13 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
 
                   </svg>
                   
-Apply filters
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Apply filters
+                  </span>
+                   
                 </button>
                 
                 
@@ -632,7 +660,11 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 1
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 1
+                        </span>
                       </a>
                       
     
@@ -682,7 +714,11 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 2
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 2
+                        </span>
                       </a>
                       
     
@@ -757,7 +793,13 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
 
                   </svg>
                   
-Submit Filters
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Submit Filters
+                  </span>
+                   
                 </button>
                 
                 
@@ -887,7 +929,11 @@ exports[`Group Filter Component renders with default values 1`] = `
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 1
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 1
+                        </span>
                       </a>
                       
     
@@ -937,7 +983,11 @@ exports[`Group Filter Component renders with default values 1`] = `
                         data-collapsible-trigger=""
                         tabindex="0"
                       >
-                        Filter 2
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Filter 2
+                        </span>
                       </a>
                       
     
@@ -1012,7 +1062,13 @@ exports[`Group Filter Component renders with default values 1`] = `
 
                   </svg>
                   
-Apply filters
+
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Apply filters
+                  </span>
+                   
                 </button>
                 
                 
@@ -1149,7 +1205,11 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
                           data-collapsible-trigger=""
                           tabindex="0"
                         >
-                          Filter 1
+                          <span
+                            class="ct-text-icon__text"
+                          >
+                            Filter 1
+                          </span>
                         </a>
                         
     
@@ -1199,7 +1259,11 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
                           data-collapsible-trigger=""
                           tabindex="0"
                         >
-                          Filter 2
+                          <span
+                            class="ct-text-icon__text"
+                          >
+                            Filter 2
+                          </span>
                         </a>
                         
     
@@ -1274,7 +1338,13 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
 
                     </svg>
                     
-Apply filters
+
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      Apply filters
+                    </span>
+                     
                   </button>
                   
                 

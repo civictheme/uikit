@@ -32,50 +32,39 @@
     {%- endif -%}
 
     {%- if text is not empty -%}
+      {# Prepare the text #}
+      {%- set text_arr = text|trim|split(' ') -%}
+      {%- set text_start = text_arr|slice(0, -1)|join(' ') -%}
+      {%- set text_end = text_arr|last -%}
+      {%- set show_full_text = icon_group_disabled or (icon_placement == 'before' and is_external == false) -%}
+      {%- set display_text = show_full_text ? text : text_start ~ ' ' -%}
+      {%- set before_text = icon_placement == 'before' ? icon_markup|raw : '' -%}
 
-      {%- if icon and icon_placement == 'before' and not is_external -%}
-        {{- icon_markup -}}{{- text|raw -}}
-      {%- else -%}
-        {# Prepare the text #}
-        {%- set text_arr = text|trim|split(' ') -%}
-        {%- set text_start = text_arr|slice(0, -1)|join(' ') -%}
-        {%- set text_end = text_arr|last -%}
-
-        {# Place text in groups #}
-        {%- set before_group = text_start -%}
-        {%- set within_group = text_end -%}
-
-        {# Place icon before or after text #}
-        {%- if icon_placement == 'before' -%}
-          {%- set before_group = icon_markup|raw ~ before_group -%}
+      {# Prepare the after elements #}
+      {%- set after_text -%}
+        {%- set after_icons -%}
+          {%- if icon_placement == 'after' -%}
+            {{- icon_markup|raw -}}
+          {%- endif -%}
+          {%- if is_external and not icon_single_only -%}
+            {%- include '@base/icon/icon.twig' with {symbol: 'upper-right-arrow'} only -%}
+          {%- endif -%}
+        {%- endset -%}
+        {%- if show_full_text %} {% endif -%}{# This line adds some space between full text and after icons #}
+        {%- if not show_full_text -%}
+          <span class="ct-text-icon__group"><span class="ct-text-icon__text">{{ text_end }}</span> {{ after_icons -}}</span>
         {%- else -%}
-          {%- set within_group = within_group ~ ' ' ~ icon_markup|raw -%}
+          {{- after_icons -}}
         {%- endif -%}
+      {%- endset -%}
 
-        {# Add external icon #}
-        {%- if is_external and not icon_single_only -%}
-          {%- set is_external_content -%}
-            {%- include '@base/icon/icon.twig' with {
-              symbol: 'upper-right-arrow',
-            } only -%}
-          {%- endset -%}
-          {%- set within_group = within_group|raw ~ ' ' ~ is_external_content|raw -%}
-        {%- endif -%}
-
-        {# Set the markup #}
-        {%- if icon_group_disabled -%}
-          {{- before_group|raw }} {{ within_group|raw -}}
-        {%- else -%}
-          {{- before_group|raw }} <span class="ct-text-icon__group">{{- within_group|raw -}}</span>
-        {%- endif -%}
-      {%- endif -%}
-
+      {{- before_text }}<span class="ct-text-icon__text">{{ display_text }}</span>{{ after_text -}}
     {%- else -%}
       {{- icon_markup -}}
     {%- endif -%}
 
   {%- else -%}
-    {{- text|raw -}}
+    <span class="ct-text-icon__text">{{- text|raw -}}</span>
   {%- endif -%}
 {%- endset -%}
 
