@@ -85,5 +85,4 @@ describe('Fast Fact Card Component', () => {
 
     assertUniqueCssClasses(c);
   });
-
 });
