@@ -1019,6 +1019,24 @@ $ct-subject-card-dark-title-hover-color: ct-color-dark('interaction-background')
 $ct-subject-card-dark-image-opacity: 20% !default;
 
 //
+// Fast fact card.
+//
+$ct-fast-fact-border-radius: $ct-border-radius !default;
+$ct-fast-fact-stripe-height: $ct-stripe-size !default;
+$ct-fast-fact-card-max-width: ct-particle(6.25) !default;
+$ct-fast-fact-card-max-height: ct-particle(12.5) !default;
+$ct-fast-fact-card-light-background-color: ct-color-light('background-light') !default;
+$ct-fast-fact-card-light-stripe-background-color: ct-color-light('highlight') !default;
+$ct-fast-fact-card-light-title-color: ct-color-light('heading') !default;
+$ct-fast-fact-card-light-title-hover-color: ct-color-light('interaction-background') !default;
+$ct-fast-fact-card-light-hover-outline-color: ct-color-light('border') !default;
+$ct-fast-fact-card-dark-background-color: ct-color-dark('background') !default;
+$ct-fast-fact-card-dark-stripe-background-color: ct-color-dark('highlight') !default;
+$ct-fast-fact-card-dark-title-color: ct-color-dark('heading') !default;
+$ct-fast-fact-card-dark-title-hover-color: ct-color-dark('interaction-background') !default;
+$ct-fast-fact-card-dark-hover-outline-color: ct-color-dark('border') !default;
+
+//
 // List/Snippet.
 //
 $ct-snippet-light-background-color: transparent !default;
