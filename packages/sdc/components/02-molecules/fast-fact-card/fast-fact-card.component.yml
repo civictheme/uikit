@@ -56,6 +56,6 @@ props:
       title: Modifier Class
       description: Additional classes to modify the component
     attributes:
-      type: object
+      type: string
       title: Attributes
-      description: HTML attributes for the component
+      description: Additional HTML attributes.
