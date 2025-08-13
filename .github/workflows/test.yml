@@ -115,13 +115,14 @@ jobs:
           publish-dir: './packages/twig/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
+          enable-pull-request-comment: true
           enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'twig'
+          alias: deploy-twig-pr-${{ github.event.number }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
         timeout-minutes: 1
 
       - name: Deploy SDC Components Storybook to Netlify
@@ -133,10 +134,10 @@ jobs:
           publish-dir: './packages/sdc/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
+          enable-pull-request-comment: true
           enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'sdc'
+          alias: deploy-sdc-pr-${{ github.event.number }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
