@@ -29,13 +29,16 @@
 .ct-tag {
   text-decoration: none;
 }
-.ct-tag:hover {
+.ct-tag .ct-text-icon__text {
   text-decoration: none;
 }
-.ct-tag--active, .ct-tag:active {
+.ct-tag:hover .ct-text-icon__text {
   text-decoration: none;
 }
-.ct-tag:focus-visible {
+.ct-tag--active .ct-text-icon__text, .ct-tag:active .ct-text-icon__text {
+  text-decoration: none;
+}
+.ct-tag:focus-visible .ct-text-icon__text {
   text-decoration: none;
 }
 @media (min-width: 0) {

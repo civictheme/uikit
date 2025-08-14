@@ -123,7 +123,11 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           class="ct-link ct-theme-dark     ct-event-card__title__link"
           href="https://example.com"
         >
-          Event Title
+          <span
+            class="ct-text-icon__text"
+          >
+            Event Title
+          </span>
         </a>
                               
       </h4>

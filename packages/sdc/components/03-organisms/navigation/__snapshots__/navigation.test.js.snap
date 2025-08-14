@@ -67,7 +67,11 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
             href="/services"
             title="Services"
           >
-            Services
+            <span
+              class="ct-text-icon__text"
+            >
+              Services
+            </span>
           </a>
           
         
@@ -99,7 +103,11 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   href="/services/consulting"
                   title="Consulting"
                 >
-                  Consulting
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Consulting
+                  </span>
                 </a>
                 
         
@@ -141,7 +149,11 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
             href="/contact"
             title="Contact"
           >
-            Contact
+            <span
+              class="ct-text-icon__text"
+            >
+              Contact
+            </span>
           </a>
           
         
@@ -173,7 +185,11 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   href="/contact/support"
                   title="Support"
                 >
-                  Support
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    Support
+                  </span>
                 </a>
                 
         
@@ -264,7 +280,11 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/"
             title="Home"
           >
-            Home
+            <span
+              class="ct-text-icon__text"
+            >
+              Home
+            </span>
           </a>
           
         
@@ -289,7 +309,11 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/about"
             title="About"
           >
-            About
+            <span
+              class="ct-text-icon__text"
+            >
+              About
+            </span>
           </a>
           
         
@@ -314,7 +338,11 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/services"
             title="Services"
           >
-            Services
+            <span
+              class="ct-text-icon__text"
+            >
+              Services
+            </span>
           </a>
           
         
@@ -339,7 +367,11 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
             href="/contact"
             title="Contact"
           >
-            Contact
+            <span
+              class="ct-text-icon__text"
+            >
+              Contact
+            </span>
           </a>
           
         
@@ -408,7 +440,11 @@ exports[`Navigation Component renders with only required attributes 1`] = `
             href="/"
             title="Home"
           >
-            Home
+            <span
+              class="ct-text-icon__text"
+            >
+              Home
+            </span>
           </a>
           
         
@@ -477,7 +513,11 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
             href="/"
             title="Home"
           >
-            Home
+            <span
+              class="ct-text-icon__text"
+            >
+              Home
+            </span>
           </a>
           
         
@@ -502,7 +542,11 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
             href="/about"
             title="About"
           >
-            About
+            <span
+              class="ct-text-icon__text"
+            >
+              About
+            </span>
           </a>
           
         

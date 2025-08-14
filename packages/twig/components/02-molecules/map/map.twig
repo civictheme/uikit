@@ -61,10 +61,8 @@
 
           {% block links_block %}
             {% if view_url is not empty %}
-              {% include '@atoms/button/button.twig' with {
-                kind: 'link',
+              {% include '@atoms/link/link.twig' with {
                 theme: theme,
-                type: 'tertiary',
                 text: view_text,
                 url: view_url,
                 is_new_window: true,

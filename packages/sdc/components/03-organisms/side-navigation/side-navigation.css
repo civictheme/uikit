@@ -94,6 +94,20 @@
   padding: 0.5rem 1rem 0.5rem 1.25rem;
   border-bottom-width: 0.0625rem;
   border-bottom-style: solid;
+}
+.ct-side-navigation__menu .ct-menu__item__link {
+  text-decoration: none;
+}
+.ct-side-navigation__menu .ct-menu__item__link .ct-text-icon__text {
+  text-decoration: none;
+}
+.ct-side-navigation__menu .ct-menu__item__link:hover .ct-text-icon__text {
+  text-decoration: none;
+}
+.ct-side-navigation__menu .ct-menu__item__link--active .ct-text-icon__text, .ct-side-navigation__menu .ct-menu__item__link:active .ct-text-icon__text {
+  text-decoration: none;
+}
+.ct-side-navigation__menu .ct-menu__item__link:focus-visible .ct-text-icon__text {
   text-decoration: none;
 }
 .ct-side-navigation__menu .ct-menu__item__link:first-child {

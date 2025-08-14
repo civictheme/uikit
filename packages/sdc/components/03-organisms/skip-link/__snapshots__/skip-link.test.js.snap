@@ -17,7 +17,11 @@ exports[`Skip Link Component renders with all attributes provided 1`] = `
       href="#main-content"
       title="Go to main content"
     >
-      Go to main content
+      <span
+        class="ct-text-icon__text"
+      >
+        Go to main content
+      </span>
     </a>
       
   </div>
@@ -43,7 +47,11 @@ exports[`Skip Link Component renders with default text when text is empty 1`] = 
       href="#main-content"
       title="Skip to main content"
     >
-      Skip to main content
+      <span
+        class="ct-text-icon__text"
+      >
+        Skip to main content
+      </span>
     </a>
       
   </div>
@@ -69,7 +77,11 @@ exports[`Skip Link Component renders with only required attributes 1`] = `
       href="#main-content"
       title="Skip to main content"
     >
-      Skip to main content
+      <span
+        class="ct-text-icon__text"
+      >
+        Skip to main content
+      </span>
     </a>
       
   </div>

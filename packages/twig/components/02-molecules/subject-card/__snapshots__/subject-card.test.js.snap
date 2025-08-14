@@ -101,7 +101,11 @@ exports[`Subject Card Component renders with link and image 1`] = `
           class="ct-link ct-theme-light     ct-subject-card__title__link"
           href="https://example.com/read-more"
         >
-          Subject Card Title
+          <span
+            class="ct-text-icon__text"
+          >
+            Subject Card Title
+          </span>
         </a>
                               
       </h4>
@@ -173,7 +177,11 @@ exports[`Subject Card Component renders with optional attributes 1`] = `
           href="https://example.com/read-more"
           target="_blank"
         >
-          Subject Card Title
+          <span
+            class="ct-text-icon__text"
+          >
+            Subject Card Title
+          </span>
           <span
             class="ct-visually-hidden"
           >

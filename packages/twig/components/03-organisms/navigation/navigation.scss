@@ -50,6 +50,8 @@
           border-bottom: solid ct-particle(0.5);
 
           > .ct-link {
+            @include ct-link-no-decoration();
+
             position: relative;
             padding: ct-spacing(2);
             font-weight: 600;
@@ -264,6 +266,8 @@
             margin-bottom: ct-spacing();
 
             > .ct-link {
+              @include ct-link-no-decoration();
+
               display: inline-flex;
               align-items: center;
               border-radius: $ct-border-radius;

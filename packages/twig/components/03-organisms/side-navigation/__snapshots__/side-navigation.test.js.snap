@@ -33,7 +33,11 @@ exports[`Side Navigation Component renders with all attributes provided 1`] = `
         href="#main-content"
         title="Skip to main content"
       >
-        Skip to main content
+        <span
+          class="ct-text-icon__text"
+        >
+          Skip to main content
+        </span>
       </a>
         
     </div>
@@ -78,7 +82,11 @@ exports[`Side Navigation Component renders with all attributes provided 1`] = `
           href="/"
           title="Home"
         >
-          Home
+          <span
+            class="ct-text-icon__text"
+          >
+            Home
+          </span>
         </a>
         
         
@@ -103,7 +111,11 @@ exports[`Side Navigation Component renders with all attributes provided 1`] = `
           href="/about"
           title="About"
         >
-          About
+          <span
+            class="ct-text-icon__text"
+          >
+            About
+          </span>
         </a>
         
         
@@ -128,7 +140,11 @@ exports[`Side Navigation Component renders with all attributes provided 1`] = `
           href="/services"
           title="Services"
         >
-          Services
+          <span
+            class="ct-text-icon__text"
+          >
+            Services
+          </span>
         </a>
         
         
@@ -153,7 +169,11 @@ exports[`Side Navigation Component renders with all attributes provided 1`] = `
           href="/contact"
           title="Contact"
         >
-          Contact
+          <span
+            class="ct-text-icon__text"
+          >
+            Contact
+          </span>
         </a>
         
         
@@ -197,7 +217,11 @@ exports[`Side Navigation Component renders with only required attributes 1`] = `
         href="#main-content"
         title="Skip to main content"
       >
-        Skip to main content
+        <span
+          class="ct-text-icon__text"
+        >
+          Skip to main content
+        </span>
       </a>
         
     </div>
@@ -232,7 +256,11 @@ exports[`Side Navigation Component renders with only required attributes 1`] = `
           href="/"
           title="Home"
         >
-          Home
+          <span
+            class="ct-text-icon__text"
+          >
+            Home
+          </span>
         </a>
         
         
@@ -276,7 +304,11 @@ exports[`Side Navigation Component renders with some attributes missing 1`] = `
         href="#main-content"
         title="Skip to main content"
       >
-        Skip to main content
+        <span
+          class="ct-text-icon__text"
+        >
+          Skip to main content
+        </span>
       </a>
         
     </div>
@@ -311,7 +343,11 @@ exports[`Side Navigation Component renders with some attributes missing 1`] = `
           href="/"
           title="Home"
         >
-          Home
+          <span
+            class="ct-text-icon__text"
+          >
+            Home
+          </span>
         </a>
         
         
@@ -336,7 +372,11 @@ exports[`Side Navigation Component renders with some attributes missing 1`] = `
           href="/about"
           title="About"
         >
-          About
+          <span
+            class="ct-text-icon__text"
+          >
+            About
+          </span>
         </a>
         
         

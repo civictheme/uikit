@@ -65,7 +65,7 @@ describe('Video Component', () => {
     });
 
     expect(c.querySelectorAll('.ct-video-player')).toHaveLength(1);
-    const transcriptLink = c.querySelector('.ct-video-player__links__transcript a');
+    const transcriptLink = c.querySelector('.ct-video-player__links-transcript a');
     expect(transcriptLink).not.toBeNull();
     expect(transcriptLink.getAttribute('href')).toEqual('transcript.html');
     expect(transcriptLink.textContent.trim()).toContain('View Transcript');
