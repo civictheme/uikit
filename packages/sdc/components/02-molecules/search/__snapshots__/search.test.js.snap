@@ -16,9 +16,13 @@ exports[`Search Component renders with URL only 1`] = `
       href="https://example.com/search"
     >
       <span
-        class="ct-search__link-text"
+        class="ct-text-icon__text"
       >
-        Search
+        <span
+          class="ct-search__link-text"
+        >
+          Search
+        </span>
       </span>
        
       <svg
@@ -64,9 +68,13 @@ exports[`Search Component renders with optional attributes 1`] = `
       href="https://example.com/search"
     >
       <span
-        class="ct-search__link-text"
+        class="ct-text-icon__text"
       >
-        Search
+        <span
+          class="ct-search__link-text"
+        >
+          Search
+        </span>
       </span>
        
       <svg
@@ -111,9 +119,13 @@ exports[`Search Component renders with required attributes 1`] = `
       href="https://example.com/search"
     >
       <span
-        class="ct-search__link-text"
+        class="ct-text-icon__text"
       >
-        Search
+        <span
+          class="ct-search__link-text"
+        >
+          Search
+        </span>
       </span>
        
       <svg

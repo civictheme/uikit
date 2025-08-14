@@ -129,7 +129,22 @@ exports[`Banner Component renders with all attributes provided 1`] = `
 
                       </svg>
                       
-Home
+
+                      <span
+                        class="ct-text-icon__text"
+                      >
+                         
+                      </span>
+                      <span
+                        class="ct-text-icon__group"
+                      >
+                        <span
+                          class="ct-text-icon__text"
+                        >
+                          Home
+                        </span>
+                         
+                      </span>
                     </a>
                           
                   </li>
@@ -153,7 +168,11 @@ Home
                       class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
                       href="/"
                     >
-                      Home
+                      <span
+                        class="ct-text-icon__text"
+                      >
+                        Home
+                      </span>
                     </a>
                     <svg
                       aria-hidden="true"
@@ -185,7 +204,11 @@ Home
                       class="ct-link ct-theme-dark  ct-link--active   ct-breadcrumb__links__link ct-breadcrumb__links__link--active"
                       href="/section"
                     >
-                      Section
+                      <span
+                        class="ct-text-icon__text"
+                      >
+                        Section
+                      </span>
                     </a>
                   </li>
                   

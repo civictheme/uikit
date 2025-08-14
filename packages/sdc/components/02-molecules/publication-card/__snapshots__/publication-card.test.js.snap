@@ -34,7 +34,11 @@ exports[`Publication Card Component renders file link with extension and size 1`
         class="ct-link ct-theme-light     ct-publication-card__link"
         href="https://example.com/sample.pdf"
       >
-        Sample File (PDF, 2MB)
+        <span
+          class="ct-text-icon__text"
+        >
+          Sample File (PDF, 2MB)
+        </span>
       </a>
                               
                         
@@ -321,7 +325,11 @@ exports[`Publication Card Component renders with summary when provided 1`] = `
         class="ct-link ct-theme-light     ct-publication-card__link"
         href="https://example.com/sample.pdf"
       >
-        Sample File (PDF, 2MB)
+        <span
+          class="ct-text-icon__text"
+        >
+          Sample File (PDF, 2MB)
+        </span>
       </a>
                               
                         

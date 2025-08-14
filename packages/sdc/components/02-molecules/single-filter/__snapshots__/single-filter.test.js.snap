@@ -171,11 +171,20 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                 data-component-name="button"
                 type="submit"
               >
-                Apply 
+                <span
+                  class="ct-text-icon__text"
+                >
+                  Apply 
+                </span>
                 <span
                   class="ct-text-icon__group"
                 >
-                  filter 
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    filter
+                  </span>
+                   
                   <svg
                     aria-hidden="true"
                     class="ct-icon  ct-button__icon"
@@ -356,11 +365,20 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                 data-component-name="button"
                 type="submit"
               >
-                Apply 
+                <span
+                  class="ct-text-icon__text"
+                >
+                  Apply 
+                </span>
                 <span
                   class="ct-text-icon__group"
                 >
-                  filter 
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    filter
+                  </span>
+                   
                   <svg
                     aria-hidden="true"
                     class="ct-icon  ct-button__icon"
@@ -549,11 +567,20 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                 data-component-name="button"
                 type="submit"
               >
-                Apply 
+                <span
+                  class="ct-text-icon__text"
+                >
+                  Apply 
+                </span>
                 <span
                   class="ct-text-icon__group"
                 >
-                  filter 
+                  <span
+                    class="ct-text-icon__text"
+                  >
+                    filter
+                  </span>
+                   
                   <svg
                     aria-hidden="true"
                     class="ct-icon  ct-button__icon"

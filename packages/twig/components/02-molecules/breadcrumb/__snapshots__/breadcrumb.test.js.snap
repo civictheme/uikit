@@ -54,7 +54,22 @@ exports[`Breadcrumb Component renders active element as span when active_is_link
 
           </svg>
           
-Category
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Category
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -78,7 +93,11 @@ Category
           class="ct-link ct-theme-light     ct-breadcrumb__links__link"
           href="/"
         >
-          Home
+          <span
+            class="ct-text-icon__text"
+          >
+            Home
+          </span>
         </a>
         <svg
           aria-hidden="true"
@@ -109,7 +128,11 @@ Category
           class="ct-link ct-theme-light     ct-breadcrumb__links__link"
           href="/category"
         >
-          Category
+          <span
+            class="ct-text-icon__text"
+          >
+            Category
+          </span>
         </a>
         <svg
           aria-hidden="true"
@@ -209,7 +232,22 @@ exports[`Breadcrumb Component renders with optional attributes 1`] = `
 
           </svg>
           
-Category
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Category
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -233,7 +271,11 @@ Category
           class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
           href="/"
         >
-          Home
+          <span
+            class="ct-text-icon__text"
+          >
+            Home
+          </span>
         </a>
         <svg
           aria-hidden="true"
@@ -264,7 +306,11 @@ Category
           class="ct-link ct-theme-dark     ct-breadcrumb__links__link"
           href="/category"
         >
-          Category
+          <span
+            class="ct-text-icon__text"
+          >
+            Category
+          </span>
         </a>
         <svg
           aria-hidden="true"
@@ -296,7 +342,11 @@ Category
           class="ct-link ct-theme-dark  ct-link--active   ct-breadcrumb__links__link ct-breadcrumb__links__link--active"
           href="/category/subcategory"
         >
-          Subcategory
+          <span
+            class="ct-text-icon__text"
+          >
+            Subcategory
+          </span>
         </a>
       </li>
       
@@ -364,7 +414,22 @@ exports[`Breadcrumb Component renders with required attributes 1`] = `
 
           </svg>
           
-Category
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Category
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -388,7 +453,11 @@ Category
           class="ct-link ct-theme-light     ct-breadcrumb__links__link"
           href="/"
         >
-          Home
+          <span
+            class="ct-text-icon__text"
+          >
+            Home
+          </span>
         </a>
         <svg
           aria-hidden="true"
@@ -419,7 +488,11 @@ Category
           class="ct-link ct-theme-light     ct-breadcrumb__links__link"
           href="/category"
         >
-          Category
+          <span
+            class="ct-text-icon__text"
+          >
+            Category
+          </span>
         </a>
         <svg
           aria-hidden="true"
