@@ -45,7 +45,7 @@ describe('Subject Card Component', () => {
 
     expect(c.querySelector('.ct-subject-card__image__over').textContent.trim()).toEqual('Image overlay content');
 
-    const link = c.querySelector('.ct-subject-card__title__link');
+    const link = c.querySelector('.ct-subject-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com/read-more');
     expect(link.getAttribute('target')).toEqual('_blank');
@@ -74,7 +74,7 @@ describe('Subject Card Component', () => {
       },
     });
 
-    const link = c.querySelector('.ct-subject-card__title__link');
+    const link = c.querySelector('.ct-subject-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com/read-more');
 

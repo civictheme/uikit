@@ -21,6 +21,7 @@ export default {
       'Tag 1',
       'Tag 2',
     ],
+    is_title_click: false,
     content_top: '',
     image_over: '',
     content_middle: '',

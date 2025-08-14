@@ -5,6 +5,8 @@ import SingleFilterData from '../../02-molecules/single-filter/single-filter.sto
 import Grid from '../../00-base/grid/grid.twig';
 import PromoCard from '../../02-molecules/promo-card/promo-card.twig';
 import PromoCardData from '../../02-molecules/promo-card/promo-card.stories.data';
+import EventCard from '../../02-molecules/event-card/event-card.twig';
+import EventCardData from '../../02-molecules/event-card/event-card.stories.data';
 import NavigationCard from '../../02-molecules/navigation-card/navigation-card.twig';
 import NavigationCardData from '../../02-molecules/navigation-card/navigation-card.stories.data';
 import Snippet from '../../02-molecules/snippet/snippet.twig';
@@ -15,11 +17,17 @@ import PaginationData from '../../02-molecules/pagination/pagination.stories.dat
 
 export default {
   args: (theme = 'light', options = {}) => {
-    const listComponents = {
-      promo: () => PromoCard(PromoCardData.args('light')),
-      navigation: () => NavigationCard(NavigationCardData.args('light')),
-      snippet: () => Snippet(SnippetData.args(theme)),
+    const components = {
+      promo: { data: PromoCardData.args('light'), render: PromoCard },
+      event: { data: EventCardData.args('light'), render: EventCard },
+      navigation: { data: NavigationCardData.args('light'), render: NavigationCard },
+      snippet: { data: SnippetData.args(theme), render: Snippet },
     };
+    const component = options.component || 'promo';
+    const { render } = components[component];
+    const defaultData = components[component].data;
+    const itemData = options.items || Array.from(Array(6), () => ({}));
+    const items = itemData.map((data) => render({ ...defaultData, ...data }));
     return {
       theme,
       title: 'My List Title',
@@ -40,7 +48,7 @@ export default {
       }),
       rows: Grid({
         theme,
-        items: [1, 2, 3, 4, 5, 6].map(options.component ? listComponents[options.component] : listComponents.promo),
+        items,
         template_column_count: options.columnCount || 3,
         fill_width: false,
         with_background: false,

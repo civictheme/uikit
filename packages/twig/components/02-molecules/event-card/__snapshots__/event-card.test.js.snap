@@ -7,7 +7,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
 
   <div
-    class="ct-event-card ct-theme-dark ct-event-card--with-image ct-event-card--image-over custom-class"
+    class="ct-event-card ct-theme-dark ct-event-card--with-image ct-event-card--image-over ct-event-card--card-clickable custom-class"
     data-test="true"
   >
     
@@ -110,27 +110,20 @@ exports[`Event Card Component renders with optional attributes 1`] = `
       </div>
       
               
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-dark ct-event-card__title"
+                                  
+      <div
+        class="ct-event-card__title"
       >
                                   
         <a
-          class="ct-link ct-theme-dark     ct-event-card__title__link"
+          class="ct-event-card__title-link"
           href="https://example.com"
         >
-          <span
-            class="ct-text-icon__text"
-          >
-            Event Title
-          </span>
+          Event Title
         </a>
-                              
-      </h4>
+        
+                      
+      </div>
       
               
                         
@@ -155,7 +148,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
 
       <div
-        class="ct-paragraph ct-theme-dark ct-paragraph--regular  ct-event-card__summary"
+        class="ct-paragraph ct-theme-dark ct-paragraph--regular ct-paragraph--no-margin ct-event-card__summary"
       >
         
     This is a summary of the event.  
@@ -228,15 +221,14 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         
             
                           
-        <a
-          aria-hidden="true"
-          class="ct-link ct-theme-dark    ct-link--only-icon ct-event-card__tags__link"
-          href="https://example.com"
-          tabindex="-1"
+        <div
+          class="ct-event-card__link-graphic"
         >
+          
+                
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-icon--size-regular "
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -252,9 +244,10 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
           </svg>
           
-
-        </a>
-                              
+              
+        </div>
+        
+                      
       </div>
       
               
@@ -282,7 +275,7 @@ exports[`Event Card Component renders with required attributes 1`] = `
 
 
   <div
-    class="ct-event-card ct-theme-light   "
+    class="ct-event-card ct-theme-light    "
   >
     
             
@@ -350,17 +343,13 @@ exports[`Event Card Component renders with required attributes 1`] = `
       </div>
       
               
-                        
-          
-
-
-  
-      <h4
-        class="ct-heading ct-theme-light ct-event-card__title"
+                                  
+      <div
+        class="ct-event-card__title"
       >
                                   Event Title
                       
-      </h4>
+      </div>
       
               
                     
@@ -378,7 +367,7 @@ exports[`Event Card Component renders with required attributes 1`] = `
 
 
       <div
-        class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-event-card__summary"
+        class="ct-paragraph ct-theme-light ct-paragraph--regular ct-paragraph--no-margin ct-event-card__summary"
       >
         
     This is a summary of the event.  

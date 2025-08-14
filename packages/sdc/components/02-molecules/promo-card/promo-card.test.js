@@ -37,6 +37,7 @@ describe('Promo Card Component', () => {
     expect(element).not.toBeNull();
     expect(element.classList.contains('ct-theme-dark')).toBe(true);
     expect(element.classList.contains('ct-promo-card--with-image')).toBe(true);
+    expect(element.classList.contains('ct-promo-card--card-clickable')).toBe(true);
     expect(element.classList.contains('custom-class')).toBe(true);
     expect(element.getAttribute('data-test')).toEqual('true');
 
@@ -57,7 +58,7 @@ describe('Promo Card Component', () => {
     const date = c.querySelector('.ct-promo-card__date');
     expect(date).toBeTruthy();
 
-    const link = c.querySelector('.ct-promo-card__title__link');
+    const link = c.querySelector('.ct-promo-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com');
     expect(link.getAttribute('target')).toEqual('_blank');
@@ -86,7 +87,7 @@ describe('Promo Card Component', () => {
       link: { text: 'Learn more', url: 'https://example.com' },
     });
 
-    const link = c.querySelector('.ct-promo-card__title__link');
+    const link = c.querySelector('.ct-promo-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com');
 
