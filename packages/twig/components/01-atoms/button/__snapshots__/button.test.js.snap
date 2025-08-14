@@ -31,7 +31,13 @@ exports[`Button Component renders as a link with optional attributes 1`] = `
 
     </svg>
     
-Click me
+
+    <span
+      class="ct-text-icon__text"
+    >
+      Click me
+    </span>
+     
     <span
       class="ct-visually-hidden"
     >
@@ -74,11 +80,21 @@ exports[`Button Component renders as a link with optional attributes, is externa
 
     </svg>
     
-Click 
+
+    <span
+      class="ct-text-icon__text"
+    >
+      Click 
+    </span>
     <span
       class="ct-text-icon__group"
     >
-      me 
+      <span
+        class="ct-text-icon__text"
+      >
+        me
+      </span>
+       
       <svg
         aria-hidden="true"
         class="ct-icon  "
@@ -153,7 +169,11 @@ exports[`Button Component renders with disabled state 1`] = `
     data-component-name="button"
     disabled="disabled"
   >
-    Click me
+    <span
+      class="ct-text-icon__text"
+    >
+      Click me
+    </span>
   </button>
   
 
@@ -169,7 +189,11 @@ exports[`Button Component renders with required attributes 1`] = `
     class="ct-button ct-theme-light  ct-button--button ct-button--regular   "
     data-component-name="button"
   >
-    Click me
+    <span
+      class="ct-text-icon__text"
+    >
+      Click me
+    </span>
   </button>
   
 

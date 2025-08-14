@@ -226,30 +226,16 @@
 .ct-basic-content:last-child p:last-child {
   margin-bottom: 0;
 }
-.ct-basic-content a:not(.ct-button) {
+.ct-basic-content a:not(.ct-button):not(.ct-link) {
   text-decoration: underline;
   text-decoration-thickness: 0.0625rem;
   text-underline-offset: 0.1875rem;
   padding: 0.1875rem 0 0.125rem;
   word-break: break-word;
 }
-.ct-basic-content a:not(.ct-button):hover {
+.ct-basic-content a:not(.ct-button):not(.ct-link):hover {
   text-decoration: none;
   padding: 0.1875rem 0 0.25rem;
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-light {
-  color: var(--ct-basic-content a:not(ct-button):visited-light-visited-color);
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-light:hover {
-  border-color: var(--ct-basic-content a:not(ct-button):visited-light-visited-hover-border-color);
-  color: var(--ct-basic-content a:not(ct-button):visited-light-visited-hover-color);
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-dark {
-  color: var(--ct-basic-content a:not(ct-button):visited-dark-visited-color);
-}
-.ct-basic-content a:not(.ct-button):visited.ct-theme-dark:hover {
-  border-color: var(--ct-basic-content a:not(ct-button):visited-dark-visited-hover-border-color);
-  color: var(--ct-basic-content a:not(ct-button):visited-dark-visited-hover-color);
 }
 @media (min-width: 0) {
   .ct-basic-content blockquote {
@@ -586,17 +572,24 @@
 .ct-basic-content.ct-theme-light h6 {
   color: var(--ct-color-light-heading);
 }
-.ct-basic-content.ct-theme-light a:not(.ct-button) {
+.ct-basic-content.ct-theme-light a:not(.ct-button):not(.ct-link) {
   color: var(--ct-color-light-interaction-background);
 }
-.ct-basic-content.ct-theme-light a:not(.ct-button):focus-visible {
+.ct-basic-content.ct-theme-light a:not(.ct-button):not(.ct-link):focus-visible {
   outline-offset: 0;
   outline-width: 0.1875rem;
   outline-style: solid;
   outline-color: var(--ct-color-light-interaction-focus);
 }
-.ct-basic-content.ct-theme-light a:not(.ct-button):hover {
+.ct-basic-content.ct-theme-light a:not(.ct-button):not(.ct-link):hover {
   background-color: var(--ct-color-light-interaction-hover-background);
+  color: var(--ct-color-light-interaction-hover-text);
+}
+.ct-basic-content.ct-theme-light a:not(.ct-button):not(.ct-link):visited {
+  color: var(--ct-color-light-body);
+}
+.ct-basic-content.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
+  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-basic-content.ct-theme-light blockquote {
@@ -692,17 +685,24 @@
 .ct-basic-content.ct-theme-dark h6 {
   color: var(--ct-color-dark-heading);
 }
-.ct-basic-content.ct-theme-dark a:not(.ct-button) {
+.ct-basic-content.ct-theme-dark a:not(.ct-button):not(.ct-link) {
   color: var(--ct-color-dark-interaction-background);
 }
-.ct-basic-content.ct-theme-dark a:not(.ct-button):focus-visible {
+.ct-basic-content.ct-theme-dark a:not(.ct-button):not(.ct-link):focus-visible {
   outline-offset: 0;
   outline-width: 0.1875rem;
   outline-style: solid;
   outline-color: var(--ct-color-dark-interaction-focus);
 }
-.ct-basic-content.ct-theme-dark a:not(.ct-button):hover {
+.ct-basic-content.ct-theme-dark a:not(.ct-button):not(.ct-link):hover {
   background-color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-color-dark-interaction-hover-text);
+}
+.ct-basic-content.ct-theme-dark a:not(.ct-button):not(.ct-link):visited {
+  color: var(--ct-color-dark-body);
+}
+.ct-basic-content.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
+  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 .ct-basic-content.ct-theme-dark blockquote {

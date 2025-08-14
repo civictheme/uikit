@@ -227,30 +227,16 @@
 .ct-paragraph:last-child p:last-child {
   margin-bottom: 0;
 }
-.ct-paragraph a:not(.ct-button) {
+.ct-paragraph a:not(.ct-button):not(.ct-link) {
   text-decoration: underline;
   text-decoration-thickness: 0.0625rem;
   text-underline-offset: 0.1875rem;
   padding: 0.1875rem 0 0.125rem;
   word-break: break-word;
 }
-.ct-paragraph a:not(.ct-button):hover {
+.ct-paragraph a:not(.ct-button):not(.ct-link):hover {
   text-decoration: none;
   padding: 0.1875rem 0 0.25rem;
-}
-.ct-paragraph a:not(.ct-button):visited.ct-theme-light {
-  color: var(--ct-paragraph a:not(ct-button):visited-light-visited-color);
-}
-.ct-paragraph a:not(.ct-button):visited.ct-theme-light:hover {
-  border-color: var(--ct-paragraph a:not(ct-button):visited-light-visited-hover-border-color);
-  color: var(--ct-paragraph a:not(ct-button):visited-light-visited-hover-color);
-}
-.ct-paragraph a:not(.ct-button):visited.ct-theme-dark {
-  color: var(--ct-paragraph a:not(ct-button):visited-dark-visited-color);
-}
-.ct-paragraph a:not(.ct-button):visited.ct-theme-dark:hover {
-  border-color: var(--ct-paragraph a:not(ct-button):visited-dark-visited-hover-border-color);
-  color: var(--ct-paragraph a:not(ct-button):visited-dark-visited-hover-color);
 }
 @media (min-width: 0) {
   .ct-paragraph blockquote {
@@ -656,17 +642,24 @@
 .ct-paragraph.ct-theme-light h6 {
   color: var(--ct-color-light-heading);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button) {
+.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link) {
   color: var(--ct-color-light-interaction-background);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):focus-visible {
+.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):focus-visible {
   outline-offset: 0;
   outline-width: 0.1875rem;
   outline-style: solid;
   outline-color: var(--ct-color-light-interaction-focus);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):hover {
+.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):hover {
   background-color: var(--ct-color-light-interaction-hover-background);
+  color: var(--ct-color-light-interaction-hover-text);
+}
+.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited {
+  color: var(--ct-color-light-body);
+}
+.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
+  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-paragraph.ct-theme-light blockquote {
@@ -759,17 +752,24 @@
 .ct-paragraph.ct-theme-dark h6 {
   color: var(--ct-color-dark-heading);
 }
-.ct-paragraph.ct-theme-dark a:not(.ct-button) {
+.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link) {
   color: var(--ct-color-dark-interaction-background);
 }
-.ct-paragraph.ct-theme-dark a:not(.ct-button):focus-visible {
+.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):focus-visible {
   outline-offset: 0;
   outline-width: 0.1875rem;
   outline-style: solid;
   outline-color: var(--ct-color-dark-interaction-focus);
 }
-.ct-paragraph.ct-theme-dark a:not(.ct-button):hover {
+.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):hover {
   background-color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-color-dark-interaction-hover-text);
+}
+.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited {
+  color: var(--ct-color-dark-body);
+}
+.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
+  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 .ct-paragraph.ct-theme-dark blockquote {

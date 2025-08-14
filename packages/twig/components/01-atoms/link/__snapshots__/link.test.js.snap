@@ -30,11 +30,21 @@ exports[`Link Component renders with optional attributes, is external 1`] = `
 
     </svg>
     
-Sample 
+
+    <span
+      class="ct-text-icon__text"
+    >
+      Sample 
+    </span>
     <span
       class="ct-text-icon__group"
     >
-      Link 
+      <span
+        class="ct-text-icon__text"
+      >
+        Link
+      </span>
+       
       <svg
         aria-hidden="true"
         class="ct-icon  "
@@ -92,7 +102,13 @@ exports[`Link Component renders with optional attributes, not external 1`] = `
 
     </svg>
     
-Sample Link
+
+    <span
+      class="ct-text-icon__text"
+    >
+      Sample Link
+    </span>
+     
     <span
       class="ct-visually-hidden"
     >
@@ -108,7 +124,11 @@ exports[`Link Component renders with required attributes 1`] = `
     class="ct-link ct-theme-light"
     href="https://example.com"
   >
-    Sample Link
+    <span
+      class="ct-text-icon__text"
+    >
+      Sample Link
+    </span>
   </a>
 </div>
 `;

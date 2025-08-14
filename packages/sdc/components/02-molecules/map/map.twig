@@ -61,10 +61,8 @@
 
           {% block links_block %}
             {% if view_url is not empty %}
-              {% include 'civictheme:button' with {
-                kind: 'link',
+              {% include 'civictheme:link' with {
                 theme: theme,
-                type: 'tertiary',
                 text: view_text,
                 url: view_url,
                 is_new_window: true,

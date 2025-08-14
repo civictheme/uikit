@@ -11,7 +11,6 @@
 
     .ct-link {
       @include ct-typography('label-regular');
-      @include ct-link-decoration(false, false, false, false);
 
       & {
         margin-bottom: -1 * ct-particle(0.125);

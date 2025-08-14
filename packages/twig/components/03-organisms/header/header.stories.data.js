@@ -94,6 +94,7 @@ export const HeaderMultilineData = {
               modifier_class: 'hide-xxs show-m',
             }).trim(),
           ],
+          size: 'small',
         }).trim(),
         MobileNavigationTrigger({
           theme,

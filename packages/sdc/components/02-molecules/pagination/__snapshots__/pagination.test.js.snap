@@ -65,7 +65,22 @@ exports[`Pagination Component renders current page correctly 1`] = `
 
           </svg>
           
-Previous
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Previous
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -84,7 +99,11 @@ Previous
           href="#1"
           title="Go to page 1 of 3"
         >
-          1
+          <span
+            class="ct-text-icon__text"
+          >
+            1
+          </span>
         </a>
                 
       </li>
@@ -103,7 +122,11 @@ Previous
           href="#2"
           title="Current page"
         >
-          2
+          <span
+            class="ct-text-icon__text"
+          >
+            2
+          </span>
         </a>
                 
       </li>
@@ -122,7 +145,11 @@ Previous
           href="#3"
           title="Go to page 3 of 3"
         >
-          3
+          <span
+            class="ct-text-icon__text"
+          >
+            3
+          </span>
         </a>
                 
       </li>
@@ -143,11 +170,20 @@ Previous
           href="#next"
           title="Go to next page"
         >
-           
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
           <span
             class="ct-text-icon__group"
           >
-            Next 
+            <span
+              class="ct-text-icon__text"
+            >
+              Next
+            </span>
+             
             <svg
               aria-hidden="true"
               class="ct-icon  ct-link__icon"
@@ -321,7 +357,22 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
           </svg>
           
-First
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              First
+            </span>
+             
+          </span>
         </a>
                 
       </li>
@@ -358,7 +409,22 @@ First
 
           </svg>
           
-Previous
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Previous
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -377,7 +443,11 @@ Previous
           href="#1"
           title="Go to page 1 of 3"
         >
-          1
+          <span
+            class="ct-text-icon__text"
+          >
+            1
+          </span>
         </a>
                 
       </li>
@@ -396,7 +466,11 @@ Previous
           href="#2"
           title="Current page"
         >
-          2
+          <span
+            class="ct-text-icon__text"
+          >
+            2
+          </span>
         </a>
                 
       </li>
@@ -425,7 +499,11 @@ Previous
           href="#3"
           title="Go to page 3 of 3"
         >
-          3
+          <span
+            class="ct-text-icon__text"
+          >
+            3
+          </span>
         </a>
                 
       </li>
@@ -446,11 +524,20 @@ Previous
           href="#next"
           title="Go to next page"
         >
-           
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
           <span
             class="ct-text-icon__group"
           >
-            Next 
+            <span
+              class="ct-text-icon__text"
+            >
+              Next
+            </span>
+             
             <svg
               aria-hidden="true"
               class="ct-icon  ct-link__icon"
@@ -489,11 +576,20 @@ Previous
           href="#last"
           title="Go to last page"
         >
-           
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
           <span
             class="ct-text-icon__group"
           >
-            Last 
+            <span
+              class="ct-text-icon__text"
+            >
+              Last
+            </span>
+             
             <svg
               aria-hidden="true"
               class="ct-icon  ct-link__icon"
@@ -585,7 +681,22 @@ exports[`Pagination Component renders with required attributes 1`] = `
 
           </svg>
           
-Previous
+
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Previous
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -604,7 +715,11 @@ Previous
           href="#1"
           title="Go to page 1 of 3"
         >
-          1
+          <span
+            class="ct-text-icon__text"
+          >
+            1
+          </span>
         </a>
                 
       </li>
@@ -623,7 +738,11 @@ Previous
           href="#2"
           title="Current page"
         >
-          2
+          <span
+            class="ct-text-icon__text"
+          >
+            2
+          </span>
         </a>
                 
       </li>
@@ -642,7 +761,11 @@ Previous
           href="#3"
           title="Go to page 3 of 3"
         >
-          3
+          <span
+            class="ct-text-icon__text"
+          >
+            3
+          </span>
         </a>
                 
       </li>
@@ -663,11 +786,20 @@ Previous
           href="#next"
           title="Go to next page"
         >
-           
+          <span
+            class="ct-text-icon__text"
+          >
+             
+          </span>
           <span
             class="ct-text-icon__group"
           >
-            Next 
+            <span
+              class="ct-text-icon__text"
+            >
+              Next
+            </span>
+             
             <svg
               aria-hidden="true"
               class="ct-icon  ct-link__icon"

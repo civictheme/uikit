@@ -57,7 +57,11 @@ exports[`Service Card Component renders with content slots 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-            Link 1
+            <span
+              class="ct-text-icon__text"
+            >
+              Link 1
+            </span>
           </a>
                         
         </li>
@@ -71,7 +75,11 @@ exports[`Service Card Component renders with content slots 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-            Link 2
+            <span
+              class="ct-text-icon__text"
+            >
+              Link 2
+            </span>
           </a>
                         
         </li>
@@ -148,11 +156,20 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             href="https://example.com/link1"
             target="_blank"
           >
-            Link 
+            <span
+              class="ct-text-icon__text"
+            >
+              Link 
+            </span>
             <span
               class="ct-text-icon__group"
             >
-              1  
+              <span
+                class="ct-text-icon__text"
+              >
+                1
+              </span>
+               
               <svg
                 aria-hidden="true"
                 class="ct-icon  "
@@ -191,7 +208,11 @@ exports[`Service Card Component renders with optional attributes 1`] = `
             class="ct-link ct-theme-dark"
             href="https://example.com/link2"
           >
-            Link 2
+            <span
+              class="ct-text-icon__text"
+            >
+              Link 2
+            </span>
           </a>
                         
         </li>
@@ -259,7 +280,11 @@ exports[`Service Card Component renders with required attributes 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link1"
           >
-            Link 1
+            <span
+              class="ct-text-icon__text"
+            >
+              Link 1
+            </span>
           </a>
                         
         </li>
@@ -273,7 +298,11 @@ exports[`Service Card Component renders with required attributes 1`] = `
             class="ct-link ct-theme-light"
             href="https://example.com/link2"
           >
-            Link 2
+            <span
+              class="ct-text-icon__text"
+            >
+              Link 2
+            </span>
           </a>
                         
         </li>
