@@ -23,7 +23,7 @@ jobs:
         node-version: [22]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: actions/setup-node@v4
         with:
@@ -115,13 +115,14 @@ jobs:
           publish-dir: './packages/twig/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
+          enable-pull-request-comment: true
           enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'twig'
+          alias: deploy-twig-pr-${{ github.event.number }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
         timeout-minutes: 1
 
       - name: Deploy SDC Components Storybook to Netlify
@@ -133,17 +134,17 @@ jobs:
           publish-dir: './packages/sdc/storybook-static'
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
+          enable-pull-request-comment: true
           enable-commit-comment: false
           overwrites-pull-request-comment: true
-          alias: 'sdc'
+          alias: deploy-sdc-pr-${{ github.event.number }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         timeout-minutes: 1
 
       - name: Find ID of existing deployment message for a PR
-        uses: 'peter-evans/find-comment@17cb4d1fd74e105b199ccd423d00d83357a1b59c'
+        uses: 'peter-evans/find-comment@092c582425a50e7fcdc2734bc8879d28bcc4ae27'
         id: netlify-deploy-message
         if: github.event_name == 'pull_request'
         with:
@@ -152,7 +153,7 @@ jobs:
           body-includes: 'CivicTheme UI Kit Deployments'
 
       - name: Create or update deployment message on a PR
-        uses: 'peter-evans/create-or-update-comment@aaef3ca0afafdb648c31900ec79672f5e3074df5'
+        uses: 'peter-evans/create-or-update-comment@5da8e07780620d4c63e2e4144177b7d2020b5996'
         if: github.event_name == 'pull_request'
         with:
           comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}

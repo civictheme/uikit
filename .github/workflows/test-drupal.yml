@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Cache Composer dependencies
         uses: actions/cache@v4
@@ -51,6 +51,21 @@ jobs:
         working-directory: tools/sdc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run ct_dev kernel tests
+        run: vendor/bin/phpunit -c ../ct_dev/phpunit.xml.dist
+        working-directory: tools/sdc/build
+
+      - name: Validate SDC components
+        run: |
+          output=$(vendor/bin/drush ct_dev:validate-component-definition ../web/themes/custom/civictheme_sdc/components 2>&1)
+          echo "${output}"
+          if echo "${output}" | grep -E -q '\b(failed|Failed)\b'; then
+            echo "Component validation failed"
+            exit 1
+          fi
+        working-directory: tools/sdc/build
+        continue-on-error: ${{ vars.CI_DRUPAL_SDC_VALIDATE_IGNORE_FAILURE == '1' }}
 
       - name: Lint SDC components
         run: |

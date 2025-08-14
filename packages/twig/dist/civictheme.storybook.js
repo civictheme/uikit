@@ -1827,6 +1827,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 /**
+ * CivicTheme Webform component.
+ */
+
+// phpcs:ignoreFile
+function CivicThemeWebform(el) {
+  if (el.getAttribute('data-webform') === 'true' || this.el) {
+    return;
+  }
+
+  this.el = el;
+
+  // Check for form errors and scroll to error message if present.
+  const fieldErrors = this.el.querySelectorAll('.ct-field-message--error');
+  if (fieldErrors.length > 0) {
+    const errorMessage = document.querySelector('.ct-message--error');
+    if (errorMessage) {
+      // Make error message focusable if it's not a link.
+      if (!errorMessage.matches('a')) {
+        errorMessage.setAttribute('tabindex', '-1');
+      }
+      errorMessage.focus();
+      errorMessage.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  }
+
+  // Mark as initialized.
+  this.el.setAttribute('data-webform', 'true');
+}
+
+// Initialize CivicThemeWebform on every element.
+document.querySelectorAll('.ct-webform').forEach((webform) => {
+  // eslint-disable-next-line no-new
+  new CivicThemeWebform(webform);
+});
+
+});
+document.addEventListener('DOMContentLoaded', () => {
+/**
  * CivicTheme Slider component.
  */
 
@@ -3692,13 +3732,14 @@ function CivicThemeCollapsible(el) {
     iconEl.classList.add('ct-collapsible__icon');
     // If multiple words - use last word and icon grouping.
     if (this.iconGroupEnabled) {
+      const wrapText = (text) => `<span class="ct-text-icon__text">${text}</span>`;
       const text = this.trigger.innerText.trim();
       const lastWordIndex = text.lastIndexOf(' ');
       const lastWord = lastWordIndex >= 0 ? text.substring(lastWordIndex + 1) : text;
       const firstWords = lastWordIndex >= 0 ? text.substring(0, lastWordIndex + 1) : '';
-      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${lastWord} </span>`);
+      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${wrapText(lastWord)} </span>`);
       iconGroupEl.append(iconEl);
-      this.trigger.innerHTML = firstWords;
+      this.trigger.innerHTML = wrapText(firstWords);
       this.trigger.append(iconGroupEl);
     } else {
       this.trigger.append(iconEl);
