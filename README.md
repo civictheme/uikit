@@ -166,6 +166,24 @@ See `tools/sdc/README.md` for more information on how to validate the SDC schema
 
     npm run lint-fix
 
+### Husky Pre-commit Hooks
+
+Husky automatically runs quality checks before each commit to ensure code quality and consistency. It tests that both SDC and Twig libraries are up to date and have no lint or test errors.
+
+If you need to bypass these checks (e.g., for emergency fixes or when working on experimental features), you can skip Husky by running:
+
+```bash
+HUSKY=0 git push
+```
+
+or
+
+```bash
+git push --no-verify
+```
+
+**Note:** Only bypass Husky when absolutely necessary, as these checks help maintain code quality across the project.
+
 ### Run Storybook for development
 
     npm run dev
