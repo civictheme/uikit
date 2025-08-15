@@ -659,7 +659,6 @@
   color: var(--ct-color-light-body);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
-  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-paragraph.ct-theme-light blockquote {
@@ -769,7 +768,6 @@
   color: var(--ct-color-dark-body);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
-  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 .ct-paragraph.ct-theme-dark blockquote {
