@@ -37,7 +37,7 @@
     "dist:watch": "node build.js base build watch styles styles_storybook styles_variables styles_stories js_storybook assets constants",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "npm run dist && storybook build",
-    "dev": "npm run dist && node build.js cli \"dist:watch\" \"storybook\"",
+    "dev": "npm run dist && node build.js base cli \"dist:watch\" \"storybook\"",
     "test": "node --experimental-vm-modules ../../node_modules/.bin/jest",
     "test:ci": "npm run test-unit:ci",
     "test-unit:ci": "node --experimental-vm-modules ../../node_modules/.bin/jest --coverage",
