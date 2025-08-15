@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# Allow skipping checks with SKIP_HUSKY or SKIP_CHECKS
+if [ "$SKIP_HUSKY" = "1" ] || [ "$SKIP_CHECKS" = "1" ]; then
+  echo "⚠️  Skipping pre-push checks (SKIP_HUSKY or SKIP_CHECKS is set)"
+  exit 0
+fi
+
 # Run dist
 echo "Running dist..."
 npm run dist
