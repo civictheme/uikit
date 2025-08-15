@@ -58,7 +58,7 @@
     "components:check:sdc": "node tools/scripts/components-update-sdc.js packages/sdc --check",
     "components:check:twig": "node tools/scripts/components-update-twig.js packages/sdc/components packages/twig/components --check",
     "components:check:twig:headers": "node tools/scripts/components-update-twig.js packages/sdc/components packages/twig/components --headers-only --check",
-    "prepare": "node -e \"if (process.env.CI !== 'true') { require('child_process').execSync('husky', {stdio: 'inherit'}); }\""
+    "prepare": "node .husky/install.mjs"
   },
   "devDependencies": {
     "commander": "^14.0.0",
