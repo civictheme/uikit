@@ -91,7 +91,7 @@ jobs:
             createVisualRegressionPrComments({require, core})
 
       - name: Find ID of existing deployment message on a PR
-        uses: 'peter-evans/find-comment@092c582425a50e7fcdc2734bc8879d28bcc4ae27'
+        uses: 'peter-evans/find-comment@048de657d50358ed23c7ac2297a319ada251f4f0'
         id: netlify-visual-regression-message
         with:
           issue-number: ${{ github.event.pull_request.number }}
