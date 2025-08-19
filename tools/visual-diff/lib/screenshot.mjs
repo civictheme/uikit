@@ -100,26 +100,62 @@ export async function captureScreenshots({
     await cluster.task(async ({ page, data: { storyUrl, filePath, selectors } }) => {
       await page.goto(storyUrl, { waitUntil: ['domcontentloaded', 'networkidle0'] });
       console.log(`Capturing: ${storyUrl} to ${filePath}`);
-      for (const selector of selectors) {
-        // String JS script passed into page context.
-        // eslint-disable-next-line no-await-in-loop
-        await page.evaluate(
-          `document.querySelectorAll('${selector}').forEach((el) => {
-              const rect = el.getBoundingClientRect();
-              const mask = document.createElement('visual-diff-mask');
-              mask.style.position = 'absolute';
-              mask.style.top = rect.top + 'px';
-              mask.style.left = rect.left + 'px';
-              mask.style.zIndex = 'calc(infinity)';
-              mask.style.display = 'block';
-              mask.style.width = Math.ceil(rect.width) + 'px';
-              mask.style.height = Math.ceil(rect.height) + 'px';
-              mask.style.pointerEvents = 'none';
-              mask.style.background = 'magenta';
-              document.body.appendChild(mask);
-            });`,
-        );
+
+      if (config.screenshot_options?.disable_css_transitions) {
+        await page.evaluate(() => {
+          const style = document.createElement('style');
+          style.textContent = `
+            *, *::before, *::after {
+              transition: none !important;
+              transition-duration: 0s !important;
+            }
+          `;
+          document.head.appendChild(style);
+        });
       }
+
+      if (config.screenshot_options?.hide_mask_selectors && selectors.length > 0) {
+        await page.evaluate((cssSelectors) => {
+          document.querySelectorAll(cssSelectors.join(', ')).forEach((el) => {
+            el.style.visibility = 'hidden';
+          });
+        }, selectors);
+      }
+
+      if (config.screenshot_options?.replace_images_with_solid_color) {
+        await page.evaluate(() => {
+          // Base64 encoded 1x1 pixel (PNG format)
+          const pixelImageB64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
+          // Replace all img src attributes
+          const images = document.querySelectorAll('img');
+          images.forEach((img) => {
+            if (img.src && !img.src.startsWith('data:')) {
+              img.src = pixelImageB64;
+            }
+          });
+
+          // Replace background images in CSS
+          const elementsWithBg = document.querySelectorAll('.ct-footer, .ct-banner__inner, .ct-background');
+          elementsWithBg.forEach((el) => {
+            const style = window.getComputedStyle(el);
+            const bgImage = style.backgroundImage;
+            if (bgImage && bgImage !== 'none' && !bgImage.includes('data:')) {
+              el.style.backgroundImage = `url("${pixelImageB64}")`;
+            }
+          });
+        });
+      }
+
+      // Small delay to ensure page has settled down
+      const settleDelay = config.screenshot_options?.settle_delay_ms || 0;
+      if (settleDelay > 0) {
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, settleDelay);
+        });
+      }
+
       await page.screenshot({
         path: filePath,
         fullPage: true,

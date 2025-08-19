@@ -4,8 +4,15 @@
       ".ct-iframe",
       ".ct-map--canvas",
       ".ct-video-player",
-      ".ct-video"
+      ".ct-video",
+      "video"
     ]
+  },
+  "screenshot_options": {
+    "disable_css_transitions": true,
+    "hide_mask_selectors": true,
+    "replace_images_with_solid_color": true,
+    "settle_delay_ms": 2000
   },
   "screenshot_sources": {
     "current_branch": {
