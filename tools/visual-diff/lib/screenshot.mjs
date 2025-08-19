@@ -114,12 +114,12 @@ export async function captureScreenshots({
         });
       }
 
-      if (config.screenshot_options?.hide_mask_selectors) {
-        await page.evaluate(`
-          document.querySelectorAll('${selectors.join(', ')}').forEach((el) => {
+      if (config.screenshot_options?.hide_mask_selectors && selectors.length > 0) {
+        await page.evaluate((cssSelectors) => {
+          document.querySelectorAll(cssSelectors.join(', ')).forEach((el) => {
             el.style.visibility = 'hidden';
           });
-        `);
+        }, selectors);
       }
 
       if (config.screenshot_options?.replace_images_with_solid_color) {

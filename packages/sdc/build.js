@@ -89,7 +89,7 @@ const DIR_OUT                   = fullPath('./dist/')
 const DIR_ASSETS_IN             = fullPath('./assets/')
 const DIR_ASSETS_OUT            = fullPath('./dist/assets/')
 
-const DIR_CIVICTHEME            = config.base ? null : getCivicthemeDir(PATH, 'themes', '/**/civictheme')
+const DIR_CIVICTHEME            = config.base || config.cli ? null : getCivicthemeDir(PATH, 'themes', '/**/civictheme')
 const DIR_UIKIT_COMPONENTS_IN   = config.base ? null : `${DIR_CIVICTHEME}/components/`
 const DIR_UIKIT_COPY_OUT        = config.base ? null : fullPath('./.components-civictheme/')
 const DIR_COMPONENTS_OUT        = config.base ? null : fullPath('./components_combined/')
