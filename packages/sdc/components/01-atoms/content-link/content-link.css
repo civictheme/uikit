@@ -30,7 +30,6 @@
   color: var(--ct-color-light-body);
 }
 .ct-content-link:visited:hover, .ct-content-link.ct-theme-light:visited:hover {
-  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-content-link.ct-theme-dark {
@@ -50,6 +49,5 @@
   color: var(--ct-color-dark-body);
 }
 .ct-content-link.ct-theme-dark:visited:hover {
-  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }

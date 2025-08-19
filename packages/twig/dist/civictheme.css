@@ -4606,7 +4606,6 @@ ol ol ol {
   color: var(--ct-color-light-body);
 }
 .ct-content-link:visited:hover, .ct-content-link.ct-theme-light:visited:hover {
-  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-content-link.ct-theme-dark {
@@ -4626,7 +4625,6 @@ ol ol ol {
   color: var(--ct-color-dark-body);
 }
 .ct-content-link.ct-theme-dark:visited:hover {
-  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 
@@ -5867,7 +5865,6 @@ ol ol ol {
   color: var(--ct-color-light-body);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
-  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-paragraph.ct-theme-light blockquote {
@@ -5977,7 +5974,6 @@ ol ol ol {
   color: var(--ct-color-dark-body);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
-  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 .ct-paragraph.ct-theme-dark blockquote {
@@ -7752,7 +7748,6 @@ ol ol ol {
   color: var(--ct-color-light-body);
 }
 .ct-basic-content.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
-  border-color: var(--ct-color-light-interaction-focus);
   color: var(--ct-color-light-interaction-hover-text);
 }
 .ct-basic-content.ct-theme-light blockquote {
@@ -7865,7 +7860,6 @@ ol ol ol {
   color: var(--ct-color-dark-body);
 }
 .ct-basic-content.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
-  border-color: var(--ct-color-dark-interaction-focus);
   color: var(--ct-color-dark-interaction-hover-text);
 }
 .ct-basic-content.ct-theme-dark blockquote {
@@ -12505,13 +12499,11 @@ html {
   --ct-content-link-light-hover-color: var(--ct-color-light-interaction-hover-text);
   --ct-content-link-light-visited-color: var(--ct-color-light-body);
   --ct-content-link-light-visited-hover-color: var(--ct-color-light-interaction-hover-text);
-  --ct-content-link-light-visited-hover-border-color: var(--ct-color-light-interaction-focus);
   --ct-content-link-dark-color: var(--ct-color-dark-interaction-background);
   --ct-content-link-dark-hover-background-color: var(--ct-color-dark-interaction-hover-background);
   --ct-content-link-dark-hover-color: var(--ct-color-dark-interaction-hover-text);
   --ct-content-link-dark-visited-color: var(--ct-color-dark-body);
   --ct-content-link-dark-visited-hover-color: var(--ct-color-dark-interaction-hover-text);
-  --ct-content-link-dark-visited-hover-border-color: var(--ct-color-dark-interaction-focus);
   --ct-heading-light-color: var(--ct-color-light-heading);
   --ct-heading-dark-color: var(--ct-color-dark-heading);
   --ct-iframe-light-wrapper-background-color: var(--ct-color-light-background-light);
