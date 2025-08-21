@@ -60,7 +60,7 @@
                       theme: theme,
                       content: title,
                       level: 4,
-                      modifier_class: 'ct-attachment__title'
+                      modifier_class: 'ct-attachment__title',
                     } only %}
                   {% endif %}
 
@@ -99,7 +99,7 @@
                       text: file.name ~ extension,
                       title: 'Download %s'|format(file.name),
                       url: file.url,
-                      modifier_class: 'ct-attachment__links__link'
+                      modifier_class: 'ct-attachment__links__link',
                     } only %}
 
                     {% if file.changed is not empty %}
