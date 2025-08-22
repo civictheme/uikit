@@ -70,23 +70,12 @@
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 0) {
-  .ct-event-card .ct-event-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-event-card .ct-event-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-event-card .ct-event-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-event-card .ct-event-card__title-link {
   font-size: inherit;
@@ -106,23 +95,12 @@
 .ct-event-card .ct-event-card__title-link:visited {
   color: inherit;
 }
-@media (min-width: 0) {
-  .ct-event-card .ct-event-card__location {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-event-card .ct-event-card__location {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-event-card .ct-event-card__location {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-event-card .ct-event-card__tags {
   display: flex;

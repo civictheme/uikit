@@ -19,23 +19,70 @@ html {
   }
 
   $typography: map.merge($ct-typography-default, $ct-typography);
+  $breakpoints: map.keys($ct-breakpoints);
 
-  @each $name, $ruleset in $typography {
-    // Ruleset is a list of rules - extract rules.
-    @if type-of($ruleset) == list {
-      $ruleset: _ct-typography-extract-rules($ruleset);
+  // First, loop through typography and collect rules by breakpoint
+  $breakpoint-typography: ();
 
-      @include _ct-typography-print-css-variables(0, $name, $ruleset);
+  @each $typography-name, $typography-ruleset in $typography {
+    // Check if this typography has rules for this breakpoint
+    @if type-of($typography-ruleset) == map {
+      @each $breakpoint, $rules in $typography-ruleset {
+        // Initialize breakpoint map if it doesn't exist
+        @if not map.has-key($breakpoint-typography, $breakpoint) {
+          $breakpoint-typography: map.set($breakpoint-typography, $breakpoint, ());
+        }
+
+        // Extract rules for this specific breakpoint
+        $breakpoint-ruleset: _ct-typography-extract-rules($rules);
+
+        // Add typography rules to the breakpoint map
+        $breakpoint-typography: map.set(
+          $breakpoint-typography,
+          $breakpoint,
+          map.merge(
+            map.get($breakpoint-typography, $breakpoint),
+            ($typography-name: $breakpoint-ruleset)
+          )
+        );
+      }
     }
 
-    // Ruleset is a full ruleset definition - print all rules with breakpoints.
-    @else if type-of($ruleset) == map {
-      $breakpoints: map.keys($ruleset);
+    // Handle typography rulesets that are lists (default/fallback values)
+    @else if type-of($typography-ruleset) == list {
+      // Initialize default breakpoint map if it doesn't exist
+      @if not map.has-key($breakpoint-typography, 'xxs') {
+        $breakpoint-typography: map.set($breakpoint-typography, 'xxs', ());
+      }
 
-      @each $breakpoint in $breakpoints {
-        $breakpoint-ruleset: _ct-typography-extract-rules(map.get($ruleset, $breakpoint));
+      $default-ruleset: _ct-typography-extract-rules($typography-ruleset);
 
-        @include _ct-typography-print-css-variables($breakpoint, $name, $breakpoint-ruleset);
+      // Add default typography rules to the xxs breakpoint map
+      $breakpoint-typography: map.set(
+        $breakpoint-typography,
+        'xxs',
+        map.merge(
+          map.get($breakpoint-typography, 'xxs'),
+          ($typography-name: $default-ruleset)
+        )
+      );
+    }
+  }
+
+  // Now output all typography rules grouped by breakpoint
+  @each $breakpoint, $typography-rules in $breakpoint-typography {
+    @if $breakpoint == 'xxs' {
+      // Default breakpoint - no media query
+      @each $typography-name, $ruleset in $typography-rules {
+        @include _ct-typography-print-css-variables($typography-name, $ruleset);
+      }
+    }
+    @else {
+      // Specific breakpoint - wrap in media query
+      @include ct-breakpoint($breakpoint) {
+        @each $typography-name, $ruleset in $typography-rules {
+          @include _ct-typography-print-css-variables($typography-name, $ruleset);
+        }
       }
     }
   }

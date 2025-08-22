@@ -3210,118 +3210,52 @@ ul.row {
   white-space: nowrap;
 }
 
-@media (min-width: 0) {
-  .ct-display {
-    font-size: var(--ct-typography-display-xxs-font-size);
-    line-height: var(--ct-typography-display-xxs-line-height);
-    font-family: var(--ct-typography-display-xxs-font-name);
-    font-weight: var(--ct-typography-display-xxs-font-weight);
-    letter-spacing: var(--ct-typography-display-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-display {
-    font-size: var(--ct-typography-display-m-font-size);
-    line-height: var(--ct-typography-display-m-line-height);
-    font-family: var(--ct-typography-display-m-font-name);
-    font-weight: var(--ct-typography-display-m-font-weight);
-    letter-spacing: var(--ct-typography-display-m-letter-spacing);
-  }
+.ct-display {
+  font-size: var(--ct-typography-display-font-size);
+  line-height: var(--ct-typography-display-line-height);
+  font-family: var(--ct-typography-display-font-name);
+  font-weight: var(--ct-typography-display-font-weight);
+  letter-spacing: var(--ct-typography-display-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-heading-1 {
-    font-size: var(--ct-typography-heading-1-xxs-font-size);
-    line-height: var(--ct-typography-heading-1-xxs-line-height);
-    font-family: var(--ct-typography-heading-1-xxs-font-name);
-    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-heading-1 {
-    font-size: var(--ct-typography-heading-1-m-font-size);
-    line-height: var(--ct-typography-heading-1-m-line-height);
-    font-family: var(--ct-typography-heading-1-m-font-name);
-    font-weight: var(--ct-typography-heading-1-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
-  }
+.ct-heading-1 {
+  font-size: var(--ct-typography-heading-1-font-size);
+  line-height: var(--ct-typography-heading-1-line-height);
+  font-family: var(--ct-typography-heading-1-font-name);
+  font-weight: var(--ct-typography-heading-1-font-weight);
+  letter-spacing: var(--ct-typography-heading-1-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-heading-2 {
-    font-size: var(--ct-typography-heading-2-xxs-font-size);
-    line-height: var(--ct-typography-heading-2-xxs-line-height);
-    font-family: var(--ct-typography-heading-2-xxs-font-name);
-    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-heading-2 {
-    font-size: var(--ct-typography-heading-2-m-font-size);
-    line-height: var(--ct-typography-heading-2-m-line-height);
-    font-family: var(--ct-typography-heading-2-m-font-name);
-    font-weight: var(--ct-typography-heading-2-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
-  }
+.ct-heading-2 {
+  font-size: var(--ct-typography-heading-2-font-size);
+  line-height: var(--ct-typography-heading-2-line-height);
+  font-family: var(--ct-typography-heading-2-font-name);
+  font-weight: var(--ct-typography-heading-2-font-weight);
+  letter-spacing: var(--ct-typography-heading-2-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-heading-3 {
-    font-size: var(--ct-typography-heading-3-xxs-font-size);
-    line-height: var(--ct-typography-heading-3-xxs-line-height);
-    font-family: var(--ct-typography-heading-3-xxs-font-name);
-    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-heading-3 {
-    font-size: var(--ct-typography-heading-3-m-font-size);
-    line-height: var(--ct-typography-heading-3-m-line-height);
-    font-family: var(--ct-typography-heading-3-m-font-name);
-    font-weight: var(--ct-typography-heading-3-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
-  }
+.ct-heading-3 {
+  font-size: var(--ct-typography-heading-3-font-size);
+  line-height: var(--ct-typography-heading-3-line-height);
+  font-family: var(--ct-typography-heading-3-font-name);
+  font-weight: var(--ct-typography-heading-3-font-weight);
+  letter-spacing: var(--ct-typography-heading-3-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-heading-4 {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-heading-4 {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-heading-4 {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-heading-5 {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-heading-5 {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-heading-5 {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 
 .ct-heading-6 {
@@ -3332,289 +3266,124 @@ ul.row {
   letter-spacing: var(--ct-typography-heading-6-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-text-extra-large {
-    font-size: var(--ct-typography-text-extra-large-xxs-font-size);
-    line-height: var(--ct-typography-text-extra-large-xxs-line-height);
-    font-family: var(--ct-typography-text-extra-large-xxs-font-name);
-    font-weight: var(--ct-typography-text-extra-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-extra-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-text-extra-large {
-    font-size: var(--ct-typography-text-extra-large-m-font-size);
-    line-height: var(--ct-typography-text-extra-large-m-line-height);
-    font-family: var(--ct-typography-text-extra-large-m-font-name);
-    font-weight: var(--ct-typography-text-extra-large-m-font-weight);
-    letter-spacing: var(--ct-typography-text-extra-large-m-letter-spacing);
-  }
+.ct-text-extra-large {
+  font-size: var(--ct-typography-text-extra-large-font-size);
+  line-height: var(--ct-typography-text-extra-large-line-height);
+  font-family: var(--ct-typography-text-extra-large-font-name);
+  font-weight: var(--ct-typography-text-extra-large-font-weight);
+  letter-spacing: var(--ct-typography-text-extra-large-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-text-large {
-    font-size: var(--ct-typography-text-large-xxs-font-size);
-    line-height: var(--ct-typography-text-large-xxs-line-height);
-    font-family: var(--ct-typography-text-large-xxs-font-name);
-    font-weight: var(--ct-typography-text-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-text-large {
-    font-size: var(--ct-typography-text-large-m-font-size);
-    line-height: var(--ct-typography-text-large-m-line-height);
-    font-family: var(--ct-typography-text-large-m-font-name);
-    font-weight: var(--ct-typography-text-large-m-font-weight);
-    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
-  }
+.ct-text-large {
+  font-size: var(--ct-typography-text-large-font-size);
+  line-height: var(--ct-typography-text-large-line-height);
+  font-family: var(--ct-typography-text-large-font-name);
+  font-weight: var(--ct-typography-text-large-font-weight);
+  letter-spacing: var(--ct-typography-text-large-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-text-regular {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-text-regular {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+.ct-text-regular {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-text-small {
-    font-size: var(--ct-typography-text-small-xxs-font-size);
-    line-height: var(--ct-typography-text-small-xxs-line-height);
-    font-family: var(--ct-typography-text-small-xxs-font-name);
-    font-weight: var(--ct-typography-text-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-text-small {
-    font-size: var(--ct-typography-text-small-m-font-size);
-    line-height: var(--ct-typography-text-small-m-line-height);
-    font-family: var(--ct-typography-text-small-m-font-name);
-    font-weight: var(--ct-typography-text-small-m-font-weight);
-    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
-  }
+.ct-text-small {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-label-extra-large {
-    font-size: var(--ct-typography-label-extra-large-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-large-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label-extra-large {
-    font-size: var(--ct-typography-label-extra-large-m-font-size);
-    line-height: var(--ct-typography-label-extra-large-m-line-height);
-    font-family: var(--ct-typography-label-extra-large-m-font-name);
-    font-weight: var(--ct-typography-label-extra-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-large-m-letter-spacing);
-  }
+.ct-label-extra-large {
+  font-size: var(--ct-typography-label-extra-large-font-size);
+  line-height: var(--ct-typography-label-extra-large-line-height);
+  font-family: var(--ct-typography-label-extra-large-font-name);
+  font-weight: var(--ct-typography-label-extra-large-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-large-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-label-large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label-large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+.ct-label-large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-label-regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label-regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-label-regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-label-small {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label-small {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
+.ct-label-small {
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-label-extra-small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label-extra-small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-label-extra-small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 
-@media (min-width: 0) {
-  .ct-quote {
-    font-size: var(--ct-typography-quote-xxs-font-size);
-    line-height: var(--ct-typography-quote-xxs-line-height);
-    font-family: var(--ct-typography-quote-xxs-font-name);
-    font-weight: var(--ct-typography-quote-xxs-font-weight);
-    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-quote {
-    font-size: var(--ct-typography-quote-m-font-size);
-    line-height: var(--ct-typography-quote-m-line-height);
-    font-family: var(--ct-typography-quote-m-font-name);
-    font-weight: var(--ct-typography-quote-m-font-weight);
-    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
-  }
+.ct-quote {
+  font-size: var(--ct-typography-quote-font-size);
+  line-height: var(--ct-typography-quote-line-height);
+  font-family: var(--ct-typography-quote-font-name);
+  font-weight: var(--ct-typography-quote-font-weight);
+  letter-spacing: var(--ct-typography-quote-letter-spacing);
 }
 
-@media (min-width: 0) {
-  h1 {
-    font-size: var(--ct-typography-heading-1-xxs-font-size);
-    line-height: var(--ct-typography-heading-1-xxs-line-height);
-    font-family: var(--ct-typography-heading-1-xxs-font-name);
-    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  h1 {
-    font-size: var(--ct-typography-heading-1-m-font-size);
-    line-height: var(--ct-typography-heading-1-m-line-height);
-    font-family: var(--ct-typography-heading-1-m-font-name);
-    font-weight: var(--ct-typography-heading-1-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
-  }
+h1 {
+  font-size: var(--ct-typography-heading-1-font-size);
+  line-height: var(--ct-typography-heading-1-line-height);
+  font-family: var(--ct-typography-heading-1-font-name);
+  font-weight: var(--ct-typography-heading-1-font-weight);
+  letter-spacing: var(--ct-typography-heading-1-letter-spacing);
 }
 
-@media (min-width: 0) {
-  h2 {
-    font-size: var(--ct-typography-heading-2-xxs-font-size);
-    line-height: var(--ct-typography-heading-2-xxs-line-height);
-    font-family: var(--ct-typography-heading-2-xxs-font-name);
-    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  h2 {
-    font-size: var(--ct-typography-heading-2-m-font-size);
-    line-height: var(--ct-typography-heading-2-m-line-height);
-    font-family: var(--ct-typography-heading-2-m-font-name);
-    font-weight: var(--ct-typography-heading-2-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
-  }
+h2 {
+  font-size: var(--ct-typography-heading-2-font-size);
+  line-height: var(--ct-typography-heading-2-line-height);
+  font-family: var(--ct-typography-heading-2-font-name);
+  font-weight: var(--ct-typography-heading-2-font-weight);
+  letter-spacing: var(--ct-typography-heading-2-letter-spacing);
 }
 
-@media (min-width: 0) {
-  h3 {
-    font-size: var(--ct-typography-heading-3-xxs-font-size);
-    line-height: var(--ct-typography-heading-3-xxs-line-height);
-    font-family: var(--ct-typography-heading-3-xxs-font-name);
-    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  h3 {
-    font-size: var(--ct-typography-heading-3-m-font-size);
-    line-height: var(--ct-typography-heading-3-m-line-height);
-    font-family: var(--ct-typography-heading-3-m-font-name);
-    font-weight: var(--ct-typography-heading-3-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
-  }
+h3 {
+  font-size: var(--ct-typography-heading-3-font-size);
+  line-height: var(--ct-typography-heading-3-line-height);
+  font-family: var(--ct-typography-heading-3-font-name);
+  font-weight: var(--ct-typography-heading-3-font-weight);
+  letter-spacing: var(--ct-typography-heading-3-letter-spacing);
 }
 
-@media (min-width: 0) {
-  h4 {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  h4 {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+h4 {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 
-@media (min-width: 0) {
-  h5 {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  h5 {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+h5 {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 
 h6 {
@@ -3625,23 +3394,12 @@ h6 {
   letter-spacing: var(--ct-typography-heading-6-letter-spacing);
 }
 
-@media (min-width: 0) {
-  p {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  p {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+p {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 p {
   margin-top: 1.5rem;
@@ -3654,23 +3412,12 @@ p:last-child {
   margin-bottom: 0;
 }
 
-@media (min-width: 0) {
-  blockquote {
-    font-size: var(--ct-typography-quote-xxs-font-size);
-    line-height: var(--ct-typography-quote-xxs-line-height);
-    font-family: var(--ct-typography-quote-xxs-font-name);
-    font-weight: var(--ct-typography-quote-xxs-font-weight);
-    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  blockquote {
-    font-size: var(--ct-typography-quote-m-font-size);
-    line-height: var(--ct-typography-quote-m-line-height);
-    font-family: var(--ct-typography-quote-m-font-name);
-    font-weight: var(--ct-typography-quote-m-font-weight);
-    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
-  }
+blockquote {
+  font-size: var(--ct-typography-quote-font-size);
+  line-height: var(--ct-typography-quote-line-height);
+  font-family: var(--ct-typography-quote-font-name);
+  font-weight: var(--ct-typography-quote-font-weight);
+  letter-spacing: var(--ct-typography-quote-letter-spacing);
 }
 blockquote {
   position: relative;
@@ -3829,24 +3576,11 @@ ol ol ol {
   border: 0.125rem solid transparent;
   border-radius: 0.25rem;
   appearance: button;
-}
-@media (min-width: 0) {
-  .ct-button {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button {
   padding: 0.875rem 2.5rem;
@@ -4067,65 +3801,32 @@ ol ol ol {
 .ct-button--tertiary:focus-visible, .ct-button--tertiary:hover, .ct-button--tertiary:active {
   text-decoration: none;
 }
-@media (min-width: 0) {
-  .ct-button--tertiary--large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+.ct-button--tertiary--large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-button--tertiary--large__dismiss {
   margin-left: 1.5rem;
 }
-@media (min-width: 0) {
-  .ct-button--tertiary--regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-button--tertiary--regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button--tertiary--regular__dismiss {
   margin-left: 1.5rem;
 }
-@media (min-width: 0) {
-  .ct-button--tertiary--small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-button--tertiary--small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-button--tertiary--small {
   border-width: 0.0625rem;
@@ -4133,23 +3834,12 @@ ol ol ol {
 .ct-button--tertiary--small__dismiss {
   margin-left: 1rem;
 }
-@media (min-width: 0) {
-  .ct-button--large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+.ct-button--large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-button--large {
   padding: 1rem 3rem;
@@ -4157,23 +3847,12 @@ ol ol ol {
 .ct-button--large.ct-button--tertiary {
   padding: 0;
 }
-@media (min-width: 0) {
-  .ct-button--regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-button--regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button--regular {
   padding: 0.875rem 2.5rem;
@@ -4181,23 +3860,12 @@ ol ol ol {
 .ct-button--regular.ct-button--tertiary {
   padding: 0;
 }
-@media (min-width: 0) {
-  .ct-button--small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-button--small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-button--small {
   border-width: 0.0625rem;
@@ -4502,23 +4170,12 @@ ol ol ol {
   border-color: var(--ct-color-dark-interaction-hover-background);
   color: var(--ct-color-dark-interaction-text);
 }
-@media (min-width: 0) {
-  .ct-chip--large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-chip--large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+.ct-chip--large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-chip--large {
   padding: 1rem 3rem;
@@ -4526,23 +4183,12 @@ ol ol ol {
 .ct-chip--large__dismiss {
   margin-left: 1.5rem;
 }
-@media (min-width: 0) {
-  .ct-chip--regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-chip--regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-chip--regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-chip--regular {
   padding: 0.875rem 2.5rem;
@@ -4550,23 +4196,12 @@ ol ol ol {
 .ct-chip--regular__dismiss {
   margin-left: 1.5rem;
 }
-@media (min-width: 0) {
-  .ct-chip--small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-chip--small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-chip--small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-chip--small {
   border-width: 0.0625rem;
@@ -4631,42 +4266,18 @@ ol ol ol {
 .ct-field-description {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-field-description {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-field-description {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-field-description--large {
-    font-size: var(--ct-typography-text-large-xxs-font-size);
-    line-height: var(--ct-typography-text-large-xxs-line-height);
-    font-family: var(--ct-typography-text-large-xxs-font-name);
-    font-weight: var(--ct-typography-text-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-field-description--large {
-    font-size: var(--ct-typography-text-large-m-font-size);
-    line-height: var(--ct-typography-text-large-m-line-height);
-    font-family: var(--ct-typography-text-large-m-font-name);
-    font-weight: var(--ct-typography-text-large-m-font-weight);
-    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
-  }
+.ct-field-description--large {
+  font-size: var(--ct-typography-text-large-font-size);
+  line-height: var(--ct-typography-text-large-line-height);
+  font-family: var(--ct-typography-text-large-font-name);
+  font-weight: var(--ct-typography-text-large-font-weight);
+  letter-spacing: var(--ct-typography-text-large-letter-spacing);
 }
 .ct-field-description.ct-theme-light {
   color: var(--ct-field-description-light-color);
@@ -4687,24 +4298,11 @@ ol ol ol {
   padding: 0.5rem;
   border-width: 0.0625rem;
   border-style: solid;
-}
-@media (min-width: 0) {
-  .ct-field-message {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-field-message {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-field-message .ct-field-message__icon {
   vertical-align: top;
@@ -4877,28 +4475,15 @@ ol ol ol {
 .ct-input {
   appearance: none;
   margin: 0;
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-input[disabled] {
   opacity: 40%;
   pointer-events: none;
-}
-@media (min-width: 0) {
-  .ct-input {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-input {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
 }
 .ct-input {
   border-radius: 0.25rem;
@@ -4999,118 +4584,50 @@ ol ol ol {
 }
 
 .ct-label {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   display: block;
   margin: 0;
   margin-bottom: 0.5rem;
   -webkit-tap-highlight-color: transparent;
 }
-@media (min-width: 0) {
-  .ct-label {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
+.ct-label.ct-label--extra-large {
+  font-size: var(--ct-typography-label-extra-large-font-size);
+  line-height: var(--ct-typography-label-extra-large-line-height);
+  font-family: var(--ct-typography-label-extra-large-font-name);
+  font-weight: var(--ct-typography-label-extra-large-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-large-letter-spacing);
 }
-@media (min-width: 768px) {
-  .ct-label {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-label.ct-label--large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-label.ct-label--extra-large {
-    font-size: var(--ct-typography-label-extra-large-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-large-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-large-xxs-letter-spacing);
-  }
+.ct-label.ct-label--regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
-@media (min-width: 768px) {
-  .ct-label.ct-label--extra-large {
-    font-size: var(--ct-typography-label-extra-large-m-font-size);
-    line-height: var(--ct-typography-label-extra-large-m-line-height);
-    font-family: var(--ct-typography-label-extra-large-m-font-name);
-    font-weight: var(--ct-typography-label-extra-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-large-m-letter-spacing);
-  }
+.ct-label.ct-label--small {
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-label.ct-label--large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label.ct-label--large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-label.ct-label--regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label.ct-label--regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-label.ct-label--small {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label.ct-label--small {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-label.ct-label--extra-small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-label.ct-label--extra-small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-label.ct-label--extra-small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-label.ct-theme-light {
   color: var(--ct-label-light-color);
@@ -5125,23 +4642,12 @@ ol ol ol {
   color: var(--ct-label-dark-required-color);
 }
 
-@media (min-width: 0) {
-  .ct-link {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-link {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-link {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-link {
   text-decoration: none;
@@ -5211,6 +4717,11 @@ ol ol ol {
 .ct-paragraph {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-paragraph--no-margin {
   margin-bottom: 0;
@@ -5252,24 +4763,6 @@ ol ol ol {
 .ct-paragraph sup {
   top: -0.5em;
 }
-@media (min-width: 0) {
-  .ct-paragraph {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
 .ct-paragraph h1,
 .ct-paragraph h2,
 .ct-paragraph h3,
@@ -5278,23 +4771,12 @@ ol ol ol {
 .ct-paragraph h6 {
   margin: 0;
 }
-@media (min-width: 0) {
-  .ct-paragraph h1 {
-    font-size: var(--ct-typography-heading-1-xxs-font-size);
-    line-height: var(--ct-typography-heading-1-xxs-line-height);
-    font-family: var(--ct-typography-heading-1-xxs-font-name);
-    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph h1 {
-    font-size: var(--ct-typography-heading-1-m-font-size);
-    line-height: var(--ct-typography-heading-1-m-line-height);
-    font-family: var(--ct-typography-heading-1-m-font-name);
-    font-weight: var(--ct-typography-heading-1-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
-  }
+.ct-paragraph h1 {
+  font-size: var(--ct-typography-heading-1-font-size);
+  line-height: var(--ct-typography-heading-1-line-height);
+  font-family: var(--ct-typography-heading-1-font-name);
+  font-weight: var(--ct-typography-heading-1-font-weight);
+  letter-spacing: var(--ct-typography-heading-1-letter-spacing);
 }
 .ct-paragraph h1 {
   margin-bottom: 1.5rem;
@@ -5304,23 +4786,12 @@ ol ol ol {
     margin-bottom: 2rem;
   }
 }
-@media (min-width: 0) {
-  .ct-paragraph h2 {
-    font-size: var(--ct-typography-heading-2-xxs-font-size);
-    line-height: var(--ct-typography-heading-2-xxs-line-height);
-    font-family: var(--ct-typography-heading-2-xxs-font-name);
-    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph h2 {
-    font-size: var(--ct-typography-heading-2-m-font-size);
-    line-height: var(--ct-typography-heading-2-m-line-height);
-    font-family: var(--ct-typography-heading-2-m-font-name);
-    font-weight: var(--ct-typography-heading-2-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
-  }
+.ct-paragraph h2 {
+  font-size: var(--ct-typography-heading-2-font-size);
+  line-height: var(--ct-typography-heading-2-line-height);
+  font-family: var(--ct-typography-heading-2-font-name);
+  font-weight: var(--ct-typography-heading-2-font-weight);
+  letter-spacing: var(--ct-typography-heading-2-letter-spacing);
 }
 .ct-paragraph h2 {
   margin-bottom: 1.5rem;
@@ -5330,23 +4801,12 @@ ol ol ol {
     margin-bottom: 2rem;
   }
 }
-@media (min-width: 0) {
-  .ct-paragraph h3 {
-    font-size: var(--ct-typography-heading-3-xxs-font-size);
-    line-height: var(--ct-typography-heading-3-xxs-line-height);
-    font-family: var(--ct-typography-heading-3-xxs-font-name);
-    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph h3 {
-    font-size: var(--ct-typography-heading-3-m-font-size);
-    line-height: var(--ct-typography-heading-3-m-line-height);
-    font-family: var(--ct-typography-heading-3-m-font-name);
-    font-weight: var(--ct-typography-heading-3-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
-  }
+.ct-paragraph h3 {
+  font-size: var(--ct-typography-heading-3-font-size);
+  line-height: var(--ct-typography-heading-3-line-height);
+  font-family: var(--ct-typography-heading-3-font-name);
+  font-weight: var(--ct-typography-heading-3-font-weight);
+  letter-spacing: var(--ct-typography-heading-3-letter-spacing);
 }
 .ct-paragraph h3 {
   margin-bottom: 1rem;
@@ -5356,23 +4816,12 @@ ol ol ol {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 0) {
-  .ct-paragraph h4 {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph h4 {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-paragraph h4 {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-paragraph h4 {
   margin-bottom: 1rem;
@@ -5382,23 +4831,12 @@ ol ol ol {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 0) {
-  .ct-paragraph h5 {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph h5 {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-paragraph h5 {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-paragraph h5 {
   margin-bottom: 0.5rem;
@@ -5444,23 +4882,12 @@ ol ol ol {
   text-decoration: none;
   padding: 0.1875rem 0 0.25rem;
 }
-@media (min-width: 0) {
-  .ct-paragraph blockquote {
-    font-size: var(--ct-typography-quote-xxs-font-size);
-    line-height: var(--ct-typography-quote-xxs-line-height);
-    font-family: var(--ct-typography-quote-xxs-font-name);
-    font-weight: var(--ct-typography-quote-xxs-font-weight);
-    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph blockquote {
-    font-size: var(--ct-typography-quote-m-font-size);
-    line-height: var(--ct-typography-quote-m-line-height);
-    font-family: var(--ct-typography-quote-m-font-name);
-    font-weight: var(--ct-typography-quote-m-font-weight);
-    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
-  }
+.ct-paragraph blockquote {
+  font-size: var(--ct-typography-quote-font-size);
+  line-height: var(--ct-typography-quote-line-height);
+  font-family: var(--ct-typography-quote-font-name);
+  font-weight: var(--ct-typography-quote-font-weight);
+  letter-spacing: var(--ct-typography-quote-letter-spacing);
 }
 .ct-paragraph blockquote {
   position: relative;
@@ -5480,44 +4907,22 @@ ol ol ol {
   left: 0;
   border-radius: 0.25rem;
 }
-@media (min-width: 0) {
-  .ct-paragraph blockquote p {
-    font-size: var(--ct-typography-quote-xxs-font-size);
-    line-height: var(--ct-typography-quote-xxs-line-height);
-    font-family: var(--ct-typography-quote-xxs-font-name);
-    font-weight: var(--ct-typography-quote-xxs-font-weight);
-    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph blockquote p {
-    font-size: var(--ct-typography-quote-m-font-size);
-    line-height: var(--ct-typography-quote-m-line-height);
-    font-family: var(--ct-typography-quote-m-font-name);
-    font-weight: var(--ct-typography-quote-m-font-weight);
-    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
-  }
+.ct-paragraph blockquote p {
+  font-size: var(--ct-typography-quote-font-size);
+  line-height: var(--ct-typography-quote-line-height);
+  font-family: var(--ct-typography-quote-font-name);
+  font-weight: var(--ct-typography-quote-font-weight);
+  letter-spacing: var(--ct-typography-quote-letter-spacing);
 }
 .ct-paragraph blockquote p {
   margin-bottom: 0;
 }
-@media (min-width: 0) {
-  .ct-paragraph blockquote cite {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph blockquote cite {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-paragraph blockquote cite {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-paragraph blockquote cite {
   padding-top: 1rem;
@@ -5587,44 +4992,19 @@ ol ol ol {
   border-spacing: 0;
   text-align: left;
   vertical-align: middle;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-paragraph table {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph table {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-paragraph table thead,
-  .ct-paragraph table tfoot {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph table thead,
-  .ct-paragraph table tfoot {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-paragraph table thead,
+.ct-paragraph table tfoot {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-paragraph table tr th,
 .ct-paragraph table tr td {
@@ -5634,45 +5014,21 @@ ol ol ol {
 .ct-paragraph table caption {
   text-align: left;
   padding: 0.75rem 0;
-}
-@media (min-width: 0) {
-  .ct-paragraph table caption {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph table caption {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-paragraph table.ct-paragraph table--caption-after {
   caption-side: bottom;
 }
-@media (min-width: 0) {
-  .ct-paragraph table.ct-paragraph table--caption-after caption {
-    font-size: var(--ct-typography-text-small-xxs-font-size);
-    line-height: var(--ct-typography-text-small-xxs-line-height);
-    font-family: var(--ct-typography-text-small-xxs-font-name);
-    font-weight: var(--ct-typography-text-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph table.ct-paragraph table--caption-after caption {
-    font-size: var(--ct-typography-text-small-m-font-size);
-    line-height: var(--ct-typography-text-small-m-line-height);
-    font-family: var(--ct-typography-text-small-m-font-name);
-    font-weight: var(--ct-typography-text-small-m-font-weight);
-    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
-  }
+.ct-paragraph table.ct-paragraph table--caption-after caption {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 @media (max-width: 767px) {
   .ct-paragraph table:not(.ct-table--data) thead,
@@ -5729,103 +5085,44 @@ ol ol ol {
     flex-shrink: 0;
     vertical-align: middle;
     padding-right: 1rem;
+    font-size: var(--ct-typography-label-regular-font-size);
+    line-height: var(--ct-typography-label-regular-line-height);
+    font-family: var(--ct-typography-label-regular-font-name);
+    font-weight: var(--ct-typography-label-regular-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   }
-}
-@media (max-width: 767px) and (min-width: 0) {
-  .ct-paragraph table:not(.ct-table--data) tbody tr td::before {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (max-width: 767px) and (min-width: 768px) {
-  .ct-paragraph table:not(.ct-table--data) tbody tr td::before {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
-}
-@media (max-width: 767px) {
   .ct-paragraph table:not(.ct-table--data) tr th,
   .ct-paragraph table:not(.ct-table--data) tr td {
     padding: 0.75rem 0.5rem;
   }
 }
-@media (min-width: 0) {
-  .ct-paragraph.ct-paragraph--extra-large {
-    font-size: var(--ct-typography-text-extra-large-xxs-font-size);
-    line-height: var(--ct-typography-text-extra-large-xxs-line-height);
-    font-family: var(--ct-typography-text-extra-large-xxs-font-name);
-    font-weight: var(--ct-typography-text-extra-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-extra-large-xxs-letter-spacing);
-  }
+.ct-paragraph.ct-paragraph--extra-large {
+  font-size: var(--ct-typography-text-extra-large-font-size);
+  line-height: var(--ct-typography-text-extra-large-line-height);
+  font-family: var(--ct-typography-text-extra-large-font-name);
+  font-weight: var(--ct-typography-text-extra-large-font-weight);
+  letter-spacing: var(--ct-typography-text-extra-large-letter-spacing);
 }
-@media (min-width: 768px) {
-  .ct-paragraph.ct-paragraph--extra-large {
-    font-size: var(--ct-typography-text-extra-large-m-font-size);
-    line-height: var(--ct-typography-text-extra-large-m-line-height);
-    font-family: var(--ct-typography-text-extra-large-m-font-name);
-    font-weight: var(--ct-typography-text-extra-large-m-font-weight);
-    letter-spacing: var(--ct-typography-text-extra-large-m-letter-spacing);
-  }
+.ct-paragraph.ct-paragraph--large {
+  font-size: var(--ct-typography-text-large-font-size);
+  line-height: var(--ct-typography-text-large-line-height);
+  font-family: var(--ct-typography-text-large-font-name);
+  font-weight: var(--ct-typography-text-large-font-weight);
+  letter-spacing: var(--ct-typography-text-large-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-paragraph.ct-paragraph--large {
-    font-size: var(--ct-typography-text-large-xxs-font-size);
-    line-height: var(--ct-typography-text-large-xxs-line-height);
-    font-family: var(--ct-typography-text-large-xxs-font-name);
-    font-weight: var(--ct-typography-text-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
-  }
+.ct-paragraph.ct-paragraph--regular {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 768px) {
-  .ct-paragraph.ct-paragraph--large {
-    font-size: var(--ct-typography-text-large-m-font-size);
-    line-height: var(--ct-typography-text-large-m-line-height);
-    font-family: var(--ct-typography-text-large-m-font-name);
-    font-weight: var(--ct-typography-text-large-m-font-weight);
-    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-paragraph.ct-paragraph--regular {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph.ct-paragraph--regular {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-paragraph.ct-paragraph--small {
-    font-size: var(--ct-typography-text-small-xxs-font-size);
-    line-height: var(--ct-typography-text-small-xxs-line-height);
-    font-family: var(--ct-typography-text-small-xxs-font-name);
-    font-weight: var(--ct-typography-text-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-paragraph.ct-paragraph--small {
-    font-size: var(--ct-typography-text-small-m-font-size);
-    line-height: var(--ct-typography-text-small-m-line-height);
-    font-family: var(--ct-typography-text-small-m-font-name);
-    font-weight: var(--ct-typography-text-small-m-font-weight);
-    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
-  }
+.ct-paragraph.ct-paragraph--small {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 .ct-paragraph.ct-theme-light {
   color: var(--ct-color-light-body);
@@ -6257,28 +5554,15 @@ ol ol ol {
 .ct-select {
   appearance: none;
   margin: 0;
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-select[disabled] {
   opacity: 40%;
   pointer-events: none;
-}
-@media (min-width: 0) {
-  .ct-select {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-select {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
 }
 .ct-select {
   width: 100%;
@@ -6386,44 +5670,19 @@ ol ol ol {
   border-spacing: 0;
   text-align: left;
   vertical-align: middle;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-table {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-table {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-table thead,
-  .ct-table tfoot {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-table thead,
-  .ct-table tfoot {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-table thead,
+.ct-table tfoot {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-table tr th,
 .ct-table tr td {
@@ -6433,45 +5692,21 @@ ol ol ol {
 .ct-table caption {
   text-align: left;
   padding: 0.75rem 0;
-}
-@media (min-width: 0) {
-  .ct-table caption {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-table caption {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-table.ct-table--caption-after {
   caption-side: bottom;
 }
-@media (min-width: 0) {
-  .ct-table.ct-table--caption-after caption {
-    font-size: var(--ct-typography-text-small-xxs-font-size);
-    line-height: var(--ct-typography-text-small-xxs-line-height);
-    font-family: var(--ct-typography-text-small-xxs-font-name);
-    font-weight: var(--ct-typography-text-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-table.ct-table--caption-after caption {
-    font-size: var(--ct-typography-text-small-m-font-size);
-    line-height: var(--ct-typography-text-small-m-line-height);
-    font-family: var(--ct-typography-text-small-m-font-name);
-    font-weight: var(--ct-typography-text-small-m-font-weight);
-    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
-  }
+.ct-table.ct-table--caption-after caption {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 @media (max-width: 767px) {
   .ct-table:not(.ct-table--data) thead,
@@ -6528,27 +5763,12 @@ ol ol ol {
     flex-shrink: 0;
     vertical-align: middle;
     padding-right: 1rem;
+    font-size: var(--ct-typography-label-regular-font-size);
+    line-height: var(--ct-typography-label-regular-line-height);
+    font-family: var(--ct-typography-label-regular-font-name);
+    font-weight: var(--ct-typography-label-regular-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   }
-}
-@media (max-width: 767px) and (min-width: 0) {
-  .ct-table:not(.ct-table--data) tbody tr td::before {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (max-width: 767px) and (min-width: 768px) {
-  .ct-table:not(.ct-table--data) tbody tr td::before {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
-}
-@media (max-width: 767px) {
   .ct-table:not(.ct-table--data) tr th,
   .ct-table:not(.ct-table--data) tr td {
     padding: 0.75rem 0.5rem;
@@ -6658,24 +5878,11 @@ ol ol ol {
   border-style: solid;
   border-width: 0.0625rem;
   display: inline-block;
-}
-@media (min-width: 0) {
-  .ct-tag {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-tag {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-tag {
   text-decoration: none;
@@ -6758,28 +5965,15 @@ ol ol ol {
 .ct-textarea {
   appearance: none;
   margin: 0;
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-textarea[disabled] {
   opacity: 40%;
   pointer-events: none;
-}
-@media (min-width: 0) {
-  .ct-textarea {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-textarea {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
 }
 .ct-textarea {
   box-sizing: border-box;
@@ -6861,28 +6055,15 @@ ol ol ol {
 .ct-textfield {
   appearance: none;
   margin: 0;
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-textfield[disabled] {
   opacity: 40%;
   pointer-events: none;
-}
-@media (min-width: 0) {
-  .ct-textfield {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-textfield {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
 }
 .ct-textfield {
   border-radius: 0.25rem;
@@ -7161,6 +6342,13 @@ ol ol ol {
   outline-style: solid;
 }
 
+.ct-basic-content {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
+}
 @media (min-width: 768px) {
   .ct-basic-content.ct-basic-content--with-background {
     padding-left: 3.5rem;
@@ -7204,24 +6392,6 @@ ol ol ol {
 .ct-basic-content sup {
   top: -0.5em;
 }
-@media (min-width: 0) {
-  .ct-basic-content {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
 .ct-basic-content h1,
 .ct-basic-content h2,
 .ct-basic-content h3,
@@ -7230,23 +6400,12 @@ ol ol ol {
 .ct-basic-content h6 {
   margin: 0;
 }
-@media (min-width: 0) {
-  .ct-basic-content h1 {
-    font-size: var(--ct-typography-heading-1-xxs-font-size);
-    line-height: var(--ct-typography-heading-1-xxs-line-height);
-    font-family: var(--ct-typography-heading-1-xxs-font-name);
-    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content h1 {
-    font-size: var(--ct-typography-heading-1-m-font-size);
-    line-height: var(--ct-typography-heading-1-m-line-height);
-    font-family: var(--ct-typography-heading-1-m-font-name);
-    font-weight: var(--ct-typography-heading-1-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
-  }
+.ct-basic-content h1 {
+  font-size: var(--ct-typography-heading-1-font-size);
+  line-height: var(--ct-typography-heading-1-line-height);
+  font-family: var(--ct-typography-heading-1-font-name);
+  font-weight: var(--ct-typography-heading-1-font-weight);
+  letter-spacing: var(--ct-typography-heading-1-letter-spacing);
 }
 .ct-basic-content h1 {
   margin-bottom: 1.5rem;
@@ -7256,23 +6415,12 @@ ol ol ol {
     margin-bottom: 2rem;
   }
 }
-@media (min-width: 0) {
-  .ct-basic-content h2 {
-    font-size: var(--ct-typography-heading-2-xxs-font-size);
-    line-height: var(--ct-typography-heading-2-xxs-line-height);
-    font-family: var(--ct-typography-heading-2-xxs-font-name);
-    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content h2 {
-    font-size: var(--ct-typography-heading-2-m-font-size);
-    line-height: var(--ct-typography-heading-2-m-line-height);
-    font-family: var(--ct-typography-heading-2-m-font-name);
-    font-weight: var(--ct-typography-heading-2-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
-  }
+.ct-basic-content h2 {
+  font-size: var(--ct-typography-heading-2-font-size);
+  line-height: var(--ct-typography-heading-2-line-height);
+  font-family: var(--ct-typography-heading-2-font-name);
+  font-weight: var(--ct-typography-heading-2-font-weight);
+  letter-spacing: var(--ct-typography-heading-2-letter-spacing);
 }
 .ct-basic-content h2 {
   margin-bottom: 1.5rem;
@@ -7282,23 +6430,12 @@ ol ol ol {
     margin-bottom: 2rem;
   }
 }
-@media (min-width: 0) {
-  .ct-basic-content h3 {
-    font-size: var(--ct-typography-heading-3-xxs-font-size);
-    line-height: var(--ct-typography-heading-3-xxs-line-height);
-    font-family: var(--ct-typography-heading-3-xxs-font-name);
-    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content h3 {
-    font-size: var(--ct-typography-heading-3-m-font-size);
-    line-height: var(--ct-typography-heading-3-m-line-height);
-    font-family: var(--ct-typography-heading-3-m-font-name);
-    font-weight: var(--ct-typography-heading-3-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
-  }
+.ct-basic-content h3 {
+  font-size: var(--ct-typography-heading-3-font-size);
+  line-height: var(--ct-typography-heading-3-line-height);
+  font-family: var(--ct-typography-heading-3-font-name);
+  font-weight: var(--ct-typography-heading-3-font-weight);
+  letter-spacing: var(--ct-typography-heading-3-letter-spacing);
 }
 .ct-basic-content h3 {
   margin-bottom: 1rem;
@@ -7308,23 +6445,12 @@ ol ol ol {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 0) {
-  .ct-basic-content h4 {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content h4 {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-basic-content h4 {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-basic-content h4 {
   margin-bottom: 1rem;
@@ -7334,23 +6460,12 @@ ol ol ol {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 0) {
-  .ct-basic-content h5 {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content h5 {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-basic-content h5 {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-basic-content h5 {
   margin-bottom: 0.5rem;
@@ -7396,23 +6511,12 @@ ol ol ol {
   text-decoration: none;
   padding: 0.1875rem 0 0.25rem;
 }
-@media (min-width: 0) {
-  .ct-basic-content blockquote {
-    font-size: var(--ct-typography-quote-xxs-font-size);
-    line-height: var(--ct-typography-quote-xxs-line-height);
-    font-family: var(--ct-typography-quote-xxs-font-name);
-    font-weight: var(--ct-typography-quote-xxs-font-weight);
-    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content blockquote {
-    font-size: var(--ct-typography-quote-m-font-size);
-    line-height: var(--ct-typography-quote-m-line-height);
-    font-family: var(--ct-typography-quote-m-font-name);
-    font-weight: var(--ct-typography-quote-m-font-weight);
-    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
-  }
+.ct-basic-content blockquote {
+  font-size: var(--ct-typography-quote-font-size);
+  line-height: var(--ct-typography-quote-line-height);
+  font-family: var(--ct-typography-quote-font-name);
+  font-weight: var(--ct-typography-quote-font-weight);
+  letter-spacing: var(--ct-typography-quote-letter-spacing);
 }
 .ct-basic-content blockquote {
   position: relative;
@@ -7432,44 +6536,22 @@ ol ol ol {
   left: 0;
   border-radius: 0.25rem;
 }
-@media (min-width: 0) {
-  .ct-basic-content blockquote p {
-    font-size: var(--ct-typography-quote-xxs-font-size);
-    line-height: var(--ct-typography-quote-xxs-line-height);
-    font-family: var(--ct-typography-quote-xxs-font-name);
-    font-weight: var(--ct-typography-quote-xxs-font-weight);
-    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content blockquote p {
-    font-size: var(--ct-typography-quote-m-font-size);
-    line-height: var(--ct-typography-quote-m-line-height);
-    font-family: var(--ct-typography-quote-m-font-name);
-    font-weight: var(--ct-typography-quote-m-font-weight);
-    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
-  }
+.ct-basic-content blockquote p {
+  font-size: var(--ct-typography-quote-font-size);
+  line-height: var(--ct-typography-quote-line-height);
+  font-family: var(--ct-typography-quote-font-name);
+  font-weight: var(--ct-typography-quote-font-weight);
+  letter-spacing: var(--ct-typography-quote-letter-spacing);
 }
 .ct-basic-content blockquote p {
   margin-bottom: 0;
 }
-@media (min-width: 0) {
-  .ct-basic-content blockquote cite {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content blockquote cite {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-basic-content blockquote cite {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-basic-content blockquote cite {
   padding-top: 1rem;
@@ -7539,44 +6621,19 @@ ol ol ol {
   border-spacing: 0;
   text-align: left;
   vertical-align: middle;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-basic-content table {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content table {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-basic-content table thead,
-  .ct-basic-content table tfoot {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content table thead,
-  .ct-basic-content table tfoot {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-basic-content table thead,
+.ct-basic-content table tfoot {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-basic-content table tr th,
 .ct-basic-content table tr td {
@@ -7586,45 +6643,21 @@ ol ol ol {
 .ct-basic-content table caption {
   text-align: left;
   padding: 0.75rem 0;
-}
-@media (min-width: 0) {
-  .ct-basic-content table caption {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content table caption {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-basic-content table.ct-basic-content table--caption-after {
   caption-side: bottom;
 }
-@media (min-width: 0) {
-  .ct-basic-content table.ct-basic-content table--caption-after caption {
-    font-size: var(--ct-typography-text-small-xxs-font-size);
-    line-height: var(--ct-typography-text-small-xxs-line-height);
-    font-family: var(--ct-typography-text-small-xxs-font-name);
-    font-weight: var(--ct-typography-text-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-basic-content table.ct-basic-content table--caption-after caption {
-    font-size: var(--ct-typography-text-small-m-font-size);
-    line-height: var(--ct-typography-text-small-m-line-height);
-    font-family: var(--ct-typography-text-small-m-font-name);
-    font-weight: var(--ct-typography-text-small-m-font-weight);
-    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
-  }
+.ct-basic-content table.ct-basic-content table--caption-after caption {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 @media (max-width: 767px) {
   .ct-basic-content table:not(.ct-table--data) thead,
@@ -7681,27 +6714,12 @@ ol ol ol {
     flex-shrink: 0;
     vertical-align: middle;
     padding-right: 1rem;
+    font-size: var(--ct-typography-label-regular-font-size);
+    line-height: var(--ct-typography-label-regular-line-height);
+    font-family: var(--ct-typography-label-regular-font-name);
+    font-weight: var(--ct-typography-label-regular-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   }
-}
-@media (max-width: 767px) and (min-width: 0) {
-  .ct-basic-content table:not(.ct-table--data) tbody tr td::before {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (max-width: 767px) and (min-width: 768px) {
-  .ct-basic-content table:not(.ct-table--data) tbody tr td::before {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
-}
-@media (max-width: 767px) {
   .ct-basic-content table:not(.ct-table--data) tr th,
   .ct-basic-content table:not(.ct-table--data) tr td {
     padding: 0.75rem 0.5rem;
@@ -7935,23 +6953,12 @@ ol ol ol {
   background-color: var(--ct-basic-content-dark-background-color);
 }
 
-@media (min-width: 0) {
-  .ct-breadcrumb {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-breadcrumb {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-breadcrumb {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-breadcrumb.ct-theme-light .ct-breadcrumb__links__separator {
   color: var(--ct-breadcrumb-light-color);
@@ -8079,23 +7086,12 @@ ol ol ol {
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 0) {
-  .ct-event-card .ct-event-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-event-card .ct-event-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-event-card .ct-event-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-event-card .ct-event-card__title-link {
   font-size: inherit;
@@ -8115,23 +7111,12 @@ ol ol ol {
 .ct-event-card .ct-event-card__title-link:visited {
   color: inherit;
 }
-@media (min-width: 0) {
-  .ct-event-card .ct-event-card__location {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-event-card .ct-event-card__location {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-event-card .ct-event-card__location {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-event-card .ct-event-card__tags {
   display: flex;
@@ -8269,25 +7254,12 @@ ol ol ol {
   max-height: 6.25rem;
 }
 .ct-fast-fact-card__title {
+  font-size: var(--ct-typography-display-font-size);
+  line-height: var(--ct-typography-display-line-height);
+  font-family: var(--ct-typography-display-font-name);
+  font-weight: var(--ct-typography-display-font-weight);
+  letter-spacing: var(--ct-typography-display-letter-spacing);
   text-align: center;
-}
-@media (min-width: 0) {
-  .ct-fast-fact-card__title {
-    font-size: var(--ct-typography-display-xxs-font-size);
-    line-height: var(--ct-typography-display-xxs-line-height);
-    font-family: var(--ct-typography-display-xxs-font-name);
-    font-weight: var(--ct-typography-display-xxs-font-weight);
-    letter-spacing: var(--ct-typography-display-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-fast-fact-card__title {
-    font-size: var(--ct-typography-display-m-font-size);
-    line-height: var(--ct-typography-display-m-line-height);
-    font-family: var(--ct-typography-display-m-font-name);
-    font-weight: var(--ct-typography-display-m-font-weight);
-    letter-spacing: var(--ct-typography-display-m-letter-spacing);
-  }
 }
 .ct-fast-fact-card__title-link {
   font-size: inherit;
@@ -8414,23 +7386,12 @@ ol ol ol {
   border-radius: 0.25rem;
   object-fit: contain;
 }
-@media (min-width: 0) {
-  .ct-figure .ct-figure__caption {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-figure .ct-figure__caption {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-figure .ct-figure__caption {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-figure.ct-theme-light .ct-figure__caption {
   color: var(--ct-figure-light-caption-color);
@@ -8448,26 +7409,13 @@ ol ol ol {
   padding-right: 2rem;
 }
 .ct-group-filter .ct-group-filter__title {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   white-space: nowrap;
   margin: 0;
-}
-@media (min-width: 0) {
-  .ct-group-filter .ct-group-filter__title {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-group-filter .ct-group-filter__title {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
 }
 .ct-group-filter .ct-group-filter__row {
   flex-direction: column;
@@ -8654,23 +7602,12 @@ ol ol ol {
   width: 1em;
   object-fit: cover;
 }
-@media (min-width: 0) {
-  .ct-navigation-card .ct-navigation-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-navigation-card .ct-navigation-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-navigation-card .ct-navigation-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-navigation-card .ct-navigation-card__title-link {
   font-size: inherit;
@@ -8792,23 +7729,12 @@ ol ol ol {
     padding: 1.5rem 1.5rem 1.5rem 1.875rem;
   }
 }
-@media (min-width: 0) {
-  .ct-next-step .ct-next-step__title {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-next-step .ct-next-step__title {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-next-step .ct-next-step__title {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-next-step .ct-next-step__title__link {
   font-size: inherit;
@@ -8838,23 +7764,12 @@ ol ol ol {
   background-color: var(--ct-next-step-dark-stripe-background-color);
 }
 
-@media (min-width: 0) {
-  .ct-pagination {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-pagination {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-pagination {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-pagination {
   display: flex;
@@ -9022,23 +7937,12 @@ ol ol ol {
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 0) {
-  .ct-promo-card .ct-promo-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-promo-card .ct-promo-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-promo-card .ct-promo-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-promo-card .ct-promo-card__title-link {
   font-size: inherit;
@@ -9200,23 +8104,12 @@ ol ol ol {
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 0) {
-  .ct-publication-card .ct-publication-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-publication-card .ct-publication-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-publication-card .ct-publication-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-publication-card .ct-publication-card__title-bar {
   display: flex;
@@ -9246,25 +8139,12 @@ ol ol ol {
   color: inherit;
 }
 .ct-publication-card .ct-publication-card__filename {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   padding-right: 1.5rem;
-}
-@media (min-width: 0) {
-  .ct-publication-card .ct-publication-card__filename {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-publication-card .ct-publication-card__filename {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
 }
 .ct-publication-card .ct-publication-card__content-bottom {
   display: flex;
@@ -9326,23 +8206,12 @@ ol ol ol {
   display: flex;
   align-items: center;
 }
-@media (min-width: 0) {
-  .ct-search__link {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-search__link {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-search__link {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-search__link {
   border-bottom: solid 0.25rem;
@@ -9491,26 +8360,13 @@ ol ol ol {
   }
 }
 .ct-single-filter .ct-single-filter__title {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   margin: 0;
   margin-bottom: 1.5rem;
-}
-@media (min-width: 0) {
-  .ct-single-filter .ct-single-filter__title {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-single-filter .ct-single-filter__title {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
 }
 .ct-single-filter .ct-single-filter__submit {
   white-space: nowrap;
@@ -9573,23 +8429,12 @@ ol ol ol {
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 0) {
-  .ct-snippet .ct-snippet__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-snippet .ct-snippet__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-snippet .ct-snippet__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-snippet .ct-snippet__title-link {
   font-size: inherit;
@@ -9702,25 +8547,12 @@ ol ol ol {
   left: 0;
 }
 .ct-subject-card .ct-subject-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
   z-index: 1;
-}
-@media (min-width: 0) {
-  .ct-subject-card .ct-subject-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-subject-card .ct-subject-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
 }
 .ct-subject-card .ct-subject-card__title-link {
   font-size: inherit;
@@ -9800,23 +8632,12 @@ ol ol ol {
 .ct-table-of-contents--position-after, .ct-table-of-contents--position-append {
   margin-top: 2rem;
 }
-@media (min-width: 0) {
-  .ct-table-of-contents__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-table-of-contents__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-table-of-contents__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-table-of-contents__title {
   margin-top: 0;
@@ -9827,23 +8648,12 @@ ol ol ol {
   padding: 0;
   margin: 0;
 }
-@media (min-width: 0) {
-  .ct-table-of-contents__link {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-table-of-contents__link {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-table-of-contents__link {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-table-of-contents__link {
   display: block;
@@ -9934,23 +8744,12 @@ ol ol ol {
   border-bottom-style: solid;
   border-bottom-width: 0.0625rem;
 }
-@media (min-width: 0) {
-  .ct-tabs .ct-tabs__links .ct-link {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-tabs .ct-tabs__links .ct-link {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-tabs .ct-tabs__links .ct-link {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-tabs .ct-tabs__links .ct-link {
   margin-bottom: -0.0625rem;
@@ -10021,23 +8820,12 @@ ol ol ol {
   background-color: transparent;
   padding: 0;
 }
-@media (min-width: 0) {
-  .ct-tooltip .ct-tooltip__description {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-tooltip .ct-tooltip__description {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-tooltip .ct-tooltip__description {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-tooltip .ct-tooltip__description {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
@@ -10236,28 +9024,15 @@ ol ol ol {
 .ct-alert {
   position: relative;
   padding: 1rem;
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 @media (min-width: 768px) {
   .ct-alert {
     padding: 1.5rem;
-  }
-}
-@media (min-width: 0) {
-  .ct-alert {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-alert {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-alert .ct-alert__title {
@@ -10756,25 +9531,12 @@ ol ol ol {
   }
 }
 .ct-list__results-count {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   margin: 0;
-}
-@media (min-width: 0) {
-  .ct-list__results-count {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-list__results-count {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
 }
 .ct-list__rows .col,
 .ct-list__rows [class*=col-] {
@@ -10818,24 +9580,11 @@ ol ol ol {
   border-left: solid 0.375rem transparent;
   padding: 1.5rem 1.5rem 1.5rem 0.5rem;
   width: 100%;
-}
-@media (min-width: 0) {
-  .ct-message .ct-message__inner {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-message .ct-message__inner {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-message .ct-message__icon {
   vertical-align: top;
@@ -10975,24 +9724,11 @@ ol ol ol {
 .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
   width: 100%;
   padding: 1rem;
-}
-@media (min-width: 0) {
-  .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
   text-decoration: none;
@@ -11037,6 +9773,11 @@ ol ol ol {
 .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
   width: 100%;
   padding: 1rem;
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
   text-decoration: none;
@@ -11052,24 +9793,6 @@ ol ol ol {
 }
 .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link:focus-visible .ct-text-icon__text {
   text-decoration: none;
-}
-@media (min-width: 0) {
-  .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
@@ -11101,24 +9824,11 @@ ol ol ol {
   float: none;
   font-weight: bold;
   background-color: transparent;
-}
-@media (min-width: 0) {
-  .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] .ct-icon {
   display: block;
@@ -11253,23 +9963,12 @@ ol ol ol {
   icon-color: var(--ct-mobile-navigation-dark-subsection-heading-icon-color);
 }
 
-@media (min-width: 0) {
-  .ct-mobile-navigation-trigger {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-mobile-navigation-trigger {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-mobile-navigation-trigger {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 @media print {
   .ct-mobile-navigation-trigger {
@@ -11329,25 +10028,12 @@ ol ol ol {
 }
 
 .ct-navigation .ct-navigation__title {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
   margin-block: 1rem;
-}
-@media (min-width: 0) {
-  .ct-navigation .ct-navigation__title {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-navigation .ct-navigation__title {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
 }
 .ct-navigation .ct-navigation__items {
   height: 100%;
@@ -11567,23 +10253,12 @@ ol ol ol {
   margin-top: 2rem;
   flex-basis: 25%;
 }
-@media (min-width: 0) {
-  .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-link {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-link {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-link {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__sub-menu__wrapper--level-2 {
   margin-top: 2rem;
@@ -11845,23 +10520,12 @@ ol ol ol {
   border-color: var(--ct-promo-dark-border-color);
 }
 
-@media (min-width: 0) {
-  .ct-side-navigation__title {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-side-navigation__title {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-side-navigation__title {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-side-navigation__title {
   margin-top: 0;
@@ -11912,23 +10576,12 @@ ol ol ol {
 .ct-side-navigation__menu .ct-menu__item {
   position: relative;
 }
-@media (min-width: 0) {
-  .ct-side-navigation__menu .ct-menu__item__link {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-side-navigation__menu .ct-menu__item__link {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+.ct-side-navigation__menu .ct-menu__item__link {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-side-navigation__menu .ct-menu__item__link {
   display: block;
@@ -12464,171 +11117,91 @@ html {
   --ct-color-dark-brand1: #61daff;
   --ct-color-dark-brand2: #003a4f;
   --ct-color-dark-brand3: #00698f;
-  --ct-typography-display-xxs-font-size: 2rem;
-  --ct-typography-display-xxs-line-height: 2.5rem;
-  --ct-typography-display-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-display-xxs-font-weight: 700;
-  --ct-typography-display-xxs-letter-spacing: -0.03px;
-  --ct-typography-display-m-font-size: 3.5rem;
-  --ct-typography-display-m-line-height: 3.75rem;
-  --ct-typography-display-m-font-name: "Lexend", sans-serif;
-  --ct-typography-display-m-font-weight: 700;
-  --ct-typography-display-m-letter-spacing: -1px;
-  --ct-typography-heading-1-xxs-font-size: 2rem;
-  --ct-typography-heading-1-xxs-line-height: 2.5rem;
-  --ct-typography-heading-1-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-1-xxs-font-weight: 700;
-  --ct-typography-heading-1-xxs-letter-spacing: -0.6px;
-  --ct-typography-heading-1-m-font-size: 3rem;
-  --ct-typography-heading-1-m-line-height: 3.75rem;
-  --ct-typography-heading-1-m-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-1-m-font-weight: 700;
-  --ct-typography-heading-1-m-letter-spacing: -1px;
-  --ct-typography-heading-2-xxs-font-size: 1.75rem;
-  --ct-typography-heading-2-xxs-line-height: 2.25rem;
-  --ct-typography-heading-2-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-2-xxs-font-weight: 700;
-  --ct-typography-heading-2-xxs-letter-spacing: -0.5px;
-  --ct-typography-heading-2-m-font-size: 2.5rem;
-  --ct-typography-heading-2-m-line-height: 3rem;
-  --ct-typography-heading-2-m-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-2-m-font-weight: 700;
-  --ct-typography-heading-2-m-letter-spacing: -0.8px;
-  --ct-typography-heading-3-xxs-font-size: 1.5rem;
-  --ct-typography-heading-3-xxs-line-height: 2rem;
-  --ct-typography-heading-3-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-3-xxs-font-weight: 700;
-  --ct-typography-heading-3-xxs-letter-spacing: -0.35px;
-  --ct-typography-heading-3-m-font-size: 2rem;
-  --ct-typography-heading-3-m-line-height: 2.5rem;
-  --ct-typography-heading-3-m-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-3-m-font-weight: 700;
-  --ct-typography-heading-3-m-letter-spacing: -0.6px;
-  --ct-typography-heading-4-xxs-font-size: 1.25rem;
-  --ct-typography-heading-4-xxs-line-height: 1.5rem;
-  --ct-typography-heading-4-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-4-xxs-font-weight: 700;
-  --ct-typography-heading-4-xxs-letter-spacing: -0.25px;
-  --ct-typography-heading-4-m-font-size: 1.5rem;
-  --ct-typography-heading-4-m-line-height: 2rem;
-  --ct-typography-heading-4-m-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-4-m-font-weight: 700;
-  --ct-typography-heading-4-m-letter-spacing: -0.4px;
-  --ct-typography-heading-5-xxs-font-size: 1rem;
-  --ct-typography-heading-5-xxs-line-height: 1.375rem;
-  --ct-typography-heading-5-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-5-xxs-font-weight: 700;
-  --ct-typography-heading-5-xxs-letter-spacing: 0;
-  --ct-typography-heading-5-m-font-size: 1.25rem;
-  --ct-typography-heading-5-m-line-height: 1.5rem;
-  --ct-typography-heading-5-m-font-name: "Lexend", sans-serif;
-  --ct-typography-heading-5-m-font-weight: 700;
-  --ct-typography-heading-5-m-letter-spacing: -0.2px;
+  --ct-typography-display-font-size: 2rem;
+  --ct-typography-display-line-height: 2.5rem;
+  --ct-typography-display-font-name: "Lexend", sans-serif;
+  --ct-typography-display-font-weight: 700;
+  --ct-typography-display-letter-spacing: -0.03px;
+  --ct-typography-heading-1-font-size: 2rem;
+  --ct-typography-heading-1-line-height: 2.5rem;
+  --ct-typography-heading-1-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-1-font-weight: 700;
+  --ct-typography-heading-1-letter-spacing: -0.6px;
+  --ct-typography-heading-2-font-size: 1.75rem;
+  --ct-typography-heading-2-line-height: 2.25rem;
+  --ct-typography-heading-2-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-2-font-weight: 700;
+  --ct-typography-heading-2-letter-spacing: -0.5px;
+  --ct-typography-heading-3-font-size: 1.5rem;
+  --ct-typography-heading-3-line-height: 2rem;
+  --ct-typography-heading-3-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-3-font-weight: 700;
+  --ct-typography-heading-3-letter-spacing: -0.35px;
+  --ct-typography-heading-4-font-size: 1.25rem;
+  --ct-typography-heading-4-line-height: 1.5rem;
+  --ct-typography-heading-4-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-4-font-weight: 700;
+  --ct-typography-heading-4-letter-spacing: -0.25px;
+  --ct-typography-heading-5-font-size: 1rem;
+  --ct-typography-heading-5-line-height: 1.375rem;
+  --ct-typography-heading-5-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-5-font-weight: 700;
+  --ct-typography-heading-5-letter-spacing: 0;
   --ct-typography-heading-6-font-size: 1rem;
   --ct-typography-heading-6-line-height: 1.625rem;
   --ct-typography-heading-6-font-name: "Lexend", sans-serif;
   --ct-typography-heading-6-font-weight: 700;
   --ct-typography-heading-6-letter-spacing: 0;
-  --ct-typography-text-extra-large-xxs-font-size: 1.25rem;
-  --ct-typography-text-extra-large-xxs-line-height: 1.5rem;
-  --ct-typography-text-extra-large-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-text-extra-large-xxs-font-weight: 400;
-  --ct-typography-text-extra-large-xxs-letter-spacing: -0.1px;
-  --ct-typography-text-extra-large-m-font-size: 1.5rem;
-  --ct-typography-text-extra-large-m-line-height: 1.5rem;
-  --ct-typography-text-extra-large-m-font-name: "Lexend", sans-serif;
-  --ct-typography-text-extra-large-m-font-weight: 400;
-  --ct-typography-text-extra-large-m-letter-spacing: 0;
-  --ct-typography-text-large-xxs-font-size: 1.125rem;
-  --ct-typography-text-large-xxs-line-height: 1.75rem;
-  --ct-typography-text-large-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-text-large-xxs-font-weight: 400;
-  --ct-typography-text-large-xxs-letter-spacing: 0;
-  --ct-typography-text-large-m-font-size: 1.25rem;
-  --ct-typography-text-large-m-line-height: 2.125rem;
-  --ct-typography-text-large-m-font-name: "Lexend", sans-serif;
-  --ct-typography-text-large-m-font-weight: 400;
-  --ct-typography-text-large-m-letter-spacing: 0;
-  --ct-typography-text-regular-xxs-font-size: 0.875rem;
-  --ct-typography-text-regular-xxs-line-height: 1.5rem;
-  --ct-typography-text-regular-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-text-regular-xxs-font-weight: 400;
-  --ct-typography-text-regular-xxs-letter-spacing: 0;
-  --ct-typography-text-regular-m-font-size: 1rem;
-  --ct-typography-text-regular-m-line-height: 1.75rem;
-  --ct-typography-text-regular-m-font-name: "Lexend", sans-serif;
-  --ct-typography-text-regular-m-font-weight: 400;
-  --ct-typography-text-regular-m-letter-spacing: 0;
-  --ct-typography-text-small-xxs-font-size: 0.75rem;
-  --ct-typography-text-small-xxs-line-height: 1.25rem;
-  --ct-typography-text-small-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-text-small-xxs-font-weight: 400;
-  --ct-typography-text-small-xxs-letter-spacing: 0;
-  --ct-typography-text-small-m-font-size: 0.875rem;
-  --ct-typography-text-small-m-line-height: 1.5rem;
-  --ct-typography-text-small-m-font-name: "Lexend", sans-serif;
-  --ct-typography-text-small-m-font-weight: 400;
-  --ct-typography-text-small-m-letter-spacing: 0;
-  --ct-typography-label-extra-large-xxs-font-size: 1.25rem;
-  --ct-typography-label-extra-large-xxs-line-height: 1.5rem;
-  --ct-typography-label-extra-large-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-label-extra-large-xxs-font-weight: 600;
-  --ct-typography-label-extra-large-xxs-letter-spacing: -0.1px;
-  --ct-typography-label-extra-large-m-font-size: 1.5rem;
-  --ct-typography-label-extra-large-m-line-height: 1.5rem;
-  --ct-typography-label-extra-large-m-font-name: "Lexend", sans-serif;
-  --ct-typography-label-extra-large-m-font-weight: 600;
-  --ct-typography-label-extra-large-m-letter-spacing: 0;
-  --ct-typography-label-large-xxs-font-size: 1.125rem;
-  --ct-typography-label-large-xxs-line-height: 1.5rem;
-  --ct-typography-label-large-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-label-large-xxs-font-weight: 600;
-  --ct-typography-label-large-xxs-letter-spacing: -0.1px;
-  --ct-typography-label-large-m-font-size: 1.125rem;
-  --ct-typography-label-large-m-line-height: 1.5rem;
-  --ct-typography-label-large-m-font-name: "Lexend", sans-serif;
-  --ct-typography-label-large-m-font-weight: 600;
-  --ct-typography-label-large-m-letter-spacing: 0;
-  --ct-typography-label-regular-xxs-font-size: 1rem;
-  --ct-typography-label-regular-xxs-line-height: 1.25rem;
-  --ct-typography-label-regular-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-label-regular-xxs-font-weight: 600;
-  --ct-typography-label-regular-xxs-letter-spacing: -0.1px;
-  --ct-typography-label-regular-m-font-size: 1rem;
-  --ct-typography-label-regular-m-line-height: 1.25rem;
-  --ct-typography-label-regular-m-font-name: "Lexend", sans-serif;
-  --ct-typography-label-regular-m-font-weight: 600;
-  --ct-typography-label-regular-m-letter-spacing: -0.1px;
-  --ct-typography-label-small-xxs-font-size: 1rem;
-  --ct-typography-label-small-xxs-line-height: 1.25rem;
-  --ct-typography-label-small-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-label-small-xxs-font-weight: 400;
-  --ct-typography-label-small-xxs-letter-spacing: -0.1px;
-  --ct-typography-label-small-m-font-size: 1rem;
-  --ct-typography-label-small-m-line-height: 1.25rem;
-  --ct-typography-label-small-m-font-name: "Lexend", sans-serif;
-  --ct-typography-label-small-m-font-weight: 400;
-  --ct-typography-label-small-m-letter-spacing: -0.1px;
-  --ct-typography-label-extra-small-xxs-font-size: 0.875rem;
-  --ct-typography-label-extra-small-xxs-line-height: 1.25rem;
-  --ct-typography-label-extra-small-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-label-extra-small-xxs-font-weight: 400;
-  --ct-typography-label-extra-small-xxs-letter-spacing: -0.1px;
-  --ct-typography-label-extra-small-m-font-size: 0.875rem;
-  --ct-typography-label-extra-small-m-line-height: 1.125rem;
-  --ct-typography-label-extra-small-m-font-name: "Lexend", sans-serif;
-  --ct-typography-label-extra-small-m-font-weight: 400;
-  --ct-typography-label-extra-small-m-letter-spacing: 0;
-  --ct-typography-quote-xxs-font-size: 1.125rem;
-  --ct-typography-quote-xxs-line-height: 1.815rem;
-  --ct-typography-quote-xxs-font-name: "Lexend", sans-serif;
-  --ct-typography-quote-xxs-font-weight: 400;
-  --ct-typography-quote-xxs-letter-spacing: -0.15px;
-  --ct-typography-quote-m-font-size: 1.5rem;
-  --ct-typography-quote-m-line-height: 2.5rem;
-  --ct-typography-quote-m-font-name: "Lexend", sans-serif;
-  --ct-typography-quote-m-font-weight: 400;
-  --ct-typography-quote-m-letter-spacing: -0.35px;
+  --ct-typography-text-extra-large-font-size: 1.25rem;
+  --ct-typography-text-extra-large-line-height: 1.5rem;
+  --ct-typography-text-extra-large-font-name: "Lexend", sans-serif;
+  --ct-typography-text-extra-large-font-weight: 400;
+  --ct-typography-text-extra-large-letter-spacing: -0.1px;
+  --ct-typography-text-large-font-size: 1.125rem;
+  --ct-typography-text-large-line-height: 1.75rem;
+  --ct-typography-text-large-font-name: "Lexend", sans-serif;
+  --ct-typography-text-large-font-weight: 400;
+  --ct-typography-text-large-letter-spacing: 0;
+  --ct-typography-text-regular-font-size: 0.875rem;
+  --ct-typography-text-regular-line-height: 1.5rem;
+  --ct-typography-text-regular-font-name: "Lexend", sans-serif;
+  --ct-typography-text-regular-font-weight: 400;
+  --ct-typography-text-regular-letter-spacing: 0;
+  --ct-typography-text-small-font-size: 0.75rem;
+  --ct-typography-text-small-line-height: 1.25rem;
+  --ct-typography-text-small-font-name: "Lexend", sans-serif;
+  --ct-typography-text-small-font-weight: 400;
+  --ct-typography-text-small-letter-spacing: 0;
+  --ct-typography-label-extra-large-font-size: 1.25rem;
+  --ct-typography-label-extra-large-line-height: 1.5rem;
+  --ct-typography-label-extra-large-font-name: "Lexend", sans-serif;
+  --ct-typography-label-extra-large-font-weight: 600;
+  --ct-typography-label-extra-large-letter-spacing: -0.1px;
+  --ct-typography-label-large-font-size: 1.125rem;
+  --ct-typography-label-large-line-height: 1.5rem;
+  --ct-typography-label-large-font-name: "Lexend", sans-serif;
+  --ct-typography-label-large-font-weight: 600;
+  --ct-typography-label-large-letter-spacing: -0.1px;
+  --ct-typography-label-regular-font-size: 1rem;
+  --ct-typography-label-regular-line-height: 1.25rem;
+  --ct-typography-label-regular-font-name: "Lexend", sans-serif;
+  --ct-typography-label-regular-font-weight: 600;
+  --ct-typography-label-regular-letter-spacing: -0.1px;
+  --ct-typography-label-small-font-size: 1rem;
+  --ct-typography-label-small-line-height: 1.25rem;
+  --ct-typography-label-small-font-name: "Lexend", sans-serif;
+  --ct-typography-label-small-font-weight: 400;
+  --ct-typography-label-small-letter-spacing: -0.1px;
+  --ct-typography-label-extra-small-font-size: 0.875rem;
+  --ct-typography-label-extra-small-line-height: 1.25rem;
+  --ct-typography-label-extra-small-font-name: "Lexend", sans-serif;
+  --ct-typography-label-extra-small-font-weight: 400;
+  --ct-typography-label-extra-small-letter-spacing: -0.1px;
+  --ct-typography-quote-font-size: 1.125rem;
+  --ct-typography-quote-line-height: 1.815rem;
+  --ct-typography-quote-font-name: "Lexend", sans-serif;
+  --ct-typography-quote-font-weight: 400;
+  --ct-typography-quote-letter-spacing: -0.15px;
   --ct-collapsible-light-color: var(--ct-color-light-body);
   --ct-collapsible-light-icon-color: var(--ct-color-light-body);
   --ct-collapsible-dark-color: var(--ct-color-dark-body);
@@ -13493,4 +12066,88 @@ html {
   --ct-webform-dark-background-color: var(--ct-color-dark-background);
   --ct-page-light-background-color: var(--ct-color-light-background-light);
   --ct-page-dark-background-color: var(--ct-color-dark-background-dark);
+}
+@media (min-width: 768px) {
+  html {
+    --ct-typography-display-font-size: 3.5rem;
+    --ct-typography-display-line-height: 3.75rem;
+    --ct-typography-display-font-name: "Lexend", sans-serif;
+    --ct-typography-display-font-weight: 700;
+    --ct-typography-display-letter-spacing: -1px;
+    --ct-typography-heading-1-font-size: 3rem;
+    --ct-typography-heading-1-line-height: 3.75rem;
+    --ct-typography-heading-1-font-name: "Lexend", sans-serif;
+    --ct-typography-heading-1-font-weight: 700;
+    --ct-typography-heading-1-letter-spacing: -1px;
+    --ct-typography-heading-2-font-size: 2.5rem;
+    --ct-typography-heading-2-line-height: 3rem;
+    --ct-typography-heading-2-font-name: "Lexend", sans-serif;
+    --ct-typography-heading-2-font-weight: 700;
+    --ct-typography-heading-2-letter-spacing: -0.8px;
+    --ct-typography-heading-3-font-size: 2rem;
+    --ct-typography-heading-3-line-height: 2.5rem;
+    --ct-typography-heading-3-font-name: "Lexend", sans-serif;
+    --ct-typography-heading-3-font-weight: 700;
+    --ct-typography-heading-3-letter-spacing: -0.6px;
+    --ct-typography-heading-4-font-size: 1.5rem;
+    --ct-typography-heading-4-line-height: 2rem;
+    --ct-typography-heading-4-font-name: "Lexend", sans-serif;
+    --ct-typography-heading-4-font-weight: 700;
+    --ct-typography-heading-4-letter-spacing: -0.4px;
+    --ct-typography-heading-5-font-size: 1.25rem;
+    --ct-typography-heading-5-line-height: 1.5rem;
+    --ct-typography-heading-5-font-name: "Lexend", sans-serif;
+    --ct-typography-heading-5-font-weight: 700;
+    --ct-typography-heading-5-letter-spacing: -0.2px;
+    --ct-typography-text-extra-large-font-size: 1.5rem;
+    --ct-typography-text-extra-large-line-height: 1.5rem;
+    --ct-typography-text-extra-large-font-name: "Lexend", sans-serif;
+    --ct-typography-text-extra-large-font-weight: 400;
+    --ct-typography-text-extra-large-letter-spacing: 0;
+    --ct-typography-text-large-font-size: 1.25rem;
+    --ct-typography-text-large-line-height: 2.125rem;
+    --ct-typography-text-large-font-name: "Lexend", sans-serif;
+    --ct-typography-text-large-font-weight: 400;
+    --ct-typography-text-large-letter-spacing: 0;
+    --ct-typography-text-regular-font-size: 1rem;
+    --ct-typography-text-regular-line-height: 1.75rem;
+    --ct-typography-text-regular-font-name: "Lexend", sans-serif;
+    --ct-typography-text-regular-font-weight: 400;
+    --ct-typography-text-regular-letter-spacing: 0;
+    --ct-typography-text-small-font-size: 0.875rem;
+    --ct-typography-text-small-line-height: 1.5rem;
+    --ct-typography-text-small-font-name: "Lexend", sans-serif;
+    --ct-typography-text-small-font-weight: 400;
+    --ct-typography-text-small-letter-spacing: 0;
+    --ct-typography-label-extra-large-font-size: 1.5rem;
+    --ct-typography-label-extra-large-line-height: 1.5rem;
+    --ct-typography-label-extra-large-font-name: "Lexend", sans-serif;
+    --ct-typography-label-extra-large-font-weight: 600;
+    --ct-typography-label-extra-large-letter-spacing: 0;
+    --ct-typography-label-large-font-size: 1.125rem;
+    --ct-typography-label-large-line-height: 1.5rem;
+    --ct-typography-label-large-font-name: "Lexend", sans-serif;
+    --ct-typography-label-large-font-weight: 600;
+    --ct-typography-label-large-letter-spacing: 0;
+    --ct-typography-label-regular-font-size: 1rem;
+    --ct-typography-label-regular-line-height: 1.25rem;
+    --ct-typography-label-regular-font-name: "Lexend", sans-serif;
+    --ct-typography-label-regular-font-weight: 600;
+    --ct-typography-label-regular-letter-spacing: -0.1px;
+    --ct-typography-label-small-font-size: 1rem;
+    --ct-typography-label-small-line-height: 1.25rem;
+    --ct-typography-label-small-font-name: "Lexend", sans-serif;
+    --ct-typography-label-small-font-weight: 400;
+    --ct-typography-label-small-letter-spacing: -0.1px;
+    --ct-typography-label-extra-small-font-size: 0.875rem;
+    --ct-typography-label-extra-small-line-height: 1.125rem;
+    --ct-typography-label-extra-small-font-name: "Lexend", sans-serif;
+    --ct-typography-label-extra-small-font-weight: 400;
+    --ct-typography-label-extra-small-letter-spacing: 0;
+    --ct-typography-quote-font-size: 1.5rem;
+    --ct-typography-quote-line-height: 2.5rem;
+    --ct-typography-quote-font-name: "Lexend", sans-serif;
+    --ct-typography-quote-font-weight: 400;
+    --ct-typography-quote-letter-spacing: -0.35px;
+  }
 }

@@ -2,23 +2,12 @@
  * This file was automatically generated. Please run `npm run dist` to update.
  */
 
-@media (min-width: 0) {
-  .ct-link {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-link {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-link {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-link {
   text-decoration: none;

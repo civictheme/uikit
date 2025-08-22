@@ -70,23 +70,12 @@
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 0) {
-  .ct-promo-card .ct-promo-card__title {
-    font-size: var(--ct-typography-heading-4-xxs-font-size);
-    line-height: var(--ct-typography-heading-4-xxs-line-height);
-    font-family: var(--ct-typography-heading-4-xxs-font-name);
-    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-promo-card .ct-promo-card__title {
-    font-size: var(--ct-typography-heading-4-m-font-size);
-    line-height: var(--ct-typography-heading-4-m-line-height);
-    font-family: var(--ct-typography-heading-4-m-font-name);
-    font-weight: var(--ct-typography-heading-4-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
-  }
+.ct-promo-card .ct-promo-card__title {
+  font-size: var(--ct-typography-heading-4-font-size);
+  line-height: var(--ct-typography-heading-4-line-height);
+  font-family: var(--ct-typography-heading-4-font-name);
+  font-weight: var(--ct-typography-heading-4-font-weight);
+  letter-spacing: var(--ct-typography-heading-4-letter-spacing);
 }
 .ct-promo-card .ct-promo-card__title-link {
   font-size: inherit;

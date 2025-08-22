@@ -5,42 +5,18 @@
 .ct-field-description {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-field-description {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-field-description {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
-}
-@media (min-width: 0) {
-  .ct-field-description--large {
-    font-size: var(--ct-typography-text-large-xxs-font-size);
-    line-height: var(--ct-typography-text-large-xxs-line-height);
-    font-family: var(--ct-typography-text-large-xxs-font-name);
-    font-weight: var(--ct-typography-text-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-field-description--large {
-    font-size: var(--ct-typography-text-large-m-font-size);
-    line-height: var(--ct-typography-text-large-m-line-height);
-    font-family: var(--ct-typography-text-large-m-font-name);
-    font-weight: var(--ct-typography-text-large-m-font-weight);
-    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
-  }
+.ct-field-description--large {
+  font-size: var(--ct-typography-text-large-font-size);
+  line-height: var(--ct-typography-text-large-line-height);
+  font-family: var(--ct-typography-text-large-font-name);
+  font-weight: var(--ct-typography-text-large-font-weight);
+  letter-spacing: var(--ct-typography-text-large-letter-spacing);
 }
 .ct-field-description.ct-theme-light {
   color: var(--ct-field-description-light-color);

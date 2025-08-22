@@ -33,23 +33,12 @@
     padding: 1.5rem 1.5rem 1.5rem 1.875rem;
   }
 }
-@media (min-width: 0) {
-  .ct-next-step .ct-next-step__title {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-next-step .ct-next-step__title {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-next-step .ct-next-step__title {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-next-step .ct-next-step__title__link {
   font-size: inherit;

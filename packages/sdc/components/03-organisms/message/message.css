@@ -11,24 +11,11 @@
   border-left: solid 0.375rem transparent;
   padding: 1.5rem 1.5rem 1.5rem 0.5rem;
   width: 100%;
-}
-@media (min-width: 0) {
-  .ct-message .ct-message__inner {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-message .ct-message__inner {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-message .ct-message__icon {
   vertical-align: top;

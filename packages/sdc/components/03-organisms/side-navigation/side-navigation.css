@@ -2,23 +2,12 @@
  * This file was automatically generated. Please run `npm run dist` to update.
  */
 
-@media (min-width: 0) {
-  .ct-side-navigation__title {
-    font-size: var(--ct-typography-heading-5-xxs-font-size);
-    line-height: var(--ct-typography-heading-5-xxs-line-height);
-    font-family: var(--ct-typography-heading-5-xxs-font-name);
-    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-side-navigation__title {
-    font-size: var(--ct-typography-heading-5-m-font-size);
-    line-height: var(--ct-typography-heading-5-m-line-height);
-    font-family: var(--ct-typography-heading-5-m-font-name);
-    font-weight: var(--ct-typography-heading-5-m-font-weight);
-    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
-  }
+.ct-side-navigation__title {
+  font-size: var(--ct-typography-heading-5-font-size);
+  line-height: var(--ct-typography-heading-5-line-height);
+  font-family: var(--ct-typography-heading-5-font-name);
+  font-weight: var(--ct-typography-heading-5-font-weight);
+  letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-side-navigation__title {
   margin-top: 0;
@@ -69,23 +58,12 @@
 .ct-side-navigation__menu .ct-menu__item {
   position: relative;
 }
-@media (min-width: 0) {
-  .ct-side-navigation__menu .ct-menu__item__link {
-    font-size: var(--ct-typography-text-regular-xxs-font-size);
-    line-height: var(--ct-typography-text-regular-xxs-line-height);
-    font-family: var(--ct-typography-text-regular-xxs-font-name);
-    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-side-navigation__menu .ct-menu__item__link {
-    font-size: var(--ct-typography-text-regular-m-font-size);
-    line-height: var(--ct-typography-text-regular-m-line-height);
-    font-family: var(--ct-typography-text-regular-m-font-name);
-    font-weight: var(--ct-typography-text-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
-  }
+.ct-side-navigation__menu .ct-menu__item__link {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-side-navigation__menu .ct-menu__item__link {
   display: block;

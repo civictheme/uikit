@@ -60,25 +60,12 @@
   max-height: 6.25rem;
 }
 .ct-fast-fact-card__title {
+  font-size: var(--ct-typography-display-font-size);
+  line-height: var(--ct-typography-display-line-height);
+  font-family: var(--ct-typography-display-font-name);
+  font-weight: var(--ct-typography-display-font-weight);
+  letter-spacing: var(--ct-typography-display-letter-spacing);
   text-align: center;
-}
-@media (min-width: 0) {
-  .ct-fast-fact-card__title {
-    font-size: var(--ct-typography-display-xxs-font-size);
-    line-height: var(--ct-typography-display-xxs-line-height);
-    font-family: var(--ct-typography-display-xxs-font-name);
-    font-weight: var(--ct-typography-display-xxs-font-weight);
-    letter-spacing: var(--ct-typography-display-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-fast-fact-card__title {
-    font-size: var(--ct-typography-display-m-font-size);
-    line-height: var(--ct-typography-display-m-line-height);
-    font-family: var(--ct-typography-display-m-font-name);
-    font-weight: var(--ct-typography-display-m-font-weight);
-    letter-spacing: var(--ct-typography-display-m-letter-spacing);
-  }
 }
 .ct-fast-fact-card__title-link {
   font-size: inherit;

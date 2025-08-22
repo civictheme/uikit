@@ -7,24 +7,11 @@
   border: 0.125rem solid transparent;
   border-radius: 0.25rem;
   appearance: button;
-}
-@media (min-width: 0) {
-  .ct-button {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button {
   padding: 0.875rem 2.5rem;
@@ -245,65 +232,32 @@
 .ct-button--tertiary:focus-visible, .ct-button--tertiary:hover, .ct-button--tertiary:active {
   text-decoration: none;
 }
-@media (min-width: 0) {
-  .ct-button--tertiary--large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+.ct-button--tertiary--large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-button--tertiary--large__dismiss {
   margin-left: 1.5rem;
 }
-@media (min-width: 0) {
-  .ct-button--tertiary--regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-button--tertiary--regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button--tertiary--regular__dismiss {
   margin-left: 1.5rem;
 }
-@media (min-width: 0) {
-  .ct-button--tertiary--small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-button--tertiary--small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-button--tertiary--small {
   border-width: 0.0625rem;
@@ -311,23 +265,12 @@
 .ct-button--tertiary--small__dismiss {
   margin-left: 1rem;
 }
-@media (min-width: 0) {
-  .ct-button--large {
-    font-size: var(--ct-typography-label-large-xxs-font-size);
-    line-height: var(--ct-typography-label-large-xxs-line-height);
-    font-family: var(--ct-typography-label-large-xxs-font-name);
-    font-weight: var(--ct-typography-label-large-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--large {
-    font-size: var(--ct-typography-label-large-m-font-size);
-    line-height: var(--ct-typography-label-large-m-line-height);
-    font-family: var(--ct-typography-label-large-m-font-name);
-    font-weight: var(--ct-typography-label-large-m-font-weight);
-    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
-  }
+.ct-button--large {
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-button--large {
   padding: 1rem 3rem;
@@ -335,23 +278,12 @@
 .ct-button--large.ct-button--tertiary {
   padding: 0;
 }
-@media (min-width: 0) {
-  .ct-button--regular {
-    font-size: var(--ct-typography-label-regular-xxs-font-size);
-    line-height: var(--ct-typography-label-regular-xxs-line-height);
-    font-family: var(--ct-typography-label-regular-xxs-font-name);
-    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--regular {
-    font-size: var(--ct-typography-label-regular-m-font-size);
-    line-height: var(--ct-typography-label-regular-m-line-height);
-    font-family: var(--ct-typography-label-regular-m-font-name);
-    font-weight: var(--ct-typography-label-regular-m-font-weight);
-    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
-  }
+.ct-button--regular {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button--regular {
   padding: 0.875rem 2.5rem;
@@ -359,23 +291,12 @@
 .ct-button--regular.ct-button--tertiary {
   padding: 0;
 }
-@media (min-width: 0) {
-  .ct-button--small {
-    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
-    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
-    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-button--small {
-    font-size: var(--ct-typography-label-extra-small-m-font-size);
-    line-height: var(--ct-typography-label-extra-small-m-line-height);
-    font-family: var(--ct-typography-label-extra-small-m-font-name);
-    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
-  }
+.ct-button--small {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-button--small {
   border-width: 0.0625rem;

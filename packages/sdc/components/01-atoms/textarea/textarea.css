@@ -5,28 +5,15 @@
 .ct-textarea {
   appearance: none;
   margin: 0;
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-textarea[disabled] {
   opacity: 40%;
   pointer-events: none;
-}
-@media (min-width: 0) {
-  .ct-textarea {
-    font-size: var(--ct-typography-label-small-xxs-font-size);
-    line-height: var(--ct-typography-label-small-xxs-line-height);
-    font-family: var(--ct-typography-label-small-xxs-font-name);
-    font-weight: var(--ct-typography-label-small-xxs-font-weight);
-    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
-  }
-}
-@media (min-width: 768px) {
-  .ct-textarea {
-    font-size: var(--ct-typography-label-small-m-font-size);
-    line-height: var(--ct-typography-label-small-m-line-height);
-    font-family: var(--ct-typography-label-small-m-font-name);
-    font-weight: var(--ct-typography-label-small-m-font-weight);
-    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
-  }
 }
 .ct-textarea {
   box-sizing: border-box;
