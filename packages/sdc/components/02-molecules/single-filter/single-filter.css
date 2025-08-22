@@ -20,20 +20,20 @@
 }
 @media (min-width: 0) {
   .ct-single-filter .ct-single-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-single-filter .ct-single-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-single-filter .ct-single-filter__submit {

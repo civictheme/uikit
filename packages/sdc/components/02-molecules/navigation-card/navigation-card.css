@@ -85,20 +85,20 @@
 }
 @media (min-width: 0) {
   .ct-navigation-card .ct-navigation-card__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-navigation-card .ct-navigation-card__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-navigation-card .ct-navigation-card__title-link {

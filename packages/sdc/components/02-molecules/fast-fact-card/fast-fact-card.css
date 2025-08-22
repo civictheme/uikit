@@ -64,20 +64,20 @@
 }
 @media (min-width: 0) {
   .ct-fast-fact-card__title {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03px;
+    font-size: var(--ct-typography-display-xxs-font-size);
+    line-height: var(--ct-typography-display-xxs-line-height);
+    font-family: var(--ct-typography-display-xxs-font-name);
+    font-weight: var(--ct-typography-display-xxs-font-weight);
+    letter-spacing: var(--ct-typography-display-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-fast-fact-card__title {
-    font-size: 3.5rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-display-m-font-size);
+    line-height: var(--ct-typography-display-m-line-height);
+    font-family: var(--ct-typography-display-m-font-name);
+    font-weight: var(--ct-typography-display-m-font-weight);
+    letter-spacing: var(--ct-typography-display-m-letter-spacing);
   }
 }
 .ct-fast-fact-card__title-link {

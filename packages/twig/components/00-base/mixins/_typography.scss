@@ -48,6 +48,7 @@
 // Use @include ct-typography() mixin instead.
 //
 @mixin _ct-typography-print-ruleset($ruleset) {
+  $name: $ruleset;
   $all-typographies: _ct-typography-all();
 
   // Ruleset is a name of the preset - retrieve preset as a ruleset.
@@ -63,7 +64,7 @@
   @if type-of($ruleset) == list {
     $ruleset: _ct-typography-extract-rules($ruleset);
 
-    @include _ct-typography-print-rules($ruleset);
+    @include _ct-typography-print-rules(0, $name, $ruleset);
   }
 
   // Ruleset is a full ruleset definition - print all rules with breakpoints.
@@ -74,7 +75,7 @@
       $breakpoint-ruleset: _ct-typography-extract-rules(map.get($ruleset, $breakpoint));
 
       @include ct-breakpoint($breakpoint) {
-        @include _ct-typography-print-rules($breakpoint-ruleset);
+        @include _ct-typography-print-rules($breakpoint, $name, $breakpoint-ruleset);
       }
     }
   }
@@ -134,20 +135,46 @@
 //
 // Do not use directly.
 //
-@mixin _ct-typography-print-rules($map) {
-  font-size: map.get($map, 'font-size');
-  line-height: map.get($map, 'line-height');
+@mixin _ct-typography-print-rules($breakpoint, $name, $map) {
+  $breakpoint_tag: if($breakpoint == 0, '', '-' + $breakpoint);
+
+  font-size: var(#{'--ct-typography-' + $name + $breakpoint_tag + '-font-size'});
+  line-height: var(#{'--ct-typography-' + $name + $breakpoint_tag + '-line-height'});
 
   @if map.get($map, 'font-name') {
-    font-family: map.get($map, 'font-name');
+    font-family: var(#{'--ct-typography-' + $name + $breakpoint_tag + '-font-name'});
   }
 
   @if map.get($map, 'font-weight') {
-    font-weight: map.get($map, 'font-weight');
+    font-weight: var(#{'--ct-typography-' + $name + $breakpoint_tag + '-font-weight'});
   }
 
   @if map.get($map, 'letter-spacing') {
-    letter-spacing: map.get($map, 'letter-spacing');
+    letter-spacing: var(#{'--ct-typography-' + $name + $breakpoint_tag + '-letter-spacing'});
+  }
+}
+
+//
+// Print css variables for typography rules.
+//
+// Do not use directly.
+//
+@mixin _ct-typography-print-css-variables($breakpoint, $name, $map) {
+  $breakpoint_tag: if($breakpoint == 0, '', '-' + $breakpoint);
+
+  --ct-typography-#{$name}#{$breakpoint_tag}-font-size: #{map.get($map, 'font-size')};
+  --ct-typography-#{$name}#{$breakpoint_tag}-line-height: #{map.get($map, 'line-height')};
+
+  @if map.get($map, 'font-name') {
+    --ct-typography-#{$name}#{$breakpoint_tag}-font-name: #{map.get($map, 'font-name')};
+  }
+
+  @if map.get($map, 'font-weight') {
+    --ct-typography-#{$name}#{$breakpoint_tag}-font-weight: #{map.get($map, 'font-weight')};
+  }
+
+  @if map.get($map, 'letter-spacing') {
+    --ct-typography-#{$name}#{$breakpoint_tag}-letter-spacing: #{map.get($map, 'letter-spacing')};
   }
 }
 

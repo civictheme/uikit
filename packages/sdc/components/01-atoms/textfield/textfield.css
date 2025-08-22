@@ -12,20 +12,20 @@
 }
 @media (min-width: 0) {
   .ct-textfield {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-textfield {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 .ct-textfield {

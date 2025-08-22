@@ -44,20 +44,20 @@
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
@@ -121,20 +121,20 @@
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
@@ -170,20 +170,20 @@
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] .ct-icon {
@@ -321,20 +321,20 @@
 
 @media (min-width: 0) {
   .ct-mobile-navigation-trigger {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation-trigger {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 @media print {

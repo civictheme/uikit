@@ -3212,435 +3212,435 @@ ul.row {
 
 @media (min-width: 0) {
   .ct-display {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03px;
+    font-size: var(--ct-typography-display-xxs-font-size);
+    line-height: var(--ct-typography-display-xxs-line-height);
+    font-family: var(--ct-typography-display-xxs-font-name);
+    font-weight: var(--ct-typography-display-xxs-font-weight);
+    letter-spacing: var(--ct-typography-display-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-display {
-    font-size: 3.5rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-display-m-font-size);
+    line-height: var(--ct-typography-display-m-line-height);
+    font-family: var(--ct-typography-display-m-font-name);
+    font-weight: var(--ct-typography-display-m-font-weight);
+    letter-spacing: var(--ct-typography-display-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-heading-1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-1-xxs-font-size);
+    line-height: var(--ct-typography-heading-1-xxs-line-height);
+    font-family: var(--ct-typography-heading-1-xxs-font-name);
+    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-heading-1 {
-    font-size: 3rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-heading-1-m-font-size);
+    line-height: var(--ct-typography-heading-1-m-line-height);
+    font-family: var(--ct-typography-heading-1-m-font-name);
+    font-weight: var(--ct-typography-heading-1-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-heading-2 {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: var(--ct-typography-heading-2-xxs-font-size);
+    line-height: var(--ct-typography-heading-2-xxs-line-height);
+    font-family: var(--ct-typography-heading-2-xxs-font-name);
+    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-heading-2 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.8px;
+    font-size: var(--ct-typography-heading-2-m-font-size);
+    line-height: var(--ct-typography-heading-2-m-line-height);
+    font-family: var(--ct-typography-heading-2-m-font-name);
+    font-weight: var(--ct-typography-heading-2-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-heading-3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-heading-3-xxs-font-size);
+    line-height: var(--ct-typography-heading-3-xxs-line-height);
+    font-family: var(--ct-typography-heading-3-xxs-font-name);
+    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-heading-3 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-3-m-font-size);
+    line-height: var(--ct-typography-heading-3-m-line-height);
+    font-family: var(--ct-typography-heading-3-m-font-name);
+    font-weight: var(--ct-typography-heading-3-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-heading-4 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-heading-4 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-heading-5 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-heading-5 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 
 .ct-heading-6 {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
 }
 
 @media (min-width: 0) {
   .ct-text-extra-large {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-text-extra-large-xxs-font-size);
+    line-height: var(--ct-typography-text-extra-large-xxs-line-height);
+    font-family: var(--ct-typography-text-extra-large-xxs-font-name);
+    font-weight: var(--ct-typography-text-extra-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-extra-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-text-extra-large {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-extra-large-m-font-size);
+    line-height: var(--ct-typography-text-extra-large-m-line-height);
+    font-family: var(--ct-typography-text-extra-large-m-font-name);
+    font-weight: var(--ct-typography-text-extra-large-m-font-weight);
+    letter-spacing: var(--ct-typography-text-extra-large-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-text-large {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-large-xxs-font-size);
+    line-height: var(--ct-typography-text-large-xxs-line-height);
+    font-family: var(--ct-typography-text-large-xxs-font-name);
+    font-weight: var(--ct-typography-text-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-text-large {
-    font-size: 1.25rem;
-    line-height: 2.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-large-m-font-size);
+    line-height: var(--ct-typography-text-large-m-line-height);
+    font-family: var(--ct-typography-text-large-m-font-name);
+    font-weight: var(--ct-typography-text-large-m-font-weight);
+    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-text-regular {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-text-regular {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-text-small {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-xxs-font-size);
+    line-height: var(--ct-typography-text-small-xxs-line-height);
+    font-family: var(--ct-typography-text-small-xxs-font-name);
+    font-weight: var(--ct-typography-text-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-text-small {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-m-font-size);
+    line-height: var(--ct-typography-text-small-m-line-height);
+    font-family: var(--ct-typography-text-small-m-font-name);
+    font-weight: var(--ct-typography-text-small-m-font-weight);
+    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-label-extra-large {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-large-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-large-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label-extra-large {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-large-m-font-size);
+    line-height: var(--ct-typography-label-extra-large-m-line-height);
+    font-family: var(--ct-typography-label-extra-large-m-font-name);
+    font-weight: var(--ct-typography-label-extra-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-large-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-label-large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label-large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-label-regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label-regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-label-small {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label-small {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-label-extra-small {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label-extra-small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   .ct-quote {
-    font-size: 1.125rem;
-    line-height: 1.815rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.15px;
+    font-size: var(--ct-typography-quote-xxs-font-size);
+    line-height: var(--ct-typography-quote-xxs-line-height);
+    font-family: var(--ct-typography-quote-xxs-font-name);
+    font-weight: var(--ct-typography-quote-xxs-font-weight);
+    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-quote {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-quote-m-font-size);
+    line-height: var(--ct-typography-quote-m-line-height);
+    font-family: var(--ct-typography-quote-m-font-name);
+    font-weight: var(--ct-typography-quote-m-font-weight);
+    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-1-xxs-font-size);
+    line-height: var(--ct-typography-heading-1-xxs-line-height);
+    font-family: var(--ct-typography-heading-1-xxs-font-name);
+    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   h1 {
-    font-size: 3rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-heading-1-m-font-size);
+    line-height: var(--ct-typography-heading-1-m-line-height);
+    font-family: var(--ct-typography-heading-1-m-font-name);
+    font-weight: var(--ct-typography-heading-1-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   h2 {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: var(--ct-typography-heading-2-xxs-font-size);
+    line-height: var(--ct-typography-heading-2-xxs-line-height);
+    font-family: var(--ct-typography-heading-2-xxs-font-name);
+    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   h2 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.8px;
+    font-size: var(--ct-typography-heading-2-m-font-size);
+    line-height: var(--ct-typography-heading-2-m-line-height);
+    font-family: var(--ct-typography-heading-2-m-font-name);
+    font-weight: var(--ct-typography-heading-2-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-heading-3-xxs-font-size);
+    line-height: var(--ct-typography-heading-3-xxs-line-height);
+    font-family: var(--ct-typography-heading-3-xxs-font-name);
+    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   h3 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-3-m-font-size);
+    line-height: var(--ct-typography-heading-3-m-line-height);
+    font-family: var(--ct-typography-heading-3-m-font-name);
+    font-weight: var(--ct-typography-heading-3-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   h4 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   h4 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 
 @media (min-width: 0) {
   h5 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   h5 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 
 h6 {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
 }
 
 @media (min-width: 0) {
   p {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   p {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 p {
@@ -3656,20 +3656,20 @@ p:last-child {
 
 @media (min-width: 0) {
   blockquote {
-    font-size: 1.125rem;
-    line-height: 1.815rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.15px;
+    font-size: var(--ct-typography-quote-xxs-font-size);
+    line-height: var(--ct-typography-quote-xxs-line-height);
+    font-family: var(--ct-typography-quote-xxs-font-name);
+    font-weight: var(--ct-typography-quote-xxs-font-weight);
+    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   blockquote {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-quote-m-font-size);
+    line-height: var(--ct-typography-quote-m-line-height);
+    font-family: var(--ct-typography-quote-m-font-name);
+    font-weight: var(--ct-typography-quote-m-font-weight);
+    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
   }
 }
 blockquote {
@@ -3832,20 +3832,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-button {
@@ -4069,20 +4069,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button--tertiary--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button--tertiary--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-button--tertiary--large__dismiss {
@@ -4090,20 +4090,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button--tertiary--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button--tertiary--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-button--tertiary--regular__dismiss {
@@ -4111,20 +4111,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button--tertiary--small {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button--tertiary--small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-button--tertiary--small {
@@ -4135,20 +4135,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-button--large {
@@ -4159,20 +4159,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-button--regular {
@@ -4183,20 +4183,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-button--small {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-button--small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-button--small {
@@ -4504,20 +4504,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-chip--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-chip--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-chip--large {
@@ -4528,20 +4528,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-chip--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-chip--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-chip--regular {
@@ -4552,20 +4552,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-chip--small {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-chip--small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-chip--small {
@@ -4634,38 +4634,38 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-field-description {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-field-description {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-field-description--large {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-large-xxs-font-size);
+    line-height: var(--ct-typography-text-large-xxs-line-height);
+    font-family: var(--ct-typography-text-large-xxs-font-name);
+    font-weight: var(--ct-typography-text-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-field-description--large {
-    font-size: 1.25rem;
-    line-height: 2.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-large-m-font-size);
+    line-height: var(--ct-typography-text-large-m-line-height);
+    font-family: var(--ct-typography-text-large-m-font-name);
+    font-weight: var(--ct-typography-text-large-m-font-weight);
+    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
   }
 }
 .ct-field-description.ct-theme-light {
@@ -4690,20 +4690,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-field-message {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-field-message {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 .ct-field-message .ct-field-message__icon {
@@ -4884,20 +4884,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-input {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-input {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 .ct-input {
@@ -5006,110 +5006,110 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-label {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-label.ct-label--extra-large {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-large-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-large-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label.ct-label--extra-large {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-large-m-font-size);
+    line-height: var(--ct-typography-label-extra-large-m-line-height);
+    font-family: var(--ct-typography-label-extra-large-m-font-name);
+    font-weight: var(--ct-typography-label-extra-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-large-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-label.ct-label--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label.ct-label--large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-label.ct-label--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label.ct-label--regular {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-label.ct-label--small {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label.ct-label--small {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-label.ct-label--extra-small {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-label.ct-label--extra-small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-label.ct-theme-light {
@@ -5127,20 +5127,20 @@ ol ol ol {
 
 @media (min-width: 0) {
   .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-link {
@@ -5254,20 +5254,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 .ct-paragraph h1,
@@ -5280,20 +5280,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-1-xxs-font-size);
+    line-height: var(--ct-typography-heading-1-xxs-line-height);
+    font-family: var(--ct-typography-heading-1-xxs-font-name);
+    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph h1 {
-    font-size: 3rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-heading-1-m-font-size);
+    line-height: var(--ct-typography-heading-1-m-line-height);
+    font-family: var(--ct-typography-heading-1-m-font-name);
+    font-weight: var(--ct-typography-heading-1-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
   }
 }
 .ct-paragraph h1 {
@@ -5306,20 +5306,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph h2 {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: var(--ct-typography-heading-2-xxs-font-size);
+    line-height: var(--ct-typography-heading-2-xxs-line-height);
+    font-family: var(--ct-typography-heading-2-xxs-font-name);
+    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph h2 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.8px;
+    font-size: var(--ct-typography-heading-2-m-font-size);
+    line-height: var(--ct-typography-heading-2-m-line-height);
+    font-family: var(--ct-typography-heading-2-m-font-name);
+    font-weight: var(--ct-typography-heading-2-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
   }
 }
 .ct-paragraph h2 {
@@ -5332,20 +5332,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-heading-3-xxs-font-size);
+    line-height: var(--ct-typography-heading-3-xxs-line-height);
+    font-family: var(--ct-typography-heading-3-xxs-font-name);
+    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph h3 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-3-m-font-size);
+    line-height: var(--ct-typography-heading-3-m-line-height);
+    font-family: var(--ct-typography-heading-3-m-font-name);
+    font-weight: var(--ct-typography-heading-3-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
   }
 }
 .ct-paragraph h3 {
@@ -5358,20 +5358,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph h4 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph h4 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-paragraph h4 {
@@ -5384,20 +5384,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph h5 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph h5 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 .ct-paragraph h5 {
@@ -5409,11 +5409,11 @@ ol ol ol {
   }
 }
 .ct-paragraph h6 {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
 }
 .ct-paragraph h6 {
   margin-bottom: 0.5rem;
@@ -5446,20 +5446,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph blockquote {
-    font-size: 1.125rem;
-    line-height: 1.815rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.15px;
+    font-size: var(--ct-typography-quote-xxs-font-size);
+    line-height: var(--ct-typography-quote-xxs-line-height);
+    font-family: var(--ct-typography-quote-xxs-font-name);
+    font-weight: var(--ct-typography-quote-xxs-font-weight);
+    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph blockquote {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-quote-m-font-size);
+    line-height: var(--ct-typography-quote-m-line-height);
+    font-family: var(--ct-typography-quote-m-font-name);
+    font-weight: var(--ct-typography-quote-m-font-weight);
+    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
   }
 }
 .ct-paragraph blockquote {
@@ -5482,20 +5482,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph blockquote p {
-    font-size: 1.125rem;
-    line-height: 1.815rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.15px;
+    font-size: var(--ct-typography-quote-xxs-font-size);
+    line-height: var(--ct-typography-quote-xxs-line-height);
+    font-family: var(--ct-typography-quote-xxs-font-name);
+    font-weight: var(--ct-typography-quote-xxs-font-weight);
+    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph blockquote p {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-quote-m-font-size);
+    line-height: var(--ct-typography-quote-m-line-height);
+    font-family: var(--ct-typography-quote-m-font-name);
+    font-weight: var(--ct-typography-quote-m-font-weight);
+    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
   }
 }
 .ct-paragraph blockquote p {
@@ -5503,20 +5503,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph blockquote cite {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph blockquote cite {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-paragraph blockquote cite {
@@ -5590,40 +5590,40 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph table {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph table {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-paragraph table thead,
   .ct-paragraph table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph table thead,
   .ct-paragraph table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-paragraph table tr th,
@@ -5637,20 +5637,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-paragraph table.ct-paragraph table--caption-after {
@@ -5658,20 +5658,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph table.ct-paragraph table--caption-after caption {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-xxs-font-size);
+    line-height: var(--ct-typography-text-small-xxs-line-height);
+    font-family: var(--ct-typography-text-small-xxs-font-name);
+    font-weight: var(--ct-typography-text-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph table.ct-paragraph table--caption-after caption {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-m-font-size);
+    line-height: var(--ct-typography-text-small-m-line-height);
+    font-family: var(--ct-typography-text-small-m-font-name);
+    font-weight: var(--ct-typography-text-small-m-font-weight);
+    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
   }
 }
 @media (max-width: 767px) {
@@ -5733,20 +5733,20 @@ ol ol ol {
 }
 @media (max-width: 767px) and (min-width: 0) {
   .ct-paragraph table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (max-width: 767px) and (min-width: 768px) {
   .ct-paragraph table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (max-width: 767px) {
@@ -5757,74 +5757,74 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-paragraph.ct-paragraph--extra-large {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-text-extra-large-xxs-font-size);
+    line-height: var(--ct-typography-text-extra-large-xxs-line-height);
+    font-family: var(--ct-typography-text-extra-large-xxs-font-name);
+    font-weight: var(--ct-typography-text-extra-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-extra-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-paragraph--extra-large {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-extra-large-m-font-size);
+    line-height: var(--ct-typography-text-extra-large-m-line-height);
+    font-family: var(--ct-typography-text-extra-large-m-font-name);
+    font-weight: var(--ct-typography-text-extra-large-m-font-weight);
+    letter-spacing: var(--ct-typography-text-extra-large-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-paragraph.ct-paragraph--large {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-large-xxs-font-size);
+    line-height: var(--ct-typography-text-large-xxs-line-height);
+    font-family: var(--ct-typography-text-large-xxs-font-name);
+    font-weight: var(--ct-typography-text-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-paragraph--large {
-    font-size: 1.25rem;
-    line-height: 2.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-large-m-font-size);
+    line-height: var(--ct-typography-text-large-m-line-height);
+    font-family: var(--ct-typography-text-large-m-font-name);
+    font-weight: var(--ct-typography-text-large-m-font-weight);
+    letter-spacing: var(--ct-typography-text-large-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-paragraph.ct-paragraph--regular {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-paragraph--regular {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-paragraph.ct-paragraph--small {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-xxs-font-size);
+    line-height: var(--ct-typography-text-small-xxs-line-height);
+    font-family: var(--ct-typography-text-small-xxs-font-name);
+    font-weight: var(--ct-typography-text-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-paragraph--small {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-m-font-size);
+    line-height: var(--ct-typography-text-small-m-line-height);
+    font-family: var(--ct-typography-text-small-m-font-name);
+    font-weight: var(--ct-typography-text-small-m-font-weight);
+    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
   }
 }
 .ct-paragraph.ct-theme-light {
@@ -6264,20 +6264,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-select {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-select {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 .ct-select {
@@ -6389,40 +6389,40 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-table {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-table {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-table thead,
   .ct-table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-table thead,
   .ct-table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-table tr th,
@@ -6436,20 +6436,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-table.ct-table--caption-after {
@@ -6457,20 +6457,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-table.ct-table--caption-after caption {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-xxs-font-size);
+    line-height: var(--ct-typography-text-small-xxs-line-height);
+    font-family: var(--ct-typography-text-small-xxs-font-name);
+    font-weight: var(--ct-typography-text-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-table.ct-table--caption-after caption {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-m-font-size);
+    line-height: var(--ct-typography-text-small-m-line-height);
+    font-family: var(--ct-typography-text-small-m-font-name);
+    font-weight: var(--ct-typography-text-small-m-font-weight);
+    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
   }
 }
 @media (max-width: 767px) {
@@ -6532,20 +6532,20 @@ ol ol ol {
 }
 @media (max-width: 767px) and (min-width: 0) {
   .ct-table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (max-width: 767px) and (min-width: 768px) {
   .ct-table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (max-width: 767px) {
@@ -6661,20 +6661,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-tag {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-tag {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-tag {
@@ -6765,20 +6765,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-textarea {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-textarea {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 .ct-textarea {
@@ -6868,20 +6868,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-textfield {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-xxs-font-size);
+    line-height: var(--ct-typography-label-small-xxs-line-height);
+    font-family: var(--ct-typography-label-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-textfield {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-small-m-font-size);
+    line-height: var(--ct-typography-label-small-m-line-height);
+    font-family: var(--ct-typography-label-small-m-font-name);
+    font-weight: var(--ct-typography-label-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-small-m-letter-spacing);
   }
 }
 .ct-textfield {
@@ -7007,11 +7007,11 @@ ol ol ol {
   border-top-right-radius: 0.25rem;
 }
 .ct-accordion .ct-accordion__panels__panel__header__button {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
   appearance: button;
   border-radius: 0.25rem;
   border: none;
@@ -7206,20 +7206,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 .ct-basic-content h1,
@@ -7232,20 +7232,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-1-xxs-font-size);
+    line-height: var(--ct-typography-heading-1-xxs-line-height);
+    font-family: var(--ct-typography-heading-1-xxs-font-name);
+    font-weight: var(--ct-typography-heading-1-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content h1 {
-    font-size: 3rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-heading-1-m-font-size);
+    line-height: var(--ct-typography-heading-1-m-line-height);
+    font-family: var(--ct-typography-heading-1-m-font-name);
+    font-weight: var(--ct-typography-heading-1-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-1-m-letter-spacing);
   }
 }
 .ct-basic-content h1 {
@@ -7258,20 +7258,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content h2 {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: var(--ct-typography-heading-2-xxs-font-size);
+    line-height: var(--ct-typography-heading-2-xxs-line-height);
+    font-family: var(--ct-typography-heading-2-xxs-font-name);
+    font-weight: var(--ct-typography-heading-2-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content h2 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.8px;
+    font-size: var(--ct-typography-heading-2-m-font-size);
+    line-height: var(--ct-typography-heading-2-m-line-height);
+    font-family: var(--ct-typography-heading-2-m-font-name);
+    font-weight: var(--ct-typography-heading-2-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-2-m-letter-spacing);
   }
 }
 .ct-basic-content h2 {
@@ -7284,20 +7284,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-heading-3-xxs-font-size);
+    line-height: var(--ct-typography-heading-3-xxs-line-height);
+    font-family: var(--ct-typography-heading-3-xxs-font-name);
+    font-weight: var(--ct-typography-heading-3-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content h3 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-size: var(--ct-typography-heading-3-m-font-size);
+    line-height: var(--ct-typography-heading-3-m-line-height);
+    font-family: var(--ct-typography-heading-3-m-font-name);
+    font-weight: var(--ct-typography-heading-3-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-3-m-letter-spacing);
   }
 }
 .ct-basic-content h3 {
@@ -7310,20 +7310,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content h4 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content h4 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-basic-content h4 {
@@ -7336,20 +7336,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content h5 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content h5 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 .ct-basic-content h5 {
@@ -7361,11 +7361,11 @@ ol ol ol {
   }
 }
 .ct-basic-content h6 {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
 }
 .ct-basic-content h6 {
   margin-bottom: 0.5rem;
@@ -7398,20 +7398,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content blockquote {
-    font-size: 1.125rem;
-    line-height: 1.815rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.15px;
+    font-size: var(--ct-typography-quote-xxs-font-size);
+    line-height: var(--ct-typography-quote-xxs-line-height);
+    font-family: var(--ct-typography-quote-xxs-font-name);
+    font-weight: var(--ct-typography-quote-xxs-font-weight);
+    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content blockquote {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-quote-m-font-size);
+    line-height: var(--ct-typography-quote-m-line-height);
+    font-family: var(--ct-typography-quote-m-font-name);
+    font-weight: var(--ct-typography-quote-m-font-weight);
+    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
   }
 }
 .ct-basic-content blockquote {
@@ -7434,20 +7434,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content blockquote p {
-    font-size: 1.125rem;
-    line-height: 1.815rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.15px;
+    font-size: var(--ct-typography-quote-xxs-font-size);
+    line-height: var(--ct-typography-quote-xxs-line-height);
+    font-family: var(--ct-typography-quote-xxs-font-name);
+    font-weight: var(--ct-typography-quote-xxs-font-weight);
+    letter-spacing: var(--ct-typography-quote-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content blockquote p {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.35px;
+    font-size: var(--ct-typography-quote-m-font-size);
+    line-height: var(--ct-typography-quote-m-line-height);
+    font-family: var(--ct-typography-quote-m-font-name);
+    font-weight: var(--ct-typography-quote-m-font-weight);
+    letter-spacing: var(--ct-typography-quote-m-letter-spacing);
   }
 }
 .ct-basic-content blockquote p {
@@ -7455,20 +7455,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content blockquote cite {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content blockquote cite {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-basic-content blockquote cite {
@@ -7542,40 +7542,40 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content table {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content table {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
   .ct-basic-content table thead,
   .ct-basic-content table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content table thead,
   .ct-basic-content table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-basic-content table tr th,
@@ -7589,20 +7589,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-basic-content table.ct-basic-content table--caption-after {
@@ -7610,20 +7610,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-basic-content table.ct-basic-content table--caption-after caption {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-xxs-font-size);
+    line-height: var(--ct-typography-text-small-xxs-line-height);
+    font-family: var(--ct-typography-text-small-xxs-font-name);
+    font-weight: var(--ct-typography-text-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-basic-content table.ct-basic-content table--caption-after caption {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-small-m-font-size);
+    line-height: var(--ct-typography-text-small-m-line-height);
+    font-family: var(--ct-typography-text-small-m-font-name);
+    font-weight: var(--ct-typography-text-small-m-font-weight);
+    letter-spacing: var(--ct-typography-text-small-m-letter-spacing);
   }
 }
 @media (max-width: 767px) {
@@ -7685,20 +7685,20 @@ ol ol ol {
 }
 @media (max-width: 767px) and (min-width: 0) {
   .ct-basic-content table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (max-width: 767px) and (min-width: 768px) {
   .ct-basic-content table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (max-width: 767px) {
@@ -7937,20 +7937,20 @@ ol ol ol {
 
 @media (min-width: 0) {
   .ct-breadcrumb {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-breadcrumb {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-breadcrumb.ct-theme-light .ct-breadcrumb__links__separator {
@@ -8081,20 +8081,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-event-card .ct-event-card__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-event-card .ct-event-card__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-event-card .ct-event-card__title-link {
@@ -8117,20 +8117,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-event-card .ct-event-card__location {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-event-card .ct-event-card__location {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-event-card .ct-event-card__tags {
@@ -8273,20 +8273,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-fast-fact-card__title {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03px;
+    font-size: var(--ct-typography-display-xxs-font-size);
+    line-height: var(--ct-typography-display-xxs-line-height);
+    font-family: var(--ct-typography-display-xxs-font-name);
+    font-weight: var(--ct-typography-display-xxs-font-weight);
+    letter-spacing: var(--ct-typography-display-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-fast-fact-card__title {
-    font-size: 3.5rem;
-    line-height: 3.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-size: var(--ct-typography-display-m-font-size);
+    line-height: var(--ct-typography-display-m-line-height);
+    font-family: var(--ct-typography-display-m-font-name);
+    font-weight: var(--ct-typography-display-m-font-weight);
+    letter-spacing: var(--ct-typography-display-m-letter-spacing);
   }
 }
 .ct-fast-fact-card__title-link {
@@ -8416,20 +8416,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-figure .ct-figure__caption {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-figure .ct-figure__caption {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-figure.ct-theme-light .ct-figure__caption {
@@ -8453,20 +8453,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-group-filter .ct-group-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-group-filter .ct-group-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-group-filter .ct-group-filter__row {
@@ -8656,20 +8656,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-navigation-card .ct-navigation-card__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-navigation-card .ct-navigation-card__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-navigation-card .ct-navigation-card__title-link {
@@ -8794,20 +8794,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-next-step .ct-next-step__title {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-next-step .ct-next-step__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 .ct-next-step .ct-next-step__title__link {
@@ -8840,20 +8840,20 @@ ol ol ol {
 
 @media (min-width: 0) {
   .ct-pagination {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-pagination {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-pagination {
@@ -9024,20 +9024,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-promo-card .ct-promo-card__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-promo-card .ct-promo-card__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-promo-card .ct-promo-card__title-link {
@@ -9202,20 +9202,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-publication-card .ct-publication-card__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-publication-card .ct-publication-card__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-publication-card .ct-publication-card__title-bar {
@@ -9250,20 +9250,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-publication-card .ct-publication-card__filename {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-publication-card .ct-publication-card__filename {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-publication-card .ct-publication-card__content-bottom {
@@ -9328,20 +9328,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-search__link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-search__link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-search__link {
@@ -9496,20 +9496,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-single-filter .ct-single-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-single-filter .ct-single-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-single-filter .ct-single-filter__submit {
@@ -9575,20 +9575,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-snippet .ct-snippet__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-snippet .ct-snippet__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-snippet .ct-snippet__title-link {
@@ -9706,20 +9706,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-subject-card .ct-subject-card__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-subject-card .ct-subject-card__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-subject-card .ct-subject-card__title-link {
@@ -9802,20 +9802,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-table-of-contents__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.25px;
+    font-size: var(--ct-typography-heading-4-xxs-font-size);
+    line-height: var(--ct-typography-heading-4-xxs-line-height);
+    font-family: var(--ct-typography-heading-4-xxs-font-name);
+    font-weight: var(--ct-typography-heading-4-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-table-of-contents__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    font-size: var(--ct-typography-heading-4-m-font-size);
+    line-height: var(--ct-typography-heading-4-m-line-height);
+    font-family: var(--ct-typography-heading-4-m-font-name);
+    font-weight: var(--ct-typography-heading-4-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-4-m-letter-spacing);
   }
 }
 .ct-table-of-contents__title {
@@ -9829,20 +9829,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-table-of-contents__link {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-table-of-contents__link {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-table-of-contents__link {
@@ -9936,20 +9936,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-tabs .ct-tabs__links .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-tabs .ct-tabs__links .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-tabs .ct-tabs__links .ct-link {
@@ -10023,20 +10023,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-tooltip .ct-tooltip__description {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-tooltip .ct-tooltip__description {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-tooltip .ct-tooltip__description {
@@ -10244,28 +10244,28 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-alert {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-alert {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 .ct-alert .ct-alert__title {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
   display: flex;
   align-items: center;
 }
@@ -10307,11 +10307,11 @@ ol ol ol {
 }
 @media (min-width: 768px) {
   .ct-alert .ct-alert__dismiss-button {
-    font-size: 1rem;
-    line-height: 1.625rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-6-font-size);
+    line-height: var(--ct-typography-heading-6-line-height);
+    font-family: var(--ct-typography-heading-6-font-name);
+    font-weight: var(--ct-typography-heading-6-font-weight);
+    letter-spacing: var(--ct-typography-heading-6-letter-spacing);
     position: unset;
     align-self: center;
     margin-left: auto;
@@ -10760,20 +10760,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-list__results-count {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-list__results-count {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 .ct-list__rows .col,
@@ -10821,20 +10821,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-message .ct-message__inner {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-message .ct-message__inner {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 .ct-message .ct-message__icon {
@@ -10978,20 +10978,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-mobile-navigation .ct-mobile-navigation__top-menu .ct-menu__item .ct-link {
@@ -11055,20 +11055,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-xxs-font-size);
+    line-height: var(--ct-typography-label-regular-xxs-line-height);
+    font-family: var(--ct-typography-label-regular-xxs-font-name);
+    font-weight: var(--ct-typography-label-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-regular-m-font-size);
+    line-height: var(--ct-typography-label-regular-m-line-height);
+    font-family: var(--ct-typography-label-regular-m-font-name);
+    font-weight: var(--ct-typography-label-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-m-letter-spacing);
   }
 }
 @media (min-width: 0) {
@@ -11104,20 +11104,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-large-xxs-font-size);
+    line-height: var(--ct-typography-label-large-xxs-line-height);
+    font-family: var(--ct-typography-label-large-xxs-font-name);
+    font-weight: var(--ct-typography-label-large-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-large-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-large-m-font-size);
+    line-height: var(--ct-typography-label-large-m-line-height);
+    font-family: var(--ct-typography-label-large-m-font-name);
+    font-weight: var(--ct-typography-label-large-m-font-weight);
+    letter-spacing: var(--ct-typography-label-large-m-letter-spacing);
   }
 }
 .ct-mobile-navigation .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] .ct-icon {
@@ -11255,20 +11255,20 @@ ol ol ol {
 
 @media (min-width: 0) {
   .ct-mobile-navigation-trigger {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
+    font-size: var(--ct-typography-label-extra-small-xxs-font-size);
+    line-height: var(--ct-typography-label-extra-small-xxs-line-height);
+    font-family: var(--ct-typography-label-extra-small-xxs-font-name);
+    font-weight: var(--ct-typography-label-extra-small-xxs-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-mobile-navigation-trigger {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-label-extra-small-m-font-size);
+    line-height: var(--ct-typography-label-extra-small-m-line-height);
+    font-family: var(--ct-typography-label-extra-small-m-font-name);
+    font-weight: var(--ct-typography-label-extra-small-m-font-weight);
+    letter-spacing: var(--ct-typography-label-extra-small-m-letter-spacing);
   }
 }
 @media print {
@@ -11333,20 +11333,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-navigation .ct-navigation__title {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-navigation .ct-navigation__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 .ct-navigation .ct-navigation__items {
@@ -11569,20 +11569,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-link {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-link {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__sub-menu__wrapper--level-2 {
@@ -11847,20 +11847,20 @@ ol ol ol {
 
 @media (min-width: 0) {
   .ct-side-navigation__title {
-    font-size: 1rem;
-    line-height: 1.375rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-5-xxs-font-size);
+    line-height: var(--ct-typography-heading-5-xxs-line-height);
+    font-family: var(--ct-typography-heading-5-xxs-font-name);
+    font-weight: var(--ct-typography-heading-5-xxs-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-side-navigation__title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.2px;
+    font-size: var(--ct-typography-heading-5-m-font-size);
+    line-height: var(--ct-typography-heading-5-m-line-height);
+    font-family: var(--ct-typography-heading-5-m-font-name);
+    font-weight: var(--ct-typography-heading-5-m-font-weight);
+    letter-spacing: var(--ct-typography-heading-5-m-letter-spacing);
   }
 }
 .ct-side-navigation__title {
@@ -11914,20 +11914,20 @@ ol ol ol {
 }
 @media (min-width: 0) {
   .ct-side-navigation__menu .ct-menu__item__link {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-xxs-font-size);
+    line-height: var(--ct-typography-text-regular-xxs-line-height);
+    font-family: var(--ct-typography-text-regular-xxs-font-name);
+    font-weight: var(--ct-typography-text-regular-xxs-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-xxs-letter-spacing);
   }
 }
 @media (min-width: 768px) {
   .ct-side-navigation__menu .ct-menu__item__link {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-text-regular-m-font-size);
+    line-height: var(--ct-typography-text-regular-m-line-height);
+    font-family: var(--ct-typography-text-regular-m-font-name);
+    font-weight: var(--ct-typography-text-regular-m-font-weight);
+    letter-spacing: var(--ct-typography-text-regular-m-letter-spacing);
   }
 }
 .ct-side-navigation__menu .ct-menu__item__link {
@@ -12464,6 +12464,171 @@ html {
   --ct-color-dark-brand1: #61daff;
   --ct-color-dark-brand2: #003a4f;
   --ct-color-dark-brand3: #00698f;
+  --ct-typography-display-xxs-font-size: 2rem;
+  --ct-typography-display-xxs-line-height: 2.5rem;
+  --ct-typography-display-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-display-xxs-font-weight: 700;
+  --ct-typography-display-xxs-letter-spacing: -0.03px;
+  --ct-typography-display-m-font-size: 3.5rem;
+  --ct-typography-display-m-line-height: 3.75rem;
+  --ct-typography-display-m-font-name: "Lexend", sans-serif;
+  --ct-typography-display-m-font-weight: 700;
+  --ct-typography-display-m-letter-spacing: -1px;
+  --ct-typography-heading-1-xxs-font-size: 2rem;
+  --ct-typography-heading-1-xxs-line-height: 2.5rem;
+  --ct-typography-heading-1-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-1-xxs-font-weight: 700;
+  --ct-typography-heading-1-xxs-letter-spacing: -0.6px;
+  --ct-typography-heading-1-m-font-size: 3rem;
+  --ct-typography-heading-1-m-line-height: 3.75rem;
+  --ct-typography-heading-1-m-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-1-m-font-weight: 700;
+  --ct-typography-heading-1-m-letter-spacing: -1px;
+  --ct-typography-heading-2-xxs-font-size: 1.75rem;
+  --ct-typography-heading-2-xxs-line-height: 2.25rem;
+  --ct-typography-heading-2-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-2-xxs-font-weight: 700;
+  --ct-typography-heading-2-xxs-letter-spacing: -0.5px;
+  --ct-typography-heading-2-m-font-size: 2.5rem;
+  --ct-typography-heading-2-m-line-height: 3rem;
+  --ct-typography-heading-2-m-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-2-m-font-weight: 700;
+  --ct-typography-heading-2-m-letter-spacing: -0.8px;
+  --ct-typography-heading-3-xxs-font-size: 1.5rem;
+  --ct-typography-heading-3-xxs-line-height: 2rem;
+  --ct-typography-heading-3-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-3-xxs-font-weight: 700;
+  --ct-typography-heading-3-xxs-letter-spacing: -0.35px;
+  --ct-typography-heading-3-m-font-size: 2rem;
+  --ct-typography-heading-3-m-line-height: 2.5rem;
+  --ct-typography-heading-3-m-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-3-m-font-weight: 700;
+  --ct-typography-heading-3-m-letter-spacing: -0.6px;
+  --ct-typography-heading-4-xxs-font-size: 1.25rem;
+  --ct-typography-heading-4-xxs-line-height: 1.5rem;
+  --ct-typography-heading-4-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-4-xxs-font-weight: 700;
+  --ct-typography-heading-4-xxs-letter-spacing: -0.25px;
+  --ct-typography-heading-4-m-font-size: 1.5rem;
+  --ct-typography-heading-4-m-line-height: 2rem;
+  --ct-typography-heading-4-m-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-4-m-font-weight: 700;
+  --ct-typography-heading-4-m-letter-spacing: -0.4px;
+  --ct-typography-heading-5-xxs-font-size: 1rem;
+  --ct-typography-heading-5-xxs-line-height: 1.375rem;
+  --ct-typography-heading-5-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-5-xxs-font-weight: 700;
+  --ct-typography-heading-5-xxs-letter-spacing: 0;
+  --ct-typography-heading-5-m-font-size: 1.25rem;
+  --ct-typography-heading-5-m-line-height: 1.5rem;
+  --ct-typography-heading-5-m-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-5-m-font-weight: 700;
+  --ct-typography-heading-5-m-letter-spacing: -0.2px;
+  --ct-typography-heading-6-font-size: 1rem;
+  --ct-typography-heading-6-line-height: 1.625rem;
+  --ct-typography-heading-6-font-name: "Lexend", sans-serif;
+  --ct-typography-heading-6-font-weight: 700;
+  --ct-typography-heading-6-letter-spacing: 0;
+  --ct-typography-text-extra-large-xxs-font-size: 1.25rem;
+  --ct-typography-text-extra-large-xxs-line-height: 1.5rem;
+  --ct-typography-text-extra-large-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-text-extra-large-xxs-font-weight: 400;
+  --ct-typography-text-extra-large-xxs-letter-spacing: -0.1px;
+  --ct-typography-text-extra-large-m-font-size: 1.5rem;
+  --ct-typography-text-extra-large-m-line-height: 1.5rem;
+  --ct-typography-text-extra-large-m-font-name: "Lexend", sans-serif;
+  --ct-typography-text-extra-large-m-font-weight: 400;
+  --ct-typography-text-extra-large-m-letter-spacing: 0;
+  --ct-typography-text-large-xxs-font-size: 1.125rem;
+  --ct-typography-text-large-xxs-line-height: 1.75rem;
+  --ct-typography-text-large-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-text-large-xxs-font-weight: 400;
+  --ct-typography-text-large-xxs-letter-spacing: 0;
+  --ct-typography-text-large-m-font-size: 1.25rem;
+  --ct-typography-text-large-m-line-height: 2.125rem;
+  --ct-typography-text-large-m-font-name: "Lexend", sans-serif;
+  --ct-typography-text-large-m-font-weight: 400;
+  --ct-typography-text-large-m-letter-spacing: 0;
+  --ct-typography-text-regular-xxs-font-size: 0.875rem;
+  --ct-typography-text-regular-xxs-line-height: 1.5rem;
+  --ct-typography-text-regular-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-text-regular-xxs-font-weight: 400;
+  --ct-typography-text-regular-xxs-letter-spacing: 0;
+  --ct-typography-text-regular-m-font-size: 1rem;
+  --ct-typography-text-regular-m-line-height: 1.75rem;
+  --ct-typography-text-regular-m-font-name: "Lexend", sans-serif;
+  --ct-typography-text-regular-m-font-weight: 400;
+  --ct-typography-text-regular-m-letter-spacing: 0;
+  --ct-typography-text-small-xxs-font-size: 0.75rem;
+  --ct-typography-text-small-xxs-line-height: 1.25rem;
+  --ct-typography-text-small-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-text-small-xxs-font-weight: 400;
+  --ct-typography-text-small-xxs-letter-spacing: 0;
+  --ct-typography-text-small-m-font-size: 0.875rem;
+  --ct-typography-text-small-m-line-height: 1.5rem;
+  --ct-typography-text-small-m-font-name: "Lexend", sans-serif;
+  --ct-typography-text-small-m-font-weight: 400;
+  --ct-typography-text-small-m-letter-spacing: 0;
+  --ct-typography-label-extra-large-xxs-font-size: 1.25rem;
+  --ct-typography-label-extra-large-xxs-line-height: 1.5rem;
+  --ct-typography-label-extra-large-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-label-extra-large-xxs-font-weight: 600;
+  --ct-typography-label-extra-large-xxs-letter-spacing: -0.1px;
+  --ct-typography-label-extra-large-m-font-size: 1.5rem;
+  --ct-typography-label-extra-large-m-line-height: 1.5rem;
+  --ct-typography-label-extra-large-m-font-name: "Lexend", sans-serif;
+  --ct-typography-label-extra-large-m-font-weight: 600;
+  --ct-typography-label-extra-large-m-letter-spacing: 0;
+  --ct-typography-label-large-xxs-font-size: 1.125rem;
+  --ct-typography-label-large-xxs-line-height: 1.5rem;
+  --ct-typography-label-large-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-label-large-xxs-font-weight: 600;
+  --ct-typography-label-large-xxs-letter-spacing: -0.1px;
+  --ct-typography-label-large-m-font-size: 1.125rem;
+  --ct-typography-label-large-m-line-height: 1.5rem;
+  --ct-typography-label-large-m-font-name: "Lexend", sans-serif;
+  --ct-typography-label-large-m-font-weight: 600;
+  --ct-typography-label-large-m-letter-spacing: 0;
+  --ct-typography-label-regular-xxs-font-size: 1rem;
+  --ct-typography-label-regular-xxs-line-height: 1.25rem;
+  --ct-typography-label-regular-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-label-regular-xxs-font-weight: 600;
+  --ct-typography-label-regular-xxs-letter-spacing: -0.1px;
+  --ct-typography-label-regular-m-font-size: 1rem;
+  --ct-typography-label-regular-m-line-height: 1.25rem;
+  --ct-typography-label-regular-m-font-name: "Lexend", sans-serif;
+  --ct-typography-label-regular-m-font-weight: 600;
+  --ct-typography-label-regular-m-letter-spacing: -0.1px;
+  --ct-typography-label-small-xxs-font-size: 1rem;
+  --ct-typography-label-small-xxs-line-height: 1.25rem;
+  --ct-typography-label-small-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-label-small-xxs-font-weight: 400;
+  --ct-typography-label-small-xxs-letter-spacing: -0.1px;
+  --ct-typography-label-small-m-font-size: 1rem;
+  --ct-typography-label-small-m-line-height: 1.25rem;
+  --ct-typography-label-small-m-font-name: "Lexend", sans-serif;
+  --ct-typography-label-small-m-font-weight: 400;
+  --ct-typography-label-small-m-letter-spacing: -0.1px;
+  --ct-typography-label-extra-small-xxs-font-size: 0.875rem;
+  --ct-typography-label-extra-small-xxs-line-height: 1.25rem;
+  --ct-typography-label-extra-small-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-label-extra-small-xxs-font-weight: 400;
+  --ct-typography-label-extra-small-xxs-letter-spacing: -0.1px;
+  --ct-typography-label-extra-small-m-font-size: 0.875rem;
+  --ct-typography-label-extra-small-m-line-height: 1.125rem;
+  --ct-typography-label-extra-small-m-font-name: "Lexend", sans-serif;
+  --ct-typography-label-extra-small-m-font-weight: 400;
+  --ct-typography-label-extra-small-m-letter-spacing: 0;
+  --ct-typography-quote-xxs-font-size: 1.125rem;
+  --ct-typography-quote-xxs-line-height: 1.815rem;
+  --ct-typography-quote-xxs-font-name: "Lexend", sans-serif;
+  --ct-typography-quote-xxs-font-weight: 400;
+  --ct-typography-quote-xxs-letter-spacing: -0.15px;
+  --ct-typography-quote-m-font-size: 1.5rem;
+  --ct-typography-quote-m-line-height: 2.5rem;
+  --ct-typography-quote-m-font-name: "Lexend", sans-serif;
+  --ct-typography-quote-m-font-weight: 400;
+  --ct-typography-quote-m-letter-spacing: -0.35px;
   --ct-collapsible-light-color: var(--ct-color-light-body);
   --ct-collapsible-light-icon-color: var(--ct-color-light-body);
   --ct-collapsible-dark-color: var(--ct-color-dark-body);
