@@ -58,6 +58,10 @@ props:
           type: boolean
           title: External
           description: Whether the link is external.
+    is_title_click:
+      type: boolean
+      title: Title click
+      description: Whether to make only the title clickable instead of the whole card.
 slots:
   icon:
     title: Icon

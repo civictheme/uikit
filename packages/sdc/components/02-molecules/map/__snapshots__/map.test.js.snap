@@ -54,20 +54,25 @@ exports[`Map Component renders with default view text 1`] = `
           
           
                                     
-
-  
           <a
-            class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--regular  ct-button--external ct-map__link"
-            data-component-name="button"
+            class="ct-link ct-theme-light ct-link--external    ct-map__link"
             href="https://maps.google.com"
-            role="button"
             target="_blank"
           >
-            View in Google 
+            <span
+              class="ct-text-icon__text"
+            >
+              View in Google 
+            </span>
             <span
               class="ct-text-icon__group"
             >
-              Maps  
+              <span
+                class="ct-text-icon__text"
+              >
+                Maps
+              </span>
+               
               <svg
                 aria-hidden="true"
                 class="ct-icon  "
@@ -94,8 +99,7 @@ exports[`Map Component renders with default view text 1`] = `
               (Opens in a new tab/window)
             </span>
           </a>
-          
-                      
+                                
                                         
         </div>
         
@@ -167,20 +171,25 @@ exports[`Map Component renders with optional attributes 1`] = `
           
           
                                     
-
-  
           <a
-            class="ct-button ct-theme-dark ct-button--tertiary ct-button--link ct-button--regular  ct-button--external ct-map__link"
-            data-component-name="button"
+            class="ct-link ct-theme-dark ct-link--external    ct-map__link"
             href="https://maps.google.com"
-            role="button"
             target="_blank"
           >
-            View in Google 
+            <span
+              class="ct-text-icon__text"
+            >
+              View in Google 
+            </span>
             <span
               class="ct-text-icon__group"
             >
-              Maps  
+              <span
+                class="ct-text-icon__text"
+              >
+                Maps
+              </span>
+               
               <svg
                 aria-hidden="true"
                 class="ct-icon  "
@@ -207,8 +216,7 @@ exports[`Map Component renders with optional attributes 1`] = `
               (Opens in a new tab/window)
             </span>
           </a>
-          
-                      
+                                
                                     
           <div
             class="ct-map__content-bottom"

@@ -49,7 +49,7 @@ describe('Navigation Card Component', () => {
     const icon = c.querySelector('.ct-navigation-card__icon');
     expect(icon).toBeTruthy();
 
-    const link = c.querySelector('.ct-navigation-card__title__link');
+    const link = c.querySelector('.ct-navigation-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com');
     expect(link.getAttribute('target')).toEqual('_blank');
@@ -94,7 +94,7 @@ describe('Navigation Card Component', () => {
     const icon = c.querySelector('.ct-navigation-card__icon');
     expect(icon).toBeNull();
 
-    const link = c.querySelector('.ct-navigation-card__title__link');
+    const link = c.querySelector('.ct-navigation-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com');
     expect(link.getAttribute('target')).toEqual('_blank');
@@ -135,7 +135,7 @@ describe('Navigation Card Component', () => {
       link: { text: 'Learn more', url: 'https://example.com' },
     });
 
-    const link = c.querySelector('.ct-navigation-card__title__link');
+    const link = c.querySelector('.ct-navigation-card__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com');
 

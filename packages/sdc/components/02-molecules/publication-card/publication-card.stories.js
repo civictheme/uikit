@@ -27,6 +27,12 @@ const meta = {
     file: {
       control: { type: 'object' },
     },
+    is_title_click: {
+      control: { type: 'boolean' },
+    },
+    filename_prefix: {
+      control: { type: 'text' },
+    },
     content_top: {
       control: { type: 'text' },
     },
@@ -53,8 +59,8 @@ export const PublicationCard = {
   },
   args: {
     theme: 'light',
-    title: 'Promo card title',
-    summary: 'Summary of the promo card',
+    title: 'Publication card title',
+    summary: 'Summary of the publication card',
     image: {
       url: './demo/images/demo1.jpg',
       alt: 'Image alt text',
@@ -68,6 +74,8 @@ export const PublicationCard = {
       changed: '2022-01-02',
       icon: 'word-file',
     },
+    is_title_click: false,
+    filename_prefix: 'File details:',
     image_over: '',
     content_top: '',
     content_middle: '',

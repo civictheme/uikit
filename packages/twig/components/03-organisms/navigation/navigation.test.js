@@ -28,6 +28,7 @@ describe('Navigation Component', () => {
       ],
       title: 'Main Navigation',
       type: 'dropdown',
+      variant: 'primary',
       dropdown_columns: 3,
       dropdown_columns_fill: true,
       is_animated: true,
@@ -61,6 +62,7 @@ describe('Navigation Component', () => {
       ],
       title: '',
       type: 'none',
+      variant: 'secondary',
       modifier_class: '',
     });
 
@@ -86,6 +88,7 @@ describe('Navigation Component', () => {
         { title: 'Contact', url: '/contact', below: [{ title: 'Support', url: '/contact/support' }] },
       ],
       type: 'drawer',
+      variant: 'primary',
       dropdown_columns: 2,
       dropdown_columns_fill: false,
       is_animated: true,

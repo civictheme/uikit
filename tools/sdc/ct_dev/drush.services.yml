@@ -1,0 +1,5 @@
+services:
+  ct_dev.commands:
+    class: \Drupal\ct_dev\Commands\ValidateComponentCommand
+    tags:
+      - { name: drush.command }

@@ -25,6 +25,10 @@ props:
           type: string
           title: Alt text
           description: Image alt text.
+    is_title_click:
+      type: boolean
+      title: Title click
+      description: Whether to make only the title clickable instead of the whole card.
     date_iso:
       type: string
       title: ISO date

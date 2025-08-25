@@ -158,7 +158,7 @@
 
       {% else %}
         {% set control0 = control[0] %}
-        {% set control0 = control0|merge({'type': type}) %}
+        {% set control0 = control0|merge({type: type}) %}
         {% include 'civictheme:input' with control0 only %}
       {% endif %}
 
@@ -187,7 +187,7 @@
           content: message_content,
           allow_html: true,
           modifier_class: 'ct-field__message',
-          attributes: message.attributes|default('')
+          attributes: message.attributes|default(''),
         } only %}
       {% endif %}
     </div>

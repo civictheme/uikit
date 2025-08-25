@@ -8,6 +8,7 @@
  * - name: [string] Navigation name for nav element.
  * - menu_id: [string] Optional menu ID used for grouping dropdown items.
  * - type: [string] Navigation display type (none, inline, dropdown, drawer).
+ * - variant: [string] One of: primary, secondary.
  * - dropdown_columns: [integer] Dropdown drawer column count.
  * - dropdown_columns_fill: [boolean] Whether to fill columns.
  * - is_animated: [boolean] Whether to use animation for transitions.
@@ -33,8 +34,9 @@
 
 {% set menu_id = menu_id|default('navigation') %}
 {% set dropdown_class = 'ct-navigation--%s'|format(type|default('none')) %}
+{% set variant_class = variant ? 'ct-navigation--%s'|format(variant) : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, dropdown_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s'|format(theme_class, dropdown_class, variant_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
   {% if type in ['dropdown', 'drawer'] %}
@@ -49,13 +51,13 @@
           {% set item_dropdown_columns_fill_class = dropdown_columns_fill ? 'ct-navigation__dropdown-columns--fill' : '' %}
           {% set item_modifier_class = 'ct-navigation__has-dropdown %s %s'|format(item_dropdown_columns_class, item_dropdown_columns_fill_class) %}
           {# Update item with attributes and classes. #}
-          {% set new_item = items[key]|merge({'attributes': item_attributes, 'modifier_class': item_modifier_class}) %}
+          {% set new_item = items[key]|merge({attributes: item_attributes, modifier_class: item_modifier_class}) %}
           {% set items = items|merge({(key): new_item}) %}
         {% else %}
           {# Item classes to style dynamically. #}
           {% set item_modifier_class = 'ct-navigation__has-dropdown' %}
           {# Update item with attributes and classes. #}
-          {% set new_item = items[key]|merge({'attributes': item_attributes, 'modifier_class': item_modifier_class}) %}
+          {% set new_item = items[key]|merge({attributes: item_attributes, modifier_class: item_modifier_class}) %}
           {% set items = items|merge({(key): new_item}) %}
         {% endif %}
       {% endif %}
@@ -63,7 +65,7 @@
   {% else %}
     {% for key in items|keys %}
       {% if items[key].below %}
-        {% set items_without_below = items[key]|merge({'below': null}) %}
+        {% set items_without_below = items[key]|merge({below: null}) %}
         {% set items = items|merge({(key): items_without_below}) %}
       {% endif %}
     {% endfor %}
@@ -85,7 +87,7 @@
       class="ct-navigation__items"
       {% if name is not empty %}aria-label="{{ name }}"{% endif %}
     >
-      {% include '@base/menu/menu.twig' with {
+    {% include '@base/menu/menu.twig' with {
         theme: theme,
         items: items,
         modifier_class: 'ct-navigation__menu',

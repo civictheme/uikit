@@ -210,6 +210,10 @@ $ct-font-base-line-height: $ct-font-base-size !default;
 // without breaking consumer sites.
 $ct-typography: () !default;
 $ct-typography-default: (
+  'display': (
+    'xxs': ($ct-font-base-size * 2, $ct-font-base-line-height * 2.5, 'bold', 'primary', -0.03px),
+    'm': ($ct-font-base-size * 3.5, $ct-font-base-line-height * 3.75, 'bold', 'primary', -1px)
+  ),
   // Headings.
   'heading-1': (
     'xxs': ($ct-font-base-size * 2, $ct-font-base-line-height * 2.5, 'bold', 'primary', -0.6px),

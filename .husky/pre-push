@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# Run dist
+echo "Running dist..."
+npm run dist
+if [ $? -ne 0 ]; then
+  echo "❌ Dist failed. Push aborted."
+  exit 1
+fi
+
+# Run components:update
+echo "Running components:update..."
+npm run components:update
+if [ $? -ne 0 ]; then
+  echo "❌ Components update failed. Push aborted."
+  exit 1
+fi
+
+# Check for uncommitted changes after dist and components:update
+if ! git diff --quiet || ! git diff --cached --quiet; then
+  echo "❌ There are uncommitted changes after running 'npm run dist' and 'npm run components:update'."
+  echo "Please commit the changes before pushing."
+  git status --short
+  exit 1
+fi
+
+# Run lint
+echo "Running lint..."
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "❌ Lint failed. Push aborted."
+  exit 1
+fi
+
+# Run tests
+echo "Running tests..."
+npm run test
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Push aborted."
+  exit 1
+fi
+
+echo "✅ All pre-push checks passed!"

@@ -45,7 +45,7 @@ describe('Snippet Component', () => {
     expect(c.querySelector('.ct-snippet__summary').textContent.trim()).toEqual('This is the summary of the snippet.');
     expect(c.querySelector('.ct-snippet__content-middle').textContent.trim()).toEqual('Middle content');
 
-    const link = c.querySelector('.ct-snippet__title__link');
+    const link = c.querySelector('.ct-snippet__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com/read-more');
     expect(link.getAttribute('target')).toEqual('_blank');
@@ -76,7 +76,7 @@ describe('Snippet Component', () => {
       tags: ['Tag1', 'Tag2'],
     });
 
-    const link = c.querySelector('.ct-snippet__title__link');
+    const link = c.querySelector('.ct-snippet__title-link');
     expect(link).toBeTruthy();
     expect(link.getAttribute('href')).toEqual('https://example.com/read-more');
 

@@ -44,13 +44,14 @@
       @include ct-typography('text-regular');
 
       & {
+        @include ct-link-no-decoration();
+
         display: block;
         box-sizing: border-box;
         position: relative;
         padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
         border-bottom-width: ct-particle(0.125);
         border-bottom-style: solid;
-        text-decoration: none;
       }
 
       &:first-child {

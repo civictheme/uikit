@@ -1827,6 +1827,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 /**
+ * CivicTheme Webform component.
+ */
+
+// phpcs:ignoreFile
+function CivicThemeWebform(el) {
+  if (el.getAttribute('data-webform') === 'true' || this.el) {
+    return;
+  }
+
+  this.el = el;
+
+  // Check for form errors and scroll to error message if present.
+  const fieldErrors = this.el.querySelectorAll('.ct-field-message--error');
+  if (fieldErrors.length > 0) {
+    const errorMessage = document.querySelector('.ct-message--error');
+    if (errorMessage) {
+      // Make error message focusable if it's not a link.
+      if (!errorMessage.matches('a')) {
+        errorMessage.setAttribute('tabindex', '-1');
+      }
+      errorMessage.focus();
+      errorMessage.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  }
+
+  // Mark as initialized.
+  this.el.setAttribute('data-webform', 'true');
+}
+
+// Initialize CivicThemeWebform on every element.
+document.querySelectorAll('.ct-webform').forEach((webform) => {
+  // eslint-disable-next-line no-new
+  new CivicThemeWebform(webform);
+});
+
+});
+document.addEventListener('DOMContentLoaded', () => {
+/**
  * CivicTheme Slider component.
  */
 
@@ -1853,7 +1893,7 @@ function CivicThemeSlider(el) {
   this.animationTimeout = null;
 
   this.updateProgress();
-  this.updateControlsState();
+  this.addSlideAriaAttributes();
   this.hideAllSlidesExceptCurrent();
 
   this.refresh();
@@ -1916,6 +1956,12 @@ CivicThemeSlider.prototype.enableSlideInteraction = function () {
   });
 };
 
+CivicThemeSlider.prototype.addSlideAriaAttributes = function () {
+  this.slides.forEach((slide, idx) => {
+    slide.setAttribute('aria-label', `Slide ${idx + 1} of ${this.totalSlides}`);
+  });
+};
+
 CivicThemeSlider.prototype.disableSlideInteraction = function () {
   this.rail.querySelectorAll('a, button').forEach((link) => {
     link.setAttribute('tabindex', '-1');
@@ -1948,36 +1994,28 @@ CivicThemeSlider.prototype.updateDisplaySlide = function () {
   }, duration);
 };
 
-CivicThemeSlider.prototype.updateControlsState = function () {
-  this.prev.disabled = (this.currentSlide === 0);
-  if (this.prev.disabled) {
-    this.prev.classList.remove('focus');
-    this.prev.blur();
-  }
-  this.next.disabled = (this.currentSlide === (this.totalSlides - 1));
-  if (this.next.disabled) {
-    this.next.classList.remove('focus');
-    this.next.blur();
-  }
-};
-
 CivicThemeSlider.prototype.previousClick = function () {
-  this.currentSlide--;
-  this.currentSlide = this.currentSlide < 0 ? 0 : this.currentSlide;
+  // Go to last slide if current slide is the first slide.
+  if (this.currentSlide === 0) {
+    this.currentSlide = this.totalSlides - 1;
+  } else {
+    this.currentSlide--;
+  }
   this.rail.style.left = `${this.currentSlide * -100}%`;
   this.updateProgress();
   this.updateDisplaySlide();
-  this.updateControlsState();
 };
 
 CivicThemeSlider.prototype.nextClick = function () {
-  this.currentSlide++;
-  const total = this.totalSlides - 1;
-  this.currentSlide = this.currentSlide > total ? total : this.currentSlide;
+  // Go to first slide if current slide is the last slide.
+  if (this.currentSlide === (this.totalSlides - 1)) {
+    this.currentSlide = 0;
+  } else {
+    this.currentSlide++;
+  }
   this.rail.style.left = `${this.currentSlide * -100}%`;
   this.updateProgress();
   this.updateDisplaySlide();
-  this.updateControlsState();
 };
 
 CivicThemeSlider.prototype.updateProgress = function () {
@@ -3694,13 +3732,14 @@ function CivicThemeCollapsible(el) {
     iconEl.classList.add('ct-collapsible__icon');
     // If multiple words - use last word and icon grouping.
     if (this.iconGroupEnabled) {
+      const wrapText = (text) => `<span class="ct-text-icon__text">${text}</span>`;
       const text = this.trigger.innerText.trim();
       const lastWordIndex = text.lastIndexOf(' ');
       const lastWord = lastWordIndex >= 0 ? text.substring(lastWordIndex + 1) : text;
       const firstWords = lastWordIndex >= 0 ? text.substring(0, lastWordIndex + 1) : '';
-      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${lastWord} </span>`);
+      const iconGroupEl = this.htmlToElement(`<span class="ct-text-icon__group">${wrapText(lastWord)} </span>`);
       iconGroupEl.append(iconEl);
-      this.trigger.innerHTML = firstWords;
+      this.trigger.innerHTML = wrapText(firstWords);
       this.trigger.append(iconGroupEl);
     } else {
       this.trigger.append(iconEl);

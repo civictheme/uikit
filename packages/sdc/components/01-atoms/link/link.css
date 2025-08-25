@@ -23,13 +23,16 @@
 .ct-link {
   text-decoration: none;
 }
-.ct-link:hover {
+.ct-link .ct-text-icon__text {
   text-decoration: none;
 }
-.ct-link--active, .ct-link:active {
-  text-decoration: underline;
+.ct-link:hover .ct-text-icon__text {
+  text-decoration: none;
 }
-.ct-link:focus-visible {
+.ct-link--active .ct-text-icon__text, .ct-link:active .ct-text-icon__text {
+  text-decoration: none;
+}
+.ct-link:focus-visible .ct-text-icon__text {
   text-decoration: none;
 }
 .ct-link[disabled] {
@@ -40,6 +43,9 @@
 .ct-link {
   padding: 0.1875rem 0 0.125rem;
   word-break: break-word;
+}
+.ct-link:hover .ct-text-icon__text {
+  text-decoration: underline;
 }
 .ct-link:focus-visible {
   outline-offset: 0;

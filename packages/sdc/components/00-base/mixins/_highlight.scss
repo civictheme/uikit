@@ -46,14 +46,15 @@
     position: absolute;
     left: -$border-width;
     right: -$border-width;
-    top: -$border-width;
     height: $height + $border-width;
 
     @if $position == 'top' {
+      top: -$border-width;
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
     }
     @else {
+      bottom: -$border-width;
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
     }
