@@ -8,6 +8,7 @@ function CivicThemeChip(el) {
   }
 
   this.el = el;
+  this.groupParentSelector = el.getAttribute('data-chip-group-parent') || null;
 
   this.el.addEventListener('change', this.changeEvent.bind(this));
   this.el.addEventListener('focusin', this.focusinEvent.bind(this));
@@ -75,14 +76,12 @@ CivicThemeChip.prototype.changeEvent = function (e) {
   // For radios, check current and uncheck others in this group.
   if (input.getAttribute('type') === 'radio') {
     const name = input.getAttribute('name');
-    // Find the closest chip group container (ct-chip)
-    const chipGroup = chip.closest('.ct-chip');
     let radios;
-    if (chipGroup) {
-      radios = chipGroup.querySelectorAll(`input[type=radio][name="${name}"]`);
+    if (this.groupParentSelector) {
+      const chipGroup = chip.closest(this.groupParentSelector);
+      radios = chipGroup ? chipGroup.querySelectorAll(`input[type=radio][name="${name}"]`) : document.querySelectorAll(`input[type=radio][name="${name}"]`);
     } else {
-      // Fallback to just the current input if no group found
-      radios = [input];
+      radios = document.querySelectorAll(`input[type=radio][name="${name}"]`);
     }
     for (const i in radios) {
       if (Object.prototype.hasOwnProperty.call(radios, i) && radios[i] !== input) {

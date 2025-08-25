@@ -12,6 +12,7 @@
  * - is_multiple: [boolean] Whether multiple selection is allowed.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - group_parent: [string] Additional parent selector for radio group.
  */
 #}
 
@@ -30,6 +31,7 @@
       class="ct-chip {{ modifier_class -}}"
       data-component-name="chip"
       {% if is_multiple %}data-chip-dismiss{% endif %}
+      {% if group_parent %}data-chip-group-parent="{{ group_parent }}"{% endif %}
     >
       <input
         class="ct-chip__input"
