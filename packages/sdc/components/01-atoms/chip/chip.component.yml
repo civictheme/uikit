@@ -49,3 +49,8 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+    group_parent:
+      type: string
+      title: Group parent
+      description: Additional parent selector for radio group.
+
