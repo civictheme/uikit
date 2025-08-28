@@ -49,11 +49,11 @@
   border-top-right-radius: 0.25rem;
 }
 .ct-accordion .ct-accordion__panels__panel__header__button {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
   appearance: button;
   border-radius: 0.25rem;
   border: none;

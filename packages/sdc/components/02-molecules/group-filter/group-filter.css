@@ -11,26 +11,13 @@
   padding-right: 2rem;
 }
 .ct-group-filter .ct-group-filter__title {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   white-space: nowrap;
   margin: 0;
-}
-@media (min-width: 0) {
-  .ct-group-filter .ct-group-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-group-filter .ct-group-filter__title {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
 }
 .ct-group-filter .ct-group-filter__row {
   flex-direction: column;
