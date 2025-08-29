@@ -5,7 +5,7 @@
 .ct-fast-fact-card {
   $root: &;
 
-  @include ct-highlight-stripe-horizontal($ct-fast-fact-stripe-height, $ct-fast-fact-border-radius, 0, 'bottom');
+  @include ct-highlight-stripe-horizontal($ct-fast-fact-card-stripe-height, $ct-fast-fact-card-border-radius, 0, 'bottom');
 
   & {
     @include ct-elevation(2);
