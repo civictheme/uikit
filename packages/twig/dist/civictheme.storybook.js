@@ -2900,18 +2900,13 @@ CivicThemeChip.prototype.changeEvent = function (e) {
   // For radios, check current and uncheck others in this group.
   if (input.getAttribute('type') === 'radio') {
     const name = input.getAttribute('name');
-    let radios;
-    if (this.groupParentSelector) {
-      const chipGroup = chip.closest(this.groupParentSelector);
-      radios = chipGroup ? chipGroup.querySelectorAll(`input[type=radio][name="${name}"]`) : document.querySelectorAll(`input[type=radio][name="${name}"]`);
-    } else {
-      radios = document.querySelectorAll(`input[type=radio][name="${name}"]`);
-    }
-    for (const i in radios) {
-      if (Object.prototype.hasOwnProperty.call(radios, i) && radios[i] !== input) {
-        this.setChecked(radios[i], false);
+    const chipContainer = (!!this.groupParentSelector && chip.closest(this.groupParentSelector)) || document;
+    const radios = chipContainer.querySelectorAll(`input[type=radio][name="${name}"]`);
+    radios.forEach((radio) => {
+      if (radio !== input) {
+        this.setChecked(radio, false);
       }
-    }
+    });
     this.setChecked(input, true);
   } else {
     this.setChecked(input, input.checked);

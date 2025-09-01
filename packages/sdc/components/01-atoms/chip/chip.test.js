@@ -25,6 +25,7 @@ describe('Chip Component', () => {
       is_disabled: true,
       is_dismissible: true,
       is_multiple: true,
+      group_parent: 'test-group',
       attributes: 'data-test="true"',
       modifier_class: 'custom-class',
       theme: 'dark',
@@ -32,6 +33,7 @@ describe('Chip Component', () => {
 
     expect(c.querySelectorAll('.ct-chip.custom-class.ct-theme-dark.ct-chip--input.ct-chip--large.active.ct-chip--multiple')).toHaveLength(1);
     expect(c.querySelector('.ct-chip').textContent.trim()).toContain('Sample Chip');
+    expect(c.querySelector('.ct-chip').getAttribute('data-chip-group-parent')).toEqual('test-group');
     expect(c.querySelector('.ct-chip__input').getAttribute('data-test')).toEqual('true');
     expect(c.querySelector('.ct-chip__input').getAttribute('type')).toEqual('checkbox');
     expect(c.querySelector('.ct-chip__input').checked).toBe(true);
