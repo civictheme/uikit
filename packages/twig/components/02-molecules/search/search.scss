@@ -28,6 +28,10 @@
       text-align: center;
     }
 
+    &:focus-visible {
+      outline-offset: ct-particle(0.25);
+    }
+
     .ct-button__icon {
       margin-left: ct-spacing(0.5);
     }
@@ -49,7 +53,8 @@
         border-bottom-color: ct-component-var(ct-navigation, $theme, menu, item, border-color);
       }
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
           @include ct-component-property(ct-navigation, $theme, drawer, menu-item, hover, background-color);
           @include ct-component-property(ct-navigation, $theme, menu, hover, color);

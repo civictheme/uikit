@@ -47,11 +47,10 @@
         }
 
         .ct-menu__item--level-0 {
-          border-bottom: solid ct-particle(0.5);
-
           > .ct-link {
             @include ct-link-no-decoration();
 
+            border-bottom: solid ct-particle(0.5) transparent;
             position: relative;
             padding: ct-spacing(2);
             font-weight: 600;
@@ -78,35 +77,13 @@
           .ct-menu__item {
             // Links - level 0.
             &--level-0 {
-              border-bottom-color: ct-component-var($root, $theme, menu-item, border-color);
+              .ct-menu__item__link {
+                border-bottom-color: ct-component-var($root, $theme, menu-item, border-color);
 
-              &:hover {
-                border-bottom-color: ct-component-var($root, $theme, menu-item, hover, border-color);
-              }
-
-              &:active {
-                border-bottom-color: ct-component-var($root, $theme, menu-item, active, border-color);
-              }
-
-              &[data-collapsible] {
-                @if $theme == 'light' {
-                  color: $ct-navigation-light-menu-color;
-                }
-                @else {
-                  color: $ct-navigation-dark-menu-color;
-                }
-
-                border-bottom-color: ct-component-var($root, $theme, menu, border-color);
-
-                &:hover {
-                  @if $theme == 'light' {
-                    color: $ct-navigation-light-menu-hover-color;
-                  }
-                  @else {
-                    color: $ct-navigation-dark-menu-hover-color;
-                  }
-
+                &:hover,
+                &:focus-visible {
                   border-bottom-color: ct-component-var($root, $theme, menu-item, hover, border-color);
+                  outline-offset: ct-particle(0.25);
                 }
 
                 &:active {
@@ -114,18 +91,52 @@
                 }
               }
 
+              &[data-collapsible] {
+                .ct-menu__item__link {
+                  @if $theme == 'light' {
+                    color: $ct-navigation-light-menu-color;
+                  }
+                  @else {
+                    color: $ct-navigation-dark-menu-color;
+                  }
+
+                  border-bottom-color: ct-component-var($root, $theme, menu, border-color);
+
+                  &:hover,
+                  &:focus-visible {
+                    @if $theme == 'light' {
+                      color: $ct-navigation-light-menu-hover-color;
+                    }
+                    @else {
+                      color: $ct-navigation-dark-menu-hover-color;
+                    }
+
+                    border-bottom-color: ct-component-var($root, $theme, menu-item, hover, border-color);
+                  }
+
+                  &:active {
+                    border-bottom-color: ct-component-var($root, $theme, menu-item, active, border-color);
+                  }
+                }
+              }
+
               &[data-collapsible-collapsed] {
-                border-bottom-color: ct-component-var($root, $theme, menu-item, border-color);
+                .ct-menu__item__link {
+                  border-bottom-color: ct-component-var($root, $theme, menu-item, border-color);
+                }
               }
 
               &.ct-menu__item--active-trail {
-                border-bottom-color: ct-component-var($root, $theme, menu, border-color);
+                .ct-menu__item__link {
+                  border-bottom-color: ct-component-var($root, $theme, menu, border-color);
+                }
               }
 
               > .ct-link {
                 @include ct-component-property($root, $theme, menu, color);
 
-                &:hover {
+                &:hover,
+                &:focus-visible {
                   @include ct-component-property($root, $theme, menu, hover, color);
                 }
 
@@ -312,7 +323,8 @@
               > .ct-link {
                 @include ct-component-property($root, $theme, drawer-sub-menu-item, heading, color);
 
-                &:hover {
+                &:hover,
+                &:focus-visible {
                   @include ct-component-property($root, $theme, drawer-sub-menu-item, heading, hover, color);
                 }
 
@@ -330,7 +342,8 @@
                 @include ct-component-property($root, $theme, drawer-sub-menu-item, background-color);
                 @include ct-component-property($root, $theme, drawer-sub-menu-item, color);
 
-                &:hover {
+                &:hover,
+                &:focus-visible {
                   @include ct-component-property($root, $theme, drawer-sub-menu-item, hover, background-color);
                   @include ct-component-property($root, $theme, drawer-sub-menu-item, hover, color);
                 }
@@ -400,7 +413,8 @@
           }
 
           .ct-menu__item__link {
-            &:hover {
+            &:hover,
+            &:focus-visible {
               @if $theme == 'light' {
                 color: $ct-link-light-hover-color;
               }
