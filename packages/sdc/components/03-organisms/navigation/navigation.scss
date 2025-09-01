@@ -47,7 +47,7 @@
         }
 
         .ct-menu__item--level-0 {
-          > .ct-link {
+          & > .ct-menu__item__link {
             @include ct-link-no-decoration();
 
             border-bottom: solid ct-particle(0.5) transparent;
@@ -64,7 +64,7 @@
             }
           }
 
-          &.ct-menu__item--active-trail > .ct-link::after {
+          &.ct-menu__item--active-trail > .ct-menu__item__link::after {
             transform: scaleX(1);
           }
         }
@@ -80,8 +80,7 @@
               .ct-menu__item__link {
                 border-bottom-color: ct-component-var($root, $theme, menu-item, border-color);
 
-                &:hover,
-                &:focus-visible {
+                &:is(:hover, :focus-visible) {
                   border-bottom-color: ct-component-var($root, $theme, menu-item, hover, border-color);
                   outline-offset: ct-particle(0.25);
                 }
@@ -102,8 +101,7 @@
 
                   border-bottom-color: ct-component-var($root, $theme, menu, border-color);
 
-                  &:hover,
-                  &:focus-visible {
+                  &:is(:hover, :focus-visible) {
                     @if $theme == 'light' {
                       color: $ct-navigation-light-menu-hover-color;
                     }
@@ -132,11 +130,10 @@
                 }
               }
 
-              > .ct-link {
+              & > .ct-menu__item__link {
                 @include ct-component-property($root, $theme, menu, color);
 
-                &:hover,
-                &:focus-visible {
+                &:is(:hover, :focus-visible) {
                   @include ct-component-property($root, $theme, menu, hover, color);
                 }
 
@@ -172,7 +169,7 @@
           .ct-menu__item {
             // Links - level 0
             &--level-0 {
-              > .ct-link {
+              & > .ct-menu__item__link {
                 text-align: center;
                 padding-block: ct-spacing();
               }
@@ -258,7 +255,7 @@
             margin-top: ct-spacing(4);
             flex-basis: math.div(100%, $ct-navigation-drawer-cols);
 
-            > .ct-link {
+            & > .ct-menu__item__link {
               @include ct-typography('heading-5');
             }
           }
@@ -269,14 +266,11 @@
           }
 
           // Nested level items
-          .ct-menu__item--level-2,
-          .ct-menu__item--level-3,
-          .ct-menu__item--level-4,
-          .ct-menu__item--level-5 {
+          .ct-menu__item:is(.ct-menu__item--level-2, .ct-menu__item--level-3, .ct-menu__item--level-4, .ct-menu__item--level-5) {
             width: 100%;
             margin-bottom: ct-spacing();
 
-            > .ct-link {
+            & > .ct-menu__item__link {
               @include ct-link-no-decoration();
 
               display: inline-flex;
@@ -309,22 +303,19 @@
             @include ct-component-property($root, $theme, drawer-sub-menu, background-color);
 
             // Reset some styles for all links in the dropdown.
-            .ct-link {
+            .ct-menu__item__link {
               background: none;
 
-              &:hover,
-              &:active,
-              &:focus-visible {
+              &:is(:hover, :active, :focus-visible) {
                 background: none;
               }
             }
 
             .ct-menu__item--level-1 {
-              > .ct-link {
+              & > .ct-menu__item__link {
                 @include ct-component-property($root, $theme, drawer-sub-menu-item, heading, color);
 
-                &:hover,
-                &:focus-visible {
+                &:is(:hover, :focus-visible) {
                   @include ct-component-property($root, $theme, drawer-sub-menu-item, heading, hover, color);
                 }
 
@@ -334,16 +325,12 @@
               }
             }
 
-            .ct-menu__item--level-2,
-            .ct-menu__item--level-3,
-            .ct-menu__item--level-4,
-            .ct-menu__item--level-5 {
-              > .ct-link {
+            .ct-menu__item:is(.ct-menu__item--level-2, .ct-menu__item--level-3, .ct-menu__item--level-4, .ct-menu__item--level-5) {
+              & > .ct-menu__item__link {
                 @include ct-component-property($root, $theme, drawer-sub-menu-item, background-color);
                 @include ct-component-property($root, $theme, drawer-sub-menu-item, color);
 
-                &:hover,
-                &:focus-visible {
+                &:is(:hover, :focus-visible) {
                   @include ct-component-property($root, $theme, drawer-sub-menu-item, hover, background-color);
                   @include ct-component-property($root, $theme, drawer-sub-menu-item, hover, color);
                 }
@@ -355,7 +342,7 @@
               }
 
               &.ct-menu__item--active-trail {
-                > .ct-link {
+                & > .ct-menu__item__link {
                   @include ct-component-property($root, $theme, drawer-menu-item, active-trail, background-color);
                   @include ct-component-property($root, $theme, drawer-menu-item, active-trail, color);
                 }
@@ -413,8 +400,7 @@
           }
 
           .ct-menu__item__link {
-            &:hover,
-            &:focus-visible {
+            &:is(:hover, :focus-visible) {
               @if $theme == 'light' {
                 color: $ct-link-light-hover-color;
               }
