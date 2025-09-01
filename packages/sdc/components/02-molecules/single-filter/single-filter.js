@@ -3,46 +3,29 @@
  */
 
 function CivicThemeSingleFilterComponent(el) {
-  if (this.el) {
+  if (el.getAttribute('data-single-filter') === 'true') {
     return;
   }
 
   this.el = el;
 
-  this.el.addEventListener('ct.single-filter.update', this.update.bind(this));
+  this.el.addEventListener('ct.single-filter.update', this.updateEvent.bind(this));
 
-  if (!el.hasEventListener) {
-    el.hasEventListener = true;
-    el.querySelectorAll('input, textarea, select, [type="checkbox"], [type="radio"]').forEach((input) => {
-      input.addEventListener('change', () => {
-        el.dispatchEvent(new CustomEvent('ct.single-filter.update', { detail: { parent: input.parentElement } }));
-      });
+  this.el.querySelectorAll('input, textarea, select, [type="checkbox"], [type="radio"]').forEach((input) => {
+    input.addEventListener('change', () => {
+      el.dispatchEvent(new CustomEvent('ct.single-filter.update', { detail: { parent: input.parentElement } }));
     });
-  }
+  });
 
-  this.activateOrDeactivateSubmitButton(el);
+  // Mark as initialized.
+  this.el.setAttribute('data-single-filter', 'true');
 }
 
 /**
- * Update the instance.
+ * Update event handler.
  */
-CivicThemeSingleFilterComponent.prototype.update = function (el) {
+CivicThemeSingleFilterComponent.prototype.updateEvent = function (el) {
   el.detail.parent.setAttribute('aria-live', 'polite');
-  this.activateOrDeactivateSubmitButton(this.el);
-};
-
-CivicThemeSingleFilterComponent.prototype.activateOrDeactivateSubmitButton = function (el) {
-  const buttons = el.querySelectorAll('.ct-button');
-  const activeChips = el.querySelectorAll('.ct-chip.active');
-  if (!activeChips.length) {
-    buttons.forEach((element) => {
-      element.setAttribute('disabled', 'disabled');
-    });
-  } else {
-    buttons.forEach((element) => {
-      element.removeAttribute('disabled');
-    });
-  }
 };
 
 document.querySelectorAll('.ct-single-filter').forEach((el) => {
