@@ -14,23 +14,12 @@
   background-color: transparent;
   padding: 0;
 }
-@media (min-width: 0) {
-  .ct-tooltip .ct-tooltip__description {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-tooltip .ct-tooltip__description {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
+.ct-tooltip .ct-tooltip__description {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-tooltip .ct-tooltip__description {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);

@@ -9,44 +9,19 @@
   border-spacing: 0;
   text-align: left;
   vertical-align: middle;
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
-@media (min-width: 0) {
-  .ct-table {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-}
-@media (min-width: 768px) {
-  .ct-table {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-}
-@media (min-width: 0) {
-  .ct-table thead,
-  .ct-table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-table thead,
-  .ct-table tfoot {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
+.ct-table thead,
+.ct-table tfoot {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-table tr th,
 .ct-table tr td {
@@ -56,45 +31,21 @@
 .ct-table caption {
   text-align: left;
   padding: 0.75rem 0;
-}
-@media (min-width: 0) {
-  .ct-table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-table caption {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0;
-  }
+  font-size: var(--ct-typography-label-large-font-size);
+  line-height: var(--ct-typography-label-large-line-height);
+  font-family: var(--ct-typography-label-large-font-name);
+  font-weight: var(--ct-typography-label-large-font-weight);
+  letter-spacing: var(--ct-typography-label-large-letter-spacing);
 }
 .ct-table.ct-table--caption-after {
   caption-side: bottom;
 }
-@media (min-width: 0) {
-  .ct-table.ct-table--caption-after caption {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-}
-@media (min-width: 768px) {
-  .ct-table.ct-table--caption-after caption {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
+.ct-table.ct-table--caption-after caption {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 @media (max-width: 767px) {
   .ct-table:not(.ct-table--data) thead,
@@ -151,27 +102,12 @@
     flex-shrink: 0;
     vertical-align: middle;
     padding-right: 1rem;
+    font-size: var(--ct-typography-label-regular-font-size);
+    line-height: var(--ct-typography-label-regular-line-height);
+    font-family: var(--ct-typography-label-regular-font-name);
+    font-weight: var(--ct-typography-label-regular-font-weight);
+    letter-spacing: var(--ct-typography-label-regular-letter-spacing);
   }
-}
-@media (max-width: 767px) and (min-width: 0) {
-  .ct-table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
-}
-@media (max-width: 767px) and (min-width: 768px) {
-  .ct-table:not(.ct-table--data) tbody tr td::before {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-  }
-}
-@media (max-width: 767px) {
   .ct-table:not(.ct-table--data) tr th,
   .ct-table:not(.ct-table--data) tr td {
     padding: 0.75rem 0.5rem;

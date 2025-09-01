@@ -5,28 +5,15 @@
 .ct-textfield {
   appearance: none;
   margin: 0;
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-textfield[disabled] {
   opacity: 40%;
   pointer-events: none;
-}
-@media (min-width: 0) {
-  .ct-textfield {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-textfield {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
-  }
 }
 .ct-textfield {
   border-radius: 0.25rem;

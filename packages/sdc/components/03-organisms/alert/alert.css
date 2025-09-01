@@ -5,36 +5,23 @@
 .ct-alert {
   position: relative;
   padding: 1rem;
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 @media (min-width: 768px) {
   .ct-alert {
     padding: 1.5rem;
   }
 }
-@media (min-width: 0) {
-  .ct-alert {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-alert {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-}
 .ct-alert .ct-alert__title {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: var(--ct-typography-heading-6-font-size);
+  line-height: var(--ct-typography-heading-6-line-height);
+  font-family: var(--ct-typography-heading-6-font-name);
+  font-weight: var(--ct-typography-heading-6-font-weight);
+  letter-spacing: var(--ct-typography-heading-6-letter-spacing);
   display: flex;
   align-items: center;
 }
@@ -76,11 +63,11 @@
 }
 @media (min-width: 768px) {
   .ct-alert .ct-alert__dismiss-button {
-    font-size: 1rem;
-    line-height: 1.625rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: var(--ct-typography-heading-6-font-size);
+    line-height: var(--ct-typography-heading-6-line-height);
+    font-family: var(--ct-typography-heading-6-font-name);
+    font-weight: var(--ct-typography-heading-6-font-weight);
+    letter-spacing: var(--ct-typography-heading-6-letter-spacing);
     position: unset;
     align-self: center;
     margin-left: auto;

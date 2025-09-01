@@ -14,23 +14,12 @@
   border-radius: 0.25rem;
   object-fit: contain;
 }
-@media (min-width: 0) {
-  .ct-figure .ct-figure__caption {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.1px;
-  }
-}
-@media (min-width: 768px) {
-  .ct-figure .ct-figure__caption {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Lexend", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
+.ct-figure .ct-figure__caption {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-figure.ct-theme-light .ct-figure__caption {
   color: var(--ct-figure-light-caption-color);
