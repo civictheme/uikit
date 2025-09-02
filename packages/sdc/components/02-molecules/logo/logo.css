@@ -6,6 +6,13 @@
   line-height: 0;
   display: inline-block;
 }
+.ct-logo:focus-visible {
+  outline-offset: 0;
+  outline-width: 0.1875rem;
+  outline-style: solid;
+  outline-color: var(--ct-color-light-interaction-focus);
+  border-radius: 0.25rem;
+}
 .ct-logo .ct-logo__image {
   line-height: 0;
   display: block;

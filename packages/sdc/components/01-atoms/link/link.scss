@@ -14,7 +14,7 @@
     word-break: break-word;
   }
 
-  &:hover {
+  &:is(:hover, :focus-visible) {
     .ct-text-icon__text {
       text-decoration: underline;
     }
@@ -37,8 +37,7 @@
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);
 
-    &:hover,
-    &:visited:hover {
+    &:is(:hover, :focus-visible, :visited:hover, :visited:focus-visible) {
       @include ct-component-property($root, $theme, hover, color);
     }
 
