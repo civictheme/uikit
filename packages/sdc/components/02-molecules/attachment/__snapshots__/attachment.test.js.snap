@@ -39,7 +39,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
             
                                       
                                       
-                                                                    
+                                                                                                              
               
 
   
@@ -81,7 +81,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                              
+                                                                                  
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -149,7 +149,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                              
+                                                                                  
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -178,6 +178,106 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
     LAST UPDATED: 2023-01-04  
                   </div>
                                                         
+                </div>
+                
+                
+              </li>
+              
+                        
+              <li
+                class="ct-item-list__item"
+              >
+                                  
+                  
+                <div
+                  class="ct-attachment__links__link__wrapper"
+                >
+                  
+                                        
+                    
+                  <a
+                    class="ct-link ct-theme-light     ct-attachment__links__link"
+                    href="https://example.com/file3"
+                    title="Download File without extension"
+                  >
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      File without extension
+                    </span>
+                  </a>
+                  
+                                      
+                </div>
+                
+                
+              </li>
+              
+                        
+              <li
+                class="ct-item-list__item"
+              >
+                                  
+                  
+                <div
+                  class="ct-attachment__links__link__wrapper"
+                >
+                  
+                                                                                  
+                    
+                  <a
+                    class="ct-link ct-theme-light     ct-attachment__links__link"
+                    href="https://example.com/file4.txt"
+                    title="Download File with only extension"
+                  >
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      File with only extension 
+                      <span
+                        class="ct-attachment__links__link__extension"
+                      >
+                        (txt)
+                      </span>
+                    </span>
+                  </a>
+                  
+                                      
+                </div>
+                
+                
+              </li>
+              
+                        
+              <li
+                class="ct-item-list__item"
+              >
+                                  
+                  
+                <div
+                  class="ct-attachment__links__link__wrapper"
+                >
+                  
+                                                                                  
+                    
+                  <a
+                    class="ct-link ct-theme-light     ct-attachment__links__link"
+                    href="https://example.com/file5"
+                    title="Download File with only size"
+                  >
+                    <span
+                      class="ct-text-icon__text"
+                    >
+                      File with only size 
+                      <span
+                        class="ct-attachment__links__link__extension"
+                      >
+                        (500KB)
+                      </span>
+                    </span>
+                  </a>
+                  
+                                      
                 </div>
                 
                 
@@ -315,7 +415,7 @@ exports[`Attachment Component renders with optional attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                              
+                                                                                  
                     
                   <a
                     class="ct-link ct-theme-dark     ct-attachment__links__link"
@@ -452,7 +552,7 @@ exports[`Attachment Component renders with required attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                              
+                                                                                  
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -520,7 +620,7 @@ exports[`Attachment Component renders with required attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                              
+                                                                                  
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
