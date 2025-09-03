@@ -88,6 +88,7 @@
                   } only %}
 
                   <div class="ct-attachment__links__link__wrapper">
+                    {% set extension = '' %}
                     {% if file.ext is not empty and file.size is not empty %}
                       {% set extension = ' <span class="ct-attachment__links__link__extension">(%s, %s)</span>'|format(file.ext, file.size) %}
                     {% elseif file.ext is not empty or file.size is not empty %}

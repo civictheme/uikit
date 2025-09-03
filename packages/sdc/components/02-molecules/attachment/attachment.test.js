@@ -57,13 +57,26 @@ describe('Attachment Component', () => {
       files: [
         { name: 'File 1', ext: 'pdf', url: 'https://example.com/file1.pdf', size: '1MB', created: '2023-01-01', changed: '2023-01-02', icon: 'pdf-file' },
         { name: 'File 2', ext: 'docx', url: 'https://example.com/file2.docx', size: '2MB', created: '2023-01-03', changed: '2023-01-04', icon: 'word-file' },
+        { name: 'File without extension', url: 'https://example.com/file3' },
+        { name: 'File with only extension', ext: 'txt', url: 'https://example.com/file4.txt' },
+        { name: 'File with only size', url: 'https://example.com/file5', size: '500KB' },
       ],
     });
 
-    expect(c.querySelectorAll('.ct-attachment__links__link')).toHaveLength(2);
+    expect(c.querySelectorAll('.ct-attachment__links__link')).toHaveLength(5);
     expect(c.querySelectorAll('.ct-attachment__links__link')[0].textContent.trim()).toContain('File 1');
     expect(c.querySelectorAll('.ct-attachment__links__link')[1].textContent.trim()).toContain('File 2');
     expect(c.querySelectorAll('.ct-attachment__links__link__changed')[0].textContent.trim()).toContain('LAST UPDATED: 2023-01-02');
     expect(c.querySelectorAll('.ct-attachment__links__link__changed')[1].textContent.trim()).toContain('LAST UPDATED: 2023-01-04');
+
+    expect(c.querySelectorAll('.ct-attachment__links__link')[2].textContent.trim()).toBe('File without extension');
+    expect(c.querySelectorAll('.ct-attachment__links__link')[2].textContent.trim()).not.toContain('docx');
+    expect(c.querySelectorAll('.ct-attachment__links__link')[2].textContent.trim()).not.toContain('2MB');
+
+    expect(c.querySelectorAll('.ct-attachment__links__link')[3].textContent.trim()).toContain('File with only extension');
+    expect(c.querySelectorAll('.ct-attachment__links__link')[3].textContent.trim()).toContain('(txt)');
+
+    expect(c.querySelectorAll('.ct-attachment__links__link')[4].textContent.trim()).toContain('File with only size');
+    expect(c.querySelectorAll('.ct-attachment__links__link')[4].textContent.trim()).toContain('(500KB)');
   });
 });
