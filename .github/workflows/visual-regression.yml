@@ -82,7 +82,7 @@ jobs:
 
       - name: Generate the visual regression message
         id: visual-regression-message
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
