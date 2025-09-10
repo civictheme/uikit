@@ -2,7 +2,7 @@
  * CivicTheme Video Player component stories.
  */
 
-import Component from './video-player.stories.twig';
+import Component from './video-player.twig';
 
 const meta = {
   title: 'Molecules/Video Player',
@@ -151,6 +151,9 @@ export const TranscriptBlock = {
   parameters: {
     layout: 'padded',
   },
+  decorators: [
+    (Story) => `<div class="story-container"><div class="story-container__content">${Story()}</div></div>`,
+  ],
   args: {
     theme: 'light',
     title: '',

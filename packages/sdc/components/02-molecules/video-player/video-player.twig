@@ -97,8 +97,8 @@
               data-collapsible-duration="250"
             >
               {% set transcript_toggle_html %}
-                <span class="ct-video-player__transcript-trigger-expand">{{ transcript_expand_text }}</span>
-                <span class="ct-video-player__transcript-trigger-collapse">{{ transcript_collapse_text }}</span>
+                <span class="ct-video-player__transcript-trigger-expand">{{ transcript_expand_text|default('Show transcript') }}</span>
+                <span class="ct-video-player__transcript-trigger-collapse">{{ transcript_collapse_text|default('Hide transcript') }}</span>
               {% endset %}
               {% include 'civictheme:button' with {
                 theme: theme,
@@ -106,7 +106,7 @@
                 allow_html: true,
                 text: transcript_toggle_html,
                 attributes: 'data-collapsible-trigger',
-                modifier_class: 'ct-video-player__transcript-toggle'
+                modifier_class: 'ct-video-player__transcript-toggle',
               } only %}
               <div class="ct-video-player__transcript-panel" data-collapsible-panel>
                 <div class="ct-video-player__transcript-panel-inner">
