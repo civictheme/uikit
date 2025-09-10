@@ -24,8 +24,10 @@
     }
   }
 
-  &__links {
+  &__transcript-block {
     display: flex;
+    flex-direction: column;
+    gap: ct-spacing(2);
     margin-top: ct-spacing(4);
 
     @include ct-breakpoint(m) {
@@ -39,5 +41,35 @@
     @include ct-breakpoint(m) {
       padding-right: ct-spacing(3);
     }
+  }
+
+  &__transcript[data-collapsible-collapsed=''] {
+    #{$root}__transcript-trigger-expand {
+      display: inline;
+    }
+    #{$root}__transcript-trigger-collapse {
+      display: none;
+    }
+  }
+
+  &__transcript-toggle {
+    &:hover {
+      #{$root}__transcript-trigger-expand,
+      #{$root}__transcript-trigger-collapse {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__transcript-trigger-expand {
+    display: none;
+  }
+
+  &__transcript-trigger-collapse {
+    display: inline;
+  }
+
+  &__transcript-panel-inner {
+    padding-top: ct-spacing(2);
   }
 }

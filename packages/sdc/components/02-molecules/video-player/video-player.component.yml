@@ -88,3 +88,15 @@ props:
           type: string
           title: Attributes
           description: Additional HTML attributes.
+    transcript_content:
+      type: string
+      title: Transcript content
+      description: HTML of transcript content to display in a collapsible.
+    transcript_expand_text:
+      type: string
+      title: Transcript expand text
+      description: Transcript collasible text to open. E.g. "Show transcript".
+    transcript_collapse_text:
+      type: string
+      title: Transcript collapse text
+      description: Transcript collasible text to close. E.g. "Hide transcript".
