@@ -45,6 +45,10 @@ const meta = {
     transcript_collapse_text: {
       control: { type: 'text' },
     },
+    vertical_spacing: {
+      control: { type: 'radio' },
+      options: ['none', 'top', 'bottom', 'both'],
+    },
     attributes: {
       control: { type: 'text' },
     },
@@ -90,6 +94,7 @@ export const Sources = {
       is_external: false,
       attributes: '',
     },
+    vertical_spacing: '',
     attributes: '',
     modifier_class: '',
   },
@@ -116,6 +121,7 @@ export const EmbeddedSource = {
       is_external: false,
       attributes: '',
     },
+    vertical_spacing: '',
     attributes: '',
     modifier_class: '',
   },
@@ -142,6 +148,7 @@ export const RawSources = {
       is_external: false,
       attributes: '',
     },
+    vertical_spacing: '',
     attributes: '',
     modifier_class: '',
   },
@@ -169,6 +176,7 @@ export const TranscriptBlock = {
     transcript_content: 'Reprehenderit sed irure dolor nisi ut consectetur exercitation aliquip commodo mollit velit est voluptate ut sint cillum est dolor ullamco reprehenderit in.',
     transcript_expand_text: 'Show transcript',
     transcript_collapse_text: 'Hide transcript',
+    vertical_spacing: '',
     attributes: '',
     modifier_class: '',
   },

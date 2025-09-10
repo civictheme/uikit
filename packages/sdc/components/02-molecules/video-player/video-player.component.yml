@@ -28,6 +28,14 @@ props:
       type: string
       title: Height
       description: Video height.
+    vertical_spacing:
+      type: string
+      title: Vertical spacing
+      description: Controls vertical spacing (top, bottom, or both).
+      enum:
+        - top
+        - bottom
+        - both
     attributes:
       type: string
       title: Attributes
