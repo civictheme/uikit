@@ -2,7 +2,7 @@
  * CivicTheme Video Player component stories.
  */
 
-import Component from './video-player.twig';
+import Component from './video-player.stories.twig';
 
 const meta = {
   title: 'Molecules/Video Player',
@@ -35,6 +35,15 @@ const meta = {
     },
     transcript_link: {
       control: { type: 'object' },
+    },
+    transcript_content: {
+      control: { type: 'text' },
+    },
+    transcript_expand_text: {
+      control: { type: 'text' },
+    },
+    transcript_collapse_text: {
+      control: { type: 'text' },
     },
     attributes: {
       control: { type: 'text' },
@@ -133,6 +142,30 @@ export const RawSources = {
       is_external: false,
       attributes: '',
     },
+    attributes: '',
+    modifier_class: '',
+  },
+};
+
+export const TranscriptBlock = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: {
+    theme: 'light',
+    title: '',
+    width: '550',
+    height: '400',
+    sources: [
+      {
+        url: 'demo/videos/demo.mp4',
+        type: 'video/mp4',
+      },
+    ],
+    poster: 'demo/videos/demo_poster.png',
+    transcript_content: 'Reprehenderit sed irure dolor nisi ut consectetur exercitation aliquip commodo mollit velit est voluptate ut sint cillum est dolor ullamco reprehenderit in.',
+    transcript_expand_text: 'Show transcript',
+    transcript_collapse_text: 'Hide transcript',
     attributes: '',
     modifier_class: '',
   },
