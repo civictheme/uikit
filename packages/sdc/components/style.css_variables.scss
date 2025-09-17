@@ -1,5 +1,6 @@
 @use 'sass:meta';
 @use 'sass:map';
+@use 'sass:list';
 @use '00-base/variables';
 @use '00-base/mixins/color';
 @import '00-base/variables'; // Needs to import twice; font/typography don't support @use.
@@ -88,13 +89,54 @@ html {
   }
 
   @each $name, $value in meta.module-variables('variables') {
+    $ignore-variables: (
+      'ct-assets-directory',
+      'ct-checkbox-check',
+      'ct-collapsible-icon-size',
+      'ct-cssgrid-columns',
+      'ct-cssgrid-gap',
+      'ct-cssgrid-rows',
+      'ct-font-average-character-width',
+      'ct-font-base-line-height',
+      'ct-font-base-size',
+      'ct-grid-columns',
+      'ct-grid-space',
+      'ct-item-list-horizontal-large-column-gap',
+      'ct-item-list-horizontal-large-row-gap',
+      'ct-item-list-horizontal-regular-column-gap',
+      'ct-item-list-horizontal-regular-row-gap',
+      'ct-item-list-horizontal-small-column-gap',
+      'ct-item-list-horizontal-small-row-gap',
+      'ct-item-list-vertical-large-column-gap',
+      'ct-item-list-vertical-large-row-gap',
+      'ct-item-list-vertical-regular-column-gap',
+      'ct-item-list-vertical-regular-row-gap',
+      'ct-item-list-vertical-small-column-gap',
+      'ct-item-list-vertical-small-row-gap',
+      'ct-layout-column-gap',
+      'ct-layout-column-gap-left-only',
+      'ct-layout-column-gap-right-only',
+      'ct-layout-columns',
+      'ct-layout-row-gap',
+      'ct-layout-row-gap-left-only',
+      'ct-layout-row-gap-right-only',
+      'ct-layout-sidebar-left-columns',
+      'ct-layout-sidebar-right-columns',
+      'ct-particle',
+      'ct-spacing',
+    );
+    $ignore-types: (
+      'map',
+      'list',
+      'bool',
+    );
     // Only filter by CivicTheme variables.
     @if str-index($name, 'ct-') {
-      // Only filter by variable names related to color or opacity.
-      @if str-index($name, 'color') or str-index($name, 'opacity') {
-        // Only filter by color or string variables.
-        @if type-of($value) == 'color' or type-of($value) == 'number' or type-of($value) == 'string' {
-          --#{$name}: #{$value};
+      @if not list.index($ignore-variables, $name) {
+        @if not list.index($ignore-types, type-of($value)) {
+          @if not str-index($name, '-breakpoint') {
+            --#{$name}: #{$value};
+          }
         }
       }
     }

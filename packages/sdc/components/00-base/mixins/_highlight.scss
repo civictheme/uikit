@@ -16,7 +16,7 @@
     top: -$border-width;
     bottom: -$border-width;
     left: -$border-width;
-    width: $width + $border-width;
+    width: calc(#{$width} + #{$border-width});
 
     @if $position == 'left' {
       border-top-left-radius: $border-radius;
@@ -46,7 +46,7 @@
     position: absolute;
     left: -$border-width;
     right: -$border-width;
-    height: $height + $border-width;
+    height: calc(#{$height} + #{$border-width});
 
     @if $position == 'top' {
       top: -$border-width;
