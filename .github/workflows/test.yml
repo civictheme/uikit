@@ -153,7 +153,7 @@ jobs:
           body-includes: 'CivicTheme UI Kit Deployments'
 
       - name: Create or update deployment message on a PR
-        uses: 'peter-evans/create-or-update-comment@ef75eae2348215adbd501f243281835beaa69d3f'
+        uses: 'peter-evans/create-or-update-comment@be17e0c03de886b7aff3fb3224d28bfb6fc5d114'
         if: github.event_name == 'pull_request'
         with:
           comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}
