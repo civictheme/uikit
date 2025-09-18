@@ -80,11 +80,11 @@
   border-bottom-color: var(--ct-navigation-light-menu-item-active-border-color);
 }
 .ct-navigation.ct-navigation--primary.ct-theme-light .ct-navigation__items .ct-navigation__menu .ct-menu__item--level-0[data-collapsible] .ct-menu__item__link {
-  color: var(--ct-color-light-interaction-background);
+  color: var(--ct-navigation-light-menu-color);
   border-bottom-color: var(--ct-navigation-light-menu-border-color);
 }
 .ct-navigation.ct-navigation--primary.ct-theme-light .ct-navigation__items .ct-navigation__menu .ct-menu__item--level-0[data-collapsible] .ct-menu__item__link:is(:hover, :focus-visible) {
-  color: var(--ct-color-light-interaction-hover-background);
+  color: var(--ct-navigation-light-menu-hover-color);
   border-bottom-color: var(--ct-navigation-light-menu-item-hover-border-color);
 }
 .ct-navigation.ct-navigation--primary.ct-theme-light .ct-navigation__items .ct-navigation__menu .ct-menu__item--level-0[data-collapsible] .ct-menu__item__link:active {
@@ -116,11 +116,11 @@
   border-bottom-color: var(--ct-navigation-dark-menu-item-active-border-color);
 }
 .ct-navigation.ct-navigation--primary.ct-theme-dark .ct-navigation__items .ct-navigation__menu .ct-menu__item--level-0[data-collapsible] .ct-menu__item__link {
-  color: var(--ct-color-dark-interaction-background);
+  color: var(--ct-navigation-dark-menu-color);
   border-bottom-color: var(--ct-navigation-dark-menu-border-color);
 }
 .ct-navigation.ct-navigation--primary.ct-theme-dark .ct-navigation__items .ct-navigation__menu .ct-menu__item--level-0[data-collapsible] .ct-menu__item__link:is(:hover, :focus-visible) {
-  color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-navigation-dark-menu-hover-color);
   border-bottom-color: var(--ct-navigation-dark-menu-item-hover-border-color);
 }
 .ct-navigation.ct-navigation--primary.ct-theme-dark .ct-navigation__items .ct-navigation__menu .ct-menu__item--level-0[data-collapsible] .ct-menu__item__link:active {
@@ -166,7 +166,7 @@
 }
 .ct-navigation.ct-navigation--inline .ct-navigation__items .ct-navigation__menu.ct-menu--level-0 {
   flex-wrap: wrap;
-  row-gap: 1rem;
+  row-gap: var(--ct-navigation-inline-row-gutter);
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__menu.ct-menu--level-0 {
   flex-wrap: nowrap;
@@ -175,8 +175,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin-top: 1rem;
-  z-index: 10;
+  margin-top: var(--ct-navigation-drawer-top-offset);
+  z-index: var(--ct-navigation-drawer-zindex);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__sub-menu.ct-menu--level-1 {
@@ -226,7 +226,7 @@
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 {
   margin-top: 2rem;
-  flex-basis: 25%;
+  flex-basis: calc(100% / var(--ct-navigation-drawer-cols));
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-menu__item__link {
   font-size: var(--ct-typography-heading-5-font-size);
@@ -245,7 +245,7 @@
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item:is(.ct-menu__item--level-2, .ct-menu__item--level-3, .ct-menu__item--level-4, .ct-menu__item--level-5) > .ct-menu__item__link {
   display: inline-flex;
   align-items: center;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-border-radius);
   padding: 0.5rem;
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item:is(.ct-menu__item--level-2, .ct-menu__item--level-3, .ct-menu__item--level-4, .ct-menu__item--level-5) > .ct-menu__item__link {
@@ -354,10 +354,10 @@
 }
 .ct-navigation.ct-navigation--dropdown .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 {
   position: absolute;
-  z-index: 11;
-  margin-top: 0.5rem;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  z-index: var(--ct-navigation-dropdown-zindex);
+  margin-top: var(--ct-navigation-dropdown-top-offset);
+  border-bottom-left-radius: var(--ct-navigation-dropdown-border-radius);
+  border-bottom-right-radius: var(--ct-navigation-dropdown-border-radius);
 }
 .ct-navigation.ct-navigation--dropdown .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 {
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2);
@@ -366,19 +366,19 @@
   padding: 1rem 2rem 2rem;
 }
 .ct-navigation.ct-navigation--dropdown.ct-theme-light .ct-navigation__items .ct-navigation__has-dropdown {
-  color: var(--ct-color-light-interaction-background);
+  color: var(--ct-link-light-color);
 }
 .ct-navigation.ct-navigation--dropdown.ct-theme-light .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__item__link:is(:hover, :focus-visible) {
-  color: var(--ct-color-light-interaction-hover-background);
+  color: var(--ct-link-light-hover-color);
 }
 .ct-navigation.ct-navigation--dropdown.ct-theme-light .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 {
   background-color: var(--ct-navigation-light-dropdown-sub-menu-background-color);
 }
 .ct-navigation.ct-navigation--dropdown.ct-theme-dark .ct-navigation__items .ct-navigation__has-dropdown {
-  color: var(--ct-color-dark-interaction-background);
+  color: var(--ct-link-dark-color);
 }
 .ct-navigation.ct-navigation--dropdown.ct-theme-dark .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__item__link:is(:hover, :focus-visible) {
-  color: var(--ct-color-dark-interaction-hover-background);
+  color: var(--ct-link-dark-hover-color);
 }
 .ct-navigation.ct-navigation--dropdown.ct-theme-dark .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 {
   background-color: var(--ct-navigation-dark-dropdown-sub-menu-background-color);

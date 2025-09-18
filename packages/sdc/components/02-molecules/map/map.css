@@ -3,14 +3,14 @@
  */
 
 .ct-map.ct-map--with-background {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+  padding-left: var(--ct-map-space-horizontal);
+  padding-right: var(--ct-map-space-horizontal);
 }
 .ct-map .ct-map__canvas {
   position: relative;
   height: 0;
   overflow: hidden;
-  padding: 0 0 56.25% 0;
+  padding: 0 0 var(--ct-map-padding-bottom) 0;
 }
 .ct-map .ct-map__iframe {
   position: absolute;

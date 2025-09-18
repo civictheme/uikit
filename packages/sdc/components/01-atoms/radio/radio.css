@@ -17,7 +17,7 @@
   margin-top: -0.1875rem;
 }
 .ct-radio[disabled] {
-  opacity: 40%;
+  opacity: var(--ct-radio-disabled-opacity);
   pointer-events: none;
 }
 .ct-radio + label {
@@ -42,7 +42,7 @@
   height: 0.8750625rem;
   margin: 0.18744375rem 0.18744375rem;
   transform: scale(0);
-  animation: radio-grow 0.1s forwards;
+  animation: radio-grow var(--ct-radio-animation-duration) forwards;
 }
 @keyframes radio-grow {
   to {
@@ -51,11 +51,11 @@
 }
 .ct-radio:focus-visible {
   outline-style: solid;
-  outline-width: 2px;
-  outline-offset: 2px;
+  outline-width: var(--ct-radio-outline-width);
+  outline-offset: var(--ct-radio-outline-offset);
 }
 .ct-radio:disabled + label {
-  opacity: 40%;
+  opacity: var(--ct-radio-disabled-opacity);
   pointer-events: none;
 }
 .ct-radio.ct-theme-light:focus-visible {

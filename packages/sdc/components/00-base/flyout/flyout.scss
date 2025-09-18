@@ -13,15 +13,15 @@
     right: 0;
     bottom: 0;
     visibility: hidden;
-    transition: transform $ct-flyout-duration;
+    transition: transform var(--ct-flyout-duration);
   }
 
   &[data-flyout-expanded] {
     > [data-flyout-panel] {
       transform: translate(0, 0);
       visibility: visible;
-      transition: transform $ct-flyout-duration;
-      z-index: $ct-flyout-zindex;
+      transition: transform var(--ct-flyout-duration);
+      z-index: var(--ct-flyout-zindex);
     }
   }
 

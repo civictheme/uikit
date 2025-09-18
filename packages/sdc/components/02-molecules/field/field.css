@@ -26,8 +26,8 @@
 }
 .ct-field.ct-field--horizontal .ct-field__title {
   flex: 0 1 auto;
-  min-width: auto;
-  max-width: 25%;
+  min-width: var(--ct-field-horizontal-label-min-width);
+  max-width: var(--ct-field-horizontal-label-max-width);
   margin-top: 0.9375rem;
 }
 .ct-field.ct-field--horizontal.ct-field--with-fixed-title--15 .ct-field__title {

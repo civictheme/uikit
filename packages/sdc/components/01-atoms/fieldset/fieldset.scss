@@ -32,8 +32,8 @@
 
   #{$root} {
     margin-top: ct-spacing(4);
-    border-left: solid $ct-fieldset-stripe-width;
-    padding-left: ct-spacing(3) - $ct-fieldset-stripe-width;
+    border-left: solid var(--ct-fieldset-stripe-width);
+    padding-left: calc(ct-spacing(3) - var(--ct-fieldset-stripe-width));
   }
 
   @include ct-component-theme($root) using($root, $theme) {

@@ -10,11 +10,11 @@
   $_horizontal_spacing: ct-spacing(2);
 
   @include ct-form-control-no-appearance();
-  @include ct-form-control-disabled($ct-textfield-disabled-opacity);
+  @include ct-form-control-disabled(var(--ct-textfield-disabled-opacity));
   @include ct-typography('label-small');
 
   & {
-    border-radius: $ct-textfield-border-radius;
+    border-radius: var(--ct-textfield-border-radius);
     border-style: solid;
     border-width: $_border-width;
     padding: $_vertical_spacing $_horizontal_spacing;
@@ -24,8 +24,8 @@
 
   &:focus-visible {
     outline-style: solid;
-    outline-width: $ct-textfield-outline-width;
-    outline-offset: $ct-textfield-outline-offset;
+    outline-width: var(--ct-textfield-outline-width);
+    outline-offset: var(--ct-textfield-outline-offset);
   }
 
   @include ct-component-theme($root) using($root, $theme) {

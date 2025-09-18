@@ -6,7 +6,7 @@
   $root: &;
 
   &__wrapper {
-    border-radius: $ct-callout-border-radius;
+    border-radius: var(--ct-callout-border-radius);
     padding: ct-spacing(3) ct-spacing(3);
     margin: 0;
     display: flex;
@@ -17,7 +17,7 @@
       padding: ct-spacing(3) ct-spacing(5) ct-spacing(4) ct-spacing(3);
     }
 
-    @include ct-highlight-stripe-vertical($ct-callout-stripe-width, $ct-callout-border-radius, 0);
+    @include ct-highlight-stripe-vertical(var(--ct-callout-stripe-width), var(--ct-callout-border-radius), 0);
   }
 
   &__inner {

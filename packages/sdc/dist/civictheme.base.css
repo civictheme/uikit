@@ -260,13 +260,13 @@
   right: 0;
   bottom: 0;
   visibility: hidden;
-  transition: transform 0.5s;
+  transition: transform var(--ct-flyout-duration);
 }
 [data-flyout][data-flyout-expanded] > [data-flyout-panel] {
   transform: translate(0, 0);
   visibility: visible;
-  transition: transform 0.5s;
-  z-index: 1000;
+  transition: transform var(--ct-flyout-duration);
+  z-index: var(--ct-flyout-zindex);
 }
 [data-flyout][data-flyout-direction=right] [data-flyout-panel] {
   transform: translateX(100%);
@@ -3406,8 +3406,8 @@ p {
   letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 p {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: var(--ct-basic-content-vertical-spacing);
+  margin-bottom: var(--ct-basic-content-vertical-spacing);
 }
 p:first-child {
   margin-top: 0;
@@ -3426,8 +3426,8 @@ blockquote {
 blockquote {
   position: relative;
   margin: 0;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: var(--ct-basic-content-vertical-spacing);
+  margin-bottom: var(--ct-basic-content-vertical-spacing);
   padding: 1rem 1.5rem;
 }
 blockquote::before {
@@ -3438,7 +3438,7 @@ blockquote::before {
   top: 0;
   bottom: 0;
   left: 0;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-basic-content-blockquote-border-radius);
 }
 
 ol {
