@@ -34,7 +34,7 @@
     }
 
     &[data-popper-placement^='top'] > [data-tooltip-arrow] {
-      bottom: -$ct-tooltip-triangle-width;
+      bottom: $ct-tooltip-triangle-width * -1;
       width: $ct-tooltip-triangle-height * 2;
       height: $ct-tooltip-triangle-width;
 
@@ -46,7 +46,7 @@
     }
 
     &[data-popper-placement^='bottom'] > [data-tooltip-arrow] {
-      top: -$ct-tooltip-triangle-width;
+      top: $ct-tooltip-triangle-width * -1;
       width: $ct-tooltip-triangle-height * 2;
       height: $ct-tooltip-triangle-width;
 
@@ -58,7 +58,7 @@
     }
 
     &[data-popper-placement^='left'] > [data-tooltip-arrow] {
-      right: -$ct-tooltip-triangle-width;
+      right: $ct-tooltip-triangle-width * -1;
       height: $ct-tooltip-triangle-height * 2;
 
       &::before {
@@ -69,7 +69,7 @@
     }
 
     &[data-popper-placement^='right'] > [data-tooltip-arrow] {
-      left: -$ct-tooltip-triangle-width;
+      left: $ct-tooltip-triangle-width * -1;
       height: $ct-tooltip-triangle-height * 2;
 
       &::before {

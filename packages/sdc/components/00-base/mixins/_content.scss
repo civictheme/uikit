@@ -193,7 +193,7 @@
         display: inline-block;
         text-align: center;
         width: $ct-basic-content-list-marker-width;
-        margin-left: -$ct-basic-content-list-marker-width - $ct-basic-content-list-marker-margin;
+        margin-left: ($ct-basic-content-list-marker-width * -1) - $ct-basic-content-list-marker-margin;
         margin-right: $ct-basic-content-list-marker-margin;
       }
     }

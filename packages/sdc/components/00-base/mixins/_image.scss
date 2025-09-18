@@ -116,7 +116,27 @@
     $_multiplier-y: 1;
   }
 
-  filter: drop-shadow($_multiplier-x * $offset-x $_multiplier-y * $offset-y 0 $color);
+  // Avoid unnecessary calc functions.
+  $_shadow_length_x: $offset-x;
+  $_shadow_length_y: $offset-y;
+  @if $_multiplier-x != 1 {
+    @if type-of($offset-x) == 'string' {
+      $_shadow_length_x: calc(#{$_multiplier-x} * #{$offset-x});
+    }
+    @else {
+      $_shadow_length_x: $_multiplier-x * $offset-x;
+    }
+  }
+  @if $_multiplier-y != 1 {
+    @if type-of($offset-y) == 'string' {
+      $_shadow_length_y: calc(#{$_multiplier-y} * #{$offset-y});
+    }
+    @else {
+      $_shadow_length_y: $_multiplier-y * $offset-y;
+    }
+  }
+
+  filter: drop-shadow($_shadow_length_x $_shadow_length_y 0 $color);
 }
 
 //
