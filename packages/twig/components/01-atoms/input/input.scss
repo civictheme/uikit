@@ -15,11 +15,11 @@
   $_label-line_height: ct-typography-rule($_label-size, 'line-height', 'm');
 
   @include ct-form-control-no-appearance();
-  @include ct-form-control-disabled($ct-input-disabled-opacity);
+  @include ct-form-control-disabled(var(--ct-input-disabled-opacity));
   @include ct-typography('label-small');
 
   & {
-    border-radius: $ct-input-border-radius;
+    border-radius: var(--ct-input-border-radius);
     border-style: solid;
     border-width: $_border-width;
     padding: $_vertical_spacing $_horizontal_spacing;
@@ -61,8 +61,8 @@
 
   &:focus-visible {
     outline-style: solid;
-    outline-width: $ct-input-outline-width;
-    outline-offset: $ct-input-outline-offset;
+    outline-width: var(--ct-input-outline-width);
+    outline-offset: var(--ct-input-outline-offset);
   }
 
   @include ct-component-theme($root) using($root, $theme) {

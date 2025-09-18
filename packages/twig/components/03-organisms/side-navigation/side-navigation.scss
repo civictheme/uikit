@@ -71,7 +71,7 @@
 
       &:active {
         outline: 0 !important;
-        border-radius: 0 $ct-side-navigation-link-active-border-radius $ct-side-navigation-link-active-border-radius 0;
+        border-radius: 0 var(--ct-side-navigation-link-active-border-radius) var(--ct-side-navigation-link-active-border-radius) 0;
       }
 
       &:focus-visible {

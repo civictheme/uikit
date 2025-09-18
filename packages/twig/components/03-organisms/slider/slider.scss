@@ -19,10 +19,10 @@
   transition-property: left;
 
   @if $ct-animation-enabled {
-    transition-duration: $ct-slider-mobile-transition;
+    transition-duration: var(--ct-slider-mobile-transition);
 
     @include ct-breakpoint(m) {
-      transition-duration: $ct-slider-desktop-transition;
+      transition-duration: var(--ct-slider-desktop-transition);
     }
   }
 }
@@ -31,8 +31,8 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-slider-space-horizontal;
-    padding-right: $ct-slider-space-horizontal;
+    padding-left: var(--ct-slider-space-horizontal);
+    padding-right: var(--ct-slider-space-horizontal);
   }
 
   #{$root}__title {
@@ -47,7 +47,7 @@
     @include ct-elevation(3);
 
     & {
-      border-radius: $ct-slider-border-radius;
+      border-radius: var(--ct-slider-border-radius);
     }
   }
 
@@ -118,7 +118,7 @@
   }
 
   #{$root}__image {
-    height: $ct-slide-mobile-height;
+    height: var(--ct-slide-mobile-height);
 
     @include ct-image-fit();
 

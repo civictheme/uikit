@@ -23,7 +23,7 @@
     th,
     td {
       padding: ct-spacing(1.5) ct-spacing(3);
-      vertical-align: $ct-table-cell-vertical-align;
+      vertical-align: var(--ct-table-cell-vertical-align);
     }
   }
 
@@ -111,66 +111,66 @@
 }
 
 @mixin ct-table-light() {
-  color: $ct-table-light-color;
-  background-color: $ct-table-light-background-color;
+  color: var(--ct-table-light-color);
+  background-color: var(--ct-table-light-background-color);
 
   thead {
-    color: $ct-table-light-header-color;
+    color: var(--ct-table-light-header-color);
 
     @include ct-breakpoint($ct-table-breakpoint) {
-      border-bottom: solid ct-particle(0.125) $ct-table-light-header-border-color;
+      border-bottom: solid ct-particle(0.125) var(--ct-table-light-header-border-color);
     }
 
     tr {
       &:last-child {
-        border-bottom: solid ct-particle(0.25) $ct-table-light-header-border-color;
+        border-bottom: solid ct-particle(0.25) var(--ct-table-light-header-border-color);
       }
     }
   }
 
   tfoot {
-    color: $ct-table-light-footer-color;
+    color: var(--ct-table-light-footer-color);
 
     @include ct-breakpoint($ct-table-breakpoint) {
-      border-top: solid ct-particle(0.125) $ct-table-light-footer-border-color;
+      border-top: solid ct-particle(0.125) var(--ct-table-light-footer-border-color);
     }
 
     tr {
       &:last-child {
-        border-top: solid ct-particle(0.25) $ct-table-light-footer-border-color;
+        border-top: solid ct-particle(0.25) var(--ct-table-light-footer-border-color);
       }
     }
   }
 
   tbody {
     tr {
-      border-bottom: solid ct-particle(0.125) $ct-table-light-border-color;
+      border-bottom: solid ct-particle(0.125) var(--ct-table-light-border-color);
     }
   }
 
   caption {
-    color: $ct-table-light-caption-color;
+    color: var(--ct-table-light-caption-color);
   }
 
   &.ct-table--data {
-    border-top: solid ct-particle(0.125) $ct-table-light-footer-border-color;
+    border-top: solid ct-particle(0.125) var(--ct-table-light-footer-border-color);
   }
 
   &.ct-table--striped {
     tbody {
       tr:nth-child(odd) {
-        background: $ct-table-light-row-odd-background-color;
+        background: var(--ct-table-light-row-odd-background-color);
 
         td {
-          color: $ct-table-light-row-odd-color;
+          color: var(--ct-table-light-row-odd-color);
         }
       }
 
       tr:nth-child(even) {
-        background: $ct-table-light-row-even-background-color;
+        background: var(--ct-table-light-row-even-background-color);
 
         td {
-          color: $ct-table-light-row-even-color;
+          color: var(--ct-table-light-row-even-color);
         }
       }
     }
@@ -178,66 +178,66 @@
 }
 
 @mixin ct-table-dark() {
-  color: $ct-table-dark-color;
-  background-color: $ct-table-dark-background-color;
+  color: var(--ct-table-dark-color);
+  background-color: var(--ct-table-dark-background-color);
 
   thead {
-    color: $ct-table-dark-header-color;
+    color: var(--ct-table-dark-header-color);
 
     @include ct-breakpoint($ct-table-breakpoint) {
-      border-bottom: solid ct-particle(0.125) $ct-table-dark-header-border-color;
+      border-bottom: solid ct-particle(0.125) var(--ct-table-dark-header-border-color);
     }
 
     tr {
       &:last-child {
-        border-bottom: solid ct-particle(0.25) $ct-table-dark-header-border-color;
+        border-bottom: solid ct-particle(0.25) var(--ct-table-dark-header-border-color);
       }
     }
   }
 
   tfoot {
-    color: $ct-table-dark-footer-color;
+    color: var(--ct-table-dark-footer-color);
 
     @include ct-breakpoint($ct-table-breakpoint) {
-      border-top: solid ct-particle(0.125) $ct-table-dark-footer-border-color;
+      border-top: solid ct-particle(0.125) var(--ct-table-dark-footer-border-color);
     }
 
     tr {
       &:last-child {
-        border-top: solid ct-particle(0.25) $ct-table-dark-footer-border-color;
+        border-top: solid ct-particle(0.25) var(--ct-table-dark-footer-border-color);
       }
     }
   }
 
   tbody {
     tr {
-      border-bottom: solid ct-particle(0.125) $ct-table-dark-border-color;
+      border-bottom: solid ct-particle(0.125) var(--ct-table-dark-border-color);
     }
   }
 
   caption {
-    color: $ct-table-dark-caption-color;
+    color: var(--ct-table-dark-caption-color);
   }
 
   &.ct-table--data {
-    border-top: solid ct-particle(0.125) $ct-table-dark-footer-border-color;
+    border-top: solid ct-particle(0.125) var(--ct-table-dark-footer-border-color);
   }
 
   &.ct-table--striped {
     tbody {
       tr:nth-child(odd) {
-        background: $ct-table-dark-row-odd-background-color;
+        background: var(--ct-table-dark-row-odd-background-color);
 
         td {
-          color: $ct-table-dark-row-odd-color;
+          color: var(--ct-table-dark-row-odd-color);
         }
       }
 
       tr:nth-child(even) {
-        background: $ct-table-dark-row-even-background-color;
+        background: var(--ct-table-dark-row-even-background-color);
 
         td {
-          color: $ct-table-dark-row-even-color;
+          color: var(--ct-table-dark-row-even-color);
         }
       }
     }

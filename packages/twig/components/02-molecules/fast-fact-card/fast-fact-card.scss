@@ -5,7 +5,7 @@
 .ct-fast-fact-card {
   $root: &;
 
-  @include ct-highlight-stripe-horizontal($ct-fast-fact-card-stripe-height, $ct-fast-fact-card-border-radius, 0, 'bottom');
+  @include ct-highlight-stripe-horizontal(var(--ct-fast-fact-card-stripe-height), var(--ct-fast-fact-card-border-radius), 0, 'bottom');
 
   & {
     @include ct-elevation(2);
@@ -39,8 +39,8 @@
     img {
       display: flex;
       margin: auto;
-      max-width: $ct-fast-fact-card-max-width;
-      max-height: $ct-fast-fact-card-max-height;
+      max-width: var(--ct-fast-fact-card-max-width);
+      max-height: var(--ct-fast-fact-card-max-height);
     }
   }
 
