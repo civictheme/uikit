@@ -10,10 +10,10 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 0.375rem;
+  height: var(--ct-fast-fact-card-stripe-height);
   bottom: 0;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: var(--ct-fast-fact-card-border-radius);
+  border-bottom-right-radius: var(--ct-fast-fact-card-border-radius);
   transition: height 0.25s;
 }
 .ct-fast-fact-card {
@@ -56,8 +56,8 @@
 .ct-fast-fact-card__image img {
   display: flex;
   margin: auto;
-  max-width: 3.125rem;
-  max-height: 6.25rem;
+  max-width: var(--ct-fast-fact-card-max-width);
+  max-height: var(--ct-fast-fact-card-max-height);
 }
 .ct-fast-fact-card__title {
   font-size: var(--ct-typography-display-font-size);
@@ -73,11 +73,11 @@
   text-decoration: none;
 }
 .ct-fast-fact-card__title-link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
-  border-radius: 0.25rem;
+  outline-color: var(--ct-outline-light);
+  border-radius: var(--ct-outline-border-radius);
 }
 .ct-fast-fact-card__title-link:hover {
   text-decoration: underline;

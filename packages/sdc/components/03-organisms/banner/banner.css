@@ -33,7 +33,7 @@
 }
 .ct-banner .ct-banner__featured-image__wrapper {
   box-sizing: border-box;
-  width: 40%;
+  width: var(--ct-banner-featured-image-width);
   display: none;
 }
 @media (min-width: 768px) {
@@ -46,13 +46,13 @@
   }
 }
 .ct-banner.ct-banner--decorative .ct-banner__inner {
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 1rem), 0% 100%);
+  clip-path: var(--ct-banner-decorative-mobile-clip-path);
 }
 @media (min-width: 768px) {
   .ct-banner.ct-banner--decorative .ct-banner__inner {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 3rem), 0% 100%);
+    clip-path: var(--ct-banner-decorative-desktop-clip-path);
   }
 }
 @media print {
@@ -74,7 +74,7 @@
   }
 }
 .ct-banner.ct-banner--decorative .ct-banner__featured-image {
-  clip-path: polygon(13% 10%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: var(--ct-banner-featured-image-clip-path);
 }
 .ct-banner .ct-banner__breadcrumb {
   margin-bottom: 2rem;

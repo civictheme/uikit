@@ -11,7 +11,7 @@
     @include ct-elevation(2);
 
     position: relative;
-    border-radius: $ct-event-card-border-radius;
+    border-radius: var(--ct-event-card-border-radius);
     width: 100%;
 
     // Event image from "spilling" over the border radius.
@@ -33,7 +33,7 @@
   }
 
   &:not(#{$root}--with-image) {
-    @include ct-highlight-stripe-horizontal($ct-event-card-stripe-height, $ct-event-card-border-radius, 0);
+    @include ct-highlight-stripe-horizontal(var(--ct-event-card-stripe-height), var(--ct-event-card-border-radius), 0);
   }
 
   #{$root}__image {
@@ -41,13 +41,13 @@
 
     & {
       position: relative;
-      height: $ct-event-card-image-height-mobile;
-      width: $ct-event-card-image-width-mobile;
+      height: var(--ct-event-card-image-height-mobile);
+      width: var(--ct-event-card-image-width-mobile);
     }
 
     @include ct-breakpoint(m) {
-      height: $ct-event-card-image-height-desktop;
-      width: $ct-event-card-image-width-desktop;
+      height: var(--ct-event-card-image-height-desktop);
+      width: var(--ct-event-card-image-width-desktop);
     }
   }
 
@@ -111,7 +111,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      opacity: $ct-event-card-link-graphic-hover-opacity;
+      opacity: var(--ct-event-card-link-graphic-hover-opacity);
       border-radius: 100%;
     }
   }

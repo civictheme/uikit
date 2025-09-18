@@ -7,20 +7,20 @@
   display: inline-block;
 }
 .ct-logo:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
-  border-radius: 0.25rem;
+  outline-color: var(--ct-outline-light);
+  border-radius: var(--ct-outline-border-radius);
 }
 .ct-logo .ct-logo__image {
   line-height: 0;
   display: block;
-  max-height: 2.5rem;
+  max-height: var(--ct-logo-image-height-max-mobile);
 }
 @media (min-width: 992px) {
   .ct-logo .ct-logo__image {
-    max-height: 2.5rem;
+    max-height: var(--ct-logo-image-height-max-desktop);
   }
 }
 .ct-logo.ct-logo--stacked, .ct-logo.ct-logo--inline, .ct-logo.ct-logo--inline-stacked {

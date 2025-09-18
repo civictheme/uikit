@@ -10,10 +10,10 @@
   #{$root}__image {
     @include ct-image-fit();
 
-    height: $ct-campaign-mobile-height;
+    height: var(--ct-campaign-mobile-height);
 
     img {
-      border-radius: $ct-campaign-image-border-radius;
+      border-radius: var(--ct-campaign-image-border-radius);
     }
 
     @include ct-breakpoint(m) {
@@ -48,7 +48,7 @@
     &.ct-campaign--image-left {
       .ct-campaign__image {
         @include ct-breakpoint(m) {
-          @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), 'down-right', $ct-campaign-image-shadow-offset-x, $ct-campaign-image-shadow-offset-y);
+          @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), 'down-right', var(--ct-campaign-image-shadow-offset-x), var(--ct-campaign-image-shadow-offset-y));
         }
       }
     }
@@ -56,7 +56,7 @@
     &.ct-campaign--image-right {
       .ct-campaign__image {
         @include ct-breakpoint(m) {
-          @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), 'down-left', $ct-campaign-image-shadow-offset-x, $ct-campaign-image-shadow-offset-y);
+          @include ct-image-shadow(ct-component-var($root, $theme, image, shadow-color), 'down-left', var(--ct-campaign-image-shadow-offset-x), var(--ct-campaign-image-shadow-offset-y));
         }
       }
     }

@@ -20,8 +20,8 @@ p {
   @include ct-typography('text-regular');
 
   & {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
   }
 
   &:first-child {
@@ -39,8 +39,8 @@ blockquote {
   & {
     position: relative;
     margin: 0;
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
     padding: ct-spacing(2) ct-spacing(3);
   }
 
@@ -52,7 +52,7 @@ blockquote {
     top: 0;
     bottom: 0;
     left: 0;
-    border-radius: $ct-basic-content-blockquote-border-radius;
+    border-radius: var(--ct-basic-content-blockquote-border-radius);
   }
 }
 

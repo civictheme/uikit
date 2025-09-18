@@ -25,10 +25,10 @@
   #{$root}__panels__panel {
     position: relative;
     border: ct-particle(0.125) solid;
-    border-radius: $ct-accordion-item-border-radius;
+    border-radius: var(--ct-accordion-item-border-radius);
     margin-bottom: ct-spacing(2);
 
-    @include ct-highlight-stripe-vertical($ct-accordion-stripe-width, $ct-accordion-item-border-radius);
+    @include ct-highlight-stripe-vertical(var(--ct-accordion-stripe-width), var(--ct-accordion-item-border-radius));
 
     &::before {
       z-index: 1;
@@ -42,15 +42,15 @@
   #{$root}__panels__panel__header {
     display: block;
     margin: 0;
-    border-top-left-radius: $ct-accordion-header-border-radius;
-    border-top-right-radius: $ct-accordion-header-border-radius;
+    border-top-left-radius: var(--ct-accordion-header-border-radius);
+    border-top-right-radius: var(--ct-accordion-header-border-radius);
   }
 
   #{$root}__panels__panel__header__button {
     @include ct-typography('heading-6');
 
     appearance: button;
-    border-radius: $ct-accordion-button-border-radius;
+    border-radius: var(--ct-accordion-button-border-radius);
     border: none;
     cursor: pointer;
     display: flex;

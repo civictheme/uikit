@@ -5,9 +5,9 @@
 .ct-tag {
   $root: &;
 
-  border-radius: $ct-tag-border-radius;
+  border-radius: var(--ct-tag-border-radius);
   border-style: solid;
-  border-width: $ct-tag-border-width;
+  border-width: var(--ct-tag-border-width);
   display: inline-block;
 
   @include ct-typography('label-extra-small');

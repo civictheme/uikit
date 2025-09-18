@@ -12,11 +12,11 @@
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-input[disabled] {
-  opacity: 40%;
+  opacity: var(--ct-input-disabled-opacity);
   pointer-events: none;
 }
 .ct-input {
-  border-radius: 0.25rem;
+  border-radius: var(--ct-input-border-radius);
   border-style: solid;
   border-width: 0.0625rem;
   padding: 0.8125rem 1rem;
@@ -46,8 +46,8 @@
 }
 .ct-input:focus-visible {
   outline-style: solid;
-  outline-width: 2px;
-  outline-offset: 2px;
+  outline-width: var(--ct-input-outline-width);
+  outline-offset: var(--ct-input-outline-offset);
 }
 .ct-input.ct-theme-light:focus-visible {
   outline-color: var(--ct-input-light-outline-color);

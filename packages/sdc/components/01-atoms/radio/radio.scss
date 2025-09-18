@@ -21,7 +21,7 @@
   $_checked-hover-border-width: $_checked-border-width;
 
   @include ct-form-control-no-appearance();
-  @include ct-form-control-disabled($ct-radio-disabled-opacity);
+  @include ct-form-control-disabled(var(--ct-radio-disabled-opacity));
 
   border-radius: 50%;
   border-style: solid;
@@ -67,7 +67,7 @@
 
       @if $ct-animation-enabled and $ct-radio-animation-duration > 0 {
         transform: scale(0);
-        animation: radio-grow $ct-radio-animation-duration forwards;
+        animation: radio-grow var(--ct-radio-animation-duration) forwards;
 
         @keyframes radio-grow {
           to {
@@ -80,13 +80,13 @@
 
   &:focus-visible {
     outline-style: solid;
-    outline-width: $ct-radio-outline-width;
-    outline-offset: $ct-radio-outline-offset;
+    outline-width: var(--ct-radio-outline-width);
+    outline-offset: var(--ct-radio-outline-offset);
   }
 
   &:disabled {
     + label {
-      opacity: $ct-radio-disabled-opacity;
+      opacity: var(--ct-radio-disabled-opacity);
       pointer-events: none;
     }
   }
