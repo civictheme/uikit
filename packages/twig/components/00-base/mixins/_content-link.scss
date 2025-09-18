@@ -16,43 +16,43 @@
 }
 
 @mixin ct-content-link-light() {
-  color: $ct-content-link-light-color;
+  color: var(--ct-content-link-light-color);
 
   &:focus-visible {
     @include ct-outline();
   }
 
   &:hover {
-    background-color: $ct-content-link-light-hover-background-color;
-    color: $ct-content-link-light-hover-color;
+    background-color: var(--ct-content-link-light-hover-background-color);
+    color: var(--ct-content-link-light-hover-color);
   }
 
   &:visited {
-    color: $ct-content-link-light-visited-color;
+    color: var(--ct-content-link-light-visited-color);
 
     &:hover {
-      color: $ct-content-link-light-visited-hover-color;
+      color: var(--ct-content-link-light-visited-hover-color);
     }
   }
 }
 
 @mixin ct-content-link-dark() {
-  color: $ct-content-link-dark-color;
+  color: var(--ct-content-link-dark-color);
 
   &:focus-visible {
     @include ct-outline(true);
   }
 
   &:hover {
-    background-color: $ct-content-link-dark-hover-background-color;
-    color: $ct-content-link-dark-hover-color;
+    background-color: var(--ct-content-link-dark-hover-background-color);
+    color: var(--ct-content-link-dark-hover-color);
   }
 
   &:visited {
-    color: $ct-content-link-dark-visited-color;
+    color: var(--ct-content-link-dark-visited-color);
 
     &:hover {
-      color: $ct-content-link-dark-visited-hover-color;
+      color: var(--ct-content-link-dark-visited-hover-color);
     }
   }
 }

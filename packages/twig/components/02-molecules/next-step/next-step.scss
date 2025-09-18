@@ -13,13 +13,13 @@
     position: relative;
     border-width: ct-particle(0.125);
     border-style: solid;
-    padding: ct-spacing(3) ct-spacing(2) ct-spacing(3) ct-spacing(2) + $ct-next-step-stripe-width;
-    border-radius: $ct-next-step-border-radius;
+    padding: ct-spacing(3) ct-spacing(2) ct-spacing(3) calc(ct-spacing(2) + var(--ct-next-step-stripe-width));
+    border-radius: var(--ct-next-step-border-radius);
 
-    @include ct-highlight-stripe-vertical($ct-next-step-stripe-width, $ct-next-step-border-radius);
+    @include ct-highlight-stripe-vertical(var(--ct-next-step-stripe-width), var(--ct-next-step-border-radius));
 
     @include ct-breakpoint(m) {
-      padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(3) + $ct-next-step-stripe-width;
+      padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) calc(ct-spacing(3) + var(--ct-next-step-stripe-width));
     }
   }
 
