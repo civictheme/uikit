@@ -130,6 +130,7 @@ html {
       'list',
       'bool',
     );
+
     // Only filter by CivicTheme variables.
     @if str-index($name, 'ct-') {
       @if not list.index($ignore-variables, $name) {

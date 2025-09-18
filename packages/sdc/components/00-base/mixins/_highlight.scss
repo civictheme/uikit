@@ -7,8 +7,9 @@
 //
 @mixin ct-highlight-stripe-vertical($width, $border-radius: 0, $border-width: ct-particle(0.125), $position: 'left') {
   $_stripe_size: $width;
+
   @if $border-width != 0 {
-    $_stripe_size: calc(#{$width} + #{$border-width})
+    $_stripe_size: calc(#{$width} + #{$border-width});
   }
 
   & {
@@ -43,8 +44,9 @@
 //
 @mixin ct-highlight-stripe-horizontal($height, $border-radius, $border-width: ct-particle(0.125), $position: 'top') {
   $_stripe_size: $height;
+
   @if $border-width != 0 {
-    $_stripe_size: calc(#{$height} + #{$border-width})
+    $_stripe_size: calc(#{$height} + #{$border-width});
   }
 
   & {
