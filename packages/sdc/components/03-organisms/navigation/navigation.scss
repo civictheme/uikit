@@ -238,16 +238,13 @@
 
           .ct-menu__sub-menu {
             &.ct-menu--level-1 {
-              @include ct-container();
-
+              margin-left: auto;
+              margin-right: auto;
               display: flex;
               flex-wrap: wrap;
               gap: ct-spacing(4);
               padding: 0;
-
-              & {
-                margin-bottom: ct-spacing(4);
-              }
+              margin-bottom: ct-spacing(4);
             }
           }
 

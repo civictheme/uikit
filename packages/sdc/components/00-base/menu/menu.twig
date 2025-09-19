@@ -19,6 +19,10 @@
  *   - below: [array] Submenu items.
  *     Each item contains:
  *     - items [object]
+ * - menu_level_modifier_class: [object] Mapping of menu level to modifier_class.
+ *   Each property contains:
+ *   - key: [number] Level of menu, e.g. `1`
+ *   - value: [string] Modifier classes for that level.
  * - is_collapsible: [boolean] Whether to collapse the menu.
  * - modifier_class: [string] Additional CSS classes.
  */
@@ -39,7 +43,7 @@
         {% set aria_hidden = item.in_active_trail ? 'aria-hidden="false"' : 'aria-hidden="true"' %}
       {% endif %}
       <div class="ct-menu__sub-menu__wrapper ct-menu__sub-menu__wrapper--level-{{- menu_level }}" {{ collapsible_panel }} {{ aria_hidden|raw -}}>
-        <ul class="ct-menu ct-menu__sub-menu ct-menu--level-{{- menu_level }}">
+        <ul class="ct-menu ct-menu__sub-menu ct-menu--level-{{- menu_level }} {{ menu_level_modifier_class[menu_level]|default('') }}">
     {% endif %}
 
     {% for key, item in items %}
