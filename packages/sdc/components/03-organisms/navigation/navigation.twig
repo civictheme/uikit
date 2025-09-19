@@ -51,7 +51,7 @@
           {% set item_dropdown_columns_class = dropdown_columns ? 'ct-navigation__dropdown-columns--%s'|format(dropdown_columns) : '' %}
           {% set item_dropdown_columns_fill_class = dropdown_columns_fill ? 'ct-navigation__dropdown-columns--fill' : '' %}
           {% set item_modifier_class = 'ct-navigation__has-dropdown %s %s'|format(item_dropdown_columns_class, item_dropdown_columns_fill_class) %}
-          {% set menu_level_classes = { 1: 'container' } %}
+          {% set menu_level_classes = {1: 'container'} %}
           {# Update item with attributes and classes. #}
           {% set new_item = items[key]|merge({attributes: item_attributes, modifier_class: item_modifier_class}) %}
           {% set items = items|merge({(key): new_item}) %}
