@@ -4,8 +4,8 @@
 
 .ct-button {
   cursor: pointer;
-  border: 0.125rem solid transparent;
-  border-radius: 0.25rem;
+  border: var(--ct-button-border-width) solid transparent;
+  border-radius: var(--ct-button-border-radius);
   appearance: button;
   font-size: var(--ct-typography-label-regular-font-size);
   line-height: var(--ct-typography-label-regular-line-height);
@@ -23,7 +23,7 @@
   outline-width: 0.1875rem;
 }
 .ct-button--primary {
-  transition: all 0.25s ease;
+  transition: all var(--ct-button-animation-duration) ease;
 }
 .ct-button--primary:focus-visible, .ct-button--primary:hover, .ct-button--primary:active {
   text-decoration: none;
@@ -50,41 +50,41 @@
   height: auto !important;
 }
 .ct-button--primary.ct-theme-light {
-  background-color: var(--ct-color-light-interaction-background);
-  border-color: var(--ct-color-light-interaction-background);
-  color: var(--ct-color-light-interaction-text);
+  background-color: var(--ct-button-light-primary-background-color);
+  border-color: var(--ct-button-light-primary-border-color);
+  color: var(--ct-button-light-primary-color);
 }
 .ct-button--primary.ct-theme-light:hover {
-  background-color: var(--ct-color-light-interaction-hover-background);
-  border-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-hover-text);
+  background-color: var(--ct-button-light-primary-hover-background-color);
+  border-color: var(--ct-button-light-primary-hover-border-color);
+  color: var(--ct-button-light-primary-hover-color);
 }
 .ct-button--primary.ct-theme-light:active, .ct-button--primary.ct-theme-light.active {
-  background-color: var(--ct-color-light-interaction-hover-background);
-  border-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-hover-text);
+  background-color: var(--ct-button-light-primary-active-background-color);
+  border-color: var(--ct-button-light-primary-active-border-color);
+  color: var(--ct-button-light-primary-active-color);
 }
 .ct-button--primary.ct-theme-light:focus-visible, .ct-button--primary.ct-theme-light.focus {
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-button-light-primary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--primary.ct-theme-dark {
-  background-color: var(--ct-color-dark-interaction-background);
-  border-color: var(--ct-color-dark-interaction-background);
-  color: var(--ct-color-dark-interaction-text);
+  background-color: var(--ct-button-dark-primary-background-color);
+  border-color: var(--ct-button-dark-primary-border-color);
+  color: var(--ct-button-dark-primary-color);
 }
 .ct-button--primary.ct-theme-dark:hover {
-  background-color: var(--ct-color-dark-interaction-hover-background);
-  border-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-hover-text);
+  background-color: var(--ct-button-dark-primary-hover-background-color);
+  border-color: var(--ct-button-dark-primary-hover-border-color);
+  color: var(--ct-button-dark-primary-hover-color);
 }
 .ct-button--primary.ct-theme-dark:active, .ct-button--primary.ct-theme-dark.active {
-  background-color: var(--ct-color-dark-interaction-hover-background);
-  border-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-hover-text);
+  background-color: var(--ct-button-dark-primary-active-background-color);
+  border-color: var(--ct-button-dark-primary-active-border-color);
+  color: var(--ct-button-dark-primary-active-color);
 }
 .ct-button--primary.ct-theme-dark:focus-visible, .ct-button--primary.ct-theme-dark.focus {
-  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-color: var(--ct-button-dark-primary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--secondary {
@@ -94,7 +94,7 @@
   outline-width: 0.1875rem;
 }
 .ct-button--secondary {
-  transition: all 0.25s ease;
+  transition: all var(--ct-button-animation-duration) ease;
 }
 .ct-button--secondary:focus-visible, .ct-button--secondary:hover, .ct-button--secondary:active {
   text-decoration: none;
@@ -121,41 +121,41 @@
   height: auto !important;
 }
 .ct-button--secondary.ct-theme-light {
-  background-color: transparent;
-  border-color: var(--ct-color-light-interaction-background);
-  color: var(--ct-color-light-interaction-background);
+  background-color: var(--ct-button-light-secondary-background-color);
+  border-color: var(--ct-button-light-secondary-border-color);
+  color: var(--ct-button-light-secondary-color);
 }
 .ct-button--secondary.ct-theme-light:hover {
-  background-color: transparent;
-  border-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-hover-background);
+  background-color: var(--ct-button-light-secondary-hover-background-color);
+  border-color: var(--ct-button-light-secondary-hover-border-color);
+  color: var(--ct-button-light-secondary-hover-color);
 }
 .ct-button--secondary.ct-theme-light:active, .ct-button--secondary.ct-theme-light.active {
-  background-color: transparent;
-  border-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-hover-background);
+  background-color: var(--ct-button-light-secondary-active-background-color);
+  border-color: var(--ct-button-light-secondary-active-border-color);
+  color: var(--ct-button-light-secondary-active-color);
 }
 .ct-button--secondary.ct-theme-light:focus-visible, .ct-button--secondary.ct-theme-light.focus {
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-button-light-secondary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--secondary.ct-theme-dark {
-  background-color: transparent;
-  border-color: var(--ct-color-dark-interaction-background);
-  color: var(--ct-color-dark-interaction-background);
+  background-color: var(--ct-button-dark-secondary-background-color);
+  border-color: var(--ct-button-dark-secondary-border-color);
+  color: var(--ct-button-dark-secondary-color);
 }
 .ct-button--secondary.ct-theme-dark:hover {
-  background-color: transparent;
-  border-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-hover-background);
+  background-color: var(--ct-button-dark-secondary-hover-background-color);
+  border-color: var(--ct-button-dark-secondary-hover-border-color);
+  color: var(--ct-button-dark-secondary-hover-color);
 }
 .ct-button--secondary.ct-theme-dark:active, .ct-button--secondary.ct-theme-dark.active {
-  background-color: transparent;
-  border-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-hover-background);
+  background-color: var(--ct-button-dark-secondary-active-background-color);
+  border-color: var(--ct-button-dark-secondary-active-border-color);
+  color: var(--ct-button-dark-secondary-active-color);
 }
 .ct-button--secondary.ct-theme-dark:focus-visible, .ct-button--secondary.ct-theme-dark.focus {
-  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-color: var(--ct-button-dark-secondary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--tertiary {
@@ -165,7 +165,7 @@
   outline-width: 0.1875rem;
 }
 .ct-button--tertiary {
-  transition: all 0.25s ease;
+  transition: all var(--ct-button-animation-duration) ease;
 }
 .ct-button--tertiary:focus-visible, .ct-button--tertiary:hover, .ct-button--tertiary:active {
   text-decoration: none;
@@ -192,41 +192,41 @@
   height: auto !important;
 }
 .ct-button--tertiary.ct-theme-light {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--ct-color-light-interaction-background);
+  background-color: var(--ct-button-light-tertiary-background-color);
+  border-color: var(--ct-button-light-tertiary-border-color);
+  color: var(--ct-button-light-tertiary-color);
 }
 .ct-button--tertiary.ct-theme-light:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--ct-color-light-interaction-hover-background);
+  background-color: var(--ct-button-light-tertiary-hover-background-color);
+  border-color: var(--ct-button-light-tertiary-hover-border-color);
+  color: var(--ct-button-light-tertiary-hover-color);
 }
 .ct-button--tertiary.ct-theme-light:active, .ct-button--tertiary.ct-theme-light.active {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--ct-color-light-interaction-hover-background);
+  background-color: var(--ct-button-light-tertiary-active-background-color);
+  border-color: var(--ct-button-light-tertiary-active-border-color);
+  color: var(--ct-button-light-tertiary-active-color);
 }
 .ct-button--tertiary.ct-theme-light:focus-visible, .ct-button--tertiary.ct-theme-light.focus {
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-button-light-tertiary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--tertiary.ct-theme-dark {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--ct-color-dark-interaction-background);
+  background-color: var(--ct-button-dark-tertiary-background-color);
+  border-color: var(--ct-button-dark-tertiary-border-color);
+  color: var(--ct-button-dark-tertiary-color);
 }
 .ct-button--tertiary.ct-theme-dark:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--ct-color-dark-interaction-hover-background);
+  background-color: var(--ct-button-dark-tertiary-hover-background-color);
+  border-color: var(--ct-button-dark-tertiary-hover-border-color);
+  color: var(--ct-button-dark-tertiary-hover-color);
 }
 .ct-button--tertiary.ct-theme-dark:active, .ct-button--tertiary.ct-theme-dark.active {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--ct-color-dark-interaction-hover-background);
+  background-color: var(--ct-button-dark-tertiary-active-background-color);
+  border-color: var(--ct-button-dark-tertiary-active-border-color);
+  color: var(--ct-button-dark-tertiary-active-color);
 }
 .ct-button--tertiary.ct-theme-dark:focus-visible, .ct-button--tertiary.ct-theme-dark.focus {
-  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-color: var(--ct-button-dark-tertiary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--tertiary:focus-visible, .ct-button--tertiary:hover, .ct-button--tertiary:active {

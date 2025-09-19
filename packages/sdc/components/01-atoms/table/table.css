@@ -26,7 +26,7 @@
 .ct-table tr th,
 .ct-table tr td {
   padding: 0.75rem 1.5rem;
-  vertical-align: top;
+  vertical-align: var(--ct-table-cell-vertical-align);
 }
 .ct-table caption {
   text-align: left;
@@ -114,98 +114,98 @@
   }
 }
 .ct-table.ct-theme-light {
-  color: var(--ct-color-light-body);
-  background-color: var(--ct-color-light-background-light);
+  color: var(--ct-table-light-color);
+  background-color: var(--ct-table-light-background-color);
 }
 .ct-table.ct-theme-light thead {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-table-light-header-color);
 }
 @media (min-width: 768px) {
   .ct-table.ct-theme-light thead {
-    border-bottom: solid 0.0625rem var(--ct-color-light-border);
+    border-bottom: solid 0.0625rem var(--ct-table-light-header-border-color);
   }
 }
 .ct-table.ct-theme-light thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-color-light-border);
+  border-bottom: solid 0.125rem var(--ct-table-light-header-border-color);
 }
 .ct-table.ct-theme-light tfoot {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-table-light-footer-color);
 }
 @media (min-width: 768px) {
   .ct-table.ct-theme-light tfoot {
-    border-top: solid 0.0625rem var(--ct-color-light-border);
+    border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
   }
 }
 .ct-table.ct-theme-light tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-color-light-border);
+  border-top: solid 0.125rem var(--ct-table-light-footer-border-color);
 }
 .ct-table.ct-theme-light tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-color-light-border);
+  border-bottom: solid 0.0625rem var(--ct-table-light-border-color);
 }
 .ct-table.ct-theme-light caption {
-  color: var(--ct-color-light-body);
+  color: var(--ct-table-light-caption-color);
 }
 .ct-table.ct-theme-light.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-color-light-border);
+  border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
 }
 .ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-color-light-background-light);
+  background: var(--ct-table-light-row-odd-background-color);
 }
 .ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-color-light-body);
+  color: var(--ct-table-light-row-odd-color);
 }
 .ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-color-light-background);
+  background: var(--ct-table-light-row-even-background-color);
 }
 .ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-color-light-body);
+  color: var(--ct-table-light-row-even-color);
 }
 .ct-table.ct-theme-dark {
-  color: var(--ct-color-dark-body);
-  background-color: var(--ct-color-dark-background);
+  color: var(--ct-table-dark-color);
+  background-color: var(--ct-table-dark-background-color);
 }
 .ct-table.ct-theme-dark thead {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-table-dark-header-color);
 }
 @media (min-width: 768px) {
   .ct-table.ct-theme-dark thead {
-    border-bottom: solid 0.0625rem var(--ct-color-dark-border);
+    border-bottom: solid 0.0625rem var(--ct-table-dark-header-border-color);
   }
 }
 .ct-table.ct-theme-dark thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-color-dark-border);
+  border-bottom: solid 0.125rem var(--ct-table-dark-header-border-color);
 }
 .ct-table.ct-theme-dark tfoot {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-table-dark-footer-color);
 }
 @media (min-width: 768px) {
   .ct-table.ct-theme-dark tfoot {
-    border-top: solid 0.0625rem var(--ct-color-dark-border);
+    border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
   }
 }
 .ct-table.ct-theme-dark tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-color-dark-border);
+  border-top: solid 0.125rem var(--ct-table-dark-footer-border-color);
 }
 .ct-table.ct-theme-dark tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-color-dark-border);
+  border-bottom: solid 0.0625rem var(--ct-table-dark-border-color);
 }
 .ct-table.ct-theme-dark caption {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-table-dark-caption-color);
 }
 .ct-table.ct-theme-dark.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-color-dark-border);
+  border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
 }
 .ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-color-dark-background);
+  background: var(--ct-table-dark-row-odd-background-color);
 }
 .ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-table-dark-row-odd-color);
 }
 .ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-color-dark-background-light);
+  background: var(--ct-table-dark-row-even-background-color);
 }
 .ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-table-dark-row-even-color);
 }
 .ct-table--wrapper {
   overflow: auto;

@@ -7,14 +7,14 @@
 
   &#{$root}--with-background {
     @include ct-breakpoint(m) {
-      padding-left: $ct-attachment-space-horizontal;
-      padding-right: $ct-attachment-space-horizontal;
+      padding-left: var(--ct-attachment-space-horizontal);
+      padding-right: var(--ct-attachment-space-horizontal);
     }
   }
 
   #{$root}__wrapper {
     border: solid ct-particle(0.125);
-    border-radius: $ct-attachment-border-radius;
+    border-radius: var(--ct-attachment-border-radius);
     padding: ct-spacing(3);
 
     @include ct-breakpoint(m) {

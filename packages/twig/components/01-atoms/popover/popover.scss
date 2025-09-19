@@ -14,14 +14,14 @@
 
     & {
       position: absolute;
-      z-index: $ct-popover-z-index;
-      border-radius: $ct-popover-description-border-radius;
-      margin-top: $ct-popover-top-offset;
+      z-index: var(--ct-popover-z-index);
+      border-radius: var(--ct-popover-description-border-radius);
+      margin-top: var(--ct-popover-top-offset);
     }
   }
 
   #{$root}__content__inner {
-    min-width: $ct-popover-min-width;
+    min-width: var(--ct-popover-min-width);
     min-height: ct-particle(12);
     padding: ct-spacing(2);
 

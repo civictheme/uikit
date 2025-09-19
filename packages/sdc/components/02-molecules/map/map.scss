@@ -6,15 +6,15 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-map-space-horizontal;
-    padding-right: $ct-map-space-horizontal;
+    padding-left: var(--ct-map-space-horizontal);
+    padding-right: var(--ct-map-space-horizontal);
   }
 
   #{$root}__canvas {
     position: relative;
     height: 0;
     overflow: hidden;
-    padding: 0 0 $ct-map-padding-bottom 0;
+    padding: 0 0 var(--ct-map-padding-bottom) 0;
   }
 
   #{$root}__iframe {

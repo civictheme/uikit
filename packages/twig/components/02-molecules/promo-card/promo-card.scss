@@ -11,7 +11,7 @@
     @include ct-elevation(2);
 
     position: relative;
-    border-radius: $ct-promo-card-border-radius;
+    border-radius: var(--ct-promo-card-border-radius);
     width: 100%;
 
     // Promo image from "spilling" over the border radius.
@@ -33,7 +33,7 @@
   }
 
   &:not(#{$root}--with-image) {
-    @include ct-highlight-stripe-horizontal($ct-promo-card-stripe-height, $ct-promo-card-border-radius, 0);
+    @include ct-highlight-stripe-horizontal(var(--ct-promo-card-stripe-height), var(--ct-promo-card-border-radius), 0);
   }
 
   #{$root}__image {
@@ -41,13 +41,13 @@
 
     & {
       position: relative;
-      height: $ct-promo-card-image-height-mobile;
-      width: $ct-promo-card-image-width-mobile;
+      height: var(--ct-promo-card-image-height-mobile);
+      width: var(--ct-promo-card-image-width-mobile);
     }
 
     @include ct-breakpoint(m) {
-      height: $ct-promo-card-image-height-desktop;
-      width: $ct-promo-card-image-width-desktop;
+      height: var(--ct-promo-card-image-height-desktop);
+      width: var(--ct-promo-card-image-width-desktop);
     }
   }
 
@@ -107,7 +107,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      opacity: $ct-promo-card-link-graphic-hover-opacity;
+      opacity: var(--ct-promo-card-link-graphic-hover-opacity);
       border-radius: 100%;
     }
   }
