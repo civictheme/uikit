@@ -32,7 +32,7 @@
   cursor: pointer;
 
   // Offset by font spacing.
-  margin-right: -1 * $_label-font-size * $ct-font-average-character-width;
+  margin-right: calc(-1 * $_label-font-size * var(--ct-font-average-character-width));
 
   // Vertically align the control, preserving label's baseline.
   vertical-align: top;
