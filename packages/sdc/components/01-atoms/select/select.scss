@@ -27,7 +27,7 @@
     width: 100%;
 
     // Show at least 5 characters.
-    min-width: $_icon-width + $_horizontal-padding * 2 + $ct-font-average-character-width * 5;
+    min-width: calc($_icon-width + $_horizontal-padding * 2 + var(--ct-font-average-character-width) * 5rem);
     border-radius: var(--ct-select-border-radius);
     border-style: solid;
     border-width: $_border-width;

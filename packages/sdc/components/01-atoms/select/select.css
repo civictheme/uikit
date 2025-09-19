@@ -17,7 +17,7 @@
 }
 .ct-select {
   width: 100%;
-  min-width: 5.5625rem;
+  min-width: calc(4.3125rem + var(--ct-font-average-character-width) * 5rem);
   border-radius: var(--ct-select-border-radius);
   border-style: solid;
   border-width: 0.0625rem;

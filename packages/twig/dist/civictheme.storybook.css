@@ -3887,7 +3887,7 @@ ol ol ol {
   width: 1.625rem;
   border-width: 0.0625rem;
   cursor: pointer;
-  margin-right: -0.25rem;
+  margin-right: calc(-1rem * var(--ct-font-average-character-width));
   vertical-align: top;
   margin-top: -0.1875rem;
 }
@@ -5386,7 +5386,7 @@ ol ol ol {
   width: 1.625rem;
   border-width: 0.0625rem;
   cursor: pointer;
-  margin-right: -0.25rem;
+  margin-right: calc(-1rem * var(--ct-font-average-character-width));
   vertical-align: top;
   margin-top: -0.1875rem;
 }
@@ -5566,7 +5566,7 @@ ol ol ol {
 }
 .ct-select {
   width: 100%;
-  min-width: 5.5625rem;
+  min-width: calc(4.3125rem + var(--ct-font-average-character-width) * 5rem);
   border-radius: var(--ct-select-border-radius);
   border-style: solid;
   border-width: 0.0625rem;
@@ -11143,6 +11143,7 @@ html {
   --ct-typography-quote-font-name: "Lexend", sans-serif;
   --ct-typography-quote-font-weight: 400;
   --ct-typography-quote-letter-spacing: -0.15px;
+  --ct-font-average-character-width: 0.25;
   --ct-flyout-duration: 0.5s;
   --ct-flyout-zindex: 1000;
   --ct-border-radius: 0.25rem;
