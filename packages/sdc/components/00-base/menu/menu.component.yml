@@ -52,6 +52,19 @@ props:
             items:
               type: object
               description: Submenu item with the same structure as parent items.
+    menu_level_modifier_class:
+      type: object
+      title: Menu level modifier class
+      description: Mapping of menu level to modifier_class.
+      properties:
+        key:
+          type: number
+          title: Menu level
+          description: Level of menu, e.g. `1`
+        value:
+          type: string
+          title: Modifier class
+          description: Modifier classes for that level.
     is_collapsible:
       type: boolean
       title: Is collapsible
