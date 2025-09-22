@@ -4,7 +4,7 @@
 
 .ct-subject-card {
   position: relative;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-subject-card-border-radius);
   width: 100%;
 }
 .ct-subject-card {
@@ -40,16 +40,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 10rem;
-  min-width: auto;
+  min-height: var(--ct-subject-card-image-height-mobile);
+  min-width: var(--ct-subject-card-image-width-mobile);
   padding: 1rem;
   box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .ct-subject-card .ct-subject-card__content {
     padding: 1.5rem;
-    min-height: 14rem;
-    min-width: auto;
+    min-height: var(--ct-subject-card-image-height-desktop);
+    min-width: var(--ct-subject-card-image-width-desktop);
   }
 }
 .ct-subject-card .ct-subject-card__image {
@@ -73,11 +73,11 @@
   text-decoration: none;
 }
 .ct-subject-card .ct-subject-card__title-link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
-  border-radius: 0.25rem;
+  outline-color: var(--ct-outline-light);
+  border-radius: var(--ct-outline-border-radius);
 }
 .ct-subject-card .ct-subject-card__title-link:hover {
   text-decoration: underline;

@@ -17,7 +17,7 @@
         outline-offset: -1 * ct-particle(0.375);
         display: block;
         padding: ct-spacing(1) ct-spacing(2);
-        border-radius: $ct-tabs-link-border-radius $ct-tabs-link-border-radius 0 0;
+        border-radius: var(--ct-tabs-link-border-radius) var(--ct-tabs-link-border-radius) 0 0;
         border: solid ct-particle(0.125);
       }
 

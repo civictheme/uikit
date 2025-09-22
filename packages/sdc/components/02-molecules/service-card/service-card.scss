@@ -5,13 +5,13 @@
 .ct-service-card {
   $root: &;
 
-  @include ct-highlight-stripe-horizontal($ct-service-card-stripe-height, $ct-service-card-border-radius, 0);
+  @include ct-highlight-stripe-horizontal(var(--ct-service-card-stripe-height), var(--ct-service-card-border-radius), 0);
 
   & {
     @include ct-elevation(2);
 
     position: relative;
-    border-radius: $ct-service-card-border-radius;
+    border-radius: var(--ct-service-card-border-radius);
     width: 100%;
   }
 

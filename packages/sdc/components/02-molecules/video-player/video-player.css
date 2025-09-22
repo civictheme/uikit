@@ -4,7 +4,7 @@
 
 .ct-video-player__wrapper {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: calc(var(--ct-video-ratio-height) / var(--ct-video-ratio-width) * 100%);
   padding-top: 1.5rem;
   height: 0;
   overflow: hidden;

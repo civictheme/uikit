@@ -6,15 +6,15 @@
 // Set element outline.
 //
 @mixin ct-outline($is_dark: false) {
-  outline-offset: $ct-outline-offset;
-  outline-width: $ct-outline-width;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
 
   @if $is_dark {
-    outline-color: $ct-outline-dark;
+    outline-color: var(--ct-outline-dark);
   }
   @else {
-    outline-color: $ct-outline-light;
+    outline-color: var(--ct-outline-light);
   }
 }
 
@@ -28,5 +28,5 @@
 }
 
 @mixin ct-outline-border() {
-  border-radius: $ct-outline-border-radius;
+  border-radius: var(--ct-outline-border-radius);
 }

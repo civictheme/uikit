@@ -228,7 +228,7 @@
 }
 .ct-paragraph ul:not(.ct-item-list) > li {
   position: relative;
-  padding-left: 2.75rem;
+  padding-left: calc(var(--ct-basic-content-list-marker-width) + var(--ct-basic-content-list-marker-margin));
 }
 .ct-paragraph ul:not(.ct-item-list) > li::before {
   content: "";
@@ -249,15 +249,15 @@
 }
 .ct-paragraph ol:not(.ct-item-list) > li {
   counter-increment: ordered_counter;
-  padding-left: 2.75rem;
+  padding-left: calc(var(--ct-basic-content-list-marker-width) + var(--ct-basic-content-list-marker-margin));
 }
 .ct-paragraph ol:not(.ct-item-list) > li::before {
   content: counter(ordered_counter);
   display: inline-block;
   text-align: center;
-  width: 1.75rem;
-  margin-left: -2.75rem;
-  margin-right: 1rem;
+  width: var(--ct-basic-content-list-marker-width);
+  margin-left: calc(var(--ct-basic-content-list-marker-width) * -1 - var(--ct-basic-content-list-marker-margin));
+  margin-right: var(--ct-basic-content-list-marker-margin);
 }
 .ct-paragraph img {
   height: auto;
@@ -297,7 +297,7 @@
 .ct-paragraph table tr th,
 .ct-paragraph table tr td {
   padding: 0.75rem 1.5rem;
-  vertical-align: top;
+  vertical-align: var(--ct-table-cell-vertical-align);
 }
 .ct-paragraph table caption {
   text-align: left;
@@ -413,220 +413,220 @@
   letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 .ct-paragraph.ct-theme-light {
-  color: var(--ct-color-light-body);
+  color: var(--ct-basic-content-light-base-color);
 }
 .ct-paragraph.ct-theme-light h1 {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-basic-content-light-heading-1-color);
 }
 .ct-paragraph.ct-theme-light h2 {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-basic-content-light-heading-2-color);
 }
 .ct-paragraph.ct-theme-light h3 {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-basic-content-light-heading-3-color);
 }
 .ct-paragraph.ct-theme-light h4 {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-basic-content-light-heading-4-color);
 }
 .ct-paragraph.ct-theme-light h5 {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-basic-content-light-heading-5-color);
 }
 .ct-paragraph.ct-theme-light h6 {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-basic-content-light-heading-6-color);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link) {
-  color: var(--ct-color-light-interaction-background);
+  color: var(--ct-content-link-light-color);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):hover {
-  background-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-hover-text);
+  background-color: var(--ct-content-link-light-hover-background-color);
+  color: var(--ct-content-link-light-hover-color);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited {
-  color: var(--ct-color-light-body);
+  color: var(--ct-content-link-light-visited-color);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
-  color: var(--ct-color-light-interaction-hover-text);
+  color: var(--ct-content-link-light-visited-hover-color);
 }
 .ct-paragraph.ct-theme-light blockquote {
-  color: var(--ct-color-light-body);
-  background-color: var(--ct-color-light-background-light);
+  color: var(--ct-basic-content-light-blockquote-color);
+  background-color: var(--ct-basic-content-light-blockquote-background-color);
 }
 .ct-paragraph.ct-theme-light blockquote::before {
-  background-color: var(--ct-color-light-highlight);
+  background-color: var(--ct-basic-content-light-blockquote-stripe-background-color);
 }
 .ct-paragraph.ct-theme-light blockquote cite {
-  color: var(--ct-color-light-body);
+  color: var(--ct-basic-content-light-blockquote-color);
 }
 .ct-paragraph.ct-theme-light ul:not(.ct-item-list) > li {
-  color: var(--ct-color-light-body);
+  color: var(--ct-basic-content-light-ul-li-color);
 }
 .ct-paragraph.ct-theme-light ul:not(.ct-item-list) > li::before {
-  background-color: var(--ct-color-light-body);
+  background-color: var(--ct-basic-content-light-ul-li-marker-color);
 }
 .ct-paragraph.ct-theme-light ol:not(.ct-item-list) > li {
-  color: var(--ct-color-light-body);
+  color: var(--ct-basic-content-light-ol-li-color);
 }
 .ct-paragraph.ct-theme-light ol:not(.ct-item-list) > li::before {
-  color: var(--ct-color-light-body);
+  color: var(--ct-basic-content-light-ol-li-marker-color);
 }
 .ct-paragraph.ct-theme-light table {
-  color: var(--ct-color-light-body);
-  background-color: var(--ct-color-light-background-light);
+  color: var(--ct-table-light-color);
+  background-color: var(--ct-table-light-background-color);
 }
 .ct-paragraph.ct-theme-light table thead {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-table-light-header-color);
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-theme-light table thead {
-    border-bottom: solid 0.0625rem var(--ct-color-light-border);
+    border-bottom: solid 0.0625rem var(--ct-table-light-header-border-color);
   }
 }
 .ct-paragraph.ct-theme-light table thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-color-light-border);
+  border-bottom: solid 0.125rem var(--ct-table-light-header-border-color);
 }
 .ct-paragraph.ct-theme-light table tfoot {
-  color: var(--ct-color-light-heading);
+  color: var(--ct-table-light-footer-color);
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-theme-light table tfoot {
-    border-top: solid 0.0625rem var(--ct-color-light-border);
+    border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
   }
 }
 .ct-paragraph.ct-theme-light table tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-color-light-border);
+  border-top: solid 0.125rem var(--ct-table-light-footer-border-color);
 }
 .ct-paragraph.ct-theme-light table tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-color-light-border);
+  border-bottom: solid 0.0625rem var(--ct-table-light-border-color);
 }
 .ct-paragraph.ct-theme-light table caption {
-  color: var(--ct-color-light-body);
+  color: var(--ct-table-light-caption-color);
 }
 .ct-paragraph.ct-theme-light table.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-color-light-border);
+  border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
 }
 .ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-color-light-background-light);
+  background: var(--ct-table-light-row-odd-background-color);
 }
 .ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-color-light-body);
+  color: var(--ct-table-light-row-odd-color);
 }
 .ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-color-light-background);
+  background: var(--ct-table-light-row-even-background-color);
 }
 .ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-color-light-body);
+  color: var(--ct-table-light-row-even-color);
 }
 .ct-paragraph.ct-theme-dark {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-basic-content-dark-base-color);
 }
 .ct-paragraph.ct-theme-dark h1 {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-basic-content-dark-heading-1-color);
 }
 .ct-paragraph.ct-theme-dark h2 {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-basic-content-dark-heading-2-color);
 }
 .ct-paragraph.ct-theme-dark h3 {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-basic-content-dark-heading-3-color);
 }
 .ct-paragraph.ct-theme-dark h4 {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-basic-content-dark-heading-4-color);
 }
 .ct-paragraph.ct-theme-dark h5 {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-basic-content-dark-heading-5-color);
 }
 .ct-paragraph.ct-theme-dark h6 {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-basic-content-dark-heading-6-color);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link) {
-  color: var(--ct-color-dark-interaction-background);
+  color: var(--ct-content-link-dark-color);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-color: var(--ct-outline-dark);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):hover {
-  background-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-hover-text);
+  background-color: var(--ct-content-link-dark-hover-background-color);
+  color: var(--ct-content-link-dark-hover-color);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-content-link-dark-visited-color);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
-  color: var(--ct-color-dark-interaction-hover-text);
+  color: var(--ct-content-link-dark-visited-hover-color);
 }
 .ct-paragraph.ct-theme-dark blockquote {
-  color: var(--ct-color-dark-body);
-  background-color: var(--ct-color-dark-background-light);
+  color: var(--ct-basic-content-dark-blockquote-color);
+  background-color: var(--ct-basic-content-dark-blockquote-background-color);
 }
 .ct-paragraph.ct-theme-dark blockquote::before {
-  background-color: var(--ct-color-dark-highlight);
+  background-color: var(--ct-basic-content-dark-blockquote-stripe-background-color);
 }
 .ct-paragraph.ct-theme-dark blockquote cite {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-basic-content-dark-blockquote-color);
 }
 .ct-paragraph.ct-theme-dark ul:not(.ct-item-list) > li {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-basic-content-dark-ul-li-color);
 }
 .ct-paragraph.ct-theme-dark ul:not(.ct-item-list) > li::before {
-  background-color: var(--ct-color-dark-body);
+  background-color: var(--ct-basic-content-dark-ul-li-marker-color);
 }
 .ct-paragraph.ct-theme-dark ol:not(.ct-item-list) > li {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-basic-content-dark-ol-li-color);
 }
 .ct-paragraph.ct-theme-dark ol:not(.ct-item-list) > li::before {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-basic-content-dark-ol-li-marker-color);
 }
 .ct-paragraph.ct-theme-dark table {
-  color: var(--ct-color-dark-body);
-  background-color: var(--ct-color-dark-background);
+  color: var(--ct-table-dark-color);
+  background-color: var(--ct-table-dark-background-color);
 }
 .ct-paragraph.ct-theme-dark table thead {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-table-dark-header-color);
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-theme-dark table thead {
-    border-bottom: solid 0.0625rem var(--ct-color-dark-border);
+    border-bottom: solid 0.0625rem var(--ct-table-dark-header-border-color);
   }
 }
 .ct-paragraph.ct-theme-dark table thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-color-dark-border);
+  border-bottom: solid 0.125rem var(--ct-table-dark-header-border-color);
 }
 .ct-paragraph.ct-theme-dark table tfoot {
-  color: var(--ct-color-dark-heading);
+  color: var(--ct-table-dark-footer-color);
 }
 @media (min-width: 768px) {
   .ct-paragraph.ct-theme-dark table tfoot {
-    border-top: solid 0.0625rem var(--ct-color-dark-border);
+    border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
   }
 }
 .ct-paragraph.ct-theme-dark table tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-color-dark-border);
+  border-top: solid 0.125rem var(--ct-table-dark-footer-border-color);
 }
 .ct-paragraph.ct-theme-dark table tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-color-dark-border);
+  border-bottom: solid 0.0625rem var(--ct-table-dark-border-color);
 }
 .ct-paragraph.ct-theme-dark table caption {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-table-dark-caption-color);
 }
 .ct-paragraph.ct-theme-dark table.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-color-dark-border);
+  border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
 }
 .ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-color-dark-background);
+  background: var(--ct-table-dark-row-odd-background-color);
 }
 .ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-table-dark-row-odd-color);
 }
 .ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-color-dark-background-light);
+  background: var(--ct-table-dark-row-even-background-color);
 }
 .ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-color-dark-body);
+  color: var(--ct-table-dark-row-even-color);
 }

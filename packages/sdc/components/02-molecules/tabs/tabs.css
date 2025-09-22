@@ -18,7 +18,7 @@
   outline-offset: -0.1875rem;
   display: block;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: var(--ct-tabs-link-border-radius) var(--ct-tabs-link-border-radius) 0 0;
   border: solid 0.0625rem;
 }
 @media (min-width: 768px) {

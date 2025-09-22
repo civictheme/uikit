@@ -9,7 +9,7 @@
 
   &__wrapper {
     position: relative;
-    padding-bottom: math.div($ct-video-ratio-height, $ct-video-ratio-width) * 100%;
+    padding-bottom: calc(var(--ct-video-ratio-height) / var(--ct-video-ratio-width) * 100%);
     padding-top: ct-spacing(3);
     height: 0;
     overflow: hidden;

@@ -22,9 +22,9 @@
   $_ct-checkbox-check_resized: ct-svg-viewbox($ct-checkbox-check, '0 0 #{$_checked-square-width} #{$_checked-square-height}');
 
   @include ct-form-control-no-appearance();
-  @include ct-form-control-disabled($ct-checkbox-disabled-opacity);
+  @include ct-form-control-disabled(var(--ct-checkbox-disabled-opacity));
 
-  border-radius: $ct-checkbox-border-radius;
+  border-radius: var(--ct-checkbox-border-radius);
   border-style: solid;
   box-sizing: border-box;
   height: $_height;
@@ -33,7 +33,7 @@
   cursor: pointer;
 
   // Offset by font spacing.
-  margin-right: -1 * $_label-font-size * $ct-font-average-character-width;
+  margin-right: calc(-1 * $_label-font-size * var(--ct-font-average-character-width));
 
   // Vertically align the control, preserving label's baseline.
   vertical-align: top;
@@ -59,7 +59,7 @@
     &::before {
       content: '';
       display: block;
-      border-radius: math.div($ct-checkbox-border-radius, 2);
+      border-radius: calc(var(--ct-checkbox-border-radius) / 2);
       width: $_checked-square-width;
       height: $_checked-square-height;
       margin: math.div($_height - $_checked-square-height, 2) - $_checked-border-width auto;
@@ -67,7 +67,7 @@
 
       @if $ct-animation-enabled and $ct-checkbox-animation-duration > 0 {
         transform: scale(0);
-        animation: check-grow $ct-checkbox-animation-duration forwards;
+        animation: check-grow var(--ct-checkbox-animation-duration) forwards;
 
         @keyframes check-grow {
           to {
@@ -80,13 +80,13 @@
 
   &:focus-visible {
     outline-style: solid;
-    outline-width: $ct-checkbox-outline-width;
-    outline-offset: $ct-checkbox-outline-offset;
+    outline-width: var(--ct-checkbox-outline-width);
+    outline-offset: var(--ct-checkbox-outline-offset);
   }
 
   &:disabled {
     + label {
-      opacity: $ct-checkbox-disabled-opacity;
+      opacity: var(--ct-checkbox-disabled-opacity);
       pointer-events: none;
     }
   }

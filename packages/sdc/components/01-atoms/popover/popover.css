@@ -10,12 +10,12 @@
 }
 .ct-popover .ct-popover__content {
   position: absolute;
-  z-index: 99;
-  border-radius: 0.25rem;
-  margin-top: 1rem;
+  z-index: var(--ct-popover-z-index);
+  border-radius: var(--ct-popover-description-border-radius);
+  margin-top: var(--ct-popover-top-offset);
 }
 .ct-popover .ct-popover__content__inner {
-  min-width: 17.5rem;
+  min-width: var(--ct-popover-min-width);
   min-height: 6rem;
   padding: 1rem;
 }
