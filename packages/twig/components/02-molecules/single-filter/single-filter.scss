@@ -41,9 +41,11 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: ct-spacing(3);
+    flex-direction: column;
 
     @include ct-breakpoint(m) {
       flex-grow: 0;
+      flex-direction: row;
       margin-left: ct-spacing(3);
       margin-top: 0;
     }
