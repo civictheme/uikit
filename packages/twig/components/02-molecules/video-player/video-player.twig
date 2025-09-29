@@ -98,8 +98,12 @@
               data-collapsible-duration="250"
             >
               {% set transcript_toggle_html %}
-                <span class="ct-video-player__transcript-trigger-expand">{{ transcript_expand_text|default('Show transcript') }}</span>
-                <span class="ct-video-player__transcript-trigger-collapse">{{ transcript_collapse_text|default('Hide transcript') }}</span>
+                <span class="ct-video-player__transcript-trigger-expand">
+                  {{- transcript_expand_text|default('Show transcript') -}}
+                </span>
+                <span class="ct-video-player__transcript-trigger-collapse">
+                  {{- transcript_collapse_text|default('Hide transcript') -}}
+                </span>
               {% endset %}
               {% include '@atoms/button/button.twig' with {
                 theme: theme,
@@ -112,6 +116,7 @@
               <div class="ct-video-player__transcript-panel" data-collapsible-panel>
                 <div class="ct-video-player__transcript-panel-inner">
                   {% include '@molecules/basic-content/basic-content.twig' with {
+                    theme: theme,
                     content: transcript_content,
                   } only %}
                 </div>
