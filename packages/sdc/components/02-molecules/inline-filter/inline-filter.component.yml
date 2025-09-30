@@ -31,10 +31,8 @@ props:
       description: Additional HTML attributes.
 slots:
   items:
-    type: string
     title: Items
     description: Field items to display. Ideally a single text field.
   items_end:
-    type: string
     title: Items
     description: Field items to appear after the 'items' slot.
