@@ -33,7 +33,7 @@
   }
 
   &__results-count {
-    @include ct-typography('label-regular');
+    @include ct-typography('heading-5');
 
     margin: 0;
   }

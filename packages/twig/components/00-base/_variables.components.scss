@@ -883,6 +883,13 @@ $ct-group-filter-dark-selected-filters-title-color: ct-color-dark('background') 
 $ct-group-filter-dark-title-color: ct-color-dark('heading') !default;
 
 //
+// Inline filter.
+//
+$ct-inline-filter-breakpoint: $ct-layout-breakpoint !default;
+$ct-inline-filter-light-title-color: ct-color-light('heading') !default;
+$ct-inline-filter-dark-title-color: ct-color-dark('heading') !default;
+
+//
 // List/Pagination.
 //
 $ct-pagination-light-color: ct-color-light('interaction-background') !default;
