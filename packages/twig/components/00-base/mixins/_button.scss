@@ -220,8 +220,8 @@
   & {
     display: inline-block;
     text-decoration: none;
-    outline-offset: $ct-button-outline-offset;
-    outline-width: $ct-button-outline-width;
+    outline-offset: var(--ct-button-outline-offset);
+    outline-width: var(--ct-button-outline-width);
   }
 
   @if $ct-animation-enabled {
@@ -316,7 +316,7 @@
     @include ct-typography('label-extra-small');
 
     & {
-      border-width: math.div($ct-button-border-width, 2);
+      border-width: calc(var(--ct-button-border-width) / 2);
     }
 
     @if $with-padding {

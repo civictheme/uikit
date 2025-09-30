@@ -19,8 +19,8 @@
 .ct-button--primary {
   display: inline-block;
   text-decoration: none;
-  outline-offset: 0.125rem;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-button-outline-offset);
+  outline-width: var(--ct-button-outline-width);
 }
 .ct-button--primary {
   transition: all var(--ct-button-animation-duration) ease;
@@ -90,8 +90,8 @@
 .ct-button--secondary {
   display: inline-block;
   text-decoration: none;
-  outline-offset: 0.125rem;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-button-outline-offset);
+  outline-width: var(--ct-button-outline-width);
 }
 .ct-button--secondary {
   transition: all var(--ct-button-animation-duration) ease;
@@ -161,8 +161,8 @@
 .ct-button--tertiary {
   display: inline-block;
   text-decoration: none;
-  outline-offset: 0.125rem;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-button-outline-offset);
+  outline-width: var(--ct-button-outline-width);
 }
 .ct-button--tertiary {
   transition: all var(--ct-button-animation-duration) ease;
@@ -260,7 +260,7 @@
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-button--tertiary--small {
-  border-width: 0.0625rem;
+  border-width: calc(var(--ct-button-border-width) / 2);
 }
 .ct-button--tertiary--small__dismiss {
   margin-left: 1rem;
@@ -299,7 +299,7 @@
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-button--small {
-  border-width: 0.0625rem;
+  border-width: calc(var(--ct-button-border-width) / 2);
 }
 .ct-button--small {
   padding: 0.5rem 2rem;
