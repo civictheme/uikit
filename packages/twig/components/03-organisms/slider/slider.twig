@@ -35,11 +35,7 @@
 {% if slides is not empty %}
   <div
     role="region"
-    {% if title is not empty %}
-      aria-label="{{ title }}"
-    {% else %}
-      aria-label="Slider"
-    {% endif %}
+    aria-label="{{ title|default('Slider') }}"
     aria-roledescription="carousel"
     class="ct-slider {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
     <div class="container">
@@ -100,7 +96,7 @@
                   theme: theme,
                   content: 'Slide 1',
                   modifier_class: 'ct-slider__controls__progress-indicator',
-                  attributes: 'aria-live="polite" data-slider-progress tabindex="0"',
+                  attributes: 'aria-live="polite" data-slider-progress',
                 } only %}
               </div>
             {% endblock %}
