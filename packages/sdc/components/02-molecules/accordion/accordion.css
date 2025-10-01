@@ -4,8 +4,8 @@
 
 @media (min-width: 768px) {
   .ct-accordion.ct-accordion--with-background {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+    padding-left: var(--ct-accordion-space-horizontal);
+    padding-right: var(--ct-accordion-space-horizontal);
   }
 }
 .ct-accordion .ct-accordion__content {

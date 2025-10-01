@@ -78,9 +78,7 @@
     }
 
     #{$root}__featured-image {
-      @if $ct-banner-featured-image-clip-path != false {
-        clip-path: var(--ct-banner-featured-image-clip-path);
-      }
+      clip-path: var(--ct-banner-featured-image-clip-path);
     }
   }
 

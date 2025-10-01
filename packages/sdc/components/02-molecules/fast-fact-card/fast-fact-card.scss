@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     gap: ct-spacing(2);
-    border-radius: $ct-border-radius;
+    border-radius: var(--ct-border-radius);
     box-sizing: border-box;
     padding: ct-spacing(4) ct-spacing(3) ct-spacing(3);
 

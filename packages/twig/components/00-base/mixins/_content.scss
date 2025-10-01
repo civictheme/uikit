@@ -88,8 +88,8 @@
   }
 
   p {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
 
     &:first-child {
       margin-top: 0;
@@ -114,8 +114,8 @@
     & {
       position: relative;
       margin: 0;
-      margin-top: $ct-basic-content-vertical-spacing;
-      margin-bottom: $ct-basic-content-vertical-spacing;
+      margin-top: var(--ct-basic-content-vertical-spacing);
+      margin-bottom: var(--ct-basic-content-vertical-spacing);
       padding: ct-spacing(2) ct-spacing(3);
       display: grid;
     }
@@ -128,7 +128,7 @@
       top: 0;
       bottom: 0;
       left: 0;
-      border-radius: $ct-basic-content-blockquote-border-radius;
+      border-radius: var(--ct-basic-content-blockquote-border-radius);
     }
 
     p {
@@ -155,8 +155,8 @@
   }
 
   ul:not(.ct-item-list) {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
     padding: 0;
     list-style: none;
 
@@ -178,8 +178,8 @@
   }
 
   ol:not(.ct-item-list) {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
     counter-reset: ordered_counter;
     padding: 0;
     list-style: none;
@@ -202,13 +202,13 @@
   img {
     height: auto;
     max-width: 100%;
-    margin-top: $ct-basic-content-vertical-spacing * 2;
-    margin-bottom: $ct-basic-content-vertical-spacing * 2;
+    margin-top: calc(var(--ct-basic-content-vertical-spacing) * 2);
+    margin-bottom: calc(var(--ct-basic-content-vertical-spacing) * 2);
   }
 
   figure {
-    margin-top: $ct-basic-content-vertical-spacing * 2;
-    margin-bottom: $ct-basic-content-vertical-spacing * 2;
+    margin-top: calc(var(--ct-basic-content-vertical-spacing) * 2);
+    margin-bottom: calc(var(--ct-basic-content-vertical-spacing) * 2);
 
     img {
       margin-top: 0;
