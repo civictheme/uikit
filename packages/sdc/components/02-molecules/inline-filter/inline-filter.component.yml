@@ -1,0 +1,38 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/assets/schemas/v1/metadata.schema.json
+name: Inline Filter
+status: stable
+description: Inline filter component
+props:
+  type: object
+  properties:
+    theme:
+      type: string
+      title: Theme
+      description: Theme variation (light or dark).
+      default: light
+      enum:
+        - light
+        - dark
+    title:
+      type: string
+      title: Title
+      description: Title to display above inline items.
+    submit_text:
+      type: string
+      title: Submit text
+      description: The text of the submit button.
+    modifier_class:
+      type: string
+      title: Modifier Class
+      description: Additional CSS classes.
+    attributes:
+      type: string
+      title: Attributes
+      description: Additional HTML attributes.
+slots:
+  items:
+    title: Items
+    description: Field items to display. Ideally a single text field.
+  items_end:
+    title: Items
+    description: Field items to appear after the 'items' slot.
