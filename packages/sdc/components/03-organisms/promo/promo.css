@@ -4,8 +4,8 @@
 
 @media (min-width: 768px) {
   .ct-promo.ct-promo--with-background {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+    padding-left: var(--ct-promo-space-horizontal);
+    padding-right: var(--ct-promo-space-horizontal);
   }
 }
 .ct-promo {

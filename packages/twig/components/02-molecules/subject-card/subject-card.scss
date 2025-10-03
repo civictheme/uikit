@@ -9,7 +9,7 @@
     @include ct-elevation(2);
 
     position: relative;
-    border-radius: $ct-subject-card-border-radius;
+    border-radius: var(--ct-subject-card-border-radius);
     width: 100%;
 
     &:hover {
@@ -33,16 +33,16 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      min-height: $ct-subject-card-image-height-mobile;
-      min-width: $ct-subject-card-image-width-mobile;
+      min-height: var(--ct-subject-card-image-height-mobile);
+      min-width: var(--ct-subject-card-image-width-mobile);
       padding: ct-spacing(2);
       box-sizing: border-box;
     }
 
     @include ct-breakpoint(m) {
       padding: ct-spacing(3);
-      min-height: $ct-subject-card-image-height-desktop;
-      min-width: $ct-subject-card-image-width-desktop;
+      min-height: var(--ct-subject-card-image-height-desktop);
+      min-width: var(--ct-subject-card-image-width-desktop);
     }
   }
 

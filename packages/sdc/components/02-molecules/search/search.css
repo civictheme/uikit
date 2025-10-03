@@ -22,8 +22,8 @@
   border-bottom: solid 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: var(--ct-navigation-drawer-top-offset);
+  padding-bottom: var(--ct-navigation-drawer-top-offset);
   text-align: center;
 }
 .ct-search__link {

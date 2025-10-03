@@ -103,7 +103,7 @@
 }
 .ct-side-navigation__menu .ct-menu__item__link:active {
   outline: 0 !important;
-  border-radius: 0 0.125rem 0.125rem 0;
+  border-radius: 0 var(--ct-side-navigation-link-active-border-radius) var(--ct-side-navigation-link-active-border-radius) 0;
 }
 .ct-side-navigation__menu .ct-menu__item__link:focus-visible {
   z-index: 1;
@@ -138,10 +138,10 @@
   background-color: var(--ct-side-navigation-light-link-child-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-child-hover-background-color);
@@ -152,10 +152,10 @@
   background-color: var(--ct-side-navigation-light-link-child-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:active, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-light-link-child-active-background-color);
@@ -166,10 +166,10 @@
   background-color: var(--ct-side-navigation-light-link-child-active-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:active:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-child-hover-background-color);
@@ -180,10 +180,10 @@
   background-color: var(--ct-side-navigation-light-link-child-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link {
   background-color: var(--ct-side-navigation-light-link-parent-background-color);
@@ -194,10 +194,10 @@
   background-color: var(--ct-side-navigation-light-link-parent-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-parent-hover-background-color);
@@ -208,10 +208,10 @@
   background-color: var(--ct-side-navigation-light-link-parent-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:active, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-light-link-parent-active-background-color);
@@ -222,10 +222,10 @@
   background-color: var(--ct-side-navigation-light-link-parent-active-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:active:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:visited:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-parent-hover-background-color);
@@ -236,10 +236,10 @@
   background-color: var(--ct-side-navigation-light-link-parent-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__title {
   color: var(--ct-side-navigation-dark-title-color);
@@ -256,10 +256,10 @@
   background-color: var(--ct-side-navigation-dark-link-child-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-child-hover-background-color);
@@ -270,10 +270,10 @@
   background-color: var(--ct-side-navigation-dark-link-child-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:active, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-dark-link-child-active-background-color);
@@ -284,10 +284,10 @@
   background-color: var(--ct-side-navigation-dark-link-child-active-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:active:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-child-hover-background-color);
@@ -298,10 +298,10 @@
   background-color: var(--ct-side-navigation-dark-link-child-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link {
   background-color: var(--ct-side-navigation-dark-link-parent-background-color);
@@ -312,10 +312,10 @@
   background-color: var(--ct-side-navigation-dark-link-parent-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-parent-hover-background-color);
@@ -326,10 +326,10 @@
   background-color: var(--ct-side-navigation-dark-link-parent-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:active, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-dark-link-parent-active-background-color);
@@ -340,10 +340,10 @@
   background-color: var(--ct-side-navigation-dark-link-parent-active-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:active:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:visited:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-parent-hover-background-color);
@@ -354,8 +354,8 @@
   background-color: var(--ct-side-navigation-dark-link-parent-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }

@@ -13,198 +13,198 @@
       'primary': (
         'light': (
           'normal': (
-            'color': $ct-button-light-primary-color,
-            'background-color': $ct-button-light-primary-background-color,
-            'border-color': $ct-button-light-primary-border-color,
+            'color': var(--ct-button-light-primary-color),
+            'background-color': var(--ct-button-light-primary-background-color),
+            'border-color': var(--ct-button-light-primary-border-color),
             'outline-color': false,
           ),
           'hover': (
-            'color': $ct-button-light-primary-hover-color,
-            'background-color': $ct-button-light-primary-hover-background-color,
-            'border-color': $ct-button-light-primary-hover-border-color,
+            'color': var(--ct-button-light-primary-hover-color),
+            'background-color': var(--ct-button-light-primary-hover-background-color),
+            'border-color': var(--ct-button-light-primary-hover-border-color),
             'outline-color': false,
           ),
           'visited': (
-            'color': $ct-button-light-primary-visited-color,
-            'background-color': $ct-button-light-primary-visited-background-color,
-            'border-color': $ct-button-light-primary-visited-border-color,
+            'color': var(--ct-button-light-primary-visited-color),
+            'background-color': var(--ct-button-light-primary-visited-background-color),
+            'border-color': var(--ct-button-light-primary-visited-border-color),
             'outline-color': false,
           ),
           'active': (
-            'color': $ct-button-light-primary-active-color,
-            'background-color': $ct-button-light-primary-active-background-color,
-            'border-color': $ct-button-light-primary-active-border-color,
+            'color': var(--ct-button-light-primary-active-color),
+            'background-color': var(--ct-button-light-primary-active-background-color),
+            'border-color': var(--ct-button-light-primary-active-border-color),
             'outline-color': false,
           ),
           'focus': (
             'color': $ct-button-light-primary-focus-color,
             'background-color': $ct-button-light-primary-focus-background-color,
             'border-color': $ct-button-light-primary-focus-border-color,
-            'outline-color': $ct-button-light-primary-focus-outline-color,
+            'outline-color': var(--ct-button-light-primary-focus-outline-color),
           ),
         ),
         'dark': (
           'normal': (
-            'color': $ct-button-dark-primary-color,
-            'background-color': $ct-button-dark-primary-background-color,
-            'border-color': $ct-button-dark-primary-border-color,
+            'color': var(--ct-button-dark-primary-color),
+            'background-color': var(--ct-button-dark-primary-background-color),
+            'border-color': var(--ct-button-dark-primary-border-color),
             'outline-color': false,
           ),
           'hover': (
-            'color': $ct-button-dark-primary-hover-color,
-            'background-color': $ct-button-dark-primary-hover-background-color,
-            'border-color': $ct-button-dark-primary-hover-border-color,
+            'color': var(--ct-button-dark-primary-hover-color),
+            'background-color': var(--ct-button-dark-primary-hover-background-color),
+            'border-color': var(--ct-button-dark-primary-hover-border-color),
             'outline-color': false,
           ),
           'visited': (
-            'color': $ct-button-dark-primary-visited-color,
-            'background-color': $ct-button-dark-primary-visited-background-color,
-            'border-color': $ct-button-dark-primary-visited-border-color,
+            'color': var(--ct-button-dark-primary-visited-color),
+            'background-color': var(--ct-button-dark-primary-visited-background-color),
+            'border-color': var(--ct-button-dark-primary-visited-border-color),
             'outline-color': false,
           ),
           'active': (
-            'color': $ct-button-dark-primary-active-color,
-            'background-color': $ct-button-dark-primary-active-background-color,
-            'border-color': $ct-button-dark-primary-active-border-color,
+            'color': var(--ct-button-dark-primary-active-color),
+            'background-color': var(--ct-button-dark-primary-active-background-color),
+            'border-color': var(--ct-button-dark-primary-active-border-color),
             'outline-color': false,
           ),
           'focus': (
             'color': $ct-button-dark-primary-focus-color,
             'background-color': $ct-button-dark-primary-focus-background-color,
             'border-color': $ct-button-dark-primary-focus-border-color,
-            'outline-color': $ct-button-dark-primary-focus-outline-color,
+            'outline-color': var(--ct-button-dark-primary-focus-outline-color),
           ),
         )
       ),
       'secondary': (
         'light': (
           'normal': (
-            'color': $ct-button-light-secondary-color,
-            'background-color': $ct-button-light-secondary-background-color,
-            'border-color': $ct-button-light-secondary-border-color,
+            'color': var(--ct-button-light-secondary-color),
+            'background-color': var(--ct-button-light-secondary-background-color),
+            'border-color': var(--ct-button-light-secondary-border-color),
             'outline-color': false,
           ),
           'hover': (
-            'color': $ct-button-light-secondary-hover-color,
-            'background-color': $ct-button-light-secondary-hover-background-color,
-            'border-color': $ct-button-light-secondary-hover-border-color,
+            'color': var(--ct-button-light-secondary-hover-color),
+            'background-color': var(--ct-button-light-secondary-hover-background-color),
+            'border-color': var(--ct-button-light-secondary-hover-border-color),
             'outline-color': false,
           ),
           'visited': (
-            'color': $ct-button-light-secondary-visited-color,
-            'background-color': $ct-button-light-secondary-visited-background-color,
-            'border-color': $ct-button-light-secondary-visited-border-color,
+            'color': var(--ct-button-light-secondary-visited-color),
+            'background-color': var(--ct-button-light-secondary-visited-background-color),
+            'border-color': var(--ct-button-light-secondary-visited-border-color),
             'outline-color': false,
           ),
           'active': (
-            'color': $ct-button-light-secondary-active-color,
-            'background-color': $ct-button-light-secondary-active-background-color,
-            'border-color': $ct-button-light-secondary-active-border-color,
+            'color': var(--ct-button-light-secondary-active-color),
+            'background-color': var(--ct-button-light-secondary-active-background-color),
+            'border-color': var(--ct-button-light-secondary-active-border-color),
             'outline-color': false,
           ),
           'focus': (
             'color': $ct-button-light-secondary-focus-color,
             'background-color': $ct-button-light-secondary-focus-background-color,
             'border-color': $ct-button-light-secondary-focus-border-color,
-            'outline-color': $ct-button-light-secondary-focus-outline-color,
+            'outline-color': var(--ct-button-light-secondary-focus-outline-color),
           ),
         ),
         'dark': (
           'normal': (
-            'color': $ct-button-dark-secondary-color,
-            'background-color': $ct-button-dark-secondary-background-color,
-            'border-color': $ct-button-dark-secondary-border-color,
+            'color': var(--ct-button-dark-secondary-color),
+            'background-color': var(--ct-button-dark-secondary-background-color),
+            'border-color': var(--ct-button-dark-secondary-border-color),
             'outline-color': false,
           ),
           'hover': (
-            'color': $ct-button-dark-secondary-hover-color,
-            'background-color': $ct-button-dark-secondary-hover-background-color,
-            'border-color': $ct-button-dark-secondary-hover-border-color,
+            'color': var(--ct-button-dark-secondary-hover-color),
+            'background-color': var(--ct-button-dark-secondary-hover-background-color),
+            'border-color': var(--ct-button-dark-secondary-hover-border-color),
             'outline-color': false,
           ),
           'visited': (
-            'color': $ct-button-dark-secondary-visited-color,
-            'background-color': $ct-button-dark-secondary-visited-background-color,
-            'border-color': $ct-button-dark-secondary-visited-border-color,
+            'color': var(--ct-button-dark-secondary-visited-color),
+            'background-color': var(--ct-button-dark-secondary-visited-background-color),
+            'border-color': var(--ct-button-dark-secondary-visited-border-color),
             'outline-color': false,
           ),
           'active': (
-            'color': $ct-button-dark-secondary-active-color,
-            'background-color': $ct-button-dark-secondary-active-background-color,
-            'border-color': $ct-button-dark-secondary-active-border-color,
+            'color': var(--ct-button-dark-secondary-active-color),
+            'background-color': var(--ct-button-dark-secondary-active-background-color),
+            'border-color': var(--ct-button-dark-secondary-active-border-color),
             'outline-color': false,
           ),
           'focus': (
             'color': $ct-button-dark-secondary-focus-color,
             'background-color': $ct-button-dark-secondary-focus-background-color,
             'border-color': $ct-button-dark-secondary-focus-border-color,
-            'outline-color': $ct-button-dark-secondary-focus-outline-color,
+            'outline-color': var(--ct-button-dark-secondary-focus-outline-color),
           ),
         )
       ),
       'tertiary': (
         'light': (
           'normal': (
-            'color': $ct-button-light-tertiary-color,
-            'background-color': $ct-button-light-tertiary-background-color,
-            'border-color': $ct-button-light-tertiary-border-color,
+            'color': var(--ct-button-light-tertiary-color),
+            'background-color': var(--ct-button-light-tertiary-background-color),
+            'border-color': var(--ct-button-light-tertiary-border-color),
             'outline-color': false,
           ),
           'hover': (
-            'color': $ct-button-light-tertiary-hover-color,
-            'background-color': $ct-button-light-tertiary-hover-background-color,
-            'border-color': $ct-button-light-tertiary-hover-border-color,
+            'color': var(--ct-button-light-tertiary-hover-color),
+            'background-color': var(--ct-button-light-tertiary-hover-background-color),
+            'border-color': var(--ct-button-light-tertiary-hover-border-color),
             'outline-color': false,
           ),
           'visited': (
-            'color': $ct-button-light-tertiary-visited-color,
-            'background-color': $ct-button-light-tertiary-visited-background-color,
-            'border-color': $ct-button-light-tertiary-visited-border-color,
+            'color': var(--ct-button-light-tertiary-visited-color),
+            'background-color': var(--ct-button-light-tertiary-visited-background-color),
+            'border-color': var(--ct-button-light-tertiary-visited-border-color),
             'outline-color': false,
           ),
           'active': (
-            'color': $ct-button-light-tertiary-active-color,
-            'background-color': $ct-button-light-tertiary-active-background-color,
-            'border-color': $ct-button-light-tertiary-active-border-color,
+            'color': var(--ct-button-light-tertiary-active-color),
+            'background-color': var(--ct-button-light-tertiary-active-background-color),
+            'border-color': var(--ct-button-light-tertiary-active-border-color),
             'outline-color': false,
           ),
           'focus': (
             'color': $ct-button-light-tertiary-focus-color,
             'background-color': $ct-button-light-tertiary-focus-background-color,
             'border-color': $ct-button-light-tertiary-focus-border-color,
-            'outline-color': $ct-button-light-tertiary-focus-outline-color,
+            'outline-color': var(--ct-button-light-tertiary-focus-outline-color),
           ),
         ),
         'dark': (
           'normal': (
-            'color': $ct-button-dark-tertiary-color,
-            'background-color': $ct-button-dark-tertiary-background-color,
-            'border-color': $ct-button-dark-tertiary-border-color,
+            'color': var(--ct-button-dark-tertiary-color),
+            'background-color': var(--ct-button-dark-tertiary-background-color),
+            'border-color': var(--ct-button-dark-tertiary-border-color),
             'outline-color': false,
           ),
           'hover': (
-            'color': $ct-button-dark-tertiary-hover-color,
-            'background-color': $ct-button-dark-tertiary-hover-background-color,
-            'border-color': $ct-button-dark-tertiary-hover-border-color,
+            'color': var(--ct-button-dark-tertiary-hover-color),
+            'background-color': var(--ct-button-dark-tertiary-hover-background-color),
+            'border-color': var(--ct-button-dark-tertiary-hover-border-color),
             'outline-color': false,
           ),
           'visited': (
-            'color': $ct-button-dark-tertiary-visited-color,
-            'background-color': $ct-button-dark-tertiary-visited-background-color,
-            'border-color': $ct-button-dark-tertiary-visited-border-color,
+            'color': var(--ct-button-dark-tertiary-visited-color),
+            'background-color': var(--ct-button-dark-tertiary-visited-background-color),
+            'border-color': var(--ct-button-dark-tertiary-visited-border-color),
             'outline-color': false,
           ),
           'active': (
-            'color': $ct-button-dark-tertiary-active-color,
-            'background-color': $ct-button-dark-tertiary-active-background-color,
-            'border-color': $ct-button-dark-tertiary-active-border-color,
+            'color': var(--ct-button-dark-tertiary-active-color),
+            'background-color': var(--ct-button-dark-tertiary-active-background-color),
+            'border-color': var(--ct-button-dark-tertiary-active-border-color),
             'outline-color': false,
           ),
           'focus': (
             'color': $ct-button-dark-tertiary-focus-color,
             'background-color': $ct-button-dark-tertiary-focus-background-color,
             'border-color': $ct-button-dark-tertiary-focus-border-color,
-            'outline-color': $ct-button-dark-tertiary-focus-outline-color,
+            'outline-color': var(--ct-button-dark-tertiary-focus-outline-color),
           ),
         )
       ),
@@ -220,13 +220,13 @@
   & {
     display: inline-block;
     text-decoration: none;
-    outline-offset: $ct-button-outline-offset;
-    outline-width: $ct-button-outline-width;
+    outline-offset: var(--ct-button-outline-offset);
+    outline-width: var(--ct-button-outline-width);
   }
 
   @if $ct-animation-enabled {
     & {
-      transition: all $ct-button-animation-duration ease;
+      transition: all var(--ct-button-animation-duration) ease;
     }
   }
 
@@ -316,7 +316,7 @@
     @include ct-typography('label-extra-small');
 
     & {
-      border-width: math.div($ct-button-border-width, 2);
+      border-width: calc(var(--ct-button-border-width) / 2);
     }
 
     @if $with-padding {

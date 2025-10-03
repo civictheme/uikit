@@ -4,7 +4,7 @@
 
 .ct-navigation-card {
   position: relative;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-navigation-card-border-radius);
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -52,16 +52,16 @@
   left: 0;
 }
 .ct-navigation-card .ct-navigation-card__image {
-  height: 17.5rem;
+  height: var(--ct-navigation-card-image-height-mobile);
   width: auto;
-  min-width: auto;
+  min-width: var(--ct-navigation-card-image-width-mobile);
 }
 @container (min-width: 36rem) {
   .ct-navigation-card .ct-navigation-card__image {
-    width: 30%;
-    min-width: 18rem;
+    width: var(--ct-navigation-card-image-max-width-desktop);
+    min-width: var(--ct-navigation-card-image-min-width-desktop);
     height: auto;
-    min-height: 16rem;
+    min-height: var(--ct-navigation-card-image-min-height-desktop);
     flex-shrink: 0;
   }
 }
@@ -96,11 +96,11 @@
   text-decoration: none;
 }
 .ct-navigation-card .ct-navigation-card__title-link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
-  border-radius: 0.25rem;
+  outline-color: var(--ct-outline-light);
+  border-radius: var(--ct-outline-border-radius);
 }
 .ct-navigation-card .ct-navigation-card__title-link:hover {
   text-decoration: underline;
@@ -129,7 +129,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.1;
+  opacity: var(--ct-navigation-card-link-graphic-hover-opacity);
   border-radius: 100%;
 }
 .ct-navigation-card.ct-theme-light {

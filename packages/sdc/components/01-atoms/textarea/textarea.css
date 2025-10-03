@@ -12,12 +12,12 @@
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-textarea[disabled] {
-  opacity: 40%;
+  opacity: var(--ct-textarea-disabled-opacity);
   pointer-events: none;
 }
 .ct-textarea {
   box-sizing: border-box;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-textarea-border-radius);
   border-style: solid;
   border-width: 0.0625rem;
   padding: 0.8125rem 1rem;
@@ -26,8 +26,8 @@
 }
 .ct-textarea:focus-visible {
   outline-style: solid;
-  outline-width: 2px;
-  outline-offset: 2px;
+  outline-width: var(--ct-textarea-outline-width);
+  outline-offset: var(--ct-textarea-outline-offset);
 }
 .ct-textarea.ct-theme-light:focus-visible {
   outline-color: var(--ct-textarea-light-outline-color);

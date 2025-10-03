@@ -4,7 +4,7 @@
 
 .ct-chip {
   cursor: pointer;
-  border: 0.0625rem solid transparent;
+  border: var(--ct-chip-border-width) solid transparent;
   border-radius: 3rem;
 }
 .ct-chip {
@@ -31,11 +31,11 @@
 .ct-chip {
   display: inline-block;
   text-decoration: none;
-  outline-offset: 0.125rem;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-button-outline-offset);
+  outline-width: var(--ct-button-outline-width);
 }
 .ct-chip {
-  transition: all 0.25s ease;
+  transition: all var(--ct-button-animation-duration) ease;
 }
 .ct-chip:focus-visible, .ct-chip:hover, .ct-chip:active {
   text-decoration: none;
@@ -62,62 +62,62 @@
   height: auto !important;
 }
 .ct-chip.ct-theme-light {
-  background-color: var(--ct-color-light-interaction-text);
-  border-color: var(--ct-color-light-interaction-background);
-  color: var(--ct-color-light-interaction-background);
+  background-color: var(--ct-chip-light-background-color);
+  border-color: var(--ct-chip-light-border-color);
+  color: var(--ct-chip-light-color);
 }
 .ct-chip.ct-theme-light:hover {
-  background-color: var(--ct-color-light-interaction-text);
-  border-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-hover-background);
+  background-color: var(--ct-chip-light-hover-background-color);
+  border-color: var(--ct-chip-light-hover-border-color);
+  color: var(--ct-chip-light-hover-color);
 }
 .ct-chip.ct-theme-light:focus-visible, .ct-chip.ct-theme-light.focus {
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-chip-light-focus-outline-color);
   outline-style: solid;
 }
 .ct-chip.ct-theme-light.selected, .ct-chip.ct-theme-light.selected:hover, .ct-chip.ct-theme-light.selected:active, .ct-chip.ct-theme-light.selected:hover:active {
-  background-color: var(--ct-color-light-interaction-background);
-  border-color: var(--ct-color-light-interaction-background);
-  color: var(--ct-color-light-interaction-hover-text);
+  background-color: var(--ct-chip-light-selected-background-color);
+  border-color: var(--ct-chip-light-selected-border-color);
+  color: var(--ct-chip-light-selected-color);
 }
 .ct-chip.ct-theme-light:active, .ct-chip.ct-theme-light.active {
-  background-color: var(--ct-color-light-interaction-background);
-  border-color: var(--ct-color-light-interaction-background);
-  color: var(--ct-color-light-interaction-hover-text);
+  background-color: var(--ct-chip-light-selected-background-color);
+  border-color: var(--ct-chip-light-selected-border-color);
+  color: var(--ct-chip-light-selected-color);
 }
 .ct-chip.ct-theme-light.active:hover {
-  background-color: var(--ct-color-light-interaction-hover-background);
-  border-color: var(--ct-color-light-interaction-hover-background);
-  color: var(--ct-color-light-interaction-text);
+  background-color: var(--ct-chip-light-selected-hover-background-color);
+  border-color: var(--ct-chip-light-selected-hover-border-color);
+  color: var(--ct-chip-light-selected-hover-color);
 }
 .ct-chip.ct-theme-dark {
-  background-color: var(--ct-color-dark-interaction-text);
-  border-color: var(--ct-color-dark-interaction-background);
-  color: var(--ct-color-dark-interaction-background);
+  background-color: var(--ct-chip-dark-background-color);
+  border-color: var(--ct-chip-dark-border-color);
+  color: var(--ct-chip-dark-color);
 }
 .ct-chip.ct-theme-dark:hover {
-  background-color: var(--ct-color-dark-interaction-text);
-  border-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-hover-background);
+  background-color: var(--ct-chip-dark-hover-background-color);
+  border-color: var(--ct-chip-dark-hover-border-color);
+  color: var(--ct-chip-dark-hover-color);
 }
 .ct-chip.ct-theme-dark:focus-visible, .ct-chip.ct-theme-dark.focus {
-  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-color: var(--ct-chip-dark-focus-outline-color);
   outline-style: solid;
 }
 .ct-chip.ct-theme-dark.selected, .ct-chip.ct-theme-dark.selected:hover, .ct-chip.ct-theme-dark.selected:active, .ct-chip.ct-theme-dark.selected:hover:active {
-  background-color: var(--ct-color-dark-interaction-background);
-  border-color: var(--ct-color-dark-interaction-background);
-  color: var(--ct-color-dark-interaction-hover-text);
+  background-color: var(--ct-chip-dark-selected-background-color);
+  border-color: var(--ct-chip-dark-selected-border-color);
+  color: var(--ct-chip-dark-selected-color);
 }
 .ct-chip.ct-theme-dark:active, .ct-chip.ct-theme-dark.active {
-  background-color: var(--ct-color-dark-interaction-background);
-  border-color: var(--ct-color-dark-interaction-background);
-  color: var(--ct-color-dark-interaction-hover-text);
+  background-color: var(--ct-chip-dark-selected-background-color);
+  border-color: var(--ct-chip-dark-selected-border-color);
+  color: var(--ct-chip-dark-selected-color);
 }
 .ct-chip.ct-theme-dark.active:hover {
-  background-color: var(--ct-color-dark-interaction-hover-background);
-  border-color: var(--ct-color-dark-interaction-hover-background);
-  color: var(--ct-color-dark-interaction-text);
+  background-color: var(--ct-chip-dark-selected-hover-background-color);
+  border-color: var(--ct-chip-dark-selected-hover-border-color);
+  color: var(--ct-chip-dark-selected-hover-color);
 }
 .ct-chip--large {
   font-size: var(--ct-typography-label-large-font-size);
@@ -153,7 +153,7 @@
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 .ct-chip--small {
-  border-width: 0.0625rem;
+  border-width: calc(var(--ct-button-border-width) / 2);
 }
 .ct-chip--small {
   padding: 0.5rem 2rem;

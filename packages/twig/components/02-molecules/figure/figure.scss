@@ -11,7 +11,7 @@
   @include ct-reset-margins();
 
   #{$root}__image {
-    border-radius: $ct-figure-border-radius;
+    border-radius: var(--ct-figure-border-radius);
     object-fit: contain;
   }
 

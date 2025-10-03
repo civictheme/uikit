@@ -12,7 +12,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: stretch;
-    border-radius: $ct-message-border-radius;
+    border-radius: var(--ct-message-border-radius);
     border-left: solid ct-particle(0.75) transparent;
     padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(1);
     width: 100%;

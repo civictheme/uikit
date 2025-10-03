@@ -11,7 +11,7 @@
     @include ct-elevation(2);
 
     position: relative;
-    border-radius: $ct-publication-card-border-radius;
+    border-radius: var(--ct-publication-card-border-radius);
     width: 100%;
 
     // Prevent image from "spilling" over the border radius.
@@ -41,15 +41,15 @@
 
     & {
       position: relative;
-      height: $ct-publication-card-image-height-mobile;
+      height: var(--ct-publication-card-image-height-mobile);
       width: auto;
-      min-width: $ct-publication-card-image-width-mobile;
+      min-width: var(--ct-publication-card-image-width-mobile);
     }
 
     @include ct-breakpoint(m) {
-      width: $ct-publication-card-image-width-desktop;
+      width: var(--ct-publication-card-image-width-desktop);
       height: auto;
-      min-height: $ct-publication-card-image-height-desktop;
+      min-height: var(--ct-publication-card-image-height-desktop);
       flex-shrink: 0;
     }
   }

@@ -1,5 +1,6 @@
 @use 'sass:meta';
 @use 'sass:map';
+@use 'sass:list';
 @use '00-base/variables';
 @use '00-base/mixins/color';
 @import '00-base/variables'; // Needs to import twice; font/typography don't support @use.
@@ -88,12 +89,37 @@ html {
   }
 
   @each $name, $value in meta.module-variables('variables') {
+    $ignore-variables-containing: (
+      'ct-assets-directory',
+      'ct-checkbox-check',
+      'ct-font-base-line-height',
+      'ct-font-base-size',
+      'ct-particle',
+      'ct-spacing',
+      'ct-cssgrid-',
+      'ct-grid-',
+      'ct-item-list-',
+      'ct-layout-',
+      '-breakpoint',
+    );
+    $ignore-types: (
+      'map',
+      'list',
+      'bool',
+    );
+
     // Only filter by CivicTheme variables.
     @if str-index($name, 'ct-') {
-      // Only filter by variable names related to color or opacity.
-      @if str-index($name, 'color') or str-index($name, 'opacity') {
-        // Only filter by color or string variables.
-        @if type-of($value) == 'color' or type-of($value) == 'number' or type-of($value) == 'string' {
+      @if not list.index($ignore-types, type-of($value)) {
+        $contains-ignored: false;
+
+        @each $prefix in $ignore-variables-containing {
+          @if str-index($name, $prefix) {
+            $contains-ignored: true;
+          }
+        }
+
+        @if not $contains-ignored {
           --#{$name}: #{$value};
         }
       }

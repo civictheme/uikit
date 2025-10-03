@@ -88,8 +88,8 @@
   }
 
   p {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
 
     &:first-child {
       margin-top: 0;
@@ -114,8 +114,8 @@
     & {
       position: relative;
       margin: 0;
-      margin-top: $ct-basic-content-vertical-spacing;
-      margin-bottom: $ct-basic-content-vertical-spacing;
+      margin-top: var(--ct-basic-content-vertical-spacing);
+      margin-bottom: var(--ct-basic-content-vertical-spacing);
       padding: ct-spacing(2) ct-spacing(3);
       display: grid;
     }
@@ -128,7 +128,7 @@
       top: 0;
       bottom: 0;
       left: 0;
-      border-radius: $ct-basic-content-blockquote-border-radius;
+      border-radius: var(--ct-basic-content-blockquote-border-radius);
     }
 
     p {
@@ -155,14 +155,14 @@
   }
 
   ul:not(.ct-item-list) {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
     padding: 0;
     list-style: none;
 
     > li {
       position: relative;
-      padding-left: $ct-basic-content-list-marker-width + $ct-basic-content-list-marker-margin;
+      padding-left: calc(var(--ct-basic-content-list-marker-width) + var(--ct-basic-content-list-marker-margin));
 
       &::before {
         content: '';
@@ -178,23 +178,23 @@
   }
 
   ol:not(.ct-item-list) {
-    margin-top: $ct-basic-content-vertical-spacing;
-    margin-bottom: $ct-basic-content-vertical-spacing;
+    margin-top: var(--ct-basic-content-vertical-spacing);
+    margin-bottom: var(--ct-basic-content-vertical-spacing);
     counter-reset: ordered_counter;
     padding: 0;
     list-style: none;
 
     > li {
       counter-increment: ordered_counter;
-      padding-left: $ct-basic-content-list-marker-width + $ct-basic-content-list-marker-margin;
+      padding-left: calc(var(--ct-basic-content-list-marker-width) + var(--ct-basic-content-list-marker-margin));
 
       &::before {
         content: counter(ordered_counter);
         display: inline-block;
         text-align: center;
-        width: $ct-basic-content-list-marker-width;
-        margin-left: -$ct-basic-content-list-marker-width - $ct-basic-content-list-marker-margin;
-        margin-right: $ct-basic-content-list-marker-margin;
+        width: var(--ct-basic-content-list-marker-width);
+        margin-left: calc((var(--ct-basic-content-list-marker-width) * -1) - var(--ct-basic-content-list-marker-margin));
+        margin-right: var(--ct-basic-content-list-marker-margin);
       }
     }
   }
@@ -202,13 +202,13 @@
   img {
     height: auto;
     max-width: 100%;
-    margin-top: $ct-basic-content-vertical-spacing * 2;
-    margin-bottom: $ct-basic-content-vertical-spacing * 2;
+    margin-top: calc(var(--ct-basic-content-vertical-spacing) * 2);
+    margin-bottom: calc(var(--ct-basic-content-vertical-spacing) * 2);
   }
 
   figure {
-    margin-top: $ct-basic-content-vertical-spacing * 2;
-    margin-bottom: $ct-basic-content-vertical-spacing * 2;
+    margin-top: calc(var(--ct-basic-content-vertical-spacing) * 2);
+    margin-bottom: calc(var(--ct-basic-content-vertical-spacing) * 2);
 
     img {
       margin-top: 0;
@@ -222,30 +222,30 @@
 }
 
 @mixin ct-content-light {
-  color: $ct-basic-content-light-base-color;
+  color: var(--ct-basic-content-light-base-color);
 
   h1 {
-    color: $ct-basic-content-light-heading-1-color;
+    color: var(--ct-basic-content-light-heading-1-color);
   }
 
   h2 {
-    color: $ct-basic-content-light-heading-2-color;
+    color: var(--ct-basic-content-light-heading-2-color);
   }
 
   h3 {
-    color: $ct-basic-content-light-heading-3-color;
+    color: var(--ct-basic-content-light-heading-3-color);
   }
 
   h4 {
-    color: $ct-basic-content-light-heading-4-color;
+    color: var(--ct-basic-content-light-heading-4-color);
   }
 
   h5 {
-    color: $ct-basic-content-light-heading-5-color;
+    color: var(--ct-basic-content-light-heading-5-color);
   }
 
   h6 {
-    color: $ct-basic-content-light-heading-6-color;
+    color: var(--ct-basic-content-light-heading-6-color);
   }
 
   a:not(.ct-button):not(.ct-link) {
@@ -253,34 +253,34 @@
   }
 
   blockquote {
-    color: $ct-basic-content-light-blockquote-color;
-    background-color: $ct-basic-content-light-blockquote-background-color;
+    color: var(--ct-basic-content-light-blockquote-color);
+    background-color: var(--ct-basic-content-light-blockquote-background-color);
 
     &::before {
-      background-color: $ct-basic-content-light-blockquote-stripe-background-color;
+      background-color: var(--ct-basic-content-light-blockquote-stripe-background-color);
     }
 
     cite {
-      color: $ct-basic-content-light-blockquote-color;
+      color: var(--ct-basic-content-light-blockquote-color);
     }
   }
 
   ul:not(.ct-item-list) {
     > li {
-      color: $ct-basic-content-light-ul-li-color;
+      color: var(--ct-basic-content-light-ul-li-color);
 
       &::before {
-        background-color: $ct-basic-content-light-ul-li-marker-color;
+        background-color: var(--ct-basic-content-light-ul-li-marker-color);
       }
     }
   }
 
   ol:not(.ct-item-list) {
     > li {
-      color: $ct-basic-content-light-ol-li-color;
+      color: var(--ct-basic-content-light-ol-li-color);
 
       &::before {
-        color: $ct-basic-content-light-ol-li-marker-color;
+        color: var(--ct-basic-content-light-ol-li-marker-color);
       }
     }
   }
@@ -291,30 +291,30 @@
 }
 
 @mixin ct-content-dark {
-  color: $ct-basic-content-dark-base-color;
+  color: var(--ct-basic-content-dark-base-color);
 
   h1 {
-    color: $ct-basic-content-dark-heading-1-color;
+    color: var(--ct-basic-content-dark-heading-1-color);
   }
 
   h2 {
-    color: $ct-basic-content-dark-heading-2-color;
+    color: var(--ct-basic-content-dark-heading-2-color);
   }
 
   h3 {
-    color: $ct-basic-content-dark-heading-3-color;
+    color: var(--ct-basic-content-dark-heading-3-color);
   }
 
   h4 {
-    color: $ct-basic-content-dark-heading-4-color;
+    color: var(--ct-basic-content-dark-heading-4-color);
   }
 
   h5 {
-    color: $ct-basic-content-dark-heading-5-color;
+    color: var(--ct-basic-content-dark-heading-5-color);
   }
 
   h6 {
-    color: $ct-basic-content-dark-heading-6-color;
+    color: var(--ct-basic-content-dark-heading-6-color);
   }
 
   a:not(.ct-button):not(.ct-link) {
@@ -322,34 +322,34 @@
   }
 
   blockquote {
-    color: $ct-basic-content-dark-blockquote-color;
-    background-color: $ct-basic-content-dark-blockquote-background-color;
+    color: var(--ct-basic-content-dark-blockquote-color);
+    background-color: var(--ct-basic-content-dark-blockquote-background-color);
 
     &::before {
-      background-color: $ct-basic-content-dark-blockquote-stripe-background-color;
+      background-color: var(--ct-basic-content-dark-blockquote-stripe-background-color);
     }
 
     cite {
-      color: $ct-basic-content-dark-blockquote-color;
+      color: var(--ct-basic-content-dark-blockquote-color);
     }
   }
 
   ul:not(.ct-item-list) {
     > li {
-      color: $ct-basic-content-dark-ul-li-color;
+      color: var(--ct-basic-content-dark-ul-li-color);
 
       &::before {
-        background-color: $ct-basic-content-dark-ul-li-marker-color;
+        background-color: var(--ct-basic-content-dark-ul-li-marker-color);
       }
     }
   }
 
   ol:not(.ct-item-list) {
     > li {
-      color: $ct-basic-content-dark-ol-li-color;
+      color: var(--ct-basic-content-dark-ol-li-color);
 
       &::before {
-        color: $ct-basic-content-dark-ol-li-marker-color;
+        color: var(--ct-basic-content-dark-ol-li-marker-color);
       }
     }
   }

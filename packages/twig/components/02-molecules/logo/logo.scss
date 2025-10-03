@@ -16,10 +16,10 @@
   #{$root}__image {
     line-height: 0;
     display: block;
-    max-height: $ct-logo-image-height-max-mobile;
+    max-height: var(--ct-logo-image-height-max-mobile);
 
     @include ct-breakpoint($ct-logo-breakpoint) {
-      max-height: $ct-logo-image-height-max-desktop;
+      max-height: var(--ct-logo-image-height-max-desktop);
     }
   }
 

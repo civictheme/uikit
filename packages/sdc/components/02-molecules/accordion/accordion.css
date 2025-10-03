@@ -4,8 +4,8 @@
 
 @media (min-width: 768px) {
   .ct-accordion.ct-accordion--with-background {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+    padding-left: var(--ct-accordion-space-horizontal);
+    padding-right: var(--ct-accordion-space-horizontal);
   }
 }
 .ct-accordion .ct-accordion__content {
@@ -19,7 +19,7 @@
 .ct-accordion .ct-accordion__panels__panel {
   position: relative;
   border: 0.0625rem solid;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-accordion-item-border-radius);
   margin-bottom: 1rem;
 }
 .ct-accordion .ct-accordion__panels__panel {
@@ -31,9 +31,9 @@
   top: -0.0625rem;
   bottom: -0.0625rem;
   left: -0.0625rem;
-  width: 0.4375rem;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  width: calc(var(--ct-accordion-stripe-width) + 0.0625rem);
+  border-top-left-radius: var(--ct-accordion-item-border-radius);
+  border-bottom-left-radius: var(--ct-accordion-item-border-radius);
   transition: width 0.25s;
 }
 .ct-accordion .ct-accordion__panels__panel::before {
@@ -45,8 +45,8 @@
 .ct-accordion .ct-accordion__panels__panel__header {
   display: block;
   margin: 0;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border-top-left-radius: var(--ct-accordion-header-border-radius);
+  border-top-right-radius: var(--ct-accordion-header-border-radius);
 }
 .ct-accordion .ct-accordion__panels__panel__header__button {
   font-size: var(--ct-typography-heading-6-font-size);
@@ -55,7 +55,7 @@
   font-weight: var(--ct-typography-heading-6-font-weight);
   letter-spacing: var(--ct-typography-heading-6-letter-spacing);
   appearance: button;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-accordion-button-border-radius);
   border: none;
   cursor: pointer;
   display: flex;
@@ -84,10 +84,10 @@
   color: var(--ct-accordion-light-button-color);
 }
 .ct-accordion.ct-theme-light .ct-accordion__panels__panel__header__button:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
+  outline-color: var(--ct-outline-light);
 }
 .ct-accordion.ct-theme-light .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
   color: var(--ct-accordion-light-icon-color);
@@ -110,10 +110,10 @@
   color: var(--ct-accordion-dark-button-color);
 }
 .ct-accordion.ct-theme-dark .ct-accordion__panels__panel__header__button:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-dark-interaction-focus);
+  outline-color: var(--ct-outline-dark);
 }
 .ct-accordion.ct-theme-dark .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
   color: var(--ct-accordion-dark-icon-color);

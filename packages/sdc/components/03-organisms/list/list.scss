@@ -6,8 +6,8 @@
   $root: &;
 
   &#{$root}--with-background {
-    padding-left: $ct-accordion-space-horizontal;
-    padding-right: $ct-accordion-space-horizontal;
+    padding-left: var(--ct-accordion-space-horizontal);
+    padding-right: var(--ct-accordion-space-horizontal);
   }
 
   &__inner {

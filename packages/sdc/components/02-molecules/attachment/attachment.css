@@ -4,13 +4,13 @@
 
 @media (min-width: 768px) {
   .ct-attachment.ct-attachment--with-background {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+    padding-left: var(--ct-attachment-space-horizontal);
+    padding-right: var(--ct-attachment-space-horizontal);
   }
 }
 .ct-attachment .ct-attachment__wrapper {
   border: solid 0.0625rem;
-  border-radius: 0.25rem;
+  border-radius: var(--ct-attachment-border-radius);
   padding: 1.5rem;
 }
 @media (min-width: 768px) {

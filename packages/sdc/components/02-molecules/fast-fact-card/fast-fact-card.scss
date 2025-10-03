@@ -5,7 +5,7 @@
 .ct-fast-fact-card {
   $root: &;
 
-  @include ct-highlight-stripe-horizontal($ct-fast-fact-card-stripe-height, $ct-fast-fact-card-border-radius, 0, 'bottom');
+  @include ct-highlight-stripe-horizontal(var(--ct-fast-fact-card-stripe-height), var(--ct-fast-fact-card-border-radius), 0, 'bottom');
 
   & {
     @include ct-elevation(2);
@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     gap: ct-spacing(2);
-    border-radius: $ct-border-radius;
+    border-radius: var(--ct-border-radius);
     box-sizing: border-box;
     padding: ct-spacing(4) ct-spacing(3) ct-spacing(3);
 
@@ -39,8 +39,8 @@
     img {
       display: flex;
       margin: auto;
-      max-width: $ct-fast-fact-card-max-width;
-      max-height: $ct-fast-fact-card-max-height;
+      max-width: var(--ct-fast-fact-card-max-width);
+      max-height: var(--ct-fast-fact-card-max-height);
     }
   }
 

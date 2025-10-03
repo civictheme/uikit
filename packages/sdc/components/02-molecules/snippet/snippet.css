@@ -28,11 +28,11 @@
   text-decoration: underline;
 }
 .ct-snippet .ct-snippet__title-link:focus-visible {
-  outline-offset: 0;
-  outline-width: 0.1875rem;
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-color-light-interaction-focus);
-  border-radius: 0.25rem;
+  outline-color: var(--ct-outline-light);
+  border-radius: var(--ct-outline-border-radius);
 }
 .ct-snippet .ct-snippet__title-link:hover {
   text-decoration: none;

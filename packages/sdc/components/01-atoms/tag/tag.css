@@ -3,9 +3,9 @@
  */
 
 .ct-tag {
-  border-radius: 0.25rem;
+  border-radius: var(--ct-tag-border-radius);
   border-style: solid;
-  border-width: 0.0625rem;
+  border-width: var(--ct-tag-border-width);
   display: inline-block;
   font-size: var(--ct-typography-label-extra-small-font-size);
   line-height: var(--ct-typography-label-extra-small-line-height);

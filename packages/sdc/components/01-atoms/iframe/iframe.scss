@@ -9,8 +9,8 @@
   box-sizing: border-box;
 
   &#{$root}--with-background {
-    padding-left: $ct-iframe-space-horizontal;
-    padding-right: $ct-iframe-space-horizontal;
+    padding-left: var(--ct-iframe-space-horizontal);
+    padding-right: var(--ct-iframe-space-horizontal);
   }
 
   &:not([width]) {
