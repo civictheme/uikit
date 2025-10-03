@@ -24,6 +24,10 @@ const meta = {
       control: { type: 'radio' },
       options: ['visible', 'invisible', 'hidden'],
     },
+    title_size: {
+      control: { type: 'radio' },
+      options: ['extra-small', 'small', 'regular', 'large', 'extra-large'],
+    },
     description: {
       control: { type: 'text' },
     },
