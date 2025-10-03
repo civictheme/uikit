@@ -29,6 +29,17 @@ props:
         - invisible
         - hidden
       default: visible
+    title_size:
+      type: string
+      title: Title size
+      description: The size of the title (extra-small, small, regular, large, extra-large).
+      enum:
+        - extra-small
+        - small
+        - regular
+        - large
+        - extra-large
+      default: regular
     label:
       type: string
       title: Label

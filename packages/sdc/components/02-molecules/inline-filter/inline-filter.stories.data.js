@@ -9,6 +9,7 @@ export default {
       Field({
         ...FieldData.args(theme),
         title: 'Search keywords',
+        title_size: 'extra-large',
         placeholder: 'I’m looking for...',
         description: null,
         message: null,

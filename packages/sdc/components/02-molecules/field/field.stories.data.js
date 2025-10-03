@@ -25,6 +25,7 @@ export default {
       type: 'textfield',
       title: 'Field title',
       title_display: 'visible',
+      title_size: 'regular',
       description: 'Description content sample.',
       message: {
         content: 'Message conte nt sample.',
