@@ -848,6 +848,14 @@ $ct-single-filter-dark-border-color: ct-color-dark('border') !default;
 $ct-single-filter-dark-title-color: ct-color-dark('heading') !default;
 
 //
+// Selected filters.
+//
+$ct-selected-filters-light-border-color: ct-color-light('border-light') !default;
+$ct-selected-filters-light-title-color: ct-color-light('heading') !default;
+$ct-selected-filters-dark-border-color: ct-color-dark('border') !default;
+$ct-selected-filters-dark-title-color: ct-color-dark('heading') !default;
+
+//
 // List/Group filter.
 //
 $ct-group-filter-light-background-color: ct-color-light('background') !default;

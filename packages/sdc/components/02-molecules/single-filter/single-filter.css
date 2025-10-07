@@ -40,10 +40,12 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 1.5rem;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   .ct-single-filter .ct-single-filter__actions {
     flex-grow: 0;
+    flex-direction: row;
     margin-left: 1.5rem;
     margin-top: 0;
   }

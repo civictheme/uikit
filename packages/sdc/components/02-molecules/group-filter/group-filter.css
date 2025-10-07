@@ -7,8 +7,12 @@
   border-bottom: solid 0.0625rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+}
+@media (min-width: 768px) {
+  .ct-group-filter {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 .ct-group-filter .ct-group-filter__title {
   font-size: var(--ct-typography-label-regular-font-size);
