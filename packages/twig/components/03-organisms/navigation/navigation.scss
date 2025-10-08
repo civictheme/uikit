@@ -17,14 +17,6 @@
 
   // Common menu styles across all variants
   #{$root}__items {
-    height: 100%;
-    display: none;
-
-    @include ct-breakpoint($ct-navigation-breakpoint) {
-      display: flex;
-      align-items: center;
-    }
-
     #{$root}__menu {
       &.ct-menu,
       .ct-menu {
@@ -221,6 +213,14 @@
   // Drawer variant specific styles
   &#{$root}--drawer {
     #{$root}__items {
+      align-items: center;
+      height: 100%;
+      display: none;
+
+      @include ct-breakpoint($ct-navigation-breakpoint) {
+        display: flex;
+      }
+
       #{$root}__menu {
         &.ct-menu--level-0 {
           flex-wrap: nowrap;
@@ -354,6 +354,13 @@
   // Dropdown variant specific styles
   &#{$root}--dropdown {
     #{$root}__items {
+      display: none;
+
+      @include ct-breakpoint($ct-navigation-breakpoint) {
+        display: flex;
+        align-items: center;
+      }
+
       #{$root}__menu {
         &.ct-menu--level-0 {
           flex-wrap: wrap;
