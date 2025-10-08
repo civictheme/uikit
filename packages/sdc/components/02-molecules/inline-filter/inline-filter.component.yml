@@ -13,10 +13,6 @@ props:
       enum:
         - light
         - dark
-    title:
-      type: string
-      title: Title
-      description: Title to display above inline items.
     submit_text:
       type: string
       title: Submit text

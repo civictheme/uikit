@@ -13,9 +13,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['light', 'dark'],
     },
-    title: {
-      control: { type: 'text' },
-    },
     items: {
       control: { type: 'text' },
     },
