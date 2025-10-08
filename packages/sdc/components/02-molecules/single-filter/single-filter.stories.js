@@ -19,9 +19,6 @@ const meta = {
     title: {
       control: { type: 'text' },
     },
-    form_attributes: {
-      control: { type: 'text' },
-    },
     form_hidden_fields: {
       control: { type: 'text' },
     },
@@ -39,9 +36,6 @@ const meta = {
     },
     is_multiple: {
       control: { type: 'boolean' },
-    },
-    attributes: {
-      control: { type: 'text' },
     },
     modifier_class: {
       control: { type: 'text' },

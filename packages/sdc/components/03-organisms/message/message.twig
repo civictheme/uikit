@@ -8,7 +8,7 @@
  * - type: [string] Message type (information, error, warning, success).
  * - vertical_spacing: [string] Message vertical spacing (none, top, bottom, both).
  * - with_background: [boolean] Whether to display with a background.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -39,7 +39,7 @@
       aria-label="{{ type }}"
       aria-live="assertive"
     {% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined %}{{- attributes -}}{% endif %}
   >
     <div class="ct-message__inner">
       {% if icons[type] is defined %}

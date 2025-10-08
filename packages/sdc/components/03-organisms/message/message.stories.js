@@ -32,9 +32,6 @@ const meta = {
     has_aria: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -55,7 +52,7 @@ export const Message = {
     vertical_spacing: 'none',
     with_background: false,
     has_aria: true,
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

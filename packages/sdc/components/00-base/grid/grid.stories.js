@@ -17,16 +17,10 @@ const meta = {
     row_class: {
       control: { type: 'text' },
     },
-    row_attributes: {
-      control: { type: 'text' },
-    },
     column_element: {
       control: { type: 'text' },
     },
     column_class: {
-      control: { type: 'text' },
-    },
-    column_attributes: {
       control: { type: 'text' },
     },
     use_container: {
@@ -43,9 +37,6 @@ const meta = {
     },
     fill_width: {
       control: { type: 'boolean' },
-    },
-    attributes: {
-      control: { type: 'text' },
     },
     modifier_class: {
       control: { type: 'text' },
@@ -76,16 +67,16 @@ export const Grid = {
     ],
     row_element: 'div',
     row_class: 'row',
-    row_attributes: '',
+    row_attributes: null,
     column_element: 'div',
     column_class: 'col',
-    column_attributes: '',
+    column_attributes: null,
     use_container: false,
     is_fluid: false,
     template_column_count: 0,
     auto_breakpoint: false,
     fill_width: false,
-    attributes: '',
+    attributes: null,
     modifier_class: 'row--equal-heights-content row--vertically-spaced',
   },
 };

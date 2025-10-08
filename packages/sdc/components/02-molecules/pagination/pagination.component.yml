@@ -34,7 +34,7 @@ props:
       title: Items per page ID
       description: Items per page select field ID.
     items_per_page_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Items per page attributes
       description: Items per page select element attributes.
     use_ellipsis:
@@ -42,7 +42,7 @@ props:
       title: Use ellipsis
       description: Whether ellipsis should be shown.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

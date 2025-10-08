@@ -22,7 +22,7 @@ props:
       title: Modifier Class
       description: Additional CSS classes.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
 slots:

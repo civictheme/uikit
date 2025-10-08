@@ -29,7 +29,7 @@ props:
       title: Allow HTML
       description: Whether to allow HTML in text.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

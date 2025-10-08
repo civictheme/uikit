@@ -71,7 +71,7 @@ export default {
       },
       vertical_spacing: 'none',
       with_background: false,
-      attributes: '',
+      attributes: null,
       modifier_class: '',
     };
   },

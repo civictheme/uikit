@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - image_position: [string] Image position (left or right).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - image: [object] Slide image object.
  *   Each property contains:
@@ -48,7 +48,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-slide {{ modifier_class -}}" role="group" aria-roledescription="slide" data-slider-slide {% if attributes is not empty %}{{ attributes|raw -}}{% endif %}>
+<div class="ct-slide {{ modifier_class -}}" role="group" aria-roledescription="slide" data-slider-slide {% if attributes is defined %}{{ attributes -}}{% endif %}>
   <div class="row ct-slide__row">
     {% block image_block %}
       {% if image is not empty %}
@@ -69,7 +69,7 @@
         {% block content_top_block %}
           {% if content_top is not empty %}
             <div class="ct-slide__content-top">
-              {{- content_top|raw -}}
+              {{- content_top -}}
             </div>
           {% endif %}
         {% endblock %}
@@ -157,7 +157,7 @@
         {% block content_bottom_block %}
           {% if content_bottom is not empty %}
             <div class="ct-slide__content-bottom">
-              {{- content_bottom|raw -}}
+              {{- content_bottom -}}
             </div>
           {% endif %}
         {% endblock %}

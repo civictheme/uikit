@@ -18,7 +18,7 @@ props:
       description: Filter title.
       default: 'Filter results by:'
     form_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Form attributes
       description: Form attributes (if empty, the form will not be printed).
     form_hidden_fields:
@@ -50,7 +50,7 @@ props:
       title: Group ID
       description: Unique ID for filter group.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

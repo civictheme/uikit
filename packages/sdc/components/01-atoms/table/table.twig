@@ -18,7 +18,7 @@
  *   - items [string]
  * - is_striped: [boolean] Whether to show table with striped rows.
  * - is_data_table: [boolean] Whether to show as a data table.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -30,7 +30,7 @@
 {% set modifier_class = '%s %s %s %s %s'|format(theme_class, caption_position_class, striped_class, data_table_class, modifier_class|default('')) %}
 
 {% if rows is not empty or header is not empty or footer is not empty or caption is not empty %}
-  <table class="ct-table {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <table class="ct-table {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
     {% if caption %}
       <caption>{{ caption }}</caption>
     {% endif %}
@@ -51,7 +51,7 @@
         <tr>
           {% for col in row %}
             <td {% if header is not empty and header[loop.index0] %}data-title="{{ header[loop.index0] }}"{% endif %}>
-              {{ col|raw }}
+              {{ col }}
             </td>
           {% endfor %}
         </tr>

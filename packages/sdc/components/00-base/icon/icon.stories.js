@@ -24,9 +24,6 @@ const meta = {
         ...Object.keys(Constants.SCSS_VARIABLES['ct-icon-sizes']),
       ],
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -44,6 +41,6 @@ export const Icon = {
     alt: 'Icon alt text',
     size: 'auto',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

@@ -10,7 +10,7 @@
  * - items: [array] List items.
  *   Each item contains:
  *   - items [string]
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -23,11 +23,11 @@
 {% set modifier_class = '%s %s %s %s'|format(direction_class, size_class, no_gap_class, modifier_class|default('')) %}
 
 {% if items %}
-  <ul class="ct-item-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <ul class="ct-item-list {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
     {% for item in items %}
       {% if item is not empty %}
         <li class="ct-item-list__item">
-          {{- item|raw -}}
+          {{- item -}}
         </li>
       {% endif %}
     {% endfor %}

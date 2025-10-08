@@ -84,6 +84,6 @@ export default {
       row_class: 'row--equal-heights-content row--vertically-spaced',
     }).trim(),
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   }),
 };

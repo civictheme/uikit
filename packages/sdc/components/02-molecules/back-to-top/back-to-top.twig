@@ -4,7 +4,7 @@
  * CivicTheme Back to Top component.
  *
  * Props:
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -20,7 +20,7 @@
     type: '',
     url: '#top',
     text: text,
-    attributes: 'data-skip-to-target',
+    attributes: create_attribute({ 'data-skip-to-target': '' }),
     modifier_class: 'ct-back-to-top__button',
   } only %}
 </div>

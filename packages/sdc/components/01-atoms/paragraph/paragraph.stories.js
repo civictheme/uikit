@@ -28,9 +28,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -47,6 +44,6 @@ export const Paragraph = {
     allow_html: false,
     no_margin: false,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

@@ -10,7 +10,7 @@
  * - width: [string] Video width.
  * - height: [string] Video height.
  * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - sources: [array] Video sources:
  *   Each item contains:
@@ -25,7 +25,7 @@
  *   - url: [string] URL for the link button.
  *   - is_new_window: [boolean] Whether to open in a new window.
  *   - is_external: [boolean] Whether the link is external.
- *   - attributes: [string] Additional HTML attributes.
+ *   - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - transcript_content: [string] HTML of transcript content to display in a collapsible.
  * - transcript_expand_text: [string] Transcript collasible text to open. E.g. "Show transcript".
  * - transcript_collapse_text: [string] Transcript collasible text to close. E.g. "Hide transcript".
@@ -64,7 +64,7 @@
             height: height,
           } only %}
         {% else %}
-          {{ raw_source|raw }}
+          {{ raw_source }}
         {% endif %}
       </div>
     {% endblock %}
@@ -110,7 +110,7 @@
                 type: 'tertiary',
                 allow_html: true,
                 text: transcript_toggle_html,
-                attributes: 'data-collapsible-trigger',
+                attributes: create_attribute({ 'data-collapsible-trigger': '' }),
                 modifier_class: 'ct-video-player__transcript-toggle',
               } only %}
               <div class="ct-video-player__transcript-panel" data-collapsible-panel>

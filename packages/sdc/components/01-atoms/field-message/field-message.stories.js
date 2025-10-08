@@ -25,9 +25,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -43,6 +40,6 @@ export const FieldMessage = {
     content: 'Field message content sample.',
     allow_html: true,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

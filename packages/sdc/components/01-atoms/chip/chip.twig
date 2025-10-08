@@ -11,7 +11,7 @@
  * - is_selected: [boolean] Whether the chip is selected (for filter chips).
  * - is_multiple: [boolean] Whether multiple selection is allowed.
  * - group_parent: [string] Additional parent selector for radio group.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -37,7 +37,7 @@
         class="ct-chip__input"
         type="{% if is_multiple %}checkbox{% else %}radio{% endif %}"
         {% if is_selected %}checked="checked"{% endif %}
-        {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+        {% if attributes is defined %}{{- attributes -}}{% endif %}
       >
       {{- content -}}
       {% if is_multiple %}
@@ -51,7 +51,7 @@
     <span
       class="ct-chip {{ modifier_class -}}"
       data-component-name="chip"
-      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+      {% if attributes is defined %}{{- attributes -}}{% endif %}
     >
       {{- content -}}
     </span>

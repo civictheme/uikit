@@ -19,7 +19,7 @@
  * - is_external: [boolean] Indicates if the link is external.
  * - is_disabled: [boolean] Indicates if the button is disabled.
  * - is_dismissable: [boolean] Indicates if the button can be dismissed.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -68,7 +68,7 @@
     class="ct-button {{ modifier_class -}}"
     data-component-name="button"
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined %}{{- attributes -}}{% endif %}
   >
     {{- button_content -}}
   </button>
@@ -80,7 +80,7 @@
     {% if url %}href="{{ url }}"{% endif %}
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
     {% if is_new_window %}target="_blank"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined %}{{- attributes -}}{% endif %}
   >
     {{- button_content -}}
   </a>
@@ -91,6 +91,6 @@
     data-component-name="button"
     value="{{- text -}}"
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined %}{{- attributes -}}{% endif %}
   />
 {% endif %}

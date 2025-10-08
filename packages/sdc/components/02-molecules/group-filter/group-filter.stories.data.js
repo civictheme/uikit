@@ -38,11 +38,11 @@ export default {
       },
     ],
     submit_text: 'Submit',
-    form_attributes: '',
+    form_attributes: null,
     form_hidden_fields: '',
     content_top: '',
     content_bottom: '',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   }),
 };

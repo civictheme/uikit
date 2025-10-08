@@ -30,10 +30,10 @@
  * - message: [object] Message object for showing messages.
  *   Each property contains:
  *   - content: [string] Message content.
- *   - attributes: [string] Additional HTML attributes.
+ *   - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - prefix: [string] Content to add before the field.
  * - suffix: [string] Content to add after the field.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -95,7 +95,7 @@
 {% set field_wrapper = type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 
 {% if control[0].name is defined %}
-  <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
     {% if title is not empty and title_display != 'hidden' and type not in ['hidden', 'checkbox', 'radio'] %}
       {% include 'civictheme:label' with {
         theme: theme,
@@ -139,7 +139,7 @@
       {% endif %}
 
       {% if prefix is not empty %}
-        <div class="ct-field__prefix">{{- prefix|raw -}}</div>
+        <div class="ct-field__prefix">{{- prefix -}}</div>
       {% endif %}
 
       {% if type == 'textfield' %}
@@ -176,7 +176,7 @@
       {% endif %}
 
       {% if suffix is not empty %}
-        <div class="ct-field__suffix">{{- suffix|raw -}}</div>
+        <div class="ct-field__suffix">{{- suffix -}}</div>
       {% endif %}
 
       {% if (message or is_invalid) and type != 'hidden' %}

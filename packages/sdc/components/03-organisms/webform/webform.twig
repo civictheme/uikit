@@ -7,7 +7,7 @@
  * - theme: [string] Theme variation (light or dark).
  * - vertical_spacing: [string] Webform vertical spacing (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -21,11 +21,11 @@
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
 
 {% if referenced_webform is not empty %}
-  <div class="ct-webform {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-webform {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
-          {{ referenced_webform|raw }}
+          {{ referenced_webform }}
         </div>
       </div>
     </div>

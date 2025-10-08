@@ -9,16 +9,16 @@
  *   - items [string]
  * - row_element: [string] Row element.
  * - row_class: [string] Optional row class override (defaults to 'row').
- * - row_attributes: [string] Additional row attributes.
+ * - row_attributes: [Drupal\Core\Template\Attribute] Additional row attributes.
  * - column_element: [string] Column element.
  * - column_class: [string] Optional column class override (defaults to 'col' if template_column_count is 0).
- * - column_attributes: [string] Additional column attributes.
+ * - column_attributes: [Drupal\Core\Template\Attribute] Additional column attributes.
  * - use_container: [boolean] Whether to use container or not.
  * - is_fluid: [boolean] Whether the grid is fluid or not (applies only if use_container is true).
  * - template_column_count: [number] Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
  * - auto_breakpoint: [boolean] Switch between columns (starting at template_column_count) as the screen reduces.
  * - fill_width: [boolean] Stretch "hanging" items to row full width.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -77,13 +77,13 @@
 
 {% if items is not empty %}
   {% if use_container %}
-  <div class="{{ container_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %} aria-live="polite">
+  <div class="{{ container_class }}" {% if attributes is defined %}{{- attributes -}}{% endif %} aria-live="polite">
   {% endif %}
-    <{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is not empty %}{{ row_attributes|raw }}{% endif %}>
+    <{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is defined %}{{ row_attributes }}{% endif %}>
       {% for item in items %}
         {% if item is not empty %}
-          <{{ column_element }} class="{{ column_class }}" {% if column_attributes is not empty %}{{ column_attributes|raw }}{% endif %}>
-            {{ item|raw }}
+          <{{ column_element }} class="{{ column_class }}" {% if column_attributes is defined %}{{ column_attributes }}{% endif %}>
+            {{ item }}
           </{{ column_element }}>
         {% endif %}
       {% endfor %}

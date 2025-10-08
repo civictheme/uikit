@@ -53,7 +53,7 @@ props:
       title: Data table
       description: Whether to show as a data table.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

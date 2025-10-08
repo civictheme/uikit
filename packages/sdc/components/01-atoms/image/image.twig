@@ -9,7 +9,7 @@
  * - alt: [string] Image alt text.
  * - width: [string] Image width.
  * - height: [string] Image height.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -25,6 +25,6 @@
     alt="{{ alt }}"
     {% if width is not empty %}width="{{ width }}"{% endif %}
     {% if height is not empty %}height="{{ height }}"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined %}{{- attributes -}}{% endif %}
   />
 {% endif %}

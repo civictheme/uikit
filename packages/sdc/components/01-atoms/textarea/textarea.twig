@@ -13,7 +13,7 @@
  * - is_invalid: [boolean] Whether the textarea is invalid.
  * - is_disabled: [boolean] Whether the textarea is disabled.
  * - is_required: [boolean] Whether the textarea is required.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -32,6 +32,6 @@
     {% if is_required %}required{% endif %}
     {% if is_invalid %}aria-invalid="true"{% endif %}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined %}{{- attributes -}}{% endif %}
   />{{ value|default('') }}</textarea>
 {% endif %}

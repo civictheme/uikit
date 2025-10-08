@@ -8,7 +8,7 @@
  * - content: [string] The message content.
  * - type: [string] Message type (error, information, warning, success).
  * - allow_html: [boolean] Whether to allow HTML in text.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -25,7 +25,7 @@
 } %}
 
 {% if content is not empty -%}
-  <div class="ct-field-message {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-field-message {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
     {% if icons[type] is defined %}
       {% include 'civictheme:icon' with {
         symbol: icons[type],
@@ -34,7 +34,7 @@
       } only %}
     {% endif %}
     {% if allow_html is defined ? allow_html : false %}
-      {{- content|raw -}}
+      {{- content -}}
     {% else %}
       {{- content -}}
     {% endif %}

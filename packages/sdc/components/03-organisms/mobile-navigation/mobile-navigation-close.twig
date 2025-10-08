@@ -6,14 +6,14 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - text: [string] Text for the button.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
-{% set attributes = '%s %s'|format('data-flyout-close-all-trigger', attributes|default('')) %}
+{% set attributes = attributes is defined ? attributes : create_attribute({}) %}
 {% set text = text|default('Close') %}
 
 <div class="ct-mobile-navigation-close {{ modifier_class -}}">
@@ -25,7 +25,7 @@
     text: text,
     icon: 'close',
     icon_placement: 'after',
-    attributes: attributes,
+    attributes: attributes.setAttribute('data-flyout-close-all-trigger', ''),
     modifier_class: 'ct-mobile-navigation-close__button',
   } only %}
 </div>
