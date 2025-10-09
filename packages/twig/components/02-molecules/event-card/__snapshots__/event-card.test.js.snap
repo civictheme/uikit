@@ -4,19 +4,18 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 <div>
   
 
-
-
+  
   <div
     class="ct-event-card ct-theme-dark ct-event-card--with-image ct-event-card--image-over ct-event-card--card-clickable custom-class"
     data-test="true"
   >
     
-            
+                  
     <div
       class="ct-event-card__image"
     >
       
-        
+          
 
   
       <img
@@ -26,38 +25,39 @@ exports[`Event Card Component renders with optional attributes 1`] = `
       />
       
 
-                              
+                                    
       <div
         class="ct-event-card__image__over"
       >
         
-              Image over content
-            
+                Image over content
+              
       </div>
       
-                        
+                              
     </div>
     
+          
           
     <div
       class="ct-event-card__content"
     >
       
-                        
+                              
       <div
         class="ct-event-card__content-top"
       >
         Top content
       </div>
       
-              
-                        
-          
+                  
+                              
+            
       <div
         class="ct-event-card__date"
       >
         
-            
+              
 
   
   
@@ -86,7 +86,7 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
           </svg>
           
-                    
+                      
           <span
             class="ct-datetime "
           >
@@ -102,19 +102,19 @@ exports[`Event Card Component renders with optional attributes 1`] = `
       
           </span>
           
-          
+            
       
         </span>
         
-          
+            
       </div>
       
-              
-                                  
+                  
+                                          
       <div
         class="ct-event-card__title"
       >
-                                  
+                                      
         <a
           class="ct-event-card__title-link"
           href="https://example.com"
@@ -122,19 +122,19 @@ exports[`Event Card Component renders with optional attributes 1`] = `
           Event Title
         </a>
         
-                      
+                          
       </div>
       
-              
-                        
+                  
+                              
       <div
         class="ct-event-card__middle"
       >
         Middle content
       </div>
       
-              
-                        
+                  
+                              
 
 
       <div
@@ -143,8 +143,8 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         
     Event Location  
       </div>
-                    
                         
+                              
 
 
       <div
@@ -153,13 +153,13 @@ exports[`Event Card Component renders with optional attributes 1`] = `
         
     This is a summary of the event.  
       </div>
-                    
                         
+                              
       <div
         class="ct-event-card__tags"
       >
         
-                          
+                              
 
   
         <div
@@ -219,13 +219,13 @@ exports[`Event Card Component renders with optional attributes 1`] = `
                 
         </div>
         
-            
-                          
+              
+                              
         <div
           class="ct-event-card__link-graphic"
         >
           
-                
+                  
           <svg
             aria-hidden="true"
             class="ct-icon ct-icon--size-regular "
@@ -244,24 +244,24 @@ exports[`Event Card Component renders with optional attributes 1`] = `
 
           </svg>
           
-              
+                
         </div>
         
-                      
+                          
       </div>
       
-              
-                        
+                  
+                              
       <div
         class="ct-event-card__content-bottom"
       >
         Bottom content
       </div>
       
-                  
+                        
     </div>
     
-  
+      
   </div>
   
 
@@ -272,25 +272,25 @@ exports[`Event Card Component renders with required attributes 1`] = `
 <div>
   
 
-
-
+  
   <div
     class="ct-event-card ct-theme-light    "
   >
     
-            
+              
+          
     <div
       class="ct-event-card__content"
     >
       
-                    
-                        
-          
+                          
+                              
+            
       <div
         class="ct-event-card__date"
       >
         
-            
+              
 
   
   
@@ -319,7 +319,7 @@ exports[`Event Card Component renders with required attributes 1`] = `
 
           </svg>
           
-                    
+                      
           <span
             class="ct-datetime "
           >
@@ -335,25 +335,25 @@ exports[`Event Card Component renders with required attributes 1`] = `
       
           </span>
           
-          
+            
       
         </span>
         
-          
+            
       </div>
       
-              
-                                  
+                  
+                                          
       <div
         class="ct-event-card__title"
       >
-                                  Event Title
-                      
+                                      Event Title
+                          
       </div>
       
-              
-                    
-                        
+                  
+                          
+                              
 
 
       <div
@@ -362,8 +362,8 @@ exports[`Event Card Component renders with required attributes 1`] = `
         
     Event Location  
       </div>
-                    
                         
+                              
 
 
       <div
@@ -372,12 +372,12 @@ exports[`Event Card Component renders with required attributes 1`] = `
         
     This is a summary of the event.  
       </div>
-                    
-                    
                         
+                          
+                                
     </div>
     
-  
+      
   </div>
   
 
