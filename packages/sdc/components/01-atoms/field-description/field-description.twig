@@ -7,7 +7,6 @@
  * - theme: [string] Theme variation (light or dark).
  * - content: [string] The description's content.
  * - size: [string] Description size (large, regular).
- * - allow_html: [boolean] Whether to allow HTML in text.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
@@ -20,10 +19,6 @@
 
 {% if content is not empty -%}
   <div class="ct-field-description {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
-    {% if allow_html is defined ? allow_html : false %}
-      {{- content -}}
-    {% else %}
-      {{- content -}}
-    {% endif %}
+    {{- content -}}
   </div>
 {%- endif %}

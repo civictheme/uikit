@@ -57,7 +57,6 @@ const meta = {
     is_external: {
       control: { type: 'boolean' },
     },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

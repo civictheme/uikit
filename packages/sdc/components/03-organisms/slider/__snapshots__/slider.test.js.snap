@@ -102,6 +102,7 @@ exports[`Slider Component renders with all attributes provided 1`] = `
 
   
                 <button
+                  _keys="data-slider-previous"
                   class="ct-button ct-theme-dark ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
@@ -137,6 +138,7 @@ exports[`Slider Component renders with all attributes provided 1`] = `
 
   
                 <button
+                  _keys="data-slider-next"
                   class="ct-button ct-theme-dark ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__next"
                   data-component-name="button"
                   data-slider-next=""
@@ -188,6 +190,7 @@ exports[`Slider Component renders with all attributes provided 1`] = `
   
     
               <span
+                _keys="aria-live data-slider-progress"
                 aria-live="polite"
                 class="ct-tag ct-theme-dark ct-tag--primary    ct-slider__controls__progress-indicator"
                 data-slider-progress=""
@@ -296,6 +299,7 @@ exports[`Slider Component renders with only required attributes 1`] = `
 
   
                 <button
+                  _keys="data-slider-previous"
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
@@ -331,6 +335,7 @@ exports[`Slider Component renders with only required attributes 1`] = `
 
   
                 <button
+                  _keys="data-slider-next"
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__next"
                   data-component-name="button"
                   data-slider-next=""
@@ -382,6 +387,7 @@ exports[`Slider Component renders with only required attributes 1`] = `
   
     
               <span
+                _keys="aria-live data-slider-progress"
                 aria-live="polite"
                 class="ct-tag ct-theme-light ct-tag--primary    ct-slider__controls__progress-indicator"
                 data-slider-progress=""
@@ -500,6 +506,7 @@ exports[`Slider Component renders without some attributes 1`] = `
 
   
                 <button
+                  _keys="data-slider-previous"
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__previous"
                   data-component-name="button"
                   data-slider-previous=""
@@ -535,6 +542,7 @@ exports[`Slider Component renders without some attributes 1`] = `
 
   
                 <button
+                  _keys="data-slider-next"
                   class="ct-button ct-theme-light ct-button--secondary ct-button--button ct-button--regular   ct-slider__controls__next"
                   data-component-name="button"
                   data-slider-next=""
@@ -586,6 +594,7 @@ exports[`Slider Component renders without some attributes 1`] = `
   
     
               <span
+                _keys="aria-live data-slider-progress"
                 aria-live="polite"
                 class="ct-tag ct-theme-light ct-tag--primary    ct-slider__controls__progress-indicator"
                 data-slider-progress=""

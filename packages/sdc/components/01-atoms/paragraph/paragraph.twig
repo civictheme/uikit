@@ -7,7 +7,6 @@
  * - theme: [string] Theme variation (light or dark).
  * - content: [string] Paragraph content.
  * - size: [string] Paragraph size (extra-large, large, regular, small).
- * - allow_html: [boolean] Whether to allow HTML in content.
  * - no_margin: [boolean] Disable default margin.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
@@ -21,10 +20,6 @@
 
 {% if content is not empty -%}
   <div class="ct-paragraph {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
-    {% if allow_html is defined ? allow_html : false %}
-      {{- content -}}
-    {% else %}
-      {{- content -}}
-    {% endif %}
+    {{- content -}}
   </div>
 {%- endif %}

@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field Description Component allows HTML content 1`] = `
-<div>
-  
-
-
-  <div
-    class="ct-field-description ct-theme-light ct-field-description--regular "
-  >
-    
-    
-    <strong>
-      This is a description
-    </strong>
-      
-  </div>
-</div>
-`;
-
 exports[`Field Description Component does not render when content is empty 1`] = `
 <div>
   
@@ -35,8 +17,7 @@ exports[`Field Description Component renders with additional attributes and clas
     class="ct-field-description ct-theme-light ct-field-description--regular custom-modifier"
     data-test="true"
   >
-    
-    This is a description  
+    This is a description
   </div>
 </div>
 `;
@@ -49,8 +30,7 @@ exports[`Field Description Component renders with custom theme and size 1`] = `
   <div
     class="ct-field-description ct-theme-dark ct-field-description--large "
   >
-    
-    This is a description  
+    This is a description
   </div>
 </div>
 `;
@@ -63,22 +43,7 @@ exports[`Field Description Component renders with default values 1`] = `
   <div
     class="ct-field-description ct-theme-light ct-field-description--regular "
   >
-    
-    This is a description  
-  </div>
-</div>
-`;
-
-exports[`Field Description Component strips HTML content 1`] = `
-<div>
-  
-
-
-  <div
-    class="ct-field-description ct-theme-light ct-field-description--regular "
-  >
-    
-    Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end  
+    This is a description
   </div>
 </div>
 `;

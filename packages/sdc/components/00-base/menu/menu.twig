@@ -55,7 +55,7 @@
         item.modifier_class|default(''),
       ] %}
 
-      {% set item_attributes = item.attributes ? item.attributes : create_attribute({}) %}
+      {% set item_attributes = item.attributes is defined ? item.attributes : create_attribute({}) %}
       {% set is_active_expanded = 'false' %}
       {% if item.below and is_collapsible %}
         {% set is_active_expanded = item.in_active_trail and item.is_expanded ? 'true' : is_active_expanded %}
@@ -78,9 +78,11 @@
         {% endfor %}
       {% endif %}
 
-      {%- set current_link_attribute = item.link_attributes ? item.link_attributes : create_attribute({}) -%}
+      {%- set current_link_attribute = item.link_attributes is defined ? item.link_attributes : create_attribute({}) -%}
       {%- set current_link_attribute_value = item.in_active_trail and not has_active_children ? 'page' : '' -%}
-      {%- do current_link_attribute.setAttribute('aria-current', current_link_attribute_value) -%}
+      {% if current_link_attribute_value is not empty %}
+        {%- do current_link_attribute.setAttribute('aria-current', current_link_attribute_value) -%}
+      {% endif %}
 
       <li class="{{- item_classes|join(' ') -}}" {{- item_attributes -}}>
 

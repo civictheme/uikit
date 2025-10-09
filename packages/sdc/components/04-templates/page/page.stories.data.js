@@ -38,7 +38,6 @@ export default {
       content_attributes: null,
       sidebar_bottom_left: Paragraph({
         theme,
-        allow_html: true,
         content: `<p>Register for events!</p><p>${Button({
           theme,
           text: 'Register',

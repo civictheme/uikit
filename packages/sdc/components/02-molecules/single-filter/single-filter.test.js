@@ -1,3 +1,4 @@
+import DrupalAttribute from 'drupal-attribute';
 const template = 'components/02-molecules/single-filter/single-filter.twig';
 
 describe('Single Filter Component', () => {
@@ -33,14 +34,14 @@ describe('Single Filter Component', () => {
       content_top: 'Top content',
       title: 'Filter results by:',
       items: [
-        { text: 'Filter 1', is_selected: true, attributes: 'data-test="true"' },
+        { text: 'Filter 1', is_selected: true, attributes: new DrupalAttribute().setAttribute('data-test', 'true') },
         { text: 'Filter 2' },
       ],
       submit_text: 'Apply filter',
       reset_text: 'Clear all',
       content_bottom: 'Bottom content',
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

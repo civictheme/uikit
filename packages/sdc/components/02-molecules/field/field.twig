@@ -133,7 +133,6 @@
         {% include 'civictheme:field-description' with {
           theme: theme,
           content: description_content,
-          allow_html: true,
           modifier_class: 'ct-field__description',
         } only %}
       {% endif %}
@@ -198,7 +197,6 @@
           theme: theme,
           type: is_invalid ? 'error' : 'information',
           content: message_content,
-          allow_html: true,
           modifier_class: 'ct-field__message',
           attributes: message.attributes|default(''),
         } only %}

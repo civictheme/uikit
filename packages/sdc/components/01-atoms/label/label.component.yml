@@ -48,10 +48,6 @@ props:
       type: string
       title: For
       description: Form element ID this label belongs to.
-    allow_html:
-      type: boolean
-      title: Allow HTML
-      description: Whether to allow HTML in text.
     attributes:
       type: Drupal\Core\Template\Attribute
       title: Attributes

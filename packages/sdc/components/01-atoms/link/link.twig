@@ -29,7 +29,7 @@
 {%- set is_disabled_class = is_disabled ? 'ct-link--disabled' : '' -%}
 {%- set theme_class = 'ct-theme-%s'|format(theme|default('light')) -%}
 {%- set modifier_class = '%s %s %s %s %s %s'|format(theme_class, is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim -%}
-{%- set attributes = attributes ? attributes : create_attribute({}) -%}
+{%- set attributes = attributes is defined ? attributes : create_attribute({}) -%}
 {%- if is_disabled -%}
   {%- do attributes.setAttribute('disabled', '') -%}
 {%- endif -%}

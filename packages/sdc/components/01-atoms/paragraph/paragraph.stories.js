@@ -19,9 +19,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['extra-large', 'large', 'regular', 'small'],
     },
-    allow_html: {
-      control: { type: 'boolean' },
-    },
     no_margin: {
       control: { type: 'boolean' },
     },
@@ -41,7 +38,6 @@ export const Paragraph = {
     theme: 'light',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.',
     size: 'regular',
-    allow_html: false,
     no_margin: false,
     modifier_class: '',
     attributes: null,

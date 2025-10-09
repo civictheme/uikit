@@ -143,7 +143,6 @@
           {% include 'civictheme:paragraph' with {
             theme: theme,
             content: location,
-            allow_html: true,
             modifier_class: 'ct-event-card__location',
           } only %}
         {% endif %}
@@ -154,7 +153,6 @@
           {% include 'civictheme:paragraph' with {
             theme: theme,
             content: summary,
-            allow_html: true,
             no_margin: true,
             modifier_class: 'ct-event-card__summary',
           } only %}

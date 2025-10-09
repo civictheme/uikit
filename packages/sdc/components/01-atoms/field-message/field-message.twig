@@ -7,7 +7,6 @@
  * - theme: [string] Theme variation (light or dark).
  * - content: [string] The message content.
  * - type: [string] Message type (error, information, warning, success).
- * - allow_html: [boolean] Whether to allow HTML in text.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
@@ -33,10 +32,6 @@
         modifier_class: 'ct-field-message__icon',
       } only %}
     {% endif %}
-    {% if allow_html is defined ? allow_html : false %}
-      {{- content -}}
-    {% else %}
-      {{- content -}}
-    {% endif %}
+    {{- content -}}
   </div>
 {%- endif %}

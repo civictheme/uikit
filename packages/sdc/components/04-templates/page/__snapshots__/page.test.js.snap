@@ -582,6 +582,7 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -668,6 +669,7 @@ exports[`Page Component renders content block with permutations: {
 
   
     <main
+      _keys="id tabindex"
       class="ct-layout ct-vertical-spacing--top"
       id="main-content"
       role="main"
@@ -742,6 +744,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -828,6 +831,7 @@ exports[`Page Component renders content block with permutations: {
 
   
     <main
+      _keys="id tabindex"
       class="ct-layout ct-layout--no-sidebar-right  ct-layout--no-top-right  ct-layout--no-bottom-right ct-vertical-spacing--top"
       id="main-content"
       role="main"
@@ -888,6 +892,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -974,6 +979,7 @@ exports[`Page Component renders content block with permutations: {
 
   
     <main
+      _keys="id tabindex"
       class="ct-layout ct-layout--no-sidebar-left  ct-layout--no-top-left  ct-layout--no-bottom-left  ct-vertical-spacing--top"
       id="main-content"
       role="main"
@@ -1034,6 +1040,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -1120,6 +1127,7 @@ exports[`Page Component renders content block with permutations: {
 
   
     <main
+      _keys="id tabindex"
       class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
       id="main-content"
       role="main"
@@ -1166,6 +1174,7 @@ exports[`Page Component renders content block with permutations: {
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -1259,6 +1268,7 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -1351,6 +1361,7 @@ exports[`Page Component renders with default values 1`] = `
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""
@@ -1444,6 +1455,7 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
 
   
       <a
+        _keys="data-skip-to-target"
         class="ct-button ct-theme-light  ct-button--link ct-button--regular   ct-back-to-top__button"
         data-component-name="button"
         data-skip-to-target=""

@@ -50,7 +50,7 @@
             {% for item in items %}
               {% set filter_item %}
                 {% if item.text is not empty %}
-                  {% set item_attributes = item.attributes is defined and item.attributes is defined ? item.attributes : create_attribute({}) %}
+                  {% set item_attributes = item.attributes is defined ? item.attributes : create_attribute({}) %}
                   {% if item_attributes.name is not defined %}
                     {% set multiple_name = is_multiple ? 'single-filter-' ~ loop.index : 'single-filter' %}
                     {% set item_name = item.name is defined ? item.name : multiple_name %}

@@ -24,10 +24,6 @@ props:
         - large
         - regular
       default: regular
-    allow_html:
-      type: boolean
-      title: Allow HTML
-      description: Whether to allow HTML in text.
     attributes:
       type: Drupal\Core\Template\Attribute
       title: Attributes

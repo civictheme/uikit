@@ -44,7 +44,7 @@
 {% set link_items = [] %}
 {% for k, link in links %}
   {%- set link %}
-    {% set link_attributes = link.attributes ? link.attributes : create_attribute({}) %}
+    {% set link_attributes = link.attributes is defined ? link.attributes : create_attribute({}) %}
     {% include 'civictheme:link' with {
       theme: theme,
       text: link.text,

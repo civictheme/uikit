@@ -27,11 +27,6 @@ props:
         - regular
         - small
       default: regular
-    allow_html:
-      type: boolean
-      title: Allow HTML
-      description: Whether to allow HTML in content.
-      default: false
     no_margin:
       type: boolean
       title: No margin
