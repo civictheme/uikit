@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/paragraph/paragraph.twig';
 
 describe('Paragraph Component', () => {
@@ -16,7 +18,7 @@ describe('Paragraph Component', () => {
     const c = await dom(template, {
       content: 'Sample content',
       size: 'large',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

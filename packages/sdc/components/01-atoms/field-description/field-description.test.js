@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/field-description/field-description.twig';
 
 describe('Field Description Component', () => {
@@ -28,7 +30,7 @@ describe('Field Description Component', () => {
   test('renders with additional attributes and classes', async () => {
     const c = await dom(template, {
       content: 'This is a description',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 

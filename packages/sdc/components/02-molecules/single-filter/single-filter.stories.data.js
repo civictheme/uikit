@@ -4,7 +4,7 @@ export default {
     content_top: '',
     title: 'Filter results by:',
     form_attributes: null,
-    form_hidden_fields: '',
+    form_hidden_fields: null,
     items: [
       {
         text: 'Option A',

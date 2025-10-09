@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/attachment/attachment.twig';
 
 describe('Attachment Component', () => {
@@ -29,7 +31,7 @@ describe('Attachment Component', () => {
       theme: 'dark',
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

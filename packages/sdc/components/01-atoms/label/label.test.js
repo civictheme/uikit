@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/label/label.twig';
 
 describe('Label Component', () => {
@@ -23,7 +25,7 @@ describe('Label Component', () => {
       is_required: true,
       required_text: '(custom-required)',
       for: 'input-id',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 
@@ -63,7 +65,7 @@ describe('Label Component', () => {
   test('strips HTML tags from attribute values', async () => {
     const c = await dom(template, {
       content: 'Sample label',
-      attributes: 'data-test="<script>alert(1)</script>"',
+      attributes: new DrupalAttribute().setAttribute('data-test', '<script>alert(1)</script>'),
     });
 
     expect(c.querySelector('.ct-label').textContent.trim()).toEqual('Sample label');

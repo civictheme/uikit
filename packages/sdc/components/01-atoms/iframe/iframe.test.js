@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/iframe/iframe.twig';
 
 describe('Iframe Component', () => {
@@ -19,7 +21,7 @@ describe('Iframe Component', () => {
       height: 400,
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

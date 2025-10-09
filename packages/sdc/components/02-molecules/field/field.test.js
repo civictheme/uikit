@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/field/field.twig';
 
 describe('Field Component', () => {
@@ -81,7 +83,7 @@ describe('Field Component', () => {
       value: 'testvalue',
       id: 'testid',
       modifier_class: 'custom-modifier',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
@@ -115,7 +117,7 @@ describe('Field Component', () => {
         value: 'testvalue',
         id: 'testid',
         modifier_class: 'custom-modifier',
-        attributes: 'data-test="true"',
+        attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       },
     });
     expect(c.innerHTML).toContain('ct-field');
@@ -151,7 +153,7 @@ describe('Field Component', () => {
         value: 'testvalue',
         id: 'testid',
         modifier_class: 'custom-modifier',
-        attributes: 'data-test="true"',
+        attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       }],
     });
     expect(c.innerHTML).toContain('ct-field');
@@ -188,14 +190,14 @@ describe('Field Component', () => {
           value: 'testvalue',
           id: 'testid',
           modifier_class: 'custom-modifier',
-          attributes: 'data-test="true"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
         {
           name: 'testname2',
           value: 'testvalue2',
           id: 'testid2',
           modifier_class: 'custom-modifier2',
-          attributes: 'data-test="false"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'false'),
         },
       ],
     });
@@ -220,7 +222,7 @@ describe('Field Component', () => {
           value: 'testvalue',
           id: 'testid',
           modifier_class: 'custom-modifier',
-          attributes: 'data-test="true"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
         {
           name: 'testname',
@@ -228,7 +230,7 @@ describe('Field Component', () => {
           id: 'testid2',
           is_checked: true,
           modifier_class: 'custom-modifier2',
-          attributes: 'data-test="false"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'false'),
         },
       ],
     });
@@ -258,14 +260,14 @@ describe('Field Component', () => {
       name: 'testname',
       id: 'testid',
       modifier_class: 'custom-modifier-parent',
-      attributes: 'data-test-parent="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test-parent', 'true'),
       control: [
         {
           label: 'Checkbox 1',
           value: 'testvalue',
           id: 'testid1',
           modifier_class: 'custom-modifier-nested1',
-          attributes: 'data-test-nested1="true"',
+          attributes: new DrupalAttribute().setAttribute('data-test-nested1', 'true'),
         },
         {
           label: 'Checkbox 2',
@@ -319,7 +321,7 @@ describe('Field Component', () => {
       id: 'testid',
       is_required: true,
       is_invalid: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 
@@ -356,7 +358,7 @@ describe('Field Component', () => {
         { value: '2', label: 'Option 2' },
       ],
       modifier_class: 'custom-modifier',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
@@ -391,7 +393,7 @@ describe('Field Component', () => {
           id: 'testid',
           is_checked: false,
           modifier_class: 'custom-modifier',
-          attributes: 'data-test="true"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
         {
           name: 'testname',
@@ -399,7 +401,7 @@ describe('Field Component', () => {
           id: 'testid2',
           is_checked: true,
           modifier_class: 'custom-modifier2',
-          attributes: 'data-test="false"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'false'),
         },
       ],
     });
@@ -430,7 +432,7 @@ describe('Field Component', () => {
       value: 'testvalue',
       id: 'testid',
       modifier_class: 'custom-modifier',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
@@ -461,7 +463,7 @@ describe('Field Component', () => {
         type: 'textfield',
         message: {
           content: 'Custom error message',
-          attributes: 'data-test="true"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
       });
 
@@ -493,7 +495,7 @@ describe('Field Component', () => {
         type: 'textfield',
         is_invalid: true,
         message: {
-          attributes: 'data-test="true"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
       });
 

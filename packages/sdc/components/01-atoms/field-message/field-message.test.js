@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/field-message/field-message.twig';
 
 describe('Field Message Component', () => {
@@ -28,7 +30,7 @@ describe('Field Message Component', () => {
   test('renders with additional attributes and classes', async () => {
     const c = await dom(template, {
       content: 'This is a message',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 

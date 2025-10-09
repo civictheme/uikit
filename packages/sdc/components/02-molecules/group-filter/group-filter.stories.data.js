@@ -39,7 +39,7 @@ export default {
     ],
     submit_text: 'Submit',
     form_attributes: null,
-    form_hidden_fields: '',
+    form_hidden_fields: null,
     content_top: '',
     content_bottom: '',
     attributes: null,

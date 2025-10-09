@@ -109,7 +109,7 @@
               </div>
             </div>
 
-            {% if form_hidden_fields|trim is not empty %}
+            {% if form_hidden_fields is defined %}
               {{ form_hidden_fields }}
             {% endif %}
 

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/webform/webform.twig';
 
 describe('Webform Component', () => {
@@ -18,7 +20,7 @@ describe('Webform Component', () => {
       theme: 'dark',
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'additional-class',
     });
 
