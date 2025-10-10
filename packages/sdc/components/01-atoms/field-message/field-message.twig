@@ -24,7 +24,7 @@
 } %}
 
 {% if content is not empty -%}
-  <div class="ct-field-message {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-field-message {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% if icons[type] is defined %}
       {% include 'civictheme:icon' with {
         symbol: icons[type],

@@ -28,7 +28,7 @@
   <{{ tag }}
   class="ct-label {{ modifier_class -}}"
   {% if for is not empty %} for="{{ for }}" {% endif %}
-  {% if attributes is defined %}{{- attributes -}}{% endif %}
+  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
   {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}
   </{{ tag }}>

@@ -20,7 +20,7 @@
   <span class="ct-search__link-text">{{ text }}</span>
 {%- endset %}
 
-<div class="ct-search {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+<div class="ct-search {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% include 'civictheme:link' with {
     theme: theme|default('light'),
     text: search_text,

@@ -52,7 +52,7 @@
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, with_image_class, with_link_class, image_as_icon_class, card_clickable_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
-  <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block image_block %}
       {% if not image_as_icon %}
         {% if image.url is not empty %}

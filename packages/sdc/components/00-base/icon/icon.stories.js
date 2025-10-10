@@ -13,9 +13,6 @@ const meta = {
       control: { type: 'select' },
       options: Constants.ICONS,
     },
-    alt: {
-      control: { type: 'text' },
-    },
     size: {
       control: { type: 'radio' },
       options: [
@@ -25,6 +22,9 @@ const meta = {
       ],
     },
     modifier_class: {
+      control: { type: 'text' },
+    },
+    assets_dir: {
       control: { type: 'text' },
     },
   },
@@ -38,9 +38,9 @@ export const Icon = {
   },
   args: {
     symbol: Constants.ICONS[0],
-    alt: 'Icon alt text',
     size: 'auto',
     modifier_class: '',
     attributes: null,
+    assets_dir: '@civictheme/../assets',
   },
 };

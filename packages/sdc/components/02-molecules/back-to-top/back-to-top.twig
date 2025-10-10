@@ -14,7 +14,13 @@
   {%- include 'civictheme:icon' with {symbol: 'up-arrow'} only -%}
 {%- endset -%}
 
-<div class="ct-back-to-top {{ modifier_class|default('') }}" data-component-name="back-to-top" data-scrollspy data-scrollspy-offset="400" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div
+  class="ct-back-to-top {{ modifier_class|default('') }}"
+  data-component-name="back-to-top"
+  data-scrollspy
+  data-scrollspy-offset="400"
+  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
+>
   {% include 'civictheme:button' with {
     kind: 'link',
     type: '',

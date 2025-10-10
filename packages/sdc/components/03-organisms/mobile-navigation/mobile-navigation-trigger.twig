@@ -14,7 +14,7 @@
 
 {% set modifier_class = 'ct-mobile-navigation-trigger %s'|format(modifier_class|default('')) %}
 {% set icon = icon|default('bars') %}
-{% set attributes = attributes is defined ? attributes : create_attribute({}) %}
+{% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
 
 {% include 'civictheme:button' with {
   theme: theme,

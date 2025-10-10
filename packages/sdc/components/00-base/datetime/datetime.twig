@@ -14,7 +14,7 @@
 #}
 
 {% if start is not empty %}
-  <span class="ct-datetime {{ modifier_class|default('') }}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <span class="ct-datetime {{ modifier_class|default('') }}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     <time class="ct-timestamp__start" datetime="{{ start_iso|default(start)|striptags }}">{{ start }}</time>
     {% if end is not empty %}
       &mdash;

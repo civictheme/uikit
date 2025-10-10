@@ -1,4 +1,5 @@
 import jestEach from 'jest-each';
+import DrupalAttribute from 'drupal-attribute';
 
 const each = jestEach.default;
 
@@ -17,7 +18,7 @@ describe('Page Component', () => {
   test('renders with custom theme and attributes', async () => {
     const c = await dom(template, {
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 
@@ -28,7 +29,7 @@ describe('Page Component', () => {
 
   test('strips HTML tags from attributes', async () => {
     const c = await dom(template, {
-      attributes: 'data-test="<script>alert(1)</script>"',
+      attributes: new DrupalAttribute().setAttribute('data-test', '<script>alert(1)</script>'),
     });
 
     expect(c.querySelector('.ct-page').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
@@ -39,7 +40,7 @@ describe('Page Component', () => {
     const c = await dom(template, {
       theme: 'dark',
       modifier_class: 'custom-class',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       header_theme: 'light',
       header_top_1: 'Header Top 1',
       header_top_2: 'Header Top 2',
@@ -52,15 +53,15 @@ describe('Page Component', () => {
       highlighted: '<strong>Highlighted Content</strong>',
       content_top: 'Content Top',
       sidebar_top_left: 'Sidebar Top Left',
-      sidebar_top_left_attributes: 'data-sidebar-top-left="true"',
+      sidebar_top_left_attributes: new DrupalAttribute().setAttribute('data-sidebar-top-left', 'true'),
       sidebar_top_right: 'Sidebar Top Right',
-      sidebar_top_right_attributes: 'data-sidebar-top-right="true"',
+      sidebar_top_right_attributes: new DrupalAttribute().setAttribute('data-sidebar-top-right', 'true'),
       content: 'Main Content',
-      content_attributes: 'data-content="true"',
+      content_attributes: new DrupalAttribute().setAttribute('data-content', 'true'),
       sidebar_bottom_left: 'Sidebar Bottom Left',
-      sidebar_bottom_left_attributes: 'data-sidebar-bottom-left="true"',
+      sidebar_bottom_left_attributes: new DrupalAttribute().setAttribute('data-sidebar-bottom-left', 'true'),
       sidebar_bottom_right: 'Sidebar Bottom Right',
-      sidebar_bottom_right_attributes: 'data-sidebar-bottom-right="true"',
+      sidebar_bottom_right_attributes: new DrupalAttribute().setAttribute('data-sidebar-bottom-right', 'true'),
       content_contained: true,
       content_bottom: 'Content Bottom',
       vertical_spacing: 'top',

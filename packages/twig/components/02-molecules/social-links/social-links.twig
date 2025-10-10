@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - with_border: [boolean] Whether icons have borders.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [array] Social media links:
  *   Each item contains:
@@ -25,7 +25,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, with_border_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
-  <div class="ct-social-links {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-social-links {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
 
     {% block items_block %}
       {% set items_rendered = [] %}
@@ -40,7 +40,6 @@
             url: item.url,
             is_external: false,
             is_new_window: true,
-            allow_html: true,
             modifier_class: 'ct-social-links__button',
             attributes: item.title is defined and item.title is not empty ? create_attribute({title: item.title}) : '',
           } only %}

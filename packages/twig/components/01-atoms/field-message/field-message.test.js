@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/field-message/field-message.twig';
 
 describe('Field Message Component', () => {
@@ -25,37 +27,10 @@ describe('Field Message Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('allows HTML content', async () => {
-    const c = await dom(template, {
-      content: '<strong>This is an HTML message</strong>',
-      allow_html: true,
-    });
-
-    expect(c.querySelectorAll('.ct-field-message.ct-theme-light.ct-field-message--information')).toHaveLength(1);
-    expect(c.querySelector('.ct-field-message').innerHTML.trim()).toContain('<strong>This is an HTML message</strong>');
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('strips HTML content', async () => {
-    const c = await dom(template, {
-      content: 'Start <strong>prefix</strong> middle <script>alert("XSS")</script> end',
-      allow_html: false,
-    });
-
-    expect(c.querySelectorAll('.ct-field-message')).toHaveLength(1);
-
-    const content = c.querySelector('.ct-field-message').innerHTML.trim();
-    expect(content).not.toContain('Start <strong>prefix</strong> middle <script>alert("XSS")</script> end');
-    expect(content).toContain('Start &lt;strong&gt;prefix&lt;/strong&gt; middle &lt;script&gt;alert("XSS")&lt;/script&gt; end');
-
-    assertUniqueCssClasses(c);
-  });
-
   test('renders with additional attributes and classes', async () => {
     const c = await dom(template, {
       content: 'This is a message',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 

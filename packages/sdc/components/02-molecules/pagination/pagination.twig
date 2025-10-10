@@ -50,13 +50,13 @@
 {% set items_per_page_title = items_per_page_title|default('Items per page') %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
-{% set attributes = attributes is defined ? attributes : create_attribute({}) %}
+{% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
 
 {% if items is not empty %}
   <nav
     class="ct-pagination {{ modifier_class -}}" role="navigation"
     {% if heading_id is not empty %}aria-labelledby="{{ heading_id }}"{% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <h4 {% if heading_id is not empty %}id="{{ heading_id }}"{% endif %} class="ct-visually-hidden">{{ 'Pagination' }}</h4>
 

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/search/search.twig';
 
 describe('Search Component', () => {
@@ -22,7 +24,7 @@ describe('Search Component', () => {
       text: 'Search',
       url: 'https://example.com/search',
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

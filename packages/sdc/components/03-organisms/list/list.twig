@@ -61,7 +61,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
 
-<div class="ct-list {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+<div class="ct-list {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   <div class="ct-list__inner">
     {% block header_block %}
       {% if title is not empty or link_above is not empty %}

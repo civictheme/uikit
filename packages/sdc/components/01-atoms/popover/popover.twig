@@ -31,7 +31,7 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if content is not empty %}
-  <div class="ct-popover {{ modifier_class -}}" data-collapsible data-collapsible-collapsed data-collapsible-group="{{ group|default('') }}" data-collapsible-duration="250" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-popover {{ modifier_class -}}" data-collapsible data-collapsible-collapsed data-collapsible-group="{{ group|default('') }}" data-collapsible-duration="250" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% include 'civictheme:link' with {
       theme: theme,
       text: trigger.text,

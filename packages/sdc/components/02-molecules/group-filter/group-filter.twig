@@ -37,7 +37,7 @@
   <div
     class="ct-group-filter {{ modifier_class -}}"
     data-component-name="ct-group-filter"
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <div class="container" data-group-filter-element>
       <div class="row">
@@ -68,7 +68,7 @@
               {% set filters_items = filters_items|merge([filters_item]) %}
             {% endfor %}
 
-            {% if form_attributes is defined %}
+            {% if form_attributes is defined and form_attributes is not null %}
               <form {{ form_attributes }}>
             {% endif %}
 
@@ -113,7 +113,7 @@
               {{ form_hidden_fields }}
             {% endif %}
 
-            {% if form_attributes is defined %}
+            {% if form_attributes is defined and form_attributes is not null %}
               </form>
             {% endif %}
           {% endblock %}

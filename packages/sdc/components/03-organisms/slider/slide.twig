@@ -48,7 +48,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-slide {{ modifier_class -}}" role="group" aria-roledescription="slide" data-slider-slide {% if attributes is defined %}{{ attributes -}}{% endif %}>
+<div class="ct-slide {{ modifier_class -}}" role="group" aria-roledescription="slide" data-slider-slide {% if attributes is defined and attributes is not null %}{{ attributes -}}{% endif %}>
   <div class="row ct-slide__row">
     {% block image_block %}
       {% if image is not empty %}

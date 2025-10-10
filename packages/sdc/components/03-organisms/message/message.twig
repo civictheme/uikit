@@ -39,7 +39,7 @@
       aria-label="{{ type }}"
       aria-live="assertive"
     {% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <div class="ct-message__inner">
       {% if icons[type] is defined %}

@@ -13,7 +13,7 @@
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
-{% set attributes = attributes is defined ? attributes : create_attribute({}) %}
+{% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
 {% set text = text|default('Close') %}
 
 <div class="ct-mobile-navigation-close {{ modifier_class -}}">

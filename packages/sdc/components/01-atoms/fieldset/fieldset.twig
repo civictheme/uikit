@@ -31,7 +31,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}
 
-<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% if legend is not empty %}
     {% include 'civictheme:label' with {
       theme: theme,

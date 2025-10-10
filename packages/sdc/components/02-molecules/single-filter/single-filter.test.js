@@ -1,4 +1,5 @@
 import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/single-filter/single-filter.twig';
 
 describe('Single Filter Component', () => {

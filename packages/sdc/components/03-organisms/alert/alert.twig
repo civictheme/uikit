@@ -35,7 +35,7 @@
     data-alert-type="{{ type }}"
     data-component-name="ct-alert"
     role="alert"
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <div class="container">
       <div class="row">

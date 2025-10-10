@@ -73,7 +73,7 @@
     {% endfor %}
   {% endif %}
 
-  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% if title %}
       {% block title_block %}
         {% include 'civictheme:heading' with {

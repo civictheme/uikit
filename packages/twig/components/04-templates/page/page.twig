@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - header_theme: [string] Theme variation for header (light or dark).
  * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
@@ -61,7 +61,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-page {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-page {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   <a id="top" tab-index="-1" aria-hidden="true"></a>
 
   {% block header_block %}
@@ -79,7 +79,7 @@
 
   {% block banner_block %}
     {% if banner is not empty %}
-      {{ banner|raw }}
+      {{ banner }}
     {% endif %}
   {% endblock %}
 
@@ -88,7 +88,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xxs-12">
-            {{ highlighted|raw }}
+            {{ highlighted }}
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@
       is_contained: content_contained,
       content_bottom: content_bottom,
       vertical_spacing: vertical_spacing,
-      attributes: (banner is empty) ? 'id="main-content" tabindex="-1"' : '',
+      attributes: (banner is empty) ? create_attribute({ 'id': 'main-content', 'tabindex': '-1' }) : '',
     } only %}
   {% endblock %}
 

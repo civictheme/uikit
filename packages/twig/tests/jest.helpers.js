@@ -17,7 +17,8 @@ const wrappedRender = async (template, props = {}, namespaces = {}, twigCallback
   const wrappedTwigCallback = (TwigInstance) => {
     const originalTwig = TwigInstance.twig;
     TwigInstance.twig = function (options) {
-      options.autoescape = true;
+      options.autoescape = false;
+      options.allowInlineIncludes = true;
       return originalTwig(options);
     };
     twigCallback(TwigInstance);

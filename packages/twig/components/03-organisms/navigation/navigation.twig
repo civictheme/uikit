@@ -12,7 +12,7 @@
  * - dropdown_columns: [integer] Dropdown drawer column count.
  * - dropdown_columns_fill: [boolean] Whether to fill columns.
  * - is_animated: [boolean] Whether to use animation for transitions.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [array] Menu items:
  *   Each item contains:
@@ -73,7 +73,7 @@
     {% endfor %}
   {% endif %}
 
-  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% if title %}
       {% block title_block %}
         {% include '@atoms/heading/heading.twig' with {

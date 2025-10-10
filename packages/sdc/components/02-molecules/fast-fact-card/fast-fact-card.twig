@@ -32,7 +32,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, card_clickable_class, modifier_class|default('')) %}
 
-<div class="ct-fast-fact-card {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+<div class="ct-fast-fact-card {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% block image_block %}
     {% if image and image.url %}
       <div class="ct-fast-fact-card__image">

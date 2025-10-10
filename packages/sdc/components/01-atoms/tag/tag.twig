@@ -67,7 +67,7 @@
   {% if url is not empty %}href="{{ url }}"{% endif %}
   {% if url is not empty %}title="{{- content -}}"{% endif %}
   {% if url is not empty and is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-  {% if attributes is defined %}{{- attributes -}}{% endif %}
+  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
   {{- content_markup -}}{{- is_new_window_content -}}{{- is_external_content -}}
   </{{ tag }}>

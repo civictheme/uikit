@@ -77,12 +77,12 @@
 
 {% if items is not empty %}
   {% if use_container %}
-  <div class="{{ container_class }}" {% if attributes is defined %}{{- attributes -}}{% endif %} aria-live="polite">
+  <div class="{{ container_class }}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %} aria-live="polite">
   {% endif %}
-    <{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is defined %}{{ row_attributes }}{% endif %}>
+    <{{ row_element }} class="{{ row_class_string }}" {% if row_attributes is defined and row_attributes is not null %}{{ row_attributes }}{% endif %}>
       {% for item in items %}
         {% if item is not empty %}
-          <{{ column_element }} class="{{ column_class }}" {% if column_attributes is defined %}{{ column_attributes }}{% endif %}>
+          <{{ column_element }} class="{{ column_class }}" {% if column_attributes is defined and column_attributes is not null %}{{ column_attributes }}{% endif %}>
             {{ item }}
           </{{ column_element }}>
         {% endif %}

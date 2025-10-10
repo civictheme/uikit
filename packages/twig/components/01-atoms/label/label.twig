@@ -11,8 +11,7 @@
  * - is_required: [boolean] Whether the label is required.
  * - required_text: [string] Text to display within label element when required.
  * - for: [string] Form element ID this label belongs to.
- * - allow_html: [boolean] Whether to allow HTML in text.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -29,12 +28,8 @@
   <{{ tag }}
   class="ct-label {{ modifier_class -}}"
   {% if for is not empty %} for="{{ for }}" {% endif %}
-  {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
-  {% if allow_html is defined ? allow_html : false %}
-    {{- content|raw -}}
-  {% else %}
-    {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}
-  {% endif %}
+  {{- content -}}{%- if is_required %} <span class="ct-label__required">{{ required_text }}</span>{%- endif -%}
   </{{ tag }}>
 {%- endif %}

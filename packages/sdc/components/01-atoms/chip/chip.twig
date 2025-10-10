@@ -37,7 +37,7 @@
         class="ct-chip__input"
         type="{% if is_multiple %}checkbox{% else %}radio{% endif %}"
         {% if is_selected %}checked="checked"{% endif %}
-        {% if attributes is defined %}{{- attributes -}}{% endif %}
+        {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
       >
       {{- content -}}
       {% if is_multiple %}
@@ -51,7 +51,7 @@
     <span
       class="ct-chip {{ modifier_class -}}"
       data-component-name="chip"
-      {% if attributes is defined %}{{- attributes -}}{% endif %}
+      {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
     >
       {{- content -}}
     </span>

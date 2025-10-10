@@ -37,7 +37,7 @@
     role="region"
     aria-label="{{ title|default('Slider') }}"
     aria-roledescription="carousel"
-    class="ct-slider {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+    class="ct-slider {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">

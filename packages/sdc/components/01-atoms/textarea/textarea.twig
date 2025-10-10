@@ -32,6 +32,6 @@
     {% if is_required %}required{% endif %}
     {% if is_invalid %}aria-invalid="true"{% endif %}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   />{{ value|default('') }}</textarea>
 {% endif %}

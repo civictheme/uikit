@@ -25,6 +25,6 @@
     alt="{{ alt }}"
     {% if width is not empty %}width="{{ width }}"{% endif %}
     {% if height is not empty %}height="{{ height }}"{% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   />
 {% endif %}

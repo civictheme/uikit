@@ -10,9 +10,9 @@
  * - items_per_page_title: [string] Items per page field title.
  * - items_per_page_name: [string] Items per page select field name.
  * - items_per_page_id: [string] Items per page select field ID.
- * - items_per_page_attributes: [string] Items per page select element attributes.
+ * - items_per_page_attributes: [Drupal\Core\Template\Attribute] Items per page select element attributes.
  * - use_ellipsis: [boolean] Whether ellipsis should be shown.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [object] Object containing pagination items.
  *   Each property contains:
@@ -50,12 +50,13 @@
 {% set items_per_page_title = items_per_page_title|default('Items per page') %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
+{% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
 
 {% if items is not empty %}
   <nav
     class="ct-pagination {{ modifier_class -}}" role="navigation"
     {% if heading_id is not empty %}aria-labelledby="{{ heading_id }}"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <h4 {% if heading_id is not empty %}id="{{ heading_id }}"{% endif %} class="ct-visually-hidden">{{ 'Pagination' }}</h4>
 
@@ -78,7 +79,6 @@
       {# Print first item if we are not on the first page. #}
       {% if items.first is not empty %}
         <li class="ct-pagination__item ct-pagination__item--first hide-xxs show-m">
-          {% set attributes = 'title="Go to first page"' %}
           {% include '@atoms/link/link.twig' with {
             theme: theme,
             text: items.first.text|default('First'),
@@ -86,7 +86,7 @@
             is_disabled: (current - 1) ? 0 : 1,
             icon: 'left-arrow',
             icon_placement: 'before',
-            attributes: attributes,
+            attributes: create_attribute({ 'title': 'Go to first page' }),
             modifier_class: 'ct-pagination__link',
           } only %}
         </li>
@@ -94,12 +94,6 @@
 
       {# Print previous item. #}
       <li class="ct-pagination__item ct-pagination__item--previous">
-        {% if current - 1 %}
-          {% set attributes = 'title="Go to previous page - page %s"'|format(current - 1) %}
-        {% else %}
-          {% set attributes = 'title="Go to previous page"' %}
-        {% endif %}
-
         {% include '@atoms/link/link.twig' with {
           theme: theme,
           text: items.previous.text|default('Prev'),
@@ -107,7 +101,7 @@
           is_disabled: (current - 1) ? 0 : 1,
           icon: 'left-arrow',
           icon_placement: 'before',
-          attributes: attributes,
+          attributes: (current - 1) ? create_attribute({ 'title': 'Go to previous page - page %s'|format(current - 1) }) : create_attribute({ 'title': 'Go to previous page' }),
           modifier_class: 'ct-pagination__link',
         } only %}
       </li>
@@ -124,11 +118,6 @@
         {% endif %}
 
         <li class="ct-pagination__item {% if current == key %}ct-pagination__item--active{% else %}hide-xxs show-m{% endif %}">
-          {% if current == key %}
-            {% set attributes = 'title="Current page"' %}
-          {% else %}
-            {% set attributes = 'title="Go to page %s of %s"'|format(key, items.pages|length) %}
-          {% endif %}
           {% include '@atoms/link/link.twig' with {
             theme: theme,
             text: key,
@@ -136,7 +125,7 @@
             hidden_text: current == key ? 'Current page' : 'Page',
             is_active: current == key ? 1 : 0,
             url: item.href,
-            attributes: attributes,
+            attributes: current == key ? create_attribute({ 'title': 'Current page' }) : create_attribute({ 'title': 'Go to page %s of %s'|format(key, items.pages|length) }),
             modifier_class: 'ct-pagination__item__link',
           } only %}
         </li>
@@ -153,12 +142,6 @@
 
       {# Print next item if we are not on the last page. #}
       <li class="ct-pagination__item ct-pagination__item--next">
-        {% if current < total_pages %}
-          {% set attributes = 'title="Go to next page - page %s"'|format(current + 1) %}
-        {% else %}
-          {% set attributes = 'title="Go to next page"' %}
-        {% endif %}
-
         {% include '@atoms/link/link.twig' with {
           theme: theme,
           text: items.next.text|default('Next'),
@@ -168,14 +151,13 @@
           is_disabled: (current < total_pages) ? 0 : 1,
           icon: 'right-arrow-2',
           icon_placement: 'after',
-          attributes: attributes,
+          attributes: current < total_pages ? create_attribute({ 'title': 'Go to next page - page %s'|format(current + 1) }) : create_attribute({ 'title': 'Go to next page' }),
           modifier_class: 'ct-pagination__link',
         } only %}
       </li>
 
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
-        {% set attributes = 'title="Go to last page"' %}
         <li class="ct-pagination__item ct-pagination__item--last hide-xxs show-m">
           {% include '@atoms/link/link.twig' with {
             theme: theme,
@@ -184,7 +166,7 @@
             is_disabled: (current < total_pages) ? 0 : 1,
             icon: 'right-arrow-2',
             icon_placement: 'after',
-            attributes: attributes,
+            attributes: create_attribute({ 'title': 'Go to last page' }),
             modifier_class: 'ct-pagination__link',
           } only %}
         </li>

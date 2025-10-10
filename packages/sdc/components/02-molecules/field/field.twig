@@ -86,7 +86,7 @@
     is_invalid: c.is_invalid is defined ? c.is_invalid : is_invalid,
     is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
     is_checked: c.is_checked is defined ? c.is_checked : false,
-    attributes: c.attributes is defined ? c.attributes : '',
+    attributes: c.attributes is defined and c.attributes is not null ? c.attributes : '',
     modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
   } %}
   {% set _controls = _controls|merge([c]) %}

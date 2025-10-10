@@ -32,7 +32,7 @@
 {% if items is not empty %}
   {% set title = title|default('Filter results by:') %}
 
-  <div class="ct-single-filter {{ modifier_class -}}" data-component-name="ct-single-filter" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-single-filter {{ modifier_class -}}" data-component-name="ct-single-filter" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
@@ -50,7 +50,7 @@
             {% for item in items %}
               {% set filter_item %}
                 {% if item.text is not empty %}
-                  {% set item_attributes = item.attributes is defined ? item.attributes : create_attribute({}) %}
+                  {% set item_attributes = item.attributes is defined and item.attributes is not null ? item.attributes : create_attribute({}) %}
                   {% if item_attributes.name is not defined %}
                     {% set multiple_name = is_multiple ? 'single-filter-' ~ loop.index : 'single-filter' %}
                     {% set item_name = item.name is defined ? item.name : multiple_name %}
@@ -71,7 +71,7 @@
               {% set filter_items = filter_items|merge([filter_item]) %}
             {% endfor %}
 
-            {% if form_attributes is defined %}
+            {% if form_attributes is defined and form_attributes is not null %}
               <form {{ form_attributes }}>
             {% endif %}
 
@@ -120,7 +120,7 @@
               {{ form_hidden_fields }}
             {% endif %}
 
-            {% if form_attributes is defined %}
+            {% if form_attributes is defined and form_attributes is not null %}
               </form>
             {% endif %}
           {% endblock %}

@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - vertical_spacing: [string] Navigation vertical spacing (top, bottom, or both).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [array] Menu items:
  *   Each item contains:
@@ -29,7 +29,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
-  <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% include '@organisms/skip-link/skip-link.twig' with {
       theme: theme,
       url: '#main-content',

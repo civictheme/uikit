@@ -30,7 +30,7 @@
           {% set position_class = 'ct-table-of-contents--position-%s'|format(position|default('before')) %}
           {% set modifier_class = '%s %s %s'|format(theme_class, position_class, modifier_class|default('')) %}
 
-          <div class="ct-table-of-contents {{ modifier_class }}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+          <div class="ct-table-of-contents {{ modifier_class }}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
             {% if title %}
               <h2 class="ct-table-of-contents__title">{{ title }}</h2>
             {% endif %}

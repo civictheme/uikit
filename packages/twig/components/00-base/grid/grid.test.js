@@ -1,3 +1,4 @@
+import DrupalAttribute from 'drupal-attribute';
 import jestEach from 'jest-each';
 
 const each = jestEach.default;
@@ -93,14 +94,14 @@ const dataProviderGrid = () => [
   {
     items: ['1'],
     use_container: true,
-    attributes: 'data-test="true"',
+    attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     modifier_class: 'custom-modifier',
     description: 'attributes and modifier class with container',
   },
   {
     items: ['1'],
     use_container: false,
-    attributes: 'data-test="true"',
+    attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     modifier_class: 'custom-modifier',
     description: 'attributes and modifier class without container',
   },
@@ -156,12 +157,12 @@ describe('Grid Row Fill Width', () => {
 describe('Grid Attributes and Modifier Class', () => {
   each([
     {
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
       use_container: true,
     },
     {
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
       use_container: false,
     },

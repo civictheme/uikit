@@ -18,7 +18,7 @@
 {% set level = level|default('2') %}
 
 {% if content %}
-  <h{{ level }} class="ct-heading {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <h{{ level }} class="ct-heading {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {{- content -}}
   </h{{ level }}>
 {% endif %}

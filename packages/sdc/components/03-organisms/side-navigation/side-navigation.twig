@@ -29,7 +29,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {% if items is not empty %}
-  <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-side-navigation {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% include 'civictheme:skip-link' with {
       theme: theme,
       url: '#main-content',

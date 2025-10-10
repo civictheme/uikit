@@ -57,7 +57,7 @@
 {% set filename = '%s %s'|format(filename_text, extension_text)|trim %}
 
 {% if file is not empty %}
-  <div class="ct-publication-card {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-publication-card {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block image_block %}
       {% if image.url is not empty %}
         <div class="ct-publication-card__image">

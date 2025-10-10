@@ -40,7 +40,7 @@
 {% set is_contained = is_contained is defined ? is_contained : true %}
 
 {% if title is not empty or content is not empty %}
-  <div class="ct-promo {{ modifier_class -}}" {% if attributes is defined %}{{- attributes -}}{% endif %}>
+  <div class="ct-promo {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% if is_contained %}
     <div class="container">
       <div class="row">

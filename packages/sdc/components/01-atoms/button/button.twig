@@ -53,7 +53,7 @@
     class="ct-button {{ modifier_class -}}"
     data-component-name="button"
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     {{- button_content -}}
   </button>
@@ -65,7 +65,7 @@
     {% if url %}href="{{ url }}"{% endif %}
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
     {% if is_new_window %}target="_blank"{% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     {{- button_content -}}
   </a>
@@ -76,6 +76,6 @@
     data-component-name="button"
     value="{{- text -}}"
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
-    {% if attributes is defined %}{{- attributes -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   />
 {% endif %}

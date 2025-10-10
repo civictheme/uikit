@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - is_multiple: [boolean] Whether to allow selection of multiple filter values.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -32,7 +32,7 @@
 {% if items is not empty %}
   {% set title = title|default('Filter results by:') %}
 
-  <div class="ct-single-filter {{ modifier_class -}}" data-component-name="ct-single-filter" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-single-filter {{ modifier_class -}}" data-component-name="ct-single-filter" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
@@ -40,7 +40,7 @@
           {% block content_top_block %}
             {% if content_top is not empty %}
               <div class="ct-single-filter__content-top">
-                {{- content_top|raw -}}
+                {{- content_top -}}
               </div>
             {% endif %}
           {% endblock %}
@@ -50,10 +50,12 @@
             {% for item in items %}
               {% set filter_item %}
                 {% if item.text is not empty %}
-                  {% set item_attributes = item.attributes is defined and item.attributes is not empty ? item.attributes : '' %}
-                  {% set multiple_name = is_multiple ? 'single-filter-' ~ loop.index : 'single-filter' %}
-                  {% set item_name = item.name is defined ? item.name : multiple_name %}
-                  {% set item_attributes = 'name' not in item_attributes ? item_attributes ~ ' name="' ~ item_name ~ '"' : item_attributes %}
+                  {% set item_attributes = item.attributes is defined and item.attributes is not null ? item.attributes : create_attribute({}) %}
+                  {% if item_attributes.name is not defined %}
+                    {% set multiple_name = is_multiple ? 'single-filter-' ~ loop.index : 'single-filter' %}
+                    {% set item_name = item.name is defined ? item.name : multiple_name %}
+                    {% do item_attributes.setAttribute('name', item_name) %}
+                  {% endif %}
                   {% include '@atoms/chip/chip.twig' with {
                     theme: theme,
                     kind: 'input',
@@ -69,7 +71,7 @@
               {% set filter_items = filter_items|merge([filter_item]) %}
             {% endfor %}
 
-            {% if form_attributes is not empty %}
+            {% if form_attributes is defined and form_attributes is not null %}
               <form {{ form_attributes }}>
             {% endif %}
 
@@ -94,7 +96,7 @@
                   text: submit_text|default('Apply filter'),
                   icon: 'approve',
                   icon_placement: 'after',
-                  attributes: 'type=submit',
+                  attributes: create_attribute({ 'type': 'submit' }),
                   modifier_class: 'ct-single-filter__submit',
                 } only %}
 
@@ -107,18 +109,18 @@
                     text: reset_text|default('Clear all'),
                     icon: 'close-outline',
                     icon_placement: 'after',
-                    attributes: 'type=submit',
+                    attributes: create_attribute({ 'type': 'submit' }),
                     modifier_class: 'ct-single-filter__submit',
                   } only %}
                 {% endif %}
               </div>
             </div>
 
-            {% if form_hidden_fields|trim is not empty %}
-              {{ form_hidden_fields|raw }}
+            {% if form_hidden_fields is defined %}
+              {{ form_hidden_fields }}
             {% endif %}
 
-            {% if form_attributes is not empty %}
+            {% if form_attributes is defined and form_attributes is not null %}
               </form>
             {% endif %}
           {% endblock %}
@@ -126,7 +128,7 @@
           {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-single-filter__content-bottom">
-                {{- content_bottom|raw -}}
+                {{- content_bottom -}}
               </div>
             {% endif %}
           {% endblock %}

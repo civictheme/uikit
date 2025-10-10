@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/side-navigation/side-navigation.twig';
 
 describe('Side Navigation Component', () => {
@@ -28,7 +30,7 @@ describe('Side Navigation Component', () => {
       ],
       title: 'Main Navigation',
       vertical_spacing: 'both',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'additional-class',
     });
 
