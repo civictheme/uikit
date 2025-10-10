@@ -86,7 +86,7 @@
             is_disabled: (current - 1) ? 0 : 1,
             icon: 'left-arrow',
             icon_placement: 'before',
-            attributes: create_attribute({ 'title': 'Go to first page' }),
+            attributes: create_attribute({title: 'Go to first page'}),
             modifier_class: 'ct-pagination__link',
           } only %}
         </li>
@@ -101,7 +101,7 @@
           is_disabled: (current - 1) ? 0 : 1,
           icon: 'left-arrow',
           icon_placement: 'before',
-          attributes: (current - 1) ? create_attribute({ 'title': 'Go to previous page - page %s'|format(current - 1) }) : create_attribute({ 'title': 'Go to previous page' }),
+          attributes: (current - 1) ? create_attribute({title: 'Go to previous page - page %s'|format(current - 1)}) : create_attribute({title: 'Go to previous page'}),
           modifier_class: 'ct-pagination__link',
         } only %}
       </li>
@@ -125,7 +125,7 @@
             hidden_text: current == key ? 'Current page' : 'Page',
             is_active: current == key ? 1 : 0,
             url: item.href,
-            attributes: current == key ? create_attribute({ 'title': 'Current page' }) : create_attribute({ 'title': 'Go to page %s of %s'|format(key, items.pages|length) }),
+            attributes: current == key ? create_attribute({title: 'Current page'}) : create_attribute({title: 'Go to page %s of %s'|format(key, items.pages|length)}),
             modifier_class: 'ct-pagination__item__link',
           } only %}
         </li>
@@ -151,7 +151,7 @@
           is_disabled: (current < total_pages) ? 0 : 1,
           icon: 'right-arrow-2',
           icon_placement: 'after',
-          attributes: current < total_pages ? create_attribute({ 'title': 'Go to next page - page %s'|format(current + 1) }) : create_attribute({ 'title': 'Go to next page' }),
+          attributes: current < total_pages ? create_attribute({title: 'Go to next page - page %s'|format(current + 1)}) : create_attribute({title: 'Go to next page'}),
           modifier_class: 'ct-pagination__link',
         } only %}
       </li>
@@ -166,7 +166,7 @@
             is_disabled: (current < total_pages) ? 0 : 1,
             icon: 'right-arrow-2',
             icon_placement: 'after',
-            attributes: create_attribute({ 'title': 'Go to last page' }),
+            attributes: create_attribute({title: 'Go to last page'}),
             modifier_class: 'ct-pagination__link',
           } only %}
         </li>

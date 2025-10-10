@@ -79,7 +79,7 @@
                     icon: 'left-arrow',
                     icon_placement: 'before',
                     modifier_class: 'ct-slider__controls__previous',
-                    attributes: create_attribute({ 'data-slider-previous': '' }),
+                    attributes: create_attribute({'data-slider-previous': ''}),
                   } only %}
                   {% include 'civictheme:button' with {
                     theme: theme,
@@ -88,7 +88,7 @@
                     icon: 'right-arrow-2',
                     icon_placement: 'after',
                     modifier_class: 'ct-slider__controls__next',
-                    attributes: create_attribute({ 'data-slider-next': '' }),
+                    attributes: create_attribute({'data-slider-next': ''}),
                   } only %}
                 </div>
 
@@ -96,7 +96,7 @@
                   theme: theme,
                   content: 'Slide 1',
                   modifier_class: 'ct-slider__controls__progress-indicator',
-                  attributes: create_attribute({ 'aria-live': 'polite', 'data-slider-progress': '' }),
+                  attributes: create_attribute({'aria-live': 'polite', 'data-slider-progress': ''}),
                 } only %}
               </div>
             {% endblock %}
