@@ -12,6 +12,12 @@
     @include ct-print-hide();
   }
 
+  &.ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right {
+    #{$root}__inner {
+      grid-template-rows: auto;
+    }
+  }
+
   &.ct-vertical-spacing--top {
     #{$root}.ct-vertical-spacing--top,
     #{$root}.ct-vertical-spacing--both {

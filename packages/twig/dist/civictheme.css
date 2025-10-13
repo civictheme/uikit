@@ -2871,6 +2871,9 @@ ul.row {
     display: none !important;
   }
 }
+.ct-layout.ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right .ct-layout__inner {
+  grid-template-rows: auto;
+}
 .ct-layout.ct-vertical-spacing--top .ct-layout.ct-vertical-spacing--top,
 .ct-layout.ct-vertical-spacing--top .ct-layout.ct-vertical-spacing--both {
   margin-top: 0;
