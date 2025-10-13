@@ -3,6 +3,7 @@
  */
 
 import Component from './layout.twig';
+import LayoutData from './layout.stories.data';
 
 const meta = {
   title: 'Base/Layout',
@@ -69,26 +70,7 @@ export const Layout = {
   parameters: {
     layout: 'padded',
   },
-  args: {
-    content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',
-    sidebar_top_left: '<div class="story-placeholder" contenteditable="true">sidebar_top_left</div>',
-    sidebar_top_right: '<div class="story-placeholder" contenteditable="true">sidebar_top_right</div>',
-    content: '<div class="story-placeholder" contenteditable="true">content</div>',
-    sidebar_bottom_left: '<div class="story-placeholder" contenteditable="true">sidebar_bottom_left</div>',
-    sidebar_bottom_right: '<div class="story-placeholder" contenteditable="true">sidebar_bottom_right</div>',
-    content_bottom: '<div class="story-placeholder" contenteditable="true">content_bottom</div>',
-    sidebar_top_left_attributes: '',
-    sidebar_top_right_attributes: '',
-    content_attributes: '',
-    sidebar_bottom_left_attributes: '',
-    sidebar_bottom_right_attributes: '',
-    hide_sidebar_left: false,
-    hide_sidebar_right: false,
-    is_contained: false,
-    vertical_spacing: 'none',
-    attributes: '',
-    modifier_class: '',
-  },
+  args: LayoutData.args(),
 };
 
 export const LayoutTopLeftSidebar = {
@@ -96,21 +78,10 @@ export const LayoutTopLeftSidebar = {
     layout: 'padded',
   },
   args: {
-    content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',
-    sidebar_top_left: '<div class="story-placeholder" contenteditable="true">sidebar_top_left</div>',
-    content: '<div class="story-placeholder" contenteditable="true">content</div>',
-    content_bottom: '<div class="story-placeholder" contenteditable="true">content_bottom</div>',
-    sidebar_top_left_attributes: '',
-    sidebar_top_right_attributes: '',
-    content_attributes: '',
-    sidebar_bottom_left_attributes: '',
-    sidebar_bottom_right_attributes: '',
-    hide_sidebar_left: false,
-    hide_sidebar_right: false,
-    is_contained: false,
-    vertical_spacing: 'none',
-    attributes: '',
-    modifier_class: '',
+    ...LayoutData.args(),
+    sidebar_top_right: '',
+    sidebar_bottom_left: '',
+    sidebar_bottom_right: '',
   },
 };
 
@@ -119,21 +90,10 @@ export const LayoutBottomLeftSidebar = {
     layout: 'padded',
   },
   args: {
-    content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',
-    sidebar_bottom_left: '<div class="story-placeholder" contenteditable="true">sidebar_bottom_left</div>',
-    content: '<div class="story-placeholder" contenteditable="true">content</div>',
-    content_bottom: '<div class="story-placeholder" contenteditable="true">content_bottom</div>',
-    sidebar_top_left_attributes: '',
-    sidebar_top_right_attributes: '',
-    content_attributes: '',
-    sidebar_bottom_left_attributes: '',
-    sidebar_bottom_right_attributes: '',
-    hide_sidebar_left: false,
-    hide_sidebar_right: false,
-    is_contained: false,
-    vertical_spacing: 'none',
-    attributes: '',
-    modifier_class: '',
+    ...LayoutData.args(),
+    sidebar_top_left: '',
+    sidebar_top_right: '',
+    sidebar_bottom_right: '',
   },
 };
 
@@ -142,21 +102,10 @@ export const LayoutTopRightSidebar = {
     layout: 'padded',
   },
   args: {
-    content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',
-    sidebar_top_right: '<div class="story-placeholder" contenteditable="true">sidebar_top_right</div>',
-    content: '<div class="story-placeholder" contenteditable="true">content</div>',
-    content_bottom: '<div class="story-placeholder" contenteditable="true">content_bottom</div>',
-    sidebar_top_left_attributes: '',
-    sidebar_top_right_attributes: '',
-    content_attributes: '',
-    sidebar_bottom_left_attributes: '',
-    sidebar_bottom_right_attributes: '',
-    hide_sidebar_left: false,
-    hide_sidebar_right: false,
-    is_contained: false,
-    vertical_spacing: 'none',
-    attributes: '',
-    modifier_class: '',
+    ...LayoutData.args(),
+    sidebar_top_left: '',
+    sidebar_bottom_left: '',
+    sidebar_bottom_right: '',
   },
 };
 
@@ -165,21 +114,10 @@ export const LayoutBottomRightSidebar = {
     layout: 'padded',
   },
   args: {
-    content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',
-    sidebar_bottom_right: '<div class="story-placeholder" contenteditable="true">sidebar_bottom_right</div>',
-    content: '<div class="story-placeholder" contenteditable="true">content</div>',
-    content_bottom: '<div class="story-placeholder" contenteditable="true">content_bottom</div>',
-    sidebar_top_left_attributes: '',
-    sidebar_top_right_attributes: '',
-    content_attributes: '',
-    sidebar_bottom_left_attributes: '',
-    sidebar_bottom_right_attributes: '',
-    hide_sidebar_left: false,
-    hide_sidebar_right: false,
-    is_contained: false,
-    vertical_spacing: 'none',
-    attributes: '',
-    modifier_class: '',
+    ...LayoutData.args(),
+    sidebar_top_left: '',
+    sidebar_top_right: '',
+    sidebar_bottom_left: '',
   },
 };
 
@@ -188,14 +126,10 @@ export const LayoutNoSidebars = {
     layout: 'padded',
   },
   args: {
-    content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',
-    content: '<div class="story-placeholder" contenteditable="true">content</div>',
-    content_bottom: '<div class="story-placeholder" contenteditable="true">content_bottom</div>',
-    hide_sidebar_left: false,
-    hide_sidebar_right: false,
-    is_contained: false,
-    vertical_spacing: 'none',
-    attributes: '',
-    modifier_class: '',
+    ...LayoutData.args(),
+    sidebar_top_left: '',
+    sidebar_top_right: '',
+    sidebar_bottom_left: '',
+    sidebar_bottom_right: '',
   },
 };
