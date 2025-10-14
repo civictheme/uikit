@@ -13,7 +13,7 @@
   }
 
   &.ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right {
-    #{$root}__inner {
+    & > #{$root}__inner {
       grid-template-rows: auto;
     }
   }
