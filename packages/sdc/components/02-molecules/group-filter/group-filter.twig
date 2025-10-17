@@ -14,6 +14,20 @@
  *   - content: [string] Filter content.
  * - submit_text: [string] Text on the submit button.
  * - group_id: [string] Unique ID for filter group.
+ * - show_selected_filters: [boolean] Enable the seleted filters list below the filter fields.
+ * - selected_title: [string] Text on the Selected filers label.
+ * - selected_filters: [array] Selected filter object:
+ *   Each item contains:
+ *   - text: [string] Filter title.
+ *   - url: [string] URL to remove the selected filter.
+ *   - label: [string] ARIA Label used to describe the selected filter.
+ * - selected_clear_link: [object] 
+ *   Each property contains:
+ *   - type: [string] Type of button to use.
+ *   - icon: [string] Icon to use in the button.
+ *   - icon_placement: [string] Icon position (before or after).
+ *   - text: [string] Button text.
+ *   - url: [string] URL for the button. Should remove clear links on navigation.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *

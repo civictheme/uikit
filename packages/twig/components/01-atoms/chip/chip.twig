@@ -5,15 +5,15 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - kind: [string] Chip kind (default, input).
+ * - kind: [string] Chip kind (default, input, link).
  * - size: [string] Chip size (large, regular, small).
  * - content: [string] Chip text.
- * - url: [string] Chip URL.
+ * - url: [string] URL if kind = link.
+ * - label: [string] Aria Label if kind = link.
  * - is_selected: [boolean] Whether the chip is selected (for filter chips).
- * - is_disabled: [boolean] Disabled or not.
- * - is_dismissible: [boolean] Can be dismissed or not.
- * - is_multiple: [boolean] Whether multiple selection is allowed.
- * - group_parent: [string] Additional parent selector for radio group.
+ * - is_multiple: [boolean] Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
+ * - is_dismissible: [boolean] Whether close icon should display when not kind is not input and not multiple.
+ * - group_parent: [string] Additional parent selector for radio group when kind = input.
  * - attributes: [string] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
@@ -29,6 +29,14 @@
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, kind_class, size_class, selected_class, multiple_class, modifier_class|default('')) %}
 
 {% if content is not empty %}
+  {%- set text_content -%}
+    {%- include '@base/text-icon/text-icon.twig' with {
+      text: content,
+      icon: is_dismissible or is_multiple ? 'cancel' : null,
+      icon_placement: 'after',
+      icon_class: 'ct-chip__dismiss',
+    } only -%}
+  {%- endset -%}
   {% if kind == 'input' %}
     <label
       class="ct-chip {{ modifier_class -}}"
@@ -42,35 +50,23 @@
         {% if is_selected %}checked="checked"{% endif %}
         {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
       >
-      {{- content -}}
-      {% if is_multiple %}
-        {% include '@base/icon/icon.twig' with {
-          symbol: 'cancel',
-          modifier_class: 'ct-chip__dismiss',
-        } only %}
-      {% endif %}
+      {{- text_content -}}
     </label>
-  {% elseif kind == 'link' %}
+  {% elseif kind == 'link' and url is not empty %}
     <a
       href="{{ url }}"
       class="ct-chip {{ modifier_class -}}"
-      alt="{{ label }}"
+      {% if label is not empty%}aria-label="{{ label }}"{% endif %}
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
-      {{- content -}}
-      {% if is_dismissible %}
-        {% include '@base/icon/icon.twig' with {
-          symbol: 'cancel',
-          modifier_class: 'ct-chip__dismiss',
-        } only %}
-      {% endif %}
+      {{- text_content -}}
     </a>
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
-      {{- content -}}
+      {{- text_content -}}
     </span>
   {% endif %}
 {% endif %}
