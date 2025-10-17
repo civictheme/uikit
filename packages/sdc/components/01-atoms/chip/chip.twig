@@ -26,6 +26,14 @@
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, kind_class, size_class, selected_class, multiple_class, modifier_class|default('')) %}
 
 {% if content is not empty %}
+  {%- set text_content -%}
+    {%- include 'civictheme:text-icon' with {
+      text: content,
+      icon: is_dismissible or is_multiple ? 'cancel' : null,
+      icon_placement: 'after',
+      icon_class: 'ct-chip__dismiss',
+    } only -%}
+  {%- endset -%}
   {% if kind == 'input' %}
     <label
       class="ct-chip {{ modifier_class -}}"
@@ -39,35 +47,23 @@
         {% if is_selected %}checked="checked"{% endif %}
         {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
       >
-      {{- content -}}
-      {% if is_multiple %}
-        {% include 'civictheme:icon' with {
-          symbol: 'cancel',
-          modifier_class: 'ct-chip__dismiss',
-        } only %}
-      {% endif %}
+      {{- text_content -}}
     </label>
-  {% elseif kind == 'link' %}
+  {% elseif kind == 'link' and url is not empty %}
     <a
       href="{{ url }}"
       class="ct-chip {{ modifier_class -}}"
-      alt="{{ label }}"
+      {% if label is not empty%}aria-label="{{ label }}"{% endif %}
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
-      {{- content -}}
-      {% if is_dismissible %}
-        {% include 'civictheme:icon' with {
-          symbol: 'cancel',
-          modifier_class: 'ct-chip__dismiss',
-        } only %}
-      {% endif %}
+      {{- text_content -}}
     </a>
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
-      {{- content -}}
+      {{- text_content -}}
     </span>
   {% endif %}
 {% endif %}

@@ -49,6 +49,61 @@ props:
       type: string
       title: Group ID
       description: Unique ID for filter group.
+    show_selected_filters:
+      type: boolean
+      title: Show selected filters
+      description: Enable the seleted filters list below the filter fields.
+    selected_title:
+      type: string
+      title: Selected title
+      description: Text on the Selected filers label.
+      default: 'Selected filters:'
+    selected_filters:
+      type: array
+      title: Selected filters
+      description: Selected filter object.
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            title: Title
+            description: Filter title.
+          url:
+            type: string
+            title: URL
+            description: URL to remove the selected filter.
+          label:
+            type: string
+            title: Content
+            description: ARIA Label used to describe the selected filter.
+    selected_clear_link:
+      type: object
+      properties:
+        type:
+          type: string
+          title: Type
+          description: Type of button to use.
+          default: 'secondary'
+        icon:
+          type: string
+          title: Icon
+          description: Icon to use in the button.
+          default: 'close-outline'
+        icon_placement:
+          type: string
+          title: Icon placement
+          description: Icon position (before or after).
+          default: 'after'
+        text:
+          type: string
+          title: Text
+          description: Button text.
+          default: 'Clear all'
+        url:
+          type: string
+          title: URL
+          description: URL for the button. Should remove clear links on navigation.
     attributes:
       type: string
       title: Attributes

@@ -22,11 +22,11 @@
 .ct-chip:focus-visible .ct-text-icon__text {
   text-decoration: none;
 }
-.ct-chip .ct-chip__dismiss {
+.ct-chip--multiple .ct-chip__dismiss {
   display: none;
 }
-.ct-chip .ct-chip__input[checked] + .ct-chip__dismiss {
-  display: inline;
+.ct-chip--multiple:has(.ct-chip__input[checked]) .ct-chip__dismiss {
+  display: initial;
 }
 .ct-chip {
   display: inline-block;

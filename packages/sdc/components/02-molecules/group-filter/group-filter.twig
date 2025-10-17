@@ -39,7 +39,7 @@
     data-component-name="ct-group-filter"
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   >
-    <div class="container" data-group-filter-element>
+    <div class="ct-group-filter__filter-controls" data-group-filter-element>
       <div class="row">
         <div class="col-xxs-12">
 
@@ -97,11 +97,11 @@
                   {% include 'civictheme:button' with {
                     theme: theme,
                     kind: 'button',
-                    type: 'secondary',
+                    type: 'primary',
                     size: 'small',
                     text: submit_text|default('Apply filters'),
                     icon: 'approve',
-                    icon_placement: 'before',
+                    icon_placement: 'after',
                     attributes: 'type=submit',
                     modifier_class: 'ct-group-filter__submit',
                   } only %}
@@ -128,5 +128,51 @@
         </div>
       </div>
     </div>
+
+    {% if show_selected_filters %}
+      <div class="ct-group-filter__selected-filter-controls">
+        <div class="ct-group-filter__selected-active-filters">
+          <div class="ct-group-filter__selected-title">
+            {{- selected_title|default('Selected filters:') -}}
+          </div>
+          {% set selected_items = [] %}
+          {% for selected_filter in selected_filters %}
+            {% set selected_filter_item %}
+              {% include 'civictheme:chip' with {
+                kind: 'link',
+                theme: theme,
+                content: selected_filter.text,
+                is_dismissible: true,
+                is_selected: true,
+                url: selected_filter.url,
+                size: 'small',
+                label: selected_filter.label|default('Selected filter: ' ~ selected_filter.text ~ ' - Click to remove filter.'),
+              } only %}
+            {% endset %}
+            {% set selected_items = selected_items|merge([selected_filter_item]) %}
+          {% endfor %}
+          {% include 'civictheme:item-list' with {
+            direction: 'horizontal',
+            size: 'small',
+            items: selected_items,
+            modifier_class: 'ct-group-filter__selected-list',
+          } only %}
+        </div>
+        {% if selected_clear_link %}
+          <div class="ct-group-filter__selected-clear">
+            {% include 'civictheme:button' with {
+              theme: theme,
+              kind: 'link',
+              type: selected_clear_link.type|default('secondary'),
+              size: 'small',
+              icon: selected_clear_link.icon|default('close-outline'),
+              icon_placement: selected_clear_link.icon_placement|default('after'),
+              text: selected_clear_link.text|default('Clear all'),
+              url: selected_clear_link.url,
+            } only %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 {% endif %}

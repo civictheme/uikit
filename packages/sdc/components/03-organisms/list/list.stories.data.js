@@ -28,6 +28,7 @@ export default {
     const defaultData = components[component].data;
     const itemData = options.items || Array.from(Array(6), () => ({}));
     const items = itemData.map((data) => render({ ...defaultData, ...data }));
+    const groupOptions = options.selectedFilters === true ? { selectedFilters: true } : undefined;
     return {
       theme,
       title: 'My List Title',
@@ -39,23 +40,7 @@ export default {
         is_external: false,
       },
       content: 'Example content',
-      filters: options.group ? GroupFilter(GroupFilterData.args(theme)) : SingleFilter(SingleFilterData.args(theme)),
-      selected_filters: options.group ? [
-        { text: 'Filter 1', url: '#', label: 'Remove filter: Filter 1' },
-        { text: 'Filter 2', url: '#', label: 'Remove filter: Filter 2' },
-        { text: 'Filter 3', url: '#', label: 'Remove filter: Filter 3' },
-        { text: 'Filter 4', url: '#', label: 'Remove filter: Filter 4' },
-        { text: 'Filter 5', url: '#', label: 'Remove filter: Filter 5' },
-        { text: 'Filter 6', url: '#', label: 'Remove filter: Filter 6' },
-        { text: 'Filter 7', url: '#', label: 'Remove filter: Filter 7' },
-        { text: 'Filter 8', url: '#', label: 'Remove filter: Filter 8' },
-        { text: 'Filter 9', url: '#', label: 'Remove filter: Filter 9' },
-        { text: 'Filter 10', url: '#', label: 'Remove filter: Filter 10' },
-      ] : [],
-      selected_filters_clear_link: {
-        text: 'Clear all',
-        url: '#',
-      },
+      filters: options.group ? GroupFilter(GroupFilterData.args(theme, groupOptions)) : SingleFilter(SingleFilterData.args(theme)),
       results_count: 'Showing 1 of 6',
       rows_above: Paragraph({
         theme,

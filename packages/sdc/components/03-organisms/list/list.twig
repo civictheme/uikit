@@ -45,7 +45,6 @@
  * - content_block
  * - list_block
  * - filters_block
- * - selected_filters
  * - rows_block
  * - rows_above_block
  * - results_count_block
@@ -136,25 +135,6 @@
                   {{ filters|raw }}
                 </div>
               </div>
-            </div>
-          </div>
-        {% endif %}
-      {% endblock %}
-
-      {% block selected_filters %}
-        {% if selected_filters -%}
-          <div class="ct-list__selected-filters">
-            <div class="container">
-                <div class="row">
-                  <div class="col-xxs-12">
-                    {% include 'civictheme:selected-filters' with {
-                      theme: theme,
-                      title: 'Selected filters:'|t,
-                      filters: selected_filters,
-                      clear_link: selected_filters_clear_link,
-                    } only %}
-                  </div>
-                </div>
             </div>
           </div>
         {% endif %}
