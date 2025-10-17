@@ -108,7 +108,7 @@
 
     <{{ field_wrapper }} class="ct-field__wrapper">
       {% if title is not empty and title_display != 'hidden' and type in ['checkbox', 'radio'] %}
-        {% include '@atoms/label/label.twig' with {
+        {% include 'civictheme:label' with {
           theme: theme,
           tag: 'legend',
           content: title,
