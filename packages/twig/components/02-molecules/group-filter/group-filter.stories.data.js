@@ -7,7 +7,7 @@ export default {
     if (options.selectedFilters) {
       selectedFilters = {
         show_selected_filters: true,
-        selected_title: 'Selected filters: ',
+        selected_title: 'Selected filters:',
         selected_filters: [
           {
             text: 'Option A',
