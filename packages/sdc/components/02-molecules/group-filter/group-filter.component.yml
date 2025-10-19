@@ -79,6 +79,8 @@ props:
             description: ARIA Label used to describe the selected filter.
     selected_clear_link:
       type: object
+      title: Selected clear link
+      description: A link to clear all selected filters.
       properties:
         type:
           type: string

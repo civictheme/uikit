@@ -56,7 +56,7 @@
     <a
       href="{{ url }}"
       class="ct-chip {{ modifier_class -}}"
-      {% if label is not empty%}aria-label="{{ label }}"{% endif %}
+      {% if label is not empty %}aria-label="{{ label }}"{% endif %}
       {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
     >
       {{- text_content -}}
