@@ -47,13 +47,13 @@
 
           {% block map_block %}
             <div class="ct-map__canvas">
-              {% set attributes = 'allowfullscreen data-chromatic="ignore"' %}
+              {% set iframe_attributes = create_attribute({allowfullscreen: '', 'data-chromatic': 'ignore'}) %}
               {% if address is not empty %}
-                {% set attributes = attributes ~ 'title="' ~ address ~ '"' %}
+                {% do iframe_attributes.setAttribute('title', address) %}
               {% endif %}
               {% include 'civictheme:iframe' with {
                 url: url,
-                attributes: attributes,
+                attributes: iframe_attributes,
                 modifier_class: 'ct-map__iframe',
               } only %}
             </div>
