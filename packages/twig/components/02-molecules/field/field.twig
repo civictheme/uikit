@@ -8,6 +8,7 @@
  * - type: [string] Type defined by a control type (required).
  * - title: [string] Field title.
  * - title_display: [string] How to display the field title (visible, invisible, hidden).
+ * - title_size: [string] The size of the title (extra-small, small, regular, large, extra-large).
  * - label: [string] Control label (required only for a radio group or checkbox).
  * - description: [string] Field description.
  * - name: [string] Control DOM name (propagated from `name` if not defined).
@@ -99,6 +100,7 @@
       {% include '@atoms/label/label.twig' with {
         theme: theme,
         content: label is not empty ? label : title,
+        size: title_size|default('regular'),
         is_required: is_required,
         required_text: required_text,
         for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,

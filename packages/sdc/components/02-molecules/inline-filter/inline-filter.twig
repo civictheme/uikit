@@ -5,7 +5,6 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - title: [string] Title to display above inline items.
  * - submit_text: [string] The text of the submit button.
  * - modifier_class: [string] Additional CSS classes.
  * - attributes: [string] Additional HTML attributes.
@@ -19,14 +18,11 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-inline-filter {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-  {% if title is not empty %}
-    <div class="ct-inline-filter__title">{{ title }}</div>
-  {% endif %}
+<div class="ct-inline-filter {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes -}}{% endif %}>
   <div class="ct-inline-filter__content">
     {% if items is not empty %}
       <div class="ct-inline-filter__items">
-        {{ items|raw }}
+        {{ items }}
         <div class="ct-inline-filter__actions">
           {% include 'civictheme:button' with {
             theme: theme,
@@ -41,7 +37,7 @@
     {% endif %}
     {% if items_end is not empty %}
       <div class="ct-inline-filter__items-end">
-        {{ items_end|raw }}
+        {{ items_end }}
       </div>
     {% endif %}
   </div>

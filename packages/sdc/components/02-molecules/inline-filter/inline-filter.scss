@@ -9,10 +9,6 @@
   flex-direction: column;
   gap: ct-spacing(3);
 
-  &__title {
-    @include ct-typography('heading-2');
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -48,6 +44,10 @@
 
   .ct-field {
     margin-bottom: 0;
+  }
+
+  .ct-label--extra-large {
+    margin-bottom: ct-spacing(2);
   }
 
   @include ct-component-theme($root) using($root, $theme) {

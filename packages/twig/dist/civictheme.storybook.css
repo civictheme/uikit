@@ -7466,13 +7466,6 @@ ol ol ol {
   flex-direction: column;
   gap: 1.5rem;
 }
-.ct-inline-filter__title {
-  font-size: var(--ct-typography-heading-2-font-size);
-  line-height: var(--ct-typography-heading-2-line-height);
-  font-family: var(--ct-typography-heading-2-font-name);
-  font-weight: var(--ct-typography-heading-2-font-weight);
-  letter-spacing: var(--ct-typography-heading-2-letter-spacing);
-}
 .ct-inline-filter__content {
   display: flex;
   flex-direction: column;
@@ -7507,6 +7500,9 @@ ol ol ol {
 }
 .ct-inline-filter .ct-field {
   margin-bottom: 0;
+}
+.ct-inline-filter .ct-label--extra-large {
+  margin-bottom: 1rem;
 }
 .ct-inline-filter.ct-theme-light .ct-inline-filter__title {
   color: var(--ct-inline-filter-light-title-color);
