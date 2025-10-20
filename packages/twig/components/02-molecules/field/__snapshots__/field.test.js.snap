@@ -20,7 +20,7 @@ exports[`Field Component Field Component - empty title with textfield renders 0 
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -64,7 +64,7 @@ exports[`Field Component Field Component - hidden title with hidden input render
       class="ct-field__wrapper"
     >
       
-      
+            
       
                               
 
@@ -107,7 +107,7 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -160,7 +160,7 @@ exports[`Field Component Field Component - invisible title with textfield render
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -204,7 +204,7 @@ exports[`Field Component Field Component - visible title with hidden input rende
       class="ct-field__wrapper"
     >
       
-      
+            
       
                               
 
@@ -256,7 +256,7 @@ exports[`Field Component Field Component - visible title with textfield renders 
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -311,7 +311,7 @@ exports[`Field Component default input 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
                               
 
@@ -356,7 +356,7 @@ exports[`Field Component default values 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
                               
 
@@ -399,7 +399,7 @@ exports[`Field Component field messages custom message renders correctly when me
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -475,12 +475,13 @@ exports[`Field Component field messages default message renders when field is in
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
   
       <input
+        aria-invalid="true"
         class="ct-textfield ct-theme-light ct-textfield--is-invalid ct-field__control"
         name="testname"
         type="text"
@@ -559,12 +560,13 @@ exports[`Field Component field messages default message renders when message obj
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
   
       <input
+        aria-invalid="true"
         class="ct-textfield ct-theme-light ct-textfield--is-invalid ct-field__control"
         name="testname"
         type="text"
@@ -635,22 +637,22 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical    "
   >
     
-          
-
-
-    <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
-    >
-      
-  Test Title  
-    </label>
-        
     
-    <div
+    
+    <fieldset
       class="ct-field__wrapper"
     >
       
-      
+              
+
+
+      <legend
+        class="ct-label ct-theme-light ct-label--regular  ct-field__title"
+      >
+        
+  Test Title  
+      </legend>
+                  
       
       
                                                                                 
@@ -726,7 +728,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
       
       
           
-    </div>
+    </fieldset>
     
   
   </div>
@@ -767,7 +769,7 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -811,22 +813,22 @@ exports[`Field Component multiple control as array propagation with mixed levels
     data-test-parent="true"
   >
     
-          
-
-
-    <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
-    >
-      
-  Test Title  
-    </label>
-        
     
-    <div
+    
+    <fieldset
       class="ct-field__wrapper"
     >
       
-      
+              
+
+
+      <legend
+        class="ct-label ct-theme-light ct-label--regular  ct-field__title"
+      >
+        
+  Test Title  
+      </legend>
+                  
       
       
                                                                                 
@@ -900,7 +902,7 @@ exports[`Field Component multiple control as array propagation with mixed levels
       
       
           
-    </div>
+    </fieldset>
     
   
   </div>
@@ -938,22 +940,22 @@ exports[`Field Component radio 1`] = `
     class="ct-field ct-theme-light ct-field--radio ct-field--vertical    "
   >
     
-          
-
-
-    <label
-      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
-    >
-      
-  Test Title  
-    </label>
-        
     
-    <div
+    
+    <fieldset
       class="ct-field__wrapper"
     >
       
-      
+              
+
+
+      <legend
+        class="ct-label ct-theme-light ct-label--regular  ct-field__title"
+      >
+        
+  Test Title  
+      </legend>
+                  
       
       
                                                                                 
@@ -1029,7 +1031,7 @@ exports[`Field Component radio 1`] = `
       
       
           
-    </div>
+    </fieldset>
     
   
   </div>
@@ -1058,7 +1060,7 @@ exports[`Field Component required, disabled, and description 1`] = `
       class="ct-field__wrapper"
     >
       
-                      
+                            
                 
         
 
@@ -1126,7 +1128,7 @@ exports[`Field Component select 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -1183,7 +1185,7 @@ exports[`Field Component single control as array propagation 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -1240,7 +1242,7 @@ exports[`Field Component single control as object propagation 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -1304,12 +1306,13 @@ exports[`Field Component textarea with all attributes 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
   
       <textarea
+        aria-invalid="true"
         class="ct-textarea ct-theme-light ct-textarea--is-invalid ct-field__control"
         id="testid"
         name="testname"
@@ -1397,7 +1400,7 @@ exports[`Field Component textfield 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
@@ -1443,12 +1446,13 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
               
 
   
       <input
+        aria-invalid="true"
         class="ct-textfield ct-theme-dark ct-textfield--is-invalid ct-field__control"
         name="testname"
         type="text"
@@ -1518,7 +1522,7 @@ exports[`Field Component values 1`] = `
       class="ct-field__wrapper"
     >
       
-      
+            
       
                               
 

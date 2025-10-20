@@ -30,6 +30,7 @@
     {% if id %}id="{{ id }}"{% endif %}
     {% if is_disabled %}disabled{% endif %}
     {% if is_required %}required{% endif %}
+    {% if is_invalid %}aria-invalid="true"{% endif %}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
     {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
   />{{ value|default('') }}</textarea>

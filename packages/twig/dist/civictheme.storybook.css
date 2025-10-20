@@ -7331,6 +7331,11 @@ ol ol ol {
 .ct-field:not(:last-child) {
   margin-bottom: 1rem;
 }
+.ct-field.ct-field--radio .ct-field__wrapper, .ct-field.ct-field--checkbox .ct-field__wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
 .ct-field > *:not(:last-child), .ct-field__wrapper > *:not(:last-child) {
   margin-bottom: 0.5rem;
 }

@@ -82,7 +82,7 @@
     placeholder: placeholder is defined ? placeholder : '',
     is_required: c.is_required is defined ? c.is_required : is_required,
     required_text: c.required_text ? c.required_text : required_text,
-    is_invalid: is_invalid,
+    is_invalid: c.is_invalid is defined ? c.is_invalid : is_invalid,
     is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
     is_checked: c.is_checked is defined ? c.is_checked : false,
     attributes: c.attributes is defined ? c.attributes : '',
@@ -91,10 +91,11 @@
   {% set _controls = _controls|merge([c]) %}
 {% endfor %}
 {% set control = _controls %}
+{% set field_wrapper = type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 
 {% if control[0].name is defined %}
   <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
-    {% if title is not empty and title_display != 'hidden' and type != 'hidden' %}
+    {% if title is not empty and title_display != 'hidden' and type not in ['hidden', 'checkbox', 'radio'] %}
       {% include '@atoms/label/label.twig' with {
         theme: theme,
         content: label is not empty ? label : title,
@@ -105,7 +106,17 @@
       } only %}
     {% endif %}
 
-    <div class="ct-field__wrapper">
+    <{{ field_wrapper }} class="ct-field__wrapper">
+      {% if title is not empty and title_display != 'hidden' and type in ['checkbox', 'radio'] %}
+        {% include '@atoms/label/label.twig' with {
+          theme: theme,
+          tag: 'legend',
+          content: title,
+          is_required: is_required,
+          for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
+          modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
+        } only %}
+      {% endif %}
       {% if (description) and type != 'hidden' %}
         {% set error_message = 'Field has an error' %}
         {% if label is not empty %}
@@ -190,6 +201,6 @@
           attributes: message.attributes|default(''),
         } only %}
       {% endif %}
-    </div>
+    </{{ field_wrapper }}>
   </div>
 {% endif %}
