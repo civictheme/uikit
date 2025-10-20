@@ -53,7 +53,7 @@ props:
     is_dismissible:
       type: boolean
       title: Dismissable
-      description: Whether close icon should display when not kind is not input and not multiple.
+      description: Whether close icon should display when kind is not input, and is_multiple is false.
     group_parent:
       type: string
       title: Group parent
