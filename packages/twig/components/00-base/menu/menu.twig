@@ -33,7 +33,7 @@
 
 {% import _self as menus %}
 
-{% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
+{% macro menu_links(items, menu_level, modifier_class, theme, is_collapsible, menu_level_modifier_class) %}
   {% if items %}
     {% if menu_level == 0 %}
       <ul class="ct-menu ct-menu--level-{{- menu_level }} {{ modifier_class -}} " data-component-name="ct-menu" {{- attributes|default('') -}}>
@@ -97,7 +97,7 @@
         {% endif %}
 
         {% if item.below %}
-          {{- menus.menu_links_below(item.below, menu_level + 1, '', theme, is_collapsible, key) -}}
+          {{- menus.menu_links_below(item.below, menu_level + 1, '', theme, is_collapsible, menu_level_modifier_class) -}}
         {% endif %}
 
       </li>
@@ -120,8 +120,8 @@ clone this whole file and override it as required.
 The main macro is split into multiple macros to allow to override only the
 required parts while preserving (cloned) main generation macro.
 #}
-{% macro menu_links_below(items, menu_level, modifier_class, theme, is_collapsible, parent_key) %}
-  {{ menus.menu_links(items, menu_level, modifier_class, theme, is_collapsible, parent_key) }}
+{% macro menu_links_below(items, menu_level, modifier_class, theme, is_collapsible, menu_level_modifier_class) %}
+  {{ menus.menu_links(items, menu_level, modifier_class, theme, is_collapsible, menu_level_modifier_class) }}
 {% endmacro %}
 
-{{ menus.menu_links(items, 0, modifier_class, theme, is_collapsible) }}
+{{ menus.menu_links(items, 0, modifier_class, theme, is_collapsible, menu_level_modifier_class) }}
