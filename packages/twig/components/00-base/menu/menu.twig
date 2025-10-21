@@ -46,7 +46,7 @@
         <ul class="ct-menu ct-menu__sub-menu ct-menu--level-{{- menu_level }} {{ menu_level_modifier_class[menu_level]|default('') }}">
     {% endif %}
 
-    {% for key, item in items %}
+    {% for item in items %}
       {% set item_classes = [
         'ct-menu__item',
         'ct-menu__item--level-' ~ menu_level,
