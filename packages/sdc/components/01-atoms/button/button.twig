@@ -45,9 +45,9 @@
       } only -%}
     {% endset %}
     {% if icon_placement == 'before' %}
-      {{- icon_markup -}}{{ text|raw }}
+      {{- icon_markup -}}{{ text }}
     {% else %}
-      {{ text|raw }}{{- icon_markup -}}
+      {{ text }}{{- icon_markup -}}
     {% endif %}
   {%- else -%}
     {%- include 'civictheme:text-icon' with {
