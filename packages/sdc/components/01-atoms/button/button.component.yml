@@ -66,6 +66,10 @@ props:
       type: string
       title: URL
       description: URL for the link button.
+    allow_html:
+      type: boolean
+      title: Allow HTML
+      description: Allow HTML in text.
     is_new_window:
       type: boolean
       title: New window
