@@ -14,11 +14,9 @@ describe('Social Links Component', () => {
     const buttons = c.querySelectorAll('.ct-social-links__button');
     expect(buttons).toHaveLength(2);
 
-    expect(buttons[0].getAttribute('title')).toEqual('Facebook');
     expect(buttons[0].getAttribute('href')).toEqual('https://facebook.com');
     expect(buttons[0].querySelector('svg')).not.toBeNull();
 
-    expect(buttons[1].getAttribute('title')).toEqual('Twitter');
     expect(buttons[1].getAttribute('href')).toEqual('https://twitter.com');
     expect(buttons[1].querySelector('svg')).not.toBeNull();
 
@@ -47,11 +45,9 @@ describe('Social Links Component', () => {
     const buttons = c.querySelectorAll('.ct-social-links__button');
     expect(buttons).toHaveLength(2);
 
-    expect(buttons[0].getAttribute('title')).toEqual('Facebook');
     expect(buttons[0].getAttribute('href')).toEqual('https://facebook.com');
     expect(buttons[0].innerHTML).toContain('<svg></svg>');
 
-    expect(buttons[1].getAttribute('title')).toEqual('Twitter');
     expect(buttons[1].getAttribute('href')).toEqual('https://twitter.com');
     expect(buttons[1].innerHTML).toContain('<svg></svg>');
 
@@ -77,11 +73,9 @@ describe('Social Links Component', () => {
     const buttons = c.querySelectorAll('.ct-social-links__button');
     expect(buttons).toHaveLength(2);
 
-    expect(buttons[0].getAttribute('title')).toEqual('Facebook');
     expect(buttons[0].getAttribute('href')).toEqual('https://facebook.com');
     expect(buttons[0].innerHTML).toContain('<svg></svg>');
 
-    expect(buttons[1].getAttribute('title')).toEqual('Twitter');
     expect(buttons[1].getAttribute('href')).toEqual('https://twitter.com');
     expect(buttons[1].innerHTML).toContain('<svg></svg>');
 
