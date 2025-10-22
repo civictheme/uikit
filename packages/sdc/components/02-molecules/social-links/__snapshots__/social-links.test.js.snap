@@ -39,10 +39,17 @@ exports[`Social Links Component renders with icon HTML 1`] = `
           href="https://facebook.com"
           role="button"
           target="_blank"
-          title="Facebook"
         >
-                    
-          <svg />
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -61,10 +68,17 @@ exports[`Social Links Component renders with icon HTML 1`] = `
           href="https://twitter.com"
           role="button"
           target="_blank"
-          title="Twitter"
         >
-                    
-          <svg />
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -113,10 +127,17 @@ exports[`Social Links Component renders with optional attributes 1`] = `
           href="https://facebook.com"
           role="button"
           target="_blank"
-          title="Facebook"
         >
-                    
-          <svg />
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -135,10 +156,17 @@ exports[`Social Links Component renders with optional attributes 1`] = `
           href="https://twitter.com"
           role="button"
           target="_blank"
-          title="Twitter"
         >
-                    
-          <svg />
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -186,9 +214,7 @@ exports[`Social Links Component renders with required attributes 1`] = `
           href="https://facebook.com"
           role="button"
           target="_blank"
-          title="Facebook"
         >
-                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-button__icon"
@@ -208,6 +234,11 @@ exports[`Social Links Component renders with required attributes 1`] = `
           </svg>
           
 
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -226,9 +257,7 @@ exports[`Social Links Component renders with required attributes 1`] = `
           href="https://twitter.com"
           role="button"
           target="_blank"
-          title="Twitter"
         >
-                    
           <svg
             aria-hidden="true"
             class="ct-icon  ct-button__icon"
@@ -248,6 +277,11 @@ exports[`Social Links Component renders with required attributes 1`] = `
           </svg>
           
 
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         

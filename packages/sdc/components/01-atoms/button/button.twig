@@ -14,7 +14,6 @@
  * - icon_single_only: [boolean] Only show 1 icon (if both icon and is_external are present, external takes preference).
  * - text: [string] Button text.
  * - url: [string] URL for the link button.
- * - allow_html: [boolean] Allow HTML in text.
  * - is_new_window: [boolean] Open in a new window.
  * - is_external: [boolean] Indicates if the link is external.
  * - is_disabled: [boolean] Indicates if the button is disabled.
@@ -37,30 +36,16 @@
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, kind_class, size_class, dismiss_class, is_external, modifier_class|default('')) %}
 
 {% set button_content %}
-  {%- if allow_html -%}
-    {% set icon_markup %}
-      {%- include 'civictheme:icon' with {
-        symbol: icon,
-        modifier_class: 'ct-button__icon',
-      } only -%}
-    {% endset %}
-    {% if icon_placement == 'before' %}
-      {{- icon_markup -}}{{ text }}
-    {% else %}
-      {{ text }}{{- icon_markup -}}
-    {% endif %}
-  {%- else -%}
-    {%- include 'civictheme:text-icon' with {
-      text: text,
-      is_new_window: is_new_window,
-      is_external: is_external,
-      icon: icon,
-      icon_placement: icon_placement,
-      icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,
-      icon_single_only: icon_single_only is defined ? icon_single_only : false,
-      icon_class: 'ct-button__icon',
-    } only -%}
-  {%- endif -%}
+  {%- include 'civictheme:text-icon' with {
+    text: text,
+    is_new_window: is_new_window,
+    is_external: is_external,
+    icon: icon,
+    icon_placement: icon_placement,
+    icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,
+    icon_single_only: icon_single_only is defined ? icon_single_only : false,
+    icon_class: 'ct-button__icon',
+  } only -%}
 {% endset %}
 
 {% if kind == 'button' %}

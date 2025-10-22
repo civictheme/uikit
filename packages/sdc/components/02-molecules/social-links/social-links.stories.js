@@ -75,6 +75,6 @@ export const SocialLinks = {
     ],
     with_border: false,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };
