@@ -32,7 +32,7 @@
           url: link.url,
           theme: theme,
           is_active: (loop.index == links_count),
-          attributes: (loop.index == links_count) ? 'aria-current="location"' : '',
+          attributes: (loop.index == links_count) ? create_attribute({'aria-current': 'location'}) : null,
           modifier_class: (loop.index == links_count) ? 'ct-breadcrumb__links__link ct-breadcrumb__links__link--active' : 'ct-breadcrumb__links__link',
         } %}
 

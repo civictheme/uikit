@@ -18,7 +18,7 @@
   {%- set source = source(assets_dir ~ '/icons/' ~ symbol ~ '.svg', true) -%}
   {%- if source is not empty -%}
 
-    {%- set attr = attributes is defined and attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}
+    {%- set attr = attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}
     {%- do attr.addClass('ct-icon') -%}
     {%- if size -%}
       {%- do attr.addClass('ct-icon--size-' ~ size) -%}

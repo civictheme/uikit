@@ -151,8 +151,7 @@ exports[`Field Component Field Component - invisible title with textfield render
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title ct-visually-hidden"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -247,8 +246,7 @@ exports[`Field Component Field Component - visible title with textfield renders 
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -302,8 +300,7 @@ exports[`Field Component default input 1`] = `
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -443,7 +440,7 @@ exports[`Field Component field messages custom message renders correctly when me
 
         </svg>
         
-        Custom error message  
+    Custom error message
       </div>
                 
     </div>
@@ -519,7 +516,7 @@ exports[`Field Component field messages default message renders when field is in
 
         </svg>
         
-        Field has an error  
+    Field has an error
       </div>
                 
     </div>
@@ -551,8 +548,7 @@ exports[`Field Component field messages default message renders when message obj
     <label
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
     >
-      
-  Test input  
+      Test input
     </label>
         
     
@@ -605,11 +601,11 @@ exports[`Field Component field messages default message renders when message obj
 
         </svg>
         
-        Field 
+    Field 
         <em>
           Test input
         </em>
-         has an error  
+         has an error
       </div>
                 
     </div>
@@ -649,8 +645,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
       <legend
         class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       >
-        
-  Test Title  
+        Test Title
       </legend>
                   
       
@@ -685,8 +680,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
             class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
             for="testid"
           >
-            
-  Test Title  
+            Test Title
           </label>
                                   
         </li>
@@ -715,8 +709,7 @@ exports[`Field Component multiple control as array propagation - checkbox 1`] = 
             class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
             for="testid2"
           >
-            
-  Test Title  
+            Test Title
           </label>
                                   
         </li>
@@ -760,8 +753,7 @@ exports[`Field Component multiple control as array propagation - textfield 1`] =
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -825,8 +817,7 @@ exports[`Field Component multiple control as array propagation with mixed levels
       <legend
         class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       >
-        
-  Test Title  
+        Test Title
       </legend>
                   
       
@@ -861,8 +852,7 @@ exports[`Field Component multiple control as array propagation with mixed levels
             class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
             for="testid1"
           >
-            
-  Checkbox 1  
+            Checkbox 1
           </label>
                                   
         </li>
@@ -889,8 +879,7 @@ exports[`Field Component multiple control as array propagation with mixed levels
             class="ct-label ct-theme-light ct-label--small  ct-checkbox__label"
             for="testid2"
           >
-            
-  Checkbox 2  
+            Checkbox 2
           </label>
                                   
         </li>
@@ -952,8 +941,7 @@ exports[`Field Component radio 1`] = `
       <legend
         class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       >
-        
-  Test Title  
+        Test Title
       </legend>
                   
       
@@ -988,8 +976,7 @@ exports[`Field Component radio 1`] = `
             class="ct-label ct-theme-light ct-label--small  ct-radio__label"
             for="testid"
           >
-            
-  Test Title  
+            Test Title
           </label>
                                   
         </li>
@@ -1018,8 +1005,7 @@ exports[`Field Component radio 1`] = `
             class="ct-label ct-theme-light ct-label--small  ct-radio__label"
             for="testid2"
           >
-            
-  Test Title  
+            Test Title
           </label>
                                   
         </li>
@@ -1068,8 +1054,7 @@ exports[`Field Component required, disabled, and description 1`] = `
       <div
         class="ct-field-description ct-theme-light ct-field-description--regular ct-field__description"
       >
-        
-    This is a description  
+        This is a description
       </div>
             
       
@@ -1119,8 +1104,7 @@ exports[`Field Component select 1`] = `
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -1176,8 +1160,7 @@ exports[`Field Component single control as array propagation 1`] = `
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -1233,8 +1216,7 @@ exports[`Field Component single control as object propagation 1`] = `
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -1291,14 +1273,12 @@ exports[`Field Component textarea with all attributes 1`] = `
       class="ct-label ct-theme-light ct-label--regular ct-label--required ct-field__title"
       for="testid"
     >
-      
-  Test Title 
+      Test Title 
       <span
         class="ct-label__required"
       >
         (required)
       </span>
-        
     </label>
         
     
@@ -1353,11 +1333,11 @@ exports[`Field Component textarea with all attributes 1`] = `
 
         </svg>
         
-        Field 
+    Field 
         <em>
           Test Title
         </em>
-         has an error  
+         has an error
       </div>
                 
     </div>
@@ -1391,8 +1371,7 @@ exports[`Field Component textfield 1`] = `
       class="ct-label ct-theme-light ct-label--regular  ct-field__title"
       for="testid"
     >
-      
-  Test Title  
+      Test Title
     </label>
         
     
@@ -1490,7 +1469,7 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
 
         </svg>
         
-        Field has an error  
+    Field has an error
       </div>
                 
     </div>

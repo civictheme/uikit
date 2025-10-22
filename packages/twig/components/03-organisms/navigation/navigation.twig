@@ -44,7 +44,13 @@
     {% for key in items|keys %}
       {% if items[key].below %}
         {# Item attributes to convert them into a collapsible element. #}
-        {% set item_attributes = 'data-collapsible data-collapsible-collapsed data-collapsible-icon-group data-collapsible-group=' ~ menu_id ~ ' ' ~ (is_animated ? 'data-collapsible-duration=250' : 'data-collapsible-duration=0') %}
+        {% set item_attributes = create_attribute({
+          'data-collapsible': '',
+          'data-collapsible-collapsed': '',
+          'data-collapsible-icon-group': '',
+          'data-collapsible-group': menu_id,
+          'data-collapsible-duration': is_animated ? '250' : '0',
+        }) %}
 
         {% if type == 'drawer' %}
           {# Item classes to style dynamically. #}
