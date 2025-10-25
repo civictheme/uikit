@@ -41,7 +41,7 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 {% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
 
-{% if sources is not empty or embedded_source is not empty or raw_source is not empty %}
+{% if sources is not empty or embedded_source is not empty or raw_source is defined %}
   <div class="ct-video-player {{ modifier_class -}}">
     {% block video_block %}
       <div class="ct-video-player__wrapper">
