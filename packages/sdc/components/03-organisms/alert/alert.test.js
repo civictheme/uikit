@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/alert/alert.twig';
 
 describe('Alert Component', () => {
@@ -18,7 +20,7 @@ describe('Alert Component', () => {
       type: 'warning',
       id: 'alert-1',
       title: 'Warning Alert',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

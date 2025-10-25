@@ -32,10 +32,10 @@ props:
             type: boolean
             description: Whether the item is expanded.
           attributes:
-            type: string
+            type: Drupal\Core\Template\Attribute
             description: Additional HTML attributes for the item.
           link_attributes:
-            type: string
+            type: Drupal\Core\Template\Attribute
             description: Additional HTML attributes for the link.
           modifier_class:
             type: string

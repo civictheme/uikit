@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/popover/popover.twig';
 
 describe('Popover Component', () => {
@@ -27,7 +29,7 @@ describe('Popover Component', () => {
       content: 'Sample content',
       group: 'sample-group',
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

@@ -22,9 +22,6 @@ const meta = {
     items_end: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

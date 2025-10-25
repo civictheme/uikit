@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/tabs/tabs.twig';
 
 describe('Tabs Component', () => {
@@ -29,7 +31,7 @@ describe('Tabs Component', () => {
       ],
       theme: 'dark',
       vertical_spacing: 'both',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

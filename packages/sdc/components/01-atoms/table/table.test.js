@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/table/table.twig';
 
 describe('Table Component', () => {
@@ -28,7 +30,7 @@ describe('Table Component', () => {
       ],
       footer: ['Footer 1', 'Footer 2'],
       is_striped: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/link/link.twig';
 
 describe('Link Component', () => {
@@ -25,7 +27,7 @@ describe('Link Component', () => {
       is_disabled: true,
       icon: 'call',
       icon_placement: 'before',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });
@@ -54,7 +56,7 @@ describe('Link Component', () => {
       is_disabled: true,
       icon: 'call',
       icon_placement: 'before',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

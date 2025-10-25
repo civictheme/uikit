@@ -29,9 +29,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -57,7 +54,7 @@ export const TableOfContents = {
     ],
     position: 'before',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };
 
@@ -85,6 +82,6 @@ export const TableOfContentsAutomatic = {
       <p>Nulla sed cupidatat irure quis veniam ut in in pariatur do minim adipisicing minim exercitation magna eiusmod culpa tempor.</p>
     ` }),
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

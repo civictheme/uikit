@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/image/image.twig';
 
 describe('Image Component', () => {
@@ -18,7 +20,7 @@ describe('Image Component', () => {
       alt: 'Sample Image',
       width: '600',
       height: '400',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

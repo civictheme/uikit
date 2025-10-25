@@ -81,7 +81,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -91,12 +91,15 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File 1 
+                                            File 1
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (pdf, 1MB)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -106,8 +109,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   <div
                     class="ct-paragraph ct-theme-light ct-paragraph--small  ct-attachment__links__link__changed"
                   >
-                    
-    LAST UPDATED: 2023-01-02  
+                    LAST UPDATED: 2023-01-02
                   </div>
                                                         
                 </div>
@@ -149,7 +151,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -159,12 +161,15 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File 2 
+                                            File 2
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (docx, 2MB)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -174,8 +179,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   <div
                     class="ct-paragraph ct-theme-light ct-paragraph--small  ct-attachment__links__link__changed"
                   >
-                    
-    LAST UPDATED: 2023-01-04  
+                    LAST UPDATED: 2023-01-04
                   </div>
                                                         
                 </div>
@@ -193,7 +197,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                        
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -203,7 +207,8 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File without extension
+                                            File without extension
+                                          
                     </span>
                   </a>
                   
@@ -223,7 +228,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -233,12 +238,15 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File with only extension 
+                                            File with only extension
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (txt)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -258,7 +266,7 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -268,12 +276,15 @@ exports[`Attachment Component renders with multiple files and attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File with only size 
+                                            File with only size
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (500KB)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -366,8 +377,7 @@ exports[`Attachment Component renders with optional attributes 1`] = `
               <div
                 class="ct-paragraph ct-theme-dark ct-paragraph--small  ct-attachment__content"
               >
-                
-    Attachment content  
+                Attachment content
               </div>
                                                 
             </div>
@@ -415,7 +425,7 @@ exports[`Attachment Component renders with optional attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-dark     ct-attachment__links__link"
@@ -425,12 +435,15 @@ exports[`Attachment Component renders with optional attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File 1 
+                                            File 1
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (pdf, 1MB)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -440,8 +453,7 @@ exports[`Attachment Component renders with optional attributes 1`] = `
                   <div
                     class="ct-paragraph ct-theme-dark ct-paragraph--small  ct-attachment__links__link__changed"
                   >
-                    
-    LAST UPDATED: 2023-01-02  
+                    LAST UPDATED: 2023-01-02
                   </div>
                                                         
                 </div>
@@ -552,7 +564,7 @@ exports[`Attachment Component renders with required attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -562,12 +574,15 @@ exports[`Attachment Component renders with required attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File 1 
+                                            File 1
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (pdf, 1MB)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -577,8 +592,7 @@ exports[`Attachment Component renders with required attributes 1`] = `
                   <div
                     class="ct-paragraph ct-theme-light ct-paragraph--small  ct-attachment__links__link__changed"
                   >
-                    
-    LAST UPDATED: 2023-01-02  
+                    LAST UPDATED: 2023-01-02
                   </div>
                                                         
                 </div>
@@ -620,7 +634,7 @@ exports[`Attachment Component renders with required attributes 1`] = `
                   class="ct-attachment__links__link__wrapper"
                 >
                   
-                                                                                  
+                    
                     
                   <a
                     class="ct-link ct-theme-light     ct-attachment__links__link"
@@ -630,12 +644,15 @@ exports[`Attachment Component renders with required attributes 1`] = `
                     <span
                       class="ct-text-icon__text"
                     >
-                      File 2 
+                                            File 2
+                                              
                       <span
                         class="ct-attachment__links__link__extension"
                       >
                         (docx, 2MB)
                       </span>
+                      
+                                          
                     </span>
                   </a>
                   
@@ -645,8 +662,7 @@ exports[`Attachment Component renders with required attributes 1`] = `
                   <div
                     class="ct-paragraph ct-theme-light ct-paragraph--small  ct-attachment__links__link__changed"
                   >
-                    
-    LAST UPDATED: 2023-01-04  
+                    LAST UPDATED: 2023-01-04
                   </div>
                                                         
                 </div>

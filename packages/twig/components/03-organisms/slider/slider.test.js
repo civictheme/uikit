@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/slider/slider.twig';
 
 describe('Slider Component', () => {
@@ -25,7 +27,7 @@ describe('Slider Component', () => {
       theme: 'dark',
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'additional-class',
     });
 

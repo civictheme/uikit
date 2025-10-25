@@ -13,7 +13,7 @@
  * - is_invalid: [boolean] Whether the input is invalid.
  * - is_disabled: [boolean] Whether the input is disabled.
  * - is_required: [boolean] Whether the input is required.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -33,6 +33,6 @@
     {% if is_required %}required{% endif %}
     {% if is_invalid %}aria-invalid="true"{% endif %}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   />
 {% endif %}

@@ -7,7 +7,7 @@
  * - theme: [string] Theme variation (light or dark).
  * - vertical_spacing: [string] List vertical spacing (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - link_above: [object] Above list link object.
  *   Each property contains:
@@ -61,7 +61,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, with_background_class, vertical_spacing_class, modifier_class|default('')) %}
 
-<div class="ct-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-list {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   <div class="ct-list__inner">
     {% block header_block %}
       {% if title is not empty or link_above is not empty %}
@@ -114,7 +114,6 @@
               <div class="col-xxs-12">
                 {% include 'civictheme:paragraph' with {
                   content: content,
-                  allow_html: true,
                   theme: theme,
                   modifier_class: 'ct-list__content__inner',
                 } only %}
@@ -132,7 +131,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-xxs-12">
-                  {{ filters|raw }}
+                  {{ filters }}
                 </div>
               </div>
             </div>
@@ -152,7 +151,7 @@
                       {% set rows_above = [rows_above] %}
                     {% endif %}
                     {% for rows_above_row in rows_above %}
-                      {{- rows_above_row|raw -}}
+                      {{- rows_above_row -}}
                     {% endfor %}
                   </div>
                 </div>
@@ -173,7 +172,7 @@
           {% endblock %}
 
           <div class="ct-list__rows">
-            {{ rows|raw }}
+            {{ rows }}
           </div>
 
           {% block rows_below_block %}
@@ -185,7 +184,7 @@
                       {% set rows_below = [rows_below] %}
                     {% endif %}
                     {% for rows_below_row in rows_below %}
-                      {{- rows_below_row|raw -}}
+                      {{- rows_below_row -}}
                     {% endfor %}
                   </div>
                 </div>
@@ -202,7 +201,6 @@
               <div class="col-xxs-12">
                 {% include 'civictheme:paragraph' with {
                   content: empty,
-                  allow_html: true,
                   theme: theme,
                   modifier_class: 'ct-list__empty-results__inner',
                 } only %}
@@ -238,7 +236,7 @@
               <div class="row">
                 <div class="col-xxs-12">
                   <div class="ct-list__pagination">
-                    {{ pagination|raw }}
+                    {{ pagination }}
                   </div>
                 </div>
               </div>
@@ -254,7 +252,7 @@
           <div class="container">
             <div class="row">
               <div class="col-xxs-12">
-                {{ footer|raw }}
+                {{ footer }}
               </div>
             </div>
           </div>

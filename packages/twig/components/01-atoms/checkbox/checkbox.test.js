@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/checkbox/checkbox.twig';
 
 describe('Checkbox Component', () => {
@@ -27,7 +29,7 @@ describe('Checkbox Component', () => {
       is_required: true,
       is_invalid: true,
       is_disabled: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/service-card/service-card.twig';
 
 describe('Service Card Component', () => {
@@ -33,7 +35,7 @@ describe('Service Card Component', () => {
       ],
       content_bottom: 'Bottom content',
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

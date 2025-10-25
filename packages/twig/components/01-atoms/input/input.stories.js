@@ -56,9 +56,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -79,6 +76,6 @@ export const Input = {
     is_invalid: false,
     is_disabled: false,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

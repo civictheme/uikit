@@ -12,7 +12,7 @@
  * - dropdown_columns: [integer] Dropdown drawer column count.
  * - dropdown_columns_fill: [boolean] Whether to fill columns.
  * - is_animated: [boolean] Whether to use animation for transitions.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [array] Menu items:
  *   Each item contains:
@@ -44,7 +44,13 @@
     {% for key in items|keys %}
       {% if items[key].below %}
         {# Item attributes to convert them into a collapsible element. #}
-        {% set item_attributes = 'data-collapsible data-collapsible-collapsed data-collapsible-icon-group data-collapsible-group=' ~ menu_id ~ ' ' ~ (is_animated ? 'data-collapsible-duration=250' : 'data-collapsible-duration=0') %}
+        {% set item_attributes = create_attribute({
+          'data-collapsible': '',
+          'data-collapsible-collapsed': '',
+          'data-collapsible-icon-group': '',
+          'data-collapsible-group': menu_id,
+          'data-collapsible-duration': is_animated ? '250' : '0',
+        }) %}
 
         {% if type == 'drawer' %}
           {# Item classes to style dynamically. #}
@@ -73,7 +79,7 @@
     {% endfor %}
   {% endif %}
 
-  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-navigation {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% if title %}
       {% block title_block %}
         {% include 'civictheme:heading' with {

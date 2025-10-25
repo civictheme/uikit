@@ -49,9 +49,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['none', 'top', 'bottom', 'both'],
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -92,10 +89,10 @@ export const Sources = {
       url: 'https://example.com',
       is_new_window: true,
       is_external: false,
-      attributes: '',
+      attributes: null,
     },
     vertical_spacing: 'none',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };
@@ -119,10 +116,10 @@ export const EmbeddedSource = {
       url: 'https://example.com',
       is_new_window: true,
       is_external: false,
-      attributes: '',
+      attributes: null,
     },
     vertical_spacing: 'none',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };
@@ -146,10 +143,10 @@ export const RawSources = {
       url: 'https://example.com',
       is_new_window: true,
       is_external: false,
-      attributes: '',
+      attributes: null,
     },
     vertical_spacing: 'none',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };
@@ -177,7 +174,7 @@ export const TranscriptBlock = {
     transcript_expand_text: 'Show transcript',
     transcript_collapse_text: 'Hide transcript',
     vertical_spacing: 'none',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

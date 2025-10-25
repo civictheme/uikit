@@ -8,7 +8,7 @@
  * - is_contained: [boolean] Whether the content is contained in a container.
  * - vertical_spacing: [string] Vertical spacing for the promo (top, bottom, or both).
  * - with_background: [boolean] Whether to display with a background.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - link: [object] Call-to-action link.
  *   Each property contains:
@@ -40,7 +40,7 @@
 {% set is_contained = is_contained is defined ? is_contained : true %}
 
 {% if title is not empty or content is not empty %}
-  <div class="ct-promo {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-promo {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% if is_contained %}
     <div class="container">
       <div class="row">
@@ -49,7 +49,7 @@
           {% block content_top_block %}
             {% if content_top is not empty %}
               <div class="ct-promo__content-top">
-                {{ content_top|raw }}
+                {{ content_top }}
               </div>
             {% endif %}
           {% endblock %}
@@ -71,7 +71,6 @@
                     {% include 'civictheme:paragraph' with {
                       theme: theme,
                       content: content,
-                      allow_html: true,
                       modifier_class: 'ct-promo__content',
                     } only %}
                   {% endif %}
@@ -101,7 +100,7 @@
           {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-promo__content-bottom">
-                {{ content_bottom|raw }}
+                {{ content_bottom }}
               </div>
             {% endif %}
           {% endblock %}

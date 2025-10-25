@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - top_menu: [array] Top section menu items:
  *   Each item contains:
@@ -37,7 +37,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
-<div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link" {% if attributes %}{{ attributes|raw }}{% endif %}>
+<div class="ct-mobile-navigation {{ modifier_class -}}" data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link" {% if attributes %}{{ attributes }}{% endif %}>
   <div data-flyout-panel class="ct-mobile-navigation__panel">
     {% include 'civictheme:mobile-navigation-close' with {
       theme: theme,
@@ -46,7 +46,7 @@
     {% block content_top_block %}
       {% if content_top is not empty %}
         <div class="ct-mobile-navigation__content_top">
-          {{ content_top|raw }}
+          {{ content_top }}
         </div>
       {% endif %}
     {% endblock %}
@@ -78,7 +78,7 @@
     {% block content_bottom_block %}
       {% if content_bottom is not empty %}
         <div class="ct-mobile-navigation__content_bottom">
-          {{ content_bottom|raw }}
+          {{ content_bottom }}
         </div>
       {% endif %}
     {% endblock %}

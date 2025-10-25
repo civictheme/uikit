@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/promo-card/promo-card.twig';
 
 describe('Promo Card Component', () => {
@@ -29,7 +31,7 @@ describe('Promo Card Component', () => {
       link: { text: 'Learn more', url: 'https://example.com', is_new_window: true, is_external: true },
       tags: ['Tag1', 'Tag2'],
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

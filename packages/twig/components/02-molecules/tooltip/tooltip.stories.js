@@ -37,9 +37,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -57,6 +54,6 @@ export const Tooltip = {
     title: 'Toggle tooltip display',
     content: 'Ullamco incididunt laborum aliquip.',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

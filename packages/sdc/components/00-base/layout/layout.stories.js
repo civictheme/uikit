@@ -30,18 +30,6 @@ const meta = {
     content_bottom: {
       control: { type: 'text' },
     },
-    sidebar_top_right_attributes: {
-      control: { type: 'text' },
-    },
-    content_attributes: {
-      control: { type: 'text' },
-    },
-    sidebar_bottom_left_attributes: {
-      control: { type: 'text' },
-    },
-    sidebar_bottom_right_attributes: {
-      control: { type: 'text' },
-    },
     hide_sidebar_left: {
       control: { type: 'boolean' },
     },
@@ -54,9 +42,6 @@ const meta = {
     vertical_spacing: {
       control: { type: 'radio' },
       options: ['none', 'top', 'bottom', 'both'],
-    },
-    attributes: {
-      control: { type: 'text' },
     },
     modifier_class: {
       control: { type: 'text' },

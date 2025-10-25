@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/input/input.twig';
 
 describe('Input Component', () => {
@@ -25,7 +27,7 @@ describe('Input Component', () => {
       is_invalid: true,
       is_disabled: true,
       is_required: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
       id: 'input-id',
@@ -57,7 +59,7 @@ describe('Input Component', () => {
       name: 'test-input',
       value: 'Sample text',
       type: 'text',
-      attributes: 'data-test="<script>alert(1)</script>"',
+      attributes: new DrupalAttribute().setAttribute('data-test', '<script>alert(1)</script>'),
     });
 
     expect(c.querySelector('.ct-input').getAttribute('value')).toEqual('Sample text');

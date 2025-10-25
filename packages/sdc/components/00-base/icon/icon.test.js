@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/00-base/icon/icon.twig';
 
 describe('Icon Component', () => {
@@ -30,7 +32,7 @@ describe('Icon Component', () => {
     const c = await dom(template, {
       symbol: 'close',
       modifier_class: 'custom-modifier',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     expect(c.querySelectorAll('.ct-icon.custom-modifier')).toHaveLength(1);

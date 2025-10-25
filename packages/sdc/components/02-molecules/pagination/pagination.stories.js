@@ -37,16 +37,10 @@ const meta = {
     items_per_page_id: {
       control: { type: 'text' },
     },
-    items_per_page_attributes: {
-      control: { type: 'text' },
-    },
     use_ellipsis: {
       control: { type: 'boolean' },
     },
     modifier_class: {
-      control: { type: 'text' },
-    },
-    attributes: {
       control: { type: 'text' },
     },
   },

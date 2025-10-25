@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/snippet/snippet.twig';
 
 describe('Snippet Component', () => {
@@ -29,7 +31,7 @@ describe('Snippet Component', () => {
       },
       tags: ['Tag1', 'Tag2'],
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

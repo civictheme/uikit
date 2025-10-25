@@ -30,7 +30,7 @@ props:
       title: Title click
       description: Whether to make only the title clickable instead of the whole card.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

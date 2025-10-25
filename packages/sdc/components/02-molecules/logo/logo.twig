@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Logo display type (default, stacked, inline, inline-stacked).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - logos: [object] Object with 'primary' and 'secondary' keys.
  *   Each property contains:
@@ -42,9 +42,9 @@
 
 {% if logos is not empty %}
   {% if url is not empty %}
-    <a class="ct-logo {{ modifier_class -}}" href="{{ url }}" title="{{ title|default('Click to go to the homepage') }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+    <a class="ct-logo {{ modifier_class -}}" href="{{ url }}" title="{{ title|default('Click to go to the homepage') }}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% else %}
-    <div class="ct-logo {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+    <div class="ct-logo {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% endif %}
 
   {% for logo_type, logo in logos %}

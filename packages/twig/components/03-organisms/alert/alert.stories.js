@@ -25,9 +25,6 @@ const meta = {
     description: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -46,7 +43,7 @@ export const Alert = {
     id: 'alert-1',
     title: 'Site information',
     description: 'Alert description',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

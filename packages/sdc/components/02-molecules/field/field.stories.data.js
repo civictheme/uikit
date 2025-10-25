@@ -9,7 +9,7 @@ export default {
       is_required: options.is_required || false,
       is_invalid: false,
       is_disabled: false,
-      attributes: '',
+      attributes: null,
       modifier_class: '',
     })) : null;
 
@@ -43,7 +43,7 @@ export default {
       id: fieldId,
       control,
       options: selectOptions,
-      attributes: '',
+      attributes: null,
       modifier_class: '',
       prefix: '',
       suffix: '',

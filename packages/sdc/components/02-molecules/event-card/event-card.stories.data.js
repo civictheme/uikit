@@ -22,7 +22,7 @@ export default {
       'Tag 2',
     ],
     modifier_class: '',
-    attributes: '',
+    attributes: null,
     content_top: '',
     image_over: '',
     content_middle: '',

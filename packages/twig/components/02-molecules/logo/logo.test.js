@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/logo/logo.twig';
 
 describe('Logo Component', () => {
@@ -38,7 +40,7 @@ describe('Logo Component', () => {
       },
       url: 'https://example.com',
       title: 'Go to homepage',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

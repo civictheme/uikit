@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/campaign/campaign.twig';
 
 describe('Campaign Component', () => {
@@ -21,7 +23,7 @@ describe('Campaign Component', () => {
       theme: 'dark',
       vertical_spacing: 'both',
       modifier_class: 'custom-class',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     const element = c.querySelector('.ct-campaign');

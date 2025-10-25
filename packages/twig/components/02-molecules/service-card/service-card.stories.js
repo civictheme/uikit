@@ -30,9 +30,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -63,6 +60,6 @@ export const ServiceCard = {
     content_top: '',
     content_bottom: '',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

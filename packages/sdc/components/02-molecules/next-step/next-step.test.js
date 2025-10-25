@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/next-step/next-step.twig';
 
 describe('Next Steps Component', () => {
@@ -23,7 +25,7 @@ describe('Next Steps Component', () => {
       content_bottom: 'Bottom content',
       theme: 'dark',
       vertical_spacing: 'both',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

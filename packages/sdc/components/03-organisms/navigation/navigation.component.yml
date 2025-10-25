@@ -49,7 +49,7 @@ props:
       title: Animated
       description: Whether to use animation for transitions.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

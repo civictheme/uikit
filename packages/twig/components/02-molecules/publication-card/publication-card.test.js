@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/publication-card/publication-card.twig';
 
 describe('Publication Card Component', () => {
@@ -38,7 +40,7 @@ describe('Publication Card Component', () => {
         icon: 'pdf-file',
       },
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

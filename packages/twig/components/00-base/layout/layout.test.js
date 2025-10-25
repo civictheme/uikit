@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/00-base/layout/layout.twig';
 
 describe('Layout Component', () => {
@@ -153,7 +155,7 @@ describe('Layout Component', () => {
   test('renders with custom attributes and classes', async () => {
     const c = await dom(template, {
       content: 'Main content',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 

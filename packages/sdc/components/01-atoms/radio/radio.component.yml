@@ -45,7 +45,7 @@ props:
       title: Disabled
       description: Whether the radio is disabled.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

@@ -28,7 +28,7 @@ export default {
     },
     url: 'https://example.com',
     title: 'Logo title',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   }),
 };

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/promo/promo.twig';
 
 describe('Promo Component', () => {
@@ -30,7 +32,7 @@ describe('Promo Component', () => {
       theme: 'dark',
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'additional-class',
     });
 

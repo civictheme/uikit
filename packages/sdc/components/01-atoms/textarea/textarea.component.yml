@@ -45,7 +45,7 @@ props:
       title: Required
       description: Whether the textarea is required.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

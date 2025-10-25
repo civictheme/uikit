@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/fieldset/fieldset.twig';
 
 describe('Fieldset Component', () => {
@@ -89,7 +91,7 @@ describe('Fieldset Component', () => {
 
   test('renders with additional attributes and classes', async () => {
     const c = await dom(template, {
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 

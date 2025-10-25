@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/event-card/event-card.twig';
 
 describe('Event Card Component', () => {
@@ -34,7 +36,7 @@ describe('Event Card Component', () => {
       link: { url: 'https://example.com' },
       tags: ['Tag 1', 'Tag 2'],
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 
