@@ -28,6 +28,7 @@ export default {
     const defaultData = components[component].data;
     const itemData = options.items || Array.from(Array(6), () => ({}));
     const items = itemData.map((data) => render({ ...defaultData, ...data }));
+    const groupOptions = options.selectedFilters === true ? { selectedFilters: true } : undefined;
     return {
       theme,
       title: 'My List Title',
@@ -39,7 +40,7 @@ export default {
         is_external: false,
       },
       content: 'Example content',
-      filters: options.group ? GroupFilter(GroupFilterData.args(theme)) : SingleFilter(SingleFilterData.args(theme)),
+      filters: options.group ? GroupFilter(GroupFilterData.args(theme, groupOptions)) : SingleFilter(SingleFilterData.args(theme)),
       results_count: 'Showing 1 of 6',
       rows_above: Paragraph({
         theme,

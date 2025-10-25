@@ -11,12 +11,16 @@
 
   @include ct-link-decoration(false, false, false, false);
 
-  #{$root}__dismiss {
-    display: none;
-  }
+  &--multiple {
+    #{$root}__dismiss {
+      display: none;
+    }
 
-  #{$root}__input[checked] + .ct-chip__dismiss {
-    display: inline;
+    &:has(#{$root}__input[checked]) {
+      #{$root}__dismiss {
+        display: initial;
+      }
+    }
   }
 
   $map: (
