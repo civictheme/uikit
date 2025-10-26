@@ -30,10 +30,9 @@
  * - message: [object] Message object for showing messages.
  *   Each property contains:
  *   - content: [string] Message content.
- *   - attributes: [object] Additional HTML attributes.
  * - prefix: [string] Content to add before the field.
  * - suffix: [string] Content to add after the field.
- * - attributes: [object] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -198,7 +197,7 @@
           type: is_invalid ? 'error' : 'information',
           content: message_content,
           modifier_class: 'ct-field__message',
-          attributes: message.attributes|default(null),
+          attributes: message.attributes|default(create_attribute({})),
         } only %}
       {% endif %}
     </{{ field_wrapper }}>
