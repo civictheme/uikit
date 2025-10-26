@@ -13,6 +13,10 @@ props:
       enum:
         - light
         - dark
+    title:
+      type: string
+      title: Title
+      description: Filter title.
     submit_text:
       type: string
       title: Submit text
