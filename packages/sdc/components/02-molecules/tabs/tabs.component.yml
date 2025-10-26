@@ -72,6 +72,6 @@ props:
             title: Modifier Class
             description: Additional CSS classes.
           attributes:
-            type: Drupal\Core\Template\Attribute
+            type: object
             title: Attributes
             description: Additional HTML attributes.
