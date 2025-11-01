@@ -34,7 +34,7 @@ props:
       title: Scope Selector
       description: CSS selector for the content area to generate TOC from.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

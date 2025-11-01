@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/tag/tag.twig';
 
 describe('Tag Component', () => {
@@ -21,7 +23,7 @@ describe('Tag Component', () => {
       url: 'https://example.com',
       is_new_window: true,
       is_external: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

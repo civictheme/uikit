@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - image_as_icon: [boolean] Whether to show the image as an icon.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - image: [object] Card image.
  *   Each property contains:
@@ -52,7 +52,7 @@
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, with_image_class, with_link_class, image_as_icon_class, card_clickable_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
-  <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-navigation-card {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block image_block %}
       {% if not image_as_icon %}
         {% if image.url is not empty %}
@@ -79,7 +79,7 @@
       {% block content_top_block %}
         {% if content_top is not empty %}
           <div class="ct-navigation-card__content-top">
-            {{- content_top|raw -}}
+            {{- content_top -}}
           </div>
         {% endif %}
       {% endblock %}
@@ -126,7 +126,7 @@
       {% block content_middle_block %}
         {% if content_middle is not empty %}
           <div class="ct-navigation-card__content-middle">
-            {{- content_middle|raw -}}
+            {{- content_middle -}}
           </div>
         {% endif %}
       {% endblock %}
@@ -136,7 +136,6 @@
           {% include 'civictheme:paragraph' with {
             theme: theme,
             content: summary,
-            allow_html: true,
             no_margin: true,
             modifier_class: 'ct-navigation-card__summary',
           } only %}
@@ -146,7 +145,7 @@
       {% block content_bottom_block %}
         {% if content_bottom is not empty %}
           <div class="ct-navigation-card__content-bottom">
-            {{- content_bottom|raw -}}
+            {{- content_bottom -}}
           </div>
         {% endif %}
       {% endblock %}

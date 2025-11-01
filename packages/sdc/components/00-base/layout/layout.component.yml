@@ -26,27 +26,27 @@ props:
         - bottom
         - both
     sidebar_top_left_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Sidebar top left attributes
       description: HTML attributes for top left sidebar.
     sidebar_top_right_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Sidebar top right attributes
       description: HTML attributes for top right sidebar.
     content_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Content attributes
       description: HTML attributes for main content.
     sidebar_bottom_left_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Sidebar bottom left attributes
       description: HTML attributes for bottom left sidebar.
     sidebar_bottom_right_attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Sidebar bottom right attributes
       description: HTML attributes for bottom right sidebar.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

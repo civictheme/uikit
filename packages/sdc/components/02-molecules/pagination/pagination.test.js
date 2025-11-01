@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/pagination/pagination.twig';
 
 describe('Pagination Component', () => {
@@ -50,9 +52,9 @@ describe('Pagination Component', () => {
       ],
       items_per_page_name: 'itemsPerPage',
       items_per_page_id: 'items-per-page',
-      items_per_page_attributes: 'data-test="items-per-page"',
+      items_per_page_attributes: new DrupalAttribute().setAttribute('data-test', 'items-per-page'),
       use_ellipsis: true,
-      attributes: 'data-test="pagination"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'pagination'),
       modifier_class: 'custom-class',
     });
 

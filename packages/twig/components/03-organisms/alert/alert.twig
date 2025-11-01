@@ -7,7 +7,7 @@
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Alert type (information, error, warning, success).
  * - id: [string] Unique identifier for the alert.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -35,7 +35,7 @@
     data-alert-type="{{ type }}"
     data-component-name="ct-alert"
     role="alert"
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <div class="container">
       <div class="row">
@@ -48,11 +48,11 @@
               } only %}
             </span>
           {% endif %}
-          {{ title|raw }}
+          {{ title }}
         </div>
 
         <div class="ct-alert__summary col-xxs-12 col-m-9">
-          {{ description|raw }}
+          {{ description }}
           {% include '@atoms/button/button.twig' with {
             kind: 'button',
             theme: theme,
@@ -61,7 +61,11 @@
             text: '',
             icon: 'cancel',
             size: 'regular',
-            attributes: 'id=dismiss-alert-' ~ id ~ ' data-alert-dismiss-trigger title="close ' ~ type ~ ' alert"',
+            attributes: create_attribute({
+              id: 'dismiss-alert-' ~ id,
+              'data-alert-dismiss-trigger': '',
+              title: 'close ' ~ type ~ ' alert',
+            }),
           } %}
         </div>
       </div>

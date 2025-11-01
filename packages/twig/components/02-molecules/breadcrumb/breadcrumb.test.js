@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/breadcrumb/breadcrumb.twig';
 
 describe('Breadcrumb Component', () => {
@@ -39,7 +41,7 @@ describe('Breadcrumb Component', () => {
       ],
       theme: 'dark',
       active_is_link: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

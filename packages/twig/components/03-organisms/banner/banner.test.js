@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/banner/banner.twig';
 
 describe('Banner Component', () => {
@@ -39,7 +41,7 @@ describe('Banner Component', () => {
       background_image_blend_mode: 'multiply',
       theme: 'dark',
       modifier_class: 'additional-class',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     expect(c.querySelectorAll('.ct-banner')).toHaveLength(1);
@@ -73,7 +75,6 @@ describe('Banner Component', () => {
       title: 'Banner Title',
       theme: 'light',
       modifier_class: '',
-      attributes: '',
     });
 
     expect(c.querySelectorAll('.ct-banner')).toHaveLength(1);

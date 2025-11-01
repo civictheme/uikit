@@ -43,7 +43,6 @@ export default {
     content_middle: '',
     content: Paragraph({
       theme,
-      allow_html: true,
       content: `<p>Government grade set of high quality design themes that are accessible, inclusive and provide a consistent digital experience for your citizen. </p><p>${Button({
         theme,
         text: 'Learn about our mission',
@@ -84,6 +83,6 @@ export default {
       row_class: 'row--equal-heights-content row--vertically-spaced',
     }).trim(),
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   }),
 };

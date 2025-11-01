@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/basic-content/basic-content.twig';
 
 describe('Basic Content Component', () => {
@@ -19,7 +21,7 @@ describe('Basic Content Component', () => {
       is_contained: true,
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

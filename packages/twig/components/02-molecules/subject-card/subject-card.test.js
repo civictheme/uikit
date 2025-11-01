@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/subject-card/subject-card.twig';
 
 describe('Subject Card Component', () => {
@@ -27,7 +29,7 @@ describe('Subject Card Component', () => {
         is_external: true,
       },
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

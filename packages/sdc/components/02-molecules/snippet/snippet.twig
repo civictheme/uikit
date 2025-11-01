@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -33,13 +33,13 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if title is not empty %}
-  <div class="ct-snippet {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-snippet {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block content_block %}
       <div class="ct-snippet__content">
         {% block content_top_block %}
           {% if content_top is not empty %}
             <div class="ct-snippet__content-top">
-              {{- content_top|raw -}}
+              {{- content_top -}}
             </div>
           {% endif %}
         {% endblock %}
@@ -64,7 +64,7 @@
         {% block content_middle_block %}
           {% if content_middle is not empty %}
             <div class="ct-snippet__content-middle">
-              {{- content_middle|raw -}}
+              {{- content_middle -}}
             </div>
           {% endif %}
         {% endblock %}
@@ -74,7 +74,6 @@
             {% include 'civictheme:paragraph' with {
               theme: theme,
               content: summary,
-              allow_html: true,
               no_margin: true,
               modifier_class: 'ct-snippet__summary',
             } only %}
@@ -95,7 +94,7 @@
         {% block content_bottom_block %}
           {% if content_bottom is not empty %}
             <div class="ct-snippet__content-bottom">
-              {{- content_bottom|raw -}}
+              {{- content_bottom -}}
             </div>
           {% endif %}
         {% endblock %}

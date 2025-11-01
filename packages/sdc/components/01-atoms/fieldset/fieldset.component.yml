@@ -60,7 +60,7 @@ props:
       title: Suffix
       description: The content to add after the fieldset children.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

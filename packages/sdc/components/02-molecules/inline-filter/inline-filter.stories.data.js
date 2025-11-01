@@ -18,7 +18,7 @@ export default {
     ].join('').trim(),
     submit_text: 'Search',
     items_end: '',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   }),
 };

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/heading/heading.twig';
 
 describe('Heading Component', () => {
@@ -17,7 +19,7 @@ describe('Heading Component', () => {
     const c = await dom(template, {
       content: 'Sample Heading',
       level: '3',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

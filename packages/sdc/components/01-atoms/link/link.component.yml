@@ -61,7 +61,7 @@ props:
       title: Single icon only
       description: Only show 1 icon (if both icon and is_external are present, external takes preference).
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

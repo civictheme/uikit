@@ -28,9 +28,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['before', 'after'],
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -52,7 +49,7 @@ export const Tag = {
     url: 'https://www.example.com',
     is_new_window: false,
     is_external: false,
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

@@ -53,7 +53,7 @@ props:
       description: Message for browsers not supporting HTML5 video.
       default: "Your browser doesn't support HTML5 video."
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

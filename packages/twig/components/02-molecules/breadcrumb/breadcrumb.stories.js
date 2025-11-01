@@ -21,9 +21,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -51,6 +48,6 @@ export const Breadcrumb = {
       },
     ],
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

@@ -10,7 +10,7 @@
  * - title: [string] Link title.
  * - is_new_window: [boolean] Whether to open in a new window.
  * - is_external: [boolean] Whether the link is external.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -33,7 +33,7 @@
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if title is not empty %}title="{{ title }}"{% endif %}
     {% if is_new_window %}target="_blank" aria-label="Opens in a new tab"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     {{- link_content -}}
   </a>

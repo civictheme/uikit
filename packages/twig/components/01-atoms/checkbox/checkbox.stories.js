@@ -36,9 +36,6 @@ const meta = {
     is_disabled: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

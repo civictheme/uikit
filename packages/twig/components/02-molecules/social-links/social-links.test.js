@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/social-links/social-links.twig';
 
 describe('Social Links Component', () => {
@@ -31,7 +33,7 @@ describe('Social Links Component', () => {
       ],
       with_border: true,
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

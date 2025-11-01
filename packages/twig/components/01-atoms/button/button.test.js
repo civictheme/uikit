@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/button/button.twig';
 
 describe('Button Component', () => {
@@ -20,7 +22,7 @@ describe('Button Component', () => {
       url: 'https://example.com',
       is_new_window: true,
       is_external: false,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
       icon: 'call',
@@ -45,7 +47,7 @@ describe('Button Component', () => {
       url: 'https://example.com',
       is_new_window: true,
       is_external: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
       icon: 'call',

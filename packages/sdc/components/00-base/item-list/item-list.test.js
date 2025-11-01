@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/00-base/item-list/item-list.twig';
 
 describe('Link List Component', () => {
@@ -74,7 +76,7 @@ describe('Link List Component', () => {
         '<a href="/about">About</a>',
         '<a href="/contact">Contact</a>',
       ],
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
     });
 

@@ -44,7 +44,6 @@ export default {
       rows_above: Paragraph({
         theme,
         content: 'Example content above rows',
-        allow_html: true,
       }),
       rows: Grid({
         theme,
@@ -57,7 +56,6 @@ export default {
       rows_below: Paragraph({
         theme,
         content: `Example content below rows`,
-        allow_html: true,
       }),
       empty: '<p>No results found</p>',
       pagination: Pagination(PaginationData.args(theme)),
@@ -71,7 +69,7 @@ export default {
       },
       vertical_spacing: 'none',
       with_background: false,
-      attributes: '',
+      attributes: null,
       modifier_class: '',
     };
   },

@@ -8,9 +8,6 @@ const meta = {
   title: 'Molecules/Back To Top',
   component: Component,
   argTypes: {
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

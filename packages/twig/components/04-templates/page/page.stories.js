@@ -60,37 +60,19 @@ const meta = {
     sidebar_top_left: {
       control: { type: 'text' },
     },
-    sidebar_top_left_attributes: {
-      control: { type: 'text' },
-    },
     sidebar_top_right: {
-      control: { type: 'text' },
-    },
-    sidebar_top_right_attributes: {
       control: { type: 'text' },
     },
     content: {
       control: { type: 'text' },
     },
-    content_attributes: {
-      control: { type: 'text' },
-    },
     sidebar_bottom_left: {
-      control: { type: 'text' },
-    },
-    sidebar_bottom_left_attributes: {
       control: { type: 'text' },
     },
     sidebar: {
       control: { type: 'text' },
     },
-    sidebar_attributes: {
-      control: { type: 'text' },
-    },
     sidebar_bottom_right: {
-      control: { type: 'text' },
-    },
-    sidebar_bottom_right_attributes: {
       control: { type: 'text' },
     },
     content_contained: {
@@ -130,9 +112,6 @@ const meta = {
       control: { type: 'text' },
     },
     footer_bottom_2: {
-      control: { type: 'text' },
-    },
-    attributes: {
       control: { type: 'text' },
     },
     modifier_class: {

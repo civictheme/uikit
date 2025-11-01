@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -20,7 +20,7 @@
   <span class="ct-search__link-text">{{ text }}</span>
 {%- endset %}
 
-<div class="ct-search {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-search {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% include '@atoms/link/link.twig' with {
     theme: theme|default('light'),
     text: search_text,

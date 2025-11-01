@@ -51,9 +51,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 

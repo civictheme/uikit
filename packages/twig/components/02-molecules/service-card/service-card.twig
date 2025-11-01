@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - links: [array] Card links:
  *   Each item contains:
@@ -31,12 +31,12 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if title %}
-  <div class="ct-service-card {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-service-card {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
     <div class="ct-service-card__content">
       {% block content_top_block %}
         {% if content_top %}
           <div class="ct-service-card__content-top">
-            {{- content_top|raw -}}
+            {{- content_top -}}
           </div>
         {% endif %}
       {% endblock %}
@@ -80,7 +80,7 @@
       {% block content_bottom_block %}
         {% if content_bottom %}
           <div class="ct-service-card__content-bottom">
-            {{- content_bottom|raw -}}
+            {{- content_bottom -}}
           </div>
         {% endif %}
       {% endblock %}

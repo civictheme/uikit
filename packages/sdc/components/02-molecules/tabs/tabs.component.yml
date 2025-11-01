@@ -22,7 +22,7 @@ props:
         - bottom
         - both
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:
@@ -72,6 +72,6 @@ props:
             title: Modifier Class
             description: Additional CSS classes.
           attributes:
-            type: string
+            type: object
             title: Attributes
             description: Additional HTML attributes.

@@ -81,12 +81,9 @@ exports[`Fieldset Component renders with description after 1`] = `
       <div
         class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-fieldset__description ct-fieldset__description--after"
       >
-        
-    
         <strong>
           Test Description
         </strong>
-          
       </div>
             
     </div>
@@ -120,12 +117,9 @@ exports[`Fieldset Component renders with description before 1`] = `
       <div
         class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-fieldset__description ct-fieldset__description--before"
       >
-        
-    
         <strong>
           Test Description
         </strong>
-          
       </div>
           
               
@@ -200,8 +194,7 @@ exports[`Fieldset Component renders with invisible description 1`] = `
       <div
         class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-fieldset__description ct-fieldset__description--invisible ct-visually-hidden"
       >
-        
-    Test Description  
+        Test Description
       </div>
           
               
@@ -231,8 +224,7 @@ exports[`Fieldset Component renders with legend 1`] = `
     <legend
       class="ct-label ct-theme-light ct-label--large  ct-fieldset__legend"
     >
-      
-  Test Legend  
+      Test Legend
     </legend>
       
   
@@ -295,11 +287,10 @@ exports[`Fieldset Component renders with message 1`] = `
 
         </svg>
         
-        
+    
         <strong>
           Test Message
         </strong>
-          
       </div>
                     
       
