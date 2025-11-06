@@ -384,3 +384,308 @@ describe('Grid Template Columns with Auto Breakpoint', () => {
     }
   });
 });
+
+describe('Grid Attribute Handling', () => {
+  test('renders with null attributes', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      attributes: null,
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(1);
+    expect(c.querySelectorAll('.row')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with undefined attributes', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      attributes: undefined,
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(1);
+    expect(c.querySelectorAll('.row')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with null row_attributes', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      row_attributes: null,
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(1);
+    expect(c.querySelectorAll('.row')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with null column_attributes', async () => {
+    const c = await dom(template, {
+      items: ['1', '2'],
+      use_container: true,
+      column_attributes: null,
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(1);
+    expect(c.querySelectorAll('.row')).toHaveLength(1);
+    expect(c.querySelectorAll('.col')).toHaveLength(2);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('merges attributes and row_attributes correctly', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      attributes: new DrupalAttribute().setAttribute('data-grid', 'test'),
+      row_attributes: new DrupalAttribute().setAttribute('data-row', 'row-test'),
+    });
+
+    expect(c.querySelectorAll('.container[data-grid="test"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.row[data-grid="test"][data-row="row-test"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('applies column_attributes to all columns', async () => {
+    const c = await dom(template, {
+      items: ['1', '2', '3'],
+      use_container: true,
+      column_attributes: new DrupalAttribute().setAttribute('data-col', 'col-test'),
+    });
+
+    expect(c.querySelectorAll('.col[data-col="col-test"]')).toHaveLength(3);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with multiple DrupalAttribute properties on container', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      attributes: new DrupalAttribute()
+        .setAttribute('data-test', 'true')
+        .setAttribute('data-custom', 'value')
+        .setAttribute('id', 'grid-1'),
+    });
+
+    expect(c.querySelector('.container').getAttribute('data-test')).toEqual('true');
+    expect(c.querySelector('.container').getAttribute('data-custom')).toEqual('value');
+    expect(c.querySelector('.container').getAttribute('id')).toEqual('grid-1');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with multiple DrupalAttribute properties on row', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      row_attributes: new DrupalAttribute()
+        .setAttribute('data-test', 'true')
+        .setAttribute('data-custom', 'value')
+        .setAttribute('id', 'row-1'),
+    });
+
+    expect(c.querySelector('.row').getAttribute('data-test')).toEqual('true');
+    expect(c.querySelector('.row').getAttribute('data-custom')).toEqual('value');
+    expect(c.querySelector('.row').getAttribute('id')).toEqual('row-1');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with multiple DrupalAttribute properties on columns', async () => {
+    const c = await dom(template, {
+      items: ['1', '2'],
+      use_container: true,
+      column_attributes: new DrupalAttribute()
+        .setAttribute('data-test', 'true')
+        .setAttribute('data-custom', 'value'),
+    });
+
+    c.querySelectorAll('.col').forEach((col) => {
+      expect(col.getAttribute('data-test')).toEqual('true');
+      expect(col.getAttribute('data-custom')).toEqual('value');
+    });
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders without container and applies attributes to row', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: false,
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(0);
+    expect(c.querySelectorAll('.row[data-test="true"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with aria-live attribute on container', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+    });
+
+    expect(c.querySelector('.container').getAttribute('aria-live')).toEqual('polite');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('preserves custom attributes when merging with row attributes', async () => {
+    const c = await dom(template, {
+      items: ['1', '2'],
+      use_container: true,
+      attributes: new DrupalAttribute()
+        .setAttribute('data-attr1', 'value1')
+        .setAttribute('data-attr2', 'value2'),
+      row_attributes: new DrupalAttribute()
+        .setAttribute('data-attr3', 'value3')
+        .setAttribute('data-attr4', 'value4'),
+    });
+
+    const row = c.querySelector('.row');
+    expect(row.getAttribute('data-attr1')).toEqual('value1');
+    expect(row.getAttribute('data-attr2')).toEqual('value2');
+    expect(row.getAttribute('data-attr3')).toEqual('value3');
+    expect(row.getAttribute('data-attr4')).toEqual('value4');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('handles empty items array gracefully', async () => {
+    const c = await dom(template, {
+      items: [],
+      use_container: true,
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(0);
+    expect(c.querySelectorAll('.row')).toHaveLength(0);
+  });
+
+  test('renders with fluid container and attributes', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      is_fluid: true,
+      attributes: new DrupalAttribute().setAttribute('data-fluid', 'true'),
+    });
+
+    expect(c.querySelectorAll('.container-fluid[data-fluid="true"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('applies modifier_class with attributes correctly', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      modifier_class: 'custom-grid',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
+    });
+
+    expect(c.querySelectorAll('.container.custom-grid[data-test="true"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.row.custom-grid')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders column attributes with custom column element', async () => {
+    const c = await dom(template, {
+      items: ['1', '2'],
+      use_container: true,
+      column_element: 'span',
+      column_attributes: new DrupalAttribute().setAttribute('data-col', 'span-col'),
+    });
+
+    expect(c.querySelectorAll('span.col[data-col="span-col"]')).toHaveLength(2);
+
+    assertUniqueCssClasses(c);
+  });
+});
+
+describe('Grid Edge Cases', () => {
+  test('renders with empty string modifier_class', async () => {
+    const c = await dom(template, {
+      items: ['1'],
+      use_container: true,
+      modifier_class: '',
+    });
+
+    expect(c.querySelectorAll('.container')).toHaveLength(1);
+    expect(c.querySelectorAll('.row')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with items containing empty strings', async () => {
+    const c = await dom(template, {
+      items: ['content1', '', 'content2'],
+      use_container: true,
+    });
+
+    expect(c.querySelectorAll('.col')).toHaveLength(2);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with zero template_column_count', async () => {
+    const c = await dom(template, {
+      items: ['1', '2'],
+      use_container: true,
+      template_column_count: 0,
+    });
+
+    expect(c.querySelectorAll('.col')).toHaveLength(2);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with custom row and column classes and attributes', async () => {
+    const c = await dom(template, {
+      items: ['1', '2'],
+      use_container: true,
+      row_class: 'my-row',
+      column_class: 'my-col',
+      row_attributes: new DrupalAttribute().setAttribute('data-row', 'custom'),
+      column_attributes: new DrupalAttribute().setAttribute('data-col', 'custom'),
+    });
+
+    expect(c.querySelectorAll('.row.my-row[data-row="custom"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.col.my-col[data-col="custom"]')).toHaveLength(2);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders with all possible attributes combined', async () => {
+    const c = await dom(template, {
+      items: ['1', '2', '3'],
+      use_container: true,
+      is_fluid: true,
+      template_column_count: 3,
+      fill_width: true,
+      row_element: 'section',
+      column_element: 'article',
+      row_class: 'custom-row',
+      column_class: 'custom-col',
+      modifier_class: 'custom-grid',
+      attributes: new DrupalAttribute().setAttribute('data-grid', 'main'),
+      row_attributes: new DrupalAttribute().setAttribute('data-row', 'row1'),
+      column_attributes: new DrupalAttribute().setAttribute('data-col', 'col1'),
+    });
+
+    expect(c.querySelectorAll('.container-fluid.custom-grid[data-grid="main"]')).toHaveLength(1);
+    expect(c.querySelectorAll('section.row.row--fill-width.custom-row.custom-grid[data-grid="main"][data-row="row1"]')).toHaveLength(1);
+    expect(c.querySelectorAll('article.custom-col[data-col="col1"]')).toHaveLength(3);
+
+    assertUniqueCssClasses(c);
+  });
+});
