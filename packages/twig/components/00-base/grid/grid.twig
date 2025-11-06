@@ -70,7 +70,9 @@
   {% if modifier_class is not empty %}
     {% set row_classes = row_classes|merge([modifier_class]) %}
   {% endif %}
-  {% set row_attributes = (row_attributes ~ ' ' ~ attributes)|trim %}
+  {% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
+  {% set row_attributes = row_attributes is defined and row_attributes is not null ? row_attributes : create_attribute({}) %}
+  {% set row_attributes = row_attributes.merge(attributes) %}
 {% endif %}
 
 {% set row_class_string = row_classes|join(' ')|trim %}
