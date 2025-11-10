@@ -39,18 +39,6 @@ const meta = {
     fill_width: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'object' },
-      description: 'Additional HTML attributes as key-value pairs',
-    },
-    row_attributes: {
-      control: { type: 'object' },
-      description: 'Additional row attributes as key-value pairs',
-    },
-    column_attributes: {
-      control: { type: 'object' },
-      description: 'Additional column attributes as key-value pairs',
-    },
     modifier_class: {
       control: { type: 'text' },
     },
