@@ -28,26 +28,26 @@
     {% set fallback_text = "Your browser doesn't support HTML5 video." %}
   {% endif %}
 
-  {% set attributes = attributes|default('') %}
+  {% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
 
   {% if title is not empty %}
-    {% set attributes = attributes ~ 'title="' ~ title ~ '"' %}
+    {% set attributes = attributes.setAttribute('title', title) %}
   {% endif %}
 
   {% if has_controls %}
-    {% set attributes = attributes ~ 'controls=""' %}
+    {% set attributes = attributes.setAttribute('controls', '') %}
   {% endif %}
 
   {% if poster is not empty %}
-    {% set attributes = attributes ~ 'poster="' ~ poster ~ '"' %}
+    {% set attributes = attributes.setAttribute('poster', poster) %}
   {% endif %}
 
   {% if width is not empty %}
-    {% set attributes = attributes ~ 'width="' ~ width ~ '"' %}
+    {% set attributes = attributes.setAttribute('width', width) %}
   {% endif %}
 
   {% if height is not empty %}
-    {% set attributes = attributes ~ 'height="' ~ height ~ '"' %}
+    {% set attributes = attributes.setAttribute('height', height) %}
   {% endif %}
 
   <video class="ct-video {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>

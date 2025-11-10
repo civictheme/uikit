@@ -2,6 +2,7 @@
  * CivicTheme Grid component stories.
  */
 
+import DrupalAttribute from 'drupal-attribute';
 import Component from './grid.twig';
 
 const meta = {
@@ -78,5 +79,29 @@ export const Grid = {
     fill_width: false,
     attributes: null,
     modifier_class: 'row--equal-heights-content row--vertically-spaced',
+  },
+  render: (args) => {
+    // Transform object inputs to DrupalAttribute instances
+    const transformedArgs = { ...args };
+
+    if (args.attributes && typeof args.attributes === 'object') {
+      transformedArgs.attributes = new DrupalAttribute(
+        Object.entries(args.attributes),
+      );
+    }
+
+    if (args.row_attributes && typeof args.row_attributes === 'object') {
+      transformedArgs.row_attributes = new DrupalAttribute(
+        Object.entries(args.row_attributes),
+      );
+    }
+
+    if (args.column_attributes && typeof args.column_attributes === 'object') {
+      transformedArgs.column_attributes = new DrupalAttribute(
+        Object.entries(args.column_attributes),
+      );
+    }
+
+    return Component(transformedArgs);
   },
 };
