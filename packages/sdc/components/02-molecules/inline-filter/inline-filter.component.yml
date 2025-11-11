@@ -13,6 +13,10 @@ props:
       enum:
         - light
         - dark
+    title:
+      type: string
+      title: Title
+      description: Filter title.
     submit_text:
       type: string
       title: Submit text
@@ -22,7 +26,7 @@ props:
       title: Modifier Class
       description: Additional CSS classes.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
 slots:

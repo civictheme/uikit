@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - url: [string] Image URL.
  * - alt: [string] Image alt text.
@@ -21,7 +21,7 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if url is not empty %}
-  <figure class="ct-figure {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <figure class="ct-figure {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% include '@atoms/image/image.twig' with {
       theme: theme,
       url: url,

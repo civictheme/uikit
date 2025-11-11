@@ -57,9 +57,6 @@ const meta = {
     is_external: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -80,11 +77,10 @@ export const Button = {
     icon_single_only: false,
     text: 'My title',
     url: '',
-    allow_html: false,
     is_new_window: false,
     is_external: false,
     is_disabled: false,
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

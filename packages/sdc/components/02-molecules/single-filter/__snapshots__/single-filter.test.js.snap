@@ -67,7 +67,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                                                                                                                            
+                                                                                                                                                                      
 
       
                   <label
@@ -87,7 +87,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                     Filter 1        
                     <svg
                       aria-hidden="true"
-                      class="ct-icon  ct-chip__dismiss"
+                      class="ct-icon ct-chip__dismiss"
                       height="24"
                       role="img"
                       viewBox="0 0 24 24"
@@ -113,7 +113,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                                                                                                                            
+                                                                                                                                                                      
 
       
                   <label
@@ -132,7 +132,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                     Filter 2        
                     <svg
                       aria-hidden="true"
-                      class="ct-icon  ct-chip__dismiss"
+                      class="ct-icon ct-chip__dismiss"
                       height="24"
                       role="img"
                       viewBox="0 0 24 24"
@@ -169,6 +169,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
 
   
               <button
+                _keys="type"
                 class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-single-filter__submit"
                 data-component-name="button"
                 type="submit"
@@ -189,7 +190,7 @@ exports[`Single Filter Component renders with multiple selection enabled 1`] = `
                    
                   <svg
                     aria-hidden="true"
-                    class="ct-icon  ct-button__icon"
+                    class="ct-icon ct-button__icon"
                     height="24"
                     role="img"
                     viewBox="0 0 24 24"
@@ -302,7 +303,7 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                                                                                                                            
+                                                                                                                                                                      
 
       
                   <label
@@ -329,7 +330,7 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                                                                                                                            
+                                                                                                                                                                      
 
       
                   <label
@@ -365,6 +366,7 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
 
   
               <button
+                _keys="type"
                 class="ct-button ct-theme-dark ct-button--primary ct-button--button ct-button--small   ct-single-filter__submit"
                 data-component-name="button"
                 type="submit"
@@ -385,7 +387,7 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
                    
                   <svg
                     aria-hidden="true"
-                    class="ct-icon  ct-button__icon"
+                    class="ct-icon ct-button__icon"
                     height="24"
                     role="img"
                     viewBox="0 0 24 24"
@@ -410,6 +412,7 @@ exports[`Single Filter Component renders with optional attributes 1`] = `
 
   
               <input
+                _keys="type"
                 class="ct-button ct-theme-dark ct-button--secondary ct-button--reset ct-button--small   ct-single-filter__submit"
                 data-component-name="button"
                 type="reset"
@@ -507,7 +510,7 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                                                                                                                            
+                                                                                                                                                                      
 
       
                   <label
@@ -533,7 +536,7 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                 <li
                   class="ct-item-list__item"
                 >
-                                                                                                                            
+                                                                                                                                                                      
 
       
                   <label
@@ -569,6 +572,7 @@ exports[`Single Filter Component renders with required attributes 1`] = `
 
   
               <button
+                _keys="type"
                 class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-single-filter__submit"
                 data-component-name="button"
                 type="submit"
@@ -589,7 +593,7 @@ exports[`Single Filter Component renders with required attributes 1`] = `
                    
                   <svg
                     aria-hidden="true"
-                    class="ct-icon  ct-button__icon"
+                    class="ct-icon ct-button__icon"
                     height="24"
                     role="img"
                     viewBox="0 0 24 24"

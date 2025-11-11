@@ -7,7 +7,7 @@
  * - theme: [string] Theme variation (light or dark).
  * - image_position: [string] Image position relative to content (left or right).
  * - vertical_spacing: [string] Campaign vertical spacing (top, bottom, or both).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - image: [object] Campaign image.
  *   Each property contains:
@@ -48,7 +48,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, image_position_class, modifier_class|default('')) %}
 
-<div class="ct-campaign {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-campaign {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   <div class="container">
     <div class="row row--vertically-spaced">
       <div class="col-xxs-12 {% if image_position == 'right' %}col-m-5 col-m-offset-1{% else %}col-m-5 col-m-offset-1{% endif %} ct-flex-align-self-center">
@@ -56,7 +56,7 @@
           {% block content_top_block %}
             {% if content_top is not empty %}
               <div class="ct-campaign__content-top">
-                {{ content_top|raw }}
+                {{ content_top }}
               </div>
             {% endif %}
           {% endblock %}
@@ -94,7 +94,6 @@
               {% include '@atoms/paragraph/paragraph.twig' with {
                 theme: theme,
                 content: content,
-                allow_html: true,
                 modifier_class: 'ct-campaign__content',
               } only %}
             {% endif %}
@@ -129,7 +128,7 @@
           {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-campaign__content-bottom">
-                {{ content_bottom|raw }}
+                {{ content_bottom }}
               </div>
             {% endif %}
           {% endblock %}

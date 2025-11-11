@@ -31,9 +31,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -51,6 +48,6 @@ export const Iframe = {
     vertical_spacing: 'none',
     with_background: false,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

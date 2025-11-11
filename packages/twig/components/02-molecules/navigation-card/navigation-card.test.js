@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/navigation-card/navigation-card.twig';
 
 describe('Navigation Card Component', () => {
@@ -27,7 +29,7 @@ describe('Navigation Card Component', () => {
       summary: 'This is a summary of the card.',
       link: { text: 'Learn more', url: 'https://example.com', is_new_window: true, is_external: true },
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 
@@ -70,7 +72,7 @@ describe('Navigation Card Component', () => {
       summary: 'This is a summary of the card.',
       link: { text: 'Learn more', url: 'https://example.com', is_new_window: true, is_external: true },
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

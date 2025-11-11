@@ -49,9 +49,9 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   
       
                                             
-                    
       
         <li
+          _keys="data-collapsible data-collapsible-collapsed data-collapsible-icon-group data-collapsible-group data-collapsible-duration"
           class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  ct-navigation__has-dropdown ct-navigation__dropdown-columns--2 "
           data-collapsible=""
           data-collapsible-collapsed=""
@@ -90,7 +90,6 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   
       
             
-                    
       
               <li
                 class="ct-menu__item ct-menu__item--level-1   "
@@ -131,9 +130,9 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   
       
                                             
-                    
       
         <li
+          _keys="data-collapsible data-collapsible-collapsed data-collapsible-icon-group data-collapsible-group data-collapsible-duration"
           class="ct-menu__item ct-menu__item--level-0 ct-menu__item--has-children  ct-navigation__has-dropdown ct-navigation__dropdown-columns--2 "
           data-collapsible=""
           data-collapsible-collapsed=""
@@ -172,7 +171,6 @@ exports[`Navigation Component renders correctly when items have submenus 1`] = `
                   
       
             
-                    
       
               <li
                 class="ct-menu__item ct-menu__item--level-1   "
@@ -267,7 +265,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "
@@ -296,7 +293,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "
@@ -325,7 +321,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "
@@ -354,7 +349,6 @@ exports[`Navigation Component renders with all attributes provided 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "
@@ -427,7 +421,6 @@ exports[`Navigation Component renders with only required attributes 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "
@@ -500,7 +493,6 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "
@@ -529,7 +521,6 @@ exports[`Navigation Component renders with some attributes missing 1`] = `
                   
       
             
-                    
       
         <li
           class="ct-menu__item ct-menu__item--level-0   "

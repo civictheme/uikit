@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/figure/figure.twig';
 
 describe('Figure Component', () => {
@@ -24,7 +26,7 @@ describe('Figure Component', () => {
       height: '300',
       caption: 'This is the image caption.',
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

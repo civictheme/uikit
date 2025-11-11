@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - background_image: [string] Content background inline image.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -37,7 +37,7 @@
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
 
 {% if content_top1 is not empty or content_top2 is not empty or content_middle1 is not empty or content_middle2 is not empty or content_middle3 is not empty or content_middle4 is not empty or content_bottom1 is not empty or content_bottom2 is not empty %}
-  <footer class="ct-footer {{ modifier_class -}}" role="contentinfo" data-component-name="ct-footer" {% if background_image %}style="background-image: url('{{ background_image }}')"{% endif %} {% if attributes %}{{ attributes|raw }}{% endif %}>
+  <footer class="ct-footer {{ modifier_class -}}" role="contentinfo" data-component-name="ct-footer" {% if background_image %}style="background-image: url('{{ background_image }}')"{% endif %} {% if attributes %}{{ attributes }}{% endif %}>
 
     {% if content_top1 is not empty or content_top2 is not empty %}
       <div class="container ct-footer__top">
@@ -47,7 +47,7 @@
             {%- block content_top1_block %}
               <div class="col-xxs-12 col-m-6">
                 <div class="ct-footer__top__content-top1">
-                  {{- content_top1|raw -}}
+                  {{- content_top1 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -57,7 +57,7 @@
             {%- block content_top2_block %}
               <div class="col-xxs-12 col-m-6">
                 <div class="ct-footer__top__content-top2">
-                  {{- content_top2|raw -}}
+                  {{- content_top2 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -75,7 +75,7 @@
             {%- block content_middle1_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle1">
-                  {{- content_middle1|raw -}}
+                  {{- content_middle1 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -85,7 +85,7 @@
             {%- block content_middle2_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle2">
-                  {{- content_middle2|raw -}}
+                  {{- content_middle2 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -95,7 +95,7 @@
             {%- block content_middle3_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle3">
-                  {{- content_middle3|raw -}}
+                  {{- content_middle3 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -105,7 +105,7 @@
             {%- block content_middle4_block %}
               <div class="col-xxs-12 col-m-3">
                 <div class="ct-footer__middle__content-middle4">
-                  {{- content_middle4|raw -}}
+                  {{- content_middle4 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -115,7 +115,7 @@
             {%- block content_middle5_block %}
               <div class="col-xxs-12">
                 <div class="ct-footer__middle__content-middle5">
-                  {{- content_middle5|raw -}}
+                  {{- content_middle5 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -133,7 +133,7 @@
             {%- block content_bottom1_block %}
               <div class="col-xxs-12 col-m-7">
                 <div class="ct-footer__bottom__content-bottom1">
-                  {{- content_bottom1|raw -}}
+                  {{- content_bottom1 -}}
                 </div>
               </div>
             {% endblock -%}
@@ -143,7 +143,7 @@
             {%- block content_bottom2_block %}
               <div class="col-xxs-12 col-m-5">
                 <div class="ct-footer__bottom__content-bottom2">
-                  {{- content_bottom2|raw -}}
+                  {{- content_bottom2 -}}
                 </div>
               </div>
             {% endblock -%}

@@ -39,9 +39,6 @@ const meta = {
     content_bottom: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -79,7 +76,7 @@ export const Slider = {
           is_external: false,
         },
       ],
-      attributes: '',
+      attributes: null,
     }).trim()).join(''),
     previous_label: 'Previous',
     next_label: 'Next',
@@ -87,7 +84,7 @@ export const Slider = {
     with_background: false,
     content_top: '',
     content_bottom: '',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

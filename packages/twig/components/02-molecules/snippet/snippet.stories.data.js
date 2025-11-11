@@ -15,6 +15,6 @@ export default {
     content_middle: '',
     content_bottom: '',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   }),
 };

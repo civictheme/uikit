@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/select/select.twig';
 
 describe('Select Component', () => {
@@ -33,7 +35,7 @@ describe('Select Component', () => {
       is_invalid: true,
       is_disabled: true,
       is_required: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 
@@ -105,7 +107,7 @@ describe('Select Component', () => {
       options: [
         { type: 'option', label: 'Option 1', value: '1' },
       ],
-      attributes: 'data-test="<script>alert(1)</script>"',
+      attributes: new DrupalAttribute().setAttribute('data-test', '<script>alert(1)</script>'),
     });
 
     expect(c.querySelector('.ct-select').getAttribute('data-test')).toEqual('<script>alert(1)</script>');

@@ -49,9 +49,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -77,6 +74,6 @@ export const Fieldset = {
     prefix: '',
     suffix: '',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

@@ -83,9 +83,6 @@ const meta = {
     is_data_table: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -117,7 +114,7 @@ export const Table = {
     ],
     is_striped: '',
     is_data_table: '',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
   render: (args) => Component({

@@ -46,7 +46,7 @@ props:
       title: Group parent
       description: Additional parent selector for radio group.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

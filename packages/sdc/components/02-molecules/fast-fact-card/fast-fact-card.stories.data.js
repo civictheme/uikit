@@ -13,6 +13,6 @@ export default {
     },
     is_title_click: false,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   }),
 };

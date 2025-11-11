@@ -18,7 +18,7 @@
  *   - icon: [string] File type icon name.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - with_background: [boolean] Whether to display with a background.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -39,7 +39,7 @@
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
 
 {% if files is not empty %}
-  <div class="ct-attachment {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-attachment {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     <div class="container">
       <div class="row">
         <div class="col-xxs-12">
@@ -47,7 +47,7 @@
             {% block content_top_block %}
               {% if content_top is not empty %}
                 <div class="ct-attachment__content-top">
-                  {{- content_top|raw -}}
+                  {{- content_top -}}
                 </div>
               {% endif %}
             {% endblock %}
@@ -69,7 +69,6 @@
                       theme: theme,
                       content: content,
                       size: 'small',
-                      allow_html: true,
                       modifier_class: 'ct-attachment__content',
                     } only %}
                   {% endif %}
@@ -88,16 +87,18 @@
                   } only %}
 
                   <div class="ct-attachment__links__link__wrapper">
-                    {% set extension = '' %}
-                    {% if file.ext is not empty and file.size is not empty %}
-                      {% set extension = ' <span class="ct-attachment__links__link__extension">(%s, %s)</span>'|format(file.ext, file.size) %}
-                    {% elseif file.ext is not empty or file.size is not empty %}
-                      {% set extension = ' <span class="ct-attachment__links__link__extension">(%s)</span>'|format(file.ext|default(file.size)) %}
-                    {% endif %}
+                    {% set link_text %}
+                      {{ file.name }}
+                      {% if file.ext is not empty and file.size is not empty %}
+                        <span class="ct-attachment__links__link__extension">({{ file.ext }}, {{ file.size }})</span>
+                      {% elseif file.ext is not empty or file.size is not empty %}
+                        <span class="ct-attachment__links__link__extension">({{ file.ext|default(file.size) }})</span>
+                      {% endif %}
+                    {% endset %}
 
                     {% include '@atoms/link/link.twig' with {
                       theme: theme,
-                      text: file.name ~ extension,
+                      text: link_text,
                       title: 'Download %s'|format(file.name),
                       url: file.url,
                       modifier_class: 'ct-attachment__links__link',
@@ -126,7 +127,7 @@
             {% block content_bottom_block %}
               {% if content_bottom is not empty %}
                 <div class="ct-attachment__content-bottom">
-                  {{- content_bottom|raw -}}
+                  {{- content_bottom -}}
                 </div>
               {% endif %}
             {% endblock %}

@@ -65,9 +65,6 @@ const meta = {
     control: {
       control: { type: 'object' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

@@ -2,6 +2,7 @@
  * CivicTheme Tabs component stories.
  */
 
+import DrupalAttribute from 'drupal-attribute';
 import Component from './tabs.twig';
 
 const meta = {
@@ -21,9 +22,6 @@ const meta = {
     vertical_spacing: {
       control: { type: 'radio' },
       options: ['none', 'top', 'bottom', 'both'],
-    },
-    attributes: {
-      control: { type: 'text' },
     },
     modifier_class: {
       control: { type: 'text' },
@@ -60,7 +58,9 @@ export const Tabs = {
         is_new_window: false,
         is_external: false,
         modifier_class: '',
-        attributes: 'id="panel-1-tab"',
+        attributes: new DrupalAttribute([
+          ['id', 'panel-1-tab'],
+        ]),
       },
       {
         text: 'Link text 2',
@@ -68,11 +68,13 @@ export const Tabs = {
         is_new_window: false,
         is_external: false,
         modifier_class: '',
-        attributes: 'id="panel-2-tab"',
+        attributes: new DrupalAttribute([
+          ['id', 'panel-2-tab'],
+        ]),
       },
     ],
     vertical_spacing: 'none',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

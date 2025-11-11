@@ -23,9 +23,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['none', 'top', 'bottom', 'both'],
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

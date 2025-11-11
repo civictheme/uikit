@@ -34,13 +34,24 @@ exports[`Social Links Component renders with icon HTML 1`] = `
 
   
         <a
+          _keys="title"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--regular   ct-social-links__button"
           data-component-name="button"
           href="https://facebook.com"
           role="button"
           target="_blank"
+          title="Facebook"
         >
-                    &lt;svg&gt;&lt;/svg&gt;
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -54,13 +65,24 @@ exports[`Social Links Component renders with icon HTML 1`] = `
 
   
         <a
+          _keys="title"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--regular   ct-social-links__button"
           data-component-name="button"
           href="https://twitter.com"
           role="button"
           target="_blank"
+          title="Twitter"
         >
-                    &lt;svg&gt;&lt;/svg&gt;
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -104,13 +126,24 @@ exports[`Social Links Component renders with optional attributes 1`] = `
 
   
         <a
+          _keys="title"
           class="ct-button ct-theme-dark ct-button--tertiary ct-button--link ct-button--regular   ct-social-links__button"
           data-component-name="button"
           href="https://facebook.com"
           role="button"
           target="_blank"
+          title="Facebook"
         >
-                    &lt;svg&gt;&lt;/svg&gt;
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -124,13 +157,24 @@ exports[`Social Links Component renders with optional attributes 1`] = `
 
   
         <a
+          _keys="title"
           class="ct-button ct-theme-dark ct-button--tertiary ct-button--link ct-button--regular   ct-social-links__button"
           data-component-name="button"
           href="https://twitter.com"
           role="button"
           target="_blank"
+          title="Twitter"
         >
-                    &lt;svg&gt;&lt;/svg&gt;
+          <span
+            class="ct-text-icon__text"
+          >
+            <svg />
+          </span>
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -173,16 +217,17 @@ exports[`Social Links Component renders with required attributes 1`] = `
 
   
         <a
+          _keys="title"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--regular   ct-social-links__button"
           data-component-name="button"
           href="https://facebook.com"
           role="button"
           target="_blank"
+          title="Facebook"
         >
-                    
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-button__icon"
+            class="ct-icon ct-button__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -199,6 +244,11 @@ exports[`Social Links Component renders with required attributes 1`] = `
           </svg>
           
 
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         
@@ -212,16 +262,17 @@ exports[`Social Links Component renders with required attributes 1`] = `
 
   
         <a
+          _keys="title"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--link ct-button--regular   ct-social-links__button"
           data-component-name="button"
           href="https://twitter.com"
           role="button"
           target="_blank"
+          title="Twitter"
         >
-                    
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-button__icon"
+            class="ct-icon ct-button__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -238,6 +289,11 @@ exports[`Social Links Component renders with required attributes 1`] = `
           </svg>
           
 
+          <span
+            class="ct-visually-hidden"
+          >
+            (Opens in a new tab/window)
+          </span>
         </a>
         
         

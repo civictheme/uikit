@@ -30,7 +30,7 @@ props:
         - '6'
       default: '2'
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

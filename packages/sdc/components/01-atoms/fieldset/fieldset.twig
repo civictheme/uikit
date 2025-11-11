@@ -14,7 +14,7 @@
  * - required_text: [string] Text to display within label element when required.
  * - prefix: [string] The content to add before the fieldset children.
  * - suffix: [string] The content to add after the fieldset children.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -31,7 +31,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}
 
-<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<fieldset class="ct-fieldset {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   {% if legend is not empty %}
     {% include 'civictheme:label' with {
       theme: theme,
@@ -49,7 +49,6 @@
       {% include 'civictheme:paragraph' with {
         theme: theme,
         content: description,
-        allow_html: true,
         modifier_class: 'ct-fieldset__description ' ~ (description_display == 'invisible' ? 'ct-fieldset__description--invisible ct-visually-hidden' : 'ct-fieldset__description--before'),
       } only %}
     {% endif %}
@@ -59,32 +58,30 @@
         theme: theme,
         type: message_type,
         content: message,
-        allow_html: true,
         modifier_class: 'ct-fieldset__message',
       } only %}
     {% endif %}
 
     {% if prefix is not empty %}
-      <div class="ct-fieldset__prefix">{{- prefix|raw -}}</div>
+      <div class="ct-fieldset__prefix">{{- prefix -}}</div>
     {% endif %}
 
     {% block fields_block %}
       {% if fields is not empty %}
         <div class="ct-fieldset__fields">
-          {{- fields|raw -}}
+          {{- fields -}}
         </div>
       {% endif %}
     {% endblock %}
 
     {% if suffix is not empty %}
-      <div class="ct-fieldset__suffix">{{- suffix|raw -}}</div>
+      <div class="ct-fieldset__suffix">{{- suffix -}}</div>
     {% endif %}
 
     {% if description is not empty and description_display == 'after' %}
       {% include 'civictheme:paragraph' with {
         theme: theme,
         content: description,
-        allow_html: true,
         modifier_class: 'ct-fieldset__description ct-fieldset__description--after',
       } only %}
     {% endif %}
