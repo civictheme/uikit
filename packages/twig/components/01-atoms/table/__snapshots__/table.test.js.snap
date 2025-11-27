@@ -57,15 +57,19 @@ exports[`Table Component renders with optional attributes 1`] = `
               
       <tr>
         
-                                  
-        <td>
+                                                                                          
+        <td
+          data-title="Header 1"
+        >
           
               Row 1, Col 1
             
         </td>
         
-                                  
-        <td>
+                                                                                          
+        <td
+          data-title="Header 2"
+        >
           
               Row 1, Col 2
             
@@ -77,15 +81,19 @@ exports[`Table Component renders with optional attributes 1`] = `
               
       <tr>
         
-                                  
-        <td>
+                                                                                          
+        <td
+          data-title="Header 1"
+        >
           
               Row 2, Col 1
             
         </td>
         
-                                  
-        <td>
+                                                                                          
+        <td
+          data-title="Header 2"
+        >
           
               Row 2, Col 2
             

@@ -104,6 +104,12 @@ export const Table = {
       '<span class="demo-class">Header 3</span>',
       '<span class="ct-visually-hidden">Header 4</span>',
     ],
+    header_sanitized: [
+      'Header 1',
+      'Header 2',
+      'Header 3',
+      'Header 4',
+    ],
     rows: getRows('light'),
     footer: [
       'Footer 1',
