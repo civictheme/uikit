@@ -8,6 +8,7 @@
  * - caption: [string] Table caption.
  * - caption_position: [string] Caption position (before, after).
  * - header: [array] Header cells.
+ * - header_sanitized: [array] Provide no-HTML header column names. Used for mobile header labels.
  *   Each item contains:
  *   - items [string]
  * - rows: [array] Table rows.
@@ -51,9 +52,11 @@
         <tr>
           {% for col in row %}
             {% if header is not empty %}
-              {% set data_title = header[loop.index0] is defined ? header[loop.index0]|render|trim : '' %}
-              {% set data_title = 'class="visually-hidden"' in data_title ? '' : data_title %}
-              {% set data_title = 'class="ct-visually-hidden"' in data_title ? '' : data_title %}
+              {% if header_sanitized is not empty and header_sanitized[loop.index0] is defined %}
+                {% set data_title = header_sanitized[loop.index0] %}
+              {% else %}
+                {% set data_title = header[loop.index0] is defined ? header[loop.index0] : '' %}
+              {% endif %}
             {% endif %}
             <td {% if data_title is defined %}data-title="{{ data_title|striptags }}"{% endif %}>
               {{ col }}
