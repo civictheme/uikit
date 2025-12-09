@@ -16,7 +16,7 @@ import Pagination from '../../02-molecules/pagination/pagination.twig';
 import PaginationData from '../../02-molecules/pagination/pagination.stories.data';
 
 export default {
-  args: (theme = 'light', options = {}) => {
+  args(theme = 'light', options = {}) {
     const items = this.items(theme, options);
     return {
       theme,
@@ -63,7 +63,7 @@ export default {
       modifier_class: '',
     };
   },
-  items: (theme = 'light', options = {}) => {
+  items(theme = 'light', options = {}) {
     const components = {
       promo: { data: PromoCardData.args('light'), render: PromoCard },
       event: { data: EventCardData.args('light'), render: EventCard },
