@@ -30,6 +30,12 @@ props:
       description: Header cells.
       items:
         type: string
+    header_sanitized:
+      type: array
+      title: Header
+      description: Provide no-HTML header column names. Used for mobile header labels.
+      items:
+        type: string
     rows:
       type: array
       title: Rows
