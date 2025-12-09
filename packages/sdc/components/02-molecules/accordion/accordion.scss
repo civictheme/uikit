@@ -15,7 +15,7 @@
     }
 
     // If outer layout has no sidebars, then don't include background padding.
-    .ct-layout:not([data-layout-builder-layout="true"]).ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right & {
+    .ct-layout:not([data-layout-builder-layout='true']).ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right & {
       padding-left: 0;
       padding-right: 0;
     }
