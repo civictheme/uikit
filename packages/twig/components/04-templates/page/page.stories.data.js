@@ -12,7 +12,6 @@ import Accordion from '../../02-molecules/accordion/accordion.twig';
 import List from '../../03-organisms/list/list.twig';
 import ListData from '../../03-organisms/list/list.stories.data';
 import Grid from '../../00-base/grid/grid.twig';
-import PromoCard from '../../02-molecules/promo-card/promo-card.twig';
 
 export default {
   args: (theme = 'light') => {
