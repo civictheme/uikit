@@ -6,9 +6,18 @@
   $root: &;
 
   &#{$root}--with-background {
-    @include ct-breakpoint(m) {
-      padding-left: var(--ct-accordion-space-horizontal);
-      padding-right: var(--ct-accordion-space-horizontal);
+    padding-left: var(--ct-accordion-space-horizontal);
+    padding-right: var(--ct-accordion-space-horizontal);
+
+    @include ct-breakpoint($ct-layout-breakpoint) {
+      padding-left: var(--ct-accordion-space-horizontal-desktop);
+      padding-right: var(--ct-accordion-space-horizontal-desktop);
+    }
+
+    // If outer layout has no sidebars, then don't include background padding.
+    .ct-layout:not([data-layout-builder-layout="true"]).ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right & {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 

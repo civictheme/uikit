@@ -3,7 +3,7 @@
  */
 
 import Component from './page.twig';
-import PageData from './page.stories.data';
+import PageData, { PageFullWidthData } from './page.stories.data';
 
 const meta = {
   title: 'Templates/Page',
@@ -137,4 +137,23 @@ export const PageDark = {
     },
   },
   args: PageData.args('dark'),
+};
+
+export const PageFullWidth = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: PageFullWidthData.args('light'),
+};
+
+export const PageSidebar = {
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {
+    ...PageFullWidthData.args('light'),
+    hide_sidebar_left: false,
+    hide_sidebar_right: false,
+    sidebar_top_left: PageData.args('light').sidebar_top_left,
+  },
 };
