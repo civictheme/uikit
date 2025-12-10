@@ -16,18 +16,8 @@ import Pagination from '../../02-molecules/pagination/pagination.twig';
 import PaginationData from '../../02-molecules/pagination/pagination.stories.data';
 
 export default {
-  args: (theme = 'light', options = {}) => {
-    const components = {
-      promo: { data: PromoCardData.args('light'), render: PromoCard },
-      event: { data: EventCardData.args('light'), render: EventCard },
-      navigation: { data: NavigationCardData.args('light'), render: NavigationCard },
-      snippet: { data: SnippetData.args(theme), render: Snippet },
-    };
-    const component = options.component || 'promo';
-    const { render } = components[component];
-    const defaultData = components[component].data;
-    const itemData = options.items || Array.from(Array(6), () => ({}));
-    const items = itemData.map((data) => render({ ...defaultData, ...data }));
+  args(theme = 'light', options = {}) {
+    const items = this.items(theme, options);
     return {
       theme,
       title: 'My List Title',
@@ -72,5 +62,18 @@ export default {
       attributes: null,
       modifier_class: '',
     };
+  },
+  items(theme = 'light', options = {}) {
+    const components = {
+      promo: { data: PromoCardData.args(theme), render: PromoCard },
+      event: { data: EventCardData.args(theme), render: EventCard },
+      navigation: { data: NavigationCardData.args(theme), render: NavigationCard },
+      snippet: { data: SnippetData.args(theme), render: Snippet },
+    };
+    const component = options.component || 'promo';
+    const { render } = components[component];
+    const defaultData = components[component].data;
+    const itemData = options.items || Array.from(Array(6), () => ({}));
+    return itemData.map((data) => render({ ...defaultData, ...data }));
   },
 };

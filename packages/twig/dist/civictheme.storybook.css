@@ -6144,11 +6144,19 @@ ol ol ol {
   color: var(--ct-textfield-dark-invalid-color);
 }
 
-@media (min-width: 768px) {
+.ct-accordion.ct-accordion--with-background {
+  padding-left: var(--ct-accordion-space-horizontal);
+  padding-right: var(--ct-accordion-space-horizontal);
+}
+@media (min-width: 992px) {
   .ct-accordion.ct-accordion--with-background {
-    padding-left: var(--ct-accordion-space-horizontal);
-    padding-right: var(--ct-accordion-space-horizontal);
+    padding-left: var(--ct-accordion-space-horizontal-desktop);
+    padding-right: var(--ct-accordion-space-horizontal-desktop);
   }
+}
+.ct-layout:not([data-layout-builder-layout=true]).ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right .ct-accordion.ct-accordion--with-background {
+  padding-left: 0;
+  padding-right: 0;
 }
 .ct-accordion .ct-accordion__content {
   display: block;
@@ -9599,6 +9607,16 @@ ol ol ol {
   padding-left: var(--ct-accordion-space-horizontal);
   padding-right: var(--ct-accordion-space-horizontal);
 }
+@media (min-width: 992px) {
+  .ct-list.ct-list--with-background {
+    padding-left: var(--ct-accordion-space-horizontal-desktop);
+    padding-right: var(--ct-accordion-space-horizontal-desktop);
+  }
+}
+.ct-layout:not([data-layout-builder-layout=true]).ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right .ct-list.ct-list--with-background {
+  padding-left: 0;
+  padding-right: 0;
+}
 .ct-list__inner > *:not(:last-child) {
   margin-bottom: 1.5rem;
 }
@@ -11657,7 +11675,8 @@ html {
   --ct-accordion-header-border-radius: 0.25rem;
   --ct-accordion-item-border-radius: 0.25rem;
   --ct-accordion-stripe-width: 0.375rem;
-  --ct-accordion-space-horizontal: 3.5rem;
+  --ct-accordion-space-horizontal: 1.5rem;
+  --ct-accordion-space-horizontal-desktop: 3.5rem;
   --ct-accordion-light-background-color: var(--ct-color-light-background-light);
   --ct-accordion-light-border-color: var(--ct-color-light-border-light);
   --ct-accordion-light-color: var(--ct-color-light-body);
