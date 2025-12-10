@@ -60,6 +60,11 @@ CivicThemeTableOfContents.prototype.findLinks = function (anchorSelector, scopeS
       let anchorId = elAnchor.id || null;
       const anchorText = elAnchor.innerText;
 
+      // Ignore blank headings.
+      if (anchorText.trim() === '') {
+        return;
+      }
+
       // Generate new ID if no existing ID.
       if (!anchorId || anchorId.length === 0) {
         anchorId = this.makeAnchorId(anchorText);
