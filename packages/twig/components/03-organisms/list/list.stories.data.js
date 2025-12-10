@@ -65,9 +65,9 @@ export default {
   },
   items(theme = 'light', options = {}) {
     const components = {
-      promo: { data: PromoCardData.args('light'), render: PromoCard },
-      event: { data: EventCardData.args('light'), render: EventCard },
-      navigation: { data: NavigationCardData.args('light'), render: NavigationCard },
+      promo: { data: PromoCardData.args(theme), render: PromoCard },
+      event: { data: EventCardData.args(theme), render: EventCard },
+      navigation: { data: NavigationCardData.args(theme), render: NavigationCard },
       snippet: { data: SnippetData.args(theme), render: Snippet },
     };
     const component = options.component || 'promo';
