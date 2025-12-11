@@ -14,7 +14,7 @@ export default {
       is_new_window: false,
     },
     image: {
-      url: './demo/images/demo1.jpg',
+      url: './demo/images/demo7.jpg',
       alt: 'Image alt text',
     },
     tags: [

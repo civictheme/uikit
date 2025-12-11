@@ -16,7 +16,7 @@ import Pagination from '../../02-molecules/pagination/pagination.twig';
 import PaginationData from '../../02-molecules/pagination/pagination.stories.data';
 
 export default {
-  args(theme = 'light', options = {}) {
+  args(theme = 'light', options = {}, overrides = {}) {
     const items = this.items(theme, options);
     return {
       theme,
@@ -35,14 +35,15 @@ export default {
         theme,
         content: 'Example content above rows',
       }),
-      rows: Grid({
+      rows: items.length > 0 ? Grid({
         theme,
         items,
         template_column_count: options.columnCount || 3,
+        auto_breakpoint: options.columnAutoBreakpoint,
         fill_width: false,
         with_background: false,
         row_class: 'row--equal-heights-content row--vertically-spaced',
-      }),
+      }) : null,
       rows_below: Paragraph({
         theme,
         content: `Example content below rows`,
@@ -61,6 +62,7 @@ export default {
       with_background: false,
       attributes: null,
       modifier_class: '',
+      ...overrides,
     };
   },
   items(theme = 'light', options = {}) {
@@ -75,5 +77,21 @@ export default {
     const defaultData = components[component].data;
     const itemData = options.items || Array.from(Array(6), () => ({}));
     return itemData.map((data) => render({ ...defaultData, ...data }));
+  },
+  basicOverride(overrides = {}) {
+    return {
+      title: null,
+      link_above: null,
+      content: null,
+      filters: null,
+      results_count: null,
+      rows_above: null,
+      rows_below: null,
+      empty: null,
+      pagination: null,
+      footer: null,
+      link_below: null,
+      ...overrides,
+    };
   },
 };
