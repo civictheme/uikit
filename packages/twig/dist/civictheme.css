@@ -11505,6 +11505,7 @@ html {
   --ct-fieldset-light-required-color: var(--ct-color-light-error);
   --ct-fieldset-light-stripe-border-color: var(--ct-color-light-highlight);
   --ct-fieldset-dark-required-color: var(--ct-color-dark-error);
+  --ct-fieldset-dark-stripe-border-color: var(--ct-color-dark-highlight);
   --ct-input-border-radius: 0.25rem;
   --ct-input-outline-width: 2px;
   --ct-input-outline-offset: 2px;
@@ -12129,10 +12130,6 @@ html {
   --ct-navigation-dark-menu-item-active-border-color: var(--ct-color-dark-highlight);
   --ct-navigation-dark-menu-item-active-trail-background-color: var(--ct-color-dark-interaction-background);
   --ct-navigation-dark-menu-item-active-trail-color: var(--ct-color-dark-background);
-  --ct-navigation-dark-drawer-border-color: var(--ct-color-dark-interaction-background);
-  --ct-navigation-dark-drawer-color: var(--ct-color-dark-interaction-background);
-  --ct-navigation-dark-drawer-hover-color: var(--ct-color-dark-interaction-hover-background);
-  --ct-navigation-dark-drawer-active-color: var(--ct-color-dark-interaction-hover-background);
   --ct-navigation-dark-drawer-menu-item-background-color: transparent;
   --ct-navigation-dark-drawer-menu-item-hover-background-color: transparent;
   --ct-navigation-dark-drawer-menu-item-active-background-color: transparent;
