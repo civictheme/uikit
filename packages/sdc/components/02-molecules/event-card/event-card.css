@@ -48,20 +48,10 @@
   transition: height 0.25s;
 }
 .ct-event-card .ct-event-card__image img {
-  height: 100%;
+  aspect-ratio: var(--ct-event-card-image-aspect-ratio);
+  display: block;
   width: 100%;
   object-fit: cover;
-}
-.ct-event-card .ct-event-card__image {
-  position: relative;
-  height: var(--ct-event-card-image-height-mobile);
-  width: var(--ct-event-card-image-width-mobile);
-}
-@media (min-width: 768px) {
-  .ct-event-card .ct-event-card__image {
-    height: var(--ct-event-card-image-height-desktop);
-    width: var(--ct-event-card-image-width-desktop);
-  }
 }
 .ct-event-card .ct-event-card__content {
   padding: 1.5rem;

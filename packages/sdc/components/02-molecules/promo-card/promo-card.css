@@ -48,20 +48,10 @@
   transition: height 0.25s;
 }
 .ct-promo-card .ct-promo-card__image img {
-  height: 100%;
+  aspect-ratio: var(--ct-promo-card-image-aspect-ratio);
+  display: block;
   width: 100%;
   object-fit: cover;
-}
-.ct-promo-card .ct-promo-card__image {
-  position: relative;
-  height: var(--ct-promo-card-image-height-mobile);
-  width: var(--ct-promo-card-image-width-mobile);
-}
-@media (min-width: 768px) {
-  .ct-promo-card .ct-promo-card__image {
-    height: var(--ct-promo-card-image-height-desktop);
-    width: var(--ct-promo-card-image-width-desktop);
-  }
 }
 .ct-promo-card .ct-promo-card__content {
   padding: 1.5rem;
