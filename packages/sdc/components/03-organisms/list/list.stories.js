@@ -129,7 +129,7 @@ export const ListPromoCardEqualHeights = {
       },
       { title: 'Do anim occaecat dolor cupidatat est eu sunt labore non aute nisi proident ullamco pariatur ut ex pariatur.' },
     ],
-  }, ListData.basicOverride({ title: 'Promo Card Equal Height' })),
+  }, ListData.basicOverrides({ title: 'Promo Card Equal Height' })),
 };
 
 export const ListEventCardEqualHeights = {
@@ -143,7 +143,7 @@ export const ListEventCardEqualHeights = {
       { title: 'Veniam occaecat deserunt sint dolor minim dolore occaecat.' },
       { title: 'Do anim occaecat dolor cupidatat est eu sunt labore non aute nisi proident ullamco pariatur ut ex pariatur.' },
     ],
-  }, ListData.basicOverride({ title: 'Event Card Equal Height' })),
+  }, ListData.basicOverrides({ title: 'Event Card Equal Height' })),
 };
 
 export const ListNavigationEqualHeights = {
@@ -157,7 +157,7 @@ export const ListNavigationEqualHeights = {
       { title: 'Veniam occaecat deserunt sint dolor minim dolore occaecat.' },
       { title: 'Do anim occaecat dolor cupidatat est eu sunt labore non aute nisi proident ullamco pariatur ut ex pariatur.' },
     ],
-  }, ListData.basicOverride({ title: 'Navigation Card Equal Height' })),
+  }, ListData.basicOverrides({ title: 'Navigation Card Equal Height' })),
 };
 
 export const ListPromoCardTwoColumn = {
@@ -173,7 +173,7 @@ export const ListPromoCardTwoColumn = {
       { title: 'Proident ad mollit aute quis laborum duis laborum exercitation.' },
     ],
     columnCount: 2,
-  }, ListData.basicOverride({ title: 'Promo Card Two Column' })),
+  }, ListData.basicOverrides({ title: 'Promo Card Two Column' })),
 };
 
 export const ListPromoCardFourColumn = {
@@ -189,7 +189,7 @@ export const ListPromoCardFourColumn = {
       { title: 'Proident ad mollit aute quis laborum duis laborum exercitation.' },
     ],
     columnCount: 4,
-  }, ListData.basicOverride({ title: 'Promo Card Four Column' })),
+  }, ListData.basicOverrides({ title: 'Promo Card Four Column' })),
 };
 
 export const ListPromoCardAutoColumn = {
@@ -208,5 +208,5 @@ export const ListPromoCardAutoColumn = {
     ],
     columnCount: 6,
     columnAutoBreakpoint: true,
-  }, ListData.basicOverride({ title: 'Promo Card Auto Column' })),
+  }, ListData.basicOverrides({ title: 'Promo Card Auto Column' })),
 };

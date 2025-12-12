@@ -49,7 +49,7 @@
 }
 .ct-promo-card .ct-promo-card__image img {
   aspect-ratio: var(--ct-promo-card-image-aspect-ratio);
-  display: table;
+  display: block;
   width: 100%;
   object-fit: cover;
 }

@@ -39,7 +39,7 @@
   #{$root}__image {
     img {
       aspect-ratio: var(--ct-event-card-image-aspect-ratio);
-      display: table;
+      display: block;
       width: 100%;
       object-fit: cover;
     }

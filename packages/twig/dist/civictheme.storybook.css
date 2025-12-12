@@ -7076,7 +7076,7 @@ ol ol ol {
 }
 .ct-event-card .ct-event-card__image img {
   aspect-ratio: var(--ct-event-card-image-aspect-ratio);
-  display: table;
+  display: block;
   width: 100%;
   object-fit: cover;
 }
@@ -7979,7 +7979,7 @@ ol ol ol {
 }
 .ct-promo-card .ct-promo-card__image img {
   aspect-ratio: var(--ct-promo-card-image-aspect-ratio);
-  display: table;
+  display: block;
   width: 100%;
   object-fit: cover;
 }
@@ -11842,7 +11842,7 @@ html {
   --ct-pagination-dark-color: var(--ct-color-dark-interaction-background);
   --ct-pagination-dark-border-color: var(--ct-color-dark-border);
   --ct-event-card-border-radius: 0.25rem;
-  --ct-event-card-image-aspect-ratio: 400/240;
+  --ct-event-card-image-aspect-ratio: 5/3;
   --ct-event-card-link-graphic-hover-opacity: 0.1;
   --ct-event-card-stripe-height: 0.375rem;
   --ct-event-card-light-background-color: var(--ct-color-light-background-light);
@@ -11882,7 +11882,7 @@ html {
   --ct-navigation-card-dark-link-graphic-hover-background-color: var(--ct-color-dark-interaction-background);
   --ct-navigation-card-dark-icon-color: var(--ct-color-dark-interaction-background);
   --ct-promo-card-border-radius: 0.25rem;
-  --ct-promo-card-image-aspect-ratio: 400/240;
+  --ct-promo-card-image-aspect-ratio: 5/3;
   --ct-promo-card-link-graphic-hover-opacity: 0.1;
   --ct-promo-card-stripe-height: 0.375rem;
   --ct-promo-card-light-background-color: var(--ct-color-light-background-light);

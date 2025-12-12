@@ -899,7 +899,7 @@ $ct-pagination-dark-border-color: ct-color-dark('border') !default;
 // List/Event card.
 //
 $ct-event-card-border-radius: $ct-border-radius !default;
-$ct-event-card-image-aspect-ratio: #{'400/240'} !default;
+$ct-event-card-image-aspect-ratio: #{'5/3'} !default;
 $ct-event-card-link-graphic-hover-opacity: 0.1 !default;
 $ct-event-card-stripe-height: $ct-stripe-size !default;
 $ct-event-card-light-background-color: ct-color-light('background-light') !default;
@@ -947,7 +947,7 @@ $ct-navigation-card-dark-icon-color: $ct-link-dark-color !default;
 // List/Promo card.
 //
 $ct-promo-card-border-radius: $ct-border-radius !default;
-$ct-promo-card-image-aspect-ratio: #{'400/240'} !default;
+$ct-promo-card-image-aspect-ratio: #{'5/3'} !default;
 $ct-promo-card-link-graphic-hover-opacity: 0.1 !default;
 $ct-promo-card-stripe-height: $ct-stripe-size !default;
 $ct-promo-card-light-background-color: ct-color-light('background-light') !default;

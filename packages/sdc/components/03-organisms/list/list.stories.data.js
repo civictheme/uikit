@@ -78,7 +78,7 @@ export default {
     const itemData = options.items || Array.from(Array(6), () => ({}));
     return itemData.map((data) => render({ ...defaultData, ...data }));
   },
-  basicOverride(overrides = {}) {
+  basicOverrides(overrides = {}) {
     return {
       title: null,
       link_above: null,
