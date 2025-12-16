@@ -708,10 +708,7 @@ html {
   --ct-pagination-dark-color: var(--ct-color-dark-interaction-background);
   --ct-pagination-dark-border-color: var(--ct-color-dark-border);
   --ct-event-card-border-radius: 0.25rem;
-  --ct-event-card-image-height-desktop: 15rem;
-  --ct-event-card-image-height-mobile: 12.5rem;
-  --ct-event-card-image-width-desktop: auto;
-  --ct-event-card-image-width-mobile: auto;
+  --ct-event-card-image-aspect-ratio: 5/3;
   --ct-event-card-link-graphic-hover-opacity: 0.1;
   --ct-event-card-stripe-height: var(--ct-stripe-size);
   --ct-event-card-light-background-color: var(--ct-color-light-background-light);
@@ -750,10 +747,7 @@ html {
   --ct-navigation-card-dark-link-graphic-hover-background-color: var(--ct-color-dark-interaction-background);
   --ct-navigation-card-dark-icon-color: var(--ct-color-dark-interaction-background);
   --ct-promo-card-border-radius: 0.25rem;
-  --ct-promo-card-image-height-desktop: 15rem;
-  --ct-promo-card-image-height-mobile: 12.5rem;
-  --ct-promo-card-image-width-desktop: auto;
-  --ct-promo-card-image-width-mobile: auto;
+  --ct-promo-card-image-aspect-ratio: 5/3;
   --ct-promo-card-link-graphic-hover-opacity: 0.1;
   --ct-promo-card-stripe-height: var(--ct-stripe-size);
   --ct-promo-card-light-background-color: var(--ct-color-light-background-light);

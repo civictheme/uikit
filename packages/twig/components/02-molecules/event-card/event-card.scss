@@ -37,17 +37,11 @@
   }
 
   #{$root}__image {
-    @include ct-image-fit();
-
-    & {
-      position: relative;
-      height: var(--ct-event-card-image-height-mobile);
-      width: var(--ct-event-card-image-width-mobile);
-    }
-
-    @include ct-breakpoint(m) {
-      height: var(--ct-event-card-image-height-desktop);
-      width: var(--ct-event-card-image-width-desktop);
+    img {
+      aspect-ratio: var(--ct-event-card-image-aspect-ratio);
+      display: block;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
