@@ -23,7 +23,7 @@ jobs:
         node-version: [22]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v6
         with:
@@ -71,14 +71,14 @@ jobs:
         run: npm run test:ci
 
       - name: Upload twig coverage report as an artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: ${{github.job}}-twig-code-coverage-report-${{ matrix.node-version }}
           path: ./packages/twig/.logs/coverage
           if-no-files-found: error
 
       - name: Upload sdc coverage report as an artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: ${{github.job}}-sdc-code-coverage-report-${{ matrix.node-version }}
           path: ./packages/sdc/.logs/coverage
