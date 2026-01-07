@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/03-organisms/list/list.twig';
 
 describe('List Component', () => {
@@ -27,7 +29,7 @@ describe('List Component', () => {
       theme: 'dark',
       vertical_spacing: 'both',
       with_background: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'additional-class',
     });
 
@@ -67,7 +69,6 @@ describe('List Component', () => {
       theme: 'light',
       vertical_spacing: '',
       with_background: false,
-      attributes: '',
       modifier_class: '',
     });
 

@@ -30,9 +30,6 @@ const meta = {
     fallback_text: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -66,7 +63,7 @@ export const Video = {
     width: '',
     height: '',
     fallback_text: 'Your browser doesn\'t support HTML5 video tag.',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

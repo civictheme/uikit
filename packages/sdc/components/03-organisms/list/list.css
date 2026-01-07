@@ -6,6 +6,16 @@
   padding-left: var(--ct-accordion-space-horizontal);
   padding-right: var(--ct-accordion-space-horizontal);
 }
+@media (min-width: 992px) {
+  .ct-list.ct-list--with-background {
+    padding-left: var(--ct-accordion-space-horizontal-desktop);
+    padding-right: var(--ct-accordion-space-horizontal-desktop);
+  }
+}
+.ct-layout:not([data-layout-builder-layout=true]).ct-layout--no-top-left.ct-layout--no-top-right.ct-layout--no-bottom-left.ct-layout--no-bottom-right .ct-list.ct-list--with-background {
+  padding-left: 0;
+  padding-right: 0;
+}
 .ct-list__inner > *:not(:last-child) {
   margin-bottom: 1.5rem;
 }

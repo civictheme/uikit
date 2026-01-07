@@ -30,9 +30,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -50,6 +47,6 @@ export const Figure = {
     height: '',
     caption: 'Figure image caption.',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

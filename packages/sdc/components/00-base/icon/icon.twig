@@ -6,7 +6,7 @@
  * Props:
  * - symbol: [string] Icon name (required).
  * - size: [string] Icon size.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - assets_dir: [string] Directory containing icon assets.
  */
@@ -17,12 +17,19 @@
 {%- if symbol is not empty %}
   {%- set source = source(assets_dir ~ '/icons/' ~ symbol ~ '.svg', true) -%}
   {%- if source is not empty -%}
-    {%- set size_class = size ? 'ct-icon--size-' ~ size : '' -%}
-    {%- set base_class = 'ct-icon ' ~ size_class -%}
-    {%- set modifier = modifier_class|default('') -%}
-    {%- set aria_attributes = 'aria-hidden="true" role="img"' -%}
-    {%- set additional_attributes = attributes|default('') -%}
-    {%- set attributes = 'class="' ~ base_class ~ ' ' ~ modifier ~ '" ' ~ aria_attributes ~ ' ' ~ additional_attributes -%}
-    {{- source|replace({'<svg ': '<svg ' ~ attributes ~ ' '})|raw -}}
+
+    {%- set attr = attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}
+    {%- do attr.addClass('ct-icon') -%}
+    {%- if size -%}
+      {%- do attr.addClass('ct-icon--size-' ~ size) -%}
+    {%- endif -%}
+    {%- set class_arr = modifier_class|split(' ') -%}
+    {%- for class in class_arr -%}
+      {%- do attr.addClass(class) -%}
+    {%- endfor -%}
+    {%- do attr.setAttribute('aria-hidden', 'true') -%}
+    {%- do attr.setAttribute('role', 'img') -%}
+
+    {{- source|replace({'<svg ': '<svg ' ~ attr ~ ' '})|raw -}}
   {%- endif -%}
 {%- endif -%}

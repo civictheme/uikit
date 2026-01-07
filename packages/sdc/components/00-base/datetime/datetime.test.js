@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/00-base/datetime/datetime.twig';
 
 describe('Datetime Component', () => {
@@ -44,7 +46,7 @@ describe('Datetime Component', () => {
       start: '2023-06-15T08:00',
       start_iso: '2023-06-15T08:00:00Z',
       modifier_class: 'custom-class',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
     });
 
     expect(c.querySelectorAll('.ct-datetime.custom-class')).toHaveLength(1);

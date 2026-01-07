@@ -30,7 +30,7 @@ props:
       title: With background
       description: Whether to display with a background.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

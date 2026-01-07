@@ -23,9 +23,6 @@ const meta = {
     end_iso: {
       control: { type: 'date' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

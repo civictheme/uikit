@@ -14,7 +14,7 @@
  * - is_multiple: [boolean] Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
  * - is_dismissible: [boolean] Whether close icon should display when kind is not input, and is_multiple is false.
  * - group_parent: [string] Additional parent selector for radio group when kind = input.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -48,7 +48,7 @@
         class="ct-chip__input"
         type="{% if is_multiple %}checkbox{% else %}radio{% endif %}"
         {% if is_selected %}checked="checked"{% endif %}
-        {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+        {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
       >
       {{- text_content -}}
     </label>
@@ -64,7 +64,8 @@
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"
-      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+      data-component-name="chip"
+      {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
     >
       {{- text_content -}}
     </span>

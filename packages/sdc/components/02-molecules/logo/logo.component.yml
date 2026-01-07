@@ -23,7 +23,7 @@ props:
         - inline-stacked
       default: default
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

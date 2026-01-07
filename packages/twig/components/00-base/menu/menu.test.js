@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/00-base/menu/menu.twig';
 
 describe('Menu Component', () => {
@@ -149,27 +151,27 @@ describe('Menu Component', () => {
         {
           title: 'Home',
           url: '/',
-          attributes: 'data-test="home"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'home'),
         },
         {
           title: 'About',
           url: '/about',
-          attributes: 'data-test="about"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'about'),
         },
         {
           title: 'Services',
           url: '/services',
-          attributes: 'data-test="services"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'services'),
           below: [
             {
               title: 'Consulting',
               url: '/services/consulting',
-              attributes: 'data-test="consulting"',
+              attributes: new DrupalAttribute().setAttribute('data-test', 'consulting'),
             },
             {
               title: 'Development',
               url: '/services/development',
-              attributes: 'data-test="development"',
+              attributes: new DrupalAttribute().setAttribute('data-test', 'development'),
             },
           ],
         },
@@ -191,27 +193,27 @@ describe('Menu Component', () => {
         {
           title: 'Home',
           url: '/',
-          attributes: 'data-test="home" data-extra="extra-home"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'home').setAttribute('data-extra', 'extra-home'),
         },
         {
           title: 'About',
           url: '/about',
-          attributes: 'data-test="about" data-extra="extra-about"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'about').setAttribute('data-extra', 'extra-about'),
         },
         {
           title: 'Services',
           url: '/services',
-          attributes: 'data-test="services" data-extra="extra-services"',
+          attributes: new DrupalAttribute().setAttribute('data-test', 'services').setAttribute('data-extra', 'extra-services'),
           below: [
             {
               title: 'Consulting',
               url: '/services/consulting',
-              attributes: 'data-test="consulting" data-extra="extra-consulting"',
+              attributes: new DrupalAttribute().setAttribute('data-test', 'consulting').setAttribute('data-extra', 'extra-consulting'),
             },
             {
               title: 'Development',
               url: '/services/development',
-              attributes: 'data-test="development" data-extra="extra-development"',
+              attributes: new DrupalAttribute().setAttribute('data-test', 'development').setAttribute('data-extra', 'extra-development'),
             },
           ],
         },

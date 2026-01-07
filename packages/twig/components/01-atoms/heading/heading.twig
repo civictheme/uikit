@@ -7,7 +7,7 @@
  * - theme: [string] Theme variation (light or dark).
  * - content: [string] Heading content.
  * - level: [string] Heading level (1-6).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -18,7 +18,7 @@
 {% set level = level|default('2') %}
 
 {% if content %}
-  <h{{ level }} class="ct-heading {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
-    {{- content|raw -}}
+  <h{{ level }} class="ct-heading {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
+    {{- content -}}
   </h{{ level }}>
 {% endif %}

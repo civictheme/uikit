@@ -89,6 +89,7 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
 
   
                 <ul
+                  _keys="data-group-filter-filters"
                   class="ct-item-list ct-item-list--horizontal ct-item-list--large  ct-group-filter__filters"
                   data-group-filter-filters=""
                 >
@@ -110,6 +111,7 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -164,6 +166,7 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -225,6 +228,7 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
 
   
                 <button
+                  _keys="type"
                   class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-group-filter__submit"
                   data-component-name="button"
                   type="submit"
@@ -245,7 +249,7 @@ exports[`Group Filter Component renders with content top and bottom 1`] = `
                      
                     <svg
                       aria-hidden="true"
-                      class="ct-icon  ct-button__icon"
+                      class="ct-icon ct-button__icon"
                       height="24"
                       role="img"
                       viewBox="0 0 24 24"
@@ -376,6 +380,7 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
 
   
                 <ul
+                  _keys="data-group-filter-filters"
                   class="ct-item-list ct-item-list--horizontal ct-item-list--large  ct-group-filter__filters"
                   data-group-filter-filters=""
                 >
@@ -397,6 +402,7 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -451,6 +457,7 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -512,6 +519,7 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
 
   
                 <button
+                  _keys="type"
                   class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-group-filter__submit"
                   data-component-name="button"
                   type="submit"
@@ -532,7 +540,7 @@ exports[`Group Filter Component renders with custom attributes and classes 1`] =
                      
                     <svg
                       aria-hidden="true"
-                      class="ct-icon  ct-button__icon"
+                      class="ct-icon ct-button__icon"
                       height="24"
                       role="img"
                       viewBox="0 0 24 24"
@@ -655,6 +663,7 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
 
   
                 <ul
+                  _keys="data-group-filter-filters"
                   class="ct-item-list ct-item-list--horizontal ct-item-list--large  ct-group-filter__filters"
                   data-group-filter-filters=""
                 >
@@ -676,6 +685,7 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -730,6 +740,7 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -791,6 +802,7 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
 
   
                 <button
+                  _keys="type"
                   class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-group-filter__submit"
                   data-component-name="button"
                   type="submit"
@@ -811,7 +823,7 @@ exports[`Group Filter Component renders with custom title and submit text 1`] = 
                      
                     <svg
                       aria-hidden="true"
-                      class="ct-icon  ct-button__icon"
+                      class="ct-icon ct-button__icon"
                       height="24"
                       role="img"
                       viewBox="0 0 24 24"
@@ -934,6 +946,7 @@ exports[`Group Filter Component renders with default values 1`] = `
 
   
                 <ul
+                  _keys="data-group-filter-filters"
                   class="ct-item-list ct-item-list--horizontal ct-item-list--large  ct-group-filter__filters"
                   data-group-filter-filters=""
                 >
@@ -955,6 +968,7 @@ exports[`Group Filter Component renders with default values 1`] = `
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -1009,6 +1023,7 @@ exports[`Group Filter Component renders with default values 1`] = `
                       
     
                       <a
+                        _keys="data-collapsible-trigger tabindex"
                         class="ct-link ct-theme-light     ct-popover__link"
                         data-collapsible-trigger=""
                         tabindex="0"
@@ -1070,6 +1085,7 @@ exports[`Group Filter Component renders with default values 1`] = `
 
   
                 <button
+                  _keys="type"
                   class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-group-filter__submit"
                   data-component-name="button"
                   type="submit"
@@ -1090,7 +1106,7 @@ exports[`Group Filter Component renders with default values 1`] = `
                      
                     <svg
                       aria-hidden="true"
-                      class="ct-icon  ct-button__icon"
+                      class="ct-icon ct-button__icon"
                       height="24"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1220,6 +1236,7 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
 
   
                   <ul
+                    _keys="data-group-filter-filters"
                     class="ct-item-list ct-item-list--horizontal ct-item-list--large  ct-group-filter__filters"
                     data-group-filter-filters=""
                   >
@@ -1241,6 +1258,7 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
                         
     
                         <a
+                          _keys="data-collapsible-trigger tabindex"
                           class="ct-link ct-theme-light     ct-popover__link"
                           data-collapsible-trigger=""
                           tabindex="0"
@@ -1295,6 +1313,7 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
                         
     
                         <a
+                          _keys="data-collapsible-trigger tabindex"
                           class="ct-link ct-theme-light     ct-popover__link"
                           data-collapsible-trigger=""
                           tabindex="0"
@@ -1356,6 +1375,7 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
 
   
                   <button
+                    _keys="type"
                     class="ct-button ct-theme-light ct-button--primary ct-button--button ct-button--small   ct-group-filter__submit"
                     data-component-name="button"
                     type="submit"
@@ -1376,7 +1396,7 @@ exports[`Group Filter Component renders with form attributes and hidden fields 1
                        
                       <svg
                         aria-hidden="true"
-                        class="ct-icon  ct-button__icon"
+                        class="ct-icon ct-button__icon"
                         height="24"
                         role="img"
                         viewBox="0 0 24 24"

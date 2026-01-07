@@ -38,13 +38,13 @@
       {%- set text_end = text_arr|last -%}
       {%- set show_full_text = icon_group_disabled or (icon_placement == 'before' and is_external == false) -%}
       {%- set display_text = show_full_text ? text : text_start ~ ' ' -%}
-      {%- set before_text = icon_placement == 'before' ? icon_markup|raw : '' -%}
+      {%- set before_text = icon_placement == 'before' ? icon_markup : '' -%}
 
       {# Prepare the after elements #}
       {%- set after_text -%}
         {%- set after_icons -%}
           {%- if icon_placement == 'after' -%}
-            {{- icon_markup|raw -}}
+            {{- icon_markup -}}
           {%- endif -%}
           {%- if is_external and not icon_single_only -%}
             {%- include '@base/icon/icon.twig' with {symbol: 'upper-right-arrow'} only -%}
@@ -64,7 +64,7 @@
     {%- endif -%}
 
   {%- else -%}
-    <span class="ct-text-icon__text">{{- text|raw -}}</span>
+    <span class="ct-text-icon__text">{{- text -}}</span>
   {%- endif -%}
 {%- endset -%}
 

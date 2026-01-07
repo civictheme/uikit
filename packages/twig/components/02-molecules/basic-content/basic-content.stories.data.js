@@ -115,7 +115,7 @@ export default {
         url: 'https://example.com',
         is_new_window: true,
         is_external: false,
-        attributes: '',
+        attributes: null,
       },
     })
     }
@@ -151,6 +151,6 @@ export default {
     vertical_spacing: 'none',
     with_background: false,
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   }),
 };

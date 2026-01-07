@@ -23,7 +23,7 @@ jobs:
         node-version: [22]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v6
         with:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Cache Composer packages
         id: composer-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: vendor
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -71,14 +71,14 @@ jobs:
         run: npm run test:ci
 
       - name: Upload twig coverage report as an artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{github.job}}-twig-code-coverage-report-${{ matrix.node-version }}
           path: ./packages/twig/.logs/coverage
           if-no-files-found: error
 
       - name: Upload sdc coverage report as an artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{github.job}}-sdc-code-coverage-report-${{ matrix.node-version }}
           path: ./packages/sdc/.logs/coverage
@@ -144,7 +144,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Find ID of existing deployment message for a PR
-        uses: 'peter-evans/find-comment@fec22f13a3d7a949297e4b5f6b9f99a423eabba1'
+        uses: 'peter-evans/find-comment@0ab0dc781059d605234c6f0b3e02a2764a42d456'
         id: netlify-deploy-message
         if: github.event_name == 'pull_request'
         with:
@@ -153,7 +153,7 @@ jobs:
           body-includes: 'CivicTheme UI Kit Deployments'
 
       - name: Create or update deployment message on a PR
-        uses: 'peter-evans/create-or-update-comment@cf911f109bd9a26f1d626a8c3276384ddec0e552'
+        uses: 'peter-evans/create-or-update-comment@35d33e4f3771787d0f602f5dca94f47c68b5cc60'
         if: github.event_name == 'pull_request'
         with:
           comment-id: ${{ steps.netlify-deploy-message.outputs.comment-id }}

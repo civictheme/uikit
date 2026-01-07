@@ -43,7 +43,7 @@ exports[`Chip Component renders with optional attributes 1`] = `
        
       <svg
         aria-hidden="true"
-        class="ct-icon  ct-chip__dismiss"
+        class="ct-icon ct-chip__dismiss"
         height="24"
         role="img"
         viewBox="0 0 24 24"
@@ -74,6 +74,7 @@ exports[`Chip Component renders with required attributes 1`] = `
     
   <span
     class="ct-chip ct-theme-light ct-chip--default ct-chip--regular   "
+    data-component-name="chip"
   >
     <span
       class="ct-text-icon__text"

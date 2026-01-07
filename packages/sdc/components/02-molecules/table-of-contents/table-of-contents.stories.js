@@ -29,9 +29,6 @@ const meta = {
     modifier_class: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
   },
 };
 
@@ -57,7 +54,7 @@ export const TableOfContents = {
     ],
     position: 'before',
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };
 
@@ -83,8 +80,9 @@ export const TableOfContentsAutomatic = {
       <p>Est incididunt irure eu elit eiusmod incididunt occaecat labore aute in ad non irure sunt ad ut nostrud commodo do fugiat fugiat tempor occaecat mollit sunt in id sed commodo enim occaecat eu proident nostrud fugiat cupidatat.</p>
       <h2>Heading 2 - 3</h2>
       <p>Nulla sed cupidatat irure quis veniam ut in in pariatur do minim adipisicing minim exercitation magna eiusmod culpa tempor.</p>
+      <h2>&nbsp;</h2>
     ` }),
     modifier_class: '',
-    attributes: '',
+    attributes: null,
   },
 };

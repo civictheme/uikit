@@ -2,6 +2,7 @@
  * CivicTheme Grid component stories.
  */
 
+import DrupalAttribute from 'drupal-attribute';
 import Component from './grid.twig';
 
 const meta = {
@@ -17,16 +18,10 @@ const meta = {
     row_class: {
       control: { type: 'text' },
     },
-    row_attributes: {
-      control: { type: 'text' },
-    },
     column_element: {
       control: { type: 'text' },
     },
     column_class: {
-      control: { type: 'text' },
-    },
-    column_attributes: {
       control: { type: 'text' },
     },
     use_container: {
@@ -43,9 +38,6 @@ const meta = {
     },
     fill_width: {
       control: { type: 'boolean' },
-    },
-    attributes: {
-      control: { type: 'text' },
     },
     modifier_class: {
       control: { type: 'text' },
@@ -76,16 +68,40 @@ export const Grid = {
     ],
     row_element: 'div',
     row_class: 'row',
-    row_attributes: '',
+    row_attributes: null,
     column_element: 'div',
     column_class: 'col',
-    column_attributes: '',
+    column_attributes: null,
     use_container: false,
     is_fluid: false,
     template_column_count: 0,
     auto_breakpoint: false,
     fill_width: false,
-    attributes: '',
+    attributes: null,
     modifier_class: 'row--equal-heights-content row--vertically-spaced',
+  },
+  render: (args) => {
+    // Transform object inputs to DrupalAttribute instances
+    const transformedArgs = { ...args };
+
+    if (args.attributes && typeof args.attributes === 'object') {
+      transformedArgs.attributes = new DrupalAttribute(
+        Object.entries(args.attributes),
+      );
+    }
+
+    if (args.row_attributes && typeof args.row_attributes === 'object') {
+      transformedArgs.row_attributes = new DrupalAttribute(
+        Object.entries(args.row_attributes),
+      );
+    }
+
+    if (args.column_attributes && typeof args.column_attributes === 'object') {
+      transformedArgs.column_attributes = new DrupalAttribute(
+        Object.entries(args.column_attributes),
+      );
+    }
+
+    return Component(transformedArgs);
   },
 };

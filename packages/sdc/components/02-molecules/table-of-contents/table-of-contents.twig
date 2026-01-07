@@ -9,7 +9,7 @@
  * - position: [string] TOC position ('before', 'after', 'prepend', 'append').
  * - anchor_selector: [string] CSS selector for headings to include in TOC (e.g. 'h2, h3').
  * - scope_selector: [string] CSS selector for the content area to generate TOC from.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -30,7 +30,7 @@
           {% set position_class = 'ct-table-of-contents--position-%s'|format(position|default('before')) %}
           {% set modifier_class = '%s %s %s'|format(theme_class, position_class, modifier_class|default('')) %}
 
-          <div class="ct-table-of-contents {{ modifier_class }}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+          <div class="ct-table-of-contents {{ modifier_class }}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
             {% if title %}
               <h2 class="ct-table-of-contents__title">{{ title }}</h2>
             {% endif %}
@@ -53,7 +53,7 @@
             data-table-of-contents-position="{{ position }}"
           >
             {%- block content_block -%}
-              {{- content|raw -}}
+              {{- content -}}
             {%- endblock -%}
           </div>
         {% endif %}
