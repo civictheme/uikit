@@ -24,7 +24,7 @@
  * - is_invalid: [boolean] Whether the select is invalid.
  * - is_disabled: [boolean] Whether the select is disabled.
  * - is_required: [boolean] Whether the select is required.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -42,7 +42,7 @@
     {% if is_disabled %}disabled{% endif %}
     {% if is_required %}required{% endif %}
     {% if is_invalid %}aria-invalid="true"{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     {% for option in options %}
       {% if option.type == 'optgroup' %}

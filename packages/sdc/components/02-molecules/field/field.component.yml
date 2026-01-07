@@ -124,10 +124,6 @@ props:
           type: string
           title: Content
           description: Message content.
-        attributes:
-          type: string
-          title: Attributes
-          description: Additional HTML attributes.
     prefix:
       type: string
       title: Prefix
@@ -137,7 +133,7 @@ props:
       title: Suffix
       description: Content to add after the field.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

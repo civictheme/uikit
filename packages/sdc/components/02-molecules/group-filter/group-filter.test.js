@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/group-filter/group-filter.twig';
 
 describe('Group Filter Component', () => {
@@ -58,7 +60,7 @@ describe('Group Filter Component', () => {
 
   test('renders with form attributes and hidden fields', async () => {
     const c = await dom(template, {
-      form_attributes: 'id="filter-form" action="/filters" method="POST"',
+      form_attributes: new DrupalAttribute().setAttribute('id', 'filter-form').setAttribute('action', '/filters').setAttribute('method', 'POST'),
       form_hidden_fields: '<input type="hidden" name="token" value="12345">',
       filters: [
         { title: 'Filter 1', content: 'Content 1' },
@@ -81,7 +83,7 @@ describe('Group Filter Component', () => {
         { title: 'Filter 1', content: 'Content 1' },
         { title: 'Filter 2', content: 'Content 2' },
       ],
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-modifier',
       group_id: '42',
     });

@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - title: [string] Filter title.
- * - form_attributes: [string] Form attributes (if empty, the form will not be printed).
+ * - form_attributes: [Drupal\Core\Template\Attribute] Form attributes (if empty, the form will not be printed).
  * - form_hidden_fields: [string] Form hidden fields.
  * - filters: [array] Filter objects:
  *   Each item contains:
@@ -14,6 +14,7 @@
  *   - content: [string] Filter content.
  * - submit_text: [string] Text on the submit button.
  * - group_id: [string] Unique ID for filter group.
+<<<<<<< HEAD
  * - show_selected_filters: [boolean] Enable the selected filters list below the filter fields.
  * - selected_title: [string] Text on the selected filters label.
  * - selected_filters: [array] Selected filter object:
@@ -29,6 +30,9 @@
  *   - text: [string] Button text.
  *   - url: [string] URL for the button. Should remove clear links on navigation.
  * - attributes: [string] Additional HTML attributes.
+=======
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+>>>>>>> main
  * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
@@ -51,7 +55,7 @@
   <div
     class="ct-group-filter {{ modifier_class -}}"
     data-component-name="ct-group-filter"
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     <div class="ct-group-filter__filter-controls" data-group-filter-element>
       <div class="row">
@@ -60,7 +64,7 @@
           {% if content_top is not empty %}
             {% block content_top_block %}
               <div class="ct-group-filter__content-top">
-                {{- content_top|raw -}}
+                {{- content_top -}}
               </div>
             {% endblock %}
           {% endif %}
@@ -82,8 +86,8 @@
               {% set filters_items = filters_items|merge([filters_item]) %}
             {% endfor %}
 
-            {% if form_attributes is not empty %}
-              <form {{ form_attributes|raw }}>
+            {% if form_attributes is defined and form_attributes is not null %}
+              <form {{ form_attributes }}>
             {% endif %}
 
             <div class="row row--no-wrap ct-group-filter__row">
@@ -101,7 +105,7 @@
                     items: filters_items,
                     size: 'large',
                     modifier_class: 'ct-group-filter__filters',
-                    attributes: 'data-group-filter-filters',
+                    attributes: create_attribute({'data-group-filter-filters': ''}),
                   } only %}
                 </div>
               </div>
@@ -115,19 +119,24 @@
                     size: 'small',
                     text: submit_text|default('Apply filters'),
                     icon: 'approve',
+<<<<<<< HEAD
                     icon_placement: 'after',
                     attributes: 'type=submit',
+=======
+                    icon_placement: 'before',
+                    attributes: create_attribute({type: 'submit'}),
+>>>>>>> main
                     modifier_class: 'ct-group-filter__submit',
                   } only %}
                 </div>
               </div>
             </div>
 
-            {% if form_hidden_fields|trim is not empty %}
-              {{ form_hidden_fields|raw }}
+            {% if form_hidden_fields is defined %}
+              {{ form_hidden_fields }}
             {% endif %}
 
-            {% if form_attributes is not empty %}
+            {% if form_attributes is defined and form_attributes is not null %}
               </form>
             {% endif %}
           {% endblock %}
@@ -135,7 +144,7 @@
           {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-group-filter__content-bottom">
-                {{- content_bottom|raw -}}
+                {{- content_bottom -}}
               </div>
             {% endif %}
           {% endblock %}

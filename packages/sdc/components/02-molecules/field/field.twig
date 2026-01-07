@@ -30,10 +30,9 @@
  * - message: [object] Message object for showing messages.
  *   Each property contains:
  *   - content: [string] Message content.
- *   - attributes: [string] Additional HTML attributes.
  * - prefix: [string] Content to add before the field.
  * - suffix: [string] Content to add after the field.
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -86,7 +85,7 @@
     is_invalid: c.is_invalid is defined ? c.is_invalid : is_invalid,
     is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
     is_checked: c.is_checked is defined ? c.is_checked : false,
-    attributes: c.attributes is defined ? c.attributes : '',
+    attributes: c.attributes is defined and c.attributes is not null ? c.attributes : null,
     modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
   } %}
   {% set _controls = _controls|merge([c]) %}
@@ -95,7 +94,7 @@
 {% set field_wrapper = type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 
 {% if control[0].name is defined %}
-  <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
     {% if title is not empty and title_display != 'hidden' and type not in ['hidden', 'checkbox', 'radio'] %}
       {% include 'civictheme:label' with {
         theme: theme,
@@ -133,13 +132,12 @@
         {% include 'civictheme:field-description' with {
           theme: theme,
           content: description_content,
-          allow_html: true,
           modifier_class: 'ct-field__description',
         } only %}
       {% endif %}
 
       {% if prefix is not empty %}
-        <div class="ct-field__prefix">{{- prefix|raw -}}</div>
+        <div class="ct-field__prefix">{{- prefix -}}</div>
       {% endif %}
 
       {% if type == 'textfield' %}
@@ -176,7 +174,7 @@
       {% endif %}
 
       {% if suffix is not empty %}
-        <div class="ct-field__suffix">{{- suffix|raw -}}</div>
+        <div class="ct-field__suffix">{{- suffix -}}</div>
       {% endif %}
 
       {% if (message or is_invalid) and type != 'hidden' %}
@@ -198,9 +196,8 @@
           theme: theme,
           type: is_invalid ? 'error' : 'information',
           content: message_content,
-          allow_html: true,
           modifier_class: 'ct-field__message',
-          attributes: message.attributes|default(''),
+          attributes: message.attributes|default(create_attribute({})),
         } only %}
       {% endif %}
     </{{ field_wrapper }}>

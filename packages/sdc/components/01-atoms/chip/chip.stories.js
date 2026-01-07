@@ -48,9 +48,6 @@ const meta = {
     is_dismissible: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },

@@ -18,14 +18,14 @@ describe('Back to Top Component', () => {
     const button = c.querySelector('.ct-back-to-top__button');
     expect(button.classList.contains('ct-button--link')).toBe(true);
     expect(button.classList.contains('ct-button--primary')).toBe(false);
-    expect(button.querySelector('.ct-button__icon')).not.toBeNull();
+    expect(button.querySelector('.ct-icon')).not.toBeNull();
     expect(button.getAttribute('href')).toEqual('#top');
   });
 
   test('button contains correct icon', async () => {
     const c = await dom(template);
 
-    const icon = c.querySelector('.ct-button__icon');
+    const icon = c.querySelector('.ct-icon');
     expect(icon).not.toBeNull();
   });
 });

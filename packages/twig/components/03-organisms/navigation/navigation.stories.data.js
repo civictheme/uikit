@@ -54,7 +54,7 @@ export default {
     dropdown_columns_fill: false,
     is_animated: false,
     menu_id: 'navigation',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   }),
 };

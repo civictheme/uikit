@@ -14,7 +14,7 @@ props:
       title: Size
       description: Icon size.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

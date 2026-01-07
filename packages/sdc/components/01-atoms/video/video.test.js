@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/video/video.twig';
 
 describe('Video Component', () => {
@@ -28,7 +30,7 @@ describe('Video Component', () => {
       width: '640',
       height: '360',
       fallback_text: 'Custom fallback text.',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });

@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/tag-list/tag-list.twig';
 
 describe('Tag List Component', () => {
@@ -20,7 +22,7 @@ describe('Tag List Component', () => {
       tags: ['Tag 1', 'Tag 2'],
       theme: 'dark',
       vertical_spacing: 'both',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       content_top: 'Top content',
       content_bottom: 'Bottom content',

@@ -18,7 +18,6 @@ const getRows = function (theme) {
       Link({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
       'Description summary on even row',
       'Another column',
-      'One more column column',
     ],
     [
       Link({ theme, text: 'Row 3 with link', url: '#', title: 'Row 3 with link' }),
@@ -83,9 +82,6 @@ const meta = {
     is_data_table: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -104,6 +100,12 @@ export const Table = {
     caption_position: 'before',
     header: [
       'Header 1',
+      '<span>Header 2</span>',
+      '<span class="demo-class">Header 3</span>',
+      '<span class="ct-visually-hidden">Header 4</span>',
+    ],
+    header_sanitized: [
+      'Header 1',
       'Header 2',
       'Header 3',
       'Header 4',
@@ -117,7 +119,7 @@ export const Table = {
     ],
     is_striped: '',
     is_data_table: '',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
   render: (args) => Component({

@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - links: [array] Callout links:
  *   Each item contains:
@@ -33,7 +33,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
-<div class="ct-callout {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+<div class="ct-callout {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
   <div class="container">
     <div class="row">
       <div class="col-xxs-12">
@@ -41,7 +41,7 @@
           {% block content_top_block %}
             {% if content_top is not empty %}
               <div class="ct-callout__content-top">
-                {{- content_top|raw -}}
+                {{- content_top -}}
               </div>
             {% endif %}
           {% endblock %}
@@ -62,7 +62,6 @@
                   {% include '@atoms/paragraph/paragraph.twig' with {
                     theme: theme,
                     content: content,
-                    allow_html: true,
                     no_margin: true,
                     modifier_class: 'ct-callout__content',
                   } only %}
@@ -98,7 +97,7 @@
           {% block content_bottom_block %}
             {% if content_bottom is not empty %}
               <div class="ct-callout__content-bottom">
-                {{- content_bottom|raw -}}
+                {{- content_bottom -}}
               </div>
             {% endif %}
           {% endblock %}

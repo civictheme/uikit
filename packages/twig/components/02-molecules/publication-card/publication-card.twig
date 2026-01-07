@@ -5,7 +5,7 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - image: [object] Card image.
  *   Each property contains:
@@ -57,7 +57,7 @@
 {% set filename = '%s %s'|format(filename_text, extension_text)|trim %}
 
 {% if file is not empty %}
-  <div class="ct-publication-card {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-publication-card {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block image_block %}
       {% if image.url is not empty %}
         <div class="ct-publication-card__image">
@@ -82,7 +82,7 @@
       {% block content_top_block %}
         {% if content_top is not empty %}
           <div class="ct-publication-card__content-top">
-            {{- content_top|raw -}}
+            {{- content_top -}}
           </div>
         {% endif %}
       {% endblock %}
@@ -116,7 +116,7 @@
       {% block content_middle_block %}
         {% if content_middle is not empty %}
           <div class="ct-publication-card__content__middle">
-            {{- content_middle|raw -}}
+            {{- content_middle -}}
           </div>
         {% endif %}
       {% endblock %}
@@ -126,7 +126,6 @@
           {% include '@atoms/paragraph/paragraph.twig' with {
             theme: theme,
             content: summary,
-            allow_html: true,
             no_margin: true,
             modifier_class: 'ct-publication-card__summary',
           } only %}
@@ -154,7 +153,7 @@
       {% block content_bottom_block %}
         {% if content_bottom is not empty %}
           <div class="ct-publication-card__content-bottom">
-            {{- content_bottom|raw -}}
+            {{- content_bottom -}}
           </div>
         {% endif %}
       {% endblock %}

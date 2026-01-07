@@ -22,9 +22,6 @@ const meta = {
     submit_text: {
       control: { type: 'text' },
     },
-    form_attributes: {
-      control: { type: 'text' },
-    },
     form_hidden_fields: {
       control: { type: 'text' },
     },
@@ -32,9 +29,6 @@ const meta = {
       control: { type: 'text' },
     },
     content_bottom: {
-      control: { type: 'text' },
-    },
-    attributes: {
       control: { type: 'text' },
     },
     modifier_class: {

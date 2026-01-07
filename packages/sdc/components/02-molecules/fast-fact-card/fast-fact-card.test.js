@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/fast-fact-card/fast-fact-card.twig';
 
 describe('Fast Fact Card Component', () => {
@@ -26,7 +28,7 @@ describe('Fast Fact Card Component', () => {
       summary: 'This is a summary of the fast fact.',
       link: { text: 'Learn more', url: 'https://example.com', is_new_window: true },
       theme: 'dark',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 

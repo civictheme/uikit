@@ -50,7 +50,7 @@ props:
       title: External
       description: Whether the link is external.
     attributes:
-      type: string
+      type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Additional HTML attributes.
     modifier_class:

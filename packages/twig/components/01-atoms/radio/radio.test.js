@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/radio/radio.twig';
 
 describe('Radio Component', () => {
@@ -27,7 +29,7 @@ describe('Radio Component', () => {
       is_required: true,
       is_invalid: true,
       is_disabled: true,
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
     });
 
@@ -64,7 +66,7 @@ describe('Radio Component', () => {
       name: 'test-radio',
       id: 'radio-id',
       value: 'radio-value',
-      attributes: 'data-test="<script>alert(1)</script>"',
+      attributes: new DrupalAttribute().setAttribute('data-test', '<script>alert(1)</script>'),
     });
 
     expect(c.querySelector('.ct-radio').getAttribute('data-test')).toEqual('<script>alert(1)</script>');

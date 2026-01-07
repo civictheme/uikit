@@ -100,7 +100,11 @@ Overrides for generation of child links.
     icon: 'right-arrow-2',
     size: 'regular',
     modifier_class: 'ct-mobile-navigation__open-subsection-trigger',
-    attributes: 'data-flyout-open-trigger aria-expanded="false" aria-label="Open %s submenu"'|format(parent_item.title),
+    attributes: create_attribute({
+      'data-flyout-open-trigger': '',
+      'aria-expanded': 'false',
+      'aria-label': 'Open %s submenu'|format(parent_item.title),
+    }),
   } only %}
 
   <div data-flyout data-flyout-direction="right" data-flyout-focus=".ct-link">
@@ -117,7 +121,10 @@ Overrides for generation of child links.
           icon_placement: 'before',
           size: 'regular',
           text: parent_item.title,
-          attributes: 'data-flyout-close-trigger aria-label="Close %s submenu"'|format(parent_item.title),
+          attributes: create_attribute({
+            'data-flyout-close-trigger': '',
+            'aria-label': 'Close %s submenu'|format(parent_item.title),
+          }),
         } only %}
       </div>
 

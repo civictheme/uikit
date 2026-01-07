@@ -44,9 +44,6 @@ const meta = {
     content_bottom: {
       control: { type: 'text' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -89,7 +86,7 @@ export const Campaign = {
     vertical_spacing: 'both',
     content_top: '',
     content_bottom: '',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   },
 };

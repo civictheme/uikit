@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/02-molecules/tooltip/tooltip.twig';
 
 describe('Tooltip Component', () => {
@@ -18,7 +20,7 @@ describe('Tooltip Component', () => {
       theme: 'dark',
       text: 'Tooltip text',
       title: 'Tooltip title',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       icon: 'call',
     });

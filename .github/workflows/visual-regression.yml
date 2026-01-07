@@ -20,7 +20,7 @@ jobs:
         node-version: [22]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v6
         with:
@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
 
       - name: Cache Playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
@@ -54,13 +54,13 @@ jobs:
           npm run diff:command -- list --sets
 
           # Compare main vs current branch components
-          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "branch--main--twig" | awk '{print $2}')
-          TARGET_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
+          SOURCE_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
+          TARGET_NAME=$(npm run diff:command -- list --sets | grep "branch--main--twig" | awk '{print $2}')
           npm run diff:command -- compare --source "$SOURCE_NAME" --target "$TARGET_NAME"
 
           # Compare main vs current branch SDC components
-          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
-          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "sdc" | awk '{print $2}')
+          SOURCE_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "sdc" | awk '{print $2}')
+          TARGET_SDC_NAME=$(npm run diff:command -- list --sets | grep "current--" | grep "twig" | awk '{print $2}')
           npm run diff:command -- compare --source "$SOURCE_SDC_NAME" --target "$TARGET_SDC_NAME"
 
       - name: Deploy to Netlify
@@ -91,7 +91,7 @@ jobs:
             createVisualRegressionPrComments({require, core})
 
       - name: Find ID of existing deployment message on a PR
-        uses: 'peter-evans/find-comment@fec22f13a3d7a949297e4b5f6b9f99a423eabba1'
+        uses: 'peter-evans/find-comment@0ab0dc781059d605234c6f0b3e02a2764a42d456'
         id: netlify-visual-regression-message
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -99,7 +99,7 @@ jobs:
           body-includes: 'CivicTheme UI Kit Deployments'
 
       - name: Create or update deployment message on a PR
-        uses: 'peter-evans/create-or-update-comment@cf911f109bd9a26f1d626a8c3276384ddec0e552'
+        uses: 'peter-evans/create-or-update-comment@35d33e4f3771787d0f602f5dca94f47c68b5cc60'
         with:
           comment-id: ${{ steps.netlify-visual-regression-message.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}

@@ -14,7 +14,7 @@ export default {
     },
     is_title_click: false,
     image: {
-      url: './demo/images/demo1.jpg',
+      url: './demo/images/demo7.jpg',
       alt: 'Image alt text',
     },
     tags: [
@@ -22,7 +22,7 @@ export default {
       'Tag 2',
     ],
     modifier_class: '',
-    attributes: '',
+    attributes: null,
     content_top: '',
     image_over: '',
     content_middle: '',

@@ -6,7 +6,7 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - vertical_spacing: [string] Tag list vertical spacing (none, top, bottom, both).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - tags: [array] Tags:
  *   Each item contains:
@@ -30,11 +30,11 @@
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
 {% if tags is not empty %}
-  <div class="ct-tag-list {{ modifier_class -}}" {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}>
+  <div class="ct-tag-list {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block content_top_block %}
       {% if content_top is not empty %}
         <div class="ct-tag-list__content-top">
-          {{- content_top|raw -}}
+          {{- content_top -}}
         </div>
       {% endif %}
     {% endblock %}
@@ -62,7 +62,7 @@
     {% block content_bottom_block %}
       {% if content_bottom is not empty %}
         <div class="ct-tag-list__content-bottom">
-          {{- content_bottom|raw -}}
+          {{- content_bottom -}}
         </div>
       {% endif %}
     {% endblock %}

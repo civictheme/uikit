@@ -16,7 +16,7 @@
  * - icon_placement: [string] Icon position (before or after).
  * - icon_group_disabled: [boolean] Disable icon and last word grouping.
  * - icon_single_only: [boolean] Only show 1 icon (if both icon and is_external are present, external takes preference).
- * - attributes: [string] Additional HTML attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -29,7 +29,10 @@
 {%- set is_disabled_class = is_disabled ? 'ct-link--disabled' : '' -%}
 {%- set theme_class = 'ct-theme-%s'|format(theme|default('light')) -%}
 {%- set modifier_class = '%s %s %s %s %s %s'|format(theme_class, is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim -%}
-{%- set attributes = is_disabled ? attributes ~ ' disabled' : attributes -%}
+{%- set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}
+{%- if is_disabled -%}
+  {%- do attributes.setAttribute('disabled', '') -%}
+{%- endif -%}
 
 {%- if text is not empty or icon is not empty -%}
   {%- set link_content -%}
@@ -51,7 +54,7 @@
     {% if title is not empty %}title="{{ title }}"{% endif %}
     {% if is_new_window %}target="_blank"{% endif %}
     {% if is_disabled %}disabled{% endif %}
-    {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
+    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     {{- link_content -}}
   </a>

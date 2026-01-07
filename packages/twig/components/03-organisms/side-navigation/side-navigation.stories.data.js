@@ -48,7 +48,7 @@ export default {
       },
     ],
     vertical_spacing: 'none',
-    attributes: '',
+    attributes: null,
     modifier_class: '',
   }),
 };

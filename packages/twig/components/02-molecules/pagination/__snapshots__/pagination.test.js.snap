@@ -40,16 +40,16 @@ exports[`Pagination Component renders current page correctly 1`] = `
         class="ct-pagination__item ct-pagination__item--previous"
       >
         
-                          
         
         <a
+          _keys="title"
           class="ct-link ct-theme-light     ct-pagination__link"
           href="#previous"
           title="Go to previous page - page 1"
         >
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-link__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -93,8 +93,9 @@ exports[`Pagination Component renders current page correctly 1`] = `
         class="ct-pagination__item hide-xxs show-m"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-light     ct-pagination__item__link"
           href="#1"
           title="Go to page 1 of 3"
@@ -116,8 +117,9 @@ exports[`Pagination Component renders current page correctly 1`] = `
         class="ct-pagination__item ct-pagination__item--active"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-light  ct-link--active   ct-pagination__item__link"
           href="#2"
           title="Current page"
@@ -139,8 +141,9 @@ exports[`Pagination Component renders current page correctly 1`] = `
         class="ct-pagination__item hide-xxs show-m"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-light     ct-pagination__item__link"
           href="#3"
           title="Go to page 3 of 3"
@@ -162,9 +165,9 @@ exports[`Pagination Component renders current page correctly 1`] = `
         class="ct-pagination__item ct-pagination__item--next"
       >
         
-                          
         
         <a
+          _keys="title"
           class="ct-link ct-theme-light   ct-link--disabled  ct-pagination__link"
           disabled=""
           href="#next"
@@ -186,7 +189,7 @@ exports[`Pagination Component renders current page correctly 1`] = `
              
             <svg
               aria-hidden="true"
-              class="ct-icon  ct-link__icon"
+              class="ct-icon ct-link__icon"
               height="24"
               role="img"
               viewBox="0 0 24 24"
@@ -265,8 +268,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
           class="ct-label ct-theme-dark ct-label--regular  ct-field__title"
           for="items-per-page"
         >
-          
-  Items per page  
+          Items per page
         </label>
             
     
@@ -333,15 +335,16 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--first hide-xxs show-m"
       >
         
-                    
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-dark     ct-pagination__link"
           href="#first"
           title="Go to first page"
         >
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-link__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -384,16 +387,16 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--previous"
       >
         
-                          
         
         <a
+          _keys="title"
           class="ct-link ct-theme-dark     ct-pagination__link"
           href="#previous"
           title="Go to previous page - page 1"
         >
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-link__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -437,8 +440,9 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         class="ct-pagination__item hide-xxs show-m"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-dark     ct-pagination__item__link"
           href="#1"
           title="Go to page 1 of 3"
@@ -460,8 +464,9 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--active"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-dark  ct-link--active   ct-pagination__item__link"
           href="#2"
           title="Current page"
@@ -493,8 +498,9 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         class="ct-pagination__item hide-xxs show-m"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-dark     ct-pagination__item__link"
           href="#3"
           title="Go to page 3 of 3"
@@ -516,9 +522,9 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--next"
       >
         
-                          
         
         <a
+          _keys="title"
           class="ct-link ct-theme-dark   ct-link--disabled  ct-pagination__link"
           disabled=""
           href="#next"
@@ -540,7 +546,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
              
             <svg
               aria-hidden="true"
-              class="ct-icon  ct-link__icon"
+              class="ct-icon ct-link__icon"
               height="24"
               role="img"
               viewBox="0 0 24 24"
@@ -564,13 +570,14 @@ exports[`Pagination Component renders with optional attributes 1`] = `
       
 
       
-                      
+              
       <li
         class="ct-pagination__item ct-pagination__item--last hide-xxs show-m"
       >
         
           
         <a
+          _keys="title"
           class="ct-link ct-theme-dark   ct-link--disabled  ct-pagination__link"
           disabled=""
           href="#last"
@@ -592,7 +599,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
              
             <svg
               aria-hidden="true"
-              class="ct-icon  ct-link__icon"
+              class="ct-icon ct-link__icon"
               height="24"
               role="img"
               viewBox="0 0 24 24"
@@ -656,16 +663,16 @@ exports[`Pagination Component renders with required attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--previous"
       >
         
-                          
         
         <a
+          _keys="title"
           class="ct-link ct-theme-light     ct-pagination__link"
           href="#previous"
           title="Go to previous page - page 1"
         >
           <svg
             aria-hidden="true"
-            class="ct-icon  ct-link__icon"
+            class="ct-icon ct-link__icon"
             height="24"
             role="img"
             viewBox="0 0 24 24"
@@ -709,8 +716,9 @@ exports[`Pagination Component renders with required attributes 1`] = `
         class="ct-pagination__item hide-xxs show-m"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-light     ct-pagination__item__link"
           href="#1"
           title="Go to page 1 of 3"
@@ -732,8 +740,9 @@ exports[`Pagination Component renders with required attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--active"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-light  ct-link--active   ct-pagination__item__link"
           href="#2"
           title="Current page"
@@ -755,8 +764,9 @@ exports[`Pagination Component renders with required attributes 1`] = `
         class="ct-pagination__item hide-xxs show-m"
       >
         
-                                          
+          
         <a
+          _keys="title"
           class="ct-link ct-theme-light     ct-pagination__item__link"
           href="#3"
           title="Go to page 3 of 3"
@@ -778,9 +788,9 @@ exports[`Pagination Component renders with required attributes 1`] = `
         class="ct-pagination__item ct-pagination__item--next"
       >
         
-                          
         
         <a
+          _keys="title"
           class="ct-link ct-theme-light   ct-link--disabled  ct-pagination__link"
           disabled=""
           href="#next"
@@ -802,7 +812,7 @@ exports[`Pagination Component renders with required attributes 1`] = `
              
             <svg
               aria-hidden="true"
-              class="ct-icon  ct-link__icon"
+              class="ct-icon ct-link__icon"
               height="24"
               role="img"
               viewBox="0 0 24 24"

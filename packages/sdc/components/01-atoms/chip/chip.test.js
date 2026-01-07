@@ -1,3 +1,5 @@
+import DrupalAttribute from 'drupal-attribute';
+
 const template = 'components/01-atoms/chip/chip.twig';
 
 describe('Chip Component', () => {
@@ -26,7 +28,7 @@ describe('Chip Component', () => {
       is_dismissible: true,
       is_multiple: true,
       group_parent: 'test-group',
-      attributes: 'data-test="true"',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
       modifier_class: 'custom-class',
       theme: 'dark',
     });
