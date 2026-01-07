@@ -16,7 +16,7 @@ import Pagination from '../../02-molecules/pagination/pagination.twig';
 import PaginationData from '../../02-molecules/pagination/pagination.stories.data';
 
 export default {
-  args: (theme = 'light', options = {}) => {
+  args: (theme = 'light', options = {}, overrides = {}) => {
     const items = this.items(theme, options);
     const groupOptions = options.selectedFilters === true ? { selectedFilters: true } : undefined;
     return {
