@@ -11,16 +11,10 @@
  * - url: [string] URL if kind = link.
  * - label: [string] Aria Label if kind = link.
  * - is_selected: [boolean] Whether the chip is selected (for filter chips).
-<<<<<<< HEAD
  * - is_multiple: [boolean] Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
  * - is_dismissible: [boolean] Whether close icon should display when kind is not input, and is_multiple is false.
  * - group_parent: [string] Additional parent selector for radio group when kind = input.
- * - attributes: [string] Additional HTML attributes.
-=======
- * - is_multiple: [boolean] Whether multiple selection is allowed.
- * - group_parent: [string] Additional parent selector for radio group.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
->>>>>>> main
  * - modifier_class: [string] Additional CSS classes.
  */
 #}
@@ -70,12 +64,8 @@
   {% else %}
     <span
       class="ct-chip {{ modifier_class -}}"
-<<<<<<< HEAD
-      {% if attributes is not empty %}{{- attributes|raw -}}{% endif %}
-=======
       data-component-name="chip"
       {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
->>>>>>> main
     >
       {{- text_content -}}
     </span>

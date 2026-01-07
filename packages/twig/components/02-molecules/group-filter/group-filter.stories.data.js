@@ -25,7 +25,6 @@ export default {
             label: 'Selected filter: Option C - Click to remove filter.',
           },
         ],
-<<<<<<< HEAD
         selected_clear_link: {
           text: 'Clear all',
           url: '#',
@@ -71,44 +70,14 @@ export default {
           ].join(''),
         },
       ],
-      submit_text: 'Apply',
-      form_attributes: '',
-      form_hidden_fields: '',
+      submit_text: 'Submit',
+      form_attributes: null,
+      form_hidden_fields: null,
       content_top: '',
       content_bottom: '',
-      attributes: '',
+      attributes: null,
       modifier_class: '',
       ...selectedFilters,
     };
   },
-=======
-      },
-      {
-        title: `Filter 2`,
-        content: [
-          Field({
-            ...FieldData.args(theme, { controls: true }),
-            type: 'radio',
-            description: null,
-            message: null,
-            orientation: 'vertical',
-          }),
-          Field({
-            ...FieldData.args(theme),
-            description: null,
-            message: null,
-            orientation: 'vertical',
-          }),
-        ].join(''),
-      },
-    ],
-    submit_text: 'Submit',
-    form_attributes: null,
-    form_hidden_fields: null,
-    content_top: '',
-    content_bottom: '',
-    attributes: null,
-    modifier_class: '',
-  }),
->>>>>>> main
 };

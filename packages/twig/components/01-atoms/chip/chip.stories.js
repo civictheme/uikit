@@ -45,15 +45,9 @@ const meta = {
     is_multiple: {
       control: { type: 'boolean' },
     },
-<<<<<<< HEAD
     is_dismissible: {
       control: { type: 'boolean' },
     },
-    attributes: {
-      control: { type: 'text' },
-    },
-=======
->>>>>>> main
     modifier_class: {
       control: { type: 'text' },
     },

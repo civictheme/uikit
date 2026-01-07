@@ -85,19 +85,18 @@ export const ListGroupFilters = {
   args: ListData.args('light', { group: true }),
 };
 
-<<<<<<< HEAD
-export const ListGroupFiltersWithSelectedFilters = {
-  parameters: {
-    layout: 'padded',
-  },
-  args: ListData.args('light', { group: true, selectedFilters: true }),
-=======
 export const ListNoResults = {
   parameters: {
     layout: 'padded',
   },
   args: ListData.args('light', { items: [] }),
->>>>>>> main
+};
+
+export const ListGroupFiltersWithSelectedFilters = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: ListData.args('light', { group: true, selectedFilters: true }),
 };
 
 export const ListNavigationCard = {

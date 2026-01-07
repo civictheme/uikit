@@ -16,24 +16,9 @@ import Pagination from '../../02-molecules/pagination/pagination.twig';
 import PaginationData from '../../02-molecules/pagination/pagination.stories.data';
 
 export default {
-<<<<<<< HEAD
   args: (theme = 'light', options = {}) => {
-    const components = {
-      promo: { data: PromoCardData.args('light'), render: PromoCard },
-      event: { data: EventCardData.args('light'), render: EventCard },
-      navigation: { data: NavigationCardData.args('light'), render: NavigationCard },
-      snippet: { data: SnippetData.args(theme), render: Snippet },
-    };
-    const component = options.component || 'promo';
-    const { render } = components[component];
-    const defaultData = components[component].data;
-    const itemData = options.items || Array.from(Array(6), () => ({}));
-    const items = itemData.map((data) => render({ ...defaultData, ...data }));
-    const groupOptions = options.selectedFilters === true ? { selectedFilters: true } : undefined;
-=======
-  args(theme = 'light', options = {}, overrides = {}) {
     const items = this.items(theme, options);
->>>>>>> main
+    const groupOptions = options.selectedFilters === true ? { selectedFilters: true } : undefined;
     return {
       theme,
       title: 'My List Title',
