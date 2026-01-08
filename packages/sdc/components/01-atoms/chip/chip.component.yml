@@ -52,7 +52,7 @@ props:
       description: Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
     is_dismissible:
       type: boolean
-      title: Dismissable
+      title: Dismissible
       description: Whether close icon should display when kind is not input, and is_multiple is false.
     group_parent:
       type: string
