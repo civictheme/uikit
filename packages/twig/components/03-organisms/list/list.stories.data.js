@@ -16,8 +16,9 @@ import Pagination from '../../02-molecules/pagination/pagination.twig';
 import PaginationData from '../../02-molecules/pagination/pagination.stories.data';
 
 export default {
-  args(theme = 'light', options = {}, overrides = {}) {
+  args: (theme = 'light', options = {}, overrides = {}) => {
     const items = this.items(theme, options);
+    const groupOptions = options.selectedFilters === true ? { selectedFilters: true } : undefined;
     return {
       theme,
       title: 'My List Title',
@@ -29,7 +30,7 @@ export default {
         is_external: false,
       },
       content: 'Example content',
-      filters: options.group ? GroupFilter(GroupFilterData.args(theme)) : SingleFilter(SingleFilterData.args(theme)),
+      filters: options.group ? GroupFilter(GroupFilterData.args(theme, groupOptions)) : SingleFilter(SingleFilterData.args(theme)),
       results_count: 'Showing 1 of 6',
       rows_above: Paragraph({
         theme,
