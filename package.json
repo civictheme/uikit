@@ -83,5 +83,10 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.40.2"
+  },
+  "overrides": {
+    "@whitespace/storybook-addon-html": {
+      "storybook": "^10.0.0"
+    }
   }
 }

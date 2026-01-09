@@ -40,9 +40,13 @@ export const InlineFilter = {
 export const InlineFilterDark = {
   parameters: {
     layout: 'padded',
+  },
+
+  args: InlineFilterData.args('dark'),
+
+  globals: {
     backgrounds: {
-      default: 'Dark',
+      value: 'dark',
     },
   },
-  args: InlineFilterData.args('dark'),
 };

@@ -35,10 +35,8 @@ export default meta;
 export const MobileNavigation = {
   parameters: {
     layout: 'centered',
-    viewport: {
-      defaultViewport: 'xs',
-    },
   },
+
   args: {
     theme: 'light',
     content_top: '',
@@ -104,6 +102,7 @@ export const MobileNavigation = {
     content_bottom: '',
     modifier_class: '',
   },
+
   render: (args) => (`${
     MobileNavigationTrigger({
       theme: args.theme,
@@ -114,4 +113,11 @@ export const MobileNavigation = {
   }${
     MobileNavigationPanel(args)
   }`),
+
+  globals: {
+    viewport: {
+      value: 'xs',
+      isRotated: false,
+    },
+  },
 };

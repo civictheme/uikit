@@ -63,9 +63,13 @@ export const Footer = {
 export const FooterDark = {
   parameters: {
     layout: 'fullscreen',
+  },
+
+  args: FooterData.args('dark'),
+
+  globals: {
     backgrounds: {
-      default: 'Dark',
+      value: 'dark',
     },
   },
-  args: FooterData.args('dark'),
 };
