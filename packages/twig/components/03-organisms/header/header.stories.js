@@ -51,12 +51,16 @@ export const Header = {
 
 export const HeaderDark = {
   parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'Dark',
-    },
+    layout: 'fullscreen'
   },
+
   args: HeaderData.args('dark'),
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };
 
 export const HeaderMultiline = {

@@ -131,12 +131,16 @@ export const Page = {
 
 export const PageDark = {
   parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'Dark',
-    },
+    layout: 'fullscreen'
   },
+
   args: PageData.args('dark'),
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };
 
 export const PageFullWidth = {

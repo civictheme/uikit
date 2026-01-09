@@ -74,10 +74,14 @@ export const Banner = {
 
 export const BannerDark = {
   parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'Dark',
-    },
+    layout: 'fullscreen'
   },
+
   args: BannerData.args('dark'),
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };

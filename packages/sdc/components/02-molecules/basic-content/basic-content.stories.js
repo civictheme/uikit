@@ -43,10 +43,14 @@ export const BasicContent = {
 
 export const BasicContentDark = {
   parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'Dark',
-    },
+    layout: 'fullscreen'
   },
+
   args: BasicContentData.args('dark'),
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };

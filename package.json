@@ -71,6 +71,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-transform-stub": "^2.0.0",
     "js-yaml": "^4.1.0",
+    "patch-package": "^8.0.1",
     "puppeteer": "^24.6.1",
     "puppeteer-cluster": "^0.25.0",
     "reg-cli": "^0.18.13",
@@ -83,5 +84,10 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.40.2"
+  },
+  "overrides": {
+    "@whitespace/storybook-addon-html": {
+      "storybook": "$storybook"
+    }
   }
 }

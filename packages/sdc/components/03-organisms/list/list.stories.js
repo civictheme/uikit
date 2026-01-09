@@ -70,12 +70,16 @@ export const List = {
 
 export const ListDark = {
   parameters: {
-    layout: 'padded',
-    backgrounds: {
-      default: 'Dark',
-    },
+    layout: 'padded'
   },
+
   args: ListData.args('dark'),
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };
 
 export const ListGroupFilters = {
