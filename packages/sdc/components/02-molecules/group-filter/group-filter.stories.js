@@ -62,3 +62,20 @@ export const GroupFilterDark = {
     }
   }
 };
+
+export const GroupFilterWithSelectedFilters = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: GroupFilterData.args('light', { selectedFilters: true }),
+};
+
+export const GroupFilterWithSelectedFiltersDark = {
+  parameters: {
+    layout: 'padded',
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
+  args: GroupFilterData.args('dark', { selectedFilters: true }),
+};

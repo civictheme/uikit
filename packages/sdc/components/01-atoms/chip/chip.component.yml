@@ -15,10 +15,11 @@ props:
     kind:
       type: string
       title: Kind
-      description: Chip kind (default, input).
+      description: Chip kind (default, input, link).
       enum:
         - default
         - input
+        - link
       default: default
     size:
       type: string
@@ -33,6 +34,14 @@ props:
       type: string
       title: Content
       description: Chip text.
+    url:
+      type: string
+      title: URL
+      description: URL if kind = link.
+    label:
+      type: string
+      title: Label
+      description: Aria Label if kind = link.
     is_selected:
       type: boolean
       title: Selected
@@ -40,11 +49,15 @@ props:
     is_multiple:
       type: boolean
       title: Multiple
-      description: Whether multiple selection is allowed.
+      description: Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
+    is_dismissible:
+      type: boolean
+      title: Dismissible
+      description: Whether close icon should display when kind is not input, and is_multiple is false.
     group_parent:
       type: string
       title: Group parent
-      description: Additional parent selector for radio group.
+      description: Additional parent selector for radio group when kind = input.
     attributes:
       type: Drupal\Core\Template\Attribute
       title: Attributes
@@ -53,4 +66,3 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
-

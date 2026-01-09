@@ -18,6 +18,7 @@ const meta = {
       options: {
         Default: 'default',
         Input: 'input',
+        Link: 'link',
       },
     },
     size: {
@@ -32,10 +33,19 @@ const meta = {
     content: {
       control: { type: 'text' },
     },
+    url: {
+      control: { type: 'text' },
+    },
+    label: {
+      control: { type: 'text' },
+    },
     is_selected: {
       control: { type: 'boolean' },
     },
     is_multiple: {
+      control: { type: 'boolean' },
+    },
+    is_dismissible: {
       control: { type: 'boolean' },
     },
     modifier_class: {
@@ -55,7 +65,10 @@ export const Chip = {
     kind: 'default',
     size: 'regular',
     content: 'Chip label',
+    url: 'https://example.com',
+    label: 'Navigate to Chip: Example',
     is_selected: false,
     is_multiple: false,
+    is_dismissible: false,
   },
 };

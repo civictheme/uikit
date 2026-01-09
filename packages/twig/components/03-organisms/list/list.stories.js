@@ -96,6 +96,13 @@ export const ListNoResults = {
   args: ListData.args('light', { items: [] }),
 };
 
+export const ListGroupFiltersWithSelectedFilters = {
+  parameters: {
+    layout: 'padded',
+  },
+  args: ListData.args('light', { group: true, selectedFilters: true }),
+};
+
 export const ListNavigationCard = {
   parameters: {
     layout: 'padded',
