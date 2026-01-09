@@ -34,7 +34,7 @@ export default meta;
 
 export const MobileNavigation = {
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
 
   args: {
@@ -117,7 +117,7 @@ export const MobileNavigation = {
   globals: {
     viewport: {
       value: 'xs',
-      isRotated: false
-    }
-  }
+      isRotated: false,
+    },
+  },
 };

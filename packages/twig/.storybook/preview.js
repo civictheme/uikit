@@ -19,8 +19,8 @@ export default {
         dark: {
           name: 'Dark',
           value: '#003f56',
-        }
-      }
+        },
+      },
     },
     viewport: {
       options: {
@@ -149,7 +149,7 @@ export default {
 
   initialGlobals: {
     backgrounds: {
-      value: 'white'
-    }
-  }
+      value: 'white',
+    },
+  },
 };

@@ -51,16 +51,16 @@ export const GroupFilter = {
 
 export const GroupFilterDark = {
   parameters: {
-    layout: 'padded'
+    layout: 'padded',
   },
 
   args: GroupFilterData.args('dark'),
 
   globals: {
     backgrounds: {
-      value: "dark"
-    }
-  }
+      value: 'dark',
+    },
+  },
 };
 
 export const GroupFilterWithSelectedFilters = {

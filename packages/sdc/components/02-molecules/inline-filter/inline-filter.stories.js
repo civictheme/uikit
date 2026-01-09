@@ -39,14 +39,14 @@ export const InlineFilter = {
 
 export const InlineFilterDark = {
   parameters: {
-    layout: 'padded'
+    layout: 'padded',
   },
 
   args: InlineFilterData.args('dark'),
 
   globals: {
     backgrounds: {
-      value: "dark"
-    }
-  }
+      value: 'dark',
+    },
+  },
 };
