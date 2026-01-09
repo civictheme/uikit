@@ -144,7 +144,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Find ID of existing deployment message for a PR
-        uses: 'peter-evans/find-comment@0ab0dc781059d605234c6f0b3e02a2764a42d456'
+        uses: 'peter-evans/find-comment@9a8d3f7d3eb406b7a5fedadd2b92be58e575a23f'
         id: netlify-deploy-message
         if: github.event_name == 'pull_request'
         with:
