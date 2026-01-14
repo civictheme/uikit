@@ -44,10 +44,8 @@
         {% set tag_items = [] %}
         {% for tag in tags %}
           {% set tag_item %}
-            {% include 'civictheme:tag' with {
-              theme: theme,
-              content: tag,
-            } only %}
+            {% set tag_data = tag is iterable ? tag : { theme: theme, content: tag } %}
+            {% include 'civictheme:tag' with tag_data only %}
           {% endset %}
           {% set tag_items = tag_items|merge([tag_item]) %}
         {% endfor %}
