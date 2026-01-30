@@ -33,7 +33,10 @@
 
     {%- if text is not empty -%}
       {# Prepare the text #}
-      {%- set text_arr = text|trim|split(' ') -%}
+      {% set rendered_text -%}
+        {{- text -}}
+      {%- endset %}
+      {%- set text_arr = rendered_text|striptags|trim|split(' ') -%}
       {%- set text_start = text_arr|slice(0, -1)|join(' ') -%}
       {%- set text_end = text_arr|last -%}
       {%- set show_full_text = icon_group_disabled or (icon_placement == 'before' and is_external == false) -%}
