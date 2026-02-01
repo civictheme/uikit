@@ -16,7 +16,9 @@
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
-{% set alt = (alt == '""') ? '' : alt|default('') %}
+{% set alt = (alt == '""') ? '' : (alt|default('')) %}
+{% set width = (width is defined and width is not null) ? (width ~ '') : '' %}
+{% set height = (height is defined and height is not null) ? (height ~ '') : '' %}
 
 {% if url is not empty %}
   <img

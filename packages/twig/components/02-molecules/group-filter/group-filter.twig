@@ -69,10 +69,11 @@
             {% set group = 'ct-group-filter--group-' ~ group_id|default(random(1000, 9999)) %}
             {% set filters_items = [] %}
             {% for filter in filters %}
+              {% set filter_content = (filter.content is iterable and filter.content is not string) ? filter.content|render : (filter.content|default('')) %}
               {% set filters_item %}
                 {% include '@atoms/popover/popover.twig' with {
                   theme: theme,
-                  content: filter.content,
+                  content: filter_content,
                   trigger: {
                     text: filter.title,
                   },

@@ -25,7 +25,7 @@
  */
 #}
 
-{% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing--%s'|format(vertical_spacing) : '' %}
+{% set vertical_spacing_class = (vertical_spacing|default('')) in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing--%s'|format(vertical_spacing) : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, vertical_spacing_class, modifier_class|default('')) %}
 
@@ -43,10 +43,15 @@
       {% if tags %}
         {% set tag_items = [] %}
         {% for tag in tags %}
+          {% set tag_data = (tag is iterable and tag is not string) ? tag : { content: tag ~ '' } %}
           {% set tag_item %}
             {% include '@atoms/tag/tag.twig' with {
-              theme: theme,
-              content: tag,
+              theme: theme|default('light'),
+              content: tag_data.content is defined ? tag_data.content : (tag_data.text is defined ? tag_data.text : (tag ~ '')),
+              icon: tag_data.icon is defined ? tag_data.icon : '',
+              url: tag_data.url is defined ? tag_data.url : '',
+              is_new_window: tag_data.is_new_window is defined ? tag_data.is_new_window : false,
+              is_external: tag_data.is_external is defined ? tag_data.is_external : false,
             } only %}
           {% endset %}
           {% set tag_items = tag_items|merge([tag_item]) %}

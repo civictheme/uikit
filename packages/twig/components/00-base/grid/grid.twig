@@ -25,7 +25,7 @@
 
 {% set use_container = use_container is defined ? use_container : true %}
 {% set is_fluid = is_fluid is defined ? is_fluid : false %}
-{% set fill_width = fill_width is defined ? fill_width : false %}
+{% set fill_width = fill_width|default(false) %}
 {% set row_element = row_element|default('div') %}
 {% set column_element = column_element|default('div') %}
 {% set template_column_count = template_column_count|default(0) %}
@@ -85,7 +85,7 @@
       {% for item in items %}
         {% if item is not empty %}
           <{{ column_element }} class="{{ column_class }}" {% if column_attributes is defined and column_attributes is not null %}{{ column_attributes }}{% endif %}>
-            {{ item }}
+            {{ item is iterable and item is not string ? item|render : item }}
           </{{ column_element }}>
         {% endif %}
       {% endfor %}

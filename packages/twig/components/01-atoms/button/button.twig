@@ -24,23 +24,25 @@
 #}
 
 {% set kind = kind in ['button', 'link', 'reset', 'submit'] ? kind : 'button' %}
-{% set type = type in ['primary', 'secondary', 'tertiary'] ? type : null %}
+{% set type = type|default('primary') %}
+{% set type = type in ['primary', 'secondary', 'tertiary'] ? type : 'primary' %}
 {% set size = size in ['large', 'regular', 'small'] ? size : 'regular' %}
 {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
+{% set is_external_boolean = (is_external|default(false)) ? true : false %}
 {% set type_class = type ? 'ct-button--%s'|format(type) : '' %}
 {% set kind_class = kind ? 'ct-button--%s'|format(kind) : '' %}
 {% set size_class = 'ct-button--%s'|format(size) %}
 {% set dismiss_class = is_dismissable ? 'ct-button--dismiss' : '' %}
-{% set is_external = is_external ? 'ct-button--external' : '' %}
+{% set is_external_class = is_external_boolean ? 'ct-button--external' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, kind_class, size_class, dismiss_class, is_external, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, kind_class, size_class, dismiss_class, is_external_class, modifier_class|default('')) %}
 
 {% set button_content %}
   {%- include '@base/text-icon/text-icon.twig' with {
-    text: text,
-    is_new_window: is_new_window,
-    is_external: is_external,
-    icon: icon,
+    text: text is defined ? (text is iterable and text is not string ? text|render : (text ~ '')) : '',
+    is_new_window: is_new_window|default(false),
+    is_external: is_external_boolean,
+    icon: icon|default(''),
     icon_placement: icon_placement,
     icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,
     icon_single_only: icon_single_only is defined ? icon_single_only : false,
@@ -64,7 +66,7 @@
     data-component-name="button"
     {% if url %}href="{{ url }}"{% endif %}
     {% if is_disabled %}disabled="disabled" aria-disabled="true"{% endif %}
-    {% if is_new_window %}target="_blank"{% endif %}
+    {% if is_new_window|default(false) %}target="_blank"{% endif %}
     {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
     {{- button_content -}}

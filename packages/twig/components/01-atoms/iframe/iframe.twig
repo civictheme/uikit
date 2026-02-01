@@ -23,7 +23,7 @@
 <iframe
   class="ct-iframe {{ modifier_class -}}"
   {% if url %}src="{{ url }}"{% endif %}
-  {% if width %}width="{{ width }}"{% endif %}
-  {% if height %}height="{{ height }}"{% endif %}
+  {% if width %}width="{{ (width is defined and width is not null) ? (width ~ '') : '' }}"{% endif %}
+  {% if height %}height="{{ (height is defined and height is not null) ? (height ~ '') : '' }}"{% endif %}
   {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
 ></iframe>

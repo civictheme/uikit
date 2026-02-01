@@ -25,8 +25,13 @@
  */
 #}
 
-{% set description_display = description_display in ['before', 'after', 'invisible'] ? description_display : 'before' %}
-{% set message_type = message_type|default('error') %}
+{% set description = description|default('') %}
+{% set description_display = (description_display|default('before')) in ['before', 'after', 'invisible'] ? description_display : 'before' %}
+{% set message = message|default('') %}
+{% set message_type = (message_type|default('error')) in ['error', 'information', 'warning', 'success'] ? message_type : 'error' %}
+{% set is_required = (is_required|default(false)) ? true : false %}
+{% set prefix = prefix|default('') %}
+{% set suffix = suffix|default('') %}
 {% set required_class = is_required ? 'ct-fieldset--required' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s'|format(theme_class, required_class, modifier_class|default('')) %}

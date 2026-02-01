@@ -19,6 +19,7 @@
 
 {% set type = type in ['primary', 'secondary', 'tertiary'] ? type : 'primary' %}
 {% set type_class = 'ct-tag--%s'|format(type) %}
+{% set icon = icon|default('') %}
 {% set icon_class = icon is not empty ? 'ct-tag--with-icon' : '' %}
 {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
 {% set icon_placement_class = icon ? 'ct-tag--icon-%s'|format(icon_placement|default('before')) : '' %}

@@ -36,13 +36,16 @@
  */
 #}
 
-{% set has_sidebar_left = (sidebar_top_left is not empty or sidebar_bottom_left is not empty) and not (hide_sidebar_left is defined ? hide_sidebar_left : false) %}
-{% set has_sidebar_right = (sidebar_top_right is not empty or sidebar_bottom_right is not empty) and not (hide_sidebar_right is defined ? hide_sidebar_right : false) %}
+{% set hide_sidebar_left = hide_sidebar_left|default(false) %}
+{% set hide_sidebar_right = hide_sidebar_right|default(false) %}
+{% set has_sidebar_left = (sidebar_top_left is not empty or sidebar_bottom_left is not empty) and not hide_sidebar_left %}
+{% set has_sidebar_right = (sidebar_top_right is not empty or sidebar_bottom_right is not empty) and not hide_sidebar_right %}
 
 {% set is_contained = is_contained is defined ? is_contained : false %}
 {% set is_contained = is_contained or has_sidebar_left or has_sidebar_right %}
 
-{% set vertical_spacing = has_sidebar_left or has_sidebar_right ? 'top' : vertical_spacing %}
+{% set _vertical_spacing = vertical_spacing|default('') %}
+{% set vertical_spacing = has_sidebar_left or has_sidebar_right ? 'top' : (_vertical_spacing in ['top', 'bottom', 'both'] ? _vertical_spacing : (_vertical_spacing == 'none' ? '' : '')) %}
 
 {% set no_sidebar_left_class = hide_sidebar_left ? 'ct-layout--no-sidebar-left' : '' %}
 {% set no_sidebar_right_class = hide_sidebar_right ? 'ct-layout--no-sidebar-right' : '' %}

@@ -38,12 +38,15 @@
 #}
 
 {% set type = type is defined ? type : 'hidden' %}
-{% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
+{% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden', 'before', 'after'] ? (title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible') : 'visible' %}
+{% set title_size = title_size is defined and title_size in ['extra-small', 'small', 'regular', 'large', 'extra-large'] ? title_size : (title_size|default('')) %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
 {% set orientation = orientation in ['vertical', 'horizontal'] ? orientation : 'vertical' %}
-{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set theme = theme|default('light') %}
+{% set description = description|default('') %}
+{% set theme_class = 'ct-theme-%s'|format(theme) %}
 {% set type_class = 'ct-field--%s'|format(type) %}
 {% set is_required_class = is_required ? 'ct-field--required' : '' %}
 {% set is_disabled_class = is_disabled ? 'ct-field--disabled' : '' %}
@@ -99,7 +102,7 @@
       {% include '@atoms/label/label.twig' with {
         theme: theme,
         content: label is not empty ? label : title,
-        size: title_size|default('regular'),
+        size: title_size is not empty ? title_size : 'regular',
         is_required: is_required,
         required_text: required_text,
         for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
@@ -197,7 +200,7 @@
           type: is_invalid ? 'error' : 'information',
           content: message_content,
           modifier_class: 'ct-field__message',
-          attributes: message.attributes|default(create_attribute({})),
+          attributes: (message is defined and message is not null and message.attributes is defined) ? message.attributes : create_attribute({}),
         } only %}
       {% endif %}
     </{{ field_wrapper }}>

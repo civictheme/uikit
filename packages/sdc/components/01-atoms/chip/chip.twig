@@ -28,6 +28,7 @@
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s %s %s'|format(theme_class, kind_class, size_class, selected_class, multiple_class, modifier_class|default('')) %}
 
+{% set content = (content is defined and content is not null) ? (content ~ '') : '' %}
 {% if content is not empty %}
   {%- set text_content -%}
     {%- include 'civictheme:text-icon' with {

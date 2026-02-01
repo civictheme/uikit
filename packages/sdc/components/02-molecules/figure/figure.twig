@@ -23,11 +23,11 @@
 {% if url is not empty %}
   <figure class="ct-figure {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% include 'civictheme:image' with {
-      theme: theme,
+      theme: theme|default('light'),
       url: url,
-      alt: alt,
-      width: width,
-      height: height,
+      alt: alt|default(''),
+      width: (width is defined and width is not null) ? (width ~ '') : '',
+      height: (height is defined and height is not null) ? (height ~ '') : '',
       modifier_class: 'ct-figure__image',
     } only %}
 

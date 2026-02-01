@@ -22,6 +22,9 @@
 {% set is_invalid_class = is_invalid ? 'ct-radio--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
+{% set name = name|default('') %}
+{% set id = id|default('') %}
+{% set value = (value is defined and value is not null) ? (value ~ '') : '' %}
 {% if name is not empty and id is not empty %}
   <input
     type="radio"

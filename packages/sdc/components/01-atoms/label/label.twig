@@ -19,8 +19,10 @@
 {% set tag = tag in ['label', 'legend'] ? tag : 'label' %}
 {% set size = size in ['extra-large', 'large', 'regular', 'small', 'extra-small'] ? size : 'regular' %}
 {% set size_class = 'ct-label--%s'|format(size) %}
+{% set is_required = (is_required|default(false)) ? true : false %}
 {% set required_class = is_required ? 'ct-label--required' : '' %}
 {% set required_text = required_text|default('(required)') %}
+{% set for = for|default('') %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, size_class, required_class, modifier_class|default('')) %}
 

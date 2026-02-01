@@ -21,7 +21,11 @@
  */
 #}
 
-{%- set text = text|default('') -%}
+{%- set text = (text is defined and text is not null) ? (text is iterable and text is not string ? text|render : (text ~ '')) : '' -%}
+{%- set title = title|default('') -%}
+{%- set url = url|default('') -%}
+{%- set is_active = (is_active|default(false)) ? true : false -%}
+{%- set is_disabled = (is_disabled|default(false)) ? true : false -%}
 {%- set only_icon_class = icon is not empty and text is empty ? 'ct-link--only-icon' : '' -%}
 {%- set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' -%}
 {%- set is_external_class = is_external ? 'ct-link--external' : '' -%}
@@ -38,9 +42,9 @@
   {%- set link_content -%}
     {%- include 'civictheme:text-icon' with {
       text: text,
-      is_new_window: is_new_window,
-      is_external: is_external,
-      icon: icon,
+      is_new_window: is_new_window|default(false),
+      is_external: is_external|default(false),
+      icon: icon|default(''),
       icon_placement: icon_placement,
       icon_class: 'ct-link__icon',
       icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,
@@ -52,7 +56,7 @@
     class="ct-link {{ modifier_class -}}"
     {% if url is not empty %}href="{{ url }}"{% endif %}
     {% if title is not empty %}title="{{ title }}"{% endif %}
-    {% if is_new_window %}target="_blank"{% endif %}
+    {% if is_new_window|default(false) %}target="_blank"{% endif %}
     {% if is_disabled %}disabled{% endif %}
     {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >

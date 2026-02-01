@@ -112,7 +112,7 @@
       sidebar_bottom_right_attributes: sidebar_bottom_right_attributes,
       is_contained: content_contained,
       content_bottom: content_bottom,
-      vertical_spacing: vertical_spacing,
+      vertical_spacing: (vertical_spacing|default('')) in ['top', 'bottom', 'both'] ? vertical_spacing : '',
       attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : '',
     } only %}
   {% endblock %}

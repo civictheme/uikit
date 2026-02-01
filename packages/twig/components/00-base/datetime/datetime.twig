@@ -13,9 +13,12 @@
  */
 #}
 
+{% set start_iso = start_iso|default(start|default('')) %}
+{% set end = end|default('') %}
+{% set end_iso = end_iso|default(end) %}
 {% if start is not empty %}
   <span class="ct-datetime {{ modifier_class|default('') }}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
-    <time class="ct-timestamp__start" datetime="{{ start_iso|default(start)|striptags }}">{{ start }}</time>
+    <time class="ct-timestamp__start" datetime="{{ start_iso|striptags }}">{{ start }}</time>
     {% if end is not empty %}
       &mdash;
       <time class="ct-timestamp__end" datetime="{{ end_iso|default(end)|striptags }}">{{ end }}</time>

@@ -26,6 +26,7 @@
  */
 #}
 
+{% set caption = caption|default('') %}
 {% set striped_class = is_striped ? 'ct-table--%s'|format('striped') : '' %}
 {% set data_table_class = is_data_table ? 'ct-table--%s'|format('data') : '' %}
 {% set caption_position_class = caption_position == 'after' ? 'ct-table--caption-after' : 'ct-table--caption-before' %}
@@ -34,7 +35,7 @@
 
 {% if rows is not empty or header is not empty or footer is not empty or caption is not empty %}
   <table class="ct-table {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
-    {% if caption %}
+    {% if caption is not empty %}
       <caption>{{ caption }}</caption>
     {% endif %}
 
@@ -42,7 +43,7 @@
       <thead>
       <tr>
         {% for item in header %}
-          <th scope="col">{{ item }}</th>
+          <th scope="col">{{ item is iterable and item is not string ? item|render : item }}</th>
         {% endfor %}
       </tr>
       </thead>
@@ -61,7 +62,7 @@
               {% endif %}
             {% endif %}
             <td {% if data_title is defined %}data-title="{{ data_title|striptags }}"{% endif %}>
-              {{ col }}
+              {{ col is iterable and col is not string ? col|render : col }}
             </td>
           {% endfor %}
         </tr>
@@ -73,7 +74,7 @@
       <tfoot>
       <tr>
         {% for item in footer %}
-          <th scope="col">{{ item }}</th>
+          <th scope="col">{{ item is iterable and item is not string ? item|render : item }}</th>
         {% endfor %}
       </tr>
       </tfoot>

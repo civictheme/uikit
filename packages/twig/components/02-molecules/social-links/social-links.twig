@@ -30,13 +30,14 @@
     {% block items_block %}
       {% set items_rendered = [] %}
       {% for item in items %}
+        {% set item_icon_html = (item.icon_html is defined and item.icon_html is not empty) ? (item.icon_html is iterable and item.icon_html is not string ? item.icon_html|render : item.icon_html) : null %}
         {%- set item_rendered %}
           {% include '@atoms/button/button.twig' with {
             theme: theme,
             kind: 'link',
             type: 'tertiary',
-            icon: item.icon_html is not defined or item.icon_html is empty ? item.icon : null,
-            text: item.icon_html|default(null),
+            icon: item_icon_html is empty ? item.icon|default(null) : null,
+            text: item_icon_html,
             url: item.url,
             is_external: false,
             is_new_window: true,

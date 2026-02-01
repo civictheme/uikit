@@ -60,8 +60,8 @@
 
                       <div class="ct-accordion__panels__panel__content" data-collapsible-panel aria-hidden="{% if is_expanded %}false{% else %}true{% endif %}">
                         {% include '@atoms/paragraph/paragraph.twig' with {
-                          theme: theme,
-                          content: panel.content,
+                          theme: theme|default('light'),
+                          content: panel.content is iterable and panel.content is not string ? panel.content|render : (panel.content|default('')),
                           modifier_class: 'ct-accordion__panels__panel__content__inner',
                         } only %}
                       </div>

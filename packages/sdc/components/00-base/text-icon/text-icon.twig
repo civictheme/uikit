@@ -15,7 +15,10 @@
  */
 #}
 
-{%- set icon = icon and is_external and icon_single_only ? 'upper-right-arrow' : icon -%}
+{%- set text = (text is defined and text is not null) ? (text is iterable and text is not string ? text|render : (text ~ '')) : '' -%}
+{%- set is_new_window = is_new_window|default(false) -%}
+{%- set is_external = (is_external|default(false)) ? true : false -%}
+{%- set icon = icon and is_external and icon_single_only ? 'upper-right-arrow' : (icon|default('')) -%}
 
 {%- set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' -%}
 
