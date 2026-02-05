@@ -42,6 +42,7 @@ export const TagList = {
     tags: [
       'Tag 1',
       'Tag 2',
+      { theme: 'dark', url: 'http://www.google.com', content: 'Tag 3', type: 'primary', icon: 'right-arrow-2' },
     ],
     vertical_spacing: 'none',
     content_top: '',
