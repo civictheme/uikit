@@ -39,6 +39,7 @@
 
 {% set type = type is defined ? type : 'hidden' %}
 {% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
+{% set title_size = (title_size is defined and title_size in ['extra-small', 'small', 'regular', 'large', 'extra-large']) ? title_size : '' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
@@ -99,7 +100,7 @@
       {% include '@atoms/label/label.twig' with {
         theme: theme,
         content: label is not empty ? label : title,
-        size: title_size|default('regular'),
+        size: title_size is not empty ? title_size : 'regular',
         is_required: is_required,
         required_text: required_text,
         for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,

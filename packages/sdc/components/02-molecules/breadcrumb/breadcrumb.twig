@@ -27,7 +27,7 @@
 
     {% for link in links %}
       {% set link_item -%}
-        {% set link = {
+        {% set link_data = {
           text: link.text,
           url: link.url,
           theme: theme,
@@ -36,10 +36,10 @@
           modifier_class: (loop.index == links_count) ? 'ct-breadcrumb__links__link ct-breadcrumb__links__link--active' : 'ct-breadcrumb__links__link',
         } %}
 
-        {%- if (not active_is_link or link.url is empty) and (loop.index == links_count) -%}
-          <span class="ct-breadcrumb__links__link ct-breadcrumb__links__link--active" aria-current="location">{{ link.text }}</span>
+        {%- if (not active_is_link or link_data.url is empty) and (loop.index == links_count) -%}
+          <span class="ct-breadcrumb__links__link ct-breadcrumb__links__link--active" aria-current="location">{{ link_data.text }}</span>
         {%- else -%}
-          {%- include 'civictheme:link' with link only -%}
+          {%- include 'civictheme:link' with link_data only -%}
           {%- if loop.index < links_count -%}
             {%- include 'civictheme:icon' with {
               symbol: 'right-arrow-1',

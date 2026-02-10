@@ -43,6 +43,11 @@
       {% if tags %}
         {% set tag_items = [] %}
         {% for tag in tags %}
+          {% if tag.content is defined or tag.text is defined %}
+            {% set tag_content = (tag.content|default(tag.text|default(''))) ~ '' %}
+          {% else %}
+            {% set tag_content = tag ~ '' %}
+          {% endif %}
           {% set tag_item %}
             {% set tag_data = tag is iterable ? {theme: theme}|merge(tag) : {theme: theme, content: tag} %}
             {% include 'civictheme:tag' with tag_data only %}

@@ -27,6 +27,7 @@
 {%- set is_external_class = is_external ? 'ct-link--external' : '' -%}
 {%- set is_active_class = is_active ? 'ct-link--active' : '' -%}
 {%- set is_disabled_class = is_disabled ? 'ct-link--disabled' : '' -%}
+{%- set is_new_window = (is_new_window|default(false)) ? true : false -%}
 {%- set theme_class = 'ct-theme-%s'|format(theme|default('light')) -%}
 {%- set modifier_class = '%s %s %s %s %s %s'|format(theme_class, is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim -%}
 {%- set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}
