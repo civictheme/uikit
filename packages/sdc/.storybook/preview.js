@@ -2,28 +2,68 @@ import '../dist/civictheme.stories.css?module'; // eslint-disable-line import/no
 import '../dist/civictheme.base.css'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.variables.css'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.base'; // eslint-disable-line import/no-unresolved
+import { useEffect, useChannel } from 'storybook/preview-api'; // eslint-disable-line import/no-unresolved
+import { format } from 'prettier/standalone';
+import htmlPlugin from 'prettier/plugins/html';
+
+const ADDON_EVENT = 'storybook/html/codeUpdate';
+
+const withHTML = (storyFn, context) => {
+  const emit = useChannel({});
+  const parameters = context.parameters?.html || {};
+
+  useEffect(() => {
+    if (parameters.disable) return undefined;
+
+    const timer = window.setTimeout(async () => {
+      const root = context.canvasElement || document.querySelector('#storybook-root, #root');
+      if (!root) return;
+
+      let code = root.innerHTML || '';
+      if (!code) return;
+
+      try {
+        code = await format(code, {
+          parser: 'html',
+          plugins: [htmlPlugin],
+          htmlWhitespaceSensitivity: 'ignore',
+        });
+      } catch (e) {
+        // Use unformatted HTML if prettier fails.
+      }
+
+      emit(ADDON_EVENT, { code, options: parameters });
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  });
+
+  return storyFn();
+};
 
 export default {
+  decorators: [withHTML],
   parameters: {
     backgrounds: {
-      default: 'White',
-      values: [
-        {
+      options: {
+        white: {
           name: 'White',
           value: '#ffffff',
         },
-        {
+
+        light: {
           name: 'Light',
           value: '#f2f4f5',
         },
-        {
+
+        dark: {
           name: 'Dark',
           value: '#003f56',
         },
-      ],
+      },
     },
     viewport: {
-      viewports: {
+      options: {
         xs: {
           name: 'XS',
           styles: {
@@ -137,12 +177,18 @@ export default {
         ],
       },
     },
+    html: {
+      prettier: {
+        tabWidth: 4,
+        useTabs: false,
+        htmlWhitespaceSensitivity: 'strict',
+      },
+    },
   },
-  html: {
-    prettier: {
-      tabWidth: 4,
-      useTabs: false,
-      htmlWhitespaceSensitivity: 'strict',
+
+  initialGlobals: {
+    backgrounds: {
+      value: 'white',
     },
   },
 };
