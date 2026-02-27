@@ -137,13 +137,12 @@ export default {
         ],
       },
     },
-  },
-
-  html: {
-    prettier: {
-      tabWidth: 4,
-      useTabs: false,
-      htmlWhitespaceSensitivity: 'strict',
+    html: {
+      prettier: {
+        tabWidth: 4,
+        useTabs: false,
+        htmlWhitespaceSensitivity: 'strict',
+      },
     },
   },
 
