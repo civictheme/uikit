@@ -1,8 +1,47 @@
 import '../dist/civictheme.storybook.css'; // eslint-disable-line import/no-unresolved
 import '../dist/civictheme.storybook'; // eslint-disable-line import/no-unresolved, import/extensions
 import '../dist/civictheme.stories.css?module'; // eslint-disable-line import/no-unresolved
+import { useEffect, useChannel } from 'storybook/preview-api'; // eslint-disable-line import/no-unresolved
+import { format } from 'prettier/standalone';
+import htmlPlugin from 'prettier/plugins/html';
+
+const ADDON_EVENT = 'storybook/html/codeUpdate';
+
+const withHTML = (storyFn, context) => {
+  const emit = useChannel({});
+  const parameters = context.parameters?.html || {};
+
+  useEffect(() => {
+    if (parameters.disable) return undefined;
+
+    const timer = window.setTimeout(async () => {
+      const root = context.canvasElement || document.querySelector('#storybook-root, #root');
+      if (!root) return;
+
+      let code = root.innerHTML || '';
+      if (!code) return;
+
+      try {
+        code = await format(code, {
+          parser: 'html',
+          plugins: [htmlPlugin],
+          htmlWhitespaceSensitivity: 'ignore',
+        });
+      } catch (e) {
+        // Use unformatted HTML if prettier fails.
+      }
+
+      emit(ADDON_EVENT, { code, options: parameters });
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  });
+
+  return storyFn();
+};
 
 export default {
+  decorators: [withHTML],
   parameters: {
     backgrounds: {
       options: {
