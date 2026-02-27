@@ -19,7 +19,7 @@ set -eu
 #-------------------------------------------------------------------------------
 
 # Drupal core version to use.
-DRUPAL_VERSION="${DRUPAL_VERSION:-11}"
+DRUPAL_VERSION="${DRUPAL_VERSION:-11.3}"
 
 # Webserver hostname.
 WEBSERVER_HOST="${WEBSERVER_HOST:-localhost}"
