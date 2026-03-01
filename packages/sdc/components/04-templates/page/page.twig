@@ -4,16 +4,15 @@
  * CivicTheme Page Template component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
- * - header_theme: [string] Theme variation for header (light or dark).
- * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
- * - hide_sidebar_right: [boolean] Whether to hide the right sidebar.
- * - content_contained: [boolean] Whether page content should be contained.
- * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
- * - footer_theme: [string] Theme variation for footer (light or dark).
- * - footer_background_image: [string] Background image for footer.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - header_theme: [string,null,integer] Theme variation for header (light or dark).
+ * - hide_sidebar_left: [boolean,null,string,integer] Whether to hide the left sidebar.
+ * - hide_sidebar_right: [boolean,null,string,integer] Whether to hide the right sidebar.
+ * - content_contained: [boolean,null,string,integer] Whether page content should be contained.
+ * - vertical_spacing: [string,null,integer] Controls vertical spacing (top, bottom, or both).
+ * - footer_theme: [string,null,integer] Theme variation for footer (light or dark).
+ * - footer_background_image: [string,null,integer] Background image for footer.
  *
  * Slots:
  * - banner: Banner content.
@@ -98,8 +97,8 @@
   {% block content_block %}
     {% include 'civictheme:layout' with {
       content_top: content_top,
-      hide_sidebar_left: hide_sidebar_left|default(false),
-      hide_sidebar_right: hide_sidebar_right|default(false),
+      hide_sidebar_left: hide_sidebar_left,
+      hide_sidebar_right: hide_sidebar_right,
       sidebar_top_left: sidebar_top_left,
       sidebar_top_left_attributes: sidebar_top_left_attributes,
       sidebar_top_right: sidebar_top_right,

@@ -6,41 +6,29 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     content:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Content
       description: The description's content.
     size:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Size
       description: Description size (large, regular).
       enum:
-      - large
-      - regular
-      - ''
-      - null
+        - large
+        - regular
       default: regular
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

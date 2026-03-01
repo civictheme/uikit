@@ -4,16 +4,15 @@
  * CivicTheme Side Navigation component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - vertical_spacing: [string] Navigation vertical spacing (top, bottom, or both).
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - vertical_spacing: [string,null,integer] Navigation vertical spacing (top, bottom, or both).
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  * - items: [array] Menu items:
  *   Each item contains:
- *   - title: [string] Navigation title.
- *   - url: [string] Menu item URL.
- *   - in_active_trail: [boolean] Whether the item is in the active trail.
- *   - is_expanded: [boolean] Whether the item is expanded.
+ *   - title: [string,null,integer,object] Navigation title.
+ *   - url: [string,null,integer,object] Menu item URL.
+ *   - in_active_trail: [boolean,null,string,integer] Whether the item is in the active trail.
+ *   - is_expanded: [boolean,null,string,integer] Whether the item is expanded.
  *   - below: [array] Submenu items.
  *
  * Slots:

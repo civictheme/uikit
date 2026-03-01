@@ -4,18 +4,17 @@
  * CivicTheme Fieldset component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - legend: [string] Legend for the fieldset.
- * - description: [string] Description for the fieldset.
- * - description_display: [string] Description display position (before, after, invisible).
- * - message: [string] Message content.
- * - message_type: [string] Message type (error, information, warning, success).
- * - is_required: [boolean] Whether the fieldset is required.
- * - required_text: [string] Text to display within label element when required.
- * - prefix: [string] The content to add before the fieldset children.
- * - suffix: [string] The content to add after the fieldset children.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - legend: [string,null,integer] Legend for the fieldset.
+ * - description: [string,null,integer] Description for the fieldset.
+ * - description_display: [string,null,integer] Description display position (before, after, invisible).
+ * - message: [string,null,integer] Message content.
+ * - message_type: [string,null,integer] Message type (error, information, warning, success).
+ * - is_required: [boolean,null,string,integer] Whether the fieldset is required.
+ * - required_text: [string,null,integer] Text to display within label element when required.
+ * - prefix: [string,null,integer] The content to add before the fieldset children.
+ * - suffix: [string,null,integer] The content to add after the fieldset children.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  *
  * Slots:
  * - fields: Fields content.

@@ -6,37 +6,28 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     type:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Type
       description: Logo display type (default, stacked, inline, inline-stacked).
       enum:
-      - default
-      - stacked
-      - inline
-      - inline-stacked
-      - ''
-      - null
+        - default
+        - stacked
+        - inline
+        - inline-stacked
       default: default
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
     logos:
@@ -107,17 +98,11 @@ props:
                   title: Alt text
                   description: Logo image alt text.
     url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: URL
       description: Optional URL that wraps the logo.
     title:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Title
       description: Optional logo title attribute.
-      default: Click to go to the homepage
+      default: 'Click to go to the homepage'

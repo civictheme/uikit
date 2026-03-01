@@ -6,43 +6,31 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     content:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Content
       description: The message content.
     type:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Type
       description: Message type (error, information, warning, success).
       enum:
-      - error
-      - information
-      - warning
-      - success
-      - ''
-      - null
+        - error
+        - information
+        - warning
+        - success
       default: information
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

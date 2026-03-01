@@ -4,21 +4,20 @@
  * CivicTheme Tabs component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - vertical_spacing: [string] Vertical spacing for the tabs (none, top, bottom, both).
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - vertical_spacing: [string,null,integer] Vertical spacing for the tabs (none, top, bottom, both).
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  * - panels: [array] Tab panels:
  *   Each item contains:
- *   - title: [string] Panel title.
- *   - content: [string] Panel content.
- *   - id: [string] Panel ID.
- *   - is_selected: [boolean] Whether the panel is selected.
+ *   - title: [string,null,integer,object] Panel title.
+ *   - content: [string,null,integer,object] Panel content.
+ *   - id: [string,null,integer,object] Panel ID.
+ *   - is_selected: [boolean,null,string,integer] Whether the panel is selected.
  * - links: [array] Optional links (if not provided - will be generated from panels):
  *   Each item contains:
- *   - text: [string] Link text.
- *   - url: [string] Link URL.
- *   - modifier_class: [string] Additional CSS classes.
+ *   - text: [string,null,integer,object] Link text.
+ *   - url: [string,null,integer,object] Link URL.
+ *   - modifier_class: [string,null,integer,object] Additional CSS classes.
  *   - attributes: [object] Additional HTML attributes.
  */
 #}

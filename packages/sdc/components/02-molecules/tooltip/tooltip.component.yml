@@ -6,69 +6,52 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     position:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Position
       description: Tooltip position ('auto', 'auto-start', 'auto-end', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'right', 'right-start', 'right-end', 'left', 'left-start', 'left-end').
       enum:
-      - auto
-      - auto-start
-      - auto-end
-      - top
-      - top-start
-      - top-end
-      - bottom
-      - bottom-start
-      - bottom-end
-      - right
-      - right-start
-      - right-end
-      - left
-      - left-start
-      - left-end
-      - ''
-      - null
+        - auto
+        - auto-start
+        - auto-end
+        - top
+        - top-start
+        - top-end
+        - bottom
+        - bottom-start
+        - bottom-end
+        - right
+        - right-start
+        - right-end
+        - left
+        - left-start
+        - left-end
     icon:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Icon
       description: Symbol to use in the button. Defaults to 'information-mark'.
     icon_size:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Icon Size
       description: Icon size ('extra-large', 'large', 'regular', 'small', 'extra-small'.)
       enum:
-      - extra-large
-      - large
-      - regular
-      - small
-      - extra-small
-      - ''
-      - null
+        - extra-large
+        - large
+        - regular
+        - small
+        - extra-small
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
 slots:

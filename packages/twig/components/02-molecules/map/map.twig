@@ -4,15 +4,14 @@
  * CivicTheme Map component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
- * - with_background: [boolean] Whether to display with a background.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
- * - address: [string] Optional address.
- * - url: [string] URL for the map iframe.
- * - view_url: [string] URL for the external map.
- * - view_text: [string] Text for the external map link.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - vertical_spacing: [string,null,integer] Vertical spacing position (top, bottom, both).
+ * - with_background: [boolean,null,string,integer] Whether to display with a background.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - address: [string,null,integer] Optional address.
+ * - url: [string,null,integer] URL for the map iframe.
+ * - view_url: [string,null,integer] URL for the external map.
+ * - view_text: [string,null,integer] Text for the external map link.
  *
  * Slots:
  * - content_top: Map top content.

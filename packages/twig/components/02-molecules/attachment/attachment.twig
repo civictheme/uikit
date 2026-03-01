@@ -4,22 +4,21 @@
  * CivicTheme Attachment component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - title: [string] Attachment title.
- * - content: [string] Attachment content.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - title: [string,null,integer] Attachment title.
+ * - content: [string,null,integer] Attachment content.
  * - files: [array] File attachments:
  *   Each item contains:
- *   - name: [string] File name (as it appears to the user).
- *   - ext: [string] File extension.
- *   - url: [string] File URL.
- *   - size: [string] File size (as it appears to the user).
- *   - created: [string] File created date.
- *   - changed: [string] File modified date.
- *   - icon: [string] File type icon name.
- * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
- * - with_background: [boolean] Whether to display with a background.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ *   - name: [string,null,integer,object] File name (as it appears to the user).
+ *   - ext: [string,null,integer,object] File extension.
+ *   - url: [string,null,integer,object] File URL.
+ *   - size: [string,null,integer,object] File size (as it appears to the user).
+ *   - created: [string,null,integer,object] File created date.
+ *   - changed: [string,null,integer,object] File modified date.
+ *   - icon: [string,null,integer,object] File type icon name.
+ * - vertical_spacing: [string,null,integer] Vertical spacing position (top, bottom, both).
+ * - with_background: [boolean,null,string,integer] Whether to display with a background.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  *
  * Slots:
  * - content_top: Top content area content.

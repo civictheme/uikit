@@ -6,37 +6,26 @@ props:
   type: object
   properties:
     start:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Start time
       description: Formatted start time.
     start_iso:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Start time ISO
       description: Start time in ISO format.
     end:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: End time
       description: Formatted end time.
     end_iso:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: End time ISO
       description: End time in ISO format.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional classes.

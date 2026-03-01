@@ -6,34 +6,25 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     image_position:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Image Position
       description: Image position (left or right).
       enum:
-      - left
-      - right
-      - ''
-      - null
+        - left
+        - right
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
     image:
@@ -57,41 +48,23 @@ props:
         type: object
         properties:
           text:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Text
             description: Tag text.
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: URL
             description: Tag URL.
           is_new_window:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: New Window
             description: Whether to open tag in a new window.
     date_iso:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: ISO Date
       description: Start date and time in ISO format.
     date_end_iso:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: ISO End Date
       description: Optional end date and time in ISO format.
     links:
@@ -102,49 +75,27 @@ props:
         type: object
         properties:
           text:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Text
             description: Link text.
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: URL
             description: Link URL.
           is_new_window:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: New Window
             description: Whether to open link in a new window.
           is_external:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: External
             description: Whether the link is external.
     date:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Date
       description: Start date and time.
     date_end:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: End Date
       description: Optional end date and time.
 slots:

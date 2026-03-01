@@ -6,37 +6,27 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
       default: light
     text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Text
       description: Link text.
       default: Skip to main content
     url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: URL
       description: Link URL.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

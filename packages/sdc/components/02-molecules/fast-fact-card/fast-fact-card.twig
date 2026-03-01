@@ -4,20 +4,19 @@
  * CivicTheme Fast Fact Card component.
  *
  * Props:
- * - theme: [string] Theme variant ('light' or 'dark')
+ * - theme: [string,null,integer] Theme variant ('light' or 'dark')
  * - image: [object] Image data containing URL and alt text
  *   Each property contains:
  *   - url: [string] URL of the image
  *   - alt: [string] Alt text for the image
- * - title: [string] Title text for the card
- * - summary: [string] Summary text content, can contain HTML
+ * - title: [string,null,integer] Title text for the card
+ * - summary: [string,null,integer] Summary text content, can contain HTML
  * - link: [object] Link object for making the title clickable
  *   Each property contains:
  *   - url: [string] URL for the link
  *   - is_new_window: [boolean] Open link in a new window
- * - is_title_click: [boolean] Whether to make only the title clickable instead of the whole card.
- * - modifier_class: [string] Additional classes to modify the component
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - is_title_click: [boolean,null,string,integer] Whether to make only the title clickable instead of the whole card.
+ * - modifier_class: [string,null,integer] Additional classes to modify the component
  *
  * Blocks:
  * - image_block
