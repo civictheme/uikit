@@ -29,10 +29,6 @@ props:
         - bottom
         - both
         - none
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

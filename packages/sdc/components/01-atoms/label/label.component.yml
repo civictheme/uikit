@@ -48,10 +48,6 @@ props:
       type: [string, 'null']
       title: For
       description: Form element ID this label belongs to.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

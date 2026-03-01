@@ -57,7 +57,7 @@ Copied as-is from '@base/menu/menu.twig'.
       <li class="{{ item_classes|join(' ') }}" {{ item_attributes }}>
 
         {% include '@atoms/link/link.twig' with {
-          theme: theme,
+          theme: theme|default('light'),
           text: item.title,
           title: item.title,
           url: item.url,

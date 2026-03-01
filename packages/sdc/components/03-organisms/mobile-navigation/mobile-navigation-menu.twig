@@ -57,7 +57,7 @@ Copied as-is from 'civictheme:menu'.
       <li class="{{ item_classes|join(' ') }}" {{ item_attributes }}>
 
         {% include 'civictheme:link' with {
-          theme: theme,
+          theme: theme|default('light'),
           text: item.title,
           title: item.title,
           url: item.url,

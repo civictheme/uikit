@@ -21,10 +21,6 @@ props:
       type: [string, 'null']
       title: End time ISO
       description: End time in ISO format.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional attributes.
     modifier_class:
       type: string
       title: Modifier classes
