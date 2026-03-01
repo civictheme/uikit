@@ -146,6 +146,12 @@ props:
           type: string
           title: URL
           description: URL for the button. Should remove clear links on navigation.
+    form_attributes:
+      type:
+      - object
+      - 'null'
+      title: Form attributes
+      description: Additional HTML attributes for the form element.
     modifier_class:
       type:
       - string

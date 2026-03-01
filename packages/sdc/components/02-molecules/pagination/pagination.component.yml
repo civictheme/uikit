@@ -61,6 +61,12 @@ props:
       - integer
       title: Use ellipsis
       description: Whether ellipsis should be shown.
+    items_per_page_attributes:
+      type:
+      - object
+      - 'null'
+      title: Items per page attributes
+      description: Additional HTML attributes for the items per page select field.
     modifier_class:
       type:
       - string
