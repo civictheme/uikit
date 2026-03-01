@@ -4,36 +4,35 @@
  * CivicTheme Field component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - type: [string] Type defined by a control type (required).
- * - title: [string] Field title.
- * - title_display: [string] How to display the field title (visible, invisible, hidden).
- * - title_size: [string] The size of the title (extra-small, small, regular, large, extra-large).
- * - label: [string] Control label (required only for a radio group or checkbox).
- * - description: [string] Field description.
- * - name: [string] Control DOM name (propagated from `name` if not defined).
- * - value: [string] Control DOM value (propagated from `value` if not defined).
- * - id: [string] Control DOM ID.
- * - is_invalid: [boolean] Whether the control is invalid (propagated from `is_invalid` if not defined).
- * - is_disabled: [boolean] Whether the control is disabled (propagated from `is_disabled` if not defined).
- * - is_required: [boolean] Whether the control is required (propagated from `is_required` if not defined).
- * - required_text: [string] Text to display within label element when required (propagated).
- * - orientation: [string] Elements orientation (vertical or horizontal).
- * - is_inline: [boolean] Whether the complex control is shown inline.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - type: [string,null,integer] Type defined by a control type (required).
+ * - title: [string,null,integer] Field title.
+ * - title_display: [string,null,integer] How to display the field title (visible, invisible, hidden).
+ * - title_size: [string,null,integer] The size of the title (extra-small, small, regular, large, extra-large).
+ * - label: [string,null,integer] Control label (required only for a radio group or checkbox).
+ * - description: [string,null,integer] Field description.
+ * - name: [string,null,integer] Control DOM name (propagated from `name` if not defined).
+ * - value: [string,null,integer] Control DOM value (propagated from `value` if not defined).
+ * - id: [string,null,integer] Control DOM ID.
+ * - is_invalid: [boolean,null,string,integer] Whether the control is invalid (propagated from `is_invalid` if not defined).
+ * - is_disabled: [boolean,null,string,integer] Whether the control is disabled (propagated from `is_disabled` if not defined).
+ * - is_required: [boolean,null,string,integer] Whether the control is required (propagated from `is_required` if not defined).
+ * - required_text: [string,null,integer] Text to display within label element when required (propagated).
+ * - orientation: [string,null,integer] Elements orientation (vertical or horizontal).
+ * - is_inline: [boolean,null,string,integer] Whether the complex control is shown inline.
  * - control: [object,array] Object or objects collection with control's properties (required for complex controls).
  * - options: [array] Options for the field input:
  *   Each item contains:
- *   - value: [string] Option value
- *   - label: [string] Option label
- * - is_multiple: [boolean] Whether the field allows multiple values.
- * - placeholder: [string] Placeholder text for field.
+ *   - value: [string,null,integer,object] Option value
+ *   - label: [string,null,integer,object] Option label
+ * - is_multiple: [boolean,null,string,integer] Whether the field allows multiple values.
+ * - placeholder: [string,null,integer] Placeholder text for field.
  * - message: [object] Message object for showing messages.
  *   Each property contains:
  *   - content: [string] Message content.
- * - prefix: [string] Content to add before the field.
- * - suffix: [string] Content to add after the field.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - prefix: [string,null,integer] Content to add before the field.
+ * - suffix: [string,null,integer] Content to add after the field.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  */
 #}
 

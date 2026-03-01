@@ -4,18 +4,17 @@
  * CivicTheme Chip component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - kind: [string] Chip kind (default, input, link).
- * - size: [string] Chip size (large, regular, small).
- * - content: [string] Chip text.
- * - url: [string] URL if kind = link.
- * - label: [string] Aria Label if kind = link.
- * - is_selected: [boolean] Whether the chip is selected (for filter chips).
- * - is_multiple: [boolean] Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
- * - is_dismissible: [boolean] Whether close icon should display when kind is not input, and is_multiple is false.
- * - group_parent: [string] Additional parent selector for radio group when kind = input.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - kind: [string,null,integer] Chip kind (default, input, link).
+ * - size: [string,null,integer] Chip size (large, regular, small).
+ * - content: [string,null,integer] Chip text.
+ * - url: [string,null,integer] URL if kind = link.
+ * - label: [string,null,integer] Aria Label if kind = link.
+ * - is_selected: [boolean,null,string,integer] Whether the chip is selected (for filter chips).
+ * - is_multiple: [boolean,null,string,integer] Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
+ * - is_dismissible: [boolean,null,string,integer] Whether close icon should display when kind is not input, and is_multiple is false.
+ * - group_parent: [string,null,integer] Additional parent selector for radio group when kind = input.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  */
 #}
 

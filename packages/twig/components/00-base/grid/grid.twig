@@ -6,20 +6,17 @@
  * Props:
  * - items: [array] Column items.
  *   Each item contains:
- *   - items [string]
- * - row_element: [string] Row element.
- * - row_class: [string] Optional row class override (defaults to 'row').
- * - row_attributes: [Drupal\Core\Template\Attribute] Additional row attributes.
- * - column_element: [string] Column element.
- * - column_class: [string] Optional column class override (defaults to 'col' if template_column_count is 0).
- * - column_attributes: [Drupal\Core\Template\Attribute] Additional column attributes.
- * - use_container: [boolean] Whether to use container or not.
- * - is_fluid: [boolean] Whether the grid is fluid or not (applies only if use_container is true).
- * - template_column_count: [number] Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
- * - auto_breakpoint: [boolean] Switch between columns (starting at template_column_count) as the screen reduces.
- * - fill_width: [boolean] Stretch "hanging" items to row full width.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ *   - items [string,null,integer,object]
+ * - row_element: [string,null,integer] Row element.
+ * - row_class: [string,null,integer] Optional row class override (defaults to 'row').
+ * - column_element: [string,null,integer] Column element.
+ * - column_class: [string,null,integer] Optional column class override (defaults to 'col' if template_column_count is 0).
+ * - use_container: [boolean,null,string,integer] Whether to use container or not.
+ * - is_fluid: [boolean,null,string,integer] Whether the grid is fluid or not (applies only if use_container is true).
+ * - template_column_count: [number,string,null] Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
+ * - auto_breakpoint: [boolean,null,string,integer] Switch between columns (starting at template_column_count) as the screen reduces.
+ * - fill_width: [boolean,null,string,integer] Stretch "hanging" items to row full width.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  */
 #}
 

@@ -4,18 +4,17 @@
  * CivicTheme Promo Card component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
+ * - theme: [string,null,integer] Theme variation (light or dark).
  * - image: [object] Card image.
  *   Each property contains:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
- * - is_title_click: [boolean] Whether to make only the title clickable instead of the whole card.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
- * - date_iso: [string] Start date and time in ISO format.
- * - date: [string] Start date and time.
- * - date_end_iso: [string] End time in ISO format.
- * - date_end: [string] Formatted end time.
+ * - is_title_click: [boolean,null,string,integer] Whether to make only the title clickable instead of the whole card.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - date_iso: [string,null,integer] Start date and time in ISO format.
+ * - date: [string,null,integer] Start date and time.
+ * - date_end_iso: [string,null,integer] End time in ISO format.
+ * - date_end: [string,null,integer] Formatted end time.
  * - link: [object] Card link object.
  *   Each property contains:
  *   - url: [string] Link URL.
@@ -23,9 +22,9 @@
  *   - is_external: [boolean] Whether the link is external.
  * - tags: [array] Card tags:
  *   Each item contains:
- *   - text: [string] Tag text.
- *   - url: [string] Tag URL.
- *   - is_new_window: [boolean] Whether to open the tag in a new window.
+ *   - text: [string,null,integer,object] Tag text.
+ *   - url: [string,null,integer,object] Tag URL.
+ *   - is_new_window: [boolean,null,string,integer] Whether to open the tag in a new window.
  *
  * Slots:
  * - subtitle: Subtitle text.

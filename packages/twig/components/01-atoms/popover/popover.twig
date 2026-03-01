@@ -4,16 +4,15 @@
  * CivicTheme Popover component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
+ * - theme: [string,null,integer] Theme variation (light or dark).
  * - trigger: [object] Popover trigger link object.
  *   Each property contains:
  *   - text: [string] Trigger text.
  *   - url: [string] Optional URL for the trigger.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - group: [string] Group name for controlling multiple popovers together.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - group: [string,null,integer] Group name for controlling multiple popovers together.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  *
  * Slots:
  * - content: Popover panel content.

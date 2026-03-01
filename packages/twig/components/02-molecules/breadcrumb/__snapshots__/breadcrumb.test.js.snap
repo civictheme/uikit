@@ -60,9 +60,18 @@ exports[`Breadcrumb Component renders active element as span when active_is_link
           <span
             class="ct-text-icon__text"
           >
-            Category
+             
           </span>
-           
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Category
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -231,9 +240,18 @@ exports[`Breadcrumb Component renders with optional attributes 1`] = `
           <span
             class="ct-text-icon__text"
           >
-            Category
+             
           </span>
-           
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Category
+            </span>
+             
+          </span>
         </a>
               
       </li>
@@ -407,9 +425,18 @@ exports[`Breadcrumb Component renders with required attributes 1`] = `
           <span
             class="ct-text-icon__text"
           >
-            Category
+             
           </span>
-           
+          <span
+            class="ct-text-icon__group"
+          >
+            <span
+              class="ct-text-icon__text"
+            >
+              Category
+            </span>
+             
+          </span>
         </a>
               
       </li>

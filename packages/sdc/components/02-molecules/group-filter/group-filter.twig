@@ -4,23 +4,22 @@
  * CivicTheme Group Filter component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - title: [string] Filter title.
- * - form_attributes: [Drupal\Core\Template\Attribute] Form attributes (if empty, the form will not be printed).
- * - form_hidden_fields: [string] Form hidden fields.
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - title: [string,null,integer] Filter title.
+ * - form_hidden_fields: [string,null,integer] Form hidden fields.
  * - filters: [array] Filter objects:
  *   Each item contains:
- *   - title: [string] Filter title.
- *   - content: [string] Filter content.
- * - submit_text: [string] Text on the submit button.
- * - group_id: [string] Unique ID for filter group.
- * - show_selected_filters: [boolean] Enable the selected filters list below the filter fields.
- * - selected_title: [string] Text on the selected filters label.
+ *   - title: [string,null,integer,object] Filter title.
+ *   - content: [string,null,integer,object] Filter content.
+ * - submit_text: [string,null,integer] Text on the submit button.
+ * - group_id: [string,null,integer] Unique ID for filter group.
+ * - show_selected_filters: [boolean,null,string,integer] Enable the selected filters list below the filter fields.
+ * - selected_title: [string,null,integer] Text on the selected filters label.
  * - selected_filters: [array] Selected filter object:
  *   Each item contains:
- *   - text: [string] Filter title.
- *   - url: [string] URL to remove the selected filter.
- *   - label: [string] ARIA Label used to describe the selected filter.
+ *   - text: [string,null,integer,object] Filter title.
+ *   - url: [string,null,integer,object] URL to remove the selected filter.
+ *   - label: [string,null,integer,object] ARIA Label used to describe the selected filter.
  * - selected_clear_link: [object] A link to clear all selected filters.
  *   Each property contains:
  *   - type: [string] Type of button to use.
@@ -28,8 +27,7 @@
  *   - icon_placement: [string] Icon position (before or after).
  *   - text: [string] Button text.
  *   - url: [string] URL for the button. Should remove clear links on navigation.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  *
  * Slots:
  * - content_top: Top content area content.

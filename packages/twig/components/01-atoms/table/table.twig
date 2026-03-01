@@ -4,9 +4,9 @@
  * CivicTheme Table component.
  *
  * Props:
- * - theme: [string] Theme variation (light or dark).
- * - caption: [string] Table caption.
- * - caption_position: [string] Caption position (before, after).
+ * - theme: [string,null,integer] Theme variation (light or dark).
+ * - caption: [string,null,integer] Table caption.
+ * - caption_position: [string,null,integer] Caption position (before, after).
  * - header: [array] Header cells.
  *   Each item contains:
  *   - items [string]
@@ -19,10 +19,9 @@
  * - footer: [array] Footer cells.
  *   Each item contains:
  *   - items [string]
- * - is_striped: [boolean] Whether to show table with striped rows.
- * - is_data_table: [boolean] Whether to show as a data table.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
- * - modifier_class: [string] Additional CSS classes.
+ * - is_striped: [boolean,null,string,integer] Whether to show table with striped rows.
+ * - is_data_table: [boolean,null,string,integer] Whether to show as a data table.
+ * - modifier_class: [string,null,integer] Additional CSS classes.
  */
 #}
 
