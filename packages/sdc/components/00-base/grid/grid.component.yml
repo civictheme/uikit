@@ -90,12 +90,16 @@ props:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Column attributes
       description: Additional HTML attributes for columns.
     row_attributes:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Row attributes
       description: Additional HTML attributes for the row.
     modifier_class:

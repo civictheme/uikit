@@ -150,6 +150,8 @@ props:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Form attributes
       description: Additional HTML attributes for the form element.
     modifier_class:

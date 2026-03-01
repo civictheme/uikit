@@ -46,30 +46,40 @@ props:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Content attributes
       description: Additional HTML attributes for the main content section.
     sidebar_top_left_attributes:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Sidebar top left attributes
       description: Additional HTML attributes for the top left sidebar.
     sidebar_top_right_attributes:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Sidebar top right attributes
       description: Additional HTML attributes for the top right sidebar.
     sidebar_bottom_left_attributes:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Sidebar bottom left attributes
       description: Additional HTML attributes for the bottom left sidebar.
     sidebar_bottom_right_attributes:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Sidebar bottom right attributes
       description: Additional HTML attributes for the bottom right sidebar.
     modifier_class:

@@ -65,6 +65,8 @@ props:
       type:
       - object
       - 'null'
+      - string
+      - integer
       title: Items per page attributes
       description: Additional HTML attributes for the items per page select field.
     modifier_class:
