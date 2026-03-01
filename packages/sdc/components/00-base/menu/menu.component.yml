@@ -91,11 +91,17 @@ props:
       description: Mapping of menu level to modifier_class.
       properties:
         key:
-          type: number
+          type:
+          - number
+          - string
+          - 'null'
           title: Menu level
           description: Level of menu, e.g. `1`
         value:
-          type: string
+          type:
+          - string
+          - 'null'
+          - integer
           title: Modifier class
           description: Modifier classes for that level.
     is_collapsible:

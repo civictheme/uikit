@@ -45,7 +45,7 @@ props:
       title: Items
       description: List items.
       items:
-        type: string
+        type: [string, 'null', integer, object]
         description: HTML content for each list item.
     modifier_class:
       type:

@@ -25,11 +25,17 @@ props:
       title: URL
       description: Iframe URL.
     width:
-      type: integer
+      type:
+      - integer
+      - string
+      - 'null'
       title: Width
       description: Iframe width.
     height:
-      type: integer
+      type:
+      - integer
+      - string
+      - 'null'
       title: Height
       description: Iframe height.
     vertical_spacing:

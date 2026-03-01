@@ -46,7 +46,10 @@ props:
       title: Placeholder
       description: Placeholder text.
     rows:
-      type: integer
+      type:
+      - integer
+      - string
+      - 'null'
       title: Rows
       description: Display rows count.
     is_invalid:

@@ -58,7 +58,10 @@ props:
       - ''
       - null
     dropdown_columns:
-      type: integer
+      type:
+      - integer
+      - string
+      - 'null'
       title: Dropdown Columns
       description: Dropdown drawer column count.
     dropdown_columns_fill:

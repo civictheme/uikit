@@ -10,7 +10,7 @@ props:
       title: Items
       description: Column items.
       items:
-        type: string
+        type: [string, 'null', integer, object]
         description: Content of a grid item. Can include HTML.
     row_element:
       type:
@@ -61,7 +61,10 @@ props:
       description: Whether the grid is fluid or not (applies only if use_container is true).
       default: false
     template_column_count:
-      type: number
+      type:
+      - number
+      - string
+      - 'null'
       title: Template column count
       description: Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
       default: 0
