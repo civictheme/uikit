@@ -4,9 +4,10 @@
  * CivicTheme Logo component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - type: [string,null,integer] Logo display type (default, stacked, inline, inline-stacked).
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - type: [string] Logo display type (default, stacked, inline, inline-stacked).
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - logos: [object] Object with 'primary' and 'secondary' keys.
  *   Each property contains:
  *   - primary: [object] Primary logo configuration
@@ -29,8 +30,8 @@
  *   Each property contains:
  *       - url: [string] Optional URL that wraps the logo.
  *       - alt: [string] Logo image alt text.
- * - url: [string,null,integer] Optional URL that wraps the logo.
- * - title: [string,null,integer] Optional logo title attribute.
+ * - url: [string] Optional URL that wraps the logo.
+ * - title: [string] Optional logo title attribute.
  */
 #}
 

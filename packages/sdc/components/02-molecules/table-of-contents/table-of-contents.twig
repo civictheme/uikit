@@ -4,12 +4,13 @@
  * CivicTheme Table of Contents component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - title: [string,null,integer] Link title.
- * - position: [string,null,integer] TOC position ('before', 'after', 'prepend', 'append').
- * - anchor_selector: [string,null,integer] CSS selector for headings to include in TOC (e.g. 'h2, h3').
- * - scope_selector: [string,null,integer] CSS selector for the content area to generate TOC from.
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - title: [string] Link title.
+ * - position: [string] TOC position ('before', 'after', 'prepend', 'append').
+ * - anchor_selector: [string] CSS selector for headings to include in TOC (e.g. 'h2, h3').
+ * - scope_selector: [string] CSS selector for the content area to generate TOC from.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
  * - links: Table of contents links.

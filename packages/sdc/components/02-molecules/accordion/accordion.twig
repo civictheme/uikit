@@ -4,16 +4,17 @@
  * CivicTheme Accordion component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - expand_all: [boolean,null,string,integer] Whether to expand all panels by default.
- * - with_background: [boolean,null,string,integer] Whether to display with a background.
- * - vertical_spacing: [string,null,integer] Vertical spacing position (top, bottom, both).
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - expand_all: [boolean] Whether to expand all panels by default.
+ * - with_background: [boolean] Whether to display with a background.
+ * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - panels: [array] Accordion panels:
  *   Each item contains:
- *   - title: [string,null,integer] Panel title.
- *   - content: [string,null,integer,object] Panel content.
- *   - expanded: [boolean,null,string,integer] Whether the panel is expanded by default.
+ *   - title: [string] Panel title.
+ *   - content: [string,object] Panel content.
+ *   - expanded: [boolean] Whether the panel is expanded by default.
  *
  * Slots:
  * - content_top: Accordion top content.

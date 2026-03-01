@@ -4,16 +4,17 @@
  * CivicTheme Layout component.
  *
  * Props:
- * - hide_sidebar_left: [boolean,null,string,integer] Whether to hide the left sidebar.
- * - hide_sidebar_right: [boolean,null,string,integer] Whether to hide the right sidebar.
- * - is_contained: [boolean,null,string,integer] Whether the page content should be contained.
- * - vertical_spacing: [string,null,integer] Controls vertical spacing (top, bottom, or both).
- * - content_attributes: [object,null,string,integer] Additional HTML attributes for the main content section.
- * - sidebar_top_left_attributes: [object,null,string,integer] Additional HTML attributes for the top left sidebar.
- * - sidebar_top_right_attributes: [object,null,string,integer] Additional HTML attributes for the top right sidebar.
- * - sidebar_bottom_left_attributes: [object,null,string,integer] Additional HTML attributes for the bottom left sidebar.
- * - sidebar_bottom_right_attributes: [object,null,string,integer] Additional HTML attributes for the bottom right sidebar.
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
+ * - hide_sidebar_right: [boolean] Whether to hide the right sidebar.
+ * - is_contained: [boolean] Whether the page content should be contained.
+ * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
+ * - sidebar_top_left_attributes: [Drupal\Core\Template\Attribute] HTML attributes for top left sidebar.
+ * - sidebar_top_right_attributes: [Drupal\Core\Template\Attribute] HTML attributes for top right sidebar.
+ * - content_attributes: [Drupal\Core\Template\Attribute] HTML attributes for main content.
+ * - sidebar_bottom_left_attributes: [Drupal\Core\Template\Attribute] HTML attributes for bottom left sidebar.
+ * - sidebar_bottom_right_attributes: [Drupal\Core\Template\Attribute] HTML attributes for bottom right sidebar.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  *
  * Slots:
  * - content_top: Main content area top content.

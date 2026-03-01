@@ -4,9 +4,10 @@
  * CivicTheme Navigation Card component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - image_as_icon: [boolean,null,string,integer] Whether to show the image as an icon.
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - image_as_icon: [boolean] Whether to show the image as an icon.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - image: [object] Card image.
  *   Each property contains:
  *   - url: [string] Link URL.
@@ -17,7 +18,7 @@
  *   - url: [string] Link URL.
  *   - is_new_window: [boolean] Whether to open link in a new window.
  *   - is_external: [boolean] Whether the link is external.
- * - is_title_click: [boolean,null,string,integer] Whether to make only the title clickable instead of the whole card.
+ * - is_title_click: [boolean] Whether to make only the title clickable instead of the whole card.
  *
  * Slots:
  * - icon: Icon name.
