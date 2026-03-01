@@ -80,10 +80,10 @@
       {% if items.first is not empty %}
         <li class="ct-pagination__item ct-pagination__item--first hide-xxs show-m">
           {% include '@atoms/link/link.twig' with {
-            theme: theme,
+            theme: theme|default('light'),
             text: items.first.text|default('First'),
-            url: items.first.href,
-            is_disabled: (current - 1) ? 0 : 1,
+            url: items.first.href|default(''),
+            is_disabled: (current - 1) ? false : true,
             icon: 'left-arrow',
             icon_placement: 'before',
             attributes: create_attribute({title: 'Go to first page'}),
@@ -95,10 +95,10 @@
       {# Print previous item. #}
       <li class="ct-pagination__item ct-pagination__item--previous">
         {% include '@atoms/link/link.twig' with {
-          theme: theme,
+          theme: theme|default('light'),
           text: items.previous.text|default('Prev'),
-          url: items.previous.href,
-          is_disabled: (current - 1) ? 0 : 1,
+          url: items.previous.href|default(''),
+          is_disabled: (current - 1) ? false : true,
           icon: 'left-arrow',
           icon_placement: 'before',
           attributes: (current - 1) ? create_attribute({title: 'Go to previous page - page %s'|format(current - 1)}) : create_attribute({title: 'Go to previous page'}),
@@ -119,12 +119,12 @@
 
         <li class="ct-pagination__item {% if current == key %}ct-pagination__item--active{% else %}hide-xxs show-m{% endif %}">
           {% include '@atoms/link/link.twig' with {
-            theme: theme,
-            text: key,
-            title: title,
+            theme: theme|default('light'),
+            text: '' ~ key,
+            title: title|default(''),
             hidden_text: current == key ? 'Current page' : 'Page',
-            is_active: current == key ? 1 : 0,
-            url: item.href,
+            is_active: current == key ? true : false,
+            url: item.href|default(''),
             attributes: current == key ? create_attribute({title: 'Current page'}) : create_attribute({title: 'Go to page %s of %s'|format(key, items.pages|length)}),
             modifier_class: 'ct-pagination__item__link',
           } only %}
@@ -143,12 +143,12 @@
       {# Print next item if we are not on the last page. #}
       <li class="ct-pagination__item ct-pagination__item--next">
         {% include '@atoms/link/link.twig' with {
-          theme: theme,
+          theme: theme|default('light'),
           text: items.next.text|default('Next'),
-          title: title,
+          title: title|default(''),
           aria_text: 'Next page',
-          url: items.next.href,
-          is_disabled: (current < total_pages) ? 0 : 1,
+          url: items.next.href|default(''),
+          is_disabled: (current < total_pages) ? false : true,
           icon: 'right-arrow-2',
           icon_placement: 'after',
           attributes: current < total_pages ? create_attribute({title: 'Go to next page - page %s'|format(current + 1)}) : create_attribute({title: 'Go to next page'}),
@@ -160,10 +160,10 @@
       {% if items.last %}
         <li class="ct-pagination__item ct-pagination__item--last hide-xxs show-m">
           {% include '@atoms/link/link.twig' with {
-            theme: theme,
+            theme: theme|default('light'),
             text: items.last.text|default('Last'),
-            url: items.last.href,
-            is_disabled: (current < total_pages) ? 0 : 1,
+            url: items.last.href|default(''),
+            is_disabled: (current < total_pages) ? false : true,
             icon: 'right-arrow-2',
             icon_placement: 'after',
             attributes: create_attribute({title: 'Go to last page'}),

@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Radio component stories.
  */

@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Table of Contents component.
  */

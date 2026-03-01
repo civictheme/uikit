@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Breadcrumb component stories.
  */

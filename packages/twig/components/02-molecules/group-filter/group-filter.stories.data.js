@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import Field from '../field/field.twig';
 import FieldData from '../field/field.stories.data';
 

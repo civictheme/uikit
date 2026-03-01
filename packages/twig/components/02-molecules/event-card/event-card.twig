@@ -96,9 +96,9 @@
             {% set date_content %}
               {% include '@base/datetime/datetime.twig' with {
                 start: date,
-                start_iso: date_iso|default(null),
-                end: date_end|default(null),
-                end_iso: date_end_iso|default(null),
+                start_iso: date_iso|default(''),
+                end: date_end|default(''),
+                end_iso: date_end_iso|default(''),
               } only %}
             {% endset %}
 

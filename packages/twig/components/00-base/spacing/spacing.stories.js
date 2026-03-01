@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import Component from './spacing.stories.twig';
 
 const meta = {

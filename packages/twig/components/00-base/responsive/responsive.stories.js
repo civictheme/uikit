@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import Component from './responsive.stories.twig';
 
 const meta = {

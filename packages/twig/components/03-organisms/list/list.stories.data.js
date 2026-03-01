@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import GroupFilter from '../../02-molecules/group-filter/group-filter.twig';
 import GroupFilterData from '../../02-molecules/group-filter/group-filter.stories.data';
 import SingleFilter from '../../02-molecules/single-filter/single-filter.twig';

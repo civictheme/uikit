@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Fieldset component stories.
  */

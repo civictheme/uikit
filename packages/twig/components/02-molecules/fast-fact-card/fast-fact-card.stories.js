@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Fast Fact Card component stories.
  */

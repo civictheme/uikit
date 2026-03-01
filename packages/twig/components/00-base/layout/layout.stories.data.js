@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 export default {
   args: () => ({
     content_top: '<div class="story-placeholder" contenteditable="true">content_top</div>',

@@ -15,16 +15,16 @@
  */
 #}
 
-{% set is_external = is_external ? 'ct-content-link--external' : '' %}
+{% set is_external_class = is_external ? 'ct-content-link--external' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, is_external, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, is_external_class, modifier_class|default('')) %}
 
 {% if text is not empty %}
   {% set link_content %}
     {%- include '@base/text-icon/text-icon.twig' with {
       text: text,
-      is_new_window: is_new_window,
-      is_external: is_external,
+      is_new_window: is_new_window|default(false),
+      is_external: is_external|default(false),
     } only -%}
   {% endset %}
 

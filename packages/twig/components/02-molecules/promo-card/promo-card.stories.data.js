@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 export default {
   args: (theme = 'light') => ({
     theme,

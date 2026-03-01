@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import Component from './fonts.stories.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

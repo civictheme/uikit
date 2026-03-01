@@ -61,10 +61,10 @@ Copied as-is from '@base/menu/menu.twig'.
           text: item.title,
           title: item.title,
           url: item.url,
-          icon: item.icon,
+          icon: item.icon|default(''),
           icon_placement: 'before',
           modifier_class: 'ct-menu__item__link',
-          attributes: item.link_attributes|default(''),
+          attributes: item.link_attributes is defined and item.link_attributes is not null ? item.link_attributes : create_attribute({}),
           is_new_window: item.is_new_window is defined ? item.is_new_window : false,
           is_external: item.is_external is defined ? item.is_external : false,
         } only %}

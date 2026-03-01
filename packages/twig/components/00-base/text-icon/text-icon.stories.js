@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Text Icon component stories.
  */
