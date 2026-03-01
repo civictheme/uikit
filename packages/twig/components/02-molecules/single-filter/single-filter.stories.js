@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Single Filter component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './single-filter.twig';
 import SingleFilterData from './single-filter.stories.data';
 

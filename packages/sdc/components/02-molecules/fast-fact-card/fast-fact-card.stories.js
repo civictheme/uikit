@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Fast Fact Card component stories.
  */
 
+// phpcs:ignoreFile
 // phpcs:ignoreFile
 import Component from './fast-fact-card.twig';
 import FastFactCardData from './fast-fact-card.stories.data';

@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Table of Contents component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTableOfContents(el) {
   // Check if current target is already initialised.
   if (el.hasAttribute('data-table-of-contents-initialised')) {

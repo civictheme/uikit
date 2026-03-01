@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Navigation component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './navigation.twig';
 import NavigationData from './navigation.stories.data';
 

@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Tag List component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './tag-list.twig';
 
 const meta = {

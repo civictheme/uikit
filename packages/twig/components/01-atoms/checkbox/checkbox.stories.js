@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Checkbox component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './checkbox.twig';
 
 const meta = {

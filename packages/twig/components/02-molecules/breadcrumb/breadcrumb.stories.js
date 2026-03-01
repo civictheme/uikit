@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Breadcrumb component stories.
  */
 
+// phpcs:ignoreFile
 import Components from './breadcrumb.twig';
 
 const meta = {

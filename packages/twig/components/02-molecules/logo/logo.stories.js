@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Logo component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './logo.twig';
 import LogoData from './logo.stories.data';
 

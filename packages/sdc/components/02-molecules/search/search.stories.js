@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Search component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './search.twig';
 
 const meta = {

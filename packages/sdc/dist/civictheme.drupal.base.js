@@ -1826,6 +1826,7 @@
 
 
 Drupal.behaviors.sdc = {attach: function (context, settings) {
+// phpcs:ignoreFile
 /**
  * @file
  * Skip to target utility.
@@ -1854,6 +1855,7 @@ document.querySelectorAll('[data-skip-to-target]').forEach((el) => {
   new CivicThemeSkipToTarget(el);
 });
 
+// phpcs:ignoreFile
 /**
  * @file
  * Scrollspy component.
@@ -1891,6 +1893,7 @@ document.querySelectorAll('[data-scrollspy]').forEach((el) => {
   new CivicThemeScrollspy(el);
 });
 
+// phpcs:ignoreFile
 /**
  * @file
  * Responsive component.
@@ -2078,6 +2081,7 @@ if (document.querySelectorAll('[data-responsive]').length) {
   }, 10);
 }
 
+// phpcs:ignoreFile
 /**
  * @file
  * Platform utility.
@@ -2110,6 +2114,7 @@ document.querySelectorAll('[data-platform]').forEach((el) => {
  * CivicTheme Layout component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeLayout(el) {
   this.el = el;
   this.grid = el.querySelector(':scope > .ct-layout__inner');
@@ -2204,6 +2209,7 @@ document.querySelectorAll('.ct-layout').forEach((layout) => {
   new CivicThemeLayout(layout);
 });
 
+// phpcs:ignoreFile
 /**
  * @file
  * Flyout component.
@@ -2412,6 +2418,7 @@ document.querySelectorAll('[data-flyout]').forEach((flyout) => {
   new CivicThemeFlyout(flyout);
 });
 
+// phpcs:ignoreFile
 /**
  * @file
  * Collapsible component.

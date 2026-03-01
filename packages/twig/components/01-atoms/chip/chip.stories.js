@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Chip component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './chip.twig';
 import './chip.event.stories';
 

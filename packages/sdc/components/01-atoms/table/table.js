@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Table component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTable(el) {
   if (!el) {
     return;

@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Event Card component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './event-card.twig';
 import EventCardData from './event-card.stories.data';
 

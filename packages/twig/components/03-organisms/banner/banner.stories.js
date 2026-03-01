@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Banner component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './banner.twig';
 import BannerData from './banner.stories.data';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved

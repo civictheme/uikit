@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Heading component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './heading.twig';
 
 const meta = {

@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Radio component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './radio.twig';
 
 const meta = {

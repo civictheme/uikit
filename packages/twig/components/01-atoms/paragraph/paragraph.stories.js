@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Paragraph component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './paragraph.twig';
 
 const meta = {

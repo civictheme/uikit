@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Mobile Navigation component stories.
  */
 
+// phpcs:ignoreFile
 import MobileNavigationPanel from './mobile-navigation.twig';
 import MobileNavigationTrigger from './mobile-navigation-trigger.twig';
 

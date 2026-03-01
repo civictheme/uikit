@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Menu component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './menu.twig';
 
 const meta = {

@@ -1831,6 +1831,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 
 // phpcs:ignoreFile
+// phpcs:ignoreFile
 function CivicThemeWebform(el) {
   if (el.getAttribute('data-webform') === 'true' || this.el) {
     return;
@@ -1870,6 +1871,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Slider component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeSlider(el) {
   if (el.getAttribute('data-slider') === 'true' || this.el) {
     return;
@@ -2032,6 +2034,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Alert component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeAlert(el) {
   // Use "data-alert"'s attribute value to identify if this
   // component was already initialised.
@@ -2303,6 +2306,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Tooltip component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTooltip(el) {
   if (el.getAttribute('data-tooltip') === 'true') {
     return;
@@ -2449,6 +2453,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Tabs component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTabs(el, selectedIndex) {
   if (!el) {
     return;
@@ -2527,6 +2532,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Table of Contents component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTableOfContents(el) {
   // Check if current target is already initialised.
   if (el.hasAttribute('data-table-of-contents-initialised')) {
@@ -2677,6 +2683,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Single Filter component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeSingleFilterComponent(el) {
   if (el.getAttribute('data-single-filter') === 'true') {
     return;
@@ -2713,6 +2720,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Group Filter component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeGroupFilterComponent(el) {
   if (this.el) {
     return;
@@ -2749,6 +2757,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Table component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTable(el) {
   if (!el) {
     return;
@@ -2831,6 +2840,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Chip component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeChip(el) {
   if (el.getAttribute('data-chip') === 'true') {
     return;
@@ -2938,6 +2948,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Button component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeButton(el) {
   if (el.getAttribute('data-button') === 'true') {
     return;
@@ -3064,6 +3075,7 @@ document.querySelectorAll('.ct-button').forEach((el) => {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+// phpcs:ignoreFile
 /**
  * @file
  * Skip to target utility.
@@ -3094,6 +3106,7 @@ document.querySelectorAll('[data-skip-to-target]').forEach((el) => {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+// phpcs:ignoreFile
 /**
  * @file
  * Scrollspy component.
@@ -3133,6 +3146,7 @@ document.querySelectorAll('[data-scrollspy]').forEach((el) => {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+// phpcs:ignoreFile
 /**
  * @file
  * Responsive component.
@@ -3322,6 +3336,7 @@ if (document.querySelectorAll('[data-responsive]').length) {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+// phpcs:ignoreFile
 /**
  * @file
  * Platform utility.
@@ -3356,6 +3371,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Layout component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeLayout(el) {
   this.el = el;
   this.grid = el.querySelector(':scope > .ct-layout__inner');
@@ -3452,6 +3468,7 @@ document.querySelectorAll('.ct-layout').forEach((layout) => {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+// phpcs:ignoreFile
 /**
  * @file
  * Flyout component.
@@ -3662,6 +3679,7 @@ document.querySelectorAll('[data-flyout]').forEach((flyout) => {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+// phpcs:ignoreFile
 /**
  * @file
  * Collapsible component.

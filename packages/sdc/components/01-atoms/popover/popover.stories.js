@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Popover component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './popover.twig';
 
 const meta = {

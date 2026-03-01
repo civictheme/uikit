@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Tooltip component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTooltip(el) {
   if (el.getAttribute('data-tooltip') === 'true') {
     return;

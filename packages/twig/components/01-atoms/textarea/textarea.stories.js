@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Textarea component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './textarea.twig';
 
 const meta = {

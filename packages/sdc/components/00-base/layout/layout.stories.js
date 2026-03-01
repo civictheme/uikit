@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Layout component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './layout.twig';
 import LayoutData from './layout.stories.data';
 

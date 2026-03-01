@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Pagination component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './pagination.twig';
 import PaginationData from './pagination.stories.data';
 

@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Select component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './select.twig';
 
 const meta = {

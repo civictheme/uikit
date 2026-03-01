@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Webform component.
  */
 
+// phpcs:ignoreFile
 // phpcs:ignoreFile
 function CivicThemeWebform(el) {
   if (el.getAttribute('data-webform') === 'true' || this.el) {

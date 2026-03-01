@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Alert component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './alert.twig';
 
 const meta = {

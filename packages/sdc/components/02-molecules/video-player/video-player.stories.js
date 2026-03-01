@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Video Player component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './video-player.twig';
 
 const meta = {

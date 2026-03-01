@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Link component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './link.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 

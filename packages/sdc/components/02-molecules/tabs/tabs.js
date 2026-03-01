@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Tabs component.
  */
 
+// phpcs:ignoreFile
 function CivicThemeTabs(el, selectedIndex) {
   if (!el) {
     return;

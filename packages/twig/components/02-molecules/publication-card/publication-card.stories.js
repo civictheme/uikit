@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Publication Card component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './publication-card.twig';
 
 const meta = {

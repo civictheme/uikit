@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Figure component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './figure.twig';
 
 const meta = {

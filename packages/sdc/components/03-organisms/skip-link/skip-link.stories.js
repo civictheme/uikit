@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Skip Link component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './skip-link.twig';
 
 const meta = {

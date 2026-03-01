@@ -1,8 +1,8 @@
-// phpcs:ignoreFile
 /**
  * CivicTheme Back to Top component stories.
  */
 
+// phpcs:ignoreFile
 import Component from './back-to-top.stories.twig';
 
 const meta = {
