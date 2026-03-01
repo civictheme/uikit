@@ -77,4 +77,5 @@
   {%- endset -%}
 {%- endif -%}
 
-{{- content_markup -}}{{- is_new_window_content -}}
+{%- set attr = attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}
+<span {{ attr }}>{{- content_markup -}}{{- is_new_window_content -}}</span>

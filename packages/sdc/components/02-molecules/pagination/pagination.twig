@@ -123,7 +123,7 @@
             text: key ~ '',
             title: title,
             hidden_text: current == key ? 'Current page' : 'Page',
-            is_active: current == key ? true : false,
+            is_active: current == key,
             url: item.href,
             attributes: current == key ? create_attribute({title: 'Current page'}) : create_attribute({title: 'Go to page %s of %s'|format(key, items.pages|length)}),
             modifier_class: 'ct-pagination__item__link',
