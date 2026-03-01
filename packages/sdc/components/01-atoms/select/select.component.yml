@@ -6,37 +6,22 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     id:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: ID
       description: DOM ID attribute.
     name:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Name
       description: DOM name (required).
     is_multiple:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Multiple
       description: Whether to allow multiple selections.
     options:
@@ -47,46 +32,26 @@ props:
         type: object
         properties:
           type:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Type
             description: Option type (option group or option).
             enum:
-            - optgroup
-            - option
+              - optgroup
+              - option
           label:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Label
             description: Option label.
           value:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Value
             description: Option value.
           is_selected:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: Selected
             description: Whether the option is selected.
           is_disabled:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: Disabled
             description: Whether the select is disabled.
           options:
@@ -97,65 +62,38 @@ props:
               type: object
               properties:
                 label:
-                  type:
-                  - string
-                  - 'null'
-                  - integer
-                  - object
+                  type: string
                   title: Label
                   description: Option label.
                 value:
-                  type:
-                  - string
-                  - 'null'
-                  - integer
-                  - object
+                  type: string
                   title: Value
                   description: Option value.
                 is_selected:
-                  type:
-                  - boolean
-                  - 'null'
-                  - string
-                  - integer
+                  type: boolean
                   title: Selected
                   description: Whether the option is selected.
                 is_disabled:
-                  type:
-                  - boolean
-                  - 'null'
-                  - string
-                  - integer
+                  type: boolean
                   title: Disabled
                   description: Whether the select is disabled.
     is_invalid:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Invalid
       description: Whether the select is invalid.
     is_disabled:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Disabled
       description: Whether the select is disabled.
     is_required:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Required
       description: Whether the select is required.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

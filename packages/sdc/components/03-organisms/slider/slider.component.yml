@@ -6,66 +6,45 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     previous_label:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Previous Label
       description: Text for previous button.
       default: Previous
     next_label:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Next Label
       description: Text for next button.
       default: Next
     vertical_spacing:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Vertical Spacing
       description: Slider vertical spacing (top, bottom, or both).
       enum:
-      - top
-      - bottom
-      - both
-      - ''
-      - null
+        - top
+        - bottom
+        - both
+        - none
     with_background:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: With Background
       description: Whether to display with a background.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
     slides:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Slides
       description: Slides HTML content.
 slots:

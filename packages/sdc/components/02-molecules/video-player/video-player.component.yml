@@ -6,63 +6,43 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     title:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Title
       description: Button title.
     poster:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Poster
       description: Optional video poster URL.
     width:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Width
       description: Video width.
     height:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Height
       description: Video height.
     vertical_spacing:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Vertical spacing
       description: Controls vertical spacing (top, bottom, or both).
       enum:
-      - top
-      - bottom
-      - both
-      - ''
-      - null
+        - top
+        - bottom
+        - both
+        - none
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
     sources:
@@ -73,33 +53,19 @@ props:
         type: object
         properties:
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: URL
             description: URL for the video source.
           type:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Type
             description: Type name like 'video/mp4'.
     embedded_source:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Embedded Source
       description: Iframe URL.
     raw_source:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Raw Source
       description: HTML of raw embedded video player.
     transcript_link:
@@ -132,23 +98,14 @@ props:
           title: Attributes
           description: Additional HTML attributes.
     transcript_content:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Transcript content
       description: HTML of transcript content to display in a collapsible.
     transcript_expand_text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Transcript expand text
       description: Transcript collasible text to open. E.g. "Show transcript".
     transcript_collapse_text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Transcript collapse text
       description: Transcript collasible text to close. E.g. "Hide transcript".

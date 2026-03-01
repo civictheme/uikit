@@ -6,30 +6,18 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     title:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Title
       description: Video title.
     has_controls:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Controls
       description: Whether the video should have controls.
     sources:
@@ -40,54 +28,35 @@ props:
         type: object
         properties:
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: URL
             description: Source URL.
           type:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Type
             description: MIME type (like 'video/mp4').
     poster:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Poster
       description: Video poster URL.
     width:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Width
       description: Video width.
     height:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Height
       description: Video height.
     fallback_text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Fallback text
       description: Message for browsers not supporting HTML5 video.
-      default: Your browser doesn't support HTML5 video.
+      default: "Your browser doesn't support HTML5 video."
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

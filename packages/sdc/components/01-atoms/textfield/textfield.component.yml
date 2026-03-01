@@ -6,73 +6,45 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     name:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Name
       description: DOM name (required).
     id:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: ID
       description: DOM ID attribute.
     value:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Value
       description: The textfield value.
     placeholder:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Placeholder
       description: Placeholder text.
     is_invalid:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Invalid
       description: Whether the textfield is invalid.
     is_disabled:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Disabled
       description: Whether the textfield is disabled.
     is_required:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Required
       description: Whether the textfield is required.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

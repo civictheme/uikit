@@ -97,8 +97,8 @@
   {% block content_block %}
     {% include 'civictheme:layout' with {
       content_top: content_top,
-      hide_sidebar_left: hide_sidebar_left,
-      hide_sidebar_right: hide_sidebar_right,
+      hide_sidebar_left: hide_sidebar_left|default(false),
+      hide_sidebar_right: hide_sidebar_right|default(false),
       sidebar_top_left: sidebar_top_left,
       sidebar_top_left_attributes: sidebar_top_left_attributes,
       sidebar_top_right: sidebar_top_right,
@@ -111,7 +111,7 @@
       sidebar_bottom_right_attributes: sidebar_bottom_right_attributes,
       is_contained: content_contained,
       content_bottom: content_bottom,
-      vertical_spacing: vertical_spacing,
+      vertical_spacing: vertical_spacing|default('none'),
       attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : create_attribute(),
     } only %}
   {% endblock %}

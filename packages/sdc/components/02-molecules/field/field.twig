@@ -141,13 +141,13 @@
       {% endif %}
 
       {% if type == 'textfield' %}
-        {% include 'civictheme:textfield' with control[0] only %}
+        {% include 'civictheme:textfield' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'textarea' %}
-        {% include 'civictheme:textarea' with control[0] only %}
+        {% include 'civictheme:textarea' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'select' %}
-        {% include 'civictheme:select' with control[0] only %}
+        {% include 'civictheme:select' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'checkbox' or type == 'radio' %}
 
@@ -155,9 +155,9 @@
         {% for item in control %}
           {% set list_item %}
             {% if type == 'checkbox' %}
-              {% include 'civictheme:checkbox' with item only %}
+              {% include 'civictheme:checkbox' with item|merge({theme: theme|default('light')}) only %}
             {% else %}
-              {% include 'civictheme:radio' with item only %}
+              {% include 'civictheme:radio' with item|merge({theme: theme|default('light')}) only %}
             {% endif %}
           {% endset %}
           {% set list_items = list_items|merge([list_item]) %}

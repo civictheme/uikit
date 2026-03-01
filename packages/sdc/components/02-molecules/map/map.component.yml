@@ -6,74 +6,50 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     vertical_spacing:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Vertical spacing
       description: Vertical spacing position (top, bottom, both).
       enum:
-      - top
-      - bottom
-      - both
-      - ''
-      - null
+        - top
+        - bottom
+        - both
+        - none
     with_background:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: With background
       description: Whether to display with a background.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
     address:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Address
       description: Optional address.
     url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: URL
       description: URL for the map iframe.
     view_url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: View URL
       description: URL for the external map.
     view_text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: View text
       description: Text for the external map link.
-      default: View in Google Maps
+      default: 'View in Google Maps'
 slots:
   content_top:
     title: Top content

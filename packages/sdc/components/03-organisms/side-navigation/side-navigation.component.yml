@@ -6,35 +6,27 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     vertical_spacing:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Vertical Spacing
       description: Navigation vertical spacing (top, bottom, or both).
       enum:
-      - top
-      - bottom
-      - both
-      - ''
-      - null
+        - top
+        - bottom
+        - both
+        - none
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
     items:
@@ -45,35 +37,19 @@ props:
         type: object
         properties:
           title:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Title
             description: Navigation title.
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: URL
             description: Menu item URL.
           in_active_trail:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: In Active Trail
             description: Whether the item is in the active trail.
           is_expanded:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: boolean
             title: Is Expanded
             description: Whether the item is expanded.
           below:

@@ -6,74 +6,47 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     heading_id:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Heading ID
       description: Heading ID for accessibility.
     items_modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Items modifier class
       description: Additional classes for pagination items.
     items_per_page_title:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Items per page title
       description: Items per page field title.
-      default: Items per page
+      default: 'Items per page'
     items_per_page_name:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Items per page name
       description: Items per page select field name.
     items_per_page_id:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Items per page ID
       description: Items per page select field ID.
+    items_per_page_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Items per page attributes
+      description: Items per page select element attributes.
     use_ellipsis:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Use ellipsis
       description: Whether ellipsis should be shown.
-    items_per_page_attributes:
-      type:
-      - object
-      - 'null'
-      - string
-      - integer
-      title: Items per page attributes
-      description: Additional HTML attributes for the items per page select field.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
     items:
@@ -90,7 +63,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: First
+              default: 'First'
             href:
               type: string
               title: URL
@@ -104,7 +77,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: Prev
+              default: 'Prev'
             href:
               type: string
               title: URL
@@ -122,7 +95,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: Next
+              default: 'Next'
             href:
               type: string
               title: URL
@@ -136,7 +109,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: Last
+              default: 'Last'
             href:
               type: string
               title: URL
@@ -149,35 +122,19 @@ props:
         type: object
         properties:
           type:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Type
             description: Option type ('option').
           label:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Label
             description: Option label.
           value:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Value
             description: Option value.
           selected:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Selected
             description: Whether the option is selected.
 slots:

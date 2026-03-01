@@ -6,30 +6,22 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     with_border:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: With Border
       description: Whether icons have borders.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
     items:
@@ -40,34 +32,18 @@ props:
         type: object
         properties:
           icon:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Icon
             description: Icon identifier.
           icon_html:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Icon HTML
             description: Custom HTML for icon.
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: URL
             description: Link URL.
           title:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: string
             title: Title
             description: Link title attribute.

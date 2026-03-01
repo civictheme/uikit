@@ -10,102 +10,64 @@ props:
       title: Items
       description: Column items.
       items:
-        type: [string, 'null', integer, object]
+        type: [string, object]
         description: Content of a grid item. Can include HTML.
     row_element:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Row element
       description: Row element.
       default: div
     row_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Row class
       description: Optional row class override (defaults to 'row').
+    row_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Row attributes
+      description: Additional row attributes.
     column_element:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Column element
       description: Column element.
       default: div
     column_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Column class
       description: Optional column class override (defaults to 'col' if template_column_count is 0).
+    column_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Column attributes
+      description: Additional column attributes.
     use_container:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Use container
       description: Whether to use container or not.
       default: true
     is_fluid:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Is fluid
       description: Whether the grid is fluid or not (applies only if use_container is true).
       default: false
     template_column_count:
-      type:
-      - number
-      - string
-      - 'null'
+      type: number
       title: Template column count
       description: Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
       default: 0
     auto_breakpoint:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Auto breakpoint
       description: Switch between columns (starting at template_column_count) as the screen reduces.
       default: false
     fill_width:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Fill width
       description: Stretch "hanging" items to row full width.
       default: false
-    column_attributes:
-      type:
-      - object
-      - 'null'
-      - string
-      - integer
-      title: Column attributes
-      description: Additional HTML attributes for columns.
-    row_attributes:
-      type:
-      - object
-      - 'null'
-      - string
-      - integer
-      title: Row attributes
-      description: Additional HTML attributes for the row.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

@@ -6,90 +6,57 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
     header_theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Header theme
       description: Theme variation for header (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     hide_sidebar_left:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Hide left sidebar
       description: Whether to hide the left sidebar.
     hide_sidebar_right:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Hide right sidebar
       description: Whether to hide the right sidebar.
     content_contained:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Content contained
       description: Whether page content should be contained.
     vertical_spacing:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Vertical spacing
       description: Controls vertical spacing (top, bottom, or both).
       enum:
-      - top
-      - bottom
-      - both
-      - ''
-      - null
+        - top
+        - bottom
+        - both
+        - none
     footer_theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Footer theme
       description: Theme variation for footer (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     footer_background_image:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Footer background image
       description: Background image for footer.
 slots:

@@ -6,17 +6,12 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     trigger:
       type: object
       title: Trigger
@@ -39,17 +34,15 @@ props:
           title: External
           description: Whether the link is external.
     group:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Group
       description: Group name for controlling multiple popovers together.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
 slots:
