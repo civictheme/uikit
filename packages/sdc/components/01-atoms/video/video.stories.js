@@ -2,7 +2,6 @@
  * CivicTheme Video component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './video.twig';
 
 const meta = {

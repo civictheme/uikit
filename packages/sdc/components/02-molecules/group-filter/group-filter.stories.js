@@ -2,7 +2,6 @@
  * CivicTheme Group Filter component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './group-filter.twig';
 import GroupFilterData from './group-filter.stories.data';
 

@@ -2,7 +2,6 @@
  * CivicTheme Inline Filter component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './inline-filter.twig';
 import InlineFilterData from './inline-filter.stories.data';
 

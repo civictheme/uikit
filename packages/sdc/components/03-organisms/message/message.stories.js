@@ -2,7 +2,6 @@
  * CivicTheme Message component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './message.twig';
 
 const meta = {

@@ -2,7 +2,6 @@
  * CivicTheme Grid component stories.
  */
 
-// phpcs:ignoreFile
 import DrupalAttribute from 'drupal-attribute';
 import Component from './grid.twig';
 

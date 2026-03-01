@@ -2,7 +2,6 @@
  * CivicTheme Content Link component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './content-link.twig';
 
 const meta = {

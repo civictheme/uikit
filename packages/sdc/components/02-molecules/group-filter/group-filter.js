@@ -2,7 +2,6 @@
  * CivicTheme Group Filter component.
  */
 
-// phpcs:ignoreFile
 function CivicThemeGroupFilterComponent(el) {
   if (this.el) {
     return;

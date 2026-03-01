@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import ContentLink from '../../01-atoms/content-link/content-link.twig';
 import Button from '../../01-atoms/button/button.twig';
 import Table from '../../01-atoms/table/table.twig';

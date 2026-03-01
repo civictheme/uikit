@@ -2,7 +2,6 @@
  * CivicTheme Page Template component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './page.twig';
 import PageData, { PageFullWidthData } from './page.stories.data';
 

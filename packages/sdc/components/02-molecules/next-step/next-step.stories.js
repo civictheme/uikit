@@ -2,7 +2,6 @@
  * CivicTheme Next Step component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './next-step.twig';
 
 const meta = {

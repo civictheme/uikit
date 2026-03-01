@@ -2,7 +2,6 @@
  * CivicTheme DateTime component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './datetime.twig';
 
 const meta = {

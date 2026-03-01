@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Component from './collapsible.stories.twig';
 
 const meta = {

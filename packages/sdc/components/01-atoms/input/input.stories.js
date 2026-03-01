@@ -2,7 +2,6 @@
  * CivicTheme Input component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './input.twig';
 
 const meta = {

@@ -2,7 +2,6 @@
  * CivicTheme Single Filter component.
  */
 
-// phpcs:ignoreFile
 function CivicThemeSingleFilterComponent(el) {
   if (el.getAttribute('data-single-filter') === 'true') {
     return;

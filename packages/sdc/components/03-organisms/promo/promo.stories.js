@@ -2,7 +2,6 @@
  * CivicTheme Promo component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './promo.twig';
 
 const meta = {

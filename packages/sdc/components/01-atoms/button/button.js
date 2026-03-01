@@ -2,7 +2,6 @@
  * CivicTheme Button component.
  */
 
-// phpcs:ignoreFile
 function CivicThemeButton(el) {
   if (el.getAttribute('data-button') === 'true') {
     return;

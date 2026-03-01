@@ -2,7 +2,6 @@
  * CivicTheme Field Message component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './field-message.twig';
 
 const meta = {

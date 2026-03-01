@@ -2,7 +2,6 @@
  * CivicTheme Callout component stories.
  */
 
-// phpcs:ignoreFile
 import Components from './callout.twig';
 
 const meta = {

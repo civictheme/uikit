@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Component from './scrollspy.stories.twig';
 
 const meta = {

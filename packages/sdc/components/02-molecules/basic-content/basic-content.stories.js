@@ -2,7 +2,6 @@
  * CivicTheme Basic Content component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './basic-content.twig';
 import BasicContentData from './basic-content.stories.data';
 

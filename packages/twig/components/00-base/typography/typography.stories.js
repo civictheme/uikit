@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Component from './typography.stories.twig';
 
 const meta = {

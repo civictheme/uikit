@@ -2,7 +2,6 @@
  * CivicTheme Service Card component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './service-card.twig';
 
 const meta = {

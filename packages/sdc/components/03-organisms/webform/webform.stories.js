@@ -2,7 +2,6 @@
  * CivicTheme Webform component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './webform.twig';
 
 const meta = {

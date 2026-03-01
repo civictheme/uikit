@@ -2,7 +2,6 @@
  * CivicTheme Navigation Card component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './navigation-card.twig';
 import NavigationCardData from './navigation-card.stories.data';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved

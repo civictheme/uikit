@@ -2,7 +2,6 @@
  * CivicTheme Tabs component stories.
  */
 
-// phpcs:ignoreFile
 import DrupalAttribute from 'drupal-attribute';
 import Component from './tabs.twig';
 

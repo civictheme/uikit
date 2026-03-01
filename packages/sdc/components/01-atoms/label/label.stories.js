@@ -2,7 +2,6 @@
  * CivicTheme Label component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './label.twig';
 
 const meta = {

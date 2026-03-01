@@ -2,7 +2,6 @@
  * CivicTheme Attachment component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './attachment.twig';
 
 const meta = {

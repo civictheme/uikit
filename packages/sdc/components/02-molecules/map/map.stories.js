@@ -2,7 +2,6 @@
  * CivicTheme Map component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './map.twig';
 
 const meta = {

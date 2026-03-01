@@ -2,7 +2,6 @@
  * CivicTheme Header component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './header.twig';
 import HeaderData, { HeaderMultilineData } from './header.stories.data';
 

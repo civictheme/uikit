@@ -2,7 +2,6 @@
  * CivicTheme Slider component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './slider.twig';
 
 import Slide from './slide.twig';

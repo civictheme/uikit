@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 export default {
   args: (theme = 'light', options = {}) => {
     const name = `option_group_${Math.floor(Math.random() * 1000)}`;

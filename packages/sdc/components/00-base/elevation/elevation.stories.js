@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Component from './elevation.stories.twig';
 
 const meta = {

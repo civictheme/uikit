@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Component from './flyout.stories.twig';
 
 const meta = {

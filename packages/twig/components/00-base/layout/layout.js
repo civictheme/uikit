@@ -2,7 +2,6 @@
  * CivicTheme Layout component.
  */
 
-// phpcs:ignoreFile
 function CivicThemeLayout(el) {
   this.el = el;
   this.grid = el.querySelector(':scope > .ct-layout__inner');

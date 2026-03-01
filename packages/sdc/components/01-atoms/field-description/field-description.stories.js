@@ -2,7 +2,6 @@
  * CivicTheme Field Description component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './field-description.twig';
 
 const meta = {

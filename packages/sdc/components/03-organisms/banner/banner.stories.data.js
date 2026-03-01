@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
 import Paragraph from '../../01-atoms/paragraph/paragraph.twig';

@@ -2,7 +2,6 @@
  * CivicTheme Fieldset component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './fieldset.twig';
 import FieldData from '../../02-molecules/field/field.stories.data';
 import Field from '../../02-molecules/field/field.twig';

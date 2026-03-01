@@ -1,4 +1,3 @@
-// phpcs:ignoreFile
 import Logo from '../../02-molecules/logo/logo.twig';
 import LogoData from '../../02-molecules/logo/logo.stories.data';
 import Navigation from '../navigation/navigation.twig';

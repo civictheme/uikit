@@ -2,7 +2,6 @@
  * CivicTheme Iframe component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './iframe.twig';
 
 const meta = {

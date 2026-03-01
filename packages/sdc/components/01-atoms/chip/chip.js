@@ -2,7 +2,6 @@
  * CivicTheme Chip component.
  */
 
-// phpcs:ignoreFile
 function CivicThemeChip(el) {
   if (el.getAttribute('data-chip') === 'true') {
     return;

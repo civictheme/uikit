@@ -2,7 +2,6 @@
  * CivicTheme Social Links component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './social-links.twig';
 import Icon from '../../00-base/icon/icon.twig';
 

@@ -2,7 +2,6 @@
  * CivicTheme Table component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './table.twig';
 import Link from '../link/link.twig';
 

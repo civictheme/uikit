@@ -2,7 +2,6 @@
  * CivicTheme Snippet component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './snippet.twig';
 import SnippetData from './snippet.stories.data';
 

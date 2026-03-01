@@ -2,7 +2,6 @@
  * CivicTheme Field component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './field.twig';
 import FieldData from './field.stories.data';
 

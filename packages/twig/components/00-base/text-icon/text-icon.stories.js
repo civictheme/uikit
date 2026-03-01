@@ -2,7 +2,6 @@
  * CivicTheme Text Icon component stories.
  */
 
-// phpcs:ignoreFile
 import Component from './text-icon.twig';
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
