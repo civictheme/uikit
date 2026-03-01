@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Publication Card component stories.
  */

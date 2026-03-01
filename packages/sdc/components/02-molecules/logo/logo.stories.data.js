@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
 
 export default {

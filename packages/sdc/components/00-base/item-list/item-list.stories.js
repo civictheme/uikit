@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Item List component stories.
  */

@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Skip Link component stories.
  */

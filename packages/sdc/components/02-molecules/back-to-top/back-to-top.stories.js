@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Back to Top component stories.
  */

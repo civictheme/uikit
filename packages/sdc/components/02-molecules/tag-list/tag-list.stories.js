@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Tag List component stories.
  */

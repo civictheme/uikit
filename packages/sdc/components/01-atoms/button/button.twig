@@ -31,16 +31,16 @@
 {% set kind_class = kind ? 'ct-button--%s'|format(kind) : '' %}
 {% set size_class = 'ct-button--%s'|format(size) %}
 {% set dismiss_class = is_dismissable ? 'ct-button--dismiss' : '' %}
-{% set is_external = is_external ? 'ct-button--external' : '' %}
+{% set is_external_class = is_external ? 'ct-button--external' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, kind_class, size_class, dismiss_class, is_external, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, kind_class, size_class, dismiss_class, is_external_class, modifier_class|default('')) %}
 
 {% set button_content %}
   {%- include 'civictheme:text-icon' with {
     text: text,
-    is_new_window: is_new_window,
-    is_external: is_external,
-    icon: icon,
+    is_new_window: is_new_window|default(false),
+    is_external: is_external|default(false),
+    icon: icon|default(''),
     icon_placement: icon_placement,
     icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,
     icon_single_only: icon_single_only is defined ? icon_single_only : false,

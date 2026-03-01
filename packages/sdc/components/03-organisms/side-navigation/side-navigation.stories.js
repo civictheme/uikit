@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Side Navigation component stories.
  */

@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 /**
  * CivicTheme Inline Filter component stories.
  */

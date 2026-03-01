@@ -32,7 +32,7 @@
   {%- set text_content -%}
     {%- include 'civictheme:text-icon' with {
       text: content,
-      icon: is_dismissible or is_multiple ? 'cancel' : null,
+      icon: is_dismissible or is_multiple ? 'cancel' : '',
       icon_placement: 'after',
       icon_class: 'ct-chip__dismiss',
     } only -%}

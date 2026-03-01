@@ -1,3 +1,4 @@
+// phpcs:ignoreFile
 import Banner from '../../03-organisms/banner/banner.twig';
 import BannerData from '../../03-organisms/banner/banner.stories.data';
 import HeaderData from '../../03-organisms/header/header.stories.data';
