@@ -15,7 +15,7 @@
  */
 #}
 
-{%- set icon = (is_external and icon_single_only) ? 'upper-right-arrow' : (icon|default('')) -%}
+{%- set icon = icon and is_external and icon_single_only ? 'upper-right-arrow' : icon -%}
 
 {%- set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' -%}
 
@@ -33,10 +33,7 @@
 
     {%- if text is not empty -%}
       {# Prepare the text #}
-      {% set rendered_text -%}
-        {{- text -}}
-      {%- endset %}
-      {%- set text_arr = rendered_text|striptags|trim|split(' ') -%}
+      {%- set text_arr = text|trim|split(' ') -%}
       {%- set text_start = text_arr|slice(0, -1)|join(' ') -%}
       {%- set text_end = text_arr|last -%}
       {%- set show_full_text = icon_group_disabled or (icon_placement == 'before' and is_external == false) -%}
@@ -61,7 +58,7 @@
         {%- endif -%}
       {%- endset -%}
 
-{{- before_text -}}<span class="ct-text-icon__text">{{- display_text -}}</span>{{- after_text -}}
+      {{- before_text }}<span class="ct-text-icon__text">{{ display_text }}</span>{{ after_text -}}
     {%- else -%}
       {{- icon_markup -}}
     {%- endif -%}

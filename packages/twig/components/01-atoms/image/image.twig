@@ -16,8 +16,7 @@
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
-{# Handle Drupal edge case where empty alt may be passed as literal '""' string #}
-{% set alt = (alt == '""') ? '' : (alt|default('')) %}
+{% set alt = (alt == '""') ? '' : alt|default('') %}
 
 {% if url is not empty %}
   <img
