@@ -44,9 +44,13 @@ export const Logo = {
 export const LogoDark = {
   parameters: {
     layout: 'centered',
+  },
+
+  args: LogoData.args('dark'),
+
+  globals: {
     backgrounds: {
-      default: 'Dark',
+      value: 'dark',
     },
   },
-  args: LogoData.args('dark'),
 };
