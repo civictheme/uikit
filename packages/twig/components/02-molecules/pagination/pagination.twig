@@ -4,15 +4,16 @@
  * CivicTheme Pagination component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - heading_id: [string,null,integer] Heading ID for accessibility.
- * - items_modifier_class: [string,null,integer] Additional classes for pagination items.
- * - items_per_page_title: [string,null,integer] Items per page field title.
- * - items_per_page_name: [string,null,integer] Items per page select field name.
- * - items_per_page_id: [string,null,integer] Items per page select field ID.
- * - use_ellipsis: [boolean,null,string,integer] Whether ellipsis should be shown.
- * - items_per_page_attributes: [object,null,string,integer] Additional HTML attributes for the items per page select field.
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - heading_id: [string] Heading ID for accessibility.
+ * - items_modifier_class: [string] Additional classes for pagination items.
+ * - items_per_page_title: [string] Items per page field title.
+ * - items_per_page_name: [string] Items per page select field name.
+ * - items_per_page_id: [string] Items per page select field ID.
+ * - items_per_page_attributes: [Drupal\Core\Template\Attribute] Items per page select element attributes.
+ * - use_ellipsis: [boolean] Whether ellipsis should be shown.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - items: [object] Object containing pagination items.
  *   Each property contains:
  *   - first: [object] First page link.
@@ -34,10 +35,10 @@
  *     - href: [string] Link URL.
  * - items_per_page_options: [array] Options for items per page:
  *   Each item contains:
- *   - type: [string,null,integer,object] Option type ('option').
- *   - label: [string,null,integer,object] Option label.
- *   - value: [string,null,integer,object] Option value.
- *   - selected: [string,null,integer,object] Whether the option is selected.
+ *   - type: [string] Option type ('option').
+ *   - label: [string] Option label.
+ *   - value: [string] Option value.
+ *   - selected: [string] Whether the option is selected.
  *
  * Slots:
  * - title: Active page title.

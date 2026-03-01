@@ -4,21 +4,22 @@
  * CivicTheme Navigation component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - name: [string,null,integer] Navigation name for nav element.
- * - menu_id: [string,null,integer] Optional menu ID used for grouping dropdown items.
- * - type: [string,null,integer] Navigation display type (none, inline, dropdown, drawer).
- * - variant: [string,null,integer] One of: primary, secondary.
- * - dropdown_columns: [integer,string,null] Dropdown drawer column count.
- * - dropdown_columns_fill: [boolean,null,string,integer] Whether to fill columns.
- * - is_animated: [boolean,null,string,integer] Whether to use animation for transitions.
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - name: [string] Navigation name for nav element.
+ * - menu_id: [string] Optional menu ID used for grouping dropdown items.
+ * - type: [string] Navigation display type (none, inline, dropdown, drawer).
+ * - variant: [string] One of: primary, secondary.
+ * - dropdown_columns: [integer] Dropdown drawer column count.
+ * - dropdown_columns_fill: [boolean] Whether to fill columns.
+ * - is_animated: [boolean] Whether to use animation for transitions.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - items: [array] Menu items:
  *   Each item contains:
- *   - title: [string,null,integer,object] Navigation item title.
- *   - url: [string,null,integer,object] URL of the menu item.
- *   - in_active_trail: [boolean,null,string,integer] Whether the item is in the active trail.
- *   - is_expanded: [boolean,null,string,integer] Whether the item is expanded.
+ *   - title: [string] Navigation item title.
+ *   - url: [string] URL of the menu item.
+ *   - in_active_trail: [boolean] Whether the item is in the active trail.
+ *   - is_expanded: [boolean] Whether the item is expanded.
  *   - below: [array] Submenu items.
  *     Each item contains:
  *     - items [object]

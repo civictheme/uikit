@@ -4,25 +4,26 @@
  * CivicTheme Campaign component.
  *
  * Props:
- * - theme: [string,null,integer] Theme variation (light or dark).
- * - image_position: [string,null,integer] Image position relative to content (left or right).
- * - vertical_spacing: [string,null,integer] Campaign vertical spacing (top, bottom, or both).
- * - modifier_class: [string,null,integer] Additional CSS classes.
+ * - theme: [string] Theme variation (light or dark).
+ * - image_position: [string] Image position relative to content (left or right).
+ * - vertical_spacing: [string] Campaign vertical spacing (top, bottom, or both).
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - modifier_class: [string] Additional CSS classes.
  * - image: [object] Campaign image.
  *   Each property contains:
  *   - url: [string] Image URL.
  *   - alt: [string] Image alt text.
  * - tags: [array] Campaign tags:
  *   Each item contains:
- *   - text: [string,null,integer,object] Tag text.
- *   - url: [string,null,integer,object] Tag URL.
- *   - is_new_window: [boolean,null,string,integer] Whether to open tag in a new window.
+ *   - text: [string] Tag text.
+ *   - url: [string] Tag URL.
+ *   - is_new_window: [boolean] Whether to open tag in a new window.
  * - links: [array] Campaign links:
  *   Each item contains:
- *   - text: [string,null,integer,object] Link text.
- *   - url: [string,null,integer,object] Link URL.
- *   - is_new_window: [boolean,null,string,integer] Whether to open link in a new window.
- *   - is_external: [boolean,null,string,integer] Whether the link is external.
+ *   - text: [string] Link text.
+ *   - url: [string] Link URL.
+ *   - is_new_window: [boolean] Whether to open link in a new window.
+ *   - is_external: [boolean] Whether the link is external.
  *
  * Slots:
  * - content_top: Top content.

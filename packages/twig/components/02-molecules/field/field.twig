@@ -141,13 +141,13 @@
       {% endif %}
 
       {% if type == 'textfield' %}
-        {% include '@atoms/textfield/textfield.twig' with control[0] only %}
+        {% include '@atoms/textfield/textfield.twig' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'textarea' %}
-        {% include '@atoms/textarea/textarea.twig' with control[0] only %}
+        {% include '@atoms/textarea/textarea.twig' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'select' %}
-        {% include '@atoms/select/select.twig' with control[0] only %}
+        {% include '@atoms/select/select.twig' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'checkbox' or type == 'radio' %}
 
@@ -155,9 +155,9 @@
         {% for item in control %}
           {% set list_item %}
             {% if type == 'checkbox' %}
-              {% include '@atoms/checkbox/checkbox.twig' with item only %}
+              {% include '@atoms/checkbox/checkbox.twig' with item|merge({theme: theme|default('light')}) only %}
             {% else %}
-              {% include '@atoms/radio/radio.twig' with item only %}
+              {% include '@atoms/radio/radio.twig' with item|merge({theme: theme|default('light')}) only %}
             {% endif %}
           {% endset %}
           {% set list_items = list_items|merge([list_item]) %}
