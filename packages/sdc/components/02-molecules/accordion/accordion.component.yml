@@ -48,7 +48,7 @@ props:
             title: Title
             description: Panel title.
           content:
-            type: string
+            type: [string, object]
             title: Content
             description: Panel content.
           expanded:

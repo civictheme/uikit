@@ -6,39 +6,29 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       default: light
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     title:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Title
       description: Filter title.
     submit_text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Submit text
       description: The text of the submit button.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
 slots:
   items:
     title: Items
