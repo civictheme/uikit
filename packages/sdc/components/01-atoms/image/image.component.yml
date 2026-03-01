@@ -6,49 +6,33 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: URL
       description: Image URL.
     alt:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Alt text
       description: Image alt text.
     width:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Width
       description: Image width.
     height:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Height
       description: Image height.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

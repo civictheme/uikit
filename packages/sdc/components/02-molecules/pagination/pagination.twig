@@ -63,6 +63,7 @@
     {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pagination__items_per_page">
         {%- include 'civictheme:field' with {
+          theme: theme|default('light'),
           title: items_per_page_title,
           type: 'select',
           orientation: 'horizontal',

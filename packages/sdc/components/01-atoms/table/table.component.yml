@@ -6,36 +6,24 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
       - light
       - dark
-      - ''
-      - null
+      default: light
     caption:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Caption
       description: Table caption.
     caption_position:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Caption position
       description: Caption position (before, after).
       enum:
       - before
       - after
-      - ''
-      - null
       default: before
     header:
       type: array
@@ -64,25 +52,14 @@ props:
       items:
         type: [string, 'null', integer, object]
     is_striped:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: Striped
       description: Whether to show table with striped rows.
     is_data_table:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: Data table
       description: Whether to show as a data table.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

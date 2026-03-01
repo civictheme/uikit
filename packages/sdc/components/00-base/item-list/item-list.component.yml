@@ -6,38 +6,24 @@ props:
   type: object
   properties:
     direction:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Direction
       description: List direction (horizontal or vertical).
       enum:
-      - horizontal
-      - vertical
-      - ''
-      - null
+        - horizontal
+        - vertical
       default: horizontal
     size:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Size
       description: List size (large, regular, or small).
       enum:
-      - large
-      - regular
-      - small
-      - ''
-      - null
+        - large
+        - regular
+        - small
       default: regular
     no_gap:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: No gap
       description: Whether to render without gaps.
     items:
@@ -45,12 +31,13 @@ props:
       title: Items
       description: List items.
       items:
-        type: [string, 'null', integer, object]
+        type: string
         description: HTML content for each list item.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

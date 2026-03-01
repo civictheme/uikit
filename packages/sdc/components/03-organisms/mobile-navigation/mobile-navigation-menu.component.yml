@@ -6,17 +6,13 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
       - light
       - dark
-      - ''
-      - null
+      default: light
     items:
       type: array
       title: Items
@@ -25,27 +21,15 @@ props:
         type: object
         properties:
           title:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: [string, 'null', object]
             title: Title
             description: Link title.
           url:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: [string, 'null', object]
             title: URL
             description: Link URL.
           icon:
-            type:
-            - string
-            - 'null'
-            - integer
-            - object
+            type: [string, 'null', object]
             title: Icon
             description: Icon name.
           below:
@@ -53,25 +37,14 @@ props:
             title: Below
             description: Submenu items.
           is_expanded:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: [boolean, 'null']
             title: Expanded
             description: Whether the current item has visible children.
           in_active_trail:
-            type:
-            - boolean
-            - 'null'
-            - string
-            - integer
+            type: [boolean, 'null']
             title: In Active Trail
             description: Whether the current item is in the active trail.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.

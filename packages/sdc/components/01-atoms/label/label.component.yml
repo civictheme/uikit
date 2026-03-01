@@ -40,12 +40,12 @@ props:
       title: Required
       description: Whether the label is required.
     required_text:
-      type: string
+      type: [string, 'null']
       title: Required text
       description: Text to display within label element when required.
       default: (required)
     for:
-      type: string
+      type: [string, 'null']
       title: For
       description: Form element ID this label belongs to.
     attributes:

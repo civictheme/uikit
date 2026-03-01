@@ -6,85 +6,54 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     type:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Type
       description: Tag type (primary, secondary, tertiary).
       enum:
-      - primary
-      - secondary
-      - tertiary
-      - ''
-      - null
+        - primary
+        - secondary
+        - tertiary
       default: primary
     content:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Content
       description: Tag content.
     icon:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Icon
       description: Icon name.
     icon_placement:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Icon placement
       description: Icon position (before, after).
       enum:
-      - before
-      - after
-      - ''
-      - null
+        - before
+        - after
       default: after
     url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: URL
       description: Optional URL to convert to a link.
     is_new_window:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: New window
       description: Whether to open in a new window (only if URL is provided).
     is_external:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: External
       description: Whether the link is external.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

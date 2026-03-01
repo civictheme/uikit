@@ -6,31 +6,19 @@ props:
   type: object
   properties:
     symbol:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Symbol
       description: Icon name (required).
     size:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Size
       description: Icon size.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
     assets_dir:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Assets directory
       description: Directory containing icon assets.
       default: '@civictheme/../assets'

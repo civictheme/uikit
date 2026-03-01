@@ -6,30 +6,19 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
       - light
       - dark
-      - ''
-      - null
       default: light
     content:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Content
       description: Paragraph content.
     size:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Size
       description: Paragraph size (extra-large, large, regular, small).
       enum:
@@ -37,22 +26,13 @@ props:
       - large
       - regular
       - small
-      - ''
-      - null
       default: regular
     no_margin:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: No margin
       description: Disable default margin.
       default: false
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

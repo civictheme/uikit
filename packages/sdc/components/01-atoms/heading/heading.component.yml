@@ -6,52 +6,40 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
       default: light
     content:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Content
       description: Heading content.
     level:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, integer]
       title: Level
       description: Heading level (1-6).
       enum:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-      - '6'
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - ''
-      - null
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
       default: '2'
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.

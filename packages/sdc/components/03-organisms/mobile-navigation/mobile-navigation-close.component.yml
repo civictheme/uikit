@@ -6,29 +6,19 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
       - light
       - dark
-      - ''
-      - null
+      default: light
     text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Text
       description: Text for the button.
       default: Close
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier Class
       description: Additional CSS classes.

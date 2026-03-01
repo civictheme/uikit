@@ -6,22 +6,15 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
       - light
       - dark
-      - ''
-      - null
+      default: light
     kind:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Kind
       description: Button kind (submit, reset, button, link).
       enum:
@@ -29,121 +22,69 @@ props:
       - reset
       - button
       - link
-      - ''
-      - null
+      default: button
     type:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Type
       description: Button type (primary, secondary, tertiary).
       enum:
       - primary
       - secondary
       - tertiary
-      - ''
-      - null
     size:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Size
       description: Button size (large, regular, small).
       enum:
       - large
       - regular
       - small
-      - ''
-      - null
       default: regular
     icon:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Icon
       description: Icon name.
     icon_placement:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Icon placement
       description: Icon position (before or after).
       enum:
       - before
       - after
-      - ''
-      - null
       default: after
     icon_group_disabled:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: Disable icon grouping
       description: Disable icon and last word grouping.
     icon_single_only:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: Single icon only
       description: Only show 1 icon (if both icon and is_external are present, external takes preference).
     text:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: Text
       description: Button text.
     url:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: [string, 'null']
       title: URL
       description: URL for the link button.
     is_new_window:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: New window
       description: Open in a new window.
     is_external:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: External link
       description: Indicates if the link is external.
     is_disabled:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: Disabled
       description: Indicates if the button is disabled.
     is_dismissable:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: [boolean, 'null']
       title: Dismissable
       description: Indicates if the button can be dismissed.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
