@@ -96,28 +96,25 @@
   {% endif %}
 
   {% block content_block %}
-    {% set layout_props = {
+    {% include '@base/layout/layout.twig' with {
       content_top: content_top,
-      hide_sidebar_left: hide_sidebar_left|default(false),
-      hide_sidebar_right: hide_sidebar_right|default(false),
+      hide_sidebar_left: hide_sidebar_left,
+      hide_sidebar_right: hide_sidebar_right,
       sidebar_top_left: sidebar_top_left,
-      sidebar_top_left_attributes: sidebar_top_left_attributes is defined and sidebar_top_left_attributes is not null ? sidebar_top_left_attributes : create_attribute({}),
+      sidebar_top_left_attributes: sidebar_top_left_attributes,
       sidebar_top_right: sidebar_top_right,
-      sidebar_top_right_attributes: sidebar_top_right_attributes is defined and sidebar_top_right_attributes is not null ? sidebar_top_right_attributes : create_attribute({}),
+      sidebar_top_right_attributes: sidebar_top_right_attributes,
       content: content,
-      content_attributes: content_attributes is defined and content_attributes is not null ? content_attributes : create_attribute({}),
+      content_attributes: content_attributes,
       sidebar_bottom_left: sidebar_bottom_left|default(sidebar),
-      sidebar_bottom_left_attributes: sidebar_bottom_left_attributes is defined and sidebar_bottom_left_attributes is not null ? sidebar_bottom_left_attributes|default(sidebar_attributes) : create_attribute({}),
+      sidebar_bottom_left_attributes: sidebar_bottom_left_attributes|default(sidebar_attributes),
       sidebar_bottom_right: sidebar_bottom_right,
-      sidebar_bottom_right_attributes: sidebar_bottom_right_attributes is defined and sidebar_bottom_right_attributes is not null ? sidebar_bottom_right_attributes : create_attribute({}),
-      is_contained: content_contained|default(false),
+      sidebar_bottom_right_attributes: sidebar_bottom_right_attributes,
+      is_contained: content_contained,
       content_bottom: content_bottom,
-      attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : create_attribute({}),
-    } %}
-    {% if vertical_spacing is defined and vertical_spacing is not empty %}
-      {% set layout_props = layout_props|merge({vertical_spacing: vertical_spacing}) %}
-    {% endif %}
-    {% include '@base/layout/layout.twig' with layout_props only %}
+      vertical_spacing: vertical_spacing,
+      attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : create_attribute(),
+    } only %}
   {% endblock %}
 
   {% block footer_block %}

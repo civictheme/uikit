@@ -6,47 +6,66 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     heading_id:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Heading ID
       description: Heading ID for accessibility.
     items_modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Items modifier class
       description: Additional classes for pagination items.
     items_per_page_title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Items per page title
       description: Items per page field title.
-      default: 'Items per page'
+      default: Items per page
     items_per_page_name:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Items per page name
       description: Items per page select field name.
     items_per_page_id:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Items per page ID
       description: Items per page select field ID.
-    items_per_page_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Items per page attributes
-      description: Items per page select element attributes.
     use_ellipsis:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Use ellipsis
       description: Whether ellipsis should be shown.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
     items:
@@ -63,7 +82,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: 'First'
+              default: First
             href:
               type: string
               title: URL
@@ -77,7 +96,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: 'Prev'
+              default: Prev
             href:
               type: string
               title: URL
@@ -95,7 +114,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: 'Next'
+              default: Next
             href:
               type: string
               title: URL
@@ -109,7 +128,7 @@ props:
               type: string
               title: Text
               description: Link text.
-              default: 'Last'
+              default: Last
             href:
               type: string
               title: URL
@@ -122,19 +141,35 @@ props:
         type: object
         properties:
           type:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Type
             description: Option type ('option').
           label:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Label
             description: Option label.
           value:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Value
             description: Option value.
           selected:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Selected
             description: Whether the option is selected.
 slots:

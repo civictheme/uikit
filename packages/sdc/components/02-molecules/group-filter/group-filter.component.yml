@@ -6,23 +6,30 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Title
       description: Filter title.
       default: 'Filter results by:'
-    form_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Form attributes
-      description: Form attributes (if empty, the form will not be printed).
     form_hidden_fields:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Hidden fields
       description: Form hidden fields.
     filters:
@@ -33,30 +40,49 @@ props:
         type: object
         properties:
           title:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Title
             description: Filter title.
           content:
-            anyOf:
-              - type: string
-              - type: object
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Content
             description: Filter content.
     submit_text:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Submit text
       description: Text on the submit button.
-      default: 'Apply filters'
+      default: Apply filters
     group_id:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Group ID
       description: Unique ID for filter group.
     show_selected_filters:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Show selected filters
       description: Enable the selected filters list below the filter fields.
     selected_title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Selected title
       description: Text on the selected filters label.
       default: 'Selected filters:'
@@ -68,15 +94,27 @@ props:
         type: object
         properties:
           text:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Title
             description: Filter title.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: URL to remove the selected filter.
           label:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Content
             description: ARIA Label used to describe the selected filter.
     selected_clear_link:
@@ -88,32 +126,31 @@ props:
           type: string
           title: Type
           description: Type of button to use.
-          default: 'secondary'
+          default: secondary
         icon:
           type: string
           title: Icon
           description: Icon to use in the button.
-          default: 'close-outline'
+          default: close-outline
         icon_placement:
           type: string
           title: Icon placement
           description: Icon position (before or after).
-          default: 'after'
+          default: after
         text:
           type: string
           title: Text
           description: Button text.
-          default: 'Clear all'
+          default: Clear all
         url:
           type: string
           title: URL
           description: URL for the button. Should remove clear links on navigation.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
 slots:

@@ -6,12 +6,17 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     image:
       type: object
       title: Image
@@ -26,23 +31,39 @@ props:
           title: Alt text
           description: Image alt text.
     is_title_click:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Title click
       description: Whether to make only the title clickable instead of the whole card.
     date_iso:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: ISO date
       description: Start date and time in ISO format.
     date:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Date
       description: Date area content.
     date_end_iso:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: ISO end date
       description: End date and time in ISO format.
     date_end:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: End date
       description: End date and time.
     link:
@@ -66,23 +87,34 @@ props:
         type: object
         properties:
           text:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Text
             description: Tag text.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Tag URL.
           is_new_window:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: New Window
             description: Whether to open tag in a new window.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
 slots:

@@ -6,26 +6,37 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     is_decorative:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Decorative
       description: Whether to show as decorative.
     background_image_blend_mode:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Background Image Blend Mode
       description: Background image blending type. Defaults to 'normal'.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
     breadcrumb:

@@ -6,65 +6,101 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     legend:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Legend
       description: Legend for the fieldset.
     description:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Description
       description: Description for the fieldset.
     description_display:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Description display
       description: Description display position (before, after, invisible).
       enum:
-        - before
-        - after
-        - invisible
+      - before
+      - after
+      - invisible
+      - ''
+      - null
       default: before
     message:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Message
       description: Message content.
     message_type:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Message type
       description: Message type (error, information, warning, success).
       enum:
-        - error
-        - information
-        - warning
-        - success
+      - error
+      - information
+      - warning
+      - success
+      - ''
+      - null
       default: error
     is_required:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Required
       description: Whether the fieldset is required.
     required_text:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Required text
       description: Text to display within label element when required.
     prefix:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Prefix
       description: The content to add before the fieldset children.
     suffix:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Suffix
       description: The content to add after the fieldset children.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
 slots:

@@ -46,7 +46,7 @@
   {%- set link %}
     {% set link_attributes = link.attributes is defined and link.attributes is not null ? link.attributes : create_attribute({}) %}
     {% include '@atoms/link/link.twig' with {
-      theme: theme|default('light'),
+      theme: theme,
       text: link.text,
       url: link.url,
       is_new_window: link.is_new_window is defined ? link.is_new_window : false,

@@ -6,53 +6,80 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     tag:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Tag
       description: HTML tag to use (label, legend).
       enum:
-        - label
-        - legend
+      - label
+      - legend
+      - ''
+      - null
       default: label
     content:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Content
       description: The label's content.
     size:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Size
       description: Label size (extra-large, large, regular, small, extra-small).
       enum:
-        - extra-large
-        - large
-        - regular
-        - small
-        - extra-small
+      - extra-large
+      - large
+      - regular
+      - small
+      - extra-small
+      - ''
+      - null
       default: regular
     is_required:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Required
       description: Whether the label is required.
     required_text:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Required text
       description: Text to display within label element when required.
       default: (required)
     for:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: For
       description: Form element ID this label belongs to.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.

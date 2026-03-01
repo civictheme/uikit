@@ -6,18 +6,22 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      - light
+      - dark
+      - ''
+      - null
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
     image:
@@ -55,11 +59,18 @@ props:
           title: Size
           description: File size.
     is_title_click:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Title click
       description: Whether to make only the title clickable instead of the whole card.
     filename_prefix:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Filename Prefix
       description: Description of file details for accessibility.
 slots:

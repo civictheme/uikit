@@ -6,51 +6,47 @@ props:
   type: object
   properties:
     hide_sidebar_left:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Hide left sidebar
       description: Whether to hide the left sidebar.
     hide_sidebar_right:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Hide right sidebar
       description: Whether to hide the right sidebar.
     is_contained:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Is contained
       description: Whether the page content should be contained.
     vertical_spacing:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Vertical spacing
       description: Controls vertical spacing (top, bottom, or both).
       enum:
-        - top
-        - bottom
-        - both
-    sidebar_top_left_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Sidebar top left attributes
-      description: HTML attributes for top left sidebar.
-    sidebar_top_right_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Sidebar top right attributes
-      description: HTML attributes for top right sidebar.
-    content_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Content attributes
-      description: HTML attributes for main content.
-    sidebar_bottom_left_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Sidebar bottom left attributes
-      description: HTML attributes for bottom left sidebar.
-    sidebar_bottom_right_attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Sidebar bottom right attributes
-      description: HTML attributes for bottom right sidebar.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      - top
+      - bottom
+      - both
+      - ''
+      - null
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
 slots:

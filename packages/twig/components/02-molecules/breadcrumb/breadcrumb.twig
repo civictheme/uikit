@@ -30,9 +30,9 @@
         {% set link_data = {
           text: link.text,
           url: link.url,
-          theme: theme|default('light'),
+          theme: theme,
           is_active: (loop.index == links_count),
-          attributes: (loop.index == links_count) ? create_attribute({'aria-current': 'location'}) : create_attribute({}),
+          attributes: (loop.index == links_count) ? create_attribute({'aria-current': 'location'}) : null,
           modifier_class: (loop.index == links_count) ? 'ct-breadcrumb__links__link ct-breadcrumb__links__link--active' : 'ct-breadcrumb__links__link',
         } %}
 
@@ -55,7 +55,7 @@
         {% set parent = {
           text: link.text,
           url: link.url,
-          theme: theme|default('light'),
+          theme: theme,
           icon: 'left-arrow',
           icon_placement: 'before',
           modifier_class: 'ct-breadcrumb__links__link',

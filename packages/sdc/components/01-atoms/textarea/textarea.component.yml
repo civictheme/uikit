@@ -6,26 +6,43 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     name:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Name
       description: DOM name (required).
     id:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: ID
       description: DOM ID attribute.
     value:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Value
       description: The textarea value.
     placeholder:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Placeholder
       description: Placeholder text.
     rows:
@@ -33,22 +50,33 @@ props:
       title: Rows
       description: Display rows count.
     is_invalid:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Invalid
       description: Whether the textarea is invalid.
     is_disabled:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Disabled
       description: Whether the textarea is disabled.
     is_required:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Required
       description: Whether the textarea is required.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.

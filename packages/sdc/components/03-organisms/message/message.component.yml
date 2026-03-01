@@ -6,40 +6,58 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     type:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Type
       description: Message type (information, error, warning, success).
       enum:
-        - information
-        - error
-        - warning
-        - success
+      - information
+      - error
+      - warning
+      - success
+      - ''
+      - null
     vertical_spacing:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Vertical Spacing
       description: Message vertical spacing (none, top, bottom, both).
       enum:
-        - none
-        - top
-        - bottom
-        - both
+      - none
+      - top
+      - bottom
+      - both
+      - ''
+      - null
     with_background:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: With background
       description: Whether to display with a background.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
 slots:

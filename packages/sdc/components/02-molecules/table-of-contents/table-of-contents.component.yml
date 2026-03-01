@@ -6,39 +6,57 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Title
       description: Link title.
     position:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Position
       description: TOC position ('before', 'after', 'prepend', 'append').
       enum:
-        - before
-        - after
-        - prepend
-        - append
+      - before
+      - after
+      - prepend
+      - append
+      - ''
+      - null
     anchor_selector:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Anchor Selector
       description: CSS selector for headings to include in TOC (e.g. 'h2, h3').
     scope_selector:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Scope Selector
       description: CSS selector for the content area to generate TOC from.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
 slots:

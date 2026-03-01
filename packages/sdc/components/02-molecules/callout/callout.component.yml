@@ -6,26 +6,35 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     vertical_spacing:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Vertical spacing
       description: Vertical spacing position (top, bottom, both).
       enum:
-        - top
-        - bottom
-        - both
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      - top
+      - bottom
+      - both
+      - ''
+      - null
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
     links:
@@ -36,19 +45,35 @@ props:
         type: object
         properties:
           text:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Text
             description: Link text.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Link URL.
           is_new_window:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: New window
             description: Whether to open link in a new window.
           is_external:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: External
             description: Whether the link is external.
 slots:

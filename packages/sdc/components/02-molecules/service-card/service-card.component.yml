@@ -6,18 +6,22 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      - light
+      - dark
+      - ''
+      - null
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
     links:
@@ -28,19 +32,35 @@ props:
         type: object
         properties:
           text:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Text
             description: Link text.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Link URL.
           is_new_window:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: New Window
             description: Whether to open the link in a new window.
           is_external:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: External
             description: Whether the link is external.
 slots:

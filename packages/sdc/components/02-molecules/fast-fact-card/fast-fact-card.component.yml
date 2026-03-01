@@ -6,13 +6,18 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variant ('light' or 'dark')
       default: light
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     image:
       type: object
       title: Image
@@ -27,11 +32,17 @@ props:
           title: Alt Text
           description: Alt text for the image
     title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Title
       description: Title text for the card
     summary:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Summary
       description: Summary text content, can contain HTML
     link:
@@ -48,14 +59,17 @@ props:
           title: Open in New Window
           description: Open link in a new window
     is_title_click:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Title click
       description: Whether to make only the title clickable instead of the whole card.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional classes to modify the component
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.

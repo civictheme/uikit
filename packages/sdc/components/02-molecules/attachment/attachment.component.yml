@@ -6,18 +6,29 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Title
       description: Attachment title.
     content:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Content
       description: Attachment content.
     files:
@@ -28,51 +39,87 @@ props:
         type: object
         properties:
           name:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Name
             description: File name (as it appears to the user).
           ext:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Extension
             description: File extension.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: File URL.
           size:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Size
             description: File size (as it appears to the user).
           created:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Created date
             description: File created date.
           changed:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Modified date
             description: File modified date.
           icon:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Icon
             description: File type icon name.
     vertical_spacing:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Vertical spacing
       description: Vertical spacing position (top, bottom, both).
       enum:
-        - top
-        - bottom
-        - both
+      - top
+      - bottom
+      - both
+      - ''
+      - null
     with_background:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: With background
       description: Whether to display with a background.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
 slots:

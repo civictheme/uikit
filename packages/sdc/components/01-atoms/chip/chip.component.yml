@@ -6,63 +6,101 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     kind:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Kind
       description: Chip kind (default, input, link).
       enum:
-        - default
-        - input
-        - link
+      - default
+      - input
+      - link
+      - ''
+      - null
       default: default
     size:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Size
       description: Chip size (large, regular, small).
       enum:
-        - large
-        - regular
-        - small
+      - large
+      - regular
+      - small
+      - ''
+      - null
       default: regular
     content:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Content
       description: Chip text.
     url:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: URL
       description: URL if kind = link.
     label:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Label
       description: Aria Label if kind = link.
     is_selected:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Selected
       description: Whether the chip is selected (for filter chips).
     is_multiple:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Multiple
       description: Whether multiple selection is allowed when kind = input. If enabled, shows close icon on selected chip.
     is_dismissible:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Dismissible
       description: Whether close icon should display when kind is not input, and is_multiple is false.
     group_parent:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Group parent
       description: Additional parent selector for radio group when kind = input.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.

@@ -58,7 +58,7 @@
 
         {% if content %}
           {% include '@atoms/paragraph/paragraph.twig' with {
-            theme: theme|default('light'),
+            theme: theme,
             content: content,
             modifier_class: 'ct-message__content',
           } only %}

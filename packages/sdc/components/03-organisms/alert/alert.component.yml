@@ -6,31 +6,43 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     type:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Type
       description: Alert type (information, error, warning, success).
       enum:
-        - information
-        - error
-        - warning
-        - success
+      - information
+      - error
+      - warning
+      - success
+      - ''
+      - null
     id:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: ID
       description: Unique identifier for the alert.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
 slots:

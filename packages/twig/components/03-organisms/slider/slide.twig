@@ -89,7 +89,7 @@
             {% include '@atoms/heading/heading.twig' with {
               theme: theme,
               content: title,
-              level: '2',
+              level: 2,
               modifier_class: 'ct-slide__title',
             } only %}
           {% endif %}
@@ -99,9 +99,9 @@
               {% set date_content %}
                 {% include '@base/datetime/datetime.twig' with {
                   start: date,
-                  start_iso: date_iso|default(''),
-                  end: date_end|default(''),
-                  end_iso: date_end_iso|default(''),
+                  start_iso: date_iso|default(null),
+                  end: date_end|default(null),
+                  end_iso: date_end_iso|default(null),
                 } only %}
               {% endset %}
 
@@ -110,7 +110,7 @@
                   theme: theme,
                   type: date_end ? 'secondary' : 'tertiary',
                   content: date_content,
-                  icon: date_end ? 'calendar-2' : '',
+                  icon: date_end ? 'calendar-2' : null,
                   icon_placement: 'before',
                 } only %}
               </div>

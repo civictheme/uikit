@@ -6,65 +6,110 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     text:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Text
       description: Link text.
     url:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: URL
       description: Link URL.
     title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Title
       description: Title attribute for the link.
     is_new_window:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: New window
       description: Open link in a new window.
     is_external:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: External
       description: Indicates if the link is external.
     is_active:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Active
       description: Indicates if the link is active
     is_disabled:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Disabled
       description: Indicates if the link is disabled.
     icon:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Icon
       description: Icon name.
     icon_placement:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Icon placement
       description: Icon position (before or after).
       enum:
-        - before
-        - after
+      - before
+      - after
+      - ''
+      - null
       default: after
     icon_group_disabled:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Disable icon grouping
       description: Disable icon and last word grouping.
     icon_single_only:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Single icon only
       description: Only show 1 icon (if both icon and is_external are present, external takes preference).
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.

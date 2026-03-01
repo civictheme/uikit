@@ -39,9 +39,9 @@
   {%- set link_content -%}
     {%- include 'civictheme:text-icon' with {
       text: text,
-      is_new_window: is_new_window|default(false),
-      is_external: is_external|default(false),
-      icon: icon|default(''),
+      is_new_window: is_new_window,
+      is_external: is_external,
+      icon: icon,
       icon_placement: icon_placement,
       icon_class: 'ct-link__icon',
       icon_group_disabled: icon_group_disabled is defined ? icon_group_disabled : false,

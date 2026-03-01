@@ -6,27 +6,36 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     vertical_spacing:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Vertical Spacing
       description: Vertical spacing for the tabs (none, top, bottom, both).
       enum:
-        - none
-        - top
-        - bottom
-        - both
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      - none
+      - top
+      - bottom
+      - both
+      - ''
+      - null
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
     panels:
@@ -37,19 +46,35 @@ props:
         type: object
         properties:
           title:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Title
             description: Panel title.
           content:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Content
             description: Panel content.
           id:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: ID
             description: Panel ID.
           is_selected:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: Selected
             description: Whether the panel is selected.
     links:
@@ -60,15 +85,27 @@ props:
         type: object
         properties:
           text:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Text
             description: Link text.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Link URL.
           modifier_class:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Modifier Class
             description: Additional CSS classes.
           attributes:

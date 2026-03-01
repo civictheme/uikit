@@ -6,12 +6,17 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     items:
       type: array
       title: Items
@@ -20,16 +25,32 @@ props:
         type: object
         properties:
           title:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             description: Title of the menu item.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             description: URL of the menu item.
           in_active_trail:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             description: Whether the item is in the active trail.
           is_expanded:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             description: Whether the item is expanded.
           attributes:
             type: object
@@ -38,13 +59,25 @@ props:
             type: object
             description: Additional HTML attributes for the link.
           modifier_class:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             description: Additional CSS classes for the item.
           is_new_window:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             description: Whether to open the link in a new window.
           is_external:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             description: Whether the link is external.
           below:
             type: array
@@ -66,10 +99,17 @@ props:
           title: Modifier class
           description: Modifier classes for that level.
     is_collapsible:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Is collapsible
       description: Whether to collapse the menu.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.

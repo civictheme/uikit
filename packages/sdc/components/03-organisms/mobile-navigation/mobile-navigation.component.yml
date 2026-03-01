@@ -6,18 +6,22 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      - light
+      - dark
+      - ''
+      - null
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier Class
       description: Additional CSS classes.
     top_menu:
@@ -28,19 +32,35 @@ props:
         type: object
         properties:
           title:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Title
             description: Menu item title.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Menu item URL.
           in_active_trail:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: Active Trail
             description: Whether the item is in the active trail.
           is_expanded:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: Expanded
             description: Whether the item is expanded.
           below:
@@ -55,19 +75,35 @@ props:
         type: object
         properties:
           title:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Title
             description: Menu item title.
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Menu item URL.
           in_active_trail:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: Active Trail
             description: Whether the item is in the active trail.
           is_expanded:
-            type: boolean
+            type:
+            - boolean
+            - 'null'
+            - string
+            - integer
             title: Expanded
             description: Whether the item is expanded.
           below:

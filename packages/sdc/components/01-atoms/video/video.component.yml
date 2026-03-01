@@ -6,18 +6,30 @@ props:
   type: object
   properties:
     theme:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      - ''
+      - null
     title:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Title
       description: Video title.
     has_controls:
-      type: boolean
+      type:
+      - boolean
+      - 'null'
+      - string
+      - integer
       title: Controls
       description: Whether the video should have controls.
     sources:
@@ -28,35 +40,54 @@ props:
         type: object
         properties:
           url:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: URL
             description: Source URL.
           type:
-            type: string
+            type:
+            - string
+            - 'null'
+            - integer
+            - object
             title: Type
             description: MIME type (like 'video/mp4').
     poster:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Poster
       description: Video poster URL.
     width:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Width
       description: Video width.
     height:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Height
       description: Video height.
     fallback_text:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Fallback text
       description: Message for browsers not supporting HTML5 video.
-      default: "Your browser doesn't support HTML5 video."
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
+      default: Your browser doesn't support HTML5 video.
     modifier_class:
-      type: string
+      type:
+      - string
+      - 'null'
+      - integer
       title: Modifier classes
       description: Additional CSS classes.
