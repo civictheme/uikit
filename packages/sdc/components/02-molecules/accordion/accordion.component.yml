@@ -6,51 +6,34 @@ props:
   type: object
   properties:
     theme:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
-      - light
-      - dark
-      - ''
-      - null
+        - light
+        - dark
     expand_all:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: Expand all
       description: Whether to expand all panels by default.
     with_background:
-      type:
-      - boolean
-      - 'null'
-      - string
-      - integer
+      type: boolean
       title: With background
       description: Whether to display with a background.
     vertical_spacing:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Vertical spacing
       description: Vertical spacing position (top, bottom, both).
       enum:
-      - top
-      - bottom
-      - both
-      - ''
-      - null
+        - top
+        - bottom
+        - both
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Additional HTML attributes.
     modifier_class:
-      type:
-      - string
-      - 'null'
-      - integer
+      type: string
       title: Modifier classes
       description: Additional CSS classes.
     panels:
@@ -60,16 +43,16 @@ props:
       items:
         type: object
         properties:
-          title:
-            type: [string, 'null', integer]
+          title: 
+            type: string
             title: Title
             description: Panel title.
           content:
-            type: [string, 'null', integer, object]
+            type: string
             title: Content
             description: Panel content.
           expanded:
-            type: [boolean, 'null', string, integer]
+            type: boolean
             title: Expanded
             description: Whether the panel is expanded by default.
 slots:
