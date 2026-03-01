@@ -37,7 +37,9 @@ props:
             title: Title
             description: Filter title.
           content:
-            type: string
+            anyOf:
+              - type: string
+              - type: object
             title: Content
             description: Filter content.
     submit_text:

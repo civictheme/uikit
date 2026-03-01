@@ -31,7 +31,9 @@ props:
       title: Items
       description: List items.
       items:
-        type: string
+        anyOf:
+          - type: string
+          - type: object
         description: HTML content for each list item.
     attributes:
       type: Drupal\Core\Template\Attribute

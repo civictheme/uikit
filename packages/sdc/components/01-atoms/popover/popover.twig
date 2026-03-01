@@ -33,10 +33,10 @@
 {% if content is not empty %}
   <div class="ct-popover {{ modifier_class -}}" data-collapsible data-collapsible-collapsed data-collapsible-group="{{ group|default('') }}" data-collapsible-duration="250" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% include 'civictheme:link' with {
-      theme: theme,
-      text: trigger.text,
-      url: trigger.url is defined ? trigger.url : null,
-      is_new_window: trigger.is_new_window,
+      theme: theme|default('light'),
+      text: trigger.text|default(''),
+      url: trigger.url|default(''),
+      is_new_window: trigger.is_new_window|default(false),
       modifier_class: 'ct-popover__link',
       attributes: create_attribute({'data-collapsible-trigger': '', tabindex: '0'}),
     } only %}

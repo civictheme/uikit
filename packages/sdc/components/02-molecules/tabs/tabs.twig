@@ -46,7 +46,7 @@
   {%- set link %}
     {% set link_attributes = link.attributes is defined and link.attributes is not null ? link.attributes : create_attribute({}) %}
     {% include 'civictheme:link' with {
-      theme: theme,
+      theme: theme|default('light'),
       text: link.text,
       url: link.url,
       is_new_window: link.is_new_window is defined ? link.is_new_window : false,

@@ -10,7 +10,9 @@ props:
       title: Items
       description: Column items.
       items:
-        type: string
+        anyOf:
+          - type: string
+          - type: object
         description: Content of a grid item. Can include HTML.
     row_element:
       type: string

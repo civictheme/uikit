@@ -39,11 +39,15 @@ props:
               - optgroup
               - option
           label:
-            type: string
+            anyOf:
+              - type: string
+              - type: integer
             title: Label
             description: Option label.
           value:
-            type: string
+            anyOf:
+              - type: string
+              - type: integer
             title: Value
             description: Option value.
           is_selected:
@@ -62,11 +66,15 @@ props:
               type: object
               properties:
                 label:
-                  type: string
+                  anyOf:
+                    - type: string
+                    - type: integer
                   title: Label
                   description: Option label.
                 value:
-                  type: string
+                  anyOf:
+                    - type: string
+                    - type: integer
                   title: Value
                   description: Option value.
                 is_selected:

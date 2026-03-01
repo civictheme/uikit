@@ -102,8 +102,8 @@
         content: label is not empty ? label : title,
         size: title_size is not empty ? title_size : 'regular',
         is_required: is_required,
-        required_text: required_text,
-        for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
+        required_text: required_text|default(''),
+        for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : '',
         modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
       } only %}
     {% endif %}
@@ -115,7 +115,7 @@
           tag: 'legend',
           content: title,
           is_required: is_required,
-          for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
+          for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : '',
           modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
         } only %}
       {% endif %}

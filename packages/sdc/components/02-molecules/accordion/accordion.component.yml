@@ -48,7 +48,9 @@ props:
             title: Title
             description: Panel title.
           content:
-            type: string
+            anyOf:
+              - type: string
+              - type: object
             title: Content
             description: Panel content.
           expanded:
