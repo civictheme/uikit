@@ -2581,6 +2581,11 @@ CivicThemeTableOfContents.prototype.findLinks = function (anchorSelector, scopeS
   // Find links within provided scope selector.
   document.querySelectorAll(scopeSelector).forEach((elScope) => {
     elScope.querySelectorAll(anchorSelector).forEach((elAnchor) => {
+      // Skip headings marked to be excluded from TOC.
+      if (elAnchor.hasAttribute('data-toc-exclude')) {
+        return;
+      }
+
       // Respect existing ID.
       let anchorId = elAnchor.id || null;
       const anchorText = elAnchor.innerText;
