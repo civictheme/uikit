@@ -25,11 +25,11 @@ props:
       title: Alt text
       description: Image alt text.
     width:
-      type: integer
+      type: ['integer', 'null']
       title: Width
       description: Image width.
     height:
-      type: integer
+      type: ['integer', 'null']
       title: Height
       description: Image height.
 slots:
