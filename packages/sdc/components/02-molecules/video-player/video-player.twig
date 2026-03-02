@@ -17,15 +17,8 @@
  *   - type: [string] Type name like 'video/mp4'.
  * - embedded_source: [string] Iframe URL.
  * - raw_source: [string] HTML of raw embedded video player.
- * - transcript_link: [object] Video transcript link.
- *   Each property contains:
- *   - text: [string] Button text.
- *   - title: [string] Button title.
- *   - url: [string] URL for the link button.
- *   - is_new_window: [boolean] Whether to open in a new window.
- *   - is_external: [boolean] Whether the link is external.
- *   - attributes: [object] Additional HTML attributes.
- * - transcript_content: [string] HTML of transcript content to display in a collapsible.
+ * - transcript_link: [object,null] Video transcript link.
+ * - transcript_content: [object,null] HTML of transcript content to display in a collapsible.
  * - transcript_expand_text: [string] Transcript collasible text to open. E.g. "Show transcript".
  * - transcript_collapse_text: [string] Transcript collasible text to close. E.g. "Hide transcript".
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.

@@ -65,7 +65,7 @@ props:
       title: Raw Source
       description: HTML of raw embedded video player.
     transcript_link:
-      type: object
+      type: ['object', 'null']
       title: Transcript Link
       description: Video transcript link.
       properties:
@@ -94,7 +94,7 @@ props:
           title: Attributes
           description: Additional HTML attributes.
     transcript_content:
-      type: string
+      type: ['object', 'null']
       title: Transcript content
       description: HTML of transcript content to display in a collapsible.
     transcript_expand_text:
