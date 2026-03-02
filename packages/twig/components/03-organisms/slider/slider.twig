@@ -55,15 +55,16 @@
                 {% include '@atoms/heading/heading.twig' with {
                   theme: theme,
                   content: title,
-                  level: 3,
+                  level: 2,
                   modifier_class: 'ct-slider__title',
                 } only %}
               {% endif %}
             {% endblock %}
 
             {% block slides_block %}
+              {% set rail_modifier_class = title is empty ? 'ct-slider__slides__inner--slide-headings-h2' : '' %}
               <div class="ct-slider__slides" data-slider-panel>
-                <div class="ct-slider__slides__inner" data-slider-rail>
+                <div class="ct-slider__slides__inner {{ rail_modifier_class }}" data-slider-rail>
                   {{- slides -}}
                 </div>
               </div>

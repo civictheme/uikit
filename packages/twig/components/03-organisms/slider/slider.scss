@@ -93,6 +93,14 @@
     }
   }
 
+  #{$root}__slides__inner {
+    &--slide-headings-h2 {
+      .ct-slide__title {
+        @include ct-typography('heading-2');
+      }
+    }
+  }
+
   @include ct-component-theme($root) using($root, $theme) {
     &#{$root}--with-background {
       @include ct-component-property($root, $theme, background-color);

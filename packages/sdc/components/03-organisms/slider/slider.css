@@ -85,6 +85,13 @@
     text-align: left;
   }
 }
+.ct-slider .ct-slider__slides__inner--slide-headings-h2 .ct-slide__title {
+  font-size: var(--ct-typography-heading-2-font-size);
+  line-height: var(--ct-typography-heading-2-line-height);
+  font-family: var(--ct-typography-heading-2-font-name);
+  font-weight: var(--ct-typography-heading-2-font-weight);
+  letter-spacing: var(--ct-typography-heading-2-letter-spacing);
+}
 .ct-slider.ct-theme-light.ct-slider--with-background {
   background-color: var(--ct-slider-light-background-color);
 }
