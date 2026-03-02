@@ -10,7 +10,7 @@ props:
       title: Start time
       description: Formatted start time.
     start_iso:
-      type: string
+      type: [string, 'null']
       title: Start time ISO
       description: Start time in ISO format.
     end:
