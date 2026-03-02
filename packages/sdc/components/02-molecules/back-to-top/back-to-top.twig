@@ -22,6 +22,7 @@
   {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
 >
   {% include 'civictheme:button' with {
+    theme: 'light',
     kind: 'link',
     url: '#top',
     text: text,
