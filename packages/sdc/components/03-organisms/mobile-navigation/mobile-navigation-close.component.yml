@@ -10,17 +10,14 @@ props:
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      default: light
     text:
-      type: string
+      type: [string, 'null']
       title: Text
       description: Text for the button.
       default: Close
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

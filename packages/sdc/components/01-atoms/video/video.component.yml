@@ -52,10 +52,6 @@ props:
       title: Fallback text
       description: Message for browsers not supporting HTML5 video.
       default: "Your browser doesn't support HTML5 video."
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

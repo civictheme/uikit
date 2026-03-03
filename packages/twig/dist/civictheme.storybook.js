@@ -1830,7 +1830,6 @@ document.addEventListener('DOMContentLoaded', () => {
  * CivicTheme Webform component.
  */
 
-// phpcs:ignoreFile
 function CivicThemeWebform(el) {
   if (el.getAttribute('data-webform') === 'true' || this.el) {
     return;

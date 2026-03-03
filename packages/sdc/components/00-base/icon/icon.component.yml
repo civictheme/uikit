@@ -6,23 +6,19 @@ props:
   type: object
   properties:
     symbol:
-      type: string
+      type: [string, 'null']
       title: Symbol
       description: Icon name (required).
     size:
-      type: string
+      type: [string, 'null']
       title: Size
       description: Icon size.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
     assets_dir:
-      type: string
+      type: [string, 'null']
       title: Assets directory
       description: Directory containing icon assets.
       default: '@civictheme/../assets'

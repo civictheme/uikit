@@ -12,7 +12,6 @@
  * - dropdown_columns: [integer] Dropdown drawer column count.
  * - dropdown_columns_fill: [boolean] Whether to fill columns.
  * - is_animated: [boolean] Whether to use animation for transitions.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [array] Menu items:
  *   Each item contains:
@@ -23,6 +22,7 @@
  *   - below: [array] Submenu items.
  *     Each item contains:
  *     - items [object]
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
  * - title: Navigation title.
@@ -83,7 +83,7 @@
     {% if title %}
       {% block title_block %}
         {% include 'civictheme:heading' with {
-          theme: theme,
+          theme: theme|default('light'),
           level: 2,
           content: title,
           modifier_class: 'ct-navigation__title',
@@ -96,7 +96,7 @@
       {% if name is not empty %}aria-label="{{ name }}"{% endif %}
     >
     {% include 'civictheme:menu' with {
-        theme: theme,
+        theme: theme|default('light'),
         items: items,
         modifier_class: 'ct-navigation__menu',
         menu_level_modifier_class: menu_level_classes,

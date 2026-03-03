@@ -33,10 +33,6 @@ props:
       type: string
       title: Scope Selector
       description: CSS selector for the content area to generate TOC from.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

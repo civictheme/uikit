@@ -41,10 +41,6 @@ props:
       type: boolean
       title: Use ellipsis
       description: Whether ellipsis should be shown.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

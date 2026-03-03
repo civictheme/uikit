@@ -132,10 +132,6 @@ props:
       type: string
       title: Suffix
       description: Content to add after the field.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

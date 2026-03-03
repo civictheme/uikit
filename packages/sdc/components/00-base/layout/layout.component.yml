@@ -25,6 +25,7 @@ props:
         - top
         - bottom
         - both
+        - none
     sidebar_top_left_attributes:
       type: Drupal\Core\Template\Attribute
       title: Sidebar top left attributes
@@ -45,10 +46,6 @@ props:
       type: Drupal\Core\Template\Attribute
       title: Sidebar bottom right attributes
       description: HTML attributes for bottom right sidebar.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

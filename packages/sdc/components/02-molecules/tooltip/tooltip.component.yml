@@ -46,10 +46,6 @@ props:
         - regular
         - small
         - extra-small
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

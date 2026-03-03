@@ -5,19 +5,19 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - text: [string] Link text.
- * - url: [string] Link URL.
- * - title: [string] Title attribute for the link.
- * - is_new_window: [boolean] Open link in a new window.
- * - is_external: [boolean] Indicates if the link is external.
- * - is_active: [boolean] Indicates if the link is active
- * - is_disabled: [boolean] Indicates if the link is disabled.
- * - icon: [string] Icon name.
+ * - text: [string,null] Link text.
+ * - url: [string,null] Link URL.
+ * - title: [string,null] Title attribute for the link.
+ * - is_new_window: [boolean,null] Open link in a new window.
+ * - is_external: [boolean,null] Indicates if the link is external.
+ * - is_active: [boolean,null] Indicates if the link is active
+ * - is_disabled: [boolean,null] Indicates if the link is disabled.
+ * - icon: [string,null] Icon name.
  * - icon_placement: [string] Icon position (before or after).
- * - icon_group_disabled: [boolean] Disable icon and last word grouping.
- * - icon_single_only: [boolean] Only show 1 icon (if both icon and is_external are present, external takes preference).
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - icon_group_disabled: [boolean,null] Disable icon and last word grouping.
+ * - icon_single_only: [boolean,null] Only show 1 icon (if both icon and is_external are present, external takes preference).
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
@@ -27,6 +27,7 @@
 {%- set is_external_class = is_external ? 'ct-link--external' : '' -%}
 {%- set is_active_class = is_active ? 'ct-link--active' : '' -%}
 {%- set is_disabled_class = is_disabled ? 'ct-link--disabled' : '' -%}
+{%- set is_new_window = is_new_window is same as(true) -%}
 {%- set theme_class = 'ct-theme-%s'|format(theme|default('light')) -%}
 {%- set modifier_class = '%s %s %s %s %s %s'|format(theme_class, is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim -%}
 {%- set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) -%}

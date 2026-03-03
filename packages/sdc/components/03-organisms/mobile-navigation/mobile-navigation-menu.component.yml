@@ -10,8 +10,9 @@ props:
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      default: light
     items:
       type: array
       title: Items
@@ -20,15 +21,15 @@ props:
         type: object
         properties:
           title:
-            type: string
+            type: [string, 'null', object]
             title: Title
             description: Link title.
           url:
-            type: string
+            type: [string, 'null', object]
             title: URL
             description: Link URL.
           icon:
-            type: string
+            type: [string, 'null', object]
             title: Icon
             description: Icon name.
           below:
@@ -36,11 +37,11 @@ props:
             title: Below
             description: Submenu items.
           is_expanded:
-            type: boolean
+            type: [boolean, 'null']
             title: Expanded
             description: Whether the current item has visible children.
           in_active_trail:
-            type: boolean
+            type: [boolean, 'null']
             title: In Active Trail
             description: Whether the current item is in the active trail.
     modifier_class:

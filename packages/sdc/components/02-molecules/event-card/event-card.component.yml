@@ -77,10 +77,6 @@ props:
             type: boolean
             title: New Window
             description: Whether to open tag in a new window.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

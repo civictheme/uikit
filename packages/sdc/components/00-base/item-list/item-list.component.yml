@@ -33,10 +33,6 @@ props:
       items:
         type: string
         description: HTML content for each list item.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

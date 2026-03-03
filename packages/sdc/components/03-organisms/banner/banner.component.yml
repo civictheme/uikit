@@ -20,10 +20,6 @@ props:
       type: string
       title: Background Image Blend Mode
       description: Background image blending type. Defaults to 'normal'.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

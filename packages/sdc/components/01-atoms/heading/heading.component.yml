@@ -18,7 +18,7 @@ props:
       title: Content
       description: Heading content.
     level:
-      type: string
+      type: [string, integer]
       title: Level
       description: Heading level (1-6).
       enum:
@@ -28,11 +28,13 @@ props:
         - '4'
         - '5'
         - '6'
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
       default: '2'
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

@@ -21,10 +21,6 @@ props:
       title: Icon
       description: Icon symbol name.
       default: bars
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class
