@@ -11,7 +11,7 @@
  * - filters: [array] Filter objects:
  *   Each item contains:
  *   - title: [string] Filter title.
- *   - content: [string] Filter content.
+ *   - content: [string,object] Filter content.
  * - submit_text: [string] Text on the submit button.
  * - group_id: [string] Unique ID for filter group.
  * - show_selected_filters: [boolean] Enable the selected filters list below the filter fields.
@@ -28,8 +28,8 @@
  *   - icon_placement: [string] Icon position (before or after).
  *   - text: [string] Button text.
  *   - url: [string] URL for the button. Should remove clear links on navigation.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
  * - content_top: Top content area content.

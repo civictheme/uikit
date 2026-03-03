@@ -16,10 +16,6 @@ props:
       type: string
       title: Background Image
       description: Content background inline image.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier Class

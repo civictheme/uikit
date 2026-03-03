@@ -4,8 +4,8 @@
  * CivicTheme Back to Top component.
  *
  * Props:
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
@@ -22,8 +22,8 @@
   {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
 >
   {% include '@atoms/button/button.twig' with {
+    theme: 'light',
     kind: 'link',
-    type: '',
     url: '#top',
     text: text,
     attributes: create_attribute({'data-skip-to-target': ''}),

@@ -332,16 +332,14 @@ function readYamlFile(yamlPath) {
  * @returns {string} Formatted props section
  */
 function generatePropsSection(properties) {
-  if (Object.keys(properties).length === 0) {
-    return '';
-  }
-
   const propLines = [' * Props:'];
 
-  // Process regular properties
   Object.entries(properties).forEach(([propName, propData]) => {
     propLines.push(...generatePropertyLines(propName, propData));
   });
+
+  // Always add attributes as the last prop - Drupal passes this to every component.
+  propLines.push(' * - attributes: [Drupal\\Core\\Template\\Attribute] Additional HTML attributes.');
 
   return propLines.join('\n') + '\n';
 }

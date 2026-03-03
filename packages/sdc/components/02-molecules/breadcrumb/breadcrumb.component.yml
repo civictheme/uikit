@@ -16,10 +16,6 @@ props:
       type: boolean
       title: Active is link
       description: Whether to show the active element as a link.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

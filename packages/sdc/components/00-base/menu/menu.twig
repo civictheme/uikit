@@ -25,6 +25,7 @@
  *   - value: [string] Modifier classes for that level.
  * - is_collapsible: [boolean] Whether to collapse the menu.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
@@ -87,7 +88,7 @@
       <li class="{{- item_classes|join(' ') -}}" {{- item_attributes -}}>
 
         {% include 'civictheme:link' with {
-          theme: theme,
+          theme: theme|default('light'),
           text: item.title,
           title: item.title,
           url: item.url,

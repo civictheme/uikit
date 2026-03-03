@@ -16,10 +16,6 @@ props:
       type: boolean
       title: Image as icon
       description: Whether to show the image as an icon.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

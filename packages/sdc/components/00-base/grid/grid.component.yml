@@ -10,7 +10,7 @@ props:
       title: Items
       description: Column items.
       items:
-        type: string
+        type: [string, object]
         description: Content of a grid item. Can include HTML.
     row_element:
       type: string
@@ -63,10 +63,6 @@ props:
       title: Fill width
       description: Stretch "hanging" items to row full width.
       default: false
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

@@ -12,7 +12,6 @@
  * - items_per_page_id: [string] Items per page select field ID.
  * - items_per_page_attributes: [Drupal\Core\Template\Attribute] Items per page select element attributes.
  * - use_ellipsis: [boolean] Whether ellipsis should be shown.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - items: [object] Object containing pagination items.
  *   Each property contains:
@@ -39,6 +38,7 @@
  *   - label: [string] Option label.
  *   - value: [string] Option value.
  *   - selected: [string] Whether the option is selected.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
  * - title: Active page title.
@@ -63,6 +63,7 @@
     {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pagination__items_per_page">
         {%- include 'civictheme:field' with {
+          theme: theme|default('light'),
           title: items_per_page_title,
           type: 'select',
           orientation: 'horizontal',
@@ -83,7 +84,7 @@
             theme: theme,
             text: items.first.text|default('First'),
             url: items.first.href,
-            is_disabled: (current - 1) ? 0 : 1,
+            is_disabled: (current - 1) ? false : true,
             icon: 'left-arrow',
             icon_placement: 'before',
             attributes: create_attribute({title: 'Go to first page'}),
@@ -98,7 +99,7 @@
           theme: theme,
           text: items.previous.text|default('Prev'),
           url: items.previous.href,
-          is_disabled: (current - 1) ? 0 : 1,
+          is_disabled: (current - 1) ? false : true,
           icon: 'left-arrow',
           icon_placement: 'before',
           attributes: (current - 1) ? create_attribute({title: 'Go to previous page - page %s'|format(current - 1)}) : create_attribute({title: 'Go to previous page'}),
@@ -120,10 +121,10 @@
         <li class="ct-pagination__item {% if current == key %}ct-pagination__item--active{% else %}hide-xxs show-m{% endif %}">
           {% include 'civictheme:link' with {
             theme: theme,
-            text: key,
+            text: key ~ '',
             title: title,
             hidden_text: current == key ? 'Current page' : 'Page',
-            is_active: current == key ? 1 : 0,
+            is_active: current == key,
             url: item.href,
             attributes: current == key ? create_attribute({title: 'Current page'}) : create_attribute({title: 'Go to page %s of %s'|format(key, items.pages|length)}),
             modifier_class: 'ct-pagination__item__link',
@@ -148,7 +149,7 @@
           title: title,
           aria_text: 'Next page',
           url: items.next.href,
-          is_disabled: (current < total_pages) ? 0 : 1,
+          is_disabled: (current < total_pages) ? false : true,
           icon: 'right-arrow-2',
           icon_placement: 'after',
           attributes: current < total_pages ? create_attribute({title: 'Go to next page - page %s'|format(current + 1)}) : create_attribute({title: 'Go to next page'}),
@@ -163,7 +164,7 @@
             theme: theme,
             text: items.last.text|default('Last'),
             url: items.last.href,
-            is_disabled: (current < total_pages) ? 0 : 1,
+            is_disabled: (current < total_pages) ? false : true,
             icon: 'right-arrow-2',
             icon_placement: 'after',
             attributes: create_attribute({title: 'Go to last page'}),

@@ -10,15 +10,15 @@ props:
       title: Text
       description: Text content.
     is_new_window:
-      type: boolean
+      type: [boolean, 'null']
       title: New window
       description: Whether to open in a new window.
     is_external:
-      type: boolean
+      type: [boolean, 'null']
       title: External
       description: Whether the link is external.
     icon:
-      type: string
+      type: [string, 'null']
       title: Icon
       description: Icon name.
     icon_placement:

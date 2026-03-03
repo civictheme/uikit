@@ -32,13 +32,14 @@
  *   - content: [string] Message content.
  * - prefix: [string] Content to add before the field.
  * - suffix: [string] Content to add after the field.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
 {% set type = type is defined ? type : 'hidden' %}
 {% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
+{% set title_size = (title_size is defined and title_size in ['extra-small', 'small', 'regular', 'large', 'extra-large']) ? title_size : '' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
@@ -99,7 +100,7 @@
       {% include '@atoms/label/label.twig' with {
         theme: theme,
         content: label is not empty ? label : title,
-        size: title_size|default('regular'),
+        size: title_size is not empty ? title_size : 'regular',
         is_required: is_required,
         required_text: required_text,
         for: control[0].id and type not in ['radio', 'checkbox'] ? control[0].id : null,
@@ -141,13 +142,13 @@
       {% endif %}
 
       {% if type == 'textfield' %}
-        {% include '@atoms/textfield/textfield.twig' with control[0] only %}
+        {% include '@atoms/textfield/textfield.twig' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'textarea' %}
-        {% include '@atoms/textarea/textarea.twig' with control[0] only %}
+        {% include '@atoms/textarea/textarea.twig' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'select' %}
-        {% include '@atoms/select/select.twig' with control[0] only %}
+        {% include '@atoms/select/select.twig' with control[0]|merge({theme: theme|default('light')}) only %}
 
       {% elseif type == 'checkbox' or type == 'radio' %}
 
@@ -155,9 +156,9 @@
         {% for item in control %}
           {% set list_item %}
             {% if type == 'checkbox' %}
-              {% include '@atoms/checkbox/checkbox.twig' with item only %}
+              {% include '@atoms/checkbox/checkbox.twig' with item|merge({theme: theme|default('light')}) only %}
             {% else %}
-              {% include '@atoms/radio/radio.twig' with item only %}
+              {% include '@atoms/radio/radio.twig' with item|merge({theme: theme|default('light')}) only %}
             {% endif %}
           {% endset %}
           {% set list_items = list_items|merge([list_item]) %}

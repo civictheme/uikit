@@ -5,24 +5,24 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - caption: [string] Table caption.
+ * - caption: [string,null] Table caption.
  * - caption_position: [string] Caption position (before, after).
  * - header: [array] Header cells.
  *   Each item contains:
- *   - items [string]
+ *   - items [string,null,integer,object]
  * - header_sanitized: [array] Provide no-HTML header column names. Used for mobile header labels.
  *   Each item contains:
- *   - items [string]
+ *   - items [string,null,integer,object]
  * - rows: [array] Table rows.
  *   Each item contains:
  *   - items [array]
  * - footer: [array] Footer cells.
  *   Each item contains:
- *   - items [string]
- * - is_striped: [boolean] Whether to show table with striped rows.
- * - is_data_table: [boolean] Whether to show as a data table.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ *   - items [string,null,integer,object]
+ * - is_striped: [boolean,null] Whether to show table with striped rows.
+ * - is_data_table: [boolean,null] Whether to show as a data table.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
