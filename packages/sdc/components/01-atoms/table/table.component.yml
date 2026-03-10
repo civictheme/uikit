@@ -42,9 +42,25 @@ props:
       title: Rows
       description: Table rows.
       items:
-        type: array
-        items:
-          type: [string, 'null', integer, object]
+        oneOf:
+          - type: array
+            items:
+              type: [string, 'null', integer, object]
+          - type: object
+            properties:
+              cols:
+                type: array
+                items:
+                  oneOf:
+                    - type: [string, 'null', integer]
+                    - type: object
+                      properties:
+                        content:
+                          type: [string, 'null', integer]
+                        attributes:
+                          type: object
+              attributes:
+                type: object
     footer:
       type: array
       title: Footer
