@@ -51,8 +51,8 @@
     {% if rows is not empty %}
       <tbody>
       {% for row in rows %}
-        <tr>
-          {% for col in row %}
+        <tr {{ create_attribute(row.attributes|default({})) }}>
+          {% for col in row.cols|default(row) %}
             {% if header is not empty %}
               {% if header_sanitized is not empty and header_sanitized[loop.index0] is defined %}
                 {% set data_title = header_sanitized[loop.index0] %}
@@ -60,8 +60,8 @@
                 {% set data_title = header[loop.index0] is defined ? header[loop.index0] : '' %}
               {% endif %}
             {% endif %}
-            <td {% if data_title is defined %}data-title="{{ data_title|striptags }}"{% endif %}>
-              {{ col }}
+            <td {{ create_attribute(col.attributes|default({})) }}{% if data_title is defined %} data-title="{{ data_title|striptags }}"{% endif %}>
+              {{ col.content|default(col) }}
             </td>
           {% endfor %}
         </tr>
@@ -71,11 +71,33 @@
 
     {% if footer is not empty %}
       <tfoot>
-      <tr>
-        {% for item in footer %}
-          <th scope="col">{{ item }}</th>
+      {% if footer[0] is defined and footer[0].cols is defined %}
+        {# Drupal format: footer is list of rows with .attributes and .cols #}
+        {% for row in footer %}
+          <tr {{ create_attribute(row.attributes|default({})) }}>
+            {% for col in row.cols %}
+              <th {{ create_attribute(col.attributes|default({})) }}>{{ col.content|default(col) }}</th>
+            {% endfor %}
+          </tr>
         {% endfor %}
-      </tr>
+      {% else %}
+        {# Legacy format: single row (footer = [cell, cell]) or multiple rows (footer = [[cell, cell], ...]) #}
+        {% if footer[0] is defined and footer[0] is iterable %}
+          {% for row in footer %}
+            <tr>
+              {% for col in row %}
+                <th>{{ col }}</th>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            {% for item in footer %}
+              <th scope="col">{{ item }}</th>
+            {% endfor %}
+          </tr>
+        {% endif %}
+      {% endif %}
       </tfoot>
     {% endif %}
   </table>
