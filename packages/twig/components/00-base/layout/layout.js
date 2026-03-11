@@ -92,6 +92,6 @@ CivicThemeLayout.prototype.masonryRedraw = function () {
 };
 
 document.querySelectorAll('.ct-layout').forEach((layout) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeLayout(layout);
 });

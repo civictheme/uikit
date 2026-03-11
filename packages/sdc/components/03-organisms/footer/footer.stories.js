@@ -4,7 +4,7 @@
 
 import Component from './footer.twig';
 import FooterData from './footer.stories.data';
-import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
+import Constants from '../../../dist/constants.json';
 
 const meta = {
   title: 'Organisms/Footer',

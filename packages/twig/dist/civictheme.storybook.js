@@ -1859,7 +1859,7 @@ function CivicThemeWebform(el) {
 
 // Initialize CivicThemeWebform on every element.
 document.querySelectorAll('.ct-webform').forEach((webform) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeWebform(webform);
 });
 
@@ -2763,7 +2763,7 @@ function CivicThemeTable(el) {
   this.init();
 }
 
-// eslint-disable-next-line func-names
+ 
 CivicThemeTable.prototype.init = function () {
   if (this.el.getAttribute('data-table') === 'true') {
     return;
@@ -2803,7 +2803,7 @@ CivicThemeTable.prototype.addWrapper = function () {
   wrapper.appendChild(targetElement);
 };
 
-// eslint-disable-next-line func-names
+ 
 CivicThemeTable.prototype.addTheadColumnTitles = function () {
   // Determine whether column titles can be added via thead.
   const theadRows = this.el.querySelectorAll('thead tr');
@@ -2825,7 +2825,7 @@ CivicThemeTable.prototype.addTheadColumnTitles = function () {
 };
 
 document.querySelectorAll('.ct-basic-content table, .ct-table').forEach((table) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeTable(table);
 });
 
@@ -3450,7 +3450,7 @@ CivicThemeLayout.prototype.masonryRedraw = function () {
 };
 
 document.querySelectorAll('.ct-layout').forEach((layout) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeLayout(layout);
 });
 
@@ -3660,7 +3660,7 @@ CivicThemeFlyout.prototype.collapse = function () {
 
 // Initialize CivicThemeFlyout on every element.
 document.querySelectorAll('[data-flyout]').forEach((flyout) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeFlyout(flyout);
 });
 
@@ -3962,7 +3962,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
 
   const onTransitionEnd = function () {
     // Remove the event listener straight away.
-    // eslint-disable-next-line no-caller, no-restricted-properties
+     
     t.panel.removeEventListener('transitionend', onTransitionEnd);
     // Remove progress state.
     t.el.removeAttribute('data-collapsible-collapsing');
@@ -4032,7 +4032,7 @@ CivicThemeCollapsible.prototype.expand = function (animate) {
 
   const onTransitionEnd = function () {
     // Remove the event listener straight away.
-    // eslint-disable-next-line no-caller, no-restricted-properties
+     
     t.panel.removeEventListener('transitionend', onTransitionEnd);
     // Set all required attributes.
     t.setExpandedState.call(t);
