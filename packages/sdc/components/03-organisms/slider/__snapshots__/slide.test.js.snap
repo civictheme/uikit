@@ -92,7 +92,9 @@ exports[`Slide Component renders with default heading level (h3) 1`] = `
 
   
           <h3
+            _keys="data-toc-exclude"
             class="ct-heading ct-theme-light ct-slide__title"
+            data-toc-exclude=""
           >
             Slide Title
           </h3>
@@ -159,7 +161,9 @@ exports[`Slide Component renders with heading level 2 when heading_level is 2 1`
 
   
           <h2
+            _keys="data-toc-exclude"
             class="ct-heading ct-theme-light ct-slide__title"
+            data-toc-exclude=""
           >
             Slide Title
           </h2>
@@ -226,7 +230,9 @@ exports[`Slide Component renders with heading level 3 when heading_level is 3 1`
 
   
           <h3
+            _keys="data-toc-exclude"
             class="ct-heading ct-theme-light ct-slide__title"
+            data-toc-exclude=""
           >
             Slide Title
           </h3>

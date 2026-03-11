@@ -10,6 +10,7 @@ describe('Slide Component', () => {
     expect(c.querySelectorAll('.ct-slide')).toHaveLength(1);
     expect(c.querySelector('.ct-slide__title').tagName).toBe('H3');
     expect(c.querySelector('.ct-slide__title').textContent.trim()).toBe('Slide Title');
+    expect(c.querySelector('.ct-slide__title').hasAttribute('data-toc-exclude')).toBe(true);
 
     assertUniqueCssClasses(c);
   });
@@ -23,6 +24,7 @@ describe('Slide Component', () => {
 
     expect(c.querySelector('.ct-slide__title').tagName).toBe('H2');
     expect(c.querySelector('.ct-slide__title').textContent.trim()).toBe('Slide Title');
+    expect(c.querySelector('.ct-slide__title').hasAttribute('data-toc-exclude')).toBe(true);
 
     assertUniqueCssClasses(c);
   });
