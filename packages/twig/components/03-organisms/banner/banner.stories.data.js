@@ -1,4 +1,4 @@
-import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
+import Constants from '../../../dist/constants.json';
 
 import Paragraph from '../../01-atoms/paragraph/paragraph.twig';
 import Button from '../../01-atoms/button/button.twig';

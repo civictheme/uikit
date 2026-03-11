@@ -61,10 +61,12 @@
     "prepare": "node .husky/install.mjs"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "commander": "^14.0.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import-newlines": "^1.4.0",
+    "eslint": "^10.0.3",
+    "eslint-plugin-import-newlines": "^2.0.0",
     "glob": "^13.0.0",
+    "globals": "^17.4.0",
     "husky": "^9.1.7",
     "inquirer": "^13.0.0",
     "jest": "^29.7.0",

@@ -12,7 +12,7 @@ function CivicThemeTable(el) {
   this.init();
 }
 
-// eslint-disable-next-line func-names
+ 
 CivicThemeTable.prototype.init = function () {
   if (this.el.getAttribute('data-table') === 'true') {
     return;
@@ -52,7 +52,7 @@ CivicThemeTable.prototype.addWrapper = function () {
   wrapper.appendChild(targetElement);
 };
 
-// eslint-disable-next-line func-names
+ 
 CivicThemeTable.prototype.addTheadColumnTitles = function () {
   // Determine whether column titles can be added via thead.
   const theadRows = this.el.querySelectorAll('thead tr');
@@ -74,6 +74,6 @@ CivicThemeTable.prototype.addTheadColumnTitles = function () {
 };
 
 document.querySelectorAll('.ct-basic-content table, .ct-table').forEach((table) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeTable(table);
 });

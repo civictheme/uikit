@@ -294,7 +294,7 @@ CivicThemeCollapsible.prototype.collapse = function (animate, evt) {
 
   const onTransitionEnd = function () {
     // Remove the event listener straight away.
-    // eslint-disable-next-line no-caller, no-restricted-properties
+     
     t.panel.removeEventListener('transitionend', onTransitionEnd);
     // Remove progress state.
     t.el.removeAttribute('data-collapsible-collapsing');
@@ -364,7 +364,7 @@ CivicThemeCollapsible.prototype.expand = function (animate) {
 
   const onTransitionEnd = function () {
     // Remove the event listener straight away.
-    // eslint-disable-next-line no-caller, no-restricted-properties
+     
     t.panel.removeEventListener('transitionend', onTransitionEnd);
     // Set all required attributes.
     t.setExpandedState.call(t);
