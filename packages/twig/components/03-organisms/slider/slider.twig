@@ -62,9 +62,9 @@
             {% endblock %}
 
             {% block slides_block %}
-              {% set rail_modifier_class = title is empty ? 'ct-slider__slides__inner--slide-headings-h2' : '' %}
+              {% set slider_wrapper_modifier_class = title is empty ? 'ct-slider__slides__inner--slide-headings-h2' : '' %}
               <div class="ct-slider__slides" data-slider-panel>
-                <div class="ct-slider__slides__inner {{ rail_modifier_class }}" data-slider-rail>
+                <div class="ct-slider__slides__inner {{ slider_wrapper_modifier_class }}" data-slider-rail>
                   {{- slides -}}
                 </div>
               </div>
