@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slide Component does not render heading when title is empty 1`] = `
+<div>
+  
+
+
+
+  <div
+    aria-roledescription="slide"
+    class="ct-slide ct-theme-light "
+    data-slider-slide=""
+    role="group"
+  >
+    
+  
+    <div
+      class="row ct-slide__row"
+    >
+      
+              
+    
+      <div
+        class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center"
+      >
+        
+      
+        <div
+          class="ct-slide__inner"
+        >
+                            
+                          
+                  
+                                
+                      
+
+
+          <div
+            class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-slide__content"
+          >
+            Slide content
+          </div>
+                    
+                                                                
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Slide Component renders with default heading level (h3) 1`] = `
+<div>
+  
+
+
+
+  <div
+    aria-roledescription="slide"
+    class="ct-slide ct-theme-light "
+    data-slider-slide=""
+    role="group"
+  >
+    
+  
+    <div
+      class="row ct-slide__row"
+    >
+      
+              
+    
+      <div
+        class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center"
+      >
+        
+      
+        <div
+          class="ct-slide__inner"
+        >
+                            
+                          
+                              
+
+
+  
+          <h3
+            class="ct-heading ct-theme-light ct-slide__title"
+          >
+            Slide Title
+          </h3>
+          
+          
+                                
+                      
+
+
+          <div
+            class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-slide__content"
+          >
+            Slide content
+          </div>
+                    
+                                                                
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Slide Component renders with heading level 2 when heading_level is 2 1`] = `
+<div>
+  
+
+
+
+  <div
+    aria-roledescription="slide"
+    class="ct-slide ct-theme-light "
+    data-slider-slide=""
+    role="group"
+  >
+    
+  
+    <div
+      class="row ct-slide__row"
+    >
+      
+              
+    
+      <div
+        class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center"
+      >
+        
+      
+        <div
+          class="ct-slide__inner"
+        >
+                            
+                          
+                              
+
+
+  
+          <h2
+            class="ct-heading ct-theme-light ct-slide__title"
+          >
+            Slide Title
+          </h2>
+          
+          
+                                
+                      
+
+
+          <div
+            class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-slide__content"
+          >
+            Slide content
+          </div>
+                    
+                                                                
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Slide Component renders with heading level 3 when heading_level is 3 1`] = `
+<div>
+  
+
+
+
+  <div
+    aria-roledescription="slide"
+    class="ct-slide ct-theme-light "
+    data-slider-slide=""
+    role="group"
+  >
+    
+  
+    <div
+      class="row ct-slide__row"
+    >
+      
+              
+    
+      <div
+        class="col-xxs-12 col-m-5 col-m-offset-1 ct-flex-align-self-center"
+      >
+        
+      
+        <div
+          class="ct-slide__inner"
+        >
+                            
+                          
+                              
+
+
+  
+          <h3
+            class="ct-heading ct-theme-light ct-slide__title"
+          >
+            Slide Title
+          </h3>
+          
+          
+                                
+                      
+
+
+          <div
+            class="ct-paragraph ct-theme-light ct-paragraph--regular  ct-slide__content"
+          >
+            Slide content
+          </div>
+                    
+                                                                
+        </div>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
