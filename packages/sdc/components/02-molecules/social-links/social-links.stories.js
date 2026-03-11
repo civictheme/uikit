@@ -70,7 +70,7 @@ export const SocialLinks = {
         // Deliberately left without a title.
       },
     ],
-    with_border: false,
+    with_border: true,
     modifier_class: '',
     attributes: null,
   },

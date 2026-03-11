@@ -21,7 +21,7 @@ props:
       title: ID
       description: DOM id (required).
     value:
-      type: string
+      type: [string, boolean]
       title: Value
       description: DOM value.
     label:
@@ -44,10 +44,6 @@ props:
       type: boolean
       title: Disabled
       description: Whether the radio is disabled.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

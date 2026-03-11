@@ -6,13 +6,13 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - vertical_spacing: [string] Tag list vertical spacing (none, top, bottom, both).
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - tags: [array] Tags:
  *   Each item contains:
  *   - text: [string] Tag text.
  *   - url: [string] Tag URL.
  *   - is_new_window: [boolean] Whether to open the tag in a new window.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
  * - content_top: Top content area.
@@ -44,10 +44,8 @@
         {% set tag_items = [] %}
         {% for tag in tags %}
           {% set tag_item %}
-            {% include '@atoms/tag/tag.twig' with {
-              theme: theme,
-              content: tag,
-            } only %}
+            {% set tag_data = tag is iterable ? {theme: theme}|merge(tag) : {theme: theme, content: tag} %}
+            {% include '@atoms/tag/tag.twig' with tag_data only %}
           {% endset %}
           {% set tag_items = tag_items|merge([tag_item]) %}
         {% endfor %}

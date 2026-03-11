@@ -12,10 +12,6 @@ props:
       enum:
         - light
         - dark
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
@@ -47,6 +43,7 @@ props:
         - top
         - bottom
         - both
+        - none
     footer_theme:
       type: string
       title: Footer theme

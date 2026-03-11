@@ -8,8 +8,8 @@
  * - is_contained: [boolean] Whether to wrap the content in a container.
  * - vertical_spacing: [string] Vertical spacing position (top, bottom, both).
  * - with_background: [boolean] Whether to display with a background.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
  * - content: HTML content.
@@ -18,10 +18,12 @@
 
 {% set with_background_class = with_background ? 'ct-basic-content--with-background' : '' %}
 {% set vertical_spacing_class = vertical_spacing in ['top', 'bottom', 'both'] ? 'ct-vertical-spacing-inset--%s'|format(vertical_spacing) : '' %}
-{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set theme = theme|default('light') %}
+{% set theme = theme in ['light', 'dark'] ? theme : 'light' %}
+{% set theme_class = 'ct-theme-%s'|format(theme) %}
 {% set modifier_class = '%s %s %s %s'|format(theme_class, vertical_spacing_class, with_background_class, modifier_class|default('')) %}
 
-{% set is_contained = is_contained is defined ? is_contained : true %}
+{% set is_contained = is_contained is not same as(false) %}
 
 {% if content is not empty %}
   <div class="ct-basic-content {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>

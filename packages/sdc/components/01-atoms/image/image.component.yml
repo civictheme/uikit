@@ -21,17 +21,13 @@ props:
       title: Alt text
       description: Image alt text.
     width:
-      type: string
+      type: ['integer', 'null']
       title: Width
       description: Image width.
     height:
-      type: string
+      type: ['integer', 'null']
       title: Height
       description: Image height.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

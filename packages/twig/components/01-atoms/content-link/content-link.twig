@@ -10,14 +10,14 @@
  * - title: [string] Link title.
  * - is_new_window: [boolean] Whether to open in a new window.
  * - is_external: [boolean] Whether the link is external.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
-{% set is_external = is_external ? 'ct-content-link--external' : '' %}
+{% set external_class = is_external ? 'ct-content-link--external' : '' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s'|format(theme_class, is_external, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s'|format(theme_class, external_class, modifier_class|default('')) %}
 
 {% if text is not empty %}
   {% set link_content %}

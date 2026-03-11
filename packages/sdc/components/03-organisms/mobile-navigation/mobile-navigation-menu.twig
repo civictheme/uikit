@@ -7,13 +7,14 @@
  * - theme: [string] Theme variation (light or dark).
  * - items: [array] Menu links:
  *   Each item contains:
- *   - title: [string] Link title.
- *   - url: [string] Link URL.
- *   - icon: [string] Icon name.
+ *   - title: [string,null,object] Link title.
+ *   - url: [string,null,object] Link URL.
+ *   - icon: [string,null,object] Icon name.
  *   - below: [array] Submenu items.
- *   - is_expanded: [boolean] Whether the current item has visible children.
- *   - in_active_trail: [boolean] Whether the current item is in the active trail.
+ *   - is_expanded: [boolean,null] Whether the current item has visible children.
+ *   - in_active_trail: [boolean,null] Whether the current item is in the active trail.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
@@ -57,7 +58,7 @@ Copied as-is from 'civictheme:menu'.
       <li class="{{ item_classes|join(' ') }}" {{ item_attributes }}>
 
         {% include 'civictheme:link' with {
-          theme: theme,
+          theme: theme|default('light'),
           text: item.title,
           title: item.title,
           url: item.url,

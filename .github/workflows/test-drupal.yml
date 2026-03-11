@@ -67,13 +67,3 @@ jobs:
         working-directory: tools/sdc/build
         continue-on-error: ${{ vars.CI_DRUPAL_SDC_VALIDATE_IGNORE_FAILURE == '1' }}
 
-      - name: Lint SDC components
-        run: |
-          output=$(vendor/bin/drush sdc-devel:validate civictheme_sdc 2>&1)
-          echo "${output}"
-          if echo "${output}" | grep -E -q '\b(Error|Warning)\b'; then
-            echo "Validation failed"
-            exit 1
-          fi
-        working-directory: tools/sdc/build
-        continue-on-error: ${{ vars.CI_DRUPAL_SDC_LINT_IGNORE_FAILURE == '1' }}

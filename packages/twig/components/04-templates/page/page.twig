@@ -5,7 +5,6 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
  * - header_theme: [string] Theme variation for header (light or dark).
  * - hide_sidebar_left: [boolean] Whether to hide the left sidebar.
@@ -14,6 +13,7 @@
  * - vertical_spacing: [string] Controls vertical spacing (top, bottom, or both).
  * - footer_theme: [string] Theme variation for footer (light or dark).
  * - footer_background_image: [string] Background image for footer.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
  * - banner: Banner content.
@@ -112,8 +112,8 @@
       sidebar_bottom_right_attributes: sidebar_bottom_right_attributes,
       is_contained: content_contained,
       content_bottom: content_bottom,
-      vertical_spacing: vertical_spacing,
-      attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : '',
+      vertical_spacing: vertical_spacing|default('none'),
+      attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : create_attribute(),
     } only %}
   {% endblock %}
 
