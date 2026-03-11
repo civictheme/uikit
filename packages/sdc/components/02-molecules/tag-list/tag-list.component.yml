@@ -32,10 +32,10 @@ props:
       items:
         type: object
         properties:
-          text:
+          content:
             type: string
-            title: Text
-            description: Tag text.
+            title: Content
+            description: Tag content.
           url:
             type: string
             title: URL
