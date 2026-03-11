@@ -1,14 +1,12 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "automerge": true,
     "dependencyDashboard": true,
     "extends": [
         "config:base"
     ],
-    "packageRules": [
-        {
-            "packagePatterns": ["^@storybook/"],
-            "enabled": false
-        }
-    ]
+    "schedule": ["before 9am on monday"],
+    "enabled": false,
+    "vulnerabilityAlerts": {
+        "enabled": true
+    }
 }
