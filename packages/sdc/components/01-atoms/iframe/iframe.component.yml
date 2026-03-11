@@ -17,11 +17,11 @@ props:
       title: URL
       description: Iframe URL.
     width:
-      type: integer
+      type: [integer, 'null']
       title: Width
       description: Iframe width.
     height:
-      type: integer
+      type: [integer, 'null']
       title: Height
       description: Iframe height.
     vertical_spacing:
@@ -32,14 +32,11 @@ props:
         - top
         - bottom
         - both
+        - none
     with_background:
       type: boolean
       title: With background
       description: Whether to include a background.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

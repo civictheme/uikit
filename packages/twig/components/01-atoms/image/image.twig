@@ -7,16 +7,17 @@
  * - theme: [string] Theme variation (light or dark).
  * - url: [string] Image URL.
  * - alt: [string] Image alt text.
- * - width: [string] Image width.
- * - height: [string] Image height.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ * - width: [integer,null] Image width.
+ * - height: [integer,null] Image height.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
-{% set alt = (alt == '""') ? '' : alt|default('') %}
+{# Handle Drupal edge case where empty alt may be passed as literal '""' string #}
+{% set alt = (alt == '""') ? '' : (alt|default('')) %}
 
 {% if url is not empty %}
   <img

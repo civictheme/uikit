@@ -25,10 +25,6 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
 slots:
   items:
     title: Items

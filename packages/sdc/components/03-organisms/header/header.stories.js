@@ -52,11 +52,15 @@ export const Header = {
 export const HeaderDark = {
   parameters: {
     layout: 'fullscreen',
+  },
+
+  args: HeaderData.args('dark'),
+
+  globals: {
     backgrounds: {
-      default: 'Dark',
+      value: 'dark',
     },
   },
-  args: HeaderData.args('dark'),
 };
 
 export const HeaderMultiline = {

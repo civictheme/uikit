@@ -6,7 +6,7 @@
  * Props:
  * - items: [array] Column items.
  *   Each item contains:
- *   - items [string]
+ *   - items [string,object]
  * - row_element: [string] Row element.
  * - row_class: [string] Optional row class override (defaults to 'row').
  * - row_attributes: [Drupal\Core\Template\Attribute] Additional row attributes.
@@ -18,8 +18,8 @@
  * - template_column_count: [number] Row columns count (0 for auto columns). If 0 - the auto columns will be used where column width will be calculated automatically.
  * - auto_breakpoint: [boolean] Switch between columns (starting at template_column_count) as the screen reduces.
  * - fill_width: [boolean] Stretch "hanging" items to row full width.
- * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
 

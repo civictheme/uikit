@@ -10,10 +10,11 @@ props:
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
+      default: light
     caption:
-      type: string
+      type: [string, 'null']
       title: Caption
       description: Table caption.
     caption_position:
@@ -21,47 +22,59 @@ props:
       title: Caption position
       description: Caption position (before, after).
       enum:
-        - before
-        - after
+      - before
+      - after
       default: before
     header:
       type: array
       title: Header
       description: Header cells.
       items:
-        type: string
+        type: [string, 'null', integer, object]
     header_sanitized:
       type: array
       title: Header
       description: Provide no-HTML header column names. Used for mobile header labels.
       items:
-        type: string
+        type: [string, 'null', integer, object]
     rows:
       type: array
       title: Rows
       description: Table rows.
       items:
-        type: array
-        items:
-          type: string
+        oneOf:
+          - type: array
+            items:
+              type: [string, 'null', integer, object]
+          - type: object
+            properties:
+              cols:
+                type: array
+                items:
+                  oneOf:
+                    - type: [string, 'null', integer]
+                    - type: object
+                      properties:
+                        content:
+                          type: [string, 'null', integer]
+                        attributes:
+                          type: object
+              attributes:
+                type: object
     footer:
       type: array
       title: Footer
       description: Footer cells.
       items:
-        type: string
+        type: [string, 'null', integer, object]
     is_striped:
-      type: boolean
+      type: [boolean, 'null']
       title: Striped
       description: Whether to show table with striped rows.
     is_data_table:
-      type: boolean
+      type: [boolean, 'null']
       title: Data table
       description: Whether to show as a data table.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

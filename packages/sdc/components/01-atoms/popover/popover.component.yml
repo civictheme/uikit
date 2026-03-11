@@ -37,10 +37,6 @@ props:
       type: string
       title: Group
       description: Group name for controlling multiple popovers together.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

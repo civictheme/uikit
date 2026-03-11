@@ -10,11 +10,11 @@ props:
       title: Theme
       description: Theme variation (light or dark).
       enum:
-        - light
-        - dark
+      - light
+      - dark
       default: light
     content:
-      type: string
+      type: [string, 'null']
       title: Content
       description: Paragraph content.
     size:
@@ -22,20 +22,16 @@ props:
       title: Size
       description: Paragraph size (extra-large, large, regular, small).
       enum:
-        - extra-large
-        - large
-        - regular
-        - small
+      - extra-large
+      - large
+      - regular
+      - small
       default: regular
     no_margin:
-      type: boolean
+      type: [boolean, 'null']
       title: No margin
       description: Disable default margin.
       default: false
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

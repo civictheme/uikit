@@ -26,7 +26,7 @@ props:
       title: Content
       description: Tag content.
     icon:
-      type: string
+      type: [string, 'null']
       title: Icon
       description: Icon name.
     icon_placement:
@@ -49,10 +49,6 @@ props:
       type: boolean
       title: External
       description: Whether the link is external.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes

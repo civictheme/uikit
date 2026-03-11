@@ -58,10 +58,6 @@ props:
       type: string
       title: Group parent
       description: Additional parent selector for radio group when kind = input.
-    attributes:
-      type: Drupal\Core\Template\Attribute
-      title: Attributes
-      description: Additional HTML attributes.
     modifier_class:
       type: string
       title: Modifier classes
