@@ -56,7 +56,7 @@ props:
                     - type: object
                       properties:
                         content:
-                          type: [string, 'null', integer]
+                          type: [string, 'null', integer, object]
                         attributes:
                           type: object
               attributes:
