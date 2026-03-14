@@ -6,7 +6,7 @@ props:
   type: object
   properties:
     text:
-      type: string
+      type: [string, 'null']
       title: Text
       description: Text content.
     is_new_window:
