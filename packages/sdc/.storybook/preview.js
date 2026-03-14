@@ -1,8 +1,8 @@
-import '../dist/civictheme.stories.css?module'; // eslint-disable-line import/no-unresolved
-import '../dist/civictheme.base.css'; // eslint-disable-line import/no-unresolved
-import '../dist/civictheme.variables.css'; // eslint-disable-line import/no-unresolved
-import '../dist/civictheme.base'; // eslint-disable-line import/no-unresolved
-import { useEffect, useChannel } from 'storybook/preview-api'; // eslint-disable-line import/no-unresolved
+import '../dist/civictheme.stories.css?module';
+import '../dist/civictheme.base.css';
+import '../dist/civictheme.variables.css';
+import '../dist/civictheme.base';
+import { useEffect, useChannel } from 'storybook/preview-api';
 import { format } from 'prettier/standalone';
 import htmlPlugin from 'prettier/plugins/html';
 

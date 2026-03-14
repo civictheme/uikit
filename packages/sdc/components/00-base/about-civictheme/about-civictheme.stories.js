@@ -1,5 +1,5 @@
 import Component from './about-civictheme.stories.twig';
-import Constants from '../../../dist/constants.json'; // eslint-disable-line import/no-unresolved
+import Constants from '../../../dist/constants.json';
 
 const meta = {
   title: 'About CivicTheme',

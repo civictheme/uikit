@@ -31,6 +31,6 @@ function CivicThemeWebform(el) {
 
 // Initialize CivicThemeWebform on every element.
 document.querySelectorAll('.ct-webform').forEach((webform) => {
-  // eslint-disable-next-line no-new
+   
   new CivicThemeWebform(webform);
 });
