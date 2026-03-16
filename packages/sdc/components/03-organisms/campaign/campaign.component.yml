@@ -87,6 +87,10 @@ props:
             type: boolean
             title: External
             description: Whether the link is external.
+    date:
+      type: string
+      title: Date
+      description: Campaign date.
 slots:
   content_top:
     title: Content Top
@@ -94,9 +98,6 @@ slots:
   title:
     title: Title
     description: Campaign title.
-  date:
-    title: Date
-    description: Campaign date.
   content:
     title: Content
     description: Campaign main content.
