@@ -36,6 +36,8 @@ export default meta;
 export const Alert = {
   parameters: {
     layout: 'fullscreen',
+    storyDocs: 'Dismiss alerts by clicking on [X] button.<br/><br/>Navigate to another component and return here to assert that dismissed alerts do not appear.<br/><br/>Dismissed alerts will be revealed if their content was updated. Change payload to "Updated" to see dismissed alerts appear again.',
+    storyDocsPlacement: 'after',
   },
   args: {
     theme: 'light',

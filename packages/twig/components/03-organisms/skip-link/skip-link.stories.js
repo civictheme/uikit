@@ -29,6 +29,9 @@ export default meta;
 export const SkipLink = {
   parameters: {
     layout: 'fullscreen',
+    storyDocs: 'Press TAB on the keyboard for the Skip Link to appear',
+    storyDocsSize: 'large',
+    storyDocsPlacement: 'after',
   },
   args: {
     theme: 'light',
