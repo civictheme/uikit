@@ -4,7 +4,7 @@
 
 import DrupalAttribute from 'drupal-attribute';
 import Component from './grid.twig';
-import { placeholder, code, generateItems, randomSentenceSimple } from '../storybook/storybook.generators.utils';
+import { placeholder, code, generateItems } from '../storybook/storybook.generators.utils';
 
 const meta = {
   title: 'Base/Grid',
@@ -231,14 +231,14 @@ export const GridDemo = {
 
     html += `<div class="story-container__subtitle">Hugged ${code('width: auto')}</div>`;
     html += Component({
-      items: generateItems(letters.length, (i) => placeholder(letters[i - 1], 0, 'story-placeholder--hugged')),
+      items: generateItems(letters.length, (i) => placeholder(letters[i - 1], 'story-placeholder--hugged')),
       column_attributes: `data-story-total-columns="${letters.length}"`,
       column_class: 'col',
     });
 
     html += `<div class="story-container__subtitle">Fixed ${code('width: 184px')}</div>`;
     html += Component({
-      items: generateItems(letters.length, (i) => placeholder(`${letters[i - 1]} fixed width`, 0, 'story-placeholder--fixed')),
+      items: generateItems(letters.length, (i) => placeholder(`${letters[i - 1]} fixed width`, 'story-placeholder--fixed')),
       column_attributes: `data-story-total-columns="${letters.length}"`,
       column_class: 'col',
     });
@@ -430,26 +430,29 @@ export const GridDemo = {
       row_class: 'row row--reverse',
     });
 
+    const shortText = 'Lorem ipsum dolor sit amet';
+    const longText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris';
+
     html += '<div class="story-container__subtitle">Equal column heights by default</div>';
     html += Component({
-      items: generateItems(4, (i) => {
-        const content = i === 1
-          ? `<strong>Content should not fill - height is not 100%.</strong> ${randomSentenceSimple(5, `A${i}`)}`
-          : randomSentenceSimple(i === 2 ? 30 : 5, `${letters[i - 1]}${i}`);
-        return placeholder(content);
-      }),
+      items: [
+        placeholder(`<strong>Content should not fill - height is not 100%.</strong> ${shortText}`),
+        placeholder(longText),
+        placeholder(shortText),
+        placeholder(shortText),
+      ],
       column_attributes: 'data-story-total-columns="4"',
       template_column_count: 4,
     });
 
     html += `<div class="story-container__subtitle">Equal column heights propagated to content ${code('.row.row--equal-heights-content > .col-[breakpoint]-[column]')}</div>`;
     html += Component({
-      items: generateItems(4, (i) => {
-        const content = i === 1
-          ? `<strong>Content should fill - height is propagated to be 100%.</strong> ${randomSentenceSimple(5, `A${i}`)}`
-          : randomSentenceSimple(i === 2 ? 30 : 5, `${letters[i - 1]}${i}`);
-        return placeholder(content);
-      }),
+      items: [
+        placeholder(`<strong>Content should fill - height is propagated to be 100%.</strong> ${shortText}`),
+        placeholder(longText),
+        placeholder(shortText),
+        placeholder(shortText),
+      ],
       column_attributes: 'data-story-total-columns="4"',
       template_column_count: 4,
       row_class: 'row row--equal-heights-content',
@@ -457,19 +460,24 @@ export const GridDemo = {
 
     html += `<div class="story-container__subtitle">Equal column heights propagated to content ${code('.row.row--equal-heights-content > .col')} - Auto column</div>`;
     html += Component({
-      items: generateItems(4, (i) => {
-        const content = i === 1
-          ? `<strong>Content should fill - height is propagated to be 100%.</strong> ${randomSentenceSimple(5, `A${i}`)}`
-          : randomSentenceSimple(i === 2 ? 30 : 5, `${letters[i - 1]}${i}`);
-        return placeholder(content);
-      }),
+      items: [
+        placeholder(`<strong>Content should fill - height is propagated to be 100%.</strong> ${shortText}`),
+        placeholder(longText),
+        placeholder(shortText),
+        placeholder(shortText),
+      ],
       column_attributes: 'data-story-total-columns="4"',
       row_class: 'row row--equal-heights-content',
     });
 
     html += `<div class="story-container__subtitle">Unequal column heights ${code('.row.row--unequal-heights > .col-[breakpoint]-[column]')}</div>`;
     html += Component({
-      items: generateItems(4, (i) => placeholder(randomSentenceSimple(i === 2 ? 20 : 5, `${letters[i - 1]}${i}`))),
+      items: [
+        placeholder(shortText),
+        placeholder(longText),
+        placeholder(shortText),
+        placeholder(shortText),
+      ],
       column_attributes: 'data-story-total-columns="4"',
       template_column_count: 4,
       row_class: 'row row--unequal-heights',
@@ -477,7 +485,12 @@ export const GridDemo = {
 
     html += `<div class="story-container__subtitle">Unequal column heights ${code('.row.row--unequal-heights > .col')} - Auto column</div>`;
     html += Component({
-      items: generateItems(4, (i) => placeholder(randomSentenceSimple(i === 2 ? 20 : 5, `${letters[i - 1]}${i}`))),
+      items: [
+        placeholder(shortText),
+        placeholder(longText),
+        placeholder(shortText),
+        placeholder(shortText),
+      ],
       column_attributes: 'data-story-total-columns="4"',
       row_class: 'row row--unequal-heights',
     });
@@ -496,7 +509,7 @@ export const GridDemo = {
     html += `<div class="story-container__subtitle">Vertical spacing ${code('.row.row--vertically-spaced > .col')} - Autocolumn</div>`;
     for (let j = 0; j < cols.length; j++) {
       html += Component({
-        items: generateItems(cols[j] + (j % 2), placeholder(code(Math.floor(12 / cols[j])), 0, 'story-placeholder--fixed')),
+        items: generateItems(cols[j] + (j % 2), placeholder(code(Math.floor(12 / cols[j])), 'story-placeholder--fixed')),
         column_attributes: `data-story-total-columns="${cols[j]}"`,
         row_class: 'row row--vertically-spaced',
       });
