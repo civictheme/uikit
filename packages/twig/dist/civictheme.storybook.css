@@ -10349,15 +10349,14 @@ ol ol ol {
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__sub-menu.ct-menu--level-1 {
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(var(--ct-navigation-drawer-cols), 1fr);
   gap: 2rem;
   padding: 0;
   margin-bottom: 2rem;
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 {
   margin-top: 2rem;
-  flex-basis: calc(100% / var(--ct-navigation-drawer-cols));
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item--level-1 > .ct-menu__item__link {
   font-size: var(--ct-typography-heading-5-font-size);
