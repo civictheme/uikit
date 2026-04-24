@@ -20,10 +20,7 @@ export const decoratorDocs = (storyFn, context) => {
     ? context.parameters.storyDocsSize
     : 'fluid';
 
-  let classes = [
-    'story-docs',
-    `story-docs-size--${size}`,
-  ].filter(Boolean).join(' ');
+  let classes = `story-docs story-docs-size--${size}`;
 
   if (context.parameters.storyDocsClass) {
     classes += ` ${context.parameters.storyDocsClass}`;
