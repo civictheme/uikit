@@ -202,7 +202,7 @@ export const GridDemo = {
     const offsets = [1, 2, 3, 4, 6, 8];
     for (let j = 0; j < cols.length; j++) {
       html += Component({
-        items: generateItems(1, placeholder(`width ${code(Math.floor(12 / cols[j]))}, offset ${code(offsets[j])}`)),
+        items: [placeholder(`width ${code(Math.floor(12 / cols[j]))}, offset ${code(offsets[j])}`)],
         column_attributes: 'data-story-total-columns="1"',
         column_class: `col-m-offset-${offsets[j]}`,
         template_column_count: cols[j],
@@ -212,7 +212,7 @@ export const GridDemo = {
     html += `<div class="story-container__subtitle">Auto column in container ${code('.container > .row > .col.col-[breakpoint]-offset-[column]')}</div>`;
     for (let j = 0; j < cols.length; j++) {
       html += Component({
-        items: generateItems(1, placeholder(`width ${code('auto')}, offset ${code(offsets[j])}`)),
+        items: [placeholder(`width ${code('auto')}, offset ${code(offsets[j])}`)],
         column_attributes: 'data-story-total-columns="1"',
         column_class: `col col-m-offset-${offsets[j]}`,
       });
@@ -250,7 +250,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: false,
           template_column_count: 3,
           column_attributes: 'data-story-total-columns="3"',
@@ -267,7 +267,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: false,
           column_attributes: 'data-story-total-columns="3"',
         }),
@@ -283,7 +283,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: false,
         }),
         placeholder('Parent'),
@@ -296,7 +296,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: false,
           template_column_count: 3,
           column_attributes: 'data-story-total-columns="3"',
@@ -314,7 +314,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: true,
           is_fluid: false,
           column_attributes: 'data-story-total-columns="3"',
@@ -331,7 +331,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: true,
           is_fluid: false,
           column_attributes: 'data-story-total-columns="3"',
@@ -348,7 +348,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: true,
           is_fluid: false,
           column_attributes: 'data-story-total-columns="3"',
@@ -363,7 +363,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: true,
           is_fluid: true,
           column_attributes: 'data-story-total-columns="3"',
@@ -380,7 +380,7 @@ export const GridDemo = {
     html += Component({
       items: [
         Component({
-          items: [placeholder('Nested'), placeholder('Nested'), placeholder('Nested')],
+          items: generateItems(3, placeholder('Nested')),
           use_container: true,
           is_fluid: true,
           column_attributes: 'data-story-total-columns="3"',
