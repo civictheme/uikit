@@ -214,7 +214,7 @@ export const GridDemo = {
       html += Component({
         items: generateItems(1, placeholder(`width ${code('auto')}, offset ${code(offsets[j])}`)),
         column_attributes: 'data-story-total-columns="1"',
-        column_class: `col-m-offset-${offsets[j]}`,
+        column_class: `col col-m-offset-${offsets[j]}`,
       });
     }
 
