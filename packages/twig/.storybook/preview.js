@@ -4,6 +4,7 @@ import '../dist/civictheme.stories.css?module';
 import { useEffect, useChannel } from 'storybook/preview-api';
 import { format } from 'prettier/standalone';
 import htmlPlugin from 'prettier/plugins/html';
+import { decoratorDocs } from '../components/00-base/storybook/storybook.docs.utils';
 
 const ADDON_EVENT = 'storybook/html/codeUpdate';
 
@@ -41,7 +42,7 @@ const withHTML = (storyFn, context) => {
 };
 
 export default {
-  decorators: [withHTML],
+  decorators: [withHTML, decoratorDocs],
   parameters: {
     backgrounds: {
       options: {

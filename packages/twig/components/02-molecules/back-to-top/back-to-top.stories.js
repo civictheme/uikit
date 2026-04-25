@@ -19,6 +19,8 @@ export default meta;
 export const BackToTop = {
   parameters: {
     layout: 'fullscreen',
+    storyDocs: 'Back To Top button appears when the bottom of the red rectangle reaches the top of the page.',
+    storyDocsSize: 'medium',
   },
   args: {},
 };
