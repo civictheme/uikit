@@ -6,6 +6,12 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - modifier_class: [string] Additional CSS classes.
+ * - link: [object] Snippet link object.
+ *   Each property contains:
+ *   - text: [string]
+ *   - url: [string]
+ *   - is_new_window: [boolean]
+ *   - is_external: [boolean]
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
@@ -14,7 +20,6 @@
  * - content_bottom: Bottom content area.
  * - title: Snippet title text.
  * - summary: Snippet summary text.
- * - link: Snippet link object.
  * - tags: Snippet tags.
  *
  * Blocks:

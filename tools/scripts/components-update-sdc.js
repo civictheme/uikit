@@ -483,6 +483,20 @@ function generatePropertyLines(propName, propData, depth = 0) {
 }
 
 /**
+ * Strip trailing spaces and tabs from every line in the given content.
+ *
+ * Required because templates such as `' * - {{name}}: [{{type}}] {{description}}'`
+ * leave a trailing space when their substitution value is empty (e.g. when a
+ * YAML property has no `description:` field).
+ *
+ * @param {string} content - Generated content
+ * @returns {string} Content with trailing whitespace removed from each line
+ */
+function removeTrailingWhitespaceFromLines(content) {
+  return content.replace(/[ \t]+(?=\r?\n|$)/g, '');
+}
+
+/**
  * Detect file type from file path.
  *
  * @param {string} filePath - Path to the file
@@ -560,8 +574,11 @@ function updateFileHeader(filePath, componentName, properties, slots, blocks, dr
     const slotsSection = generateSlotsSection(slots);
     const blocksSection = generateBlocksSection(blocks, blockNames);
 
-    // Generate docblock
-    const docblock = generateDocblock(fileType, componentName, propsSection, slotsSection, blocksSection);
+    // Generate docblock and strip any trailing whitespace introduced by
+    // template substitutions where a value (e.g. description) is empty.
+    const docblock = removeTrailingWhitespaceFromLines(
+      generateDocblock(fileType, componentName, propsSection, slotsSection, blocksSection),
+    );
 
     // Read current file content
     const fileContent = fs.readFileSync(filePath, 'utf8');

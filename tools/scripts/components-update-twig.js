@@ -322,6 +322,49 @@ function ensureFileEndsWithNewline(filePath, dryRun = false) {
 }
 
 /**
+ * Strip trailing spaces and tabs from every line in the given content.
+ *
+ * @param {string} content - File content
+ * @returns {string} Content with trailing whitespace removed from each line
+ */
+function removeTrailingWhitespaceFromLines(content) {
+  return content.replace(/[ \t]+(?=\r?\n|$)/g, '');
+}
+
+/**
+ * Ensures that no line in the file ends with trailing whitespace.
+ *
+ * @param {string} filePath - Path to the file to check
+ * @param {boolean} dryRun - If true, don't write to files
+ * @returns {boolean} True if the file needed cleanup, false otherwise
+ */
+function ensureNoTrailingWhitespace(filePath, dryRun = false) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return false;
+    }
+
+    const content = fs.readFileSync(filePath, 'utf8');
+    const cleaned = removeTrailingWhitespaceFromLines(content);
+
+    if (cleaned !== content) {
+      if (!dryRun) {
+        fs.writeFileSync(filePath, cleaned, 'utf8');
+        console.log(`Removed trailing whitespace from ${filePath}`);
+      } else {
+        console.log(`Would remove trailing whitespace from ${filePath}`);
+      }
+      return true;
+    }
+
+    return false;
+  } catch (error) {
+    console.error(`Error removing trailing whitespace from ${filePath}: ${error.message}`);
+    return false;
+  }
+}
+
+/**
  * Extract docblock header from a twig file.
  *
  * @param {string} content - Twig file content
@@ -532,13 +575,15 @@ function processComponents(srcDir, dstDir, dryRun, checkMode) {
     yamlFiles.forEach(yamlFile => {
       const fullPath = path.join(srcDir, yamlFile);
       ensureFileEndsWithNewline(fullPath, dryRun);
+      ensureNoTrailingWhitespace(fullPath, dryRun);
     });
-    
-    // Also ensure all twig files in source have newlines
-    console.log(`Checking source Twig files for newlines...`);
+
+    // Also ensure all twig files in source have newlines and no trailing whitespace
+    console.log(`Checking source Twig files for newlines and trailing whitespace...`);
     srcFiles.forEach(twigFile => {
       const fullPath = path.join(srcDir, twigFile);
       ensureFileEndsWithNewline(fullPath, dryRun);
+      ensureNoTrailingWhitespace(fullPath, dryRun);
     });
   }
 
@@ -568,8 +613,11 @@ function processComponents(srcDir, dstDir, dryRun, checkMode) {
       // Read source file
       const srcContent = fs.readFileSync(srcPath, 'utf8');
 
-      // Transform content by replacing namespace references
-      const transformedContent = replaceNamespaces(srcContent, namespaceMapping);
+      // Transform content by replacing namespace references and stripping
+      // any trailing whitespace introduced by the source file.
+      let transformedContent = removeTrailingWhitespaceFromLines(
+        replaceNamespaces(srcContent, namespaceMapping),
+      );
 
       // Check if destination file exists
       const fileExists = fs.existsSync(dstPath);
@@ -708,32 +756,36 @@ function processHeaders(srcDir, dstDir, dryRun, checkMode) {
   
   // Find all YAML files to ensure they have newlines
   if (!checkMode) {
-    // Check source YAML and Twig files for newlines
+    // Check source YAML and Twig files for newlines and trailing whitespace
     console.log(`Checking source YAML files for newlines...`);
     const srcYamlFiles = findFiles(srcDir, 'yml');
     srcYamlFiles.forEach(yamlFile => {
       const fullPath = path.join(srcDir, yamlFile);
       ensureFileEndsWithNewline(fullPath, dryRun);
+      ensureNoTrailingWhitespace(fullPath, dryRun);
     });
-    
-    console.log(`Checking source Twig files for newlines...`);
+
+    console.log(`Checking source Twig files for newlines and trailing whitespace...`);
     srcFiles.forEach(twigFile => {
       const fullPath = path.join(srcDir, twigFile);
       ensureFileEndsWithNewline(fullPath, dryRun);
+      ensureNoTrailingWhitespace(fullPath, dryRun);
     });
-    
-    // Check destination YAML and Twig files for newlines
+
+    // Check destination YAML and Twig files for newlines and trailing whitespace
     console.log(`Checking destination YAML files for newlines...`);
     const dstYamlFiles = findFiles(dstDir, 'yml');
     dstYamlFiles.forEach(yamlFile => {
       const fullPath = path.join(dstDir, yamlFile);
       ensureFileEndsWithNewline(fullPath, dryRun);
+      ensureNoTrailingWhitespace(fullPath, dryRun);
     });
-    
-    console.log(`Checking destination Twig files for newlines...`);
+
+    console.log(`Checking destination Twig files for newlines and trailing whitespace...`);
     dstAllFiles.forEach(twigFile => {
       const fullPath = path.join(dstDir, twigFile);
       ensureFileEndsWithNewline(fullPath, dryRun);
+      ensureNoTrailingWhitespace(fullPath, dryRun);
     });
   }
 
@@ -759,8 +811,10 @@ function processHeaders(srcDir, dstDir, dryRun, checkMode) {
       const srcContent = fs.readFileSync(srcPath, 'utf8');
       const dstContent = fs.readFileSync(dstPath, 'utf8');
 
-      // Extract docblock from source
-      const srcDocblock = extractDocblock(srcContent);
+      // Extract docblock from source and strip any trailing whitespace
+      // so it is not propagated to the destination.
+      const rawSrcDocblock = extractDocblock(srcContent);
+      const srcDocblock = rawSrcDocblock ? removeTrailingWhitespaceFromLines(rawSrcDocblock) : null;
 
       if (!srcDocblock) {
         console.log(`Skipping: Source file has no docblock: ${srcPath}`);

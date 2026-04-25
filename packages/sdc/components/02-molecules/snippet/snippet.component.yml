@@ -16,6 +16,23 @@ props:
       type: string
       title: Modifier Class
       description: Additional CSS classes.
+    link:
+      type: object
+      title: Link
+      description: Snippet link object.
+      properties:
+        text:
+          type: string
+          title: Text
+        url:
+          type: string
+          title: URL
+        is_new_window:
+          type: boolean
+          title: New Window
+        is_external:
+          type: boolean
+          title: External
 slots:
   content_top:
     title: Content Top
@@ -32,9 +49,6 @@ slots:
   summary:
     title: Summary
     description: Snippet summary text.
-  link:
-    title: Link
-    description: Snippet link object.
   tags:
     title: Tags
     description: Snippet tags.
