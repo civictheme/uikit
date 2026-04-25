@@ -6,13 +6,12 @@ props:
   type: object
   properties:
     theme:
-      type: [string, 'null']
+      type: string
       title: Theme
       description: Theme variation (light or dark).
       enum:
         - light
         - dark
-        - null
     items:
       type: array
       title: Items
