@@ -58,6 +58,10 @@ props:
       type: string
       title: Filename Prefix
       description: Description of file details for accessibility.
+    title:
+      type: string
+      title: Title
+      description: Card title text.
 slots:
   image_over:
     title: Image Over
@@ -65,9 +69,6 @@ slots:
   content_top:
     title: Content Top
     description: Top content area.
-  title:
-    title: Title
-    description: Card title text.
   content_middle:
     title: Content Middle
     description: Middle content area.

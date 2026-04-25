@@ -66,6 +66,10 @@ props:
           type: boolean
           title: External
           description: Whether the link is external.
+    subtitle:
+      type: ['string', 'null']
+      title: Subtitle
+      description: Subtitle text.
     tags:
       type: array
       title: Tags
@@ -86,9 +90,6 @@ props:
             title: New Window
             description: Whether to open the tag in a new window.
 slots:
-  subtitle:
-    title: Subtitle
-    description: Subtitle text.
   title:
     title: Title
     description: Card title text.
