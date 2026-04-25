@@ -12,7 +12,8 @@
 export const decoratorDocs = (storyFn, context) => {
   const content = storyFn();
 
-  if (!context.parameters.storyDocs || typeof content !== 'string') {
+  const params = context?.parameters;
+  if (!params?.storyDocs || typeof content !== 'string') {
     return content;
   }
 
