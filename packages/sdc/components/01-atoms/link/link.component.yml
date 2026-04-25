@@ -46,12 +46,13 @@ props:
       title: Icon
       description: Icon name.
     icon_placement:
-      type: string
+      type: [string, 'null']
       title: Icon placement
       description: Icon position (before or after).
       enum:
       - before
       - after
+      - null
       default: after
     icon_group_disabled:
       type: [boolean, 'null']
