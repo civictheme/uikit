@@ -20,12 +20,13 @@
     }
   }
 
-  .ct-table {
-    margin-bottom: var(--ct-basic-content-vertical-spacing);
-  }
-
+  .ct-table,
   .ct-video-player {
     margin-bottom: var(--ct-basic-content-vertical-spacing);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include ct-component-theme($root) using($root, $theme) {
