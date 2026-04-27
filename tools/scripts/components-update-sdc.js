@@ -419,14 +419,20 @@ function generatePropertyLines(propName, propData, depth = 0) {
   const type = propData.type || 'string';
   const description = propData.description || '';
 
+  // A YAML `type` may be a string ("object") or an array of strings
+  // (["object", "null"]). Normalize so nested property/item handling works
+  // for both forms.
+  const typeList = Array.isArray(type) ? type : [type];
+  const hasObjectType = typeList.includes('object');
+  const hasArrayType = typeList.includes('array');
+
   // Create indentation string based on depth
   const indent = '  '.repeat(depth);
 
   // Format the description
   let formattedDesc = description;
-  const isComplexObject = (type === 'object' && propData.properties && Object.keys(propData.properties).length > 0);
-  const isNestedArray = (type === 'array' && propData.items && propData.items.properties && Object.keys(propData.items.properties).length > 0);
-  
+  const isNestedArray = (hasArrayType && propData.items && propData.items.properties && Object.keys(propData.items.properties).length > 0);
+
   // Only add colon to nested arrays, not to objects
   if (isNestedArray) {
     // Add a colon if not already present
@@ -447,17 +453,17 @@ function generatePropertyLines(propName, propData, depth = 0) {
   lines.push(line);
 
   // Handle nested properties for objects
-  if (type === 'object' && propData.properties) {
+  if (hasObjectType && propData.properties) {
     // Add "Each property contains:" line for objects
     lines.push(' *   Each property contains:');
-    
+
     Object.entries(propData.properties).forEach(([nestedName, nestedData]) => {
       lines.push(...generatePropertyLines(nestedName, nestedData, depth + 1));
     });
   }
 
   // Handle array items with a fully recursive approach
-  if (type === 'array' && propData.items) {
+  if (hasArrayType && propData.items) {
     // Add "Each item contains:" line with proper indentation
     lines.push(` * ${indent}  Each item contains:`);
 
