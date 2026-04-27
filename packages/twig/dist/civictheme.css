@@ -6730,11 +6730,13 @@ ol ol ol {
 .ct-basic-content .ct-content-link .ct-icon {
   vertical-align: middle;
 }
-.ct-basic-content .ct-table {
-  margin-bottom: var(--ct-basic-content-vertical-spacing);
-}
+.ct-basic-content .ct-table,
 .ct-basic-content .ct-video-player {
   margin-bottom: var(--ct-basic-content-vertical-spacing);
+}
+.ct-basic-content .ct-table:last-child,
+.ct-basic-content .ct-video-player:last-child {
+  margin-bottom: 0;
 }
 .ct-basic-content.ct-theme-light {
   color: var(--ct-basic-content-light-base-color);
