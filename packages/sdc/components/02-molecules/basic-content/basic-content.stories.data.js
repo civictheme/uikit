@@ -146,6 +146,7 @@ export default {
       ],
     })
     }
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor risus nec nisl tempor, vel sodales metus bibendum.</p>
       `,
     is_contained: true,
     vertical_spacing: 'none',
