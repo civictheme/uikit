@@ -6293,6 +6293,9 @@ ol ol ol {
   display: flex;
   gap: 0 0.5rem;
 }
+.ct-attachment .ct-attachment__links__link__icon {
+  flex-shrink: 0;
+}
 .ct-attachment .ct-attachment__links__link__extension {
   text-transform: uppercase;
 }
