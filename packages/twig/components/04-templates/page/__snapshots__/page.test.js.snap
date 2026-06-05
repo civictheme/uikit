@@ -266,31 +266,40 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
     </header>
     
   
-            
-    <strong>
-      Banner Content
-    </strong>
-    
-      
-            
-    <div
-      class="container"
+  
+    <main
+      id="main-content"
+      tabindex="-1"
     >
       
-        
+                  
+      <strong>
+        Banner Content
+      </strong>
+      
+          
+                  
       <div
-        class="row"
+        class="container"
       >
         
           
         <div
-          class="col-xxs-12"
+          class="row"
         >
           
             
-          <strong>
-            Highlighted Content
-          </strong>
+          <div
+            class="col-xxs-12"
+          >
+            
+              
+            <strong>
+              Highlighted Content
+            </strong>
+            
+            
+          </div>
           
           
         </div>
@@ -298,80 +307,79 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
         
       </div>
       
-      
-    </div>
-    
-      
-      
+          
+          
 
 
 
 
 
   
-    <main
-      class="ct-layout ct-vertical-spacing--top"
-      role="main"
-    >
-      
-          Content Top    
-    
       <div
-        class="ct-layout__inner container"
+        class="ct-layout ct-vertical-spacing--top"
       >
         
-                        
-        <section
-          class="ct-layout__main"
-          data-content="true"
+          Content Top    
+    
+        <div
+          class="ct-layout__inner container"
         >
-          Main Content
-        </section>
-        
+          
+                        
+          <section
+            class="ct-layout__main"
+            data-content="true"
+          >
+            Main Content
+          </section>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_top_left"
-          data-sidebar-top-left="true"
-        >
-          Sidebar Top Left
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_top_left"
+            data-sidebar-top-left="true"
+          >
+            Sidebar Top Left
+          </aside>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_top_right"
-          data-sidebar-top-right="true"
-        >
-          Sidebar Top Right
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_top_right"
+            data-sidebar-top-right="true"
+          >
+            Sidebar Top Right
+          </aside>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_bottom_left"
-          data-sidebar-bottom-left="true"
-        >
-          Sidebar Bottom Left
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_bottom_left"
+            data-sidebar-bottom-left="true"
+          >
+            Sidebar Bottom Left
+          </aside>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_bottom_right"
-          data-sidebar-bottom-right="true"
-        >
-          Sidebar Bottom Right
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_bottom_right"
+            data-sidebar-bottom-right="true"
+          >
+            Sidebar Bottom Right
+          </aside>
+          
                   
-      </div>
-      
+        </div>
+        
 
           Content Bottom      
+      </div>
+      
+      
     </main>
     
-  
+
       
 
   
@@ -659,76 +667,81 @@ exports[`Page Component renders content block with permutations: {
 
 
   
-        
-  
-      
-
-
-
-
-
   
     <main
-      _keys="id tabindex"
-      class="ct-layout ct-vertical-spacing--top"
       id="main-content"
-      role="main"
       tabindex="-1"
     >
       
               
     
+          
+
+
+
+
+
+  
       <div
-        class="ct-layout__inner container"
+        class="ct-layout ct-vertical-spacing--top"
       >
         
-                        
-        <section
-          class="ct-layout__main"
+              
+    
+        <div
+          class="ct-layout__inner container"
         >
-          Main Content
-        </section>
-        
+          
+                        
+          <section
+            class="ct-layout__main"
+          >
+            Main Content
+          </section>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_top_left"
-        >
-          Sidebar Top Left
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_top_left"
+          >
+            Sidebar Top Left
+          </aside>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_top_right"
-        >
-          Sidebar Top Right
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_top_right"
+          >
+            Sidebar Top Right
+          </aside>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_bottom_left"
-        >
-          Sidebar Bottom Left
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_bottom_left"
+          >
+            Sidebar Bottom Left
+          </aside>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_bottom_right"
-        >
-          Sidebar Bottom Right
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_bottom_right"
+          >
+            Sidebar Bottom Right
+          </aside>
+          
                   
-      </div>
-      
+        </div>
+        
 
                 
+      </div>
+      
+      
     </main>
     
-  
+
       
 
   
@@ -821,62 +834,67 @@ exports[`Page Component renders content block with permutations: {
 
 
   
-        
-  
-      
-
-
-
-
-
   
     <main
-      _keys="id tabindex"
-      class="ct-layout ct-layout--no-sidebar-right  ct-layout--no-top-right  ct-layout--no-bottom-right ct-vertical-spacing--top"
       id="main-content"
-      role="main"
       tabindex="-1"
     >
       
               
     
+          
+
+
+
+
+
+  
       <div
-        class="ct-layout__inner container"
+        class="ct-layout ct-layout--no-sidebar-right  ct-layout--no-top-right  ct-layout--no-bottom-right ct-vertical-spacing--top"
       >
         
-                        
-        <section
-          class="ct-layout__main"
+              
+    
+        <div
+          class="ct-layout__inner container"
         >
-          Main Content
-        </section>
-        
+          
+                        
+          <section
+            class="ct-layout__main"
+          >
+            Main Content
+          </section>
+          
               
                         
-        <aside
-          class="ct-layout__sidebar_top_left"
-        >
-          Sidebar Top Left
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_top_left"
+          >
+            Sidebar Top Left
+          </aside>
+          
               
       
                         
-        <aside
-          class="ct-layout__sidebar_bottom_left"
-        >
-          Sidebar Bottom Left
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_bottom_left"
+          >
+            Sidebar Bottom Left
+          </aside>
+          
               
           
-      </div>
-      
+        </div>
+        
 
                 
+      </div>
+      
+      
     </main>
     
-  
+
       
 
   
@@ -969,62 +987,67 @@ exports[`Page Component renders content block with permutations: {
 
 
   
-        
-  
-      
-
-
-
-
-
   
     <main
-      _keys="id tabindex"
-      class="ct-layout ct-layout--no-sidebar-left  ct-layout--no-top-left  ct-layout--no-bottom-left  ct-vertical-spacing--top"
       id="main-content"
-      role="main"
       tabindex="-1"
     >
       
               
     
+          
+
+
+
+
+
+  
       <div
-        class="ct-layout__inner container"
+        class="ct-layout ct-layout--no-sidebar-left  ct-layout--no-top-left  ct-layout--no-bottom-left  ct-vertical-spacing--top"
       >
         
-                        
-        <section
-          class="ct-layout__main"
+              
+    
+        <div
+          class="ct-layout__inner container"
         >
-          Main Content
-        </section>
-        
+          
+                        
+          <section
+            class="ct-layout__main"
+          >
+            Main Content
+          </section>
+          
               
       
                         
-        <aside
-          class="ct-layout__sidebar_top_right"
-        >
-          Sidebar Top Right
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_top_right"
+          >
+            Sidebar Top Right
+          </aside>
+          
               
       
                         
-        <aside
-          class="ct-layout__sidebar_bottom_right"
-        >
-          Sidebar Bottom Right
-        </aside>
-        
+          <aside
+            class="ct-layout__sidebar_bottom_right"
+          >
+            Sidebar Bottom Right
+          </aside>
+          
                   
-      </div>
-      
+        </div>
+        
 
                 
+      </div>
+      
+      
     </main>
     
-  
+
       
 
   
@@ -1117,48 +1140,53 @@ exports[`Page Component renders content block with permutations: {
 
 
   
-        
-  
-      
-
-
-
-
-
   
     <main
-      _keys="id tabindex"
-      class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
       id="main-content"
-      role="main"
       tabindex="-1"
     >
       
               
     
+          
+
+
+
+
+
+  
       <div
-        class="ct-layout__inner container-fluid"
+        class="ct-layout ct-layout--no-sidebar-left ct-layout--no-sidebar-right ct-layout--no-top-left ct-layout--no-top-right ct-layout--no-bottom-left ct-layout--no-bottom-right"
       >
         
-                        
-        <section
-          class="ct-layout__main"
+              
+    
+        <div
+          class="ct-layout__inner container-fluid"
         >
-          Main Content
-        </section>
-        
+          
+                        
+          <section
+            class="ct-layout__main"
+          >
+            Main Content
+          </section>
+          
               
       
       
       
           
-      </div>
-      
+        </div>
+        
 
                 
+      </div>
+      
+      
     </main>
     
-  
+
       
 
   
@@ -1244,15 +1272,24 @@ exports[`Page Component renders with custom theme and attributes 1`] = `
 
 
   
-        
   
+    <main
+      id="main-content"
+      tabindex="-1"
+    >
       
+              
+    
+          
 
 
 
 
 
-  
+      
+    </main>
+    
+
       
 
   
@@ -1337,15 +1374,24 @@ exports[`Page Component renders with default values 1`] = `
 
 
   
-        
   
+    <main
+      id="main-content"
+      tabindex="-1"
+    >
       
+              
+    
+          
 
 
 
 
 
-  
+      
+    </main>
+    
+
       
 
   
@@ -1431,15 +1477,24 @@ exports[`Page Component strips HTML tags from attributes 1`] = `
 
 
   
-        
   
+    <main
+      id="main-content"
+      tabindex="-1"
+    >
       
+              
+    
+          
 
 
 
 
 
-  
+      
+    </main>
+    
+
       
 
   

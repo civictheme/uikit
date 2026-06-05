@@ -57,7 +57,7 @@
 {% set modifier_class = modifier_class|trim %}
 
 {% if content %}
-  <main class="ct-layout {{ modifier_class -}}" role="main" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
+  <div class="ct-layout {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}>
     {% block content_top_block %}
       {% if content_top is not empty %}
         {{- content_top -}}
@@ -111,5 +111,5 @@
         {{- content_bottom -}}
       {% endif %}
     {% endblock %}
-  </main>
+  </div>
 {% endif %}

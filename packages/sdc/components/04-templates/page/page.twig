@@ -77,45 +77,46 @@
     } only %}
   {% endblock %}
 
-  {% block banner_block %}
-    {% if banner is not empty %}
-      {{ banner }}
-    {% endif %}
-  {% endblock %}
+  <main id="main-content" tabindex="-1">
+    {% block banner_block %}
+      {% if banner is not empty %}
+        {{ banner }}
+      {% endif %}
+    {% endblock %}
 
-  {% if highlighted is not empty %}
-    {% block highlighted_block %}
-      <div class="container">
-        <div class="row">
-          <div class="col-xxs-12">
-            {{ highlighted }}
+    {% if highlighted is not empty %}
+      {% block highlighted_block %}
+        <div class="container">
+          <div class="row">
+            <div class="col-xxs-12">
+              {{ highlighted }}
+            </div>
           </div>
         </div>
-      </div>
-    {% endblock %}
-  {% endif %}
+      {% endblock %}
+    {% endif %}
 
-  {% block content_block %}
-    {% include 'civictheme:layout' with {
-      content_top: content_top,
-      hide_sidebar_left: hide_sidebar_left,
-      hide_sidebar_right: hide_sidebar_right,
-      sidebar_top_left: sidebar_top_left,
-      sidebar_top_left_attributes: sidebar_top_left_attributes,
-      sidebar_top_right: sidebar_top_right,
-      sidebar_top_right_attributes: sidebar_top_right_attributes,
-      content: content,
-      content_attributes: content_attributes,
-      sidebar_bottom_left: sidebar_bottom_left|default(sidebar),
-      sidebar_bottom_left_attributes: sidebar_bottom_left_attributes|default(sidebar_attributes),
-      sidebar_bottom_right: sidebar_bottom_right,
-      sidebar_bottom_right_attributes: sidebar_bottom_right_attributes,
-      is_contained: content_contained,
-      content_bottom: content_bottom,
-      vertical_spacing: vertical_spacing|default('none'),
-      attributes: (banner is empty) ? create_attribute({id: 'main-content', tabindex: '-1'}) : create_attribute(),
-    } only %}
-  {% endblock %}
+    {% block content_block %}
+      {% include 'civictheme:layout' with {
+        content_top: content_top,
+        hide_sidebar_left: hide_sidebar_left,
+        hide_sidebar_right: hide_sidebar_right,
+        sidebar_top_left: sidebar_top_left,
+        sidebar_top_left_attributes: sidebar_top_left_attributes,
+        sidebar_top_right: sidebar_top_right,
+        sidebar_top_right_attributes: sidebar_top_right_attributes,
+        content: content,
+        content_attributes: content_attributes,
+        sidebar_bottom_left: sidebar_bottom_left|default(sidebar),
+        sidebar_bottom_left_attributes: sidebar_bottom_left_attributes|default(sidebar_attributes),
+        sidebar_bottom_right: sidebar_bottom_right,
+        sidebar_bottom_right_attributes: sidebar_bottom_right_attributes,
+        is_contained: content_contained,
+        content_bottom: content_bottom,
+        vertical_spacing: vertical_spacing|default('none'),
+      } only %}
+    {% endblock %}
+  </main>
 
   {% block footer_block %}
     {% include 'civictheme:footer' with {
