@@ -6284,7 +6284,7 @@ ol ol ol {
   }
 }
 .ct-attachment .ct-attachment__title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .ct-attachment .ct-attachment__content {
   margin-bottom: 1rem;
@@ -6292,6 +6292,9 @@ ol ol ol {
 .ct-attachment .ct-attachment__links .ct-item-list__item {
   display: flex;
   gap: 0 0.5rem;
+}
+.ct-attachment .ct-attachment__links__link__changed {
+  margin-bottom: 0;
 }
 .ct-attachment .ct-attachment__links__link__extension {
   text-transform: uppercase;

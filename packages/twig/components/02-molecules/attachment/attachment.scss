@@ -23,7 +23,7 @@
   }
 
   #{$root}__title {
-    margin-bottom: ct-spacing(2);
+    margin-bottom: ct-spacing();
   }
 
   #{$root}__content {
@@ -33,6 +33,10 @@
   #{$root}__links .ct-item-list__item {
     display: flex;
     gap: 0 ct-spacing();
+  }
+
+  #{$root}__links__link__changed {
+    margin-bottom: 0;
   }
 
   #{$root}__links__link__extension {
