@@ -11,6 +11,7 @@
     position: relative;
     border-radius: var(--ct-subject-card-border-radius);
     width: 100%;
+    overflow: hidden;
 
     &:hover {
       outline: 1px solid transparent;
