@@ -7,14 +7,14 @@
 
   &__wrapper {
     border-radius: var(--ct-callout-border-radius);
-    padding: ct-spacing(3) ct-spacing(3);
+    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(3.25);
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: ct-spacing(2);
 
     @include ct-breakpoint(m) {
-      padding: ct-spacing(3) ct-spacing(5) ct-spacing(4) ct-spacing(3);
+      padding: ct-spacing(4) ct-spacing(5) ct-spacing(4.5) ct-spacing(4.25);
     }
 
     @include ct-highlight-stripe-vertical(var(--ct-callout-stripe-width), var(--ct-callout-border-radius), 0);
