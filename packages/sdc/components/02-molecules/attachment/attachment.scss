@@ -39,6 +39,10 @@
     margin-bottom: 0;
   }
 
+  #{$root}__links__link__icon {
+    flex-shrink: 0;
+  }
+
   #{$root}__links__link__extension {
     text-transform: uppercase;
   }

@@ -31,6 +31,9 @@
 .ct-attachment .ct-attachment__links__link__changed {
   margin-bottom: 0;
 }
+.ct-attachment .ct-attachment__links__link__icon {
+  flex-shrink: 0;
+}
 .ct-attachment .ct-attachment__links__link__extension {
   text-transform: uppercase;
 }
