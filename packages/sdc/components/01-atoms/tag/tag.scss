@@ -34,11 +34,11 @@
   }
 
   &#{$root}--primary {
-    padding: ct-spacing(0.5) ct-spacing();
+    padding: ct-spacing(0.375) ct-spacing(0.875);
   }
 
   &#{$root}--secondary {
-    padding: ct-spacing(0.5) ct-spacing();
+    padding: ct-spacing(0.375) ct-spacing(0.875);
   }
 
   @include ct-component-theme($root) using($root, $theme) {
