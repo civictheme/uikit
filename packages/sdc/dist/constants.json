@@ -1038,7 +1038,7 @@
     "ct-accordion-button-border-radius": "$ct-border-radius",
     "ct-accordion-header-border-radius": "$ct-border-radius",
     "ct-accordion-item-border-radius": "$ct-border-radius",
-    "ct-accordion-stripe-width": "var(--ct-stripe-size)",
+    "ct-accordion-stripe-width": "calc(var(--ct-stripe-size) - ct-particle(0.125))",
     "ct-accordion-space-horizontal": "ct-spacing(3)",
     "ct-accordion-space-horizontal-desktop": "ct-spacing(7)",
     "ct-accordion-light-background-color": "ct-color-light('background-light')",
