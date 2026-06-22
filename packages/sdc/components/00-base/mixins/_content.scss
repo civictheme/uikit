@@ -116,7 +116,7 @@
       margin: 0;
       margin-top: var(--ct-basic-content-vertical-spacing);
       margin-bottom: var(--ct-basic-content-vertical-spacing);
-      padding: ct-spacing(2) ct-spacing(3);
+      padding: ct-spacing(2.5) ct-spacing(3) ct-spacing(2.5) ct-spacing(3.75);
       display: grid;
     }
 
@@ -140,7 +140,7 @@
     }
 
     cite {
-      @include ct-typography('label-extra-small');
+      @include ct-typography('text-regular');
 
       & {
         padding-top: ct-spacing(2);

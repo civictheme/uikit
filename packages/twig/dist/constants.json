@@ -224,13 +224,13 @@
       "heading-2": {
         "xxs": [
           "$ct-font-base-size * 1.75",
-          "$ct-font-base-line-height * 2.25",
+          "$ct-font-base-line-height * 2.1875",
           "'bold'",
           "'primary'",
           "-0.5px"
         ],
         "m": [
-          "$ct-font-base-size * 2.5",
+          "$ct-font-base-size * 2.4375",
           "$ct-font-base-line-height * 3",
           "'bold'",
           "'primary'",
@@ -240,7 +240,7 @@
       "heading-3": {
         "xxs": [
           "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 2",
+          "$ct-font-base-line-height * 1.9375",
           "'bold'",
           "'primary'",
           "-0.35px"
@@ -256,14 +256,14 @@
       "heading-4": {
         "xxs": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.5625",
           "'bold'",
           "'primary'",
           "-0.25px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 2",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 1.9375",
           "'bold'",
           "'primary'",
           "-0.4px"
@@ -272,46 +272,55 @@
       "heading-5": {
         "xxs": [
           "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.375",
+          "$ct-font-base-line-height * 1.5",
           "'bold'",
           "'primary'",
           "0"
         ],
         "m": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.75",
           "'bold'",
           "'primary'",
           "-0.2px"
         ]
       },
-      "heading-6": [
-        "$ct-font-base-size",
-        "$ct-font-base-line-height * 1.625",
-        "'bold'",
-        "'primary'",
-        "0"
-      ],
+      "heading-6": {
+        "xxs": [
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.625",
+          "'bold'",
+          "'primary'",
+          "0"
+        ],
+        "m": [
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.75",
+          "'bold'",
+          "'primary'",
+          "0"
+        ]
+      },
       "text-extra-large": {
         "xxs": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.9375",
           "'regular'",
           "'primary'",
-          "-0.1px"
+          "-0.15px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 2.5",
           "'regular'",
           "'primary'",
-          "0"
+          "-0.35px"
         ]
       },
       "text-large": {
         "xxs": [
           "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.75",
+          "$ct-font-base-line-height * 1.8125",
           "'regular'",
           "'primary'",
           "0"
@@ -326,8 +335,8 @@
       },
       "text-regular": {
         "xxs": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.625",
           "'regular'",
           "'primary'",
           "0"
@@ -342,15 +351,15 @@
       },
       "text-small": {
         "xxs": [
-          "$ct-font-base-size * 0.75",
-          "$ct-font-base-line-height * 1.25",
+          "$ct-font-base-size * 0.875",
+          "$ct-font-base-line-height * 1.4375",
           "'regular'",
           "'primary'",
           "0"
         ],
         "m": [
           "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.5625",
           "'regular'",
           "'primary'",
           "0"
