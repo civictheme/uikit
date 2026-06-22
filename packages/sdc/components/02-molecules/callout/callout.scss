@@ -23,7 +23,11 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: ct-spacing(2);
+    gap: ct-spacing(1.5);
+
+    @include ct-breakpoint(m) {
+      gap: ct-spacing(2);
+    }
   }
 
   @include ct-component-theme($root) using($root, $theme) {
