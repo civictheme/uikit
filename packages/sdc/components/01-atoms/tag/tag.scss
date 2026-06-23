@@ -5,9 +5,6 @@
 .ct-tag {
   $root: &;
 
-  border-radius: var(--ct-tag-border-radius);
-  border-style: solid;
-  border-width: var(--ct-tag-border-width);
   display: inline-block;
 
   @include ct-typography('label-small');
@@ -33,11 +30,11 @@
     }
   }
 
-  &#{$root}--primary {
-    padding: ct-spacing(0.375) ct-spacing(0.875);
-  }
-
+  &#{$root}--primary,
   &#{$root}--secondary {
+    border-radius: var(--ct-tag-border-radius);
+    border-style: solid;
+    border-width: var(--ct-tag-border-width);
     padding: ct-spacing(0.375) ct-spacing(0.875);
   }
 
