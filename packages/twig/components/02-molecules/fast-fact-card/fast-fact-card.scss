@@ -13,13 +13,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: ct-spacing(2);
+    gap: ct-spacing();
     border-radius: var(--ct-border-radius);
     box-sizing: border-box;
-    padding: ct-spacing(4) ct-spacing(3) ct-spacing(3);
+    padding: ct-spacing(2.5) ct-spacing(3) ct-spacing(3.25) ct-spacing(3);
 
     @include ct-breakpoint('m') {
-      padding: ct-spacing(5) ct-spacing(4) ct-spacing(3);
+      padding: ct-spacing(3) ct-spacing(4) ct-spacing(3.75) ct-spacing(4);
     }
 
     &:hover {
@@ -33,6 +33,13 @@
     #{$root}__title-link {
       @include ct-link-cover-parent();
     }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
   }
 
   &__image {
