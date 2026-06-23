@@ -45,32 +45,30 @@
     {% endif %}
   {% endblock %}
 
-  <div class="ct-fast-fact-card__content">
-    {% block title_block %}
-      {% if title is not empty %}
-        <div class="ct-fast-fact-card__title">
-          {% if with_link %}
-            <a
-              class="ct-fast-fact-card__title-link"
-              href="{{ link.url }}"
-              {% if link.is_new_window %}target="_blank"{% endif %}
-            >{{ title }}</a>
-          {% else %}
-            {{ title }}
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endblock %}
+  {% block title_block %}
+    {% if title is not empty %}
+      <div class="ct-fast-fact-card__title">
+        {% if with_link %}
+          <a
+            class="ct-fast-fact-card__title-link"
+            href="{{ link.url }}"
+            {% if link.is_new_window %}target="_blank"{% endif %}
+          >{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endblock %}
 
-    {% block summary_block %}
-      {% if summary is not empty %}
-        {% include '@atoms/paragraph/paragraph.twig' with {
-          theme: theme,
-          content: summary,
-          size: 'large',
-          modifier_class: 'ct-fast-fact-card__summary',
-        } only %}
-      {% endif %}
-    {% endblock %}
-  </div>
+  {% block summary_block %}
+    {% if summary is not empty %}
+      {% include '@atoms/paragraph/paragraph.twig' with {
+        theme: theme,
+        content: summary,
+        size: 'large',
+        modifier_class: 'ct-fast-fact-card__summary',
+      } only %}
+    {% endif %}
+  {% endblock %}
 </div>

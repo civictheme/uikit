@@ -13,7 +13,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: ct-spacing();
+    gap: 0;
     border-radius: var(--ct-border-radius);
     box-sizing: border-box;
     padding: ct-spacing(2.5) ct-spacing(3) ct-spacing(3.25) ct-spacing(3);
@@ -35,14 +35,9 @@
     }
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    align-items: center;
-  }
-
   &__image {
+    margin-bottom: ct-spacing();
+
     img {
       display: flex;
       margin: auto;

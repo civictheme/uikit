@@ -20,7 +20,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0;
   border-radius: var(--ct-border-radius);
   box-sizing: border-box;
   padding: 1.25rem 1.5rem 1.625rem 1.5rem;
@@ -53,11 +53,8 @@
   left: 0;
   right: 0;
 }
-.ct-fast-fact-card__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  align-items: center;
+.ct-fast-fact-card__image {
+  margin-bottom: 0.5rem;
 }
 .ct-fast-fact-card__image img {
   display: flex;
