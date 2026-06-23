@@ -58,8 +58,8 @@
       content: '';
       display: inline-block;
       position: absolute;
-      top: -1 * ct-particle(0.125);
-      bottom: -1 * ct-particle(0.125);
+      top: 0;
+      bottom: 0;
       left: -1 * ct-particle(0.125);
       width: ct-particle(0.5);
     }
