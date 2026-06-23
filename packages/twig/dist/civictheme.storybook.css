@@ -8035,6 +8035,9 @@ ol ol ol {
   border-top-right-radius: var(--ct-promo-card-border-radius);
   transition: height 0.25s;
 }
+.ct-promo-card:not(.ct-promo-card--with-image) .ct-promo-card__content {
+  padding: 1.875rem 1.5rem 1.5rem 1.5rem;
+}
 .ct-promo-card .ct-promo-card__image img {
   aspect-ratio: var(--ct-promo-card-image-aspect-ratio);
   display: block;
@@ -8058,6 +8061,7 @@ ol ol ol {
 .ct-promo-card .ct-promo-card__title-link {
   font-size: inherit;
   line-height: inherit;
+  padding: 0;
   text-decoration: none;
 }
 .ct-promo-card .ct-promo-card__title-link:focus-visible {
@@ -8075,7 +8079,7 @@ ol ol ol {
 }
 .ct-promo-card .ct-promo-card__tags {
   display: flex;
-  margin-top: auto;
+  margin-top: 0.5rem;
   align-items: flex-end;
   gap: 0.5rem;
 }
