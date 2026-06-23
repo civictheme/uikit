@@ -64,7 +64,7 @@
 
     {% block summary_block %}
       {% if summary is not empty %}
-        {% include 'civictheme:paragraph' with {
+        {% include '@atoms/paragraph/paragraph.twig' with {
           theme: theme,
           content: summary,
           size: 'large',
