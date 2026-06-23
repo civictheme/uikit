@@ -34,6 +34,10 @@
 
   &:not(#{$root}--with-image) {
     @include ct-highlight-stripe-horizontal(var(--ct-promo-card-stripe-height), var(--ct-promo-card-border-radius), 0);
+
+    #{$root}__content {
+      padding: ct-spacing(3.75) ct-spacing(3) ct-spacing(3) ct-spacing(3);
+    }
   }
 
   #{$root}__image {
@@ -60,6 +64,7 @@
   #{$root}__title-link {
     @include ct-font-size-inherit();
 
+    padding: 0;
     text-decoration: none;
 
     &:focus-visible {
@@ -78,7 +83,7 @@
 
   #{$root}__tags {
     display: flex;
-    margin-top: auto;
+    margin-top: ct-spacing(1);
     align-items: flex-end;
     gap: ct-spacing(1);
   }
