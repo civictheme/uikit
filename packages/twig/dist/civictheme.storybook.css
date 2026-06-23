@@ -5868,9 +5868,6 @@ ol ol ol {
 }
 
 .ct-tag {
-  border-radius: var(--ct-tag-border-radius);
-  border-style: solid;
-  border-width: var(--ct-tag-border-width);
   display: inline-block;
   font-size: var(--ct-typography-label-small-font-size);
   line-height: var(--ct-typography-label-small-line-height);
@@ -5919,10 +5916,10 @@ ol ol ol {
 .ct-tag--icon-after .ct-icon {
   margin-left: 0.125rem;
 }
-.ct-tag.ct-tag--primary {
-  padding: 0.1875rem 0.4375rem;
-}
-.ct-tag.ct-tag--secondary {
+.ct-tag.ct-tag--primary, .ct-tag.ct-tag--secondary {
+  border-radius: var(--ct-tag-border-radius);
+  border-style: solid;
+  border-width: var(--ct-tag-border-width);
   padding: 0.1875rem 0.4375rem;
 }
 .ct-tag.ct-theme-light.ct-tag--primary {
