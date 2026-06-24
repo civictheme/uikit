@@ -9440,9 +9440,6 @@ ol ol ol {
   flex-direction: column;
   gap: 1.5rem;
 }
-.ct-campaign .ct-campaign__content {
-  margin-bottom: 0;
-}
 .ct-campaign .ct-campaign__inner > * {
   margin-bottom: 1rem;
 }
@@ -9451,8 +9448,13 @@ ol ol ol {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 1280px) {
-  .ct-campaign .ct-campaign__inner > * {
+@media (min-width: 768px) {
+  .ct-campaign .ct-campaign__inner > .ct-campaign__tags {
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-campaign .ct-campaign__inner .ct-campaign__content {
     margin-bottom: 2rem;
   }
 }

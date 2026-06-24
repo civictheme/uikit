@@ -72,34 +72,32 @@
           {% endblock %}
 
           {% block content_block %}
-            <div class="ct-campaign__content-inner">
-              {% if title is not empty %}
-                {% include 'civictheme:heading' with {
-                  theme: theme,
-                  content: title,
-                  level: 2,
-                  modifier_class: 'ct-campaign__title',
-                } only %}
-              {% endif %}
+            {% if title is not empty %}
+              {% include 'civictheme:heading' with {
+                theme: theme,
+                content: title,
+                level: 2,
+                modifier_class: 'ct-campaign__title',
+              } only %}
+            {% endif %}
 
-              {% if date is not empty %}
-                {% include 'civictheme:tag' with {
-                  theme: theme,
-                  content: date,
-                  type: 'tertiary',
-                  modifier_class: 'ct-campaign__date',
-                } only %}
-              {% endif %}
+            {% if date is not empty %}
+              {% include 'civictheme:tag' with {
+                theme: theme,
+                content: date,
+                type: 'tertiary',
+                modifier_class: 'ct-campaign__date',
+              } only %}
+            {% endif %}
 
-              {% if content is not empty %}
-                {% include 'civictheme:paragraph' with {
-                  theme: theme,
-                  content: content,
-                  modifier_class: 'ct-campaign__content',
-                  size: 'large',
-                } only %}
-              {% endif %}
-            </div>
+            {% if content is not empty %}
+              {% include 'civictheme:paragraph' with {
+                theme: theme,
+                content: content,
+                modifier_class: 'ct-campaign__content',
+                size: 'large',
+              } only %}
+            {% endif %}
 
             {% block links_block %}
               {% if links is not empty %}

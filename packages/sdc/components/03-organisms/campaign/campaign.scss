@@ -27,10 +27,6 @@
     gap: ct-spacing(3);
   }
 
-  #{$root}__content {
-    margin-bottom: 0;
-  }
-
   #{$root}__inner {
     > * {
       margin-bottom: ct-spacing(2);
@@ -38,8 +34,16 @@
       @include ct-breakpoint(m) {
         margin-bottom: ct-spacing(3);
       }
+    }
 
-      @include ct-breakpoint(xl) {
+    > #{$root}__tags {
+      @include ct-breakpoint(m) {
+        margin-bottom: ct-spacing(4);
+      }
+    }
+
+    > #{$root}__content {
+      @include ct-breakpoint(m) {
         margin-bottom: ct-spacing(4);
       }
     }
