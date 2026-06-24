@@ -9458,6 +9458,14 @@ ol ol ol {
     margin-bottom: 2rem;
   }
 }
+.ct-campaign .ct-campaign__inner > .ct-campaign__links {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .ct-campaign .ct-campaign__inner > .ct-campaign__links {
+    margin-bottom: 0;
+  }
+}
 .ct-campaign .ct-campaign__links > * {
   display: flex;
   align-items: center;

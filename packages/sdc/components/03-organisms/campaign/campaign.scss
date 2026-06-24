@@ -47,6 +47,14 @@
         margin-bottom: ct-spacing(4);
       }
     }
+
+    > #{$root}__links {
+      margin-bottom: 0;
+
+      @include ct-breakpoint(m) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   #{$root}__links {
