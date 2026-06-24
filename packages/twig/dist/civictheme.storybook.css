@@ -9435,6 +9435,14 @@ ol ol ol {
     left: 0;
   }
 }
+.ct-campaign .ct-campaign__content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ct-campaign .ct-campaign__content {
+  margin-bottom: 0;
+}
 .ct-campaign .ct-campaign__inner > * {
   margin-bottom: 1rem;
 }

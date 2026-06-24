@@ -27,6 +27,10 @@
     gap: ct-spacing(3);
   }
 
+  #{$root}__content {
+    margin-bottom: 0;
+  }
+
   #{$root}__inner {
     > * {
       margin-bottom: ct-spacing(2);
