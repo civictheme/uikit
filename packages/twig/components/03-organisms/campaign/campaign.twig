@@ -72,31 +72,33 @@
           {% endblock %}
 
           {% block content_block %}
-            {% if title is not empty %}
-              {% include '@atoms/heading/heading.twig' with {
-                theme: theme,
-                content: title,
-                level: 2,
-                modifier_class: 'ct-campaign__title',
-              } only %}
-            {% endif %}
+            <div class="ct-campaign__content-inner">
+              {% if title is not empty %}
+                {% include '@atoms/heading/heading.twig' with {
+                  theme: theme,
+                  content: title,
+                  level: 2,
+                  modifier_class: 'ct-campaign__title',
+                } only %}
+              {% endif %}
 
-            {% if date is not empty %}
-              {% include '@atoms/tag/tag.twig' with {
-                theme: theme,
-                content: date,
-                type: 'tertiary',
-                modifier_class: 'ct-campaign__date',
-              } only %}
-            {% endif %}
+              {% if date is not empty %}
+                {% include '@atoms/tag/tag.twig' with {
+                  theme: theme,
+                  content: date,
+                  type: 'tertiary',
+                  modifier_class: 'ct-campaign__date',
+                } only %}
+              {% endif %}
 
-            {% if content is not empty %}
-              {% include '@atoms/paragraph/paragraph.twig' with {
-                theme: theme,
-                content: content,
-                modifier_class: 'ct-campaign__content',
-              } only %}
-            {% endif %}
+              {% if content is not empty %}
+                {% include '@atoms/paragraph/paragraph.twig' with {
+                  theme: theme,
+                  content: content,
+                  modifier_class: 'ct-campaign__content',
+                } only %}
+              {% endif %}
+            </div>
 
             {% block links_block %}
               {% if links is not empty %}
@@ -106,7 +108,7 @@
                     {% include '@atoms/button/button.twig' with {
                       theme: theme,
                       kind: 'link',
-                      type: loop.index == 1 ? 'primary' : 'tertiary',
+                      type: loop.index == 1 ? 'primary' : 'secondary',
                       text: link.text,
                       url: link.url,
                       is_new_window: link.is_new_window,
