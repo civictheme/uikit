@@ -7070,6 +7070,9 @@ ol ol ol {
   border-top-right-radius: var(--ct-event-card-border-radius);
   transition: height 0.25s;
 }
+.ct-event-card:not(.ct-event-card--with-image) .ct-event-card__content {
+  padding: 1.875rem 1.5rem 1.5rem 1.5rem;
+}
 .ct-event-card .ct-event-card__image img {
   aspect-ratio: var(--ct-event-card-image-aspect-ratio);
   display: block;
@@ -7093,6 +7096,7 @@ ol ol ol {
 .ct-event-card .ct-event-card__title-link {
   font-size: inherit;
   line-height: inherit;
+  padding: 0;
   text-decoration: none;
 }
 .ct-event-card .ct-event-card__title-link:focus-visible {
@@ -7109,15 +7113,37 @@ ol ol ol {
   color: inherit;
 }
 .ct-event-card .ct-event-card__location {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
+  margin-bottom: 0;
+}
+.ct-event-card .ct-event-card__date .ct-tag {
+  font-size: var(--ct-typography-label-extra-small-font-size);
+  line-height: var(--ct-typography-label-extra-small-line-height);
+  font-family: var(--ct-typography-label-extra-small-font-name);
+  font-weight: var(--ct-typography-label-extra-small-font-weight);
+  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.1875rem 0.4375rem 0.1875rem 0.1875rem;
+}
+@media (min-width: 0) {
+  .ct-event-card .ct-event-card__date .ct-tag .ct-icon {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-event-card .ct-event-card__date .ct-tag .ct-icon {
+    font-size: 1.25rem;
+  }
 }
 .ct-event-card .ct-event-card__tags {
   display: flex;
-  margin-top: auto;
+  margin-top: 0.5rem;
   align-items: flex-end;
   gap: 0.5rem;
 }
