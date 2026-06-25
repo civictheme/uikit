@@ -14,7 +14,7 @@
     padding: ct-spacing(3);
   }
 
-  @include ct-typography('label-extra-small');
+  @include ct-typography('text-small');
 
   #{$root}__title {
     @include ct-typography('heading-6');
@@ -60,6 +60,10 @@
     right: ct-spacing(2);
     background-color: transparent;
     padding: 0;
+
+    .ct-icon {
+      @include ct-icon-size('regular');
+    }
 
     @include ct-breakpoint(m) {
       @include ct-typography('heading-6');

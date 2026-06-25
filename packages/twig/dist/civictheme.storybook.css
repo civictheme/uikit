@@ -9164,11 +9164,11 @@ ol ol ol {
 .ct-alert {
   position: relative;
   padding: 1rem;
-  font-size: var(--ct-typography-label-extra-small-font-size);
-  line-height: var(--ct-typography-label-extra-small-line-height);
-  font-family: var(--ct-typography-label-extra-small-font-name);
-  font-weight: var(--ct-typography-label-extra-small-font-weight);
-  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 @media (min-width: 768px) {
   .ct-alert {
@@ -9219,6 +9219,16 @@ ol ol ol {
   right: 1rem;
   background-color: transparent;
   padding: 0;
+}
+@media (min-width: 0) {
+  .ct-alert .ct-alert__dismiss-button .ct-icon {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-alert .ct-alert__dismiss-button .ct-icon {
+    font-size: 1.25rem;
+  }
 }
 @media (min-width: 768px) {
   .ct-alert .ct-alert__dismiss-button {
