@@ -7,6 +7,10 @@
 
   #{$root}__button {
     line-height: 0;
+
+    .ct-icon {
+      @include ct-icon-size('regular');
+    }
   }
 
   &#{$root}--with-border {

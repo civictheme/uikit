@@ -8597,6 +8597,16 @@ ol ol ol {
 .ct-social-links .ct-social-links__button {
   line-height: 0;
 }
+@media (min-width: 0) {
+  .ct-social-links .ct-social-links__button .ct-icon {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-social-links .ct-social-links__button .ct-icon {
+    font-size: 1.25rem;
+  }
+}
 .ct-social-links.ct-social-links--with-border .ct-social-links__button {
   border: 0.0625rem solid currentcolor;
   border-radius: 6rem;
