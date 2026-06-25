@@ -19,8 +19,12 @@
     padding: 0;
   }
 
+  #{$root}__close-button {
+    @include ct-icon-size('regular');
+  }
+
   #{$root}__description {
-    @include ct-typography('label-extra-small');
+    @include ct-typography('text-regular');
     @include ct-elevation(2);
 
     & {
@@ -29,7 +33,6 @@
       border-radius: var(--ct-tooltip-description-border-radius);
       position: absolute;
       width: var(--ct-tooltip-width-mobile);
-      min-height: calc(var(--ct-tooltip-width-mobile) / 2);
       z-index: var(--ct-tooltip-z-index);
     }
 
@@ -131,6 +134,10 @@
       &:focus-visible {
         @include ct-outline-theme($theme);
       }
+    }
+
+    #{$root}__close-button {
+      @include ct-component-property($root, $theme, description, color);
     }
 
     #{$root}__description {

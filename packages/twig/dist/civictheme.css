@@ -8939,12 +8939,22 @@ ol ol ol {
   background-color: transparent;
   padding: 0;
 }
+@media (min-width: 0) {
+  .ct-tooltip .ct-tooltip__close-button {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-tooltip .ct-tooltip__close-button {
+    font-size: 1.25rem;
+  }
+}
 .ct-tooltip .ct-tooltip__description {
-  font-size: var(--ct-typography-label-extra-small-font-size);
-  line-height: var(--ct-typography-label-extra-small-line-height);
-  font-family: var(--ct-typography-label-extra-small-font-name);
-  font-weight: var(--ct-typography-label-extra-small-font-weight);
-  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-tooltip .ct-tooltip__description {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
@@ -8955,7 +8965,6 @@ ol ol ol {
   border-radius: var(--ct-tooltip-description-border-radius);
   position: absolute;
   width: var(--ct-tooltip-width-mobile);
-  min-height: calc(var(--ct-tooltip-width-mobile) / 2);
   z-index: var(--ct-tooltip-z-index);
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=top] > [data-tooltip-arrow] {
@@ -9065,6 +9074,9 @@ ol ol ol {
   outline-style: solid;
   outline-color: var(--ct-outline-light);
 }
+.ct-tooltip.ct-theme-light .ct-tooltip__close-button {
+  color: var(--ct-tooltip-light-description-color);
+}
 .ct-tooltip.ct-theme-light .ct-tooltip__description {
   color: var(--ct-tooltip-light-description-color);
   background-color: var(--ct-tooltip-light-description-background-color);
@@ -9089,6 +9101,9 @@ ol ol ol {
   outline-width: var(--ct-outline-width);
   outline-style: solid;
   outline-color: var(--ct-outline-dark);
+}
+.ct-tooltip.ct-theme-dark .ct-tooltip__close-button {
+  color: var(--ct-tooltip-dark-description-color);
 }
 .ct-tooltip.ct-theme-dark .ct-tooltip__description {
   color: var(--ct-tooltip-dark-description-color);
