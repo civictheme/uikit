@@ -173,7 +173,7 @@ exports[`Tooltip Component renders with optional attributes 1`] = `
 
   
         <button
-          class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   "
+          class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   ct-tooltip__close-button"
           data-component-name="button"
         >
           <svg
@@ -276,7 +276,7 @@ exports[`Tooltip Component renders with required attributes 1`] = `
 
   
         <button
-          class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   "
+          class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   ct-tooltip__close-button"
           data-component-name="button"
         >
           <svg
