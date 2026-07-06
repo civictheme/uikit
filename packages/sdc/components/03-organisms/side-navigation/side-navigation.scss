@@ -4,8 +4,7 @@
 
 .ct-side-navigation {
   $root: &;
-
-  $border-vertical-width: ct-particle(0.125);
+  $border-width-vertical: ct-particle(0.125);
 
   &__title {
     @include ct-typography('heading-5');
@@ -44,13 +43,13 @@
       &.ct-menu__item--level-0 {
         &:first-child {
           & > .ct-menu__item__link {
-            border-top-width: $border-vertical-width;
+            border-top-width: $border-width-vertical;
             border-top-style: solid;
           }
 
           // Offset the trigger by the top border width.
           &:not([data-collapsible-trigger-no-icon]) > .ct-menu__item__link-trigger[data-collapsible-trigger] {
-            top: $border-vertical-width;
+            top: $border-width-vertical;
           }
         }
       }
@@ -66,7 +65,7 @@
         box-sizing: border-box;
         position: relative;
         padding: ct-spacing() ct-spacing(4) ct-spacing() ct-spacing(2.5);
-        border-bottom-width: $border-vertical-width;
+        border-bottom-width: $border-width-vertical;
         border-bottom-style: solid;
       }
 
