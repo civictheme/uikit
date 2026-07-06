@@ -3,30 +3,30 @@
  */
 
 import Component from './table.twig';
-import Link from '../link/link.twig';
+import ContentLink from '../content-link/content-link.twig';
 
 const getRows = function (theme) {
   return [
     [
-      Link({ theme, text: 'Row 1 with link', url: '#', title: 'Row 1 with link' }),
+      ContentLink({ theme, text: 'Row 1 with link', url: '#', title: 'Row 1 with link' }),
       'Description summary on odd row with vertical spacing',
       'Another column',
       'One more column column',
     ],
     [
-      Link({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
-      Link({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
+      ContentLink({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
+      ContentLink({ theme, text: 'Row 2 with link', url: '#', title: 'Row 2 with link' }),
       'Description summary on even row',
       'Another column',
     ],
     [
-      Link({ theme, text: 'Row 3 with link', url: '#', title: 'Row 3 with link' }),
+      ContentLink({ theme, text: 'Row 3 with link', url: '#', title: 'Row 3 with link' }),
       'Description summary on odd row with vertical spacing',
       'Another column',
       'One more column column',
     ],
     [
-      Link({ theme, text: 'Row 4 with link', url: '#', title: 'Row 4 with link' }),
+      ContentLink({ theme, text: 'Row 4 with link', url: '#', title: 'Row 4 with link' }),
       'Description summary on even row',
       'Another column',
       'One more column column',
