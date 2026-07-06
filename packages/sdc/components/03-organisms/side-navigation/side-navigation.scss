@@ -5,6 +5,8 @@
 .ct-side-navigation {
   $root: &;
 
+  $border-vertical-width: ct-particle(0.125);
+
   &__title {
     @include ct-typography('heading-5');
 
@@ -38,6 +40,20 @@
 
     .ct-menu__item {
       position: relative;
+
+      &.ct-menu__item--level-0 {
+        &:first-child {
+          & > .ct-menu__item__link {
+            border-top-width: $border-vertical-width;
+            border-top-style: solid;
+          }
+
+          // Offset the trigger by the top border width.
+          &:not([data-collapsible-trigger-no-icon]) > .ct-menu__item__link-trigger[data-collapsible-trigger] {
+            top: $border-vertical-width;
+          }
+        }
+      }
     }
 
     .ct-menu__item__link {
@@ -49,23 +65,18 @@
         display: block;
         box-sizing: border-box;
         position: relative;
-        padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
-        border-bottom-width: ct-particle(0.125);
+        padding: ct-spacing() ct-spacing(4) ct-spacing() ct-spacing(2.5);
+        border-bottom-width: $border-vertical-width;
         border-bottom-style: solid;
-      }
-
-      &:first-child {
-        border-top-width: ct-particle(0.125);
-        border-top-style: solid;
       }
 
       &::before {
         content: '';
         display: inline-block;
         position: absolute;
-        top: -1 * ct-particle(0.125);
-        bottom: -1 * ct-particle(0.125);
-        left: -1 * ct-particle(0.125);
+        top: 0;
+        bottom: 0;
+        left: 0;
         width: ct-particle(0.5);
       }
 
@@ -81,16 +92,19 @@
 
     [data-collapsible]:not([data-collapsible-trigger-no-icon]) .ct-menu__item__link-trigger[data-collapsible-trigger] {
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       right: 0;
-      width: ct-spacing(3);
-      height: ct-spacing(3);
-      padding: ct-spacing() ct-spacing(0.25);
+      width: ct-spacing(4);
+      height: calc(var(--ct-typography-text-regular-line-height) + #{ct-spacing(2)});
+      padding: ct-spacing() ct-spacing(0.75);
       z-index: 1;
 
       @include ct-breakpoint(m) {
-        padding: ct-spacing(1.25) ct-spacing(0.25);
+        padding: ct-spacing(1.25) ct-spacing(0.75);
       }
     }
   }
