@@ -1,5 +1,5 @@
 import '../dist/civictheme.stories.css?module';
-import '../dist/civictheme.base.css';
+import '../dist/civictheme.stories.base.css';
 import '../dist/civictheme.variables.css';
 import '../dist/civictheme.base';
 import { useEffect, useChannel } from 'storybook/preview-api';
