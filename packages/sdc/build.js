@@ -19,7 +19,7 @@ import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import path from 'path'
 import { globSync } from 'glob'
-import { execSync, spawn } from 'child_process'
+import { execFileSync, spawn } from 'child_process'
 import * as sass from 'sass-embedded'
 
 // ----------------------------------------------------------------------------- CONFIG AND START
@@ -497,19 +497,8 @@ function lintExclusions() {
 // ----------------------------------------------------------------------------- UTILITIES
 
 function runCommand(command) {
-  execSync(command, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`)
-      return
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`)
-      return
-    }
-    if (stdout) {
-      console.log(stdout)
-    }
-  })
+  const [cmd, ...args] = command.split(/\s+/)
+  execFileSync(cmd, args, { stdio: 'inherit' })
 }
 
 function getImportsFromGlob(path, cwd) {
@@ -538,7 +527,7 @@ function stripJS(js) {
 }
 
 function fullPath(filepath) {
-  return path.resolve(PATH, filepath)
+  return new URL(filepath, import.meta.url).pathname
 }
 
 function modulePath(moduleName) {
