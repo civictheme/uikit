@@ -257,72 +257,21 @@
       }
     }
   }
-}
 
-//
-// Layout has larger gaps when only one sidebar is present.
-// Nested layouts should have the smae larger gaps when only one sidebar is
-// present, but only when the parent layout has no sidebars.
-//
-@include ct-breakpoint($ct-layout-breakpoint) {
-  .ct-layout {
-    $root: &;
-
-    // stylelint-disable-next-line no-duplicate-selectors
-    &#{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner {
-      column-gap: $ct-layout-column-gap-right-only;
-    }
-
-    // stylelint-disable-next-line no-duplicate-selectors
-    &#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner {
-      column-gap: $ct-layout-column-gap-left-only;
-    }
-
-    & > #{$root}__inner {
-      #{$root} {
-        > #{$root}__inner {
-          column-gap: $ct-layout-column-gap;
-        }
+  &#{$root}--no-top-right#{$root}--no-bottom-right {
+    #{$root}__sidebar_top_left,
+    #{$root}__sidebar_bottom_left {
+      @include ct-breakpoint($ct-layout-breakpoint) {
+        padding-right: $ct-layout-sidebar-left-only-padding;
       }
     }
+  }
 
-    // stylelint-disable-next-line no-duplicate-selectors
-    &#{$root}--no-top-left#{$root}--no-bottom-left > #{$root}__inner {
-      #{$root} {
-        &#{$root}--no-top-left#{$root}--no-bottom-left,
-        &#{$root}--no-top-right#{$root}--no-bottom-right {
-          > #{$root}__inner {
-            column-gap: $ct-layout-column-gap;
-          }
-        }
-      }
-    }
-
-    // stylelint-disable-next-line no-duplicate-selectors
-    &#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner {
-      #{$root} {
-        &#{$root}--no-top-left#{$root}--no-bottom-left,
-        &#{$root}--no-top-right#{$root}--no-bottom-right {
-          > #{$root}__inner {
-            column-gap: $ct-layout-column-gap;
-          }
-        }
-      }
-    }
-
-    &#{$root}--no-top-left#{$root}--no-bottom-left#{$root}--no-top-right#{$root}--no-bottom-right > #{$root}__inner {
-      #{$root} {
-        &#{$root}--no-top-left#{$root}--no-bottom-left {
-          > #{$root}__inner {
-            column-gap: $ct-layout-column-gap-right-only;
-          }
-        }
-
-        &#{$root}--no-top-right#{$root}--no-bottom-right {
-          > #{$root}__inner {
-            column-gap: $ct-layout-column-gap-right-only;
-          }
-        }
+  &#{$root}--no-top-left#{$root}--no-bottom-left {
+    #{$root}__sidebar_top_right,
+    #{$root}__sidebar_bottom_right {
+      @include ct-breakpoint($ct-layout-breakpoint) {
+        padding-left: $ct-layout-sidebar-right-only-padding;
       }
     }
   }
