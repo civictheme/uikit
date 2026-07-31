@@ -224,13 +224,13 @@
       "heading-2": {
         "xxs": [
           "$ct-font-base-size * 1.75",
-          "$ct-font-base-line-height * 2.25",
+          "$ct-font-base-line-height * 2.1875",
           "'bold'",
           "'primary'",
           "-0.5px"
         ],
         "m": [
-          "$ct-font-base-size * 2.5",
+          "$ct-font-base-size * 2.4375",
           "$ct-font-base-line-height * 3",
           "'bold'",
           "'primary'",
@@ -240,7 +240,7 @@
       "heading-3": {
         "xxs": [
           "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 2",
+          "$ct-font-base-line-height * 1.9375",
           "'bold'",
           "'primary'",
           "-0.35px"
@@ -256,14 +256,14 @@
       "heading-4": {
         "xxs": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.5625",
           "'bold'",
           "'primary'",
           "-0.25px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 2",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 1.9375",
           "'bold'",
           "'primary'",
           "-0.4px"
@@ -272,26 +272,35 @@
       "heading-5": {
         "xxs": [
           "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.375",
+          "$ct-font-base-line-height * 1.5",
           "'bold'",
           "'primary'",
           "0"
         ],
         "m": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.75",
           "'bold'",
           "'primary'",
           "-0.2px"
         ]
       },
-      "heading-6": [
-        "$ct-font-base-size",
-        "$ct-font-base-line-height * 1.625",
-        "'bold'",
-        "'primary'",
-        "0"
-      ],
+      "heading-6": {
+        "xxs": [
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.625",
+          "'bold'",
+          "'primary'",
+          "0"
+        ],
+        "m": [
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.75",
+          "'bold'",
+          "'primary'",
+          "0"
+        ]
+      },
       "text-extra-large": {
         "xxs": [
           "$ct-font-base-size * 1.25",
@@ -1134,13 +1143,15 @@
     "ct-map-light-wrapper-background-color": "ct-color-light('background')",
     "ct-map-dark-wrapper-background-color": "ct-color-dark('background')",
     "ct-next-step-border-radius": "$ct-border-radius",
-    "ct-next-step-stripe-width": "var(--ct-stripe-size)",
+    "ct-next-step-stripe-width": "calc(var(--ct-stripe-size) - ct-particle(0.125))",
     "ct-next-step-light-background-color": "ct-color-light('background-light')",
     "ct-next-step-light-border-color": "ct-color-light('border-light')",
     "ct-next-step-light-stripe-background-color": "ct-color-light('highlight')",
+    "ct-next-step-light-title-color": "ct-color-light('heading')",
     "ct-next-step-dark-background-color": "ct-color-dark('background')",
     "ct-next-step-dark-border-color": "ct-color-dark('border')",
     "ct-next-step-dark-stripe-background-color": "ct-color-dark('highlight')",
+    "ct-next-step-dark-title-color": "ct-color-dark('heading')",
     "ct-table-of-contents-link-active-border-radius": "math.div($ct-border-radius, 2)",
     "ct-table-of-contents-max-width": "50%",
     "ct-table-of-contents-min-width": "50%",
