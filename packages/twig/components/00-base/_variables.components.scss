@@ -605,7 +605,7 @@ $ct-textfield-dark-outline-color: $ct-outline-dark !default;
 $ct-accordion-button-border-radius: $ct-border-radius !default;
 $ct-accordion-header-border-radius: $ct-border-radius !default;
 $ct-accordion-item-border-radius: $ct-border-radius !default;
-$ct-accordion-stripe-width: calc(var(--ct-stripe-size) - ct-particle(0.125)) !default;
+$ct-accordion-stripe-width: var(--ct-stripe-size) !default;
 $ct-accordion-space-horizontal: ct-spacing(3) !default;
 $ct-accordion-space-horizontal-desktop: ct-spacing(7) !default;
 $ct-accordion-light-background-color: ct-color-light('background-light') !default;
