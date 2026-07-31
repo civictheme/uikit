@@ -6995,7 +6995,7 @@ ol ol ol {
 }
 @media (min-width: 768px) {
   .ct-callout__wrapper {
-    padding: 2rem 2rem 2rem 2.375rem;
+    padding: 2rem 2rem 2rem calc(2rem + var(--ct-callout-stripe-width));
   }
 }
 .ct-callout__wrapper {
