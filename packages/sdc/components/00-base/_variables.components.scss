@@ -401,7 +401,7 @@ $ct-field-message-dark-warning-icon-color: $ct-field-message-dark-warning-color 
 //
 // Form/Fieldset.
 //
-$ct-fieldset-stripe-width: var(--ct-stripe-size) !default;
+$ct-fieldset-stripe-width: $ct-stripe-size !default;
 $ct-fieldset-light-stripe-border-color: ct-color-light('highlight') !default;
 $ct-fieldset-dark-stripe-border-color: ct-color-dark('highlight') !default;
 
@@ -605,7 +605,7 @@ $ct-textfield-dark-outline-color: $ct-outline-dark !default;
 $ct-accordion-button-border-radius: $ct-border-radius !default;
 $ct-accordion-header-border-radius: $ct-border-radius !default;
 $ct-accordion-item-border-radius: $ct-border-radius !default;
-$ct-accordion-stripe-width: var(--ct-stripe-size) !default;
+$ct-accordion-stripe-width: $ct-stripe-size !default;
 $ct-accordion-space-horizontal: ct-spacing(3) !default;
 $ct-accordion-space-horizontal-desktop: ct-spacing(7) !default;
 $ct-accordion-light-background-color: ct-color-light('background-light') !default;
@@ -703,7 +703,7 @@ $ct-breadcrumb-dark-active-color: $ct-breadcrumb-dark-color !default;
 // Callout.
 //
 $ct-callout-border-radius: $ct-border-radius !default;
-$ct-callout-stripe-width: var(--ct-stripe-size) !default;
+$ct-callout-stripe-width: $ct-stripe-size !default;
 $ct-callout-light-background-color: ct-color-light('background') !default;
 $ct-callout-light-stripe-background-color: ct-color-light('highlight') !default;
 $ct-callout-dark-background-color: ct-color-dark('background') !default;
@@ -744,7 +744,7 @@ $ct-map-dark-wrapper-background-color: ct-color-dark('background') !default;
 // Next steps.
 //
 $ct-next-step-border-radius: $ct-border-radius !default;
-$ct-next-step-stripe-width: calc(var(--ct-stripe-size) - ct-particle(0.125)) !default;
+$ct-next-step-stripe-width: $ct-stripe-size !default;
 $ct-next-step-light-background-color: ct-color-light('background-light') !default;
 $ct-next-step-light-border-color: ct-color-light('border-light') !default;
 $ct-next-step-light-stripe-background-color: ct-color-light('highlight') !default;
@@ -847,7 +847,7 @@ $ct-pagination-dark-border-color: ct-color-dark('border') !default;
 $ct-event-card-border-radius: $ct-border-radius !default;
 $ct-event-card-image-aspect-ratio: #{'5/3'} !default;
 $ct-event-card-link-graphic-hover-opacity: 0.1 !default;
-$ct-event-card-stripe-height: var(--ct-stripe-size) !default;
+$ct-event-card-stripe-height: $ct-stripe-size !default;
 $ct-event-card-light-background-color: ct-color-light('background-light') !default;
 $ct-event-card-light-hover-outline-color: ct-color-light('border') !default;
 $ct-event-card-light-title-color: ct-color-light('heading') !default;
@@ -895,7 +895,7 @@ $ct-navigation-card-dark-icon-color: $ct-link-dark-color !default;
 $ct-promo-card-border-radius: $ct-border-radius !default;
 $ct-promo-card-image-aspect-ratio: #{'5/3'} !default;
 $ct-promo-card-link-graphic-hover-opacity: 0.1 !default;
-$ct-promo-card-stripe-height: var(--ct-stripe-size) !default;
+$ct-promo-card-stripe-height: $ct-stripe-size !default;
 $ct-promo-card-light-background-color: ct-color-light('background-light') !default;
 $ct-promo-card-light-hover-outline-color: ct-color-light('border') !default;
 $ct-promo-card-light-title-color: ct-color-light('heading') !default;
@@ -936,7 +936,7 @@ $ct-publication-card-dark-filename-color: ct-color-dark('interaction-background'
 // List/Service card.
 //
 $ct-service-card-border-radius: $ct-border-radius !default;
-$ct-service-card-stripe-height: var(--ct-stripe-size) !default;
+$ct-service-card-stripe-height: $ct-stripe-size !default;
 $ct-service-card-light-background-color: ct-color-light('background-light') !default;
 $ct-service-card-light-stripe-background-color: ct-color-light('highlight') !default;
 $ct-service-card-dark-background-color: ct-color-dark('background') !default;
@@ -965,7 +965,7 @@ $ct-subject-card-dark-image-opacity: 20% !default;
 // Fast fact card.
 //
 $ct-fast-fact-card-border-radius: $ct-border-radius !default;
-$ct-fast-fact-card-stripe-height: var(--ct-stripe-size) !default;
+$ct-fast-fact-card-stripe-height: $ct-stripe-size !default;
 $ct-fast-fact-card-max-width: ct-particle(6.25) !default;
 $ct-fast-fact-card-max-height: ct-particle(12.5) !default;
 $ct-fast-fact-card-light-background-color: ct-color-light('background-light') !default;
