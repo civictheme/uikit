@@ -1143,7 +1143,7 @@
     "ct-map-light-wrapper-background-color": "ct-color-light('background')",
     "ct-map-dark-wrapper-background-color": "ct-color-dark('background')",
     "ct-next-step-border-radius": "$ct-border-radius",
-    "ct-next-step-stripe-width": "calc($ct-stripe-size - ct-particle(0.125))",
+    "ct-next-step-stripe-width": "$ct-stripe-size",
     "ct-next-step-light-background-color": "ct-color-light('background-light')",
     "ct-next-step-light-border-color": "ct-color-light('border-light')",
     "ct-next-step-light-stripe-background-color": "ct-color-light('highlight')",
