@@ -376,7 +376,7 @@ html {
   --ct-field-message-dark-warning-border-color: var(--ct-color-dark-warning);
   --ct-field-message-dark-warning-color: var(--ct-color-dark-body);
   --ct-field-message-dark-warning-icon-color: var(--ct-color-dark-body);
-  --ct-fieldset-stripe-width: 0.375rem;
+  --ct-fieldset-stripe-width: var(--ct-stripe-size);
   --ct-fieldset-light-stripe-border-color: var(--ct-color-light-highlight);
   --ct-fieldset-dark-stripe-border-color: var(--ct-color-dark-highlight);
   --ct-input-border-radius: 0.25rem;
@@ -548,7 +548,7 @@ html {
   --ct-accordion-button-border-radius: 0.25rem;
   --ct-accordion-header-border-radius: 0.25rem;
   --ct-accordion-item-border-radius: 0.25rem;
-  --ct-accordion-stripe-width: 0.375rem;
+  --ct-accordion-stripe-width: var(--ct-stripe-size);
   --ct-accordion-space-horizontal: 1.5rem;
   --ct-accordion-space-horizontal-desktop: 3.5rem;
   --ct-accordion-light-background-color: var(--ct-color-light-background-light);
@@ -623,7 +623,7 @@ html {
   --ct-breadcrumb-dark-color: var(--ct-color-dark-body);
   --ct-breadcrumb-dark-active-color: var(--ct-color-dark-body);
   --ct-callout-border-radius: 0.25rem;
-  --ct-callout-stripe-width: 0.375rem;
+  --ct-callout-stripe-width: var(--ct-stripe-size);
   --ct-callout-light-background-color: var(--ct-color-light-background);
   --ct-callout-light-stripe-background-color: var(--ct-color-light-highlight);
   --ct-callout-dark-background-color: var(--ct-color-dark-background);
@@ -642,7 +642,7 @@ html {
   --ct-map-light-wrapper-background-color: var(--ct-color-light-background);
   --ct-map-dark-wrapper-background-color: var(--ct-color-dark-background);
   --ct-next-step-border-radius: 0.25rem;
-  --ct-next-step-stripe-width: 0.375rem;
+  --ct-next-step-stripe-width: var(--ct-stripe-size);
   --ct-next-step-light-background-color: var(--ct-color-light-background-light);
   --ct-next-step-light-border-color: var(--ct-color-light-border-light);
   --ct-next-step-light-stripe-background-color: var(--ct-color-light-highlight);
@@ -712,7 +712,7 @@ html {
   --ct-event-card-border-radius: 0.25rem;
   --ct-event-card-image-aspect-ratio: 5/3;
   --ct-event-card-link-graphic-hover-opacity: 0.1;
-  --ct-event-card-stripe-height: 0.375rem;
+  --ct-event-card-stripe-height: var(--ct-stripe-size);
   --ct-event-card-light-background-color: var(--ct-color-light-background-light);
   --ct-event-card-light-hover-outline-color: var(--ct-color-light-border);
   --ct-event-card-light-title-color: var(--ct-color-light-heading);
@@ -751,7 +751,7 @@ html {
   --ct-promo-card-border-radius: 0.25rem;
   --ct-promo-card-image-aspect-ratio: 5/3;
   --ct-promo-card-link-graphic-hover-opacity: 0.1;
-  --ct-promo-card-stripe-height: 0.375rem;
+  --ct-promo-card-stripe-height: var(--ct-stripe-size);
   --ct-promo-card-light-background-color: var(--ct-color-light-background-light);
   --ct-promo-card-light-hover-outline-color: var(--ct-color-light-border);
   --ct-promo-card-light-title-color: var(--ct-color-light-heading);
@@ -784,7 +784,7 @@ html {
   --ct-publication-card-dark-title-icon-color: var(--ct-color-dark-heading);
   --ct-publication-card-dark-filename-color: var(--ct-color-dark-interaction-background);
   --ct-service-card-border-radius: 0.25rem;
-  --ct-service-card-stripe-height: 0.375rem;
+  --ct-service-card-stripe-height: var(--ct-stripe-size);
   --ct-service-card-light-background-color: var(--ct-color-light-background-light);
   --ct-service-card-light-stripe-background-color: var(--ct-color-light-highlight);
   --ct-service-card-dark-background-color: var(--ct-color-dark-background);
@@ -805,7 +805,7 @@ html {
   --ct-subject-card-dark-title-hover-color: var(--ct-color-dark-interaction-background);
   --ct-subject-card-dark-image-opacity: 20%;
   --ct-fast-fact-card-border-radius: 0.25rem;
-  --ct-fast-fact-card-stripe-height: 0.375rem;
+  --ct-fast-fact-card-stripe-height: var(--ct-stripe-size);
   --ct-fast-fact-card-max-width: 3.125rem;
   --ct-fast-fact-card-max-height: 6.25rem;
   --ct-fast-fact-card-light-background-color: var(--ct-color-light-background-light);
