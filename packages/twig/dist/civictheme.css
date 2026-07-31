@@ -6172,7 +6172,7 @@ ol ol ol {
   top: -0.0625rem;
   bottom: -0.0625rem;
   left: -0.0625rem;
-  width: calc(var(--ct-accordion-stripe-width) + 0.0625rem);
+  width: var(--ct-accordion-stripe-width);
   border-top-left-radius: var(--ct-accordion-item-border-radius);
   border-bottom-left-radius: var(--ct-accordion-item-border-radius);
   transition: width 0.25s;
@@ -6202,7 +6202,7 @@ ol ol ol {
   display: flex;
   text-align: left;
   margin: 0;
-  padding: 1.5rem 1.5rem 1.5rem 2.25rem;
+  padding: 1.5rem 1.5rem 1.5rem 2.1875rem;
   justify-content: stretch;
   width: 100%;
   align-items: center;
@@ -6213,7 +6213,7 @@ ol ol ol {
   border-bottom-right-radius: 0;
 }
 .ct-accordion .ct-accordion__panels__panel__content__inner {
-  padding: 0 1.5rem 1.5rem 2.25rem;
+  padding: 0 1.5rem 1.5rem 2.1875rem;
   margin-bottom: 0;
 }
 .ct-accordion.ct-theme-light {
@@ -7845,7 +7845,7 @@ ol ol ol {
   top: -0.0625rem;
   bottom: -0.0625rem;
   left: -0.0625rem;
-  width: calc(var(--ct-next-step-stripe-width) + 0.0625rem);
+  width: var(--ct-next-step-stripe-width);
   border-top-left-radius: var(--ct-next-step-border-radius);
   border-bottom-left-radius: var(--ct-next-step-border-radius);
   transition: width 0.25s;

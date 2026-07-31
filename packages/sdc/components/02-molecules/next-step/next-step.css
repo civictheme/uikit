@@ -23,7 +23,7 @@
   top: -0.0625rem;
   bottom: -0.0625rem;
   left: -0.0625rem;
-  width: calc(var(--ct-next-step-stripe-width) + 0.0625rem);
+  width: var(--ct-next-step-stripe-width);
   border-top-left-radius: var(--ct-next-step-border-radius);
   border-bottom-left-radius: var(--ct-next-step-border-radius);
   transition: width 0.25s;
