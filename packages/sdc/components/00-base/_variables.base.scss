@@ -258,7 +258,8 @@ $ct-typography-default: (
   'label-large': ($ct-font-base-size * 1.125, $ct-font-base-line-height * 1.5, 'semibold', 'primary', 0),
   'label-regular': ($ct-font-base-size, $ct-font-base-line-height * 1.25, 'semibold', 'primary', 0),
   'label-small': ($ct-font-base-size, $ct-font-base-line-height * 1.25, 'regular', 'primary', 0),
-  'label-extra-small': ($ct-font-base-size * 0.875, $ct-font-base-line-height * 1.125, 'regular', 'primary', 0),  // Special elements.
+  'label-extra-small': ($ct-font-base-size * 0.875, $ct-font-base-line-height * 1.125, 'regular', 'primary', 0),
+  // Special elements.
   'quote': (
     'xxs': ($ct-font-base-size * 1.25, $ct-font-base-line-height * 1.9375, 'regular', 'primary', -0.15px),
     'm': ($ct-font-base-size * 1.5625, $ct-font-base-line-height * 2.5, 'regular', 'primary', -0.35px)
