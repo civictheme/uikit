@@ -11701,7 +11701,7 @@ html {
   --ct-accordion-button-border-radius: 0.25rem;
   --ct-accordion-header-border-radius: 0.25rem;
   --ct-accordion-item-border-radius: 0.25rem;
-  --ct-accordion-stripe-width: calc(var(--ct-stripe-size) - 0.0625rem);
+  --ct-accordion-stripe-width: var(--ct-stripe-size);
   --ct-accordion-space-horizontal: 1.5rem;
   --ct-accordion-space-horizontal-desktop: 3.5rem;
   --ct-accordion-light-background-color: var(--ct-color-light-background-light);
