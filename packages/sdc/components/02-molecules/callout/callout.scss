@@ -14,7 +14,7 @@
     gap: ct-spacing(2);
 
     @include ct-breakpoint(m) {
-      padding: ct-spacing(4) ct-spacing(4) ct-spacing(4) ct-spacing(4) + $ct-stripe-size;
+      padding: ct-spacing(4) ct-spacing(4) ct-spacing(4) calc(ct-spacing(4) + var(--ct-callout-stripe-width));
     }
 
     @include ct-highlight-stripe-vertical(var(--ct-callout-stripe-width), var(--ct-callout-border-radius), 0);
