@@ -7,7 +7,7 @@
 
   &__wrapper {
     border-radius: var(--ct-callout-border-radius);
-    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(3) + $ct-stripe-size;
+    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) calc(ct-spacing(3) + var(--ct-callout-stripe-width));
     margin: 0;
     display: flex;
     flex-direction: column;

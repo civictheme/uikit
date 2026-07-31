@@ -65,7 +65,7 @@
     display: flex;
     text-align: left;
     margin: 0;
-    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(3.5) + $ct-stripe-size;
+    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) calc(ct-spacing(3.5) + var(--ct-accordion-stripe-width));
     justify-content: stretch;
     width: 100%;
     align-items: center;
@@ -78,7 +78,7 @@
   }
 
   #{$root}__panels__panel__content__inner {
-    padding: 0 ct-spacing(3) ct-spacing(3) ct-spacing(3.5) + $ct-stripe-size;
+    padding: 0 ct-spacing(3) ct-spacing(3) calc(ct-spacing(3.5) + var(--ct-accordion-stripe-width));
     margin-bottom: 0;
   }
 
