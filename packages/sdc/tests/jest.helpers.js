@@ -1,4 +1,5 @@
 import { render, Twig } from 'twig-testing-library';
+import { createAttribute } from '@civictheme/drupal-attribute';
 import * as fs from 'node:fs';
 import { globSync } from 'glob';
 
@@ -33,6 +34,15 @@ const wrappedRender = async (template, props = {}, namespaces = {}, twigCallback
     TwigInstance.twig = function (options) {
       options.autoescape = false;
       options.allowInlineIncludes = true;
+      // twig-testing-library registers create_attribute as
+      // `new DrupalAttribute(Object.entries(value))`, which carries twig.js's
+      // `_keys` bookkeeping property into the markup as an attribute. It does so
+      // inside loadTemplate, which runs after this callback, so registering at
+      // module scope or directly here would be overwritten. loadTemplate only
+      // reassigns twigAsync, and twigAsync calls twig() - so this wrapper is the
+      // first hook that runs after its registration. createAttribute drops
+      // `_keys` and uses it to order the remaining attributes.
+      TwigInstance.extendFunction('create_attribute', createAttribute);
       return originalTwig(options);
     };
     twigCallback(TwigInstance);
