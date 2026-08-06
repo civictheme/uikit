@@ -9207,6 +9207,11 @@ ol ol ol {
   display: flex;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .ct-alert .ct-alert__summary {
+    gap: 1.5rem;
+  }
+}
 .ct-alert .ct-alert__summary p:nth-last-child(-n+2) {
   margin-bottom: 0;
 }
@@ -9218,6 +9223,7 @@ ol ol ol {
   right: 0;
   background-color: transparent;
   padding: 0;
+  flex-shrink: 0;
 }
 @media (min-width: 0) {
   .ct-alert .ct-alert__dismiss-button .ct-icon {

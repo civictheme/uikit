@@ -46,6 +46,10 @@
     display: flex;
     align-items: center;
 
+    @include ct-breakpoint(m) {
+      gap: ct-spacing(3);
+    }
+
     p {
       &:nth-last-child(-n+2) {
         margin-bottom: 0;
@@ -61,6 +65,7 @@
     right: 0;
     background-color: transparent;
     padding: 0;
+    flex-shrink: 0;
 
     .ct-icon {
       @include ct-icon-size('regular');
