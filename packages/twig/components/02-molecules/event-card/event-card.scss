@@ -70,9 +70,6 @@
   }
 
   #{$root}__title-link {
-    @include ct-font-size-inherit();
-
-    padding: 0;
     text-decoration: none;
 
     &:focus-visible {
