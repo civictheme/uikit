@@ -164,13 +164,12 @@
         &.ct-menu__item--active-trail {
           > .ct-menu__item__link {
             &,
-            &:active,
             &:visited {
               @include _ct-side-navigation-print-menu-item(
-                ct-component-var($root, $theme, link, child, active, background-color),
-                ct-component-var($root, $theme, link, child, active, border-color),
-                ct-component-var($root, $theme, link, child, active, color),
-                ct-component-var($root, $theme, link, child, active, stripe-background-color)
+                ct-component-var($root, $theme, link, child, active-trail, background-color),
+                ct-component-var($root, $theme, link, child, active-trail, border-color),
+                ct-component-var($root, $theme, link, child, active-trail, color),
+                ct-component-var($root, $theme, link, child, active-trail, stripe-background-color)
               );
             }
 
@@ -218,13 +217,12 @@
           &.ct-menu__item--active-trail {
             > .ct-menu__item__link {
               &,
-              &:active,
               &:visited {
                 @include _ct-side-navigation-print-menu-item(
-                  ct-component-var($root, $theme, link, parent, active, background-color),
-                  ct-component-var($root, $theme, link, parent, active, border-color),
-                  ct-component-var($root, $theme, link, parent, active, color),
-                  ct-component-var($root, $theme, link, parent, active, stripe-background-color)
+                  ct-component-var($root, $theme, link, parent, active-trail, background-color),
+                  ct-component-var($root, $theme, link, parent, active-trail, border-color),
+                  ct-component-var($root, $theme, link, parent, active-trail, color),
+                  ct-component-var($root, $theme, link, parent, active-trail, stripe-background-color)
                 );
               }
 
