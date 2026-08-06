@@ -9,6 +9,7 @@
   border-style: solid;
   border-width: var(--ct-tag-border-width);
   display: inline-flex;
+  align-items: center
   gap: ct-spacing(0.5);
 
   @include ct-typography('label-extra-small');
