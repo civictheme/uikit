@@ -15,6 +15,11 @@
         "twig/twig": "^3.16.0",
         "vincentlanglet/twig-cs-fixer": "^3.0"
     },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    },
     "scripts": {
         "lint": "vendor/bin/twig-cs-fixer --no-cache",
         "lint-fix": "vendor/bin/twig-cs-fixer --no-cache --fix"
