@@ -968,7 +968,7 @@ html {
   --ct-navigation-dark-drawer-sub-menu-item-hover-color: var(--ct-color-dark-interaction-hover-text);
   --ct-navigation-dark-drawer-sub-menu-item-active-background-color: var(--ct-color-dark-body);
   --ct-navigation-dark-drawer-sub-menu-item-active-color: var(--ct-color-dark-background);
-  --ct-side-navigation-link-active-border-radius: 0.125rem;
+  --ct-side-navigation-link-active-border-radius: 0;
   --ct-side-navigation-light-title-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-expanded-icon-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-parent-background-color: var(--ct-color-light-background-light);
@@ -980,7 +980,7 @@ html {
   --ct-side-navigation-light-link-parent-hover-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-parent-hover-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-light-link-parent-active-background-color: var(--ct-color-light-background);
-  --ct-side-navigation-light-link-parent-active-border-color: var(--ct-color-light-border-light);
+  --ct-side-navigation-light-link-parent-active-border-color: var(--ct-color-light-border);
   --ct-side-navigation-light-link-parent-active-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-parent-active-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-light-link-child-background-color: var(--ct-color-light-background-light);
@@ -992,7 +992,7 @@ html {
   --ct-side-navigation-light-link-child-hover-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-child-hover-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-light-link-child-active-background-color: var(--ct-color-light-background);
-  --ct-side-navigation-light-link-child-active-border-color: var(--ct-color-light-border-light);
+  --ct-side-navigation-light-link-child-active-border-color: var(--ct-color-light-border);
   --ct-side-navigation-light-link-child-active-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-child-active-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-dark-title-color: var(--ct-color-dark-heading);

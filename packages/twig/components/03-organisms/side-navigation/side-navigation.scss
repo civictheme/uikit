@@ -150,6 +150,15 @@
               ct-component-var($root, $theme, link, child, hover, stripe-background-color)
             );
           }
+
+          &:active {
+            @include _ct-side-navigation-print-menu-item(
+              ct-component-var($root, $theme, link, child, active, background-color),
+              ct-component-var($root, $theme, link, child, active, border-color),
+              ct-component-var($root, $theme, link, child, active, color),
+              ct-component-var($root, $theme, link, child, active, stripe-background-color)
+            );
+          }
         }
 
         &.ct-menu__item--active-trail {
@@ -193,6 +202,15 @@
                 ct-component-var($root, $theme, link, parent, hover, border-color),
                 ct-component-var($root, $theme, link, parent, hover, color),
                 ct-component-var($root, $theme, link, parent, hover, stripe-background-color)
+              );
+            }
+
+            &:active {
+              @include _ct-side-navigation-print-menu-item(
+                ct-component-var($root, $theme, link, parent, active, background-color),
+                ct-component-var($root, $theme, link, parent, active, border-color),
+                ct-component-var($root, $theme, link, parent, active, color),
+                ct-component-var($root, $theme, link, parent, active, stripe-background-color)
               );
             }
           }

@@ -10749,6 +10749,20 @@ ol ol ol {
   outline-style: solid;
   outline-color: var(--ct-outline-light);
 }
+.ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active {
+  background-color: var(--ct-side-navigation-light-link-child-active-background-color);
+  border-color: var(--ct-side-navigation-light-link-child-active-border-color);
+  color: var(--ct-side-navigation-light-link-child-active-color);
+}
+.ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active::before {
+  background-color: var(--ct-side-navigation-light-link-child-active-stripe-background-color);
+}
+.ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active:focus-visible {
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
+  outline-style: solid;
+  outline-color: var(--ct-outline-light);
+}
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:active, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-light-link-child-active-background-color);
   border-color: var(--ct-side-navigation-light-link-child-active-border-color);
@@ -10800,6 +10814,20 @@ ol ol ol {
   background-color: var(--ct-side-navigation-light-link-parent-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible:focus-visible {
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
+  outline-style: solid;
+  outline-color: var(--ct-outline-light);
+}
+.ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active {
+  background-color: var(--ct-side-navigation-light-link-parent-active-background-color);
+  border-color: var(--ct-side-navigation-light-link-parent-active-border-color);
+  color: var(--ct-side-navigation-light-link-parent-active-color);
+}
+.ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active::before {
+  background-color: var(--ct-side-navigation-light-link-parent-active-stripe-background-color);
+}
+.ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active:focus-visible {
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
@@ -10867,6 +10895,20 @@ ol ol ol {
   outline-style: solid;
   outline-color: var(--ct-outline-light);
 }
+.ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active {
+  background-color: var(--ct-side-navigation-dark-link-child-active-background-color);
+  border-color: var(--ct-side-navigation-dark-link-child-active-border-color);
+  color: var(--ct-side-navigation-dark-link-child-active-color);
+}
+.ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active::before {
+  background-color: var(--ct-side-navigation-dark-link-child-active-stripe-background-color);
+}
+.ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active:focus-visible {
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
+  outline-style: solid;
+  outline-color: var(--ct-outline-light);
+}
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:active, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-dark-link-child-active-background-color);
   border-color: var(--ct-side-navigation-dark-link-child-active-border-color);
@@ -10918,6 +10960,20 @@ ol ol ol {
   background-color: var(--ct-side-navigation-dark-link-parent-hover-stripe-background-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover:focus-visible, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible:focus-visible {
+  outline-offset: var(--ct-outline-offset);
+  outline-width: var(--ct-outline-width);
+  outline-style: solid;
+  outline-color: var(--ct-outline-light);
+}
+.ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active {
+  background-color: var(--ct-side-navigation-dark-link-parent-active-background-color);
+  border-color: var(--ct-side-navigation-dark-link-parent-active-border-color);
+  color: var(--ct-side-navigation-dark-link-parent-active-color);
+}
+.ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active::before {
+  background-color: var(--ct-side-navigation-dark-link-parent-active-stripe-background-color);
+}
+.ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active:focus-visible {
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
@@ -12125,7 +12181,7 @@ html {
   --ct-navigation-dark-drawer-sub-menu-item-hover-color: var(--ct-color-dark-interaction-hover-text);
   --ct-navigation-dark-drawer-sub-menu-item-active-background-color: var(--ct-color-dark-body);
   --ct-navigation-dark-drawer-sub-menu-item-active-color: var(--ct-color-dark-background);
-  --ct-side-navigation-link-active-border-radius: 0.125rem;
+  --ct-side-navigation-link-active-border-radius: 0;
   --ct-side-navigation-light-title-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-expanded-icon-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-parent-background-color: var(--ct-color-light-background-light);
@@ -12137,19 +12193,19 @@ html {
   --ct-side-navigation-light-link-parent-hover-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-parent-hover-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-light-link-parent-active-background-color: var(--ct-color-light-background);
-  --ct-side-navigation-light-link-parent-active-border-color: var(--ct-color-light-border-light);
+  --ct-side-navigation-light-link-parent-active-border-color: var(--ct-color-light-border);
   --ct-side-navigation-light-link-parent-active-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-parent-active-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-light-link-child-background-color: var(--ct-color-light-background-light);
-  --ct-side-navigation-light-link-child-border-color: var(--ct-color-light-border-light);
+  --ct-side-navigation-light-link-child-border-color: var(--ct-color-light-border);
   --ct-side-navigation-light-link-child-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-child-stripe-background-color: var(--ct-color-light-border-light);
   --ct-side-navigation-light-link-child-hover-background-color: var(--ct-color-light-background-dark);
-  --ct-side-navigation-light-link-child-hover-border-color: var(--ct-color-light-border-light);
+  --ct-side-navigation-light-link-child-hover-border-color: var(--ct-color-light-border);
   --ct-side-navigation-light-link-child-hover-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-child-hover-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-light-link-child-active-background-color: var(--ct-color-light-background);
-  --ct-side-navigation-light-link-child-active-border-color: var(--ct-color-light-border-light);
+  --ct-side-navigation-light-link-child-active-border-color: var(--ct-color-light-border);
   --ct-side-navigation-light-link-child-active-color: var(--ct-color-light-heading);
   --ct-side-navigation-light-link-child-active-stripe-background-color: var(--ct-color-light-highlight);
   --ct-side-navigation-dark-title-color: var(--ct-color-dark-heading);

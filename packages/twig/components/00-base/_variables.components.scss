@@ -1195,7 +1195,7 @@ $ct-navigation-breakpoint: $ct-header-desktop-menu-breakpoint !default;
 //
 // Navigation/Side navigation.
 //
-$ct-side-navigation-link-active-border-radius: math.div($ct-border-radius, 2) !default;
+$ct-side-navigation-link-active-border-radius: 0 !default;
 $ct-side-navigation-light-title-color: ct-color-light('heading') !default;
 $ct-side-navigation-light-link-expanded-icon-color: ct-color-light('heading') !default;
 $ct-side-navigation-light-link-parent-background-color: ct-color-light('background-light') !default;
@@ -1207,11 +1207,11 @@ $ct-side-navigation-light-link-parent-hover-border-color: $ct-side-navigation-li
 $ct-side-navigation-light-link-parent-hover-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-parent-hover-stripe-background-color: ct-color-light('highlight') !default;
 $ct-side-navigation-light-link-parent-active-background-color: ct-color-light('background') !default;
-$ct-side-navigation-light-link-parent-active-border-color: $ct-side-navigation-light-link-parent-border-color !default;
+$ct-side-navigation-light-link-parent-active-border-color: ct-color-light('border') !default;
 $ct-side-navigation-light-link-parent-active-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-parent-active-stripe-background-color: ct-color-light('highlight') !default;
 $ct-side-navigation-light-link-child-background-color: $ct-side-navigation-light-link-parent-background-color !default;
-$ct-side-navigation-light-link-child-border-color: $ct-side-navigation-light-link-parent-border-color !default;
+$ct-side-navigation-light-link-child-border-color: ct-color-light('border') !default;
 $ct-side-navigation-light-link-child-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-child-stripe-background-color: $ct-side-navigation-light-link-parent-stripe-background-color !default;
 $ct-side-navigation-light-link-child-hover-background-color: $ct-side-navigation-light-link-parent-hover-background-color !default;
