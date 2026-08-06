@@ -18,7 +18,7 @@
   }
 
   &__wrapper {
-    padding: ct-spacing(3) 0;
+    padding: ct-spacing(4) 0 ct-spacing(5) 0;
 
     @include ct-breakpoint(m) {
       padding: ct-spacing(7) 0;
@@ -35,7 +35,7 @@
   }
 
   &__links {
-    margin-top: ct-spacing(3);
+    margin-top: ct-spacing(2);
 
     @include ct-breakpoint(m) {
       margin-top: 0;
