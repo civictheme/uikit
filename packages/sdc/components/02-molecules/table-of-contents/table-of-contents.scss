@@ -67,6 +67,11 @@
     &:active {
       outline: 0 !important;
       border-radius: 0 var(--ct-table-of-contents-link-active-border-radius) var(--ct-table-of-contents-link-active-border-radius) 0;
+
+      &::before {
+        top: -1 * ct-particle(0.125);
+        bottom: -1 * ct-particle(0.125);
+      }
     }
 
     &:focus-visible {
