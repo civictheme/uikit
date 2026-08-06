@@ -9163,7 +9163,7 @@ ol ol ol {
 
 .ct-alert {
   position: relative;
-  padding: 1rem;
+  padding: 1rem 0;
   font-size: var(--ct-typography-text-small-font-size);
   line-height: var(--ct-typography-text-small-line-height);
   font-family: var(--ct-typography-text-small-font-name);
@@ -9172,7 +9172,7 @@ ol ol ol {
 }
 @media (min-width: 768px) {
   .ct-alert {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 }
 .ct-alert .container {

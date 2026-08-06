@@ -8,10 +8,10 @@
   $root: &;
 
   position: relative;
-  padding: ct-spacing(2);
+  padding: ct-spacing(2) 0;
 
   @include ct-breakpoint(m) {
-    padding: ct-spacing(3);
+    padding: ct-spacing(3) 0;
   }
 
   @include ct-typography('text-small');
