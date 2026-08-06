@@ -96,9 +96,13 @@
           // Extract format from file extension.
           $format: string.slice($path, ct-string-last-index($path, '.') + 1);
 
-          // Handle special case for EOT and IE.
+          // Handle special cases for EOT / OTF / TTF.
           @if $format == 'eot' {
             $format: 'embedded-opentype';
+          } @else if $format == 'otf' {
+            $format: 'opentype';
+          } @else if $format == 'ttf' {
+            $format: 'truetype';
           }
 
           // noinspection CssInvalidFunction
