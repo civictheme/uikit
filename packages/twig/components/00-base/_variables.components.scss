@@ -1211,7 +1211,7 @@ $ct-side-navigation-light-link-parent-active-border-color: ct-color-light('borde
 $ct-side-navigation-light-link-parent-active-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-parent-active-stripe-background-color: ct-color-light('highlight') !default;
 $ct-side-navigation-light-link-child-background-color: $ct-side-navigation-light-link-parent-background-color !default;
-$ct-side-navigation-light-link-child-border-color: ct-color-light('border') !default;
+$ct-side-navigation-light-link-child-border-color: $ct-side-navigation-light-link-parent-border-color !default;
 $ct-side-navigation-light-link-child-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-child-stripe-background-color: $ct-side-navigation-light-link-parent-stripe-background-color !default;
 $ct-side-navigation-light-link-child-hover-background-color: $ct-side-navigation-light-link-parent-hover-background-color !default;
@@ -1219,7 +1219,7 @@ $ct-side-navigation-light-link-child-hover-border-color: $ct-side-navigation-lig
 $ct-side-navigation-light-link-child-hover-color: $ct-side-navigation-light-link-child-color !default;
 $ct-side-navigation-light-link-child-hover-stripe-background-color: ct-color-light('highlight') !default;
 $ct-side-navigation-light-link-child-active-background-color: ct-color-light('background') !default;
-$ct-side-navigation-light-link-child-active-border-color: $ct-side-navigation-light-link-child-border-color !default;
+$ct-side-navigation-light-link-child-active-border-color: ct-color-light('border') !default;
 $ct-side-navigation-light-link-child-active-color: $ct-side-navigation-light-link-child-color !default;
 $ct-side-navigation-light-link-child-active-stripe-background-color: $ct-side-navigation-light-link-child-hover-stripe-background-color !default;
 $ct-side-navigation-dark-title-color: ct-color-dark('heading') !default;
