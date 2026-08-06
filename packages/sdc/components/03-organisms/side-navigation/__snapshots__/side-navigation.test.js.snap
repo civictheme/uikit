@@ -28,7 +28,6 @@ exports[`Side Navigation Component renders with all attributes provided 1`] = `
       
     
       <a
-        _keys="data-platform"
         class="ct-link ct-theme-dark     ct-skip-link__link ct-visually-hidden"
         data-platform=""
         href="#main-content"
@@ -209,7 +208,6 @@ exports[`Side Navigation Component renders with only required attributes 1`] = `
       
     
       <a
-        _keys="data-platform"
         class="ct-link ct-theme-light     ct-skip-link__link ct-visually-hidden"
         data-platform=""
         href="#main-content"
@@ -296,7 +294,6 @@ exports[`Side Navigation Component renders with some attributes missing 1`] = `
       
     
       <a
-        _keys="data-platform"
         class="ct-link ct-theme-light     ct-skip-link__link ct-visually-hidden"
         data-platform=""
         href="#main-content"
