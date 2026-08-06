@@ -9175,6 +9175,9 @@ ol ol ol {
     padding: 1.5rem;
   }
 }
+.ct-alert .container {
+  position: relative;
+}
 .ct-alert .ct-alert__title {
   font-size: var(--ct-typography-heading-6-font-size);
   line-height: var(--ct-typography-heading-6-line-height);
@@ -9187,6 +9190,7 @@ ol ol ol {
 @media (max-width: 767px) {
   .ct-alert .ct-alert__title {
     margin-bottom: 0.5rem;
+    padding-right: 2rem;
   }
 }
 .ct-alert .ct-alert__icon {
@@ -9202,7 +9206,6 @@ ol ol ol {
 .ct-alert .ct-alert__summary {
   display: flex;
   align-items: center;
-  position: relative;
 }
 .ct-alert .ct-alert__summary p:nth-last-child(-n+2) {
   margin-bottom: 0;
@@ -9211,8 +9214,8 @@ ol ol ol {
   cursor: pointer;
   margin-left: 1.5rem;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   background-color: transparent;
   padding: 0;
 }

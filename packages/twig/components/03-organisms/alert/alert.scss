@@ -16,6 +16,10 @@
 
   @include ct-typography('text-small');
 
+  .container {
+    position: relative;
+  }
+
   #{$root}__title {
     @include ct-typography('heading-6');
 
@@ -24,6 +28,7 @@
 
     @include ct-breakpoint-upto('m') {
       margin-bottom: ct-spacing();
+      padding-right: ct-spacing(4);
     }
   }
 
@@ -40,7 +45,6 @@
   #{$root}__summary {
     display: flex;
     align-items: center;
-    position: relative;
 
     p {
       &:nth-last-child(-n+2) {
@@ -53,8 +57,8 @@
     cursor: pointer;
     margin-left: ct-spacing(3);
     position: absolute;
-    top: ct-spacing(2);
-    right: ct-spacing(2);
+    top: 0;
+    right: 0;
     background-color: transparent;
     padding: 0;
 
