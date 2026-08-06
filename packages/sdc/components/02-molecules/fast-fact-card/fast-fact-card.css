@@ -54,13 +54,18 @@
   right: 0;
 }
 .ct-fast-fact-card__image {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 .ct-fast-fact-card__image img {
   display: flex;
   margin: auto;
   max-width: var(--ct-fast-fact-card-max-width);
   max-height: var(--ct-fast-fact-card-max-height);
+}
+@media (min-width: 768px) {
+  .ct-fast-fact-card__image {
+    margin-bottom: 0.5rem;
+  }
 }
 .ct-fast-fact-card__title {
   font-size: var(--ct-typography-display-font-size);

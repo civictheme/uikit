@@ -36,13 +36,17 @@
   }
 
   &__image {
-    margin-bottom: ct-spacing();
+    margin-bottom: ct-spacing(0.5);
 
     img {
       display: flex;
       margin: auto;
       max-width: var(--ct-fast-fact-card-max-width);
       max-height: var(--ct-fast-fact-card-max-height);
+    }
+
+    @include ct-breakpoint('m') {
+      margin-bottom: ct-spacing();
     }
   }
 
