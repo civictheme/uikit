@@ -40,10 +40,7 @@
   #{$root}__summary {
     display: flex;
     align-items: center;
-
-    @include ct-breakpoint(m) {
-      position: relative;
-    }
+    position: relative;
 
     p {
       &:nth-last-child(-n+2) {
@@ -83,6 +80,10 @@
       &#{$root}--#{$type} {
         @include ct-component-property($root, $theme, $type, background-color);
         @include ct-component-property($root, $theme, $type, color);
+
+        #{$root}__title {
+          @include ct-component-property($root, $theme, $type, title, color);
+        }
 
         #{$root}__dismiss-button,
         #{$root}__icon {

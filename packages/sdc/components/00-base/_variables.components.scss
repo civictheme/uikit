@@ -996,28 +996,36 @@ $ct-snippet-dark-title-hover-color: ct-color-dark('interaction-background') !def
 //
 $ct-alert-light-error-background-color: ct-color-tint(ct-color-constant-light('error'), 80) !default;
 $ct-alert-light-error-color: ct-color-light('body') !default;
-$ct-alert-light-error-icon-color: $ct-alert-light-error-color !default;
+$ct-alert-light-error-title-color: ct-color-light('heading') !default;
+$ct-alert-light-error-icon-color: $ct-alert-light-error-title-color !default;
 $ct-alert-light-information-background-color: ct-color-tint(ct-color-constant-light('information'), 80) !default;
 $ct-alert-light-information-color: ct-color-light('body') !default;
-$ct-alert-light-information-icon-color: $ct-alert-light-information-color !default;
+$ct-alert-light-information-title-color: ct-color-light('heading') !default;
+$ct-alert-light-information-icon-color: $ct-alert-light-information-title-color !default;
 $ct-alert-light-success-background-color: ct-color-tint(ct-color-constant-light('success'), 80) !default;
 $ct-alert-light-success-color: ct-color-light('body') !default;
-$ct-alert-light-success-icon-color: $ct-alert-light-success-color !default;
+$ct-alert-light-success-title-color: ct-color-light('heading') !default;
+$ct-alert-light-success-icon-color: $ct-alert-light-success-title-color !default;
 $ct-alert-light-warning-background-color: ct-color-tint(ct-color-constant-light('warning'), 80) !default;
 $ct-alert-light-warning-color: ct-color-light('body') !default;
-$ct-alert-light-warning-icon-color: $ct-alert-light-warning-color !default;
+$ct-alert-light-warning-title-color: ct-color-light('heading') !default;
+$ct-alert-light-warning-icon-color: $ct-alert-light-warning-title-color !default;
 $ct-alert-dark-error-background-color: ct-color-shade(ct-color-constant-dark('error'), 20) !default;
 $ct-alert-dark-error-color: ct-color-dark('body') !default;
-$ct-alert-dark-error-icon-color: $ct-alert-dark-error-color !default;
+$ct-alert-dark-error-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-error-icon-color: $ct-alert-dark-error-title-color !default;
 $ct-alert-dark-information-background-color: ct-color-shade(ct-color-constant-dark('information'), 39) !default;
 $ct-alert-dark-information-color: ct-color-dark('body') !default;
-$ct-alert-dark-information-icon-color: $ct-alert-dark-information-color !default;
+$ct-alert-dark-information-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-information-icon-color: $ct-alert-dark-information-title-color !default;
 $ct-alert-dark-success-background-color: ct-color-shade(ct-color-constant-dark('success'), 30) !default;
 $ct-alert-dark-success-color: ct-color-dark('body') !default;
-$ct-alert-dark-success-icon-color: $ct-alert-dark-success-color !default;
+$ct-alert-dark-success-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-success-icon-color: $ct-alert-dark-success-title-color !default;
 $ct-alert-dark-warning-background-color: ct-color-shade(ct-color-constant-dark('warning'), 28) !default;
 $ct-alert-dark-warning-color: ct-color-dark('body') !default;
-$ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-color !default;
+$ct-alert-dark-warning-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-title-color !default;
 
 //
 // Banner.
