@@ -36,7 +36,11 @@
     @include ct-highlight-stripe-horizontal(var(--ct-event-card-stripe-height), var(--ct-event-card-border-radius), 0);
 
     #{$root}__content {
-      padding: ct-spacing(3.75) ct-spacing(3) ct-spacing(3) ct-spacing(3);
+      padding: ct-spacing(3.25) ct-spacing(2.5) ct-spacing(2.5) ct-spacing(2.5);
+
+      @include ct-breakpoint(m) {
+        padding: ct-spacing(3.75) ct-spacing(3) ct-spacing(3) ct-spacing(3);
+      }
     }
   }
 
@@ -50,11 +54,15 @@
   }
 
   #{$root}__content {
-    padding: ct-spacing(3);
+    padding: ct-spacing(2.5);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: ct-spacing(2);
+
+    @include ct-breakpoint(m) {
+      padding: ct-spacing(3);
+    }
   }
 
   #{$root}__title {
@@ -91,10 +99,6 @@
     .ct-tag {
       @include ct-typography('label-extra-small');
 
-      display: inline-flex;
-      align-items: center;
-      padding: ct-spacing(0.375) ct-spacing(0.875) ct-spacing(0.375) ct-spacing(0.375);
-
       .ct-icon {
         @include ct-icon-size('regular');
       }
@@ -111,7 +115,7 @@
 
   #{$root}__tags {
     display: flex;
-    margin-top: ct-spacing();
+    margin-top: auto;
     align-items: flex-end;
     gap: ct-spacing(1);
   }

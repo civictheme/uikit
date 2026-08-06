@@ -7071,7 +7071,12 @@ ol ol ol {
   transition: height 0.25s;
 }
 .ct-event-card:not(.ct-event-card--with-image) .ct-event-card__content {
-  padding: 1.875rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.625rem 1.25rem 1.25rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .ct-event-card:not(.ct-event-card--with-image) .ct-event-card__content {
+    padding: 1.875rem 1.5rem 1.5rem 1.5rem;
+  }
 }
 .ct-event-card .ct-event-card__image img {
   aspect-ratio: var(--ct-event-card-image-aspect-ratio);
@@ -7080,11 +7085,16 @@ ol ol ol {
   object-fit: cover;
 }
 .ct-event-card .ct-event-card__content {
-  padding: 1.5rem;
+  padding: 1.25rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+@media (min-width: 768px) {
+  .ct-event-card .ct-event-card__content {
+    padding: 1.5rem;
+  }
 }
 .ct-event-card .ct-event-card__title {
   font-size: var(--ct-typography-heading-4-font-size);
@@ -7126,9 +7136,6 @@ ol ol ol {
   font-family: var(--ct-typography-label-extra-small-font-name);
   font-weight: var(--ct-typography-label-extra-small-font-weight);
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
-  display: inline-flex;
-  align-items: center;
-  padding: 0.1875rem 0.4375rem 0.1875rem 0.1875rem;
 }
 @media (min-width: 0) {
   .ct-event-card .ct-event-card__date .ct-tag .ct-icon {
@@ -7148,7 +7155,7 @@ ol ol ol {
 }
 .ct-event-card .ct-event-card__tags {
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: auto;
   align-items: flex-end;
   gap: 0.5rem;
 }
@@ -8067,7 +8074,12 @@ ol ol ol {
   transition: height 0.25s;
 }
 .ct-promo-card:not(.ct-promo-card--with-image) .ct-promo-card__content {
-  padding: 1.875rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.625rem 1.25rem 1.25rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .ct-promo-card:not(.ct-promo-card--with-image) .ct-promo-card__content {
+    padding: 1.875rem 1.5rem 1.5rem 1.5rem;
+  }
 }
 .ct-promo-card .ct-promo-card__image img {
   aspect-ratio: var(--ct-promo-card-image-aspect-ratio);
@@ -8076,11 +8088,16 @@ ol ol ol {
   object-fit: cover;
 }
 .ct-promo-card .ct-promo-card__content {
-  padding: 1.5rem;
+  padding: 1.25rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+@media (min-width: 768px) {
+  .ct-promo-card .ct-promo-card__content {
+    padding: 1.5rem;
+  }
 }
 .ct-promo-card .ct-promo-card__title {
   font-size: var(--ct-typography-heading-4-font-size);
@@ -8110,7 +8127,7 @@ ol ol ol {
 }
 .ct-promo-card .ct-promo-card__tags {
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: auto;
   align-items: flex-end;
   gap: 0.5rem;
 }
