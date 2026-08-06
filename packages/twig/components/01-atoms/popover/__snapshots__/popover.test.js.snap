@@ -24,7 +24,6 @@ exports[`Popover Component renders with optional attributes 1`] = `
     
     
     <a
-      _keys="data-collapsible-trigger tabindex"
       class="ct-link ct-theme-dark     ct-popover__link"
       data-collapsible-trigger=""
       href="https://example.com"
@@ -85,7 +84,6 @@ exports[`Popover Component renders with required attributes 1`] = `
     
     
     <a
-      _keys="data-collapsible-trigger tabindex"
       class="ct-link ct-theme-light     ct-popover__link"
       data-collapsible-trigger=""
       tabindex="0"
