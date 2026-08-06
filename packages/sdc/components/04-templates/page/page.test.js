@@ -1,5 +1,5 @@
 import jestEach from 'jest-each';
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 
 const each = jestEach.default;
 
