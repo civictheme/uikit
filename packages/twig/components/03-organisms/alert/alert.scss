@@ -16,7 +16,7 @@
 
   @include ct-typography('text-small');
 
-  .container {
+  #{$root}__container {
     position: relative;
   }
 
