@@ -56,7 +56,7 @@
     }
 
     .ct-menu__item__link {
-      @include ct-typography('text-regular');
+      @include ct-typography('label-small');
 
       & {
         @include ct-link-no-decoration();
@@ -64,7 +64,7 @@
         display: block;
         box-sizing: border-box;
         position: relative;
-        padding: ct-spacing() ct-spacing(4) ct-spacing() ct-spacing(2.5);
+        padding: ct-spacing(1.5) ct-spacing(4) ct-spacing(1.5) ct-spacing(2.5);
         border-bottom-width: $border-width-vertical;
         border-bottom-style: solid;
       }
@@ -99,11 +99,11 @@
       right: 0;
       width: ct-spacing(4);
       height: calc(var(--ct-typography-text-regular-line-height) + #{ct-spacing(2)});
-      padding: ct-spacing() ct-spacing(0.75);
+      padding: ct-spacing(1.5) ct-spacing(0.75);
       z-index: 1;
 
       @include ct-breakpoint(m) {
-        padding: ct-spacing(1.25) ct-spacing(0.75);
+        padding: ct-spacing(1.75) ct-spacing(0.75);
       }
     }
   }
