@@ -1,4 +1,4 @@
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 
 const template = 'components/02-molecules/subject-card/subject-card.twig';
 
