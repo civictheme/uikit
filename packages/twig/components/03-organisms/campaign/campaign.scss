@@ -11,6 +11,7 @@
     @include ct-image-fit();
 
     height: var(--ct-campaign-mobile-height);
+    margin-bottom: ct-spacing(3);
 
     img {
       border-radius: var(--ct-campaign-image-border-radius);
@@ -21,18 +22,16 @@
     }
   }
 
-  #{$root}__content-inner {
-    display: flex;
-    flex-direction: column;
-    gap: ct-spacing(3);
-  }
-
   #{$root}__inner {
     > * {
-      margin-bottom: ct-spacing(2);
+      margin-bottom: ct-spacing(3);
+    }
+
+    > #{$root}__title {
+      @include ct-typography('heading-3');
 
       @include ct-breakpoint(m) {
-        margin-bottom: ct-spacing(3);
+        @include ct-typography('heading-2');
       }
     }
 
@@ -66,6 +65,13 @@
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, background-color);
+
+    #{$root}__image {
+      @include ct-breakpoint-upto(m) {
+        border-radius: calc(var(--ct-campaign-image-border-radius) + var(--ct-campaign-mobile-image-shadow-inset));
+        box-shadow: 0 calc(var(--ct-campaign-mobile-image-shadow-offset-y) + var(--ct-campaign-mobile-image-shadow-inset)) 0 calc(-1 * var(--ct-campaign-mobile-image-shadow-inset)) ct-component-var($root, $theme, image, shadow-color);
+      }
+    }
 
     &.ct-campaign--image-left {
       .ct-campaign__image {
