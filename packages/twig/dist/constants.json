@@ -295,23 +295,23 @@
       "text-extra-large": {
         "xxs": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.9375",
           "'regular'",
           "'primary'",
-          "-0.1px"
+          "-0.15px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 2.5",
           "'regular'",
           "'primary'",
-          "0"
+          "-0.35px"
         ]
       },
       "text-large": {
         "xxs": [
           "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.75",
+          "$ct-font-base-line-height * 1.8125",
           "'regular'",
           "'primary'",
           "0"
@@ -326,8 +326,8 @@
       },
       "text-regular": {
         "xxs": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.625",
           "'regular'",
           "'primary'",
           "0"
@@ -342,111 +342,66 @@
       },
       "text-small": {
         "xxs": [
-          "$ct-font-base-size * 0.75",
-          "$ct-font-base-line-height * 1.25",
+          "$ct-font-base-size * 0.875",
+          "$ct-font-base-line-height * 1.4375",
           "'regular'",
           "'primary'",
           "0"
         ],
         "m": [
           "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.5625",
           "'regular'",
           "'primary'",
           "0"
         ]
       },
-      "label-extra-large": {
-        "xxs": [
-          "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "0"
-        ]
-      },
-      "label-large": {
-        "xxs": [
-          "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "0"
-        ]
-      },
-      "label-regular": {
-        "xxs": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ]
-      },
-      "label-small": {
-        "xxs": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'regular'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'regular'",
-          "'primary'",
-          "-0.1px"
-        ]
-      },
-      "label-extra-small": {
-        "xxs": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.25",
-          "'regular'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.125",
-          "'regular'",
-          "'primary'",
-          "0"
-        ]
-      },
+      "label-extra-large": [
+        "$ct-font-base-size * 1.5",
+        "$ct-font-base-line-height * 1.5",
+        "'semibold'",
+        "'primary'",
+        "0"
+      ],
+      "label-large": [
+        "$ct-font-base-size * 1.125",
+        "$ct-font-base-line-height * 1.5",
+        "'semibold'",
+        "'primary'",
+        "0"
+      ],
+      "label-regular": [
+        "$ct-font-base-size",
+        "$ct-font-base-line-height * 1.25",
+        "'semibold'",
+        "'primary'",
+        "0"
+      ],
+      "label-small": [
+        "$ct-font-base-size",
+        "$ct-font-base-line-height * 1.25",
+        "'regular'",
+        "'primary'",
+        "0"
+      ],
+      "label-extra-small": [
+        "$ct-font-base-size * 0.875",
+        "$ct-font-base-line-height * 1.125",
+        "'regular'",
+        "'primary'",
+        "0"
+      ],
       "quote": {
         "xxs": [
-          "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.815",
+          "$ct-font-base-size * 1.25",
+          "$ct-font-base-line-height * 1.9375",
           "'regular'",
           "'primary'",
           "-0.15px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-size * 2.5",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 2.5",
           "'regular'",
           "'primary'",
           "-0.35px"
@@ -1073,7 +1028,7 @@
     "ct-back-to-top-border-color": "ct-color-light('background-light')",
     "ct-back-to-top-color": "ct-color-light('interaction-text')",
     "ct-back-to-top-outline-color": "ct-color-light('interaction-focus')",
-    "ct-basic-content-blockquote-border-radius": "$ct-border-radius",
+    "ct-basic-content-blockquote-border-radius": "0",
     "ct-basic-content-list-marker-margin": "ct-particle(2)",
     "ct-basic-content-list-marker-width": "ct-particle(3.5)",
     "ct-basic-content-space-horizontal": "ct-spacing(7)",
