@@ -8976,6 +8976,7 @@ ol ol ol {
   border-left: var(--ct-tooltip-triangle-height) solid transparent;
   border-right: var(--ct-tooltip-triangle-height) solid transparent;
   border-top: var(--ct-tooltip-triangle-width) solid;
+  margin-top: -1px;
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=bottom] > [data-tooltip-arrow] {
   top: calc(var(--ct-tooltip-triangle-width) * -1);
@@ -8986,6 +8987,7 @@ ol ol ol {
   border-left: var(--ct-tooltip-triangle-height) solid transparent;
   border-right: var(--ct-tooltip-triangle-height) solid transparent;
   border-bottom: var(--ct-tooltip-triangle-width) solid;
+  margin-bottom: -1px;
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=left] > [data-tooltip-arrow] {
   right: calc(var(--ct-tooltip-triangle-width) * -1);
@@ -8995,6 +8997,7 @@ ol ol ol {
   border-top: var(--ct-tooltip-triangle-height) solid transparent;
   border-left: var(--ct-tooltip-triangle-width) solid;
   border-bottom: var(--ct-tooltip-triangle-height) solid transparent;
+  margin-left: -1px;
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=right] > [data-tooltip-arrow] {
   left: calc(var(--ct-tooltip-triangle-width) * -1);
@@ -9004,6 +9007,7 @@ ol ol ol {
   border-top: var(--ct-tooltip-triangle-height) solid transparent;
   border-right: var(--ct-tooltip-triangle-width) solid;
   border-bottom: var(--ct-tooltip-triangle-height) solid transparent;
+  margin-right: -1px;
 }
 @media (min-width: 768px) {
   .ct-tooltip .ct-tooltip__description {
@@ -11850,8 +11854,8 @@ html {
   --ct-tooltip-description-border-radius: 0.5rem;
   --ct-tooltip-width: 30rem;
   --ct-tooltip-width-mobile: 20rem;
-  --ct-tooltip-triangle-width: 1.6rem;
-  --ct-tooltip-triangle-height: 1.3rem;
+  --ct-tooltip-triangle-width: 1.625rem;
+  --ct-tooltip-triangle-height: 1.3125rem;
   --ct-tooltip-z-index: 99;
   --ct-tooltip-light-description-background-color: var(--ct-color-light-interaction-background);
   --ct-tooltip-light-description-color: var(--ct-color-light-interaction-text);
