@@ -2,7 +2,7 @@
  * CivicTheme Tabs component stories.
  */
 
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 import Component from './tabs.twig';
 
 const meta = {
