@@ -1,5 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Event Card Component renders tags provided as objects 1`] = `
+<div>
+  
+
+  
+  <div
+    class="ct-event-card ct-theme-light    "
+  >
+    
+              
+          
+    <div
+      class="ct-event-card__content"
+    >
+      
+                          
+                          
+                                          
+      <div
+        class="ct-event-card__title"
+      >
+                                      Event Title
+                          
+      </div>
+      
+                  
+                          
+                          
+                          
+                              
+      <div
+        class="ct-event-card__tags"
+      >
+        
+                              
+
+  
+        <div
+          class="ct-tag-list ct-theme-light  "
+        >
+          
+              
+                                                                                          
+
+  
+          <ul
+            class="ct-item-list ct-item-list--horizontal ct-item-list--small  ct-tag-list__content"
+          >
+            
+                  
+            <li
+              class="ct-item-list__item"
+            >
+                                      
+
+  
+  
+  
+    
+              <a
+                class="ct-tag ct-theme-light ct-tag--primary    "
+                href="https://example.com/tag-1"
+                title="Tag 1"
+              >
+                    Tag 1  
+              </a>
+              
+          
+            </li>
+            
+                        
+            <li
+              class="ct-item-list__item"
+            >
+                                      
+
+  
+  
+  
+    
+              <span
+                class="ct-tag ct-theme-light ct-tag--primary    "
+              >
+                    Tag 2  
+              </span>
+              
+          
+            </li>
+            
+            
+          </ul>
+          
+          
+                
+        </div>
+        
+              
+                          
+      </div>
+      
+                  
+                                
+    </div>
+    
+      
+  </div>
+  
+
+</div>
+`;
+
 exports[`Event Card Component renders with optional attributes 1`] = `
 <div>
   

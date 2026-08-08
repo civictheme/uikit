@@ -71,4 +71,22 @@ describe('Event Card Component', () => {
 
     assertUniqueCssClasses(c);
   });
+
+  test('renders tags provided as objects', async () => {
+    const c = await dom(template, {
+      title: 'Event Title',
+      tags: [
+        { content: 'Tag 1', url: 'https://example.com/tag-1' },
+        { content: 'Tag 2' },
+      ],
+    });
+
+    const tags = c.querySelectorAll('.ct-event-card__tags .ct-tag');
+    expect(tags).toHaveLength(2);
+    expect(tags[0].textContent.trim()).toEqual('Tag 1');
+    expect(tags[0].getAttribute('href')).toEqual('https://example.com/tag-1');
+    expect(tags[1].textContent.trim()).toEqual('Tag 2');
+
+    assertUniqueCssClasses(c);
+  });
 });
