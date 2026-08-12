@@ -165,14 +165,14 @@ export const PageFullWidthData = {
           vertical_spacing: 'both',
           link_above: {
             text: 'Example link above call to action',
-            url: 'http://www.example.com',
+            url: '/example',
             title: 'Example link above call to action',
             is_new_window: false,
             is_external: false,
           },
           link_below: {
             text: 'Example link below call to action',
-            url: 'http://www.example.com',
+            url: '/example',
             title: 'Example link below call to action',
             is_new_window: false,
             is_external: false,
