@@ -5,6 +5,8 @@ on:
     types:
       - opened
 
+permissions: {}
+
 jobs:
   issue_opened:
     runs-on: ubuntu-latest
@@ -13,35 +15,71 @@ jobs:
       - name: Create issue body file
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: echo "$ISSUE_BODY" > ${{ runner.temp }}/_github_workflow/issue.md
+        run: |
+          mkdir -p "${RUNNER_TEMP}/_github_workflow"
+          printf '%s\n' "$ISSUE_BODY" > "${RUNNER_TEMP}/_github_workflow/issue.md"
 
       - name: Convert GitHub markdown to Jira markup
         uses: docker://pandoc/core:3.8
         with:
           args: --from gfm --to jira --output=/github/workflow/issue.jira /github/workflow/issue.md
 
-      - name: Put output to the variable
-        run: |
-          echo 'JIRA_CONTENT<<EOF' >> $GITHUB_ENV
-          cat ${{ runner.temp }}/_github_workflow/issue.jira >> $GITHUB_ENV
-          echo >> $GITHUB_ENV
-          echo "----" >> $GITHUB_ENV
-          echo "GitHub issue: ${{ github.event.issue.html_url }}" >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-
-      - name: Login
-        uses: atlassian/gajira-login@v3
+      - name: Create Jira issue
         env:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_PROJECT_KEY: ${{ vars.JIRA_PROJECT_KEY }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          set -euo pipefail
 
-      - name: Create issue
-        id: create
-        uses: atlassian/gajira-create@v3
-        with:
-          project: ${{ vars.JIRA_PROJECT_KEY }}
-          issuetype: Story
-          summary: "UI Kit (GitHub): ${{ github.event.issue.title }}"
-          description: ${{ env.JIRA_CONTENT }}
-          fields: '{"components": [{"name": "UIKit"}]}'
+          body_file="${RUNNER_TEMP}/_github_workflow/issue.jira"
+          payload="${RUNNER_TEMP}/payload.json"
+          response="${RUNNER_TEMP}/response.json"
+
+          printf '\n----\nGitHub issue: %s\n' "$ISSUE_URL" >> "$body_file"
+
+          # Jira caps the summary at 255 characters; GitHub issue titles can be longer.
+          jq -n \
+            --arg project "$JIRA_PROJECT_KEY" \
+            --arg summary "UI Kit (GitHub): $ISSUE_TITLE" \
+            --rawfile description "$body_file" \
+            '{
+              fields: {
+                project: {key: $project},
+                issuetype: {name: "Story"},
+                summary: $summary[0:255],
+                description: $description,
+                components: [{name: "UIKit"}]
+              }
+            }' > "$payload"
+
+          # The v2 endpoint takes a wiki-markup description, which is what pandoc
+          # emits above. The v3 endpoint would require Atlassian Document Format.
+          status="$(curl --silent --show-error \
+            --output "$response" \
+            --write-out '%{http_code}' \
+            --request POST \
+            --url "${JIRA_BASE_URL%/}/rest/api/2/issue" \
+            --user "${JIRA_USER_EMAIL}:${JIRA_API_TOKEN}" \
+            --header 'Accept: application/json' \
+            --header 'Content-Type: application/json' \
+            --data @"$payload")"
+
+          if [ "$status" = "201" ]; then
+            echo "Created Jira issue $(jq -r '.key' "$response")"
+            exit 0
+          fi
+
+          echo "::error::Jira returned HTTP ${status} when creating the issue."
+
+          case "$status" in
+            401 | 403)
+              echo "::error::Jira rejected the credentials. Atlassian API tokens expire after at most one year, so this is most likely an expired JIRA_API_TOKEN. Mint a replacement at https://id.atlassian.com/manage-profile/security/api-tokens, update the JIRA_API_TOKEN secret, and confirm JIRA_USER_EMAIL still belongs to an active account."
+              ;;
+          esac
+
+          jq . "$response" 2> /dev/null || cat "$response"
+          exit 1
