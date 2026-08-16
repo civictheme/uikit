@@ -6336,7 +6336,7 @@ ol ol ol {
 .ct-back-to-top .ct-back-to-top__button, .ct-back-to-top .ct-back-to-top__button:focus-visible, .ct-back-to-top .ct-back-to-top__button:active, .ct-back-to-top .ct-back-to-top__button:visited, .ct-back-to-top .ct-back-to-top__button:hover {
   display: inline-block;
   border-radius: 6rem;
-  padding: 0.5rem;
+  padding: 0;
   background-color: var(--ct-back-to-top-background-color);
   border-color: var(--ct-back-to-top-border-color);
   color: var(--ct-back-to-top-color);
@@ -6348,6 +6348,16 @@ ol ol ol {
 }
 .ct-back-to-top .ct-back-to-top__button:focus-visible {
   outline-style: solid;
+}
+@media (min-width: 0) {
+  .ct-back-to-top .ct-back-to-top__button .ct-icon {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-back-to-top .ct-back-to-top__button .ct-icon {
+    font-size: 2.5rem;
+  }
 }
 
 .ct-basic-content {
