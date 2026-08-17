@@ -795,11 +795,11 @@ $ct-tabs-dark-panel-border-color: ct-color-dark('border') !default;
 //
 // Tooltip.
 //
-$ct-tooltip-description-border-radius: $ct-border-radius !default;
+$ct-tooltip-description-border-radius: $ct-border-radius * 2 !default;
 $ct-tooltip-width: ct-particle(60) !default;
 $ct-tooltip-width-mobile: ct-particle(40) !default;
-$ct-tooltip-triangle-width: ct-spacing(3.2) !default;
-$ct-tooltip-triangle-height: ct-spacing(2.6) !default;
+$ct-tooltip-triangle-width: ct-spacing(3.25) !default;
+$ct-tooltip-triangle-height: ct-spacing(2.625) !default;
 $ct-tooltip-z-index: 99 !default;
 $ct-tooltip-light-description-background-color: ct-color-light('interaction-background') !default;
 $ct-tooltip-light-description-color: ct-color-light('interaction-text') !default;

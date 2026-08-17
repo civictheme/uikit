@@ -9044,12 +9044,22 @@ ol ol ol {
   background-color: transparent;
   padding: 0;
 }
+@media (min-width: 0) {
+  .ct-tooltip .ct-tooltip__close-button {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-tooltip .ct-tooltip__close-button {
+    font-size: 1.25rem;
+  }
+}
 .ct-tooltip .ct-tooltip__description {
-  font-size: var(--ct-typography-label-extra-small-font-size);
-  line-height: var(--ct-typography-label-extra-small-line-height);
-  font-family: var(--ct-typography-label-extra-small-font-name);
-  font-weight: var(--ct-typography-label-extra-small-font-weight);
-  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-tooltip .ct-tooltip__description {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
@@ -9060,43 +9070,60 @@ ol ol ol {
   border-radius: var(--ct-tooltip-description-border-radius);
   position: absolute;
   width: var(--ct-tooltip-width-mobile);
-  min-height: calc(var(--ct-tooltip-width-mobile) / 2);
   z-index: var(--ct-tooltip-z-index);
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=top] > [data-tooltip-arrow] {
-  bottom: calc(var(--ct-tooltip-triangle-width) * -1);
+  bottom: calc(1px - var(--ct-tooltip-triangle-width));
   width: calc(var(--ct-tooltip-triangle-height) * 2);
   height: var(--ct-tooltip-triangle-width);
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=top] > [data-tooltip-arrow]::before {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
   border-left: var(--ct-tooltip-triangle-height) solid transparent;
   border-right: var(--ct-tooltip-triangle-height) solid transparent;
   border-top: var(--ct-tooltip-triangle-width) solid;
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=bottom] > [data-tooltip-arrow] {
-  top: calc(var(--ct-tooltip-triangle-width) * -1);
+  top: calc(1px - var(--ct-tooltip-triangle-width));
   width: calc(var(--ct-tooltip-triangle-height) * 2);
   height: var(--ct-tooltip-triangle-width);
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=bottom] > [data-tooltip-arrow]::before {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
   border-left: var(--ct-tooltip-triangle-height) solid transparent;
   border-right: var(--ct-tooltip-triangle-height) solid transparent;
   border-bottom: var(--ct-tooltip-triangle-width) solid;
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=left] > [data-tooltip-arrow] {
-  right: calc(var(--ct-tooltip-triangle-width) * -1);
+  right: calc(1px - var(--ct-tooltip-triangle-width));
+  width: var(--ct-tooltip-triangle-width);
   height: calc(var(--ct-tooltip-triangle-height) * 2);
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=left] > [data-tooltip-arrow]::before {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
   border-top: var(--ct-tooltip-triangle-height) solid transparent;
   border-left: var(--ct-tooltip-triangle-width) solid;
   border-bottom: var(--ct-tooltip-triangle-height) solid transparent;
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=right] > [data-tooltip-arrow] {
-  left: calc(var(--ct-tooltip-triangle-width) * -1);
+  left: calc(1px - var(--ct-tooltip-triangle-width));
+  width: var(--ct-tooltip-triangle-width);
   height: calc(var(--ct-tooltip-triangle-height) * 2);
 }
 .ct-tooltip .ct-tooltip__description[data-popper-placement^=right] > [data-tooltip-arrow]::before {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
   border-top: var(--ct-tooltip-triangle-height) solid transparent;
   border-right: var(--ct-tooltip-triangle-width) solid;
   border-bottom: var(--ct-tooltip-triangle-height) solid transparent;
@@ -9170,6 +9197,9 @@ ol ol ol {
   outline-style: solid;
   outline-color: var(--ct-outline-light);
 }
+.ct-tooltip.ct-theme-light .ct-tooltip__close-button {
+  color: var(--ct-tooltip-light-description-color);
+}
 .ct-tooltip.ct-theme-light .ct-tooltip__description {
   color: var(--ct-tooltip-light-description-color);
   background-color: var(--ct-tooltip-light-description-background-color);
@@ -9194,6 +9224,9 @@ ol ol ol {
   outline-width: var(--ct-outline-width);
   outline-style: solid;
   outline-color: var(--ct-outline-dark);
+}
+.ct-tooltip.ct-theme-dark .ct-tooltip__close-button {
+  color: var(--ct-tooltip-dark-description-color);
 }
 .ct-tooltip.ct-theme-dark .ct-tooltip__description {
   color: var(--ct-tooltip-dark-description-color);
@@ -11982,11 +12015,11 @@ html {
   --ct-tabs-dark-links-active-border-color: var(--ct-color-dark-border-light);
   --ct-tabs-dark-panel-background-color: var(--ct-color-dark-background);
   --ct-tabs-dark-panel-border-color: var(--ct-color-dark-border);
-  --ct-tooltip-description-border-radius: 0.25rem;
+  --ct-tooltip-description-border-radius: 0.5rem;
   --ct-tooltip-width: 30rem;
   --ct-tooltip-width-mobile: 20rem;
-  --ct-tooltip-triangle-width: 1.6rem;
-  --ct-tooltip-triangle-height: 1.3rem;
+  --ct-tooltip-triangle-width: 1.625rem;
+  --ct-tooltip-triangle-height: 1.3125rem;
   --ct-tooltip-z-index: 99;
   --ct-tooltip-light-description-background-color: var(--ct-color-light-interaction-background);
   --ct-tooltip-light-description-color: var(--ct-color-light-interaction-text);
