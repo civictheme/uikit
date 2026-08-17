@@ -3,6 +3,7 @@
 //
 
 @use 'sass:color';
+@use 'sass:list';
 @use 'sass:map';
 @use 'sass:math';
 @use 'sass:string';
@@ -39,14 +40,14 @@
 // Color shade. Do not use on components directly - map to a color variant instead.
 //
 @function ct-color-shade($color, $number) {
-  @return color.mix(black, $color, math.percentage(math.div($number, 100)));
+  @return ct-color-blend($color, (black math.percentage(math.div($number, 100))));
 }
 
 //
 // Color tint. Do not use on components directly - map to a color variant instead.
 //
 @function ct-color-tint($color, $number) {
-  @return color.mix(white, $color, math.percentage(math.div($number, 100)));
+  @return ct-color-blend($color, (white math.percentage(math.div($number, 100))));
 }
 
 //
@@ -55,7 +56,24 @@
 @function ct-color-tone($base, $color) {
   $neutral: color.adjust(color.adjust($base, $saturation: -20%), $lightness: -1 * math.max(color.lightness($base) - 5%, 0%));
 
-  @return color.mix($neutral, white, math.percentage(math.div($color, 100)));
+  @return ct-color-blend(white, ($neutral math.percentage(math.div($color, 100))));
+}
+
+//
+// Composite fills over $base so the result renders like Figma.
+//
+// Each entry in $fills is a `<color> <opacity>` pair, listed bottom-to-top.
+//
+@function ct-color-blend($base, $fills...) {
+  $channels: _ct-color-blend-channels($base, $fills);
+
+  // color.change() keeps the alpha of $base and the hex serialization that
+  // ct-color-encode() relies on.
+  @return color.change($base,
+    $red: _ct-color-byte(list.nth($channels, 1)),
+    $green: _ct-color-byte(list.nth($channels, 2)),
+    $blue: _ct-color-byte(list.nth($channels, 3))
+  );
 }
 
 //
@@ -77,6 +95,63 @@
 //
 @function ct-color-svg-fill($svg, $color) {
   @return ct-str-replace($svg, "fill=''", "fill='#{ct-color-encode($color)}'");
+}
+
+//
+// Interpolate fills over $base the way Figma does, returning unrounded
+// 0-255 channels.
+//
+// Done by hand because color.mix() rounds to 8 bits internally, which loses
+// the precision needed to round like Figma at the end.
+//
+// Do not use directly.
+//
+@function _ct-color-blend-channels($base, $fills) {
+  $red: color.red($base);
+  $green: color.green($base);
+  $blue: color.blue($base);
+
+  @each $fill in $fills {
+    $color: list.nth($fill, 1);
+    $alpha: list.nth($fill, 2);
+
+    @if not math.is-unitless($alpha) {
+      $alpha: math.div($alpha, 100%);
+    }
+
+    $red: $red * (1 - $alpha) + color.red($color) * $alpha;
+    $green: $green * (1 - $alpha) + color.green($color) * $alpha;
+    $blue: $blue * (1 - $alpha) + color.blue($color) * $alpha;
+  }
+
+  @return $red $green $blue;
+}
+
+//
+// Convert a 0-255 channel to a byte the way Figma renders one.
+//
+// Rounds half to even rather than half away from zero like math.round, with a
+// tolerance on the tie test to absorb Figma's float32 storage.
+//
+// Do not use directly.
+//
+@function _ct-color-byte($channel) {
+  $floor: math.floor($channel);
+  $remainder: $channel - $floor;
+
+  @if math.abs($remainder - 0.5) > 0.0001 {
+    @if $remainder > 0.5 {
+      @return $floor + 1;
+    }
+
+    @return $floor;
+  }
+
+  @if $floor % 2 == 0 {
+    @return $floor;
+  }
+
+  @return $floor + 1;
 }
 
 //
