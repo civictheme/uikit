@@ -58,14 +58,18 @@
   content: "";
   display: inline-block;
   position: absolute;
-  top: -0.0625rem;
-  bottom: -0.0625rem;
+  top: 0;
+  bottom: 0;
   left: -0.0625rem;
   width: 0.25rem;
 }
 .ct-table-of-contents__link:active {
   outline: 0 !important;
   border-radius: 0 var(--ct-table-of-contents-link-active-border-radius) var(--ct-table-of-contents-link-active-border-radius) 0;
+}
+.ct-table-of-contents__link:active::before {
+  top: -0.0625rem;
+  bottom: -0.0625rem;
 }
 .ct-table-of-contents__link:focus-visible {
   z-index: 1;

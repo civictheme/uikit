@@ -1,4 +1,4 @@
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 import jestEach from 'jest-each';
 
 const each = jestEach.default;

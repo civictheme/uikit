@@ -655,7 +655,7 @@ $ct-back-to-top-outline-color: ct-color-light('interaction-focus') !default;
 //
 // Basic content.
 //
-$ct-basic-content-blockquote-border-radius: $ct-border-radius !default;
+$ct-basic-content-blockquote-border-radius: 0 !default;
 $ct-basic-content-list-marker-margin: ct-particle(2) !default;
 $ct-basic-content-list-marker-width: ct-particle(3.5) !default;
 $ct-basic-content-space-horizontal: ct-spacing(7) !default;
@@ -755,7 +755,7 @@ $ct-next-step-dark-stripe-background-color: ct-color-dark('highlight') !default;
 //
 // Table Of Contents.
 //
-$ct-table-of-contents-link-active-border-radius: math.div($ct-border-radius, 2) !default;
+$ct-table-of-contents-link-active-border-radius: $ct-border-radius !default;
 $ct-table-of-contents-max-width: 50% !default;
 $ct-table-of-contents-min-width: 50% !default;
 $ct-table-of-contents-light-link-background-color: ct-color-light('background-light') !default;
@@ -964,7 +964,7 @@ $ct-subject-card-dark-image-opacity: 20% !default;
 //
 $ct-fast-fact-card-border-radius: $ct-border-radius !default;
 $ct-fast-fact-card-stripe-height: var(--ct-stripe-size) !default;
-$ct-fast-fact-card-max-width: ct-particle(6.25) !default;
+$ct-fast-fact-card-max-width: ct-particle(6) !default;
 $ct-fast-fact-card-max-height: ct-particle(12.5) !default;
 $ct-fast-fact-card-light-background-color: ct-color-light('background-light') !default;
 $ct-fast-fact-card-light-stripe-background-color: ct-color-light('highlight') !default;
@@ -1038,6 +1038,8 @@ $ct-campaign-image-border-radius: $ct-border-radius !default;
 $ct-campaign-image-shadow-offset-x: ct-particle(2) !default;
 $ct-campaign-image-shadow-offset-y: ct-particle(2) !default;
 $ct-campaign-mobile-height: ct-particle(30) !default;
+$ct-campaign-mobile-image-shadow-offset-y: ct-particle(1.5) !default;
+$ct-campaign-mobile-image-shadow-inset: ct-particle(1.25) !default;
 $ct-campaign-light-background-color: ct-color-light('background-light') !default;
 $ct-campaign-light-image-shadow-color: ct-color-light('background') !default;
 $ct-campaign-dark-background-color: ct-color-dark('background') !default;
