@@ -49,7 +49,7 @@ export const SocialLinks = {
         // icon_html should take precedence.
         icon_html: Icon({
           symbol: 'linkedin',
-          size: 'small',
+          size: 'regular',
         }),
         icon: 'linkedin',
         url: 'https://www.linkedin.com',
@@ -65,7 +65,7 @@ export const SocialLinks = {
         url: 'https://www.youtube.com',
       },
       {
-        icon_html: `<img class="ct-button__icon" width="16" height="16" src="./demo/images/demo1.jpg"/>`,
+        icon_html: `<img class="ct-button__icon" width="20" height="20" src="./demo/images/demo1.jpg"/>`,
         url: 'https://www.dropbox.com',
         // Deliberately left without a title.
       },

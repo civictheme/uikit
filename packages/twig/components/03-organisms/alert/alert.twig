@@ -41,7 +41,7 @@
   >
     <div class="container">
       <div class="row">
-        <div class="ct-alert__title col-xxs-12 col-m-3">
+        <div class="ct-alert__title col-xxs-12 col-m-4 col-l-3">
           {% if icons[type] is defined %}
             <span class="ct-alert__icon">
               {% include '@base/icon/icon.twig' with {
@@ -53,7 +53,7 @@
           {{ title }}
         </div>
 
-        <div class="ct-alert__summary col-xxs-12 col-m-9">
+        <div class="ct-alert__summary col-xxs-12 col-m-8 col-l-9">
           {{ description }}
           {% include '@atoms/button/button.twig' with {
             kind: 'button',
@@ -61,7 +61,7 @@
             type: 'tertiary',
             modifier_class: 'ct-alert__dismiss-button',
             text: '',
-            icon: 'cancel',
+            icon: 'close',
             size: 'regular',
             attributes: create_attribute({
               id: 'dismiss-alert-' ~ id,
