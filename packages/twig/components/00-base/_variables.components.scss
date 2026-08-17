@@ -58,11 +58,11 @@
 // Layout.
 //
 $ct-layout-columns: $ct-grid-columns !default;
-$ct-layout-sidebar-left-columns: 3 !default;
-$ct-layout-sidebar-right-columns: 3 !default;
+$ct-layout-sidebar-left-columns: 4 !default;
+$ct-layout-sidebar-right-columns: 4 !default;
+$ct-layout-sidebar-left-only-padding: ct-spacing(5) !default;
+$ct-layout-sidebar-right-only-padding: ct-spacing(5) !default;
 $ct-layout-column-gap: ct-spacing(3) !default;
-$ct-layout-column-gap-left-only: ct-spacing(8) !default;
-$ct-layout-column-gap-right-only: ct-spacing(8) !default;
 $ct-layout-row-gap: ct-spacing(3) !default;
 $ct-layout-breakpoint: l !default;
 
