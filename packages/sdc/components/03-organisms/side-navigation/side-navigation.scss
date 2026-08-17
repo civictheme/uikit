@@ -4,6 +4,8 @@
 
 .ct-side-navigation {
   $root: &;
+  $border-width-vertical: ct-particle(0.125);
+  $stripe-width: ct-particle(0.5);
 
   &__title {
     @include ct-typography('heading-5');
@@ -17,7 +19,7 @@
   @for $i from 0 through 10 {
     .ct-menu--level-#{$i} {
       .ct-menu__item__link {
-        padding-left: ($i + 1) * ct-spacing(2);
+        padding-left: $stripe-width + ($i + 1) * ct-spacing(2);
       }
     }
   }
@@ -38,10 +40,24 @@
 
     .ct-menu__item {
       position: relative;
+
+      &.ct-menu__item--level-0 {
+        &:first-child {
+          & > .ct-menu__item__link {
+            border-top-width: $border-width-vertical;
+            border-top-style: solid;
+          }
+
+          // Offset the trigger by the top border width.
+          &:not([data-collapsible-trigger-no-icon]) > .ct-menu__item__link-trigger[data-collapsible-trigger] {
+            top: $border-width-vertical;
+          }
+        }
+      }
     }
 
     .ct-menu__item__link {
-      @include ct-typography('text-regular');
+      @include ct-typography('label-small');
 
       & {
         @include ct-link-no-decoration();
@@ -49,24 +65,19 @@
         display: block;
         box-sizing: border-box;
         position: relative;
-        padding: ct-spacing() ct-spacing(2) ct-spacing() ct-spacing(2.5);
-        border-bottom-width: ct-particle(0.125);
+        padding: ct-spacing(1.5) ct-spacing(4) ct-spacing(1.5) ct-spacing(2.5);
+        border-bottom-width: $border-width-vertical;
         border-bottom-style: solid;
-      }
-
-      &:first-child {
-        border-top-width: ct-particle(0.125);
-        border-top-style: solid;
       }
 
       &::before {
         content: '';
         display: inline-block;
         position: absolute;
-        top: -1 * ct-particle(0.125);
-        bottom: -1 * ct-particle(0.125);
-        left: -1 * ct-particle(0.125);
-        width: ct-particle(0.5);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: $stripe-width;
       }
 
       &:active {
@@ -81,16 +92,19 @@
 
     [data-collapsible]:not([data-collapsible-trigger-no-icon]) .ct-menu__item__link-trigger[data-collapsible-trigger] {
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       right: 0;
-      width: ct-spacing(3);
-      height: ct-spacing(3);
-      padding: ct-spacing() ct-spacing(0.25);
+      width: ct-spacing(4);
+      height: calc(var(--ct-typography-text-regular-line-height) + #{ct-spacing(2)});
+      padding: ct-spacing(1.5) ct-spacing(0.75);
       z-index: 1;
 
       @include ct-breakpoint(m) {
-        padding: ct-spacing(1.25) ct-spacing(0.25);
+        padding: ct-spacing(1.75) ct-spacing(0.75);
       }
     }
   }
@@ -137,18 +151,26 @@
               ct-component-var($root, $theme, link, child, hover, stripe-background-color)
             );
           }
+
+          &:active {
+            @include _ct-side-navigation-print-menu-item(
+              ct-component-var($root, $theme, link, child, active, background-color),
+              ct-component-var($root, $theme, link, child, active, border-color),
+              ct-component-var($root, $theme, link, child, active, color),
+              ct-component-var($root, $theme, link, child, active, stripe-background-color)
+            );
+          }
         }
 
         &.ct-menu__item--active-trail {
           > .ct-menu__item__link {
             &,
-            &:active,
             &:visited {
               @include _ct-side-navigation-print-menu-item(
-                ct-component-var($root, $theme, link, child, active, background-color),
-                ct-component-var($root, $theme, link, child, active, border-color),
-                ct-component-var($root, $theme, link, child, active, color),
-                ct-component-var($root, $theme, link, child, active, stripe-background-color)
+                ct-component-var($root, $theme, link, child, active-trail, background-color),
+                ct-component-var($root, $theme, link, child, active-trail, border-color),
+                ct-component-var($root, $theme, link, child, active-trail, color),
+                ct-component-var($root, $theme, link, child, active-trail, stripe-background-color)
               );
             }
 
@@ -182,18 +204,26 @@
                 ct-component-var($root, $theme, link, parent, hover, stripe-background-color)
               );
             }
+
+            &:active {
+              @include _ct-side-navigation-print-menu-item(
+                ct-component-var($root, $theme, link, parent, active, background-color),
+                ct-component-var($root, $theme, link, parent, active, border-color),
+                ct-component-var($root, $theme, link, parent, active, color),
+                ct-component-var($root, $theme, link, parent, active, stripe-background-color)
+              );
+            }
           }
 
           &.ct-menu__item--active-trail {
             > .ct-menu__item__link {
               &,
-              &:active,
               &:visited {
                 @include _ct-side-navigation-print-menu-item(
-                  ct-component-var($root, $theme, link, parent, active, background-color),
-                  ct-component-var($root, $theme, link, parent, active, border-color),
-                  ct-component-var($root, $theme, link, parent, active, color),
-                  ct-component-var($root, $theme, link, parent, active, stripe-background-color)
+                  ct-component-var($root, $theme, link, parent, active-trail, background-color),
+                  ct-component-var($root, $theme, link, parent, active-trail, border-color),
+                  ct-component-var($root, $theme, link, parent, active-trail, color),
+                  ct-component-var($root, $theme, link, parent, active-trail, stripe-background-color)
                 );
               }
 
