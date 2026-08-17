@@ -15,7 +15,7 @@
     width: auto;
     border-top-width: ct-particle(0.125);
     border-top-style: solid;
-    padding: ct-spacing(3);
+    padding: ct-spacing(3.5) ct-spacing(3);
     box-sizing: border-box;
   }
 
@@ -70,6 +70,15 @@
   }
 
   #{$root}__item--first,
+  #{$root}__item--previous,
+  #{$root}__item--next,
+  #{$root}__item--last {
+    .ct-icon {
+      @include ct-icon-size('regular');
+    }
+  }
+
+  #{$root}__item--first,
   #{$root}__item--previous {
     padding: 0 ct-spacing(1) 0 0;
 
@@ -87,10 +96,18 @@
     }
   }
 
+  #{$root}__item--active {
+    #{$root}__item__link {
+      text-decoration: underline;
+    }
+  }
+
   #{$root}__item__link {
     padding: 0 ct-spacing();
     white-space: nowrap;
   }
+
+
 
   @include ct-component-theme($root) using($root, $theme) {
     @include ct-component-property($root, $theme, color);

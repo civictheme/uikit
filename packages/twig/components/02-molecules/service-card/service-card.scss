@@ -16,10 +16,10 @@
   }
 
   #{$root}__content {
-    padding: ct-spacing(3);
+    padding: ct-spacing(3.75) ct-spacing(2.5) ct-spacing(4) ct-spacing(2.5);
 
     @include ct-breakpoint(m) {
-      padding: ct-spacing(4);
+      padding: ct-spacing(4.75) ct-spacing(4) ct-spacing(5) ct-spacing(4);
     }
   }
 
@@ -28,7 +28,11 @@
   }
 
   #{$root}__links {
-    margin-top: ct-spacing(2);
+    margin-top: ct-spacing(2.5);
+
+    @include ct-breakpoint(m) {
+      margin-top: ct-spacing(3);
+    }
 
     .ct-item-list__item {
       text-align: center;

@@ -3,15 +3,12 @@
  */
 
 .ct-tag {
-  border-radius: var(--ct-tag-border-radius);
-  border-style: solid;
-  border-width: var(--ct-tag-border-width);
   display: inline-block;
-  font-size: var(--ct-typography-label-extra-small-font-size);
-  line-height: var(--ct-typography-label-extra-small-line-height);
-  font-family: var(--ct-typography-label-extra-small-font-name);
-  font-weight: var(--ct-typography-label-extra-small-font-weight);
-  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-tag {
   text-decoration: none;
@@ -54,11 +51,11 @@
 .ct-tag--icon-after .ct-icon {
   margin-left: 0.125rem;
 }
-.ct-tag.ct-tag--primary {
-  padding: 0.25rem 0.5rem;
-}
-.ct-tag.ct-tag--secondary {
-  padding: 0.25rem 0.5rem;
+.ct-tag.ct-tag--primary, .ct-tag.ct-tag--secondary {
+  border-radius: var(--ct-tag-border-radius);
+  border-style: solid;
+  border-width: var(--ct-tag-border-width);
+  padding: 0.1875rem 0.4375rem;
 }
 .ct-tag.ct-theme-light.ct-tag--primary {
   background-color: var(--ct-tag-light-primary-background-color);
