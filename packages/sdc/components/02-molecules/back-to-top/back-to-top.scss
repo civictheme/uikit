@@ -21,7 +21,7 @@
     &:hover {
       display: inline-block;
       border-radius: ct-particle(12);
-      padding: ct-spacing();
+      padding: 0;
       background-color: var(--ct-back-to-top-background-color);
       border-color: var(--ct-back-to-top-border-color);
       color: var(--ct-back-to-top-color);
@@ -34,6 +34,10 @@
 
     &:focus-visible {
       outline-style: solid;
+    }
+
+    .ct-icon {
+      @include ct-icon-size('large');
     }
   }
 }
