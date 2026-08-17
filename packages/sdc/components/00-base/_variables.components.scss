@@ -58,11 +58,11 @@
 // Layout.
 //
 $ct-layout-columns: $ct-grid-columns !default;
-$ct-layout-sidebar-left-columns: 3 !default;
-$ct-layout-sidebar-right-columns: 3 !default;
+$ct-layout-sidebar-left-columns: 4 !default;
+$ct-layout-sidebar-right-columns: 4 !default;
+$ct-layout-sidebar-left-only-padding: ct-spacing(5) !default;
+$ct-layout-sidebar-right-only-padding: ct-spacing(5) !default;
 $ct-layout-column-gap: ct-spacing(3) !default;
-$ct-layout-column-gap-left-only: ct-spacing(8) !default;
-$ct-layout-column-gap-right-only: ct-spacing(8) !default;
 $ct-layout-row-gap: ct-spacing(3) !default;
 $ct-layout-breakpoint: l !default;
 
@@ -324,7 +324,7 @@ $ct-checkbox-outline-width: 2px !default;
 $ct-checkbox-outline-offset: 2px !default;
 $ct-checkbox-light-background-color: transparent !default;
 $ct-checkbox-light-border-color: ct-color-light('border-light') !default;
-$ct-checkbox-light-color: ct-color-light('body') !default;
+$ct-checkbox-light-color: ct-color-light('heading') !default;
 $ct-checkbox-light-hover-background-color: $ct-checkbox-light-background-color !default;
 $ct-checkbox-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
 $ct-checkbox-light-hover-color: $ct-checkbox-light-color !default;
@@ -340,7 +340,7 @@ $ct-checkbox-light-invalid-color: ct-color-light('error') !default;
 $ct-checkbox-light-outline-color: $ct-outline-light !default;
 $ct-checkbox-dark-background-color: transparent !default;
 $ct-checkbox-dark-border-color: ct-color-dark('border-light') !default;
-$ct-checkbox-dark-color: ct-color-dark('body') !default;
+$ct-checkbox-dark-color: ct-color-dark('heading') !default;
 $ct-checkbox-dark-hover-background-color: $ct-checkbox-dark-background-color !default;
 $ct-checkbox-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
 $ct-checkbox-dark-hover-color: $ct-checkbox-dark-color !default;
@@ -456,7 +456,7 @@ $ct-radio-outline-width: 2px !default;
 $ct-radio-outline-offset: 2px !default;
 $ct-radio-light-background-color: transparent !default;
 $ct-radio-light-border-color: ct-color-light('border-light') !default;
-$ct-radio-light-color: ct-color-light('body') !default;
+$ct-radio-light-color: ct-color-light('heading') !default;
 $ct-radio-light-hover-background-color: $ct-radio-light-background-color !default;
 $ct-radio-light-hover-border-color: ct-color-light('interaction-hover-background') !default;
 $ct-radio-light-hover-color: $ct-radio-light-color !default;
@@ -472,7 +472,7 @@ $ct-radio-light-invalid-color: ct-color-light('error') !default;
 $ct-radio-light-outline-color: $ct-outline-light !default;
 $ct-radio-dark-background-color: transparent !default;
 $ct-radio-dark-border-color: ct-color-dark('border-light') !default;
-$ct-radio-dark-color: ct-color-dark('body') !default;
+$ct-radio-dark-color: ct-color-dark('heading') !default;
 $ct-radio-dark-hover-background-color: $ct-radio-dark-background-color !default;
 $ct-radio-dark-hover-border-color: ct-color-dark('interaction-hover-background') !default;
 $ct-radio-dark-hover-color: $ct-radio-dark-color !default;
@@ -655,7 +655,7 @@ $ct-back-to-top-outline-color: ct-color-light('interaction-focus') !default;
 //
 // Basic content.
 //
-$ct-basic-content-blockquote-border-radius: $ct-border-radius !default;
+$ct-basic-content-blockquote-border-radius: 0 !default;
 $ct-basic-content-list-marker-margin: ct-particle(2) !default;
 $ct-basic-content-list-marker-width: ct-particle(3.5) !default;
 $ct-basic-content-space-horizontal: ct-spacing(7) !default;
@@ -757,7 +757,7 @@ $ct-next-step-dark-title-color: ct-color-dark('heading') !default;
 //
 // Table Of Contents.
 //
-$ct-table-of-contents-link-active-border-radius: math.div($ct-border-radius, 2) !default;
+$ct-table-of-contents-link-active-border-radius: $ct-border-radius !default;
 $ct-table-of-contents-max-width: 50% !default;
 $ct-table-of-contents-min-width: 50% !default;
 $ct-table-of-contents-light-link-background-color: ct-color-light('background-light') !default;
@@ -797,11 +797,11 @@ $ct-tabs-dark-panel-border-color: ct-color-dark('border') !default;
 //
 // Tooltip.
 //
-$ct-tooltip-description-border-radius: $ct-border-radius !default;
+$ct-tooltip-description-border-radius: $ct-border-radius * 2 !default;
 $ct-tooltip-width: ct-particle(60) !default;
 $ct-tooltip-width-mobile: ct-particle(40) !default;
-$ct-tooltip-triangle-width: ct-spacing(3.2) !default;
-$ct-tooltip-triangle-height: ct-spacing(2.6) !default;
+$ct-tooltip-triangle-width: ct-spacing(3.25) !default;
+$ct-tooltip-triangle-height: ct-spacing(2.625) !default;
 $ct-tooltip-z-index: 99 !default;
 $ct-tooltip-light-description-background-color: ct-color-light('interaction-background') !default;
 $ct-tooltip-light-description-color: ct-color-light('interaction-text') !default;
@@ -966,7 +966,7 @@ $ct-subject-card-dark-image-opacity: 20% !default;
 //
 $ct-fast-fact-card-border-radius: $ct-border-radius !default;
 $ct-fast-fact-card-stripe-height: var(--ct-stripe-size) !default;
-$ct-fast-fact-card-max-width: ct-particle(6.25) !default;
+$ct-fast-fact-card-max-width: ct-particle(6) !default;
 $ct-fast-fact-card-max-height: ct-particle(12.5) !default;
 $ct-fast-fact-card-light-background-color: ct-color-light('background-light') !default;
 $ct-fast-fact-card-light-stripe-background-color: ct-color-light('highlight') !default;
@@ -998,28 +998,36 @@ $ct-snippet-dark-title-hover-color: ct-color-dark('interaction-background') !def
 //
 $ct-alert-light-error-background-color: ct-color-tint(ct-color-constant-light('error'), 80) !default;
 $ct-alert-light-error-color: ct-color-light('body') !default;
-$ct-alert-light-error-icon-color: $ct-alert-light-error-color !default;
+$ct-alert-light-error-title-color: ct-color-light('heading') !default;
+$ct-alert-light-error-icon-color: $ct-alert-light-error-title-color !default;
 $ct-alert-light-information-background-color: ct-color-tint(ct-color-constant-light('information'), 80) !default;
 $ct-alert-light-information-color: ct-color-light('body') !default;
-$ct-alert-light-information-icon-color: $ct-alert-light-information-color !default;
+$ct-alert-light-information-title-color: ct-color-light('heading') !default;
+$ct-alert-light-information-icon-color: $ct-alert-light-information-title-color !default;
 $ct-alert-light-success-background-color: ct-color-tint(ct-color-constant-light('success'), 80) !default;
 $ct-alert-light-success-color: ct-color-light('body') !default;
-$ct-alert-light-success-icon-color: $ct-alert-light-success-color !default;
+$ct-alert-light-success-title-color: ct-color-light('heading') !default;
+$ct-alert-light-success-icon-color: $ct-alert-light-success-title-color !default;
 $ct-alert-light-warning-background-color: ct-color-tint(ct-color-constant-light('warning'), 80) !default;
 $ct-alert-light-warning-color: ct-color-light('body') !default;
-$ct-alert-light-warning-icon-color: $ct-alert-light-warning-color !default;
+$ct-alert-light-warning-title-color: ct-color-light('heading') !default;
+$ct-alert-light-warning-icon-color: $ct-alert-light-warning-title-color !default;
 $ct-alert-dark-error-background-color: ct-color-shade(ct-color-constant-dark('error'), 20) !default;
 $ct-alert-dark-error-color: ct-color-dark('body') !default;
-$ct-alert-dark-error-icon-color: $ct-alert-dark-error-color !default;
+$ct-alert-dark-error-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-error-icon-color: $ct-alert-dark-error-title-color !default;
 $ct-alert-dark-information-background-color: ct-color-shade(ct-color-constant-dark('information'), 39) !default;
 $ct-alert-dark-information-color: ct-color-dark('body') !default;
-$ct-alert-dark-information-icon-color: $ct-alert-dark-information-color !default;
+$ct-alert-dark-information-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-information-icon-color: $ct-alert-dark-information-title-color !default;
 $ct-alert-dark-success-background-color: ct-color-shade(ct-color-constant-dark('success'), 30) !default;
 $ct-alert-dark-success-color: ct-color-dark('body') !default;
-$ct-alert-dark-success-icon-color: $ct-alert-dark-success-color !default;
+$ct-alert-dark-success-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-success-icon-color: $ct-alert-dark-success-title-color !default;
 $ct-alert-dark-warning-background-color: ct-color-shade(ct-color-constant-dark('warning'), 28) !default;
 $ct-alert-dark-warning-color: ct-color-dark('body') !default;
-$ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-color !default;
+$ct-alert-dark-warning-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-title-color !default;
 
 //
 // Banner.
@@ -1027,7 +1035,7 @@ $ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-color !default;
 $ct-banner-decorative-mobile-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - #{ct-spacing(2)}), 0% 100%) !default;
 $ct-banner-decorative-desktop-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - #{ct-spacing(6)}), 0% 100%) !default;
 $ct-banner-featured-image-width: 40% !default;
-$ct-banner-featured-image-clip-path: polygon(13% 10%, 100% 0, 100% 100%, 0% 100%) !default;
+$ct-banner-featured-image-clip-path: polygon(7.5% 7.5%, 100% 0, 100% 100%, 0% 100%) !default;
 $ct-banner-light-background-color: ct-color-light('background') !default;
 $ct-banner-light-featured-image-shadow-color: ct-color-light('background-light') !default;
 $ct-banner-dark-background-color: ct-color-dark('background') !default;
@@ -1040,6 +1048,8 @@ $ct-campaign-image-border-radius: $ct-border-radius !default;
 $ct-campaign-image-shadow-offset-x: ct-particle(2) !default;
 $ct-campaign-image-shadow-offset-y: ct-particle(2) !default;
 $ct-campaign-mobile-height: ct-particle(30) !default;
+$ct-campaign-mobile-image-shadow-offset-y: ct-particle(1.5) !default;
+$ct-campaign-mobile-image-shadow-inset: ct-particle(1.25) !default;
 $ct-campaign-light-background-color: ct-color-light('background-light') !default;
 $ct-campaign-light-image-shadow-color: ct-color-light('background') !default;
 $ct-campaign-dark-background-color: ct-color-dark('background') !default;
@@ -1197,7 +1207,7 @@ $ct-navigation-breakpoint: $ct-header-desktop-menu-breakpoint !default;
 //
 // Navigation/Side navigation.
 //
-$ct-side-navigation-link-active-border-radius: math.div($ct-border-radius, 2) !default;
+$ct-side-navigation-link-active-border-radius: 0 !default;
 $ct-side-navigation-light-title-color: ct-color-light('heading') !default;
 $ct-side-navigation-light-link-expanded-icon-color: ct-color-light('heading') !default;
 $ct-side-navigation-light-link-parent-background-color: ct-color-light('background-light') !default;
@@ -1209,9 +1219,13 @@ $ct-side-navigation-light-link-parent-hover-border-color: $ct-side-navigation-li
 $ct-side-navigation-light-link-parent-hover-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-parent-hover-stripe-background-color: ct-color-light('highlight') !default;
 $ct-side-navigation-light-link-parent-active-background-color: ct-color-light('background') !default;
-$ct-side-navigation-light-link-parent-active-border-color: $ct-side-navigation-light-link-parent-border-color !default;
+$ct-side-navigation-light-link-parent-active-border-color: ct-color-light('border') !default;
 $ct-side-navigation-light-link-parent-active-color: $ct-side-navigation-light-link-parent-color !default;
 $ct-side-navigation-light-link-parent-active-stripe-background-color: ct-color-light('highlight') !default;
+$ct-side-navigation-light-link-parent-active-trail-background-color: $ct-side-navigation-light-link-parent-active-background-color !default;
+$ct-side-navigation-light-link-parent-active-trail-border-color: ct-color-light('border-light') !default;
+$ct-side-navigation-light-link-parent-active-trail-color: $ct-side-navigation-light-link-parent-active-color !default;
+$ct-side-navigation-light-link-parent-active-trail-stripe-background-color: $ct-side-navigation-light-link-parent-active-stripe-background-color !default;
 $ct-side-navigation-light-link-child-background-color: $ct-side-navigation-light-link-parent-background-color !default;
 $ct-side-navigation-light-link-child-border-color: $ct-side-navigation-light-link-parent-border-color !default;
 $ct-side-navigation-light-link-child-color: $ct-side-navigation-light-link-parent-color !default;
@@ -1221,23 +1235,31 @@ $ct-side-navigation-light-link-child-hover-border-color: $ct-side-navigation-lig
 $ct-side-navigation-light-link-child-hover-color: $ct-side-navigation-light-link-child-color !default;
 $ct-side-navigation-light-link-child-hover-stripe-background-color: ct-color-light('highlight') !default;
 $ct-side-navigation-light-link-child-active-background-color: ct-color-light('background') !default;
-$ct-side-navigation-light-link-child-active-border-color: $ct-side-navigation-light-link-child-border-color !default;
+$ct-side-navigation-light-link-child-active-border-color: ct-color-light('border') !default;
 $ct-side-navigation-light-link-child-active-color: $ct-side-navigation-light-link-child-color !default;
 $ct-side-navigation-light-link-child-active-stripe-background-color: $ct-side-navigation-light-link-child-hover-stripe-background-color !default;
+$ct-side-navigation-light-link-child-active-trail-background-color: $ct-side-navigation-light-link-child-active-background-color !default;
+$ct-side-navigation-light-link-child-active-trail-border-color: ct-color-light('border-light') !default;
+$ct-side-navigation-light-link-child-active-trail-color: $ct-side-navigation-light-link-child-active-color !default;
+$ct-side-navigation-light-link-child-active-trail-stripe-background-color: $ct-side-navigation-light-link-child-active-stripe-background-color !default;
 $ct-side-navigation-dark-title-color: ct-color-dark('heading') !default;
 $ct-side-navigation-dark-link-expanded-icon-color: ct-color-dark('heading') !default;
 $ct-side-navigation-dark-link-parent-background-color: ct-color-dark('background-light') !default;
-$ct-side-navigation-dark-link-parent-border-color: ct-color-dark('interaction-text') !default;
+$ct-side-navigation-dark-link-parent-border-color: ct-color-dark('border') !default;
 $ct-side-navigation-dark-link-parent-color: ct-color-dark('heading') !default;
-$ct-side-navigation-dark-link-parent-stripe-background-color: ct-color-dark('interaction-text') !default;
+$ct-side-navigation-dark-link-parent-stripe-background-color: ct-color-dark('border') !default;
 $ct-side-navigation-dark-link-parent-hover-background-color: ct-color-dark('background-dark') !default;
 $ct-side-navigation-dark-link-parent-hover-border-color: $ct-side-navigation-dark-link-parent-border-color !default;
 $ct-side-navigation-dark-link-parent-hover-color: $ct-side-navigation-dark-link-parent-color !default;
 $ct-side-navigation-dark-link-parent-hover-stripe-background-color: ct-color-dark('highlight') !default;
 $ct-side-navigation-dark-link-parent-active-background-color: ct-color-dark('background') !default;
-$ct-side-navigation-dark-link-parent-active-border-color: $ct-side-navigation-dark-link-parent-border-color !default;
+$ct-side-navigation-dark-link-parent-active-border-color: ct-color-dark('highlight') !default;
 $ct-side-navigation-dark-link-parent-active-color: $ct-side-navigation-dark-link-parent-color !default;
 $ct-side-navigation-dark-link-parent-active-stripe-background-color: ct-color-dark('highlight') !default;
+$ct-side-navigation-dark-link-parent-active-trail-background-color: $ct-side-navigation-dark-link-parent-active-background-color !default;
+$ct-side-navigation-dark-link-parent-active-trail-border-color: $ct-side-navigation-dark-link-parent-border-color !default;
+$ct-side-navigation-dark-link-parent-active-trail-color: $ct-side-navigation-dark-link-parent-active-color !default;
+$ct-side-navigation-dark-link-parent-active-trail-stripe-background-color: $ct-side-navigation-dark-link-parent-active-stripe-background-color !default;
 $ct-side-navigation-dark-link-child-background-color: $ct-side-navigation-dark-link-parent-background-color !default;
 $ct-side-navigation-dark-link-child-border-color: $ct-side-navigation-dark-link-parent-border-color !default;
 $ct-side-navigation-dark-link-child-color: $ct-side-navigation-dark-link-parent-color !default;
@@ -1247,9 +1269,13 @@ $ct-side-navigation-dark-link-child-hover-border-color: $ct-side-navigation-dark
 $ct-side-navigation-dark-link-child-hover-color: $ct-side-navigation-dark-link-child-color !default;
 $ct-side-navigation-dark-link-child-hover-stripe-background-color: ct-color-dark('highlight') !default;
 $ct-side-navigation-dark-link-child-active-background-color: ct-color-dark('background') !default;
-$ct-side-navigation-dark-link-child-active-border-color: $ct-side-navigation-dark-link-child-border-color !default;
+$ct-side-navigation-dark-link-child-active-border-color: ct-color-dark('highlight') !default;
 $ct-side-navigation-dark-link-child-active-color: $ct-side-navigation-dark-link-child-color !default;
 $ct-side-navigation-dark-link-child-active-stripe-background-color: $ct-side-navigation-dark-link-child-hover-stripe-background-color !default;
+$ct-side-navigation-dark-link-child-active-trail-background-color: $ct-side-navigation-dark-link-child-active-background-color !default;
+$ct-side-navigation-dark-link-child-active-trail-border-color: $ct-side-navigation-dark-link-child-border-color !default;
+$ct-side-navigation-dark-link-child-active-trail-color: $ct-side-navigation-dark-link-child-active-color !default;
+$ct-side-navigation-dark-link-child-active-trail-stripe-background-color: $ct-side-navigation-dark-link-child-active-stripe-background-color !default;
 
 //
 // Navigation/Mobile navigation.

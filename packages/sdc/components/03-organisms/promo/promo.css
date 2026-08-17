@@ -13,7 +13,7 @@
   border-bottom: solid 0.0625rem;
 }
 .ct-promo__wrapper {
-  padding: 1.5rem 0;
+  padding: 2rem 0 2.5rem 0;
 }
 @media (min-width: 768px) {
   .ct-promo__wrapper {
@@ -29,7 +29,7 @@
   }
 }
 .ct-promo__links {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .ct-promo__links {
@@ -37,10 +37,11 @@
   }
 }
 .ct-promo__title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .ct-promo__content {
   margin-left: auto;
+  margin-bottom: 0;
 }
 .ct-promo__button {
   width: auto;

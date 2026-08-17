@@ -2,7 +2,7 @@
  * CivicTheme Grid component stories.
  */
 
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 import Component from './grid.twig';
 import { placeholder, code, generateItems } from '../storybook/storybook.generators.utils';
 

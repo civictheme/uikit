@@ -19,8 +19,12 @@
     padding: 0;
   }
 
+  #{$root}__close-button {
+    @include ct-icon-size('regular');
+  }
+
   #{$root}__description {
-    @include ct-typography('label-extra-small');
+    @include ct-typography('text-regular');
     @include ct-elevation(2);
 
     & {
@@ -29,16 +33,19 @@
       border-radius: var(--ct-tooltip-description-border-radius);
       position: absolute;
       width: var(--ct-tooltip-width-mobile);
-      min-height: calc(var(--ct-tooltip-width-mobile) / 2);
       z-index: var(--ct-tooltip-z-index);
     }
 
     &[data-popper-placement^='top'] > [data-tooltip-arrow] {
-      bottom: calc(var(--ct-tooltip-triangle-width) * -1);
+      bottom: calc(1px - var(--ct-tooltip-triangle-width));
       width: calc(var(--ct-tooltip-triangle-height) * 2);
       height: var(--ct-tooltip-triangle-width);
 
       &::before {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
         border-left: var(--ct-tooltip-triangle-height) solid transparent;
         border-right: var(--ct-tooltip-triangle-height) solid transparent;
         border-top: var(--ct-tooltip-triangle-width) solid;
@@ -46,11 +53,15 @@
     }
 
     &[data-popper-placement^='bottom'] > [data-tooltip-arrow] {
-      top: calc(var(--ct-tooltip-triangle-width) * -1);
+      top: calc(1px - var(--ct-tooltip-triangle-width));
       width: calc(var(--ct-tooltip-triangle-height) * 2);
       height: var(--ct-tooltip-triangle-width);
 
       &::before {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
         border-left: var(--ct-tooltip-triangle-height) solid transparent;
         border-right: var(--ct-tooltip-triangle-height) solid transparent;
         border-bottom: var(--ct-tooltip-triangle-width) solid;
@@ -58,10 +69,15 @@
     }
 
     &[data-popper-placement^='left'] > [data-tooltip-arrow] {
-      right: calc(var(--ct-tooltip-triangle-width) * -1);
+      right: calc(1px - var(--ct-tooltip-triangle-width));
+      width: var(--ct-tooltip-triangle-width);
       height: calc(var(--ct-tooltip-triangle-height) * 2);
 
       &::before {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
         border-top: var(--ct-tooltip-triangle-height) solid transparent;
         border-left: var(--ct-tooltip-triangle-width) solid;
         border-bottom: var(--ct-tooltip-triangle-height) solid transparent;
@@ -69,10 +85,15 @@
     }
 
     &[data-popper-placement^='right'] > [data-tooltip-arrow] {
-      left: calc(var(--ct-tooltip-triangle-width) * -1);
+      left: calc(1px - var(--ct-tooltip-triangle-width));
+      width: var(--ct-tooltip-triangle-width);
       height: calc(var(--ct-tooltip-triangle-height) * 2);
 
       &::before {
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: auto;
         border-top: var(--ct-tooltip-triangle-height) solid transparent;
         border-right: var(--ct-tooltip-triangle-width) solid;
         border-bottom: var(--ct-tooltip-triangle-height) solid transparent;
@@ -131,6 +152,10 @@
       &:focus-visible {
         @include ct-outline-theme($theme);
       }
+    }
+
+    #{$root}__close-button {
+      @include ct-component-property($root, $theme, description, color);
     }
 
     #{$root}__description {

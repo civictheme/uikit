@@ -7,6 +7,10 @@
 
   #{$root}__button {
     line-height: 0;
+
+    .ct-icon {
+      @include ct-icon-size('regular');
+    }
   }
 
   &#{$root}--with-border {
@@ -14,6 +18,7 @@
       border: ct-particle(0.125) solid currentcolor;
       border-radius: ct-particle(12);
       padding: ct-spacing(1.375);
+      outline-offset: -1 * ct-particle(0.375);
 
       @include ct-breakpoint(m) {
         padding: ct-spacing(1.625);
