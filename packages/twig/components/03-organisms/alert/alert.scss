@@ -8,13 +8,17 @@
   $root: &;
 
   position: relative;
-  padding: ct-spacing(2);
+  padding: ct-spacing(2) 0;
 
   @include ct-breakpoint(m) {
-    padding: ct-spacing(3);
+    padding: ct-spacing(3) 0;
   }
 
-  @include ct-typography('label-extra-small');
+  @include ct-typography('text-small');
+
+  .container {
+    position: relative;
+  }
 
   #{$root}__title {
     @include ct-typography('heading-6');
@@ -24,6 +28,7 @@
 
     @include ct-breakpoint-upto('m') {
       margin-bottom: ct-spacing();
+      padding-right: ct-spacing(4);
     }
   }
 
@@ -42,7 +47,7 @@
     align-items: center;
 
     @include ct-breakpoint(m) {
-      position: relative;
+      gap: ct-spacing(3);
     }
 
     p {
@@ -56,10 +61,15 @@
     cursor: pointer;
     margin-left: ct-spacing(3);
     position: absolute;
-    top: ct-spacing(2);
-    right: ct-spacing(2);
+    top: 0;
+    right: 0;
     background-color: transparent;
     padding: 0;
+    flex-shrink: 0;
+
+    .ct-icon {
+      @include ct-icon-size('regular');
+    }
 
     @include ct-breakpoint(m) {
       @include ct-typography('heading-6');
@@ -79,6 +89,10 @@
       &#{$root}--#{$type} {
         @include ct-component-property($root, $theme, $type, background-color);
         @include ct-component-property($root, $theme, $type, color);
+
+        #{$root}__title {
+          @include ct-component-property($root, $theme, $type, title, color);
+        }
 
         #{$root}__dismiss-button,
         #{$root}__icon {

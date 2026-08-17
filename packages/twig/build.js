@@ -139,6 +139,7 @@ const STYLE_SDC_COMMON_INCLUDES      = [VAR_CT_ASSETS_DIRECTORY, `@import '00-ba
 const STYLE_SDC_MIXIN_IMPORTS        = `00-base/mixins/**/*.scss`
 const STYLE_SDC_BASE_IMPORTS         = `00-base/**/!(*.stories|variables|_variables.*).scss`
 const STYLE_SDC_BASE_FILE_OUT        = `${DIR_OUT}/${STYLE_NAME}.base.css`;
+const STYLE_SDC_SB_BASE_FILE_OUT     = `${DIR_OUT}/${STYLE_NAME}.base.storybook.css`;
 const JS_SDC_BASE_FILE_OUT           = `${DIR_OUT}/${SCRIPT_NAME}.drupal.base.js`
 const JS_SDC_STORYBOOK_BASE_FILE_OUT = `${DIR_OUT}/${SCRIPT_NAME}.base.js`
 const JS_SDC_BASE_IMPORTS            = `${COMPONENT_DIR}/00-base/**/!(*.stories|*.test|*.data|*.stories.data|*.utils).js`
@@ -286,7 +287,17 @@ function buildStylesSdcBase() {
     ].join('\n')
     const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] })
     fs.writeFileSync(STYLE_SDC_BASE_FILE_OUT, SDC_HEADER + sortCssLines(compiled.css))
-    successReporter(`Saved: SDC styles (base) ${time()}`)
+    successReporter(`Saved: SDC base styles (base) ${time()}`)
+  }
+}
+
+function buildStylesSdcBaseStorybook() {
+  if (config.sdc_base && config.styles_storybook) {
+    // Replace the asset path.
+    let file = fs.readFileSync(STYLE_SDC_BASE_FILE_OUT, 'utf-8')
+    file = file.replaceAll(DIR_CT_ASSETS, DIR_SB_ASSETS)
+    fs.writeFileSync(STYLE_SDC_SB_BASE_FILE_OUT, file, 'utf-8')
+    successReporter(`Saved: SDC base styles (storybook) ${time()}`)
   }
 }
 
@@ -435,6 +446,7 @@ async function build() {
     buildStylesStories()
     buildStylesTheme()
     buildStylesSdcBase()
+    buildStylesSdcBaseStorybook()
     await buildStylesSdcComponents()
     buildStylesSdcCopyBack()
     buildJavascript()

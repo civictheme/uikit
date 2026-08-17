@@ -655,7 +655,7 @@ $ct-back-to-top-outline-color: ct-color-light('interaction-focus') !default;
 //
 // Basic content.
 //
-$ct-basic-content-blockquote-border-radius: $ct-border-radius !default;
+$ct-basic-content-blockquote-border-radius: 0 !default;
 $ct-basic-content-list-marker-margin: ct-particle(2) !default;
 $ct-basic-content-list-marker-width: ct-particle(3.5) !default;
 $ct-basic-content-space-horizontal: ct-spacing(7) !default;
@@ -755,7 +755,7 @@ $ct-next-step-dark-stripe-background-color: ct-color-dark('highlight') !default;
 //
 // Table Of Contents.
 //
-$ct-table-of-contents-link-active-border-radius: math.div($ct-border-radius, 2) !default;
+$ct-table-of-contents-link-active-border-radius: $ct-border-radius !default;
 $ct-table-of-contents-max-width: 50% !default;
 $ct-table-of-contents-min-width: 50% !default;
 $ct-table-of-contents-light-link-background-color: ct-color-light('background-light') !default;
@@ -795,11 +795,11 @@ $ct-tabs-dark-panel-border-color: ct-color-dark('border') !default;
 //
 // Tooltip.
 //
-$ct-tooltip-description-border-radius: $ct-border-radius !default;
+$ct-tooltip-description-border-radius: $ct-border-radius * 2 !default;
 $ct-tooltip-width: ct-particle(60) !default;
 $ct-tooltip-width-mobile: ct-particle(40) !default;
-$ct-tooltip-triangle-width: ct-spacing(3.2) !default;
-$ct-tooltip-triangle-height: ct-spacing(2.6) !default;
+$ct-tooltip-triangle-width: ct-spacing(3.25) !default;
+$ct-tooltip-triangle-height: ct-spacing(2.625) !default;
 $ct-tooltip-z-index: 99 !default;
 $ct-tooltip-light-description-background-color: ct-color-light('interaction-background') !default;
 $ct-tooltip-light-description-color: ct-color-light('interaction-text') !default;
@@ -964,7 +964,7 @@ $ct-subject-card-dark-image-opacity: 20% !default;
 //
 $ct-fast-fact-card-border-radius: $ct-border-radius !default;
 $ct-fast-fact-card-stripe-height: var(--ct-stripe-size) !default;
-$ct-fast-fact-card-max-width: ct-particle(6.25) !default;
+$ct-fast-fact-card-max-width: ct-particle(6) !default;
 $ct-fast-fact-card-max-height: ct-particle(12.5) !default;
 $ct-fast-fact-card-light-background-color: ct-color-light('background-light') !default;
 $ct-fast-fact-card-light-stripe-background-color: ct-color-light('highlight') !default;
@@ -996,28 +996,36 @@ $ct-snippet-dark-title-hover-color: ct-color-dark('interaction-background') !def
 //
 $ct-alert-light-error-background-color: ct-color-tint(ct-color-constant-light('error'), 80) !default;
 $ct-alert-light-error-color: ct-color-light('body') !default;
-$ct-alert-light-error-icon-color: $ct-alert-light-error-color !default;
+$ct-alert-light-error-title-color: ct-color-light('heading') !default;
+$ct-alert-light-error-icon-color: $ct-alert-light-error-title-color !default;
 $ct-alert-light-information-background-color: ct-color-tint(ct-color-constant-light('information'), 80) !default;
 $ct-alert-light-information-color: ct-color-light('body') !default;
-$ct-alert-light-information-icon-color: $ct-alert-light-information-color !default;
+$ct-alert-light-information-title-color: ct-color-light('heading') !default;
+$ct-alert-light-information-icon-color: $ct-alert-light-information-title-color !default;
 $ct-alert-light-success-background-color: ct-color-tint(ct-color-constant-light('success'), 80) !default;
 $ct-alert-light-success-color: ct-color-light('body') !default;
-$ct-alert-light-success-icon-color: $ct-alert-light-success-color !default;
+$ct-alert-light-success-title-color: ct-color-light('heading') !default;
+$ct-alert-light-success-icon-color: $ct-alert-light-success-title-color !default;
 $ct-alert-light-warning-background-color: ct-color-tint(ct-color-constant-light('warning'), 80) !default;
 $ct-alert-light-warning-color: ct-color-light('body') !default;
-$ct-alert-light-warning-icon-color: $ct-alert-light-warning-color !default;
+$ct-alert-light-warning-title-color: ct-color-light('heading') !default;
+$ct-alert-light-warning-icon-color: $ct-alert-light-warning-title-color !default;
 $ct-alert-dark-error-background-color: ct-color-shade(ct-color-constant-dark('error'), 20) !default;
 $ct-alert-dark-error-color: ct-color-dark('body') !default;
-$ct-alert-dark-error-icon-color: $ct-alert-dark-error-color !default;
+$ct-alert-dark-error-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-error-icon-color: $ct-alert-dark-error-title-color !default;
 $ct-alert-dark-information-background-color: ct-color-shade(ct-color-constant-dark('information'), 39) !default;
 $ct-alert-dark-information-color: ct-color-dark('body') !default;
-$ct-alert-dark-information-icon-color: $ct-alert-dark-information-color !default;
+$ct-alert-dark-information-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-information-icon-color: $ct-alert-dark-information-title-color !default;
 $ct-alert-dark-success-background-color: ct-color-shade(ct-color-constant-dark('success'), 30) !default;
 $ct-alert-dark-success-color: ct-color-dark('body') !default;
-$ct-alert-dark-success-icon-color: $ct-alert-dark-success-color !default;
+$ct-alert-dark-success-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-success-icon-color: $ct-alert-dark-success-title-color !default;
 $ct-alert-dark-warning-background-color: ct-color-shade(ct-color-constant-dark('warning'), 28) !default;
 $ct-alert-dark-warning-color: ct-color-dark('body') !default;
-$ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-color !default;
+$ct-alert-dark-warning-title-color: ct-color-dark('heading') !default;
+$ct-alert-dark-warning-icon-color: $ct-alert-dark-warning-title-color !default;
 
 //
 // Banner.
@@ -1038,6 +1046,8 @@ $ct-campaign-image-border-radius: $ct-border-radius !default;
 $ct-campaign-image-shadow-offset-x: ct-particle(2) !default;
 $ct-campaign-image-shadow-offset-y: ct-particle(2) !default;
 $ct-campaign-mobile-height: ct-particle(30) !default;
+$ct-campaign-mobile-image-shadow-offset-y: ct-particle(1.5) !default;
+$ct-campaign-mobile-image-shadow-inset: ct-particle(1.25) !default;
 $ct-campaign-light-background-color: ct-color-light('background-light') !default;
 $ct-campaign-light-image-shadow-color: ct-color-light('background') !default;
 $ct-campaign-dark-background-color: ct-color-dark('background') !default;
