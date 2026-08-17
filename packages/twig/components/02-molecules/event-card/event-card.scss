@@ -34,6 +34,14 @@
 
   &:not(#{$root}--with-image) {
     @include ct-highlight-stripe-horizontal(var(--ct-event-card-stripe-height), var(--ct-event-card-border-radius), 0);
+
+    #{$root}__content {
+      padding: ct-spacing(3.25) ct-spacing(2.5) ct-spacing(2.5) ct-spacing(2.5);
+
+      @include ct-breakpoint(m) {
+        padding: ct-spacing(3.75) ct-spacing(3) ct-spacing(3) ct-spacing(3);
+      }
+    }
   }
 
   #{$root}__image {
@@ -46,11 +54,15 @@
   }
 
   #{$root}__content {
-    padding: ct-spacing(3);
+    padding: ct-spacing(2.5);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: ct-spacing(2);
+
+    @include ct-breakpoint(m) {
+      padding: ct-spacing(3);
+    }
   }
 
   #{$root}__title {
@@ -58,8 +70,6 @@
   }
 
   #{$root}__title-link {
-    @include ct-font-size-inherit();
-
     text-decoration: none;
 
     &:focus-visible {
@@ -77,7 +87,27 @@
   }
 
   #{$root}__location {
-    @include ct-typography('label-regular');
+    @include ct-typography('text-regular');
+
+    margin-bottom: 0;
+  }
+
+  #{$root}__date {
+    .ct-tag {
+      @include ct-typography('label-extra-small');
+
+      .ct-icon {
+        @include ct-icon-size('regular');
+      }
+
+      .ct-tag--icon-before .ct-icon {
+        margin-right: ct-spacing(0.5);
+      }
+
+      .ct-tag--icon-after .ct-icon {
+        margin-left: ct-spacing(0.5);
+      }
+    }
   }
 
   #{$root}__tags {
