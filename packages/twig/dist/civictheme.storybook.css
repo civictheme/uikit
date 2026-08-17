@@ -6156,7 +6156,7 @@ ol ol ol {
   top: -0.0625rem;
   bottom: -0.0625rem;
   left: -0.0625rem;
-  width: calc(var(--ct-accordion-stripe-width) + 0.0625rem);
+  width: var(--ct-accordion-stripe-width);
   border-top-left-radius: var(--ct-accordion-item-border-radius);
   border-bottom-left-radius: var(--ct-accordion-item-border-radius);
   transition: width 0.25s;
@@ -6186,9 +6186,10 @@ ol ol ol {
   display: flex;
   text-align: left;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem calc(1.75rem + var(--ct-accordion-stripe-width));
   justify-content: stretch;
   width: 100%;
+  align-items: center;
 }
 [data-collapsible-collapsed] > .ct-accordion .ct-accordion__panels__panel__header__button {
   border-bottom: none;
@@ -6196,7 +6197,8 @@ ol ol ol {
   border-bottom-right-radius: 0;
 }
 .ct-accordion .ct-accordion__panels__panel__content__inner {
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 1.5rem 1.5rem calc(1.75rem + var(--ct-accordion-stripe-width));
+  margin-bottom: 0;
 }
 .ct-accordion.ct-theme-light {
   color: var(--ct-accordion-light-color);
@@ -6985,7 +6987,7 @@ ol ol ol {
 
 .ct-callout__wrapper {
   border-radius: var(--ct-callout-border-radius);
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem calc(1.5rem + var(--ct-callout-stripe-width));
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -6993,7 +6995,7 @@ ol ol ol {
 }
 @media (min-width: 768px) {
   .ct-callout__wrapper {
-    padding: 1.5rem 2.5rem 2rem 1.5rem;
+    padding: 2rem 2rem 2rem calc(2rem + var(--ct-callout-stripe-width));
   }
 }
 .ct-callout__wrapper {
@@ -7013,7 +7015,12 @@ ol ol ol {
 .ct-callout__inner {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .ct-callout__inner {
+    gap: 1rem;
+  }
 }
 .ct-callout.ct-theme-light .ct-callout__wrapper {
   background-color: var(--ct-callout-light-background-color);
@@ -7883,7 +7890,7 @@ ol ol ol {
   position: relative;
   border-width: 0.0625rem;
   border-style: solid;
-  padding: 1.5rem 1rem 1.5rem calc(1rem + var(--ct-next-step-stripe-width));
+  padding: 1.4375rem 1.1875rem 1.4375rem calc(1.4375rem + var(--ct-next-step-stripe-width));
   border-radius: var(--ct-next-step-border-radius);
 }
 .ct-next-step .ct-next-step__wrapper {
@@ -7895,14 +7902,14 @@ ol ol ol {
   top: -0.0625rem;
   bottom: -0.0625rem;
   left: -0.0625rem;
-  width: calc(var(--ct-next-step-stripe-width) + 0.0625rem);
+  width: var(--ct-next-step-stripe-width);
   border-top-left-radius: var(--ct-next-step-border-radius);
   border-bottom-left-radius: var(--ct-next-step-border-radius);
   transition: width 0.25s;
 }
 @media (min-width: 768px) {
   .ct-next-step .ct-next-step__wrapper {
-    padding: 1.5rem 1.5rem 1.5rem calc(1.5rem + var(--ct-next-step-stripe-width));
+    padding: 1.4375rem 1.1875rem 1.4375rem calc(1.4375rem + var(--ct-next-step-stripe-width));
   }
 }
 .ct-next-step .ct-next-step__title {
@@ -7913,10 +7920,14 @@ ol ol ol {
   letter-spacing: var(--ct-typography-heading-5-letter-spacing);
 }
 .ct-next-step .ct-next-step__title__link {
+  padding: 0;
   font-size: inherit;
   line-height: inherit;
   display: flex;
   column-gap: 1rem;
+}
+.ct-next-step .ct-next-step__title__link .ct-link__icon {
+  flex-shrink: 0;
 }
 .ct-next-step .ct-next-step__title__link .ct-link__icon {
   margin-left: auto;
@@ -7924,6 +7935,7 @@ ol ol ol {
 }
 .ct-next-step .ct-next-step__content {
   margin-top: 1rem;
+  margin-bottom: 0;
 }
 .ct-next-step.ct-theme-light .ct-next-step__wrapper {
   color: var(--ct-next-step-light-border-color);
@@ -7932,12 +7944,18 @@ ol ol ol {
 .ct-next-step.ct-theme-light .ct-next-step__wrapper::before {
   background-color: var(--ct-next-step-light-stripe-background-color);
 }
+.ct-next-step.ct-theme-light .ct-next-step__title__link .ct-text-icon__text {
+  color: var(--ct-next-step-light-title-color);
+}
 .ct-next-step.ct-theme-dark .ct-next-step__wrapper {
   color: var(--ct-next-step-dark-border-color);
   background-color: var(--ct-next-step-dark-background-color);
 }
 .ct-next-step.ct-theme-dark .ct-next-step__wrapper::before {
   background-color: var(--ct-next-step-dark-stripe-background-color);
+}
+.ct-next-step.ct-theme-dark .ct-next-step__title__link .ct-text-icon__text {
+  color: var(--ct-next-step-dark-title-color);
 }
 
 .ct-pagination {
@@ -12080,9 +12098,11 @@ html {
   --ct-next-step-light-background-color: var(--ct-color-light-background-light);
   --ct-next-step-light-border-color: var(--ct-color-light-border-light);
   --ct-next-step-light-stripe-background-color: var(--ct-color-light-highlight);
+  --ct-next-step-light-title-color: var(--ct-color-light-heading);
   --ct-next-step-dark-background-color: var(--ct-color-dark-background);
   --ct-next-step-dark-border-color: var(--ct-color-dark-border);
   --ct-next-step-dark-stripe-background-color: var(--ct-color-dark-highlight);
+  --ct-next-step-dark-title-color: var(--ct-color-dark-heading);
   --ct-table-of-contents-link-active-border-radius: 0.25rem;
   --ct-table-of-contents-max-width: 50%;
   --ct-table-of-contents-min-width: 50%;

@@ -748,9 +748,11 @@ $ct-next-step-stripe-width: var(--ct-stripe-size) !default;
 $ct-next-step-light-background-color: ct-color-light('background-light') !default;
 $ct-next-step-light-border-color: ct-color-light('border-light') !default;
 $ct-next-step-light-stripe-background-color: ct-color-light('highlight') !default;
+$ct-next-step-light-title-color: ct-color-light('heading') !default;
 $ct-next-step-dark-background-color: ct-color-dark('background') !default;
 $ct-next-step-dark-border-color: ct-color-dark('border') !default;
 $ct-next-step-dark-stripe-background-color: ct-color-dark('highlight') !default;
+$ct-next-step-dark-title-color: ct-color-dark('heading') !default;
 
 //
 // Table Of Contents.
