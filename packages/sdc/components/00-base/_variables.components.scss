@@ -755,7 +755,7 @@ $ct-next-step-dark-stripe-background-color: ct-color-dark('highlight') !default;
 //
 // Table Of Contents.
 //
-$ct-table-of-contents-link-active-border-radius: math.div($ct-border-radius, 2) !default;
+$ct-table-of-contents-link-active-border-radius: $ct-border-radius !default;
 $ct-table-of-contents-max-width: 50% !default;
 $ct-table-of-contents-min-width: 50% !default;
 $ct-table-of-contents-light-link-background-color: ct-color-light('background-light') !default;
