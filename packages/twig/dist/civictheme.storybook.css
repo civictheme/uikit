@@ -7968,7 +7968,7 @@ ol ol ol {
   width: auto;
   border-top-width: 0.0625rem;
   border-top-style: solid;
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   box-sizing: border-box;
 }
 @media (min-width: 768px) {
@@ -8019,6 +8019,22 @@ ol ol ol {
   padding: 0 0.5rem;
   text-align: center;
 }
+@media (min-width: 0) {
+  .ct-pagination .ct-pagination__item--first .ct-icon,
+  .ct-pagination .ct-pagination__item--previous .ct-icon,
+  .ct-pagination .ct-pagination__item--next .ct-icon,
+  .ct-pagination .ct-pagination__item--last .ct-icon {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .ct-pagination .ct-pagination__item--first .ct-icon,
+  .ct-pagination .ct-pagination__item--previous .ct-icon,
+  .ct-pagination .ct-pagination__item--next .ct-icon,
+  .ct-pagination .ct-pagination__item--last .ct-icon {
+    font-size: 1.25rem;
+  }
+}
 .ct-pagination .ct-pagination__item--first,
 .ct-pagination .ct-pagination__item--previous {
   padding: 0 0.5rem 0 0;
@@ -8038,6 +8054,9 @@ ol ol ol {
   .ct-pagination .ct-pagination__item--last {
     padding: 0 0 0 1rem;
   }
+}
+.ct-pagination .ct-pagination__item--active .ct-pagination__item__link {
+  text-decoration: underline;
 }
 .ct-pagination .ct-pagination__item__link {
   padding: 0 0.5rem;
