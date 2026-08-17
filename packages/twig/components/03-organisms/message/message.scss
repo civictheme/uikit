@@ -14,7 +14,7 @@
     justify-content: stretch;
     border-radius: var(--ct-message-border-radius);
     border-left: solid ct-particle(0.75) transparent;
-    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(1);
+    padding: ct-spacing(3) ct-spacing(3) ct-spacing(3) ct-spacing(1.25);
     width: 100%;
 
     @include ct-typography('text-regular');
@@ -27,7 +27,7 @@
   }
 
   #{$root}__title {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   #{$root}__content {
