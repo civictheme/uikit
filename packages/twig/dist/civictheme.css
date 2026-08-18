@@ -3328,6 +3328,30 @@ ul.row {
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 
+.ct-button-large {
+  font-size: var(--ct-typography-button-large-font-size);
+  line-height: var(--ct-typography-button-large-line-height);
+  font-family: var(--ct-typography-button-large-font-name);
+  font-weight: var(--ct-typography-button-large-font-weight);
+  letter-spacing: var(--ct-typography-button-large-letter-spacing);
+}
+
+.ct-button-regular {
+  font-size: var(--ct-typography-button-regular-font-size);
+  line-height: var(--ct-typography-button-regular-line-height);
+  font-family: var(--ct-typography-button-regular-font-name);
+  font-weight: var(--ct-typography-button-regular-font-weight);
+  letter-spacing: var(--ct-typography-button-regular-letter-spacing);
+}
+
+.ct-button-small {
+  font-size: var(--ct-typography-button-small-font-size);
+  line-height: var(--ct-typography-button-small-line-height);
+  font-family: var(--ct-typography-button-small-font-name);
+  font-weight: var(--ct-typography-button-small-font-weight);
+  letter-spacing: var(--ct-typography-button-small-letter-spacing);
+}
+
 .ct-quote {
   font-size: var(--ct-typography-quote-font-size);
   line-height: var(--ct-typography-quote-line-height);
@@ -3566,11 +3590,11 @@ ol ol ol {
   border: var(--ct-button-border-width) solid transparent;
   border-radius: var(--ct-button-border-radius);
   appearance: button;
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-button-regular-font-size);
+  line-height: var(--ct-typography-button-regular-line-height);
+  font-family: var(--ct-typography-button-regular-font-name);
+  font-weight: var(--ct-typography-button-regular-font-weight);
+  letter-spacing: var(--ct-typography-button-regular-letter-spacing);
 }
 .ct-button {
   padding: 0.75rem 1.25rem;
@@ -3797,62 +3821,46 @@ ol ol ol {
   text-decoration: none;
 }
 .ct-button--tertiary--large {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
-}
-@media (min-width: 768px) {
-  .ct-button--tertiary--large {
-    font-size: var(--ct-typography-label-large-font-size);
-    line-height: var(--ct-typography-label-large-line-height);
-    font-family: var(--ct-typography-label-large-font-name);
-    font-weight: var(--ct-typography-label-large-font-weight);
-    letter-spacing: var(--ct-typography-label-large-letter-spacing);
-  }
+  font-size: var(--ct-typography-button-large-font-size);
+  line-height: var(--ct-typography-button-large-line-height);
+  font-family: var(--ct-typography-button-large-font-name);
+  font-weight: var(--ct-typography-button-large-font-weight);
+  letter-spacing: var(--ct-typography-button-large-letter-spacing);
 }
 .ct-button--tertiary--large__dismiss {
   margin-left: 1.5rem;
 }
 .ct-button--tertiary--regular {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-button-regular-font-size);
+  line-height: var(--ct-typography-button-regular-line-height);
+  font-family: var(--ct-typography-button-regular-font-name);
+  font-weight: var(--ct-typography-button-regular-font-weight);
+  letter-spacing: var(--ct-typography-button-regular-letter-spacing);
 }
 .ct-button--tertiary--regular__dismiss {
   margin-left: 1.5rem;
 }
 .ct-button--tertiary--small {
-  font-size: var(--ct-typography-label-small-font-size);
-  line-height: var(--ct-typography-label-small-line-height);
-  font-family: var(--ct-typography-label-small-font-name);
-  font-weight: var(--ct-typography-label-small-font-weight);
-  letter-spacing: var(--ct-typography-label-small-letter-spacing);
+  font-size: var(--ct-typography-button-small-font-size);
+  line-height: var(--ct-typography-button-small-line-height);
+  font-family: var(--ct-typography-button-small-font-name);
+  font-weight: var(--ct-typography-button-small-font-weight);
+  letter-spacing: var(--ct-typography-button-small-letter-spacing);
 }
 .ct-button--tertiary--small__dismiss {
   margin-left: 1rem;
 }
 .ct-button--large {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-button-large-font-size);
+  line-height: var(--ct-typography-button-large-line-height);
+  font-family: var(--ct-typography-button-large-font-name);
+  font-weight: var(--ct-typography-button-large-font-weight);
+  letter-spacing: var(--ct-typography-button-large-letter-spacing);
 }
 .ct-button--large {
   padding: 0.75rem 1.5rem;
 }
 @media (min-width: 768px) {
-  .ct-button--large {
-    font-size: var(--ct-typography-label-large-font-size);
-    line-height: var(--ct-typography-label-large-line-height);
-    font-family: var(--ct-typography-label-large-font-name);
-    font-weight: var(--ct-typography-label-large-font-weight);
-    letter-spacing: var(--ct-typography-label-large-letter-spacing);
-  }
   .ct-button--large {
     padding: 1rem 3rem;
   }
@@ -3861,11 +3869,11 @@ ol ol ol {
   padding: 0;
 }
 .ct-button--regular {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-button-regular-font-size);
+  line-height: var(--ct-typography-button-regular-line-height);
+  font-family: var(--ct-typography-button-regular-font-name);
+  font-weight: var(--ct-typography-button-regular-font-weight);
+  letter-spacing: var(--ct-typography-button-regular-letter-spacing);
 }
 .ct-button--regular {
   padding: 0.75rem 1.25rem;
@@ -3879,11 +3887,11 @@ ol ol ol {
   padding: 0;
 }
 .ct-button--small {
-  font-size: var(--ct-typography-label-small-font-size);
-  line-height: var(--ct-typography-label-small-line-height);
-  font-family: var(--ct-typography-label-small-font-name);
-  font-weight: var(--ct-typography-label-small-font-weight);
-  letter-spacing: var(--ct-typography-label-small-letter-spacing);
+  font-size: var(--ct-typography-button-small-font-size);
+  line-height: var(--ct-typography-button-small-line-height);
+  font-family: var(--ct-typography-button-small-font-name);
+  font-weight: var(--ct-typography-button-small-font-weight);
+  letter-spacing: var(--ct-typography-button-small-letter-spacing);
 }
 .ct-button--small {
   padding: 0.5rem 1rem;
@@ -4191,23 +4199,16 @@ ol ol ol {
   color: var(--ct-chip-dark-selected-hover-color);
 }
 .ct-chip--large {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-button-large-font-size);
+  line-height: var(--ct-typography-button-large-line-height);
+  font-family: var(--ct-typography-button-large-font-name);
+  font-weight: var(--ct-typography-button-large-font-weight);
+  letter-spacing: var(--ct-typography-button-large-letter-spacing);
 }
 .ct-chip--large {
   padding: 0.75rem 1.5rem;
 }
 @media (min-width: 768px) {
-  .ct-chip--large {
-    font-size: var(--ct-typography-label-large-font-size);
-    line-height: var(--ct-typography-label-large-line-height);
-    font-family: var(--ct-typography-label-large-font-name);
-    font-weight: var(--ct-typography-label-large-font-weight);
-    letter-spacing: var(--ct-typography-label-large-letter-spacing);
-  }
   .ct-chip--large {
     padding: 1rem 3rem;
   }
@@ -4216,11 +4217,11 @@ ol ol ol {
   margin-left: 1.5rem;
 }
 .ct-chip--regular {
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+  font-size: var(--ct-typography-button-regular-font-size);
+  line-height: var(--ct-typography-button-regular-line-height);
+  font-family: var(--ct-typography-button-regular-font-name);
+  font-weight: var(--ct-typography-button-regular-font-weight);
+  letter-spacing: var(--ct-typography-button-regular-letter-spacing);
 }
 .ct-chip--regular {
   padding: 0.75rem 1.25rem;
@@ -4234,11 +4235,11 @@ ol ol ol {
   margin-left: 1.5rem;
 }
 .ct-chip--small {
-  font-size: var(--ct-typography-label-small-font-size);
-  line-height: var(--ct-typography-label-small-line-height);
-  font-family: var(--ct-typography-label-small-font-name);
-  font-weight: var(--ct-typography-label-small-font-weight);
-  letter-spacing: var(--ct-typography-label-small-letter-spacing);
+  font-size: var(--ct-typography-button-small-font-size);
+  line-height: var(--ct-typography-button-small-line-height);
+  font-family: var(--ct-typography-button-small-font-name);
+  font-weight: var(--ct-typography-button-small-font-weight);
+  letter-spacing: var(--ct-typography-button-small-letter-spacing);
 }
 .ct-chip--small {
   padding: 0.5rem 1rem;
@@ -11631,6 +11632,21 @@ html {
   --ct-typography-label-extra-small-font-name: "Lexend", sans-serif;
   --ct-typography-label-extra-small-font-weight: 400;
   --ct-typography-label-extra-small-letter-spacing: 0;
+  --ct-typography-button-large-font-size: 1rem;
+  --ct-typography-button-large-line-height: 1.25rem;
+  --ct-typography-button-large-font-name: "Lexend", sans-serif;
+  --ct-typography-button-large-font-weight: 600;
+  --ct-typography-button-large-letter-spacing: 0;
+  --ct-typography-button-regular-font-size: 1rem;
+  --ct-typography-button-regular-line-height: 1.25rem;
+  --ct-typography-button-regular-font-name: "Lexend", sans-serif;
+  --ct-typography-button-regular-font-weight: 600;
+  --ct-typography-button-regular-letter-spacing: 0;
+  --ct-typography-button-small-font-size: 1rem;
+  --ct-typography-button-small-line-height: 1.25rem;
+  --ct-typography-button-small-font-name: "Lexend", sans-serif;
+  --ct-typography-button-small-font-weight: 400;
+  --ct-typography-button-small-letter-spacing: 0;
   --ct-typography-quote-font-size: 1.25rem;
   --ct-typography-quote-line-height: 1.9375rem;
   --ct-typography-quote-font-name: "Lexend", sans-serif;
@@ -12657,6 +12673,11 @@ html {
     --ct-typography-text-small-font-name: "Lexend", sans-serif;
     --ct-typography-text-small-font-weight: 400;
     --ct-typography-text-small-letter-spacing: 0;
+    --ct-typography-button-large-font-size: 1.125rem;
+    --ct-typography-button-large-line-height: 1.5rem;
+    --ct-typography-button-large-font-name: "Lexend", sans-serif;
+    --ct-typography-button-large-font-weight: 600;
+    --ct-typography-button-large-letter-spacing: 0;
     --ct-typography-quote-font-size: 1.5625rem;
     --ct-typography-quote-line-height: 2.5rem;
     --ct-typography-quote-font-name: "Lexend", sans-serif;

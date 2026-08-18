@@ -3332,6 +3332,30 @@ ul.row {
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
 
+.ct-button-large {
+  font-size: var(--ct-typography-button-large-font-size);
+  line-height: var(--ct-typography-button-large-line-height);
+  font-family: var(--ct-typography-button-large-font-name);
+  font-weight: var(--ct-typography-button-large-font-weight);
+  letter-spacing: var(--ct-typography-button-large-letter-spacing);
+}
+
+.ct-button-regular {
+  font-size: var(--ct-typography-button-regular-font-size);
+  line-height: var(--ct-typography-button-regular-line-height);
+  font-family: var(--ct-typography-button-regular-font-name);
+  font-weight: var(--ct-typography-button-regular-font-weight);
+  letter-spacing: var(--ct-typography-button-regular-letter-spacing);
+}
+
+.ct-button-small {
+  font-size: var(--ct-typography-button-small-font-size);
+  line-height: var(--ct-typography-button-small-line-height);
+  font-family: var(--ct-typography-button-small-font-name);
+  font-weight: var(--ct-typography-button-small-font-weight);
+  letter-spacing: var(--ct-typography-button-small-letter-spacing);
+}
+
 .ct-quote {
   font-size: var(--ct-typography-quote-font-size);
   line-height: var(--ct-typography-quote-line-height);
