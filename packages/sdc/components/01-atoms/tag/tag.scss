@@ -6,7 +6,7 @@
   $root: &;
 
   display: inline-flex;
-  align-items: center
+  align-items: center;
   gap: ct-spacing(0.5);
 
   @include ct-typography('label-small');
