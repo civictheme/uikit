@@ -13,4 +13,7 @@ jobs:
   assign-author:
     runs-on: ubuntu-latest
     steps:
-      - uses: toshimaru/auto-author-assign@v3.0.1
+      # Pinned by commit SHA rather than tag: this workflow runs on
+      # pull_request_target, so the action executes with a write-scoped token on
+      # pull requests from forks. A tag can be moved to point at other code.
+      - uses: toshimaru/auto-author-assign@4d585cc37690897bd9015942ed6e766aa7cdb97f # v3.0.1
