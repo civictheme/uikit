@@ -101,9 +101,13 @@ jobs:
               # describe it rather than printing it.
               echo "::error::Could not reach Jira: the request failed before any HTTP response (DNS, connection or TLS failure, or the 60s timeout). Check that the JIRA_BASE_URL secret is a correct, reachable https:// URL."
               ;;
-            401 | 403)
+            401)
               echo "::error::Jira returned HTTP ${status} when creating the issue."
-              echo "::error::Jira rejected the credentials. Atlassian API tokens expire after at most one year, so this is most likely an expired JIRA_API_TOKEN. Mint a replacement at https://id.atlassian.com/manage-profile/security/api-tokens, update the JIRA_API_TOKEN secret, and confirm JIRA_USER_EMAIL still belongs to an active account."
+              echo "::error::Jira did not accept the credentials. Atlassian API tokens last at most one year, so an expired JIRA_API_TOKEN is the most likely cause: mint a replacement at https://id.atlassian.com/manage-profile/security/api-tokens and update the secret. If the token is current, check that JIRA_USER_EMAIL still belongs to an active account and that JIRA_BASE_URL points at the right site."
+              ;;
+            403)
+              echo "::error::Jira returned HTTP ${status} when creating the issue."
+              echo "::error::Jira accepted the credentials but refused the request, so this is an authorisation problem rather than an expired token. Check that the account holds a Jira licence and the 'Create issues' permission on project ${JIRA_PROJECT_KEY}, and that the Story issue type and UIKit component both exist in that project. Jira also returns 403 after repeated failed logins, which needs a manual web login to clear."
               ;;
             *)
               echo "::error::Jira returned HTTP ${status} when creating the issue."
