@@ -5,9 +5,6 @@
 .ct-tag {
   $root: &;
 
-  border-radius: var(--ct-tag-border-radius);
-  border-style: solid;
-  border-width: var(--ct-tag-border-width);
   display: inline-flex;
   align-items: center
   gap: ct-spacing(0.5);
