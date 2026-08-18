@@ -1,4 +1,4 @@
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 
 const template = 'components/03-organisms/side-navigation/side-navigation.twig';
 

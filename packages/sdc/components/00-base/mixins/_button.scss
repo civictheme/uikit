@@ -259,11 +259,21 @@
   $sizes: ('large', 'regular', 'small');
 
   @if $size == 'large' {
-    @include ct-typography('label-large');
+    @include ct-typography('label-regular');
 
     @if $with-padding {
       & {
-        padding: ct-spacing(2) ct-spacing(6);
+        padding: ct-spacing(1.5) ct-spacing(3);
+      }
+    }
+
+    @include ct-breakpoint(m) {
+      @include ct-typography('label-large');
+
+      @if $with-padding {
+        & {
+          padding: ct-spacing(2) ct-spacing(6);
+        }
       }
     }
   }
@@ -272,7 +282,11 @@
 
     @if $with-padding {
       & {
-        padding: ct-spacing(1.75) ct-spacing(5);
+        padding: ct-spacing(1.5) ct-spacing(2.5);
+
+        @include ct-breakpoint(m) {
+          padding: ct-spacing(1.75) ct-spacing(5);
+        }
       }
     }
   }
@@ -281,7 +295,11 @@
 
     @if $with-padding {
       & {
-        padding: ct-spacing() ct-spacing(4);
+        padding: ct-spacing() ct-spacing(2);
+
+        @include ct-breakpoint(m) {
+          padding: ct-spacing() ct-spacing(4);
+        }
       }
     }
   }

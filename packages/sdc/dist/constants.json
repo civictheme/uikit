@@ -224,13 +224,13 @@
       "heading-2": {
         "xxs": [
           "$ct-font-base-size * 1.75",
-          "$ct-font-base-line-height * 2.25",
+          "$ct-font-base-line-height * 2.1875",
           "'bold'",
           "'primary'",
           "-0.5px"
         ],
         "m": [
-          "$ct-font-base-size * 2.5",
+          "$ct-font-base-size * 2.4375",
           "$ct-font-base-line-height * 3",
           "'bold'",
           "'primary'",
@@ -240,7 +240,7 @@
       "heading-3": {
         "xxs": [
           "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 2",
+          "$ct-font-base-line-height * 1.9375",
           "'bold'",
           "'primary'",
           "-0.35px"
@@ -256,14 +256,14 @@
       "heading-4": {
         "xxs": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.5625",
           "'bold'",
           "'primary'",
           "-0.25px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 2",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 1.9375",
           "'bold'",
           "'primary'",
           "-0.4px"
@@ -272,46 +272,55 @@
       "heading-5": {
         "xxs": [
           "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.375",
+          "$ct-font-base-line-height * 1.5",
           "'bold'",
           "'primary'",
           "0"
         ],
         "m": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.75",
           "'bold'",
           "'primary'",
           "-0.2px"
         ]
       },
-      "heading-6": [
-        "$ct-font-base-size",
-        "$ct-font-base-line-height * 1.625",
-        "'bold'",
-        "'primary'",
-        "0"
-      ],
+      "heading-6": {
+        "xxs": [
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.625",
+          "'bold'",
+          "'primary'",
+          "0"
+        ],
+        "m": [
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.75",
+          "'bold'",
+          "'primary'",
+          "0"
+        ]
+      },
       "text-extra-large": {
         "xxs": [
           "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.9375",
           "'regular'",
           "'primary'",
-          "-0.1px"
+          "-0.15px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 2.5",
           "'regular'",
           "'primary'",
-          "0"
+          "-0.35px"
         ]
       },
       "text-large": {
         "xxs": [
           "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.75",
+          "$ct-font-base-line-height * 1.8125",
           "'regular'",
           "'primary'",
           "0"
@@ -326,8 +335,8 @@
       },
       "text-regular": {
         "xxs": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-size",
+          "$ct-font-base-line-height * 1.625",
           "'regular'",
           "'primary'",
           "0"
@@ -342,111 +351,66 @@
       },
       "text-small": {
         "xxs": [
-          "$ct-font-base-size * 0.75",
-          "$ct-font-base-line-height * 1.25",
+          "$ct-font-base-size * 0.875",
+          "$ct-font-base-line-height * 1.4375",
           "'regular'",
           "'primary'",
           "0"
         ],
         "m": [
           "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.5",
+          "$ct-font-base-line-height * 1.5625",
           "'regular'",
           "'primary'",
           "0"
         ]
       },
-      "label-extra-large": {
-        "xxs": [
-          "$ct-font-base-size * 1.25",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "0"
-        ]
-      },
-      "label-large": {
-        "xxs": [
-          "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.5",
-          "'semibold'",
-          "'primary'",
-          "0"
-        ]
-      },
-      "label-regular": {
-        "xxs": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'semibold'",
-          "'primary'",
-          "-0.1px"
-        ]
-      },
-      "label-small": {
-        "xxs": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'regular'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size",
-          "$ct-font-base-line-height * 1.25",
-          "'regular'",
-          "'primary'",
-          "-0.1px"
-        ]
-      },
-      "label-extra-small": {
-        "xxs": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.25",
-          "'regular'",
-          "'primary'",
-          "-0.1px"
-        ],
-        "m": [
-          "$ct-font-base-size * 0.875",
-          "$ct-font-base-line-height * 1.125",
-          "'regular'",
-          "'primary'",
-          "0"
-        ]
-      },
+      "label-extra-large": [
+        "$ct-font-base-size * 1.5",
+        "$ct-font-base-line-height * 1.5",
+        "'semibold'",
+        "'primary'",
+        "0"
+      ],
+      "label-large": [
+        "$ct-font-base-size * 1.125",
+        "$ct-font-base-line-height * 1.5",
+        "'semibold'",
+        "'primary'",
+        "0"
+      ],
+      "label-regular": [
+        "$ct-font-base-size",
+        "$ct-font-base-line-height * 1.25",
+        "'semibold'",
+        "'primary'",
+        "0"
+      ],
+      "label-small": [
+        "$ct-font-base-size",
+        "$ct-font-base-line-height * 1.25",
+        "'regular'",
+        "'primary'",
+        "0"
+      ],
+      "label-extra-small": [
+        "$ct-font-base-size * 0.875",
+        "$ct-font-base-line-height * 1.125",
+        "'regular'",
+        "'primary'",
+        "0"
+      ],
       "quote": {
         "xxs": [
-          "$ct-font-base-size * 1.125",
-          "$ct-font-base-line-height * 1.815",
+          "$ct-font-base-size * 1.25",
+          "$ct-font-base-line-height * 1.9375",
           "'regular'",
           "'primary'",
           "-0.15px"
         ],
         "m": [
-          "$ct-font-base-size * 1.5",
-          "$ct-font-base-size * 2.5",
+          "$ct-font-base-size * 1.5625",
+          "$ct-font-base-line-height * 2.5",
           "'regular'",
           "'primary'",
           "-0.35px"
@@ -553,10 +517,10 @@
       }
     },
     "ct-elevations": [
-      "0 ct-particle(0.25) ct-particle(1) rgba(0, 0, 0, 25%)",
+      "0 ct-particle(0.25) ct-particle(1) rgba(0, 0, 0, 24%)",
       "0 ct-particle(0.5) ct-particle(2) rgba(0, 0, 0, 20%)",
       "0 ct-particle(1) ct-particle(3) rgba(0, 0, 0, 20%)",
-      "0 ct-particle(2) ct-particle(8) rgba(0, 0, 0, 20%)"
+      "0 ct-particle(2) ct-particle(4) rgba(0, 0, 0, 20%)"
     ],
     "ct-flyout-duration": "0.5s",
     "ct-flyout-direction-transforms": {
@@ -591,11 +555,11 @@
     "ct-outline-width": "ct-particle(0.375)",
     "ct-outline-border-radius": "$ct-border-radius",
     "ct-layout-columns": "$ct-grid-columns",
-    "ct-layout-sidebar-left-columns": "3",
-    "ct-layout-sidebar-right-columns": "3",
+    "ct-layout-sidebar-left-columns": "4",
+    "ct-layout-sidebar-right-columns": "4",
+    "ct-layout-sidebar-left-only-padding": "ct-spacing(5)",
+    "ct-layout-sidebar-right-only-padding": "ct-spacing(5)",
     "ct-layout-column-gap": "ct-spacing(3)",
-    "ct-layout-column-gap-left-only": "ct-spacing(8)",
-    "ct-layout-column-gap-right-only": "ct-spacing(8)",
     "ct-layout-row-gap": "ct-spacing(3)",
     "ct-layout-breakpoint": "l",
     "ct-outline-light": "ct-color-light('interaction-focus')",
@@ -801,7 +765,7 @@
     "ct-checkbox-outline-offset": "2px",
     "ct-checkbox-light-background-color": "transparent",
     "ct-checkbox-light-border-color": "ct-color-light('border-light')",
-    "ct-checkbox-light-color": "ct-color-light('body')",
+    "ct-checkbox-light-color": "ct-color-light('heading')",
     "ct-checkbox-light-hover-background-color": "$ct-checkbox-light-background-color",
     "ct-checkbox-light-hover-border-color": "ct-color-light('interaction-hover-background')",
     "ct-checkbox-light-hover-color": "$ct-checkbox-light-color",
@@ -817,7 +781,7 @@
     "ct-checkbox-light-outline-color": "$ct-outline-light",
     "ct-checkbox-dark-background-color": "transparent",
     "ct-checkbox-dark-border-color": "ct-color-dark('border-light')",
-    "ct-checkbox-dark-color": "ct-color-dark('body')",
+    "ct-checkbox-dark-color": "ct-color-dark('heading')",
     "ct-checkbox-dark-hover-background-color": "$ct-checkbox-dark-background-color",
     "ct-checkbox-dark-hover-border-color": "ct-color-dark('interaction-hover-background')",
     "ct-checkbox-dark-hover-color": "$ct-checkbox-dark-color",
@@ -909,7 +873,7 @@
     "ct-radio-outline-offset": "2px",
     "ct-radio-light-background-color": "transparent",
     "ct-radio-light-border-color": "ct-color-light('border-light')",
-    "ct-radio-light-color": "ct-color-light('body')",
+    "ct-radio-light-color": "ct-color-light('heading')",
     "ct-radio-light-hover-background-color": "$ct-radio-light-background-color",
     "ct-radio-light-hover-border-color": "ct-color-light('interaction-hover-background')",
     "ct-radio-light-hover-color": "$ct-radio-light-color",
@@ -925,7 +889,7 @@
     "ct-radio-light-outline-color": "$ct-outline-light",
     "ct-radio-dark-background-color": "transparent",
     "ct-radio-dark-border-color": "ct-color-dark('border-light')",
-    "ct-radio-dark-color": "ct-color-dark('body')",
+    "ct-radio-dark-color": "ct-color-dark('heading')",
     "ct-radio-dark-hover-background-color": "$ct-radio-dark-background-color",
     "ct-radio-dark-hover-border-color": "ct-color-dark('interaction-hover-background')",
     "ct-radio-dark-hover-color": "$ct-radio-dark-color",
@@ -1073,7 +1037,7 @@
     "ct-back-to-top-border-color": "ct-color-light('background-light')",
     "ct-back-to-top-color": "ct-color-light('interaction-text')",
     "ct-back-to-top-outline-color": "ct-color-light('interaction-focus')",
-    "ct-basic-content-blockquote-border-radius": "$ct-border-radius",
+    "ct-basic-content-blockquote-border-radius": "0",
     "ct-basic-content-list-marker-margin": "ct-particle(2)",
     "ct-basic-content-list-marker-width": "ct-particle(3.5)",
     "ct-basic-content-space-horizontal": "ct-spacing(7)",
@@ -1138,10 +1102,12 @@
     "ct-next-step-light-background-color": "ct-color-light('background-light')",
     "ct-next-step-light-border-color": "ct-color-light('border-light')",
     "ct-next-step-light-stripe-background-color": "ct-color-light('highlight')",
+    "ct-next-step-light-title-color": "ct-color-light('heading')",
     "ct-next-step-dark-background-color": "ct-color-dark('background')",
     "ct-next-step-dark-border-color": "ct-color-dark('border')",
     "ct-next-step-dark-stripe-background-color": "ct-color-dark('highlight')",
-    "ct-table-of-contents-link-active-border-radius": "math.div($ct-border-radius, 2)",
+    "ct-next-step-dark-title-color": "ct-color-dark('heading')",
+    "ct-table-of-contents-link-active-border-radius": "$ct-border-radius",
     "ct-table-of-contents-max-width": "50%",
     "ct-table-of-contents-min-width": "50%",
     "ct-table-of-contents-light-link-background-color": "ct-color-light('background-light')",
@@ -1173,11 +1139,11 @@
     "ct-tabs-dark-links-active-border-color": "ct-color-dark('border-light')",
     "ct-tabs-dark-panel-background-color": "ct-color-dark('background')",
     "ct-tabs-dark-panel-border-color": "ct-color-dark('border')",
-    "ct-tooltip-description-border-radius": "$ct-border-radius",
+    "ct-tooltip-description-border-radius": "$ct-border-radius * 2",
     "ct-tooltip-width": "ct-particle(60)",
     "ct-tooltip-width-mobile": "ct-particle(40)",
-    "ct-tooltip-triangle-width": "ct-spacing(3.2)",
-    "ct-tooltip-triangle-height": "ct-spacing(2.6)",
+    "ct-tooltip-triangle-width": "ct-spacing(3.25)",
+    "ct-tooltip-triangle-height": "ct-spacing(2.625)",
     "ct-tooltip-z-index": "99",
     "ct-tooltip-light-description-background-color": "ct-color-light('interaction-background')",
     "ct-tooltip-light-description-color": "ct-color-light('interaction-text')",
@@ -1298,7 +1264,7 @@
     "ct-subject-card-dark-image-opacity": "20%",
     "ct-fast-fact-card-border-radius": "$ct-border-radius",
     "ct-fast-fact-card-stripe-height": "var(--ct-stripe-size)",
-    "ct-fast-fact-card-max-width": "ct-particle(6.25)",
+    "ct-fast-fact-card-max-width": "ct-particle(6)",
     "ct-fast-fact-card-max-height": "ct-particle(12.5)",
     "ct-fast-fact-card-light-background-color": "ct-color-light('background-light')",
     "ct-fast-fact-card-light-stripe-background-color": "ct-color-light('highlight')",
@@ -1318,32 +1284,40 @@
     "ct-snippet-dark-title-hover-color": "ct-color-dark('interaction-background')",
     "ct-alert-light-error-background-color": "ct-color-tint(ct-color-constant-light('error'), 80)",
     "ct-alert-light-error-color": "ct-color-light('body')",
-    "ct-alert-light-error-icon-color": "$ct-alert-light-error-color",
+    "ct-alert-light-error-title-color": "ct-color-light('heading')",
+    "ct-alert-light-error-icon-color": "$ct-alert-light-error-title-color",
     "ct-alert-light-information-background-color": "ct-color-tint(ct-color-constant-light('information'), 80)",
     "ct-alert-light-information-color": "ct-color-light('body')",
-    "ct-alert-light-information-icon-color": "$ct-alert-light-information-color",
+    "ct-alert-light-information-title-color": "ct-color-light('heading')",
+    "ct-alert-light-information-icon-color": "$ct-alert-light-information-title-color",
     "ct-alert-light-success-background-color": "ct-color-tint(ct-color-constant-light('success'), 80)",
     "ct-alert-light-success-color": "ct-color-light('body')",
-    "ct-alert-light-success-icon-color": "$ct-alert-light-success-color",
+    "ct-alert-light-success-title-color": "ct-color-light('heading')",
+    "ct-alert-light-success-icon-color": "$ct-alert-light-success-title-color",
     "ct-alert-light-warning-background-color": "ct-color-tint(ct-color-constant-light('warning'), 80)",
     "ct-alert-light-warning-color": "ct-color-light('body')",
-    "ct-alert-light-warning-icon-color": "$ct-alert-light-warning-color",
+    "ct-alert-light-warning-title-color": "ct-color-light('heading')",
+    "ct-alert-light-warning-icon-color": "$ct-alert-light-warning-title-color",
     "ct-alert-dark-error-background-color": "ct-color-shade(ct-color-constant-dark('error'), 20)",
     "ct-alert-dark-error-color": "ct-color-dark('body')",
-    "ct-alert-dark-error-icon-color": "$ct-alert-dark-error-color",
+    "ct-alert-dark-error-title-color": "ct-color-dark('heading')",
+    "ct-alert-dark-error-icon-color": "$ct-alert-dark-error-title-color",
     "ct-alert-dark-information-background-color": "ct-color-shade(ct-color-constant-dark('information'), 39)",
     "ct-alert-dark-information-color": "ct-color-dark('body')",
-    "ct-alert-dark-information-icon-color": "$ct-alert-dark-information-color",
+    "ct-alert-dark-information-title-color": "ct-color-dark('heading')",
+    "ct-alert-dark-information-icon-color": "$ct-alert-dark-information-title-color",
     "ct-alert-dark-success-background-color": "ct-color-shade(ct-color-constant-dark('success'), 30)",
     "ct-alert-dark-success-color": "ct-color-dark('body')",
-    "ct-alert-dark-success-icon-color": "$ct-alert-dark-success-color",
+    "ct-alert-dark-success-title-color": "ct-color-dark('heading')",
+    "ct-alert-dark-success-icon-color": "$ct-alert-dark-success-title-color",
     "ct-alert-dark-warning-background-color": "ct-color-shade(ct-color-constant-dark('warning'), 28)",
     "ct-alert-dark-warning-color": "ct-color-dark('body')",
-    "ct-alert-dark-warning-icon-color": "$ct-alert-dark-warning-color",
+    "ct-alert-dark-warning-title-color": "ct-color-dark('heading')",
+    "ct-alert-dark-warning-icon-color": "$ct-alert-dark-warning-title-color",
     "ct-banner-decorative-mobile-clip-path": "polygon(0% 0%, 100% 0%, 100% calc(100% - #{ct-spacing(2)}), 0% 100%)",
     "ct-banner-decorative-desktop-clip-path": "polygon(0% 0%, 100% 0%, 100% calc(100% - #{ct-spacing(6)}), 0% 100%)",
     "ct-banner-featured-image-width": "40%",
-    "ct-banner-featured-image-clip-path": "polygon(13% 10%, 100% 0, 100% 100%, 0% 100%)",
+    "ct-banner-featured-image-clip-path": "polygon(7.5% 7.5%, 100% 0, 100% 100%, 0% 100%)",
     "ct-banner-light-background-color": "ct-color-light('background')",
     "ct-banner-light-featured-image-shadow-color": "ct-color-light('background-light')",
     "ct-banner-dark-background-color": "ct-color-dark('background')",
@@ -1352,6 +1326,8 @@
     "ct-campaign-image-shadow-offset-x": "ct-particle(2)",
     "ct-campaign-image-shadow-offset-y": "ct-particle(2)",
     "ct-campaign-mobile-height": "ct-particle(30)",
+    "ct-campaign-mobile-image-shadow-offset-y": "ct-particle(1.5)",
+    "ct-campaign-mobile-image-shadow-inset": "ct-particle(1.25)",
     "ct-campaign-light-background-color": "ct-color-light('background-light')",
     "ct-campaign-light-image-shadow-color": "ct-color-light('background')",
     "ct-campaign-dark-background-color": "ct-color-dark('background')",
@@ -1464,7 +1440,7 @@
     "ct-navigation-dark-drawer-sub-menu-item-active-background-color": "ct-color-dark('body')",
     "ct-navigation-dark-drawer-sub-menu-item-active-color": "ct-color-dark('background')",
     "ct-navigation-breakpoint": "$ct-header-desktop-menu-breakpoint",
-    "ct-side-navigation-link-active-border-radius": "math.div($ct-border-radius, 2)",
+    "ct-side-navigation-link-active-border-radius": "0",
     "ct-side-navigation-light-title-color": "ct-color-light('heading')",
     "ct-side-navigation-light-link-expanded-icon-color": "ct-color-light('heading')",
     "ct-side-navigation-light-link-parent-background-color": "ct-color-light('background-light')",
@@ -1476,9 +1452,13 @@
     "ct-side-navigation-light-link-parent-hover-color": "$ct-side-navigation-light-link-parent-color",
     "ct-side-navigation-light-link-parent-hover-stripe-background-color": "ct-color-light('highlight')",
     "ct-side-navigation-light-link-parent-active-background-color": "ct-color-light('background')",
-    "ct-side-navigation-light-link-parent-active-border-color": "$ct-side-navigation-light-link-parent-border-color",
+    "ct-side-navigation-light-link-parent-active-border-color": "ct-color-light('border')",
     "ct-side-navigation-light-link-parent-active-color": "$ct-side-navigation-light-link-parent-color",
     "ct-side-navigation-light-link-parent-active-stripe-background-color": "ct-color-light('highlight')",
+    "ct-side-navigation-light-link-parent-active-trail-background-color": "$ct-side-navigation-light-link-parent-active-background-color",
+    "ct-side-navigation-light-link-parent-active-trail-border-color": "ct-color-light('border-light')",
+    "ct-side-navigation-light-link-parent-active-trail-color": "$ct-side-navigation-light-link-parent-active-color",
+    "ct-side-navigation-light-link-parent-active-trail-stripe-background-color": "$ct-side-navigation-light-link-parent-active-stripe-background-color",
     "ct-side-navigation-light-link-child-background-color": "$ct-side-navigation-light-link-parent-background-color",
     "ct-side-navigation-light-link-child-border-color": "$ct-side-navigation-light-link-parent-border-color",
     "ct-side-navigation-light-link-child-color": "$ct-side-navigation-light-link-parent-color",
@@ -1488,23 +1468,31 @@
     "ct-side-navigation-light-link-child-hover-color": "$ct-side-navigation-light-link-child-color",
     "ct-side-navigation-light-link-child-hover-stripe-background-color": "ct-color-light('highlight')",
     "ct-side-navigation-light-link-child-active-background-color": "ct-color-light('background')",
-    "ct-side-navigation-light-link-child-active-border-color": "$ct-side-navigation-light-link-child-border-color",
+    "ct-side-navigation-light-link-child-active-border-color": "ct-color-light('border')",
     "ct-side-navigation-light-link-child-active-color": "$ct-side-navigation-light-link-child-color",
     "ct-side-navigation-light-link-child-active-stripe-background-color": "$ct-side-navigation-light-link-child-hover-stripe-background-color",
+    "ct-side-navigation-light-link-child-active-trail-background-color": "$ct-side-navigation-light-link-child-active-background-color",
+    "ct-side-navigation-light-link-child-active-trail-border-color": "ct-color-light('border-light')",
+    "ct-side-navigation-light-link-child-active-trail-color": "$ct-side-navigation-light-link-child-active-color",
+    "ct-side-navigation-light-link-child-active-trail-stripe-background-color": "$ct-side-navigation-light-link-child-active-stripe-background-color",
     "ct-side-navigation-dark-title-color": "ct-color-dark('heading')",
     "ct-side-navigation-dark-link-expanded-icon-color": "ct-color-dark('heading')",
     "ct-side-navigation-dark-link-parent-background-color": "ct-color-dark('background-light')",
-    "ct-side-navigation-dark-link-parent-border-color": "ct-color-dark('interaction-text')",
+    "ct-side-navigation-dark-link-parent-border-color": "ct-color-dark('border')",
     "ct-side-navigation-dark-link-parent-color": "ct-color-dark('heading')",
-    "ct-side-navigation-dark-link-parent-stripe-background-color": "ct-color-dark('interaction-text')",
+    "ct-side-navigation-dark-link-parent-stripe-background-color": "ct-color-dark('border')",
     "ct-side-navigation-dark-link-parent-hover-background-color": "ct-color-dark('background-dark')",
     "ct-side-navigation-dark-link-parent-hover-border-color": "$ct-side-navigation-dark-link-parent-border-color",
     "ct-side-navigation-dark-link-parent-hover-color": "$ct-side-navigation-dark-link-parent-color",
     "ct-side-navigation-dark-link-parent-hover-stripe-background-color": "ct-color-dark('highlight')",
     "ct-side-navigation-dark-link-parent-active-background-color": "ct-color-dark('background')",
-    "ct-side-navigation-dark-link-parent-active-border-color": "$ct-side-navigation-dark-link-parent-border-color",
+    "ct-side-navigation-dark-link-parent-active-border-color": "ct-color-dark('highlight')",
     "ct-side-navigation-dark-link-parent-active-color": "$ct-side-navigation-dark-link-parent-color",
     "ct-side-navigation-dark-link-parent-active-stripe-background-color": "ct-color-dark('highlight')",
+    "ct-side-navigation-dark-link-parent-active-trail-background-color": "$ct-side-navigation-dark-link-parent-active-background-color",
+    "ct-side-navigation-dark-link-parent-active-trail-border-color": "$ct-side-navigation-dark-link-parent-border-color",
+    "ct-side-navigation-dark-link-parent-active-trail-color": "$ct-side-navigation-dark-link-parent-active-color",
+    "ct-side-navigation-dark-link-parent-active-trail-stripe-background-color": "$ct-side-navigation-dark-link-parent-active-stripe-background-color",
     "ct-side-navigation-dark-link-child-background-color": "$ct-side-navigation-dark-link-parent-background-color",
     "ct-side-navigation-dark-link-child-border-color": "$ct-side-navigation-dark-link-parent-border-color",
     "ct-side-navigation-dark-link-child-color": "$ct-side-navigation-dark-link-parent-color",
@@ -1514,9 +1502,13 @@
     "ct-side-navigation-dark-link-child-hover-color": "$ct-side-navigation-dark-link-child-color",
     "ct-side-navigation-dark-link-child-hover-stripe-background-color": "ct-color-dark('highlight')",
     "ct-side-navigation-dark-link-child-active-background-color": "ct-color-dark('background')",
-    "ct-side-navigation-dark-link-child-active-border-color": "$ct-side-navigation-dark-link-child-border-color",
+    "ct-side-navigation-dark-link-child-active-border-color": "ct-color-dark('highlight')",
     "ct-side-navigation-dark-link-child-active-color": "$ct-side-navigation-dark-link-child-color",
     "ct-side-navigation-dark-link-child-active-stripe-background-color": "$ct-side-navigation-dark-link-child-hover-stripe-background-color",
+    "ct-side-navigation-dark-link-child-active-trail-background-color": "$ct-side-navigation-dark-link-child-active-background-color",
+    "ct-side-navigation-dark-link-child-active-trail-border-color": "$ct-side-navigation-dark-link-child-border-color",
+    "ct-side-navigation-dark-link-child-active-trail-color": "$ct-side-navigation-dark-link-child-active-color",
+    "ct-side-navigation-dark-link-child-active-trail-stripe-background-color": "$ct-side-navigation-dark-link-child-active-stripe-background-color",
     "ct-mobile-navigation-breakpoint": "$ct-header-desktop-menu-breakpoint",
     "ct-mobile-navigation-light-panel-background-color": "ct-color-light('background-light')",
     "ct-mobile-navigation-light-top-menu-background-color": "$ct-mobile-navigation-light-panel-background-color",

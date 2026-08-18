@@ -14,7 +14,12 @@
   letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button {
-  padding: 0.875rem 2.5rem;
+  padding: 0.75rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .ct-button {
+    padding: 0.875rem 2.5rem;
+  }
 }
 .ct-button--primary {
   display: inline-block;
@@ -233,11 +238,20 @@
   text-decoration: none;
 }
 .ct-button--tertiary--large {
-  font-size: var(--ct-typography-label-large-font-size);
-  line-height: var(--ct-typography-label-large-line-height);
-  font-family: var(--ct-typography-label-large-font-name);
-  font-weight: var(--ct-typography-label-large-font-weight);
-  letter-spacing: var(--ct-typography-label-large-letter-spacing);
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
+}
+@media (min-width: 768px) {
+  .ct-button--tertiary--large {
+    font-size: var(--ct-typography-label-large-font-size);
+    line-height: var(--ct-typography-label-large-line-height);
+    font-family: var(--ct-typography-label-large-font-name);
+    font-weight: var(--ct-typography-label-large-font-weight);
+    letter-spacing: var(--ct-typography-label-large-letter-spacing);
+  }
 }
 .ct-button--tertiary--large__dismiss {
   margin-left: 1.5rem;
@@ -263,14 +277,26 @@
   margin-left: 1rem;
 }
 .ct-button--large {
-  font-size: var(--ct-typography-label-large-font-size);
-  line-height: var(--ct-typography-label-large-line-height);
-  font-family: var(--ct-typography-label-large-font-name);
-  font-weight: var(--ct-typography-label-large-font-weight);
-  letter-spacing: var(--ct-typography-label-large-letter-spacing);
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button--large {
-  padding: 1rem 3rem;
+  padding: 0.75rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .ct-button--large {
+    font-size: var(--ct-typography-label-large-font-size);
+    line-height: var(--ct-typography-label-large-line-height);
+    font-family: var(--ct-typography-label-large-font-name);
+    font-weight: var(--ct-typography-label-large-font-weight);
+    letter-spacing: var(--ct-typography-label-large-letter-spacing);
+  }
+  .ct-button--large {
+    padding: 1rem 3rem;
+  }
 }
 .ct-button--large.ct-button--tertiary {
   padding: 0;
@@ -283,7 +309,12 @@
   letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-button--regular {
-  padding: 0.875rem 2.5rem;
+  padding: 0.75rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .ct-button--regular {
+    padding: 0.875rem 2.5rem;
+  }
 }
 .ct-button--regular.ct-button--tertiary {
   padding: 0;
@@ -296,7 +327,12 @@
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-button--small {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .ct-button--small {
+    padding: 0.5rem 2rem;
+  }
 }
 .ct-button--small.ct-button--tertiary {
   padding: 0;

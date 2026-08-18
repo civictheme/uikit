@@ -1,4 +1,4 @@
-import DrupalAttribute from 'drupal-attribute';
+import DrupalAttribute from '@civictheme/drupal-attribute';
 
 const template = 'components/02-molecules/event-card/event-card.twig';
 
@@ -68,6 +68,24 @@ describe('Event Card Component', () => {
     const titleLink = c.querySelector('.ct-event-card__title-link');
     expect(titleLink).toBeTruthy();
     expect(titleLink.getAttribute('href')).toEqual('https://example.com');
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders tags provided as objects', async () => {
+    const c = await dom(template, {
+      title: 'Event Title',
+      tags: [
+        { content: 'Tag 1', url: 'https://example.com/tag-1' },
+        { content: 'Tag 2' },
+      ],
+    });
+
+    const tags = c.querySelectorAll('.ct-event-card__tags .ct-tag');
+    expect(tags).toHaveLength(2);
+    expect(tags[0].textContent.trim()).toEqual('Tag 1');
+    expect(tags[0].getAttribute('href')).toEqual('https://example.com/tag-1');
+    expect(tags[1].textContent.trim()).toEqual('Tag 2');
 
     assertUniqueCssClasses(c);
   });

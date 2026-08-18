@@ -12,7 +12,7 @@
   align-items: center
   gap: ct-spacing(0.5);
 
-  @include ct-typography('label-extra-small');
+  @include ct-typography('label-small');
   @include ct-link-no-decoration();
 
   &--icon-before {
@@ -27,12 +27,12 @@
     }
   }
 
-  &#{$root}--primary {
-    padding: ct-spacing(0.5) ct-spacing();
-  }
-
+  &#{$root}--primary,
   &#{$root}--secondary {
-    padding: ct-spacing(0.5) ct-spacing();
+    border-radius: var(--ct-tag-border-radius);
+    border-style: solid;
+    border-width: var(--ct-tag-border-width);
+    padding: ct-spacing(0.375) ct-spacing(0.875);
   }
 
   .ct-icon {
