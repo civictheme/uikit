@@ -10,6 +10,12 @@ permissions: {}
 jobs:
   issue_opened:
     runs-on: ubuntu-latest
+    # Anyone can open an issue on a public repository, so cap what a single run
+    # can consume. A concurrency group is deliberately not used: this triggers
+    # only on `issues: opened`, so a per-issue group would always hold exactly
+    # one run, and a shared group would cancel queued runs and silently drop
+    # issues from the Jira sync.
+    timeout-minutes: 5
 
     steps:
       - name: Create issue body file
@@ -20,7 +26,9 @@ jobs:
           printf '%s\n' "$ISSUE_BODY" > "${RUNNER_TEMP}/_github_workflow/issue.md"
 
       - name: Convert GitHub markdown to Jira markup
-        uses: docker://pandoc/core:3.8
+        # Pinned by digest: the 3.8 tag is mutable and this step processes
+        # untrusted issue content.
+        uses: docker://pandoc/core@sha256:c7127705b9d84c1b4acbbe411a86e3a6d67ac57870654dc378b6fe636ab747df
         with:
           args: --from gfm --to jira --output=/github/workflow/issue.jira /github/workflow/issue.md
 
@@ -56,30 +64,55 @@ jobs:
               }
             }' > "$payload"
 
+          # Credentials go in via --config rather than --user so they never
+          # appear in the process list. The value is deliberately unquoted:
+          # curl processes backslash escapes inside a quoted config value and
+          # would truncate a token containing a double quote.
+          config="${RUNNER_TEMP}/curl.conf"
+          umask 077
+          trap 'rm -f "$config"' EXIT
+          printf 'user = %s:%s\n' "$JIRA_USER_EMAIL" "$JIRA_API_TOKEN" > "$config"
+
           # The v2 endpoint takes a wiki-markup description, which is what pandoc
           # emits above. The v3 endpoint would require Atlassian Document Format.
+          #
+          # `|| true` keeps `set -e` from killing the step before the error
+          # handling below runs: curl exits non-zero on transport failures (DNS,
+          # connection refused, TLS), which are exactly the cases worth reporting.
           status="$(curl --silent --show-error \
+            --config "$config" \
             --output "$response" \
             --write-out '%{http_code}' \
             --request POST \
             --url "${JIRA_BASE_URL%/}/rest/api/2/issue" \
-            --user "${JIRA_USER_EMAIL}:${JIRA_API_TOKEN}" \
             --header 'Accept: application/json' \
             --header 'Content-Type: application/json' \
-            --data @"$payload")"
+            --max-time 60 \
+            --data @"$payload" || true)"
 
           if [ "$status" = "201" ]; then
             echo "Created Jira issue $(jq -r '.key' "$response")"
             exit 0
           fi
 
-          echo "::error::Jira returned HTTP ${status} when creating the issue."
-
           case "$status" in
+            000)
+              # JIRA_BASE_URL is a secret and would be masked in the log, so
+              # describe it rather than printing it.
+              echo "::error::Could not reach Jira: the request failed before any HTTP response (DNS, connection or TLS failure, or the 60s timeout). Check that the JIRA_BASE_URL secret is a correct, reachable https:// URL."
+              ;;
             401 | 403)
+              echo "::error::Jira returned HTTP ${status} when creating the issue."
               echo "::error::Jira rejected the credentials. Atlassian API tokens expire after at most one year, so this is most likely an expired JIRA_API_TOKEN. Mint a replacement at https://id.atlassian.com/manage-profile/security/api-tokens, update the JIRA_API_TOKEN secret, and confirm JIRA_USER_EMAIL still belongs to an active account."
+              ;;
+            *)
+              echo "::error::Jira returned HTTP ${status} when creating the issue."
               ;;
           esac
 
-          jq . "$response" 2> /dev/null || cat "$response"
+          if [ -s "$response" ]; then
+            echo "Jira response body:"
+            jq . "$response" 2> /dev/null || cat "$response"
+          fi
+
           exit 1
