@@ -47,19 +47,22 @@ jobs:
           payload="${RUNNER_TEMP}/payload.json"
           response="${RUNNER_TEMP}/response.json"
 
-          printf '\n----\nGitHub issue: %s\n' "$ISSUE_URL" >> "$body_file"
-
+          # The footer is appended inside jq rather than written to $body_file:
+          # pandoc runs as root in its container, so the file it produces is
+          # root-owned and this step, running as `runner`, cannot write to it.
+          #
           # Jira caps the summary at 255 characters; GitHub issue titles can be longer.
           jq -n \
             --arg project "$JIRA_PROJECT_KEY" \
             --arg summary "UI Kit (GitHub): $ISSUE_TITLE" \
+            --arg url "$ISSUE_URL" \
             --rawfile description "$body_file" \
             '{
               fields: {
                 project: {key: $project},
                 issuetype: {name: "Story"},
                 summary: $summary[0:255],
-                description: $description,
+                description: ($description + "\n----\nGitHub issue: " + $url),
                 components: [{name: "UIKit"}]
               }
             }' > "$payload"
