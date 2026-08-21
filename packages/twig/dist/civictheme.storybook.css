@@ -5025,6 +5025,34 @@ ol ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
+.ct-paragraph figure.align-left, .ct-paragraph figure.align-center, .ct-paragraph figure.align-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ct-paragraph figure.align-left, .ct-paragraph figure.ct-figure--align-left {
+  align-items: flex-start;
+  float: left;
+  clear: left;
+  max-width: 100%;
+  margin: 0.5rem 3rem 1rem 0;
+}
+.ct-paragraph figure.align-center, .ct-paragraph figure.ct-figure--align-center {
+  align-items: center;
+  float: none;
+  clear: both;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ct-paragraph figure.align-right, .ct-paragraph figure.ct-figure--align-right {
+  align-items: flex-start;
+  float: right;
+  clear: right;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem 3rem;
+}
 .ct-paragraph table {
   width: 100%;
   border-collapse: collapse;
@@ -6676,6 +6704,34 @@ ol ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
+.ct-basic-content figure.align-left, .ct-basic-content figure.align-center, .ct-basic-content figure.align-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ct-basic-content figure.align-left, .ct-basic-content figure.ct-figure--align-left {
+  align-items: flex-start;
+  float: left;
+  clear: left;
+  max-width: 100%;
+  margin: 0.5rem 3rem 1rem 0;
+}
+.ct-basic-content figure.align-center, .ct-basic-content figure.ct-figure--align-center {
+  align-items: center;
+  float: none;
+  clear: both;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ct-basic-content figure.align-right, .ct-basic-content figure.ct-figure--align-right {
+  align-items: flex-start;
+  float: right;
+  clear: right;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem 3rem;
+}
 .ct-basic-content table {
   width: 100%;
   border-collapse: collapse;
@@ -7489,7 +7545,9 @@ ol ol ol {
 
 .ct-figure {
   margin: 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
@@ -7499,12 +7557,41 @@ ol ol ol {
   border-radius: var(--ct-figure-border-radius);
   object-fit: contain;
 }
+.ct-figure.align-left, .ct-figure.ct-figure--align-left {
+  align-items: flex-start;
+  float: left;
+  clear: left;
+  max-width: 100%;
+  margin: 0.5rem 3rem 1rem 0;
+}
+.ct-figure.align-center, .ct-figure.ct-figure--align-center {
+  align-items: center;
+  float: none;
+  clear: both;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ct-figure.align-right, .ct-figure.ct-figure--align-right {
+  align-items: flex-start;
+  float: right;
+  clear: right;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem 3rem;
+}
 .ct-figure .ct-figure__caption {
-  font-size: var(--ct-typography-label-extra-small-font-size);
-  line-height: var(--ct-typography-label-extra-small-line-height);
-  font-family: var(--ct-typography-label-extra-small-font-name);
-  font-weight: var(--ct-typography-label-extra-small-font-weight);
-  letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
+  font-size: var(--ct-typography-label-small-font-size);
+  line-height: var(--ct-typography-label-small-line-height);
+  font-family: var(--ct-typography-label-small-font-name);
+  font-weight: var(--ct-typography-label-small-font-weight);
+  letter-spacing: var(--ct-typography-label-small-letter-spacing);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ct-figure .ct-figure__caption .ct-icon {
+  flex-shrink: 0;
 }
 .ct-figure.ct-theme-light .ct-figure__caption {
   color: var(--ct-figure-light-caption-color);

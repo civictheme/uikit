@@ -1,0 +1,34 @@
+//
+// Figure mixins.
+//
+
+@mixin ct-figure-alignment() {
+  &.align-left,
+  &.ct-figure--align-left {
+    align-items: flex-start;
+    float: left;
+    clear: left;
+    max-width: 100%;
+    margin: ct-spacing() ct-spacing(6) ct-spacing(2) 0;
+  }
+
+  &.align-center,
+  &.ct-figure--align-center {
+    align-items: center;
+    float: none;
+    clear: both;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.align-right,
+  &.ct-figure--align-right {
+    align-items: flex-start;
+    float: right;
+    clear: right;
+    max-width: 100%;
+    margin: ct-spacing() 0 ct-spacing(2) ct-spacing(6);
+  }
+}
