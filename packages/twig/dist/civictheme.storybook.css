@@ -5032,10 +5032,18 @@ ol ol ol {
 }
 .ct-paragraph figure.align-left, .ct-paragraph figure.ct-figure--align-left {
   align-items: flex-start;
-  float: left;
-  clear: left;
-  max-width: calc(100% - 3rem);
-  margin: 0.5rem 3rem 1rem 0;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-paragraph figure.align-left, .ct-paragraph figure.ct-figure--align-left {
+    float: left;
+    clear: left;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 3rem 1rem 0;
+  }
 }
 .ct-paragraph figure.align-center, .ct-paragraph figure.ct-figure--align-center {
   align-items: center;
@@ -5048,10 +5056,18 @@ ol ol ol {
 }
 .ct-paragraph figure.align-right, .ct-paragraph figure.ct-figure--align-right {
   align-items: flex-start;
-  float: right;
-  clear: right;
-  max-width: calc(100% - 3rem);
-  margin: 0.5rem 0 1rem 3rem;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-paragraph figure.align-right, .ct-paragraph figure.ct-figure--align-right {
+    float: right;
+    clear: right;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 0 1rem 3rem;
+  }
 }
 .ct-paragraph table {
   width: 100%;
@@ -6711,10 +6727,18 @@ ol ol ol {
 }
 .ct-basic-content figure.align-left, .ct-basic-content figure.ct-figure--align-left {
   align-items: flex-start;
-  float: left;
-  clear: left;
-  max-width: calc(100% - 3rem);
-  margin: 0.5rem 3rem 1rem 0;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-basic-content figure.align-left, .ct-basic-content figure.ct-figure--align-left {
+    float: left;
+    clear: left;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 3rem 1rem 0;
+  }
 }
 .ct-basic-content figure.align-center, .ct-basic-content figure.ct-figure--align-center {
   align-items: center;
@@ -6727,10 +6751,18 @@ ol ol ol {
 }
 .ct-basic-content figure.align-right, .ct-basic-content figure.ct-figure--align-right {
   align-items: flex-start;
-  float: right;
-  clear: right;
-  max-width: calc(100% - 3rem);
-  margin: 0.5rem 0 1rem 3rem;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-basic-content figure.align-right, .ct-basic-content figure.ct-figure--align-right {
+    float: right;
+    clear: right;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 0 1rem 3rem;
+  }
 }
 .ct-basic-content table {
   width: 100%;
@@ -7559,10 +7591,18 @@ ol ol ol {
 }
 .ct-figure.align-left, .ct-figure.ct-figure--align-left {
   align-items: flex-start;
-  float: left;
-  clear: left;
-  max-width: calc(100% - 3rem);
-  margin: 0.5rem 3rem 1rem 0;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-figure.align-left, .ct-figure.ct-figure--align-left {
+    float: left;
+    clear: left;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 3rem 1rem 0;
+  }
 }
 .ct-figure.align-center, .ct-figure.ct-figure--align-center {
   align-items: center;
@@ -7575,10 +7615,18 @@ ol ol ol {
 }
 .ct-figure.align-right, .ct-figure.ct-figure--align-right {
   align-items: flex-start;
-  float: right;
-  clear: right;
-  max-width: calc(100% - 3rem);
-  margin: 0.5rem 0 1rem 3rem;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-figure.align-right, .ct-figure.ct-figure--align-right {
+    float: right;
+    clear: right;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 0 1rem 3rem;
+  }
 }
 .ct-figure .ct-figure__caption {
   font-size: var(--ct-typography-label-small-font-size);
