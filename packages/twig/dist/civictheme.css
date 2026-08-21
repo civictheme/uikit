@@ -5044,7 +5044,7 @@ ol ol ol {
   align-items: flex-start;
   float: left;
   clear: left;
-  max-width: 100%;
+  max-width: calc(100% - 3rem);
   margin: 0.5rem 3rem 1rem 0;
 }
 .ct-paragraph figure.align-center, .ct-paragraph figure.ct-figure--align-center {
@@ -5060,7 +5060,7 @@ ol ol ol {
   align-items: flex-start;
   float: right;
   clear: right;
-  max-width: 100%;
+  max-width: calc(100% - 3rem);
   margin: 0.5rem 0 1rem 3rem;
 }
 .ct-paragraph table {
@@ -6731,7 +6731,7 @@ ol ol ol {
   align-items: flex-start;
   float: left;
   clear: left;
-  max-width: 100%;
+  max-width: calc(100% - 3rem);
   margin: 0.5rem 3rem 1rem 0;
 }
 .ct-basic-content figure.align-center, .ct-basic-content figure.ct-figure--align-center {
@@ -6747,7 +6747,7 @@ ol ol ol {
   align-items: flex-start;
   float: right;
   clear: right;
-  max-width: 100%;
+  max-width: calc(100% - 3rem);
   margin: 0.5rem 0 1rem 3rem;
 }
 .ct-basic-content table {
@@ -7580,7 +7580,7 @@ ol ol ol {
   align-items: flex-start;
   float: left;
   clear: left;
-  max-width: 100%;
+  max-width: calc(100% - 3rem);
   margin: 0.5rem 3rem 1rem 0;
 }
 .ct-figure.align-center, .ct-figure.ct-figure--align-center {
@@ -7596,7 +7596,7 @@ ol ol ol {
   align-items: flex-start;
   float: right;
   clear: right;
-  max-width: 100%;
+  max-width: calc(100% - 3rem);
   margin: 0.5rem 0 1rem 3rem;
 }
 .ct-figure .ct-figure__caption {

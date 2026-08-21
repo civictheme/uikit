@@ -8,7 +8,7 @@
     align-items: flex-start;
     float: left;
     clear: left;
-    max-width: 100%;
+    max-width: calc(100% - #{ct-spacing(6)});
     margin: ct-spacing() ct-spacing(6) ct-spacing(2) 0;
   }
 
@@ -28,7 +28,7 @@
     align-items: flex-start;
     float: right;
     clear: right;
-    max-width: 100%;
+    max-width: calc(100% - #{ct-spacing(6)});
     margin: ct-spacing() 0 ct-spacing(2) ct-spacing(6);
   }
 }
