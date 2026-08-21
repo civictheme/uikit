@@ -32,6 +32,15 @@ props:
       type: ['integer', 'null']
       title: Height
       description: Image height.
+    alignment:
+      type: string
+      title: Alignment
+      description: Figure alignment (left, center, right, none). Outputs CKEditor-compatible align-* classes.
+      enum:
+        - left
+        - center
+        - right
+        - none
 slots:
   caption:
     title: Caption
