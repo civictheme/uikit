@@ -8,13 +8,40 @@ exports[`Figure Component does not render when URL is empty 1`] = `
 </div>
 `;
 
+exports[`Figure Component renders with alignment 1`] = `
+<div>
+  
+
+  
+  <figure
+    class="ct-figure ct-theme-light align-center ct-figure--align-center "
+  >
+    
+    
+
+
+  
+    <img
+      alt="Image description"
+      class="ct-image ct-theme-light ct-figure__image"
+      src="https://example.com/image.jpg"
+    />
+    
+
+      
+  </figure>
+  
+
+</div>
+`;
+
 exports[`Figure Component renders with optional attributes 1`] = `
 <div>
   
 
   
   <figure
-    class="ct-figure ct-theme-dark custom-class"
+    class="ct-figure ct-theme-dark  custom-class"
     data-test="true"
   >
     
@@ -82,7 +109,7 @@ exports[`Figure Component renders with required attributes 1`] = `
 
   
   <figure
-    class="ct-figure ct-theme-light "
+    class="ct-figure ct-theme-light  "
   >
     
     

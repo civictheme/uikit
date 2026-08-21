@@ -50,6 +50,20 @@ describe('Figure Component', () => {
     assertUniqueCssClasses(c);
   });
 
+  test('renders with alignment', async () => {
+    const c = await dom(template, {
+      url: 'https://example.com/image.jpg',
+      alt: 'Image description',
+      alignment: 'center',
+    });
+
+    const element = c.querySelector('.ct-figure');
+    expect(element.classList.contains('ct-figure--align-center')).toBe(true);
+    expect(element.classList.contains('align-center')).toBe(true);
+
+    assertUniqueCssClasses(c);
+  });
+
   test('does not render when URL is empty', async () => {
     const c = await dom(template, {
       url: '',
