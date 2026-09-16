@@ -14,10 +14,9 @@
 
   @include ct-content();
 
-  .ct-content-link {
-    .ct-icon {
-      vertical-align: middle;
-    }
+  &__external-icon {
+    vertical-align: middle;
+    margin-left: var(--ct-basic-content-external-icon-spacing);
   }
 
   .ct-table,
