@@ -2,11 +2,13 @@
 // Button mixins.
 //
 
+@use 'sass:list';
 @use 'sass:map';
 @use 'sass:math';
+@use 'sass:meta';
 
 @mixin ct-button-type($type, $map: false) {
-  @if type-of($map) != 'map' {
+  @if meta.type-of($map) != 'map' {
     // SASS does not allow variables interpolation, so we are creating a local
     // map to easily generate rules.
     $map: (
@@ -177,7 +179,7 @@
 
   $types: map.keys($map);
 
-  @if not index($types, $type) {
+  @if not list.index($types, $type) {
     @error '"#{$type}" is not one of allowed #{$types}.';
   }
 

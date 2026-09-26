@@ -6,6 +6,7 @@
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:math';
+@use 'sass:meta';
 @use 'sass:string';
 
 //
@@ -80,7 +81,7 @@
 // Encode color to be suitable for embedding.
 //
 @function ct-color-encode($string) {
-  @if type-of($string) == 'color' and string.index(#{$string}, '#') == 1 {
+  @if meta.type-of($string) == 'color' and string.index(#{$string}, '#') == 1 {
     $hex: string.slice(color.ie-hex-str($string), 4);
     $string: string.unquote('#{$hex}');
 
