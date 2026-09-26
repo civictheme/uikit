@@ -5,15 +5,17 @@
 .ct-textfield {
   appearance: none;
   margin: 0;
+}
+.ct-textfield[disabled] {
+  opacity: var(--ct-textfield-disabled-opacity);
+  pointer-events: none;
+}
+.ct-textfield {
   font-size: var(--ct-typography-label-small-font-size);
   line-height: var(--ct-typography-label-small-line-height);
   font-family: var(--ct-typography-label-small-font-name);
   font-weight: var(--ct-typography-label-small-font-weight);
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
-}
-.ct-textfield[disabled] {
-  opacity: var(--ct-textfield-disabled-opacity);
-  pointer-events: none;
 }
 .ct-textfield {
   border-radius: var(--ct-textfield-border-radius);

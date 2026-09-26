@@ -8,13 +8,16 @@
 .ct-fast-fact-card::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -0;
+  right: -0;
   height: var(--ct-fast-fact-card-stripe-height);
-  bottom: 0;
+  bottom: -0;
   border-bottom-left-radius: var(--ct-fast-fact-card-border-radius);
   border-bottom-right-radius: var(--ct-fast-fact-card-border-radius);
   transition: height 0.25s;
+}
+.ct-fast-fact-card {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 .ct-fast-fact-card {
   position: relative;
@@ -24,9 +27,6 @@
   border-radius: var(--ct-border-radius);
   box-sizing: border-box;
   padding: 1.5rem 1.5rem 1.875rem 1.5rem;
-}
-.ct-fast-fact-card {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 768px) {
   .ct-fast-fact-card {

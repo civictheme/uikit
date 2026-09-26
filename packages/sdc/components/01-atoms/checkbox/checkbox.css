@@ -5,6 +5,12 @@
 .ct-checkbox {
   appearance: none;
   margin: 0;
+}
+.ct-checkbox[disabled] {
+  opacity: var(--ct-checkbox-disabled-opacity);
+  pointer-events: none;
+}
+.ct-checkbox {
   border-radius: var(--ct-checkbox-border-radius);
   border-style: solid;
   box-sizing: border-box;
@@ -15,10 +21,6 @@
   margin-right: calc(-1rem * var(--ct-font-average-character-width));
   vertical-align: top;
   margin-top: -0.1875rem;
-}
-.ct-checkbox[disabled] {
-  opacity: var(--ct-checkbox-disabled-opacity);
-  pointer-events: none;
 }
 .ct-checkbox + label {
   cursor: pointer;

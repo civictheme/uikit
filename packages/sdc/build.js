@@ -148,6 +148,11 @@ const SDC_STYLE_FILES_IN             = `!(00-base)/**/*.scss`
 const SDC_COMPONENT_DIR              = config.base ? DIR_COMPONENTS_IN : DIR_COMPONENTS_IN
 const SDC_COMPLETE_COMPONENT_DIR     = config.base ? DIR_COMPONENTS_IN : DIR_COMPONENTS_OUT
 
+// @import is deprecated in Dart Sass but not removed until 3.0.0. The build
+// generates @import rules itself, so silence the warning until the codebase
+// moves to @use.
+const SASS_OPTIONS                   = { silenceDeprecations: ['import'] }
+
 if (config.build) {
   build()
 }
@@ -194,7 +199,7 @@ function buildStyles() {
       ].join('\n') : '',
     ].join('\n')
 
-    const compiled = sass.compileString(stylecss, { loadPaths: [COMPONENT_DIR, PATH] })
+    const compiled = sass.compileString(stylecss, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR, PATH] })
     const compiledImportAtTop = sortCssLines(compiled.css)
     fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
     successReporter(`Saved: Component styles ${time()}`)
@@ -218,7 +223,7 @@ function buildStylesEditor() {
       loadStyleFile(STYLE_EDITOR_FILE_IN, PATH),
     ].join('\n')
 
-    const compiled = sass.compileString(editorcss, { loadPaths: [PATH] })
+    const compiled = sass.compileString(editorcss, { ...SASS_OPTIONS, loadPaths: [PATH] })
     fs.writeFileSync(STYLE_EDITOR_FILE_OUT, compiled.css, 'utf-8')
     successReporter(`Saved: Editor styles ${time()}`)
   }
@@ -226,7 +231,7 @@ function buildStylesEditor() {
 
 function buildStylesAdmin() {
   if (config.styles_admin) {
-    const compiled = sass.compile(STYLE_ADMIN_FILE_IN, { loadPaths: [PATH] })
+    const compiled = sass.compile(STYLE_ADMIN_FILE_IN, { ...SASS_OPTIONS, loadPaths: [PATH] })
     fs.writeFileSync(STYLE_ADMIN_FILE_OUT, compiled.css, 'utf-8')
     successReporter(`Saved: Admin styles ${time()}`)
   }
@@ -239,7 +244,7 @@ function buildStylesLayout() {
       loadStyleFile(STYLE_LAYOUT_FILE_IN, PATH),
     ].join('\n')
 
-    const compiled = sass.compileString(layoutcss, { loadPaths: [PATH] })
+    const compiled = sass.compileString(layoutcss, { ...SASS_OPTIONS, loadPaths: [PATH] })
     fs.writeFileSync(STYLE_LAYOUT_FILE_OUT, compiled.css, 'utf-8')
     successReporter(`Saved: Layout styles ${time()}`)
   }
@@ -247,7 +252,7 @@ function buildStylesLayout() {
 
 function buildStylesVariables() {
   if (config.styles_variables) {
-    const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { loadPaths: [COMPONENT_DIR] })
+    const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR] })
     fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
     successReporter(`Saved: Variable styles ${time()}`)
   }
@@ -260,7 +265,7 @@ function buildStylesStories() {
       loadStyleFile(STYLE_STORIES_FILE_IN, COMPONENT_DIR),
     ].join('\n')
 
-    const compiled = sass.compileString(storybookcss, { loadPaths: [COMPONENT_DIR, PATH] })
+    const compiled = sass.compileString(storybookcss, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR, PATH] })
     fs.writeFileSync(STYLE_STORIES_FILE_OUT, compiled.css, 'utf-8')
     successReporter(`Saved: Stories styles ${time()}`)
   }
@@ -273,7 +278,7 @@ function buildStylesTheme() {
       getImportsFromGlob(STYLE_THEME_FILE_IN, PATH),
     ].join('\n')
 
-    const compiled = sass.compileString(themecss, { loadPaths: [COMPONENT_DIR, PATH] })
+    const compiled = sass.compileString(themecss, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR, PATH] })
     fs.writeFileSync(STYLE_THEME_FILE_OUT, sortCssLines(compiled.css), 'utf-8')
     successReporter(`Saved: Component styles (theme) ${time()}`)
   }
@@ -285,7 +290,7 @@ function buildStylesSdcBase() {
       ...STYLE_SDC_COMMON_INCLUDES,
       getImportsFromGlob(STYLE_SDC_BASE_IMPORTS, COMPONENT_DIR),
     ].join('\n')
-    const compiled = sass.compileString(baseCss, { loadPaths: [COMPONENT_DIR] })
+    const compiled = sass.compileString(baseCss, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR] })
     fs.writeFileSync(STYLE_SDC_BASE_FILE_OUT, SDC_HEADER + sortCssLines(compiled.css))
     successReporter(`Saved: SDC base styles (base) ${time()}`)
   }
@@ -315,7 +320,7 @@ async function buildStylesSdcComponents() {
       const styleDir = filePath.substring(0, separator)
       const styleName = filePath.substring(separator, filePath.lastIndexOf('.'))
       const styleData = `${componentDependencies}\n@import '${filePath}';`
-      const result = await sass.compileStringAsync(styleData, { loadPaths: [SDC_COMPLETE_COMPONENT_DIR] })
+      const result = await sass.compileStringAsync(styleData, { ...SASS_OPTIONS, loadPaths: [SDC_COMPLETE_COMPONENT_DIR] })
       fs.writeFileSync(`${SDC_COMPONENT_DIR}/${styleDir}/${styleName}.css`, SDC_HEADER + result.css)
     }))
     successReporter(`Saved: SDC styles (components) ${time()}`)

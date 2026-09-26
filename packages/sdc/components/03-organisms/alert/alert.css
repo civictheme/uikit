@@ -5,16 +5,18 @@
 .ct-alert {
   position: relative;
   padding: 1rem 0;
-  font-size: var(--ct-typography-text-small-font-size);
-  line-height: var(--ct-typography-text-small-line-height);
-  font-family: var(--ct-typography-text-small-font-name);
-  font-weight: var(--ct-typography-text-small-font-weight);
-  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 @media (min-width: 768px) {
   .ct-alert {
     padding: 1.5rem 0;
   }
+}
+.ct-alert {
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
 .ct-alert .container {
   position: relative;

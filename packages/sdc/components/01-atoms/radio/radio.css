@@ -5,6 +5,12 @@
 .ct-radio {
   appearance: none;
   margin: 0;
+}
+.ct-radio[disabled] {
+  opacity: var(--ct-radio-disabled-opacity);
+  pointer-events: none;
+}
+.ct-radio {
   border-radius: 50%;
   border-style: solid;
   box-sizing: border-box;
@@ -15,10 +21,6 @@
   margin-right: calc(-1rem * var(--ct-font-average-character-width));
   vertical-align: top;
   margin-top: -0.1875rem;
-}
-.ct-radio[disabled] {
-  opacity: var(--ct-radio-disabled-opacity);
-  pointer-events: none;
 }
 .ct-radio + label {
   cursor: pointer;

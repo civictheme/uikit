@@ -21,9 +21,9 @@
 .ct-callout__wrapper::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: -0;
+  bottom: -0;
+  left: -0;
   width: var(--ct-callout-stripe-width);
   border-top-left-radius: var(--ct-callout-border-radius);
   border-bottom-left-radius: var(--ct-callout-border-radius);

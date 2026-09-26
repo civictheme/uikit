@@ -5,15 +5,17 @@
 .ct-textarea {
   appearance: none;
   margin: 0;
+}
+.ct-textarea[disabled] {
+  opacity: var(--ct-textarea-disabled-opacity);
+  pointer-events: none;
+}
+.ct-textarea {
   font-size: var(--ct-typography-label-small-font-size);
   line-height: var(--ct-typography-label-small-line-height);
   font-family: var(--ct-typography-label-small-font-name);
   font-weight: var(--ct-typography-label-small-font-weight);
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
-}
-.ct-textarea[disabled] {
-  opacity: var(--ct-textarea-disabled-opacity);
-  pointer-events: none;
 }
 .ct-textarea {
   box-sizing: border-box;
