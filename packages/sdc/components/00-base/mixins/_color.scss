@@ -54,7 +54,7 @@
 // Color tone. Do not use on components directly - map to a color variant instead.
 //
 @function ct-color-tone($base, $color) {
-  $neutral: color.adjust(color.adjust($base, $saturation: -20%), $lightness: -1 * math.max(color.lightness($base) - 5%, 0%));
+  $neutral: color.adjust(color.adjust($base, $saturation: -20%), $lightness: -1 * math.max(color.channel($base, 'lightness', $space: hsl) - 5%, 0%));
 
   @return ct-color-blend(white, ($neutral math.percentage(math.div($color, 100))));
 }
@@ -107,9 +107,9 @@
 // Do not use directly.
 //
 @function _ct-color-blend-channels($base, $fills) {
-  $red: color.red($base);
-  $green: color.green($base);
-  $blue: color.blue($base);
+  $red: color.channel($base, 'red', $space: rgb);
+  $green: color.channel($base, 'green', $space: rgb);
+  $blue: color.channel($base, 'blue', $space: rgb);
 
   @each $fill in $fills {
     $color: list.nth($fill, 1);
@@ -119,9 +119,9 @@
       $alpha: math.div($alpha, 100%);
     }
 
-    $red: $red * (1 - $alpha) + color.red($color) * $alpha;
-    $green: $green * (1 - $alpha) + color.green($color) * $alpha;
-    $blue: $blue * (1 - $alpha) + color.blue($color) * $alpha;
+    $red: $red * (1 - $alpha) + color.channel($color, 'red', $space: rgb) * $alpha;
+    $green: $green * (1 - $alpha) + color.channel($color, 'green', $space: rgb) * $alpha;
+    $blue: $blue * (1 - $alpha) + color.channel($color, 'blue', $space: rgb) * $alpha;
   }
 
   @return $red $green $blue;
