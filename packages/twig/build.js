@@ -463,7 +463,8 @@ async function build() {
     buildAssetsDirectory()
     await buildConstants()
   } catch (error) {
-    errorReporter(error);
+    // Exit non-zero so CI fails, but keep watch mode running.
+    errorReporter(error, !config.watch);
   }
 
   console.log(`Time taken: ${time(true)}`)
