@@ -39,10 +39,10 @@
 .ct-event-card:not(.ct-event-card--with-image)::before {
   content: "";
   position: absolute;
-  left: -0;
-  right: -0;
+  left: 0;
+  right: 0;
   height: var(--ct-event-card-stripe-height);
-  top: -0;
+  top: 0;
   border-top-left-radius: var(--ct-event-card-border-radius);
   border-top-right-radius: var(--ct-event-card-border-radius);
   transition: height 0.25s;

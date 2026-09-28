@@ -13,9 +13,9 @@
   &::before {
     content: '';
     position: absolute;
-    top: -$border-width;
-    bottom: -$border-width;
-    left: -$border-width;
+    top: 0 - $border-width;
+    bottom: 0 - $border-width;
+    left: 0 - $border-width;
     width: $width;
 
     @if $position == 'left' {
@@ -50,17 +50,17 @@
   &::before {
     content: '';
     position: absolute;
-    left: -$border-width;
-    right: -$border-width;
+    left: 0 - $border-width;
+    right: 0 - $border-width;
     height: $_stripe_size;
 
     @if $position == 'top' {
-      top: -$border-width;
+      top: 0 - $border-width;
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
     }
     @else {
-      bottom: -$border-width;
+      bottom: 0 - $border-width;
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
     }

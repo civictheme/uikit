@@ -7076,9 +7076,9 @@ ol ol ol {
 .ct-callout__wrapper::before {
   content: "";
   position: absolute;
-  top: -0;
-  bottom: -0;
-  left: -0;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: var(--ct-callout-stripe-width);
   border-top-left-radius: var(--ct-callout-border-radius);
   border-bottom-left-radius: var(--ct-callout-border-radius);
@@ -7144,10 +7144,10 @@ ol ol ol {
 .ct-event-card:not(.ct-event-card--with-image)::before {
   content: "";
   position: absolute;
-  left: -0;
-  right: -0;
+  left: 0;
+  right: 0;
   height: var(--ct-event-card-stripe-height);
-  top: -0;
+  top: 0;
   border-top-left-radius: var(--ct-event-card-border-radius);
   border-top-right-radius: var(--ct-event-card-border-radius);
   transition: height 0.25s;
@@ -7316,10 +7316,10 @@ ol ol ol {
 .ct-fast-fact-card::before {
   content: "";
   position: absolute;
-  left: -0;
-  right: -0;
+  left: 0;
+  right: 0;
   height: var(--ct-fast-fact-card-stripe-height);
-  bottom: -0;
+  bottom: 0;
   border-bottom-left-radius: var(--ct-fast-fact-card-border-radius);
   border-bottom-right-radius: var(--ct-fast-fact-card-border-radius);
   transition: height 0.25s;
@@ -8197,10 +8197,10 @@ ol ol ol {
 .ct-promo-card:not(.ct-promo-card--with-image)::before {
   content: "";
   position: absolute;
-  left: -0;
-  right: -0;
+  left: 0;
+  right: 0;
   height: var(--ct-promo-card-stripe-height);
-  top: -0;
+  top: 0;
   border-top-left-radius: var(--ct-promo-card-border-radius);
   border-top-right-radius: var(--ct-promo-card-border-radius);
   transition: height 0.25s;
@@ -8596,10 +8596,10 @@ ol ol ol {
 .ct-service-card::before {
   content: "";
   position: absolute;
-  left: -0;
-  right: -0;
+  left: 0;
+  right: 0;
   height: var(--ct-service-card-stripe-height);
-  top: -0;
+  top: 0;
   border-top-left-radius: var(--ct-service-card-border-radius);
   border-top-right-radius: var(--ct-service-card-border-radius);
   transition: height 0.25s;
