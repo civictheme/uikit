@@ -150,11 +150,11 @@ const SDC_COMPLETE_COMPONENT_DIR     = config.base ? DIR_COMPONENTS_IN : DIR_COM
 
 // @import is deprecated in Dart Sass but not removed until 3.0.0. The build
 // generates @import rules itself, so silence the warning until the codebase
-// moves to @use. Deprecations already fixed fail the build so they cannot
-// come back.
+// moves to @use. Every other active deprecation fails the build, as Dart
+// Sass 2.0.0 turns most of them into errors.
 const SASS_OPTIONS                   = {
   silenceDeprecations: ['import'],
-  fatalDeprecations: ['color-functions', 'global-builtin', 'if-function'],
+  fatalDeprecations: Object.values(sass.deprecations).filter(d => d.status === 'active' && d.id !== 'import'),
 }
 
 if (config.build) {
