@@ -5,11 +5,6 @@
 .ct-paragraph {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: var(--ct-typography-text-regular-font-size);
-  line-height: var(--ct-typography-text-regular-line-height);
-  font-family: var(--ct-typography-text-regular-font-name);
-  font-weight: var(--ct-typography-text-regular-font-weight);
-  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-paragraph--no-margin {
   margin-bottom: 0;
@@ -50,6 +45,13 @@
 }
 .ct-paragraph sup {
   top: -0.5em;
+}
+.ct-paragraph {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-paragraph h1,
 .ct-paragraph h2,

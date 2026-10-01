@@ -3,13 +3,13 @@
  */
 
 .ct-subject-card {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+.ct-subject-card {
   position: relative;
   border-radius: var(--ct-subject-card-border-radius);
   width: 100%;
   overflow: hidden;
-}
-.ct-subject-card {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 .ct-subject-card:hover {
   outline: 1px solid transparent;

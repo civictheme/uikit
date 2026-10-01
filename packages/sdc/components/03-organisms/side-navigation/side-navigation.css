@@ -73,14 +73,6 @@
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
 }
 .ct-side-navigation__menu .ct-menu__item__link {
-  display: block;
-  box-sizing: border-box;
-  position: relative;
-  padding: 0.75rem 2rem 0.75rem 1.25rem;
-  border-bottom-width: 0.0625rem;
-  border-bottom-style: solid;
-}
-.ct-side-navigation__menu .ct-menu__item__link {
   text-decoration: none;
 }
 .ct-side-navigation__menu .ct-menu__item__link .ct-text-icon__text {
@@ -94,6 +86,14 @@
 }
 .ct-side-navigation__menu .ct-menu__item__link:focus-visible .ct-text-icon__text {
   text-decoration: none;
+}
+.ct-side-navigation__menu .ct-menu__item__link {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0.75rem 2rem 0.75rem 1.25rem;
+  border-bottom-width: 0.0625rem;
+  border-bottom-style: solid;
 }
 .ct-side-navigation__menu .ct-menu__item__link::before {
   content: "";
