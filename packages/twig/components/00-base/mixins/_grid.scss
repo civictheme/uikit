@@ -11,6 +11,7 @@
 
 @use 'sass:math';
 @use 'sass:map';
+@use 'sass:meta';
 
 //
 // Container class should wrap every row.
@@ -121,7 +122,7 @@
 // Do not use directly.
 //
 @mixin _ct-col-condition($col-number) {
-  @if type-of($col-number) == number {
+  @if meta.type-of($col-number) == number {
     @if $col-number > $ct-grid-columns or $col-number == 0 {
       @warn 'Column number must be greater than 0 and less than or equal to total number of columns in the grid (#{$ct-grid-columns})';
     }
@@ -155,7 +156,7 @@
 @mixin _ct-grid-col($breakpoint: 'xs', $col-number: 'auto') {
   // If no breakpoint is passed and a col number is just use the first arg as
   // the col number and act like xs.
-  @if type-of($breakpoint) == number {
+  @if meta.type-of($breakpoint) == number {
     $col-number: $breakpoint;
 
     @include _ct-col-condition($col-number);

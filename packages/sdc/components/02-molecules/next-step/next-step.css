@@ -42,13 +42,15 @@
 }
 .ct-next-step .ct-next-step__title__link {
   padding: 0;
+}
+.ct-next-step .ct-next-step__title__link .ct-link__icon {
+  flex-shrink: 0;
+}
+.ct-next-step .ct-next-step__title__link {
   font-size: inherit;
   line-height: inherit;
   display: flex;
   column-gap: 1rem;
-}
-.ct-next-step .ct-next-step__title__link .ct-link__icon {
-  flex-shrink: 0;
 }
 .ct-next-step .ct-next-step__title__link .ct-link__icon {
   margin-left: auto;

@@ -2,29 +2,29 @@
  * This file was automatically generated. Please run `npm run dist` to update.
  */
 
-.ct-campaign .ct-campaign__image {
-  height: var(--ct-campaign-mobile-height);
-  margin-bottom: 1.5rem;
-}
 .ct-campaign .ct-campaign__image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
+.ct-campaign .ct-campaign__image {
+  height: var(--ct-campaign-mobile-height);
+  margin-bottom: 1.5rem;
+}
 .ct-campaign .ct-campaign__image img {
   border-radius: var(--ct-campaign-image-border-radius);
 }
 @media (min-width: 768px) {
+  .ct-campaign .ct-campaign__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
   .ct-campaign .ct-campaign__image {
     position: relative;
     width: 100%;
     padding-top: 100%;
     box-sizing: border-box;
-  }
-  .ct-campaign .ct-campaign__image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
   }
   .ct-campaign .ct-campaign__image img {
     position: absolute;

@@ -2,8 +2,8 @@
  * This file was automatically generated. Please run `npm run dist` to update.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
 .ct-background {
   background-position: center;
   background-repeat: no-repeat;
@@ -78,9 +78,6 @@
   cursor: pointer;
   position: relative;
 }
-[data-collapsible] [data-collapsible-trigger] .ct-collapsible__icon {
-  transform: rotate(-180deg);
-}
 @media (min-width: 0) {
   [data-collapsible] [data-collapsible-trigger] .ct-collapsible__icon {
     font-size: 1.25rem;
@@ -90,6 +87,9 @@
   [data-collapsible] [data-collapsible-trigger] .ct-collapsible__icon {
     font-size: 1.25rem;
   }
+}
+[data-collapsible] [data-collapsible-trigger] .ct-collapsible__icon {
+  transform: rotate(-180deg);
 }
 @media print {
   [data-collapsible] [data-collapsible-trigger] .ct-collapsible__icon {

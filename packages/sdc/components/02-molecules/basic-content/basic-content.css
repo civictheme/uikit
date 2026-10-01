@@ -2,13 +2,6 @@
  * This file was automatically generated. Please run `npm run dist` to update.
  */
 
-.ct-basic-content {
-  font-size: var(--ct-typography-text-regular-font-size);
-  line-height: var(--ct-typography-text-regular-line-height);
-  font-family: var(--ct-typography-text-regular-font-name);
-  font-weight: var(--ct-typography-text-regular-font-weight);
-  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
-}
 @media (min-width: 768px) {
   .ct-basic-content.ct-basic-content--with-background {
     padding-left: var(--ct-basic-content-space-horizontal);
@@ -51,6 +44,13 @@
 }
 .ct-basic-content sup {
   top: -0.5em;
+}
+.ct-basic-content {
+  font-size: var(--ct-typography-text-regular-font-size);
+  line-height: var(--ct-typography-text-regular-line-height);
+  font-family: var(--ct-typography-text-regular-font-name);
+  font-weight: var(--ct-typography-text-regular-font-weight);
+  letter-spacing: var(--ct-typography-text-regular-letter-spacing);
 }
 .ct-basic-content h1,
 .ct-basic-content h2,

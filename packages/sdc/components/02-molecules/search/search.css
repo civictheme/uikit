@@ -19,14 +19,6 @@
   letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-search__link {
-  border-bottom: solid 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: var(--ct-navigation-drawer-top-offset);
-  padding-bottom: var(--ct-navigation-drawer-top-offset);
-  text-align: center;
-}
-.ct-search__link {
   text-decoration: none;
 }
 .ct-search__link .ct-text-icon__text {
@@ -40,6 +32,14 @@
 }
 .ct-search__link:focus-visible .ct-text-icon__text {
   text-decoration: none;
+}
+.ct-search__link {
+  border-bottom: solid 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: var(--ct-navigation-drawer-top-offset);
+  padding-bottom: var(--ct-navigation-drawer-top-offset);
+  text-align: center;
 }
 .ct-search__link:focus-visible {
   outline-offset: 0.125rem;

@@ -4,12 +4,13 @@
 
 @use 'sass:list';
 @use 'sass:math';
+@use 'sass:meta';
 
 //
 // Get a spacing value from the pre-defined list of spacings.
 //
 @function ct-spacing($multiplier: 1) {
-  @if type-of($multiplier) != number {
+  @if meta.type-of($multiplier) != number {
     @error '"#{$multiplier}" is not a valid number!';
   }
 

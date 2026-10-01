@@ -5,15 +5,17 @@
 .ct-select {
   appearance: none;
   margin: 0;
+}
+.ct-select[disabled] {
+  opacity: var(--ct-select-disabled-opacity);
+  pointer-events: none;
+}
+.ct-select {
   font-size: var(--ct-typography-label-small-font-size);
   line-height: var(--ct-typography-label-small-line-height);
   font-family: var(--ct-typography-label-small-font-name);
   font-weight: var(--ct-typography-label-small-font-weight);
   letter-spacing: var(--ct-typography-label-small-letter-spacing);
-}
-.ct-select[disabled] {
-  opacity: var(--ct-select-disabled-opacity);
-  pointer-events: none;
 }
 .ct-select {
   width: 100%;

@@ -286,14 +286,14 @@ code {
   font-family: sans-serif;
   background-color: rgba(84, 137, 146, 0.3);
   border: dashed 1px rgba(84, 137, 146, 0.7);
-  color: #1c2e31;
+  color: rgb(11.0281329923%, 17.9863597613%, 19.167945439%);
 }
 .ct-theme-dark .story-placeholder,
 .ct-theme-dark .story-placeholder--hugged,
 .ct-theme-dark .story-placeholder--fixed {
-  background-color: rgba(110, 162, 171, 0.7);
-  border: dashed 1px rgba(239, 245, 246, 0.9);
-  color: #eff5f6;
+  background-color: rgba(42.9940323956%, 63.6879795396%, 67.2020460358%, 0.7);
+  border: dashed 1px rgba(93.7766410912%, 96.0358056266%, 96.4194373402%, 0.9);
+  color: rgb(93.7766410912%, 96.0358056266%, 96.4194373402%);
 }
 
 .story-placeholder {
@@ -432,7 +432,7 @@ code {
 .story-colors-wrapper .story-color-light--brand1 .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 24.7058823529%, 33.6470588235%);
   position: relative;
   background-color: #00698f;
 }
@@ -465,7 +465,7 @@ code {
 .story-colors-wrapper .story-color-light--brand2 .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #7f8e98;
+  box-shadow: inset 0 0 0 0.0625rem rgb(49.6732026144%, 55.7124183007%, 59.7385620915%);
   position: relative;
   background-color: #e6e9eb;
 }
@@ -498,7 +498,7 @@ code {
 .story-colors-wrapper .story-color-light--brand3 .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #0b0b0b;
+  box-shadow: inset 0 0 0 0.0625rem rgb(4.2352941176%, 4.4705882353%, 4.4705882353%);
   position: relative;
   background-color: #121313;
 }
@@ -531,7 +531,7 @@ code {
 .story-colors-wrapper .story-color-dark--brand1 .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #00a2d3;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 63.4281459419%, 82.8235294118%);
   position: relative;
   background-color: #61daff;
 }
@@ -564,7 +564,7 @@ code {
 .story-colors-wrapper .story-color-dark--brand2 .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #00232f;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 13.6470588235%, 18.5882352941%);
   position: relative;
   background-color: #003a4f;
 }
@@ -597,7 +597,7 @@ code {
 .story-colors-wrapper .story-color-dark--brand3 .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 24.7058823529%, 33.6470588235%);
   position: relative;
   background-color: #00698f;
 }
@@ -630,7 +630,7 @@ code {
 .story-colors-wrapper .story-color-light--heading .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #001922;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 9.8823529412%, 13.4117647059%);
   position: relative;
   background-color: #002a39;
 }
@@ -663,7 +663,7 @@ code {
 .story-colors-wrapper .story-color-light--body .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #1f292c;
+  box-shadow: inset 0 0 0 0.0625rem rgb(12%, 16%, 17.4117647059%);
   position: relative;
   background-color: #33444a;
 }
@@ -696,7 +696,7 @@ code {
 .story-colors-wrapper .story-color-light--background-light .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #83acac;
+  box-shadow: inset 0 0 0 0.0625rem rgb(51.2941176471%, 67.5294117647%, 67.5294117647%);
   position: relative;
   background-color: #fcfdfd;
 }
@@ -729,7 +729,7 @@ code {
 .story-colors-wrapper .story-color-light--background .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #7f8e98;
+  box-shadow: inset 0 0 0 0.0625rem rgb(49.6732026144%, 55.7124183007%, 59.7385620915%);
   position: relative;
   background-color: #e6e9eb;
 }
@@ -762,7 +762,7 @@ code {
 .story-colors-wrapper .story-color-light--background-dark .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #6c7073;
+  box-shadow: inset 0 0 0 0.0625rem rgb(42.4961636829%, 43.7647058824%, 45.0332480818%);
   position: relative;
   background-color: #b8babc;
 }
@@ -795,7 +795,7 @@ code {
 .story-colors-wrapper .story-color-light--border-light .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #666a6b;
+  box-shadow: inset 0 0 0 0.0625rem rgb(39.9302832244%, 41.4466230937%, 41.9520697168%);
   position: relative;
   background-color: #acafb0;
 }
@@ -828,7 +828,7 @@ code {
 .story-colors-wrapper .story-color-light--border .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #373838;
+  box-shadow: inset 0 0 0 0.0625rem rgb(21.6470588235%, 21.8823529412%, 22.1176470588%);
   position: relative;
   background-color: #5c5d5e;
 }
@@ -861,7 +861,7 @@ code {
 .story-colors-wrapper .story-color-light--border-dark .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #0e0e0e;
+  box-shadow: inset 0 0 0 0.0625rem rgb(5.4117647059%, 5.4117647059%, 5.6470588235%);
   position: relative;
   background-color: #171718;
 }
@@ -894,7 +894,7 @@ code {
 .story-colors-wrapper .story-color-light--interaction-text .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #8ba2a2;
+  box-shadow: inset 0 0 0 0.0625rem rgb(54.3790849673%, 63.5032679739%, 63.5032679739%);
   position: relative;
   background-color: #fafbfb;
 }
@@ -927,7 +927,7 @@ code {
 .story-colors-wrapper .story-color-light--interaction-background .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 24.7058823529%, 33.6470588235%);
   position: relative;
   background-color: #00698f;
 }
@@ -960,7 +960,7 @@ code {
 .story-colors-wrapper .story-color-light--interaction-hover-text .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #8ba2a2;
+  box-shadow: inset 0 0 0 0.0625rem rgb(54.3790849673%, 63.5032679739%, 63.5032679739%);
   position: relative;
   background-color: #fafbfb;
 }
@@ -993,7 +993,7 @@ code {
 .story-colors-wrapper .story-color-light--interaction-hover-background .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #002634;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 14.8235294118%, 20.2352941176%);
   position: relative;
   background-color: #003f56;
 }
@@ -1026,7 +1026,7 @@ code {
 .story-colors-wrapper .story-color-light--interaction-focus .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #4f2494;
+  box-shadow: inset 0 0 0 0.0625rem rgb(30.9579831933%, 14.2335554912%, 58.0017386265%);
   position: relative;
   background-color: #8b5cd7;
 }
@@ -1059,7 +1059,7 @@ code {
 .story-colors-wrapper .story-color-light--highlight .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #0b0b0b;
+  box-shadow: inset 0 0 0 0.0625rem rgb(4.2352941176%, 4.4705882353%, 4.4705882353%);
   position: relative;
   background-color: #121313;
 }
@@ -1092,7 +1092,7 @@ code {
 .story-colors-wrapper .story-color-light--information .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #004a73;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 29.1764705882%, 44.9411764706%);
   position: relative;
   background-color: #007cbf;
 }
@@ -1125,7 +1125,7 @@ code {
 .story-colors-wrapper .story-color-light--warning .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #793100;
+  box-shadow: inset 0 0 0 0.0625rem rgb(47.2941176471%, 19.0588235294%, 0%);
   position: relative;
   background-color: #c95100;
 }
@@ -1158,7 +1158,7 @@ code {
 .story-colors-wrapper .story-color-light--error .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #7d201f;
+  box-shadow: inset 0 0 0 0.0625rem rgb(49.1858823529%, 12.48%, 11.9905882353%);
   position: relative;
   background-color: #ce3836;
 }
@@ -1191,7 +1191,7 @@ code {
 .story-colors-wrapper .story-color-light--success .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #004f4e;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 31.0588235294%, 30.5882352941%);
   position: relative;
   background-color: #008482;
 }
@@ -1224,7 +1224,7 @@ code {
 .story-colors-wrapper .story-color-dark--heading .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #2ecbff;
+  box-shadow: inset 0 0 0 0.0625rem rgb(18.1176470588%, 79.5294117647%, 100%);
   position: relative;
   background-color: #f7fdff;
 }
@@ -1257,7 +1257,7 @@ code {
 .story-colors-wrapper .story-color-dark--body .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #25c8ff;
+  box-shadow: inset 0 0 0 0.0625rem rgb(14.3529411765%, 78.5882352941%, 100%);
   position: relative;
   background-color: #e7f9ff;
 }
@@ -1290,7 +1290,7 @@ code {
 .story-colors-wrapper .story-color-dark--background-light .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #082935;
+  box-shadow: inset 0 0 0 0.0625rem rgb(3.0588235294%, 16%, 20.7058823529%);
   position: relative;
   background-color: #0d4458;
 }
@@ -1323,7 +1323,7 @@ code {
 .story-colors-wrapper .story-color-dark--background .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #00232f;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 13.6470588235%, 18.5882352941%);
   position: relative;
   background-color: #003a4f;
 }
@@ -1356,7 +1356,7 @@ code {
 .story-colors-wrapper .story-color-dark--background-dark .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #001921;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 9.6470588235%, 12.9411764706%);
   position: relative;
   background-color: #002937;
 }
@@ -1389,7 +1389,7 @@ code {
 .story-colors-wrapper .story-color-dark--border-light .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #58757f;
+  box-shadow: inset 0 0 0 0.0625rem rgb(34.6832878847%, 45.8714452668%, 49.7873003506%);
   position: relative;
   background-color: #a6bac1;
 }
@@ -1422,7 +1422,7 @@ code {
 .story-colors-wrapper .story-color-dark--border .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #102f3a;
+  box-shadow: inset 0 0 0 0.0625rem rgb(6.1176470588%, 18.3529411765%, 22.8235294118%);
   position: relative;
   background-color: #1a4e61;
 }
@@ -1455,7 +1455,7 @@ code {
 .story-colors-wrapper .story-color-dark--border-dark .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #001921;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 9.6470588235%, 12.9411764706%);
   position: relative;
   background-color: #002937;
 }
@@ -1488,7 +1488,7 @@ code {
 .story-colors-wrapper .story-color-dark--interaction-text .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #00232f;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 13.6470588235%, 18.5882352941%);
   position: relative;
   background-color: #003a4f;
 }
@@ -1521,7 +1521,7 @@ code {
 .story-colors-wrapper .story-color-dark--interaction-background .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #00a2d3;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 63.4281459419%, 82.8235294118%);
   position: relative;
   background-color: #61daff;
 }
@@ -1554,7 +1554,7 @@ code {
 .story-colors-wrapper .story-color-dark--interaction-hover-text .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #001921;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 9.6470588235%, 12.9411764706%);
   position: relative;
   background-color: #002937;
 }
@@ -1587,7 +1587,7 @@ code {
 .story-colors-wrapper .story-color-dark--interaction-hover-background .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #00bff9;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 75.0340557276%, 97.6470588235%);
   position: relative;
   background-color: #a0e9ff;
 }
@@ -1620,7 +1620,7 @@ code {
 .story-colors-wrapper .story-color-dark--interaction-focus .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #4f2494;
+  box-shadow: inset 0 0 0 0.0625rem rgb(30.9579831933%, 14.2335554912%, 58.0017386265%);
   position: relative;
   background-color: #8b5cd7;
 }
@@ -1653,7 +1653,7 @@ code {
 .story-colors-wrapper .story-color-dark--highlight .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #003f56;
+  box-shadow: inset 0 0 0 0.0625rem rgb(0%, 24.7058823529%, 33.6470588235%);
   position: relative;
   background-color: #00698f;
 }
@@ -1686,7 +1686,7 @@ code {
 .story-colors-wrapper .story-color-dark--information .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #0385c2;
+  box-shadow: inset 0 0 0 0.0625rem rgb(1.2721396251%, 52.1577246283%, 75.9043309632%);
   position: relative;
   background-color: #4cc4fc;
 }
@@ -1719,7 +1719,7 @@ code {
 .story-colors-wrapper .story-color-dark--warning .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #9a4c17;
+  box-shadow: inset 0 0 0 0.0625rem rgb(60.3720930233%, 29.7017783858%, 9.0396716826%);
   position: relative;
   background-color: #e38444;
 }
@@ -1752,7 +1752,7 @@ code {
 .story-colors-wrapper .story-color-dark--error .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #a71916;
+  box-shadow: inset 0 0 0 0.0625rem rgb(65.3755656109%, 9.8823529412%, 8.742081448%);
   position: relative;
   background-color: #e85653;
 }
@@ -1785,7 +1785,7 @@ code {
 .story-colors-wrapper .story-color-dark--success .story-color-element {
   display: block;
   height: 3.75rem;
-  box-shadow: inset 0 0 0 0.0625rem #0b6a68;
+  box-shadow: inset 0 0 0 0.0625rem rgb(4.2352941176%, 41.4117647059%, 40.9411764706%);
   position: relative;
   background-color: #12b0ae;
 }
@@ -2522,7 +2522,7 @@ code {
 .ct-layout .ct-layout .story-placeholder {
   background-color: rgba(107, 83, 148, 0.3);
   border: dashed 1px rgba(107, 83, 148, 0.7);
-  color: #241c32;
+  color: rgb(14.1685765215%, 10.9905780494%, 19.5976572447%);
 }
 
 .story-layout-outlines {
@@ -2608,7 +2608,7 @@ code {
 .story-spacing-wrapper .story-spacing--1 {
   box-sizing: border-box;
   padding: 0.5rem 0 0 0.5rem;
-  background-color: #d8f6ff;
+  background-color: rgb(84.5098039216%, 96.3725490196%, 100%);
 }
 .story-spacing-wrapper .story-spacing--1::before {
   content: "spacing 1";
@@ -2619,7 +2619,7 @@ code {
 .story-spacing-wrapper .story-spacing--2 {
   box-sizing: border-box;
   padding: 1rem 0 0 1rem;
-  background-color: #b0edff;
+  background-color: rgb(69.0196078431%, 92.7450980392%, 100%);
 }
 .story-spacing-wrapper .story-spacing--2::before {
   content: "spacing 2";
@@ -2630,7 +2630,7 @@ code {
 .story-spacing-wrapper .story-spacing--3 {
   box-sizing: border-box;
   padding: 1.5rem 0 0 1.5rem;
-  background-color: #d8f6ff;
+  background-color: rgb(84.5098039216%, 96.3725490196%, 100%);
 }
 .story-spacing-wrapper .story-spacing--3::before {
   content: "spacing 3";
@@ -2641,7 +2641,7 @@ code {
 .story-spacing-wrapper .story-spacing--4 {
   box-sizing: border-box;
   padding: 2rem 0 0 2rem;
-  background-color: #b0edff;
+  background-color: rgb(69.0196078431%, 92.7450980392%, 100%);
 }
 .story-spacing-wrapper .story-spacing--4::before {
   content: "spacing 4";
@@ -2652,7 +2652,7 @@ code {
 .story-spacing-wrapper .story-spacing--5 {
   box-sizing: border-box;
   padding: 2.5rem 0 0 2.5rem;
-  background-color: #d8f6ff;
+  background-color: rgb(84.5098039216%, 96.3725490196%, 100%);
 }
 .story-spacing-wrapper .story-spacing--5::before {
   content: "spacing 5";
@@ -2663,7 +2663,7 @@ code {
 .story-spacing-wrapper .story-spacing--6 {
   box-sizing: border-box;
   padding: 3rem 0 0 3rem;
-  background-color: #b0edff;
+  background-color: rgb(69.0196078431%, 92.7450980392%, 100%);
 }
 .story-spacing-wrapper .story-spacing--6::before {
   content: "spacing 6";
@@ -2674,7 +2674,7 @@ code {
 .story-spacing-wrapper .story-spacing--7 {
   box-sizing: border-box;
   padding: 3.5rem 0 0 3.5rem;
-  background-color: #d8f6ff;
+  background-color: rgb(84.5098039216%, 96.3725490196%, 100%);
 }
 .story-spacing-wrapper .story-spacing--7::before {
   content: "spacing 7";
@@ -2685,7 +2685,7 @@ code {
 .story-spacing-wrapper .story-spacing--8 {
   box-sizing: border-box;
   padding: 4rem 0 0 4rem;
-  background-color: #b0edff;
+  background-color: rgb(69.0196078431%, 92.7450980392%, 100%);
 }
 .story-spacing-wrapper .story-spacing--8::before {
   content: "spacing 8";
@@ -2696,7 +2696,7 @@ code {
 .story-spacing-wrapper .story-spacing--9 {
   box-sizing: border-box;
   padding: 4.5rem 0 0 4.5rem;
-  background-color: #d8f6ff;
+  background-color: rgb(84.5098039216%, 96.3725490196%, 100%);
 }
 .story-spacing-wrapper .story-spacing--9::before {
   content: "spacing 9";
@@ -2707,7 +2707,7 @@ code {
 .story-spacing-wrapper .story-spacing--10 {
   box-sizing: border-box;
   padding: 5rem 0 0 5rem;
-  background-color: #b0edff;
+  background-color: rgb(69.0196078431%, 92.7450980392%, 100%);
 }
 .story-spacing-wrapper .story-spacing--10::before {
   content: "spacing 10";
@@ -2718,7 +2718,7 @@ code {
 .story-spacing-wrapper .story-spacing--11 {
   box-sizing: border-box;
   padding: 5.5rem 0 0 5.5rem;
-  background-color: #d8f6ff;
+  background-color: rgb(84.5098039216%, 96.3725490196%, 100%);
 }
 .story-spacing-wrapper .story-spacing--11::before {
   content: "spacing 11";
@@ -2729,8 +2729,6 @@ code {
 
 .story-vertical-spacing-wrapper .story-vertical-spacing-container {
   box-shadow: 0 0 0.0625rem 0.0625rem red inset;
-  position: relative;
-  overflow: hidden;
 }
 .story-vertical-spacing-wrapper .story-vertical-spacing-container::before {
   border: 0.0625rem solid red;
@@ -2741,9 +2739,12 @@ code {
   z-index: 10000;
   left: 0;
 }
+.story-vertical-spacing-wrapper .story-vertical-spacing-container {
+  position: relative;
+  overflow: hidden;
+}
 .story-vertical-spacing-wrapper .story-vertical-spacing {
   box-shadow: 0 0 0.0625rem 0.0625rem blue inset;
-  position: relative;
 }
 .story-vertical-spacing-wrapper .story-vertical-spacing::before {
   border: 0.0625rem solid blue;
@@ -2753,6 +2754,9 @@ code {
   position: absolute;
   z-index: 10000;
   right: 0;
+}
+.story-vertical-spacing-wrapper .story-vertical-spacing {
+  position: relative;
 }
 
 .story-welcome {

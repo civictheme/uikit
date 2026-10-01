@@ -32,7 +32,7 @@
   }
 
   @if map.get($ct-breakpoints, $name) == null {
-    @error '"#{$name}" is not an available breakpoint. (#{map-keys($ct-breakpoints)})';
+    @error '"#{$name}" is not an available breakpoint. (#{map.keys($ct-breakpoints)})';
   }
 
   @media (#{'min-width: ' + map.get($ct-breakpoints, $name)}) {
@@ -59,7 +59,7 @@
 //
 @mixin ct-breakpoint-upto($class) {
   @if map.get($ct-breakpoints, $class) == null {
-    @error '"#{$class}" is not an available breakpoint. (#{map-keys($ct-breakpoints)})';
+    @error '"#{$class}" is not an available breakpoint. (#{map.keys($ct-breakpoints)})';
   }
 
   @media (#{'max-width: ' + (map.get($ct-breakpoints, $class) - 1)}) {

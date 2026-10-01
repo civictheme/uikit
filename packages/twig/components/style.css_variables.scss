@@ -1,6 +1,7 @@
 @use 'sass:meta';
 @use 'sass:map';
 @use 'sass:list';
+@use 'sass:string';
 @use '00-base/variables';
 @use '00-base/mixins/color';
 @import '00-base/variables'; // Needs to import twice; font/typography don't support @use.
@@ -27,7 +28,7 @@ html {
 
   @each $typography-name, $typography-ruleset in $typography {
     // Check if this typography has rules for this breakpoint
-    @if type-of($typography-ruleset) == map {
+    @if meta.type-of($typography-ruleset) == map {
       @each $breakpoint, $rules in $typography-ruleset {
         // Initialize breakpoint map if it doesn't exist
         @if not map.has-key($breakpoint-typography, $breakpoint) {
@@ -50,7 +51,7 @@ html {
     }
 
     // Handle typography rulesets that are lists (default/fallback values)
-    @else if type-of($typography-ruleset) == list {
+    @else if meta.type-of($typography-ruleset) == list {
       // Initialize default breakpoint map if it doesn't exist
       @if not map.has-key($breakpoint-typography, 'xxs') {
         $breakpoint-typography: map.set($breakpoint-typography, 'xxs', ());
@@ -110,12 +111,12 @@ html {
     );
 
     // Only filter by CivicTheme variables.
-    @if str-index($name, 'ct-') {
-      @if not list.index($ignore-types, type-of($value)) {
+    @if string.index($name, 'ct-') {
+      @if not list.index($ignore-types, meta.type-of($value)) {
         $contains-ignored: false;
 
         @each $prefix in $ignore-variables-containing {
-          @if str-index($name, $prefix) {
+          @if string.index($name, $prefix) {
             $contains-ignored: true;
           }
         }
