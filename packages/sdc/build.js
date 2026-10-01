@@ -18,7 +18,7 @@ import fs from 'fs'
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import path from 'path'
-import { globSync } from 'glob'
+import { globSync } from 'node:fs'
 import { execSync, spawn } from 'child_process'
 import * as sass from 'sass-embedded'
 

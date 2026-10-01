@@ -1,6 +1,6 @@
 import { render, Twig } from 'twig-testing-library';
 import * as fs from 'node:fs';
-import { globSync } from 'glob';
+import { globSync } from 'node:fs';
 
 const dir = new URL('.', import.meta.url).pathname;
 
