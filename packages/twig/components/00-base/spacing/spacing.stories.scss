@@ -22,7 +22,7 @@
     box-sizing: border-box;
     padding: $value 0 0 $value;
 
-    $transparency: if($index % 2 == 0, 25%, 50%);
+    $transparency: if(sass($index % 2 == 0): 25%; else: 50%);
 
     background-color: color.mix(#61daff, white, $transparency);
 

@@ -3,15 +3,15 @@
  */
 
 .ct-event-card {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+.ct-event-card {
   position: relative;
   border-radius: var(--ct-event-card-border-radius);
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
-.ct-event-card {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 .ct-event-card:hover {
   outline: 1px solid transparent;

@@ -2,6 +2,8 @@
 // Generator mixins.
 //
 
+@use 'sass:meta';
+
 //
 // Generate classes variations from provided map with optional prefix.
 //
@@ -10,7 +12,7 @@
 
   @each $key, $value in $map {
     // Handle lists.
-    @if type-of($map) == 'list' or $value == null {
+    @if meta.type-of($map) == 'list' or $value == null {
       $value: $key;
       $key: $index + 1;
     }

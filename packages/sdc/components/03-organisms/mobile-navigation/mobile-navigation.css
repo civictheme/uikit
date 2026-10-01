@@ -90,11 +90,6 @@
 .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
   width: 100%;
   padding: 1rem;
-  font-size: var(--ct-typography-label-regular-font-size);
-  line-height: var(--ct-typography-label-regular-line-height);
-  font-family: var(--ct-typography-label-regular-font-name);
-  font-weight: var(--ct-typography-label-regular-font-weight);
-  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
   text-decoration: none;
@@ -110,6 +105,13 @@
 }
 .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link:focus-visible .ct-text-icon__text {
   text-decoration: none;
+}
+.ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {
+  font-size: var(--ct-typography-label-regular-font-size);
+  line-height: var(--ct-typography-label-regular-line-height);
+  font-family: var(--ct-typography-label-regular-font-name);
+  font-weight: var(--ct-typography-label-regular-font-weight);
+  letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
 @media (min-width: 0) {
   .ct-mobile-navigation .ct-mobile-navigation__bottom-menu .ct-menu__item .ct-link {

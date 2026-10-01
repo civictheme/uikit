@@ -4,6 +4,7 @@
 
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:meta';
 @use 'sass:string';
 
 //
@@ -13,7 +14,7 @@
 //
 @function ct-map-get-next($map, $key, $fallback: false, $return: value) {
   // Check if map is valid.
-  @if type-of($map) == map {
+  @if meta.type-of($map) == map {
     // Check if key exists in map.
     @if map.has-key($map, $key) {
       // Init index counter variable.
@@ -44,7 +45,7 @@
         }
 
         // If last entry return the fallback.
-        @if $i == length($map) {
+        @if $i == list.length($map) {
           @return $fallback;
         }
       }

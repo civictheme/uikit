@@ -4,6 +4,7 @@
 
 @use 'sass:map';
 @use 'sass:list';
+@use 'sass:meta';
 
 //
 // Print typography rules based on the pre-defined typography preset.
@@ -15,7 +16,7 @@
 // @endcode
 //
 @mixin ct-typography($name) {
-  @if type-of($name) != string {
+  @if meta.type-of($name) != string {
     @error 'Only scalar names can be used as a typography preset.';
   }
 
@@ -28,7 +29,7 @@
 // Similar to ct-typography(), but returns the value instead of printing it.
 //
 @function ct-typography-rule($name, $rule-name, $breakpoint, $default: 'none') {
-  @if type-of($name) != string {
+  @if meta.type-of($name) != string {
     @error 'Only scalar names can be used as a typography preset.';
   }
 
@@ -66,7 +67,7 @@
   $all-typographies: _ct-typography-all();
 
   // Ruleset is a name of the preset - retrieve preset as a ruleset.
-  @if type-of($ruleset) == string {
+  @if meta.type-of($ruleset) == string {
     @if map.get($all-typographies, $ruleset) == null {
       @error '"#{$ruleset}" is not an available typography preset.';
     }
@@ -75,7 +76,7 @@
   }
 
   // Ruleset is a list of rules - extract rules.
-  @if type-of($ruleset) == list {
+  @if meta.type-of($ruleset) == list {
     $ruleset: _ct-typography-extract-rules($ruleset);
 
     @if $rule-name {
@@ -84,7 +85,7 @@
   }
 
   // Ruleset is a full ruleset definition - print all rules with breakpoints.
-  @else if type-of($ruleset) == map {
+  @else if meta.type-of($ruleset) == map {
     $breakpoints: map.keys($ruleset);
 
     @if $rule-name == false and $rule-breakpoint == false {
@@ -139,15 +140,15 @@
   $font-name: false;
   $letter-spacing: false;
 
-  @if length($rules) >= 3 {
+  @if list.length($rules) >= 3 {
     $font-weight: list.nth($rules, 3);
   }
 
-  @if length($rules) >= 4 {
+  @if list.length($rules) >= 4 {
     $font-name: list.nth($rules, 4);
   }
 
-  @if length($rules) >= 5 {
+  @if list.length($rules) >= 5 {
     $letter-spacing: list.nth($rules, 5);
   }
 
