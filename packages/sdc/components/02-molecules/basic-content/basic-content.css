@@ -385,8 +385,9 @@
     padding: 0.75rem 0.5rem;
   }
 }
-.ct-basic-content .ct-content-link .ct-icon {
+.ct-basic-content__external-icon {
   vertical-align: middle;
+  margin-left: var(--ct-basic-content-external-icon-spacing);
 }
 .ct-basic-content .ct-table,
 .ct-basic-content .ct-video-player {

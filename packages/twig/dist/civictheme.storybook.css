@@ -3473,6 +3473,10 @@ ol ol ol {
   text-align: right;
 }
 
+.ct-text-no-wrap {
+  white-space: nowrap;
+}
+
 .show-xxs {
   display: block !important;
 }
@@ -6801,8 +6805,9 @@ ol ol ol {
     padding: 0.75rem 0.5rem;
   }
 }
-.ct-basic-content .ct-content-link .ct-icon {
+.ct-basic-content__external-icon {
   vertical-align: middle;
+  margin-left: var(--ct-basic-content-external-icon-spacing);
 }
 .ct-basic-content .ct-table,
 .ct-basic-content .ct-video-player {
@@ -12208,6 +12213,7 @@ html {
   --ct-back-to-top-color: var(--ct-color-light-interaction-text);
   --ct-back-to-top-outline-color: var(--ct-color-light-interaction-focus);
   --ct-basic-content-blockquote-border-radius: 0;
+  --ct-basic-content-external-icon-spacing: 0.1875rem;
   --ct-basic-content-list-marker-margin: 1rem;
   --ct-basic-content-list-marker-width: 1.75rem;
   --ct-basic-content-space-horizontal: 3.5rem;
