@@ -6,7 +6,9 @@
   $root: &;
 
   margin: 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: ct-spacing();
 
   @include ct-reset-margins();
 
@@ -15,8 +17,18 @@
     object-fit: contain;
   }
 
+  @include ct-figure-alignment();
+
   #{$root}__caption {
-    @include ct-typography('label-extra-small');
+    @include ct-typography('label-small');
+
+    display: flex;
+    align-items: center;
+    gap: ct-spacing();
+
+    .ct-icon {
+      flex-shrink: 0;
+    }
   }
 
   @include ct-component-theme($root) using($root, $theme) {

@@ -274,6 +274,50 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+.ct-basic-content figure.align-left, .ct-basic-content figure.align-center, .ct-basic-content figure.align-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ct-basic-content figure.align-left, .ct-basic-content figure.ct-figure--align-left {
+  align-items: flex-start;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-basic-content figure.align-left, .ct-basic-content figure.ct-figure--align-left {
+    float: left;
+    clear: left;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 3rem 1rem 0;
+  }
+}
+.ct-basic-content figure.align-center, .ct-basic-content figure.ct-figure--align-center {
+  align-items: center;
+  float: none;
+  clear: both;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ct-basic-content figure.align-right, .ct-basic-content figure.ct-figure--align-right {
+  align-items: flex-start;
+  float: none;
+  clear: none;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 768px) {
+  .ct-basic-content figure.align-right, .ct-basic-content figure.ct-figure--align-right {
+    float: right;
+    clear: right;
+    max-width: calc(100% - 3rem);
+    margin: 0.5rem 0 1rem 3rem;
+  }
+}
 .ct-basic-content table {
   width: 100%;
   border-collapse: collapse;
