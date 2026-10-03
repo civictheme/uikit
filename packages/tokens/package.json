@@ -1,0 +1,23 @@
+{
+  "name": "@civictheme/tokens",
+  "version": "2.0.0-alpha.0",
+  "license": "GPL-2.0-or-later",
+  "description": "CivicTheme design tokens: DTCG source of truth for colour, built to UIKit CSS custom properties and Figma variable import files.",
+  "homepage": "https://github.com/civictheme/uikit",
+  "bugs": "https://github.com/civictheme/uikit",
+  "repository": "https://github.com/civictheme/uikit.git",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node build/build.mjs",
+    "dist": "node build/build.mjs",
+    "build-storybook": "echo @civictheme/tokens has no Storybook",
+    "test": "node tests/validate-resolved-values.mjs",
+    "test:ci": "npm run test",
+    "lint": "eslint ./build ./tests",
+    "lint:fix": "eslint ./build ./tests --fix"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.1.0"
+  }
+}

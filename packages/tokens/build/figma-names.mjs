@@ -1,0 +1,34 @@
+/**
+ * Deterministic token-path <-> Figma variable name map (plan §3.1).
+ *
+ * The `Colour` collection adopts the Figma file's existing paint-style
+ * taxonomy (Brand / Typography / Background / Border / Interaction /
+ * Highlight / Status) minus the `Light Theme/` / `Dark Theme/` prefix,
+ * because theme becomes a variable mode.
+ *
+ * Leaf names using `Default` (Background, Border, Highlight) are provisional
+ * until Phase 3 seeds the collection from the actual style names.
+ */
+export const FIGMA_NAMES = {
+  'color.brand.brand1': 'Brand/Brand 1',
+  'color.brand.brand2': 'Brand/Brand 2',
+  'color.brand.brand3': 'Brand/Brand 3',
+  'color.palette.heading': 'Typography/Heading',
+  'color.palette.body': 'Typography/Body',
+  'color.palette.background-light': 'Background/Light',
+  'color.palette.background': 'Background/Default',
+  'color.palette.background-dark': 'Background/Dark',
+  'color.palette.border-light': 'Border/Light',
+  'color.palette.border': 'Border/Default',
+  'color.palette.border-dark': 'Border/Dark',
+  'color.palette.interaction-text': 'Interaction/Text',
+  'color.palette.interaction-background': 'Interaction/Background',
+  'color.palette.interaction-hover-text': 'Interaction/Hover Text',
+  'color.palette.interaction-hover-background': 'Interaction/Hover Background',
+  'color.palette.interaction-focus': 'Interaction/Focus',
+  'color.palette.highlight': 'Highlight/Default',
+  'color.palette.information': 'Status/Information',
+  'color.palette.warning': 'Status/Warning',
+  'color.palette.error': 'Status/Error',
+  'color.palette.success': 'Status/Success',
+};

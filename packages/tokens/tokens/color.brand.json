@@ -1,0 +1,86 @@
+{
+  "color": {
+    "$type": "color",
+    "brand": {
+      "$description": "Brand primitives: generator inputs only, never emitted to CSS. Light values in $value; dark-mode values under $extensions[\"io.civictheme.modes\"].dark.",
+      "brand1": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0.411765,
+            0.560784
+          ],
+          "alpha": 1,
+          "hex": "#00698f"
+        },
+        "$extensions": {
+          "io.civictheme.modes": {
+            "dark": {
+              "colorSpace": "srgb",
+              "components": [
+                0.380392,
+                0.854902,
+                1
+              ],
+              "alpha": 1,
+              "hex": "#61daff"
+            }
+          }
+        }
+      },
+      "brand2": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.901961,
+            0.913725,
+            0.921569
+          ],
+          "alpha": 1,
+          "hex": "#e6e9eb"
+        },
+        "$extensions": {
+          "io.civictheme.modes": {
+            "dark": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0.227451,
+                0.309804
+              ],
+              "alpha": 1,
+              "hex": "#003a4f"
+            }
+          }
+        }
+      },
+      "brand3": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.070588,
+            0.07451,
+            0.07451
+          ],
+          "alpha": 1,
+          "hex": "#121313"
+        },
+        "$extensions": {
+          "io.civictheme.modes": {
+            "dark": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0.411765,
+                0.560784
+              ],
+              "alpha": 1,
+              "hex": "#00698f"
+            }
+          }
+        }
+      }
+    }
+  }
+}
