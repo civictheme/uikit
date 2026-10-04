@@ -37,6 +37,6 @@ The test compares every brand + palette token against the compiled `--ct-color-{
 ## Current status / provisional bits
 
 - Theme scope selectors are `.ct-theme-light` / `.ct-theme-dark` (with light also on `:root`) — matches the existing class convention; `[data-theme]` was the alternative (plan §3.4 open item).
-- Figma leaf names `Background/Default`, `Border/Default`, `Highlight/Default` are provisional until Phase 3 creates the `Colour` collection seeded from the actual paint-style names.
+- Figma names were reconciled against the file's actual paint-style taxonomy (2026-10-04): variable leaves are the exact style leaf names (`Background/Background Light`, `Highlight/Highlight`, …), so every palette leaf slugifies 1:1 to its token name; groups drop the `" Colours"` suffix.
 - Figma import files emit plain hex strings (maximum importer compatibility); flip to full colour objects in `build/build.mjs` if Figma's importer prefers them.
 - Component-tier tokens (`color.components.json`, ~568 aliases) land in Phase 2.
