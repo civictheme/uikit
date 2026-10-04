@@ -161,6 +161,9 @@ export async function captureScreenshots({
         fullPage: true,
       });
     });
+    // Dark theme is captured by default so colour changes are verified in both
+    // themes; disable via screenshot_options.capture_dark_theme = false.
+    const captureDarkTheme = config.screenshot_options?.capture_dark_theme !== false;
     storyIds.forEach(({ id: storyId }) => {
       const storyPath = storyId.replace(/--/g, '/');
       const fileName = `${storyPath}.png`;
@@ -171,6 +174,12 @@ export async function captureScreenshots({
       }
       const storyUrl = `${url}/iframe?id=${storyId}&viewMode=story`;
       cluster.queue({ storyUrl, filePath, selectors: config.masking.selectors || [] });
+
+      if (captureDarkTheme) {
+        const darkStoryUrl = `${storyUrl}&args=theme:dark`;
+        const darkFilePath = path.join(outputDir, `${storyPath}--dark.png`);
+        cluster.queue({ storyUrl: darkStoryUrl, filePath: darkFilePath, selectors: config.masking.selectors || [] });
+      }
     });
     await cluster.idle();
     await cluster.close();
