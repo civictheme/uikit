@@ -59,12 +59,10 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    border-top-color: ct-component-var($root, $theme, border-color);
-    border-bottom-color: ct-component-var($root, $theme, border-color);
+  border-top-color: ct-component-var($root, border-color);
+  border-bottom-color: ct-component-var($root, border-color);
 
-    #{$root}__title {
-      color: ct-component-var($root, $theme, title, color);
-    }
+  #{$root}__title {
+    color: ct-component-var($root, title, color);
   }
 }

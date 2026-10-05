@@ -39,28 +39,29 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__links {
-      border-bottom-color: ct-component-var($root, $theme, links, stripe, border-color);
-    }
+  // Colour rules are nested under __links so they outrank the structural
+  // `border` shorthand above (whose implicit colour is currentColor) - the
+  // same winning order the 1.x theme-classed selectors had.
+  #{$root}__links {
+    border-bottom-color: ct-component-var($root, links, stripe, border-color);
 
     .ct-link {
-      @include ct-component-property($root, $theme, links, background-color);
-      @include ct-component-property($root, $theme, links, border-color);
+      @include ct-component-property($root, links, background-color);
+      @include ct-component-property($root, links, border-color);
 
-      border-bottom-color: ct-component-var($root, $theme, links, stripe, border-color);
+      border-bottom-color: ct-component-var($root, links, stripe, border-color);
 
       &#{$root}__tab--selected {
-        @include ct-component-property($root, $theme, links, active, background-color);
-        @include ct-component-property($root, $theme, links, active, border-color);
+        @include ct-component-property($root, links, active, background-color);
+        @include ct-component-property($root, links, active, border-color);
 
-        border-bottom-color: ct-component-var($root, $theme, links, stripe, border-color);
+        border-bottom-color: ct-component-var($root, links, stripe, border-color);
       }
     }
+  }
 
-    #{$root}__panels {
-      @include ct-component-property($root, $theme, panel, background-color);
-      @include ct-component-property($root, $theme, panel, border-color);
-    }
+  #{$root}__panels {
+    @include ct-component-property($root, panel, background-color);
+    @include ct-component-property($root, panel, border-color);
   }
 }

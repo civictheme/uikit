@@ -40,23 +40,13 @@
 .ct-snippet .ct-snippet__title-link:visited {
   color: inherit;
 }
-.ct-snippet.ct-theme-light {
-  background-color: var(--ct-snippet-light-background-color);
+.ct-snippet {
+  background-color: var(--ct-snippet-background-color);
 }
-.ct-snippet.ct-theme-light .ct-snippet__title,
-.ct-snippet.ct-theme-light .ct-snippet__title-link {
-  color: var(--ct-snippet-light-title-color);
+.ct-snippet .ct-snippet__title,
+.ct-snippet .ct-snippet__title-link {
+  color: var(--ct-snippet-title-color);
 }
-.ct-snippet.ct-theme-light .ct-snippet__title-link:hover {
-  color: var(--ct-snippet-light-title-hover-color);
-}
-.ct-snippet.ct-theme-dark {
-  background-color: var(--ct-snippet-dark-background-color);
-}
-.ct-snippet.ct-theme-dark .ct-snippet__title,
-.ct-snippet.ct-theme-dark .ct-snippet__title-link {
-  color: var(--ct-snippet-dark-title-color);
-}
-.ct-snippet.ct-theme-dark .ct-snippet__title-link:hover {
-  color: var(--ct-snippet-dark-title-hover-color);
+.ct-snippet .ct-snippet__title-link:hover {
+  color: var(--ct-snippet-title-hover-color);
 }

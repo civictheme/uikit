@@ -20,9 +20,6 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.ct-map.ct-theme-light.ct-map--with-background {
-  background-color: var(--ct-map-light-wrapper-background-color);
-}
-.ct-map.ct-theme-dark.ct-map--with-background {
-  background-color: var(--ct-map-dark-wrapper-background-color);
+.ct-map.ct-map--with-background {
+  background-color: var(--ct-map-wrapper-background-color);
 }

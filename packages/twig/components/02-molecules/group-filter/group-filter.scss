@@ -90,22 +90,20 @@
     gap: ct-spacing(1);
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__filter-controls {
-      border-top-color: ct-component-var($root, $theme, border-color);
-      border-bottom-color: ct-component-var($root, $theme, border-color);
-    }
+  #{$root}__filter-controls {
+    border-top-color: ct-component-var($root, border-color);
+    border-bottom-color: ct-component-var($root, border-color);
+  }
 
-    #{$root}__title {
-      color: ct-component-var($root, $theme, title, color);
-    }
+  #{$root}__title {
+    color: ct-component-var($root, title, color);
+  }
 
-    #{$root}__selected-filter-controls {
-      border-bottom-color: ct-component-var($root, $theme, border-color);
-    }
+  #{$root}__selected-filter-controls {
+    border-bottom-color: ct-component-var($root, border-color);
+  }
 
-    #{$root}__selected-title {
-      color: ct-component-var($root, $theme, title, color);
-    }
+  #{$root}__selected-title {
+    color: ct-component-var($root, title, color);
   }
 }

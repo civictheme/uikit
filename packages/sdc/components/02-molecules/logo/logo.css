@@ -45,9 +45,6 @@
     width: 0.0625rem;
   }
 }
-.ct-logo.ct-theme-light .ct-logo__stripe {
-  background-color: var(--ct-logo-light-stripe-background-color);
-}
-.ct-logo.ct-theme-dark .ct-logo__stripe {
-  background-color: var(--ct-logo-dark-stripe-background-color);
+.ct-logo .ct-logo__stripe {
+  background-color: var(--ct-logo-stripe-background-color);
 }

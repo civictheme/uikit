@@ -92,11 +92,8 @@
   font-weight: var(--ct-typography-heading-2-font-weight);
   letter-spacing: var(--ct-typography-heading-2-letter-spacing);
 }
-.ct-slider.ct-theme-light.ct-slider--with-background {
-  background-color: var(--ct-slider-light-background-color);
-}
-.ct-slider.ct-theme-dark.ct-slider--with-background {
-  background-color: var(--ct-slider-dark-background-color);
+.ct-slider.ct-slider--with-background {
+  background-color: var(--ct-slider-background-color);
 }
 
 @media (min-width: 768px) {
@@ -162,9 +159,6 @@
     margin-bottom: 1rem;
   }
 }
-.ct-slide.ct-theme-light {
-  background-color: var(--ct-slider-light-slide-background-color);
-}
-.ct-slide.ct-theme-dark {
-  background-color: var(--ct-slider-dark-slide-background-color);
+.ct-slide {
+  background-color: var(--ct-slider-slide-background-color);
 }

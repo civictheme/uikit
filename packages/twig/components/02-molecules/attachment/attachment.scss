@@ -47,16 +47,16 @@
     text-transform: uppercase;
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & {
+    @include ct-component-property($root, color);
+  }
 
-    &#{$root}--with-background {
-      @include ct-component-property($root, $theme, wrapper, background-color);
-    }
+  &#{$root}--with-background {
+    @include ct-component-property($root, wrapper, background-color);
+  }
 
-    #{$root}__wrapper {
-      @include ct-component-property($root, $theme, border-color);
-      @include ct-component-property($root, $theme, background-color);
-    }
+  #{$root}__wrapper {
+    @include ct-component-property($root, border-color);
+    @include ct-component-property($root, background-color);
   }
 }

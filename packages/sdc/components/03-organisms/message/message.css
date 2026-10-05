@@ -47,73 +47,38 @@
 .ct-message[class*=ct-vertical-spacing-] .ct-message__inner {
   margin: 0;
 }
-.ct-message.ct-theme-light.ct-message--with-background {
-  background-color: var(--ct-message-light-background-color);
+.ct-message.ct-message--with-background {
+  background-color: var(--ct-message-background-color);
 }
-.ct-message.ct-theme-light.ct-message--information .ct-message__inner {
-  background-color: var(--ct-message-light-information-background-color);
-  color: var(--ct-message-light-information-color);
-  border-color: var(--ct-message-light-information-border-color);
+.ct-message.ct-message--information .ct-message__inner {
+  background-color: var(--ct-message-information-background-color);
+  color: var(--ct-message-information-color);
+  border-color: var(--ct-message-information-border-color);
 }
-.ct-message.ct-theme-light.ct-message--information .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-light-information-icon-color);
+.ct-message.ct-message--information .ct-message__inner .ct-message__icon {
+  color: var(--ct-message-information-icon-color);
 }
-.ct-message.ct-theme-light.ct-message--warning .ct-message__inner {
-  background-color: var(--ct-message-light-warning-background-color);
-  color: var(--ct-message-light-warning-color);
-  border-color: var(--ct-message-light-warning-border-color);
+.ct-message.ct-message--warning .ct-message__inner {
+  background-color: var(--ct-message-warning-background-color);
+  color: var(--ct-message-warning-color);
+  border-color: var(--ct-message-warning-border-color);
 }
-.ct-message.ct-theme-light.ct-message--warning .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-light-warning-icon-color);
+.ct-message.ct-message--warning .ct-message__inner .ct-message__icon {
+  color: var(--ct-message-warning-icon-color);
 }
-.ct-message.ct-theme-light.ct-message--error .ct-message__inner {
-  background-color: var(--ct-message-light-error-background-color);
-  color: var(--ct-message-light-error-color);
-  border-color: var(--ct-message-light-error-border-color);
+.ct-message.ct-message--error .ct-message__inner {
+  background-color: var(--ct-message-error-background-color);
+  color: var(--ct-message-error-color);
+  border-color: var(--ct-message-error-border-color);
 }
-.ct-message.ct-theme-light.ct-message--error .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-light-error-icon-color);
+.ct-message.ct-message--error .ct-message__inner .ct-message__icon {
+  color: var(--ct-message-error-icon-color);
 }
-.ct-message.ct-theme-light.ct-message--success .ct-message__inner {
-  background-color: var(--ct-message-light-success-background-color);
-  color: var(--ct-message-light-success-color);
-  border-color: var(--ct-message-light-success-border-color);
+.ct-message.ct-message--success .ct-message__inner {
+  background-color: var(--ct-message-success-background-color);
+  color: var(--ct-message-success-color);
+  border-color: var(--ct-message-success-border-color);
 }
-.ct-message.ct-theme-light.ct-message--success .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-light-success-icon-color);
-}
-.ct-message.ct-theme-dark.ct-message--with-background {
-  background-color: var(--ct-message-dark-background-color);
-}
-.ct-message.ct-theme-dark.ct-message--information .ct-message__inner {
-  background-color: var(--ct-message-dark-information-background-color);
-  color: var(--ct-message-dark-information-color);
-  border-color: var(--ct-message-dark-information-border-color);
-}
-.ct-message.ct-theme-dark.ct-message--information .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-dark-information-icon-color);
-}
-.ct-message.ct-theme-dark.ct-message--warning .ct-message__inner {
-  background-color: var(--ct-message-dark-warning-background-color);
-  color: var(--ct-message-dark-warning-color);
-  border-color: var(--ct-message-dark-warning-border-color);
-}
-.ct-message.ct-theme-dark.ct-message--warning .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-dark-warning-icon-color);
-}
-.ct-message.ct-theme-dark.ct-message--error .ct-message__inner {
-  background-color: var(--ct-message-dark-error-background-color);
-  color: var(--ct-message-dark-error-color);
-  border-color: var(--ct-message-dark-error-border-color);
-}
-.ct-message.ct-theme-dark.ct-message--error .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-dark-error-icon-color);
-}
-.ct-message.ct-theme-dark.ct-message--success .ct-message__inner {
-  background-color: var(--ct-message-dark-success-background-color);
-  color: var(--ct-message-dark-success-color);
-  border-color: var(--ct-message-dark-success-border-color);
-}
-.ct-message.ct-theme-dark.ct-message--success .ct-message__inner .ct-message__icon {
-  color: var(--ct-message-dark-success-icon-color);
+.ct-message.ct-message--success .ct-message__inner .ct-message__icon {
+  color: var(--ct-message-success-icon-color);
 }

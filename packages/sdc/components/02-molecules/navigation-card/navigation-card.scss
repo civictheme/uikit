@@ -130,42 +130,44 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, background-color);
+  & {
+    @include ct-component-property($root, background-color);
+  }
 
-    &#{$root}--card-clickable {
-      &:hover {
-        @include ct-component-property($root, $theme, hover, outline-color);
+  &#{$root}--card-clickable {
+    &:hover {
+      @include ct-component-property($root, hover, outline-color);
 
-        #{$root}__title-link {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
-
-        #{$root}__link-graphic {
-          &::before {
-            @include ct-component-property($root, $theme, link, graphic, hover, background-color);
-          }
-        }
-      }
-    }
-
-    &:not(#{$root}--card-clickable) {
       #{$root}__title-link {
-        &:hover {
-          @include ct-component-property($root, $theme, title, hover, color);
+        @include ct-component-property($root, title, hover, color);
+      }
+
+      #{$root}__link-graphic {
+        &::before {
+          @include ct-component-property($root, link, graphic, hover, background-color);
         }
       }
     }
+  }
 
-    #{$root}__title,
+  &:not(#{$root}--card-clickable) {
     #{$root}__title-link {
-      @include ct-component-property($root, $theme, title, color);
+      &:hover {
+        @include ct-component-property($root, title, hover, color);
+      }
     }
+  }
 
-    #{$root}__link-graphic {
-      @include ct-component-property($root, $theme, link, graphic, color);
-    }
+  #{$root}__title,
+  #{$root}__title-link {
+    @include ct-component-property($root, title, color);
+  }
 
-    @include ct-component-property($root, $theme, icon, color);
+  #{$root}__link-graphic {
+    @include ct-component-property($root, link, graphic, color);
+  }
+
+  & {
+    @include ct-component-property($root, icon, color);
   }
 }

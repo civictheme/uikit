@@ -45,9 +45,6 @@
 .ct-inline-filter .ct-label--extra-large {
   margin-bottom: 1rem;
 }
-.ct-inline-filter.ct-theme-light .ct-inline-filter__title {
-  color: var(--ct-inline-filter-light-title-color);
-}
-.ct-inline-filter.ct-theme-dark .ct-inline-filter__title {
-  color: var(--ct-inline-filter-dark-title-color);
+.ct-inline-filter .ct-inline-filter__title {
+  color: var(--ct-inline-filter-title-color);
 }

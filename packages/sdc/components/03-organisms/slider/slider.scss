@@ -97,10 +97,8 @@
     @include ct-typography('heading-2');
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    &#{$root}--with-background {
-      @include ct-component-property($root, $theme, background-color);
-    }
+  &#{$root}--with-background {
+    @include ct-component-property($root, background-color);
   }
 }
 
@@ -152,7 +150,7 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property(ct-slider, $theme, slide, background-color);
+  & {
+    @include ct-component-property(ct-slider, slide, background-color);
   }
 }
