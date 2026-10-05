@@ -86,40 +86,24 @@
 .ct-subject-card .ct-subject-card__title-link:visited {
   color: inherit;
 }
-.ct-subject-card.ct-theme-light {
-  background-color: var(--ct-subject-card-light-background-color);
+.ct-subject-card {
+  background-color: var(--ct-subject-card-background-color);
 }
-.ct-subject-card.ct-theme-light.ct-subject-card--card-clickable:hover {
-  outline-color: var(--ct-subject-card-light-hover-outline-color);
+.ct-subject-card.ct-subject-card--card-clickable:hover {
+  outline-color: var(--ct-subject-card-hover-outline-color);
 }
-.ct-subject-card.ct-theme-light.ct-subject-card--card-clickable:hover .ct-subject-card__title-link {
-  color: var(--ct-subject-card-light-title-hover-color);
+.ct-subject-card.ct-subject-card--card-clickable:hover .ct-subject-card__title-link {
+  color: var(--ct-subject-card-title-hover-color);
 }
-.ct-subject-card.ct-theme-light:not(.ct-subject-card--card-clickable) .ct-subject-card__title-link:hover {
-  color: var(--ct-subject-card-light-title-hover-color);
+.ct-subject-card:not(.ct-subject-card--card-clickable) .ct-subject-card__title-link:hover {
+  color: var(--ct-subject-card-title-hover-color);
 }
-.ct-subject-card.ct-theme-light .ct-subject-card__title,
-.ct-subject-card.ct-theme-light .ct-subject-card__title-link {
-  color: var(--ct-subject-card-light-title-color);
+.ct-subject-card .ct-subject-card__title,
+.ct-subject-card .ct-subject-card__title-link {
+  color: var(--ct-subject-card-title-color);
 }
 .ct-subject-card.ct-theme-light .ct-subject-card__image {
   opacity: var(--ct-subject-card-light-image-opacity);
-}
-.ct-subject-card.ct-theme-dark {
-  background-color: var(--ct-subject-card-dark-background-color);
-}
-.ct-subject-card.ct-theme-dark.ct-subject-card--card-clickable:hover {
-  outline-color: var(--ct-subject-card-dark-hover-outline-color);
-}
-.ct-subject-card.ct-theme-dark.ct-subject-card--card-clickable:hover .ct-subject-card__title-link {
-  color: var(--ct-subject-card-dark-title-hover-color);
-}
-.ct-subject-card.ct-theme-dark:not(.ct-subject-card--card-clickable) .ct-subject-card__title-link:hover {
-  color: var(--ct-subject-card-dark-title-hover-color);
-}
-.ct-subject-card.ct-theme-dark .ct-subject-card__title,
-.ct-subject-card.ct-theme-dark .ct-subject-card__title-link {
-  color: var(--ct-subject-card-dark-title-color);
 }
 .ct-subject-card.ct-theme-dark .ct-subject-card__image {
   opacity: var(--ct-subject-card-dark-image-opacity);

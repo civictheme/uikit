@@ -80,31 +80,32 @@
     margin-bottom: 0;
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, background-color);
-    @include ct-highlight-stripe-background-color(ct-component-var($root, $theme, stripe, background-color));
+  & {
+    @include ct-component-property($root, background-color);
+  }
 
-    &#{$root}--card-clickable {
-      &:hover {
-        @include ct-component-property($root, $theme, hover, outline-color);
+  @include ct-highlight-stripe-background-color(ct-component-var($root, stripe, background-color));
 
-        #{$root}__title-link {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
-      }
-    }
+  &#{$root}--card-clickable {
+    &:hover {
+      @include ct-component-property($root, hover, outline-color);
 
-    &:not(#{$root}--card-clickable) {
       #{$root}__title-link {
-        &:hover {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
+        @include ct-component-property($root, title, hover, color);
       }
     }
+  }
 
-    #{$root}__title,
+  &:not(#{$root}--card-clickable) {
     #{$root}__title-link {
-      @include ct-component-property($root, $theme, title, color);
+      &:hover {
+        @include ct-component-property($root, title, hover, color);
+      }
     }
+  }
+
+  #{$root}__title,
+  #{$root}__title-link {
+    @include ct-component-property($root, title, color);
   }
 }

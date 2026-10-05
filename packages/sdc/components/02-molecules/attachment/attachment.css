@@ -37,23 +37,13 @@
 .ct-attachment .ct-attachment__links__link__extension {
   text-transform: uppercase;
 }
-.ct-attachment.ct-theme-light {
-  color: var(--ct-attachment-light-color);
+.ct-attachment {
+  color: var(--ct-attachment-color);
 }
-.ct-attachment.ct-theme-light.ct-attachment--with-background {
-  background-color: var(--ct-attachment-light-wrapper-background-color);
+.ct-attachment.ct-attachment--with-background {
+  background-color: var(--ct-attachment-wrapper-background-color);
 }
-.ct-attachment.ct-theme-light .ct-attachment__wrapper {
-  border-color: var(--ct-attachment-light-border-color);
-  background-color: var(--ct-attachment-light-background-color);
-}
-.ct-attachment.ct-theme-dark {
-  color: var(--ct-attachment-dark-color);
-}
-.ct-attachment.ct-theme-dark.ct-attachment--with-background {
-  background-color: var(--ct-attachment-dark-wrapper-background-color);
-}
-.ct-attachment.ct-theme-dark .ct-attachment__wrapper {
-  border-color: var(--ct-attachment-dark-border-color);
-  background-color: var(--ct-attachment-dark-background-color);
+.ct-attachment .ct-attachment__wrapper {
+  border-color: var(--ct-attachment-border-color);
+  background-color: var(--ct-attachment-background-color);
 }

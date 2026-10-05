@@ -35,37 +35,20 @@
 .ct-tabs .ct-tabs__panels__panel.ct-tabs__panel--selected {
   display: block;
 }
-.ct-tabs.ct-theme-light .ct-tabs__links {
-  border-bottom-color: var(--ct-tabs-light-links-stripe-border-color);
+.ct-tabs .ct-tabs__links {
+  border-bottom-color: var(--ct-tabs-links-stripe-border-color);
 }
-.ct-tabs.ct-theme-light .ct-link {
-  background-color: var(--ct-tabs-light-links-background-color);
-  border-color: var(--ct-tabs-light-links-border-color);
-  border-bottom-color: var(--ct-tabs-light-links-stripe-border-color);
+.ct-tabs .ct-tabs__links .ct-link {
+  background-color: var(--ct-tabs-links-background-color);
+  border-color: var(--ct-tabs-links-border-color);
+  border-bottom-color: var(--ct-tabs-links-stripe-border-color);
 }
-.ct-tabs.ct-theme-light .ct-link.ct-tabs__tab--selected {
-  background-color: var(--ct-tabs-light-links-active-background-color);
-  border-color: var(--ct-tabs-light-links-active-border-color);
-  border-bottom-color: var(--ct-tabs-light-links-stripe-border-color);
+.ct-tabs .ct-tabs__links .ct-link.ct-tabs__tab--selected {
+  background-color: var(--ct-tabs-links-active-background-color);
+  border-color: var(--ct-tabs-links-active-border-color);
+  border-bottom-color: var(--ct-tabs-links-stripe-border-color);
 }
-.ct-tabs.ct-theme-light .ct-tabs__panels {
-  background-color: var(--ct-tabs-light-panel-background-color);
-  border-color: var(--ct-tabs-light-panel-border-color);
-}
-.ct-tabs.ct-theme-dark .ct-tabs__links {
-  border-bottom-color: var(--ct-tabs-dark-links-stripe-border-color);
-}
-.ct-tabs.ct-theme-dark .ct-link {
-  background-color: var(--ct-tabs-dark-links-background-color);
-  border-color: var(--ct-tabs-dark-links-border-color);
-  border-bottom-color: var(--ct-tabs-dark-links-stripe-border-color);
-}
-.ct-tabs.ct-theme-dark .ct-link.ct-tabs__tab--selected {
-  background-color: var(--ct-tabs-dark-links-active-background-color);
-  border-color: var(--ct-tabs-dark-links-active-border-color);
-  border-bottom-color: var(--ct-tabs-dark-links-stripe-border-color);
-}
-.ct-tabs.ct-theme-dark .ct-tabs__panels {
-  background-color: var(--ct-tabs-dark-panel-background-color);
-  border-color: var(--ct-tabs-dark-panel-border-color);
+.ct-tabs .ct-tabs__panels {
+  background-color: var(--ct-tabs-panel-background-color);
+  border-color: var(--ct-tabs-panel-border-color);
 }

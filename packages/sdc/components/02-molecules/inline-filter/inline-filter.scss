@@ -50,9 +50,7 @@
     margin-bottom: ct-spacing(2);
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__title {
-      color: ct-component-var($root, $theme, title, color);
-    }
+  #{$root}__title {
+    color: ct-component-var($root, title, color);
   }
 }

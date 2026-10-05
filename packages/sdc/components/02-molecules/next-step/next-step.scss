@@ -43,18 +43,15 @@
     margin-bottom: 0;
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__wrapper {
-      @include ct-component-property($root, $theme, border, color);
-      @include ct-component-property($root, $theme, background-color);
-      @include ct-highlight-stripe-background-color(ct-component-var($root, $theme, stripe, background-color));
-    }
+  #{$root}__wrapper {
+    @include ct-component-property($root, border, color);
+    @include ct-component-property($root, background-color);
+    @include ct-highlight-stripe-background-color(ct-component-var($root, stripe, background-color));
+  }
 
-    #{$root}__title__link {
-      .ct-text-icon__text {
-        @include ct-component-property($root, $theme, title, color);
-      }
+  #{$root}__title__link {
+    .ct-text-icon__text {
+      @include ct-component-property($root, title, color);
     }
-
   }
 }

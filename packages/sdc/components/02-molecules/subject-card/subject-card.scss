@@ -80,34 +80,40 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, background-color);
+  & {
+    @include ct-component-property($root, background-color);
+  }
 
-    &#{$root}--card-clickable {
-      &:hover {
-        @include ct-component-property($root, $theme, hover, outline-color);
+  &#{$root}--card-clickable {
+    &:hover {
+      @include ct-component-property($root, hover, outline-color);
 
-        #{$root}__title-link {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
-      }
-    }
-
-    &:not(#{$root}--card-clickable) {
       #{$root}__title-link {
-        &:hover {
-          @include ct-component-property($root, $theme, title, hover, color);
-        }
+        @include ct-component-property($root, title, hover, color);
       }
     }
+  }
 
-    #{$root}__title,
+  &:not(#{$root}--card-clickable) {
     #{$root}__title-link {
-      @include ct-component-property($root, $theme, title, color);
+      &:hover {
+        @include ct-component-property($root, title, hover, color);
+      }
     }
+  }
 
-    #{$root}__image {
-      @include ct-component-property($root, $theme, image, opacity);
-    }
+  #{$root}__title,
+  #{$root}__title-link {
+    @include ct-component-property($root, title, color);
+  }
+
+  // Image opacity is a themed NON-colour variable (not a colour token), so
+  // it stays keyed to the 1.x theme-named properties until the cleanup.
+  &.ct-theme-light #{$root}__image {
+    opacity: var(--ct-subject-card-light-image-opacity);
+  }
+
+  &.ct-theme-dark #{$root}__image {
+    opacity: var(--ct-subject-card-dark-image-opacity);
   }
 }

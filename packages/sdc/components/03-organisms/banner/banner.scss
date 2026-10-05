@@ -102,16 +102,14 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__inner {
-      @include ct-component-property($root, $theme, background-color);
-    }
+  #{$root}__inner {
+    @include ct-component-property($root, background-color);
+  }
 
-    &#{$root}--decorative {
-      #{$root}__featured-image__wrapper {
-        @include ct-breakpoint(m) {
-          @include ct-image-shadow(ct-component-var($root, $theme, featured-image, shadow-color), 'up-left');
-        }
+  &#{$root}--decorative {
+    #{$root}__featured-image__wrapper {
+      @include ct-breakpoint(m) {
+        @include ct-image-shadow(ct-component-var($root, featured-image, shadow-color), 'up-left');
       }
     }
   }

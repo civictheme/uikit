@@ -76,7 +76,9 @@
     option {
       &:checked {
         @include ct-component-property($root, option, background-color);
-        @include ct-component-property($root, option, color);
+
+        // 1.x set this to the literal `inherit` (skip-listed, no token).
+        color: inherit;
       }
     }
 

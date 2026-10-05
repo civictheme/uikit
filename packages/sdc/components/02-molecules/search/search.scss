@@ -44,31 +44,29 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    & > #{$root}__link {
-      @include ct-component-property(ct-navigation, $theme, drawer, menu-item, background-color);
-      @include ct-component-property(ct-navigation, $theme, menu, color);
+  & > #{$root}__link {
+    @include ct-component-property(ct-navigation, drawer, menu-item, background-color);
+    @include ct-component-property(ct-navigation, menu, color);
 
-      & {
-        border-bottom-color: ct-component-var(ct-navigation, $theme, menu, item, border-color);
+    & {
+      border-bottom-color: ct-component-var(ct-navigation, menu, item, border-color);
+    }
+
+    &:is(:hover, :focus-visible) {
+      @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
+        @include ct-component-property(ct-navigation, drawer, menu-item, hover, background-color);
+        @include ct-component-property(ct-navigation, menu, hover, color);
+
+        border-bottom-color: ct-component-var(ct-navigation, menu, item, hover, border-color);
       }
+    }
 
-      &:is(:hover, :focus-visible) {
-        @include ct-breakpoint($ct-header-desktop-menu-breakpoint) {
-          @include ct-component-property(ct-navigation, $theme, drawer, menu-item, hover, background-color);
-          @include ct-component-property(ct-navigation, $theme, menu, hover, color);
+    &[aria-expanded='true'],
+    &:active {
+      @include ct-component-property(ct-navigation, drawer, menu-item, active, background-color);
+      @include ct-component-property(ct-navigation, menu, active, color);
 
-          border-bottom-color: ct-component-var(ct-navigation, $theme, menu, item, hover, border-color);
-        }
-      }
-
-      &[aria-expanded='true'],
-      &:active {
-        @include ct-component-property(ct-navigation, $theme, drawer, menu-item, active, background-color);
-        @include ct-component-property(ct-navigation, $theme, menu, active, color);
-
-        border-bottom-color: ct-component-var(ct-navigation, $theme, menu, item, active, border-color);
-      }
+      border-bottom-color: ct-component-var(ct-navigation, menu, item, active, border-color);
     }
   }
 }

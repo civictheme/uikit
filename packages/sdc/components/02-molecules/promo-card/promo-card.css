@@ -123,53 +123,28 @@
   opacity: var(--ct-promo-card-link-graphic-hover-opacity);
   border-radius: 100%;
 }
-.ct-promo-card.ct-theme-light {
-  background-color: var(--ct-promo-card-light-background-color);
+.ct-promo-card {
+  background-color: var(--ct-promo-card-background-color);
 }
-.ct-promo-card.ct-theme-light.ct-promo-card--card-clickable:hover {
-  outline-color: var(--ct-promo-card-light-hover-outline-color);
+.ct-promo-card.ct-promo-card--card-clickable:hover {
+  outline-color: var(--ct-promo-card-hover-outline-color);
 }
-.ct-promo-card.ct-theme-light.ct-promo-card--card-clickable:hover .ct-promo-card__title-link {
-  color: var(--ct-promo-card-light-title-hover-color);
+.ct-promo-card.ct-promo-card--card-clickable:hover .ct-promo-card__title-link {
+  color: var(--ct-promo-card-title-hover-color);
 }
-.ct-promo-card.ct-theme-light.ct-promo-card--card-clickable:hover .ct-promo-card__link-graphic::before {
-  background-color: var(--ct-promo-card-light-link-graphic-hover-background-color);
+.ct-promo-card.ct-promo-card--card-clickable:hover .ct-promo-card__link-graphic::before {
+  background-color: var(--ct-promo-card-link-graphic-hover-background-color);
 }
-.ct-promo-card.ct-theme-light:not(.ct-promo-card--card-clickable) .ct-promo-card__title-link:hover {
-  color: var(--ct-promo-card-light-title-hover-color);
+.ct-promo-card:not(.ct-promo-card--card-clickable) .ct-promo-card__title-link:hover {
+  color: var(--ct-promo-card-title-hover-color);
 }
-.ct-promo-card.ct-theme-light .ct-promo-card__title,
-.ct-promo-card.ct-theme-light .ct-promo-card__title-link {
-  color: var(--ct-promo-card-light-title-color);
+.ct-promo-card .ct-promo-card__title,
+.ct-promo-card .ct-promo-card__title-link {
+  color: var(--ct-promo-card-title-color);
 }
-.ct-promo-card.ct-theme-light .ct-promo-card__link-graphic {
-  color: var(--ct-promo-card-light-link-graphic-color);
+.ct-promo-card .ct-promo-card__link-graphic {
+  color: var(--ct-promo-card-link-graphic-color);
 }
-.ct-promo-card.ct-theme-light.ct-promo-card:not(.ct-promo-card--with-image)::before {
-  background-color: var(--ct-promo-card-light-stripe-background-color);
-}
-.ct-promo-card.ct-theme-dark {
-  background-color: var(--ct-promo-card-dark-background-color);
-}
-.ct-promo-card.ct-theme-dark.ct-promo-card--card-clickable:hover {
-  outline-color: var(--ct-promo-card-dark-hover-outline-color);
-}
-.ct-promo-card.ct-theme-dark.ct-promo-card--card-clickable:hover .ct-promo-card__title-link {
-  color: var(--ct-promo-card-dark-title-hover-color);
-}
-.ct-promo-card.ct-theme-dark.ct-promo-card--card-clickable:hover .ct-promo-card__link-graphic::before {
-  background-color: var(--ct-promo-card-dark-link-graphic-hover-background-color);
-}
-.ct-promo-card.ct-theme-dark:not(.ct-promo-card--card-clickable) .ct-promo-card__title-link:hover {
-  color: var(--ct-promo-card-dark-title-hover-color);
-}
-.ct-promo-card.ct-theme-dark .ct-promo-card__title,
-.ct-promo-card.ct-theme-dark .ct-promo-card__title-link {
-  color: var(--ct-promo-card-dark-title-color);
-}
-.ct-promo-card.ct-theme-dark .ct-promo-card__link-graphic {
-  color: var(--ct-promo-card-dark-link-graphic-color);
-}
-.ct-promo-card.ct-theme-dark.ct-promo-card:not(.ct-promo-card--with-image)::before {
-  background-color: var(--ct-promo-card-dark-stripe-background-color);
+.ct-promo-card.ct-promo-card:not(.ct-promo-card--with-image)::before {
+  background-color: var(--ct-promo-card-stripe-background-color);
 }

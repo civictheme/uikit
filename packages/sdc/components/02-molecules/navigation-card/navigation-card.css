@@ -141,53 +141,28 @@
   opacity: var(--ct-navigation-card-link-graphic-hover-opacity);
   border-radius: 100%;
 }
-.ct-navigation-card.ct-theme-light {
-  background-color: var(--ct-navigation-card-light-background-color);
+.ct-navigation-card {
+  background-color: var(--ct-navigation-card-background-color);
 }
-.ct-navigation-card.ct-theme-light.ct-navigation-card--card-clickable:hover {
-  outline-color: var(--ct-navigation-card-light-hover-outline-color);
+.ct-navigation-card.ct-navigation-card--card-clickable:hover {
+  outline-color: var(--ct-navigation-card-hover-outline-color);
 }
-.ct-navigation-card.ct-theme-light.ct-navigation-card--card-clickable:hover .ct-navigation-card__title-link {
-  color: var(--ct-navigation-card-light-title-hover-color);
+.ct-navigation-card.ct-navigation-card--card-clickable:hover .ct-navigation-card__title-link {
+  color: var(--ct-navigation-card-title-hover-color);
 }
-.ct-navigation-card.ct-theme-light.ct-navigation-card--card-clickable:hover .ct-navigation-card__link-graphic::before {
-  background-color: var(--ct-navigation-card-light-link-graphic-hover-background-color);
+.ct-navigation-card.ct-navigation-card--card-clickable:hover .ct-navigation-card__link-graphic::before {
+  background-color: var(--ct-navigation-card-link-graphic-hover-background-color);
 }
-.ct-navigation-card.ct-theme-light:not(.ct-navigation-card--card-clickable) .ct-navigation-card__title-link:hover {
-  color: var(--ct-navigation-card-light-title-hover-color);
+.ct-navigation-card:not(.ct-navigation-card--card-clickable) .ct-navigation-card__title-link:hover {
+  color: var(--ct-navigation-card-title-hover-color);
 }
-.ct-navigation-card.ct-theme-light .ct-navigation-card__title,
-.ct-navigation-card.ct-theme-light .ct-navigation-card__title-link {
-  color: var(--ct-navigation-card-light-title-color);
+.ct-navigation-card .ct-navigation-card__title,
+.ct-navigation-card .ct-navigation-card__title-link {
+  color: var(--ct-navigation-card-title-color);
 }
-.ct-navigation-card.ct-theme-light .ct-navigation-card__link-graphic {
-  color: var(--ct-navigation-card-light-link-graphic-color);
+.ct-navigation-card .ct-navigation-card__link-graphic {
+  color: var(--ct-navigation-card-link-graphic-color);
 }
-.ct-navigation-card.ct-theme-light {
-  color: var(--ct-navigation-card-light-icon-color);
-}
-.ct-navigation-card.ct-theme-dark {
-  background-color: var(--ct-navigation-card-dark-background-color);
-}
-.ct-navigation-card.ct-theme-dark.ct-navigation-card--card-clickable:hover {
-  outline-color: var(--ct-navigation-card-dark-hover-outline-color);
-}
-.ct-navigation-card.ct-theme-dark.ct-navigation-card--card-clickable:hover .ct-navigation-card__title-link {
-  color: var(--ct-navigation-card-dark-title-hover-color);
-}
-.ct-navigation-card.ct-theme-dark.ct-navigation-card--card-clickable:hover .ct-navigation-card__link-graphic::before {
-  background-color: var(--ct-navigation-card-dark-link-graphic-hover-background-color);
-}
-.ct-navigation-card.ct-theme-dark:not(.ct-navigation-card--card-clickable) .ct-navigation-card__title-link:hover {
-  color: var(--ct-navigation-card-dark-title-hover-color);
-}
-.ct-navigation-card.ct-theme-dark .ct-navigation-card__title,
-.ct-navigation-card.ct-theme-dark .ct-navigation-card__title-link {
-  color: var(--ct-navigation-card-dark-title-color);
-}
-.ct-navigation-card.ct-theme-dark .ct-navigation-card__link-graphic {
-  color: var(--ct-navigation-card-dark-link-graphic-color);
-}
-.ct-navigation-card.ct-theme-dark {
-  color: var(--ct-navigation-card-dark-icon-color);
+.ct-navigation-card {
+  color: var(--ct-navigation-card-icon-color);
 }

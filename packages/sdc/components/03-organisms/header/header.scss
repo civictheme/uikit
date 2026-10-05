@@ -46,13 +46,13 @@
     display: flex;
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, border-color);
-    @include ct-component-property($root, $theme, background-color);
+  & {
+    @include ct-component-property($root, border-color);
+    @include ct-component-property($root, background-color);
+  }
 
-    #{$root}__top {
-      @include ct-component-property($root, $theme, top, background-color);
-      @include ct-component-property($root, $theme, top, color);
-    }
+  #{$root}__top {
+    @include ct-component-property($root, top, background-color);
+    @include ct-component-property($root, top, color);
   }
 }

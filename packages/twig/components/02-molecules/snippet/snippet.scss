@@ -43,18 +43,18 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, background-color);
+  & {
+    @include ct-component-property($root, background-color);
+  }
 
-    #{$root}__title,
-    #{$root}__title-link {
-      @include ct-component-property($root, $theme, title, color);
-    }
+  #{$root}__title,
+  #{$root}__title-link {
+    @include ct-component-property($root, title, color);
+  }
 
-    #{$root}__title-link {
-      &:hover {
-        @include ct-component-property($root, $theme, title, hover, color);
-      }
+  #{$root}__title-link {
+    &:hover {
+      @include ct-component-property($root, title, hover, color);
     }
   }
 }

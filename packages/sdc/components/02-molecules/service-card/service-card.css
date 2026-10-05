@@ -46,15 +46,9 @@
 .ct-service-card .ct-service-card__links .ct-item-list__item {
   text-align: center;
 }
-.ct-service-card.ct-theme-light {
-  background-color: var(--ct-service-card-light-background-color);
+.ct-service-card {
+  background-color: var(--ct-service-card-background-color);
 }
-.ct-service-card.ct-theme-light::before {
-  background-color: var(--ct-service-card-light-stripe-background-color);
-}
-.ct-service-card.ct-theme-dark {
-  background-color: var(--ct-service-card-dark-background-color);
-}
-.ct-service-card.ct-theme-dark::before {
-  background-color: var(--ct-service-card-dark-stripe-background-color);
+.ct-service-card::before {
+  background-color: var(--ct-service-card-stripe-background-color);
 }

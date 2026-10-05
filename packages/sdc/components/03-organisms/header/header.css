@@ -37,19 +37,11 @@
 .ct-header__content-bottom1 {
   display: flex;
 }
-.ct-header.ct-theme-light {
-  border-color: var(--ct-header-light-border-color);
-  background-color: var(--ct-header-light-background-color);
+.ct-header {
+  border-color: var(--ct-header-border-color);
+  background-color: var(--ct-header-background-color);
 }
-.ct-header.ct-theme-light .ct-header__top {
-  background-color: var(--ct-header-light-top-background-color);
-  color: var(--ct-header-light-top-color);
-}
-.ct-header.ct-theme-dark {
-  border-color: var(--ct-header-dark-border-color);
-  background-color: var(--ct-header-dark-background-color);
-}
-.ct-header.ct-theme-dark .ct-header__top {
-  background-color: var(--ct-header-dark-top-background-color);
-  color: var(--ct-header-dark-top-color);
+.ct-header .ct-header__top {
+  background-color: var(--ct-header-top-background-color);
+  color: var(--ct-header-top-color);
 }

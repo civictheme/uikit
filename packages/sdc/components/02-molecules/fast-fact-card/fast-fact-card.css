@@ -97,41 +97,22 @@
   text-align: center;
   margin-bottom: 0;
 }
-.ct-fast-fact-card.ct-theme-light {
-  background-color: var(--ct-fast-fact-card-light-background-color);
+.ct-fast-fact-card {
+  background-color: var(--ct-fast-fact-card-background-color);
 }
-.ct-fast-fact-card.ct-theme-light::before {
-  background-color: var(--ct-fast-fact-card-light-stripe-background-color);
+.ct-fast-fact-card::before {
+  background-color: var(--ct-fast-fact-card-stripe-background-color);
 }
-.ct-fast-fact-card.ct-theme-light.ct-fast-fact-card--card-clickable:hover {
-  outline-color: var(--ct-fast-fact-card-light-hover-outline-color);
+.ct-fast-fact-card.ct-fast-fact-card--card-clickable:hover {
+  outline-color: var(--ct-fast-fact-card-hover-outline-color);
 }
-.ct-fast-fact-card.ct-theme-light.ct-fast-fact-card--card-clickable:hover .ct-fast-fact-card__title-link {
-  color: var(--ct-fast-fact-card-light-title-hover-color);
+.ct-fast-fact-card.ct-fast-fact-card--card-clickable:hover .ct-fast-fact-card__title-link {
+  color: var(--ct-fast-fact-card-title-hover-color);
 }
-.ct-fast-fact-card.ct-theme-light:not(.ct-fast-fact-card--card-clickable) .ct-fast-fact-card__title-link:hover {
-  color: var(--ct-fast-fact-card-light-title-hover-color);
+.ct-fast-fact-card:not(.ct-fast-fact-card--card-clickable) .ct-fast-fact-card__title-link:hover {
+  color: var(--ct-fast-fact-card-title-hover-color);
 }
-.ct-fast-fact-card.ct-theme-light .ct-fast-fact-card__title,
-.ct-fast-fact-card.ct-theme-light .ct-fast-fact-card__title-link {
-  color: var(--ct-fast-fact-card-light-title-color);
-}
-.ct-fast-fact-card.ct-theme-dark {
-  background-color: var(--ct-fast-fact-card-dark-background-color);
-}
-.ct-fast-fact-card.ct-theme-dark::before {
-  background-color: var(--ct-fast-fact-card-dark-stripe-background-color);
-}
-.ct-fast-fact-card.ct-theme-dark.ct-fast-fact-card--card-clickable:hover {
-  outline-color: var(--ct-fast-fact-card-dark-hover-outline-color);
-}
-.ct-fast-fact-card.ct-theme-dark.ct-fast-fact-card--card-clickable:hover .ct-fast-fact-card__title-link {
-  color: var(--ct-fast-fact-card-dark-title-hover-color);
-}
-.ct-fast-fact-card.ct-theme-dark:not(.ct-fast-fact-card--card-clickable) .ct-fast-fact-card__title-link:hover {
-  color: var(--ct-fast-fact-card-dark-title-hover-color);
-}
-.ct-fast-fact-card.ct-theme-dark .ct-fast-fact-card__title,
-.ct-fast-fact-card.ct-theme-dark .ct-fast-fact-card__title-link {
-  color: var(--ct-fast-fact-card-dark-title-color);
+.ct-fast-fact-card .ct-fast-fact-card__title,
+.ct-fast-fact-card .ct-fast-fact-card__title-link {
+  color: var(--ct-fast-fact-card-title-color);
 }

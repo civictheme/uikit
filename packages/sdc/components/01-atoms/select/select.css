@@ -55,7 +55,7 @@
 }
 .ct-select:not(.ct-select--is-invalid) option:checked {
   background-color: var(--ct-select-option-background-color);
-  color: var(--ct-select-option-color);
+  color: inherit;
 }
 .ct-select:not(.ct-select--is-invalid):hover {
   color: var(--ct-select-hover-color);

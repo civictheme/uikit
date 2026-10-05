@@ -51,11 +51,7 @@
     white-space: nowrap;
   }
 }
-.ct-promo.ct-theme-light {
-  background-color: var(--ct-promo-light-background-color);
-  border-color: var(--ct-promo-light-border-color);
-}
-.ct-promo.ct-theme-dark {
-  background-color: var(--ct-promo-dark-background-color);
-  border-color: var(--ct-promo-dark-border-color);
+.ct-promo {
+  background-color: var(--ct-promo-background-color);
+  border-color: var(--ct-promo-border-color);
 }
