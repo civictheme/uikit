@@ -2,99 +2,288 @@
   "Brand": {
     "Brand 1": {
       "$type": "color",
-      "$value": "#00698f"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4117647058823529,
+          0.5607843137254902
+        ],
+        "alpha": 1,
+        "hex": "#00698F"
+      }
     },
     "Brand 2": {
       "$type": "color",
-      "$value": "#e6e9eb"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9019607843137255,
+          0.9137254901960784,
+          0.9215686274509803
+        ],
+        "alpha": 1,
+        "hex": "#E6E9EB"
+      }
     },
     "Brand 3": {
       "$type": "color",
-      "$value": "#121313"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.07058823529411765,
+          0.07450980392156863,
+          0.07450980392156863
+        ],
+        "alpha": 1,
+        "hex": "#121313"
+      }
     }
   },
   "Typography": {
     "Heading": {
       "$type": "color",
-      "$value": "#002a39"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.16470588235294117,
+          0.2235294117647059
+        ],
+        "alpha": 1,
+        "hex": "#002A39"
+      }
     },
     "Body": {
       "$type": "color",
-      "$value": "#33444a"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2,
+          0.26666666666666666,
+          0.2901960784313726
+        ],
+        "alpha": 1,
+        "hex": "#33444A"
+      }
     }
   },
   "Background": {
     "Background Light": {
       "$type": "color",
-      "$value": "#fcfdfd"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9882352941176471,
+          0.9921568627450981,
+          0.9921568627450981
+        ],
+        "alpha": 1,
+        "hex": "#FCFDFD"
+      }
     },
     "Background": {
       "$type": "color",
-      "$value": "#e6e9eb"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9019607843137255,
+          0.9137254901960784,
+          0.9215686274509803
+        ],
+        "alpha": 1,
+        "hex": "#E6E9EB"
+      }
     },
     "Background Dark": {
       "$type": "color",
-      "$value": "#b8babc"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7215686274509804,
+          0.7294117647058823,
+          0.7372549019607844
+        ],
+        "alpha": 1,
+        "hex": "#B8BABC"
+      }
     }
   },
   "Border": {
     "Border Light": {
       "$type": "color",
-      "$value": "#acafb0"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6745098039215687,
+          0.6862745098039216,
+          0.6901960784313725
+        ],
+        "alpha": 1,
+        "hex": "#ACAFB0"
+      }
     },
     "Border": {
       "$type": "color",
-      "$value": "#5c5d5e"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3607843137254902,
+          0.36470588235294116,
+          0.3686274509803922
+        ],
+        "alpha": 1,
+        "hex": "#5C5D5E"
+      }
     },
     "Border Dark": {
       "$type": "color",
-      "$value": "#171718"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09019607843137255,
+          0.09019607843137255,
+          0.09411764705882353
+        ],
+        "alpha": 1,
+        "hex": "#171718"
+      }
     }
   },
   "Interaction": {
     "Interaction Text": {
       "$type": "color",
-      "$value": "#fafbfb"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9803921568627451,
+          0.984313725490196,
+          0.984313725490196
+        ],
+        "alpha": 1,
+        "hex": "#FAFBFB"
+      }
     },
     "Interaction Background": {
       "$type": "color",
-      "$value": "#00698f"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4117647058823529,
+          0.5607843137254902
+        ],
+        "alpha": 1,
+        "hex": "#00698F"
+      }
     },
     "Interaction Hover Text": {
       "$type": "color",
-      "$value": "#fafbfb"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9803921568627451,
+          0.984313725490196,
+          0.984313725490196
+        ],
+        "alpha": 1,
+        "hex": "#FAFBFB"
+      }
     },
     "Interaction Hover Background": {
       "$type": "color",
-      "$value": "#003f56"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.24705882352941178,
+          0.33725490196078434
+        ],
+        "alpha": 1,
+        "hex": "#003F56"
+      }
     },
     "Interaction Focus": {
       "$type": "color",
-      "$value": "#8b5cd7"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5450980392156862,
+          0.3607843137254902,
+          0.8431372549019608
+        ],
+        "alpha": 1,
+        "hex": "#8B5CD7"
+      }
     }
   },
   "Highlight": {
     "Highlight": {
       "$type": "color",
-      "$value": "#121313"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.07058823529411765,
+          0.07450980392156863,
+          0.07450980392156863
+        ],
+        "alpha": 1,
+        "hex": "#121313"
+      }
     }
   },
   "Status": {
     "Information": {
       "$type": "color",
-      "$value": "#007cbf"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.48627450980392156,
+          0.7490196078431373
+        ],
+        "alpha": 1,
+        "hex": "#007CBF"
+      }
     },
     "Warning": {
       "$type": "color",
-      "$value": "#c95100"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.788235294117647,
+          0.3176470588235294,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#C95100"
+      }
     },
     "Error": {
       "$type": "color",
-      "$value": "#ce3836"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.807843137254902,
+          0.2196078431372549,
+          0.21176470588235294
+        ],
+        "alpha": 1,
+        "hex": "#CE3836"
+      }
     },
     "Success": {
       "$type": "color",
-      "$value": "#008482"
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.5176470588235295,
+          0.5098039215686274
+        ],
+        "alpha": 1,
+        "hex": "#008482"
+      }
     }
   }
 }
