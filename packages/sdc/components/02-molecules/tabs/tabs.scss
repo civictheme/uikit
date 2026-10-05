@@ -42,20 +42,24 @@
   // Colour rules are nested under __links so they outrank the structural
   // `border` shorthand above (whose implicit colour is currentColor) - the
   // same winning order the 1.x theme-classed selectors had.
+  //
+  // The stripe border-bottom is explicitly currentcolor: 1.x pointed it at a
+  // variable that was never defined, which computed to the border-color
+  // initial value (currentcolor); this pins that rendered behaviour.
   #{$root}__links {
-    border-bottom-color: ct-component-var($root, links, stripe, border-color);
+    border-bottom-color: currentcolor;
 
     .ct-link {
       @include ct-component-property($root, links, background-color);
       @include ct-component-property($root, links, border-color);
 
-      border-bottom-color: ct-component-var($root, links, stripe, border-color);
+      border-bottom-color: currentcolor;
 
       &#{$root}__tab--selected {
         @include ct-component-property($root, links, active, background-color);
         @include ct-component-property($root, links, active, border-color);
 
-        border-bottom-color: ct-component-var($root, links, stripe, border-color);
+        border-bottom-color: currentcolor;
       }
     }
   }

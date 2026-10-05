@@ -184,15 +184,3 @@
     }
   }
 }
-
-@mixin ct-table-light() {
-  @include ct-table-colors();
-}
-
-@mixin ct-table-dark() {
-  @include ct-table-colors();
-}
-
-@mixin ct-table-theme($theme) {
-  @include ct-table-colors();
-}

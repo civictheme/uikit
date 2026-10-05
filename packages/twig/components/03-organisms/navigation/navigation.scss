@@ -325,7 +325,11 @@
             &.ct-menu__item--active-trail {
               & > .ct-menu__item__link {
                 @include ct-component-property($root, drawer-menu-item, active-trail, background-color);
-                @include ct-component-property($root, drawer-menu-item, active-trail, color);
+
+                // Explicit inherit: 1.x pointed this at a variable that was
+                // never defined, which computed to the inherited colour;
+                // this pins that rendered behaviour.
+                color: inherit;
               }
             }
           }

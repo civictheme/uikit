@@ -130,32 +130,3 @@ export function resolveModes(tree = loadTokens()) {
   });
   return resolved;
 }
-
-/**
- * Parses a compiled UIKit stylesheet into a `{ '--prop': 'value' }` map.
- * Shared by the component-token extractor and the validation test.
- */
-export function parseCssVars(css) {
-  const vars = {};
-  for (const match of css.matchAll(/(--ct-[a-z0-9-]+):\s*([^;}]+)[;}]/g)) {
-    vars[match[1]] = match[2].trim();
-  }
-  return vars;
-}
-
-/**
- * Resolves a compiled custom-property value to its literal, chasing
- * single-`var()` references (`var(--ct-color-light-body)` -> `#33444a`).
- */
-export function resolveCssVar(cssVars, name) {
-  let value = cssVars[name];
-  const seen = new Set();
-  while (value !== undefined) {
-    const ref = value.match(/^var\((--[a-z0-9-]+)\)$/);
-    if (!ref) return value.toLowerCase();
-    if (seen.has(ref[1])) throw new Error(`var() cycle through "${ref[1]}"`);
-    seen.add(ref[1]);
-    value = cssVars[ref[1]];
-  }
-  throw new Error(`Compiled CSS has no value for "${name}"`);
-}

@@ -59,34 +59,29 @@
     }
   }
 
+  // Columns carry the matching ct-theme-<theme> class so the palette
+  // properties resolve to that theme's values.
   #{$root}__column {
     flex: 1;
 
     &--light {
-      background: ct-color-light('background-light');
-
-      #{$root}__title,
-      #{$root}__subtitle {
-        color: ct-color-light('heading');
-      }
-
-      #{$root}__content,
-      #{$root}__subcontent {
-        color: ct-color-light('body');
-      }
+      background: var(--ct-color-background-light);
     }
 
     &--dark {
-      background: ct-color-dark('background');
+      background: var(--ct-color-background);
+    }
 
+    &--light,
+    &--dark {
       #{$root}__title,
       #{$root}__subtitle {
-        color: ct-color-dark('heading');
+        color: var(--ct-color-heading);
       }
 
       #{$root}__content,
       #{$root}__subcontent {
-        color: ct-color-dark('body');
+        color: var(--ct-color-body);
       }
     }
   }

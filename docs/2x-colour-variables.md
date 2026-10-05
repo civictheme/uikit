@@ -145,7 +145,9 @@ blocks" shape, and the generated CSS follows them:
 
 ## Converting a component (the recipe)
 
-The conversion is mechanical. Per component:
+Every CivicTheme component has been converted; this recipe stays for
+sub-themes converting their own components (see
+`docs/migrating-1x-colours-to-2x.md`). Per component:
 
 1. **Theme wrappers go.** `@include ct-component-theme($root) using (…)`
    blocks unwrap into the component's base rules; `&.ct-theme-#{$theme}`
@@ -160,24 +162,29 @@ The conversion is mechanical. Per component:
 4. **Sass colour variables become literals or vanish.** `$ct-…-focus-…: false`
    slots become literal `false` in maps (no rule emitted); `inherit` stays a
    literal.
-5. **Gates:** the tokens resolved-value test must stay at zero drift, and a
+5. **Gates:** the tokens test must stay green, every `var(--ct-…)` reference
+   in compiled CSS must be declared (`npm run validate`), and a
    visual-regression capture against the frozen `baseline--2x--*` sets must
    show no colour change in either theme.
 
-During the transition both generations coexist: `civictheme.variables.css`
-carries the token-generated properties *and* the Sass-generated 1.x-structure
-properties, so unconverted components keep working untouched. The 1.x colour
-variables and their emission are deleted in one cleanup change once every
-component is converted.
+The transition is complete: the 1.x colour Sass variables, the palette maps,
+the `ct-color-*` functions and the theme-pair mixin shims were deleted once
+every component was converted, and `civictheme.variables.css` now carries the
+token-generated colour properties plus only non-colour Sass-emitted
+properties.
 
 ## Testing strategy
 
-Two layers, because each sees what the other cannot:
+Three layers, because each sees what the others cannot:
 
-- **Resolved-value equality** (`npm run test -w packages/tokens`): every token
-  resolved through its alias graph must equal the compiled CSS value, per
-  theme, for sdc and twig. This covers *all* states — hover, focus, invalid —
-  which screenshots never render.
+- **Tokens gate** (`npm run test -w packages/tokens`): every token must
+  resolve through its alias graph in both modes, and the compiled UIKit
+  stylesheets must embed the current tokens dist CSS byte-for-byte. Since
+  components consume only the token-generated properties, byte-equal
+  embedding is the whole colour contract between the packages.
+- **Coverage gate** (`npm run validate`): every `var(--ct-…)` reference in
+  compiled CSS must be declared somewhere — this catches a component
+  consuming a property that no longer exists (which fails silently in CSS).
 - **Visual regression**: captures of every story in both themes compared
   against baselines frozen at the 2.x branch point; the refactor must not
   shift a pixel. CI additionally compares each PR against the `main` (1.x)

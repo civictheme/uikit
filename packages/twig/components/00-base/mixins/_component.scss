@@ -6,14 +6,6 @@
 @use 'sass:string';
 @use 'sass:list';
 
-@mixin ct-component-theme($name) {
-  @each $theme in light, dark {
-    &.ct-theme-#{$theme} {
-      @content($name, $theme);
-    }
-  }
-}
-
 @mixin ct-component-property($args...) {
   $property: list.nth($args, list.length($args));
 

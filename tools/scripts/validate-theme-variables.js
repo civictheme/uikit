@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * Validates that all light theme variables have matching dark theme variables
- * and vice versa in the SCSS variables file.
+ * Validates that every `var(--ct-*)` reference in the compiled component CSS
+ * is declared somewhere: in the token-generated + Sass-emitted
+ * `dist/civictheme.variables.css`, or as a custom-property declaration in any
+ * scanned stylesheet.
  *
- * Pattern: $<component-identifier>-<theme>-<variable-identifier>
- * where <theme> is either 'light' or 'dark'
+ * This is the 2.x colour-token coverage gate. It catches the "de-themed to
+ * an undefined property" failure class: a component consuming a custom
+ * property that no longer exists silently falls back to initial/inherited
+ * values instead of failing the build.
  */
 
 import fs from 'fs';
@@ -15,206 +19,86 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const VARIABLES_FILES = [
-  path.join(
-    __dirname,
-    '../../packages/twig/components/00-base/_variables.components.scss'
-  ),
-  path.join(
-    __dirname,
-    '../../packages/sdc/components/00-base/_variables.components.scss'
-  ),
-];
+const PACKAGES = ['sdc', 'twig'];
 
-// ANSI color codes for terminal output
+// Shipped bundles to scan for references on top of the per-component CSS.
+// Stories/Storybook bundles are development-only copies and stay out.
+const DIST_FILES = {
+  sdc: ['civictheme.base.css'],
+  twig: ['civictheme.css'],
+};
+
+// ANSI colour codes for terminal output.
 const colors = {
   red: '\x1b[31m',
   green: '\x1b[32m',
-  yellow: '\x1b[33m',
   blue: '\x1b[34m',
   reset: '\x1b[0m',
 };
 
-/**
- * Extracts theme variables from SCSS content
- * @param {string} content - SCSS file content
- * @returns {Object} Object with 'light' and 'dark' arrays of variable info
- */
-function extractThemeVariables(content) {
-  const lines = content.split('\n');
-  const lightVariables = new Map();
-  const darkVariables = new Map();
+const DECLARATION_PATTERN = /(--ct-[a-z0-9-]+)\s*:/g;
+const REFERENCE_PATTERN = /var\((--ct-[a-z0-9-]+)[),]/g;
 
-  // Pattern to match: $component-light-property or $component-dark-property
-  const variablePattern = /^\$([a-zA-Z0-9_-]+)-(light|dark)-([a-zA-Z0-9_-]+)\s*:/;
+function* cssFiles(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const entryPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      yield* cssFiles(entryPath);
+    } else if (entry.name.endsWith('.css')) {
+      yield entryPath;
+    }
+  }
+}
 
-  lines.forEach((line, index) => {
-    const match = line.match(variablePattern);
-    if (match) {
-      const [, component, theme, property] = match;
-      const variableName = `${component}-${theme}-${property}`;
-      const baseKey = `${component}-${property}`; // Key without theme for matching
+let overallProblems = 0;
 
-      const variableInfo = {
-        name: variableName,
-        component,
-        property,
-        line: index + 1,
-        baseKey,
-      };
+PACKAGES.forEach((pkg) => {
+  const packageDir = path.join(__dirname, '../../packages', pkg);
+  const variablesFile = path.join(packageDir, 'dist', 'civictheme.variables.css');
 
-      if (theme === 'light') {
-        lightVariables.set(baseKey, variableInfo);
-      } else if (theme === 'dark') {
-        darkVariables.set(baseKey, variableInfo);
+  const files = [...cssFiles(path.join(packageDir, 'components'))];
+  DIST_FILES[pkg].forEach((file) => {
+    const distPath = path.join(packageDir, 'dist', file);
+    if (fs.existsSync(distPath)) {
+      files.push(distPath);
+    }
+  });
+
+  const defined = new Set();
+  for (const match of fs.readFileSync(variablesFile, 'utf8').matchAll(DECLARATION_PATTERN)) {
+    defined.add(match[1]);
+  }
+  files.forEach((file) => {
+    for (const match of fs.readFileSync(file, 'utf8').matchAll(DECLARATION_PATTERN)) {
+      defined.add(match[1]);
+    }
+  });
+
+  let packageProblems = 0;
+  console.log(`${colors.blue}Checking var(--ct-*) coverage: packages/${pkg}${colors.reset}`);
+  files.forEach((file) => {
+    const missing = new Set();
+    for (const match of fs.readFileSync(file, 'utf8').matchAll(REFERENCE_PATTERN)) {
+      if (!defined.has(match[1])) {
+        missing.add(match[1]);
       }
     }
+    if (missing.size > 0) {
+      packageProblems += missing.size;
+      console.log(`  ${colors.red}${path.relative(packageDir, file)}: ${[...missing].join(', ')}${colors.reset}`);
+    }
   });
 
-  return { lightVariables, darkVariables };
-}
-
-/**
- * Finds unpaired variables
- * @param {Map} sourceVars - Variables to check
- * @param {Map} targetVars - Variables to match against
- * @param {string} sourceTheme - Name of source theme
- * @param {string} targetTheme - Name of target theme
- * @returns {Array} Array of unpaired variable info
- */
-function findUnpairedVariables(sourceVars, targetVars, sourceTheme, targetTheme) {
-  const unpaired = [];
-
-  for (const [baseKey, varInfo] of sourceVars) {
-    if (!targetVars.has(baseKey)) {
-      unpaired.push({
-        ...varInfo,
-        missingTheme: targetTheme,
-      });
-    }
-  }
-
-  return unpaired;
-}
-
-/**
- * Validates a single file
- * @param {string} filePath - Path to the SCSS file
- * @returns {Object} Validation results
- */
-function validateFile(filePath) {
-  const fileName = path.basename(path.dirname(filePath));
-
-  // Read the file
-  let content;
-  try {
-    content = fs.readFileSync(filePath, 'utf8');
-  } catch (error) {
-    return {
-      fileName,
-      filePath,
-      error: error.message,
-      hasErrors: true,
-    };
-  }
-
-  // Extract variables
-  const { lightVariables, darkVariables } = extractThemeVariables(content);
-
-  // Find unpaired variables
-  const lightWithoutDark = findUnpairedVariables(
-    lightVariables,
-    darkVariables,
-    'light',
-    'dark'
-  );
-  const darkWithoutLight = findUnpairedVariables(
-    darkVariables,
-    lightVariables,
-    'dark',
-    'light'
-  );
-
-  return {
-    fileName,
-    filePath,
-    lightVariables,
-    darkVariables,
-    lightWithoutDark,
-    darkWithoutLight,
-    hasErrors: lightWithoutDark.length > 0 || darkWithoutLight.length > 0,
-  };
-}
-
-/**
- * Main validation function
- */
-function validateThemeVariables() {
-  console.log(`${colors.blue}Validating SCSS theme variables...${colors.reset}\n`);
-
-  let overallHasErrors = false;
-  const results = [];
-
-  // Validate each file
-  VARIABLES_FILES.forEach((filePath) => {
-    const result = validateFile(filePath);
-    results.push(result);
-
-    console.log(`${colors.blue}File: ${result.filePath}${colors.reset}`);
-
-    if (result.error) {
-      console.log(`${colors.red}Error reading file: ${result.error}${colors.reset}\n`);
-      overallHasErrors = true;
-      return;
-    }
-
-    console.log(`Found ${colors.green}${result.lightVariables.size}${colors.reset} light theme variables`);
-    console.log(`Found ${colors.green}${result.darkVariables.size}${colors.reset} dark theme variables\n`);
-
-    // Report unpaired variables
-    if (result.lightWithoutDark.length > 0) {
-      overallHasErrors = true;
-      console.log(`${colors.red}Light variables missing dark counterparts:${colors.reset}\n`);
-      result.lightWithoutDark.forEach((varInfo) => {
-        console.log(
-          `  ${colors.yellow}$${varInfo.name}${colors.reset} (line ${varInfo.line})`
-        );
-        console.log(`    Missing: ${colors.red}$${varInfo.component}-dark-${varInfo.property}${colors.reset}\n`);
-      });
-    }
-
-    if (result.darkWithoutLight.length > 0) {
-      overallHasErrors = true;
-      console.log(`${colors.red}Dark variables missing light counterparts:${colors.reset}\n`);
-      result.darkWithoutLight.forEach((varInfo) => {
-        console.log(
-          `  ${colors.yellow}$${varInfo.name}${colors.reset} (line ${varInfo.line})`
-        );
-        console.log(`    Missing: ${colors.red}$${varInfo.component}-light-${varInfo.property}${colors.reset}\n`);
-      });
-    }
-
-    if (!result.hasErrors) {
-      console.log(`${colors.green}✓ All theme variables are properly paired in this file!${colors.reset}\n`);
-    }
-
-    console.log('─'.repeat(60) + '\n');
-  });
-
-  // Final summary
-  console.log('─'.repeat(60));
-  if (overallHasErrors) {
-    const totalUnpaired = results.reduce((sum, r) => {
-      if (r.error) return sum;
-      return sum + (r.lightWithoutDark?.length || 0) + (r.darkWithoutLight?.length || 0);
-    }, 0);
-    console.log(`${colors.red}✗ Validation failed: ${totalUnpaired} unpaired variable(s) found across ${results.length} file(s)${colors.reset}`);
-    process.exit(1);
+  if (packageProblems === 0) {
+    console.log(`  ${colors.green}✓ All references are declared (${files.length} files)${colors.reset}\n`);
   } else {
-    console.log(`${colors.green}✓ All theme variables are properly paired in all files!${colors.reset}`);
-    process.exit(0);
+    console.log(`  ${colors.red}✗ ${packageProblems} undefined variable reference(s)${colors.reset}\n`);
   }
-}
+  overallProblems += packageProblems;
+});
 
-// Run validation
-validateThemeVariables();
+if (overallProblems > 0) {
+  console.log(`${colors.red}✗ Validation failed: ${overallProblems} undefined var(--ct-*) reference(s)${colors.reset}`);
+  process.exit(1);
+}
+console.log(`${colors.green}✓ Every var(--ct-*) reference in compiled CSS is declared${colors.reset}`);
