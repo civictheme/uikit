@@ -9,15 +9,9 @@
   font-weight: var(--ct-typography-label-regular-font-weight);
   letter-spacing: var(--ct-typography-label-regular-letter-spacing);
 }
-.ct-breadcrumb.ct-theme-light .ct-breadcrumb__links__separator {
-  color: var(--ct-breadcrumb-light-color);
+.ct-breadcrumb .ct-breadcrumb__links__separator {
+  color: var(--ct-breadcrumb-color);
 }
-.ct-breadcrumb.ct-theme-light .ct-breadcrumb__links__link--active {
-  color: var(--ct-breadcrumb-light-active-color);
-}
-.ct-breadcrumb.ct-theme-dark .ct-breadcrumb__links__separator {
-  color: var(--ct-breadcrumb-dark-color);
-}
-.ct-breadcrumb.ct-theme-dark .ct-breadcrumb__links__link--active {
-  color: var(--ct-breadcrumb-dark-active-color);
+.ct-breadcrumb .ct-breadcrumb__links__link--active {
+  color: var(--ct-breadcrumb-active-color);
 }

@@ -13,9 +13,6 @@
   width: auto !important;
   height: auto !important;
 }
-.ct-skip-link.ct-theme-light {
-  background-color: var(--ct-skip-link-light-background-color);
-}
-.ct-skip-link.ct-theme-dark {
-  background-color: var(--ct-skip-link-dark-background-color);
+.ct-skip-link {
+  background-color: var(--ct-skip-link-background-color);
 }

@@ -22,7 +22,7 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, background-color);
+  & {
+    @include ct-component-property($root, background-color);
   }
 }
