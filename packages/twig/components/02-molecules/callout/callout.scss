@@ -12,12 +12,14 @@
     display: flex;
     flex-direction: column;
     gap: ct-spacing(2);
+    background-color: var(--ct-callout-background-color);
 
     @include ct-breakpoint(m) {
       padding: ct-spacing(4) ct-spacing(4) ct-spacing(4) calc(ct-spacing(4) + var(--ct-callout-stripe-width));
     }
 
     @include ct-highlight-stripe-vertical(var(--ct-callout-stripe-width), var(--ct-callout-border-radius), 0);
+    @include ct-highlight-stripe-background-color(var(--ct-callout-stripe-background-color));
   }
 
   &__inner {
@@ -30,10 +32,4 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__wrapper {
-      @include ct-component-property($root, $theme, background-color);
-      @include ct-highlight-stripe-background-color(ct-component-var($root, $theme, stripe, background-color));
-    }
-  }
 }

@@ -54,42 +54,23 @@
   width: auto !important;
   height: auto !important;
 }
-.ct-button--primary.ct-theme-light {
-  background-color: var(--ct-button-light-primary-background-color);
-  border-color: var(--ct-button-light-primary-border-color);
-  color: var(--ct-button-light-primary-color);
+.ct-button--primary {
+  background-color: var(--ct-button-primary-background-color);
+  border-color: var(--ct-button-primary-border-color);
+  color: var(--ct-button-primary-color);
 }
-.ct-button--primary.ct-theme-light:hover {
-  background-color: var(--ct-button-light-primary-hover-background-color);
-  border-color: var(--ct-button-light-primary-hover-border-color);
-  color: var(--ct-button-light-primary-hover-color);
+.ct-button--primary:hover {
+  background-color: var(--ct-button-primary-hover-background-color);
+  border-color: var(--ct-button-primary-hover-border-color);
+  color: var(--ct-button-primary-hover-color);
 }
-.ct-button--primary.ct-theme-light:active, .ct-button--primary.ct-theme-light.active {
-  background-color: var(--ct-button-light-primary-active-background-color);
-  border-color: var(--ct-button-light-primary-active-border-color);
-  color: var(--ct-button-light-primary-active-color);
+.ct-button--primary:active, .ct-button--primary.active {
+  background-color: var(--ct-button-primary-active-background-color);
+  border-color: var(--ct-button-primary-active-border-color);
+  color: var(--ct-button-primary-active-color);
 }
-.ct-button--primary.ct-theme-light:focus-visible, .ct-button--primary.ct-theme-light.focus {
-  outline-color: var(--ct-button-light-primary-focus-outline-color);
-  outline-style: solid;
-}
-.ct-button--primary.ct-theme-dark {
-  background-color: var(--ct-button-dark-primary-background-color);
-  border-color: var(--ct-button-dark-primary-border-color);
-  color: var(--ct-button-dark-primary-color);
-}
-.ct-button--primary.ct-theme-dark:hover {
-  background-color: var(--ct-button-dark-primary-hover-background-color);
-  border-color: var(--ct-button-dark-primary-hover-border-color);
-  color: var(--ct-button-dark-primary-hover-color);
-}
-.ct-button--primary.ct-theme-dark:active, .ct-button--primary.ct-theme-dark.active {
-  background-color: var(--ct-button-dark-primary-active-background-color);
-  border-color: var(--ct-button-dark-primary-active-border-color);
-  color: var(--ct-button-dark-primary-active-color);
-}
-.ct-button--primary.ct-theme-dark:focus-visible, .ct-button--primary.ct-theme-dark.focus {
-  outline-color: var(--ct-button-dark-primary-focus-outline-color);
+.ct-button--primary:focus-visible, .ct-button--primary.focus {
+  outline-color: var(--ct-button-primary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--secondary {
@@ -125,42 +106,23 @@
   width: auto !important;
   height: auto !important;
 }
-.ct-button--secondary.ct-theme-light {
-  background-color: var(--ct-button-light-secondary-background-color);
-  border-color: var(--ct-button-light-secondary-border-color);
-  color: var(--ct-button-light-secondary-color);
+.ct-button--secondary {
+  background-color: var(--ct-button-secondary-background-color);
+  border-color: var(--ct-button-secondary-border-color);
+  color: var(--ct-button-secondary-color);
 }
-.ct-button--secondary.ct-theme-light:hover {
-  background-color: var(--ct-button-light-secondary-hover-background-color);
-  border-color: var(--ct-button-light-secondary-hover-border-color);
-  color: var(--ct-button-light-secondary-hover-color);
+.ct-button--secondary:hover {
+  background-color: var(--ct-button-secondary-hover-background-color);
+  border-color: var(--ct-button-secondary-hover-border-color);
+  color: var(--ct-button-secondary-hover-color);
 }
-.ct-button--secondary.ct-theme-light:active, .ct-button--secondary.ct-theme-light.active {
-  background-color: var(--ct-button-light-secondary-active-background-color);
-  border-color: var(--ct-button-light-secondary-active-border-color);
-  color: var(--ct-button-light-secondary-active-color);
+.ct-button--secondary:active, .ct-button--secondary.active {
+  background-color: var(--ct-button-secondary-active-background-color);
+  border-color: var(--ct-button-secondary-active-border-color);
+  color: var(--ct-button-secondary-active-color);
 }
-.ct-button--secondary.ct-theme-light:focus-visible, .ct-button--secondary.ct-theme-light.focus {
-  outline-color: var(--ct-button-light-secondary-focus-outline-color);
-  outline-style: solid;
-}
-.ct-button--secondary.ct-theme-dark {
-  background-color: var(--ct-button-dark-secondary-background-color);
-  border-color: var(--ct-button-dark-secondary-border-color);
-  color: var(--ct-button-dark-secondary-color);
-}
-.ct-button--secondary.ct-theme-dark:hover {
-  background-color: var(--ct-button-dark-secondary-hover-background-color);
-  border-color: var(--ct-button-dark-secondary-hover-border-color);
-  color: var(--ct-button-dark-secondary-hover-color);
-}
-.ct-button--secondary.ct-theme-dark:active, .ct-button--secondary.ct-theme-dark.active {
-  background-color: var(--ct-button-dark-secondary-active-background-color);
-  border-color: var(--ct-button-dark-secondary-active-border-color);
-  color: var(--ct-button-dark-secondary-active-color);
-}
-.ct-button--secondary.ct-theme-dark:focus-visible, .ct-button--secondary.ct-theme-dark.focus {
-  outline-color: var(--ct-button-dark-secondary-focus-outline-color);
+.ct-button--secondary:focus-visible, .ct-button--secondary.focus {
+  outline-color: var(--ct-button-secondary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--tertiary {
@@ -196,42 +158,23 @@
   width: auto !important;
   height: auto !important;
 }
-.ct-button--tertiary.ct-theme-light {
-  background-color: var(--ct-button-light-tertiary-background-color);
-  border-color: var(--ct-button-light-tertiary-border-color);
-  color: var(--ct-button-light-tertiary-color);
+.ct-button--tertiary {
+  background-color: var(--ct-button-tertiary-background-color);
+  border-color: var(--ct-button-tertiary-border-color);
+  color: var(--ct-button-tertiary-color);
 }
-.ct-button--tertiary.ct-theme-light:hover {
-  background-color: var(--ct-button-light-tertiary-hover-background-color);
-  border-color: var(--ct-button-light-tertiary-hover-border-color);
-  color: var(--ct-button-light-tertiary-hover-color);
+.ct-button--tertiary:hover {
+  background-color: var(--ct-button-tertiary-hover-background-color);
+  border-color: var(--ct-button-tertiary-hover-border-color);
+  color: var(--ct-button-tertiary-hover-color);
 }
-.ct-button--tertiary.ct-theme-light:active, .ct-button--tertiary.ct-theme-light.active {
-  background-color: var(--ct-button-light-tertiary-active-background-color);
-  border-color: var(--ct-button-light-tertiary-active-border-color);
-  color: var(--ct-button-light-tertiary-active-color);
+.ct-button--tertiary:active, .ct-button--tertiary.active {
+  background-color: var(--ct-button-tertiary-active-background-color);
+  border-color: var(--ct-button-tertiary-active-border-color);
+  color: var(--ct-button-tertiary-active-color);
 }
-.ct-button--tertiary.ct-theme-light:focus-visible, .ct-button--tertiary.ct-theme-light.focus {
-  outline-color: var(--ct-button-light-tertiary-focus-outline-color);
-  outline-style: solid;
-}
-.ct-button--tertiary.ct-theme-dark {
-  background-color: var(--ct-button-dark-tertiary-background-color);
-  border-color: var(--ct-button-dark-tertiary-border-color);
-  color: var(--ct-button-dark-tertiary-color);
-}
-.ct-button--tertiary.ct-theme-dark:hover {
-  background-color: var(--ct-button-dark-tertiary-hover-background-color);
-  border-color: var(--ct-button-dark-tertiary-hover-border-color);
-  color: var(--ct-button-dark-tertiary-hover-color);
-}
-.ct-button--tertiary.ct-theme-dark:active, .ct-button--tertiary.ct-theme-dark.active {
-  background-color: var(--ct-button-dark-tertiary-active-background-color);
-  border-color: var(--ct-button-dark-tertiary-active-border-color);
-  color: var(--ct-button-dark-tertiary-active-color);
-}
-.ct-button--tertiary.ct-theme-dark:focus-visible, .ct-button--tertiary.ct-theme-dark.focus {
-  outline-color: var(--ct-button-dark-tertiary-focus-outline-color);
+.ct-button--tertiary:focus-visible, .ct-button--tertiary.focus {
+  outline-color: var(--ct-button-tertiary-focus-outline-color);
   outline-style: solid;
 }
 .ct-button--tertiary:focus-visible, .ct-button--tertiary:hover, .ct-button--tertiary:active {

@@ -19,7 +19,9 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/tokens",
+    "packages/sdc",
+    "packages/twig"
   ],
   "os": [
     "darwin",
