@@ -1,0 +1,4453 @@
+{
+  "color": {
+    "component": {
+      "$type": "color",
+      "$description": "Component colour tokens: aliases into the palette tier (plus captured literals where 1.x derived or hardcoded values). Generated from packages/sdc/components/00-base/_variables.components.scss by build/extract-components.mjs; each token records its 1.x source variables under the io.civictheme.scss extension. Not emitted to Figma (plan §3.1 — palette variables only unless designers ask).",
+      "$extensions": {
+        "io.civictheme.skipped": {
+          "$ct-chip-light-focus-background-color": "false",
+          "$ct-chip-dark-focus-background-color": "false",
+          "$ct-chip-light-focus-border-color": "false",
+          "$ct-chip-dark-focus-border-color": "false",
+          "$ct-chip-light-focus-color": "false",
+          "$ct-chip-dark-focus-color": "false",
+          "$ct-button-light-primary-focus-background-color": "false",
+          "$ct-button-dark-primary-focus-background-color": "false",
+          "$ct-button-light-primary-focus-border-color": "false",
+          "$ct-button-dark-primary-focus-border-color": "false",
+          "$ct-button-light-primary-focus-color": "false",
+          "$ct-button-dark-primary-focus-color": "false",
+          "$ct-button-light-secondary-focus-background-color": "false",
+          "$ct-button-dark-secondary-focus-background-color": "false",
+          "$ct-button-light-secondary-focus-border-color": "false",
+          "$ct-button-dark-secondary-focus-border-color": "false",
+          "$ct-button-light-secondary-focus-color": "false",
+          "$ct-button-dark-secondary-focus-color": "false",
+          "$ct-button-light-tertiary-focus-background-color": "false",
+          "$ct-button-dark-tertiary-focus-background-color": "false",
+          "$ct-button-light-tertiary-focus-border-color": "false",
+          "$ct-button-dark-tertiary-focus-border-color": "false",
+          "$ct-button-light-tertiary-focus-color": "false",
+          "$ct-button-dark-tertiary-focus-color": "false",
+          "$ct-select-light-option-color": "inherit",
+          "$ct-select-dark-option-color": "inherit"
+        }
+      },
+      "outline": {
+        "color": {
+          "$value": "{color.palette.interaction-focus}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-outline-light",
+              "dark": "$ct-outline-dark"
+            }
+          }
+        }
+      },
+      "chip": {
+        "background-color": {
+          "$value": "{color.palette.interaction-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-background-color",
+              "dark": "$ct-chip-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-border-color",
+              "dark": "$ct-chip-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-color",
+              "dark": "$ct-chip-dark-color"
+            }
+          }
+        },
+        "selected-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-selected-background-color",
+              "dark": "$ct-chip-dark-selected-background-color"
+            }
+          }
+        },
+        "selected-border-color": {
+          "$value": "{color.component.chip.selected-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-selected-border-color",
+              "dark": "$ct-chip-dark-selected-border-color"
+            }
+          }
+        },
+        "selected-color": {
+          "$value": "{color.palette.interaction-hover-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-selected-color",
+              "dark": "$ct-chip-dark-selected-color"
+            }
+          }
+        },
+        "selected-hover-color": {
+          "$value": "{color.component.chip.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-selected-hover-color",
+              "dark": "$ct-chip-dark-selected-hover-color"
+            }
+          }
+        },
+        "selected-hover-background-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-selected-hover-background-color",
+              "dark": "$ct-chip-dark-selected-hover-background-color"
+            }
+          }
+        },
+        "selected-hover-border-color": {
+          "$value": "{color.component.chip.selected-hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-selected-hover-border-color",
+              "dark": "$ct-chip-dark-selected-hover-border-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.chip.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-hover-background-color",
+              "dark": "$ct-chip-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-hover-color",
+              "dark": "$ct-chip-dark-hover-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.component.chip.hover-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-hover-border-color",
+              "dark": "$ct-chip-dark-hover-border-color"
+            }
+          }
+        },
+        "focus-outline-color": {
+          "$value": "{color.palette.interaction-focus}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-chip-light-focus-outline-color",
+              "dark": "$ct-chip-dark-focus-outline-color"
+            }
+          }
+        }
+      },
+      "content-link": {
+        "color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-content-link-light-color",
+              "dark": "$ct-content-link-dark-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-content-link-light-hover-background-color",
+              "dark": "$ct-content-link-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.palette.interaction-hover-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-content-link-light-hover-color",
+              "dark": "$ct-content-link-dark-hover-color"
+            }
+          }
+        },
+        "visited-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-content-link-light-visited-color",
+              "dark": "$ct-content-link-dark-visited-color"
+            }
+          }
+        },
+        "visited-hover-color": {
+          "$value": "{color.palette.interaction-hover-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-content-link-light-visited-hover-color",
+              "dark": "$ct-content-link-dark-visited-hover-color"
+            }
+          }
+        }
+      },
+      "heading": {
+        "color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-heading-light-color",
+              "dark": "$ct-heading-dark-color"
+            }
+          }
+        }
+      },
+      "iframe": {
+        "wrapper-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-iframe-light-wrapper-background-color",
+              "dark": "$ct-iframe-dark-wrapper-background-color"
+            }
+          }
+        }
+      },
+      "link": {
+        "color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-link-light-color",
+              "dark": "$ct-link-dark-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-link-light-hover-color",
+              "dark": "$ct-link-dark-hover-color"
+            }
+          }
+        },
+        "visited-color": {
+          "$value": "{color.component.link.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-link-light-visited-color",
+              "dark": "$ct-link-dark-visited-color"
+            }
+          }
+        },
+        "active-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-link-light-active-color",
+              "dark": "$ct-link-dark-active-color"
+            }
+          }
+        }
+      },
+      "popover": {
+        "content-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-popover-light-content-background-color",
+              "dark": "$ct-popover-dark-content-background-color"
+            }
+          }
+        }
+      },
+      "table": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-background-color",
+              "dark": "$ct-table-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-border-color",
+              "dark": "$ct-table-dark-border-color"
+            }
+          }
+        },
+        "caption-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-caption-color",
+              "dark": "$ct-table-dark-caption-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-color",
+              "dark": "$ct-table-dark-color"
+            }
+          }
+        },
+        "footer-border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-footer-border-color",
+              "dark": "$ct-table-dark-footer-border-color"
+            }
+          }
+        },
+        "footer-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-footer-color",
+              "dark": "$ct-table-dark-footer-color"
+            }
+          }
+        },
+        "header-border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-header-border-color",
+              "dark": "$ct-table-dark-header-border-color"
+            }
+          }
+        },
+        "header-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-header-color",
+              "dark": "$ct-table-dark-header-color"
+            }
+          }
+        },
+        "row-even-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-row-even-background-color",
+              "dark": "$ct-table-dark-row-even-background-color"
+            }
+          }
+        },
+        "row-even-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-row-even-color",
+              "dark": "$ct-table-dark-row-even-color"
+            }
+          }
+        },
+        "row-odd-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-row-odd-background-color",
+              "dark": "$ct-table-dark-row-odd-background-color"
+            }
+          }
+        },
+        "row-odd-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-light-row-odd-color",
+              "dark": "$ct-table-dark-row-odd-color"
+            }
+          }
+        }
+      },
+      "tag": {
+        "primary-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-primary-background-color",
+              "dark": "$ct-tag-dark-primary-background-color"
+            }
+          }
+        },
+        "primary-border-color": {
+          "$value": "{color.component.tag.primary-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-primary-border-color",
+              "dark": "$ct-tag-dark-primary-border-color"
+            }
+          }
+        },
+        "primary-color": {
+          "$value": "{color.palette.interaction-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-primary-color",
+              "dark": "$ct-tag-dark-primary-color"
+            }
+          }
+        },
+        "secondary-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-secondary-background-color",
+              "dark": "$ct-tag-dark-secondary-background-color"
+            }
+          }
+        },
+        "secondary-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-secondary-border-color",
+              "dark": "$ct-tag-dark-secondary-border-color"
+            }
+          }
+        },
+        "secondary-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-secondary-color",
+              "dark": "$ct-tag-dark-secondary-color"
+            }
+          }
+        },
+        "tertiary-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-tertiary-background-color",
+              "dark": "$ct-tag-dark-tertiary-background-color"
+            }
+          }
+        },
+        "tertiary-border-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-tertiary-border-color",
+              "dark": "$ct-tag-dark-tertiary-border-color"
+            }
+          }
+        },
+        "tertiary-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tag-light-tertiary-color",
+              "dark": "$ct-tag-dark-tertiary-color"
+            }
+          }
+        }
+      },
+      "button": {
+        "primary-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-background-color",
+              "dark": "$ct-button-dark-primary-background-color"
+            }
+          }
+        },
+        "primary-border-color": {
+          "$value": "{color.component.button.primary-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-border-color",
+              "dark": "$ct-button-dark-primary-border-color"
+            }
+          }
+        },
+        "primary-color": {
+          "$value": "{color.palette.interaction-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-color",
+              "dark": "$ct-button-dark-primary-color"
+            }
+          }
+        },
+        "primary-hover-background-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-hover-background-color",
+              "dark": "$ct-button-dark-primary-hover-background-color"
+            }
+          }
+        },
+        "primary-hover-border-color": {
+          "$value": "{color.component.button.primary-hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-hover-border-color",
+              "dark": "$ct-button-dark-primary-hover-border-color"
+            }
+          }
+        },
+        "primary-hover-color": {
+          "$value": "{color.palette.interaction-hover-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-hover-color",
+              "dark": "$ct-button-dark-primary-hover-color"
+            }
+          }
+        },
+        "primary-active-background-color": {
+          "$value": "{color.component.button.primary-hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-active-background-color",
+              "dark": "$ct-button-dark-primary-active-background-color"
+            }
+          }
+        },
+        "primary-active-border-color": {
+          "$value": "{color.component.button.primary-hover-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-active-border-color",
+              "dark": "$ct-button-dark-primary-active-border-color"
+            }
+          }
+        },
+        "primary-active-color": {
+          "$value": "{color.component.button.primary-hover-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-active-color",
+              "dark": "$ct-button-dark-primary-active-color"
+            }
+          }
+        },
+        "primary-focus-outline-color": {
+          "$value": "{color.palette.interaction-focus}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-primary-focus-outline-color",
+              "dark": "$ct-button-dark-primary-focus-outline-color"
+            }
+          }
+        },
+        "secondary-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-background-color",
+              "dark": "$ct-button-dark-secondary-background-color"
+            }
+          }
+        },
+        "secondary-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-border-color",
+              "dark": "$ct-button-dark-secondary-border-color"
+            }
+          }
+        },
+        "secondary-color": {
+          "$value": "{color.component.button.secondary-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-color",
+              "dark": "$ct-button-dark-secondary-color"
+            }
+          }
+        },
+        "secondary-hover-background-color": {
+          "$value": "{color.component.button.secondary-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-hover-background-color",
+              "dark": "$ct-button-dark-secondary-hover-background-color"
+            }
+          }
+        },
+        "secondary-hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-hover-border-color",
+              "dark": "$ct-button-dark-secondary-hover-border-color"
+            }
+          }
+        },
+        "secondary-hover-color": {
+          "$value": "{color.component.button.secondary-hover-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-hover-color",
+              "dark": "$ct-button-dark-secondary-hover-color"
+            }
+          }
+        },
+        "secondary-active-background-color": {
+          "$value": "{color.component.button.secondary-hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-active-background-color",
+              "dark": "$ct-button-dark-secondary-active-background-color"
+            }
+          }
+        },
+        "secondary-active-border-color": {
+          "$value": "{color.component.button.secondary-hover-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-active-border-color",
+              "dark": "$ct-button-dark-secondary-active-border-color"
+            }
+          }
+        },
+        "secondary-active-color": {
+          "$value": "{color.component.button.secondary-hover-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-active-color",
+              "dark": "$ct-button-dark-secondary-active-color"
+            }
+          }
+        },
+        "secondary-focus-outline-color": {
+          "$value": "{color.palette.interaction-focus}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-secondary-focus-outline-color",
+              "dark": "$ct-button-dark-secondary-focus-outline-color"
+            }
+          }
+        },
+        "tertiary-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-background-color",
+              "dark": "$ct-button-dark-tertiary-background-color"
+            }
+          }
+        },
+        "tertiary-border-color": {
+          "$value": "{color.component.button.tertiary-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-border-color",
+              "dark": "$ct-button-dark-tertiary-border-color"
+            }
+          }
+        },
+        "tertiary-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-color",
+              "dark": "$ct-button-dark-tertiary-color"
+            }
+          }
+        },
+        "tertiary-hover-background-color": {
+          "$value": "{color.component.button.tertiary-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-hover-background-color",
+              "dark": "$ct-button-dark-tertiary-hover-background-color"
+            }
+          }
+        },
+        "tertiary-hover-border-color": {
+          "$value": "{color.component.button.tertiary-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-hover-border-color",
+              "dark": "$ct-button-dark-tertiary-hover-border-color"
+            }
+          }
+        },
+        "tertiary-hover-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-hover-color",
+              "dark": "$ct-button-dark-tertiary-hover-color"
+            }
+          }
+        },
+        "tertiary-active-background-color": {
+          "$value": "{color.component.button.tertiary-hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-active-background-color",
+              "dark": "$ct-button-dark-tertiary-active-background-color"
+            }
+          }
+        },
+        "tertiary-active-border-color": {
+          "$value": "{color.component.button.tertiary-hover-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-active-border-color",
+              "dark": "$ct-button-dark-tertiary-active-border-color"
+            }
+          }
+        },
+        "tertiary-active-color": {
+          "$value": "{color.component.button.tertiary-hover-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-active-color",
+              "dark": "$ct-button-dark-tertiary-active-color"
+            }
+          }
+        },
+        "tertiary-focus-outline-color": {
+          "$value": "{color.palette.interaction-focus}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-button-light-tertiary-focus-outline-color",
+              "dark": "$ct-button-dark-tertiary-focus-outline-color"
+            }
+          }
+        }
+      },
+      "checkbox": {
+        "background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-background-color",
+              "dark": "$ct-checkbox-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-border-color",
+              "dark": "$ct-checkbox-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-color",
+              "dark": "$ct-checkbox-dark-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.checkbox.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-hover-background-color",
+              "dark": "$ct-checkbox-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-hover-border-color",
+              "dark": "$ct-checkbox-dark-hover-border-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.component.checkbox.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-hover-color",
+              "dark": "$ct-checkbox-dark-hover-color"
+            }
+          }
+        },
+        "checked-background-color": {
+          "$value": "{color.component.checkbox.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-checked-background-color",
+              "dark": "$ct-checkbox-dark-checked-background-color"
+            }
+          }
+        },
+        "checked-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-checked-border-color",
+              "dark": "$ct-checkbox-dark-checked-border-color"
+            }
+          }
+        },
+        "checked-color": {
+          "$value": "{color.component.checkbox.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-checked-color",
+              "dark": "$ct-checkbox-dark-checked-color"
+            }
+          }
+        },
+        "checked-hover-background-color": {
+          "$value": "{color.component.checkbox.hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-checked-hover-background-color",
+              "dark": "$ct-checkbox-dark-checked-hover-background-color"
+            }
+          }
+        },
+        "checked-hover-border-color": {
+          "$value": "{color.component.checkbox.hover-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-checked-hover-border-color",
+              "dark": "$ct-checkbox-dark-checked-hover-border-color"
+            }
+          }
+        },
+        "checked-hover-color": {
+          "$value": "{color.component.checkbox.hover-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-checked-hover-color",
+              "dark": "$ct-checkbox-dark-checked-hover-color"
+            }
+          }
+        },
+        "invalid-background-color": {
+          "$value": "{color.component.checkbox.hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-invalid-background-color",
+              "dark": "$ct-checkbox-dark-invalid-background-color"
+            }
+          }
+        },
+        "invalid-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-invalid-border-color",
+              "dark": "$ct-checkbox-dark-invalid-border-color"
+            }
+          }
+        },
+        "invalid-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-invalid-color",
+              "dark": "$ct-checkbox-dark-invalid-color"
+            }
+          }
+        },
+        "outline-color": {
+          "$value": "{color.component.outline.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-checkbox-light-outline-color",
+              "dark": "$ct-checkbox-dark-outline-color"
+            }
+          }
+        }
+      },
+      "field-description": {
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-description-light-color",
+              "dark": "$ct-field-description-dark-color"
+            }
+          }
+        }
+      },
+      "field-message": {
+        "error-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.960784,
+              0.843137,
+              0.843137
+            ],
+            "alpha": 1,
+            "hex": "#f5d7d7"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.729412,
+                  0.270588,
+                  0.258824
+                ],
+                "alpha": 1,
+                "hex": "#ba4542"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-error-background-color",
+              "dark": "$ct-field-message-dark-error-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('error'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('error'), 20); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "error-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-error-border-color",
+              "dark": "$ct-field-message-dark-error-border-color"
+            }
+          }
+        },
+        "error-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-error-color",
+              "dark": "$ct-field-message-dark-error-color"
+            }
+          }
+        },
+        "error-icon-color": {
+          "$value": "{color.component.field-message.error-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-error-icon-color",
+              "dark": "$ct-field-message-dark-error-icon-color"
+            }
+          }
+        },
+        "information-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8,
+              0.898039,
+              0.94902
+            ],
+            "alpha": 1,
+            "hex": "#cce5f2"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.180392,
+                  0.470588,
+                  0.603922
+                ],
+                "alpha": 1,
+                "hex": "#2e789a"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-information-background-color",
+              "dark": "$ct-field-message-dark-information-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('information'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('information'), 39); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "information-border-color": {
+          "$value": "{color.palette.information}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-information-border-color",
+              "dark": "$ct-field-message-dark-information-border-color"
+            }
+          }
+        },
+        "information-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-information-color",
+              "dark": "$ct-field-message-dark-information-color"
+            }
+          }
+        },
+        "information-icon-color": {
+          "$value": "{color.component.field-message.information-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-information-icon-color",
+              "dark": "$ct-field-message-dark-information-icon-color"
+            }
+          }
+        },
+        "success-border-color": {
+          "$value": "{color.palette.success}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-success-border-color",
+              "dark": "$ct-field-message-dark-success-border-color"
+            }
+          }
+        },
+        "success-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8,
+              0.901961,
+              0.901961
+            ],
+            "alpha": 1,
+            "hex": "#cce6e6"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.05098,
+                  0.482353,
+                  0.478431
+                ],
+                "alpha": 1,
+                "hex": "#0d7b7a"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-success-background-color",
+              "dark": "$ct-field-message-dark-success-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('success'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('success'), 30); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "success-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-success-color",
+              "dark": "$ct-field-message-dark-success-color"
+            }
+          }
+        },
+        "success-icon-color": {
+          "$value": "{color.component.field-message.success-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-success-icon-color",
+              "dark": "$ct-field-message-dark-success-icon-color"
+            }
+          }
+        },
+        "warning-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.956863,
+              0.862745,
+              0.8
+            ],
+            "alpha": 1,
+            "hex": "#f4dccc"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.639216,
+                  0.372549,
+                  0.192157
+                ],
+                "alpha": 1,
+                "hex": "#a35f31"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-warning-background-color",
+              "dark": "$ct-field-message-dark-warning-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('warning'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('warning'), 28); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "warning-border-color": {
+          "$value": "{color.palette.warning}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-warning-border-color",
+              "dark": "$ct-field-message-dark-warning-border-color"
+            }
+          }
+        },
+        "warning-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-warning-color",
+              "dark": "$ct-field-message-dark-warning-color"
+            }
+          }
+        },
+        "warning-icon-color": {
+          "$value": "{color.component.field-message.warning-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-field-message-light-warning-icon-color",
+              "dark": "$ct-field-message-dark-warning-icon-color"
+            }
+          }
+        }
+      },
+      "fieldset": {
+        "stripe-border-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-fieldset-light-stripe-border-color",
+              "dark": "$ct-fieldset-dark-stripe-border-color"
+            }
+          }
+        }
+      },
+      "input": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-background-color",
+              "dark": "$ct-input-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-border-color",
+              "dark": "$ct-input-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-color",
+              "dark": "$ct-input-dark-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.input.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-hover-background-color",
+              "dark": "$ct-input-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-hover-border-color",
+              "dark": "$ct-input-dark-hover-border-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.component.input.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-hover-color",
+              "dark": "$ct-input-dark-hover-color"
+            }
+          }
+        },
+        "focus-background-color": {
+          "$value": "{color.component.input.background-color}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-focus-background-color",
+              "dark": "$ct-input-dark-focus-background-color"
+            }
+          }
+        },
+        "focus-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-focus-border-color",
+              "dark": "$ct-input-dark-focus-border-color"
+            }
+          }
+        },
+        "focus-color": {
+          "$value": "{color.component.input.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-focus-color",
+              "dark": "$ct-input-dark-focus-color"
+            }
+          }
+        },
+        "invalid-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-invalid-background-color",
+              "dark": "$ct-input-dark-invalid-background-color"
+            }
+          }
+        },
+        "invalid-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-invalid-border-color",
+              "dark": "$ct-input-dark-invalid-border-color"
+            }
+          }
+        },
+        "invalid-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-invalid-color",
+              "dark": "$ct-input-dark-invalid-color"
+            }
+          }
+        },
+        "outline-color": {
+          "$value": "{color.component.outline.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-input-light-outline-color",
+              "dark": "$ct-input-dark-outline-color"
+            }
+          }
+        }
+      },
+      "label": {
+        "color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-label-light-color",
+              "dark": "$ct-label-dark-color"
+            }
+          }
+        },
+        "required-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-label-light-required-color",
+              "dark": "$ct-label-dark-required-color"
+            }
+          }
+        }
+      },
+      "radio": {
+        "background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-background-color",
+              "dark": "$ct-radio-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-border-color",
+              "dark": "$ct-radio-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-color",
+              "dark": "$ct-radio-dark-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.radio.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-hover-background-color",
+              "dark": "$ct-radio-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-hover-border-color",
+              "dark": "$ct-radio-dark-hover-border-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.component.radio.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-hover-color",
+              "dark": "$ct-radio-dark-hover-color"
+            }
+          }
+        },
+        "checked-background-color": {
+          "$value": "{color.component.radio.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-checked-background-color",
+              "dark": "$ct-radio-dark-checked-background-color"
+            }
+          }
+        },
+        "checked-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-checked-border-color",
+              "dark": "$ct-radio-dark-checked-border-color"
+            }
+          }
+        },
+        "checked-color": {
+          "$value": "{color.component.radio.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-checked-color",
+              "dark": "$ct-radio-dark-checked-color"
+            }
+          }
+        },
+        "checked-hover-background-color": {
+          "$value": "{color.component.radio.hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-checked-hover-background-color",
+              "dark": "$ct-radio-dark-checked-hover-background-color"
+            }
+          }
+        },
+        "checked-hover-border-color": {
+          "$value": "{color.component.radio.hover-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-checked-hover-border-color",
+              "dark": "$ct-radio-dark-checked-hover-border-color"
+            }
+          }
+        },
+        "checked-hover-color": {
+          "$value": "{color.component.radio.hover-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-checked-hover-color",
+              "dark": "$ct-radio-dark-checked-hover-color"
+            }
+          }
+        },
+        "invalid-background-color": {
+          "$value": "{color.component.radio.hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-invalid-background-color",
+              "dark": "$ct-radio-dark-invalid-background-color"
+            }
+          }
+        },
+        "invalid-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-invalid-border-color",
+              "dark": "$ct-radio-dark-invalid-border-color"
+            }
+          }
+        },
+        "invalid-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-invalid-color",
+              "dark": "$ct-radio-dark-invalid-color"
+            }
+          }
+        },
+        "outline-color": {
+          "$value": "{color.component.outline.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-radio-light-outline-color",
+              "dark": "$ct-radio-dark-outline-color"
+            }
+          }
+        }
+      },
+      "select": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-background-color",
+              "dark": "$ct-select-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-border-color",
+              "dark": "$ct-select-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-color",
+              "dark": "$ct-select-dark-color"
+            }
+          }
+        },
+        "option-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-option-background-color",
+              "dark": "$ct-select-dark-option-background-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.select.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-hover-background-color",
+              "dark": "$ct-select-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-hover-border-color",
+              "dark": "$ct-select-dark-hover-border-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.component.select.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-hover-color",
+              "dark": "$ct-select-dark-hover-color"
+            }
+          }
+        },
+        "focus-background-color": {
+          "$value": "{color.component.select.background-color}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-focus-background-color",
+              "dark": "$ct-select-dark-focus-background-color"
+            }
+          }
+        },
+        "focus-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-focus-border-color",
+              "dark": "$ct-select-dark-focus-border-color"
+            }
+          }
+        },
+        "focus-color": {
+          "$value": "{color.component.select.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-focus-color",
+              "dark": "$ct-select-dark-focus-color"
+            }
+          }
+        },
+        "invalid-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-invalid-background-color",
+              "dark": "$ct-select-dark-invalid-background-color"
+            }
+          }
+        },
+        "invalid-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-invalid-border-color",
+              "dark": "$ct-select-dark-invalid-border-color"
+            }
+          }
+        },
+        "invalid-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-invalid-color",
+              "dark": "$ct-select-dark-invalid-color"
+            }
+          }
+        },
+        "outline-color": {
+          "$value": "{color.component.outline.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-select-light-outline-color",
+              "dark": "$ct-select-dark-outline-color"
+            }
+          }
+        }
+      },
+      "textarea": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-background-color",
+              "dark": "$ct-textarea-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-border-color",
+              "dark": "$ct-textarea-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-color",
+              "dark": "$ct-textarea-dark-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.textarea.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-hover-background-color",
+              "dark": "$ct-textarea-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-hover-border-color",
+              "dark": "$ct-textarea-dark-hover-border-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.component.textarea.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-hover-color",
+              "dark": "$ct-textarea-dark-hover-color"
+            }
+          }
+        },
+        "focus-background-color": {
+          "$value": "{color.component.textarea.background-color}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-focus-background-color",
+              "dark": "$ct-textarea-dark-focus-background-color"
+            }
+          }
+        },
+        "focus-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-focus-border-color",
+              "dark": "$ct-textarea-dark-focus-border-color"
+            }
+          }
+        },
+        "focus-color": {
+          "$value": "{color.component.textarea.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-focus-color",
+              "dark": "$ct-textarea-dark-focus-color"
+            }
+          }
+        },
+        "invalid-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-invalid-background-color",
+              "dark": "$ct-textarea-dark-invalid-background-color"
+            }
+          }
+        },
+        "invalid-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-invalid-border-color",
+              "dark": "$ct-textarea-dark-invalid-border-color"
+            }
+          }
+        },
+        "invalid-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-invalid-color",
+              "dark": "$ct-textarea-dark-invalid-color"
+            }
+          }
+        },
+        "outline-color": {
+          "$value": "{color.component.outline.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textarea-light-outline-color",
+              "dark": "$ct-textarea-dark-outline-color"
+            }
+          }
+        }
+      },
+      "textfield": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-background-color",
+              "dark": "$ct-textfield-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-border-color",
+              "dark": "$ct-textfield-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-color",
+              "dark": "$ct-textfield-dark-color"
+            }
+          }
+        },
+        "hover-background-color": {
+          "$value": "{color.component.textfield.background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-hover-background-color",
+              "dark": "$ct-textfield-dark-hover-background-color"
+            }
+          }
+        },
+        "hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-hover-border-color",
+              "dark": "$ct-textfield-dark-hover-border-color"
+            }
+          }
+        },
+        "hover-color": {
+          "$value": "{color.component.textfield.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-hover-color",
+              "dark": "$ct-textfield-dark-hover-color"
+            }
+          }
+        },
+        "focus-background-color": {
+          "$value": "{color.component.textfield.background-color}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-focus-background-color",
+              "dark": "$ct-textfield-dark-focus-background-color"
+            }
+          }
+        },
+        "focus-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-focus-border-color",
+              "dark": "$ct-textfield-dark-focus-border-color"
+            }
+          }
+        },
+        "focus-color": {
+          "$value": "{color.component.textfield.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-focus-color",
+              "dark": "$ct-textfield-dark-focus-color"
+            }
+          }
+        },
+        "invalid-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-invalid-background-color",
+              "dark": "$ct-textfield-dark-invalid-background-color"
+            }
+          }
+        },
+        "invalid-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-invalid-border-color",
+              "dark": "$ct-textfield-dark-invalid-border-color"
+            }
+          }
+        },
+        "invalid-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-invalid-color",
+              "dark": "$ct-textfield-dark-invalid-color"
+            }
+          }
+        },
+        "outline-color": {
+          "$value": "{color.component.outline.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-textfield-light-outline-color",
+              "dark": "$ct-textfield-dark-outline-color"
+            }
+          }
+        }
+      },
+      "accordion": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-background-color",
+              "dark": "$ct-accordion-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-border-color",
+              "dark": "$ct-accordion-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-color",
+              "dark": "$ct-accordion-dark-color"
+            }
+          }
+        },
+        "button-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-button-background-color",
+              "dark": "$ct-accordion-dark-button-background-color"
+            }
+          }
+        },
+        "button-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-button-color",
+              "dark": "$ct-accordion-dark-button-color"
+            }
+          }
+        },
+        "icon-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-icon-color",
+              "dark": "$ct-accordion-dark-icon-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-stripe-background-color",
+              "dark": "$ct-accordion-dark-stripe-background-color"
+            }
+          }
+        },
+        "wrapper-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-accordion-light-wrapper-background-color",
+              "dark": "$ct-accordion-dark-wrapper-background-color"
+            }
+          }
+        }
+      },
+      "attachment": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-attachment-light-background-color",
+              "dark": "$ct-attachment-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-attachment-light-border-color",
+              "dark": "$ct-attachment-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-attachment-light-color",
+              "dark": "$ct-attachment-dark-color"
+            }
+          }
+        },
+        "wrapper-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-attachment-light-wrapper-background-color",
+              "dark": "$ct-attachment-dark-wrapper-background-color"
+            }
+          }
+        }
+      },
+      "back-to-top": {
+        "background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0,
+                  0.411765,
+                  0.560784
+                ],
+                "alpha": 1,
+                "hex": "#00698f"
+              }
+            },
+            "io.civictheme.scss": {
+              "unthemed": "$ct-back-to-top-background-color"
+            }
+          },
+          "$description": "Unthemed in 1.x (one variable, light values, for both themes): dark mode pinned to the light literal."
+        },
+        "border-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.988235,
+                  0.992157,
+                  0.992157
+                ],
+                "alpha": 1,
+                "hex": "#fcfdfd"
+              }
+            },
+            "io.civictheme.scss": {
+              "unthemed": "$ct-back-to-top-border-color"
+            }
+          },
+          "$description": "Unthemed in 1.x (one variable, light values, for both themes): dark mode pinned to the light literal."
+        },
+        "color": {
+          "$value": "{color.palette.interaction-text}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.980392,
+                  0.984314,
+                  0.984314
+                ],
+                "alpha": 1,
+                "hex": "#fafbfb"
+              }
+            },
+            "io.civictheme.scss": {
+              "unthemed": "$ct-back-to-top-color"
+            }
+          },
+          "$description": "Unthemed in 1.x (one variable, light values, for both themes): dark mode pinned to the light literal."
+        },
+        "outline-color": {
+          "$value": "{color.palette.interaction-focus}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.545098,
+                  0.360784,
+                  0.843137
+                ],
+                "alpha": 1,
+                "hex": "#8b5cd7"
+              }
+            },
+            "io.civictheme.scss": {
+              "unthemed": "$ct-back-to-top-outline-color"
+            }
+          },
+          "$description": "Unthemed in 1.x (one variable, light values, for both themes): dark mode pinned to the light literal."
+        }
+      },
+      "basic-content": {
+        "base-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-base-color",
+              "dark": "$ct-basic-content-dark-base-color"
+            }
+          }
+        },
+        "blockquote-stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-blockquote-stripe-background-color",
+              "dark": "$ct-basic-content-dark-blockquote-stripe-background-color"
+            }
+          }
+        },
+        "blockquote-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-blockquote-color",
+              "dark": "$ct-basic-content-dark-blockquote-color"
+            }
+          }
+        },
+        "blockquote-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-blockquote-background-color",
+              "dark": "$ct-basic-content-dark-blockquote-background-color"
+            }
+          }
+        },
+        "heading-1-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-heading-1-color",
+              "dark": "$ct-basic-content-dark-heading-1-color"
+            }
+          }
+        },
+        "heading-2-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-heading-2-color",
+              "dark": "$ct-basic-content-dark-heading-2-color"
+            }
+          }
+        },
+        "heading-3-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-heading-3-color",
+              "dark": "$ct-basic-content-dark-heading-3-color"
+            }
+          }
+        },
+        "heading-4-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-heading-4-color",
+              "dark": "$ct-basic-content-dark-heading-4-color"
+            }
+          }
+        },
+        "heading-5-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-heading-5-color",
+              "dark": "$ct-basic-content-dark-heading-5-color"
+            }
+          }
+        },
+        "heading-6-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-heading-6-color",
+              "dark": "$ct-basic-content-dark-heading-6-color"
+            }
+          }
+        },
+        "ol-li-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-ol-li-color",
+              "dark": "$ct-basic-content-dark-ol-li-color"
+            }
+          }
+        },
+        "ol-li-marker-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-ol-li-marker-color",
+              "dark": "$ct-basic-content-dark-ol-li-marker-color"
+            }
+          }
+        },
+        "ul-li-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-ul-li-color",
+              "dark": "$ct-basic-content-dark-ul-li-color"
+            }
+          }
+        },
+        "ul-li-marker-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-ul-li-marker-color",
+              "dark": "$ct-basic-content-dark-ul-li-marker-color"
+            }
+          }
+        },
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-basic-content-light-background-color",
+              "dark": "$ct-basic-content-dark-background-color"
+            }
+          }
+        }
+      },
+      "breadcrumb": {
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-breadcrumb-light-color",
+              "dark": "$ct-breadcrumb-dark-color"
+            }
+          }
+        },
+        "active-color": {
+          "$value": "{color.component.breadcrumb.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-breadcrumb-light-active-color",
+              "dark": "$ct-breadcrumb-dark-active-color"
+            }
+          }
+        }
+      },
+      "callout": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-callout-light-background-color",
+              "dark": "$ct-callout-dark-background-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-callout-light-stripe-background-color",
+              "dark": "$ct-callout-dark-stripe-background-color"
+            }
+          }
+        }
+      },
+      "figure": {
+        "caption-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-figure-light-caption-color",
+              "dark": "$ct-figure-dark-caption-color"
+            }
+          }
+        }
+      },
+      "logo": {
+        "stripe-background-color": {
+          "$value": "{color.palette.border-dark}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border-light}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-logo-light-stripe-background-color",
+              "dark": "$ct-logo-dark-stripe-background-color"
+            }
+          }
+        }
+      },
+      "map": {
+        "wrapper-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-map-light-wrapper-background-color",
+              "dark": "$ct-map-dark-wrapper-background-color"
+            }
+          }
+        }
+      },
+      "next-step": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-next-step-light-background-color",
+              "dark": "$ct-next-step-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-next-step-light-border-color",
+              "dark": "$ct-next-step-dark-border-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-next-step-light-stripe-background-color",
+              "dark": "$ct-next-step-dark-stripe-background-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-next-step-light-title-color",
+              "dark": "$ct-next-step-dark-title-color"
+            }
+          }
+        }
+      },
+      "table-of-contents": {
+        "link-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-background-color",
+              "dark": "$ct-table-of-contents-dark-link-background-color"
+            }
+          }
+        },
+        "link-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-color",
+              "dark": "$ct-table-of-contents-dark-link-color"
+            }
+          }
+        },
+        "link-hover-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-hover-background-color",
+              "dark": "$ct-table-of-contents-dark-link-hover-background-color"
+            }
+          }
+        },
+        "link-hover-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-hover-border-color",
+              "dark": "$ct-table-of-contents-dark-link-hover-border-color"
+            }
+          }
+        },
+        "link-hover-color": {
+          "$value": "{color.component.table-of-contents.link-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-hover-color",
+              "dark": "$ct-table-of-contents-dark-link-hover-color"
+            }
+          }
+        },
+        "link-stripe-background-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-stripe-background-color",
+              "dark": "$ct-table-of-contents-dark-link-stripe-background-color"
+            }
+          }
+        },
+        "link-hover-stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-link-hover-stripe-background-color",
+              "dark": "$ct-table-of-contents-dark-link-hover-stripe-background-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-table-of-contents-light-title-color",
+              "dark": "$ct-table-of-contents-dark-title-color"
+            }
+          }
+        }
+      },
+      "tabs": {
+        "links-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tabs-light-links-background-color",
+              "dark": "$ct-tabs-dark-links-background-color"
+            }
+          }
+        },
+        "links-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tabs-light-links-border-color",
+              "dark": "$ct-tabs-dark-links-border-color"
+            }
+          }
+        },
+        "links-active-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tabs-light-links-active-background-color",
+              "dark": "$ct-tabs-dark-links-active-background-color"
+            }
+          }
+        },
+        "links-active-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tabs-light-links-active-border-color",
+              "dark": "$ct-tabs-dark-links-active-border-color"
+            }
+          }
+        },
+        "panel-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tabs-light-panel-background-color",
+              "dark": "$ct-tabs-dark-panel-background-color"
+            }
+          }
+        },
+        "panel-border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tabs-light-panel-border-color",
+              "dark": "$ct-tabs-dark-panel-border-color"
+            }
+          }
+        }
+      },
+      "tooltip": {
+        "description-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tooltip-light-description-background-color",
+              "dark": "$ct-tooltip-dark-description-background-color"
+            }
+          }
+        },
+        "description-color": {
+          "$value": "{color.palette.interaction-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tooltip-light-description-color",
+              "dark": "$ct-tooltip-dark-description-color"
+            }
+          }
+        },
+        "icon-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-tooltip-light-icon-color",
+              "dark": "$ct-tooltip-dark-icon-color"
+            }
+          }
+        }
+      },
+      "single-filter": {
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-single-filter-light-border-color",
+              "dark": "$ct-single-filter-dark-border-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-single-filter-light-title-color",
+              "dark": "$ct-single-filter-dark-title-color"
+            }
+          }
+        }
+      },
+      "group-filter": {
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-group-filter-light-border-color",
+              "dark": "$ct-group-filter-dark-border-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-group-filter-light-title-color",
+              "dark": "$ct-group-filter-dark-title-color"
+            }
+          }
+        }
+      },
+      "inline-filter": {
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-inline-filter-light-title-color",
+              "dark": "$ct-inline-filter-dark-title-color"
+            }
+          }
+        }
+      },
+      "pagination": {
+        "color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-pagination-light-color",
+              "dark": "$ct-pagination-dark-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-pagination-light-border-color",
+              "dark": "$ct-pagination-dark-border-color"
+            }
+          }
+        }
+      },
+      "event-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-background-color",
+              "dark": "$ct-event-card-dark-background-color"
+            }
+          }
+        },
+        "hover-outline-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-hover-outline-color",
+              "dark": "$ct-event-card-dark-hover-outline-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-title-color",
+              "dark": "$ct-event-card-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-title-hover-color",
+              "dark": "$ct-event-card-dark-title-hover-color"
+            }
+          }
+        },
+        "link-graphic-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-link-graphic-color",
+              "dark": "$ct-event-card-dark-link-graphic-color"
+            }
+          }
+        },
+        "link-graphic-hover-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-link-graphic-hover-background-color",
+              "dark": "$ct-event-card-dark-link-graphic-hover-background-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-event-card-light-stripe-background-color",
+              "dark": "$ct-event-card-dark-stripe-background-color"
+            }
+          }
+        }
+      },
+      "navigation-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-background-color",
+              "dark": "$ct-navigation-card-dark-background-color"
+            }
+          }
+        },
+        "hover-outline-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-hover-outline-color",
+              "dark": "$ct-navigation-card-dark-hover-outline-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-title-color",
+              "dark": "$ct-navigation-card-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-title-hover-color",
+              "dark": "$ct-navigation-card-dark-title-hover-color"
+            }
+          }
+        },
+        "link-graphic-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-link-graphic-color",
+              "dark": "$ct-navigation-card-dark-link-graphic-color"
+            }
+          }
+        },
+        "link-graphic-hover-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-link-graphic-hover-background-color",
+              "dark": "$ct-navigation-card-dark-link-graphic-hover-background-color"
+            }
+          }
+        },
+        "icon-color": {
+          "$value": "{color.component.link.color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-card-light-icon-color",
+              "dark": "$ct-navigation-card-dark-icon-color"
+            }
+          }
+        }
+      },
+      "promo-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-background-color",
+              "dark": "$ct-promo-card-dark-background-color"
+            }
+          }
+        },
+        "hover-outline-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-hover-outline-color",
+              "dark": "$ct-promo-card-dark-hover-outline-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-title-color",
+              "dark": "$ct-promo-card-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-title-hover-color",
+              "dark": "$ct-promo-card-dark-title-hover-color"
+            }
+          }
+        },
+        "link-graphic-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-link-graphic-color",
+              "dark": "$ct-promo-card-dark-link-graphic-color"
+            }
+          }
+        },
+        "link-graphic-hover-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-link-graphic-hover-background-color",
+              "dark": "$ct-promo-card-dark-link-graphic-hover-background-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-promo-card-light-stripe-background-color",
+              "dark": "$ct-promo-card-dark-stripe-background-color"
+            }
+          }
+        }
+      },
+      "publication-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-publication-card-light-background-color",
+              "dark": "$ct-publication-card-dark-background-color"
+            }
+          }
+        },
+        "hover-outline-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-publication-card-light-hover-outline-color",
+              "dark": "$ct-publication-card-dark-hover-outline-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-publication-card-light-title-color",
+              "dark": "$ct-publication-card-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-publication-card-light-title-hover-color",
+              "dark": "$ct-publication-card-dark-title-hover-color"
+            }
+          }
+        },
+        "title-icon-color": {
+          "$value": "{color.component.publication-card.title-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-publication-card-light-title-icon-color",
+              "dark": "$ct-publication-card-dark-title-icon-color"
+            }
+          }
+        },
+        "filename-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-publication-card-light-filename-color",
+              "dark": "$ct-publication-card-dark-filename-color"
+            }
+          }
+        }
+      },
+      "service-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-service-card-light-background-color",
+              "dark": "$ct-service-card-dark-background-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-service-card-light-stripe-background-color",
+              "dark": "$ct-service-card-dark-stripe-background-color"
+            }
+          }
+        }
+      },
+      "subject-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-subject-card-light-background-color",
+              "dark": "$ct-subject-card-dark-background-color"
+            }
+          }
+        },
+        "hover-outline-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-subject-card-light-hover-outline-color",
+              "dark": "$ct-subject-card-dark-hover-outline-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-subject-card-light-title-color",
+              "dark": "$ct-subject-card-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-subject-card-light-title-hover-color",
+              "dark": "$ct-subject-card-dark-title-hover-color"
+            }
+          }
+        }
+      },
+      "fast-fact-card": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-fast-fact-card-light-background-color",
+              "dark": "$ct-fast-fact-card-dark-background-color"
+            }
+          }
+        },
+        "stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-fast-fact-card-light-stripe-background-color",
+              "dark": "$ct-fast-fact-card-dark-stripe-background-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-fast-fact-card-light-title-color",
+              "dark": "$ct-fast-fact-card-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-fast-fact-card-light-title-hover-color",
+              "dark": "$ct-fast-fact-card-dark-title-hover-color"
+            }
+          }
+        },
+        "hover-outline-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-fast-fact-card-light-hover-outline-color",
+              "dark": "$ct-fast-fact-card-dark-hover-outline-color"
+            }
+          }
+        }
+      },
+      "snippet": {
+        "background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-snippet-light-background-color",
+              "dark": "$ct-snippet-dark-background-color"
+            }
+          }
+        },
+        "title-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.heading}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-snippet-light-title-color",
+              "dark": "$ct-snippet-dark-title-color"
+            }
+          }
+        },
+        "title-hover-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-snippet-light-title-hover-color",
+              "dark": "$ct-snippet-dark-title-hover-color"
+            }
+          }
+        }
+      },
+      "alert": {
+        "error-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.960784,
+              0.843137,
+              0.843137
+            ],
+            "alpha": 1,
+            "hex": "#f5d7d7"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.729412,
+                  0.270588,
+                  0.258824
+                ],
+                "alpha": 1,
+                "hex": "#ba4542"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-error-background-color",
+              "dark": "$ct-alert-dark-error-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('error'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('error'), 20); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "error-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-error-color",
+              "dark": "$ct-alert-dark-error-color"
+            }
+          }
+        },
+        "error-title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-error-title-color",
+              "dark": "$ct-alert-dark-error-title-color"
+            }
+          }
+        },
+        "error-icon-color": {
+          "$value": "{color.component.alert.error-title-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-error-icon-color",
+              "dark": "$ct-alert-dark-error-icon-color"
+            }
+          }
+        },
+        "information-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8,
+              0.898039,
+              0.94902
+            ],
+            "alpha": 1,
+            "hex": "#cce5f2"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.180392,
+                  0.470588,
+                  0.603922
+                ],
+                "alpha": 1,
+                "hex": "#2e789a"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-information-background-color",
+              "dark": "$ct-alert-dark-information-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('information'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('information'), 39); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "information-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-information-color",
+              "dark": "$ct-alert-dark-information-color"
+            }
+          }
+        },
+        "information-title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-information-title-color",
+              "dark": "$ct-alert-dark-information-title-color"
+            }
+          }
+        },
+        "information-icon-color": {
+          "$value": "{color.component.alert.information-title-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-information-icon-color",
+              "dark": "$ct-alert-dark-information-icon-color"
+            }
+          }
+        },
+        "success-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8,
+              0.901961,
+              0.901961
+            ],
+            "alpha": 1,
+            "hex": "#cce6e6"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.05098,
+                  0.482353,
+                  0.478431
+                ],
+                "alpha": 1,
+                "hex": "#0d7b7a"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-success-background-color",
+              "dark": "$ct-alert-dark-success-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('success'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('success'), 30); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "success-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-success-color",
+              "dark": "$ct-alert-dark-success-color"
+            }
+          }
+        },
+        "success-title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-success-title-color",
+              "dark": "$ct-alert-dark-success-title-color"
+            }
+          }
+        },
+        "success-icon-color": {
+          "$value": "{color.component.alert.success-title-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-success-icon-color",
+              "dark": "$ct-alert-dark-success-icon-color"
+            }
+          }
+        },
+        "warning-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.956863,
+              0.862745,
+              0.8
+            ],
+            "alpha": 1,
+            "hex": "#f4dccc"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.639216,
+                  0.372549,
+                  0.192157
+                ],
+                "alpha": 1,
+                "hex": "#a35f31"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-warning-background-color",
+              "dark": "$ct-alert-dark-warning-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('warning'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('warning'), 28); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "warning-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-warning-color",
+              "dark": "$ct-alert-dark-warning-color"
+            }
+          }
+        },
+        "warning-title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-warning-title-color",
+              "dark": "$ct-alert-dark-warning-title-color"
+            }
+          }
+        },
+        "warning-icon-color": {
+          "$value": "{color.component.alert.warning-title-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-alert-light-warning-icon-color",
+              "dark": "$ct-alert-dark-warning-icon-color"
+            }
+          }
+        }
+      },
+      "banner": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-banner-light-background-color",
+              "dark": "$ct-banner-dark-background-color"
+            }
+          }
+        },
+        "featured-image-shadow-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-banner-light-featured-image-shadow-color",
+              "dark": "$ct-banner-dark-featured-image-shadow-color"
+            }
+          }
+        }
+      },
+      "campaign": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-campaign-light-background-color",
+              "dark": "$ct-campaign-dark-background-color"
+            }
+          }
+        },
+        "image-shadow-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-campaign-light-image-shadow-color",
+              "dark": "$ct-campaign-dark-image-shadow-color"
+            }
+          }
+        }
+      },
+      "footer": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-footer-light-background-color",
+              "dark": "$ct-footer-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-footer-light-border-color",
+              "dark": "$ct-footer-dark-border-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-footer-light-color",
+              "dark": "$ct-footer-dark-color"
+            }
+          }
+        }
+      },
+      "header": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-header-light-background-color",
+              "dark": "$ct-header-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-header-light-border-color",
+              "dark": "$ct-header-dark-border-color"
+            }
+          }
+        },
+        "top-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-header-light-top-background-color",
+              "dark": "$ct-header-dark-top-background-color"
+            }
+          }
+        },
+        "top-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-header-light-top-color",
+              "dark": "$ct-header-dark-top-color"
+            }
+          }
+        }
+      },
+      "list": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-list-light-background-color",
+              "dark": "$ct-list-dark-background-color"
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-list-light-color",
+              "dark": "$ct-list-dark-color"
+            }
+          }
+        },
+        "results-count-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-list-light-results-count-color",
+              "dark": "$ct-list-dark-results-count-color"
+            }
+          }
+        }
+      },
+      "message": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-background-color",
+              "dark": "$ct-message-dark-background-color"
+            }
+          }
+        },
+        "error-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.960784,
+              0.843137,
+              0.843137
+            ],
+            "alpha": 1,
+            "hex": "#f5d7d7"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.729412,
+                  0.270588,
+                  0.258824
+                ],
+                "alpha": 1,
+                "hex": "#ba4542"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-error-background-color",
+              "dark": "$ct-message-dark-error-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('error'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('error'), 20); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "error-border-color": {
+          "$value": "{color.palette.error}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-error-border-color",
+              "dark": "$ct-message-dark-error-border-color"
+            }
+          }
+        },
+        "error-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-error-color",
+              "dark": "$ct-message-dark-error-color"
+            }
+          }
+        },
+        "error-icon-color": {
+          "$value": "{color.component.message.error-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-error-icon-color",
+              "dark": "$ct-message-dark-error-icon-color"
+            }
+          }
+        },
+        "information-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8,
+              0.898039,
+              0.94902
+            ],
+            "alpha": 1,
+            "hex": "#cce5f2"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.180392,
+                  0.470588,
+                  0.603922
+                ],
+                "alpha": 1,
+                "hex": "#2e789a"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-information-background-color",
+              "dark": "$ct-message-dark-information-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('information'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('information'), 39); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "information-border-color": {
+          "$value": "{color.palette.information}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-information-border-color",
+              "dark": "$ct-message-dark-information-border-color"
+            }
+          }
+        },
+        "information-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-information-color",
+              "dark": "$ct-message-dark-information-color"
+            }
+          }
+        },
+        "information-icon-color": {
+          "$value": "{color.component.message.information-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-information-icon-color",
+              "dark": "$ct-message-dark-information-icon-color"
+            }
+          }
+        },
+        "success-border-color": {
+          "$value": "{color.palette.success}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-success-border-color",
+              "dark": "$ct-message-dark-success-border-color"
+            }
+          }
+        },
+        "success-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8,
+              0.901961,
+              0.901961
+            ],
+            "alpha": 1,
+            "hex": "#cce6e6"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.05098,
+                  0.482353,
+                  0.478431
+                ],
+                "alpha": 1,
+                "hex": "#0d7b7a"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-success-background-color",
+              "dark": "$ct-message-dark-success-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('success'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('success'), 30); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "success-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-success-color",
+              "dark": "$ct-message-dark-success-color"
+            }
+          }
+        },
+        "success-icon-color": {
+          "$value": "{color.component.message.success-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-success-icon-color",
+              "dark": "$ct-message-dark-success-icon-color"
+            }
+          }
+        },
+        "warning-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.956863,
+              0.862745,
+              0.8
+            ],
+            "alpha": 1,
+            "hex": "#f4dccc"
+          },
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.639216,
+                  0.372549,
+                  0.192157
+                ],
+                "alpha": 1,
+                "hex": "#a35f31"
+              }
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-warning-background-color",
+              "dark": "$ct-message-dark-warning-background-color"
+            }
+          },
+          "$description": "light: derived in 1.x as ct-color-tint(ct-color-constant-light('warning'), 80); captured as a literal (derivation moves to the generator, plan §4.4). dark: derived in 1.x as ct-color-shade(ct-color-constant-dark('warning'), 28); captured as a literal (derivation moves to the generator, plan §4.4)."
+        },
+        "warning-border-color": {
+          "$value": "{color.palette.warning}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-warning-border-color",
+              "dark": "$ct-message-dark-warning-border-color"
+            }
+          }
+        },
+        "warning-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-warning-color",
+              "dark": "$ct-message-dark-warning-color"
+            }
+          }
+        },
+        "warning-icon-color": {
+          "$value": "{color.component.message.warning-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-message-light-warning-icon-color",
+              "dark": "$ct-message-dark-warning-icon-color"
+            }
+          }
+        }
+      },
+      "navigation": {
+        "dropdown-sub-menu-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-dropdown-sub-menu-background-color",
+              "dark": "$ct-navigation-dark-dropdown-sub-menu-background-color"
+            }
+          }
+        },
+        "menu-border-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-border-color",
+              "dark": "$ct-navigation-dark-menu-border-color"
+            }
+          }
+        },
+        "menu-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-color",
+              "dark": "$ct-navigation-dark-menu-color"
+            }
+          }
+        },
+        "menu-hover-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-hover-color",
+              "dark": "$ct-navigation-dark-menu-hover-color"
+            }
+          }
+        },
+        "menu-active-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-active-color",
+              "dark": "$ct-navigation-dark-menu-active-color"
+            }
+          }
+        },
+        "menu-item-border-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-item-border-color",
+              "dark": "$ct-navigation-dark-menu-item-border-color"
+            }
+          }
+        },
+        "menu-item-hover-border-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-item-hover-border-color",
+              "dark": "$ct-navigation-dark-menu-item-hover-border-color"
+            }
+          }
+        },
+        "menu-item-active-border-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-menu-item-active-border-color",
+              "dark": "$ct-navigation-dark-menu-item-active-border-color"
+            }
+          }
+        },
+        "drawer-menu-item-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-menu-item-background-color",
+              "dark": "$ct-navigation-dark-drawer-menu-item-background-color"
+            }
+          }
+        },
+        "drawer-menu-item-hover-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-menu-item-hover-background-color",
+              "dark": "$ct-navigation-dark-drawer-menu-item-hover-background-color"
+            }
+          }
+        },
+        "drawer-menu-item-active-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-menu-item-active-background-color",
+              "dark": "$ct-navigation-dark-drawer-menu-item-active-background-color"
+            }
+          }
+        },
+        "drawer-menu-item-active-trail-background-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-menu-item-active-trail-background-color",
+              "dark": "$ct-navigation-dark-drawer-menu-item-active-trail-background-color"
+            }
+          }
+        },
+        "drawer-sub-menu-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-background-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-background-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-background-color": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "hex": "#000000"
+          },
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-background-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-background-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-heading-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-heading-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-heading-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-heading-hover-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-heading-hover-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-heading-hover-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-heading-active-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-heading-active-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-heading-active-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-hover-background-color": {
+          "$value": "{color.palette.interaction-hover-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-hover-background-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-hover-background-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-hover-color": {
+          "$value": "{color.palette.interaction-hover-text}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-hover-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-hover-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-active-background-color": {
+          "$value": "{color.palette.body}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-active-background-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-active-background-color"
+            }
+          }
+        },
+        "drawer-sub-menu-item-active-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-navigation-light-drawer-sub-menu-item-active-color",
+              "dark": "$ct-navigation-dark-drawer-sub-menu-item-active-color"
+            }
+          }
+        }
+      },
+      "side-navigation": {
+        "title-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-title-color",
+              "dark": "$ct-side-navigation-dark-title-color"
+            }
+          }
+        },
+        "link-expanded-icon-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-expanded-icon-color",
+              "dark": "$ct-side-navigation-dark-link-expanded-icon-color"
+            }
+          }
+        },
+        "link-parent-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-background-color"
+            }
+          }
+        },
+        "link-parent-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-border-color",
+              "dark": "$ct-side-navigation-dark-link-parent-border-color"
+            }
+          }
+        },
+        "link-parent-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-color",
+              "dark": "$ct-side-navigation-dark-link-parent-color"
+            }
+          }
+        },
+        "link-parent-stripe-background-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-stripe-background-color"
+            }
+          }
+        },
+        "link-parent-hover-background-color": {
+          "$value": "{color.palette.background-dark}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-hover-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-hover-background-color"
+            }
+          }
+        },
+        "link-parent-hover-border-color": {
+          "$value": "{color.component.side-navigation.link-parent-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-hover-border-color",
+              "dark": "$ct-side-navigation-dark-link-parent-hover-border-color"
+            }
+          }
+        },
+        "link-parent-hover-color": {
+          "$value": "{color.component.side-navigation.link-parent-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-hover-color",
+              "dark": "$ct-side-navigation-dark-link-parent-hover-color"
+            }
+          }
+        },
+        "link-parent-hover-stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-hover-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-hover-stripe-background-color"
+            }
+          }
+        },
+        "link-parent-active-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-background-color"
+            }
+          }
+        },
+        "link-parent-active-border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.highlight}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-border-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-border-color"
+            }
+          }
+        },
+        "link-parent-active-color": {
+          "$value": "{color.component.side-navigation.link-parent-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-color"
+            }
+          }
+        },
+        "link-parent-active-stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-stripe-background-color"
+            }
+          }
+        },
+        "link-parent-active-trail-background-color": {
+          "$value": "{color.component.side-navigation.link-parent-active-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-trail-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-trail-background-color"
+            }
+          }
+        },
+        "link-parent-active-trail-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.component.side-navigation.link-parent-border-color}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-trail-border-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-trail-border-color"
+            }
+          }
+        },
+        "link-parent-active-trail-color": {
+          "$value": "{color.component.side-navigation.link-parent-active-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-trail-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-trail-color"
+            }
+          }
+        },
+        "link-parent-active-trail-stripe-background-color": {
+          "$value": "{color.component.side-navigation.link-parent-active-stripe-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-parent-active-trail-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-parent-active-trail-stripe-background-color"
+            }
+          }
+        },
+        "link-child-background-color": {
+          "$value": "{color.component.side-navigation.link-parent-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-background-color"
+            }
+          }
+        },
+        "link-child-border-color": {
+          "$value": "{color.component.side-navigation.link-parent-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-border-color",
+              "dark": "$ct-side-navigation-dark-link-child-border-color"
+            }
+          }
+        },
+        "link-child-color": {
+          "$value": "{color.component.side-navigation.link-parent-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-color",
+              "dark": "$ct-side-navigation-dark-link-child-color"
+            }
+          }
+        },
+        "link-child-stripe-background-color": {
+          "$value": "{color.component.side-navigation.link-parent-stripe-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-stripe-background-color"
+            }
+          }
+        },
+        "link-child-hover-background-color": {
+          "$value": "{color.component.side-navigation.link-parent-hover-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-hover-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-hover-background-color"
+            }
+          }
+        },
+        "link-child-hover-border-color": {
+          "$value": "{color.component.side-navigation.link-child-border-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-hover-border-color",
+              "dark": "$ct-side-navigation-dark-link-child-hover-border-color"
+            }
+          }
+        },
+        "link-child-hover-color": {
+          "$value": "{color.component.side-navigation.link-child-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-hover-color",
+              "dark": "$ct-side-navigation-dark-link-child-hover-color"
+            }
+          }
+        },
+        "link-child-hover-stripe-background-color": {
+          "$value": "{color.palette.highlight}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-hover-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-hover-stripe-background-color"
+            }
+          }
+        },
+        "link-child-active-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-background-color"
+            }
+          }
+        },
+        "link-child-active-border-color": {
+          "$value": "{color.palette.border}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.highlight}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-border-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-border-color"
+            }
+          }
+        },
+        "link-child-active-color": {
+          "$value": "{color.component.side-navigation.link-child-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-color"
+            }
+          }
+        },
+        "link-child-active-stripe-background-color": {
+          "$value": "{color.component.side-navigation.link-child-hover-stripe-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-stripe-background-color"
+            }
+          }
+        },
+        "link-child-active-trail-background-color": {
+          "$value": "{color.component.side-navigation.link-child-active-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-trail-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-trail-background-color"
+            }
+          }
+        },
+        "link-child-active-trail-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.component.side-navigation.link-child-border-color}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-trail-border-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-trail-border-color"
+            }
+          }
+        },
+        "link-child-active-trail-color": {
+          "$value": "{color.component.side-navigation.link-child-active-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-trail-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-trail-color"
+            }
+          }
+        },
+        "link-child-active-trail-stripe-background-color": {
+          "$value": "{color.component.side-navigation.link-child-active-stripe-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-side-navigation-light-link-child-active-trail-stripe-background-color",
+              "dark": "$ct-side-navigation-dark-link-child-active-trail-stripe-background-color"
+            }
+          }
+        }
+      },
+      "mobile-navigation": {
+        "panel-background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-panel-background-color",
+              "dark": "$ct-mobile-navigation-dark-panel-background-color"
+            }
+          }
+        },
+        "top-menu-background-color": {
+          "$value": "{color.component.mobile-navigation.panel-background-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-top-menu-background-color",
+              "dark": "$ct-mobile-navigation-dark-top-menu-background-color"
+            }
+          }
+        },
+        "bottom-menu-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-bottom-menu-background-color",
+              "dark": "$ct-mobile-navigation-dark-bottom-menu-background-color"
+            }
+          }
+        },
+        "menu-item-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-menu-item-color",
+              "dark": "$ct-mobile-navigation-dark-menu-item-color"
+            }
+          }
+        },
+        "menu-item-hover-color": {
+          "$value": "{color.component.mobile-navigation.menu-item-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-menu-item-hover-color",
+              "dark": "$ct-mobile-navigation-dark-menu-item-hover-color"
+            }
+          }
+        },
+        "menu-divider-border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-menu-divider-border-color",
+              "dark": "$ct-mobile-navigation-dark-menu-divider-border-color"
+            }
+          }
+        },
+        "subsection-heading-color": {
+          "$value": "{color.palette.heading}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-subsection-heading-color",
+              "dark": "$ct-mobile-navigation-dark-subsection-heading-color"
+            }
+          }
+        },
+        "subsection-heading-icon-color": {
+          "$value": "{color.component.mobile-navigation.subsection-heading-color}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-subsection-heading-icon-color",
+              "dark": "$ct-mobile-navigation-dark-subsection-heading-icon-color"
+            }
+          }
+        },
+        "subsection-trigger-color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-light-subsection-trigger-color",
+              "dark": "$ct-mobile-navigation-dark-subsection-trigger-color"
+            }
+          }
+        }
+      },
+      "mobile-navigation-trigger": {
+        "color": {
+          "$value": "{color.palette.interaction-background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-mobile-navigation-trigger-light-color",
+              "dark": "$ct-mobile-navigation-trigger-dark-color"
+            }
+          }
+        }
+      },
+      "promo": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-promo-light-background-color",
+              "dark": "$ct-promo-dark-background-color"
+            }
+          }
+        },
+        "border-color": {
+          "$value": "{color.palette.border-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.border}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-promo-light-border-color",
+              "dark": "$ct-promo-dark-border-color"
+            }
+          }
+        }
+      },
+      "skip-link": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-skip-link-light-background-color",
+              "dark": "$ct-skip-link-dark-background-color"
+            }
+          }
+        }
+      },
+      "slider": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-slider-light-background-color",
+              "dark": "$ct-slider-dark-background-color"
+            }
+          }
+        },
+        "slide-background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-slider-light-slide-background-color",
+              "dark": "$ct-slider-dark-slide-background-color"
+            }
+          }
+        }
+      },
+      "webform": {
+        "background-color": {
+          "$value": "{color.palette.background}",
+          "$extensions": {
+            "io.civictheme.scss": {
+              "light": "$ct-webform-light-background-color",
+              "dark": "$ct-webform-dark-background-color"
+            }
+          }
+        }
+      },
+      "page": {
+        "background-color": {
+          "$value": "{color.palette.background-light}",
+          "$extensions": {
+            "io.civictheme.modes": {
+              "dark": "{color.palette.background-dark}"
+            },
+            "io.civictheme.scss": {
+              "light": "$ct-page-light-background-color",
+              "dark": "$ct-page-dark-background-color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

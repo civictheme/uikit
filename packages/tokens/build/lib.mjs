@@ -32,9 +32,11 @@ function deepMerge(target, source) {
 }
 
 /** Loads and merges every tokens/*.json source file into one DTCG tree. */
-export function loadTokens() {
+export function loadTokens(excludeFiles = []) {
   const tree = {};
-  const files = fs.readdirSync(TOKENS_DIR).filter((f) => f.endsWith('.json')).sort();
+  const files = fs.readdirSync(TOKENS_DIR)
+    .filter((f) => f.endsWith('.json') && !excludeFiles.includes(f))
+    .sort();
   files.forEach((file) => {
     deepMerge(tree, JSON.parse(fs.readFileSync(path.join(TOKENS_DIR, file), 'utf-8')));
   });
@@ -80,24 +82,80 @@ export function flattenTree(tree, prefix = []) {
   return flat;
 }
 
-/** Hex for a colour token value — the canonical comparison key (§3.3). */
+/**
+ * Hex for a literal colour token value — the canonical comparison key (§3.3).
+ * A fully transparent colour resolves to the CSS `transparent` keyword (used
+ * by component tokens; it has no meaningful hex).
+ */
 export function hexOf(value) {
   if (typeof value === 'string') return value.toLowerCase();
+  if (value.alpha === 0) return 'transparent';
   return value.hex.toLowerCase();
 }
 
+/** True for a `{color.path.to.token}` DTCG alias value. */
+export function isAlias(value) {
+  return typeof value === 'string' && value.startsWith('{') && value.endsWith('}');
+}
+
+/** The token path inside a DTCG alias value. */
+export function aliasTarget(value) {
+  return value.slice(1, -1);
+}
+
 /**
- * Resolves every mode to a flat `{ mode: { tokenPath: hex } }` map.
- * This is the single resolution path shared by build outputs and validation.
+ * Resolves every mode to a flat `{ mode: { tokenPath: hex } }` map, following
+ * `{alias}` references (component tokens alias the palette tier) within the
+ * same mode. This is the single resolution path shared by build outputs and
+ * validation.
  */
-export function resolveModes() {
-  const tree = loadTokens();
+export function resolveModes(tree = loadTokens()) {
   const resolved = {};
   MODES.forEach((mode) => {
     const flat = flattenTree(treeForMode(tree, mode));
-    resolved[mode] = Object.fromEntries(
-      Object.entries(flat).map(([tokenPath, token]) => [tokenPath, hexOf(token.$value)]),
-    );
+    const out = {};
+    const resolving = new Set();
+    const resolvePath = (tokenPath) => {
+      if (tokenPath in out) return out[tokenPath];
+      if (!(tokenPath in flat)) throw new Error(`Alias references unknown token "${tokenPath}"`);
+      if (resolving.has(tokenPath)) throw new Error(`Alias cycle through "${tokenPath}"`);
+      resolving.add(tokenPath);
+      const value = flat[tokenPath].$value;
+      out[tokenPath] = isAlias(value) ? resolvePath(aliasTarget(value)) : hexOf(value);
+      resolving.delete(tokenPath);
+      return out[tokenPath];
+    };
+    Object.keys(flat).forEach(resolvePath);
+    resolved[mode] = out;
   });
   return resolved;
+}
+
+/**
+ * Parses a compiled UIKit stylesheet into a `{ '--prop': 'value' }` map.
+ * Shared by the component-token extractor and the validation test.
+ */
+export function parseCssVars(css) {
+  const vars = {};
+  for (const match of css.matchAll(/(--ct-[a-z0-9-]+):\s*([^;}]+)[;}]/g)) {
+    vars[match[1]] = match[2].trim();
+  }
+  return vars;
+}
+
+/**
+ * Resolves a compiled custom-property value to its literal, chasing
+ * single-`var()` references (`var(--ct-color-light-body)` -> `#33444a`).
+ */
+export function resolveCssVar(cssVars, name) {
+  let value = cssVars[name];
+  const seen = new Set();
+  while (value !== undefined) {
+    const ref = value.match(/^var\((--[a-z0-9-]+)\)$/);
+    if (!ref) return value.toLowerCase();
+    if (seen.has(ref[1])) throw new Error(`var() cycle through "${ref[1]}"`);
+    seen.add(ref[1]);
+    value = cssVars[ref[1]];
+  }
+  throw new Error(`Compiled CSS has no value for "${name}"`);
 }
