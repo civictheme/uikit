@@ -110,145 +110,89 @@
   }
 }
 
-@mixin ct-table-light() {
-  color: var(--ct-table-light-color);
-  background-color: var(--ct-table-light-background-color);
+// 2.x: the colour properties resolve per .ct-theme-* scope, so one
+// theme-less mixin replaces the light/dark pair. The old names remain as
+// shims for unconverted callers and leave with the 1.x variables in the
+// cleanup.
+//
+// $var-prefix exists for callers that must pin the values to THEIR scope
+// rather than the table's own (see ct-content-colors): they declare
+// forwarding properties under another prefix and pass it here.
+@mixin ct-table-colors($var-prefix: '--ct-table') {
+  color: var(#{$var-prefix}-color);
+  background-color: var(#{$var-prefix}-background-color);
 
   thead {
-    color: var(--ct-table-light-header-color);
+    color: var(#{$var-prefix}-header-color);
 
     @include ct-breakpoint($ct-table-breakpoint) {
-      border-bottom: solid ct-particle(0.125) var(--ct-table-light-header-border-color);
+      border-bottom: solid ct-particle(0.125) var(#{$var-prefix}-header-border-color);
     }
 
     tr {
       &:last-child {
-        border-bottom: solid ct-particle(0.25) var(--ct-table-light-header-border-color);
+        border-bottom: solid ct-particle(0.25) var(#{$var-prefix}-header-border-color);
       }
     }
   }
 
   tfoot {
-    color: var(--ct-table-light-footer-color);
+    color: var(#{$var-prefix}-footer-color);
 
     @include ct-breakpoint($ct-table-breakpoint) {
-      border-top: solid ct-particle(0.125) var(--ct-table-light-footer-border-color);
+      border-top: solid ct-particle(0.125) var(#{$var-prefix}-footer-border-color);
     }
 
     tr {
       &:last-child {
-        border-top: solid ct-particle(0.25) var(--ct-table-light-footer-border-color);
+        border-top: solid ct-particle(0.25) var(#{$var-prefix}-footer-border-color);
       }
     }
   }
 
   tbody {
     tr {
-      border-bottom: solid ct-particle(0.125) var(--ct-table-light-border-color);
+      border-bottom: solid ct-particle(0.125) var(#{$var-prefix}-border-color);
     }
   }
 
   caption {
-    color: var(--ct-table-light-caption-color);
+    color: var(#{$var-prefix}-caption-color);
   }
 
   &.ct-table--data {
-    border-top: solid ct-particle(0.125) var(--ct-table-light-footer-border-color);
+    border-top: solid ct-particle(0.125) var(#{$var-prefix}-footer-border-color);
   }
 
   &.ct-table--striped {
     tbody {
       tr:nth-child(odd) {
-        background: var(--ct-table-light-row-odd-background-color);
+        background: var(#{$var-prefix}-row-odd-background-color);
 
         td {
-          color: var(--ct-table-light-row-odd-color);
+          color: var(#{$var-prefix}-row-odd-color);
         }
       }
 
       tr:nth-child(even) {
-        background: var(--ct-table-light-row-even-background-color);
+        background: var(#{$var-prefix}-row-even-background-color);
 
         td {
-          color: var(--ct-table-light-row-even-color);
+          color: var(#{$var-prefix}-row-even-color);
         }
       }
     }
   }
+}
+
+@mixin ct-table-light() {
+  @include ct-table-colors();
 }
 
 @mixin ct-table-dark() {
-  color: var(--ct-table-dark-color);
-  background-color: var(--ct-table-dark-background-color);
-
-  thead {
-    color: var(--ct-table-dark-header-color);
-
-    @include ct-breakpoint($ct-table-breakpoint) {
-      border-bottom: solid ct-particle(0.125) var(--ct-table-dark-header-border-color);
-    }
-
-    tr {
-      &:last-child {
-        border-bottom: solid ct-particle(0.25) var(--ct-table-dark-header-border-color);
-      }
-    }
-  }
-
-  tfoot {
-    color: var(--ct-table-dark-footer-color);
-
-    @include ct-breakpoint($ct-table-breakpoint) {
-      border-top: solid ct-particle(0.125) var(--ct-table-dark-footer-border-color);
-    }
-
-    tr {
-      &:last-child {
-        border-top: solid ct-particle(0.25) var(--ct-table-dark-footer-border-color);
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      border-bottom: solid ct-particle(0.125) var(--ct-table-dark-border-color);
-    }
-  }
-
-  caption {
-    color: var(--ct-table-dark-caption-color);
-  }
-
-  &.ct-table--data {
-    border-top: solid ct-particle(0.125) var(--ct-table-dark-footer-border-color);
-  }
-
-  &.ct-table--striped {
-    tbody {
-      tr:nth-child(odd) {
-        background: var(--ct-table-dark-row-odd-background-color);
-
-        td {
-          color: var(--ct-table-dark-row-odd-color);
-        }
-      }
-
-      tr:nth-child(even) {
-        background: var(--ct-table-dark-row-even-background-color);
-
-        td {
-          color: var(--ct-table-dark-row-even-color);
-        }
-      }
-    }
-  }
+  @include ct-table-colors();
 }
 
 @mixin ct-table-theme($theme) {
-  @if $theme == 'light' {
-    @include ct-table-light();
-  }
-  @else {
-    @include ct-table-dark();
-  }
+  @include ct-table-colors();
 }

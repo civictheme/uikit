@@ -19,9 +19,7 @@
     @include ct-typography('label-extra-small');
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__caption {
-      @include ct-component-property($root, $theme, caption, color);
-    }
+  #{$root}__caption {
+    @include ct-component-property($root, caption, color);
   }
 }

@@ -15,44 +15,39 @@
   }
 }
 
-@mixin ct-content-link-light() {
-  color: var(--ct-content-link-light-color);
+// 2.x: the colour properties resolve per .ct-theme-* scope, so one
+// theme-less mixin replaces the light/dark pair. The old names remain as
+// shims for unconverted callers and leave with the 1.x variables in the
+// cleanup.
+//
+// $var-prefix exists for callers that must pin the values to THEIR scope
+// rather than the anchor's own (see ct-content-colors): they declare
+// forwarding properties under another prefix and pass it here.
+@mixin ct-content-link-colors($var-prefix: '--ct-content-link') {
+  color: var(#{$var-prefix}-color);
 
   &:focus-visible {
     @include ct-outline();
   }
 
   &:hover {
-    background-color: var(--ct-content-link-light-hover-background-color);
-    color: var(--ct-content-link-light-hover-color);
+    background-color: var(#{$var-prefix}-hover-background-color);
+    color: var(#{$var-prefix}-hover-color);
   }
 
   &:visited {
-    color: var(--ct-content-link-light-visited-color);
+    color: var(#{$var-prefix}-visited-color);
 
     &:hover {
-      color: var(--ct-content-link-light-visited-hover-color);
+      color: var(#{$var-prefix}-visited-hover-color);
     }
   }
 }
 
+@mixin ct-content-link-light() {
+  @include ct-content-link-colors();
+}
+
 @mixin ct-content-link-dark() {
-  color: var(--ct-content-link-dark-color);
-
-  &:focus-visible {
-    @include ct-outline(true);
-  }
-
-  &:hover {
-    background-color: var(--ct-content-link-dark-hover-background-color);
-    color: var(--ct-content-link-dark-hover-color);
-  }
-
-  &:visited {
-    color: var(--ct-content-link-dark-visited-color);
-
-    &:hover {
-      color: var(--ct-content-link-dark-visited-hover-color);
-    }
-  }
+  @include ct-content-link-colors();
 }

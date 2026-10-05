@@ -72,6 +72,38 @@ scope blocks makes substitution re-happen on each theme-scope element, which
 is what makes the alias graph theme-aware. (This is a deliberate correction to
 the original design, which declared them once.)
 
+## Nested components inside themed content: forwarding properties
+
+One 1.x behaviour does not survive scope semantics on its own. Content
+containers (basic-content, paragraph) style *elements* inside themselves —
+`table`, `a:not(.ct-button):not(.ct-link)` — and in 1.x those descendant
+rules used themed variable names, so they painted even a nested component
+carrying its own `.ct-theme-*` class (e.g. a light-themed `.ct-table` inside
+dark content rendered dark: the content's rule simply outranked the table's).
+With scope resolution, the nested component's own theme class would win,
+changing rendering.
+
+The fix is a **forwarding property**: the content mixin re-declares the
+values it needs under a private prefix at the content root —
+
+```scss
+.ct-basic-content {
+  --ct-content-table-background-color: var(--ct-table-background-color);
+}
+.ct-basic-content table {
+  background-color: var(--ct-content-table-background-color);
+}
+```
+
+Substitution happens where a property is *declared*, so the forwarded value
+is fixed by the **content root's** scope, and a nested `.ct-theme-*` class on
+the table cannot re-resolve it — reproducing 1.x exactly. `ct-table-colors()`
+and `ct-content-link-colors()` take a `$var-prefix` argument for this.
+Use this pattern whenever a component's descendant rules may match another
+component's root (anything class-agnostic like `table` or `a:not(…)`); plain
+elements (headings, list items, blockquotes) never carry theme classes and
+need no forwarding.
+
 ## The non-uniform cases
 
 The token source encodes three deviations from the simple "same alias in both

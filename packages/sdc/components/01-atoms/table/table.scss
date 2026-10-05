@@ -7,8 +7,8 @@
 
   @include ct-table();
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-table-theme($theme);
+  & {
+    @include ct-table-colors();
   }
 
   &--wrapper {

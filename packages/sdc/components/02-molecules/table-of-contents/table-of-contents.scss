@@ -79,42 +79,40 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__title {
-      @include ct-component-property($root, $theme, title, color);
+  #{$root}__title {
+    @include ct-component-property($root, title, color);
+  }
+
+  #{$root}__link {
+    @include ct-component-property($root, link, color);
+    @include ct-component-property($root, link, background-color);
+
+    &::before {
+      @include ct-component-property($root, link, stripe, background-color);
     }
 
-    #{$root}__link {
-      @include ct-component-property($root, $theme, link, color);
-      @include ct-component-property($root, $theme, link, background-color);
+    &:hover,
+    &:focus-visible,
+    &:active {
+      @include ct-component-property($root, link, hover, background-color);
+      @include ct-component-property($root, link, hover, color);
 
       &::before {
-        @include ct-component-property($root, $theme, link, stripe, background-color);
+        @include ct-component-property($root, link, hover, stripe, background-color);
       }
+    }
 
-      &:hover,
-      &:focus-visible,
-      &:active {
-        @include ct-component-property($root, $theme, link, hover, background-color);
-        @include ct-component-property($root, $theme, link, hover, color);
+    &:active {
+      @include ct-component-property($root, link, hover, border-color);
 
-        &::before {
-          @include ct-component-property($root, $theme, link, hover, stripe, background-color);
-        }
-      }
+      border-width: ct-particle(0.125);
+      border-left-width: 0;
+      padding-top: ct-spacing(1 - 0.125);
+      padding-bottom: ct-spacing(1 - 0.125);
+    }
 
-      &:active {
-        @include ct-component-property($root, $theme, link, hover, border-color);
-
-        border-width: ct-particle(0.125);
-        border-left-width: 0;
-        padding-top: ct-spacing(1 - 0.125);
-        padding-bottom: ct-spacing(1 - 0.125);
-      }
-
-      &:focus-visible {
-        @include ct-outline-theme($theme);
-      }
+    &:focus-visible {
+      @include ct-outline();
     }
   }
 }

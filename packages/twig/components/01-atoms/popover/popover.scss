@@ -30,10 +30,8 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__content {
-      @include ct-component-property($root, $theme, content, background-color);
-    }
+  #{$root}__content {
+    @include ct-component-property($root, content, background-color);
   }
 }
 

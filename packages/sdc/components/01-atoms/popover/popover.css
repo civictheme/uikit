@@ -24,11 +24,8 @@
     padding: 1.5rem;
   }
 }
-.ct-popover.ct-theme-light .ct-popover__content {
-  background-color: var(--ct-popover-light-content-background-color);
-}
-.ct-popover.ct-theme-dark .ct-popover__content {
-  background-color: var(--ct-popover-dark-content-background-color);
+.ct-popover .ct-popover__content {
+  background-color: var(--ct-popover-content-background-color);
 }
 
 .no-js .ct-popover__content {

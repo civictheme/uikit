@@ -25,7 +25,7 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-content-theme($theme);
+  & {
+    @include ct-content-colors();
   }
 }

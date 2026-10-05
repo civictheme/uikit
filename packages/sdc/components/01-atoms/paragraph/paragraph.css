@@ -414,221 +414,129 @@
   font-weight: var(--ct-typography-text-small-font-weight);
   letter-spacing: var(--ct-typography-text-small-letter-spacing);
 }
-.ct-paragraph.ct-theme-light {
-  color: var(--ct-basic-content-light-base-color);
+.ct-paragraph {
+  color: var(--ct-basic-content-base-color);
+  --ct-content-table-color: var(--ct-table-color);
+  --ct-content-table-background-color: var(--ct-table-background-color);
+  --ct-content-table-header-color: var(--ct-table-header-color);
+  --ct-content-table-header-border-color: var(--ct-table-header-border-color);
+  --ct-content-table-footer-color: var(--ct-table-footer-color);
+  --ct-content-table-footer-border-color: var(--ct-table-footer-border-color);
+  --ct-content-table-border-color: var(--ct-table-border-color);
+  --ct-content-table-caption-color: var(--ct-table-caption-color);
+  --ct-content-table-row-odd-background-color: var(--ct-table-row-odd-background-color);
+  --ct-content-table-row-odd-color: var(--ct-table-row-odd-color);
+  --ct-content-table-row-even-background-color: var(--ct-table-row-even-background-color);
+  --ct-content-table-row-even-color: var(--ct-table-row-even-color);
+  --ct-content-a-color: var(--ct-content-link-color);
+  --ct-content-a-hover-background-color: var(--ct-content-link-hover-background-color);
+  --ct-content-a-hover-color: var(--ct-content-link-hover-color);
+  --ct-content-a-visited-color: var(--ct-content-link-visited-color);
+  --ct-content-a-visited-hover-color: var(--ct-content-link-visited-hover-color);
 }
-.ct-paragraph.ct-theme-light h1 {
-  color: var(--ct-basic-content-light-heading-1-color);
+.ct-paragraph h1 {
+  color: var(--ct-basic-content-heading-1-color);
 }
-.ct-paragraph.ct-theme-light h2 {
-  color: var(--ct-basic-content-light-heading-2-color);
+.ct-paragraph h2 {
+  color: var(--ct-basic-content-heading-2-color);
 }
-.ct-paragraph.ct-theme-light h3 {
-  color: var(--ct-basic-content-light-heading-3-color);
+.ct-paragraph h3 {
+  color: var(--ct-basic-content-heading-3-color);
 }
-.ct-paragraph.ct-theme-light h4 {
-  color: var(--ct-basic-content-light-heading-4-color);
+.ct-paragraph h4 {
+  color: var(--ct-basic-content-heading-4-color);
 }
-.ct-paragraph.ct-theme-light h5 {
-  color: var(--ct-basic-content-light-heading-5-color);
+.ct-paragraph h5 {
+  color: var(--ct-basic-content-heading-5-color);
 }
-.ct-paragraph.ct-theme-light h6 {
-  color: var(--ct-basic-content-light-heading-6-color);
+.ct-paragraph h6 {
+  color: var(--ct-basic-content-heading-6-color);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link) {
-  color: var(--ct-content-link-light-color);
+.ct-paragraph a:not(.ct-button):not(.ct-link) {
+  color: var(--ct-content-a-color);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):focus-visible {
+.ct-paragraph a:not(.ct-button):not(.ct-link):focus-visible {
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
   outline-color: var(--ct-outline-color);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):hover {
-  background-color: var(--ct-content-link-light-hover-background-color);
-  color: var(--ct-content-link-light-hover-color);
+.ct-paragraph a:not(.ct-button):not(.ct-link):hover {
+  background-color: var(--ct-content-a-hover-background-color);
+  color: var(--ct-content-a-hover-color);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited {
-  color: var(--ct-content-link-light-visited-color);
+.ct-paragraph a:not(.ct-button):not(.ct-link):visited {
+  color: var(--ct-content-a-visited-color);
 }
-.ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):visited:hover {
-  color: var(--ct-content-link-light-visited-hover-color);
+.ct-paragraph a:not(.ct-button):not(.ct-link):visited:hover {
+  color: var(--ct-content-a-visited-hover-color);
 }
-.ct-paragraph.ct-theme-light blockquote {
-  color: var(--ct-basic-content-light-blockquote-color);
-  background-color: var(--ct-basic-content-light-blockquote-background-color);
+.ct-paragraph blockquote {
+  color: var(--ct-basic-content-blockquote-color);
+  background-color: var(--ct-basic-content-blockquote-background-color);
 }
-.ct-paragraph.ct-theme-light blockquote::before {
-  background-color: var(--ct-basic-content-light-blockquote-stripe-background-color);
+.ct-paragraph blockquote::before {
+  background-color: var(--ct-basic-content-blockquote-stripe-background-color);
 }
-.ct-paragraph.ct-theme-light blockquote cite {
-  color: var(--ct-basic-content-light-blockquote-color);
+.ct-paragraph blockquote cite {
+  color: var(--ct-basic-content-blockquote-color);
 }
-.ct-paragraph.ct-theme-light ul:not(.ct-item-list) > li {
-  color: var(--ct-basic-content-light-ul-li-color);
+.ct-paragraph ul:not(.ct-item-list) > li {
+  color: var(--ct-basic-content-ul-li-color);
 }
-.ct-paragraph.ct-theme-light ul:not(.ct-item-list) > li::before {
-  background-color: var(--ct-basic-content-light-ul-li-marker-color);
+.ct-paragraph ul:not(.ct-item-list) > li::before {
+  background-color: var(--ct-basic-content-ul-li-marker-color);
 }
-.ct-paragraph.ct-theme-light ol:not(.ct-item-list) > li {
-  color: var(--ct-basic-content-light-ol-li-color);
+.ct-paragraph ol:not(.ct-item-list) > li {
+  color: var(--ct-basic-content-ol-li-color);
 }
-.ct-paragraph.ct-theme-light ol:not(.ct-item-list) > li::before {
-  color: var(--ct-basic-content-light-ol-li-marker-color);
+.ct-paragraph ol:not(.ct-item-list) > li::before {
+  color: var(--ct-basic-content-ol-li-marker-color);
 }
-.ct-paragraph.ct-theme-light table {
-  color: var(--ct-table-light-color);
-  background-color: var(--ct-table-light-background-color);
+.ct-paragraph table {
+  color: var(--ct-content-table-color);
+  background-color: var(--ct-content-table-background-color);
 }
-.ct-paragraph.ct-theme-light table thead {
-  color: var(--ct-table-light-header-color);
-}
-@media (min-width: 768px) {
-  .ct-paragraph.ct-theme-light table thead {
-    border-bottom: solid 0.0625rem var(--ct-table-light-header-border-color);
-  }
-}
-.ct-paragraph.ct-theme-light table thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-table-light-header-border-color);
-}
-.ct-paragraph.ct-theme-light table tfoot {
-  color: var(--ct-table-light-footer-color);
+.ct-paragraph table thead {
+  color: var(--ct-content-table-header-color);
 }
 @media (min-width: 768px) {
-  .ct-paragraph.ct-theme-light table tfoot {
-    border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
+  .ct-paragraph table thead {
+    border-bottom: solid 0.0625rem var(--ct-content-table-header-border-color);
   }
 }
-.ct-paragraph.ct-theme-light table tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-table-light-footer-border-color);
+.ct-paragraph table thead tr:last-child {
+  border-bottom: solid 0.125rem var(--ct-content-table-header-border-color);
 }
-.ct-paragraph.ct-theme-light table tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-table-light-border-color);
-}
-.ct-paragraph.ct-theme-light table caption {
-  color: var(--ct-table-light-caption-color);
-}
-.ct-paragraph.ct-theme-light table.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
-}
-.ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-table-light-row-odd-background-color);
-}
-.ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-table-light-row-odd-color);
-}
-.ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-table-light-row-even-background-color);
-}
-.ct-paragraph.ct-theme-light table.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-table-light-row-even-color);
-}
-.ct-paragraph.ct-theme-dark {
-  color: var(--ct-basic-content-dark-base-color);
-}
-.ct-paragraph.ct-theme-dark h1 {
-  color: var(--ct-basic-content-dark-heading-1-color);
-}
-.ct-paragraph.ct-theme-dark h2 {
-  color: var(--ct-basic-content-dark-heading-2-color);
-}
-.ct-paragraph.ct-theme-dark h3 {
-  color: var(--ct-basic-content-dark-heading-3-color);
-}
-.ct-paragraph.ct-theme-dark h4 {
-  color: var(--ct-basic-content-dark-heading-4-color);
-}
-.ct-paragraph.ct-theme-dark h5 {
-  color: var(--ct-basic-content-dark-heading-5-color);
-}
-.ct-paragraph.ct-theme-dark h6 {
-  color: var(--ct-basic-content-dark-heading-6-color);
-}
-.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link) {
-  color: var(--ct-content-link-dark-color);
-}
-.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):focus-visible {
-  outline-offset: var(--ct-outline-offset);
-  outline-width: var(--ct-outline-width);
-  outline-style: solid;
-  outline-color: var(--ct-outline-color);
-}
-.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):hover {
-  background-color: var(--ct-content-link-dark-hover-background-color);
-  color: var(--ct-content-link-dark-hover-color);
-}
-.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited {
-  color: var(--ct-content-link-dark-visited-color);
-}
-.ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):visited:hover {
-  color: var(--ct-content-link-dark-visited-hover-color);
-}
-.ct-paragraph.ct-theme-dark blockquote {
-  color: var(--ct-basic-content-dark-blockquote-color);
-  background-color: var(--ct-basic-content-dark-blockquote-background-color);
-}
-.ct-paragraph.ct-theme-dark blockquote::before {
-  background-color: var(--ct-basic-content-dark-blockquote-stripe-background-color);
-}
-.ct-paragraph.ct-theme-dark blockquote cite {
-  color: var(--ct-basic-content-dark-blockquote-color);
-}
-.ct-paragraph.ct-theme-dark ul:not(.ct-item-list) > li {
-  color: var(--ct-basic-content-dark-ul-li-color);
-}
-.ct-paragraph.ct-theme-dark ul:not(.ct-item-list) > li::before {
-  background-color: var(--ct-basic-content-dark-ul-li-marker-color);
-}
-.ct-paragraph.ct-theme-dark ol:not(.ct-item-list) > li {
-  color: var(--ct-basic-content-dark-ol-li-color);
-}
-.ct-paragraph.ct-theme-dark ol:not(.ct-item-list) > li::before {
-  color: var(--ct-basic-content-dark-ol-li-marker-color);
-}
-.ct-paragraph.ct-theme-dark table {
-  color: var(--ct-table-dark-color);
-  background-color: var(--ct-table-dark-background-color);
-}
-.ct-paragraph.ct-theme-dark table thead {
-  color: var(--ct-table-dark-header-color);
+.ct-paragraph table tfoot {
+  color: var(--ct-content-table-footer-color);
 }
 @media (min-width: 768px) {
-  .ct-paragraph.ct-theme-dark table thead {
-    border-bottom: solid 0.0625rem var(--ct-table-dark-header-border-color);
+  .ct-paragraph table tfoot {
+    border-top: solid 0.0625rem var(--ct-content-table-footer-border-color);
   }
 }
-.ct-paragraph.ct-theme-dark table thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-table-dark-header-border-color);
+.ct-paragraph table tfoot tr:last-child {
+  border-top: solid 0.125rem var(--ct-content-table-footer-border-color);
 }
-.ct-paragraph.ct-theme-dark table tfoot {
-  color: var(--ct-table-dark-footer-color);
+.ct-paragraph table tbody tr {
+  border-bottom: solid 0.0625rem var(--ct-content-table-border-color);
 }
-@media (min-width: 768px) {
-  .ct-paragraph.ct-theme-dark table tfoot {
-    border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
-  }
+.ct-paragraph table caption {
+  color: var(--ct-content-table-caption-color);
 }
-.ct-paragraph.ct-theme-dark table tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-table-dark-footer-border-color);
+.ct-paragraph table.ct-table--data {
+  border-top: solid 0.0625rem var(--ct-content-table-footer-border-color);
 }
-.ct-paragraph.ct-theme-dark table tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-table-dark-border-color);
+.ct-paragraph table.ct-table--striped tbody tr:nth-child(odd) {
+  background: var(--ct-content-table-row-odd-background-color);
 }
-.ct-paragraph.ct-theme-dark table caption {
-  color: var(--ct-table-dark-caption-color);
+.ct-paragraph table.ct-table--striped tbody tr:nth-child(odd) td {
+  color: var(--ct-content-table-row-odd-color);
 }
-.ct-paragraph.ct-theme-dark table.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
+.ct-paragraph table.ct-table--striped tbody tr:nth-child(even) {
+  background: var(--ct-content-table-row-even-background-color);
 }
-.ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-table-dark-row-odd-background-color);
-}
-.ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-table-dark-row-odd-color);
-}
-.ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-table-dark-row-even-background-color);
-}
-.ct-paragraph.ct-theme-dark table.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-table-dark-row-even-color);
+.ct-paragraph table.ct-table--striped tbody tr:nth-child(even) td {
+  color: var(--ct-content-table-row-even-color);
 }

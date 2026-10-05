@@ -113,99 +113,52 @@
     padding: 0.75rem 0.5rem;
   }
 }
-.ct-table.ct-theme-light {
-  color: var(--ct-table-light-color);
-  background-color: var(--ct-table-light-background-color);
+.ct-table {
+  color: var(--ct-table-color);
+  background-color: var(--ct-table-background-color);
 }
-.ct-table.ct-theme-light thead {
-  color: var(--ct-table-light-header-color);
-}
-@media (min-width: 768px) {
-  .ct-table.ct-theme-light thead {
-    border-bottom: solid 0.0625rem var(--ct-table-light-header-border-color);
-  }
-}
-.ct-table.ct-theme-light thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-table-light-header-border-color);
-}
-.ct-table.ct-theme-light tfoot {
-  color: var(--ct-table-light-footer-color);
+.ct-table thead {
+  color: var(--ct-table-header-color);
 }
 @media (min-width: 768px) {
-  .ct-table.ct-theme-light tfoot {
-    border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
+  .ct-table thead {
+    border-bottom: solid 0.0625rem var(--ct-table-header-border-color);
   }
 }
-.ct-table.ct-theme-light tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-table-light-footer-border-color);
+.ct-table thead tr:last-child {
+  border-bottom: solid 0.125rem var(--ct-table-header-border-color);
 }
-.ct-table.ct-theme-light tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-table-light-border-color);
-}
-.ct-table.ct-theme-light caption {
-  color: var(--ct-table-light-caption-color);
-}
-.ct-table.ct-theme-light.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-table-light-footer-border-color);
-}
-.ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-table-light-row-odd-background-color);
-}
-.ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-table-light-row-odd-color);
-}
-.ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-table-light-row-even-background-color);
-}
-.ct-table.ct-theme-light.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-table-light-row-even-color);
-}
-.ct-table.ct-theme-dark {
-  color: var(--ct-table-dark-color);
-  background-color: var(--ct-table-dark-background-color);
-}
-.ct-table.ct-theme-dark thead {
-  color: var(--ct-table-dark-header-color);
+.ct-table tfoot {
+  color: var(--ct-table-footer-color);
 }
 @media (min-width: 768px) {
-  .ct-table.ct-theme-dark thead {
-    border-bottom: solid 0.0625rem var(--ct-table-dark-header-border-color);
+  .ct-table tfoot {
+    border-top: solid 0.0625rem var(--ct-table-footer-border-color);
   }
 }
-.ct-table.ct-theme-dark thead tr:last-child {
-  border-bottom: solid 0.125rem var(--ct-table-dark-header-border-color);
+.ct-table tfoot tr:last-child {
+  border-top: solid 0.125rem var(--ct-table-footer-border-color);
 }
-.ct-table.ct-theme-dark tfoot {
-  color: var(--ct-table-dark-footer-color);
+.ct-table tbody tr {
+  border-bottom: solid 0.0625rem var(--ct-table-border-color);
 }
-@media (min-width: 768px) {
-  .ct-table.ct-theme-dark tfoot {
-    border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
-  }
+.ct-table caption {
+  color: var(--ct-table-caption-color);
 }
-.ct-table.ct-theme-dark tfoot tr:last-child {
-  border-top: solid 0.125rem var(--ct-table-dark-footer-border-color);
+.ct-table.ct-table--data {
+  border-top: solid 0.0625rem var(--ct-table-footer-border-color);
 }
-.ct-table.ct-theme-dark tbody tr {
-  border-bottom: solid 0.0625rem var(--ct-table-dark-border-color);
+.ct-table.ct-table--striped tbody tr:nth-child(odd) {
+  background: var(--ct-table-row-odd-background-color);
 }
-.ct-table.ct-theme-dark caption {
-  color: var(--ct-table-dark-caption-color);
+.ct-table.ct-table--striped tbody tr:nth-child(odd) td {
+  color: var(--ct-table-row-odd-color);
 }
-.ct-table.ct-theme-dark.ct-table--data {
-  border-top: solid 0.0625rem var(--ct-table-dark-footer-border-color);
+.ct-table.ct-table--striped tbody tr:nth-child(even) {
+  background: var(--ct-table-row-even-background-color);
 }
-.ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(odd) {
-  background: var(--ct-table-dark-row-odd-background-color);
-}
-.ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(odd) td {
-  color: var(--ct-table-dark-row-odd-color);
-}
-.ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(even) {
-  background: var(--ct-table-dark-row-even-background-color);
-}
-.ct-table.ct-theme-dark.ct-table--striped tbody tr:nth-child(even) td {
-  color: var(--ct-table-dark-row-even-color);
+.ct-table.ct-table--striped tbody tr:nth-child(even) td {
+  color: var(--ct-table-row-even-color);
 }
 .ct-table--wrapper {
   overflow: auto;

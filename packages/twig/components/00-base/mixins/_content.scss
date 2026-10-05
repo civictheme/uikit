@@ -221,149 +221,114 @@
   }
 }
 
-@mixin ct-content-light {
-  color: var(--ct-basic-content-light-base-color);
+// 2.x: the colour properties resolve per .ct-theme-* scope, so one
+// theme-less mixin replaces the light/dark pair. The old names remain as
+// shims for unconverted callers and leave with the 1.x variables in the
+// cleanup.
+@mixin ct-content-colors {
+  color: var(--ct-basic-content-base-color);
+
+  // Forwarding properties for embedded tables: 1.x themed every table in
+  // content by the CONTENT's theme (its descendant rules with themed var
+  // names beat a nested table's own .ct-theme-* class). These substitute at
+  // the content root, so a nested theme class on a .ct-table cannot
+  // re-resolve them - preserving the 1.x rendering exactly.
+  --ct-content-table-color: var(--ct-table-color);
+  --ct-content-table-background-color: var(--ct-table-background-color);
+  --ct-content-table-header-color: var(--ct-table-header-color);
+  --ct-content-table-header-border-color: var(--ct-table-header-border-color);
+  --ct-content-table-footer-color: var(--ct-table-footer-color);
+  --ct-content-table-footer-border-color: var(--ct-table-footer-border-color);
+  --ct-content-table-border-color: var(--ct-table-border-color);
+  --ct-content-table-caption-color: var(--ct-table-caption-color);
+  --ct-content-table-row-odd-background-color: var(--ct-table-row-odd-background-color);
+  --ct-content-table-row-odd-color: var(--ct-table-row-odd-color);
+  --ct-content-table-row-even-background-color: var(--ct-table-row-even-background-color);
+  --ct-content-table-row-even-color: var(--ct-table-row-even-color);
+
+  // Same forwarding for content anchors: `a:not(.ct-button):not(.ct-link)`
+  // also matches .ct-content-link components, whose own .ct-theme-* class
+  // must not re-resolve the content's link colours (1.x behaviour).
+  --ct-content-a-color: var(--ct-content-link-color);
+  --ct-content-a-hover-background-color: var(--ct-content-link-hover-background-color);
+  --ct-content-a-hover-color: var(--ct-content-link-hover-color);
+  --ct-content-a-visited-color: var(--ct-content-link-visited-color);
+  --ct-content-a-visited-hover-color: var(--ct-content-link-visited-hover-color);
 
   h1 {
-    color: var(--ct-basic-content-light-heading-1-color);
+    color: var(--ct-basic-content-heading-1-color);
   }
 
   h2 {
-    color: var(--ct-basic-content-light-heading-2-color);
+    color: var(--ct-basic-content-heading-2-color);
   }
 
   h3 {
-    color: var(--ct-basic-content-light-heading-3-color);
+    color: var(--ct-basic-content-heading-3-color);
   }
 
   h4 {
-    color: var(--ct-basic-content-light-heading-4-color);
+    color: var(--ct-basic-content-heading-4-color);
   }
 
   h5 {
-    color: var(--ct-basic-content-light-heading-5-color);
+    color: var(--ct-basic-content-heading-5-color);
   }
 
   h6 {
-    color: var(--ct-basic-content-light-heading-6-color);
+    color: var(--ct-basic-content-heading-6-color);
   }
 
   a:not(.ct-button):not(.ct-link) {
-    @include ct-content-link-light();
+    @include ct-content-link-colors('--ct-content-a');
   }
 
   blockquote {
-    color: var(--ct-basic-content-light-blockquote-color);
-    background-color: var(--ct-basic-content-light-blockquote-background-color);
+    color: var(--ct-basic-content-blockquote-color);
+    background-color: var(--ct-basic-content-blockquote-background-color);
 
     &::before {
-      background-color: var(--ct-basic-content-light-blockquote-stripe-background-color);
+      background-color: var(--ct-basic-content-blockquote-stripe-background-color);
     }
 
     cite {
-      color: var(--ct-basic-content-light-blockquote-color);
+      color: var(--ct-basic-content-blockquote-color);
     }
   }
 
   ul:not(.ct-item-list) {
     > li {
-      color: var(--ct-basic-content-light-ul-li-color);
+      color: var(--ct-basic-content-ul-li-color);
 
       &::before {
-        background-color: var(--ct-basic-content-light-ul-li-marker-color);
+        background-color: var(--ct-basic-content-ul-li-marker-color);
       }
     }
   }
 
   ol:not(.ct-item-list) {
     > li {
-      color: var(--ct-basic-content-light-ol-li-color);
+      color: var(--ct-basic-content-ol-li-color);
 
       &::before {
-        color: var(--ct-basic-content-light-ol-li-marker-color);
+        color: var(--ct-basic-content-ol-li-marker-color);
       }
     }
   }
 
   table {
-    @include ct-table-light();
+    @include ct-table-colors('--ct-content-table');
   }
+}
+
+@mixin ct-content-light {
+  @include ct-content-colors();
 }
 
 @mixin ct-content-dark {
-  color: var(--ct-basic-content-dark-base-color);
-
-  h1 {
-    color: var(--ct-basic-content-dark-heading-1-color);
-  }
-
-  h2 {
-    color: var(--ct-basic-content-dark-heading-2-color);
-  }
-
-  h3 {
-    color: var(--ct-basic-content-dark-heading-3-color);
-  }
-
-  h4 {
-    color: var(--ct-basic-content-dark-heading-4-color);
-  }
-
-  h5 {
-    color: var(--ct-basic-content-dark-heading-5-color);
-  }
-
-  h6 {
-    color: var(--ct-basic-content-dark-heading-6-color);
-  }
-
-  a:not(.ct-button):not(.ct-link) {
-    @include ct-content-link-dark();
-  }
-
-  blockquote {
-    color: var(--ct-basic-content-dark-blockquote-color);
-    background-color: var(--ct-basic-content-dark-blockquote-background-color);
-
-    &::before {
-      background-color: var(--ct-basic-content-dark-blockquote-stripe-background-color);
-    }
-
-    cite {
-      color: var(--ct-basic-content-dark-blockquote-color);
-    }
-  }
-
-  ul:not(.ct-item-list) {
-    > li {
-      color: var(--ct-basic-content-dark-ul-li-color);
-
-      &::before {
-        background-color: var(--ct-basic-content-dark-ul-li-marker-color);
-      }
-    }
-  }
-
-  ol:not(.ct-item-list) {
-    > li {
-      color: var(--ct-basic-content-dark-ol-li-color);
-
-      &::before {
-        color: var(--ct-basic-content-dark-ol-li-marker-color);
-      }
-    }
-  }
-
-  table {
-    @include ct-table-dark();
-  }
+  @include ct-content-colors();
 }
 
 @mixin ct-content-theme($theme) {
-  @if $theme == 'light' {
-    @include ct-content-light();
-  }
-  @else {
-    @include ct-content-dark();
-  }
+  @include ct-content-colors();
 }
