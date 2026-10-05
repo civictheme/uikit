@@ -61,121 +61,62 @@
   opacity: var(--ct-checkbox-disabled-opacity);
   pointer-events: none;
 }
-.ct-checkbox.ct-theme-light:focus-visible {
-  outline-color: var(--ct-checkbox-light-outline-color);
+.ct-checkbox:focus-visible {
+  outline-color: var(--ct-checkbox-outline-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid) {
-  border-color: var(--ct-checkbox-light-border-color);
-  background-color: var(--ct-checkbox-light-background-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid) {
+  border-color: var(--ct-checkbox-border-color);
+  background-color: var(--ct-checkbox-background-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):hover {
-  border-color: var(--ct-checkbox-light-hover-border-color);
-  background-color: var(--ct-checkbox-light-hover-background-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):hover {
+  border-color: var(--ct-checkbox-hover-border-color);
+  background-color: var(--ct-checkbox-hover-background-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):hover + label {
-  color: var(--ct-checkbox-light-hover-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):hover + label {
+  color: var(--ct-checkbox-hover-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid) + label {
-  color: var(--ct-checkbox-light-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid) + label {
+  color: var(--ct-checkbox-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid) + label:hover {
-  color: var(--ct-checkbox-light-hover-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid) + label:hover {
+  color: var(--ct-checkbox-hover-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked {
-  border-color: var(--ct-checkbox-light-checked-border-color);
-  background-color: var(--ct-checkbox-light-checked-background-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked {
+  border-color: var(--ct-checkbox-checked-border-color);
+  background-color: var(--ct-checkbox-checked-background-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked:hover {
-  border-color: var(--ct-checkbox-light-checked-hover-border-color);
-  background-color: var(--ct-checkbox-light-checked-hover-background-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked:hover {
+  border-color: var(--ct-checkbox-checked-hover-border-color);
+  background-color: var(--ct-checkbox-checked-hover-background-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked:hover::before {
-  background-color: var(--ct-checkbox-light-checked-hover-border-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked:hover::before {
+  background-color: var(--ct-checkbox-checked-hover-border-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked:hover + label {
-  color: var(--ct-checkbox-light-checked-hover-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked:hover + label {
+  color: var(--ct-checkbox-checked-hover-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked::before {
-  background-color: var(--ct-checkbox-light-checked-border-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked::before {
+  background-color: var(--ct-checkbox-checked-border-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked + label {
-  color: var(--ct-checkbox-light-checked-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked + label {
+  color: var(--ct-checkbox-checked-color);
 }
-.ct-checkbox.ct-theme-light:not(.ct-checkbox--is-invalid):checked + label:hover {
-  color: var(--ct-checkbox-light-checked-hover-color);
+.ct-checkbox:not(.ct-checkbox--is-invalid):checked + label:hover {
+  color: var(--ct-checkbox-checked-hover-color);
 }
-.ct-checkbox.ct-theme-light.ct-checkbox--is-invalid {
-  border-color: var(--ct-checkbox-light-invalid-border-color);
-  background-color: var(--ct-checkbox-light-invalid-background-color);
+.ct-checkbox.ct-checkbox--is-invalid {
+  border-color: var(--ct-checkbox-invalid-border-color);
+  background-color: var(--ct-checkbox-invalid-background-color);
 }
-.ct-checkbox.ct-theme-light.ct-checkbox--is-invalid:hover + label {
-  color: var(--ct-checkbox-light-invalid-color);
+.ct-checkbox.ct-checkbox--is-invalid:hover + label {
+  color: var(--ct-checkbox-invalid-color);
 }
-.ct-checkbox.ct-theme-light.ct-checkbox--is-invalid + label {
-  color: var(--ct-checkbox-light-invalid-color);
+.ct-checkbox.ct-checkbox--is-invalid + label {
+  color: var(--ct-checkbox-invalid-color);
 }
-.ct-checkbox.ct-theme-light.ct-checkbox--is-invalid + label:hover {
-  color: var(--ct-checkbox-light-invalid-color);
+.ct-checkbox.ct-checkbox--is-invalid + label:hover {
+  color: var(--ct-checkbox-invalid-color);
 }
-.ct-checkbox.ct-theme-light.ct-checkbox--is-invalid:checked::before {
-  background-color: var(--ct-checkbox-light-invalid-border-color);
-}
-.ct-checkbox.ct-theme-dark:focus-visible {
-  outline-color: var(--ct-checkbox-dark-outline-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid) {
-  border-color: var(--ct-checkbox-dark-border-color);
-  background-color: var(--ct-checkbox-dark-background-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):hover {
-  border-color: var(--ct-checkbox-dark-hover-border-color);
-  background-color: var(--ct-checkbox-dark-hover-background-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):hover + label {
-  color: var(--ct-checkbox-dark-hover-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid) + label {
-  color: var(--ct-checkbox-dark-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid) + label:hover {
-  color: var(--ct-checkbox-dark-hover-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked {
-  border-color: var(--ct-checkbox-dark-checked-border-color);
-  background-color: var(--ct-checkbox-dark-checked-background-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked:hover {
-  border-color: var(--ct-checkbox-dark-checked-hover-border-color);
-  background-color: var(--ct-checkbox-dark-checked-hover-background-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked:hover::before {
-  background-color: var(--ct-checkbox-dark-checked-hover-border-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked:hover + label {
-  color: var(--ct-checkbox-dark-checked-hover-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked::before {
-  background-color: var(--ct-checkbox-dark-checked-border-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked + label {
-  color: var(--ct-checkbox-dark-checked-color);
-}
-.ct-checkbox.ct-theme-dark:not(.ct-checkbox--is-invalid):checked + label:hover {
-  color: var(--ct-checkbox-dark-checked-hover-color);
-}
-.ct-checkbox.ct-theme-dark.ct-checkbox--is-invalid {
-  border-color: var(--ct-checkbox-dark-invalid-border-color);
-  background-color: var(--ct-checkbox-dark-invalid-background-color);
-}
-.ct-checkbox.ct-theme-dark.ct-checkbox--is-invalid:hover + label {
-  color: var(--ct-checkbox-dark-invalid-color);
-}
-.ct-checkbox.ct-theme-dark.ct-checkbox--is-invalid + label {
-  color: var(--ct-checkbox-dark-invalid-color);
-}
-.ct-checkbox.ct-theme-dark.ct-checkbox--is-invalid + label:hover {
-  color: var(--ct-checkbox-dark-invalid-color);
-}
-.ct-checkbox.ct-theme-dark.ct-checkbox--is-invalid:checked::before {
-  background-color: var(--ct-checkbox-dark-invalid-border-color);
+.ct-checkbox.ct-checkbox--is-invalid:checked::before {
+  background-color: var(--ct-checkbox-invalid-border-color);
 }

@@ -24,11 +24,11 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & {
+    @include ct-component-property($root, color);
+  }
 
-    #{$root}__required {
-      @include ct-component-property($root, $theme, required, color);
-    }
+  #{$root}__required {
+    @include ct-component-property($root, required, color);
   }
 }

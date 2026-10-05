@@ -91,85 +91,83 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    &:focus-visible {
-      @include ct-component-property($root, $theme, outline-color);
-    }
+  &:focus-visible {
+    @include ct-component-property($root, outline-color);
+  }
 
-    &:not(#{$root}--is-invalid) {
-      @include ct-component-property($root, $theme, border-color);
-      @include ct-component-property($root, $theme, background-color);
+  &:not(#{$root}--is-invalid) {
+    @include ct-component-property($root, border-color);
+    @include ct-component-property($root, background-color);
 
-      &:hover {
-        @include ct-component-property($root, $theme, hover, border-color);
-        @include ct-component-property($root, $theme, hover, background-color);
-
-        & + label {
-          @include ct-component-property($root, $theme, hover, color);
-        }
-      }
+    &:hover {
+      @include ct-component-property($root, hover, border-color);
+      @include ct-component-property($root, hover, background-color);
 
       & + label {
-        @include ct-component-property($root, $theme, color);
-
-        &:hover {
-          @include ct-component-property($root, $theme, hover, color);
-        }
-      }
-
-      &:checked {
-        @include ct-component-property($root, $theme, checked, border-color);
-        @include ct-component-property($root, $theme, checked, background-color);
-
-        &:hover {
-          @include ct-component-property($root, $theme, checked, hover, border-color);
-          @include ct-component-property($root, $theme, checked, hover, background-color);
-
-          &::before {
-            background-color: ct-component-var($root, $theme, checked, hover, border-color);
-          }
-
-          & + label {
-            @include ct-component-property($root, $theme, checked, hover, color);
-          }
-        }
-
-        &::before {
-          background-color: ct-component-var($root, $theme, checked, border-color);
-        }
-
-        & + label {
-          @include ct-component-property($root, $theme, checked, color);
-
-          &:hover {
-            @include ct-component-property($root, $theme, checked, hover, color);
-          }
-        }
+        @include ct-component-property($root, hover, color);
       }
     }
 
-    &#{$root}--is-invalid {
-      @include ct-component-property($root, $theme, invalid, border-color);
-      @include ct-component-property($root, $theme, invalid, background-color);
+    & + label {
+      @include ct-component-property($root, color);
 
       &:hover {
-        & + label {
-          @include ct-component-property($root, $theme, invalid, color);
+        @include ct-component-property($root, hover, color);
+      }
+    }
+
+    &:checked {
+      @include ct-component-property($root, checked, border-color);
+      @include ct-component-property($root, checked, background-color);
+
+      &:hover {
+        @include ct-component-property($root, checked, hover, border-color);
+        @include ct-component-property($root, checked, hover, background-color);
+
+        &::before {
+          background-color: ct-component-var($root, checked, hover, border-color);
         }
+
+        & + label {
+          @include ct-component-property($root, checked, hover, color);
+        }
+      }
+
+      &::before {
+        background-color: ct-component-var($root, checked, border-color);
       }
 
       & + label {
-        @include ct-component-property($root, $theme, invalid, color);
+        @include ct-component-property($root, checked, color);
 
         &:hover {
-          @include ct-component-property($root, $theme, invalid, color);
+          @include ct-component-property($root, checked, hover, color);
         }
       }
+    }
+  }
 
-      &:checked {
-        &::before {
-          background-color: ct-component-var($root, $theme, invalid, border-color);
-        }
+  &#{$root}--is-invalid {
+    @include ct-component-property($root, invalid, border-color);
+    @include ct-component-property($root, invalid, background-color);
+
+    &:hover {
+      & + label {
+        @include ct-component-property($root, invalid, color);
+      }
+    }
+
+    & + label {
+      @include ct-component-property($root, invalid, color);
+
+      &:hover {
+        @include ct-component-property($root, invalid, color);
+      }
+    }
+
+    &:checked {
+      &::before {
+        background-color: ct-component-var($root, invalid, border-color);
       }
     }
   }

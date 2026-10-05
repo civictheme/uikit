@@ -65,48 +65,47 @@
     outline-offset: var(--ct-input-outline-offset);
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
+  &:focus-visible {
+    @include ct-component-property($root, outline-color);
+  }
+
+  // color-scheme is intrinsically theme-conditional (it also drives the
+  // native calendar widget) - a behaviour switch, not a colour token.
+  &.ct-theme-dark:not(#{$root}--is-invalid) {
+    color-scheme: dark;
+  }
+
+  &:not(#{$root}--is-invalid) {
+    @include ct-component-property($root, color);
+    @include ct-component-property($root, border-color);
+    @include ct-component-property($root, background-color);
+
+    &::placeholder {
+      @include ct-component-property($root, color);
+    }
+
+    &:hover {
+      @include ct-component-property($root, hover, color);
+      @include ct-component-property($root, hover, border-color);
+      @include ct-component-property($root, hover, background-color);
+      @include ct-form-control-border-inset(ct-component-var($root, hover, border-color), $_hover-border-width - $_border-width);
+    }
+
     &:focus-visible {
-      @include ct-component-property($root, $theme, outline-color);
+      @include ct-component-property($root, focus, color);
+      @include ct-component-property($root, focus, border-color);
+      @include ct-component-property($root, focus, background-color);
     }
+  }
 
-    &:not(#{$root}--is-invalid) {
-      @include ct-component-property($root, $theme, color);
-      @include ct-component-property($root, $theme, border-color);
-      @include ct-component-property($root, $theme, background-color);
+  &#{$root}--is-invalid {
+    @include ct-component-property($root, invalid, color);
+    @include ct-component-property($root, invalid, border-color);
+    @include ct-component-property($root, invalid, background-color);
+    @include ct-form-control-border-inset(ct-component-var($root, invalid, border-color), $_hover-border-width - $_border-width);
 
-      @if $theme == 'dark' {
-        // Note that this will also affects the calendar color scheme.
-        color-scheme: dark;
-      }
-
-      &::placeholder {
-        @include ct-component-property($root, $theme, color);
-      }
-
-      &:hover {
-        @include ct-component-property($root, $theme, hover, color);
-        @include ct-component-property($root, $theme, hover, border-color);
-        @include ct-component-property($root, $theme, hover, background-color);
-        @include ct-form-control-border-inset(ct-component-var($root, $theme, hover, border-color), $_hover-border-width - $_border-width);
-      }
-
-      &:focus-visible {
-        @include ct-component-property($root, $theme, focus, color);
-        @include ct-component-property($root, $theme, focus, border-color);
-        @include ct-component-property($root, $theme, focus, background-color);
-      }
-    }
-
-    &#{$root}--is-invalid {
-      @include ct-component-property($root, $theme, invalid, color);
-      @include ct-component-property($root, $theme, invalid, border-color);
-      @include ct-component-property($root, $theme, invalid, background-color);
-      @include ct-form-control-border-inset(ct-component-var($root, $theme, invalid, border-color), $_hover-border-width - $_border-width);
-
-      &::placeholder {
-        @include ct-component-property($root, $theme, invalid, color);
-      }
+    &::placeholder {
+      @include ct-component-property($root, invalid, color);
     }
   }
 }

@@ -25,9 +25,6 @@
   border-left: solid var(--ct-fieldset-stripe-width);
   padding-left: calc(1.5rem - var(--ct-fieldset-stripe-width));
 }
-.ct-fieldset.ct-theme-light .ct-fieldset {
-  border-color: var(--ct-fieldset-light-stripe-border-color);
-}
-.ct-fieldset.ct-theme-dark .ct-fieldset {
-  border-color: var(--ct-fieldset-dark-stripe-border-color);
+.ct-fieldset .ct-fieldset {
+  border-color: var(--ct-fieldset-stripe-border-color);
 }

@@ -18,15 +18,9 @@
   font-weight: var(--ct-typography-text-large-font-weight);
   letter-spacing: var(--ct-typography-text-large-letter-spacing);
 }
-.ct-field-description.ct-theme-light {
-  color: var(--ct-field-description-light-color);
+.ct-field-description {
+  color: var(--ct-field-description-color);
 }
-.ct-field-description.ct-theme-light a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
-  color: inherit;
-}
-.ct-field-description.ct-theme-dark {
-  color: var(--ct-field-description-dark-color);
-}
-.ct-field-description.ct-theme-dark a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
+.ct-field-description a:not(.ct-link.ct-theme-light):not(.ct-link.ct-theme-dark) {
   color: inherit;
 }

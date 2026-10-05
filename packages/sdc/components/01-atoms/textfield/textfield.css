@@ -30,65 +30,34 @@
   outline-width: var(--ct-textfield-outline-width);
   outline-offset: var(--ct-textfield-outline-offset);
 }
-.ct-textfield.ct-theme-light:focus-visible {
-  outline-color: var(--ct-textfield-light-outline-color);
+.ct-textfield:focus-visible {
+  outline-color: var(--ct-textfield-outline-color);
 }
-.ct-textfield.ct-theme-light:not(.ct-textfield--is-invalid) {
-  color: var(--ct-textfield-light-color);
-  border-color: var(--ct-textfield-light-border-color);
-  background-color: var(--ct-textfield-light-background-color);
+.ct-textfield:not(.ct-textfield--is-invalid) {
+  color: var(--ct-textfield-color);
+  border-color: var(--ct-textfield-border-color);
+  background-color: var(--ct-textfield-background-color);
 }
-.ct-textfield.ct-theme-light:not(.ct-textfield--is-invalid)::placeholder {
-  color: var(--ct-textfield-light-color);
+.ct-textfield:not(.ct-textfield--is-invalid)::placeholder {
+  color: var(--ct-textfield-color);
 }
-.ct-textfield.ct-theme-light:not(.ct-textfield--is-invalid):hover {
-  color: var(--ct-textfield-light-hover-color);
-  border-color: var(--ct-textfield-light-hover-border-color);
-  background-color: var(--ct-textfield-light-hover-background-color);
-  box-shadow: inset 0 0 0 0.0625rem var(--ct-textfield-light-hover-border-color);
+.ct-textfield:not(.ct-textfield--is-invalid):hover {
+  color: var(--ct-textfield-hover-color);
+  border-color: var(--ct-textfield-hover-border-color);
+  background-color: var(--ct-textfield-hover-background-color);
+  box-shadow: inset 0 0 0 0.0625rem var(--ct-textfield-hover-border-color);
 }
-.ct-textfield.ct-theme-light:not(.ct-textfield--is-invalid):focus-visible {
-  color: var(--ct-textfield-light-focus-color);
-  border-color: var(--ct-textfield-light-focus-border-color);
-  background-color: var(--ct-textfield-light-focus-background-color);
+.ct-textfield:not(.ct-textfield--is-invalid):focus-visible {
+  color: var(--ct-textfield-focus-color);
+  border-color: var(--ct-textfield-focus-border-color);
+  background-color: var(--ct-textfield-focus-background-color);
 }
-.ct-textfield.ct-theme-light.ct-textfield--is-invalid {
-  color: var(--ct-textfield-light-invalid-color);
-  border-color: var(--ct-textfield-light-invalid-border-color);
-  background-color: var(--ct-textfield-light-invalid-background-color);
-  box-shadow: inset 0 0 0 0.0625rem var(--ct-textfield-light-invalid-border-color);
+.ct-textfield.ct-textfield--is-invalid {
+  color: var(--ct-textfield-invalid-color);
+  border-color: var(--ct-textfield-invalid-border-color);
+  background-color: var(--ct-textfield-invalid-background-color);
+  box-shadow: inset 0 0 0 0.0625rem var(--ct-textfield-invalid-border-color);
 }
-.ct-textfield.ct-theme-light.ct-textfield--is-invalid::placeholder {
-  color: var(--ct-textfield-light-invalid-color);
-}
-.ct-textfield.ct-theme-dark:focus-visible {
-  outline-color: var(--ct-textfield-dark-outline-color);
-}
-.ct-textfield.ct-theme-dark:not(.ct-textfield--is-invalid) {
-  color: var(--ct-textfield-dark-color);
-  border-color: var(--ct-textfield-dark-border-color);
-  background-color: var(--ct-textfield-dark-background-color);
-}
-.ct-textfield.ct-theme-dark:not(.ct-textfield--is-invalid)::placeholder {
-  color: var(--ct-textfield-dark-color);
-}
-.ct-textfield.ct-theme-dark:not(.ct-textfield--is-invalid):hover {
-  color: var(--ct-textfield-dark-hover-color);
-  border-color: var(--ct-textfield-dark-hover-border-color);
-  background-color: var(--ct-textfield-dark-hover-background-color);
-  box-shadow: inset 0 0 0 0.0625rem var(--ct-textfield-dark-hover-border-color);
-}
-.ct-textfield.ct-theme-dark:not(.ct-textfield--is-invalid):focus-visible {
-  color: var(--ct-textfield-dark-focus-color);
-  border-color: var(--ct-textfield-dark-focus-border-color);
-  background-color: var(--ct-textfield-dark-focus-background-color);
-}
-.ct-textfield.ct-theme-dark.ct-textfield--is-invalid {
-  color: var(--ct-textfield-dark-invalid-color);
-  border-color: var(--ct-textfield-dark-invalid-border-color);
-  background-color: var(--ct-textfield-dark-invalid-background-color);
-  box-shadow: inset 0 0 0 0.0625rem var(--ct-textfield-dark-invalid-border-color);
-}
-.ct-textfield.ct-theme-dark.ct-textfield--is-invalid::placeholder {
-  color: var(--ct-textfield-dark-invalid-color);
+.ct-textfield.ct-textfield--is-invalid::placeholder {
+  color: var(--ct-textfield-invalid-color);
 }
