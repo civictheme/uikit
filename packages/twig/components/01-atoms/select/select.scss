@@ -4,6 +4,20 @@
 
 @use 'sass:math';
 
+// The select icon is a theme-keyed image asset: two SVG data URIs that
+// differ only in fill (black 0.6 light, white 0.9 dark). A native <select>
+// cannot carry pseudo-elements, so a single masked-and-tinted asset is not
+// possible; the theme dimension lives in the scoped custom property instead
+// and the component reads one property, like its colour properties.
+:root,
+.ct-theme-light {
+  --ct-select-icon: #{$ct-select-light-icon};
+}
+
+.ct-theme-dark {
+  --ct-select-icon: #{$ct-select-dark-icon};
+}
+
 .ct-select {
   $root: &;
   $_vertical-padding: ct-spacing(2);
@@ -45,15 +59,8 @@
     outline-offset: var(--ct-select-outline-offset);
   }
 
-  // The select icons are theme-keyed image assets (two different SVGs, not
-  // colour values) - they stay per-theme until the data-URI -> mask-image
-  // conversion in the 2.x cleanup.
-  &.ct-theme-light {
-    background-image: var(--ct-select-light-icon);
-  }
-
-  &.ct-theme-dark {
-    background-image: var(--ct-select-dark-icon);
+  & {
+    background-image: var(--ct-select-icon);
   }
 
   &[multiple] {

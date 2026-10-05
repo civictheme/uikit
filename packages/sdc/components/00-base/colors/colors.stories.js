@@ -1,9 +1,10 @@
 import Component from './colors.stories.twig';
-import Constants from '../../../dist/constants.json';
+import lightTokens from '../../../../tokens/dist/resolved.light.json';
+import darkTokens from '../../../../tokens/dist/resolved.dark.json';
 
-const themes = {
-  light: 'Light',
-  dark: 'Dark',
+const themeTokens = {
+  light: lightTokens,
+  dark: darkTokens,
 };
 
 const sectionMap = {
@@ -45,71 +46,88 @@ const sectionMap = {
       'error',
       'success',
     ],
-    Custom: [],
   },
 };
 
-function getColorMap(name) {
-  const map = {};
-
-  map.default = Constants.SCSS_VARIABLES[`ct-${name}-default`] || {};
-  map.custom = Constants.SCSS_VARIABLES[`ct-${name}`];
-
-  // Normalise colors as they may not be provided.
-  if (!Object.prototype.hasOwnProperty.call(map.default, 'light') || !Object.prototype.hasOwnProperty.call(map.default, 'dark')) {
-    map.default = {
-      light: {},
-      dark: {},
-    };
-  }
-
-  if (!Object.prototype.hasOwnProperty.call(map.custom, 'light') || !Object.prototype.hasOwnProperty.call(map.custom, 'dark')) {
-    map.custom = {
-      light: {},
-      dark: {},
-    };
-  }
-
-  for (const theme in themes) {
-    map.custom[theme] = Object.keys(map.custom[theme]).filter((n) => Object.keys(map.default[theme]).indexOf(n) === -1)
-      .reduce((obj2, key) => {
-        if (key in map.custom[theme]) {
-          obj2[key] = map.custom[theme][key];
-        }
-        return obj2;
-      }, {});
-  }
-
-  return map;
+// The swatch border tone replicates dart-sass color.scale($lightness: -40%),
+// which the 1.x Sass-generated swatches used, so swatches render unchanged.
+function hexToRgb(hex) {
+  const value = hex.replace('#', '');
+  const full = value.length === 3 ? value.split('').map((c) => c + c).join('') : value;
+  return [0, 2, 4].map((i) => parseInt(full.slice(i, i + 2), 16));
 }
 
-const brandMap = getColorMap('colors-brands');
-const paletteMap = getColorMap('colors');
+function rgbToHsl([red, green, blue]) {
+  const r = red / 255;
+  const g = green / 255;
+  const b = blue / 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const delta = max - min;
+  let h = 0;
 
-const colorMap = {
-  'Brand colors': brandMap,
-  'Palette colors': paletteMap,
-};
+  if (delta !== 0) {
+    if (max === r) {
+      h = ((g - b) / delta) % 6;
+    } else if (max === g) {
+      h = (b - r) / delta + 2;
+    } else {
+      h = (r - g) / delta + 4;
+    }
+    h *= 60;
+    if (h < 0) {
+      h += 360;
+    }
+  }
+
+  const l = (max + min) / 2;
+  const s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+  return [h, s, l];
+}
+
+function hueToRgb(m1, m2, hue) {
+  let h = hue;
+  if (h < 0) h += 1;
+  if (h > 1) h -= 1;
+  if (h < 1 / 6) return m1 + (m2 - m1) * h * 6;
+  if (h < 1 / 2) return m2;
+  if (h < 2 / 3) return m1 + (m2 - m1) * (2 / 3 - h) * 6;
+  return m1;
+}
+
+function hslToRgb([hue, s, l]) {
+  const h = (((hue % 360) + 360) % 360) / 360;
+  const m2 = l <= 0.5 ? l * (s + 1) : l + s - l * s;
+  const m1 = l * 2 - m2;
+  return [
+    hueToRgb(m1, m2, h + 1 / 3) * 255,
+    hueToRgb(m1, m2, h) * 255,
+    hueToRgb(m1, m2, h - 1 / 3) * 255,
+  ].map((c) => Math.round(c));
+}
+
+function darken(hex, amount = 0.4) {
+  const [h, s, l] = rgbToHsl(hexToRgb(hex));
+  const rgb = hslToRgb([h, s, l * (1 - amount)]);
+  return `#${rgb.map((c) => c.toString(16).padStart(2, '0')).join('')}`;
+}
 
 const sections = {};
 
-for (const theme in themes) {
+for (const theme in themeTokens) {
+  sections[theme] = {};
   for (const sectionTitle in sectionMap) {
+    sections[theme][sectionTitle] = {};
+    const prefix = sectionTitle === 'Brand colors' ? 'color.brand.' : 'color.palette.';
     for (const sectionName in sectionMap[sectionTitle]) {
-      sections[theme] = sections[theme] || {};
-      sections[theme][sectionTitle] = sections[theme][sectionTitle] || {};
-
-      if (sectionName === 'Custom') {
-        if (Object.keys(colorMap[sectionTitle].custom[theme]).length > 0) {
-          sections[theme][sectionTitle][sectionName] = sections[theme][sectionTitle][sectionName] || {};
-          sections[theme][sectionTitle][sectionName] = colorMap[sectionTitle].custom[theme];
-        }
-      } else {
-        const colorNames = sectionMap[sectionTitle][sectionName];
-        for (let i = 0; i < colorNames.length; i++) {
-          sections[theme][sectionTitle][sectionName] = sections[theme][sectionTitle][sectionName] || {};
-          sections[theme][sectionTitle][sectionName][colorNames[i]] = colorMap[sectionTitle].default[theme][colorNames[i]];
-        }
+      sections[theme][sectionTitle][sectionName] = {};
+      for (const name of sectionMap[sectionTitle][sectionName]) {
+        const value = themeTokens[theme][`${prefix}${name}`];
+        sections[theme][sectionTitle][sectionName][name] = {
+          value,
+          border: darken(value),
+        };
       }
     }
   }

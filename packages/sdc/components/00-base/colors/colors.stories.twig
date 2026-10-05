@@ -7,7 +7,7 @@
 
 <div class="story-container story-container--columns story-container--columns--2">
   {% for theme, theme_section in sections %}
-    <div class="story-container__column story-container__column--{{ theme }}">
+    <div class="story-container__column story-container__column--{{ theme }} ct-theme-{{ theme }}">
       {% for section_title, section_colors in theme_section %}
 
         <div class="story-container__title">{{ section_title }}</div>
@@ -20,8 +20,8 @@
 
             <div class="story-container__content story-colors-wrapper">
               {% for color_name, color in colors %}
-                <div class="story-color-{{ theme }}--{{ color_name }}">
-                  <span class="story-color-element" title="{{ color_name }}"></span><span class="story-color-text" title="{{ color_name }}">{{ color_name|capitalize|replace({'-': ' '}) }}</span>
+                <div class="story-color" style="--story-color: {{ color.value }}; --story-color-border: {{ color.border }};">
+                  <span class="story-color-element" title="{{ color_name }}"></span><span class="story-color-text" data-hex="{{ color.value|upper }}" title="{{ color_name }}">{{ color_name|capitalize|replace({'-': ' '}) }}</span>
                 </div>
               {% endfor %}
             </div>

@@ -15,10 +15,8 @@
   }
 }
 
-// 2.x: the colour properties resolve per .ct-theme-* scope, so one
-// theme-less mixin replaces the light/dark pair. The old names remain as
-// shims for unconverted callers and leave with the 1.x variables in the
-// cleanup.
+// The colour properties resolve per .ct-theme-* scope, so one theme-less
+// mixin covers both themes.
 //
 // $var-prefix exists for callers that must pin the values to THEIR scope
 // rather than the anchor's own (see ct-content-colors): they declare
@@ -42,12 +40,4 @@
       color: var(#{$var-prefix}-visited-hover-color);
     }
   }
-}
-
-@mixin ct-content-link-light() {
-  @include ct-content-link-colors();
-}
-
-@mixin ct-content-link-dark() {
-  @include ct-content-link-colors();
 }

@@ -320,15 +320,3 @@
     @include ct-table-colors('--ct-content-table');
   }
 }
-
-@mixin ct-content-light {
-  @include ct-content-colors();
-}
-
-@mixin ct-content-dark {
-  @include ct-content-colors();
-}
-
-@mixin ct-content-theme($theme) {
-  @include ct-content-colors();
-}

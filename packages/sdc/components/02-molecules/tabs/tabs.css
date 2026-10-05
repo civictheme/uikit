@@ -36,17 +36,17 @@
   display: block;
 }
 .ct-tabs .ct-tabs__links {
-  border-bottom-color: var(--ct-tabs-links-stripe-border-color);
+  border-bottom-color: currentcolor;
 }
 .ct-tabs .ct-tabs__links .ct-link {
   background-color: var(--ct-tabs-links-background-color);
   border-color: var(--ct-tabs-links-border-color);
-  border-bottom-color: var(--ct-tabs-links-stripe-border-color);
+  border-bottom-color: currentcolor;
 }
 .ct-tabs .ct-tabs__links .ct-link.ct-tabs__tab--selected {
   background-color: var(--ct-tabs-links-active-background-color);
   border-color: var(--ct-tabs-links-active-border-color);
-  border-bottom-color: var(--ct-tabs-links-stripe-border-color);
+  border-bottom-color: currentcolor;
 }
 .ct-tabs .ct-tabs__panels {
   background-color: var(--ct-tabs-panel-background-color);

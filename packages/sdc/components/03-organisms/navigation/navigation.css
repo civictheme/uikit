@@ -237,7 +237,7 @@
 }
 .ct-navigation.ct-navigation--drawer .ct-navigation__items .ct-navigation__has-dropdown .ct-menu__sub-menu__wrapper--level-1 .ct-menu__item:is(.ct-menu__item--level-2, .ct-menu__item--level-3, .ct-menu__item--level-4, .ct-menu__item--level-5).ct-menu__item--active-trail > .ct-menu__item__link {
   background-color: var(--ct-navigation-drawer-menu-item-active-trail-background-color);
-  color: var(--ct-navigation-drawer-menu-item-active-trail-color);
+  color: inherit;
 }
 .ct-navigation.ct-navigation--dropdown .ct-navigation__items {
   display: none;
