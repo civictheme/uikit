@@ -200,7 +200,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-mobile-navigation.ct-theme-light .ct-mobile-navigation__open-subsection-trigger .ct-icon {
   color: var(--ct-mobile-navigation-light-subsection-trigger-color);
@@ -212,7 +212,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-mobile-navigation.ct-theme-light .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] .ct-icon {
   icon-color: var(--ct-mobile-navigation-light-subsection-heading-icon-color);
@@ -264,7 +264,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-dark);
+  outline-color: var(--ct-outline-color);
 }
 .ct-mobile-navigation.ct-theme-dark .ct-mobile-navigation__open-subsection-trigger .ct-icon {
   color: var(--ct-mobile-navigation-dark-subsection-trigger-color);
@@ -276,7 +276,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-dark);
+  outline-color: var(--ct-outline-color);
 }
 .ct-mobile-navigation.ct-theme-dark .ct-mobile-navigation__close-trigger [data-flyout-close-trigger] .ct-icon {
   icon-color: var(--ct-mobile-navigation-dark-subsection-heading-icon-color);
@@ -326,7 +326,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-mobile-navigation-trigger.ct-theme-dark {
   color: var(--ct-mobile-navigation-trigger-dark-color);
@@ -335,7 +335,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-dark);
+  outline-color: var(--ct-outline-color);
 }
 
 .ct-mobile-navigation-close {

@@ -102,7 +102,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-table-of-contents.ct-theme-dark .ct-table-of-contents__title {
   color: var(--ct-table-of-contents-dark-title-color);
@@ -132,5 +132,5 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-dark);
+  outline-color: var(--ct-outline-color);
 }

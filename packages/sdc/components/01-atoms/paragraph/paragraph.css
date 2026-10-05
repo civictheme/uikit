@@ -442,7 +442,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-paragraph.ct-theme-light a:not(.ct-button):not(.ct-link):hover {
   background-color: var(--ct-content-link-light-hover-background-color);
@@ -551,7 +551,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-dark);
+  outline-color: var(--ct-outline-color);
 }
 .ct-paragraph.ct-theme-dark a:not(.ct-button):not(.ct-link):hover {
   background-color: var(--ct-content-link-dark-hover-background-color);

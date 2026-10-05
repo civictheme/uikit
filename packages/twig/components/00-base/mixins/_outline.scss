@@ -5,26 +5,20 @@
 //
 // Set element outline.
 //
+// 2.x: the outline colour property resolves per .ct-theme-* scope, so the
+// mixin is theme-less (and value-neutral either way: interaction-focus is
+// identical in both themes). $is_dark is accepted and ignored for callers
+// not yet converted; both it and ct-outline-theme() are removed with the
+// 1.x variables in the 2.x cleanup.
 @mixin ct-outline($is_dark: false) {
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-
-  @if $is_dark {
-    outline-color: var(--ct-outline-dark);
-  }
-  @else {
-    outline-color: var(--ct-outline-light);
-  }
+  outline-color: var(--ct-outline-color);
 }
 
 @mixin ct-outline-theme($theme) {
-  @if $theme == 'light' {
-    @include ct-outline();
-  }
-  @else {
-    @include ct-outline(true);
-  }
+  @include ct-outline();
 }
 
 @mixin ct-outline-border() {

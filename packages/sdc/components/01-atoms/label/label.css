@@ -48,15 +48,9 @@
   font-weight: var(--ct-typography-label-extra-small-font-weight);
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
-.ct-label.ct-theme-light {
-  color: var(--ct-label-light-color);
+.ct-label {
+  color: var(--ct-label-color);
 }
-.ct-label.ct-theme-light .ct-label__required {
-  color: var(--ct-label-light-required-color);
-}
-.ct-label.ct-theme-dark {
-  color: var(--ct-label-dark-color);
-}
-.ct-label.ct-theme-dark .ct-label__required {
-  color: var(--ct-label-dark-required-color);
+.ct-label .ct-label__required {
+  color: var(--ct-label-required-color);
 }

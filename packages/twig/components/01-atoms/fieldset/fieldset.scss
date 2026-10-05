@@ -36,9 +36,7 @@
     padding-left: calc(ct-spacing(3) - var(--ct-fieldset-stripe-width));
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    .ct-fieldset {
-      @include ct-component-property($root, $theme, stripe, border-color);
-    }
+  .ct-fieldset {
+    @include ct-component-property($root, stripe, border-color);
   }
 }

@@ -147,7 +147,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-child-hover-background-color);
@@ -161,7 +161,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active {
   background-color: var(--ct-side-navigation-light-link-child-active-background-color);
@@ -175,7 +175,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-light-link-child-active-trail-background-color);
@@ -189,7 +189,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-child-hover-background-color);
@@ -203,7 +203,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link {
   background-color: var(--ct-side-navigation-light-link-parent-background-color);
@@ -217,7 +217,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-parent-hover-background-color);
@@ -231,7 +231,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active {
   background-color: var(--ct-side-navigation-light-link-parent-active-background-color);
@@ -245,7 +245,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-light-link-parent-active-trail-background-color);
@@ -259,7 +259,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-light .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-light-link-parent-hover-background-color);
@@ -273,7 +273,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__title {
   color: var(--ct-side-navigation-dark-title-color);
@@ -293,7 +293,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-child-hover-background-color);
@@ -307,7 +307,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item .ct-menu__item__link:active {
   background-color: var(--ct-side-navigation-dark-link-child-active-background-color);
@@ -321,7 +321,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-dark-link-child-active-trail-background-color);
@@ -335,7 +335,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-child-hover-background-color);
@@ -349,7 +349,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link {
   background-color: var(--ct-side-navigation-dark-link-parent-background-color);
@@ -363,7 +363,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-parent-hover-background-color);
@@ -377,7 +377,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0 > .ct-menu__item__link:active {
   background-color: var(--ct-side-navigation-dark-link-parent-active-background-color);
@@ -391,7 +391,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:visited {
   background-color: var(--ct-side-navigation-dark-link-parent-active-trail-background-color);
@@ -405,7 +405,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:hover, .ct-side-navigation.ct-theme-dark .ct-side-navigation__menu .ct-menu__item.ct-menu__item--level-0.ct-menu__item--active-trail > .ct-menu__item__link:focus-visible {
   background-color: var(--ct-side-navigation-dark-link-parent-hover-background-color);
@@ -419,5 +419,5 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }

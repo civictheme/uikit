@@ -97,7 +97,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-light);
+  outline-color: var(--ct-outline-color);
 }
 .ct-accordion.ct-theme-light .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
   color: var(--ct-accordion-light-icon-color);
@@ -123,7 +123,7 @@
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
-  outline-color: var(--ct-outline-dark);
+  outline-color: var(--ct-outline-color);
 }
 .ct-accordion.ct-theme-dark .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
   color: var(--ct-accordion-dark-icon-color);
