@@ -7,7 +7,7 @@
 
   @include ct-reset-margins();
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & {
+    @include ct-component-property($root, color);
   }
 }

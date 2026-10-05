@@ -145,45 +145,43 @@
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    #{$root}__button {
-      @include ct-component-property($root, $theme, icon, color);
+  #{$root}__button {
+    @include ct-component-property($root, icon, color);
 
-      &:focus-visible {
-        @include ct-outline-theme($theme);
+    &:focus-visible {
+      @include ct-outline();
+    }
+  }
+
+  #{$root}__close-button {
+    @include ct-component-property($root, description, color);
+  }
+
+  #{$root}__description {
+    @include ct-component-property($root, description, color);
+    @include ct-component-property($root, description, background-color);
+
+    &[data-popper-placement^='top'] > [data-tooltip-arrow] {
+      &::before {
+        border-top-color: ct-component-var($root, description, background-color);
       }
     }
 
-    #{$root}__close-button {
-      @include ct-component-property($root, $theme, description, color);
+    &[data-popper-placement^='bottom'] > [data-tooltip-arrow] {
+      &::before {
+        border-bottom-color: ct-component-var($root, description, background-color);
+      }
     }
 
-    #{$root}__description {
-      @include ct-component-property($root, $theme, description, color);
-      @include ct-component-property($root, $theme, description, background-color);
-
-      &[data-popper-placement^='top'] > [data-tooltip-arrow] {
-        &::before {
-          border-top-color: ct-component-var($root, $theme, description, background-color);
-        }
+    &[data-popper-placement^='left'] > [data-tooltip-arrow] {
+      &::before {
+        border-left-color: ct-component-var($root, description, background-color);
       }
+    }
 
-      &[data-popper-placement^='bottom'] > [data-tooltip-arrow] {
-        &::before {
-          border-bottom-color: ct-component-var($root, $theme, description, background-color);
-        }
-      }
-
-      &[data-popper-placement^='left'] > [data-tooltip-arrow] {
-        &::before {
-          border-left-color: ct-component-var($root, $theme, description, background-color);
-        }
-      }
-
-      &[data-popper-placement^='right'] > [data-tooltip-arrow] {
-        &::before {
-          border-right-color: ct-component-var($root, $theme, description, background-color);
-        }
+    &[data-popper-placement^='right'] > [data-tooltip-arrow] {
+      &::before {
+        border-right-color: ct-component-var($root, description, background-color);
       }
     }
   }

@@ -21,9 +21,6 @@
   font-weight: var(--ct-typography-label-extra-small-font-weight);
   letter-spacing: var(--ct-typography-label-extra-small-letter-spacing);
 }
-.ct-figure.ct-theme-light .ct-figure__caption {
-  color: var(--ct-figure-light-caption-color);
-}
-.ct-figure.ct-theme-dark .ct-figure__caption {
-  color: var(--ct-figure-dark-caption-color);
+.ct-figure .ct-figure__caption {
+  color: var(--ct-figure-caption-color);
 }

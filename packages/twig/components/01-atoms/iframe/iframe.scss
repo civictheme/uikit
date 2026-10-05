@@ -21,9 +21,7 @@
     height: 100%;
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    &.ct-iframe--with-background {
-      @include ct-component-property($root, $theme, wrapper, background-color);
-    }
+  &.ct-iframe--with-background {
+    @include ct-component-property($root, wrapper, background-color);
   }
 }

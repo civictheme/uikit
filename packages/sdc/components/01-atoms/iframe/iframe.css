@@ -16,9 +16,6 @@
 .ct-iframe:not([height]) {
   height: 100%;
 }
-.ct-iframe.ct-theme-light.ct-iframe--with-background {
-  background-color: var(--ct-iframe-light-wrapper-background-color);
-}
-.ct-iframe.ct-theme-dark.ct-iframe--with-background {
-  background-color: var(--ct-iframe-dark-wrapper-background-color);
+.ct-iframe.ct-iframe--with-background {
+  background-color: var(--ct-iframe-wrapper-background-color);
 }

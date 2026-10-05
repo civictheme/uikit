@@ -83,55 +83,29 @@
   padding: 0 1.5rem 1.5rem calc(1.75rem + var(--ct-accordion-stripe-width));
   margin-bottom: 0;
 }
-.ct-accordion.ct-theme-light {
-  color: var(--ct-accordion-light-color);
+.ct-accordion {
+  color: var(--ct-accordion-color);
 }
-.ct-accordion.ct-theme-light.ct-accordion--with-background {
-  background-color: var(--ct-accordion-light-wrapper-background-color);
+.ct-accordion.ct-accordion--with-background {
+  background-color: var(--ct-accordion-wrapper-background-color);
 }
-.ct-accordion.ct-theme-light .ct-accordion__panels__panel__header__button {
-  background-color: var(--ct-accordion-light-button-background-color);
-  color: var(--ct-accordion-light-button-color);
+.ct-accordion .ct-accordion__panels__panel__header__button {
+  background-color: var(--ct-accordion-button-background-color);
+  color: var(--ct-accordion-button-color);
 }
-.ct-accordion.ct-theme-light .ct-accordion__panels__panel__header__button:focus-visible {
+.ct-accordion .ct-accordion__panels__panel__header__button:focus-visible {
   outline-offset: var(--ct-outline-offset);
   outline-width: var(--ct-outline-width);
   outline-style: solid;
   outline-color: var(--ct-outline-color);
 }
-.ct-accordion.ct-theme-light .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
-  color: var(--ct-accordion-light-icon-color);
+.ct-accordion .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
+  color: var(--ct-accordion-icon-color);
 }
-.ct-accordion.ct-theme-light .ct-accordion__panels__panel {
-  background-color: var(--ct-accordion-light-background-color);
-  border-color: var(--ct-accordion-light-border-color);
+.ct-accordion .ct-accordion__panels__panel {
+  background-color: var(--ct-accordion-background-color);
+  border-color: var(--ct-accordion-border-color);
 }
-.ct-accordion.ct-theme-light .ct-accordion__panels__panel::before {
-  background-color: var(--ct-accordion-light-stripe-background-color);
-}
-.ct-accordion.ct-theme-dark {
-  color: var(--ct-accordion-dark-color);
-}
-.ct-accordion.ct-theme-dark.ct-accordion--with-background {
-  background-color: var(--ct-accordion-dark-wrapper-background-color);
-}
-.ct-accordion.ct-theme-dark .ct-accordion__panels__panel__header__button {
-  background-color: var(--ct-accordion-dark-button-background-color);
-  color: var(--ct-accordion-dark-button-color);
-}
-.ct-accordion.ct-theme-dark .ct-accordion__panels__panel__header__button:focus-visible {
-  outline-offset: var(--ct-outline-offset);
-  outline-width: var(--ct-outline-width);
-  outline-style: solid;
-  outline-color: var(--ct-outline-color);
-}
-.ct-accordion.ct-theme-dark .ct-accordion__panels__panel__header__button .ct-collapsible__icon {
-  color: var(--ct-accordion-dark-icon-color);
-}
-.ct-accordion.ct-theme-dark .ct-accordion__panels__panel {
-  background-color: var(--ct-accordion-dark-background-color);
-  border-color: var(--ct-accordion-dark-border-color);
-}
-.ct-accordion.ct-theme-dark .ct-accordion__panels__panel::before {
-  background-color: var(--ct-accordion-dark-stripe-background-color);
+.ct-accordion .ct-accordion__panels__panel::before {
+  background-color: var(--ct-accordion-stripe-background-color);
 }

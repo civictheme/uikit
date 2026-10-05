@@ -82,30 +82,30 @@
     margin-bottom: 0;
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & {
+    @include ct-component-property($root, color);
+  }
 
-    &#{$root}--with-background {
-      @include ct-component-property($root, $theme, wrapper, background-color);
+  &#{$root}--with-background {
+    @include ct-component-property($root, wrapper, background-color);
+  }
+
+  #{$root}__panels__panel__header__button {
+    @include ct-component-property($root, button, background-color);
+    @include ct-component-property($root, button, color);
+
+    &:focus-visible {
+      @include ct-outline();
     }
 
-    #{$root}__panels__panel__header__button {
-      @include ct-component-property($root, $theme, button, background-color);
-      @include ct-component-property($root, $theme, button, color);
-
-      &:focus-visible {
-        @include ct-outline-theme($theme);
-      }
-
-      .ct-collapsible__icon {
-        @include ct-component-property($root, $theme, icon, color);
-      }
+    .ct-collapsible__icon {
+      @include ct-component-property($root, icon, color);
     }
+  }
 
-    #{$root}__panels__panel {
-      @include ct-component-property($root, $theme, background-color);
-      @include ct-component-property($root, $theme, border-color);
-      @include ct-highlight-stripe-background-color(ct-component-var($root, $theme, stripe, background-color));
-    }
+  #{$root}__panels__panel {
+    @include ct-component-property($root, background-color);
+    @include ct-component-property($root, border-color);
+    @include ct-highlight-stripe-background-color(ct-component-var($root, stripe, background-color));
   }
 }
