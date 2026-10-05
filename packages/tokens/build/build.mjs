@@ -10,7 +10,8 @@
  *
  * Style Dictionary v5 parses/resolves each single-mode DTCG tree; colour
  * objects are collapsed to their `hex` by a custom transform (the known
- * SD 2025.10 colour-object gap, plan §6).
+ * SD 2025.10 colour-object gap, plan §6). The Figma emit re-expands hex to
+ * the 2025.10 colour object — Figma's importer rejects hex strings.
  */
 import fs from 'fs';
 import path from 'path';
@@ -27,6 +28,14 @@ StyleDictionary.registerTransform({
   transform: (token) => (typeof token.$value === 'string' ? token.$value : token.$value.hex).toLowerCase(),
 });
 
+// Figma's native "Import mode" rejects legacy hex-string colours; it requires
+// the DTCG 2025.10 object form (colorSpace/components/alpha). `hex` is an
+// optional convenience field Figma itself includes on export.
+function figmaColorValue(hex) {
+  const channels = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  return { colorSpace: 'srgb', components: channels, alpha: 1, hex: hex.toUpperCase() };
+}
+
 StyleDictionary.registerFormat({
   name: 'ct/figma-dtcg',
   format: ({ dictionary }) => {
@@ -42,7 +51,7 @@ StyleDictionary.registerFormat({
         group[segment] = group[segment] || {};
         group = group[segment];
       });
-      group[leaf] = { $type: 'color', $value: token.$value };
+      group[leaf] = { $type: 'color', $value: figmaColorValue(token.$value) };
     });
     return `${JSON.stringify(out, null, 2)}\n`;
   },
