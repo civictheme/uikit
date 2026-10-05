@@ -11,6 +11,7 @@
   "scripts": {
     "build": "node build/build.mjs",
     "dist": "node build/build.mjs",
+    "extract": "node build/extract-components.mjs",
     "build-storybook": "echo @civictheme/tokens has no Storybook",
     "test": "node tests/validate-resolved-values.mjs",
     "test:ci": "npm run test",

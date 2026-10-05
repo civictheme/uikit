@@ -86,13 +86,17 @@ jobs:
           path: ./packages/sdc/.logs/coverage
           if-no-files-found: error
 
+      # Codecov uploads are best-effort: the uploader CLI download from
+      # cli.codecov.io intermittently fails the SSL handshake on runners
+      # (curl error 35), and coverage reporting must not block merges.
+      # The reports are also kept as workflow artifacts above.
       - name: Upload twig coverage report to Codecov
         uses: codecov/codecov-action@v5
         if: ${{ env.CODECOV_TOKEN != '' }}
         with:
           files: ./packages/twig/.logs/coverage/clover.xml
           flags: twig
-          fail_ci_if_error: true
+          fail_ci_if_error: false
           token: ${{ secrets.CODECOV_TOKEN }}
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -103,7 +107,7 @@ jobs:
         with:
           files: ./packages/sdc/.logs/coverage/clover.xml
           flags: sdc
-          fail_ci_if_error: true
+          fail_ci_if_error: false
           token: ${{ secrets.CODECOV_TOKEN }}
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
