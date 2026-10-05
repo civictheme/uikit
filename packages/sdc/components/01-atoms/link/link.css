@@ -49,27 +49,15 @@
   padding: 0.5rem;
   margin: -0.5rem;
 }
-.ct-link.ct-theme-light {
-  color: var(--ct-link-light-color);
+.ct-link {
+  color: var(--ct-link-color);
 }
-.ct-link.ct-theme-light:is(:hover, :focus-visible, :visited:hover, :visited:focus-visible) {
-  color: var(--ct-link-light-hover-color);
+.ct-link:is(:hover, :focus-visible, :visited:hover, :visited:focus-visible) {
+  color: var(--ct-link-hover-color);
 }
-.ct-link.ct-theme-light:visited {
-  color: var(--ct-link-light-visited-color);
+.ct-link:visited {
+  color: var(--ct-link-visited-color);
 }
-.ct-link.ct-theme-light.ct-link--active, .ct-link.ct-theme-light:active {
-  color: var(--ct-link-light-active-color);
-}
-.ct-link.ct-theme-dark {
-  color: var(--ct-link-dark-color);
-}
-.ct-link.ct-theme-dark:is(:hover, :focus-visible, :visited:hover, :visited:focus-visible) {
-  color: var(--ct-link-dark-hover-color);
-}
-.ct-link.ct-theme-dark:visited {
-  color: var(--ct-link-dark-visited-color);
-}
-.ct-link.ct-theme-dark.ct-link--active, .ct-link.ct-theme-dark:active {
-  color: var(--ct-link-dark-active-color);
+.ct-link.ct-link--active, .ct-link:active {
+  color: var(--ct-link-active-color);
 }

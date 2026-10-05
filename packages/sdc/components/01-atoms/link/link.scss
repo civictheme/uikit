@@ -34,20 +34,20 @@
     margin: -1 * ct-spacing(1);
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & {
+    @include ct-component-property($root, color);
+  }
 
-    &:is(:hover, :focus-visible, :visited:hover, :visited:focus-visible) {
-      @include ct-component-property($root, $theme, hover, color);
-    }
+  &:is(:hover, :focus-visible, :visited:hover, :visited:focus-visible) {
+    @include ct-component-property($root, hover, color);
+  }
 
-    &:visited {
-      @include ct-component-property($root, $theme, visited, color);
-    }
+  &:visited {
+    @include ct-component-property($root, visited, color);
+  }
 
-    &#{$root}--active,
-    &:active {
-      @include ct-component-property($root, $theme, active, color);
-    }
+  &#{$root}--active,
+  &:active {
+    @include ct-component-property($root, active, color);
   }
 }

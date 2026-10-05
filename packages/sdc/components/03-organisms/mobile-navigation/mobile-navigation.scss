@@ -135,55 +135,53 @@ $ct-mobile-navigation-spacing: ct-spacing(2);
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    [data-flyout-panel] {
-      @include ct-component-property($root, $theme, panel, background-color);
+  [data-flyout-panel] {
+    @include ct-component-property($root, panel, background-color);
+  }
+
+  .ct-mobile-navigation__top-menu-wrapper {
+    @include ct-component-property($root, top-menu, background-color);
+  }
+
+  .ct-mobile-navigation__bottom-menu-wrapper {
+    @include ct-component-property($root, bottom-menu, background-color);
+  }
+
+  .ct-menu__item {
+    border-bottom-color: ct-component-var($root, menu-divider, border-color);
+
+    .ct-link {
+      @include ct-link-backgrounds(transparent, transparent, transparent, transparent, transparent);
+      @include ct-link-colors(
+        ct-component-var($root, menu-item, color),
+        ct-component-var($root, menu-item, hover-color)
+      );
+    }
+  }
+
+  #{$root}__open-subsection-trigger {
+    border-left-color: ct-component-var($root, menu-divider, border-color);
+    background-color: transparent;
+
+    &:focus-visible {
+      @include ct-outline();
     }
 
-    .ct-mobile-navigation__top-menu-wrapper {
-      @include ct-component-property($root, $theme, top-menu, background-color);
+    .ct-icon {
+      @include ct-component-property($root, subsection-trigger, color);
     }
+  }
 
-    .ct-mobile-navigation__bottom-menu-wrapper {
-      @include ct-component-property($root, $theme, bottom-menu, background-color);
-    }
-
-    .ct-menu__item {
-      border-bottom-color: ct-component-var($root, $theme, menu-divider, border-color);
-
-      .ct-link {
-        @include ct-link-backgrounds(transparent, transparent, transparent, transparent, transparent);
-        @include ct-link-colors(
-          ct-component-var($root, $theme, menu-item, color),
-          ct-component-var($root, $theme, menu-item, hover-color)
-        );
-      }
-    }
-
-    #{$root}__open-subsection-trigger {
-      border-left-color: ct-component-var($root, $theme, menu-divider, border-color);
-      background-color: transparent;
+  #{$root}__close-trigger {
+    [data-flyout-close-trigger] {
+      color: ct-component-var($root, subsection-heading, color);
 
       &:focus-visible {
-        @include ct-outline-theme($theme);
+        @include ct-outline();
       }
 
       .ct-icon {
-        @include ct-component-property($root, $theme, subsection-trigger, color);
-      }
-    }
-
-    #{$root}__close-trigger {
-      [data-flyout-close-trigger] {
-        color: ct-component-var($root, $theme, subsection-heading, color);
-
-        &:focus-visible {
-          @include ct-outline-theme($theme);
-        }
-
-        .ct-icon {
-          @include ct-component-property($root, $theme, subsection-heading, icon-color);
-        }
+        @include ct-component-property($root, subsection-heading, icon-color);
       }
     }
   }
@@ -216,12 +214,12 @@ $ct-mobile-navigation-spacing: ct-spacing(2);
     }
   }
 
-  @include ct-component-theme($root) using($root, $theme) {
-    @include ct-component-property($root, $theme, color);
+  & {
+    @include ct-component-property($root, color);
+  }
 
-    &:focus-visible {
-      @include ct-outline-theme($theme);
-    }
+  &:focus-visible {
+    @include ct-outline();
   }
 }
 
