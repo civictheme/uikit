@@ -93,6 +93,9 @@ UIKIT_PACKAGES.forEach((pkg) => {
       failures.push(`${tokenPath}: missing ${SCSS_EXTENSION} extension (source-variable bridge)`);
       return;
     }
+    // The compiled file also carries this token's own generated 2.x property
+    // (the tokens dist CSS is embedded into civictheme.variables.css).
+    claimedProps.add(`--ct-${tokenPath.split('.').slice(2).join('-')}`);
     MODES.forEach((mode) => {
       const srcVar = src[mode] ?? src.unthemed;
       const prop = `--${srcVar.slice(1)}`;

@@ -100,6 +100,7 @@ const DRUPAL_THEME_FOLDER       = config.base ? 'contrib' : 'custom'
 
 const STYLE_FILE_IN             = `${COMPONENT_DIR}/style.scss`
 const STYLE_VARIABLE_FILE_IN    = `${COMPONENT_DIR}/style.css_variables.scss`
+const TOKENS_VARIABLE_FILE_IN   = fullPath('../tokens/dist/css/variables.css')
 const STYLE_STORIES_FILE_IN     = `${COMPONENT_DIR}/style.stories.scss`
 const STYLE_THEME_FILE_IN       = `${DIR_ASSETS_IN}/sass/theme.scss`
 const STYLE_EDITOR_FILE_IN      = `${DIR_ASSETS_IN}/sass/theme.editor.scss`
@@ -205,7 +206,13 @@ function buildStyles() {
 
     const compiled = sass.compileString(stylecss, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR, PATH] })
     const compiledImportAtTop = sortCssLines(compiled.css)
-    fs.writeFileSync(STYLE_FILE_OUT, compiledImportAtTop, 'utf-8')
+    // The token-generated theme-scoped colour properties (@civictheme/tokens)
+    // are plain CSS, not Sass, so they are appended to the compiled bundle
+    // (after it, to keep @import lines first; custom-property declarations
+    // have unique names, so position does not affect the cascade). This is
+    // the stylesheet Drupal and the Storybook copy consume, so the token
+    // properties must travel in it, not only in civictheme.variables.css.
+    fs.writeFileSync(STYLE_FILE_OUT, [compiledImportAtTop, loadTokensCss()].join('\n'), 'utf-8')
     successReporter(`Saved: Component styles ${time()}`)
   }
 }
@@ -254,10 +261,25 @@ function buildStylesLayout() {
   }
 }
 
+// Token-generated theme-scoped colour properties from @civictheme/tokens
+// (packages/tokens/dist/css/variables.css). Consumer-theme builds have no
+// tokens package - only the base (uikit) build requires it.
+function loadTokensCss() {
+  if (fs.existsSync(TOKENS_VARIABLE_FILE_IN)) {
+    return fs.readFileSync(TOKENS_VARIABLE_FILE_IN, 'utf-8')
+  }
+  if (config.base) {
+    errorReporter(new Error(`Missing ${TOKENS_VARIABLE_FILE_IN} - build the tokens package first.`), true)
+  }
+  return ''
+}
+
 function buildStylesVariables() {
   if (config.styles_variables) {
     const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR] })
-    fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
+    // The token properties lead the file; the Sass-generated 1.x-structure
+    // properties follow until the 2.x component refactor retires them.
+    fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, [loadTokensCss(), compiled.css].join('\n'), 'utf-8')
     successReporter(`Saved: Variable styles ${time()}`)
   }
 }

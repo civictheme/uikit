@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: var(--ct-callout-background-color);
 }
 @media (min-width: 768px) {
   .ct-callout__wrapper {
@@ -29,6 +30,9 @@
   border-bottom-left-radius: var(--ct-callout-border-radius);
   transition: width 0.25s;
 }
+.ct-callout__wrapper::before {
+  background-color: var(--ct-callout-stripe-background-color);
+}
 .ct-callout__inner {
   display: flex;
   flex-direction: column;
@@ -38,16 +42,4 @@
   .ct-callout__inner {
     gap: 1rem;
   }
-}
-.ct-callout.ct-theme-light .ct-callout__wrapper {
-  background-color: var(--ct-callout-light-background-color);
-}
-.ct-callout.ct-theme-light .ct-callout__wrapper::before {
-  background-color: var(--ct-callout-light-stripe-background-color);
-}
-.ct-callout.ct-theme-dark .ct-callout__wrapper {
-  background-color: var(--ct-callout-dark-background-color);
-}
-.ct-callout.ct-theme-dark .ct-callout__wrapper::before {
-  background-color: var(--ct-callout-dark-stripe-background-color);
 }

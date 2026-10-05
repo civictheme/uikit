@@ -100,6 +100,7 @@ const DRUPAL_THEME_FOLDER       = config.base ? 'contrib' : 'custom'
 
 const STYLE_FILE_IN             = `${COMPONENT_DIR}/style.scss`
 const STYLE_VARIABLE_FILE_IN    = `${COMPONENT_DIR}/style.css_variables.scss`
+const TOKENS_VARIABLE_FILE_IN   = fullPath('../tokens/dist/css/variables.css')
 const STYLE_STORIES_FILE_IN     = `${COMPONENT_DIR}/style.stories.scss`
 const STYLE_THEME_FILE_IN       = `${DIR_ASSETS_IN}/sass/theme.scss`
 const STYLE_EDITOR_FILE_IN      = `${DIR_ASSETS_IN}/sass/theme.editor.scss`
@@ -257,7 +258,17 @@ function buildStylesLayout() {
 function buildStylesVariables() {
   if (config.styles_variables) {
     const compiled = sass.compile(STYLE_VARIABLE_FILE_IN, { ...SASS_OPTIONS, loadPaths: [COMPONENT_DIR] })
-    fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, compiled.css, 'utf-8')
+    // The token-generated theme-scoped colour properties (@civictheme/tokens)
+    // lead the file; the Sass-generated 1.x-structure properties follow until
+    // the 2.x component refactor retires them. Consumer-theme builds have no
+    // tokens package - only the base (uikit) build requires it.
+    let tokensCss = ''
+    if (fs.existsSync(TOKENS_VARIABLE_FILE_IN)) {
+      tokensCss = fs.readFileSync(TOKENS_VARIABLE_FILE_IN, 'utf-8') + '\n'
+    } else if (config.base) {
+      errorReporter(new Error(`Missing ${TOKENS_VARIABLE_FILE_IN} - build the tokens package first.`), true)
+    }
+    fs.writeFileSync(STYLE_VARIABLE_FILE_OUT, tokensCss + compiled.css, 'utf-8')
     successReporter(`Saved: Variable styles ${time()}`)
   }
 }
