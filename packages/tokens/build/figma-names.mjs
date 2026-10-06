@@ -43,8 +43,10 @@ export const FIGMA_NAMES = {
 };
 
 /*
- * Figma variable scopes (which pickers each variable appears in). Palette and
- * brand scopes mirror the source file's variables exactly (read from the real
+ * Figma variable scopes: which of Figma's colour pickers offer the variable
+ * (suggestion filters only, never binding restrictions) — each value is
+ * glossed in the README's "Figma variable scopes" table. Palette and brand
+ * scopes mirror the source file's variables exactly (read from the real
  * Export-mode dump, 2026-10-06); the component tier uniformly carries
  * SHAPE_FILL + TEXT_FILL (the Phase 3b piece-1 decision — narrowing per
  * component is a parked designer decision; changing it here rolls out via the
