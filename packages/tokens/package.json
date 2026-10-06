@@ -13,12 +13,9 @@
     "dist": "node build/build.mjs",
     "build-storybook": "echo @civictheme/tokens has no Storybook",
     "ingest": "node build/figma-ingest.mjs",
-    "test": "node tests/validate-resolved-values.mjs && node tests/validate-figma-ingest.mjs",
+    "test": "node tests/validate-resolved-values.mjs && node tests/validate-figma-ingest.mjs && node tests/validate-figma-emit.mjs",
     "test:ci": "npm run test",
     "lint": "eslint ./build ./tests",
     "lint:fix": "eslint ./build ./tests --fix"
-  },
-  "devDependencies": {
-    "style-dictionary": "^5.1.0"
   }
 }

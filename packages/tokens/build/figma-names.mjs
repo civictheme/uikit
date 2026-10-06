@@ -42,6 +42,40 @@ export const FIGMA_NAMES = {
   'color.palette.success': 'Status/Success',
 };
 
+/*
+ * Figma variable scopes (which pickers each variable appears in). Palette and
+ * brand scopes mirror the source file's variables exactly (read from the real
+ * Export-mode dump, 2026-10-06); the component tier uniformly carries
+ * SHAPE_FILL + TEXT_FILL (the Phase 3b piece-1 decision — narrowing per
+ * component is a parked designer decision; changing it here rolls out via the
+ * next native import).
+ */
+export const FIGMA_SCOPES = {
+  'color.brand.brand1': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.brand.brand2': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.brand.brand3': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.palette.heading': ['TEXT_FILL'],
+  'color.palette.body': ['TEXT_FILL'],
+  'color.palette.background-light': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.palette.background': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.palette.background-dark': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.palette.border-light': ['STROKE'],
+  'color.palette.border': ['STROKE'],
+  'color.palette.border-dark': ['STROKE'],
+  'color.palette.interaction-text': ['SHAPE_FILL', 'TEXT_FILL'],
+  'color.palette.interaction-background': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.palette.interaction-hover-text': ['SHAPE_FILL', 'TEXT_FILL'],
+  'color.palette.interaction-hover-background': ['FRAME_FILL', 'SHAPE_FILL'],
+  'color.palette.interaction-focus': ['STROKE', 'EFFECT_COLOR'],
+  'color.palette.highlight': ['FRAME_FILL', 'SHAPE_FILL', 'TEXT_FILL'],
+  'color.palette.information': ['FRAME_FILL', 'SHAPE_FILL', 'TEXT_FILL', 'STROKE'],
+  'color.palette.warning': ['FRAME_FILL', 'SHAPE_FILL', 'TEXT_FILL', 'STROKE'],
+  'color.palette.error': ['FRAME_FILL', 'SHAPE_FILL', 'TEXT_FILL', 'STROKE'],
+  'color.palette.success': ['FRAME_FILL', 'SHAPE_FILL', 'TEXT_FILL', 'STROKE'],
+};
+
+const COMPONENT_SCOPES = ['SHAPE_FILL', 'TEXT_FILL'];
+
 const TOKEN_PATHS = Object.fromEntries(Object.entries(FIGMA_NAMES).map(([tokenPath, figmaName]) => [figmaName, tokenPath]));
 
 const titleCase = (slug) => slug.split('-').map((word) => word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -54,6 +88,17 @@ export function figmaNameFor(tokenPath) {
     return `Component/${titleCase(parts[2])}/${titleCase(parts[3])}`;
   }
   throw new Error(`No Figma name for token "${tokenPath}" — not in FIGMA_NAMES and not a color.component.<comp>.<prop> path`);
+}
+
+/** The Figma scopes for a token path (table tiers, uniform components). */
+export function figmaScopesFor(tokenPath) {
+  if (FIGMA_NAMES[tokenPath]) {
+    if (!FIGMA_SCOPES[tokenPath]) throw new Error(`No Figma scopes for token "${tokenPath}" — add it to FIGMA_SCOPES in build/figma-names.mjs`);
+    return FIGMA_SCOPES[tokenPath];
+  }
+  // Throws unless it is a valid component path.
+  figmaNameFor(tokenPath);
+  return COMPONENT_SCOPES;
 }
 
 /**

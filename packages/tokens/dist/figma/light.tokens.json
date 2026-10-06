@@ -1,4 +1,7 @@
 {
+  "$extensions": {
+    "com.figma.modeName": "Light"
+  },
   "Brand": {
     "Brand 1": {
       "$type": "color",
@@ -6,11 +9,17 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.4117647058823529,
-          0.5607843137254902
+          0.411765,
+          0.560784
         ],
         "alpha": 1,
         "hex": "#00698F"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ]
       }
     },
     "Brand 2": {
@@ -18,12 +27,18 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9019607843137255,
-          0.9137254901960784,
-          0.9215686274509803
+          0.901961,
+          0.913725,
+          0.921569
         ],
         "alpha": 1,
         "hex": "#E6E9EB"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ]
       }
     },
     "Brand 3": {
@@ -31,12 +46,5684 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.07058823529411765,
-          0.07450980392156863,
-          0.07450980392156863
+          0.070588,
+          0.07451,
+          0.07451
         ],
         "alpha": 1,
         "hex": "#121313"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    }
+  },
+  "Component": {
+    "Outline": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Focus}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-outline-color)"
+          }
+        }
+      }
+    },
+    "Chip": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-color)"
+          }
+        }
+      },
+      "Selected Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-selected-background-color)"
+          }
+        }
+      },
+      "Selected Border Color": {
+        "$type": "color",
+        "$value": "{Component.Chip.Selected Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-selected-border-color)"
+          }
+        }
+      },
+      "Selected Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-selected-color)"
+          }
+        }
+      },
+      "Selected Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Chip.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-selected-hover-color)"
+          }
+        }
+      },
+      "Selected Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-selected-hover-background-color)"
+          }
+        }
+      },
+      "Selected Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Chip.Selected Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-selected-hover-border-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Chip.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-hover-background-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-hover-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Chip.Hover Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-hover-border-color)"
+          }
+        }
+      },
+      "Focus Outline Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Focus}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-chip-focus-outline-color)"
+          }
+        }
+      }
+    },
+    "Content Link": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-content-link-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-content-link-hover-background-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-content-link-hover-color)"
+          }
+        }
+      },
+      "Visited Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-content-link-visited-color)"
+          }
+        }
+      },
+      "Visited Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-content-link-visited-hover-color)"
+          }
+        }
+      }
+    },
+    "Heading": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-heading-color)"
+          }
+        }
+      }
+    },
+    "Iframe": {
+      "Wrapper Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-iframe-wrapper-background-color)"
+          }
+        }
+      }
+    },
+    "Link": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-link-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-link-hover-color)"
+          }
+        }
+      },
+      "Visited Color": {
+        "$type": "color",
+        "$value": "{Component.Link.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-link-visited-color)"
+          }
+        }
+      },
+      "Active Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-link-active-color)"
+          }
+        }
+      }
+    },
+    "Popover": {
+      "Content Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-popover-content-background-color)"
+          }
+        }
+      }
+    },
+    "Table": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-border-color)"
+          }
+        }
+      },
+      "Caption Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-caption-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-color)"
+          }
+        }
+      },
+      "Footer Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-footer-border-color)"
+          }
+        }
+      },
+      "Footer Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-footer-color)"
+          }
+        }
+      },
+      "Header Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-header-border-color)"
+          }
+        }
+      },
+      "Header Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-header-color)"
+          }
+        }
+      },
+      "Row Even Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-row-even-background-color)"
+          }
+        }
+      },
+      "Row Even Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-row-even-color)"
+          }
+        }
+      },
+      "Row Odd Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-row-odd-background-color)"
+          }
+        }
+      },
+      "Row Odd Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-row-odd-color)"
+          }
+        }
+      }
+    },
+    "Tag": {
+      "Primary Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-primary-background-color)"
+          }
+        }
+      },
+      "Primary Border Color": {
+        "$type": "color",
+        "$value": "{Component.Tag.Primary Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-primary-border-color)"
+          }
+        }
+      },
+      "Primary Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-primary-color)"
+          }
+        }
+      },
+      "Secondary Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-secondary-background-color)"
+          }
+        }
+      },
+      "Secondary Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-secondary-border-color)"
+          }
+        }
+      },
+      "Secondary Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-secondary-color)"
+          }
+        }
+      },
+      "Tertiary Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-tertiary-background-color)"
+          }
+        }
+      },
+      "Tertiary Border Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-tertiary-border-color)"
+          }
+        }
+      },
+      "Tertiary Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tag-tertiary-color)"
+          }
+        }
+      }
+    },
+    "Button": {
+      "Primary Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-background-color)"
+          }
+        }
+      },
+      "Primary Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Primary Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-border-color)"
+          }
+        }
+      },
+      "Primary Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-color)"
+          }
+        }
+      },
+      "Primary Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-hover-background-color)"
+          }
+        }
+      },
+      "Primary Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Primary Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-hover-border-color)"
+          }
+        }
+      },
+      "Primary Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-hover-color)"
+          }
+        }
+      },
+      "Primary Active Background Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Primary Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-active-background-color)"
+          }
+        }
+      },
+      "Primary Active Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Primary Hover Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-active-border-color)"
+          }
+        }
+      },
+      "Primary Active Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Primary Hover Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-active-color)"
+          }
+        }
+      },
+      "Primary Focus Outline Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Focus}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-primary-focus-outline-color)"
+          }
+        }
+      },
+      "Secondary Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-background-color)"
+          }
+        }
+      },
+      "Secondary Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-border-color)"
+          }
+        }
+      },
+      "Secondary Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Secondary Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-color)"
+          }
+        }
+      },
+      "Secondary Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Secondary Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-hover-background-color)"
+          }
+        }
+      },
+      "Secondary Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-hover-border-color)"
+          }
+        }
+      },
+      "Secondary Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Secondary Hover Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-hover-color)"
+          }
+        }
+      },
+      "Secondary Active Background Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Secondary Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-active-background-color)"
+          }
+        }
+      },
+      "Secondary Active Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Secondary Hover Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-active-border-color)"
+          }
+        }
+      },
+      "Secondary Active Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Secondary Hover Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-active-color)"
+          }
+        }
+      },
+      "Secondary Focus Outline Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Focus}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-secondary-focus-outline-color)"
+          }
+        }
+      },
+      "Tertiary Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-background-color)"
+          }
+        }
+      },
+      "Tertiary Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Tertiary Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-border-color)"
+          }
+        }
+      },
+      "Tertiary Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-color)"
+          }
+        }
+      },
+      "Tertiary Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Tertiary Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-hover-background-color)"
+          }
+        }
+      },
+      "Tertiary Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Tertiary Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-hover-border-color)"
+          }
+        }
+      },
+      "Tertiary Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-hover-color)"
+          }
+        }
+      },
+      "Tertiary Active Background Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Tertiary Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-active-background-color)"
+          }
+        }
+      },
+      "Tertiary Active Border Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Tertiary Hover Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-active-border-color)"
+          }
+        }
+      },
+      "Tertiary Active Color": {
+        "$type": "color",
+        "$value": "{Component.Button.Tertiary Hover Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-active-color)"
+          }
+        }
+      },
+      "Tertiary Focus Outline Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Focus}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-button-tertiary-focus-outline-color)"
+          }
+        }
+      }
+    },
+    "Checkbox": {
+      "Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-hover-background-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-hover-border-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-hover-color)"
+          }
+        }
+      },
+      "Checked Background Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-checked-background-color)"
+          }
+        }
+      },
+      "Checked Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-checked-border-color)"
+          }
+        }
+      },
+      "Checked Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-checked-color)"
+          }
+        }
+      },
+      "Checked Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-checked-hover-background-color)"
+          }
+        }
+      },
+      "Checked Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Hover Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-checked-hover-border-color)"
+          }
+        }
+      },
+      "Checked Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Hover Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-checked-hover-color)"
+          }
+        }
+      },
+      "Invalid Background Color": {
+        "$type": "color",
+        "$value": "{Component.Checkbox.Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-invalid-background-color)"
+          }
+        }
+      },
+      "Invalid Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-invalid-border-color)"
+          }
+        }
+      },
+      "Invalid Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-invalid-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Component.Outline.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-checkbox-outline-color)"
+          }
+        }
+      }
+    },
+    "Field Description": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-description-color)"
+          }
+        }
+      }
+    },
+    "Field Message": {
+      "Error Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.960784,
+            0.843137,
+            0.843137
+          ],
+          "alpha": 1,
+          "hex": "#F5D7D7"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-error-background-color)"
+          }
+        }
+      },
+      "Error Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-error-border-color)"
+          }
+        }
+      },
+      "Error Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-error-color)"
+          }
+        }
+      },
+      "Error Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Field Message.Error Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-error-icon-color)"
+          }
+        }
+      },
+      "Information Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.898039,
+            0.94902
+          ],
+          "alpha": 1,
+          "hex": "#CCE5F2"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-information-background-color)"
+          }
+        }
+      },
+      "Information Border Color": {
+        "$type": "color",
+        "$value": "{Status.Information}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-information-border-color)"
+          }
+        }
+      },
+      "Information Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-information-color)"
+          }
+        }
+      },
+      "Information Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Field Message.Information Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-information-icon-color)"
+          }
+        }
+      },
+      "Success Border Color": {
+        "$type": "color",
+        "$value": "{Status.Success}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-success-border-color)"
+          }
+        }
+      },
+      "Success Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.901961,
+            0.901961
+          ],
+          "alpha": 1,
+          "hex": "#CCE6E6"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-success-background-color)"
+          }
+        }
+      },
+      "Success Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-success-color)"
+          }
+        }
+      },
+      "Success Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Field Message.Success Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-success-icon-color)"
+          }
+        }
+      },
+      "Warning Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.956863,
+            0.862745,
+            0.8
+          ],
+          "alpha": 1,
+          "hex": "#F4DCCC"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-warning-background-color)"
+          }
+        }
+      },
+      "Warning Border Color": {
+        "$type": "color",
+        "$value": "{Status.Warning}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-warning-border-color)"
+          }
+        }
+      },
+      "Warning Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-warning-color)"
+          }
+        }
+      },
+      "Warning Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Field Message.Warning Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-field-message-warning-icon-color)"
+          }
+        }
+      }
+    },
+    "Fieldset": {
+      "Stripe Border Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-fieldset-stripe-border-color)"
+          }
+        }
+      }
+    },
+    "Input": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Input.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-hover-background-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-hover-border-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Input.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-hover-color)"
+          }
+        }
+      },
+      "Focus Background Color": {
+        "$type": "color",
+        "$value": "{Component.Input.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-focus-background-color)"
+          }
+        }
+      },
+      "Focus Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-focus-border-color)"
+          }
+        }
+      },
+      "Focus Color": {
+        "$type": "color",
+        "$value": "{Component.Input.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-focus-color)"
+          }
+        }
+      },
+      "Invalid Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-invalid-background-color)"
+          }
+        }
+      },
+      "Invalid Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-invalid-border-color)"
+          }
+        }
+      },
+      "Invalid Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-invalid-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Component.Outline.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-input-outline-color)"
+          }
+        }
+      }
+    },
+    "Label": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-label-color)"
+          }
+        }
+      },
+      "Required Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-label-required-color)"
+          }
+        }
+      }
+    },
+    "Radio": {
+      "Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-hover-background-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-hover-border-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-hover-color)"
+          }
+        }
+      },
+      "Checked Background Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-checked-background-color)"
+          }
+        }
+      },
+      "Checked Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-checked-border-color)"
+          }
+        }
+      },
+      "Checked Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-checked-color)"
+          }
+        }
+      },
+      "Checked Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-checked-hover-background-color)"
+          }
+        }
+      },
+      "Checked Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Hover Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-checked-hover-border-color)"
+          }
+        }
+      },
+      "Checked Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Hover Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-checked-hover-color)"
+          }
+        }
+      },
+      "Invalid Background Color": {
+        "$type": "color",
+        "$value": "{Component.Radio.Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-invalid-background-color)"
+          }
+        }
+      },
+      "Invalid Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-invalid-border-color)"
+          }
+        }
+      },
+      "Invalid Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-invalid-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Component.Outline.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-radio-outline-color)"
+          }
+        }
+      }
+    },
+    "Select": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-color)"
+          }
+        }
+      },
+      "Option Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-option-background-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Select.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-hover-background-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-hover-border-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Select.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-hover-color)"
+          }
+        }
+      },
+      "Focus Background Color": {
+        "$type": "color",
+        "$value": "{Component.Select.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-focus-background-color)"
+          }
+        }
+      },
+      "Focus Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-focus-border-color)"
+          }
+        }
+      },
+      "Focus Color": {
+        "$type": "color",
+        "$value": "{Component.Select.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-focus-color)"
+          }
+        }
+      },
+      "Invalid Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-invalid-background-color)"
+          }
+        }
+      },
+      "Invalid Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-invalid-border-color)"
+          }
+        }
+      },
+      "Invalid Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-invalid-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Component.Outline.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-select-outline-color)"
+          }
+        }
+      }
+    },
+    "Textarea": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Textarea.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-hover-background-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-hover-border-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Textarea.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-hover-color)"
+          }
+        }
+      },
+      "Focus Background Color": {
+        "$type": "color",
+        "$value": "{Component.Textarea.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-focus-background-color)"
+          }
+        }
+      },
+      "Focus Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-focus-border-color)"
+          }
+        }
+      },
+      "Focus Color": {
+        "$type": "color",
+        "$value": "{Component.Textarea.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-focus-color)"
+          }
+        }
+      },
+      "Invalid Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-invalid-background-color)"
+          }
+        }
+      },
+      "Invalid Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-invalid-border-color)"
+          }
+        }
+      },
+      "Invalid Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-invalid-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Component.Outline.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textarea-outline-color)"
+          }
+        }
+      }
+    },
+    "Textfield": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-color)"
+          }
+        }
+      },
+      "Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Textfield.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-hover-background-color)"
+          }
+        }
+      },
+      "Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-hover-border-color)"
+          }
+        }
+      },
+      "Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Textfield.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-hover-color)"
+          }
+        }
+      },
+      "Focus Background Color": {
+        "$type": "color",
+        "$value": "{Component.Textfield.Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-focus-background-color)"
+          }
+        }
+      },
+      "Focus Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-focus-border-color)"
+          }
+        }
+      },
+      "Focus Color": {
+        "$type": "color",
+        "$value": "{Component.Textfield.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-focus-color)"
+          }
+        }
+      },
+      "Invalid Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-invalid-background-color)"
+          }
+        }
+      },
+      "Invalid Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-invalid-border-color)"
+          }
+        }
+      },
+      "Invalid Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-invalid-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Component.Outline.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-textfield-outline-color)"
+          }
+        }
+      }
+    },
+    "Accordion": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-color)"
+          }
+        }
+      },
+      "Button Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-button-background-color)"
+          }
+        }
+      },
+      "Button Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-button-color)"
+          }
+        }
+      },
+      "Icon Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-icon-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-stripe-background-color)"
+          }
+        }
+      },
+      "Wrapper Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-accordion-wrapper-background-color)"
+          }
+        }
+      }
+    },
+    "Attachment": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-attachment-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-attachment-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-attachment-color)"
+          }
+        }
+      },
+      "Wrapper Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-attachment-wrapper-background-color)"
+          }
+        }
+      }
+    },
+    "Back To Top": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-back-to-top-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-back-to-top-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-back-to-top-color)"
+          }
+        }
+      },
+      "Outline Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Focus}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-back-to-top-outline-color)"
+          }
+        }
+      }
+    },
+    "Basic Content": {
+      "Base Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-base-color)"
+          }
+        }
+      },
+      "Blockquote Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-blockquote-stripe-background-color)"
+          }
+        }
+      },
+      "Blockquote Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-blockquote-color)"
+          }
+        }
+      },
+      "Blockquote Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-blockquote-background-color)"
+          }
+        }
+      },
+      "Heading 1 Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-heading-1-color)"
+          }
+        }
+      },
+      "Heading 2 Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-heading-2-color)"
+          }
+        }
+      },
+      "Heading 3 Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-heading-3-color)"
+          }
+        }
+      },
+      "Heading 4 Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-heading-4-color)"
+          }
+        }
+      },
+      "Heading 5 Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-heading-5-color)"
+          }
+        }
+      },
+      "Heading 6 Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-heading-6-color)"
+          }
+        }
+      },
+      "Ol Li Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-ol-li-color)"
+          }
+        }
+      },
+      "Ol Li Marker Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-ol-li-marker-color)"
+          }
+        }
+      },
+      "Ul Li Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-ul-li-color)"
+          }
+        }
+      },
+      "Ul Li Marker Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-ul-li-marker-color)"
+          }
+        }
+      },
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-basic-content-background-color)"
+          }
+        }
+      }
+    },
+    "Breadcrumb": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-breadcrumb-color)"
+          }
+        }
+      },
+      "Active Color": {
+        "$type": "color",
+        "$value": "{Component.Breadcrumb.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-breadcrumb-active-color)"
+          }
+        }
+      }
+    },
+    "Callout": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-callout-background-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-callout-stripe-background-color)"
+          }
+        }
+      }
+    },
+    "Figure": {
+      "Caption Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-figure-caption-color)"
+          }
+        }
+      }
+    },
+    "Logo": {
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Border.Border Dark}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-logo-stripe-background-color)"
+          }
+        }
+      }
+    },
+    "Map": {
+      "Wrapper Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-map-wrapper-background-color)"
+          }
+        }
+      }
+    },
+    "Next Step": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-next-step-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-next-step-border-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-next-step-stripe-background-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-next-step-title-color)"
+          }
+        }
+      }
+    },
+    "Table Of Contents": {
+      "Link Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-background-color)"
+          }
+        }
+      },
+      "Link Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-color)"
+          }
+        }
+      },
+      "Link Hover Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-hover-background-color)"
+          }
+        }
+      },
+      "Link Hover Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-hover-border-color)"
+          }
+        }
+      },
+      "Link Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Table Of Contents.Link Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-hover-color)"
+          }
+        }
+      },
+      "Link Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-stripe-background-color)"
+          }
+        }
+      },
+      "Link Hover Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-link-hover-stripe-background-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-table-of-contents-title-color)"
+          }
+        }
+      }
+    },
+    "Tabs": {
+      "Links Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tabs-links-background-color)"
+          }
+        }
+      },
+      "Links Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tabs-links-border-color)"
+          }
+        }
+      },
+      "Links Active Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tabs-links-active-background-color)"
+          }
+        }
+      },
+      "Links Active Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tabs-links-active-border-color)"
+          }
+        }
+      },
+      "Panel Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tabs-panel-background-color)"
+          }
+        }
+      },
+      "Panel Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tabs-panel-border-color)"
+          }
+        }
+      }
+    },
+    "Tooltip": {
+      "Description Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tooltip-description-background-color)"
+          }
+        }
+      },
+      "Description Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tooltip-description-color)"
+          }
+        }
+      },
+      "Icon Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-tooltip-icon-color)"
+          }
+        }
+      }
+    },
+    "Single Filter": {
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-single-filter-border-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-single-filter-title-color)"
+          }
+        }
+      }
+    },
+    "Group Filter": {
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-group-filter-border-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-group-filter-title-color)"
+          }
+        }
+      }
+    },
+    "Inline Filter": {
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-inline-filter-title-color)"
+          }
+        }
+      }
+    },
+    "Pagination": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-pagination-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-pagination-border-color)"
+          }
+        }
+      }
+    },
+    "Event Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-background-color)"
+          }
+        }
+      },
+      "Hover Outline Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-hover-outline-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-title-hover-color)"
+          }
+        }
+      },
+      "Link Graphic Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-link-graphic-color)"
+          }
+        }
+      },
+      "Link Graphic Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-link-graphic-hover-background-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-event-card-stripe-background-color)"
+          }
+        }
+      }
+    },
+    "Navigation Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-background-color)"
+          }
+        }
+      },
+      "Hover Outline Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-hover-outline-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-title-hover-color)"
+          }
+        }
+      },
+      "Link Graphic Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-link-graphic-color)"
+          }
+        }
+      },
+      "Link Graphic Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-link-graphic-hover-background-color)"
+          }
+        }
+      },
+      "Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Link.Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-card-icon-color)"
+          }
+        }
+      }
+    },
+    "Promo Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-background-color)"
+          }
+        }
+      },
+      "Hover Outline Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-hover-outline-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-title-hover-color)"
+          }
+        }
+      },
+      "Link Graphic Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-link-graphic-color)"
+          }
+        }
+      },
+      "Link Graphic Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-link-graphic-hover-background-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-card-stripe-background-color)"
+          }
+        }
+      }
+    },
+    "Publication Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-publication-card-background-color)"
+          }
+        }
+      },
+      "Hover Outline Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-publication-card-hover-outline-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-publication-card-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-publication-card-title-hover-color)"
+          }
+        }
+      },
+      "Title Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Publication Card.Title Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-publication-card-title-icon-color)"
+          }
+        }
+      },
+      "Filename Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-publication-card-filename-color)"
+          }
+        }
+      }
+    },
+    "Service Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-service-card-background-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-service-card-stripe-background-color)"
+          }
+        }
+      }
+    },
+    "Subject Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-subject-card-background-color)"
+          }
+        }
+      },
+      "Hover Outline Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-subject-card-hover-outline-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-subject-card-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-subject-card-title-hover-color)"
+          }
+        }
+      }
+    },
+    "Fast Fact Card": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-fast-fact-card-background-color)"
+          }
+        }
+      },
+      "Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-fast-fact-card-stripe-background-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-fast-fact-card-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-fast-fact-card-title-hover-color)"
+          }
+        }
+      },
+      "Hover Outline Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-fast-fact-card-hover-outline-color)"
+          }
+        }
+      }
+    },
+    "Snippet": {
+      "Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-snippet-background-color)"
+          }
+        }
+      },
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-snippet-title-color)"
+          }
+        }
+      },
+      "Title Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-snippet-title-hover-color)"
+          }
+        }
+      }
+    },
+    "Alert": {
+      "Error Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.960784,
+            0.843137,
+            0.843137
+          ],
+          "alpha": 1,
+          "hex": "#F5D7D7"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-error-background-color)"
+          }
+        }
+      },
+      "Error Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-error-color)"
+          }
+        }
+      },
+      "Error Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-error-title-color)"
+          }
+        }
+      },
+      "Error Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Alert.Error Title Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-error-icon-color)"
+          }
+        }
+      },
+      "Information Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.898039,
+            0.94902
+          ],
+          "alpha": 1,
+          "hex": "#CCE5F2"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-information-background-color)"
+          }
+        }
+      },
+      "Information Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-information-color)"
+          }
+        }
+      },
+      "Information Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-information-title-color)"
+          }
+        }
+      },
+      "Information Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Alert.Information Title Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-information-icon-color)"
+          }
+        }
+      },
+      "Success Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.901961,
+            0.901961
+          ],
+          "alpha": 1,
+          "hex": "#CCE6E6"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-success-background-color)"
+          }
+        }
+      },
+      "Success Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-success-color)"
+          }
+        }
+      },
+      "Success Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-success-title-color)"
+          }
+        }
+      },
+      "Success Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Alert.Success Title Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-success-icon-color)"
+          }
+        }
+      },
+      "Warning Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.956863,
+            0.862745,
+            0.8
+          ],
+          "alpha": 1,
+          "hex": "#F4DCCC"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-warning-background-color)"
+          }
+        }
+      },
+      "Warning Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-warning-color)"
+          }
+        }
+      },
+      "Warning Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-warning-title-color)"
+          }
+        }
+      },
+      "Warning Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Alert.Warning Title Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-alert-warning-icon-color)"
+          }
+        }
+      }
+    },
+    "Banner": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-banner-background-color)"
+          }
+        }
+      },
+      "Featured Image Shadow Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-banner-featured-image-shadow-color)"
+          }
+        }
+      }
+    },
+    "Campaign": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-campaign-background-color)"
+          }
+        }
+      },
+      "Image Shadow Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-campaign-image-shadow-color)"
+          }
+        }
+      }
+    },
+    "Footer": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-footer-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-footer-border-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-footer-color)"
+          }
+        }
+      }
+    },
+    "Header": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-header-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-header-border-color)"
+          }
+        }
+      },
+      "Top Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-header-top-background-color)"
+          }
+        }
+      },
+      "Top Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-header-top-color)"
+          }
+        }
+      }
+    },
+    "List": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-list-background-color)"
+          }
+        }
+      },
+      "Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-list-color)"
+          }
+        }
+      },
+      "Results Count Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-list-results-count-color)"
+          }
+        }
+      }
+    },
+    "Message": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-background-color)"
+          }
+        }
+      },
+      "Error Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.960784,
+            0.843137,
+            0.843137
+          ],
+          "alpha": 1,
+          "hex": "#F5D7D7"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-error-background-color)"
+          }
+        }
+      },
+      "Error Border Color": {
+        "$type": "color",
+        "$value": "{Status.Error}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-error-border-color)"
+          }
+        }
+      },
+      "Error Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-error-color)"
+          }
+        }
+      },
+      "Error Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Message.Error Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-error-icon-color)"
+          }
+        }
+      },
+      "Information Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.898039,
+            0.94902
+          ],
+          "alpha": 1,
+          "hex": "#CCE5F2"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-information-background-color)"
+          }
+        }
+      },
+      "Information Border Color": {
+        "$type": "color",
+        "$value": "{Status.Information}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-information-border-color)"
+          }
+        }
+      },
+      "Information Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-information-color)"
+          }
+        }
+      },
+      "Information Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Message.Information Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-information-icon-color)"
+          }
+        }
+      },
+      "Success Border Color": {
+        "$type": "color",
+        "$value": "{Status.Success}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-success-border-color)"
+          }
+        }
+      },
+      "Success Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.901961,
+            0.901961
+          ],
+          "alpha": 1,
+          "hex": "#CCE6E6"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-success-background-color)"
+          }
+        }
+      },
+      "Success Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-success-color)"
+          }
+        }
+      },
+      "Success Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Message.Success Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-success-icon-color)"
+          }
+        }
+      },
+      "Warning Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.956863,
+            0.862745,
+            0.8
+          ],
+          "alpha": 1,
+          "hex": "#F4DCCC"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-warning-background-color)"
+          }
+        }
+      },
+      "Warning Border Color": {
+        "$type": "color",
+        "$value": "{Status.Warning}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-warning-border-color)"
+          }
+        }
+      },
+      "Warning Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-warning-color)"
+          }
+        }
+      },
+      "Warning Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Message.Warning Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-message-warning-icon-color)"
+          }
+        }
+      }
+    },
+    "Navigation": {
+      "Dropdown Sub Menu Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-dropdown-sub-menu-background-color)"
+          }
+        }
+      },
+      "Menu Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-border-color)"
+          }
+        }
+      },
+      "Menu Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-color)"
+          }
+        }
+      },
+      "Menu Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-hover-color)"
+          }
+        }
+      },
+      "Menu Active Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-active-color)"
+          }
+        }
+      },
+      "Menu Item Border Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-item-border-color)"
+          }
+        }
+      },
+      "Menu Item Hover Border Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-item-hover-border-color)"
+          }
+        }
+      },
+      "Menu Item Active Border Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-menu-item-active-border-color)"
+          }
+        }
+      },
+      "Drawer Menu Item Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-menu-item-background-color)"
+          }
+        }
+      },
+      "Drawer Menu Item Hover Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-menu-item-hover-background-color)"
+          }
+        }
+      },
+      "Drawer Menu Item Active Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-menu-item-active-background-color)"
+          }
+        }
+      },
+      "Drawer Menu Item Active Trail Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-menu-item-active-trail-background-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-background-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Background Color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-background-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Heading Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-heading-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Heading Hover Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-heading-hover-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Heading Active Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-heading-active-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Hover Background Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-hover-background-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Hover Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Hover Text}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-hover-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Active Background Color": {
+        "$type": "color",
+        "$value": "{Typography.Body}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-active-background-color)"
+          }
+        }
+      },
+      "Drawer Sub Menu Item Active Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-navigation-drawer-sub-menu-item-active-color)"
+          }
+        }
+      }
+    },
+    "Side Navigation": {
+      "Title Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-title-color)"
+          }
+        }
+      },
+      "Link Expanded Icon Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-expanded-icon-color)"
+          }
+        }
+      },
+      "Link Parent Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-background-color)"
+          }
+        }
+      },
+      "Link Parent Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-border-color)"
+          }
+        }
+      },
+      "Link Parent Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-color)"
+          }
+        }
+      },
+      "Link Parent Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-stripe-background-color)"
+          }
+        }
+      },
+      "Link Parent Hover Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Dark}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-hover-background-color)"
+          }
+        }
+      },
+      "Link Parent Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-hover-border-color)"
+          }
+        }
+      },
+      "Link Parent Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-hover-color)"
+          }
+        }
+      },
+      "Link Parent Hover Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-hover-stripe-background-color)"
+          }
+        }
+      },
+      "Link Parent Active Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-background-color)"
+          }
+        }
+      },
+      "Link Parent Active Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-border-color)"
+          }
+        }
+      },
+      "Link Parent Active Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-color)"
+          }
+        }
+      },
+      "Link Parent Active Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-stripe-background-color)"
+          }
+        }
+      },
+      "Link Parent Active Trail Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Active Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-trail-background-color)"
+          }
+        }
+      },
+      "Link Parent Active Trail Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-trail-border-color)"
+          }
+        }
+      },
+      "Link Parent Active Trail Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Active Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-trail-color)"
+          }
+        }
+      },
+      "Link Parent Active Trail Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Active Stripe Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-parent-active-trail-stripe-background-color)"
+          }
+        }
+      },
+      "Link Child Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-background-color)"
+          }
+        }
+      },
+      "Link Child Border Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-border-color)"
+          }
+        }
+      },
+      "Link Child Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-color)"
+          }
+        }
+      },
+      "Link Child Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Stripe Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-stripe-background-color)"
+          }
+        }
+      },
+      "Link Child Hover Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Parent Hover Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-hover-background-color)"
+          }
+        }
+      },
+      "Link Child Hover Border Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Border Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-hover-border-color)"
+          }
+        }
+      },
+      "Link Child Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-hover-color)"
+          }
+        }
+      },
+      "Link Child Hover Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Highlight.Highlight}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-hover-stripe-background-color)"
+          }
+        }
+      },
+      "Link Child Active Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-background-color)"
+          }
+        }
+      },
+      "Link Child Active Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-border-color)"
+          }
+        }
+      },
+      "Link Child Active Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-color)"
+          }
+        }
+      },
+      "Link Child Active Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Hover Stripe Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-stripe-background-color)"
+          }
+        }
+      },
+      "Link Child Active Trail Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Active Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-trail-background-color)"
+          }
+        }
+      },
+      "Link Child Active Trail Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-trail-border-color)"
+          }
+        }
+      },
+      "Link Child Active Trail Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Active Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-trail-color)"
+          }
+        }
+      },
+      "Link Child Active Trail Stripe Background Color": {
+        "$type": "color",
+        "$value": "{Component.Side Navigation.Link Child Active Stripe Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-side-navigation-link-child-active-trail-stripe-background-color)"
+          }
+        }
+      }
+    },
+    "Mobile Navigation": {
+      "Panel Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-panel-background-color)"
+          }
+        }
+      },
+      "Top Menu Background Color": {
+        "$type": "color",
+        "$value": "{Component.Mobile Navigation.Panel Background Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-top-menu-background-color)"
+          }
+        }
+      },
+      "Bottom Menu Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-bottom-menu-background-color)"
+          }
+        }
+      },
+      "Menu Item Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-menu-item-color)"
+          }
+        }
+      },
+      "Menu Item Hover Color": {
+        "$type": "color",
+        "$value": "{Component.Mobile Navigation.Menu Item Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-menu-item-hover-color)"
+          }
+        }
+      },
+      "Menu Divider Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-menu-divider-border-color)"
+          }
+        }
+      },
+      "Subsection Heading Color": {
+        "$type": "color",
+        "$value": "{Typography.Heading}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-subsection-heading-color)"
+          }
+        }
+      },
+      "Subsection Heading Icon Color": {
+        "$type": "color",
+        "$value": "{Component.Mobile Navigation.Subsection Heading Color}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-subsection-heading-icon-color)"
+          }
+        }
+      },
+      "Subsection Trigger Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-subsection-trigger-color)"
+          }
+        }
+      }
+    },
+    "Mobile Navigation Trigger": {
+      "Color": {
+        "$type": "color",
+        "$value": "{Interaction.Interaction Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-mobile-navigation-trigger-color)"
+          }
+        }
+      }
+    },
+    "Promo": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-background-color)"
+          }
+        }
+      },
+      "Border Color": {
+        "$type": "color",
+        "$value": "{Border.Border Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-promo-border-color)"
+          }
+        }
+      }
+    },
+    "Skip Link": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-skip-link-background-color)"
+          }
+        }
+      }
+    },
+    "Slider": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-slider-background-color)"
+          }
+        }
+      },
+      "Slide Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-slider-slide-background-color)"
+          }
+        }
+      }
+    },
+    "Webform": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-webform-background-color)"
+          }
+        }
+      }
+    },
+    "Page": {
+      "Background Color": {
+        "$type": "color",
+        "$value": "{Background.Background Light}",
+        "$extensions": {
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--ct-page-background-color)"
+          }
+        }
       }
     }
   },
@@ -47,11 +5734,19 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.16470588235294117,
-          0.2235294117647059
+          0.164706,
+          0.223529
         ],
         "alpha": 1,
         "hex": "#002A39"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-heading)"
+        }
       }
     },
     "Body": {
@@ -60,11 +5755,19 @@
         "colorSpace": "srgb",
         "components": [
           0.2,
-          0.26666666666666666,
-          0.2901960784313726
+          0.266667,
+          0.290196
         ],
         "alpha": 1,
         "hex": "#33444A"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-body)"
+        }
       }
     }
   },
@@ -74,12 +5777,21 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9882352941176471,
-          0.9921568627450981,
-          0.9921568627450981
+          0.988235,
+          0.992157,
+          0.992157
         ],
         "alpha": 1,
         "hex": "#FCFDFD"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-background-light)"
+        }
       }
     },
     "Background": {
@@ -87,12 +5799,21 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9019607843137255,
-          0.9137254901960784,
-          0.9215686274509803
+          0.901961,
+          0.913725,
+          0.921569
         ],
         "alpha": 1,
         "hex": "#E6E9EB"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-background)"
+        }
       }
     },
     "Background Dark": {
@@ -100,12 +5821,21 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.7215686274509804,
-          0.7294117647058823,
-          0.7372549019607844
+          0.721569,
+          0.729412,
+          0.737255
         ],
         "alpha": 1,
         "hex": "#B8BABC"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-background-dark)"
+        }
       }
     }
   },
@@ -115,12 +5845,20 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.6745098039215687,
-          0.6862745098039216,
-          0.6901960784313725
+          0.67451,
+          0.686275,
+          0.690196
         ],
         "alpha": 1,
         "hex": "#ACAFB0"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-border-light)"
+        }
       }
     },
     "Border": {
@@ -128,12 +5866,20 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.3607843137254902,
-          0.36470588235294116,
-          0.3686274509803922
+          0.360784,
+          0.364706,
+          0.368627
         ],
         "alpha": 1,
         "hex": "#5C5D5E"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-border)"
+        }
       }
     },
     "Border Dark": {
@@ -141,12 +5887,20 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.09019607843137255,
-          0.09019607843137255,
-          0.09411764705882353
+          0.090196,
+          0.090196,
+          0.094118
         ],
         "alpha": 1,
         "hex": "#171718"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-border-dark)"
+        }
       }
     }
   },
@@ -156,12 +5910,21 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9803921568627451,
-          0.984313725490196,
-          0.984313725490196
+          0.980392,
+          0.984314,
+          0.984314
         ],
         "alpha": 1,
         "hex": "#FAFBFB"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-interaction-text)"
+        }
       }
     },
     "Interaction Background": {
@@ -170,11 +5933,20 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.4117647058823529,
-          0.5607843137254902
+          0.411765,
+          0.560784
         ],
         "alpha": 1,
         "hex": "#00698F"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-interaction-background)"
+        }
       }
     },
     "Interaction Hover Text": {
@@ -182,12 +5954,21 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9803921568627451,
-          0.984313725490196,
-          0.984313725490196
+          0.980392,
+          0.984314,
+          0.984314
         ],
         "alpha": 1,
         "hex": "#FAFBFB"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-interaction-hover-text)"
+        }
       }
     },
     "Interaction Hover Background": {
@@ -196,11 +5977,20 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.24705882352941178,
-          0.33725490196078434
+          0.247059,
+          0.337255
         ],
         "alpha": 1,
         "hex": "#003F56"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-interaction-hover-background)"
+        }
       }
     },
     "Interaction Focus": {
@@ -208,12 +5998,21 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.5450980392156862,
-          0.3607843137254902,
-          0.8431372549019608
+          0.545098,
+          0.360784,
+          0.843137
         ],
         "alpha": 1,
         "hex": "#8B5CD7"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE",
+          "EFFECT_COLOR"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-interaction-focus)"
+        }
       }
     }
   },
@@ -223,12 +6022,22 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.07058823529411765,
-          0.07450980392156863,
-          0.07450980392156863
+          0.070588,
+          0.07451,
+          0.07451
         ],
         "alpha": 1,
         "hex": "#121313"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL",
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-highlight)"
+        }
       }
     }
   },
@@ -239,11 +6048,22 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.48627450980392156,
-          0.7490196078431373
+          0.486275,
+          0.74902
         ],
         "alpha": 1,
         "hex": "#007CBF"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL",
+          "TEXT_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-information)"
+        }
       }
     },
     "Warning": {
@@ -251,12 +6071,23 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.788235294117647,
-          0.3176470588235294,
+          0.788235,
+          0.317647,
           0
         ],
         "alpha": 1,
         "hex": "#C95100"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL",
+          "TEXT_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-warning)"
+        }
       }
     },
     "Error": {
@@ -264,12 +6095,23 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.807843137254902,
-          0.2196078431372549,
-          0.21176470588235294
+          0.807843,
+          0.219608,
+          0.211765
         ],
         "alpha": 1,
         "hex": "#CE3836"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL",
+          "TEXT_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-error)"
+        }
       }
     },
     "Success": {
@@ -278,11 +6120,22 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.5176470588235295,
-          0.5098039215686274
+          0.517647,
+          0.509804
         ],
         "alpha": 1,
         "hex": "#008482"
+      },
+      "$extensions": {
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL",
+          "TEXT_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--ct-color-success)"
+        }
       }
     }
   }

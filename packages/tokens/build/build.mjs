@@ -8,75 +8,19 @@
  *   dist/css/variables.css         — 2.x theme-scoped properties (§3.4)
  *   dist/figma/name-map.json       — token path <-> Figma name contract
  *
- * Style Dictionary v5 parses/resolves each single-mode DTCG tree; colour
- * objects are collapsed to their `hex` by a custom transform (the known
- * SD 2025.10 colour-object gap, plan §6). The Figma emit re-expands hex to
- * the 2025.10 colour object — Figma's importer rejects hex strings.
+ * The Figma files carry ALL 430 variables (brand + palette + component),
+ * mirroring the proven Export-mode shape, so the production run can create or
+ * update the whole Colour collection through Figma's native Import mode
+ * (rehearsed 2026-10-06: import matches by name, creates the full alias
+ * graph with scopes and codeSyntax, preserves variable ids in-place, and is
+ * an idempotent no-op on equal values).
  */
 import fs from 'fs';
 import path from 'path';
-import StyleDictionary from 'style-dictionary';
 import { MODES, PACKAGE_DIR, loadTokens, treeForMode, flattenTree, resolveModes, isAlias, aliasTarget } from './lib.mjs';
-import { FIGMA_NAMES } from './figma-names.mjs';
+import { figmaNameFor, figmaScopesFor } from './figma-names.mjs';
 
 const DIST = path.join(PACKAGE_DIR, 'dist');
-
-StyleDictionary.registerTransform({
-  name: 'ct/color/hex',
-  type: 'value',
-  filter: (token) => (token.$type ?? token.type) === 'color',
-  transform: (token) => (typeof token.$value === 'string' ? token.$value : token.$value.hex).toLowerCase(),
-});
-
-// Figma's native "Import mode" rejects legacy hex-string colours; it requires
-// the DTCG 2025.10 object form (colorSpace/components/alpha). `hex` is an
-// optional convenience field Figma itself includes on export.
-function figmaColorValue(hex) {
-  const channels = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
-  return { colorSpace: 'srgb', components: channels, alpha: 1, hex: hex.toUpperCase() };
-}
-
-StyleDictionary.registerFormat({
-  name: 'ct/figma-dtcg',
-  format: ({ dictionary }) => {
-    const out = {};
-    dictionary.allTokens.forEach((token) => {
-      const tokenPath = token.path.join('.');
-      const figmaName = FIGMA_NAMES[tokenPath];
-      if (!figmaName) throw new Error(`No Figma name mapped for token "${tokenPath}" — add it to build/figma-names.mjs`);
-      const segments = figmaName.split('/');
-      const leaf = segments.pop();
-      let group = out;
-      segments.forEach((segment) => {
-        group[segment] = group[segment] || {};
-        group = group[segment];
-      });
-      group[leaf] = { $type: 'color', $value: figmaColorValue(token.$value) };
-    });
-    return `${JSON.stringify(out, null, 2)}\n`;
-  },
-});
-
-async function buildMode(tree, mode) {
-  const sd = new StyleDictionary({
-    tokens: treeForMode(tree, mode),
-    log: { verbosity: 'default' },
-    platforms: {
-      figma: {
-        transforms: ['ct/color/hex'],
-        buildPath: `${DIST}/figma/`,
-        files: [{
-          destination: `${mode}.tokens.json`,
-          format: 'ct/figma-dtcg',
-          // Component tokens stay out of Figma (plan §3.1): designers bind to
-          // the palette variables; this tier lives in JSON/CSS only.
-          filter: (token) => token.path[1] !== 'component',
-        }],
-      },
-    },
-  });
-  await sd.buildAllPlatforms();
-}
 
 /**
  * The 2.x custom-property name for a token (§3.4 naming contract).
@@ -87,6 +31,44 @@ function cssNameFor(tokenPath) {
   if (tier === 'palette') return `--ct-color-${rest.join('-')}`;
   if (tier === 'component') return `--ct-${rest.join('-')}`;
   throw new Error(`No CSS name for "${tokenPath}" — only palette and component tokens ship in CSS`);
+}
+
+/**
+ * A committed $value in Figma Export-mode form: an alias becomes a DTCG
+ * reference string with the dot-separated Figma path (names never contain
+ * dots, so the slash->dot translation is unambiguous); a literal keeps the
+ * committed 6-decimal components and alpha with hex flipped to Figma's
+ * uppercase. Figma's native Import mode rejects legacy hex-string colours —
+ * the DTCG 2025.10 object form is required.
+ */
+function figmaValue(value) {
+  if (isAlias(value)) return `{${figmaNameFor(aliasTarget(value)).replaceAll('/', '.')}}`;
+  return { colorSpace: 'srgb', components: value.components, alpha: value.alpha, hex: value.hex.toUpperCase() };
+}
+
+/**
+ * One mode's Figma import document. Each variable carries com.figma.scopes
+ * and (except brand, which ships nowhere in CSS) WEB codeSyntax, so a native
+ * import CREATES variables with the correct pickers and syntax, not just
+ * values; the doc-level com.figma.modeName drives the ingest's swapped-files
+ * guard. com.figma.variableId is deliberately absent — import matches by
+ * name, and ids differ per file.
+ */
+function figmaDoc(tree, mode) {
+  const out = { $extensions: { 'com.figma.modeName': mode === 'light' ? 'Light' : 'Dark' } };
+  Object.entries(flattenTree(treeForMode(tree, mode))).forEach(([tokenPath, token]) => {
+    const segments = figmaNameFor(tokenPath).split('/');
+    const leaf = segments.pop();
+    let group = out;
+    segments.forEach((segment) => {
+      group[segment] = group[segment] || {};
+      group = group[segment];
+    });
+    const $extensions = { 'com.figma.scopes': figmaScopesFor(tokenPath) };
+    if (!tokenPath.startsWith('color.brand.')) $extensions['com.figma.codeSyntax'] = { WEB: `var(${cssNameFor(tokenPath)})` };
+    group[leaf] = { $type: 'color', $value: figmaValue(token.$value), $extensions };
+  });
+  return out;
 }
 
 function cssLiteral(value) {
@@ -121,14 +103,17 @@ function cssForMode(tree, resolved, mode) {
 const tree = loadTokens();
 const resolved = resolveModes();
 
+fs.mkdirSync(path.join(DIST, 'figma'), { recursive: true });
 for (const mode of MODES) {
-  await buildMode(tree, mode);
+  fs.writeFileSync(path.join(DIST, 'figma', `${mode}.tokens.json`), `${JSON.stringify(figmaDoc(tree, mode), null, 2)}\n`);
   fs.writeFileSync(path.join(DIST, `resolved.${mode}.json`), `${JSON.stringify(resolved[mode], null, 2)}\n`);
 }
 
 fs.mkdirSync(path.join(DIST, 'css'), { recursive: true });
 const banner = '/**\n * Generated by @civictheme/tokens — do not edit.\n * Source: packages/tokens/tokens/*.json\n */\n';
 fs.writeFileSync(path.join(DIST, 'css', 'variables.css'), `${banner}${cssForMode(tree, resolved, 'light')}\n${cssForMode(tree, resolved, 'dark')}`);
-fs.writeFileSync(path.join(DIST, 'figma', 'name-map.json'), `${JSON.stringify(FIGMA_NAMES, null, 2)}\n`);
+
+const nameMap = Object.fromEntries(Object.keys(flattenTree(tree)).map((tokenPath) => [tokenPath, figmaNameFor(tokenPath)]));
+fs.writeFileSync(path.join(DIST, 'figma', 'name-map.json'), `${JSON.stringify(nameMap, null, 2)}\n`);
 
 console.log(`Built ${Object.keys(resolved.light).length} tokens × ${MODES.length} modes -> ${path.relative(process.cwd(), DIST)}`);
