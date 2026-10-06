@@ -10,6 +10,14 @@
  * leaves whose slug differs from the token name (brand-1 vs brand1) — this
  * explicit table, not string mechanics, is the contract.
  */
+/*
+ * The component tier (Phase 3b) is covered by a mechanical rule instead of
+ * table entries: `color.component.<comp>.<prop>` <-> `Component/<Comp Title
+ * Case>/<Prop Title Case>` (hyphen <-> space, title-case each word; verified
+ * reversible across all 409 component tokens — no brand1-style exceptions
+ * exist in this tier). Use figmaNameFor()/tokenPathFor() below, which apply
+ * the table first and the rule second.
+ */
 export const FIGMA_NAMES = {
   'color.brand.brand1': 'Brand/Brand 1',
   'color.brand.brand2': 'Brand/Brand 2',
@@ -33,3 +41,37 @@ export const FIGMA_NAMES = {
   'color.palette.error': 'Status/Error',
   'color.palette.success': 'Status/Success',
 };
+
+const TOKEN_PATHS = Object.fromEntries(Object.entries(FIGMA_NAMES).map(([tokenPath, figmaName]) => [figmaName, tokenPath]));
+
+const titleCase = (slug) => slug.split('-').map((word) => word[0].toUpperCase() + word.slice(1)).join(' ');
+
+/** The Figma name for a token path (table first, component rule second). */
+export function figmaNameFor(tokenPath) {
+  if (FIGMA_NAMES[tokenPath]) return FIGMA_NAMES[tokenPath];
+  const parts = tokenPath.split('.');
+  if (parts.length === 4 && parts[0] === 'color' && parts[1] === 'component') {
+    return `Component/${titleCase(parts[2])}/${titleCase(parts[3])}`;
+  }
+  throw new Error(`No Figma name for token "${tokenPath}" — not in FIGMA_NAMES and not a color.component.<comp>.<prop> path`);
+}
+
+/**
+ * The token path for a Figma variable name — the ingest direction. STRICT:
+ * a Component/ name must round-trip to itself through figmaNameFor, so any
+ * drift in casing or spacing introduced by a rename in Figma fails loudly
+ * instead of silently mapping onto the nearest token.
+ */
+export function tokenPathFor(figmaName) {
+  if (TOKEN_PATHS[figmaName]) return TOKEN_PATHS[figmaName];
+  const segments = figmaName.split('/');
+  if (segments.length === 3 && segments[0] === 'Component') {
+    const slug = (name) => name.toLowerCase().replaceAll(' ', '-');
+    const tokenPath = `color.component.${slug(segments[1])}.${slug(segments[2])}`;
+    if (figmaNameFor(tokenPath) !== figmaName) {
+      throw new Error(`Figma name "${figmaName}" does not round-trip the component name rule (expected "${figmaNameFor(tokenPath)}") — renamed in Figma?`);
+    }
+    return tokenPath;
+  }
+  throw new Error(`No token path for Figma variable "${figmaName}" — not in FIGMA_NAMES and not a Component/<Comp>/<Prop> name`);
+}
