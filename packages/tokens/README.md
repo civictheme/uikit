@@ -9,16 +9,17 @@ tokens/
   color.brand.json      # brand1/2/3 primitives — the only hand-edited colour inputs
   color.palette.json    # 18 semantic colours — resolved values (generated, Phase 4 regenerates via Leonardo)
   color.components.json # 409 component tokens — aliases into the palette (captured from the 1.x SCSS; maintained by hand until the Phase 4 generator)
-build/                  # Style Dictionary v5 build, the token<->Figma name map, the Figma->code ingest
+build/                  # token build, the token<->Figma name/scope contract, the Figma->code ingest
 dist/
   css/variables.css     # 2.x theme-scoped custom properties (:root/.ct-theme-light + .ct-theme-dark)
-  figma/light.tokens.json   # Figma native DTCG mode import files (right-click mode -> Import mode)
-  figma/dark.tokens.json
-  figma/name-map.json   # token path <-> Figma variable name contract
+  figma/light.tokens.json   # Figma native DTCG mode import files (right-click mode -> Import mode),
+  figma/dark.tokens.json    #   all 430 variables incl. the component tier, aliases as references
+  figma/name-map.json   # token path <-> Figma variable name contract (all 430)
   resolved.{light,dark}.json  # flat token-path -> hex maps for tooling/CI
 tests/
   validate-resolved-values.mjs  # source-resolution sanity + embeds gate vs compiled UIKit CSS
   validate-figma-ingest.mjs     # ingest acceptance gate (fixture round-trip must be byte-identical)
+  validate-figma-emit.mjs       # emit acceptance gate (dist == export fixtures, emit->ingest round-trip)
   fixtures/figma-export/        # real Export-mode dump of the 430-variable Colour collection
 ```
 
@@ -28,16 +29,38 @@ tests/
 - **Theme is a mode, never part of the token path.** A token's `$value` is the light (default) mode value; the dark value lives under `$extensions["io.civictheme.modes"].dark`. The build emits one single-mode file per mode for Figma, and both scopes into one CSS file.
 - Token path ↔ CSS custom property ↔ Figma variable differ only by separators/case: `color.palette.interaction-background` ↔ `--ct-color-interaction-background` ↔ `Interaction/Background`. The explicit map lives in `build/figma-names.mjs` (group assignment, e.g. `heading` → `Typography/`, is a lookup, not string mechanics).
 - Brand tokens are generator inputs only — they ship in Figma for designers, but never in CSS.
-- **Component tokens** (`color.component.chip.background-color` ↔ `--ct-chip-background-color`) are aliases into the palette — `"$value": "{color.palette.interaction-text}"` — or into other component tokens, mirroring the 1.x SCSS alias graph. Where 1.x derived values (`ct-color-tint`/`ct-color-shade` on status colours) or hardcoded them (`transparent`), the token is a captured literal with the derivation recorded in `$description`. Each token's 1.x source variables sit under `$extensions["io.civictheme.scss"]` — the bridge used by the validation test, the Phase 2b component refactor, and sub-theme migration tooling. The component tier exists as Figma variables since Phase 3b (`Component/<Comp>/<Prop>` in the same `Colour` collection, names via the mechanical rule in `build/figma-names.mjs`); the dist *import* files still emit the palette tier only — extending them to all 430 is a decided follow-up for the production run.
+- **Component tokens** (`color.component.chip.background-color` ↔ `--ct-chip-background-color`) are aliases into the palette — `"$value": "{color.palette.interaction-text}"` — or into other component tokens, mirroring the 1.x SCSS alias graph. Where 1.x derived values (`ct-color-tint`/`ct-color-shade` on status colours) or hardcoded them (`transparent`), the token is a captured literal with the derivation recorded in `$description`. Each token's 1.x source variables sit under `$extensions["io.civictheme.scss"]` — the bridge used by the validation test, the Phase 2b component refactor, and sub-theme migration tooling. The component tier exists as Figma variables since Phase 3b (`Component/<Comp>/<Prop>` in the same `Colour` collection, names via the mechanical rule in `build/figma-names.mjs`), and the dist *import* files carry all 430 variables — see "Code → Figma" below.
 - In the generated CSS, component properties are emitted as `var()` references so the alias graph survives into devtools, and they are re-declared in **both** theme scope blocks (a deliberate deviation from plan §3.4's ":root once"): `var()` substitution inside a custom property happens where that property is *declared*, and the substituted result is what inherits — declared only on `:root`, every component property would freeze at its light value for descendants of a `.ct-theme-dark` scope.
 
 ## Commands
 
 ```
 npm run dist -w packages/tokens     # build dist/ from tokens/
-npm run test -w packages/tokens     # source-resolution sanity + embeds gate + ingest acceptance
+npm run test -w packages/tokens     # source-resolution sanity + embeds gate + ingest + emit acceptance
 npm run ingest -w packages/tokens -- <Light.tokens.json> <Dark.tokens.json> [--out <dir>] [--dry-run]
 ```
+
+## Code → Figma (the dist import files)
+
+`dist/figma/{light,dark}.tokens.json` mirror the proven Export-mode shape for **all 430 variables**: brand + palette + component, grouped by Figma name, aliases emitted as DTCG reference strings (`"{Interaction.Interaction Text}"`, dot-separated Figma paths), literals as DTCG 2025.10 colour objects, per-variable `com.figma.scopes` and `WEB` `codeSyntax` (brand carries no codeSyntax — it ships nowhere in CSS), and doc-level `com.figma.modeName`. `com.figma.variableId` is deliberately absent: Figma's Import mode matches by **name**.
+
+That makes native import the whole code→Figma push (rehearsed on the real 430-variable collection, 2026-10-06): importing both files into an empty collection *creates* the full alias graph with correct scopes and codeSyntax; importing into an existing collection updates only changed values, preserves variable ids (so node bindings survive), and is an idempotent no-op when values are equal. The scripted `use_figma` creation path remains as fallback only. Palette/brand scopes live in `FIGMA_SCOPES` (`build/figma-names.mjs`); the component tier is uniformly `SHAPE_FILL`+`TEXT_FILL` until designers decide narrowed scopes — changing the table rolls out via the next import.
+
+### Figma variable scopes
+
+Scopes control **which colour pickers in Figma's UI offer the variable** — they are suggestion filters, not binding restrictions. A designer only sees `Border/Border` when editing a stroke, which keeps a 430-variable collection usable from the pickers; existing bindings and the Plugin API are unaffected by scopes. The values (from Figma's [`VariableScope`](https://www.figma.com/plugin-docs/api/VariableScope/) enum, carried in the import/export files as `com.figma.scopes`):
+
+| Scope | The variable is offered when setting… |
+|---|---|
+| `FRAME_FILL` | the fill of a frame, section or group — page and container backgrounds |
+| `SHAPE_FILL` | the fill of a shape (rectangle, ellipse, vector, …) — component surfaces, icons |
+| `TEXT_FILL` | the colour of a text layer |
+| `STROKE` | a stroke colour — borders, dividers, outlines |
+| `EFFECT_COLOR` | an effect colour — drop/inner shadow colours |
+
+How the tiers use them: `Typography/*` are `TEXT_FILL`-only; `Background/*` and `Brand/*` are `FRAME_FILL`+`SHAPE_FILL`; `Border/*` are `STROKE`-only; `Interaction/Interaction Focus` is `STROKE`+`EFFECT_COLOR` because focus rings render as strokes or shadows; `Highlight` and the `Status/*` colours span fills and text (status also strokes). The `Component/*` tier mirrors the palette default `SHAPE_FILL`+`TEXT_FILL` from Phase 3b — per-component narrowing (e.g. `*-border-color` → `STROKE`-only) is a parked designer decision.
+
+The emit acceptance test (`validate-figma-emit.mjs`) holds the dist files semantically identical to the committed real-export fixtures (the only tolerated differences being `variableId` and float formatting) and requires ingesting them to reproduce `tokens/*.json` byte-for-byte with zero changes — the code → Figma → code loop closes on the dist artifacts themselves.
 
 ## Figma → code ingest (Phase 2c)
 
@@ -55,5 +78,5 @@ The test resolves every token through its alias graph for both modes (cycles, un
 
 - Theme scope selectors are `.ct-theme-light` / `.ct-theme-dark` (with light also on `:root`) — matches the existing class convention; `[data-theme]` was the alternative (plan §3.4 open item).
 - Figma names were reconciled against the file's actual paint-style taxonomy (2026-10-04): variable leaves are the exact style leaf names (`Background/Background Light`, `Highlight/Highlight`, …), so every palette leaf slugifies 1:1 to its token name; groups drop the `" Colours"` suffix.
-- Figma import files emit DTCG 2025.10 colour objects (`colorSpace`/`components`/`alpha`/`hex`) — Figma's native *Import mode* rejects legacy hex-string `$value`s. Palette round-trip proven byte-exact 2026-10-05; the full 430-variable export/import round-trip (aliases as references, ids preserved on in-place import) proven 2026-10-06.
+- Figma import files emit DTCG 2025.10 colour objects (`colorSpace`/`components`/`alpha`/`hex`) — Figma's native *Import mode* rejects legacy hex-string `$value`s. Palette round-trip proven byte-exact 2026-10-05; the full 430-variable export/import round-trip (aliases as references, ids preserved on in-place import) proven 2026-10-06; the dist files cover all 430 variables since the Figma-emit extension (same day).
 - Component-tier derived literals (the 24 status tint/shade backgrounds) stop tracking palette changes until the Phase 4 generator re-derives them — a sub-theme that changes `error`/`warning`/`information`/`success` must override them too until then.
