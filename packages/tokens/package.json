@@ -12,7 +12,8 @@
     "build": "node build/build.mjs",
     "dist": "node build/build.mjs",
     "build-storybook": "echo @civictheme/tokens has no Storybook",
-    "test": "node tests/validate-resolved-values.mjs",
+    "ingest": "node build/figma-ingest.mjs",
+    "test": "node tests/validate-resolved-values.mjs && node tests/validate-figma-ingest.mjs",
     "test:ci": "npm run test",
     "lint": "eslint ./build ./tests",
     "lint:fix": "eslint ./build ./tests --fix"
