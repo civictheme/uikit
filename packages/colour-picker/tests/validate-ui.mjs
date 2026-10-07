@@ -97,8 +97,10 @@ try {
   const tokens = await get('/colour-picker-tokens/tokens/color.palette.json');
   expect('serve: token sources', tokens.status === 200 && JSON.parse(tokens.body).color.palette !== undefined);
   const config = await get('/colour-picker/ui/serve-config.json');
-  expect('serve: dynamic config carries --storybook-url', config.status === 200 && JSON.parse(config.body).storybookUrl === 'http://storybook.invalid/');
+  expect('serve: dynamic config points previews at the same-origin proxy', config.status === 200 && JSON.parse(config.body).storybookUrl === '/');
   expect('serve: dynamic config advertises generate', JSON.parse(config.body).generate === true);
+  const proxied = await get('/index.json');
+  expect('serve: unknown paths proxy to the Storybook (502 when unreachable)', proxied.status === 502 && proxied.body.includes('storybook.invalid'));
   const post = async (body) => {
     const response = await fetch(new URL('/generate', address), { method: 'POST', headers: { 'content-type': 'application/json' }, body });
     return { status: response.status, body: await response.json() };
@@ -112,9 +114,41 @@ try {
   const badJson = await post('not json');
   expect('serve: POST /generate rejects bad JSON with 400', badJson.status === 400);
   const traversal = await get('/colour-picker/../package.json');
-  expect('serve: no path traversal', traversal.status === 404);
+  expect('serve: no path traversal', traversal.status === 404 || traversal.status === 502);
   const missing = await get('/colour-picker/nope.txt');
   expect('serve: 404s cleanly', missing.status === 404);
+
+  // A reachable Storybook target is proxied transparently (content + type).
+  const { createServer } = await import('http');
+  const upstream = createServer((req, res) => {
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({ probe: req.url }));
+  });
+  await new Promise((resolve) => upstream.listen(0, '127.0.0.1', resolve));
+  const upstreamUrl = `http://127.0.0.1:${upstream.address().port}`;
+  const proxyChild = spawn(process.execPath, [path.join(PACKAGE_ROOT, 'cli.mjs'), 'serve', '--port', '0', '--json', '--storybook-url', upstreamUrl], { stdio: ['ignore', 'pipe', 'pipe'] });
+  try {
+    const proxyAddress = await new Promise((resolve, reject) => {
+      let buffer = '';
+      proxyChild.stdout.on('data', (chunk) => {
+        buffer += chunk;
+        try {
+          resolve(JSON.parse(buffer).url);
+        } catch { /* keep buffering */ }
+      });
+      proxyChild.on('exit', (code) => reject(new Error(`proxy serve exited early (${code})`)));
+      setTimeout(() => reject(new Error('proxy serve did not start in 5s')), 5000);
+    });
+    const live = await fetch(new URL('/index.json?x=1', proxyAddress));
+    const liveBody = await live.json();
+    expect('serve: reachable Storybook is proxied with path and query intact', live.status === 200 && liveBody.probe === '/index.json?x=1');
+    expect('serve: proxy forwards the content type', (live.headers.get('content-type') ?? '').startsWith('application/json'));
+    const owned = await fetch(new URL('/colour-picker/engine/core.mjs', proxyAddress));
+    expect('serve: owned mounts are never proxied', owned.status === 200 && (await owned.text()).includes('resolveRecipe'));
+  } finally {
+    proxyChild.kill();
+    upstream.close();
+  }
 } catch (error) {
   failures.push(`serve: ${error.message}`);
 } finally {
@@ -126,4 +160,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`  - ${failure}`));
   process.exit(1);
 }
-console.log(`UI validation passed: the browser import graph (${seen.size} modules) is Node-free, reaches the pure engine and never touches derive.mjs; index.html carries the import map and dogfoods the tokens CSS; serve delivers the app, both package mounts, the dynamic config (generate advertised) and a working POST /generate with correct types and traversal safety.`);
+console.log(`UI validation passed: the browser import graph (${seen.size} modules) is Node-free, reaches the pure engine and never touches derive.mjs; index.html carries the import map, the import controls and dogfoods the tokens CSS; serve delivers the app, both package mounts, the dynamic config (generate advertised), a working POST /generate and the same-origin Storybook proxy, with correct types and traversal safety.`);

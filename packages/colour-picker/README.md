@@ -118,7 +118,10 @@ Reach it two ways:
 - **`npx @civictheme/colour-picker serve`** — a zero-dependency static
   server mounting this package at `/colour-picker/` and
   `@civictheme/tokens` at `/colour-picker-tokens/`. Pass `--storybook-url`
-  to point live previews at a running Storybook.
+  to a running Storybook and `serve` **proxies it same-origin** (every path
+  it does not own is forwarded), so the live story previews accept the
+  generated-CSS injection and restyle on every recipe change — including
+  a freshly generated palette.
 - **Inside a Storybook** (the UIKit sdc Storybook ships it): add the
   stories glob and serve the two packages at the same paths —
 

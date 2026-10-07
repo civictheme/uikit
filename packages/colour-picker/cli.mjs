@@ -35,7 +35,7 @@ Options:
   --strict                check: exit 1 when any contrast target fails
   --write                 generate: write the updated recipe back to --recipe (default: print it)
   --port <n>              serve: port (default 8420; 0 picks a free one)
-  --storybook-url <url>   serve: Storybook base URL for live component previews
+  --storybook-url <url>   serve: Storybook to proxy same-origin, so live previews restyle
 `;
 
 function parseArgs(argv) {
@@ -197,12 +197,38 @@ const MIME = {
  * (engine/derive.mjs) and returns the updated recipe — the browser never
  * loads a Leonardo byte. serve-config.json advertises the capability; the
  * Storybook-static copy has no config, so its Generate button stays off.
+ * With --storybook-url, every path this server does not own is transparently
+ * proxied to that Storybook, which makes the story iframes SAME-origin with
+ * the picker UI — so the live previews accept the generated-CSS injection
+ * and restyle on every recipe change (cross-origin iframes cannot, by
+ * browser rule). serve-config then advertises "/" as the Storybook base.
  */
 async function commandServe(options) {
   const { createServer } = await import('node:http');
   const packageRoot = path.dirname(fileURLToPath(import.meta.url));
   const tokensRoot = path.dirname(fileURLToPath(import.meta.resolve('@civictheme/tokens/package.json')));
   const mounts = { '/colour-picker/': packageRoot, '/colour-picker-tokens/': tokensRoot };
+  const storybookTarget = options.storybookUrl?.replace(/\/+$/, '') ?? null;
+
+  const proxyStorybook = async (request, response) => {
+    try {
+      const upstream = await fetch(`${storybookTarget}${request.url}`, {
+        headers: { accept: request.headers.accept ?? '*/*' },
+        redirect: 'manual',
+      });
+      const headers = {};
+      ['content-type', 'cache-control', 'location'].forEach((name) => {
+        const value = upstream.headers.get(name);
+        if (value !== null) headers[name] = value;
+      });
+      response.writeHead(upstream.status, headers);
+      if (upstream.body) for await (const chunk of upstream.body) response.write(chunk);
+      return response.end();
+    } catch {
+      response.writeHead(502, { 'content-type': 'text/plain' });
+      return response.end(`Storybook proxy: ${storybookTarget} unreachable`);
+    }
+  };
 
   const server = createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost');
@@ -225,9 +251,10 @@ async function commandServe(options) {
     }
     if (url.pathname === '/colour-picker/ui/serve-config.json') {
       response.writeHead(200, { 'content-type': MIME['.json'] });
-      return response.end(JSON.stringify({ storybookUrl: options.storybookUrl ?? null, generate: true }));
+      return response.end(JSON.stringify({ storybookUrl: storybookTarget ? '/' : null, generate: true }));
     }
     const mount = Object.keys(mounts).find((prefix) => url.pathname.startsWith(prefix));
+    if (!mount && storybookTarget && request.method === 'GET') return proxyStorybook(request, response);
     const file = mount && path.join(mounts[mount], decodeURIComponent(url.pathname.slice(mount.length)));
     if (!file || !path.resolve(file).startsWith(mounts[mount] + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
       response.writeHead(404, { 'content-type': 'text/plain' });
@@ -242,7 +269,7 @@ async function commandServe(options) {
   await new Promise((ready, failed) => server.listen(port, '127.0.0.1').once('listening', ready).once('error', failed));
   const address = `http://127.0.0.1:${server.address().port}/`;
   if (options.json) console.log(JSON.stringify({ url: address, storybookUrl: options.storybookUrl ?? null }, null, 2));
-  else console.log(`Colour picker UI at ${address}${options.storybookUrl ? ` (previews from ${options.storybookUrl})` : ' (no --storybook-url: previews probe the current origin, else swatch-only)'}`);
+  else console.log(`Colour picker UI at ${address}${options.storybookUrl ? ` (previews proxied same-origin from ${options.storybookUrl} — they restyle live)` : ' (no --storybook-url: previews probe the current origin, else swatch-only)'}`);
   return new Promise(() => {});
 }
 
