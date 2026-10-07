@@ -879,7 +879,7 @@ function renderPreview() {
     panes.innerHTML = `${tabs}${MODES.map((mode) => `
       <div class="${paneClass(mode)}">
         <iframe title="${esc(comp)} story — ${mode} theme" data-pane="${mode}"
-          src="${esc(state.storybook.base)}iframe.html?id=${esc(story.id)}&viewMode=story&globals=theme:${mode}"></iframe>
+          src="${esc(state.storybook.base)}iframe.html?id=${esc(story.id)}&viewMode=story&args=theme:${mode}"></iframe>
       </div>`).join('')}`;
     panes.querySelectorAll('iframe').forEach((iframe) => {
       iframe.addEventListener('load', () => injectIntoPane(iframe));
@@ -887,7 +887,7 @@ function renderPreview() {
     const note = state.storybook.sameOrigin
       ? 'generated properties injected over the story’s token CSS'
       : 'cross-origin Storybook — stories render with stock colours (generated properties cannot be injected)';
-    $('#preview-src').textContent = `iframe.html?id=${story.id} · globals: theme=light / theme=dark · ${note}`;
+    $('#preview-src').textContent = `iframe.html?id=${story.id} · args: theme=light / theme=dark · ${note}`;
   } else {
     const swatches = (mode) => componentTokens(comp).map((path) => `
         <span class="preview-swatch"><span class="swatch" style="background: ${esc(derived.resolved[mode][path])}"></span>${esc(slotLeaf(path))}</span>`).join('');
