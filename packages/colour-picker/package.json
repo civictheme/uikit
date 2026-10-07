@@ -11,6 +11,9 @@
   "engines": {
     "node": ">=22.6"
   },
+  "bin": {
+    "colour-picker": "./cli.mjs"
+  },
   "exports": {
     "./engine/resolve.mjs": "./engine/resolve.mjs",
     "./engine/contrast.mjs": "./engine/contrast.mjs",
@@ -25,9 +28,9 @@
     "build": "echo @civictheme/colour-picker has no build step",
     "dist": "echo @civictheme/colour-picker has no build step",
     "build-storybook": "echo @civictheme/colour-picker has no Storybook",
-    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-isolation.mjs",
+    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-cli.mjs && node tests/validate-isolation.mjs",
     "test:ci": "npm run test",
-    "lint": "eslint ./engine ./tests",
-    "lint:fix": "eslint ./engine ./tests --fix"
+    "lint": "eslint ./cli.mjs ./engine ./tests",
+    "lint:fix": "eslint ./cli.mjs ./engine ./tests --fix"
   }
 }
