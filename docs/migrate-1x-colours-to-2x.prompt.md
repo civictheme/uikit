@@ -20,7 +20,7 @@ other Sass untouched.
 | Palette | Sass maps (`$ct-colors-brands`, `$ct-colors`), derived at compile time via `ct-color-tint/shade/blend()` | DTCG tokens JSON (`packages/tokens/tokens/*.json`) → generated CSS custom properties; no compile-time derivation exists |
 | Component colours | Doubled Sass variables `$ct-[component]-(light\|dark)-[rule]` with `!default` | One CSS custom property per role: `--ct-[component]-[rule]`, aliasing palette properties |
 | Theme switching | Separate per-theme rules/variables | A scope: `:root`/`.ct-theme-light` (light is the default) and `.ct-theme-dark`; one definition per colour, resolved per scope |
-| Sub-theme format | SCSS overrides of maps and `$ct-*` variables | A **colour overrides stylesheet**: scoped custom-property declarations (a recipe file + generator replaces this in a later 2.x release — structure your output so that swap is mechanical) |
+| Sub-theme format | SCSS overrides of maps and `$ct-*` variables | A **recipe** for `@civictheme/colour-picker` (preferred — its `emit` generates the overrides stylesheet), or a hand-written **colour overrides stylesheet** of scoped custom-property declarations |
 | Sass colour functions | `ct-color-light/dark/tint/shade/tone/blend/constant-*` | **Removed.** Do not call them; they do not exist on 2.x |
 
 Name mapping:
@@ -94,7 +94,8 @@ declarations built from the Step 2 diff:
   `io.civictheme.scss` lookup, per scope block.
 - Brands: brand colours do not exist in 2.x CSS — their effect on the palette
   is already in the Step 2 palette diff. Record the brand hexes in the report
-  (they become generator inputs in a later 2.x release).
+  (they belong in the recipe's `brands` key, where
+  `npx @civictheme/colour-picker generate` can derive the palette from them).
 - Where light and dark diffs are identical, still declare both scopes (the
   dark block must re-declare to win inside `.ct-theme-dark`).
 - Skip entries whose resolved value equals stock — `!default` overrides that
@@ -126,8 +127,9 @@ In the sub-theme's own components/styles:
 ## Step 5 — Report
 
 Write `MIGRATION-REPORT.md`: inventory counts, the Step 2 diff (as a table of
-token path → light/dark values — this becomes the recipe file when the
-generator ships), brand hexes, converted items, flagged items
+token path → light/dark values — each row is an `overrides` entry if you
+produce a `@civictheme/colour-picker` recipe), brand hexes, converted items,
+flagged items
 (`needs-design-review`, `ambiguous-slot`, `no-matching-token`), and anything
 intentionally left as a literal.
 
