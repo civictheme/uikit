@@ -108,7 +108,25 @@ expect('tokens.json carries the addition', tokensJson.color.palette['brand-accen
 const figmaDark = JSON.parse(fs.readFileSync(path.join(exampleOut, 'figma', 'dark.tokens.json'), 'utf-8'));
 expect('figma dark carries the addition', figmaDark.Custom?.['Brand Accent']?.$value?.hex === '#C9A1E8');
 
-// --- 5. init-skill copies the shipped skill into ./.claude/skills.
+// --- 5. generate: solves the palette into the recipe's generated key.
+const brandRecipeData = { version: 1, brands: { light: { brand1: '#7a3b00' } }, overrides: { 'color.palette.highlight': { light: '#ffcc00' } } };
+const brandRecipe = writeJson('brand.json', brandRecipeData);
+const generate = run(['generate', '--recipe', brandRecipe, '--json']);
+expect('generate exits 0', generate.status === 0, generate.stderr);
+const generateOut = JSON.parse(generate.stdout);
+expect('generate materialises the generated key', generateOut.recipe.generated?.['color.palette.heading']?.light !== undefined);
+expect('generate honours the override lock', generateOut.recipe.generated?.['color.palette.highlight'] === undefined
+  && generateOut.rows.some((row) => row.tokenPath === 'color.palette.highlight' && row.locked));
+expect('generate without --write leaves the file alone', JSON.parse(fs.readFileSync(brandRecipe, 'utf-8')).generated === undefined);
+expect('generate --write without --recipe exits 1', run(['generate', '--write']).status === 1);
+const written = run(['generate', '--recipe', brandRecipe, '--write']);
+expect('generate --write exits 0', written.status === 0, written.stderr);
+const writtenRecipe = JSON.parse(fs.readFileSync(brandRecipe, 'utf-8'));
+expect('generate --write persists the generated key', writtenRecipe.generated?.['color.palette.heading']?.light !== undefined);
+expect('generate --write keeps the rest of the recipe', writtenRecipe.brands.light.brand1 === '#7a3b00' && writtenRecipe.overrides['color.palette.highlight'].light === '#ffcc00');
+expect('generated recipe passes check --strict', run(['check', '--strict', '--recipe', brandRecipe]).status === 0);
+
+// --- 6. init-skill copies the shipped skill into ./.claude/skills.
 const skillCwd = path.join(tempRoot, 'consumer-project');
 fs.mkdirSync(skillCwd, { recursive: true });
 try {
@@ -119,7 +137,7 @@ try {
   failures.push(`init-skill threw: ${error.message}`);
 }
 
-// --- 6. Failure modes: usage and malformed input.
+// --- 7. Failure modes: usage and malformed input.
 expect('unknown command exits 2', run(['bogus']).status === 2);
 expect('unknown flag exits 2', run(['resolve', '--bogus']).status === 2);
 expect('emit without --out exits 1', run(['emit']).status === 1);
@@ -134,4 +152,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`  - ${failure}`));
   process.exit(1);
 }
-console.log('CLI validation passed: identity resolve/emit reproduce the tokens dist byte-for-byte; check warns on the 3 known failures with --strict flipping the exit; an example recipe lands its exact changes across tokens.json, overrides.scss and the Figma files; usage and malformed input fail with the right codes.');
+console.log('CLI validation passed: identity resolve/emit reproduce the tokens dist byte-for-byte; check warns on the 3 known failures with --strict flipping the exit; an example recipe lands its exact changes across tokens.json, overrides.scss and the Figma files; generate materialises the generated key (locks honoured, --write round-trips, result passes check --strict); usage and malformed input fail with the right codes.');

@@ -4,8 +4,10 @@
  * contrast QA / build outputs out. Zero dependencies — hand-rolled args,
  * node:* only. Exit codes: 0 success (contrast failures WARN, never block —
  * recorded decision), 1 failure or `check --strict` with failing targets,
- * 2 usage. `generate` (Leonardo) arrives at P5; `serve` (human UI) at P4;
- * `init-skill` at P3 — each lands with the thing it operates on.
+ * 2 usage. The one exception to zero-dep is `generate`: palette generation
+ * lazily imports @adobe/leonardo-contrast-colors in engine/derive.mjs,
+ * Node-side only (the containment rule — the UI's Generate button POSTs to
+ * /generate on `serve`, no Leonardo bytes ever reach a browser).
  */
 import fs from 'fs';
 import path from 'path';
@@ -21,6 +23,7 @@ Commands:
   resolve     Full resolved token table, both modes
   check       Contrast QA against the per-family targets (warns, never blocks)
   emit        Write every build output of a recipe to a directory
+  generate    Generate the palette from the brand inputs (Leonardo), into the recipe's generated key
   serve       Serve the human UI locally
   init-skill  Install the colour-picker AI skill into ./.claude/skills/
 
@@ -30,8 +33,9 @@ Options:
   --targets <file>        check: alternative targets JSON ({ "targets": { ... } })
   --json                  Machine-readable output
   --strict                check: exit 1 when any contrast target fails
+  --write                 generate: write the updated recipe back to --recipe (default: print it)
   --port <n>              serve: port (default 8420; 0 picks a free one)
-  --storybook-url <url>   serve: Storybook base URL for live component previews
+  --storybook-url <url>   serve: Storybook to proxy same-origin, so live previews restyle
 `;
 
 function parseArgs(argv) {
@@ -41,6 +45,7 @@ function parseArgs(argv) {
     const arg = argv[i];
     if (arg === '--json') options.json = true;
     else if (arg === '--strict') options.strict = true;
+    else if (arg === '--write') options.write = true;
     else if (flags[arg]) {
       const value = argv[++i];
       if (value === undefined || value.startsWith('--')) throw new Error(`${arg} needs a value`);
@@ -142,6 +147,36 @@ function commandEmit(options) {
   return 0;
 }
 
+async function commandGenerate(options) {
+  if (options.write && !options.recipe) throw new Error('generate --write needs --recipe <file> to write back to');
+  const { generateRecipe } = await import('./engine/derive.mjs');
+  const { recipe, rows } = await generateRecipe(loadRecipe(options.recipe));
+  const recipeJson = `${JSON.stringify(recipe, null, 2)}\n`;
+  if (options.json) {
+    console.log(JSON.stringify({ recipe, rows, written: options.write ? options.recipe : null }, null, 2));
+    if (options.write) fs.writeFileSync(options.recipe, recipeJson);
+    return 0;
+  }
+  const width = Math.max(...rows.map((row) => row.tokenPath.length));
+  rows.forEach((row) => {
+    if (row.locked) {
+      console.log(`lock  ${pad('', 5)} ${pad(row.tokenPath, width)}  kept — slot has an override`);
+      return;
+    }
+    const detail = row.method === 'contrast'
+      ? `${pad(row.ratio.toFixed(2), 5)}:1 vs ${row.against.split('.').pop()} (requested ${row.request}:1, floor ${row.floor}:1)`
+      : 'mix rule';
+    console.log(`${row.method === 'contrast' ? 'solve' : 'mix '}  ${pad(row.mode, 5)} ${pad(row.tokenPath, width)}  ${pad(row.before, 11)} -> ${pad(row.value, 11)} ${detail}`);
+  });
+  if (options.write) {
+    fs.writeFileSync(options.recipe, recipeJson);
+    console.log(`\nWrote the generated palette back to ${options.recipe}`);
+  } else {
+    console.log(`\n${recipeJson}`);
+  }
+  return 0;
+}
+
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -157,26 +192,69 @@ const MIME = {
  * deps — R2/R3). Mounts this package at /colour-picker/ and the tokens
  * package at /colour-picker-tokens/ — the same paths the sdc Storybook
  * serves them at via staticDirs, so ui/index.html's import map works
- * identically in both contexts. P5 adds the POST /generate endpoint here
- * (Leonardo runs Node-side only — the containment rule).
+ * identically in both contexts. POST /generate is the P5 containment
+ * boundary: the UI sends a recipe, this process runs Leonardo
+ * (engine/derive.mjs) and returns the updated recipe — the browser never
+ * loads a Leonardo byte. serve-config.json advertises the capability; the
+ * Storybook-static copy has no config, so its Generate button stays off.
+ * With --storybook-url, every path this server does not own is transparently
+ * proxied to that Storybook, which makes the story iframes SAME-origin with
+ * the picker UI — so the live previews accept the generated-CSS injection
+ * and restyle on every recipe change (cross-origin iframes cannot, by
+ * browser rule). serve-config then advertises "/" as the Storybook base.
  */
 async function commandServe(options) {
   const { createServer } = await import('node:http');
   const packageRoot = path.dirname(fileURLToPath(import.meta.url));
   const tokensRoot = path.dirname(fileURLToPath(import.meta.resolve('@civictheme/tokens/package.json')));
   const mounts = { '/colour-picker/': packageRoot, '/colour-picker-tokens/': tokensRoot };
+  const storybookTarget = options.storybookUrl?.replace(/\/+$/, '') ?? null;
 
-  const server = createServer((request, response) => {
+  const proxyStorybook = async (request, response) => {
+    try {
+      const upstream = await fetch(`${storybookTarget}${request.url}`, {
+        headers: { accept: request.headers.accept ?? '*/*' },
+        redirect: 'manual',
+      });
+      const headers = {};
+      ['content-type', 'cache-control', 'location'].forEach((name) => {
+        const value = upstream.headers.get(name);
+        if (value !== null) headers[name] = value;
+      });
+      response.writeHead(upstream.status, headers);
+      if (upstream.body) for await (const chunk of upstream.body) response.write(chunk);
+      return response.end();
+    } catch {
+      response.writeHead(502, { 'content-type': 'text/plain' });
+      return response.end(`Storybook proxy: ${storybookTarget} unreachable`);
+    }
+  };
+
+  const server = createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost');
+    if (request.method === 'POST' && url.pathname === '/generate') {
+      try {
+        let body = '';
+        for await (const chunk of request) body += chunk;
+        const { generateRecipe } = await import('./engine/derive.mjs');
+        const result = await generateRecipe(JSON.parse(body));
+        response.writeHead(200, { 'content-type': MIME['.json'] });
+        return response.end(JSON.stringify(result));
+      } catch (error) {
+        response.writeHead(400, { 'content-type': MIME['.json'] });
+        return response.end(JSON.stringify({ error: error.message }));
+      }
+    }
     if (url.pathname === '/' || url.pathname === '/colour-picker/ui/') {
       response.writeHead(302, { location: '/colour-picker/ui/index.html' });
       return response.end();
     }
     if (url.pathname === '/colour-picker/ui/serve-config.json') {
       response.writeHead(200, { 'content-type': MIME['.json'] });
-      return response.end(JSON.stringify({ storybookUrl: options.storybookUrl ?? null }));
+      return response.end(JSON.stringify({ storybookUrl: storybookTarget ? '/' : null, generate: true }));
     }
     const mount = Object.keys(mounts).find((prefix) => url.pathname.startsWith(prefix));
+    if (!mount && storybookTarget && request.method === 'GET') return proxyStorybook(request, response);
     const file = mount && path.join(mounts[mount], decodeURIComponent(url.pathname.slice(mount.length)));
     if (!file || !path.resolve(file).startsWith(mounts[mount] + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
       response.writeHead(404, { 'content-type': 'text/plain' });
@@ -191,7 +269,7 @@ async function commandServe(options) {
   await new Promise((ready, failed) => server.listen(port, '127.0.0.1').once('listening', ready).once('error', failed));
   const address = `http://127.0.0.1:${server.address().port}/`;
   if (options.json) console.log(JSON.stringify({ url: address, storybookUrl: options.storybookUrl ?? null }, null, 2));
-  else console.log(`Colour picker UI at ${address}${options.storybookUrl ? ` (previews from ${options.storybookUrl})` : ' (no --storybook-url: previews probe the current origin, else swatch-only)'}`);
+  else console.log(`Colour picker UI at ${address}${options.storybookUrl ? ` (previews proxied same-origin from ${options.storybookUrl} — they restyle live)` : ' (no --storybook-url: previews probe the current origin, else swatch-only)'}`);
   return new Promise(() => {});
 }
 
@@ -204,7 +282,7 @@ function commandInitSkill(options) {
   return 0;
 }
 
-const COMMANDS = { resolve: commandResolve, check: commandCheck, emit: commandEmit, serve: commandServe, 'init-skill': commandInitSkill };
+const COMMANDS = { resolve: commandResolve, check: commandCheck, emit: commandEmit, generate: commandGenerate, serve: commandServe, 'init-skill': commandInitSkill };
 
 let options;
 try {

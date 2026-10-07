@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "$description": "Palette generation rules — how `generate` derives every core palette slot from the brand inputs. Designer-editable data, no code. Two methods: `contrast` slots are solved by Leonardo on the key colour's scale to the per-mode `ratio` (vs the slot's `against` token from targets.json, floored at its target — so a stock-matching ratio request can never undercut the accessibility floor); `mix` slots are percentage tints (mix toward white) / shades (mix toward black) of a brand — the 1.x `$ct-colors-default` derivation recipe verbatim. `key`/`of` name a brand (brand1-3) or `default` (the slot's committed stock value per mode — the status colours and focus, literal in 1.x, generate from their own defaults). The `ratio` values are the STOCK palette's measured ratios, so generating from the stock brands reproduces the stock design's contrast structure; the three floored dark slots (border 1.16, interaction-focus 2.32, error 2.97) are the known failures generation fixes.",
+  "slots": {
+    "color.palette.heading": { "method": "contrast", "key": "brand1", "ratio": { "light": 14.82, "dark": 10.3 } },
+    "color.palette.body": { "method": "contrast", "key": "brand1", "ratio": { "light": 9.97, "dark": 9.77 } },
+    "color.palette.background-light": { "method": "mix", "light": { "tint": 90, "of": "brand2" }, "dark": { "tint": 5, "of": "brand2" } },
+    "color.palette.background": { "method": "mix", "light": { "of": "brand2" }, "dark": { "of": "brand2" } },
+    "color.palette.background-dark": { "method": "mix", "light": { "shade": 20, "of": "brand2" }, "dark": { "shade": 30, "of": "brand2" } },
+    "color.palette.border-light": { "method": "mix", "light": { "shade": 25, "of": "brand2" }, "dark": { "tint": 65, "of": "brand2" } },
+    "color.palette.border": { "method": "contrast", "key": "brand2", "ratio": { "light": 6.48, "dark": 1.16 } },
+    "color.palette.border-dark": { "method": "mix", "light": { "shade": 90, "of": "brand2" }, "dark": { "shade": 30, "of": "brand2" } },
+    "color.palette.interaction-text": { "method": "contrast", "key": "brand2", "ratio": { "light": 5.93, "dark": 7.56 } },
+    "color.palette.interaction-background": { "method": "mix", "light": { "of": "brand1" }, "dark": { "of": "brand1" } },
+    "color.palette.interaction-hover-text": { "method": "contrast", "key": "brand2", "ratio": { "light": 10.98, "dark": 11.36 } },
+    "color.palette.interaction-hover-background": { "method": "mix", "light": { "shade": 40, "of": "brand1" }, "dark": { "tint": 40, "of": "brand1" } },
+    "color.palette.interaction-focus": { "method": "contrast", "key": "default", "ratio": { "light": 4.47, "dark": 2.32 } },
+    "color.palette.highlight": { "method": "mix", "light": { "of": "brand3" }, "dark": { "of": "brand3" } },
+    "color.palette.information": { "method": "contrast", "key": "default", "ratio": { "light": 4.45, "dark": 5.34 } },
+    "color.palette.warning": { "method": "contrast", "key": "default", "ratio": { "light": 4.42, "dark": 3.85 } },
+    "color.palette.error": { "method": "contrast", "key": "default", "ratio": { "light": 4.86, "dark": 2.97 } },
+    "color.palette.success": { "method": "contrast", "key": "default", "ratio": { "light": 4.46, "dark": 3.95 } }
+  }
+}

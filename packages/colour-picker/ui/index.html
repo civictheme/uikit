@@ -23,16 +23,16 @@
     <div class="page-header__intro">
       <div class="eyebrow">CivicTheme design system</div>
       <h1>Colour picker</h1>
-      <p>Enter your brand colours and shape a CivicTheme palette with live WCAG contrast QA.
-        Override anything — nothing is force-generated — then export the full 2.x token set.
-        Palette generation from brand colours arrives with Leonardo (P5); today every value is
-        editable by hand.</p>
+      <p>Enter your brand colours, generate a WCAG-targeted palette, and shape it with live
+        contrast QA. Override anything — nothing is force-generated — then export the full
+        2.x token set.</p>
     </div>
     <div class="recipe-card">
       <div class="recipe-card__label">Recipe</div>
       <div class="recipe-card__name mono" id="recipe-name">recipe.json</div>
       <div class="recipe-card__meta" id="recipe-meta">no changes yet</div>
       <div class="recipe-card__actions">
+        <button class="button button--outline" id="import-recipe-top">Import</button>
         <a class="button button--accent" href="#export">Export</a>
       </div>
     </div>
@@ -46,14 +46,14 @@
       <span class="step-dot">1</span>
       <div>
         <h2 id="brands-h">Brand inputs</h2>
-        <p>Three brand colours per theme. They flow into the recipe and the Figma export now;
-          palette generation from them lands with Leonardo (P5).</p>
+        <p>Three brand colours per theme. They flow into the recipe and the Figma export,
+          and Generate derives the palette from them.</p>
       </div>
     </div>
     <div class="brand-grid" id="brand-inputs"></div>
     <div class="panel__foot">
-      <button class="button button--primary" disabled title="Palette generation (Leonardo) arrives at P5 — run the CLI's generate command when it lands">Generate palette</button>
-      <p>Generation is not in this build. Locked overrides are never regenerated when it arrives.</p>
+      <button class="button button--primary" id="generate" disabled>Generate palette</button>
+      <p id="generate-note">Checking for the generation endpoint…</p>
     </div>
   </section>
 
@@ -143,9 +143,11 @@
     <div class="export-grid">
       <div class="export-recipe">
         <div class="export-recipe__bar">
+          <button class="button button--outline" id="import-recipe">Import recipe…</button>
           <button class="button button--outline" id="copy-recipe">Copy recipe</button>
           <button class="button button--outline" id="apply-recipe">Apply edits</button>
-          <span>Editable — paste an existing recipe straight in. No importer.</span>
+          <span>Editable — paste an existing recipe straight in, or import the file.</span>
+          <input type="file" id="import-file" accept=".json,application/json" hidden>
         </div>
         <textarea id="recipe-json" class="mono" spellcheck="false" aria-label="Recipe JSON"></textarea>
         <div id="recipe-error" class="recipe-error" hidden></div>

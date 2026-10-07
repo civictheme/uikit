@@ -1,6 +1,11 @@
 /**
  * Recipe resolution core (uplift plan §4.4 plus the session-11 `additions`
- * key): per token and mode, resolved = override ?? current-default ?? alias.
+ * key and the P5 `generated` key): per token and mode, resolved =
+ * override ?? generated ?? current-default ?? alias. `generated` holds the
+ * values the `generate` command MATERIALISED into the recipe (palette slots
+ * only, per-mode literals) — resolution never derives on its own, so a
+ * recipe without the key still reproduces stock byte-for-byte (the identity
+ * gate), and overrides always win over generated values.
  * Pure — no Node built-ins, importable in the browser (the UI runs the same
  * resolution client-side); every function takes the defaults tree and the
  * targets map as arguments. resolve.mjs wraps this with the Node-side
@@ -18,8 +23,9 @@ import { MODES_EXTENSION, flattenTree, resolveTree } from '@civictheme/tokens/bu
 export const RECIPE_VERSION = 1;
 export const DEFAULT_AGAINST = 'color.palette.background-light';
 
-const RECIPE_KEYS = ['$schema', 'version', 'name', 'brands', 'overrides', 'additions'];
+const RECIPE_KEYS = ['$schema', 'version', 'name', 'brands', 'overrides', 'generated', 'additions'];
 const VALUE_KEYS = ['light', 'dark', '$value'];
+const GENERATED_KEYS = ['light', 'dark'];
 const ADDITION_KEYS = [...VALUE_KEYS, 'target', 'against'];
 export const BRAND_KEYS = ['brand1', 'brand2', 'brand3'];
 const HEX = /^#[0-9a-fA-F]{6}$/;
@@ -128,6 +134,14 @@ export function validateRecipe(recipe, tree) {
     if (isPlainObject(spec)) checkAlias(spec, context);
   });
 
+  if (recipe.generated !== undefined && !isPlainObject(recipe.generated)) problems.push('generated: must be an object');
+  Object.entries(isPlainObject(recipe.generated) ? recipe.generated : {}).forEach(([tokenPath, spec]) => {
+    const context = `generated.${tokenPath}`;
+    if (!PALETTE_PATH.test(tokenPath)) problems.push(`${context}: generated values are palette slots only`);
+    else if (!(tokenPath in defaults)) problems.push(`${context}: no such token — generate materialises existing palette slots`);
+    checkValueSpec(spec, context, GENERATED_KEYS, problems);
+  });
+
   if (recipe.additions !== undefined && !isPlainObject(recipe.additions)) problems.push('additions: must be an object');
   Object.entries(isPlainObject(recipe.additions) ? recipe.additions : {}).forEach(([tokenPath, spec]) => {
     const context = `additions.${tokenPath}`;
@@ -179,9 +193,10 @@ function applySpec(node, spec) {
 }
 
 /**
- * The defaults tree with the recipe layered on: brands and overrides mutate
- * existing tokens, additions insert new ones. Returns a new tree; `tree` is
- * not modified. Call validateRecipe first (resolveRecipe does both).
+ * The defaults tree with the recipe layered on: brands, generated values
+ * and overrides mutate existing tokens, additions insert new ones. Returns
+ * a new tree; `tree` is not modified. Call validateRecipe first
+ * (resolveRecipe does both).
  */
 export function applyRecipe(tree, recipe) {
   const applied = structuredClone(tree);
@@ -191,6 +206,12 @@ export function applyRecipe(tree, recipe) {
     if (recipe.brands?.light?.[brand] !== undefined) spec.light = recipe.brands.light[brand];
     if (recipe.brands?.dark?.[brand] !== undefined) spec.dark = recipe.brands.dark[brand];
     if (Object.keys(spec).length) applySpec(tokenNodeAt(applied, `color.brand.${brand}`), spec);
+  });
+
+  // Generated before overrides: both mutate in place, so applying overrides
+  // second gives the override ?? generated ?? default precedence per mode.
+  Object.entries(recipe.generated ?? {}).forEach(([tokenPath, spec]) => {
+    applySpec(tokenNodeAt(applied, tokenPath), spec);
   });
 
   Object.entries(recipe.overrides ?? {}).forEach(([tokenPath, spec]) => {

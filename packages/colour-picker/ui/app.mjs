@@ -7,11 +7,17 @@
  * identically by `colour-picker serve` and by the sdc Storybook's
  * staticDirs. The recipe object is the single source of truth; every panel
  * renders from the resolved state (session-11 design, artifact
- * VGjiPayrZz1UrmV1eUzd3D). Recorded decisions honoured here: no import
- * button (the recipe JSON block is editable copy/paste), add-token flows
+ * VGjiPayrZz1UrmV1eUzd3D). Recorded decisions honoured here: recipe import
+ * via file picker AND the editable copy/paste JSON block (the session-11
+ * "no importer" decision was reversed by the user 2026-10-07 after live
+ * testing), add-token flows
  * for palette slots and component tokens, component-centric live preview
  * with the component's tokens editable below it, contrast warnings never
- * block, and no in-browser generation (Leonardo is Node-side only, P5).
+ * block, and no in-browser generation: Leonardo is Node-side only (the P5
+ * containment rule), so Generate POSTs the recipe to the CLI serve
+ * process's /generate endpoint and swaps in the returned recipe. The
+ * endpoint's presence is advertised by serve-config.json; without it (the
+ * Storybook-static copy) the button stays disabled with CLI instructions.
  */
 import { mergeTrees, flattenTree, MODES_EXTENSION } from '@civictheme/tokens/build/model.mjs';
 import { FIGMA_NAMES } from '@civictheme/tokens/build/figma-names.mjs';
@@ -39,6 +45,8 @@ const state = {
   filter: 'all',
   overriddenOnly: false,
   storybook: { base: null, sameOrigin: false, stories: null },
+  canGenerate: false,
+  previewTheme: 'light',
 };
 let base = null;
 let derived = null;
@@ -64,7 +72,7 @@ function recompute() {
 function tryRecipe(mutate) {
   const next = structuredClone(state.recipe);
   mutate(next);
-  ['brands', 'overrides', 'additions'].forEach((key) => {
+  ['brands', 'overrides', 'generated', 'additions'].forEach((key) => {
     if (next[key] && !Object.keys(next[key]).length) delete next[key];
   });
   try {
@@ -549,6 +557,7 @@ async function detectStorybook() {
   try {
     const config = await fetchJson('./serve-config.json');
     if (config.storybookUrl) candidates.push(config.storybookUrl);
+    state.canGenerate = Boolean(config.generate);
   } catch { /* not served by the CLI */ }
   let stored = null;
   try {
@@ -631,13 +640,45 @@ function renderQa() {
 function renderHeaderCard() {
   const overrides = Object.keys(state.recipe.overrides ?? {}).length;
   const additions = Object.keys(state.recipe.additions ?? {}).length;
+  const generated = Object.keys(state.recipe.generated ?? {}).length;
   const brands = Object.values(state.recipe.brands ?? {}).reduce((count, set) => count + Object.keys(set).length, 0);
   const parts = [];
   if (brands) parts.push(`${brands} brand input${brands === 1 ? '' : 's'}`);
   parts.push(`${overrides} override${overrides === 1 ? '' : 's'}`);
+  if (generated) parts.push(`${generated} generated slot${generated === 1 ? '' : 's'}`);
   parts.push(`${additions} addition${additions === 1 ? '' : 's'}`);
   $('#recipe-name').textContent = state.recipe.name ? `${state.recipe.name}.recipe.json` : 'recipe.json';
   $('#recipe-meta').textContent = parts.join(' · ');
+}
+
+function renderGenerate() {
+  const button = $('#generate');
+  if (button.dataset.busy) return;
+  button.disabled = !state.canGenerate;
+  $('#generate-note').textContent = state.canGenerate
+    ? 'Derives every core palette slot from the brand inputs — solved to the stock contrast structure, floored at the WCAG targets. Slots with an override are locked and never regenerated.'
+    : 'Generation runs Node-side only (Leonardo never loads in the browser). Serve this UI via the CLI to enable it: npx @civictheme/colour-picker serve';
+}
+
+async function runGenerate() {
+  const button = $('#generate');
+  const note = $('#generate-note');
+  button.dataset.busy = '1';
+  button.disabled = true;
+  note.textContent = 'Generating…';
+  try {
+    const response = await fetch('/generate', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(state.recipe) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error ?? `HTTP ${response.status}`);
+    validateRecipe(result.recipe, base.tree);
+    state.recipe = result.recipe;
+    delete button.dataset.busy;
+    refresh();
+  } catch (error) {
+    delete button.dataset.busy;
+    renderGenerate();
+    note.textContent = `Generation failed: ${error.message}`;
+  }
 }
 
 function renderBrands() {
@@ -814,33 +855,63 @@ function renderPreview() {
 
   const story = storyFor(comp);
   const panes = $('#preview-panes');
+  // The pane surrounds and theme tabs follow the CURRENT resolved palette
+  // (same slots the stock design hardcoded, so an identity recipe renders
+  // byte-identically): pane = background / background-dark, tab =
+  // background-light, text = body.
+  Object.entries({
+    '--pv-light-bg': derived.resolved.light['color.palette.background'],
+    '--pv-dark-bg': derived.resolved.dark['color.palette.background-dark'],
+    '--pv-light-tag-bg': derived.resolved.light['color.palette.background-light'],
+    '--pv-dark-tag-bg': derived.resolved.dark['color.palette.background-light'],
+    '--pv-light-text': derived.resolved.light['color.palette.body'],
+    '--pv-dark-text': derived.resolved.dark['color.palette.body'],
+  }).forEach(([name, value]) => panes.style.setProperty(name, value));
+  // One theme at a time behind tabs, so the visible pane gets the full
+  // panel width and stories render at their desktop breakpoint (user
+  // decision 2026-10-07). Both iframes stay mounted: switching is instant
+  // and the CSS injection reaches the hidden pane too.
+  const tabs = `<div class="preview-tabs" role="tablist" aria-label="Preview theme">${MODES.map((mode) => `
+      <button class="preview-tab preview-tab--${mode}${state.previewTheme === mode ? ' preview-tab--sel' : ''}"
+        role="tab" aria-selected="${state.previewTheme === mode}" data-ptab="${mode}">.ct-theme-${mode}</button>`).join('')}</div>`;
+  const paneClass = (mode) => `preview-pane preview-pane--${mode}${state.previewTheme === mode ? '' : ' preview-pane--hidden'}`;
   if (story) {
-    panes.innerHTML = MODES.map((mode) => `
-      <div class="preview-pane preview-pane--${mode}">
-        <span class="preview-pane__tag">.ct-theme-${mode}</span>
+    panes.innerHTML = `${tabs}${MODES.map((mode) => `
+      <div class="${paneClass(mode)}">
         <iframe title="${esc(comp)} story — ${mode} theme" data-pane="${mode}"
-          src="${esc(state.storybook.base)}iframe.html?id=${esc(story.id)}&viewMode=story&globals=theme:${mode}"></iframe>
-      </div>`).join('');
+          src="${esc(state.storybook.base)}iframe.html?id=${esc(story.id)}&viewMode=story&args=theme:${mode}"></iframe>
+      </div>`).join('')}`;
     panes.querySelectorAll('iframe').forEach((iframe) => {
       iframe.addEventListener('load', () => injectIntoPane(iframe));
     });
     const note = state.storybook.sameOrigin
       ? 'generated properties injected over the story’s token CSS'
       : 'cross-origin Storybook — stories render with stock colours (generated properties cannot be injected)';
-    $('#preview-src').textContent = `iframe.html?id=${story.id} · globals: theme=light / theme=dark · ${note}`;
+    $('#preview-src').textContent = `iframe.html?id=${story.id} · args: theme=light / theme=dark · ${note}`;
   } else {
     const swatches = (mode) => componentTokens(comp).map((path) => `
         <span class="preview-swatch"><span class="swatch" style="background: ${esc(derived.resolved[mode][path])}"></span>${esc(slotLeaf(path))}</span>`).join('');
-    panes.innerHTML = MODES.map((mode) => `
-      <div class="preview-pane preview-pane--${mode}">
-        <span class="preview-pane__tag">.ct-theme-${mode}</span>
+    panes.innerHTML = `${tabs}${MODES.map((mode) => `
+      <div class="${paneClass(mode)}">
         <div class="preview-swatches">${swatches(mode)}</div>
-      </div>`).join('');
+      </div>`).join('')}`;
     $('#preview-src').textContent = state.storybook.base
       ? `No story found for "${comp}" in the Storybook index — showing resolved swatches.`
       : 'No Storybook reachable — showing resolved swatches. Set a Storybook URL below for live component previews.';
     if (!state.storybook.base) renderStorybookConfig(panes);
   }
+  panes.querySelectorAll('[data-ptab]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      state.previewTheme = tab.dataset.ptab;
+      panes.querySelectorAll('[data-ptab]').forEach((button) => {
+        button.classList.toggle('preview-tab--sel', button.dataset.ptab === state.previewTheme);
+        button.setAttribute('aria-selected', String(button.dataset.ptab === state.previewTheme));
+      });
+      panes.querySelectorAll('.preview-pane').forEach((pane) => {
+        pane.classList.toggle('preview-pane--hidden', !pane.classList.contains(`preview-pane--${state.previewTheme}`));
+      });
+    });
+  });
 
   $('#preview-tokens-title').textContent = `Tokens — ${comp}`;
   $('#preview-tokens-count').textContent = `${componentTokens(comp).length} tokens · follows the component picker`;
@@ -860,7 +931,7 @@ function renderRecipeJson() {
 
 function renderDownloads() {
   const files = [
-    ['recipe.json', 'The durable artefact — brand inputs, overrides and additions. Commit this to your sub-theme.', () => download('recipe.json', `${JSON.stringify(state.recipe, null, 2)}\n`)],
+    ['recipe.json', 'The durable artefact — brand inputs, overrides, generated palette and additions. Commit this to your sub-theme.', () => download('recipe.json', `${JSON.stringify(state.recipe, null, 2)}\n`)],
     ['color.tokens.json', 'The recipe-applied DTCG token tree, both modes.', () => download('color.tokens.json', `${JSON.stringify(derived.tree, null, 2)}\n`)],
     ['figma.light.tokens.json', 'Native Figma variable import — Light mode.', () => download('figma.light.tokens.json', `${JSON.stringify(emitFigma(derived.tree, 'light'), null, 2)}\n`)],
     ['figma.dark.tokens.json', 'Native Figma variable import — Dark mode.', () => download('figma.dark.tokens.json', `${JSON.stringify(emitFigma(derived.tree, 'dark'), null, 2)}\n`)],
@@ -880,6 +951,7 @@ function renderDownloads() {
 function renderAll() {
   renderQa();
   renderHeaderCard();
+  renderGenerate();
   renderBrands();
   renderPalette();
   renderPreview();
@@ -904,19 +976,35 @@ function wireStatic() {
     state.overriddenOnly = event.target.checked;
     renderComponentTable();
   });
+  $('#generate').addEventListener('click', runGenerate);
   $('#add-slot').addEventListener('click', () => openAddEditor('palette'));
   $('#add-token').addEventListener('click', () => openAddEditor('component', state.filter === 'all' ? '' : state.filter));
   $('#copy-recipe').addEventListener('click', () => navigator.clipboard?.writeText($('#recipe-json').value));
-  $('#apply-recipe').addEventListener('click', () => {
+  const commitRecipeText = (text, source) => {
     const errorBox = $('#recipe-error');
     try {
-      const parsed = JSON.parse($('#recipe-json').value);
+      const parsed = JSON.parse(text);
       validateRecipe(parsed, base.tree);
       state.recipe = parsed;
       refresh();
+      return true;
     } catch (error) {
-      errorBox.textContent = error.message;
+      errorBox.textContent = source ? `Import of ${source} failed: ${error.message}` : error.message;
       errorBox.hidden = false;
+      return false;
+    }
+  };
+  $('#apply-recipe').addEventListener('click', () => commitRecipeText($('#recipe-json').value));
+  const importFile = $('#import-file');
+  const pickImport = () => importFile.click();
+  $('#import-recipe').addEventListener('click', pickImport);
+  $('#import-recipe-top').addEventListener('click', pickImport);
+  importFile.addEventListener('change', async () => {
+    const file = importFile.files?.[0];
+    importFile.value = '';
+    if (!file) return;
+    if (!commitRecipeText(await file.text(), file.name)) {
+      $('#export').scrollIntoView({ behavior: 'smooth' });
     }
   });
 }
