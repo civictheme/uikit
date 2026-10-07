@@ -15,7 +15,9 @@
     "colour-picker": "./cli.mjs"
   },
   "exports": {
+    "./package.json": "./package.json",
     "./engine/resolve.mjs": "./engine/resolve.mjs",
+    "./engine/core.mjs": "./engine/core.mjs",
     "./engine/contrast.mjs": "./engine/contrast.mjs",
     "./engine/emit.mjs": "./engine/emit.mjs",
     "./targets.json": "./targets.json",
@@ -28,9 +30,9 @@
     "build": "echo @civictheme/colour-picker has no build step",
     "dist": "echo @civictheme/colour-picker has no build step",
     "build-storybook": "echo @civictheme/colour-picker has no Storybook",
-    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-cli.mjs && node tests/validate-isolation.mjs",
+    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-cli.mjs && node tests/validate-ui.mjs && node tests/validate-isolation.mjs",
     "test:ci": "npm run test",
-    "lint": "eslint ./cli.mjs ./engine ./tests",
-    "lint:fix": "eslint ./cli.mjs ./engine ./tests --fix"
+    "lint": "eslint ./cli.mjs ./engine ./stories ./tests ./ui",
+    "lint:fix": "eslint ./cli.mjs ./engine ./stories ./tests ./ui --fix"
   }
 }

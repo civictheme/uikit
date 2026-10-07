@@ -21,19 +21,22 @@ Commands:
   resolve     Full resolved token table, both modes
   check       Contrast QA against the per-family targets (warns, never blocks)
   emit        Write every build output of a recipe to a directory
+  serve       Serve the human UI locally
   init-skill  Install the colour-picker AI skill into ./.claude/skills/
 
 Options:
-  --recipe <file>    Recipe JSON (default: identity — the stock tokens)
-  --out <dir>        emit: output directory (required)
-  --targets <file>   check: alternative targets JSON ({ "targets": { ... } })
-  --json             Machine-readable output
-  --strict           check: exit 1 when any contrast target fails
+  --recipe <file>         Recipe JSON (default: identity — the stock tokens)
+  --out <dir>             emit: output directory (required)
+  --targets <file>        check: alternative targets JSON ({ "targets": { ... } })
+  --json                  Machine-readable output
+  --strict                check: exit 1 when any contrast target fails
+  --port <n>              serve: port (default 8420; 0 picks a free one)
+  --storybook-url <url>   serve: Storybook base URL for live component previews
 `;
 
 function parseArgs(argv) {
   const options = { command: argv[0], json: false, strict: false };
-  const flags = { '--recipe': 'recipe', '--out': 'out', '--targets': 'targets' };
+  const flags = { '--recipe': 'recipe', '--out': 'out', '--targets': 'targets', '--port': 'port', '--storybook-url': 'storybookUrl' };
   for (let i = 1; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === '--json') options.json = true;
@@ -139,6 +142,59 @@ function commandEmit(options) {
   return 0;
 }
 
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.mjs': 'text/javascript; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.md': 'text/markdown; charset=utf-8',
+  '.svg': 'image/svg+xml',
+};
+
+/**
+ * The human UI's local server: a hand-rolled node:http static server (zero
+ * deps — R2/R3). Mounts this package at /colour-picker/ and the tokens
+ * package at /colour-picker-tokens/ — the same paths the sdc Storybook
+ * serves them at via staticDirs, so ui/index.html's import map works
+ * identically in both contexts. P5 adds the POST /generate endpoint here
+ * (Leonardo runs Node-side only — the containment rule).
+ */
+async function commandServe(options) {
+  const { createServer } = await import('node:http');
+  const packageRoot = path.dirname(fileURLToPath(import.meta.url));
+  const tokensRoot = path.dirname(fileURLToPath(import.meta.resolve('@civictheme/tokens/package.json')));
+  const mounts = { '/colour-picker/': packageRoot, '/colour-picker-tokens/': tokensRoot };
+
+  const server = createServer((request, response) => {
+    const url = new URL(request.url, 'http://localhost');
+    if (url.pathname === '/' || url.pathname === '/colour-picker/ui/') {
+      response.writeHead(302, { location: '/colour-picker/ui/index.html' });
+      return response.end();
+    }
+    if (url.pathname === '/colour-picker/ui/serve-config.json') {
+      response.writeHead(200, { 'content-type': MIME['.json'] });
+      return response.end(JSON.stringify({ storybookUrl: options.storybookUrl ?? null }));
+    }
+    const mount = Object.keys(mounts).find((prefix) => url.pathname.startsWith(prefix));
+    const file = mount && path.join(mounts[mount], decodeURIComponent(url.pathname.slice(mount.length)));
+    if (!file || !path.resolve(file).startsWith(mounts[mount] + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
+      response.writeHead(404, { 'content-type': 'text/plain' });
+      return response.end('Not found');
+    }
+    response.writeHead(200, { 'content-type': MIME[path.extname(file)] ?? 'application/octet-stream' });
+    return response.end(fs.readFileSync(file));
+  });
+
+  const port = options.port === undefined ? 8420 : Number(options.port);
+  if (!Number.isInteger(port) || port < 0 || port > 65535) throw new Error(`Invalid --port ${JSON.stringify(options.port)}`);
+  await new Promise((ready, failed) => server.listen(port, '127.0.0.1').once('listening', ready).once('error', failed));
+  const address = `http://127.0.0.1:${server.address().port}/`;
+  if (options.json) console.log(JSON.stringify({ url: address, storybookUrl: options.storybookUrl ?? null }, null, 2));
+  else console.log(`Colour picker UI at ${address}${options.storybookUrl ? ` (previews from ${options.storybookUrl})` : ' (no --storybook-url: previews probe the current origin, else swatch-only)'}`);
+  return new Promise(() => {});
+}
+
 function commandInitSkill(options) {
   const source = path.join(path.dirname(fileURLToPath(import.meta.url)), 'skills', 'colour-picker');
   const target = path.resolve('.claude', 'skills', 'colour-picker');
@@ -148,7 +204,7 @@ function commandInitSkill(options) {
   return 0;
 }
 
-const COMMANDS = { resolve: commandResolve, check: commandCheck, emit: commandEmit, 'init-skill': commandInitSkill };
+const COMMANDS = { resolve: commandResolve, check: commandCheck, emit: commandEmit, serve: commandServe, 'init-skill': commandInitSkill };
 
 let options;
 try {
@@ -162,7 +218,7 @@ if (!options.command || !COMMANDS[options.command]) {
   process.exit(options.command ? 2 : 0);
 }
 try {
-  process.exit(COMMANDS[options.command](options));
+  process.exit(await COMMANDS[options.command](options));
 } catch (error) {
   console.error(error.message);
   process.exit(1);

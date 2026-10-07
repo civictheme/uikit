@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CivicTheme colour picker</title>
+<script type="importmap">
+{
+  "imports": {
+    "@civictheme/tokens/": "/colour-picker-tokens/",
+    "@civictheme/colour-picker/": "/colour-picker/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/colour-picker-tokens/dist/css/variables.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="page">
+
+  <header class="page-header">
+    <div class="page-header__intro">
+      <div class="eyebrow">CivicTheme design system</div>
+      <h1>Colour picker</h1>
+      <p>Enter your brand colours and shape a CivicTheme palette with live WCAG contrast QA.
+        Override anything — nothing is force-generated — then export the full 2.x token set.
+        Palette generation from brand colours arrives with Leonardo (P5); today every value is
+        editable by hand.</p>
+    </div>
+    <div class="recipe-card">
+      <div class="recipe-card__label">Recipe</div>
+      <div class="recipe-card__name mono" id="recipe-name">recipe.json</div>
+      <div class="recipe-card__meta" id="recipe-meta">no changes yet</div>
+      <div class="recipe-card__actions">
+        <a class="button button--accent" href="#export">Export</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="load-error" class="load-error" hidden></div>
+  <div id="qa-band" class="qa-band" hidden></div>
+
+  <section class="panel" aria-labelledby="brands-h">
+    <div class="panel__head">
+      <span class="step-dot">1</span>
+      <div>
+        <h2 id="brands-h">Brand inputs</h2>
+        <p>Three brand colours per theme. They flow into the recipe and the Figma export now;
+          palette generation from them lands with Leonardo (P5).</p>
+      </div>
+    </div>
+    <div class="brand-grid" id="brand-inputs"></div>
+    <div class="panel__foot">
+      <button class="button button--primary" disabled title="Palette generation (Leonardo) arrives at P5 — run the CLI's generate command when it lands">Generate palette</button>
+      <p>Generation is not in this build. Locked overrides are never regenerated when it arrives.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="palette" aria-labelledby="palette-h">
+    <div class="panel__head">
+      <span class="step-dot">2</span>
+      <div>
+        <h2 id="palette-h">Palette — 18 core slots × 2 themes, plus your own</h2>
+        <p>Value and contrast ratio per slot. Click a cell to override it; an override is locked
+          into the recipe. Your own slots ride along as additions.</p>
+      </div>
+    </div>
+    <div class="legend">
+      <span class="chip chip--pass">✓ meets target</span>
+      <span class="chip chip--warn">▲ below target — allowed, flagged</span>
+      <span class="chip chip--lock">🔒 override (locked)</span>
+      <span class="chip chip--muted">— surface / decorative, no target</span>
+    </div>
+    <div class="table-scroll"><div id="palette-table"></div></div>
+    <div class="panel__foot">
+      <button class="button button--dashed" id="add-slot">+ Add palette slot</button>
+      <p>Custom slots land in the recipe's additions and get a contrast target like any core slot —
+        core slots stay untouched.</p>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="preview-h">
+    <div class="panel__head panel__head--split">
+      <div>
+        <h2 id="preview-h">Live preview — per component</h2>
+        <p id="preview-note">Pick a component: its Storybook story renders with your palette in both
+          themes, and its colour tokens follow below, ready to edit.</p>
+      </div>
+      <div class="preview-pick">
+        <label for="comp-pick">Component</label>
+        <select id="comp-pick"></select>
+      </div>
+    </div>
+    <div class="recent-row" id="recent-chips"></div>
+    <div class="preview-panes" id="preview-panes"></div>
+    <p class="preview-src mono" id="preview-src"></p>
+    <div class="preview-tokens">
+      <div class="preview-tokens__head">
+        <h3 id="preview-tokens-title">Tokens</h3>
+        <span id="preview-tokens-count"></span>
+        <a href="#comp-tokens">All component tokens</a>
+      </div>
+      <div class="table-scroll"><div id="preview-token-table"></div></div>
+    </div>
+  </section>
+
+  <section class="panel" id="comp-tokens" aria-labelledby="comp-h">
+    <div class="panel__head">
+      <span class="step-dot">3</span>
+      <div>
+        <h2 id="comp-h">Component tokens</h2>
+        <p>Every component token aliases a palette slot by default. Re-point the alias or break it
+          to a literal — both land as overrides. New tokens, even for your own components, land as
+          additions.</p>
+      </div>
+    </div>
+    <div class="filter-row">
+      <input type="search" id="token-search" aria-label="Search tokens" placeholder="Search tokens…">
+      <label for="comp-filter">Component</label>
+      <select id="comp-filter"></select>
+      <span class="filter-check">
+        <input type="checkbox" id="ovr-only">
+        <label for="ovr-only" id="ovr-only-label">Overridden only</label>
+      </span>
+      <button class="button button--dashed" id="add-token">+ Add token</button>
+      <span class="filter-row__count" id="comp-count"></span>
+    </div>
+    <div class="table-scroll"><div id="component-table"></div></div>
+  </section>
+
+  <section class="panel" id="export" aria-labelledby="export-h">
+    <div class="panel__head">
+      <span class="step-dot">4</span>
+      <div>
+        <h2 id="export-h">Export — recipe in, tokens out</h2>
+        <p>The recipe is the durable artefact: brand inputs plus overrides and additions. Every
+          other file is a build output of it — re-run an old recipe on a new CivicTheme release and
+          untouched tokens pick up new defaults while overrides persist. The recipe is the 2.x
+          sub-theme format.</p>
+      </div>
+    </div>
+    <div class="export-grid">
+      <div class="export-recipe">
+        <div class="export-recipe__bar">
+          <button class="button button--outline" id="copy-recipe">Copy recipe</button>
+          <button class="button button--outline" id="apply-recipe">Apply edits</button>
+          <span>Editable — paste an existing recipe straight in. No importer.</span>
+        </div>
+        <textarea id="recipe-json" class="mono" spellcheck="false" aria-label="Recipe JSON"></textarea>
+        <div id="recipe-error" class="recipe-error" hidden></div>
+      </div>
+      <div class="export-downloads" id="downloads"></div>
+    </div>
+  </section>
+
+</main>
+
+<dialog id="editor" class="editor"></dialog>
+
+<script type="module" src="./app.mjs"></script>
+</body>
+</html>
