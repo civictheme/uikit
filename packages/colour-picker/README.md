@@ -5,7 +5,7 @@ engine (this package's P1 core), a CLI, an AI skill and a human UI, layered
 over [`@civictheme/tokens`](../tokens). Full plan and recorded decisions:
 `docs/colour-picker-plan.md` in the repo root.
 
-**Status: P1 (engine) — CLI (P2), skill (P3), UI (P4), Leonardo generation
+**Status: P1 (engine) + P2 (CLI) — skill (P3), UI (P4), Leonardo generation
 (P5) and packaging (P6) follow.** Both this package and `@civictheme/tokens`
 are `private: true` until the maintainer publishes them.
 
@@ -39,6 +39,27 @@ resolved(token, mode) = override ?? current-default ?? alias
 Schema: [`recipe.schema.json`](./recipe.schema.json). An identity recipe
 (`{"version": 1}`) reproduces the tokens dist byte-for-byte — the engine's
 acceptance gate.
+
+## CLI (`cli.mjs`)
+
+The AI/maintainer side application — zero dependencies, `node cli.mjs …` in
+the repo (or `npx @civictheme/colour-picker …` once published):
+
+```
+resolve [--recipe recipe.json] [--json]      # full resolved table, both modes
+check   [--recipe recipe.json] [--json]      # contrast QA; warns, never blocks
+        [--strict] [--targets targets.json]  #   --strict exits 1 on failures (CI)
+emit    --recipe recipe.json --out dir/      # every build output of the recipe
+```
+
+`emit` writes `tokens.json` (the recipe-applied DTCG tree),
+`resolved.{light,dark}.json`, `css/variables.css` (the full stylesheet),
+`overrides.scss` (only the changed custom properties, loadable after the
+stock variables), `figma/{light,dark}.tokens.json` (native Import mode) and
+`figma/name-map.json`. An identity emit is byte-identical to the tokens
+dist. Exit codes: 0 success, 1 failure (or `check --strict` with failing
+targets), 2 usage. `generate` arrives at P5, `serve` at P4, `init-skill` at
+P3 — each with the thing it operates on.
 
 ## Engine API (`engine/`)
 
