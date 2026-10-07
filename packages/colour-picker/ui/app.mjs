@@ -46,6 +46,7 @@ const state = {
   overriddenOnly: false,
   storybook: { base: null, sameOrigin: false, stories: null },
   canGenerate: false,
+  previewTheme: 'light',
 };
 let base = null;
 let derived = null;
@@ -854,9 +855,9 @@ function renderPreview() {
 
   const story = storyFor(comp);
   const panes = $('#preview-panes');
-  // The pane surrounds and theme tags follow the CURRENT resolved palette
+  // The pane surrounds and theme tabs follow the CURRENT resolved palette
   // (same slots the stock design hardcoded, so an identity recipe renders
-  // byte-identically): pane = background / background-dark, tag chip =
+  // byte-identically): pane = background / background-dark, tab =
   // background-light, text = body.
   Object.entries({
     '--pv-light-bg': derived.resolved.light['color.palette.background'],
@@ -866,13 +867,20 @@ function renderPreview() {
     '--pv-light-text': derived.resolved.light['color.palette.body'],
     '--pv-dark-text': derived.resolved.dark['color.palette.body'],
   }).forEach(([name, value]) => panes.style.setProperty(name, value));
+  // One theme at a time behind tabs, so the visible pane gets the full
+  // panel width and stories render at their desktop breakpoint (user
+  // decision 2026-10-07). Both iframes stay mounted: switching is instant
+  // and the CSS injection reaches the hidden pane too.
+  const tabs = `<div class="preview-tabs" role="tablist" aria-label="Preview theme">${MODES.map((mode) => `
+      <button class="preview-tab preview-tab--${mode}${state.previewTheme === mode ? ' preview-tab--sel' : ''}"
+        role="tab" aria-selected="${state.previewTheme === mode}" data-ptab="${mode}">.ct-theme-${mode}</button>`).join('')}</div>`;
+  const paneClass = (mode) => `preview-pane preview-pane--${mode}${state.previewTheme === mode ? '' : ' preview-pane--hidden'}`;
   if (story) {
-    panes.innerHTML = MODES.map((mode) => `
-      <div class="preview-pane preview-pane--${mode}">
-        <span class="preview-pane__tag">.ct-theme-${mode}</span>
+    panes.innerHTML = `${tabs}${MODES.map((mode) => `
+      <div class="${paneClass(mode)}">
         <iframe title="${esc(comp)} story — ${mode} theme" data-pane="${mode}"
           src="${esc(state.storybook.base)}iframe.html?id=${esc(story.id)}&viewMode=story&globals=theme:${mode}"></iframe>
-      </div>`).join('');
+      </div>`).join('')}`;
     panes.querySelectorAll('iframe').forEach((iframe) => {
       iframe.addEventListener('load', () => injectIntoPane(iframe));
     });
@@ -883,16 +891,27 @@ function renderPreview() {
   } else {
     const swatches = (mode) => componentTokens(comp).map((path) => `
         <span class="preview-swatch"><span class="swatch" style="background: ${esc(derived.resolved[mode][path])}"></span>${esc(slotLeaf(path))}</span>`).join('');
-    panes.innerHTML = MODES.map((mode) => `
-      <div class="preview-pane preview-pane--${mode}">
-        <span class="preview-pane__tag">.ct-theme-${mode}</span>
+    panes.innerHTML = `${tabs}${MODES.map((mode) => `
+      <div class="${paneClass(mode)}">
         <div class="preview-swatches">${swatches(mode)}</div>
-      </div>`).join('');
+      </div>`).join('')}`;
     $('#preview-src').textContent = state.storybook.base
       ? `No story found for "${comp}" in the Storybook index — showing resolved swatches.`
       : 'No Storybook reachable — showing resolved swatches. Set a Storybook URL below for live component previews.';
     if (!state.storybook.base) renderStorybookConfig(panes);
   }
+  panes.querySelectorAll('[data-ptab]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      state.previewTheme = tab.dataset.ptab;
+      panes.querySelectorAll('[data-ptab]').forEach((button) => {
+        button.classList.toggle('preview-tab--sel', button.dataset.ptab === state.previewTheme);
+        button.setAttribute('aria-selected', String(button.dataset.ptab === state.previewTheme));
+      });
+      panes.querySelectorAll('.preview-pane').forEach((pane) => {
+        pane.classList.toggle('preview-pane--hidden', !pane.classList.contains(`preview-pane--${state.previewTheme}`));
+      });
+    });
+  });
 
   $('#preview-tokens-title').textContent = `Tokens — ${comp}`;
   $('#preview-tokens-count').textContent = `${componentTokens(comp).length} tokens · follows the component picker`;
