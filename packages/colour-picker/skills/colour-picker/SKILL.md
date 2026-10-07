@@ -35,30 +35,46 @@ Every command takes `--json` for machine-readable output.
    }
    ```
 
-   Semantics: per token and mode, `override ?? current-default ?? alias`.
-   In an override, a mode literal (`"light"`/`"dark"`, `#rrggbb` or
+   Semantics: per token and mode, `override ?? generated ?? current-default
+   ?? alias`. In an override, a mode literal (`"light"`/`"dark"`, `#rrggbb` or
    `"transparent"`) wins over `"$value"` (an alias re-point applying to both
    modes); a mode with neither keeps the shipped default. `additions` create
    NEW tokens (paths must not collide; palette additions may carry a contrast
    `target`, measured against `color.palette.background-light` unless
-   `against` names another token). Token paths are the keys of
+   `against` names another token). A `generated` key may also be present —
+   it is OWNED by the `generate` command (below): never hand-edit it, and
+   know that every `generate` run replaces it wholesale. Token paths are the keys of
    `node_modules/@civictheme/tokens/dist/resolved.light.json` (in the UIKit
    repo: `packages/tokens/dist/resolved.light.json`; an `emit` run's
    `resolved.light.json` output lists them all too). Custom-property names:
    `--ct-color-<slug>` for palette tokens, `--ct-<component>-<property>` for
    component tokens (no `component` segment).
 
-2. `npx @civictheme/colour-picker check --recipe recipe.json --json` —
+2. Optional — generate the palette from the brand inputs:
+   `npx @civictheme/colour-picker generate --recipe recipe.json --write`
+   solves every core palette slot from `brands` (Leonardo, WCAG-targeted:
+   contrast slots are solved to the stock design's contrast structure and
+   floored at the targets, the rest follow the 1.x tint/shade rules — the
+   table is `generation.json` in the package root) and materialises the
+   result into the recipe's `generated` key. Slots with an override are
+   LOCKED — never regenerated. Without `--write` it prints the updated
+   recipe; `--json` returns `{ recipe, rows }` where `rows` is the per-slot
+   QA table (before/after values, achieved ratio, floor). On stock brands
+   this also fixes the 3 known dark failures (border, interaction-focus,
+   error all come out ≥ 3:1). Requires `@adobe/leonardo-contrast-colors`
+   (installed with the package; Node-side only — generation never runs in a
+   browser).
+3. `npx @civictheme/colour-picker check --recipe recipe.json --json` —
    the contrast oracle. Failures are warnings, never blockers; use
    `--strict` only where CI should fail.
-3. `npx @civictheme/colour-picker emit --recipe recipe.json --out <dir>` —
+4. `npx @civictheme/colour-picker emit --recipe recipe.json --out <dir>` —
    writes `tokens.json` (the recipe-applied DTCG tree),
    `resolved.{light,dark}.json`, `css/variables.css` (full stylesheet),
    `overrides.scss` (only the changed custom properties — load it after the
    stock CivicTheme variables stylesheet), `figma/{light,dark}.tokens.json`
    (native Figma Import-mode files for the design side) and
    `figma/name-map.json`.
-4. Commit the recipe AND the emitted outputs. Never edit anything under
+5. Commit the recipe AND the emitted outputs. Never edit anything under
    `node_modules/`.
 
 **CivicTheme maintainer work** (this repo, changing shipped defaults): edit
@@ -111,8 +127,9 @@ On STOCK tokens, `check --json` reports exactly **3 failures, all dark**:
 `color.palette.error` 2.97:1 (each vs dark background-light `#0d4458`), and
 a clean light theme. Any other result on unmodified tokens means your
 checkout or install is broken — stop and investigate. With a recipe loaded,
-those 3 stock failures persist unless the recipe overrides those slots: any
-count above 3, or any new failing tokenPath, is caused by your recipe.
+those 3 stock failures persist unless the recipe overrides those slots OR
+carries a `generated` palette (generation solves them to ≥ 3:1): any count
+above 3, or any new failing tokenPath, is caused by your recipe.
 
 ## Figma round-trip (maintainers)
 
@@ -130,4 +147,8 @@ the "Code → Figma" and ingest sections of `packages/tokens/README.md`.
 - Agency recipes never modify `color.components.json` or the core palette —
   overrides and additions only.
 - New dependencies require explicit human approval — this toolchain is
-  zero-dependency by design.
+  zero-dependency by design, with one recorded exception:
+  `@adobe/leonardo-contrast-colors` (pinned, approved 2026-10-07) powers
+  `generate` only, loads lazily, and runs Node-side only — it must never be
+  imported into the browser graph (the UI's Generate button POSTs to the
+  CLI `serve` process instead).

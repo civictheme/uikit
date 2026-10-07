@@ -2,11 +2,13 @@
  * P4 gate, scripted half: the UI stays a static browser app and the serve
  * command actually serves it. (1) The whole import graph reachable from
  * ui/app.mjs and the browser-side engine must be free of Node built-ins —
- * the wrong-tree/fs modules (engine/resolve.mjs, tokens lib.mjs) must never
- * sneak in. (2) index.html carries the import map both hosting contexts
- * rely on. (3) `serve` really serves the page, the mounted packages and the
- * dynamic serve-config at the documented paths. The visual half of the gate
- * is the browser walkthrough recorded in the PR.
+ * the wrong-tree/fs modules (engine/resolve.mjs, tokens lib.mjs) and the
+ * Leonardo boundary (engine/derive.mjs — the P5 containment rule) must
+ * never sneak in. (2) index.html carries the import map both hosting
+ * contexts rely on. (3) `serve` really serves the page, the mounted
+ * packages, the dynamic serve-config (advertising the generate capability)
+ * and the POST /generate endpoint. The visual half of the gate is the
+ * browser walkthrough recorded in the PR.
  */
 import fs from 'fs';
 import path from 'path';
@@ -57,6 +59,7 @@ expect('import graph reaches the pure engine', [...seen].some((file) => file.end
 expect('import graph reaches the tokens model', [...seen].some((file) => file.endsWith('build/model.mjs')));
 expect('import graph never touches resolve.mjs', ![...seen].some((file) => file.endsWith('engine/resolve.mjs')));
 expect('import graph never touches tokens lib.mjs', ![...seen].some((file) => file.endsWith('build/lib.mjs')));
+expect('import graph never touches derive.mjs (Leonardo stays Node-side)', ![...seen].some((file) => file.endsWith('engine/derive.mjs')));
 
 // --- 2. index.html contract.
 const indexHtml = fs.readFileSync(path.join(PACKAGE_ROOT, 'ui', 'index.html'), 'utf-8');
@@ -94,6 +97,19 @@ try {
   expect('serve: token sources', tokens.status === 200 && JSON.parse(tokens.body).color.palette !== undefined);
   const config = await get('/colour-picker/ui/serve-config.json');
   expect('serve: dynamic config carries --storybook-url', config.status === 200 && JSON.parse(config.body).storybookUrl === 'http://storybook.invalid/');
+  expect('serve: dynamic config advertises generate', JSON.parse(config.body).generate === true);
+  const post = async (body) => {
+    const response = await fetch(new URL('/generate', address), { method: 'POST', headers: { 'content-type': 'application/json' }, body });
+    return { status: response.status, body: await response.json() };
+  };
+  const generated = await post(JSON.stringify({ version: 1 }));
+  expect('serve: POST /generate solves the identity recipe', generated.status === 200 && generated.body.recipe?.generated?.['color.palette.heading']?.light !== undefined,
+    JSON.stringify(generated.body).slice(0, 200));
+  expect('serve: POST /generate returns QA rows', Array.isArray(generated.body.rows) && generated.body.rows.length > 0);
+  const badRecipe = await post(JSON.stringify({ version: 1, overrides: { 'color.palette.nope': { light: '#000000' } } }));
+  expect('serve: POST /generate rejects a bad recipe with 400', badRecipe.status === 400 && badRecipe.body.error.includes('no such token'));
+  const badJson = await post('not json');
+  expect('serve: POST /generate rejects bad JSON with 400', badJson.status === 400);
   const traversal = await get('/colour-picker/../package.json');
   expect('serve: no path traversal', traversal.status === 404);
   const missing = await get('/colour-picker/nope.txt');
@@ -109,4 +125,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`  - ${failure}`));
   process.exit(1);
 }
-console.log(`UI validation passed: the browser import graph (${seen.size} modules) is Node-free and reaches the pure engine; index.html carries the import map and dogfoods the tokens CSS; serve delivers the app, both package mounts and the dynamic config with correct types and traversal safety.`);
+console.log(`UI validation passed: the browser import graph (${seen.size} modules) is Node-free, reaches the pure engine and never touches derive.mjs; index.html carries the import map and dogfoods the tokens CSS; serve delivers the app, both package mounts, the dynamic config (generate advertised) and a working POST /generate with correct types and traversal safety.`);

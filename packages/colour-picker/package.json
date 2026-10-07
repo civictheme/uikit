@@ -20,17 +20,20 @@
     "./engine/core.mjs": "./engine/core.mjs",
     "./engine/contrast.mjs": "./engine/contrast.mjs",
     "./engine/emit.mjs": "./engine/emit.mjs",
+    "./engine/derive.mjs": "./engine/derive.mjs",
     "./targets.json": "./targets.json",
+    "./generation.json": "./generation.json",
     "./recipe.schema.json": "./recipe.schema.json"
   },
   "dependencies": {
+    "@adobe/leonardo-contrast-colors": "1.1.0",
     "@civictheme/tokens": "2.0.0-alpha.0"
   },
   "scripts": {
     "build": "echo @civictheme/colour-picker has no build step",
     "dist": "echo @civictheme/colour-picker has no build step",
     "build-storybook": "echo @civictheme/colour-picker has no Storybook",
-    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-cli.mjs && node tests/validate-ui.mjs && node tests/validate-isolation.mjs",
+    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-derive.mjs && node tests/validate-cli.mjs && node tests/validate-ui.mjs && node tests/validate-isolation.mjs",
     "test:ci": "npm run test",
     "lint": "eslint ./cli.mjs ./engine ./stories ./tests ./ui",
     "lint:fix": "eslint ./cli.mjs ./engine ./stories ./tests ./ui --fix"
