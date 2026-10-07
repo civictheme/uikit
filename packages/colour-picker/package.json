@@ -1,0 +1,33 @@
+{
+  "name": "@civictheme/colour-picker",
+  "version": "2.0.0-alpha.0",
+  "license": "GPL-2.0-or-later",
+  "description": "CivicTheme colour picker: recipe-driven sub-theme colour engine, CLI and UI over @civictheme/tokens. Installed alongside UIKit — UIKit packages never depend on it.",
+  "homepage": "https://github.com/civictheme/uikit",
+  "bugs": "https://github.com/civictheme/uikit",
+  "repository": "https://github.com/civictheme/uikit.git",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6"
+  },
+  "exports": {
+    "./engine/resolve.mjs": "./engine/resolve.mjs",
+    "./engine/contrast.mjs": "./engine/contrast.mjs",
+    "./engine/emit.mjs": "./engine/emit.mjs",
+    "./targets.json": "./targets.json",
+    "./recipe.schema.json": "./recipe.schema.json"
+  },
+  "dependencies": {
+    "@civictheme/tokens": "2.0.0-alpha.0"
+  },
+  "scripts": {
+    "build": "echo @civictheme/colour-picker has no build step",
+    "dist": "echo @civictheme/colour-picker has no build step",
+    "build-storybook": "echo @civictheme/colour-picker has no Storybook",
+    "test": "node tests/validate-identity.mjs && node tests/validate-contrast.mjs && node tests/validate-recipe.mjs && node tests/validate-isolation.mjs",
+    "test:ci": "npm run test",
+    "lint": "eslint ./engine ./tests",
+    "lint:fix": "eslint ./engine ./tests --fix"
+  }
+}

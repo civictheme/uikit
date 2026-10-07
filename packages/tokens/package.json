@@ -8,6 +8,14 @@
   "repository": "https://github.com/civictheme/uikit.git",
   "type": "module",
   "private": true,
+  "exports": {
+    "./build/lib.mjs": "./build/lib.mjs",
+    "./build/emit.mjs": "./build/emit.mjs",
+    "./build/figma-names.mjs": "./build/figma-names.mjs",
+    "./build/figma-ingest.mjs": "./build/figma-ingest.mjs",
+    "./tokens/*.json": "./tokens/*.json",
+    "./dist/*": "./dist/*"
+  },
   "scripts": {
     "build": "node build/build.mjs",
     "dist": "node build/build.mjs",

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/civictheme/uikit/packages/colour-picker/recipe.schema.json",
+  "title": "CivicTheme colour recipe",
+  "description": "The durable artefact of a sub-theme's colour intent (uplift plan §4.4 + the additions key): brand inputs plus the override and addition sets. Everything else — resolved DTCG JSON, CSS custom properties, Figma mode files — is a build output of this file.",
+  "type": "object",
+  "required": ["version"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": 1 },
+    "name": { "type": "string" },
+    "brands": {
+      "description": "Brand colour inputs per mode. At P1–P4 these flow into the color.brand tokens (emitted to Figma, never to CSS); from P5 they also drive palette generation.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "light": { "$ref": "#/$defs/brandSet" },
+        "dark": { "$ref": "#/$defs/brandSet" }
+      }
+    },
+    "overrides": {
+      "description": "Per-token overrides of existing CivicTheme tokens, keyed by token path (e.g. color.palette.highlight). Never touches shipped defaults — resolution is override ?? current-default ?? alias.",
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/valueSpec" },
+      "propertyNames": { "pattern": "^color\\.(brand|palette)\\.[a-z0-9]+(-[a-z0-9]+)*$|^color\\.component\\.[a-z0-9]+(-[a-z0-9]+)*\\.[a-z0-9]+(-[a-z0-9]+)*$" }
+    },
+    "additions": {
+      "description": "New tokens the recipe adds (session-11 decision): custom palette slots (which may carry a contrast target and join Contrast QA) and component tokens, including new component groups. Addition paths must not collide with existing tokens.",
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/additionSpec" },
+      "propertyNames": { "pattern": "^color\\.palette\\.[a-z0-9]+(-[a-z0-9]+)*$|^color\\.component\\.[a-z0-9]+(-[a-z0-9]+)*\\.[a-z0-9]+(-[a-z0-9]+)*$" }
+    }
+  },
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "literal": {
+      "oneOf": [
+        { "$ref": "#/$defs/hex" },
+        { "const": "transparent" }
+      ]
+    },
+    "alias": { "type": "string", "pattern": "^\\{color\\.[a-z0-9.-]+\\}$" },
+    "brandSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "brand1": { "$ref": "#/$defs/hex" },
+        "brand2": { "$ref": "#/$defs/hex" },
+        "brand3": { "$ref": "#/$defs/hex" }
+      }
+    },
+    "valueSpec": {
+      "description": "A value override: per-mode literals and/or an alias re-point. A mode literal wins over $value; a mode with neither keeps the token's current default.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "light": { "$ref": "#/$defs/literal" },
+        "dark": { "$ref": "#/$defs/literal" },
+        "$value": { "$ref": "#/$defs/alias" }
+      }
+    },
+    "additionSpec": {
+      "description": "An added token: the same value shape as an override (a light value — literal or $value alias — is required), plus an optional contrast target for Contrast QA (`against` defaults to color.palette.background-light).",
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [
+        { "required": ["light"] },
+        { "required": ["$value"] }
+      ],
+      "properties": {
+        "light": { "$ref": "#/$defs/literal" },
+        "dark": { "$ref": "#/$defs/literal" },
+        "$value": { "$ref": "#/$defs/alias" },
+        "target": { "type": "number", "exclusiveMinimum": 1, "maximum": 21 },
+        "against": { "type": "string", "pattern": "^color\\.[a-z0-9.-]+$" }
+      }
+    }
+  }
+}
