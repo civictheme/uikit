@@ -6,9 +6,16 @@ const require = createRequire(import.meta.url);
 const getAbsolutePath = function (value) {
   return dirname(require.resolve(join(value, 'package.json')));
 };
+// Opt-in colour-picker mounting (the plugin's docs page; sdc Storybook only
+// by decision). Static-serving two package dirs is file-copy only — nothing
+// on the story-build critical path, and UIKit code never imports the plugin.
+const colourPickerDir = getAbsolutePath('@civictheme/colour-picker');
+const tokensDir = getAbsolutePath('@civictheme/tokens');
+
 const config = {
   stories: [
     '../components/**/*.stories.js',
+    join(colourPickerDir, 'stories/**/*.stories.js'),
   ],
   addons: [
     getAbsolutePath('@storybook/addon-links'),
@@ -19,7 +26,12 @@ const config = {
     name: getAbsolutePath('@storybook/html-vite'),
     options: {},
   },
-  staticDirs: [{ from: '../dist/assets', to: '/assets' }, './static'],
+  staticDirs: [
+    { from: '../dist/assets', to: '/assets' },
+    './static',
+    { from: colourPickerDir, to: '/colour-picker' },
+    { from: tokensDir, to: '/colour-picker-tokens' },
+  ],
 };
 
 export default config;

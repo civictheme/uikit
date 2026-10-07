@@ -5,8 +5,8 @@ engine (this package's P1 core), a CLI, an AI skill and a human UI, layered
 over [`@civictheme/tokens`](../tokens). Full plan and recorded decisions:
 `docs/colour-picker-plan.md` in the repo root.
 
-**Status: P1 (engine) + P2 (CLI) + P3 (AI skill) — UI (P4), Leonardo
-generation (P5) and packaging (P6) follow.** Both this package and
+**Status: P1 (engine) + P2 (CLI) + P3 (AI skill) + P4 (human UI) —
+Leonardo generation (P5) and packaging (P6) follow.** Both this package and
 `@civictheme/tokens` are `private: true` until the maintainer publishes
 them.
 
@@ -51,6 +51,7 @@ resolve [--recipe recipe.json] [--json]      # full resolved table, both modes
 check   [--recipe recipe.json] [--json]      # contrast QA; warns, never blocks
         [--strict] [--targets targets.json]  #   --strict exits 1 on failures (CI)
 emit    --recipe recipe.json --out dir/      # every build output of the recipe
+serve   [--port 8420] [--storybook-url …]    # the human UI, locally
 ```
 
 `emit` writes `tokens.json` (the recipe-applied DTCG tree),
@@ -62,6 +63,44 @@ dist. `init-skill` installs the AI skill below into `./.claude/skills/`.
 Exit codes: 0 success, 1 failure (or `check --strict` with failing
 targets), 2 usage. `generate` arrives at P5, `serve` at P4 — each with the
 thing it operates on.
+
+## Human UI (`ui/`)
+
+A static vanilla ESM app (no framework, no bundler) implementing the
+session-11 design: brand inputs, the palette grid with per-cell override
+editors and lock badges, the component-centric live preview with that
+component's tokens editable below it, the full component-token table with
+add-token flows, a Contrast QA band, and the export panel whose recipe JSON
+block is editable copy/paste (no importer). All computation runs
+client-side through `engine/core.mjs` — the same pure engine as the CLI —
+via the import map in `ui/index.html`; the page is themed with the tokens
+package's own custom properties.
+
+Reach it two ways:
+
+- **`npx @civictheme/colour-picker serve`** — a zero-dependency static
+  server mounting this package at `/colour-picker/` and
+  `@civictheme/tokens` at `/colour-picker-tokens/`. Pass `--storybook-url`
+  to point live previews at a running Storybook.
+- **Inside a Storybook** (the UIKit sdc Storybook ships it): add the
+  stories glob and serve the two packages at the same paths —
+
+  ```js
+  // .storybook/main.js
+  const colourPickerDir = getAbsolutePath('@civictheme/colour-picker');
+  const tokensDir = getAbsolutePath('@civictheme/tokens');
+  stories: [..., join(colourPickerDir, 'stories/**/*.stories.js')],
+  staticDirs: [...,
+    { from: colourPickerDir, to: '/colour-picker' },
+    { from: tokensDir, to: '/colour-picker-tokens' }],
+  ```
+
+Live previews embed real story iframes (`iframe.html?id=…` with the theme
+global per pane) and inject the generated custom properties over the
+story's token CSS when the Storybook is same-origin (always true when
+mounted). A cross-origin Storybook renders stock colours; no Storybook at
+all degrades to resolved swatches. There is no Generate button behaviour
+yet — palette generation is Node-side Leonardo at P5.
 
 ## AI skill (`skills/colour-picker/`)
 

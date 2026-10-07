@@ -9,7 +9,9 @@
   "type": "module",
   "private": true,
   "exports": {
+    "./package.json": "./package.json",
     "./build/lib.mjs": "./build/lib.mjs",
+    "./build/model.mjs": "./build/model.mjs",
     "./build/emit.mjs": "./build/emit.mjs",
     "./build/figma-names.mjs": "./build/figma-names.mjs",
     "./build/figma-ingest.mjs": "./build/figma-ingest.mjs",
