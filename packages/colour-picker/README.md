@@ -11,6 +11,41 @@ Leonardo-powered palette generator, layered over
 `@civictheme/tokens` are `private: true` until the maintainer publishes
 them.
 
+## Quickstart: generate a palette locally
+
+The package is not yet published, so run it from the repo:
+
+```bash
+npm install                                # once; installs Leonardo for generation
+node packages/colour-picker/cli.mjs serve
+```
+
+Open the printed URL (default `http://127.0.0.1:8420/`). The Generate
+button is live because the CLI is serving the page — set the brand
+colours and hit **Generate**: Leonardo solves the contrast slots, the
+tint/shade slots follow the 1.x derivation, and the result lands in the
+recipe's `generated` key (slots you have overridden are locked and never
+regenerated). Export the recipe JSON from the export panel.
+
+For live story previews (instead of swatch-only), run the sdc Storybook
+in another terminal and let `serve` proxy it same-origin:
+
+```bash
+npm run storybook -w packages/sdc          # listens on 6007
+node packages/colour-picker/cli.mjs serve --storybook-url http://localhost:6007
+```
+
+The same flow without the UI:
+
+```bash
+node packages/colour-picker/cli.mjs generate --recipe my-recipe.json --write
+node packages/colour-picker/cli.mjs check    --recipe my-recipe.json
+node packages/colour-picker/cli.mjs emit     --recipe my-recipe.json --out out/
+```
+
+A minimal starting recipe is
+`{"version": 1, "brands": {"light": {"brand1": "#00698f"}}}`.
+
 ## The model
 
 A sub-theme's entire colour intent is a small **recipe** file — brand inputs
