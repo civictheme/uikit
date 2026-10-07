@@ -88,8 +88,12 @@ h1 { margin: 0; font-size: 40px; line-height: 1.15; font-weight: 700; letter-spa
 
 /* Tables */
 .table-scroll { overflow-x: auto; }
+/* Where the grids fit without horizontal scrolling, drop the scroll context
+ * so the sticky column headers stick to the (page/iframe) viewport; below
+ * that width the horizontal scroller returns and sticky quietly degrades. */
+@media (min-width: 1080px) { .table-scroll { overflow-x: visible; } }
 .trow, .thead { display: grid; gap: 0 16px; align-items: center; padding: 8px 12px; }
-.thead { font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cp-muted); border-bottom: 1px solid var(--cp-line); }
+.thead { position: sticky; top: 0; z-index: 2; background: var(--cp-panel); font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cp-muted); border-bottom: 1px solid var(--cp-line); }
 .trow { border-top: 1px solid rgba(230, 233, 235, 0.7); }
 .trow:first-of-type { border-top: none; }
 .palette-grid .trow, .palette-grid .thead { grid-template-columns: 220px 140px 1fr 1fr; min-width: 920px; }
