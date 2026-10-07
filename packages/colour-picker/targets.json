@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "$description": "Per-family WCAG 2.x contrast targets — the recorded PROPOSAL (not designer-decided); designers confirm or adjust by editing this file. Each targeted slot is measured against its `against` token in the same mode. Untargeted slots (backgrounds, highlight, border-light/border-dark, brand, the interaction fills) are surfaces or decorative variants by design: border-light (light 2.17:1) and border-dark (dark 1.45:1) sit below 3:1 today, so only the main border slot carries the UI target — that calibration keeps the known failure set at exactly the three recorded dark values.",
+  "targets": {
+    "color.palette.heading": { "target": 7, "against": "color.palette.background-light" },
+    "color.palette.body": { "target": 7, "against": "color.palette.background-light" },
+    "color.palette.border": { "target": 3, "against": "color.palette.background-light" },
+    "color.palette.interaction-focus": { "target": 3, "against": "color.palette.background-light" },
+    "color.palette.information": { "target": 3, "against": "color.palette.background-light" },
+    "color.palette.warning": { "target": 3, "against": "color.palette.background-light" },
+    "color.palette.error": { "target": 3, "against": "color.palette.background-light" },
+    "color.palette.success": { "target": 3, "against": "color.palette.background-light" },
+    "color.palette.interaction-text": { "target": 4.5, "against": "color.palette.interaction-background" },
+    "color.palette.interaction-hover-text": { "target": 4.5, "against": "color.palette.interaction-hover-background" }
+  }
+}

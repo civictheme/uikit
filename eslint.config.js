@@ -76,7 +76,7 @@ export default [
   },
 
   {
-    files: ['tools/visual-diff/**/*.mjs', 'tools/scripts/**/*.js', 'packages/tokens/**/*.mjs'],
+    files: ['tools/visual-diff/**/*.mjs', 'tools/scripts/**/*.js', 'packages/tokens/**/*.mjs', 'packages/colour-picker/**/*.mjs'],
     languageOptions: {
       globals: {
         ...globals.node,
