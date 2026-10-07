@@ -9,6 +9,7 @@
  */
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { loadTokens, resolveModes, MODES } from '@civictheme/tokens/build/lib.mjs';
 import { resolveRecipe, targetsForRecipe, loadTargets } from './engine/resolve.mjs';
 import { checkContrast } from './engine/contrast.mjs';
@@ -17,9 +18,10 @@ import { emitCss, emitFigma, emitResolved, emitNameMap, emitScssOverrides } from
 const USAGE = `Usage: npx @civictheme/colour-picker <command> [options]
 
 Commands:
-  resolve   Full resolved token table, both modes
-  check     Contrast QA against the per-family targets (warns, never blocks)
-  emit      Write every build output of a recipe to a directory
+  resolve     Full resolved token table, both modes
+  check       Contrast QA against the per-family targets (warns, never blocks)
+  emit        Write every build output of a recipe to a directory
+  init-skill  Install the colour-picker AI skill into ./.claude/skills/
 
 Options:
   --recipe <file>    Recipe JSON (default: identity — the stock tokens)
@@ -137,7 +139,16 @@ function commandEmit(options) {
   return 0;
 }
 
-const COMMANDS = { resolve: commandResolve, check: commandCheck, emit: commandEmit };
+function commandInitSkill(options) {
+  const source = path.join(path.dirname(fileURLToPath(import.meta.url)), 'skills', 'colour-picker');
+  const target = path.resolve('.claude', 'skills', 'colour-picker');
+  fs.cpSync(source, target, { recursive: true });
+  if (options.json) console.log(JSON.stringify({ installed: target }, null, 2));
+  else console.log(`Installed the colour-picker skill to ${target}`);
+  return 0;
+}
+
+const COMMANDS = { resolve: commandResolve, check: commandCheck, emit: commandEmit, 'init-skill': commandInitSkill };
 
 let options;
 try {

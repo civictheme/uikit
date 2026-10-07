@@ -108,7 +108,18 @@ expect('tokens.json carries the addition', tokensJson.color.palette['brand-accen
 const figmaDark = JSON.parse(fs.readFileSync(path.join(exampleOut, 'figma', 'dark.tokens.json'), 'utf-8'));
 expect('figma dark carries the addition', figmaDark.Custom?.['Brand Accent']?.$value?.hex === '#C9A1E8');
 
-// --- 5. Failure modes: usage and malformed input.
+// --- 5. init-skill copies the shipped skill into ./.claude/skills.
+const skillCwd = path.join(tempRoot, 'consumer-project');
+fs.mkdirSync(skillCwd, { recursive: true });
+try {
+  execFileSync(process.execPath, [CLI, 'init-skill'], { encoding: 'utf-8', cwd: skillCwd, stdio: ['ignore', 'pipe', 'pipe'] });
+  const installed = fs.readFileSync(path.join(skillCwd, '.claude', 'skills', 'colour-picker', 'SKILL.md'), 'utf-8');
+  expect('init-skill installs SKILL.md', installed.includes('name: colour-picker') && installed.includes('check --json'));
+} catch (error) {
+  failures.push(`init-skill threw: ${error.message}`);
+}
+
+// --- 6. Failure modes: usage and malformed input.
 expect('unknown command exits 2', run(['bogus']).status === 2);
 expect('unknown flag exits 2', run(['resolve', '--bogus']).status === 2);
 expect('emit without --out exits 1', run(['emit']).status === 1);

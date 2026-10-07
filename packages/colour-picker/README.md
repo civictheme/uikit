@@ -5,9 +5,10 @@ engine (this package's P1 core), a CLI, an AI skill and a human UI, layered
 over [`@civictheme/tokens`](../tokens). Full plan and recorded decisions:
 `docs/colour-picker-plan.md` in the repo root.
 
-**Status: P1 (engine) + P2 (CLI) — skill (P3), UI (P4), Leonardo generation
-(P5) and packaging (P6) follow.** Both this package and `@civictheme/tokens`
-are `private: true` until the maintainer publishes them.
+**Status: P1 (engine) + P2 (CLI) + P3 (AI skill) — UI (P4), Leonardo
+generation (P5) and packaging (P6) follow.** Both this package and
+`@civictheme/tokens` are `private: true` until the maintainer publishes
+them.
 
 ## The model
 
@@ -57,9 +58,20 @@ emit    --recipe recipe.json --out dir/      # every build output of the recipe
 `overrides.scss` (only the changed custom properties, loadable after the
 stock variables), `figma/{light,dark}.tokens.json` (native Import mode) and
 `figma/name-map.json`. An identity emit is byte-identical to the tokens
-dist. Exit codes: 0 success, 1 failure (or `check --strict` with failing
-targets), 2 usage. `generate` arrives at P5, `serve` at P4, `init-skill` at
-P3 — each with the thing it operates on.
+dist. `init-skill` installs the AI skill below into `./.claude/skills/`.
+Exit codes: 0 success, 1 failure (or `check --strict` with failing
+targets), 2 usage. `generate` arrives at P5, `serve` at P4 — each with the
+thing it operates on.
+
+## AI skill (`skills/colour-picker/`)
+
+`SKILL.md` teaches an AI agent the whole workflow without the UI: the
+agency branch (edit a recipe, `check`, `emit` — never touch
+`node_modules`) and the maintainer branch (edit `packages/tokens/tokens/*`
+following the merge conventions, then the gates, including the full
+fallout of a deliberate value change). It ships in the package, installs
+via `init-skill`, and the UIKit repo's own copy lives at
+`.claude/skills/colour-picker/`.
 
 ## Engine API (`engine/`)
 
