@@ -32,6 +32,7 @@
       <div class="recipe-card__name mono" id="recipe-name">recipe.json</div>
       <div class="recipe-card__meta" id="recipe-meta">no changes yet</div>
       <div class="recipe-card__actions">
+        <button class="button button--outline" id="import-recipe-top">Import</button>
         <a class="button button--accent" href="#export">Export</a>
       </div>
     </div>
@@ -142,9 +143,11 @@
     <div class="export-grid">
       <div class="export-recipe">
         <div class="export-recipe__bar">
+          <button class="button button--outline" id="import-recipe">Import recipe…</button>
           <button class="button button--outline" id="copy-recipe">Copy recipe</button>
           <button class="button button--outline" id="apply-recipe">Apply edits</button>
-          <span>Editable — paste an existing recipe straight in. No importer.</span>
+          <span>Editable — paste an existing recipe straight in, or import the file.</span>
+          <input type="file" id="import-file" accept=".json,application/json" hidden>
         </div>
         <textarea id="recipe-json" class="mono" spellcheck="false" aria-label="Recipe JSON"></textarea>
         <div id="recipe-error" class="recipe-error" hidden></div>

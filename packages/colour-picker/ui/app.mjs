@@ -7,8 +7,10 @@
  * identically by `colour-picker serve` and by the sdc Storybook's
  * staticDirs. The recipe object is the single source of truth; every panel
  * renders from the resolved state (session-11 design, artifact
- * VGjiPayrZz1UrmV1eUzd3D). Recorded decisions honoured here: no import
- * button (the recipe JSON block is editable copy/paste), add-token flows
+ * VGjiPayrZz1UrmV1eUzd3D). Recorded decisions honoured here: recipe import
+ * via file picker AND the editable copy/paste JSON block (the session-11
+ * "no importer" decision was reversed by the user 2026-10-07 after live
+ * testing), add-token flows
  * for palette slots and component tokens, component-centric live preview
  * with the component's tokens editable below it, contrast warnings never
  * block, and no in-browser generation: Leonardo is Node-side only (the P5
@@ -947,16 +949,31 @@ function wireStatic() {
   $('#add-slot').addEventListener('click', () => openAddEditor('palette'));
   $('#add-token').addEventListener('click', () => openAddEditor('component', state.filter === 'all' ? '' : state.filter));
   $('#copy-recipe').addEventListener('click', () => navigator.clipboard?.writeText($('#recipe-json').value));
-  $('#apply-recipe').addEventListener('click', () => {
+  const commitRecipeText = (text, source) => {
     const errorBox = $('#recipe-error');
     try {
-      const parsed = JSON.parse($('#recipe-json').value);
+      const parsed = JSON.parse(text);
       validateRecipe(parsed, base.tree);
       state.recipe = parsed;
       refresh();
+      return true;
     } catch (error) {
-      errorBox.textContent = error.message;
+      errorBox.textContent = source ? `Import of ${source} failed: ${error.message}` : error.message;
       errorBox.hidden = false;
+      return false;
+    }
+  };
+  $('#apply-recipe').addEventListener('click', () => commitRecipeText($('#recipe-json').value));
+  const importFile = $('#import-file');
+  const pickImport = () => importFile.click();
+  $('#import-recipe').addEventListener('click', pickImport);
+  $('#import-recipe-top').addEventListener('click', pickImport);
+  importFile.addEventListener('change', async () => {
+    const file = importFile.files?.[0];
+    importFile.value = '';
+    if (!file) return;
+    if (!commitRecipeText(await file.text(), file.name)) {
+      $('#export').scrollIntoView({ behavior: 'smooth' });
     }
   });
 }

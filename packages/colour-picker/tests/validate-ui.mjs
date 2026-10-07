@@ -66,6 +66,7 @@ const indexHtml = fs.readFileSync(path.join(PACKAGE_ROOT, 'ui', 'index.html'), '
 expect('import map maps the tokens package', indexHtml.includes('"@civictheme/tokens/": "/colour-picker-tokens/"'));
 expect('import map maps this package', indexHtml.includes('"@civictheme/colour-picker/": "/colour-picker/"'));
 expect('dogfoods the tokens stylesheet', indexHtml.includes('/colour-picker-tokens/dist/css/variables.css'));
+expect('recipe import controls present', indexHtml.includes('id="import-recipe"') && indexHtml.includes('id="import-file"') && indexHtml.includes('id="import-recipe-top"'));
 const story = fs.readFileSync(path.join(PACKAGE_ROOT, 'stories', 'colour-picker.stories.js'), 'utf-8');
 expect('story iframes the static app', story.includes('/colour-picker/ui/index.html'));
 

@@ -107,8 +107,8 @@ A static vanilla ESM app (no framework, no bundler) implementing the
 session-11 design: brand inputs, the palette grid with per-cell override
 editors and lock badges, the component-centric live preview with that
 component's tokens editable below it, the full component-token table with
-add-token flows, a Contrast QA band, and the export panel whose recipe JSON
-block is editable copy/paste (no importer). All computation runs
+add-token flows, a Contrast QA band, and the export panel with a recipe
+file importer and an editable copy/paste recipe JSON block. All computation runs
 client-side through `engine/core.mjs` — the same pure engine as the CLI —
 via the import map in `ui/index.html`; the page is themed with the tokens
 package's own custom properties.
