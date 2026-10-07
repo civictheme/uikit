@@ -854,6 +854,18 @@ function renderPreview() {
 
   const story = storyFor(comp);
   const panes = $('#preview-panes');
+  // The pane surrounds and theme tags follow the CURRENT resolved palette
+  // (same slots the stock design hardcoded, so an identity recipe renders
+  // byte-identically): pane = background / background-dark, tag chip =
+  // background-light, text = body.
+  Object.entries({
+    '--pv-light-bg': derived.resolved.light['color.palette.background'],
+    '--pv-dark-bg': derived.resolved.dark['color.palette.background-dark'],
+    '--pv-light-tag-bg': derived.resolved.light['color.palette.background-light'],
+    '--pv-dark-tag-bg': derived.resolved.dark['color.palette.background-light'],
+    '--pv-light-text': derived.resolved.light['color.palette.body'],
+    '--pv-dark-text': derived.resolved.dark['color.palette.body'],
+  }).forEach(([name, value]) => panes.style.setProperty(name, value));
   if (story) {
     panes.innerHTML = MODES.map((mode) => `
       <div class="preview-pane preview-pane--${mode}">
