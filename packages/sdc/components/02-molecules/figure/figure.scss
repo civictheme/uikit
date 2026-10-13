@@ -6,7 +6,9 @@
   $root: &;
 
   margin: 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: ct-spacing();
 
   @include ct-reset-margins();
 
