@@ -7511,6 +7511,8 @@ ol ol ol {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
@@ -7519,6 +7521,8 @@ ol ol ol {
 .ct-figure .ct-figure__image {
   border-radius: var(--ct-figure-border-radius);
   object-fit: contain;
+  max-width: 100%;
+  height: auto;
 }
 .ct-figure .ct-figure__caption {
   font-size: var(--ct-typography-text-small-font-size);
@@ -7527,9 +7531,9 @@ ol ol ol {
   font-weight: var(--ct-typography-text-small-font-weight);
   letter-spacing: var(--ct-typography-text-small-letter-spacing);
   align-items: center;
-  align-self: stretch;
   contain: inline-size;
   display: flex;
+  width: 100%;
   gap: 0.5rem;
 }
 .ct-figure__caption-icon {

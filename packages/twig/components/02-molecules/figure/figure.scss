@@ -9,21 +9,25 @@
   display: flex;
   flex-direction: column;
   gap: ct-spacing();
+  width: fit-content;
+  max-width: 100%;
 
   @include ct-reset-margins();
 
   #{$root}__image {
     border-radius: var(--ct-figure-border-radius);
     object-fit: contain;
+    max-width: 100%;
+    height: auto;
   }
 
   #{$root}__caption {
     @include ct-typography('text-small');
 
     align-items: center;
-    align-self: stretch;
     contain: inline-size;
     display: flex;
+    width: 100%;
     gap: ct-spacing();
   }
 
