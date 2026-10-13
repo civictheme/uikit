@@ -18,8 +18,10 @@
   #{$root}__caption {
     @include ct-typography('text-small');
 
-    display: flex;
     align-items: center;
+    align-self: stretch;
+    contain: inline-size;
+    display: flex;
     gap: ct-spacing();
   }
 

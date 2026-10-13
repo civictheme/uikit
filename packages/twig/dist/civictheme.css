@@ -7524,8 +7524,10 @@ ol ol ol {
   font-family: var(--ct-typography-text-small-font-name);
   font-weight: var(--ct-typography-text-small-font-weight);
   letter-spacing: var(--ct-typography-text-small-letter-spacing);
-  display: flex;
   align-items: center;
+  align-self: stretch;
+  contain: inline-size;
+  display: flex;
   gap: 0.5rem;
 }
 .ct-figure__caption-icon {
