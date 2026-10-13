@@ -4,15 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CivicTheme colour picker</title>
+<!-- Mount-relative URLs: the app works from any base where this package and
+     the tokens package are served as siblings named colour-picker and
+     colour-picker-tokens — the CLI serve, the sdc Storybook staticDirs, or a
+     consumer's copied dist (e.g. the CivicTheme Drupal theme). -->
 <script type="importmap">
 {
   "imports": {
-    "@civictheme/tokens/": "/colour-picker-tokens/",
-    "@civictheme/colour-picker/": "/colour-picker/"
+    "@civictheme/tokens/": "../../colour-picker-tokens/",
+    "@civictheme/colour-picker/": "../"
   }
 }
 </script>
-<link rel="stylesheet" href="/colour-picker-tokens/dist/css/variables.css">
+<link rel="stylesheet" href="../../colour-picker-tokens/dist/css/variables.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="./styles.css">
 </head>

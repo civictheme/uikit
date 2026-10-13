@@ -61,14 +61,29 @@ expect('import graph never touches resolve.mjs', ![...seen].some((file) => file.
 expect('import graph never touches tokens lib.mjs', ![...seen].some((file) => file.endsWith('build/lib.mjs')));
 expect('import graph never touches derive.mjs (Leonardo stays Node-side)', ![...seen].some((file) => file.endsWith('engine/derive.mjs')));
 
-// --- 2. index.html contract.
+// --- 2. index.html contract. The import map is mount-relative so the app
+// runs from any base where the two packages are served as siblings named
+// colour-picker and colour-picker-tokens (CLI serve, Storybook staticDirs,
+// a consumer's copied dist).
 const indexHtml = fs.readFileSync(path.join(PACKAGE_ROOT, 'ui', 'index.html'), 'utf-8');
-expect('import map maps the tokens package', indexHtml.includes('"@civictheme/tokens/": "/colour-picker-tokens/"'));
-expect('import map maps this package', indexHtml.includes('"@civictheme/colour-picker/": "/colour-picker/"'));
-expect('dogfoods the tokens stylesheet', indexHtml.includes('/colour-picker-tokens/dist/css/variables.css'));
+expect('import map maps the tokens package mount-relatively', indexHtml.includes('"@civictheme/tokens/": "../../colour-picker-tokens/"'));
+expect('import map maps this package mount-relatively', indexHtml.includes('"@civictheme/colour-picker/": "../"'));
+expect('dogfoods the tokens stylesheet mount-relatively', indexHtml.includes('"../../colour-picker-tokens/dist/css/variables.css"'));
+expect('no absolute mount paths remain', !indexHtml.includes('"/colour-picker'));
 expect('recipe import controls present', indexHtml.includes('id="import-recipe"') && indexHtml.includes('id="import-file"') && indexHtml.includes('id="import-recipe-top"'));
 const story = fs.readFileSync(path.join(PACKAGE_ROOT, 'stories', 'colour-picker.stories.js'), 'utf-8');
 expect('story iframes the static app', story.includes('/colour-picker/ui/index.html'));
+
+// --- 2b. Embed API contract: data fetches go through the import map, and
+// the same-origin host API is installed with its ready event.
+const appSource = fs.readFileSync(path.join(PACKAGE_ROOT, 'ui', 'app.mjs'), 'utf-8');
+expect('app fetches its data through the import map', appSource.includes("import.meta.resolve('@civictheme/colour-picker/targets.json')") && appSource.includes('import.meta.resolve(`@civictheme/tokens/tokens/'));
+expect('app has no absolute mount fetches', !/fetchJson\(['"`]\/colour-picker/.test(appSource));
+expect('embed API is installed', appSource.includes('window.CivicThemeColourPicker'));
+['getRecipe', 'setRecipe', 'getVariablesCss', 'getOverridesCss', 'onChange'].forEach((member) => {
+  expect(`embed API exposes ${member}`, appSource.includes(member));
+});
+expect('embed API announces readiness', appSource.includes('civicthemecolourpicker:ready'));
 
 // --- 3. serve smoke test.
 const child = spawn(process.execPath, [path.join(PACKAGE_ROOT, 'cli.mjs'), 'serve', '--port', '0', '--json', '--storybook-url', 'http://storybook.invalid/'], { stdio: ['ignore', 'pipe', 'pipe'] });
