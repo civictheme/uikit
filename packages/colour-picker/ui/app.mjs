@@ -2,10 +2,15 @@
  * Colour picker UI — static vanilla ESM, no framework, no build step.
  * All computation happens client-side through the same pure engine the CLI
  * uses (engine/core.mjs + the tokens model), loaded via the import map in
- * index.html: '@civictheme/tokens/' -> /colour-picker-tokens/ and
- * '@civictheme/colour-picker/' -> /colour-picker/ — paths served
- * identically by `colour-picker serve` and by the sdc Storybook's
- * staticDirs. The recipe object is the single source of truth; every panel
+ * index.html. The map is mount-relative ('@civictheme/colour-picker/' ->
+ * '../', '@civictheme/tokens/' -> '../../colour-picker-tokens/'), so the app
+ * runs from any base where the two packages are served as siblings named
+ * colour-picker and colour-picker-tokens: the CLI serve, the sdc Storybook's
+ * staticDirs, or a consumer's copied dist (e.g. the CivicTheme Drupal theme
+ * settings screen, which talks to the page through the embed API at the
+ * bottom of this file). Data fetches resolve through import.meta.resolve so
+ * they follow the same map. The recipe object is the single source of truth;
+ * every panel
  * renders from the resolved state (session-11 design, artifact
  * VGjiPayrZz1UrmV1eUzd3D). Recorded decisions honoured here: recipe import
  * via file picker AND the editable copy/paste JSON block (the session-11
@@ -1009,11 +1014,44 @@ function wireStatic() {
   });
 }
 
+/* ------------------------------------------------------------ embed API */
+
+// Host pages embedding this UI in a same-origin iframe (e.g. the CivicTheme
+// Drupal theme settings screen) drive it through this API instead of
+// reaching into the DOM. It is installed only once boot has succeeded, and
+// `civicthemecolourpicker:ready` fires on the window right after — hosts
+// listen for the event, falling back to polling the global.
+const embedListeners = new Set();
+
+function installEmbedApi() {
+  window.CivicThemeColourPicker = {
+    /** The current recipe (a detached copy). */
+    getRecipe: () => structuredClone(state.recipe),
+    /** Replace the recipe; throws listing every validation problem. */
+    setRecipe(recipe) {
+      const next = structuredClone(recipe);
+      validateRecipe(next, base.tree);
+      state.recipe = next;
+      refresh();
+    },
+    /** The full theme-scoped custom-property stylesheet for the recipe. */
+    getVariablesCss: () => emitCss(derived.tree, derived.resolved),
+    /** The changed custom properties — loads after the stock variables. */
+    getOverridesCss: () => emitScssOverrides(base.tree, base.resolved, derived.tree, derived.resolved),
+    /** Subscribe to recipe changes; returns an unsubscribe function. */
+    onChange(listener) {
+      embedListeners.add(listener);
+      return () => embedListeners.delete(listener);
+    },
+  };
+  window.dispatchEvent(new Event('civicthemecolourpicker:ready'));
+}
+
 async function boot() {
   try {
     const [targetsFile, ...sources] = await Promise.all([
-      fetchJson('/colour-picker/targets.json'),
-      ...TOKEN_FILES.map((file) => fetchJson(`/colour-picker-tokens/tokens/${file}`)),
+      fetchJson(import.meta.resolve('@civictheme/colour-picker/targets.json')),
+      ...TOKEN_FILES.map((file) => fetchJson(import.meta.resolve(`@civictheme/tokens/tokens/${file}`))),
     ]);
     const tree = mergeTrees(...sources);
     base = { tree, flat: flattenTree(tree), resolved: resolveRecipe({ version: 1 }, tree).resolved, targets: targetsFile.targets };
@@ -1026,12 +1064,18 @@ async function boot() {
   refresh = () => {
     recompute();
     renderAll();
+    embedListeners.forEach((listener) => {
+      try {
+        listener(structuredClone(state.recipe));
+      } catch { /* a host listener must never break the app */ }
+    });
   };
   renderPreviewLate = () => renderPreview();
   await detectStorybook();
   recompute();
   wireStatic();
   renderAll();
+  installEmbedApi();
 }
 
 boot();

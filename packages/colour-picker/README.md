@@ -154,6 +154,32 @@ fallout of a deliberate value change). It ships in the package, installs
 via `init-skill`, and the UIKit repo's own copy lives at
 `.claude/skills/colour-picker/`.
 
+## Embedding the UI in another product
+
+The page is mount-relative: serve this package and `@civictheme/tokens` as
+sibling directories named `colour-picker` and `colour-picker-tokens` under
+any base URL (that is exactly how `serve` and the Storybook `staticDirs`
+mount them) and open `colour-picker/ui/index.html`. A same-origin host —
+such as the CivicTheme Drupal theme settings screen, which copies both
+packages into its `dist/` and embeds the page in an iframe — drives it
+through the embed API instead of the DOM:
+
+```js
+iframe.contentWindow.addEventListener('civicthemecolourpicker:ready', () => {
+  const picker = iframe.contentWindow.CivicThemeColourPicker;
+  picker.setRecipe(stored);                   // throws listing every problem
+  picker.onChange((recipe) => { /* track */ });
+  picker.getRecipe();                         // detached copy
+  picker.getVariablesCss();                   // full recipe-applied stylesheet
+  picker.getOverridesCss();                   // only the changed properties
+});
+```
+
+The API installs only after a successful boot (hosts may also poll for the
+global). Generation stays Node-side: without the CLI's `/generate` endpoint
+the Generate button is disabled with CLI instructions, and recipes made
+elsewhere arrive through `setRecipe` or the import controls.
+
 ## Engine API (`engine/`)
 
 - `resolve.mjs` — `resolveRecipe(recipe)` → `{ tree, resolved }`
