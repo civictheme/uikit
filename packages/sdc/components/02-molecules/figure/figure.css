@@ -56,16 +56,16 @@
   }
 }
 .ct-figure .ct-figure__caption {
-  font-size: var(--ct-typography-label-small-font-size);
-  line-height: var(--ct-typography-label-small-line-height);
-  font-family: var(--ct-typography-label-small-font-name);
-  font-weight: var(--ct-typography-label-small-font-weight);
-  letter-spacing: var(--ct-typography-label-small-letter-spacing);
+  font-size: var(--ct-typography-text-small-font-size);
+  line-height: var(--ct-typography-text-small-line-height);
+  font-family: var(--ct-typography-text-small-font-name);
+  font-weight: var(--ct-typography-text-small-font-weight);
+  letter-spacing: var(--ct-typography-text-small-letter-spacing);
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.ct-figure .ct-figure__caption .ct-icon {
+.ct-figure__caption-icon {
   flex-shrink: 0;
 }
 .ct-figure.ct-theme-light .ct-figure__caption {
