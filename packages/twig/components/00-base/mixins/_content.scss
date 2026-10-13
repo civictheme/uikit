@@ -214,16 +214,6 @@
       margin-top: 0;
       margin-bottom: 0;
     }
-
-    &.align-left,
-    &.align-center,
-    &.align-right {
-      display: flex;
-      flex-direction: column;
-      gap: ct-spacing();
-    }
-
-    @include ct-figure-alignment();
   }
 
   table {
