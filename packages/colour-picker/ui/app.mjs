@@ -18,11 +18,13 @@
  * testing), add-token flows
  * for palette slots and component tokens, component-centric live preview
  * with the component's tokens editable below it, contrast warnings never
- * block, and no in-browser generation: Leonardo is Node-side only (the P5
- * containment rule), so Generate POSTs the recipe to the CLI serve
- * process's /generate endpoint and swaps in the returned recipe. The
- * endpoint's presence is advertised by serve-config.json; without it (the
- * Storybook-static copy) the button stays disabled with CLI instructions.
+ * block, and in-browser generation: Generate runs locally through
+ * engine/generate.mjs, which lazily loads the committed, pinned Leonardo
+ * vendor bundle (vendor/leonardo.mjs — the P5 "Node-side only" containment
+ * rule was deliberately reversed in P8 so Generate works in every embed;
+ * see vendor/README.md). The CLI serve process's /generate endpoint and its
+ * serve-config.json advertisement remain for API consumers, but this UI no
+ * longer depends on either.
  */
 import { mergeTrees, flattenTree, MODES_EXTENSION } from '@civictheme/tokens/build/model.mjs';
 import { FIGMA_NAMES } from '@civictheme/tokens/build/figma-names.mjs';
@@ -50,7 +52,6 @@ const state = {
   filter: 'all',
   overriddenOnly: false,
   storybook: { base: null, sameOrigin: false, stories: null },
-  canGenerate: false,
   previewTheme: 'light',
 };
 let base = null;
@@ -562,7 +563,6 @@ async function detectStorybook() {
   try {
     const config = await fetchJson('./serve-config.json');
     if (config.storybookUrl) candidates.push(config.storybookUrl);
-    state.canGenerate = Boolean(config.generate);
   } catch { /* not served by the CLI */ }
   let stored = null;
   try {
@@ -659,10 +659,8 @@ function renderHeaderCard() {
 function renderGenerate() {
   const button = $('#generate');
   if (button.dataset.busy) return;
-  button.disabled = !state.canGenerate;
-  $('#generate-note').textContent = state.canGenerate
-    ? 'Derives every core palette slot from the brand inputs — solved to the stock contrast structure, floored at the WCAG targets. Slots with an override are locked and never regenerated.'
-    : 'Generation runs Node-side only (Leonardo never loads in the browser). Serve this UI via the CLI to enable it: npx @civictheme/colour-picker serve';
+  button.disabled = false;
+  $('#generate-note').textContent = 'Derives every core palette slot from the brand inputs — solved to the stock contrast structure, floored at the WCAG targets. Slots with an override are locked and never regenerated. Runs locally in this page.';
 }
 
 async function runGenerate() {
@@ -672,9 +670,13 @@ async function runGenerate() {
   button.disabled = true;
   note.textContent = 'Generating…';
   try {
-    const response = await fetch('/generate', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(state.recipe) });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error ?? `HTTP ${response.status}`);
+    // Generation runs locally: the engine module (and, behind it, the
+    // vendored Leonardo bundle) loads on first press only.
+    const [{ generateRecipe }, generationFile] = await Promise.all([
+      import('@civictheme/colour-picker/engine/generate.mjs'),
+      fetchJson(import.meta.resolve('@civictheme/colour-picker/generation.json')),
+    ]);
+    const result = await generateRecipe(state.recipe, { tree: base.tree, targets: base.targets, generation: generationFile.slots });
     validateRecipe(result.recipe, base.tree);
     state.recipe = result.recipe;
     delete button.dataset.busy;

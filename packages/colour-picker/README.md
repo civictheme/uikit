@@ -68,13 +68,15 @@ The whole mapping is data, not code:
 colour and per-mode ratios, designer-editable in one file. Slots carrying
 an override in the recipe are **locked** — `generate` never writes them.
 
-Leonardo is this package's one dependency beyond `@civictheme/tokens`
-(pinned, approved per-dependency as recorded in the plan) and is **lazily
-imported, Node-side only** — the containment rule: no Leonardo bytes are
-ever bundled, served to, or executed in a browser. The UI's Generate button
-POSTs the recipe to the local `serve` process (`POST /generate`), which
-runs the solve and returns the updated recipe; every other command keeps
-working if the dependency is absent.
+Leonardo ships as a **committed, pinned vendor bundle**
+([`vendor/leonardo.mjs`](./vendor/README.md), built by
+`npm run vendor-leonardo` from the exact devDependency pin) and is lazily
+imported by the generation engine only when a generate actually runs — in
+Node and in the browser alike, so `generate` output is byte-identical
+everywhere. The P5 containment rule ("no Leonardo bytes ever reach a
+browser") was deliberately reversed in P8 so the UI's Generate button works
+in every embed without a Node runtime; the recorded decision and its
+security reasoning live in `vendor/README.md` and the plan.
 
 ## CLI (`cli.mjs`)
 
@@ -139,10 +141,11 @@ Live previews embed real story iframes (`iframe.html?id=…` with the theme
 global per pane) and inject the generated custom properties over the
 story's token CSS when the Storybook is same-origin (always true when
 mounted). A cross-origin Storybook renders stock colours; no Storybook at
-all degrades to resolved swatches. The Generate button is live only when
-the page is served by the CLI (`serve-config.json` advertises the
-`/generate` endpoint); the Storybook-static copy keeps it disabled with
-instructions to run `serve` — generation is Node-side only.
+all degrades to resolved swatches. The Generate button is always live:
+generation runs locally in the page through `engine/generate.mjs` and the
+vendored Leonardo bundle, wherever the static copy is served. The CLI
+`serve` process still advertises its `POST /generate` endpoint through
+`serve-config.json` for API consumers, but the UI no longer needs it.
 
 ## AI skill (`skills/colour-picker/`)
 
@@ -176,9 +179,10 @@ iframe.contentWindow.addEventListener('civicthemecolourpicker:ready', () => {
 ```
 
 The API installs only after a successful boot (hosts may also poll for the
-global). Generation stays Node-side: without the CLI's `/generate` endpoint
-the Generate button is disabled with CLI instructions, and recipes made
-elsewhere arrive through `setRecipe` or the import controls.
+global). Generation runs in the page itself (the vendored Leonardo bundle
+loads on first press), so embedded copies get a working Generate button
+with no server support; recipes made elsewhere still arrive through
+`setRecipe` or the import controls.
 
 ## Engine API (`engine/`)
 
@@ -193,10 +197,13 @@ elsewhere arrive through `setRecipe` or the import controls.
 - `emit.mjs` — `emitCss`, `emitFigma`, `emitResolved`, `emitNameMap`: thin
   wrappers over the tokens build emit module, extended only to name recipe
   additions (custom palette slots land under `Custom/` in Figma).
-- `derive.mjs` — `generateRecipe(recipe)` → `{ recipe, rows }` (the recipe
-  with a fresh `generated` key + the per-slot QA rows). The only module
-  that touches Leonardo, behind a lazy import; everything else works
-  without the dependency installed.
+- `generate.mjs` — `generateRecipe(recipe, { tree, targets, generation })`
+  → `{ recipe, rows }` (the recipe with a fresh `generated` key + the
+  per-slot QA rows). Browser-pure; the only module that touches Leonardo,
+  lazily imported from the committed `vendor/leonardo.mjs` bundle.
+- `derive.mjs` — the Node-side shell over `generate.mjs` with filesystem
+  defaults for the three data inputs, mirroring the `core.mjs` /
+  `resolve.mjs` split; CLI and tests import this one.
 
 Contrast targets ship as data in [`targets.json`](./targets.json) — the
 recorded proposal (text ≥ 7:1, UI/status ≥ 3:1, text-on-fill ≥ 4.5:1),

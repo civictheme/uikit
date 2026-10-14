@@ -1,10 +1,12 @@
 /**
  * P4 gate, scripted half: the UI stays a static browser app and the serve
  * command actually serves it. (1) The whole import graph reachable from
- * ui/app.mjs and the browser-side engine must be free of Node built-ins —
- * the wrong-tree/fs modules (engine/resolve.mjs, tokens lib.mjs) and the
- * Leonardo boundary (engine/derive.mjs — the P5 containment rule) must
- * never sneak in. (2) index.html carries the import map both hosting
+ * ui/app.mjs (static AND string-literal dynamic imports) must be free of
+ * Node built-ins — the wrong-tree/fs modules (engine/resolve.mjs, tokens
+ * lib.mjs, engine/derive.mjs) must never sneak in — and the only
+ * third-party bytes in it are the committed, pinned Leonardo vendor bundle
+ * that generation lazy-loads (the P8 reversal of the P5 containment rule —
+ * see vendor/README.md). (2) index.html carries the import map both hosting
  * contexts rely on. (3) `serve` really serves the page, the mounted
  * packages, the dynamic serve-config (advertising the generate capability)
  * and the POST /generate endpoint. The visual half of the gate is the
@@ -44,7 +46,13 @@ while (queue.length) {
     failures.push(`import graph: ${path.relative(PACKAGE_ROOT, file)} does not exist`);
     continue;
   }
-  for (const match of source.matchAll(/^import\s[^'"]*['"]([^'"]+)['"];?$/gm)) {
+  // Vendored bundles are generated leaves: their existence is asserted, but
+  // their contents are not walked (esbuild inlines every dependency, so a
+  // bundle carries no import statements of its own).
+  if (file.includes(`${path.sep}vendor${path.sep}`)) continue;
+  const statics = [...source.matchAll(/^import\s[^'"]*['"]([^'"]+)['"];?$/gm)];
+  const dynamics = [...source.matchAll(/import\(\s*['"]([^'"]+)['"]\s*\)/g)];
+  for (const match of [...statics, ...dynamics]) {
     const specifier = match[1];
     if (FORBIDDEN.test(specifier)) {
       failures.push(`import graph: ${path.relative(PACKAGE_ROOT, file)} imports Node built-in "${specifier}" — the browser graph must stay pure`);
@@ -57,9 +65,12 @@ while (queue.length) {
 }
 expect('import graph reaches the pure engine', [...seen].some((file) => file.endsWith('engine/core.mjs')));
 expect('import graph reaches the tokens model', [...seen].some((file) => file.endsWith('build/model.mjs')));
+expect('import graph reaches the browser generation engine', [...seen].some((file) => file.endsWith('engine/generate.mjs')));
+expect('import graph lazy-loads the vendored Leonardo bundle', [...seen].some((file) => file.endsWith(path.join('vendor', 'leonardo.mjs'))));
+expect('the vendored Leonardo bundle exists', fs.existsSync(path.join(PACKAGE_ROOT, 'vendor', 'leonardo.mjs')));
 expect('import graph never touches resolve.mjs', ![...seen].some((file) => file.endsWith('engine/resolve.mjs')));
 expect('import graph never touches tokens lib.mjs', ![...seen].some((file) => file.endsWith('build/lib.mjs')));
-expect('import graph never touches derive.mjs (Leonardo stays Node-side)', ![...seen].some((file) => file.endsWith('engine/derive.mjs')));
+expect('import graph never touches derive.mjs (the Node-side shell)', ![...seen].some((file) => file.endsWith('engine/derive.mjs')));
 
 // --- 2. index.html contract. The import map is mount-relative so the app
 // runs from any base where the two packages are served as siblings named
@@ -175,4 +186,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`  - ${failure}`));
   process.exit(1);
 }
-console.log(`UI validation passed: the browser import graph (${seen.size} modules) is Node-free, reaches the pure engine and never touches derive.mjs; index.html carries the import map, the import controls and dogfoods the tokens CSS; serve delivers the app, both package mounts, the dynamic config (generate advertised), a working POST /generate and the same-origin Storybook proxy, with correct types and traversal safety.`);
+console.log(`UI validation passed: the browser import graph (${seen.size} modules) is Node-free, reaches the pure engine and the browser generation engine, lazy-loads only the vendored Leonardo bundle and never touches the Node-side shells; index.html carries the import map, the import controls and dogfoods the tokens CSS; serve delivers the app, both package mounts, the dynamic config (generate advertised), a working POST /generate and the same-origin Storybook proxy, with correct types and traversal safety.`);
