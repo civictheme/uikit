@@ -21,15 +21,21 @@
     "./engine/contrast.mjs": "./engine/contrast.mjs",
     "./engine/emit.mjs": "./engine/emit.mjs",
     "./engine/derive.mjs": "./engine/derive.mjs",
+    "./engine/generate.mjs": "./engine/generate.mjs",
+    "./vendor/leonardo.mjs": "./vendor/leonardo.mjs",
     "./targets.json": "./targets.json",
     "./generation.json": "./generation.json",
     "./recipe.schema.json": "./recipe.schema.json"
   },
   "dependencies": {
-    "@adobe/leonardo-contrast-colors": "1.1.0",
     "@civictheme/tokens": "2.0.0-alpha.0"
   },
+  "devDependencies": {
+    "@adobe/leonardo-contrast-colors": "1.1.0",
+    "esbuild": "0.25.12"
+  },
   "scripts": {
+    "vendor-leonardo": "node vendor/build.mjs",
     "build": "echo @civictheme/colour-picker has no build step",
     "dist": "echo @civictheme/colour-picker has no build step",
     "build-storybook": "echo @civictheme/colour-picker has no Storybook",
