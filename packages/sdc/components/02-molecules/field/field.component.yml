@@ -87,9 +87,9 @@ props:
         - horizontal
       default: vertical
     message:
-      type: object
+      type: ['object', 'null']
       title: Message
-      description: Message object for showing messages. When no attributes are provided and the id prop is set, the message renders with id "{id}--error-message", for controls to reference via aria-describedby.
+      description: Message object for showing messages, or null for none. When no attributes are provided and the id prop is set, the message renders with id "{id}--error-message", for controls to reference via aria-describedby.
       properties:
         content:
           type: string
