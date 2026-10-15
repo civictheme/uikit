@@ -39,11 +39,11 @@ props:
               - optgroup
               - option
           label:
-            type: string
+            type: ['string', 'number']
             title: Label
             description: Option label.
           value:
-            type: ['string', 'array']
+            type: ['string', 'number', 'array']
             title: Value
             description: Option value.
           selected:
@@ -62,11 +62,11 @@ props:
               type: object
               properties:
                 label:
-                  type: string
+                  type: ['string', 'number']
                   title: Label
                   description: Option label.
                 value:
-                  type: string
+                  type: ['string', 'number']
                   title: Value
                   description: Option value.
                 selected:

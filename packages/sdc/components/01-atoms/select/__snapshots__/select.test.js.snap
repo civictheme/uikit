@@ -62,6 +62,39 @@ exports[`Select Component renders from attributes only (platform-rendered contro
 </div>
 `;
 
+exports[`Select Component renders numeric option labels and values (core-prepared options) 1`] = `
+<div>
+  
+
+
+
+  <select
+    class="ct-select ct-theme-light"
+    name="test-select"
+  >
+    
+                    
+    <option
+      value="2024"
+    >
+      2024
+    </option>
+    
+                              
+    <option
+      selected="selected"
+      value="2025"
+    >
+      2025
+    </option>
+    
+            
+  </select>
+  
+
+</div>
+`;
+
 exports[`Select Component renders optgroup with options 1`] = `
 <div>
   

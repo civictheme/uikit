@@ -98,6 +98,22 @@ describe('Select Component', () => {
     expect(c.querySelectorAll('option')).toHaveLength(1);
   });
 
+  test('renders numeric option labels and values (core-prepared options)', async () => {
+    const c = await dom(template, {
+      name: 'test-select',
+      options: [
+        { type: 'option', label: 2024, value: 2024 },
+        { type: 'option', label: 2025, value: 2025, selected: true },
+      ],
+    });
+
+    expect(c.querySelectorAll('option')).toHaveLength(2);
+    expect(c.querySelector('option[value="2024"]').textContent.trim()).toEqual('2024');
+    expect(c.querySelector('option[value="2025"]').hasAttribute('selected')).toBe(true);
+
+    assertUniqueCssClasses(c);
+  });
+
   test('renders an empty select when options are empty', async () => {
     const c = await dom(template, {
       name: 'test-select',
