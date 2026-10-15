@@ -5,6 +5,7 @@ exports[`Checkbox Component does not render when name or id is empty 1`] = `
   
 
 
+
 </div>
 `;
 
@@ -13,12 +14,32 @@ exports[`Checkbox Component does not render when name or id is empty 2`] = `
   
 
 
+
+</div>
+`;
+
+exports[`Checkbox Component renders from attributes only (platform-rendered control) 1`] = `
+<div>
+  
+
+
+  
+  <input
+    class="ct-checkbox ct-theme-light"
+    data-drupal-selector="platform-id"
+    id="platform-id"
+    name="platform-name"
+    type="checkbox"
+  />
+  
+  
 </div>
 `;
 
 exports[`Checkbox Component renders with optional attributes 1`] = `
 <div>
   
+
 
   
   <input
@@ -51,13 +72,13 @@ exports[`Checkbox Component renders with required attributes 1`] = `
 <div>
   
 
+
   
   <input
     class="ct-checkbox ct-theme-light"
     id="test-checkbox-id"
     name="test-checkbox"
     type="checkbox"
-    value=""
   />
   
   

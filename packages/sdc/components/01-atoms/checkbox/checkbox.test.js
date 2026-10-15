@@ -64,4 +64,16 @@ describe('Checkbox Component', () => {
     });
     expect(c2.querySelectorAll('.ct-checkbox')).toHaveLength(0);
   });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-checkbox[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
 });
