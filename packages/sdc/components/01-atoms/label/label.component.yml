@@ -43,7 +43,7 @@ props:
       type: [string, 'null']
       title: Required text
       description: Text to display within label element when required.
-      default: (Required)
+      default: (required)
     for:
       type: [string, 'null']
       title: For
