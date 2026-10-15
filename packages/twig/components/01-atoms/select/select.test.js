@@ -85,20 +85,23 @@ describe('Select Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name or options are empty', async () => {
-    let c = await dom(template, {
+  test('does not render when name is empty', async () => {
+    const c = await dom(template, {
       name: '',
       options: [
         { type: 'option', label: 'Option 1', value: '1' },
       ],
     });
     expect(c.querySelectorAll('.ct-select')).toHaveLength(0);
+  });
 
-    c = await dom(template, {
+  test('renders an empty select when options are empty', async () => {
+    const c = await dom(template, {
       name: 'test-select',
       options: [],
     });
-    expect(c.querySelectorAll('.ct-select')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-select[name="test-select"]')).toHaveLength(1);
+    expect(c.querySelectorAll('option')).toHaveLength(0);
   });
 
   test('strips HTML tags from attribute values', async () => {
@@ -111,6 +114,18 @@ describe('Select Component', () => {
     });
 
     expect(c.querySelector('.ct-select').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
+
+    assertUniqueCssClasses(c);
+  });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-select[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });

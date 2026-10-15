@@ -48,6 +48,19 @@ describe('Textfield Component', () => {
     expect(c.querySelectorAll('.ct-textfield')).toHaveLength(0);
   });
 
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-textfield[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
+
   test('strips HTML tags from attribute values', async () => {
     const c = await dom(template, {
       name: 'test-textfield',

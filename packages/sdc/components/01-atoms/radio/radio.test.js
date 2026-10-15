@@ -73,4 +73,16 @@ describe('Radio Component', () => {
 
     assertUniqueCssClasses(c);
   });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-radio[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
+  });
 });

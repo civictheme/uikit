@@ -33,10 +33,12 @@
 {% set is_invalid_class = is_invalid ? 'ct-select--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-{% if name is not empty and options is not empty %}
+{% set _show_control = ('' ~ attributes|default(''))|trim != '' %}
+{% if (name|default('') != '') %}{% set _show_control = true %}{% endif %}
+{% if _show_control %}
   <select
     class="ct-select {{ modifier_class -}}"
-    name="{{ name }}"
+    {% if name is not empty %}name="{{ name }}"{% endif %}
     {% if id %}id="{{ id }}"{% endif %}
     {% if is_multiple %}multiple{% endif %}
     {% if is_disabled %}disabled{% endif %}
@@ -44,7 +46,7 @@
     {% if is_invalid %}aria-invalid="true"{% endif %}
     {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
   >
-    {% for option in options %}
+    {% for option in options|default([]) %}
       {% if option.type == 'optgroup' %}
         <optgroup label="{{ option.label }}" {% if option.is_disabled %}disabled{% endif %}>
           {% for sub_option in option.options %}

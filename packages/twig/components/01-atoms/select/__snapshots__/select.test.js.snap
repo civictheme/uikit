@@ -1,17 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select Component does not render when name or options are empty 1`] = `
+exports[`Select Component does not render when name is empty 1`] = `
 <div>
   
+
 
 
 </div>
 `;
 
-exports[`Select Component does not render when name or options are empty 2`] = `
+exports[`Select Component renders an empty select when options are empty 1`] = `
 <div>
   
 
+
+  
+  <select
+    class="ct-select ct-theme-light"
+    name="test-select"
+  >
+    
+      
+  </select>
+  
+
+</div>
+`;
+
+exports[`Select Component renders from attributes only (platform-rendered control) 1`] = `
+<div>
+  
+
+
+  
+  <select
+    class="ct-select ct-theme-light"
+    data-drupal-selector="platform-id"
+    id="platform-id"
+    name="platform-name"
+  >
+    
+      
+  </select>
+  
 
 </div>
 `;
@@ -19,6 +50,7 @@ exports[`Select Component does not render when name or options are empty 2`] = `
 exports[`Select Component renders optgroup with options 1`] = `
 <div>
   
+
 
   
   <select
@@ -66,6 +98,7 @@ exports[`Select Component renders with optional attributes 1`] = `
 <div>
   
 
+
   
   <select
     aria-invalid="true"
@@ -112,6 +145,7 @@ exports[`Select Component renders with required attributes 1`] = `
 <div>
   
 
+
   
   <select
     class="ct-select ct-theme-light"
@@ -142,6 +176,7 @@ exports[`Select Component renders with required attributes 1`] = `
 exports[`Select Component strips HTML tags from attribute values 1`] = `
 <div>
   
+
 
   
   <select
