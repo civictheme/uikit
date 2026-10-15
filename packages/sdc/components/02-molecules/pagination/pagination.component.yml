@@ -130,7 +130,7 @@ props:
             title: Value
             description: Option value.
           selected:
-            type: string
+            type: boolean
             title: Selected
             description: Whether the option is selected.
 slots:
