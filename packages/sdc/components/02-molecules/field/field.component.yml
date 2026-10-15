@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Field
 status: stable
-description: Main entry point component for building form fields with labels, descriptions, and validation
+description: Form field wrapper rendering the label, description, validation message and a control provided via the control slot
 props:
   type: object
   properties:
@@ -15,7 +15,7 @@ props:
     type:
       type: string
       title: Type
-      description: Type defined by a control type (required).
+      description: Control type, used for presentation only (type class; fieldset wrapper and legend for checkbox and radio; hidden suppresses title, description and message).
     title:
       type: string
       title: Title
@@ -40,42 +40,30 @@ props:
         - large
         - extra-large
       default: regular
-    label:
-      type: string
-      title: Label
-      description: Control label (required only for a radio group or checkbox).
     description:
       type: string
       title: Description
-      description: Field description.
-    name:
-      type: string
-      title: Name
-      description: Control DOM name (propagated from `name` if not defined).
-    value:
-      type: string
-      title: Value
-      description: Control DOM value (propagated from `value` if not defined).
+      description: Field description. Rendered with id "{id}--description" when the id prop is set, for controls to reference via aria-describedby.
     id:
       type: string
       title: ID
-      description: Control DOM ID.
+      description: The control DOM ID, used for the title label's "for" attribute and the description id.
     is_invalid:
       type: boolean
       title: Invalid
-      description: Whether the control is invalid (propagated from `is_invalid` if not defined).
+      description: Whether the field is invalid.
     is_disabled:
       type: boolean
       title: Disabled
-      description: Whether the control is disabled (propagated from `is_disabled` if not defined).
+      description: Whether the field is disabled.
     is_required:
       type: boolean
       title: Required
-      description: Whether the control is required (propagated from `is_required` if not defined).
+      description: Whether the field is required.
     required_text:
       type: string
       title: Required text
-      description: Text to display within label element when required (propagated).
+      description: Text to display within the label element when required.
     orientation:
       type: string
       title: Orientation
@@ -84,37 +72,6 @@ props:
         - vertical
         - horizontal
       default: vertical
-    is_inline:
-      type: boolean
-      title: Inline
-      description: Whether the complex control is shown inline.
-    control:
-      type: [object, array]
-      title: Control
-      description: Object or objects collection with control's properties (required for complex controls).
-    options:
-      type: array
-      title: Options
-      description: Options for the field input.
-      items:
-        type: object
-        properties:
-          value:
-            type: string
-            title: Value
-            description: Option value
-          label:
-            type: string
-            title: Label
-            description: Option label
-    is_multiple:
-      type: boolean
-      title: Multiple
-      description: Whether the field allows multiple values.
-    placeholder:
-      type: string
-      title: Placeholder
-      description: Placeholder text for field.
     message:
       type: object
       title: Message
@@ -127,16 +84,16 @@ props:
     prefix:
       type: string
       title: Prefix
-      description: Content to add before the field.
+      description: Content to add before the control.
     suffix:
       type: string
       title: Suffix
-      description: Content to add after the field.
+      description: Content to add after the control.
     modifier_class:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  control_content:
-    title: Control content
-    description: Pre-rendered control markup. When provided, it is printed in place of the controls built from the `control` prop (which is then ignored).
+  control:
+    title: Control
+    description: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed inside the "ct-field__control" wrapper; also fillable by overriding the "control_block" block in an embed.

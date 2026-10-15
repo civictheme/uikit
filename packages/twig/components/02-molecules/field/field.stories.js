@@ -5,9 +5,15 @@
 import Component from './field.twig';
 import FieldData from './field.stories.data';
 
+// The control markup is built from the atoms and passed into the component's
+// `control` slot; name/value/placeholder args feed the control builder, not
+// the field component itself.
+const render = (args) => Component({ ...args, control: FieldData.control(args) });
+
 const meta = {
   title: 'Molecules/Field',
   component: Component,
+  render,
   argTypes: {
     theme: {
       control: { type: 'radio' },
@@ -59,12 +65,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['vertical', 'horizontal'],
     },
-    is_inline: {
-      control: { type: 'boolean' },
-    },
-    control: {
-      control: { type: 'object' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -91,7 +91,7 @@ export const FieldRadio = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { controls: true, is_required: true }),
+    ...FieldData.args('light', { is_required: true }),
     type: 'radio',
   },
 };
@@ -101,7 +101,7 @@ export const FieldCheckbox = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { controls: true, is_required: true }),
+    ...FieldData.args('light', { is_required: true }),
     type: 'checkbox',
   },
 };
@@ -111,7 +111,7 @@ export const FieldSelect = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { options: true, is_required: true }),
+    ...FieldData.args('light', { is_required: true }),
     type: 'select',
   },
 };
