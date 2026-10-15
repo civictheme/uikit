@@ -11,14 +11,14 @@
  * - options: [array] Options, matching Drupal core's prepared select options structure (keys mirror the HTML option attributes):
  *   Each item contains:
  *   - type: [string] Option type (option group or option).
- *   - label: [string] Option label.
- *   - value: [string,array] Option value.
+ *   - label: [string,number] Option label.
+ *   - value: [string,number,array] Option value.
  *   - selected: [boolean] Whether the option is selected.
  *   - disabled: [boolean] Whether the option is disabled.
  *   - options: [array] Options (applies to optgroup type):
  *     Each item contains:
- *     - label: [string] Option label.
- *     - value: [string] Option value.
+ *     - label: [string,number] Option label.
+ *     - value: [string,number] Option value.
  *     - selected: [boolean] Whether the option is selected.
  *     - disabled: [boolean] Whether the option is disabled.
  * - is_invalid: [boolean] Whether the select is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
