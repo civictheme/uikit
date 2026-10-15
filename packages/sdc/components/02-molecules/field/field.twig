@@ -58,8 +58,9 @@
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 {% set description_id = description is defined and description is not empty and type != 'hidden' and id is defined and id is not empty ? '%s--description'|format(id) : null %}
 {% set message_id = (message or is_invalid) and type != 'hidden' and id is defined and id is not empty ? '%s--error-message'|format(id) : null %}
-{% set field_wrapper = title_position == 'before' and type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 {% set show_title = title is not empty and title_display != 'hidden' and type != 'hidden' %}
+{# A fieldset wrapper is only correct when its legend actually renders. #}
+{% set field_wrapper = show_title and title_position == 'before' and type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 
 <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
   {% if show_title and title_position == 'before' and type not in ['checkbox', 'radio'] %}

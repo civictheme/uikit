@@ -86,6 +86,22 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
+  test('checkbox and radio types render a plain div wrapper when no title renders', async () => {
+    for (const type of ['checkbox', 'radio']) {
+      const c = await dom(template, {
+        type,
+        title: '',
+        title_display: 'none',
+        control: `<input type="${type}" name="testname">`,
+      }, false);
+
+      expect(c.querySelectorAll('.ct-field fieldset')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field div.ct-field__wrapper')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    }
+  });
+
   test('checkbox and radio types render the title as a legend in a fieldset wrapper', async () => {
     for (const type of ['checkbox', 'radio']) {
       const c = await dom(template, {
