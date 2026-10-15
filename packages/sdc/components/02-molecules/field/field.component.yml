@@ -136,3 +136,7 @@ props:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+slots:
+  control_content:
+    title: Control content
+    description: Pre-rendered control markup. When provided, it is printed in place of the controls built from the `control` prop (which is then ignored).

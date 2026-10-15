@@ -248,7 +248,9 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"][checked]')).toHaveLength(1);
 
     expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
+    // Group title is not propagated as per-item labels - items must provide
+    // their own labels.
+    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(0);
 
     assertUniqueCssClasses(c);
   });
@@ -340,7 +342,7 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field textarea.custom-modifier')).toHaveLength(0);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title (required)');
+    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title (Required)');
     expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
@@ -419,7 +421,9 @@ describe('Field Component', () => {
     expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid2"][checked]')).toHaveLength(1);
 
     expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
+    // Group title is not propagated as per-item labels - items must provide
+    // their own labels.
+    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(0);
 
     assertUniqueCssClasses(c);
   });
@@ -505,6 +509,77 @@ describe('Field Component', () => {
       expect(messageElement.getAttribute('data-test')).toBe('true');
       expect(c.querySelectorAll('.ct-field--invalid')).toHaveLength(1);
       assertUniqueCssClasses(c);
+    });
+  });
+
+  describe('control_content slot', () => {
+    test('renders slot content instead of building controls', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        title: 'Test Title',
+        id: 'testid',
+        control_content: '<input type="text" name="slotted" id="testid" class="external-control">',
+      });
+
+      expect(c.querySelectorAll('.ct-field')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field input.external-control[name="slotted"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field .ct-field__control')).toHaveLength(0);
+      expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
+      expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('slot content takes precedence over the control prop', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        name: 'testname',
+        control_content: '<input type="text" name="slotted" class="external-control">',
+      });
+
+      expect(c.querySelectorAll('.ct-field input.external-control[name="slotted"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field input[name="testname"]')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field .ct-field__control')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+    });
+  });
+
+  describe('description references', () => {
+    test('description receives an id and the control references it via aria-describedby', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        name: 'testname',
+        id: 'testid',
+        description: 'This is a description',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__description[id="testid--description"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field input[type="text"][aria-describedby="testid--description"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('no aria-describedby without an id or description', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        name: 'testname',
+        description: 'This is a description',
+      });
+
+      expect(c.querySelectorAll('.ct-field [aria-describedby]')).toHaveLength(0);
+
+      const c2 = await dom(template, {
+        type: 'textfield',
+        name: 'testname',
+        id: 'testid',
+      });
+
+      expect(c2.querySelectorAll('.ct-field [aria-describedby]')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+      assertUniqueCssClasses(c2);
     });
   });
 

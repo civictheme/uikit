@@ -34,6 +34,12 @@
  * - suffix: [string] Content to add after the field.
  * - modifier_class: [string] Additional CSS classes.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ *
+ * Slots:
+ * - control_content: Pre-rendered control markup. When provided, it is printed in place of the controls built from the `control` prop (which is then ignored).
+ *
+ * Blocks:
+ * - control_block
  */
 #}
 
@@ -51,6 +57,7 @@
 {% set is_invalid_class = is_invalid ? 'ct-field--invalid' : '' %}
 {% set orientation_class = 'ct-field--%s'|format(orientation) %}
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
+{% set description_id = description is defined and description is not empty and type != 'hidden' and id is defined and id is not empty ? '%s--description'|format(id) : null %}
 
 {# Initialise empty control and convert to an array. #}
 {% if control is not defined or control is not iterable %}
@@ -59,6 +66,10 @@
   {% set first_key = control|keys|first %}
   {% set control = first_key is not empty and first_key matches '/^[0-9]+$/' ? control : [control] %}
 {% endif %}
+
+{# Group-level title, value and id must not propagate into the items of a
+   multi-control group: each option carries its own. #}
+{% set is_single_control = control|length == 1 %}
 
 {% set _controls = [] %}
 {% for c in control %}
@@ -74,10 +85,10 @@
 
   {% set c = {
     theme: c.theme is defined ? c.theme : theme,
-    label: c.label is defined ? c.label : title,
+    label: c.label is defined ? c.label : (is_single_control ? title : null),
     name: c.name is defined ? c.name : name,
-    value: c.value is defined ? c.value : value,
-    id: c.id is defined ? c.id : id,
+    value: c.value is defined ? c.value : (is_single_control ? value : null),
+    id: c.id is defined ? c.id : (is_single_control ? id : null),
     options: c.options is defined ? c.options : default_options,
     is_multiple: c.is_multiple is defined ? c.is_multiple : default_is_multiple,
     placeholder: placeholder is defined ? placeholder : '',
@@ -86,7 +97,7 @@
     is_invalid: c.is_invalid is defined ? c.is_invalid : is_invalid,
     is_disabled: c.is_disabled is defined ? c.is_disabled : is_disabled,
     is_checked: c.is_checked is defined ? c.is_checked : false,
-    attributes: c.attributes is defined and c.attributes is not null ? c.attributes : null,
+    attributes: (c.attributes is defined and c.attributes is not null ? c.attributes : '') ~ (description_id ? ' aria-describedby="%s"'|format(description_id) : ''),
     modifier_class: c.modifier_class is defined ? 'ct-field__control ' ~ c.modifier_class : 'ct-field__control',
   } %}
   {% set _controls = _controls|merge([c]) %}
@@ -94,7 +105,11 @@
 {% set control = _controls %}
 {% set field_wrapper = type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 
-{% if control[0].name is defined %}
+{# Pre-rendered control markup provided via the `control_content` slot takes
+   precedence over building controls from the `control` prop. #}
+{% set has_control_content = control_content is defined and control_content is not empty %}
+
+{% if control[0].name is defined or has_control_content %}
   <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
     {% if title is not empty and title_display != 'hidden' and type not in ['hidden', 'checkbox', 'radio'] %}
       {% include 'civictheme:label' with {
@@ -134,6 +149,7 @@
           theme: theme,
           content: description_content,
           modifier_class: 'ct-field__description',
+          attributes: description_id ? create_attribute({id: description_id}) : null,
         } only %}
       {% endif %}
 
@@ -141,38 +157,43 @@
         <div class="ct-field__prefix">{{- prefix -}}</div>
       {% endif %}
 
-      {% if type == 'textfield' %}
-        {% include 'civictheme:textfield' with control[0]|merge({theme: theme|default('light')}) only %}
+      {% block control_block %}
+        {% if has_control_content %}
+          {{- control_content -}}
 
-      {% elseif type == 'textarea' %}
-        {% include 'civictheme:textarea' with control[0]|merge({theme: theme|default('light')}) only %}
+        {% elseif type == 'textfield' %}
+          {% include 'civictheme:textfield' with control[0]|merge({theme: theme|default('light')}) only %}
 
-      {% elseif type == 'select' %}
-        {% include 'civictheme:select' with control[0]|merge({theme: theme|default('light')}) only %}
+        {% elseif type == 'textarea' %}
+          {% include 'civictheme:textarea' with control[0]|merge({theme: theme|default('light')}) only %}
 
-      {% elseif type == 'checkbox' or type == 'radio' %}
+        {% elseif type == 'select' %}
+          {% include 'civictheme:select' with control[0]|merge({theme: theme|default('light')}) only %}
 
-        {% set list_items = [] %}
-        {% for item in control %}
-          {% set list_item %}
-            {% if type == 'checkbox' %}
-              {% include 'civictheme:checkbox' with item|merge({theme: theme|default('light')}) only %}
-            {% else %}
-              {% include 'civictheme:radio' with item|merge({theme: theme|default('light')}) only %}
-            {% endif %}
-          {% endset %}
-          {% set list_items = list_items|merge([list_item]) %}
-        {% endfor %}
-        {% include 'civictheme:item-list' with {
-          direction: is_inline ? 'horizontal' : 'vertical',
-          items: list_items,
-        } only %}
+        {% elseif type == 'checkbox' or type == 'radio' %}
 
-      {% else %}
-        {% set control0 = control[0] %}
-        {% set control0 = control0|merge({type: type}) %}
-        {% include 'civictheme:input' with control0 only %}
-      {% endif %}
+          {% set list_items = [] %}
+          {% for item in control %}
+            {% set list_item %}
+              {% if type == 'checkbox' %}
+                {% include 'civictheme:checkbox' with item|merge({theme: theme|default('light')}) only %}
+              {% else %}
+                {% include 'civictheme:radio' with item|merge({theme: theme|default('light')}) only %}
+              {% endif %}
+            {% endset %}
+            {% set list_items = list_items|merge([list_item]) %}
+          {% endfor %}
+          {% include 'civictheme:item-list' with {
+            direction: is_inline ? 'horizontal' : 'vertical',
+            items: list_items,
+          } only %}
+
+        {% else %}
+          {% set control0 = control[0] %}
+          {% set control0 = control0|merge({type: type}) %}
+          {% include 'civictheme:input' with control0 only %}
+        {% endif %}
+      {% endblock %}
 
       {% if suffix is not empty %}
         <div class="ct-field__suffix">{{- suffix -}}</div>
