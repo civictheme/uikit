@@ -28,6 +28,8 @@ exports[`Field Component Field Component - empty title with textfield renders 0 
         />
       </div>
       
+
+    
       
     </div>
     
@@ -66,6 +68,8 @@ exports[`Field Component Field Component - hidden title with hidden input render
         />
       </div>
       
+
+    
       
     </div>
     
@@ -104,6 +108,8 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
         />
       </div>
       
+
+    
       
     </div>
     
@@ -150,6 +156,8 @@ exports[`Field Component Field Component - invisible title with textfield render
         />
       </div>
       
+
+    
       
     </div>
     
@@ -188,6 +196,8 @@ exports[`Field Component Field Component - visible title with hidden input rende
         />
       </div>
       
+
+    
       
     </div>
     
@@ -234,6 +244,8 @@ exports[`Field Component Field Component - visible title with textfield renders 
         />
       </div>
       
+
+    
       
     </div>
     
@@ -274,6 +286,8 @@ exports[`Field Component control slot renders inside the control wrapper 1`] = `
         />
       </div>
       
+
+    
       
     </div>
     
@@ -307,6 +321,8 @@ exports[`Field Component default values 1`] = `
         class="ct-field__control"
       />
       
+
+    
       
     </div>
     
@@ -353,6 +369,8 @@ exports[`Field Component description references description has no id without a 
         />
       </div>
       
+
+    
       
     </div>
     
@@ -402,6 +420,8 @@ exports[`Field Component description references description receives an id deriv
         />
       </div>
       
+
+    
       
     </div>
     
@@ -440,6 +460,8 @@ exports[`Field Component field messages default message renders when field is in
         />
       </div>
       
+
+    
                 
                           
       
@@ -517,6 +539,8 @@ exports[`Field Component field messages default message renders when message obj
         />
       </div>
       
+
+    
                               
                           
       
@@ -591,6 +615,8 @@ exports[`Field Component field messages message renders with content and attribu
         />
       </div>
       
+
+    
                 
             
                     
@@ -661,6 +687,8 @@ exports[`Field Component field messages no message or description renders for th
         />
       </div>
       
+
+    
       
     </div>
     
@@ -705,7 +733,9 @@ exports[`Field Component prefix and suffix 1`] = `
           type="text"
         />
       </div>
-            
+      
+
+          
       <div
         class="ct-field__suffix"
       >
@@ -759,6 +789,8 @@ exports[`Field Component required, disabled, and description 1`] = `
         />
       </div>
       
+
+    
       
     </div>
     
@@ -797,6 +829,8 @@ exports[`Field Component theme, orientation, and invalid state 1`] = `
         />
       </div>
       
+
+    
                 
                           
       
@@ -881,6 +915,124 @@ exports[`Field Component title is linked to the control id and carries the requi
         />
       </div>
       
+
+    
+      
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component title_position after (single checkbox/radio layout) invisible title renders a visually hidden label after the control 1`] = `
+<div>
+  
+
+
+
+  <div
+    class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical    "
+  >
+    
+  
+  
+    <div
+      class="ct-field__wrapper"
+    >
+      
+    
+    
+    
+      <div
+        class="ct-field__control"
+      >
+        <input
+          id="testid"
+          name="agree"
+          type="checkbox"
+        />
+                
+
+
+        <label
+          class="ct-label ct-theme-light ct-label--regular  ct-field__label ct-visually-hidden"
+          for="testid"
+        >
+          Hidden title
+        </label>
+              
+      </div>
+      
+
+    
+      
+    </div>
+    
+
+  </div>
+  
+
+</div>
+`;
+
+exports[`Field Component title_position after (single checkbox/radio layout) renders the label after the control inside the control wrapper, with a div wrapper and no legend 1`] = `
+<div>
+  
+
+
+
+  <div
+    class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical ct-field--required   "
+  >
+    
+  
+  
+    <div
+      class="ct-field__wrapper"
+    >
+      
+    
+    
+    
+      <div
+        class="ct-field__control"
+      >
+        <input
+          id="testid"
+          name="agree"
+          type="checkbox"
+        />
+                
+
+
+        <label
+          class="ct-label ct-theme-light ct-label--regular ct-label--required ct-field__label"
+          for="testid"
+        >
+          Agree to the terms 
+          <span
+            class="ct-label__required"
+          >
+            (required)
+          </span>
+        </label>
+              
+      </div>
+      
+
+          
+
+
+      <div
+        class="ct-field-description ct-theme-light ct-field-description--regular ct-field__description"
+        id="testid--description"
+      >
+        This is a description
+      </div>
+          
       
     </div>
     
@@ -920,6 +1072,8 @@ exports[`Field Component wrapper attributes and modifier class 1`] = `
         />
       </div>
       
+
+    
       
     </div>
     

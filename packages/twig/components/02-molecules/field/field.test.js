@@ -118,6 +118,54 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
+  describe('title_position after (single checkbox/radio layout)', () => {
+    test('renders the label after the control inside the control wrapper, with a div wrapper and no legend', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        title: 'Agree to the terms',
+        title_position: 'after',
+        id: 'testid',
+        is_required: true,
+        description: 'This is a description',
+        control: '<input type="checkbox" name="agree" id="testid">',
+      });
+
+      expect(c.querySelectorAll('.ct-field fieldset')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field legend')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field div.ct-field__wrapper')).toHaveLength(1);
+
+      const control = c.querySelector('.ct-field .ct-field__control');
+      expect(control.querySelectorAll('input[name="agree"]')).toHaveLength(1);
+      expect(control.querySelectorAll('label.ct-field__label[for="testid"]')).toHaveLength(1);
+      expect(control.querySelector('label').textContent).toContain('Agree to the terms');
+      expect(control.querySelector('label').textContent).toContain('(required)');
+      // The label follows the control in document order.
+      expect(control.innerHTML.indexOf('<input')).toBeLessThan(control.innerHTML.indexOf('<label'));
+
+      // The description renders after the control block.
+      const wrapper = c.querySelector('.ct-field .ct-field__wrapper');
+      expect(wrapper.innerHTML.indexOf('ct-field__control')).toBeLessThan(wrapper.innerHTML.indexOf('ct-field__description'));
+      expect(c.querySelectorAll('.ct-field .ct-field__description[id="testid--description"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('invisible title renders a visually hidden label after the control', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        title: 'Hidden title',
+        title_position: 'after',
+        title_display: 'invisible',
+        id: 'testid',
+        control: '<input type="checkbox" name="agree" id="testid">',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__control label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+  });
+
   describe('description references', () => {
     test('description receives an id derived from the field id', async () => {
       const c = await dom(template, {

@@ -20,6 +20,14 @@ props:
       type: string
       title: Title
       description: Field title.
+    title_position:
+      type: string
+      title: Title position
+      description: Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type.
+      enum:
+        - before
+        - after
+      default: before
     title_display:
       type: string
       title: Title display

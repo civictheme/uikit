@@ -7,6 +7,7 @@
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Control type, used for presentation only (type class; fieldset wrapper and legend for checkbox and radio; hidden suppresses title, description and message).
  * - title: [string] Field title.
+ * - title_position: [string] Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type.
  * - title_display: [string] How to display the field title (visible, invisible, hidden).
  * - title_size: [string] The size of the title (extra-small, small, regular, large, extra-large).
  * - description: [string] Field description. Rendered with id "{id}--description" when the id prop is set, for controls to reference via aria-describedby.
@@ -33,6 +34,7 @@
 #}
 
 {% set type = type is defined and type is not empty ? type : 'hidden' %}
+{% set title_position = title_position is defined and title_position in ['before', 'after'] ? title_position : 'before' %}
 {% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
 {% set title_size = (title_size is defined and title_size in ['extra-small', 'small', 'regular', 'large', 'extra-large']) ? title_size : '' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
@@ -47,10 +49,11 @@
 {% set orientation_class = 'ct-field--%s'|format(orientation) %}
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 {% set description_id = description is defined and description is not empty and type != 'hidden' and id is defined and id is not empty ? '%s--description'|format(id) : null %}
-{% set field_wrapper = type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
+{% set field_wrapper = title_position == 'before' and type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
+{% set show_title = title is not empty and title_display != 'hidden' and type != 'hidden' %}
 
 <div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
-  {% if title is not empty and title_display != 'hidden' and type not in ['hidden', 'checkbox', 'radio'] %}
+  {% if show_title and title_position == 'before' and type not in ['checkbox', 'radio'] %}
     {% include 'civictheme:label' with {
       theme: theme,
       content: title,
@@ -63,7 +66,7 @@
   {% endif %}
 
   <{{ field_wrapper }} class="ct-field__wrapper">
-    {% if title is not empty and title_display != 'hidden' and type in ['checkbox', 'radio'] %}
+    {% if show_title and title_position == 'before' and type in ['checkbox', 'radio'] %}
       {% include 'civictheme:label' with {
         theme: theme,
         tag: 'legend',
@@ -74,7 +77,7 @@
       } only %}
     {% endif %}
 
-    {% if description is not empty and type != 'hidden' %}
+    {% if description is not empty and type != 'hidden' and title_position == 'before' %}
       {% include 'civictheme:field-description' with {
         theme: theme,
         content: description,
@@ -91,7 +94,27 @@
       {%- block control_block -%}
         {{- control -}}
       {%- endblock -%}
+      {%- if show_title and title_position == 'after' %}
+        {% include 'civictheme:label' with {
+          theme: theme,
+          content: title,
+          size: title_size is not empty ? title_size : 'regular',
+          is_required: is_required,
+          required_text: required_text,
+          for: id is defined and id is not empty ? id : null,
+          modifier_class: 'ct-field__label' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
+        } only %}
+      {% endif -%}
     </div>
+
+    {% if description is not empty and type != 'hidden' and title_position == 'after' %}
+      {% include 'civictheme:field-description' with {
+        theme: theme,
+        content: description,
+        modifier_class: 'ct-field__description',
+        attributes: description_id ? create_attribute({id: description_id}) : null,
+      } only %}
+    {% endif %}
 
     {% if suffix is not empty %}
       <div class="ct-field__suffix">{{- suffix -}}</div>
