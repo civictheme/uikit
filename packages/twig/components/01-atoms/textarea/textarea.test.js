@@ -44,12 +44,13 @@ describe('Textarea Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name is empty', async () => {
+  test('renders bare without a name (fail visible)', async () => {
     const c = await dom(template, {
       name: '',
     });
 
-    expect(c.querySelectorAll('.ct-textarea')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-textarea')).toHaveLength(1);
+    expect(c.querySelector('.ct-textarea').hasAttribute('name')).toBe(false);
   });
 
   test('strips HTML tags from attribute values', async () => {

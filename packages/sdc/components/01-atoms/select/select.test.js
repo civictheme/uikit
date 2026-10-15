@@ -85,14 +85,16 @@ describe('Select Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name is empty', async () => {
+  test('renders bare without a name (fail visible)', async () => {
     const c = await dom(template, {
       name: '',
       options: [
         { type: 'option', label: 'Option 1', value: '1' },
       ],
     });
-    expect(c.querySelectorAll('.ct-select')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-select')).toHaveLength(1);
+    expect(c.querySelector('.ct-select').hasAttribute('name')).toBe(false);
+    expect(c.querySelectorAll('option')).toHaveLength(1);
   });
 
   test('renders an empty select when options are empty', async () => {

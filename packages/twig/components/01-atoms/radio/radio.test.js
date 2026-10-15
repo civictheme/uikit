@@ -47,18 +47,20 @@ describe('Radio Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name or id is empty', async () => {
+  test('renders bare without a name or id (fail visible)', async () => {
     let c = await dom(template, {
       name: '',
       id: 'radio-id',
     });
-    expect(c.querySelectorAll('.ct-radio')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-radio[id="radio-id"]')).toHaveLength(1);
+    expect(c.querySelector('.ct-radio').hasAttribute('name')).toBe(false);
 
     c = await dom(template, {
       name: 'test-radio',
       id: '',
     });
-    expect(c.querySelectorAll('.ct-radio')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-radio[name="test-radio"]')).toHaveLength(1);
+    expect(c.querySelector('.ct-radio').hasAttribute('id')).toBe(false);
   });
 
   test('strips HTML tags from attribute values', async () => {
