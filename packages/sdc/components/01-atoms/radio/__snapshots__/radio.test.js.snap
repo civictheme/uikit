@@ -1,19 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio Component does not render when name or id is empty 1`] = `
+exports[`Radio Component renders bare without a name or id (fail visible) 1`] = `
 <div>
   
 
 
+
+  <input
+    class="ct-radio ct-theme-light"
+    id="radio-id"
+    type="radio"
+  />
+  
 
 </div>
 `;
 
-exports[`Radio Component does not render when name or id is empty 2`] = `
+exports[`Radio Component renders bare without a name or id (fail visible) 2`] = `
 <div>
   
 
 
+
+  <input
+    class="ct-radio ct-theme-light"
+    name="test-radio"
+    type="radio"
+  />
+  
 
 </div>
 `;
@@ -23,7 +37,7 @@ exports[`Radio Component renders from attributes only (platform-rendered control
   
 
 
-  
+
   <input
     class="ct-radio ct-theme-light"
     data-drupal-selector="platform-id"
@@ -32,7 +46,7 @@ exports[`Radio Component renders from attributes only (platform-rendered control
     type="radio"
   />
   
-  
+
 </div>
 `;
 
@@ -41,7 +55,7 @@ exports[`Radio Component renders with optional attributes 1`] = `
   
 
 
-  
+
   <input
     aria-invalid="true"
     checked=""
@@ -55,7 +69,7 @@ exports[`Radio Component renders with optional attributes 1`] = `
     value="radio-value"
   />
   
-      
+  
 
 
   <label
@@ -64,7 +78,6 @@ exports[`Radio Component renders with optional attributes 1`] = `
   >
     Radio Label
   </label>
-    
 </div>
 `;
 
@@ -73,7 +86,7 @@ exports[`Radio Component renders with required attributes 1`] = `
   
 
 
-  
+
   <input
     class="ct-radio ct-theme-light"
     id="radio-id"
@@ -82,7 +95,7 @@ exports[`Radio Component renders with required attributes 1`] = `
     value="radio-value"
   />
   
-  
+
 </div>
 `;
 
@@ -91,7 +104,7 @@ exports[`Radio Component strips HTML tags from attribute values 1`] = `
   
 
 
-  
+
   <input
     class="ct-radio ct-theme-light"
     data-test="<script>alert(1)</script>"
@@ -101,6 +114,6 @@ exports[`Radio Component strips HTML tags from attribute values 1`] = `
     value="radio-value"
   />
   
-  
+
 </div>
 `;

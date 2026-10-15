@@ -45,13 +45,14 @@ describe('Input Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name is empty', async () => {
+  test('renders bare without a name (fail visible)', async () => {
     const c = await dom(template, {
       name: '',
       type: 'text',
     });
 
-    expect(c.querySelectorAll('.ct-input')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-input[type="text"]')).toHaveLength(1);
+    expect(c.querySelector('.ct-input').hasAttribute('name')).toBe(false);
   });
 
   test('strips HTML tags from attribute values', async () => {

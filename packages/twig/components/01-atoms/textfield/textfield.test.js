@@ -40,12 +40,13 @@ describe('Textfield Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name is empty', async () => {
+  test('renders bare without a name (fail visible)', async () => {
     const c = await dom(template, {
       name: '',
     });
 
-    expect(c.querySelectorAll('.ct-textfield')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-textfield')).toHaveLength(1);
+    expect(c.querySelector('.ct-textfield').hasAttribute('name')).toBe(false);
   });
 
   test('renders from attributes only (platform-rendered control)', async () => {

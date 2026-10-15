@@ -19,7 +19,7 @@ props:
     name:
       type: string
       title: Name
-      description: DOM name (required).
+      description: DOM name (or provide it via attributes).
     id:
       type: string
       title: ID

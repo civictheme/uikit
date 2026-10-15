@@ -5,8 +5,8 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - name: [string] DOM name (required).
- * - id: [string] DOM id (required).
+ * - name: [string] DOM name (or provide it via attributes).
+ * - id: [string] DOM id (or provide it via attributes).
  * - value: [string,boolean] DOM value.
  * - label: [string] Label content.
  * - is_checked: [boolean] Whether the radio is checked.
@@ -22,28 +22,24 @@
 {% set is_invalid_class = is_invalid ? 'ct-radio--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-{% set _show_control = ('' ~ attributes|default(''))|trim != '' %}
-{% if (name|default('') != '') and (id|default('') != '') %}{% set _show_control = true %}{% endif %}
-{% if _show_control %}
-  <input
-    type="radio"
-    class="ct-radio {{ modifier_class -}}"
-    {% if name is not empty %}name="{{ name }}"{% endif %}
-    {% if value is not empty %}value="{{ value }}"{% endif %}
-    {% if id is not empty %}id="{{ id }}"{% endif %}
-    {% if is_checked %}checked{% endif %}
-    {% if is_required %}required{% endif %}
-    {% if is_disabled %}disabled{% endif %}
-    {% if is_invalid %}aria-invalid="true"{% endif %}
-    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
-  />
-  {% if label is not empty %}
-    {% include '@atoms/label/label.twig' with {
-      theme: theme,
-      content: label,
-      for: id,
-      size: 'small',
-      modifier_class: 'ct-radio__label',
-    } only %}
-  {% endif %}
+<input
+  type="radio"
+  class="ct-radio {{ modifier_class -}}"
+  {% if name is not empty %}name="{{ name }}"{% endif %}
+  {% if value is not empty %}value="{{ value }}"{% endif %}
+  {% if id is not empty %}id="{{ id }}"{% endif %}
+  {% if is_checked %}checked{% endif %}
+  {% if is_required %}required{% endif %}
+  {% if is_disabled %}disabled{% endif %}
+  {% if is_invalid %}aria-invalid="true"{% endif %}
+  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
+/>
+{% if label is not empty %}
+  {% include '@atoms/label/label.twig' with {
+    theme: theme,
+    content: label,
+    for: id,
+    size: 'small',
+    modifier_class: 'ct-radio__label',
+  } only %}
 {% endif %}

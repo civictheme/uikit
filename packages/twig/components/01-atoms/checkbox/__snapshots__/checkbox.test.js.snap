@@ -1,19 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox Component does not render when name or id is empty 1`] = `
+exports[`Checkbox Component renders bare without a name or id (fail visible) 1`] = `
 <div>
   
 
 
+
+  <input
+    class="ct-checkbox ct-theme-light"
+    id="test-checkbox-id"
+    type="checkbox"
+  />
+  
 
 </div>
 `;
 
-exports[`Checkbox Component does not render when name or id is empty 2`] = `
+exports[`Checkbox Component renders bare without a name or id (fail visible) 2`] = `
 <div>
   
 
 
+
+  <input
+    class="ct-checkbox ct-theme-light"
+    name="test-checkbox"
+    type="checkbox"
+  />
+  
 
 </div>
 `;
@@ -23,7 +37,7 @@ exports[`Checkbox Component renders from attributes only (platform-rendered cont
   
 
 
-  
+
   <input
     class="ct-checkbox ct-theme-light"
     data-drupal-selector="platform-id"
@@ -32,7 +46,7 @@ exports[`Checkbox Component renders from attributes only (platform-rendered cont
     type="checkbox"
   />
   
-  
+
 </div>
 `;
 
@@ -41,7 +55,7 @@ exports[`Checkbox Component renders with optional attributes 1`] = `
   
 
 
-  
+
   <input
     aria-invalid="true"
     checked=""
@@ -55,7 +69,7 @@ exports[`Checkbox Component renders with optional attributes 1`] = `
     value="test-value"
   />
   
-      
+  
 
 
   <label
@@ -64,7 +78,6 @@ exports[`Checkbox Component renders with optional attributes 1`] = `
   >
     Test Label
   </label>
-    
 </div>
 `;
 
@@ -73,7 +86,7 @@ exports[`Checkbox Component renders with required attributes 1`] = `
   
 
 
-  
+
   <input
     class="ct-checkbox ct-theme-light"
     id="test-checkbox-id"
@@ -81,6 +94,6 @@ exports[`Checkbox Component renders with required attributes 1`] = `
     type="checkbox"
   />
   
-  
+
 </div>
 `;
