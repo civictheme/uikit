@@ -7,17 +7,17 @@
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Control type, used for presentation only (type class; fieldset wrapper and legend for checkbox and radio; hidden suppresses title, description and message).
  * - title: [string] Field title.
- * - title_position: [string] Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type.
- * - title_display: [string] How to display the field title (visible, invisible, hidden).
+ * - title_position: [string] Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type. Defaults to "after" when title_display is "after".
+ * - title_display: [string] How to display the field title. Canonical values are visible, invisible and hidden. The Drupal form vocabulary is accepted and normalised ("before", "after" and "inline" mean visible and carry the title position and orientation, "visually_hidden" means invisible, "none" and "attribute" mean hidden).
  * - title_size: [string] The size of the title (extra-small, small, regular, large, extra-large).
  * - description: [string] Field description. Rendered with id "{id}--description" when the id prop is set, for controls to reference via aria-describedby.
- * - id: [string] The control DOM ID, used for the title label's "for" attribute and the description id.
+ * - id: [string] The control DOM ID, used for the title label's "for" attribute and the description and error message ids.
  * - is_invalid: [boolean] Whether the field is invalid.
  * - is_disabled: [boolean] Whether the field is disabled.
  * - is_required: [boolean] Whether the field is required.
  * - required_text: [string] Text to display within the label element when required.
- * - orientation: [string] Elements orientation (vertical or horizontal).
- * - message: [object] Message object for showing messages.
+ * - orientation: [string] Elements orientation (vertical or horizontal). Defaults to horizontal when title_display is "inline".
+ * - message: [object] Message object for showing messages. When no attributes are provided and the id prop is set, the message renders with id "{id}--error-message", for controls to reference via aria-describedby.
  *   Each property contains:
  *   - content: [string] Message content.
  * - prefix: [string] Content to add before the control.
@@ -34,13 +34,21 @@
 #}
 
 {% set type = type is defined and type is not empty ? type : 'hidden' %}
-{% set title_position = title_position is defined and title_position in ['before', 'after'] ? title_position : 'before' %}
-{% set title_display = title_display is defined and title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
+{# Normalise the Drupal title_display vocabulary onto the canonical enum.
+   'before', 'after' and 'inline' are visible titles that carry the title
+   position and orientation, 'visually_hidden' is the webform spelling of
+   'invisible', and 'none' and 'attribute' render no title. #}
+{% set title_display = title_display is defined and title_display is not empty ? title_display : 'visible' %}
+{% set title_position = title_position is defined and title_position in ['before', 'after'] ? title_position : (title_display == 'after' ? 'after' : 'before') %}
+{% set orientation = orientation is defined and orientation in ['vertical', 'horizontal'] ? orientation : (title_display == 'inline' ? 'horizontal' : 'vertical') %}
+{% set title_display = title_display in ['before', 'after', 'inline'] ? 'visible' : title_display %}
+{% set title_display = title_display in ['none', 'attribute'] ? 'hidden' : title_display %}
+{% set title_display = title_display == 'visually_hidden' ? 'invisible' : title_display %}
+{% set title_display = title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
 {% set title_size = (title_size is defined and title_size in ['extra-small', 'small', 'regular', 'large', 'extra-large']) ? title_size : '' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
-{% set orientation = orientation in ['vertical', 'horizontal'] ? orientation : 'vertical' %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type) %}
 {% set is_required_class = is_required ? 'ct-field--required' : '' %}
@@ -49,6 +57,7 @@
 {% set orientation_class = 'ct-field--%s'|format(orientation) %}
 {% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 {% set description_id = description is defined and description is not empty and type != 'hidden' and id is defined and id is not empty ? '%s--description'|format(id) : null %}
+{% set message_id = (message or is_invalid) and type != 'hidden' and id is defined and id is not empty ? '%s--error-message'|format(id) : null %}
 {% set field_wrapper = title_position == 'before' and type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
 {% set show_title = title is not empty and title_display != 'hidden' and type != 'hidden' %}
 
@@ -140,7 +149,7 @@
         type: is_invalid ? 'error' : 'information',
         content: message_content,
         modifier_class: 'ct-field__message',
-        attributes: message.attributes|default(create_attribute({})),
+        attributes: message.attributes|default(message_id ? create_attribute({id: message_id}) : create_attribute({})),
       } only %}
     {% endif %}
   </{{ field_wrapper }}>

@@ -27,7 +27,7 @@ props:
     options:
       type: array
       title: Options
-      description: Options (applies to optgroup type)
+      description: Options, matching Drupal core's prepared select options structure (keys mirror the HTML option attributes).
       items:
         type: object
         properties:
@@ -46,14 +46,14 @@ props:
             type: ['string', 'array']
             title: Value
             description: Option value.
-          is_selected:
+          selected:
             type: boolean
             title: Selected
             description: Whether the option is selected.
-          is_disabled:
+          disabled:
             type: boolean
             title: Disabled
-            description: Whether the select is disabled.
+            description: Whether the option is disabled.
           options:
             type: array
             title: Nested options
@@ -69,18 +69,18 @@ props:
                   type: string
                   title: Value
                   description: Option value.
-                is_selected:
+                selected:
                   type: boolean
                   title: Selected
                   description: Whether the option is selected.
-                is_disabled:
+                disabled:
                   type: boolean
                   title: Disabled
-                  description: Whether the select is disabled.
+                  description: Whether the option is disabled.
     is_invalid:
       type: boolean
       title: Invalid
-      description: Whether the select is invalid.
+      description: Whether the select is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
     is_disabled:
       type: boolean
       title: Disabled

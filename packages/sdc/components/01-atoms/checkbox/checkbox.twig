@@ -11,7 +11,7 @@
  * - label: [string] Label content.
  * - is_checked: [boolean] Whether the checkbox is checked.
  * - is_required: [boolean] Whether the checkbox is required.
- * - is_invalid: [boolean] Whether the checkbox is invalid.
+ * - is_invalid: [boolean] Whether the checkbox is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
  * - is_disabled: [boolean] Whether the checkbox is disabled.
  * - modifier_class: [string] Additional CSS classes.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
@@ -32,6 +32,7 @@
   {% if is_required %}required{% endif %}
   {% if is_disabled %}disabled{% endif %}
   {% if is_invalid %}aria-invalid="true"{% endif %}
+  {% if is_invalid and id is not empty %}aria-describedby="{{ id }}--error-message"{% endif %}
   {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
 />
 {% if label is not empty %}
