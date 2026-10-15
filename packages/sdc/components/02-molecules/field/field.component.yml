@@ -23,7 +23,7 @@ props:
     title_position:
       type: string
       title: Title position
-      description: Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type.
+      description: Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type. Defaults to "after" when title_display is "after".
       enum:
         - before
         - after
@@ -31,11 +31,17 @@ props:
     title_display:
       type: string
       title: Title display
-      description: How to display the field title (visible, invisible, hidden).
+      description: How to display the field title. Canonical values are visible, invisible and hidden. The Drupal form vocabulary is accepted and normalised ("before", "after" and "inline" mean visible and carry the title position and orientation, "visually_hidden" means invisible, "none" and "attribute" mean hidden).
       enum:
         - visible
         - invisible
         - hidden
+        - before
+        - after
+        - inline
+        - visually_hidden
+        - none
+        - attribute
       default: visible
     title_size:
       type: string
@@ -55,7 +61,7 @@ props:
     id:
       type: string
       title: ID
-      description: The control DOM ID, used for the title label's "for" attribute and the description id.
+      description: The control DOM ID, used for the title label's "for" attribute and the description and error message ids.
     is_invalid:
       type: boolean
       title: Invalid
@@ -75,7 +81,7 @@ props:
     orientation:
       type: string
       title: Orientation
-      description: Elements orientation (vertical or horizontal).
+      description: Elements orientation (vertical or horizontal). Defaults to horizontal when title_display is "inline".
       enum:
         - vertical
         - horizontal
@@ -83,7 +89,7 @@ props:
     message:
       type: object
       title: Message
-      description: Message object for showing messages.
+      description: Message object for showing messages. When no attributes are provided and the id prop is set, the message renders with id "{id}--error-message", for controls to reference via aria-describedby.
       properties:
         content:
           type: string

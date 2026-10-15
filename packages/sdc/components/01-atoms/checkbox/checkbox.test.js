@@ -42,6 +42,7 @@ describe('Checkbox Component', () => {
     expect(c.querySelector('.ct-checkbox').checked).toBe(true);
     expect(c.querySelector('.ct-checkbox').disabled).toBe(true);
     expect(c.querySelector('.ct-checkbox').getAttribute('data-test')).toBe('true');
+    expect(c.querySelector('.ct-checkbox').getAttribute('aria-describedby')).toBe('test-checkbox-id--error-message');
 
     const label = c.querySelector('.ct-checkbox__label');
     expect(label).not.toBeNull();

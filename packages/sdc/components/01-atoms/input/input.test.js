@@ -41,6 +41,7 @@ describe('Input Component', () => {
     expect(c.querySelector('.ct-input').getAttribute('required')).toBe('');
     expect(c.querySelector('.ct-input').getAttribute('data-test')).toEqual('true');
     expect(c.querySelector('.ct-input').getAttribute('id')).toEqual('input-id');
+    expect(c.querySelector('.ct-input').getAttribute('aria-describedby')).toEqual('input-id--error-message');
 
     assertUniqueCssClasses(c);
   });

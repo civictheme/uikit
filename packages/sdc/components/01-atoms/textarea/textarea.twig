@@ -10,7 +10,7 @@
  * - value: [string] The textarea value.
  * - placeholder: [string] Placeholder text.
  * - rows: [integer] Display rows count.
- * - is_invalid: [boolean] Whether the textarea is invalid.
+ * - is_invalid: [boolean] Whether the textarea is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
  * - is_disabled: [boolean] Whether the textarea is disabled.
  * - is_required: [boolean] Whether the textarea is required.
  * - modifier_class: [string] Additional CSS classes.
@@ -30,6 +30,7 @@
   {% if is_disabled %}disabled{% endif %}
   {% if is_required %}required{% endif %}
   {% if is_invalid %}aria-invalid="true"{% endif %}
+  {% if is_invalid and id is not empty %}aria-describedby="{{ id }}--error-message"{% endif %}
   {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
   {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
 >{{ value|default('') }}</textarea>

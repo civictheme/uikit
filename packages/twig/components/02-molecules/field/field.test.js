@@ -226,6 +226,45 @@ describe('Field Component', () => {
       assertUniqueCssClasses(c);
     });
 
+    test('message receives an id derived from the field id when no attributes are provided', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        id: 'testid',
+        is_invalid: true,
+        message: {
+          content: 'Message content sample.',
+        },
+        control: '<input type="text" name="testname" id="testid" aria-describedby="testid--error-message">',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__message[id="testid--error-message"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('message has no derived id without a field id, and explicit message attributes win', async () => {
+      const withoutId = await dom(template, {
+        type: 'textfield',
+        is_invalid: true,
+        message: { content: 'Message content sample.' },
+        control: '<input type="text" name="testname">',
+      });
+      expect(withoutId.querySelectorAll('.ct-field .ct-field__message[id]')).toHaveLength(0);
+
+      const withExplicitAttributes = await dom(template, {
+        type: 'textfield',
+        id: 'testid',
+        is_invalid: true,
+        message: {
+          content: 'Message content sample.',
+          attributes: new DrupalAttribute().setAttribute('id', 'custom-id'),
+        },
+        control: '<input type="text" name="testname" id="testid">',
+      });
+      expect(withExplicitAttributes.querySelectorAll('.ct-field .ct-field__message[id="custom-id"]')).toHaveLength(1);
+      expect(withExplicitAttributes.querySelectorAll('.ct-field .ct-field__message[id="testid--error-message"]')).toHaveLength(0);
+    });
+
     test('default message renders when message object has no content and title is present', async () => {
       const c = await dom(template, {
         title: 'Test input',
@@ -268,6 +307,12 @@ describe('Field Component', () => {
     { title: '', titleDisplay: 'visible', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'empty title with textfield' },
     { title: 'Test Title', titleDisplay: 'visible', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'visible title with hidden input' },
     { title: 'Test Title', titleDisplay: 'hidden', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'hidden title with hidden input' },
+    // Drupal form vocabulary is accepted and normalised.
+    { title: 'Test Title', titleDisplay: 'before', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'drupal "before" renders a visible title' },
+    { title: 'Test Title', titleDisplay: 'inline', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'drupal "inline" renders a visible title' },
+    { title: 'Test Title', titleDisplay: 'visually_hidden', type: 'textfield', expected: 1, selector: '.ct-field__title.ct-visually-hidden', description: 'drupal "visually_hidden" renders an invisible title' },
+    { title: 'Test Title', titleDisplay: 'none', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'drupal "none" renders no title' },
+    { title: 'Test Title', titleDisplay: 'attribute', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'drupal "attribute" renders no title' },
   ])('Field Component - $description', ({ title, titleDisplay, type, expected, selector }) => {
     test(`renders ${expected} title(s)`, async () => {
       const c = await dom(template, {
@@ -278,6 +323,56 @@ describe('Field Component', () => {
       });
 
       expect(c.querySelectorAll(selector)).toHaveLength(expected);
+    });
+  });
+
+  describe('drupal title_display vocabulary side effects', () => {
+    test('"after" places the title after the control without an explicit title_position', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        title: 'Agree to the terms',
+        title_display: 'after',
+        id: 'testid',
+        control: '<input type="checkbox" name="agree" id="testid">',
+      });
+
+      const control = c.querySelector('.ct-field .ct-field__control');
+      expect(control.querySelectorAll('label.ct-field__label[for="testid"]')).toHaveLength(1);
+      expect(control.innerHTML.indexOf('<input')).toBeLessThan(control.innerHTML.indexOf('<label'));
+      expect(c.querySelectorAll('.ct-field fieldset')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('"inline" renders a horizontal field without an explicit orientation', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        title: 'Inline title',
+        title_display: 'inline',
+        control: '<input type="text" name="testname">',
+      });
+
+      expect(c.querySelectorAll('.ct-field.ct-field--horizontal')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field__title')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('explicit title_position and orientation win over the title_display vocabulary', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        title: 'Test Title',
+        title_display: 'after',
+        title_position: 'before',
+        orientation: 'vertical',
+        control: '<input type="text" name="testname">',
+      });
+
+      expect(c.querySelectorAll('.ct-field.ct-field--vertical')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field > .ct-label.ct-field__title')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field .ct-field__control .ct-field__label')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
     });
   });
 });

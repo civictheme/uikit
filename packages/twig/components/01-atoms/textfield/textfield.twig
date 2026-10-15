@@ -9,7 +9,7 @@
  * - id: [string] DOM ID attribute.
  * - value: [string] The textfield value.
  * - placeholder: [string] Placeholder text.
- * - is_invalid: [boolean] Whether the textfield is invalid.
+ * - is_invalid: [boolean] Whether the textfield is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
  * - is_disabled: [boolean] Whether the textfield is disabled.
  * - is_required: [boolean] Whether the textfield is required.
  * - modifier_class: [string] Additional CSS classes.
@@ -30,6 +30,7 @@
   {% if is_disabled %}disabled{% endif %}
   {% if is_required %}required{% endif %}
   {% if is_invalid %}aria-invalid="true"{% endif %}
+  {% if is_invalid and id is not empty %}aria-describedby="{{ id }}--error-message"{% endif %}
   {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
   {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
 />

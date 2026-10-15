@@ -41,6 +41,7 @@ describe('Radio Component', () => {
     expect(c.querySelector('.ct-radio').hasAttribute('checked')).toBe(true);
     expect(c.querySelector('.ct-radio').hasAttribute('disabled')).toBe(true);
     expect(c.querySelector('.ct-radio').getAttribute('data-test')).toEqual('true');
+    expect(c.querySelector('.ct-radio').getAttribute('aria-describedby')).toEqual('radio-id--error-message');
     expect(c.querySelectorAll('label.ct-radio__label')).toHaveLength(1);
     expect(c.querySelector('label.ct-radio__label').textContent.trim()).toEqual('Radio Label');
 

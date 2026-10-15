@@ -26,9 +26,9 @@ describe('Select Component', () => {
       name: 'test-select',
       id: 'select-id',
       options: [
-        { type: 'option', label: 'Option 1', value: '1', is_selected: true },
+        { type: 'option', label: 'Option 1', value: '1', selected: true },
         { type: 'option', label: 'Option 2', value: '2' },
-        { type: 'option', label: 'Option 3', value: '3', is_disabled: true },
+        { type: 'option', label: 'Option 3', value: '3', disabled: true },
       ],
       theme: 'dark',
       is_multiple: true,
@@ -46,6 +46,7 @@ describe('Select Component', () => {
     expect(c.querySelector('.ct-select').hasAttribute('disabled')).toBe(true);
     expect(c.querySelector('.ct-select').hasAttribute('required')).toBe(true);
     expect(c.querySelector('.ct-select').getAttribute('data-test')).toEqual('true');
+    expect(c.querySelector('.ct-select').getAttribute('aria-describedby')).toEqual('select-id--error-message');
     expect(c.querySelectorAll('option')).toHaveLength(3);
     expect(c.querySelector('option[value="1"]').hasAttribute('selected')).toBe(true);
     expect(c.querySelector('option[value="1"]').textContent.trim()).toEqual('Option 1');

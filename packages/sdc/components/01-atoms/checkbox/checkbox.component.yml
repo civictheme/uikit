@@ -39,7 +39,7 @@ props:
     is_invalid:
       type: boolean
       title: Invalid
-      description: Whether the checkbox is invalid.
+      description: Whether the checkbox is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
     is_disabled:
       type: boolean
       title: Disabled
