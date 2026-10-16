@@ -8,7 +8,7 @@
  * - type: [string] Control type, used for presentation only (type class; hidden suppresses title, description and message).
  * - is_group: [boolean] Whether the field wraps a group of options - the root element becomes a <fieldset> and the title renders as its <legend> (title_position is ignored).
  * - title: [string] Field title.
- * - title_position: [string] Where the title renders. "before" places it above the control; "after" places it as a label following the control (the single checkbox/radio layout) with the description below. Ignored for groups. Defaults to "after" when title_display is "after".
+ * - title_position: [string] Where the title renders. "before" places it above the control; "after" places it as a label following the control with the description below. Ignored for groups. Defaults to "after" when title_display is "after" and for a single (non-group) checkbox or radio.
  * - title_display: [string] How to display the field title. Canonical values are visible, invisible and hidden. The Drupal form vocabulary is accepted and normalised ("before", "after" and "inline" mean visible and carry the title position and orientation, "visually_hidden" means invisible, "none" and "attribute" mean hidden).
  * - title_size: [string] The size of the title (extra-small, small, regular, large, extra-large).
  * - description: [string] Field description. Rendered with id "{id}--description" when the id prop is set, for controls to reference via aria-describedby.
@@ -41,7 +41,9 @@
    position and orientation, 'visually_hidden' is the webform spelling of
    'invisible', and 'none' and 'attribute' render no title. #}
 {% set title_display = title_display is defined and title_display is not empty ? title_display : 'visible' %}
-{% set title_position = title_position is defined and title_position in ['before', 'after'] ? title_position : (title_display == 'after' ? 'after' : 'before') %}
+{# A single checkbox or radio renders its label beside the control by
+   default, whatever the title_display value. #}
+{% set title_position = title_position is defined and title_position in ['before', 'after'] ? title_position : (title_display == 'after' or (type in ['checkbox', 'radio'] and not is_group) ? 'after' : 'before') %}
 {% set orientation = orientation is defined and orientation in ['vertical', 'horizontal'] ? orientation : (title_display == 'inline' ? 'horizontal' : 'vertical') %}
 {% set title_display = title_display in ['before', 'after', 'inline'] ? 'visible' : title_display %}
 {% set title_display = title_display in ['none', 'attribute'] ? 'hidden' : title_display %}

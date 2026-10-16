@@ -8,6 +8,7 @@ exports[`Field Component Field Component - drupal "attribute" renders no title r
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -29,6 +30,7 @@ exports[`Field Component Field Component - drupal "attribute" renders no title r
 exports[`Field Component Field Component - drupal "before" renders a visible title renders 1 title(s) 1`] = `
 <div>
   
+
 
 
 
@@ -68,6 +70,7 @@ exports[`Field Component Field Component - drupal "inline" renders a visible tit
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--horizontal     "
   >
@@ -102,6 +105,7 @@ exports[`Field Component Field Component - drupal "none" renders no title render
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -123,6 +127,7 @@ exports[`Field Component Field Component - drupal "none" renders no title render
 exports[`Field Component Field Component - drupal "visually_hidden" renders an invisible title renders 1 title(s) 1`] = `
 <div>
   
+
 
 
 
@@ -162,6 +167,7 @@ exports[`Field Component Field Component - empty title with textfield renders 0 
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -183,6 +189,7 @@ exports[`Field Component Field Component - empty title with textfield renders 0 
 exports[`Field Component Field Component - hidden title with hidden input renders 0 title(s) 1`] = `
 <div>
   
+
 
 
 
@@ -214,6 +221,7 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -235,6 +243,7 @@ exports[`Field Component Field Component - hidden title with textfield renders 0
 exports[`Field Component Field Component - invisible title with textfield renders 1 title(s) 1`] = `
 <div>
   
+
 
 
 
@@ -274,6 +283,7 @@ exports[`Field Component Field Component - visible title with hidden input rende
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical     "
   >
@@ -295,6 +305,7 @@ exports[`Field Component Field Component - visible title with hidden input rende
 exports[`Field Component Field Component - visible title with textfield renders 1 title(s) 1`] = `
 <div>
   
+
 
 
 
@@ -334,6 +345,7 @@ exports[`Field Component a hidden single checkbox title degrades to a visually h
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical     "
   >
@@ -362,9 +374,47 @@ exports[`Field Component a hidden single checkbox title degrades to a visually h
 </div>
 `;
 
+exports[`Field Component an explicit before position renders the single checkbox label above the control 1`] = `
+<div>
+  
+
+
+
+
+
+
+  <div
+    class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical     "
+  >
+    
+      
+
+
+    <label
+      class="ct-label ct-theme-light ct-label--regular  ct-field__title"
+      for="testid"
+    >
+      Test Title
+    </label>
+      
+  
+    <input
+      id="testid"
+      name="testname"
+      type="checkbox"
+    />
+    
+  
+  </div>
+  
+
+</div>
+`;
+
 exports[`Field Component control slot renders as a direct child of the field root 1`] = `
 <div>
   
+
 
 
 
@@ -398,6 +448,7 @@ exports[`Field Component default values 1`] = `
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical     "
   >
@@ -414,6 +465,7 @@ exports[`Field Component default values 1`] = `
 exports[`Field Component description references description has no id without a field id 1`] = `
 <div>
   
+
 
 
 
@@ -448,6 +500,7 @@ exports[`Field Component description references description has no id without a 
 exports[`Field Component description references description receives an id derived from the field id 1`] = `
 <div>
   
+
 
 
 
@@ -490,6 +543,7 @@ exports[`Field Component drupal title_display vocabulary side effects "after" pl
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical     "
   >
@@ -521,6 +575,7 @@ exports[`Field Component drupal title_display vocabulary side effects "after" pl
 exports[`Field Component drupal title_display vocabulary side effects "inline" renders a horizontal field without an explicit orientation 1`] = `
 <div>
   
+
 
 
 
@@ -560,6 +615,7 @@ exports[`Field Component drupal title_display vocabulary side effects explicit t
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -589,6 +645,7 @@ exports[`Field Component drupal title_display vocabulary side effects explicit t
 exports[`Field Component field messages default message renders when field is invalid without message object and no field title 1`] = `
 <div>
   
+
 
 
 
@@ -646,6 +703,7 @@ exports[`Field Component field messages default message renders when field is in
 exports[`Field Component field messages default message renders when message object has no content and title is present 1`] = `
 <div>
   
+
 
 
 
@@ -721,6 +779,7 @@ exports[`Field Component field messages message has no derived id without a fiel
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical    ct-field--invalid "
   >
@@ -773,6 +832,7 @@ exports[`Field Component field messages message has no derived id without a fiel
 exports[`Field Component field messages message has no derived id without a field id, and explicit message attributes win 2`] = `
 <div>
   
+
 
 
 
@@ -832,6 +892,7 @@ exports[`Field Component field messages message has no derived id without a fiel
 exports[`Field Component field messages message receives an id derived from the field id when no attributes are provided 1`] = `
 <div>
   
+
 
 
 
@@ -897,6 +958,7 @@ exports[`Field Component field messages message renders with content and attribu
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -955,6 +1017,7 @@ exports[`Field Component field messages no message or description renders for th
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--hidden ct-field--vertical    ct-field--invalid "
   >
@@ -981,6 +1044,7 @@ exports[`Field Component option groups (is_group) a group without a title render
 
 
 
+
   <fieldset
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical ct-field--group    "
   >
@@ -1002,6 +1066,7 @@ exports[`Field Component option groups (is_group) a group without a title render
 exports[`Field Component option groups (is_group) attributes render on the fieldset root 1`] = `
 <div>
   
+
 
 
 
@@ -1037,6 +1102,7 @@ exports[`Field Component option groups (is_group) attributes render on the field
 exports[`Field Component option groups (is_group) the group description renders after the legend 1`] = `
 <div>
   
+
 
 
 
@@ -1085,6 +1151,7 @@ exports[`Field Component prefix and suffix 1`] = `
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical     "
   >
@@ -1125,6 +1192,7 @@ exports[`Field Component required, disabled, and description 1`] = `
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical  ct-field--required ct-field--disabled  "
   >
@@ -1154,6 +1222,7 @@ exports[`Field Component required, disabled, and description 1`] = `
 exports[`Field Component theme, orientation, and invalid state 1`] = `
 <div>
   
+
 
 
 
@@ -1216,6 +1285,7 @@ exports[`Field Component title is linked to the control id and carries the requi
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--textfield ct-field--vertical  ct-field--required   "
   >
@@ -1257,6 +1327,7 @@ exports[`Field Component title_position after (single checkbox/radio layout) inv
 
 
 
+
   <div
     class="ct-field ct-theme-light ct-field--checkbox ct-field--vertical     "
   >
@@ -1288,6 +1359,7 @@ exports[`Field Component title_position after (single checkbox/radio layout) inv
 exports[`Field Component title_position after (single checkbox/radio layout) renders the label directly after the control, with the description below 1`] = `
 <div>
   
+
 
 
 
@@ -1338,6 +1410,7 @@ exports[`Field Component title_position after (single checkbox/radio layout) ren
 exports[`Field Component wrapper attributes and modifier class 1`] = `
 <div>
   
+
 
 
 
