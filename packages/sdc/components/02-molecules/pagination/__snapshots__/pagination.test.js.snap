@@ -255,7 +255,7 @@ exports[`Pagination Component renders with optional attributes 1`] = `
 
 
       <div
-        class="ct-field ct-theme-dark ct-field--select ct-field--horizontal    ct-pagination__items_per_page__field ct-field--horizontal--fluid"
+        class="ct-field ct-theme-dark ct-field--select ct-field--horizontal     ct-pagination__items_per_page__field ct-field--horizontal--fluid"
         data-test="items-per-page"
       >
         
@@ -270,60 +270,42 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         </label>
           
   
-        <div
-          class="ct-field__wrapper"
+
+
+
+        <select
+          class="ct-select ct-theme-dark"
+          id="items-per-page"
+          name="itemsPerPage"
         >
           
-    
-    
-    
-          <div
-            class="ct-field__control"
-          >
-            
-
-
-
-            <select
-              class="ct-select ct-theme-dark"
-              id="items-per-page"
-              name="itemsPerPage"
-            >
-              
                     
-              <option
-                selected="selected"
-                value="10"
-              >
-                10
-              </option>
-              
-                              
-              <option
-                value="20"
-              >
-                20
-              </option>
-              
-                              
-              <option
-                value="50"
-              >
-                50
-              </option>
-              
-            
-            </select>
-            
-
-          </div>
+          <option
+            selected="selected"
+            value="10"
+          >
+            10
+          </option>
           
-
-    
-      
-        </div>
+                              
+          <option
+            value="20"
+          >
+            20
+          </option>
+          
+                              
+          <option
+            value="50"
+          >
+            50
+          </option>
+          
+            
+        </select>
         
 
+  
       </div>
       
 
