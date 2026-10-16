@@ -8,8 +8,7 @@ describe('Field Component', () => {
 
     // Default classes.
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__control')).toHaveLength(1);
+    expect(c.querySelectorAll('div.ct-field')).toHaveLength(1);
 
     // Default field type.
     expect(c.querySelectorAll('.ct-field.ct-field--hidden')).toHaveLength(1);
@@ -17,13 +16,13 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('control slot renders inside the control wrapper', async () => {
+  test('control slot renders as a direct child of the field root', async () => {
     const c = await dom(template, {
       type: 'textfield',
       control: '<input type="text" name="slotted" id="testid" class="external-control">',
     });
 
-    expect(c.querySelectorAll('.ct-field .ct-field__control input.external-control[name="slotted"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field > input.external-control[name="slotted"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
@@ -38,7 +37,6 @@ describe('Field Component', () => {
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-dark.ct-field--horizontal.ct-field--invalid')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
     assertUniqueCssClasses(c);
   });
 
@@ -65,8 +63,7 @@ describe('Field Component', () => {
       control: '<input type="text" name="testname">',
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical.ct-field--required.ct-field--disabled')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__description')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field > .ct-field__description')).toHaveLength(1);
     expect(c.querySelector('.ct-field .ct-field__description').textContent.trim()).toEqual('This is a description');
     assertUniqueCssClasses(c);
   });
@@ -80,29 +77,97 @@ describe('Field Component', () => {
       control: '<input type="text" name="testname" id="testid">',
     });
 
-    expect(c.querySelectorAll('.ct-field .ct-label.ct-field__title[for="testid"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field > .ct-label.ct-field__title[for="testid"]')).toHaveLength(1);
     expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title (required)');
 
     assertUniqueCssClasses(c);
   });
 
-  test('checkbox and radio types render a plain div wrapper when no title renders', async () => {
-    for (const type of ['checkbox', 'radio']) {
-      const c = await dom(template, {
-        type,
-        title: '',
-        title_display: 'none',
-        control: `<input type="${type}" name="testname">`,
-      }, false);
+  describe('option groups (is_group)', () => {
+    test('the root element is a fieldset and the title renders as its legend', async () => {
+      for (const type of ['checkbox', 'radio']) {
+        const c = await dom(template, {
+          type,
+          is_group: true,
+          title: 'Test Title',
+          id: 'testid',
+          control: `<input type="${type}" name="testname" id="testid">`,
+        }, false);
 
-      expect(c.querySelectorAll('.ct-field fieldset')).toHaveLength(0);
-      expect(c.querySelectorAll('.ct-field div.ct-field__wrapper')).toHaveLength(1);
+        expect(c.querySelectorAll('fieldset.ct-field.ct-field--group')).toHaveLength(1);
+        expect(c.querySelectorAll('fieldset.ct-field > legend.ct-label.ct-field__title')).toHaveLength(1);
+        expect(c.querySelector('legend.ct-field__title').textContent.trim()).toEqual('Test Title');
+        expect(c.querySelectorAll('.ct-field .ct-label[for]')).toHaveLength(0);
+
+        assertUniqueCssClasses(c);
+      }
+    });
+
+    test('attributes render on the fieldset root', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        is_group: true,
+        title: 'Test Title',
+        attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
+        control: '<input type="checkbox" name="testname">',
+      });
+
+      expect(c.querySelectorAll('fieldset.ct-field[data-test="true"]')).toHaveLength(1);
 
       assertUniqueCssClasses(c);
-    }
+    });
+
+    test('a hidden group title degrades to a visually hidden legend, keeping the fieldset', async () => {
+      for (const titleDisplay of ['hidden', 'none']) {
+        const c = await dom(template, {
+          type: 'checkbox',
+          is_group: true,
+          title: 'Test Title',
+          title_display: titleDisplay,
+          control: '<input type="checkbox" name="testname">',
+        }, false);
+
+        expect(c.querySelectorAll('fieldset.ct-field')).toHaveLength(1);
+        expect(c.querySelectorAll('legend.ct-field__title.ct-visually-hidden')).toHaveLength(1);
+
+        assertUniqueCssClasses(c);
+      }
+    });
+
+    test('a group without a title renders the fieldset without a legend', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        is_group: true,
+        title: '',
+        control: '<input type="checkbox" name="testname">',
+      });
+
+      expect(c.querySelectorAll('fieldset.ct-field')).toHaveLength(1);
+      expect(c.querySelectorAll('legend')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('the group description renders after the legend', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        is_group: true,
+        title: 'Test Title',
+        id: 'testid',
+        description: 'This is a description',
+        control: '<input type="checkbox" name="testname">',
+      });
+
+      const root = c.querySelector('fieldset.ct-field');
+      expect(root.innerHTML.indexOf('ct-field__title')).toBeLessThan(root.innerHTML.indexOf('ct-field__description'));
+      expect(root.innerHTML.indexOf('ct-field__description')).toBeLessThan(root.innerHTML.indexOf('<input'));
+      expect(c.querySelectorAll('.ct-field__description[id="testid--description"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
   });
 
-  test('checkbox and radio types render the title as a legend in a fieldset wrapper', async () => {
+  test('a single checkbox or radio renders a label, not a fieldset', async () => {
     for (const type of ['checkbox', 'radio']) {
       const c = await dom(template, {
         type,
@@ -111,13 +176,27 @@ describe('Field Component', () => {
         control: `<input type="${type}" name="testname" id="testid">`,
       }, false);
 
-      expect(c.querySelectorAll('.ct-field fieldset.ct-field__wrapper')).toHaveLength(1);
-      expect(c.querySelectorAll('.ct-field legend.ct-label.ct-field__title')).toHaveLength(1);
-      expect(c.querySelector('.ct-field legend.ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-      expect(c.querySelectorAll('.ct-field .ct-label[for]')).toHaveLength(0);
+      expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+      expect(c.querySelectorAll('legend')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field > label.ct-field__title[for="testid"]')).toHaveLength(1);
 
       assertUniqueCssClasses(c);
     }
+  });
+
+  test('a hidden single checkbox title degrades to a visually hidden label', async () => {
+    const c = await dom(template, {
+      type: 'checkbox',
+      title: 'Test Title',
+      title_display: 'hidden',
+      title_position: 'after',
+      id: 'testid',
+      control: '<input type="checkbox" name="testname" id="testid">',
+    });
+
+    expect(c.querySelectorAll('.ct-field > label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
   });
 
   test('prefix and suffix', async () => {
@@ -128,14 +207,14 @@ describe('Field Component', () => {
       control: '<input type="text" name="testname">',
     });
 
-    expect(c.querySelector('.ct-field .ct-field__prefix').textContent.trim()).toEqual('Prefix content');
-    expect(c.querySelector('.ct-field .ct-field__suffix').textContent.trim()).toEqual('Suffix content');
+    expect(c.querySelector('.ct-field > .ct-field__prefix').textContent.trim()).toEqual('Prefix content');
+    expect(c.querySelector('.ct-field > .ct-field__suffix').textContent.trim()).toEqual('Suffix content');
 
     assertUniqueCssClasses(c);
   });
 
   describe('title_position after (single checkbox/radio layout)', () => {
-    test('renders the label after the control inside the control wrapper, with a div wrapper and no legend', async () => {
+    test('renders the label directly after the control, with the description below', async () => {
       const c = await dom(template, {
         type: 'checkbox',
         title: 'Agree to the terms',
@@ -146,22 +225,20 @@ describe('Field Component', () => {
         control: '<input type="checkbox" name="agree" id="testid">',
       });
 
-      expect(c.querySelectorAll('.ct-field fieldset')).toHaveLength(0);
-      expect(c.querySelectorAll('.ct-field legend')).toHaveLength(0);
-      expect(c.querySelectorAll('.ct-field div.ct-field__wrapper')).toHaveLength(1);
+      expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+      expect(c.querySelectorAll('legend')).toHaveLength(0);
 
-      const control = c.querySelector('.ct-field .ct-field__control');
-      expect(control.querySelectorAll('input[name="agree"]')).toHaveLength(1);
-      expect(control.querySelectorAll('label.ct-field__label[for="testid"]')).toHaveLength(1);
-      expect(control.querySelector('label').textContent).toContain('Agree to the terms');
-      expect(control.querySelector('label').textContent).toContain('(required)');
+      const root = c.querySelector('.ct-field');
+      expect(root.querySelectorAll(':scope > input[name="agree"]')).toHaveLength(1);
+      expect(root.querySelectorAll(':scope > label.ct-field__label[for="testid"]')).toHaveLength(1);
+      expect(root.querySelector('label').textContent).toContain('Agree to the terms');
+      expect(root.querySelector('label').textContent).toContain('(required)');
       // The label follows the control in document order.
-      expect(control.innerHTML.indexOf('<input')).toBeLessThan(control.innerHTML.indexOf('<label'));
+      expect(root.innerHTML.indexOf('<input')).toBeLessThan(root.innerHTML.indexOf('<label'));
 
-      // The description renders after the control block.
-      const wrapper = c.querySelector('.ct-field .ct-field__wrapper');
-      expect(wrapper.innerHTML.indexOf('ct-field__control')).toBeLessThan(wrapper.innerHTML.indexOf('ct-field__description'));
-      expect(c.querySelectorAll('.ct-field .ct-field__description[id="testid--description"]')).toHaveLength(1);
+      // The description renders after the control and label.
+      expect(root.innerHTML.indexOf('<label')).toBeLessThan(root.innerHTML.indexOf('ct-field__description'));
+      expect(c.querySelectorAll('.ct-field > .ct-field__description[id="testid--description"]')).toHaveLength(1);
 
       assertUniqueCssClasses(c);
     });
@@ -176,7 +253,7 @@ describe('Field Component', () => {
         control: '<input type="checkbox" name="agree" id="testid">',
       });
 
-      expect(c.querySelectorAll('.ct-field .ct-field__control label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field > label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
 
       assertUniqueCssClasses(c);
     });
@@ -352,10 +429,10 @@ describe('Field Component', () => {
         control: '<input type="checkbox" name="agree" id="testid">',
       });
 
-      const control = c.querySelector('.ct-field .ct-field__control');
-      expect(control.querySelectorAll('label.ct-field__label[for="testid"]')).toHaveLength(1);
-      expect(control.innerHTML.indexOf('<input')).toBeLessThan(control.innerHTML.indexOf('<label'));
-      expect(c.querySelectorAll('.ct-field fieldset')).toHaveLength(0);
+      const root = c.querySelector('.ct-field');
+      expect(root.querySelectorAll(':scope > label.ct-field__label[for="testid"]')).toHaveLength(1);
+      expect(root.innerHTML.indexOf('<input')).toBeLessThan(root.innerHTML.indexOf('<label'));
+      expect(c.querySelectorAll('fieldset')).toHaveLength(0);
 
       assertUniqueCssClasses(c);
     });
@@ -386,7 +463,7 @@ describe('Field Component', () => {
 
       expect(c.querySelectorAll('.ct-field.ct-field--vertical')).toHaveLength(1);
       expect(c.querySelectorAll('.ct-field > .ct-label.ct-field__title')).toHaveLength(1);
-      expect(c.querySelectorAll('.ct-field .ct-field__control .ct-field__label')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field .ct-field__label')).toHaveLength(0);
 
       assertUniqueCssClasses(c);
     });

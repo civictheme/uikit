@@ -5,9 +5,10 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - type: [string] Control type, used for presentation only (type class; fieldset wrapper and legend for checkbox and radio; hidden suppresses title, description and message).
+ * - type: [string] Control type, used for presentation only (type class; hidden suppresses title, description and message).
+ * - is_group: [boolean] Whether the field wraps a group of options - the root element becomes a <fieldset> and the title renders as its <legend> (title_position is ignored).
  * - title: [string] Field title.
- * - title_position: [string] Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type. Defaults to "after" when title_display is "after".
+ * - title_position: [string] Where the title renders. "before" places it above the control; "after" places it as a label following the control (the single checkbox/radio layout) with the description below. Ignored for groups. Defaults to "after" when title_display is "after".
  * - title_display: [string] How to display the field title. Canonical values are visible, invisible and hidden. The Drupal form vocabulary is accepted and normalised ("before", "after" and "inline" mean visible and carry the title position and orientation, "visually_hidden" means invisible, "none" and "attribute" mean hidden).
  * - title_size: [string] The size of the title (extra-small, small, regular, large, extra-large).
  * - description: [string] Field description. Rendered with id "{id}--description" when the id prop is set, for controls to reference via aria-describedby.
@@ -26,7 +27,7 @@
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
- * - control: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed inside the "ct-field__control" wrapper; also fillable by overriding the "control_block" block in an embed.
+ * - control: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root; also fillable by overriding the "control_block" block in an embed.
  *
  * Blocks:
  * - control_block
@@ -34,6 +35,7 @@
 #}
 
 {% set type = type is defined and type is not empty ? type : 'hidden' %}
+{% set is_group = is_group is defined ? is_group : false %}
 {# Normalise the Drupal title_display vocabulary onto the canonical enum.
    'before', 'after' and 'inline' are visible titles that carry the title
    position and orientation, 'visually_hidden' is the webform spelling of
@@ -45,25 +47,57 @@
 {% set title_display = title_display in ['none', 'attribute'] ? 'hidden' : title_display %}
 {% set title_display = title_display == 'visually_hidden' ? 'invisible' : title_display %}
 {% set title_display = title_display in ['visible', 'invisible', 'hidden'] ? title_display : 'visible' %}
+{# A group keeps its accessible name and a single checkbox or radio keeps an
+   accessible label: a hidden title degrades to a visually hidden one. #}
+{% set title_display = (is_group or type in ['checkbox', 'radio']) and title_display == 'hidden' and title is not empty ? 'invisible' : title_display %}
 {% set title_size = (title_size is defined and title_size in ['extra-small', 'small', 'regular', 'large', 'extra-large']) ? title_size : '' %}
 {% set is_invalid = is_invalid is defined ? is_invalid : false %}
 {% set is_disabled = is_disabled is defined ? is_disabled : false %}
 {% set is_required = is_required is defined ? is_required : false %}
 {% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
 {% set type_class = 'ct-field--%s'|format(type) %}
+{% set is_group_class = is_group ? 'ct-field--group' : '' %}
 {% set is_required_class = is_required ? 'ct-field--required' : '' %}
 {% set is_disabled_class = is_disabled ? 'ct-field--disabled' : '' %}
 {% set is_invalid_class = is_invalid ? 'ct-field--invalid' : '' %}
 {% set orientation_class = 'ct-field--%s'|format(orientation) %}
-{% set modifier_class = '%s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s %s %s %s %s %s %s'|format(theme_class, type_class, orientation_class, is_group_class, is_required_class, is_disabled_class, is_invalid_class, modifier_class|default('')) %}
 {% set description_id = description is defined and description is not empty and type != 'hidden' and id is defined and id is not empty ? '%s--description'|format(id) : null %}
 {% set message_id = (message or is_invalid) and type != 'hidden' and id is defined and id is not empty ? '%s--error-message'|format(id) : null %}
 {% set show_title = title is not empty and title_display != 'hidden' and type != 'hidden' %}
-{# A fieldset wrapper is only correct when its legend actually renders. #}
-{% set field_wrapper = show_title and title_position == 'before' and type in ['checkbox', 'radio'] ? 'fieldset' : 'div' %}
+{% set root_tag = is_group ? 'fieldset' : 'div' %}
 
-<div class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
-  {% if show_title and title_position == 'before' and type not in ['checkbox', 'radio'] %}
+<{{ root_tag }} class="ct-field {{ modifier_class -}}" {% if attributes %}{{- attributes -}}{% endif %}>
+  {% if show_title and (is_group or title_position == 'before') %}
+    {% include 'civictheme:label' with {
+      theme: theme,
+      tag: is_group ? 'legend' : 'label',
+      content: title,
+      size: title_size is not empty ? title_size : 'regular',
+      is_required: is_required,
+      required_text: required_text,
+      for: not is_group and id is defined and id is not empty ? id : null,
+      modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
+    } only %}
+  {% endif %}
+
+  {% if description is not empty and type != 'hidden' and (is_group or title_position == 'before') %}
+    {% include 'civictheme:field-description' with {
+      theme: theme,
+      content: description,
+      modifier_class: 'ct-field__description',
+      attributes: description_id ? create_attribute({id: description_id}) : null,
+    } only %}
+  {% endif %}
+
+  {% if prefix is not empty %}
+    <div class="ct-field__prefix">{{- prefix -}}</div>
+  {% endif %}
+
+  {%- block control_block -%}
+    {{- control -}}
+  {%- endblock -%}
+  {%- if show_title and not is_group and title_position == 'after' %}
     {% include 'civictheme:label' with {
       theme: theme,
       content: title,
@@ -71,87 +105,44 @@
       is_required: is_required,
       required_text: required_text,
       for: id is defined and id is not empty ? id : null,
-      modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
+      modifier_class: 'ct-field__label' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
+    } only %}
+  {% endif -%}
+
+  {% if description is not empty and type != 'hidden' and not is_group and title_position == 'after' %}
+    {% include 'civictheme:field-description' with {
+      theme: theme,
+      content: description,
+      modifier_class: 'ct-field__description',
+      attributes: description_id ? create_attribute({id: description_id}) : null,
     } only %}
   {% endif %}
 
-  <{{ field_wrapper }} class="ct-field__wrapper">
-    {% if show_title and title_position == 'before' and type in ['checkbox', 'radio'] %}
-      {% include 'civictheme:label' with {
-        theme: theme,
-        tag: 'legend',
-        content: title,
-        is_required: is_required,
-        required_text: required_text,
-        modifier_class: 'ct-field__title' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
-      } only %}
+  {% if suffix is not empty %}
+    <div class="ct-field__suffix">{{- suffix -}}</div>
+  {% endif %}
+
+  {% if (message or is_invalid) and type != 'hidden' %}
+    {% set error_message = 'Field has an error' %}
+    {% if title is not empty %}
+      {% set error_message = 'Field <em>' ~ title ~ '</em> has an error' %}
     {% endif %}
 
-    {% if description is not empty and type != 'hidden' and title_position == 'before' %}
-      {% include 'civictheme:field-description' with {
-        theme: theme,
-        content: description,
-        modifier_class: 'ct-field__description',
-        attributes: description_id ? create_attribute({id: description_id}) : null,
-      } only %}
+    {% set message_content = null %}
+    {% if is_invalid %}
+      {% set message_content = error_message %}
     {% endif %}
 
-    {% if prefix is not empty %}
-      <div class="ct-field__prefix">{{- prefix -}}</div>
+    {% if message is defined and message.content is defined %}
+      {% set message_content = message.content %}
     {% endif %}
 
-    <div class="ct-field__control">
-      {%- block control_block -%}
-        {{- control -}}
-      {%- endblock -%}
-      {%- if show_title and title_position == 'after' %}
-        {% include 'civictheme:label' with {
-          theme: theme,
-          content: title,
-          size: title_size is not empty ? title_size : 'regular',
-          is_required: is_required,
-          required_text: required_text,
-          for: id is defined and id is not empty ? id : null,
-          modifier_class: 'ct-field__label' ~ (title_display == 'invisible' ? ' ct-visually-hidden' : ''),
-        } only %}
-      {% endif -%}
-    </div>
-
-    {% if description is not empty and type != 'hidden' and title_position == 'after' %}
-      {% include 'civictheme:field-description' with {
-        theme: theme,
-        content: description,
-        modifier_class: 'ct-field__description',
-        attributes: description_id ? create_attribute({id: description_id}) : null,
-      } only %}
-    {% endif %}
-
-    {% if suffix is not empty %}
-      <div class="ct-field__suffix">{{- suffix -}}</div>
-    {% endif %}
-
-    {% if (message or is_invalid) and type != 'hidden' %}
-      {% set error_message = 'Field has an error' %}
-      {% if title is not empty %}
-        {% set error_message = 'Field <em>' ~ title ~ '</em> has an error' %}
-      {% endif %}
-
-      {% set message_content = null %}
-      {% if is_invalid %}
-        {% set message_content = error_message %}
-      {% endif %}
-
-      {% if message is defined and message.content is defined %}
-        {% set message_content = message.content %}
-      {% endif %}
-
-      {% include 'civictheme:field-message' with {
-        theme: theme,
-        type: is_invalid ? 'error' : 'information',
-        content: message_content,
-        modifier_class: 'ct-field__message',
-        attributes: message.attributes|default(message_id ? create_attribute({id: message_id}) : create_attribute({})),
-      } only %}
-    {% endif %}
-  </{{ field_wrapper }}>
-</div>
+    {% include 'civictheme:field-message' with {
+      theme: theme,
+      type: is_invalid ? 'error' : 'information',
+      content: message_content,
+      modifier_class: 'ct-field__message',
+      attributes: message.attributes|default(message_id ? create_attribute({id: message_id}) : create_attribute({})),
+    } only %}
+  {% endif %}
+</{{ root_tag }}>

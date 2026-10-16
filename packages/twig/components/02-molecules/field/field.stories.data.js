@@ -59,6 +59,7 @@ export default {
     return {
       theme,
       type: 'textfield',
+      is_group: false,
       title: 'Field title',
       title_display: 'visible',
       title_size: 'regular',

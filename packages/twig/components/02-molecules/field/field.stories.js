@@ -23,6 +23,9 @@ const meta = {
       control: { type: 'select' },
       options: ['textfield', 'textarea', 'select', 'select_multiple', 'radio', 'checkbox', 'hidden', 'color', 'date', 'email', 'file', 'image', 'month', 'number', 'password', 'range', 'search', 'tel', 'time', 'url', 'week', 'other'],
     },
+    is_group: {
+      control: { type: 'boolean' },
+    },
     title: {
       control: { type: 'text' },
     },
@@ -93,6 +96,7 @@ export const FieldRadio = {
   args: {
     ...FieldData.args('light', { is_required: true }),
     type: 'radio',
+    is_group: true,
   },
 };
 
@@ -103,6 +107,7 @@ export const FieldCheckbox = {
   args: {
     ...FieldData.args('light', { is_required: true }),
     type: 'checkbox',
+    is_group: true,
   },
 };
 
