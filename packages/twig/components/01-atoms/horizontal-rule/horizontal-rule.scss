@@ -1,0 +1,9 @@
+//
+// CivicTheme Horizontal Rule component styles.
+//
+
+.ct-horizontal-rule {
+  margin: ct-spacing(3) 0;
+  border: 0;
+  border-top: 1px solid var(--ct-color-border);
+}

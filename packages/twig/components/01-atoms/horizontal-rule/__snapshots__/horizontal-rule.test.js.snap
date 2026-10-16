@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Horizontal Rule Component renders with default attributes 1`] = `
+<div>
+  
+
+
+
+  <hr
+    class="ct-horizontal-rule ct-theme-light "
+  />
+  
+
+</div>
+`;
+
+exports[`Horizontal Rule Component renders with optional attributes 1`] = `
+<div>
+  
+
+
+
+  <hr
+    class="ct-horizontal-rule ct-theme-dark custom-class"
+    data-test="true"
+  />
+  
+
+</div>
+`;

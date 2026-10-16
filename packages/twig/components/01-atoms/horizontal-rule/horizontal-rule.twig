@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * CivicTheme Horizontal Rule component.
+ *
+ * Props:
+ * - theme: [string] Theme variation (light or dark).
+ * - modifier_class: [string] Additional CSS classes.
+ * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
+ */
+#}
+
+{% set theme_class = 'ct-theme-%s'|format(theme|default('light')) %}
+{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
+
+<hr class="ct-horizontal-rule {{ modifier_class -}}" {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %} />
