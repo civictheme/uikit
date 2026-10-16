@@ -15,7 +15,12 @@ props:
     type:
       type: string
       title: Type
-      description: Control type, used for presentation only (type class; fieldset wrapper and legend for checkbox and radio; hidden suppresses title, description and message).
+      description: Control type, used for presentation only (type class; hidden suppresses title, description and message).
+    is_group:
+      type: boolean
+      title: Group
+      description: Whether the field wraps a group of options - the root element becomes a <fieldset> and the title renders as its <legend> (title_position is ignored).
+      default: false
     title:
       type: string
       title: Title
@@ -23,7 +28,7 @@ props:
     title_position:
       type: string
       title: Title position
-      description: Where the title renders. "before" places it above the control (as a legend inside the fieldset wrapper for checkbox and radio types); "after" places it as a label beside the control inside the control wrapper (the single checkbox/radio layout) with the description below, and uses a plain div wrapper for every type. Defaults to "after" when title_display is "after".
+      description: Where the title renders. "before" places it above the control; "after" places it as a label following the control (the single checkbox/radio layout) with the description below. Ignored for groups. Defaults to "after" when title_display is "after".
       enum:
         - before
         - after
@@ -110,4 +115,4 @@ props:
 slots:
   control:
     title: Control
-    description: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed inside the "ct-field__control" wrapper; also fillable by overriding the "control_block" block in an embed.
+    description: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root; also fillable by overriding the "control_block" block in an embed.
