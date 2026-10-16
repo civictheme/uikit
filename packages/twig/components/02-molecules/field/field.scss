@@ -18,11 +18,11 @@
   }
 
   // The root element is the <fieldset> for an option group: reset the
-  // native fieldset chrome.
+  // native fieldset chrome. Block margins stay with the field rhythm rules.
   &#{$root}--group {
     border: none;
     padding: 0;
-    margin: 0;
+    margin-inline: 0;
     min-width: 0;
   }
 
