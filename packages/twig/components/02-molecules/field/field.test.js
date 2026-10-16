@@ -167,7 +167,7 @@ describe('Field Component', () => {
     });
   });
 
-  test('a single checkbox or radio renders a label, not a fieldset', async () => {
+  test('a single checkbox or radio renders a label beside the control, not a fieldset', async () => {
     for (const type of ['checkbox', 'radio']) {
       const c = await dom(template, {
         type,
@@ -178,10 +178,25 @@ describe('Field Component', () => {
 
       expect(c.querySelectorAll('fieldset')).toHaveLength(0);
       expect(c.querySelectorAll('legend')).toHaveLength(0);
-      expect(c.querySelectorAll('.ct-field > label.ct-field__title[for="testid"]')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field > label.ct-field__label[for="testid"]')).toHaveLength(1);
 
       assertUniqueCssClasses(c);
     }
+  });
+
+  test('an explicit before position renders the single checkbox label above the control', async () => {
+    const c = await dom(template, {
+      type: 'checkbox',
+      title: 'Test Title',
+      title_position: 'before',
+      id: 'testid',
+      control: '<input type="checkbox" name="testname" id="testid">',
+    });
+
+    expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-field > label.ct-field__title[for="testid"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
   });
 
   test('a hidden single checkbox title degrades to a visually hidden label', async () => {
@@ -189,7 +204,6 @@ describe('Field Component', () => {
       type: 'checkbox',
       title: 'Test Title',
       title_display: 'hidden',
-      title_position: 'after',
       id: 'testid',
       control: '<input type="checkbox" name="testname" id="testid">',
     });
