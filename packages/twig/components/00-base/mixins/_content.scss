@@ -108,6 +108,10 @@
     @include ct-content-link-base();
   }
 
+  hr {
+    @include ct-horizontal-rule();
+  }
+
   blockquote {
     @include ct-typography('quote');
 

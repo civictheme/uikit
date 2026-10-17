@@ -17,18 +17,20 @@
     margin-bottom: ct-spacing(2);
   }
 
-  &#{$root}--radio,
-  &#{$root}--checkbox {
-    #{$root}__wrapper {
-      border: none;
-      padding: 0;
-      margin: 0;
-    }
+  // The root element is the <fieldset> for an option group: reset the
+  // native fieldset chrome. Block margins stay with the field rhythm rules.
+  &#{$root}--group {
+    border: none;
+    padding: 0;
+    margin-inline: 0;
+    min-width: 0;
   }
 
-  & > *:not(:last-child),
-  &__wrapper > *:not(:last-child) {
-    margin-bottom: ct-spacing();
+  // Vertical rhythm between the stacked children. A margin-top on the
+  // following sibling leaves the inline after-label of a single checkbox or
+  // radio unaffected, keeping the control and its label on one line.
+  > * + * {
+    margin-top: ct-spacing();
   }
 
   .ct-item-list__item {
@@ -36,10 +38,20 @@
   }
 
   &#{$root}--horizontal {
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: start;
     column-gap: ct-spacing();
+    row-gap: ct-spacing();
+
+    > * {
+      margin-top: 0;
+      grid-column: 2;
+    }
+
+    > #{$root}__title {
+      grid-column: 1;
+    }
 
     &#{$root}--horizontal--fluid {
       #{$root}__title {
@@ -49,7 +61,6 @@
     }
 
     #{$root}__title {
-      flex: 0 1 auto;
       min-width: var(--ct-field-horizontal-label-min-width);
       max-width: var(--ct-field-horizontal-label-max-width);
       margin-top: $_control-vertical-padding - $_control-border-width;
@@ -69,24 +80,6 @@
       #{$root}__title {
         margin-top: 0;
       }
-    }
-
-    #{$root}__wrapper {
-      flex: 1 0 0;
-      display: flex;
-      flex-flow: column;
-    }
-
-    #{$root}__control {
-      order: 1;
-    }
-
-    #{$root}__description {
-      order: 2;
-    }
-
-    #{$root}__message {
-      order: 3;
     }
   }
 }

@@ -67,6 +67,7 @@ exports[`Tooltip Component renders with icon and icon size 1`] = `
 
   
         <button
+          aria-label="Close"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   ct-tooltip__close-button"
           data-component-name="button"
         >
@@ -173,6 +174,7 @@ exports[`Tooltip Component renders with optional attributes 1`] = `
 
   
         <button
+          aria-label="Close"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   ct-tooltip__close-button"
           data-component-name="button"
         >
@@ -276,6 +278,7 @@ exports[`Tooltip Component renders with required attributes 1`] = `
 
   
         <button
+          aria-label="Close"
           class="ct-button ct-theme-light ct-button--tertiary ct-button--button ct-button--regular   ct-tooltip__close-button"
           data-component-name="button"
         >

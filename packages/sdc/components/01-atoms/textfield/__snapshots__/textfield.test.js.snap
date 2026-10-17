@@ -1,9 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Textfield Component does not render when name is empty 1`] = `
+exports[`Textfield Component renders bare without a name (fail visible) 1`] = `
 <div>
   
 
+
+
+  <input
+    class="ct-textfield ct-theme-light"
+    type="text"
+  />
+  
+
+</div>
+`;
+
+exports[`Textfield Component renders from attributes only (platform-rendered control) 1`] = `
+<div>
+  
+
+
+
+  <input
+    class="ct-textfield ct-theme-light"
+    data-drupal-selector="platform-id"
+    id="platform-id"
+    name="platform-name"
+    type="text"
+  />
+  
 
 </div>
 `;
@@ -12,7 +37,8 @@ exports[`Textfield Component renders with optional attributes 1`] = `
 <div>
   
 
-  
+
+
   <input
     aria-invalid="true"
     class="ct-textfield ct-theme-dark ct-textfield--is-invalid custom-class"
@@ -33,7 +59,8 @@ exports[`Textfield Component renders with required attributes 1`] = `
 <div>
   
 
-  
+
+
   <input
     class="ct-textfield ct-theme-light"
     name="test-textfield"
@@ -49,7 +76,8 @@ exports[`Textfield Component strips HTML tags from attribute values 1`] = `
 <div>
   
 
-  
+
+
   <input
     class="ct-textfield ct-theme-light"
     data-test="<script>alert(1)</script>"

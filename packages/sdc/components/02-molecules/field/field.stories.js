@@ -5,9 +5,15 @@
 import Component from './field.twig';
 import FieldData from './field.stories.data';
 
+// The control markup is built from the atoms and passed into the component's
+// `control` slot; name/value/placeholder args feed the control builder, not
+// the field component itself.
+const render = (args) => Component({ ...args, control: FieldData.control(args) });
+
 const meta = {
   title: 'Molecules/Field',
   component: Component,
+  render,
   argTypes: {
     theme: {
       control: { type: 'radio' },
@@ -16,6 +22,9 @@ const meta = {
     type: {
       control: { type: 'select' },
       options: ['textfield', 'textarea', 'select', 'select_multiple', 'radio', 'checkbox', 'hidden', 'color', 'date', 'email', 'file', 'image', 'month', 'number', 'password', 'range', 'search', 'tel', 'time', 'url', 'week', 'other'],
+    },
+    is_group: {
+      control: { type: 'boolean' },
     },
     title: {
       control: { type: 'text' },
@@ -59,12 +68,6 @@ const meta = {
       control: { type: 'radio' },
       options: ['vertical', 'horizontal'],
     },
-    is_inline: {
-      control: { type: 'boolean' },
-    },
-    control: {
-      control: { type: 'object' },
-    },
     modifier_class: {
       control: { type: 'text' },
     },
@@ -91,8 +94,9 @@ export const FieldRadio = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { controls: true, is_required: true }),
+    ...FieldData.args('light', { is_required: true }),
     type: 'radio',
+    is_group: true,
   },
 };
 
@@ -101,8 +105,9 @@ export const FieldCheckbox = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { controls: true, is_required: true }),
+    ...FieldData.args('light', { is_required: true }),
     type: 'checkbox',
+    is_group: true,
   },
 };
 
@@ -111,7 +116,7 @@ export const FieldSelect = {
     layout: 'centered',
   },
   args: {
-    ...FieldData.args('light', { options: true, is_required: true }),
+    ...FieldData.args('light', { is_required: true }),
     type: 'select',
   },
 };

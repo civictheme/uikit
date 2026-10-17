@@ -46,7 +46,7 @@ describe('Pagination Component', () => {
       current: '2',
       items_per_page_title: 'Items per page',
       items_per_page_options: [
-        { type: 'option', label: '10', value: '10', selected: 'selected' },
+        { type: 'option', label: '10', value: '10', selected: true },
         { type: 'option', label: '20', value: '20' },
         { type: 'option', label: '50', value: '50' },
       ],
