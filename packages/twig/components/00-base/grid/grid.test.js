@@ -2,13 +2,13 @@ import DrupalAttribute from '@civictheme/drupal-attribute';
 import { format } from 'node:util';
 
 // Local replacement for jest-each: formats '%s' titles with util.format and
-// escapes newlines itself, so snapshot keys cannot change when jest updates
-// its own title formatting.
+// collapses them to a single line, so test names and snapshot keys contain
+// no newlines and cannot change when jest updates its own title formatting.
 const each = (rows) => ({
   test: (titleTemplate, testFn) => {
     rows.forEach((row) => {
       const args = Array.isArray(row) ? row : [row];
-      const name = format(titleTemplate, args[0]).replace(/\n/g, '\\n');
+      const name = format(titleTemplate, args[0]).replace(/\s*\n\s*/g, ' ');
       test(name, () => testFn(...args));
     });
   },
