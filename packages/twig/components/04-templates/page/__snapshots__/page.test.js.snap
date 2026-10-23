@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Page Component renders all blocks with complex attributes and classes 1`] = `
 <div>
@@ -636,15 +636,7 @@ exports[`Page Component renders all blocks with complex attributes and classes 1
 </div>
 `;
 
-exports[`Page Component renders content block with permutations: {
-  hide_sidebar_left: false,
-  hide_sidebar_right: false,
-  content: 'Main Content',
-  sidebar_top_left: 'Sidebar Top Left',
-  sidebar_top_right: 'Sidebar Top Right',
-  sidebar_bottom_left: 'Sidebar Bottom Left',
-  sidebar_bottom_right: 'Sidebar Bottom Right'
-} 1`] = `
+exports[`Page Component renders content block with permutations: { hide_sidebar_left: false, hide_sidebar_right: false, content: 'Main Content', sidebar_top_left: 'Sidebar Top Left', sidebar_top_right: 'Sidebar Top Right', sidebar_bottom_left: 'Sidebar Bottom Left', sidebar_bottom_right: 'Sidebar Bottom Right' } 1`] = `
 <div>
   
 
@@ -802,15 +794,7 @@ exports[`Page Component renders content block with permutations: {
 </div>
 `;
 
-exports[`Page Component renders content block with permutations: {
-  hide_sidebar_left: false,
-  hide_sidebar_right: true,
-  content: 'Main Content',
-  sidebar_top_left: 'Sidebar Top Left',
-  sidebar_top_right: '',
-  sidebar_bottom_left: 'Sidebar Bottom Left',
-  sidebar_bottom_right: ''
-} 1`] = `
+exports[`Page Component renders content block with permutations: { hide_sidebar_left: false, hide_sidebar_right: true, content: 'Main Content', sidebar_top_left: 'Sidebar Top Left', sidebar_top_right: '', sidebar_bottom_left: 'Sidebar Bottom Left', sidebar_bottom_right: '' } 1`] = `
 <div>
   
 
@@ -954,15 +938,7 @@ exports[`Page Component renders content block with permutations: {
 </div>
 `;
 
-exports[`Page Component renders content block with permutations: {
-  hide_sidebar_left: true,
-  hide_sidebar_right: false,
-  content: 'Main Content',
-  sidebar_top_left: '',
-  sidebar_top_right: 'Sidebar Top Right',
-  sidebar_bottom_left: '',
-  sidebar_bottom_right: 'Sidebar Bottom Right'
-} 1`] = `
+exports[`Page Component renders content block with permutations: { hide_sidebar_left: true, hide_sidebar_right: false, content: 'Main Content', sidebar_top_left: '', sidebar_top_right: 'Sidebar Top Right', sidebar_bottom_left: '', sidebar_bottom_right: 'Sidebar Bottom Right' } 1`] = `
 <div>
   
 
@@ -1106,15 +1082,7 @@ exports[`Page Component renders content block with permutations: {
 </div>
 `;
 
-exports[`Page Component renders content block with permutations: {
-  hide_sidebar_left: true,
-  hide_sidebar_right: true,
-  content: 'Main Content',
-  sidebar_top_left: '',
-  sidebar_top_right: '',
-  sidebar_bottom_left: '',
-  sidebar_bottom_right: ''
-} 1`] = `
+exports[`Page Component renders content block with permutations: { hide_sidebar_left: true, hide_sidebar_right: true, content: 'Main Content', sidebar_top_left: '', sidebar_top_right: '', sidebar_bottom_left: '', sidebar_bottom_right: '' } 1`] = `
 <div>
   
 

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://github.com/IBM/audit-ci/raw/main/docs/schema.json",
+  // Fail on high and critical advisories.
+  "high": true,
+  "allowlist": [
+    // GHSA-vfj7-8cjw-p6xm (CVE-2026-93687): braces <=3.0.3 stack-exhaustion DoS.
+    // Dev-only (stylelint's glob stack: micromatch/fast-glob/globby), no
+    // untrusted input reaches it, and no patched braces release exists.
+    // Remove this entry once braces ships a fix (micromatch/braces#70) or
+    // stylelint drops the dependency.
+    "GHSA-vfj7-8cjw-p6xm"
+  ]
+}
