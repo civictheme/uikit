@@ -33,6 +33,10 @@
     margin-top: ct-spacing();
   }
 
+  > #{$root}__title {
+    margin-bottom: 0;
+  }
+
   .ct-item-list__item {
     line-height: $_item-line_height;
   }

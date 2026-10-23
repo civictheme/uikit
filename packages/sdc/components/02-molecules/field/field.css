@@ -17,6 +17,9 @@
 .ct-field > * + * {
   margin-top: 0.5rem;
 }
+.ct-field > .ct-field__title {
+  margin-bottom: 0;
+}
 .ct-field .ct-item-list__item {
   line-height: 1.25rem;
 }
