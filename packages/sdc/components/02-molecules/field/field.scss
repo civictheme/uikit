@@ -33,8 +33,8 @@
     margin-top: ct-spacing();
   }
 
-  > #{$root}__title {
-    margin-bottom: 0;
+  > #{$root}__title + * {
+    margin-top: 0;
   }
 
   .ct-item-list__item {
