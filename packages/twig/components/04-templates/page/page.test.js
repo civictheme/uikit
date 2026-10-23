@@ -1,7 +1,5 @@
-import jestEach from 'jest-each';
+import each from 'jest-each';
 import DrupalAttribute from '@civictheme/drupal-attribute';
-
-const each = jestEach.default;
 
 const template = 'components/04-templates/page/page.twig';
 

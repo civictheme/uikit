@@ -1,7 +1,5 @@
 import DrupalAttribute from '@civictheme/drupal-attribute';
-import jestEach from 'jest-each';
-
-const each = jestEach.default;
+import each from 'jest-each';
 
 const template = 'components/00-base/grid/grid.twig';
 
