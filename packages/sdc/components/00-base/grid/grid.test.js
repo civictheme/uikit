@@ -1,5 +1,18 @@
 import DrupalAttribute from '@civictheme/drupal-attribute';
-import each from 'jest-each';
+import { format } from 'node:util';
+
+// Local replacement for jest-each: formats '%s' titles with util.format and
+// escapes newlines itself, so snapshot keys cannot change when jest updates
+// its own title formatting.
+const each = (rows) => ({
+  test: (titleTemplate, testFn) => {
+    rows.forEach((row) => {
+      const args = Array.isArray(row) ? row : [row];
+      const name = format(titleTemplate, args[0]).replace(/\n/g, '\\n');
+      test(name, () => testFn(...args));
+    });
+  },
+});
 
 const template = 'components/00-base/grid/grid.twig';
 
