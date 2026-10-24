@@ -15,11 +15,11 @@ props:
     name:
       type: string
       title: Name
-      description: DOM name (required).
+      description: DOM name (or provide it via attributes).
     id:
       type: string
       title: ID
-      description: DOM id (required).
+      description: DOM id (or provide it via attributes).
     value:
       type: [string, boolean]
       title: Value
@@ -39,7 +39,7 @@ props:
     is_invalid:
       type: boolean
       title: Invalid
-      description: Whether the radio is invalid.
+      description: Whether the radio is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
     is_disabled:
       type: boolean
       title: Disabled

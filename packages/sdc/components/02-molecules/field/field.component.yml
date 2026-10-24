@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Field
 status: stable
-description: Main entry point component for building form fields with labels, descriptions, and validation
+description: Form field wrapper rendering the label, description, validation message and a control provided via the control slot
 props:
   type: object
   properties:
@@ -15,19 +15,38 @@ props:
     type:
       type: string
       title: Type
-      description: Type defined by a control type (required).
+      description: Control type, used for presentation only (type class; hidden suppresses title, description and message).
+    is_group:
+      type: boolean
+      title: Group
+      description: Whether the field wraps a group of options - the root element becomes a <fieldset> and the title renders as its <legend> (title_position is ignored).
+      default: false
     title:
       type: string
       title: Title
       description: Field title.
+    title_position:
+      type: string
+      title: Title position
+      description: Where the title renders. "before" places it above the control; "after" places it as a label following the control with the description below. Ignored for groups. Defaults to "after" when title_display is "after" and for a single (non-group) checkbox or radio.
+      enum:
+        - before
+        - after
+      default: before
     title_display:
       type: string
       title: Title display
-      description: How to display the field title (visible, invisible, hidden).
+      description: How to display the field title. Canonical values are visible, invisible and hidden. The Drupal form vocabulary is accepted and normalised ("before", "after" and "inline" mean visible and carry the title position and orientation, "visually_hidden" means invisible, "none" and "attribute" mean hidden).
       enum:
         - visible
         - invisible
         - hidden
+        - before
+        - after
+        - inline
+        - visually_hidden
+        - none
+        - attribute
       default: visible
     title_size:
       type: string
@@ -40,85 +59,42 @@ props:
         - large
         - extra-large
       default: regular
-    label:
-      type: string
-      title: Label
-      description: Control label (required only for a radio group or checkbox).
     description:
       type: string
       title: Description
-      description: Field description.
-    name:
-      type: string
-      title: Name
-      description: Control DOM name (propagated from `name` if not defined).
-    value:
-      type: string
-      title: Value
-      description: Control DOM value (propagated from `value` if not defined).
+      description: Field description. Rendered with id "{id}--description" when the id prop is set, for controls to reference via aria-describedby.
     id:
       type: string
       title: ID
-      description: Control DOM ID.
+      description: The control DOM ID, used for the title label's "for" attribute and the description and error message ids.
     is_invalid:
       type: boolean
       title: Invalid
-      description: Whether the control is invalid (propagated from `is_invalid` if not defined).
+      description: Whether the field is invalid.
     is_disabled:
       type: boolean
       title: Disabled
-      description: Whether the control is disabled (propagated from `is_disabled` if not defined).
+      description: Whether the field is disabled.
     is_required:
       type: boolean
       title: Required
-      description: Whether the control is required (propagated from `is_required` if not defined).
+      description: Whether the field is required.
     required_text:
       type: string
       title: Required text
-      description: Text to display within label element when required (propagated).
+      description: Text to display within the label element when required.
     orientation:
       type: string
       title: Orientation
-      description: Elements orientation (vertical or horizontal).
+      description: Elements orientation (vertical or horizontal). Defaults to horizontal when title_display is "inline".
       enum:
         - vertical
         - horizontal
       default: vertical
-    is_inline:
-      type: boolean
-      title: Inline
-      description: Whether the complex control is shown inline.
-    control:
-      type: [object, array]
-      title: Control
-      description: Object or objects collection with control's properties (required for complex controls).
-    options:
-      type: array
-      title: Options
-      description: Options for the field input.
-      items:
-        type: object
-        properties:
-          value:
-            type: string
-            title: Value
-            description: Option value
-          label:
-            type: string
-            title: Label
-            description: Option label
-    is_multiple:
-      type: boolean
-      title: Multiple
-      description: Whether the field allows multiple values.
-    placeholder:
-      type: string
-      title: Placeholder
-      description: Placeholder text for field.
     message:
-      type: object
+      type: ['object', 'null']
       title: Message
-      description: Message object for showing messages.
+      description: Message object for showing messages, or null for none. When no attributes are provided and the id prop is set, the message renders with id "{id}--error-message", for controls to reference via aria-describedby.
       properties:
         content:
           type: string
@@ -127,12 +103,16 @@ props:
     prefix:
       type: string
       title: Prefix
-      description: Content to add before the field.
+      description: Content to add before the control.
     suffix:
       type: string
       title: Suffix
-      description: Content to add after the field.
+      description: Content to add after the control.
     modifier_class:
       type: string
       title: Modifier classes
       description: Additional CSS classes.
+slots:
+  control:
+    title: Control
+    description: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root; also fillable by overriding the "control_block" block in an embed.

@@ -3,482 +3,327 @@ import DrupalAttribute from '@civictheme/drupal-attribute';
 const template = 'components/02-molecules/field/field.twig';
 
 describe('Field Component', () => {
-  test('nothing is rendered if name is not provided', async () => {
-    const c = await dom(template, { other: 'test' });
-
-    expect(c.querySelectorAll('.ct-field')).toHaveLength(0);
-  });
-
   test('default values', async () => {
-    const c = await dom(template, {
-      name: 'test',
-    });
+    const c = await dom(template, {});
 
     // Default classes.
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
+    expect(c.querySelectorAll('div.ct-field')).toHaveLength(1);
 
     // Default field type.
     expect(c.querySelectorAll('.ct-field.ct-field--hidden')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="hidden"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="hidden"].ct-input.ct-theme-light.ct-field__control')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
 
-  test('values', async () => {
+  test('control slot renders as a direct child of the field root', async () => {
     const c = await dom(template, {
-      name: 'testname',
-      value: 'testvalue',
+      type: 'textfield',
+      control: '<input type="text" name="slotted" id="testid" class="external-control">',
     });
 
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field.ct-field--hidden')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="hidden"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="hidden"].ct-input.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="hidden"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="hidden"][name="testname"][value="testvalue"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field > input.external-control[name="slotted"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
 
   test('theme, orientation, and invalid state', async () => {
     const c = await dom(template, {
-      name: 'testname',
       type: 'textfield',
       theme: 'dark',
       is_invalid: true,
       orientation: 'horizontal',
+      control: '<input type="text" name="testname">',
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-dark.ct-field--horizontal.ct-field--invalid')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-dark.ct-field__control')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
+    assertUniqueCssClasses(c);
+  });
+
+  test('wrapper attributes and modifier class', async () => {
+    const c = await dom(template, {
+      type: 'textfield',
+      modifier_class: 'custom-modifier',
+      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
+      control: '<input type="text" name="testname">',
+    });
+
+    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(1);
+
     assertUniqueCssClasses(c);
   });
 
   test('required, disabled, and description', async () => {
     const c = await dom(template, {
-      name: 'testname',
       type: 'textfield',
       is_required: true,
       is_disabled: true,
       description: 'This is a description',
+      control: '<input type="text" name="testname">',
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical.ct-field--required.ct-field--disabled')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__description')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field > .ct-field__description')).toHaveLength(1);
     expect(c.querySelector('.ct-field .ct-field__description').textContent.trim()).toEqual('This is a description');
     assertUniqueCssClasses(c);
   });
 
-  test('textfield', async () => {
+  test('title is linked to the control id and carries the required marker', async () => {
     const c = await dom(template, {
       type: 'textfield',
       title: 'Test Title',
-      name: 'testname',
-      value: 'testvalue',
-      id: 'testid',
-      modifier_class: 'custom-modifier',
-      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-    });
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][id="testid"]')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(0);
-
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('single control as object propagation', async () => {
-    const c = await dom(template, {
-      type: 'textfield',
-      title: 'Test Title',
-      control: {
-        name: 'testname',
-        value: 'testvalue',
-        id: 'testid',
-        modifier_class: 'custom-modifier',
-        attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-      },
-    });
-    expect(c.innerHTML).toContain('ct-field');
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][id="testid"]')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(1);
-
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('single control as array propagation', async () => {
-    const c = await dom(template, {
-      type: 'textfield',
-      title: 'Test Title',
-      control: [{
-        name: 'testname',
-        value: 'testvalue',
-        id: 'testid',
-        modifier_class: 'custom-modifier',
-        attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-      }],
-    });
-    expect(c.innerHTML).toContain('ct-field');
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"].ct-textfield.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"][id="testid"]')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(1);
-
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('multiple control as array propagation - textfield', async () => {
-    const c = await dom(template, {
-      type: 'textfield',
-      title: 'Test Title',
-      control: [
-        {
-          name: 'testname',
-          value: 'testvalue',
-          id: 'testid',
-          modifier_class: 'custom-modifier',
-          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-        },
-        {
-          name: 'testname2',
-          value: 'testvalue2',
-          id: 'testid2',
-          modifier_class: 'custom-modifier2',
-          attributes: new DrupalAttribute().setAttribute('data-test', 'false'),
-        },
-      ],
-    });
-    expect(c.innerHTML).toContain('ct-field');
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="text"][name="testname2"]')).toHaveLength(0);
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('multiple control as array propagation - checkbox', async () => {
-    const c = await dom(template, {
-      type: 'checkbox',
-      title: 'Test Title',
-      control: [
-        {
-          name: 'testname',
-          value: 'testvalue',
-          id: 'testid',
-          modifier_class: 'custom-modifier',
-          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-        },
-        {
-          name: 'testname',
-          value: 'testvalue2',
-          id: 'testid2',
-          is_checked: true,
-          modifier_class: 'custom-modifier2',
-          attributes: new DrupalAttribute().setAttribute('data-test', 'false'),
-        },
-      ],
-    });
-    expect(c.innerHTML).toContain('ct-field');
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"]')).toHaveLength(2);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid"][checked]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue2"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"][checked]')).toHaveLength(1);
-
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('multiple control as array propagation with mixed levels - checkbox', async () => {
-    const c = await dom(template, {
-      type: 'checkbox',
-      title: 'Test Title',
-      name: 'testname',
-      id: 'testid',
-      modifier_class: 'custom-modifier-parent',
-      attributes: new DrupalAttribute().setAttribute('data-test-parent', 'true'),
-      control: [
-        {
-          label: 'Checkbox 1',
-          value: 'testvalue',
-          id: 'testid1',
-          modifier_class: 'custom-modifier-nested1',
-          attributes: new DrupalAttribute().setAttribute('data-test-nested1', 'true'),
-        },
-        {
-          label: 'Checkbox 2',
-          value: 'testvalue2',
-          id: 'testid2',
-        },
-      ],
-    });
-    expect(c.innerHTML).toContain('ct-field');
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"]')).toHaveLength(2);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][value="testvalue2"]')).toHaveLength(1);
-
-    // Parent ids are not propagated to the nested elements - nested elements
-    // must provide their own ids.
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid1"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="checkbox"][name="testname"][id="testid2"]')).toHaveLength(1);
-
-    // expect(container.innerHTML).toContain('ct-field1');
-    // Do not propagate the attributes to the nested elements.
-    expect(c.querySelectorAll('.ct-field[data-test-parent="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[data-test-nested1="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[data-test-parent="true"]')).toHaveLength(0);
-    // Do not propagate the classes to the nested elements.
-    expect(c.querySelectorAll('.ct-field.custom-modifier-parent')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input.custom-modifier-nested1')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input.custom-modifier-parent')).toHaveLength(0);
-
-    // Do not use [for] on label when multiple controls passed.
-    expect(c.querySelectorAll('.ct-field .ct-label.ct-field__title')).toHaveLength(1);
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label.ct-checkbox__label[for="testid1"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-label.ct-checkbox__label[for="testid2"]')).toHaveLength(1);
-    expect(c.querySelector('.ct-field .ct-label.ct-checkbox__label[for="testid1"]').textContent.trim()).toEqual('Checkbox 1');
-    expect(c.querySelector('.ct-field .ct-label.ct-checkbox__label[for="testid2"]').textContent.trim()).toEqual('Checkbox 2');
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('textarea with all attributes', async () => {
-    const c = await dom(template, {
-      type: 'textarea',
-      title: 'Test Title',
-      name: 'testname',
-      value: 'testvalue',
       id: 'testid',
       is_required: true,
-      is_invalid: true,
-      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-      modifier_class: 'custom-modifier',
+      control: '<input type="text" name="testname" id="testid">',
     });
 
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical.ct-field--required.ct-field--invalid')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field.ct-field--textarea')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field textarea')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field textarea.ct-textarea.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field textarea[name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field textarea[name="testname"][id="testid"]')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field textarea[data-test="true"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field textarea.custom-modifier')).toHaveLength(0);
-
+    expect(c.querySelectorAll('.ct-field > .ct-label.ct-field__title[for="testid"]')).toHaveLength(1);
     expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title (required)');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
 
-  test('select', async () => {
-    const c = await dom(template, {
-      type: 'select',
-      title: 'Test Title',
-      name: 'testname',
-      value: 'testvalue',
-      id: 'testid',
-      options: [
-        { value: '1', label: 'Option 1' },
-        { value: '2', label: 'Option 2' },
-      ],
-      modifier_class: 'custom-modifier',
-      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-    });
-
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field.ct-field--select')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field select')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field select.ct-select.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field select[name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field select[name="testname"][id="testid"]')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field select[data-test="true"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field select.custom-modifier')).toHaveLength(0);
-
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
-
-    assertUniqueCssClasses(c);
-  });
-
-  test('radio', async () => {
-    const c = await dom(template, {
-      type: 'radio',
-      title: 'Test Title',
-      control: [
-        {
-          name: 'testname',
-          value: 'testvalue',
+  describe('option groups (is_group)', () => {
+    test('the root element is a fieldset and the title renders as its legend', async () => {
+      for (const type of ['checkbox', 'radio']) {
+        const c = await dom(template, {
+          type,
+          is_group: true,
+          title: 'Test Title',
           id: 'testid',
-          is_checked: false,
-          modifier_class: 'custom-modifier',
-          attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-        },
-        {
-          name: 'testname',
-          value: 'testvalue2',
-          id: 'testid2',
-          is_checked: true,
-          modifier_class: 'custom-modifier2',
-          attributes: new DrupalAttribute().setAttribute('data-test', 'false'),
-        },
-      ],
+          control: `<input type="${type}" name="testname" id="testid">`,
+        }, false);
+
+        expect(c.querySelectorAll('fieldset.ct-field.ct-field--group')).toHaveLength(1);
+        expect(c.querySelectorAll('fieldset.ct-field > legend.ct-label.ct-field__title')).toHaveLength(1);
+        expect(c.querySelector('legend.ct-field__title').textContent.trim()).toEqual('Test Title');
+        expect(c.querySelectorAll('.ct-field .ct-label[for]')).toHaveLength(0);
+
+        assertUniqueCssClasses(c);
+      }
     });
-    expect(c.innerHTML).toContain('ct-field');
 
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
+    test('attributes render on the fieldset root', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        is_group: true,
+        title: 'Test Title',
+        attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
+        control: '<input type="checkbox" name="testname">',
+      });
 
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"]')).toHaveLength(2);
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid"][checked]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][value="testvalue2"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid2"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="radio"][name="testname"][id="testid2"][checked]')).toHaveLength(1);
+      expect(c.querySelectorAll('fieldset.ct-field[data-test="true"]')).toHaveLength(1);
 
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
+      assertUniqueCssClasses(c);
+    });
+
+    test('a hidden group title degrades to a visually hidden legend, keeping the fieldset', async () => {
+      for (const titleDisplay of ['hidden', 'none']) {
+        const c = await dom(template, {
+          type: 'checkbox',
+          is_group: true,
+          title: 'Test Title',
+          title_display: titleDisplay,
+          control: '<input type="checkbox" name="testname">',
+        }, false);
+
+        expect(c.querySelectorAll('fieldset.ct-field')).toHaveLength(1);
+        expect(c.querySelectorAll('legend.ct-field__title.ct-visually-hidden')).toHaveLength(1);
+
+        assertUniqueCssClasses(c);
+      }
+    });
+
+    test('a group without a title renders the fieldset without a legend', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        is_group: true,
+        title: '',
+        control: '<input type="checkbox" name="testname">',
+      });
+
+      expect(c.querySelectorAll('fieldset.ct-field')).toHaveLength(1);
+      expect(c.querySelectorAll('legend')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('the group description renders after the legend', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        is_group: true,
+        title: 'Test Title',
+        id: 'testid',
+        description: 'This is a description',
+        control: '<input type="checkbox" name="testname">',
+      });
+
+      const root = c.querySelector('fieldset.ct-field');
+      expect(root.innerHTML.indexOf('ct-field__title')).toBeLessThan(root.innerHTML.indexOf('ct-field__description'));
+      expect(root.innerHTML.indexOf('ct-field__description')).toBeLessThan(root.innerHTML.indexOf('<input'));
+      expect(c.querySelectorAll('.ct-field__description[id="testid--description"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+  });
+
+  test('a single checkbox or radio renders a label beside the control, not a fieldset', async () => {
+    for (const type of ['checkbox', 'radio']) {
+      const c = await dom(template, {
+        type,
+        title: 'Test Title',
+        id: 'testid',
+        control: `<input type="${type}" name="testname" id="testid">`,
+      }, false);
+
+      expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+      expect(c.querySelectorAll('legend')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field > label.ct-field__label[for="testid"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    }
+  });
+
+  test('an explicit before position renders the single checkbox label above the control', async () => {
+    const c = await dom(template, {
+      type: 'checkbox',
+      title: 'Test Title',
+      title_position: 'before',
+      id: 'testid',
+      control: '<input type="checkbox" name="testname" id="testid">',
+    });
+
+    expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-field > label.ct-field__title[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
 
-  test('default input', async () => {
+  test('a hidden single checkbox title degrades to a visually hidden label', async () => {
     const c = await dom(template, {
-      type: 'email',
+      type: 'checkbox',
       title: 'Test Title',
-      name: 'testname',
-      value: 'testvalue',
+      title_display: 'hidden',
       id: 'testid',
-      modifier_class: 'custom-modifier',
-      attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
+      control: '<input type="checkbox" name="testname" id="testid">',
     });
 
-    expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field .ct-field__wrapper')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="email"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="email"].ct-input.ct-theme-light.ct-field__control')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field input[type="email"][name="testname"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="email"][name="testname"][value="testvalue"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[type="email"][name="testname"][id="testid"]')).toHaveLength(1);
-
-    expect(c.querySelectorAll('.ct-field[data-test="true"]')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input[data-test="true"]')).toHaveLength(0);
-    expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
-    expect(c.querySelectorAll('.ct-field input.custom-modifier')).toHaveLength(0);
-
-    expect(c.querySelector('.ct-field .ct-label.ct-field__title').textContent.trim()).toEqual('Test Title');
-    expect(c.querySelectorAll('.ct-field .ct-label[for="testid"]')).toHaveLength(1);
+    expect(c.querySelectorAll('.ct-field > label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
+  });
+
+  test('prefix and suffix', async () => {
+    const c = await dom(template, {
+      type: 'textfield',
+      prefix: 'Prefix content',
+      suffix: 'Suffix content',
+      control: '<input type="text" name="testname">',
+    });
+
+    expect(c.querySelector('.ct-field > .ct-field__prefix').textContent.trim()).toEqual('Prefix content');
+    expect(c.querySelector('.ct-field > .ct-field__suffix').textContent.trim()).toEqual('Suffix content');
+
+    assertUniqueCssClasses(c);
+  });
+
+  describe('title_position after (single checkbox/radio layout)', () => {
+    test('renders the label directly after the control, with the description below', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        title: 'Agree to the terms',
+        title_position: 'after',
+        id: 'testid',
+        is_required: true,
+        description: 'This is a description',
+        control: '<input type="checkbox" name="agree" id="testid">',
+      });
+
+      expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+      expect(c.querySelectorAll('legend')).toHaveLength(0);
+
+      const root = c.querySelector('.ct-field');
+      expect(root.querySelectorAll(':scope > input[name="agree"]')).toHaveLength(1);
+      expect(root.querySelectorAll(':scope > label.ct-field__label[for="testid"]')).toHaveLength(1);
+      expect(root.querySelector('label').textContent).toContain('Agree to the terms');
+      expect(root.querySelector('label').textContent).toContain('(required)');
+      // The label follows the control in document order.
+      expect(root.innerHTML.indexOf('<input')).toBeLessThan(root.innerHTML.indexOf('<label'));
+
+      // The description renders after the control and label.
+      expect(root.innerHTML.indexOf('<label')).toBeLessThan(root.innerHTML.indexOf('ct-field__description'));
+      expect(c.querySelectorAll('.ct-field > .ct-field__description[id="testid--description"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('invisible title renders a visually hidden label after the control', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        title: 'Hidden title',
+        title_position: 'after',
+        title_display: 'invisible',
+        id: 'testid',
+        control: '<input type="checkbox" name="agree" id="testid">',
+      });
+
+      expect(c.querySelectorAll('.ct-field > label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+  });
+
+  describe('description references', () => {
+    test('description receives an id derived from the field id', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        id: 'testid',
+        description: 'This is a description',
+        control: '<input type="text" name="testname" id="testid" aria-describedby="testid--description">',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__description[id="testid--description"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('description has no id without a field id', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        description: 'This is a description',
+        control: '<input type="text" name="testname">',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__description')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field .ct-field__description[id]')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+    });
   });
 
   describe('field messages', () => {
-    test('custom message renders correctly when message object is passed', async () => {
+    test('message renders with content and attributes', async () => {
       const c = await dom(template, {
-        name: 'testname',
         type: 'textfield',
         message: {
-          content: 'Custom error message',
+          content: 'Message content sample.',
           attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
+        control: '<input type="text" name="testname">',
       });
 
       const messageElement = c.querySelector('.ct-field .ct-field__message');
       expect(messageElement).not.toBeNull();
-      expect(messageElement.textContent.trim()).toBe('Custom error message');
+      expect(messageElement.textContent.trim()).toBe('Message content sample.');
       expect(messageElement.getAttribute('data-test')).toBe('true');
       assertUniqueCssClasses(c);
     });
 
     test('default message renders when field is invalid without message object and no field title', async () => {
       const c = await dom(template, {
-        name: 'testname',
         type: 'textfield',
         is_invalid: true,
+        control: '<input type="text" name="testname">',
       });
 
       const messageElement = c.querySelector('.ct-field .ct-field__message');
@@ -488,15 +333,54 @@ describe('Field Component', () => {
       assertUniqueCssClasses(c);
     });
 
+    test('message receives an id derived from the field id when no attributes are provided', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        id: 'testid',
+        is_invalid: true,
+        message: {
+          content: 'Message content sample.',
+        },
+        control: '<input type="text" name="testname" id="testid" aria-describedby="testid--error-message">',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__message[id="testid--error-message"]')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('message has no derived id without a field id, and explicit message attributes win', async () => {
+      const withoutId = await dom(template, {
+        type: 'textfield',
+        is_invalid: true,
+        message: { content: 'Message content sample.' },
+        control: '<input type="text" name="testname">',
+      });
+      expect(withoutId.querySelectorAll('.ct-field .ct-field__message[id]')).toHaveLength(0);
+
+      const withExplicitAttributes = await dom(template, {
+        type: 'textfield',
+        id: 'testid',
+        is_invalid: true,
+        message: {
+          content: 'Message content sample.',
+          attributes: new DrupalAttribute().setAttribute('id', 'custom-id'),
+        },
+        control: '<input type="text" name="testname" id="testid">',
+      });
+      expect(withExplicitAttributes.querySelectorAll('.ct-field .ct-field__message[id="custom-id"]')).toHaveLength(1);
+      expect(withExplicitAttributes.querySelectorAll('.ct-field .ct-field__message[id="testid--error-message"]')).toHaveLength(0);
+    });
+
     test('default message renders when message object has no content and title is present', async () => {
       const c = await dom(template, {
-        name: 'testname',
         title: 'Test input',
         type: 'textfield',
         is_invalid: true,
         message: {
           attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
+        control: '<input type="text" name="testname">',
       });
 
       const messageElement = c.querySelector('.ct-field .ct-field__message');
@@ -504,6 +388,21 @@ describe('Field Component', () => {
       expect(messageElement.textContent.trim()).toBe('Field Test input has an error');
       expect(messageElement.getAttribute('data-test')).toBe('true');
       expect(c.querySelectorAll('.ct-field--invalid')).toHaveLength(1);
+      assertUniqueCssClasses(c);
+    });
+
+    test('no message or description renders for the hidden type', async () => {
+      const c = await dom(template, {
+        type: 'hidden',
+        title: 'Test Title',
+        description: 'This is a description',
+        is_invalid: true,
+        control: '<input type="hidden" name="testname">',
+      });
+
+      expect(c.querySelectorAll('.ct-field .ct-field__message')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field .ct-field__description')).toHaveLength(0);
+      expect(c.querySelectorAll('.ct-field .ct-field__title')).toHaveLength(0);
       assertUniqueCssClasses(c);
     });
   });
@@ -515,16 +414,72 @@ describe('Field Component', () => {
     { title: '', titleDisplay: 'visible', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'empty title with textfield' },
     { title: 'Test Title', titleDisplay: 'visible', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'visible title with hidden input' },
     { title: 'Test Title', titleDisplay: 'hidden', type: 'hidden', expected: 0, selector: '.ct-field__title', description: 'hidden title with hidden input' },
+    // Drupal form vocabulary is accepted and normalised.
+    { title: 'Test Title', titleDisplay: 'before', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'drupal "before" renders a visible title' },
+    { title: 'Test Title', titleDisplay: 'inline', type: 'textfield', expected: 1, selector: '.ct-field__title', description: 'drupal "inline" renders a visible title' },
+    { title: 'Test Title', titleDisplay: 'visually_hidden', type: 'textfield', expected: 1, selector: '.ct-field__title.ct-visually-hidden', description: 'drupal "visually_hidden" renders an invisible title' },
+    { title: 'Test Title', titleDisplay: 'none', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'drupal "none" renders no title' },
+    { title: 'Test Title', titleDisplay: 'attribute', type: 'textfield', expected: 0, selector: '.ct-field__title', description: 'drupal "attribute" renders no title' },
   ])('Field Component - $description', ({ title, titleDisplay, type, expected, selector }) => {
     test(`renders ${expected} title(s)`, async () => {
       const c = await dom(template, {
         title,
         title_display: titleDisplay,
         type,
-        name: 'testname',
+        control: '<input type="text" name="testname">',
       });
 
       expect(c.querySelectorAll(selector)).toHaveLength(expected);
+    });
+  });
+
+  describe('drupal title_display vocabulary side effects', () => {
+    test('"after" places the title after the control without an explicit title_position', async () => {
+      const c = await dom(template, {
+        type: 'checkbox',
+        title: 'Agree to the terms',
+        title_display: 'after',
+        id: 'testid',
+        control: '<input type="checkbox" name="agree" id="testid">',
+      });
+
+      const root = c.querySelector('.ct-field');
+      expect(root.querySelectorAll(':scope > label.ct-field__label[for="testid"]')).toHaveLength(1);
+      expect(root.innerHTML.indexOf('<input')).toBeLessThan(root.innerHTML.indexOf('<label'));
+      expect(c.querySelectorAll('fieldset')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('"inline" renders a horizontal field without an explicit orientation', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        title: 'Inline title',
+        title_display: 'inline',
+        control: '<input type="text" name="testname">',
+      });
+
+      expect(c.querySelectorAll('.ct-field.ct-field--horizontal')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field__title')).toHaveLength(1);
+
+      assertUniqueCssClasses(c);
+    });
+
+    test('explicit title_position and orientation win over the title_display vocabulary', async () => {
+      const c = await dom(template, {
+        type: 'textfield',
+        title: 'Test Title',
+        title_display: 'after',
+        title_position: 'before',
+        orientation: 'vertical',
+        control: '<input type="text" name="testname">',
+      });
+
+      expect(c.querySelectorAll('.ct-field.ct-field--vertical')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field > .ct-label.ct-field__title')).toHaveLength(1);
+      expect(c.querySelectorAll('.ct-field .ct-field__label')).toHaveLength(0);
+
+      assertUniqueCssClasses(c);
     });
   });
 });

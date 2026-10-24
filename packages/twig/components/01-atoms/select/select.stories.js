@@ -58,8 +58,8 @@ export const Select = {
           {
             label: 'Option label',
             value: 'Option value',
-            is_selected: false,
-            is_disabled: false,
+            selected: false,
+            disabled: false,
           },
         ],
       },

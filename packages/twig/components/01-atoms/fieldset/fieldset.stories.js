@@ -6,6 +6,10 @@ import Component from './fieldset.twig';
 import FieldData from '../../02-molecules/field/field.stories.data';
 import Field from '../../02-molecules/field/field.twig';
 
+// The control markup is built from the atoms and passed into the field
+// component's `control` slot.
+const field = (args) => Field({ ...args, control: FieldData.control(args) });
+
 const meta = {
   title: 'Atoms/Form Controls/Fieldset',
   component: Component,
@@ -66,8 +70,8 @@ export const Fieldset = {
     message: 'Fieldset example message',
     message_type: 'error',
     fields: [
-      Field({ ...FieldData.args('light', { controls: true, is_required: true }), type: 'checkbox', description: '', message: '' }),
-      Field({ ...FieldData.args('light', { controls: true, is_required: true }), type: 'radio', message: '' }),
+      field({ ...FieldData.args('light', { is_required: true }), type: 'checkbox', is_group: true, description: '', message: '' }),
+      field({ ...FieldData.args('light', { is_required: true }), type: 'radio', is_group: true, message: '' }),
     ].join('').trim(),
     is_required: true,
     required_text: '',

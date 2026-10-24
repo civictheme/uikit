@@ -6,11 +6,11 @@
  * Props:
  * - theme: [string] Theme variation (light or dark).
  * - type: [string] Input type (text, password, email, etc.).
- * - name: [string] DOM name (required).
+ * - name: [string] DOM name (or provide it via attributes).
  * - id: [string] DOM id.
  * - value: [string] The input value.
  * - placeholder: [string] Placeholder text.
- * - is_invalid: [boolean] Whether the input is invalid.
+ * - is_invalid: [boolean] Whether the input is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
  * - is_disabled: [boolean] Whether the input is disabled.
  * - is_required: [boolean] Whether the input is required.
  * - modifier_class: [string] Additional CSS classes.
@@ -22,17 +22,16 @@
 {% set is_invalid_class = is_invalid ? 'ct-input--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-{% if name is not empty %}
-  <input
-    type="{{ type }}"
-    class="ct-input {{ modifier_class -}}"
-    name="{{ name }}"
-    {% if value is not empty %}value="{{ value }}"{% endif %}
-    {% if id %}id="{{ id }}"{% endif %}
-    {% if is_disabled %}disabled{% endif %}
-    {% if is_required %}required{% endif %}
-    {% if is_invalid %}aria-invalid="true"{% endif %}
-    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
-  />
-{% endif %}
+<input
+  {% if type %}type="{{ type }}"{% endif %}
+  class="ct-input {{ modifier_class -}}"
+  {% if name is not empty %}name="{{ name }}"{% endif %}
+  {% if value is not empty %}value="{{ value }}"{% endif %}
+  {% if id %}id="{{ id }}"{% endif %}
+  {% if is_disabled %}disabled{% endif %}
+  {% if is_required %}required{% endif %}
+  {% if is_invalid %}aria-invalid="true"{% endif %}
+  {% if is_invalid and id is not empty %}aria-describedby="{{ id }}--error-message"{% endif %}
+  {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
+/>

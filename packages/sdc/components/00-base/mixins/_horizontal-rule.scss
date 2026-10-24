@@ -1,0 +1,12 @@
+//
+// Horizontal rule mixins.
+//
+
+// The single source of the rule look: used by the Horizontal Rule atom for
+// standalone placement and by ct-content for hr elements authored inside
+// rich text, so the two never drift.
+@mixin ct-horizontal-rule {
+  margin: ct-spacing(3) 0;
+  border: 0;
+  border-top: 1px solid var(--ct-color-border);
+}
