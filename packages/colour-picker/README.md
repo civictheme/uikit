@@ -132,7 +132,13 @@ serve    [--port 8420] [--storybook-url …]    # the human UI, locally
 `overrides.scss` (only the changed custom properties, loadable after the
 stock variables), `figma/{light,dark}.tokens.json` (native Import mode) and
 `figma/name-map.json`. An identity emit is byte-identical to the tokens
-dist. `generate` prints the recipe with its freshly solved `generated` key
+dist. **Figma import caveat:** Figma's native mode-import only *updates*
+variables whose names already exist in the collection — it never creates
+them, so recipe `additions` (emitted under `Custom/`, or `Component/` for
+component additions) show as per-token import errors. `emit` lists them;
+create those variables once in the collection (any mode value, names as
+listed or in `figma/name-map.json`), then re-import both mode files and
+every later import matches them by name. `generate` prints the recipe with its freshly solved `generated` key
 (`--write` updates the `--recipe` file in place; `--json` adds the per-slot
 QA rows). `init-skill` installs the AI skill below into `./.claude/skills/`.
 Exit codes: 0 success, 1 failure (or `check --strict` with failing
