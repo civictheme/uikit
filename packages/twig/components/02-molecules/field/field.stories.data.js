@@ -13,7 +13,7 @@ const selectOptions = [1, 2, 3].map((i) => ({
   selected: false,
 }));
 
-const control = (args) => {
+const children = (args) => {
   const {
     theme = 'light', type = 'textfield', name, id, value = '', placeholder = '', is_required = false, is_invalid = false, is_disabled = false,
   } = args;
@@ -53,7 +53,7 @@ const control = (args) => {
 };
 
 export default {
-  control,
+  children,
   args: (theme = 'light', options = {}) => {
     const fieldId = `field_id_${Math.floor(Math.random() * 1000)}`;
     return {

@@ -2,8 +2,8 @@ import Field from '../field/field.twig';
 import FieldData from '../field/field.stories.data';
 
 // The control markup is built from the atoms and passed into the field
-// component's `control` slot.
-const field = (args) => Field({ ...args, control: FieldData.control(args) });
+// component's `children` slot.
+const field = (args) => Field({ ...args, children: FieldData.children(args) });
 
 export default {
   args: (theme = 'light', options = {}) => {

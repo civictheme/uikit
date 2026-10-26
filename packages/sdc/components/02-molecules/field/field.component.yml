@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Field
 status: stable
-description: Form field wrapper rendering the label, description, validation message and a control provided via the control slot
+description: Form field wrapper rendering the label, description, validation message and a control provided via the children slot
 props:
   type: object
   properties:
@@ -113,6 +113,6 @@ props:
       title: Modifier classes
       description: Additional CSS classes.
 slots:
-  control:
-    title: Control
-    description: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root; also fillable by overriding the "control_block" block in an embed.
+  children:
+    title: Children
+    description: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root.

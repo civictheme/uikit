@@ -27,10 +27,7 @@
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
- * - control: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root; also fillable by overriding the "control_block" block in an embed.
- *
- * Blocks:
- * - control_block
+ * - children: Pre-rendered control markup (form controls built from the atoms, or markup rendered by the consuming platform). Printed as a direct child of the field root.
  */
 #}
 
@@ -96,9 +93,7 @@
     <div class="ct-field__prefix">{{- prefix -}}</div>
   {% endif %}
 
-  {%- block control_block -%}
-    {{- control -}}
-  {%- endblock -%}
+  {{- children -}}
   {%- if show_title and not is_group and title_position == 'after' %}
     {% include 'civictheme:label' with {
       theme: theme,

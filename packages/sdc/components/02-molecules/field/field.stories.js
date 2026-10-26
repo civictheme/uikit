@@ -6,9 +6,9 @@ import Component from './field.twig';
 import FieldData from './field.stories.data';
 
 // The control markup is built from the atoms and passed into the component's
-// `control` slot; name/value/placeholder args feed the control builder, not
+// `children` slot; name/value/placeholder args feed the control builder, not
 // the field component itself.
-const render = (args) => Component({ ...args, control: FieldData.control(args) });
+const render = (args) => Component({ ...args, children: FieldData.children(args) });
 
 const meta = {
   title: 'Molecules/Field',

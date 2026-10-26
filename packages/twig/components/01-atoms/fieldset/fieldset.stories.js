@@ -7,8 +7,8 @@ import FieldData from '../../02-molecules/field/field.stories.data';
 import Field from '../../02-molecules/field/field.twig';
 
 // The control markup is built from the atoms and passed into the field
-// component's `control` slot.
-const field = (args) => Field({ ...args, control: FieldData.control(args) });
+// component's `children` slot.
+const field = (args) => Field({ ...args, children: FieldData.children(args) });
 
 const meta = {
   title: 'Atoms/Form Controls/Fieldset',

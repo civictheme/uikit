@@ -16,10 +16,10 @@ describe('Field Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('control slot renders as a direct child of the field root', async () => {
+  test('children slot renders as a direct child of the field root', async () => {
     const c = await dom(template, {
       type: 'textfield',
-      control: '<input type="text" name="slotted" id="testid" class="external-control">',
+      children: '<input type="text" name="slotted" id="testid" class="external-control">',
     });
 
     expect(c.querySelectorAll('.ct-field > input.external-control[name="slotted"]')).toHaveLength(1);
@@ -33,7 +33,7 @@ describe('Field Component', () => {
       theme: 'dark',
       is_invalid: true,
       orientation: 'horizontal',
-      control: '<input type="text" name="testname">',
+      children: '<input type="text" name="testname">',
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-dark.ct-field--horizontal.ct-field--invalid')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field.ct-field--textfield')).toHaveLength(1);
@@ -45,7 +45,7 @@ describe('Field Component', () => {
       type: 'textfield',
       modifier_class: 'custom-modifier',
       attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-      control: '<input type="text" name="testname">',
+      children: '<input type="text" name="testname">',
     });
 
     expect(c.querySelectorAll('.ct-field.custom-modifier')).toHaveLength(1);
@@ -60,7 +60,7 @@ describe('Field Component', () => {
       is_required: true,
       is_disabled: true,
       description: 'This is a description',
-      control: '<input type="text" name="testname">',
+      children: '<input type="text" name="testname">',
     });
     expect(c.querySelectorAll('.ct-field.ct-theme-light.ct-field--vertical.ct-field--required.ct-field--disabled')).toHaveLength(1);
     expect(c.querySelectorAll('.ct-field > .ct-field__description')).toHaveLength(1);
@@ -74,7 +74,7 @@ describe('Field Component', () => {
       title: 'Test Title',
       id: 'testid',
       is_required: true,
-      control: '<input type="text" name="testname" id="testid">',
+      children: '<input type="text" name="testname" id="testid">',
     });
 
     expect(c.querySelectorAll('.ct-field > .ct-label.ct-field__title[for="testid"]')).toHaveLength(1);
@@ -91,7 +91,7 @@ describe('Field Component', () => {
           is_group: true,
           title: 'Test Title',
           id: 'testid',
-          control: `<input type="${type}" name="testname" id="testid">`,
+          children: `<input type="${type}" name="testname" id="testid">`,
         }, false);
 
         expect(c.querySelectorAll('fieldset.ct-field.ct-field--group')).toHaveLength(1);
@@ -109,7 +109,7 @@ describe('Field Component', () => {
         is_group: true,
         title: 'Test Title',
         attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
-        control: '<input type="checkbox" name="testname">',
+        children: '<input type="checkbox" name="testname">',
       });
 
       expect(c.querySelectorAll('fieldset.ct-field[data-test="true"]')).toHaveLength(1);
@@ -124,7 +124,7 @@ describe('Field Component', () => {
           is_group: true,
           title: 'Test Title',
           title_display: titleDisplay,
-          control: '<input type="checkbox" name="testname">',
+          children: '<input type="checkbox" name="testname">',
         }, false);
 
         expect(c.querySelectorAll('fieldset.ct-field')).toHaveLength(1);
@@ -139,7 +139,7 @@ describe('Field Component', () => {
         type: 'checkbox',
         is_group: true,
         title: '',
-        control: '<input type="checkbox" name="testname">',
+        children: '<input type="checkbox" name="testname">',
       });
 
       expect(c.querySelectorAll('fieldset.ct-field')).toHaveLength(1);
@@ -155,7 +155,7 @@ describe('Field Component', () => {
         title: 'Test Title',
         id: 'testid',
         description: 'This is a description',
-        control: '<input type="checkbox" name="testname">',
+        children: '<input type="checkbox" name="testname">',
       });
 
       const root = c.querySelector('fieldset.ct-field');
@@ -173,7 +173,7 @@ describe('Field Component', () => {
         type,
         title: 'Test Title',
         id: 'testid',
-        control: `<input type="${type}" name="testname" id="testid">`,
+        children: `<input type="${type}" name="testname" id="testid">`,
       }, false);
 
       expect(c.querySelectorAll('fieldset')).toHaveLength(0);
@@ -190,7 +190,7 @@ describe('Field Component', () => {
       title: 'Test Title',
       title_position: 'before',
       id: 'testid',
-      control: '<input type="checkbox" name="testname" id="testid">',
+      children: '<input type="checkbox" name="testname" id="testid">',
     });
 
     expect(c.querySelectorAll('fieldset')).toHaveLength(0);
@@ -205,7 +205,7 @@ describe('Field Component', () => {
       title: 'Test Title',
       title_display: 'hidden',
       id: 'testid',
-      control: '<input type="checkbox" name="testname" id="testid">',
+      children: '<input type="checkbox" name="testname" id="testid">',
     });
 
     expect(c.querySelectorAll('.ct-field > label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
@@ -218,7 +218,7 @@ describe('Field Component', () => {
       type: 'textfield',
       prefix: 'Prefix content',
       suffix: 'Suffix content',
-      control: '<input type="text" name="testname">',
+      children: '<input type="text" name="testname">',
     });
 
     expect(c.querySelector('.ct-field > .ct-field__prefix').textContent.trim()).toEqual('Prefix content');
@@ -236,7 +236,7 @@ describe('Field Component', () => {
         id: 'testid',
         is_required: true,
         description: 'This is a description',
-        control: '<input type="checkbox" name="agree" id="testid">',
+        children: '<input type="checkbox" name="agree" id="testid">',
       });
 
       expect(c.querySelectorAll('fieldset')).toHaveLength(0);
@@ -264,7 +264,7 @@ describe('Field Component', () => {
         title_position: 'after',
         title_display: 'invisible',
         id: 'testid',
-        control: '<input type="checkbox" name="agree" id="testid">',
+        children: '<input type="checkbox" name="agree" id="testid">',
       });
 
       expect(c.querySelectorAll('.ct-field > label.ct-field__label.ct-visually-hidden[for="testid"]')).toHaveLength(1);
@@ -279,7 +279,7 @@ describe('Field Component', () => {
         type: 'textfield',
         id: 'testid',
         description: 'This is a description',
-        control: '<input type="text" name="testname" id="testid" aria-describedby="testid--description">',
+        children: '<input type="text" name="testname" id="testid" aria-describedby="testid--description">',
       });
 
       expect(c.querySelectorAll('.ct-field .ct-field__description[id="testid--description"]')).toHaveLength(1);
@@ -291,7 +291,7 @@ describe('Field Component', () => {
       const c = await dom(template, {
         type: 'textfield',
         description: 'This is a description',
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       expect(c.querySelectorAll('.ct-field .ct-field__description')).toHaveLength(1);
@@ -309,7 +309,7 @@ describe('Field Component', () => {
           content: 'Message content sample.',
           attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       const messageElement = c.querySelector('.ct-field .ct-field__message');
@@ -323,7 +323,7 @@ describe('Field Component', () => {
       const c = await dom(template, {
         type: 'textfield',
         is_invalid: true,
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       const messageElement = c.querySelector('.ct-field .ct-field__message');
@@ -341,7 +341,7 @@ describe('Field Component', () => {
         message: {
           content: 'Message content sample.',
         },
-        control: '<input type="text" name="testname" id="testid" aria-describedby="testid--error-message">',
+        children: '<input type="text" name="testname" id="testid" aria-describedby="testid--error-message">',
       });
 
       expect(c.querySelectorAll('.ct-field .ct-field__message[id="testid--error-message"]')).toHaveLength(1);
@@ -354,7 +354,7 @@ describe('Field Component', () => {
         type: 'textfield',
         is_invalid: true,
         message: { content: 'Message content sample.' },
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
       expect(withoutId.querySelectorAll('.ct-field .ct-field__message[id]')).toHaveLength(0);
 
@@ -366,7 +366,7 @@ describe('Field Component', () => {
           content: 'Message content sample.',
           attributes: new DrupalAttribute().setAttribute('id', 'custom-id'),
         },
-        control: '<input type="text" name="testname" id="testid">',
+        children: '<input type="text" name="testname" id="testid">',
       });
       expect(withExplicitAttributes.querySelectorAll('.ct-field .ct-field__message[id="custom-id"]')).toHaveLength(1);
       expect(withExplicitAttributes.querySelectorAll('.ct-field .ct-field__message[id="testid--error-message"]')).toHaveLength(0);
@@ -380,7 +380,7 @@ describe('Field Component', () => {
         message: {
           attributes: new DrupalAttribute().setAttribute('data-test', 'true'),
         },
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       const messageElement = c.querySelector('.ct-field .ct-field__message');
@@ -397,7 +397,7 @@ describe('Field Component', () => {
         title: 'Test Title',
         description: 'This is a description',
         is_invalid: true,
-        control: '<input type="hidden" name="testname">',
+        children: '<input type="hidden" name="testname">',
       });
 
       expect(c.querySelectorAll('.ct-field .ct-field__message')).toHaveLength(0);
@@ -426,7 +426,7 @@ describe('Field Component', () => {
         title,
         title_display: titleDisplay,
         type,
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       expect(c.querySelectorAll(selector)).toHaveLength(expected);
@@ -440,7 +440,7 @@ describe('Field Component', () => {
         title: 'Agree to the terms',
         title_display: 'after',
         id: 'testid',
-        control: '<input type="checkbox" name="agree" id="testid">',
+        children: '<input type="checkbox" name="agree" id="testid">',
       });
 
       const root = c.querySelector('.ct-field');
@@ -456,7 +456,7 @@ describe('Field Component', () => {
         type: 'textfield',
         title: 'Inline title',
         title_display: 'inline',
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       expect(c.querySelectorAll('.ct-field.ct-field--horizontal')).toHaveLength(1);
@@ -472,7 +472,7 @@ describe('Field Component', () => {
         title_display: 'after',
         title_position: 'before',
         orientation: 'vertical',
-        control: '<input type="text" name="testname">',
+        children: '<input type="text" name="testname">',
       });
 
       expect(c.querySelectorAll('.ct-field.ct-field--vertical')).toHaveLength(1);
