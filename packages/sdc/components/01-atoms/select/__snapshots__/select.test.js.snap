@@ -1,8 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Select Component renders an empty select when options are empty 1`] = `
 <div>
   
+
+
 
 
 
@@ -21,6 +23,8 @@ exports[`Select Component renders an empty select when options are empty 1`] = `
 exports[`Select Component renders bare without a name (fail visible) 1`] = `
 <div>
   
+
+
 
 
 
@@ -48,6 +52,8 @@ exports[`Select Component renders from attributes only (platform-rendered contro
 
 
 
+
+
   <select
     class="ct-select ct-theme-light"
     data-drupal-selector="platform-id"
@@ -65,6 +71,8 @@ exports[`Select Component renders from attributes only (platform-rendered contro
 exports[`Select Component renders numeric option labels and values (core-prepared options) 1`] = `
 <div>
   
+
+
 
 
 
@@ -98,6 +106,8 @@ exports[`Select Component renders numeric option labels and values (core-prepare
 exports[`Select Component renders optgroup with options 1`] = `
 <div>
   
+
+
 
 
 
@@ -145,6 +155,8 @@ exports[`Select Component renders optgroup with options 1`] = `
 exports[`Select Component renders with optional attributes 1`] = `
 <div>
   
+
+
 
 
 
@@ -196,6 +208,8 @@ exports[`Select Component renders with required attributes 1`] = `
 
 
 
+
+
   <select
     class="ct-select ct-theme-light"
     name="test-select"
@@ -225,6 +239,8 @@ exports[`Select Component renders with required attributes 1`] = `
 exports[`Select Component strips HTML tags from attribute values 1`] = `
 <div>
   
+
+
 
 
 

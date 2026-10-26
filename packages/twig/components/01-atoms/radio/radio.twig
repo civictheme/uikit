@@ -5,15 +5,15 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - name: [string] DOM name (or provide it via attributes).
- * - id: [string] DOM id (or provide it via attributes).
- * - value: [string,boolean] DOM value.
- * - label: [string] Label content.
- * - is_checked: [boolean] Whether the radio is checked.
- * - is_required: [boolean] Whether the radio is required.
- * - is_invalid: [boolean] Whether the radio is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
- * - is_disabled: [boolean] Whether the radio is disabled.
- * - modifier_class: [string] Additional CSS classes.
+ * - name: [string,null] DOM name (or provide it via attributes).
+ * - id: [string,null] DOM id (or provide it via attributes).
+ * - value: [string,boolean,null] DOM value.
+ * - label: [string,null] Label content.
+ * - is_checked: [boolean,null] Whether the radio is checked.
+ * - is_required: [boolean,null] Whether the radio is required.
+ * - is_invalid: [boolean,null] Whether the radio is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
+ * - is_disabled: [boolean,null] Whether the radio is disabled.
+ * - modifier_class: [string,null] Additional CSS classes.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
@@ -22,19 +22,22 @@
 {% set is_invalid_class = is_invalid ? 'ct-radio--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-<input
-  type="radio"
-  class="ct-radio {{ modifier_class -}}"
-  {% if name is not empty %}name="{{ name }}"{% endif %}
-  {% if value is not empty %}value="{{ value }}"{% endif %}
-  {% if id is not empty %}id="{{ id }}"{% endif %}
-  {% if is_checked %}checked{% endif %}
-  {% if is_required %}required{% endif %}
-  {% if is_disabled %}disabled{% endif %}
-  {% if is_invalid %}aria-invalid="true"{% endif %}
-  {% if is_invalid and id is not empty %}aria-describedby="{{ id }}--error-message"{% endif %}
-  {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
-/>
+{# Props fold into attributes when present, so the control renders entirely
+   from the attributes object and platform-prepared attributes pass through
+   without duplication. #}
+{% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
+{% do attributes.setAttribute('type', 'radio') %}
+{% do attributes.addClass('ct-radio', modifier_class) %}
+{% if name is not empty %}{% do attributes.setAttribute('name', name) %}{% endif %}
+{% if value is not empty %}{% do attributes.setAttribute('value', value ~ '') %}{% endif %}
+{% if id is not empty %}{% do attributes.setAttribute('id', id) %}{% endif %}
+{% if is_checked %}{% do attributes.setAttribute('checked', true) %}{% endif %}
+{% if is_required %}{% do attributes.setAttribute('required', true) %}{% endif %}
+{% if is_disabled %}{% do attributes.setAttribute('disabled', true) %}{% endif %}
+{% if is_invalid %}{% do attributes.setAttribute('aria-invalid', 'true') %}{% endif %}
+{% if is_invalid and id is not empty %}{% do attributes.setAttribute('aria-describedby', id ~ '--error-message') %}{% endif %}
+
+<input{{ attributes }} />
 {% if label is not empty %}
   {% include '@atoms/label/label.twig' with {
     theme: theme,
