@@ -41,24 +41,27 @@ describe('Radio Component', () => {
     expect(c.querySelector('.ct-radio').hasAttribute('checked')).toBe(true);
     expect(c.querySelector('.ct-radio').hasAttribute('disabled')).toBe(true);
     expect(c.querySelector('.ct-radio').getAttribute('data-test')).toEqual('true');
+    expect(c.querySelector('.ct-radio').getAttribute('aria-describedby')).toEqual('radio-id--error-message');
     expect(c.querySelectorAll('label.ct-radio__label')).toHaveLength(1);
     expect(c.querySelector('label.ct-radio__label').textContent.trim()).toEqual('Radio Label');
 
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name or id is empty', async () => {
+  test('renders bare without a name or id (fail visible)', async () => {
     let c = await dom(template, {
       name: '',
       id: 'radio-id',
     });
-    expect(c.querySelectorAll('.ct-radio')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-radio[id="radio-id"]')).toHaveLength(1);
+    expect(c.querySelector('.ct-radio').hasAttribute('name')).toBe(false);
 
     c = await dom(template, {
       name: 'test-radio',
       id: '',
     });
-    expect(c.querySelectorAll('.ct-radio')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-radio[name="test-radio"]')).toHaveLength(1);
+    expect(c.querySelector('.ct-radio').hasAttribute('id')).toBe(false);
   });
 
   test('strips HTML tags from attribute values', async () => {
@@ -70,6 +73,18 @@ describe('Radio Component', () => {
     });
 
     expect(c.querySelector('.ct-radio').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
+
+    assertUniqueCssClasses(c);
+  });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-radio[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });

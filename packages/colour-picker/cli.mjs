@@ -15,7 +15,7 @@ import { fileURLToPath } from 'url';
 import { loadTokens, resolveModes, MODES } from '@civictheme/tokens/build/lib.mjs';
 import { resolveRecipe, targetsForRecipe, loadTargets } from './engine/resolve.mjs';
 import { checkContrast } from './engine/contrast.mjs';
-import { emitCss, emitFigma, emitResolved, emitNameMap, emitScssOverrides } from './engine/emit.mjs';
+import { emitCss, emitFigma, emitResolved, emitNameMap, emitScssOverrides, recipeNameFor } from './engine/emit.mjs';
 
 const USAGE = `Usage: npx @civictheme/colour-picker <command> [options]
 
@@ -137,12 +137,22 @@ function commandEmit(options) {
   });
 
   const failures = checkContrast(resolved, targetsForRecipe(recipe)).filter((row) => !row.pass).length;
+  // Figma's native mode-import only UPDATES variables whose names already
+  // exist in the collection — it never creates them, so recipe additions
+  // show as per-token import errors until created once (any mode value).
+  const figmaAdditions = Object.keys(recipe.additions ?? {}).map((tokenPath) => ({ tokenPath, figmaName: recipeNameFor(tokenPath) }));
   if (options.json) {
-    console.log(JSON.stringify({ out: options.out, files: Object.keys(outputs), contrastFailures: failures }, null, 2));
+    console.log(JSON.stringify({ out: options.out, files: Object.keys(outputs), contrastFailures: failures, figmaAdditions }, null, 2));
   } else {
     console.log(`Wrote ${Object.keys(outputs).length} files to ${options.out}:`);
     Object.keys(outputs).forEach((file) => console.log(`  - ${file}`));
     if (failures) console.log(`\n⚠ ${failures} contrast targets failing (warn-only) — run check for detail.`);
+    if (figmaAdditions.length) {
+      console.log(`\n⚠ Figma's native import updates existing variables only — it never creates`);
+      console.log(`  them, so these ${figmaAdditions.length} recipe addition(s) will error on import until the`);
+      console.log(`  variables are created once in the collection (then re-import both modes):`);
+      figmaAdditions.forEach(({ tokenPath, figmaName }) => console.log(`  - ${figmaName}  (${tokenPath})`));
+    }
   }
   return 0;
 }

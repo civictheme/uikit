@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Pagination Component does not render when items are empty 1`] = `
 <div>
@@ -248,19 +248,19 @@ exports[`Pagination Component renders with optional attributes 1`] = `
       class="ct-pagination__items_per_page"
     >
       
+        
 
 
 
-  
-          
-    
-      
+
+
+
       <div
-        class="ct-field ct-theme-dark ct-field--select ct-field--horizontal    ct-pagination__items_per_page__field ct-field--horizontal--fluid"
+        class="ct-field ct-theme-dark ct-field--select ct-field--horizontal     ct-pagination__items_per_page__field ct-field--horizontal--fluid"
         data-test="items-per-page"
       >
         
-          
+      
 
 
         <label
@@ -269,53 +269,45 @@ exports[`Pagination Component renders with optional attributes 1`] = `
         >
           Items per page
         </label>
-            
-    
-        <div
-          class="ct-field__wrapper"
+          
+  
+
+
+
+
+
+        <select
+          class="ct-select ct-theme-dark"
+          id="items-per-page"
+          name="itemsPerPage"
         >
           
-            
-      
-              
-
-  
-          <select
-            class="ct-select ct-theme-dark  ct-field__control"
-            id="items-per-page"
-            name="itemsPerPage"
-          >
-            
-                            
-            <option
-              value="10"
-            >
-              10
-            </option>
-            
-                                          
-            <option
-              value="20"
-            >
-              20
-            </option>
-            
-                                          
-            <option
-              value="50"
-            >
-              50
-            </option>
-            
                     
-          </select>
+          <option
+            selected="selected"
+            value="10"
+          >
+            10
+          </option>
           
-
-      
-      
+                              
+          <option
+            value="20"
+          >
+            20
+          </option>
           
-        </div>
+                              
+          <option
+            value="50"
+          >
+            50
+          </option>
+          
+            
+        </select>
         
+
   
       </div>
       

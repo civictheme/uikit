@@ -1,6 +1,10 @@
 import Field from '../field/field.twig';
 import FieldData from '../field/field.stories.data';
 
+// The control markup is built from the atoms and passed into the field
+// component's `children` slot.
+const field = (args) => Field({ ...args, children: FieldData.children(args) });
+
 export default {
   args: (theme = 'light', options = {}) => {
     let selectedFilters = {};
@@ -42,9 +46,10 @@ export default {
         {
           title: `Filter 1`,
           content: [
-            Field({
-              ...FieldData.args(theme, { controls: true }),
+            field({
+              ...FieldData.args(theme),
               type: 'checkbox',
+              is_group: true,
               description: null,
               message: null,
               orientation: 'vertical',
@@ -54,14 +59,15 @@ export default {
         {
           title: `Filter 2`,
           content: [
-            Field({
-              ...FieldData.args(theme, { controls: true }),
+            field({
+              ...FieldData.args(theme),
               type: 'radio',
+              is_group: true,
               description: null,
               message: null,
               orientation: 'vertical',
             }),
-            Field({
+            field({
               ...FieldData.args(theme),
               description: null,
               message: null,

@@ -1,9 +1,37 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Input Component does not render when name is empty 1`] = `
+exports[`Input Component renders bare without a name (fail visible) 1`] = `
 <div>
   
 
+
+
+
+
+  <input
+    class="ct-input ct-theme-light"
+    type="text"
+  />
+  
+
+</div>
+`;
+
+exports[`Input Component renders from attributes only (platform-rendered control) 1`] = `
+<div>
+  
+
+
+
+
+
+  <input
+    class="ct-input ct-theme-light"
+    data-drupal-selector="platform-id"
+    id="platform-id"
+    name="platform-name"
+  />
+  
 
 </div>
 `;
@@ -12,8 +40,12 @@ exports[`Input Component renders with optional attributes 1`] = `
 <div>
   
 
-  
+
+
+
+
   <input
+    aria-describedby="input-id--error-message"
     aria-invalid="true"
     class="ct-input ct-theme-dark ct-input--is-invalid custom-class"
     data-test="true"
@@ -34,7 +66,10 @@ exports[`Input Component renders with required attributes 1`] = `
 <div>
   
 
-  
+
+
+
+
   <input
     class="ct-input ct-theme-light"
     name="test-input"
@@ -50,7 +85,10 @@ exports[`Input Component strips HTML tags from attribute values 1`] = `
 <div>
   
 
-  
+
+
+
+
   <input
     class="ct-input ct-theme-light"
     data-test="<script>alert(1)</script>"

@@ -1,17 +1,104 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Select Component does not render when name or options are empty 1`] = `
+exports[`Select Component renders an empty select when options are empty 1`] = `
 <div>
   
 
+
+
+
+
+  <select
+    class="ct-select ct-theme-light"
+    name="test-select"
+  >
+    
+  
+  </select>
+  
 
 </div>
 `;
 
-exports[`Select Component does not render when name or options are empty 2`] = `
+exports[`Select Component renders bare without a name (fail visible) 1`] = `
 <div>
   
 
+
+
+
+
+  <select
+    class="ct-select ct-theme-light"
+  >
+    
+                    
+    <option
+      value="1"
+    >
+      Option 1
+    </option>
+    
+            
+  </select>
+  
+
+</div>
+`;
+
+exports[`Select Component renders from attributes only (platform-rendered control) 1`] = `
+<div>
+  
+
+
+
+
+
+  <select
+    class="ct-select ct-theme-light"
+    data-drupal-selector="platform-id"
+    id="platform-id"
+    name="platform-name"
+  >
+    
+  
+  </select>
+  
+
+</div>
+`;
+
+exports[`Select Component renders numeric option labels and values (core-prepared options) 1`] = `
+<div>
+  
+
+
+
+
+
+  <select
+    class="ct-select ct-theme-light"
+    name="test-select"
+  >
+    
+                    
+    <option
+      value="2024"
+    >
+      2024
+    </option>
+    
+                              
+    <option
+      selected="selected"
+      value="2025"
+    >
+      2025
+    </option>
+    
+            
+  </select>
+  
 
 </div>
 `;
@@ -20,42 +107,45 @@ exports[`Select Component renders optgroup with options 1`] = `
 <div>
   
 
-  
+
+
+
+
   <select
     class="ct-select ct-theme-light"
     name="test-select"
   >
     
-                  
+            
     <optgroup
       label="Group 1"
     >
       
-                                    
+                              
       <option
         value="1.1"
       >
         Option 1.1
       </option>
       
-                                                
+                                        
       <option
         value="1.2"
       >
         Option 1.2
       </option>
       
-                              
+                        
     </optgroup>
     
-                                  
+                        
     <option
       value="2"
     >
       Option 2
     </option>
     
-                    
+            
   </select>
   
 
@@ -66,8 +156,12 @@ exports[`Select Component renders with optional attributes 1`] = `
 <div>
   
 
-  
+
+
+
+
   <select
+    aria-describedby="select-id--error-message"
     aria-invalid="true"
     class="ct-select ct-theme-dark ct-select--is-invalid custom-class"
     data-test="true"
@@ -78,7 +172,7 @@ exports[`Select Component renders with optional attributes 1`] = `
     required=""
   >
     
-                            
+                    
     <option
       selected="selected"
       value="1"
@@ -86,14 +180,14 @@ exports[`Select Component renders with optional attributes 1`] = `
       Option 1
     </option>
     
-                                          
+                              
     <option
       value="2"
     >
       Option 2
     </option>
     
-                                          
+                              
     <option
       disabled=""
       value="3"
@@ -101,7 +195,7 @@ exports[`Select Component renders with optional attributes 1`] = `
       Option 3
     </option>
     
-                    
+            
   </select>
   
 
@@ -112,27 +206,30 @@ exports[`Select Component renders with required attributes 1`] = `
 <div>
   
 
-  
+
+
+
+
   <select
     class="ct-select ct-theme-light"
     name="test-select"
   >
     
-                            
+                    
     <option
       value="1"
     >
       Option 1
     </option>
     
-                                          
+                              
     <option
       value="2"
     >
       Option 2
     </option>
     
-                    
+            
   </select>
   
 
@@ -143,21 +240,24 @@ exports[`Select Component strips HTML tags from attribute values 1`] = `
 <div>
   
 
-  
+
+
+
+
   <select
     class="ct-select ct-theme-light"
     data-test="<script>alert(1)</script>"
     name="test-select"
   >
     
-                            
+                    
     <option
       value="1"
     >
       Option 1
     </option>
     
-                    
+            
   </select>
   
 

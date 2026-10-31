@@ -1,9 +1,36 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Textarea Component does not render when name is empty 1`] = `
+exports[`Textarea Component renders bare without a name (fail visible) 1`] = `
 <div>
   
 
+
+
+
+
+  <textarea
+    class="ct-textarea ct-theme-light"
+  />
+  
+
+</div>
+`;
+
+exports[`Textarea Component renders from attributes only (platform-rendered control) 1`] = `
+<div>
+  
+
+
+
+
+
+  <textarea
+    class="ct-textarea ct-theme-light"
+    data-drupal-selector="platform-id"
+    id="platform-id"
+    name="platform-name"
+  />
+  
 
 </div>
 `;
@@ -12,7 +39,10 @@ exports[`Textarea Component renders with optional attributes 1`] = `
 <div>
   
 
-  
+
+
+
+
   <textarea
     aria-invalid="true"
     class="ct-textarea ct-theme-dark ct-textarea--is-invalid custom-class"
@@ -34,7 +64,10 @@ exports[`Textarea Component renders with required attributes 1`] = `
 <div>
   
 
-  
+
+
+
+
   <textarea
     class="ct-textarea ct-theme-light"
     name="test-textarea"
@@ -50,7 +83,10 @@ exports[`Textarea Component strips HTML tags from attribute values 1`] = `
 <div>
   
 
-  
+
+
+
+
   <textarea
     class="ct-textarea ct-theme-light"
     data-test="<script>alert(1)</script>"

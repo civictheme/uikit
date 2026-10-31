@@ -37,7 +37,7 @@
  *   - type: [string] Option type ('option').
  *   - label: [string] Option label.
  *   - value: [string] Option value.
- *   - selected: [string] Whether the option is selected.
+ *   - selected: [boolean] Whether the option is selected.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  *
  * Slots:
@@ -62,14 +62,21 @@
 
     {% if items_per_page_options is defined and items_per_page_options is not empty %}
       <div class="ct-pagination__items_per_page">
+        {% set items_per_page_control %}
+          {%- include 'civictheme:select' with {
+            theme: theme|default('light'),
+            name: items_per_page_name,
+            id: items_per_page_id,
+            options: items_per_page_options,
+          } only -%}
+        {% endset %}
         {%- include 'civictheme:field' with {
           theme: theme|default('light'),
           title: items_per_page_title,
           type: 'select',
           orientation: 'horizontal',
-          name: items_per_page_name,
           id: items_per_page_id,
-          options: items_per_page_options,
+          children: items_per_page_control,
           attributes: items_per_page_attributes,
           modifier_class: 'ct-pagination__items_per_page__field ct-field--horizontal--fluid',
         } -%}

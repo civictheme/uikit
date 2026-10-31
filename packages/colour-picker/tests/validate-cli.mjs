@@ -88,7 +88,11 @@ const exampleRecipe = writeJson('example.json', {
 const exampleOut = path.join(tempRoot, 'example');
 const emit = run(['emit', '--recipe', exampleRecipe, '--out', exampleOut, '--json']);
 expect('example emit exits 0', emit.status === 0, emit.stderr);
-expect('example emit reports contrast state', JSON.parse(emit.stdout).contrastFailures === 3);
+const emitJson = JSON.parse(emit.stdout);
+expect('example emit reports contrast state', emitJson.contrastFailures === 3);
+expect('example emit flags additions as Figma import caveats', emitJson.figmaAdditions?.length === 2
+  && emitJson.figmaAdditions.some((a) => a.tokenPath === 'color.palette.brand-accent' && a.figmaName === 'Custom/Brand Accent')
+  && emitJson.figmaAdditions.some((a) => a.tokenPath === 'color.component.my-hero.background-color' && a.figmaName?.startsWith('Component/')), JSON.stringify(emitJson.figmaAdditions));
 
 const scss = fs.readFileSync(path.join(exampleOut, 'overrides.scss'), 'utf-8');
 const lightBlock = scss.split('.ct-theme-dark')[0];

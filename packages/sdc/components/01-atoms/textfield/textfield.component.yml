@@ -13,34 +13,34 @@ props:
         - light
         - dark
     name:
-      type: string
+      type: [string, 'null']
       title: Name
-      description: DOM name (required).
+      description: DOM name (or provide it via attributes).
     id:
-      type: string
+      type: [string, 'null']
       title: ID
       description: DOM ID attribute.
     value:
-      type: string
+      type: [string, 'null']
       title: Value
       description: The textfield value.
     placeholder:
-      type: string
+      type: [string, 'null']
       title: Placeholder
       description: Placeholder text.
     is_invalid:
-      type: boolean
+      type: [boolean, 'null']
       title: Invalid
-      description: Whether the textfield is invalid.
+      description: Whether the textfield is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
     is_disabled:
-      type: boolean
+      type: [boolean, 'null']
       title: Disabled
       description: Whether the textfield is disabled.
     is_required:
-      type: boolean
+      type: [boolean, 'null']
       title: Required
       description: Whether the textfield is required.
     modifier_class:
-      type: string
+      type: [string, 'null']
       title: Modifier classes
       description: Additional CSS classes.

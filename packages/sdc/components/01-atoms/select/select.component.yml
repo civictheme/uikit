@@ -13,21 +13,21 @@ props:
         - light
         - dark
     id:
-      type: string
+      type: [string, 'null']
       title: ID
       description: DOM ID attribute.
     name:
-      type: string
+      type: [string, 'null']
       title: Name
-      description: DOM name (required).
+      description: DOM name (or provide it via attributes).
     is_multiple:
-      type: boolean
+      type: [boolean, 'null']
       title: Multiple
       description: Whether to allow multiple selections.
     options:
-      type: array
+      type: [array, 'null']
       title: Options
-      description: Options (applies to optgroup type)
+      description: Options, matching Drupal core's prepared select options structure (keys mirror the HTML option attributes).
       items:
         type: object
         properties:
@@ -39,21 +39,21 @@ props:
               - optgroup
               - option
           label:
-            type: string
+            type: ['string', 'number']
             title: Label
             description: Option label.
           value:
-            type: ['string', 'array']
+            type: ['string', 'number', 'array']
             title: Value
             description: Option value.
-          is_selected:
+          selected:
             type: boolean
             title: Selected
             description: Whether the option is selected.
-          is_disabled:
+          disabled:
             type: boolean
             title: Disabled
-            description: Whether the select is disabled.
+            description: Whether the option is disabled.
           options:
             type: array
             title: Nested options
@@ -62,34 +62,34 @@ props:
               type: object
               properties:
                 label:
-                  type: string
+                  type: ['string', 'number']
                   title: Label
                   description: Option label.
                 value:
-                  type: string
+                  type: ['string', 'number']
                   title: Value
                   description: Option value.
-                is_selected:
+                selected:
                   type: boolean
                   title: Selected
                   description: Whether the option is selected.
-                is_disabled:
+                disabled:
                   type: boolean
                   title: Disabled
-                  description: Whether the select is disabled.
+                  description: Whether the option is disabled.
     is_invalid:
-      type: boolean
+      type: [boolean, 'null']
       title: Invalid
-      description: Whether the select is invalid.
+      description: Whether the select is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
     is_disabled:
-      type: boolean
+      type: [boolean, 'null']
       title: Disabled
       description: Whether the select is disabled.
     is_required:
-      type: boolean
+      type: [boolean, 'null']
       title: Required
       description: Whether the select is required.
     modifier_class:
-      type: string
+      type: [string, 'null']
       title: Modifier classes
       description: Additional CSS classes.

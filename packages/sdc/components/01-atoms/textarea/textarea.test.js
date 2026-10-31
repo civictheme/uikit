@@ -44,12 +44,13 @@ describe('Textarea Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name is empty', async () => {
+  test('renders bare without a name (fail visible)', async () => {
     const c = await dom(template, {
       name: '',
     });
 
-    expect(c.querySelectorAll('.ct-textarea')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-textarea')).toHaveLength(1);
+    expect(c.querySelector('.ct-textarea').hasAttribute('name')).toBe(false);
   });
 
   test('strips HTML tags from attribute values', async () => {
@@ -62,6 +63,18 @@ describe('Textarea Component', () => {
     expect(c.querySelector('.ct-textarea').textContent.trim()).toEqual('Sample text');
     expect(c.querySelector('.ct-textarea').getAttribute('name')).toEqual('test-textarea');
     expect(c.querySelector('.ct-textarea').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
+
+    assertUniqueCssClasses(c);
+  });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-textarea[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });

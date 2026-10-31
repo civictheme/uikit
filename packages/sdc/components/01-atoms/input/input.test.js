@@ -41,17 +41,19 @@ describe('Input Component', () => {
     expect(c.querySelector('.ct-input').getAttribute('required')).toBe('');
     expect(c.querySelector('.ct-input').getAttribute('data-test')).toEqual('true');
     expect(c.querySelector('.ct-input').getAttribute('id')).toEqual('input-id');
+    expect(c.querySelector('.ct-input').getAttribute('aria-describedby')).toEqual('input-id--error-message');
 
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name is empty', async () => {
+  test('renders bare without a name (fail visible)', async () => {
     const c = await dom(template, {
       name: '',
       type: 'text',
     });
 
-    expect(c.querySelectorAll('.ct-input')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-input[type="text"]')).toHaveLength(1);
+    expect(c.querySelector('.ct-input').hasAttribute('name')).toBe(false);
   });
 
   test('strips HTML tags from attribute values', async () => {
@@ -65,6 +67,18 @@ describe('Input Component', () => {
     expect(c.querySelector('.ct-input').getAttribute('value')).toEqual('Sample text');
     expect(c.querySelector('.ct-input').getAttribute('name')).toEqual('test-input');
     expect(c.querySelector('.ct-input').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
+
+    assertUniqueCssClasses(c);
+  });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-input[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });

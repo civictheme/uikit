@@ -42,6 +42,7 @@ describe('Checkbox Component', () => {
     expect(c.querySelector('.ct-checkbox').checked).toBe(true);
     expect(c.querySelector('.ct-checkbox').disabled).toBe(true);
     expect(c.querySelector('.ct-checkbox').getAttribute('data-test')).toBe('true');
+    expect(c.querySelector('.ct-checkbox').getAttribute('aria-describedby')).toBe('test-checkbox-id--error-message');
 
     const label = c.querySelector('.ct-checkbox__label');
     expect(label).not.toBeNull();
@@ -51,17 +52,31 @@ describe('Checkbox Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name or id is empty', async () => {
+  test('renders bare without a name or id (fail visible)', async () => {
     const c1 = await dom(template, {
       name: '',
       id: 'test-checkbox-id',
     });
-    expect(c1.querySelectorAll('.ct-checkbox')).toHaveLength(0);
+    expect(c1.querySelectorAll('.ct-checkbox[id="test-checkbox-id"]')).toHaveLength(1);
+    expect(c1.querySelector('.ct-checkbox').hasAttribute('name')).toBe(false);
 
     const c2 = await dom(template, {
       name: 'test-checkbox',
       id: '',
     });
-    expect(c2.querySelectorAll('.ct-checkbox')).toHaveLength(0);
+    expect(c2.querySelectorAll('.ct-checkbox[name="test-checkbox"]')).toHaveLength(1);
+    expect(c2.querySelector('.ct-checkbox').hasAttribute('id')).toBe(false);
+  });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-checkbox[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
+
+    assertUniqueCssClasses(c);
   });
 });

@@ -5,14 +5,14 @@
  *
  * Props:
  * - theme: [string] Theme variation (light or dark).
- * - name: [string] DOM name (required).
- * - id: [string] DOM ID attribute.
- * - value: [string] The textfield value.
- * - placeholder: [string] Placeholder text.
- * - is_invalid: [boolean] Whether the textfield is invalid.
- * - is_disabled: [boolean] Whether the textfield is disabled.
- * - is_required: [boolean] Whether the textfield is required.
- * - modifier_class: [string] Additional CSS classes.
+ * - name: [string,null] DOM name (or provide it via attributes).
+ * - id: [string,null] DOM ID attribute.
+ * - value: [string,null] The textfield value.
+ * - placeholder: [string,null] Placeholder text.
+ * - is_invalid: [boolean,null] Whether the textfield is invalid. With the id prop set, the control references the field error message via aria-describedby="{id}--error-message".
+ * - is_disabled: [boolean,null] Whether the textfield is disabled.
+ * - is_required: [boolean,null] Whether the textfield is required.
+ * - modifier_class: [string,null] Additional CSS classes.
  * - attributes: [Drupal\Core\Template\Attribute] Additional HTML attributes.
  */
 #}
@@ -21,17 +21,19 @@
 {% set is_invalid_class = is_invalid ? 'ct-textfield--is-invalid' : '' %}
 {% set modifier_class = '%s %s %s'|format(theme_class, is_invalid_class, modifier_class|default(''))|trim %}
 
-{% if name is not empty %}
-  <input
-    type="text"
-    class="ct-textfield {{ modifier_class -}}"
-    name="{{ name }}"
-    {% if value is not empty %}value="{{ value }}"{% endif %}
-    {% if id %}id="{{ id }}"{% endif %}
-    {% if is_disabled %}disabled{% endif %}
-    {% if is_required %}required{% endif %}
-    {% if is_invalid %}aria-invalid="true"{% endif %}
-    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if attributes is defined and attributes is not null %}{{- attributes -}}{% endif %}
-  />
-{% endif %}
+{# Props fold into attributes when present, so the control renders entirely
+   from the attributes object and platform-prepared attributes pass through
+   without duplication. #}
+{% set attributes = attributes is defined and attributes is not null ? attributes : create_attribute({}) %}
+{% do attributes.setAttribute('type', 'text') %}
+{% do attributes.addClass('ct-textfield', modifier_class) %}
+{% if name is not empty %}{% do attributes.setAttribute('name', name) %}{% endif %}
+{% if value is not empty %}{% do attributes.setAttribute('value', value) %}{% endif %}
+{% if id %}{% do attributes.setAttribute('id', id) %}{% endif %}
+{% if is_disabled %}{% do attributes.setAttribute('disabled', true) %}{% endif %}
+{% if is_required %}{% do attributes.setAttribute('required', true) %}{% endif %}
+{% if is_invalid %}{% do attributes.setAttribute('aria-invalid', 'true') %}{% endif %}
+{% if is_invalid and id is not empty %}{% do attributes.setAttribute('aria-describedby', id ~ '--error-message') %}{% endif %}
+{% if placeholder %}{% do attributes.setAttribute('placeholder', placeholder) %}{% endif %}
+
+<input{{ attributes }} />

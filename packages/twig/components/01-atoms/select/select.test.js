@@ -26,9 +26,9 @@ describe('Select Component', () => {
       name: 'test-select',
       id: 'select-id',
       options: [
-        { type: 'option', label: 'Option 1', value: '1', is_selected: true },
+        { type: 'option', label: 'Option 1', value: '1', selected: true },
         { type: 'option', label: 'Option 2', value: '2' },
-        { type: 'option', label: 'Option 3', value: '3', is_disabled: true },
+        { type: 'option', label: 'Option 3', value: '3', disabled: true },
       ],
       theme: 'dark',
       is_multiple: true,
@@ -46,6 +46,7 @@ describe('Select Component', () => {
     expect(c.querySelector('.ct-select').hasAttribute('disabled')).toBe(true);
     expect(c.querySelector('.ct-select').hasAttribute('required')).toBe(true);
     expect(c.querySelector('.ct-select').getAttribute('data-test')).toEqual('true');
+    expect(c.querySelector('.ct-select').getAttribute('aria-describedby')).toEqual('select-id--error-message');
     expect(c.querySelectorAll('option')).toHaveLength(3);
     expect(c.querySelector('option[value="1"]').hasAttribute('selected')).toBe(true);
     expect(c.querySelector('option[value="1"]').textContent.trim()).toEqual('Option 1');
@@ -85,20 +86,41 @@ describe('Select Component', () => {
     assertUniqueCssClasses(c);
   });
 
-  test('does not render when name or options are empty', async () => {
-    let c = await dom(template, {
+  test('renders bare without a name (fail visible)', async () => {
+    const c = await dom(template, {
       name: '',
       options: [
         { type: 'option', label: 'Option 1', value: '1' },
       ],
     });
-    expect(c.querySelectorAll('.ct-select')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-select')).toHaveLength(1);
+    expect(c.querySelector('.ct-select').hasAttribute('name')).toBe(false);
+    expect(c.querySelectorAll('option')).toHaveLength(1);
+  });
 
-    c = await dom(template, {
+  test('renders numeric option labels and values (core-prepared options)', async () => {
+    const c = await dom(template, {
+      name: 'test-select',
+      options: [
+        { type: 'option', label: 2024, value: 2024 },
+        { type: 'option', label: 2025, value: 2025, selected: true },
+      ],
+    });
+
+    expect(c.querySelectorAll('option')).toHaveLength(2);
+    expect(c.querySelector('option[value="2024"]').textContent.trim()).toEqual('2024');
+    expect(c.querySelector('option[value="2025"]').hasAttribute('selected')).toBe(true);
+
+    assertUniqueCssClasses(c);
+  });
+
+  test('renders an empty select when options are empty', async () => {
+    const c = await dom(template, {
       name: 'test-select',
       options: [],
     });
-    expect(c.querySelectorAll('.ct-select')).toHaveLength(0);
+    expect(c.querySelectorAll('.ct-select[name="test-select"]')).toHaveLength(1);
+    expect(c.querySelectorAll('option')).toHaveLength(0);
   });
 
   test('strips HTML tags from attribute values', async () => {
@@ -111,6 +133,18 @@ describe('Select Component', () => {
     });
 
     expect(c.querySelector('.ct-select').getAttribute('data-test')).toEqual('<script>alert(1)</script>');
+
+    assertUniqueCssClasses(c);
+  });
+  test('renders from attributes only (platform-rendered control)', async () => {
+    const c = await dom(template, {
+      attributes: new DrupalAttribute()
+        .setAttribute('name', 'platform-name')
+        .setAttribute('id', 'platform-id')
+        .setAttribute('data-drupal-selector', 'platform-id'),
+    });
+
+    expect(c.querySelectorAll('.ct-select[name="platform-name"][id="platform-id"][data-drupal-selector="platform-id"]')).toHaveLength(1);
 
     assertUniqueCssClasses(c);
   });
